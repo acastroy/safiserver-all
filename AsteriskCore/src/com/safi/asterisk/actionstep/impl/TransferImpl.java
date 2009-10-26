@@ -7,6 +7,7 @@
 package com.safi.asterisk.actionstep.impl;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.builder.EqualsBuilder;
 import org.asteriskjava.fastagi.AgiChannel;
 import org.asteriskjava.manager.ManagerConnection;
 import org.asteriskjava.manager.ManagerEventListener;
@@ -583,7 +584,7 @@ public class TransferImpl extends ActionStepImpl implements Transfer {
     return result.toString();
   }
 
-  private class RedirectCallManagerEventListener implements ManagerEventListener, Runnable {
+  public class RedirectCallManagerEventListener implements ManagerEventListener, Runnable {
     private StringBuffer buf;
     private String uniqueId;
     volatile boolean stopped;
@@ -593,6 +594,13 @@ public class TransferImpl extends ActionStepImpl implements Transfer {
       this.uniqueId = uniqueId;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+      if (! (obj instanceof RedirectCallManagerEventListener))
+        return false;
+      RedirectCallManagerEventListener o = (RedirectCallManagerEventListener)obj;
+      return new EqualsBuilder().append(o.buf, buf).append(o.uniqueId, uniqueId).append(o.stopped, stopped).isEquals();
+    }
     @Override
     public void onManagerEvent(ManagerEvent event) {
       
@@ -636,6 +644,18 @@ public class TransferImpl extends ActionStepImpl implements Transfer {
           e.printStackTrace();
         }
       }
+    }
+
+    public StringBuffer getBuf() {
+      return buf;
+    }
+
+    public String getUniqueId() {
+      return uniqueId;
+    }
+
+    public boolean isStopped() {
+      return stopped;
     }
   }
 
