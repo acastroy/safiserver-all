@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="com.safi.server.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="com.safi.server.preferences.WorkshopPreferencePage"
+            id="org.eclipse.ui.preferencePages.Startup"
+            name="Workshop">
+      </page>
+   </extension>
+
+</plugin>

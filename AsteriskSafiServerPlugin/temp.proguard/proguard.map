@@ -1,0 +1,445 @@
+com.safi.server.actions.ServerUtilities -> com.safi.server.actions.ServerUtilities:
+    com.safi.asterisk.handler.HandlerEngine handlerEngine -> a
+    com.safi.server.actions.ServerUtilities instance -> b
+    java.util.List callbackList -> c
+    org.eclipse.core.runtime.jobs.Job serverJob -> d
+    java.util.List fundamentalProps -> e
+    89:89:com.safi.server.actions.ServerUtilities getInstance() -> getInstance
+    93:93:boolean isRunning() -> isRunning
+    120:121:void registerDebugHandler(java.lang.String,com.safi.asterisk.handler.Handler,java.lang.Object,org.eclipse.emf.transaction.TransactionalEditingDomain) -> registerDebugHandler
+    124:126:void unregisterHandler(com.safi.asterisk.handler.Handler) -> unregisterHandler
+    129:132:void addServerStartupCallback(com.safi.server.actions.ServerUtilities$ServerStartupCallback) -> addServerStartupCallback
+    135:139:void removeServerStartupCallback(com.safi.server.actions.ServerUtilities$ServerStartupCallback) -> removeServerStartupCallback
+    142:200:void startServer() -> startServer
+    310:311:void stopServer() -> stopServer
+    349:349:void propertyChange(org.eclipse.jface.util.PropertyChangeEvent) -> propertyChange
+    41:41:java.util.List access$0(com.safi.server.actions.ServerUtilities) -> a
+    37:37:com.safi.asterisk.handler.HandlerEngine access$1(com.safi.server.actions.ServerUtilities) -> b
+com.safi.server.actions.ServerUtilities$1 -> com.safi.server.actions.ServerUtilities$1:
+    com.safi.server.actions.ServerUtilities this$0 -> a
+    67:71:void serverStarted() -> serverStarted
+    75:82:void serverStopped(java.lang.String) -> serverStopped
+com.safi.server.actions.ServerUtilities$2 -> com.safi.server.actions.ServerUtilities$2:
+    com.safi.server.actions.ServerUtilities this$0 -> a
+    209:250:org.eclipse.core.runtime.IStatus run(org.eclipse.core.runtime.IProgressMonitor) -> run
+    255:256:void canceling() -> canceling
+com.safi.server.actions.ServerUtilities$3 -> com.safi.server.actions.ServerUtilities$3:
+    com.safi.server.actions.ServerUtilities this$0 -> a
+    275:275:void running(org.eclipse.core.runtime.jobs.IJobChangeEvent) -> running
+    279:296:void done(org.eclipse.core.runtime.jobs.IJobChangeEvent) -> done
+com.safi.server.actions.ServerUtilities$ServerStartupCallback -> com.safi.server.actions.ServerUtilities$ServerStartupCallback:
+    void serverStarted() -> serverStarted
+    void serverFailedToStart(java.lang.String) -> serverFailedToStart
+    void serverStopped() -> serverStopped
+    boolean removeOnServerStop() -> removeOnServerStop
+com.safi.server.actions.StartServerAction -> com.safi.server.actions.StartServerAction:
+    org.eclipse.ui.IWorkbenchWindow window -> a
+    org.eclipse.jface.action.IAction action -> b
+    66:79:void run(org.eclipse.jface.action.IAction) -> run
+    92:94:void selectionChanged(org.eclipse.jface.action.IAction,org.eclipse.jface.viewers.ISelection) -> selectionChanged
+    102:102:void dispose() -> dispose
+    111:112:void init(org.eclipse.ui.IWorkbenchWindow) -> init
+    19:19:org.eclipse.jface.action.IAction access$0(com.safi.server.actions.StartServerAction) -> a
+    18:18:org.eclipse.ui.IWorkbenchWindow access$1(com.safi.server.actions.StartServerAction) -> b
+com.safi.server.actions.StartServerAction$1 -> com.safi.server.actions.StartServerAction$1:
+    com.safi.server.actions.StartServerAction this$0 -> a
+    29:31:void serverFailedToStart(java.lang.String) -> serverFailedToStart
+    35:45:void serverStarted() -> serverStarted
+    49:51:void serverStopped() -> serverStopped
+    54:54:boolean removeOnServerStop() -> removeOnServerStop
+com.safi.server.actions.StartServerAction$1$1 -> com.safi.server.actions.StartServerAction$1$1:
+    com.safi.server.actions.StartServerAction$1 this$1 -> a
+    40:42:void run() -> run
+com.safi.server.actions.StopServerAction -> com.safi.server.actions.StopServerAction:
+    org.eclipse.ui.IWorkbenchWindow window -> a
+    org.eclipse.jface.action.IAction action -> b
+    71:78:void run(org.eclipse.jface.action.IAction) -> run
+    87:89:void selectionChanged(org.eclipse.jface.action.IAction,org.eclipse.jface.viewers.ISelection) -> selectionChanged
+    97:97:void dispose() -> dispose
+    106:107:void init(org.eclipse.ui.IWorkbenchWindow) -> init
+    19:19:org.eclipse.jface.action.IAction access$0(com.safi.server.actions.StopServerAction) -> a
+    18:18:org.eclipse.ui.IWorkbenchWindow access$1(com.safi.server.actions.StopServerAction) -> b
+com.safi.server.actions.StopServerAction$1 -> com.safi.server.actions.StopServerAction$1:
+    com.safi.server.actions.StopServerAction this$0 -> a
+    29:38:void serverFailedToStart(java.lang.String) -> serverFailedToStart
+    42:43:void serverStarted() -> serverStarted
+    47:56:void serverStopped() -> serverStopped
+    59:59:boolean removeOnServerStop() -> removeOnServerStop
+com.safi.server.actions.StopServerAction$1$1 -> com.safi.server.actions.StopServerAction$1$1:
+    com.safi.server.actions.StopServerAction$1 this$1 -> a
+    java.lang.String val$msg -> b
+    33:35:void run() -> run
+com.safi.server.actions.StopServerAction$1$2 -> com.safi.server.actions.StopServerAction$1$2:
+    com.safi.server.actions.StopServerAction$1 this$1 -> a
+    52:53:void run() -> run
+com.safi.server.manager.BooleanMessageDialogWithToggle -> com.safi.server.manager.BooleanMessageDialogWithToggle:
+    19:32:com.safi.server.manager.BooleanMessageDialogWithToggle openError(org.eclipse.swt.widgets.Shell,java.lang.String,java.lang.String,java.lang.String,boolean,org.eclipse.jface.preference.IPreferenceStore,java.lang.String) -> openError
+    37:48:com.safi.server.manager.BooleanMessageDialogWithToggle openInformation(org.eclipse.swt.widgets.Shell,java.lang.String,java.lang.String,java.lang.String,boolean,org.eclipse.jface.preference.IPreferenceStore,java.lang.String) -> openInformation
+    54:74:void buttonPressed(int) -> buttonPressed
+    1:1:org.eclipse.jface.dialogs.MessageDialogWithToggle openError(org.eclipse.swt.widgets.Shell,java.lang.String,java.lang.String,java.lang.String,boolean,org.eclipse.jface.preference.IPreferenceStore,java.lang.String) -> openError
+    1:1:org.eclipse.jface.dialogs.MessageDialogWithToggle openInformation(org.eclipse.swt.widgets.Shell,java.lang.String,java.lang.String,java.lang.String,boolean,org.eclipse.jface.preference.IPreferenceStore,java.lang.String) -> openInformation
+com.safi.server.manager.SafiServerManagementException -> com.safi.server.manager.SafiServerManagementException:
+com.safi.server.manager.SafiServerManager -> com.safi.server.manager.SafiServerManager:
+com.safi.server.manager.SafiServerManagerDefault -> com.safi.server.manager.SafiServerManagerDefault:
+com.safi.server.manager.SafiServerRemoteManager -> com.safi.server.manager.SafiServerRemoteManager:
+    javax.management.MBeanServerConnection serverConnection -> a
+    com.safi.server.manager.SafiServerRemoteManager instance -> b
+    javax.management.remote.JMXConnector jmxc -> c
+    org.tanukisoftware.wrapper.jmx.WrapperManagerMBean wrapperProxy -> d
+    com.safi.asterisk.handler.SafiServerMonitor serverMonitor -> e
+    boolean listenerRegistered -> f
+    java.lang.Object serverMonitorHandback -> g
+    javax.management.ObjectName serverMonitorName -> h
+    javax.management.ObjectName wrapperMBeanName -> i
+    boolean observerInfo -> j
+    boolean observeError -> k
+    55:55:com.safi.server.manager.SafiServerRemoteManager getInstance() -> getInstance
+    64:132:void handleNotification(javax.management.Notification,java.lang.Object) -> handleNotification
+    136:186:void connect() -> connect
+    189:205:void reset() -> reset
+    208:210:void resetConnection() -> resetConnection
+    213:220:boolean restartServerService() -> restartServerService
+    224:236:boolean stopServerService(int) -> stopServerService
+    241:244:java.lang.String[] getServerIPs() -> getServerIPs
+    248:251:boolean notificationPreferencesChanged() -> notificationPreferencesChanged
+com.safi.server.manager.SafiServerRemoteManager$1 -> com.safi.server.manager.SafiServerRemoteManager$1:
+    org.eclipse.swt.widgets.Display val$d -> a
+    javax.management.Notification val$notification -> b
+    75:81:void run() -> run
+com.safi.server.manager.SafiServerRemoteManager$2 -> com.safi.server.manager.SafiServerRemoteManager$2:
+    org.eclipse.swt.widgets.Display val$d -> a
+    javax.management.Notification val$notification -> b
+    91:97:void run() -> run
+com.safi.server.manager.SafiServerRemoteManager$3 -> com.safi.server.manager.SafiServerRemoteManager$3:
+    com.safi.server.manager.SafiServerRemoteManager this$0 -> a
+    org.eclipse.swt.widgets.Display val$d -> b
+    javax.management.remote.JMXConnectionNotification val$n -> c
+    115:128:void run() -> run
+com.safi.server.manager.SafiServerRemoteManager$Handback -> com.safi.server.manager.SafiServerRemoteManager$Handback:
+com.safi.server.manager.SafiServerRemoteManager$ServerInfoNotificationFilter -> com.safi.server.manager.SafiServerRemoteManager$ServerInfoNotificationFilter:
+    boolean observerInfo -> a
+    boolean observeError -> b
+    267:275:boolean isNotificationEnabled(javax.management.Notification) -> isNotificationEnabled
+    280:284:void refreshSettings() -> refreshSettings
+com.safi.server.plugin.SafiServerPlugin -> com.safi.server.plugin.SafiServerPlugin:
+    java.lang.String AST_DEBUG_NAME_SUFFIX -> AST_DEBUG_NAME_SUFFIX
+    java.lang.String PLUGIN_ID -> PLUGIN_ID
+    com.safi.server.plugin.SafiServerPlugin plugin -> a
+    com.safi.db.SafiDriverManager driverManager -> b
+    java.util.List authListeners -> c
+    com.safi.db.server.config.User currentUser -> d
+    com.safi.db.server.config.SafiServer currentServer -> e
+    com.safi.db.server.config.SafiServer localServer -> f
+    com.safi.db.server.config.AsteriskServer debugAsteriskServer -> g
+    79:129:void start(org.osgi.framework.BundleContext) -> start
+    151:152:void loadDriverManager() -> loadDriverManager
+    155:169:void loadDriverManager(boolean) -> loadDriverManager
+    177:180:void stop(org.osgi.framework.BundleContext) -> stop
+    188:188:com.safi.server.plugin.SafiServerPlugin getDefault() -> getDefault
+    199:199:org.eclipse.jface.resource.ImageDescriptor getImageDescriptor(java.lang.String) -> getImageDescriptor
+    203:203:com.safi.db.SafiDriverManager getDriverManager() -> getDriverManager
+    230:243:void updateServerResources() -> updateServerResources
+    252:255:void refreshSafiServer() -> refreshSafiServer
+    258:291:void storeDebug(com.safi.db.server.config.AsteriskServer) -> storeDebug
+    309:318:com.safi.db.server.config.SafiServer createLocalSafiServerFromStore() -> createLocalSafiServerFromStore
+    323:330:void storeLocalSafiServerToPref() -> storeLocalSafiServerToPref
+    333:348:com.safi.db.server.config.SafiServer refreshProdSafiServer() -> refreshProdSafiServer
+    352:382:com.safi.db.server.config.AsteriskServer createDebugAsteriskFromStore() -> createDebugAsteriskFromStore
+    407:409:void addAuthListener(com.safi.server.preferences.SafiServerAuthListener) -> addAuthListener
+    412:413:void removeAuthListener(com.safi.server.preferences.SafiServerAuthListener) -> removeAuthListener
+    416:418:void notifyListeners() -> notifyListeners
+    421:438:void updateUser() -> updateUser
+    445:498:void refreshDebugServer() -> refreshDebugServer
+    507:507:com.safi.db.server.config.User getCurrentUser() -> getCurrentUser
+    511:516:boolean hasProductionServerInfo() -> hasProductionServerInfo
+    521:530:com.safi.db.server.config.SafiServer getSafiServer() -> getSafiServer
+    535:537:void setSafiServer(com.safi.db.server.config.SafiServer) -> setSafiServer
+    540:548:boolean isCurrentUserAdmin() -> isCurrentUserAdmin
+    556:568:java.util.List getAvailableRoles() -> getAvailableRoles
+    579:591:java.util.List getAvailableEntitlements() -> getAvailableEntitlements
+    598:608:void remove(java.util.List,java.util.List) -> remove
+    611:611:com.safi.db.server.config.SafiServer getLocalServer() -> getLocalServer
+    615:615:com.safi.db.server.config.AsteriskServer getDebugAsteriskServer() -> getDebugAsteriskServer
+com.safi.server.preferences.AgeRange -> com.safi.server.preferences.AgeRange:
+    java.lang.String NONE -> NONE
+    java.lang.String BABY -> BABY
+    java.lang.String TODDLER -> TODDLER
+    java.lang.String CHILD -> CHILD
+    java.lang.String TEENAGER -> TEENAGER
+    java.lang.String ADULT -> ADULT
+    java.lang.String[] INSTANCES -> INSTANCES
+com.safi.server.preferences.AsteriskConfigurationDialog -> com.safi.server.preferences.AsteriskConfigurationDialog:
+    org.eclipse.swt.widgets.Text nameField -> a
+    org.eclipse.swt.widgets.Text descField -> b
+    org.eclipse.swt.widgets.Text sftpPortField -> c
+    org.eclipse.swt.widgets.Text sftpPassField -> d
+    org.eclipse.swt.widgets.Text userField -> e
+    org.eclipse.swt.widgets.Text managerPortField -> f
+    org.eclipse.swt.widgets.Text managerPassField -> g
+    org.eclipse.swt.widgets.Text managerNameField -> h
+    org.eclipse.swt.widgets.Text hostnameField -> i
+    com.safi.db.server.config.AsteriskServer asteriskServer -> j
+    org.eclipse.swt.widgets.Button debugButton -> k
+    org.eclipse.swt.widgets.Button activeButton -> l
+    org.eclipse.swt.graphics.Font titleFont -> m
+    boolean debug -> n
+    boolean active -> o
+    org.eclipse.swt.widgets.Button privateCheckbox -> p
+    boolean privateServer -> q
+    89:290:org.eclipse.swt.widgets.Control createDialogArea(org.eclipse.swt.widgets.Composite) -> createDialogArea
+    310:318:boolean isCurrentUserOwner() -> a
+    328:330:void createButtonsForButtonBar(org.eclipse.swt.widgets.Composite) -> createButtonsForButtonBar
+    337:337:org.eclipse.swt.graphics.Point getInitialSize() -> getInitialSize
+    341:343:void configureShell(org.eclipse.swt.widgets.Shell) -> configureShell
+    346:366:void buttonPressed(int) -> buttonPressed
+    459:459:com.safi.db.server.config.AsteriskServer getAsteriskServer() -> getAsteriskServer
+    463:467:void main(java.lang.String[]) -> main
+    470:470:boolean isDebug() -> isDebug
+    474:475:void setDebug(boolean) -> setDebug
+    478:478:boolean isActive() -> isActive
+    482:483:void setActive(boolean) -> setActive
+    486:486:boolean isPrivateServer() -> isPrivateServer
+    490:491:void setPrivateServer(boolean) -> setPrivateServer
+    494:515:boolean commit() -> commit
+    49:49:org.eclipse.swt.graphics.Font access$0(com.safi.server.preferences.AsteriskConfigurationDialog) -> a
+    47:47:org.eclipse.swt.widgets.Button access$1(com.safi.server.preferences.AsteriskConfigurationDialog) -> b
+    50:50:void access$2(com.safi.server.preferences.AsteriskConfigurationDialog,boolean) -> a
+    48:48:org.eclipse.swt.widgets.Button access$3(com.safi.server.preferences.AsteriskConfigurationDialog) -> c
+    51:51:void access$4(com.safi.server.preferences.AsteriskConfigurationDialog,boolean) -> b
+    52:52:org.eclipse.swt.widgets.Button access$5(com.safi.server.preferences.AsteriskConfigurationDialog) -> d
+com.safi.server.preferences.AsteriskConfigurationDialog$1 -> com.safi.server.preferences.AsteriskConfigurationDialog$1:
+    com.safi.server.preferences.AsteriskConfigurationDialog this$0 -> a
+    66:68:void widgetDisposed(org.eclipse.swt.events.DisposeEvent) -> widgetDisposed
+com.safi.server.preferences.AsteriskConfigurationDialog$2 -> com.safi.server.preferences.AsteriskConfigurationDialog$2:
+    com.safi.server.preferences.AsteriskConfigurationDialog this$0 -> a
+    158:159:void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+com.safi.server.preferences.AsteriskConfigurationDialog$3 -> com.safi.server.preferences.AsteriskConfigurationDialog$3:
+    com.safi.server.preferences.AsteriskConfigurationDialog this$0 -> a
+    171:172:void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+com.safi.server.preferences.AsteriskConfigurationDialog$4 -> com.safi.server.preferences.AsteriskConfigurationDialog$4:
+    com.safi.server.preferences.AsteriskConfigurationDialog this$0 -> a
+    179:182:void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+com.safi.server.preferences.AsteriskConfigurationDialog$5 -> com.safi.server.preferences.AsteriskConfigurationDialog$5:
+    com.safi.server.preferences.AsteriskConfigurationDialog this$0 -> a
+    org.eclipse.swt.widgets.Composite val$container -> b
+    195:203:void itemCollapsed(org.eclipse.swt.events.ExpandEvent) -> itemCollapsed
+    207:215:void itemExpanded(org.eclipse.swt.events.ExpandEvent) -> itemExpanded
+com.safi.server.preferences.AsteriskConfigurationDialog$5$1 -> com.safi.server.preferences.AsteriskConfigurationDialog$5$1:
+    com.safi.server.preferences.AsteriskConfigurationDialog$5 this$1 -> a
+    org.eclipse.swt.widgets.Composite val$container -> b
+    198:201:void run() -> run
+com.safi.server.preferences.AsteriskConfigurationDialog$5$2 -> com.safi.server.preferences.AsteriskConfigurationDialog$5$2:
+    com.safi.server.preferences.AsteriskConfigurationDialog$5 this$1 -> a
+    org.eclipse.swt.widgets.Composite val$container -> b
+    210:213:void run() -> run
+com.safi.server.preferences.Food -> com.safi.server.preferences.Food:
+    java.lang.String name -> a
+    boolean healthy -> b
+    447:447:boolean isHealthy() -> isHealthy
+    456:456:java.lang.String getName() -> getName
+com.safi.server.preferences.FoodContentProvider -> com.safi.server.preferences.FoodContentProvider:
+    204:204:java.lang.Object[] getElements(java.lang.Object) -> getElements
+    212:212:void dispose() -> dispose
+    226:226:void inputChanged(org.eclipse.jface.viewers.Viewer,java.lang.Object,java.lang.Object) -> inputChanged
+com.safi.server.preferences.GroceryList -> com.safi.server.preferences.GroceryList:
+    java.util.List foods -> a
+    413:413:java.util.List getFoods() -> getFoods
+com.safi.server.preferences.Person -> com.safi.server.preferences.Person:
+    java.lang.String name -> a
+    boolean male -> b
+    java.lang.Integer ageRange -> c
+    org.eclipse.swt.graphics.RGB shirtColor -> d
+    323:323:java.lang.Integer getAgeRange() -> getAgeRange
+    331:332:void setAgeRange(java.lang.Integer) -> setAgeRange
+    338:338:boolean isMale() -> isMale
+    346:347:void setMale(boolean) -> setMale
+    353:353:java.lang.String getName() -> getName
+    361:362:void setName(java.lang.String) -> setName
+    368:368:org.eclipse.swt.graphics.RGB getShirtColor() -> getShirtColor
+    376:377:void setShirtColor(org.eclipse.swt.graphics.RGB) -> setShirtColor
+com.safi.server.preferences.PersonCellModifier -> com.safi.server.preferences.PersonCellModifier:
+    org.eclipse.jface.viewers.Viewer viewer -> a
+    251:251:boolean canModify(java.lang.Object,java.lang.String) -> canModify
+    264:274:java.lang.Object getValue(java.lang.Object,java.lang.String) -> getValue
+    288:303:void modify(java.lang.Object,java.lang.String,java.lang.Object) -> modify
+com.safi.server.preferences.PersonContentProvider -> com.safi.server.preferences.PersonContentProvider:
+    173:173:java.lang.Object[] getElements(java.lang.Object) -> getElements
+    181:181:void dispose() -> dispose
+    188:188:void inputChanged(org.eclipse.jface.viewers.Viewer,java.lang.Object,java.lang.Object) -> inputChanged
+com.safi.server.preferences.PersonEditor -> com.safi.server.preferences.PersonEditor:
+    java.lang.String NAME -> NAME
+    java.lang.String MALE -> MALE
+    java.lang.String AGE -> AGE
+    java.lang.String SHIRT_COLOR -> SHIRT_COLOR
+    java.lang.String[] PROPS -> PROPS
+    java.util.List people -> a
+    66:73:void run() -> run
+    82:85:void configureShell(org.eclipse.swt.widgets.Shell) -> configureShell
+    95:150:org.eclipse.swt.widgets.Control createContents(org.eclipse.swt.widgets.Composite) -> createContents
+    160:161:void main(java.lang.String[]) -> main
+    51:51:java.util.List access$0(com.safi.server.preferences.PersonEditor) -> a
+com.safi.server.preferences.PersonEditor$1 -> com.safi.server.preferences.PersonEditor$1:
+    com.safi.server.preferences.PersonEditor this$0 -> a
+    org.eclipse.jface.viewers.TableViewer val$tv -> b
+    127:134:void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+com.safi.server.preferences.PersonLabelProvider -> com.safi.server.preferences.PersonLabelProvider:
+    475:475:org.eclipse.swt.graphics.Image getColumnImage(java.lang.Object,int) -> getColumnImage
+    488:499:java.lang.String getColumnText(java.lang.Object,int) -> getColumnText
+    510:510:void addListener(org.eclipse.jface.viewers.ILabelProviderListener) -> addListener
+    517:517:void dispose() -> dispose
+    530:530:boolean isLabelProperty(java.lang.Object,java.lang.String) -> isLabelProperty
+    541:541:void removeListener(org.eclipse.jface.viewers.ILabelProviderListener) -> removeListener
+com.safi.server.preferences.PreferenceConstants -> com.safi.server.preferences.PreferenceConstants:
+    java.lang.String PREF_FASTAGI_PORT -> PREF_FASTAGI_PORT
+    java.lang.String PREF_MGR_USER -> PREF_MGR_USER
+    java.lang.String PREF_MGR_PWD -> PREF_MGR_PWD
+    java.lang.String PREF_SAFISERVER_HOSTNAME_PROD -> PREF_SAFISERVER_HOSTNAME_PROD
+    java.lang.String PREF_SAFISERVER_USER_PROD -> PREF_SAFISERVER_USER_PROD
+    java.lang.String PREF_SAFISERVER_PASS_PROD -> PREF_SAFISERVER_PASS_PROD
+    java.lang.String PREF_AUTO_SYNC_ON_CONNECT -> PREF_AUTO_SYNC_ON_CONNECT
+    java.lang.String PREF_FASTAGI_PORT_DEBUG -> PREF_FASTAGI_PORT_DEBUG
+    java.lang.String PREF_MANAGER_PORT_DEBUG -> PREF_MANAGER_PORT_DEBUG
+    java.lang.String PREF_MGR_USER_DEBUG -> PREF_MGR_USER_DEBUG
+    java.lang.String PREF_MGR_PWD_DEBUG -> PREF_MGR_PWD_DEBUG
+    java.lang.String PREF_AST_IP_DEBUG -> PREF_AST_IP_DEBUG
+    java.lang.String PREF_AST_NAME_DEBUG -> PREF_AST_NAME_DEBUG
+    java.lang.String PREF_SAFI_BIND_ADDR_LOCAL -> PREF_SAFI_BIND_ADDR_LOCAL
+    java.lang.String PREF_SAFISERVER_USER_DEBUG -> PREF_SAFISERVER_USER_DEBUG
+    java.lang.String PREF_SAFISERVER_PASS_DEBUG -> PREF_SAFISERVER_PASS_DEBUG
+    java.lang.String PREF_AUTO_SYNC_ON_CONNECT_DEBUG -> PREF_AUTO_SYNC_ON_CONNECT_DEBUG
+    java.lang.String PREF_DB_PORT_PROD -> PREF_DB_PORT_PROD
+    java.lang.String AST_ACTIVE_DEBUG -> AST_ACTIVE_DEBUG
+    java.lang.String AST_SFTP_PORT_DEBUG -> AST_SFTP_PORT_DEBUG
+    java.lang.String AST_SFTP_PASSWORD_DEBUG -> AST_SFTP_PASSWORD_DEBUG
+    java.lang.String AST_SFTP_USER_DEBUG -> AST_SFTP_USER_DEBUG
+    java.lang.String AST_NAME_DEBUG -> AST_NAME_DEBUG
+    java.lang.String AST_DESCRIPTION_DEBUG -> AST_DESCRIPTION_DEBUG
+    java.lang.String PREF_AST_ID_DEBUG -> PREF_AST_ID_DEBUG
+    java.lang.String PREF_SAFISERVER_ID -> PREF_SAFISERVER_ID
+    java.lang.String AST_PRIVATE_DEBUG -> AST_PRIVATE_DEBUG
+    java.lang.String PREF_SERVER_ERROR_NOTIFICATION -> PREF_SERVER_ERROR_NOTIFICATION
+    java.lang.String PREF_SERVER_INFO_NOTIFICATION -> PREF_SERVER_INFO_NOTIFICATION
+com.safi.server.preferences.PreferenceInitializer -> com.safi.server.preferences.PreferenceInitializer:
+    18:35:void initializeDefaultPreferences() -> initializeDefaultPreferences
+    38:38:org.eclipse.jface.preference.IPreferenceStore getPreferenceStore() -> getPreferenceStore
+com.safi.server.preferences.RegisterAsterisksDialog -> com.safi.server.preferences.RegisterAsterisksDialog:
+    java.util.List asterisks -> a
+    java.util.List deleted_asterisks -> b
+    com.safi.db.server.config.SafiServer production -> c
+    com.safi.db.server.config.AsteriskServer debugServer -> d
+    com.safi.db.server.config.AsteriskServer localServer -> e
+    org.eclipse.nebula.jface.gridviewer.GridTableViewer tableViewer -> f
+    org.eclipse.nebula.widgets.grid.Grid table -> g
+    205:212:int open() -> open
+    223:434:org.eclipse.swt.widgets.Control createDialogArea(org.eclipse.swt.widgets.Composite) -> createDialogArea
+    444:446:void createButtonsForButtonBar(org.eclipse.swt.widgets.Composite) -> createButtonsForButtonBar
+    453:453:org.eclipse.swt.graphics.Point getInitialSize() -> getInitialSize
+    457:460:void configureShell(org.eclipse.swt.widgets.Shell) -> configureShell
+    479:498:void addAsterisk() -> a
+    501:573:void okPressed() -> okPressed
+    599:600:void updateAll() -> b
+    160:160:org.eclipse.nebula.jface.gridviewer.GridTableViewer access$0(com.safi.server.preferences.RegisterAsterisksDialog) -> a
+    151:151:java.util.List access$1(com.safi.server.preferences.RegisterAsterisksDialog) -> b
+    157:157:com.safi.db.server.config.AsteriskServer access$2(com.safi.server.preferences.RegisterAsterisksDialog) -> c
+    598:598:void access$3(com.safi.server.preferences.RegisterAsterisksDialog) -> d
+    575:575:void access$4(com.safi.server.preferences.RegisterAsterisksDialog) -> e
+    157:157:void access$5(com.safi.server.preferences.RegisterAsterisksDialog,com.safi.db.server.config.AsteriskServer) -> a
+    462:462:void access$6(com.safi.server.preferences.RegisterAsterisksDialog) -> f
+    602:602:void access$7(com.safi.server.preferences.RegisterAsterisksDialog) -> g
+com.safi.server.preferences.RegisterAsterisksDialog$1 -> com.safi.server.preferences.RegisterAsterisksDialog$1:
+    com.safi.server.preferences.RegisterAsterisksDialog this$0 -> a
+    237:243:void update(java.lang.Object,java.lang.String[]) -> update
+    248:250:void refresh() -> refresh
+com.safi.server.preferences.RegisterAsterisksDialog$2 -> com.safi.server.preferences.RegisterAsterisksDialog$2:
+    com.safi.server.preferences.RegisterAsterisksDialog this$0 -> a
+    254:257:void doubleClick(org.eclipse.jface.viewers.DoubleClickEvent) -> doubleClick
+com.safi.server.preferences.RegisterAsterisksDialog$3 -> com.safi.server.preferences.RegisterAsterisksDialog$3:
+    com.safi.server.preferences.RegisterAsterisksDialog this$0 -> a
+    org.eclipse.jface.viewers.CheckboxCellEditor val$checkCellEditor -> b
+    277:277:boolean canEdit(java.lang.Object) -> canEdit
+    281:281:org.eclipse.jface.viewers.CellEditor getCellEditor(java.lang.Object) -> getCellEditor
+    285:285:java.lang.Object getValue(java.lang.Object) -> getValue
+    289:297:void setValue(java.lang.Object,java.lang.Object) -> setValue
+com.safi.server.preferences.RegisterAsterisksDialog$4 -> com.safi.server.preferences.RegisterAsterisksDialog$4:
+    com.safi.server.preferences.RegisterAsterisksDialog this$0 -> a
+    org.eclipse.jface.viewers.CheckboxCellEditor val$checkCellEditor -> b
+    308:308:boolean canEdit(java.lang.Object) -> canEdit
+    312:312:org.eclipse.jface.viewers.CellEditor getCellEditor(java.lang.Object) -> getCellEditor
+    316:316:java.lang.Object getValue(java.lang.Object) -> getValue
+    320:325:void setValue(java.lang.Object,java.lang.Object) -> setValue
+com.safi.server.preferences.RegisterAsterisksDialog$5 -> com.safi.server.preferences.RegisterAsterisksDialog$5:
+    com.safi.server.preferences.RegisterAsterisksDialog this$0 -> a
+    org.eclipse.jface.viewers.CheckboxCellEditor val$checkCellEditor -> b
+    335:335:boolean canEdit(java.lang.Object) -> canEdit
+    339:339:org.eclipse.jface.viewers.CellEditor getCellEditor(java.lang.Object) -> getCellEditor
+    343:343:java.lang.Object getValue(java.lang.Object) -> getValue
+    348:353:void setValue(java.lang.Object,java.lang.Object) -> setValue
+com.safi.server.preferences.RegisterAsterisksDialog$6 -> com.safi.server.preferences.RegisterAsterisksDialog$6:
+    com.safi.server.preferences.RegisterAsterisksDialog this$0 -> a
+    400:401:void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+com.safi.server.preferences.RegisterAsterisksDialog$7 -> com.safi.server.preferences.RegisterAsterisksDialog$7:
+    com.safi.server.preferences.RegisterAsterisksDialog this$0 -> a
+    411:412:void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+com.safi.server.preferences.RegisterAsterisksDialog$8 -> com.safi.server.preferences.RegisterAsterisksDialog$8:
+    com.safi.server.preferences.RegisterAsterisksDialog this$0 -> a
+    422:423:void widgetSelected(org.eclipse.swt.events.SelectionEvent) -> widgetSelected
+com.safi.server.preferences.RegisterAsterisksDialog$AstServerProxy -> com.safi.server.preferences.RegisterAsterisksDialog$AstServerProxy:
+    com.safi.db.server.config.AsteriskServer original -> a
+    com.safi.db.server.config.AsteriskServer copy -> b
+    boolean newInstance -> c
+    659:677:void applyChanges() -> a
+    682:682:java.lang.String getHostname() -> getHostname
+    688:688:java.lang.String getManagerName() -> getManagerName
+    694:694:java.lang.String getManagerPassword() -> getManagerPassword
+    700:700:int getManagerPort() -> getManagerPort
+    706:706:org.eclipse.emf.common.util.EList getPromptDirectories() -> getPromptDirectories
+    712:712:com.safi.db.server.config.SafiServer getSafiServer() -> getSafiServer
+    718:718:java.lang.String getSftpPassword() -> getSftpPassword
+    724:724:int getSftpPort() -> getSftpPort
+    730:730:java.lang.String getSftpUser() -> getSftpUser
+    736:736:boolean isActive() -> isActive
+    742:742:boolean isPrivate() -> isPrivate
+    748:748:boolean isRunning() -> isRunning
+    753:755:void setActive(boolean) -> setActive
+    760:761:void setPrivate(boolean) -> setPrivate
+    766:767:void setHostname(java.lang.String) -> setHostname
+    772:773:void setManagerName(java.lang.String) -> setManagerName
+    778:779:void setManagerPassword(java.lang.String) -> setManagerPassword
+    784:785:void setManagerPort(int) -> setManagerPort
+    790:791:void setRunning(boolean) -> setRunning
+    796:797:void setSafiServer(com.safi.db.server.config.SafiServer) -> setSafiServer
+    802:803:void setSftpPassword(java.lang.String) -> setSftpPassword
+    808:809:void setSftpPort(int) -> setSftpPort
+    814:815:void setSftpUser(java.lang.String) -> setSftpUser
+    819:819:com.safi.db.server.config.User getCreatedBy() -> getCreatedBy
+    825:825:java.lang.String getDescription() -> getDescription
+    831:831:int getId() -> getId
+    837:837:java.util.Date getLastModified() -> getLastModified
+    843:843:java.util.Date getLastUpdated() -> getLastUpdated
+    849:849:com.safi.db.server.config.User getModifiedBy() -> getModifiedBy
+    855:855:java.lang.String getName() -> getName
+    862:862:void setCreatedBy(com.safi.db.server.config.User) -> setCreatedBy
+    867:868:void setDescription(java.lang.String) -> setDescription
+    874:874:void setId(int) -> setId
+    879:880:void setLastModified(java.util.Date) -> setLastModified
+    885:886:void setLastUpdated(java.util.Date) -> setLastUpdated
+    892:892:void setModifiedBy(com.safi.db.server.config.User) -> setModifiedBy
+    897:898:void setName(java.lang.String) -> setName
+com.safi.server.preferences.RegisterAsterisksDialog$ContentProvider -> com.safi.server.preferences.RegisterAsterisksDialog$ContentProvider:
+    132:139:java.lang.Object[] getElements(java.lang.Object) -> getElements
+    143:143:void dispose() -> dispose
+    146:146:void inputChanged(org.eclipse.jface.viewers.Viewer,java.lang.Object,java.lang.Object) -> inputChanged
+com.safi.server.preferences.RegisterAsterisksDialog$TableLabelProvider -> com.safi.server.preferences.RegisterAsterisksDialog$TableLabelProvider:
+    int colIndex -> a
+    82:82:java.lang.String getText(java.lang.Object) -> getText
+    86:121:java.lang.String getColumnText(java.lang.Object,int) -> getColumnText
+    125:125:org.eclipse.swt.graphics.Image getColumnImage(java.lang.Object,int) -> getColumnImage
+com.safi.server.preferences.SafiServerAuthListener -> com.safi.server.preferences.SafiServerAuthListener:
+    void authInfoChanged() -> authInfoChanged
+com.safi.server.preferences.ServerPreferencePage -> com.safi.server.preferences.ServerPreferencePage:
+    26:28:org.eclipse.swt.widgets.Control createContents(org.eclipse.swt.widgets.Composite) -> createContents
+    36:36:void init(org.eclipse.ui.IWorkbench) -> init
+com.safi.server.preferences.WorkshopPreferencePage -> com.safi.server.preferences.WorkshopPreferencePage:
+    28:37:void createFieldEditors() -> createFieldEditors
+    44:44:void init(org.eclipse.ui.IWorkbench) -> init
+    48:49:boolean performOk() -> performOk
