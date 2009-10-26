@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/SafiDB/src"
+    editDirectory="/SafiDB.edit/src" modelPluginID="SafiDB" redirection="" modelName="Db"
+    modelPluginClass="" importerID="org.eclipse.emf.importer.java" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>@model</foreignModel>
+  <genPackages prefix="Db" basePackage="com.safi" disposableProviderFactory="true"
+      ecorePackage="db.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="db.ecore#//QueryType">
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//QueryType/Select"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//QueryType/Update"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//QueryType/SPSelect"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//QueryType/SPUpdate"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="db.ecore#//RSHoldabilityMode">
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//RSHoldabilityMode/HoldCursorsOverCommit"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//RSHoldabilityMode/CloseCursorsOverCommit"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="db.ecore#//RSScrollMode">
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//RSScrollMode/ForwardOnly"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//RSScrollMode/ScrollInsensitive"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//RSScrollMode/ScrollSensitive"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="db.ecore#//SQLDataType">
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//SQLDataType/Text"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//SQLDataType/Date"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//SQLDataType/DateTime"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//SQLDataType/Time"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//SQLDataType/Integer"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//SQLDataType/Long"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//SQLDataType/Double"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//SQLDataType/Clob"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//SQLDataType/Blob"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//SQLDataType/Array"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//SQLDataType/Object"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//SQLDataType/Boolean"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="db.ecore#//TransactionMode">
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//TransactionMode/None"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//TransactionMode/ReadCommitted"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//TransactionMode/ReadUncommitted"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//TransactionMode/RepeatableRead"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//TransactionMode/Serializable"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="db.ecore#//VariableScope">
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//VariableScope/Local"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//VariableScope/Global"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//VariableScope/Runtime"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="db.ecore#//VariableType">
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//VariableType/Text"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//VariableType/Integer"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//VariableType/Decimal"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//VariableType/Datetime"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//VariableType/Date"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//VariableType/Time"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//VariableType/Object"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//VariableType/Boolean"/>
+      <genEnumLiterals ecoreEnumLiteral="db.ecore#//VariableType/Array"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="db.ecore#//Properties"/>
+    <genDataTypes ecoreDataType="db.ecore#//ResultSet"/>
+    <genDataTypes ecoreDataType="db.ecore#//Connection"/>
+    <genDataTypes ecoreDataType="db.ecore#//Statement"/>
+    <genClasses ecoreClass="db.ecore#//DBConnection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBConnection/url"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBConnection/user"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBConnection/password"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBConnection/loginTimeout"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBConnection/properties"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBConnection/transactionMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBConnection/minPoolSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBConnection/maxPoolSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBConnection/acquireIncrement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBConnection/maxIdleTime"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference db.ecore#//DBConnection/driver"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference db.ecore#//DBConnection/queries"/>
+      <genOperations ecoreOperation="db.ecore#//DBConnection/getQuery">
+        <genParameters ecoreParameter="db.ecore#//DBConnection/getQuery/name"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="db.ecore#//DBDriver">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBDriver/driverClassName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBDriver/pooling"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference db.ecore#//DBDriver/connections"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBDriver/exampleUrl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBDriver/jars"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference db.ecore#//DBDriver/driverManager"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBDriver/default"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBDriver/guideUrl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBDriver/websiteUrl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBDriver/loginTimeout"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBDriver/urlRegexPattern "/>
+      <genOperations ecoreOperation="db.ecore#//DBDriver/getConnection">
+        <genParameters ecoreParameter="db.ecore#//DBDriver/getConnection/name"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="db.ecore#//Query">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//Query/queryType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//Query/querySql"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference db.ecore#//Query/parameters"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference db.ecore#//Query/connection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference db.ecore#//Query/resultSets"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//Query/catalog"/>
+      <genOperations ecoreOperation="db.ecore#//Query/getResultSet">
+        <genParameters ecoreParameter="db.ecore#//Query/getResultSet/name"/>
+      </genOperations>
+      <genOperations ecoreOperation="db.ecore#//Query/getParameter">
+        <genParameters ecoreParameter="db.ecore#//Query/getParameter/name"/>
+      </genOperations>
+      <genOperations ecoreOperation="db.ecore#//Query/getParameter.1">
+        <genParameters ecoreParameter="db.ecore#//Query/getParameter.1/index"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="db.ecore#//QueryParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//QueryParameter/dataType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference db.ecore#//QueryParameter/query"/>
+    </genClasses>
+    <genClasses ecoreClass="db.ecore#//SafiDriverManager">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference db.ecore#//SafiDriverManager/drivers"/>
+      <genOperations ecoreOperation="db.ecore#//SafiDriverManager/getDriver">
+        <genParameters ecoreParameter="db.ecore#//SafiDriverManager/getDriver/name"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="db.ecore#//SafiResultSet">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//SafiResultSet/useCache"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//SafiResultSet/scrollable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//SafiResultSet/readOnly"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//SafiResultSet/scrollMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//SafiResultSet/holdabilityMode"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference db.ecore#//SafiResultSet/query"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="db.ecore#//DBResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBResource/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBResource/lastModified"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBResource/lastUpdated"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBResource/id"/>
+    </genClasses>
+    <genClasses ecoreClass="db.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//Variable/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//Variable/defaultValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//Variable/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//Variable/scope"/>
+    </genClasses>
+    <nestedGenPackages prefix="Server" disposableProviderFactory="true" ecorePackage="db.ecore#//server">
+      <nestedGenPackages prefix="Config" disposableProviderFactory="true" ecorePackage="db.ecore#//server/config">
+        <genEnums typeSafeEnumCompatible="false" ecoreEnum="db.ecore#//server/config/SynchMode">
+          <genEnumLiterals ecoreEnumLiteral="db.ecore#//server/config/SynchMode/ReadOnly"/>
+          <genEnumLiterals ecoreEnumLiteral="db.ecore#//server/config/SynchMode/Synch"/>
+        </genEnums>
+        <genClasses ecoreClass="db.ecore#//server/config/ServerResource">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/ServerResource/name"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/ServerResource/lastModified"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/ServerResource/lastUpdated"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/ServerResource/id"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference db.ecore#//server/config/ServerResource/createdBy"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference db.ecore#//server/config/ServerResource/modifiedBy"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/ServerResource/description"/>
+        </genClasses>
+        <genClasses ecoreClass="db.ecore#//server/config/AsteriskServer">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/hostname"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/managerName"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/managerPassword"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/managerPort"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/sftpUser"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/sftpPassword"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/sftpPort"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference db.ecore#//server/config/AsteriskServer/safiServer"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/running"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/active"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/private"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/promptDirectory"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/asteriskVersion"/>
+        </genClasses>
+        <genClasses ecoreClass="db.ecore#//server/config/SafiServer">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/SafiServer/bindIP"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/SafiServer/port"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/SafiServer/managementPort"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference db.ecore#//server/config/SafiServer/asteriskServers"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference db.ecore#//server/config/SafiServer/user"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference db.ecore#//server/config/SafiServer/users"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/SafiServer/running"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/SafiServer/debug"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/SafiServer/dbPort"/>
+        </genClasses>
+        <genClasses ecoreClass="db.ecore#//server/config/Role">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference db.ecore#//server/config/Role/entitlements"/>
+        </genClasses>
+        <genClasses ecoreClass="db.ecore#//server/config/Entitlement"/>
+        <genClasses ecoreClass="db.ecore#//server/config/User">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/User/firstname"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/User/lastname"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference db.ecore#//server/config/User/roles"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/User/password"/>
+        </genClasses>
+        <genClasses ecoreClass="db.ecore#//server/config/Saflet">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/Saflet/code"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference db.ecore#//server/config/Saflet/project"/>
+        </genClasses>
+        <genClasses ecoreClass="db.ecore#//server/config/SafletProject">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference db.ecore#//server/config/SafletProject/saflets"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/SafletProject/enabled"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference db.ecore#//server/config/SafletProject/prompts"/>
+        </genClasses>
+        <genClasses ecoreClass="db.ecore#//server/config/Prompt">
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference db.ecore#//server/config/Prompt/project"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/Prompt/system"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/Prompt/extension"/>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

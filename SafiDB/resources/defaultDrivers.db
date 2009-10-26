@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.safi.db:SafiDriverManager name="SafiDriverManager"
+  xmlns:xmi="http://www.omg.org/XMI" xmlns:com.safi.db="http:///com/safi/db.ecore"
+  id="1">
+  <drivers lastUpdated="2008-06-24T22:32:36.000-0700" default="true"
+    name="MS SQL Server" driverClassName="net.sourceforge.jtds.jdbc.Driver"
+    exampleUrl="jdbc:jtds:sqlserver://SVBMN14GLB1-03:1433/BEFGAutoDial;TDS=8.0"
+    guideUrl="jdbc:jtds:[servertype]://[host][port][/database_name]"
+    urlRegexPattern="^jdbc:jtds:(?:sybase|sqlserver)://(?:([a-zA-Z0-9\-\._]+)|(?:(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])))?(?:\:([0-9]+))?(?:/[a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~]*)?$"
+    id="2">
+    <jars></jars>
+  </drivers>
+  <drivers lastUpdated="2008-06-24T22:32:36.000-0700" default="false"
+    name="MySQL" driverClassName="com.mysql.jdbc.Driver" exampleUrl="jdbc:mysql://localhost:3306/test"
+    guideUrl="jdbc:mysql://[host][port]/[schema]" websiteUrl="http://www.mysql.com/products/connector/j/"
+    defaultPort="3306"
+    urlRegexPattern="^jdbc:mysql://(?:([a-zA-Z0-9\-\._]+)|(?:(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])))?(?:\:([0-9]+))?(?:/[a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~]*)?$"
+    id="3">
+    <jars></jars>
+  </drivers>
+  <drivers lastUpdated="2008-06-24T22:32:36.000-0700" default="false"
+    name="Postgres" driverClassName="org.postgresql.Driver"
+    exampleUrl="jdbc:postgresql://localhost:5432/database" guideUrl="jdbc:postgresql://[host][port]/[schema]"
+    websiteUrl="http://jdbc.postgresql.org/index.html" defaultPort="5432"
+    urlRegexPattern="^jdbc:postgresql:(?:[a-zA-Z0-9_\-\.]+|(?://(?:([a-zA-Z0-9\-\._]+)|(?:(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])))?(?:\:([0-9]+))?(?:\W[a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~]*)?))$"
+    id="4">
+    <jars></jars>
+  </drivers>
+
+  <drivers default="false" name="IBM DB2" driverClassName="COM.ibm.db2.jdbc.app.DB2Driver"
+    exampleUrl="jdbc:db2://192.168.1.101:1527/customers" guideUrl="jdbc:db2://[host][port]/[schema]"
+    websiteUrl="http://www-01.ibm.com/software/data/db2/express/download.html"
+    defaultPort="1527"
+    urlRegexPattern="jdbc:db2://(?:([a-zA-Z0-9\-\._]+)|(?:(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])))?(?:\:([0-9]+))?(?:/[a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~]*)?$"
+    id="5">
+    <jars></jars>
+  </drivers>
+
+  <drivers default="false" name="Oracle Thin" driverClassName="oracle.jdbc.driver.OracleDriver"
+    exampleUrl="jdbc:oracle:thin:@machine_name:1521:database_name"
+    guideUrl="jdbc:oracle:thin:@[host][port]:[schema]" websiteUrl="http://jdbc.postgresql.org/index.html"
+    defaultPort="1521"
+    urlRegexPattern="^jdbc:oracle:thin:(?:\w+/\w+)?\@(?://)?(?:([a-zA-Z0-9\-\._]+)|(?:(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])))?(?:\:([0-9]+))?(?:[:/][a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~]*)?$"
+    id="6">
+    <jars></jars>
+  </drivers>
+
+  <drivers default="false" name="Firebird" driverClassName="org.firebirdsql.jdbc.FBDriver"
+    exampleUrl="jdbc:firebirdsql:localhost/3050:c:/database/employee.gdb"
+    guideUrl="jdbc:firebirdsql:[host]/[port]:[schema]" websiteUrl="http://www.firebirdsql.org/"
+    defaultPort="3050"
+    urlRegexPattern="jdbc:firebirdsql:(?:([a-zA-Z0-9\-\._]+)|(?:(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])))?(?:\/([0-9]+))?(?:\:[a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~\:]*)?$"
+    id="7">
+    <jars></jars>
+  </drivers>
+</com.safi.db:SafiDriverManager>
