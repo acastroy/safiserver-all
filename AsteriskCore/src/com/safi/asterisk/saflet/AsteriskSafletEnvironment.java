@@ -121,6 +121,6 @@ public interface AsteriskSafletEnvironment extends SafletEnvironment {
    */
   Object getLoopbackLock(String uuid);
 
-  void setLoopbackLock(String string);
+  void setLoopbackLock(String string, Object lock);
 
 } // AsteriskSafletEnvironment

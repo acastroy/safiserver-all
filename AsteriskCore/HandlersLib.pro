@@ -1,5 +1,5 @@
 -injars bin
--outjars obfuscated\asteriskcore_v20090522.jar
+-outjars obfuscated\asteriskcore_v20090706.jar
 
 -libraryjars 'D:\ganymede\eclipse\plugins\org.eclipse.core.commands_3.4.0.I20080509-2000.jar'
 -libraryjars 'D:\ganymede\eclipse\plugins\org.eclipse.core.contenttype_3.3.0.v20080604-1400.jar'
@@ -27,8 +27,8 @@
 -libraryjars 'D:\temp\safiStaging\obfuscated\eclipse\plugins\org.eclipse.ui.forms_3.3.101.v20080708_34x.jar'
 -libraryjars 'D:\temp\safiStaging\obfuscated\eclipse\plugins\org.eclipse.ui.views.properties.tabbed_3.4.1.M20080730-0800.jar'
 -libraryjars 'C:\Java\jdk1.6.0_10\jre\lib\rt.jar'
--libraryjars 'D:\temp\safiStaging\obfuscated\eclipse\plugins\SafiDB.edit_1.0.0.jar'
--libraryjars 'D:\temp\safiStaging\obfuscated\eclipse\plugins\SafiDB_1.0.0.jar'
+-libraryjars 'D:\temp\safiStaging\obfuscated\eclipse\plugins\SafiDB.edit_1.1.0.jar'
+-libraryjars 'D:\temp\safiStaging\obfuscated\eclipse\plugins\SafiDB_1.1.0.jar'
 -libraryjars 'D:\workspace\SafiCommons\log4j-1.2.15.jar'
 -libraryjars 'D:\ganymede\eclipse\plugins\org.eclipse.gmf.runtime.emf.core_1.1.1.v20080716-1600.jar'
 -libraryjars 'D:\ganymede\eclipse\plugins\org.apache.commons.lang_2.3.0.v200803061910.jar'

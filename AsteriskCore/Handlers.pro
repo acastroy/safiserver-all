@@ -29,8 +29,8 @@
 -libraryjars 'D:\temp\safiStaging\obfuscated\eclipse\plugins\org.eclipse.ui.views.properties.tabbed_3.4.1.M20080730-0800.jar'
 -libraryjars 'C:\Java\jdk1.6.0_10\jre\lib\rt.jar'
 -libraryjars lib\Zql.jar
--libraryjars 'D:\temp\safiStaging\obfuscated\eclipse\plugins\SafiDB.edit_1.0.0.jar'
--libraryjars 'D:\temp\safiStaging\obfuscated\eclipse\plugins\SafiDB_1.0.0.jar'
+-libraryjars 'D:\temp\safiStaging\obfuscated\eclipse\plugins\SafiDB.edit_1.1.0.jar'
+-libraryjars 'D:\temp\safiStaging\obfuscated\eclipse\plugins\SafiDB_1.1.0.jar'
 -libraryjars 'D:\workspace\SafiCommons\log4j-1.2.15.jar'
 -libraryjars 'D:\ganymede2\eclipse\plugins\org.eclipse.gmf.runtime.emf.core_1.1.1.v20080716-1600.jar'
 -libraryjars 'D:\ganymede2\eclipse\plugins\org.apache.commons.lang_2.3.0.v200803061910.jar'

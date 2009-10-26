@@ -208,7 +208,8 @@ public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
 
     UUID uuid = UUID.randomUUID();
     
-    handlerEnvironment.setLoopbackLock(uuid.toString());
+    Long timeoutVal = new Long(timeout <= 0 ? Saflet.DEFAULT_MANAGER_ACTION_TIMEOUT : timeout);
+    handlerEnvironment.setLoopbackLock(uuid.toString(), timeoutVal);
     action.setVariable("SafiUUID", uuid.toString());
     ManagerResponse response = connection
         .sendAction(action, Saflet.DEFAULT_MANAGER_ACTION_TIMEOUT);

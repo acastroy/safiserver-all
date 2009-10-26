@@ -436,8 +436,13 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
     action.setAccount(acctVal);
 
     UUID uuid = UUID.randomUUID();
+    
     AsteriskSafletEnvironment handlerEnvironment = (AsteriskSafletEnvironment)getSaflet().getSafletEnvironment();
-    handlerEnvironment.setLoopbackLock(uuid.toString());
+    
+    Long timeoutVal = new Long(timeout <= 0 ? Saflet.DEFAULT_MANAGER_ACTION_TIMEOUT : timeout);
+    handlerEnvironment.setLoopbackLock(uuid.toString(), timeoutVal);
+    
+//    handlerEnvironment.setLoopbackLock(uuid.toString());
     action.setVariable("SafiUUID", uuid.toString());
     ManagerResponse response = connection
         .sendAction(action, Saflet.DEFAULT_MANAGER_ACTION_TIMEOUT);
