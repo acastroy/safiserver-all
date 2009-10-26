@@ -29,7 +29,8 @@ Bundle-ClassPath: antlr-2.7.6.jar,
  hibernate-entitymanager.jar,
  slf4j-api-1.5.2.jar,
  slf4j-log4j12-1.5.0.jar,
- commons-collections-3.1.jar
+ commons-collections-3.1.jar,
+ persistence.jar
 Bundle-Vendor: SafiSystems LLC
 Eclipse-BuddyPolicy: dependent
 Export-Package: EDU.oswego.cs.dl.util.concurrent,
@@ -133,6 +134,8 @@ Export-Package: EDU.oswego.cs.dl.util.concurrent,
  javassist.tools.web,
  javassist.util,
  javassist.util.proxy,
+ javax.persistence,
+ javax.persistence.spi,
  javax.security.auth,
  javax.security.auth.callback,
  javax.security.auth.login,
