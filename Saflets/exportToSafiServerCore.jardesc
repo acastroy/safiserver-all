@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="WINDOWS-1252" standalone="no"?>
 <jardesc>
-    <jar path="SafiServerCore/lib/safletcore_v20090823.jar"/>
+    <jar path="SafiServerCore/lib/safletcore_v20091006.jar"/>
     <options buildIfNeeded="true" compress="true" descriptionLocation="/Saflets/exportToSafiServerCore.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
     <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
     <selectedProjects/>
@@ -14,5 +14,4 @@
         <javaElement handleIdentifier="=Saflets/src"/>
         <file path="/Saflets/model/core.ecore"/>
     </selectedElements>
-    <fatjar builder="org.eclipse.jdt.ui.plain_jar_builder" launchConfig=""/>
 </jardesc>
