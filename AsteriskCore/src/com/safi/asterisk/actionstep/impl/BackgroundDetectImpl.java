@@ -19,6 +19,9 @@ import com.safi.asterisk.CallConsumer1;
 import com.safi.asterisk.actionstep.ActionstepPackage;
 import com.safi.asterisk.actionstep.BackgroundDetect;
 import com.safi.core.actionstep.ActionStepException;
+import com.safi.core.actionstep.ActionStepFactory;
+import com.safi.core.actionstep.Output;
+import com.safi.core.actionstep.OutputType;
 import com.safi.core.actionstep.impl.ActionStepImpl;
 import com.safi.core.saflet.SafletContext;
 
@@ -199,6 +202,17 @@ public class BackgroundDetectImpl extends ActionStepImpl implements BackgroundDe
     }
     handleSuccess(context, speechDetected ? 2 : 1);
 
+  }
+  
+  
+  @Override
+  public void createDefaultOutputs() {
+    // TODO Auto-generated method stub
+    super.createDefaultOutputs();
+    Output o = ActionStepFactory.eINSTANCE.createOutput();
+    o.setOutputType(OutputType.CHOICE);
+    o.setName("speech");
+    getOutputs().add(o);
   }
   /**
    * <!-- begin-user-doc -->

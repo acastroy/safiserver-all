@@ -204,6 +204,19 @@ public class GetCallInfoImpl extends ActionStepImpl implements GetCallInfo {
     try {
       AgiRequest request = (AgiRequest) context
           .getVariableRawValue(AsteriskSafletConstants.VAR_KEY_REQUEST);
+      
+      if (accountCodeVar != null)
+        try {
+
+          Object result = request.getAccountCode();
+          setVariableValue(accountCodeVar, result, context);
+
+        } catch (Exception e) {
+          if (debugLog.isDebugEnabled())
+            debugLog.error(e.getLocalizedMessage());
+          exception = e;
+        }
+
       if (callerIdNameVar != null)
         try {
 

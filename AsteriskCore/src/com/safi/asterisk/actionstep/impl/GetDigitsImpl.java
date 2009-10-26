@@ -221,8 +221,8 @@ public class GetDigitsImpl extends ActionStepImpl implements GetDigits {
         
         if (!rcvdEscape && numRemainingDigits > 0) {
           if ("#".equals(escapeDigits))
-            
-            buf.append(channel.getData("silence/1", inputTimeout,numRemainingDigits));
+            buf.append(channel.getData("silence/1", inputTimeout, numRemainingDigits));
+          
           for (int i = buf.length(); i < maxDigits; i++) {
             char c = channel.waitForDigit((int) inputTimeout);
             if (StringUtils.isNotBlank(escapeDigits) && escapeDigits.indexOf(c) >= 0){

@@ -142,15 +142,13 @@ public class ExtensionTransferImpl extends ActionStepImpl implements ExtensionTr
   @Override
   public void beginProcessing(SafletContext context) throws ActionStepException {
     super.beginProcessing(context);
-    Object variableRawValue = context
-        .getVariableRawValue(com.safi.asterisk.util.AsteriskSafletConstants.VAR_KEY_MANAGER_CONNECTION);
-    if (variableRawValue == null || !(variableRawValue instanceof ManagerConnection)) {
-      handleException(context, new ActionStepException(
-          "No manager connection found in current context"));
-      return;
-    }
-    ManagerConnection connection = (ManagerConnection) variableRawValue;
-
+//    Object variableRawValue = context
+//        .getVariableRawValue(com.safi.asterisk.util.AsteriskSafletConstants.VAR_KEY_MANAGER_CONNECTION);
+//    if (variableRawValue == null || !(variableRawValue instanceof ManagerConnection)) {
+//      handleException(context, new ActionStepException(
+//          "No manager connection found in current context"));
+//      return;
+//    }
     if (call1 == null || call1.getChannel() == null) {
       handleException(context, new ActionStepException(call1 == null ? "No current call found"
           : "No channel found in current context"));

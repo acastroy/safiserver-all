@@ -65,9 +65,7 @@ public class EchoImpl extends ActionStepImpl implements Echo {
       AgiChannel channel = call1.getChannel();
       try {
         
-        StringBuffer appCmd = new StringBuffer("Echo");
-       
-        int result = channel.exec(appCmd.toString());
+        int result = channel.exec("Echo");
         
         if (debugLog.isDebugEnabled())
           debug("Echo return value was "+translateAppReturnValue(result));
