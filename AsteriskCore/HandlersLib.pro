@@ -1,5 +1,5 @@
 -injars bin
--outjars obfuscated\asteriskcore_v20090219.jar
+-outjars obfuscated\asteriskcore_v20090522.jar
 
 -libraryjars 'D:\ganymede\eclipse\plugins\org.eclipse.core.commands_3.4.0.I20080509-2000.jar'
 -libraryjars 'D:\ganymede\eclipse\plugins\org.eclipse.core.contenttype_3.3.0.v20080604-1400.jar'
