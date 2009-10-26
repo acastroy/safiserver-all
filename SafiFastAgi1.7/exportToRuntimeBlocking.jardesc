@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="WINDOWS-1252" standalone="no"?>
+<jardesc>
+    <jar path="SafiServerCore/lib/safiFastagi_v20090802.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/SafiFastAgi1.7/exportToRuntimeBlocking.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="true" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="true" manifestLocation="" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+        <javaElement handleIdentifier="=SafiFastAgi1.7/src&lt;org.asteriskjava.util"/>
+        <javaElement handleIdentifier="=SafiFastAgi1.7/src&lt;org.asteriskjava.fastagi.reply"/>
+        <javaElement handleIdentifier="=SafiFastAgi1.7/src&lt;org.asteriskjava.fastagi"/>
+        <javaElement handleIdentifier="=SafiFastAgi1.7/src&lt;org.asteriskjava.manager.response"/>
+        <javaElement handleIdentifier="=SafiFastAgi1.7/src&lt;org.asteriskjava.tools"/>
+        <javaElement handleIdentifier="=SafiFastAgi1.7/src&lt;org.asteriskjava.manager.action"/>
+        <javaElement handleIdentifier="=SafiFastAgi1.7/src&lt;org.asteriskjava.manager"/>
+        <javaElement handleIdentifier="=SafiFastAgi1.7/src&lt;org.asteriskjava"/>
+        <javaElement handleIdentifier="=SafiFastAgi1.7/src&lt;org.asteriskjava.fastagi.command"/>
+        <javaElement handleIdentifier="=SafiFastAgi1.7/src&lt;org.asteriskjava.manager.event"/>
+        <javaElement handleIdentifier="=SafiFastAgi1.7/src&lt;org.asteriskjava.util.internal"/>
+        <javaElement handleIdentifier="=SafiFastAgi1.7/src&lt;com.safi.server"/>
+        <javaElement handleIdentifier="=SafiFastAgi1.7/src&lt;org.asteriskjava.live.internal"/>
+        <javaElement handleIdentifier="=SafiFastAgi1.7/src&lt;org.asteriskjava.config"/>
+        <javaElement handleIdentifier="=SafiFastAgi1.7/src&lt;org.asteriskjava.fastagi.internal"/>
+        <javaElement handleIdentifier="=SafiFastAgi1.7/src&lt;org.asteriskjava.manager.internal"/>
+        <javaElement handleIdentifier="=SafiFastAgi1.7/src&lt;org.asteriskjava.config.dialplan"/>
+        <javaElement handleIdentifier="=SafiFastAgi1.7/src&lt;org.asteriskjava.live"/>
+    </selectedElements>
+    <fatjar builder="org.eclipse.jdt.ui.plain_jar_builder" launchConfig=""/>
+</jardesc>

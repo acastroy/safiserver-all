@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="SafiFastAgi1.7">
+    <property environment="env"/>
+    <property name="SafiServerCore.location" value="../SafiServerCore"/>
+    <property name="ECLIPSE_HOME" value="../../ganymede2/eclipse"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+    <path id="SafiFastAgi1.7.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="lib/commons-lang-2.4.jar"/>
+        <pathelement location="lib/slf4j-api-1.5.0.jar"/>
+        <pathelement location="lib/log4j-1.2.14.jar"/>
+        <pathelement location="lib/slf4j-simple-1.5.0.jar"/>
+        <pathelement location="lib/mina-core-2.0.0-M1.jar"/>
+        <pathelement location="lib/mina-core-2.0.0-M1-sources.jar"/>
+        <pathelement location="lib/mina-filter-codec-netty-2.0.0-M1.jar"/>
+        <pathelement location="lib/mina-filter-codec-netty-2.0.0-M1-sources.jar"/>
+        <pathelement location="lib/mina-filter-compression-2.0.0-M1.jar"/>
+        <pathelement location="lib/mina-filter-compression-2.0.0-M1-sources.jar"/>
+        <pathelement location="lib/mina-integration-jmx-2.0.0-M1.jar"/>
+        <pathelement location="lib/mina-integration-jmx-2.0.0-M1-sources.jar"/>
+        <pathelement location="lib/log4j-over-slf4j-1.5.0.jar"/>
+        <pathelement location="lib/slf4j-log4j12-1.5.0.jar"/>
+        <pathelement location="lib/slf4j-migrator-1.5.0.jar"/>
+        <pathelement location="lib/spring.jar"/>
+        <pathelement location="lib/mina-integration-beans-2.0.0-M1.jar"/>
+        <pathelement location="lib/mina-integration-ognl-2.0.0-M1.jar"/>
+        <pathelement location="lib/mina-statemachine-2.0.0-M1.jar"/>
+        <pathelement location="lib/ognl-2.7.1.jar"/>
+        <pathelement location="lib/javassist-3.6.ga.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src" excludes="**/*.launch, **/*.java"/>
+        </copy>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir=".apt_generated" excludes="**/*.launch, **/*.java"/>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="SafiFastAgi1.7.classpath"/>
+        </javac>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
+            <src path=".apt_generated"/>
+            <classpath refid="SafiFastAgi1.7.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects">
+        <ant antfile="${SafiServerCore.location}/build.xml" inheritAll="false" target="clean"/>
+        <ant antfile="${SafiServerCore.location}/build.xml" inheritAll="false" target="build">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+    </target>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+</project>
