@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.8 2008/08/01 06:10:41 jonl Exp $
+-->
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http:///com/safi/core.ecore#actionstep" 
+       class = "com.safi.core.actionstep.ActionStepPackage"
+       genModel = "model/core.genmodel" /> 
+  </extension>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http:///com/safi/core.ecore#scripting" 
+       class = "com.safi.core.scripting.ScriptingPackage"
+       genModel = "model/core.genmodel" /> 
+  </extension>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http:///com/safi/core.ecore#saflet" 
+       class = "com.safi.core.saflet.SafletPackage"
+       genModel = "model/core.genmodel" /> 
+  </extension>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http:///com/safi/core.ecore#initiator" 
+       class = "com.safi.core.initiator.InitiatorPackage"
+       genModel = "model/core.genmodel" /> 
+  </extension>
+  <extension
+        id="product"
+        point="org.eclipse.core.runtime.products">
+     <product
+           application="Saflets.diagram.CoreApplication"
+           name="SafiWorkshop">
+        <property
+              name="aboutText"
+              value="%aboutText">
+        </property>
+        <property
+              name="appName"
+              value="SafiWorkshop">
+        </property>
+        <property
+              name="windowImages"
+              value="platform:/plugin/Saflets.diagram/icons/product/app16x16-24bit.Bmp,platform:/plugin/Saflets.diagram/icons/product/app32x32-24bit.Bmp,platform:/plugin/Saflets.diagram/icons/product/app48x48-24bit.Bmp">
+        </property>
+        <property
+              name="startupProgressRect"
+              value="10,275,480,15">
+        </property>
+        <property
+              name="preferenceCustomization"
+              value="plugin_customization.ini">
+        </property>
+     </product>
+  </extension>
+
+</plugin>

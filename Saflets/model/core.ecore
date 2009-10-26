@@ -1,0 +1,992 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="core"
+    nsURI="http:///com/safi/core.ecore" nsPrefix="com.safi.core">
+  <eClassifiers xsi:type="ecore:EClass" name="ProductIdentifiable" abstract="true"
+      interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="productId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eSubpackages name="actionstep" nsURI="http:///com/safi/core.ecore#actionstep" nsPrefix="com.safi.core.actionstep">
+    <eClassifiers xsi:type="ecore:EClass" name="Assignment" eSuperTypes="#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="value" ordered="false"
+          eType="#//actionstep/DynamicValue" containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The value to assign"/>
+          <details key="expectedReturnType" value="Unknown"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="variableName" ordered="false"
+          eType="#//actionstep/DynamicValue" containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="true"/>
+          <details key="description" value="The assignee variable"/>
+          <details key="expectedReturnType" value="VariableName"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+        <eAnnotations source="MetaProperty">
+          <details key="displayText" value="Variable"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CaseItem" eSuperTypes="#//actionstep/Item">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="dynamicValue" ordered="false"
+          eType="#//actionstep/DynamicValue" containment="true">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The value with which to compare against"/>
+          <details key="expectedReturnType" value="Unknown"/>
+          <details key="helperClass" value="com.safi.workshop.sheet.BooleanBuilderDynamicValueEditorPage"/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="InputItem" eSuperTypes="#//actionstep/CaseItem">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameterName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="required" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterizedActionstep" abstract="true"
+        eSuperTypes="#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" upperBound="-1"
+          eType="#//actionstep/InputItem" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="outputParameters" upperBound="-1"
+          eType="#//actionstep/OutputParameter" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterizedInitiator" abstract="true"
+        eSuperTypes="#//initiator/Initiator #//actionstep/ParameterizedActionstep"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AudioFileItem" eSuperTypes="#//actionstep/CaseItem">
+      <eAnnotations source="DynamicValueAnnotation">
+        <details key="superProperty" value="dynamicValue"/>
+        <details key="type" value="Prompt Filename"/>
+        <details key="isTypeLocked" value="false"/>
+        <details key="description" value="The audio prompt file name that will be played"/>
+        <details key="expectedReturnType" value="Prompt Filename"/>
+        <details key="helperClass" value="com.safi.workshop.sheet.PromptChooserDynamicValueEditorPage"/>
+      </eAnnotations>
+      <eAnnotations source="Required">
+        <details key="criteria" value="non-null"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Choice" eSuperTypes="#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="choices" ordered="false"
+          upperBound="-1" eType="#//actionstep/CaseItem" containment="true" resolveProxies="false">
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-empty"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="value" ordered="false"
+          eType="#//actionstep/DynamicValue" containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The value that will be compared against each choice"/>
+          <details key="expectedReturnType" value="Unknown"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DynamicValue">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//actionstep/DynamicValueType"
+          defaultValueLiteral="LiteralText"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="payload" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1"
+          eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"
+          containment="true" resolveProxies="false"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="DynamicValueType">
+      <eLiterals name="LiteralText"/>
+      <eLiterals name="ScriptText" value="1"/>
+      <eLiterals name="VariableName" value="2"/>
+      <eLiterals name="Custom" value="3" literal="Custom"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IfThen" eSuperTypes="#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="booleanExpression" ordered="false"
+          eType="#//actionstep/DynamicValue" containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="Boolean"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The boolean value that determines which output will be activated (true = green, false = red)"/>
+          <details key="expectedReturnType" value="Boolean"/>
+          <details key="helperClass" value="com.safi.workshop.sheet.BooleanBuilderDynamicValueEditorPage"/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Output">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//actionstep/ActionStep"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//actionstep/ActionStep"
+          eOpposite="#//actionstep/ActionStep/outputs"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="outputType" eType="#//actionstep/OutputType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="OutputType">
+      <eLiterals name="Default"/>
+      <eLiterals name="Error" value="1"/>
+      <eLiterals name="Choice" value="3"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActionStep" abstract="true" eSuperTypes="#//ProductIdentifiable">
+      <eOperations name="beginProcessing" eExceptions="#//initiator/ActionStepException">
+        <eParameters name="context" ordered="false" eType="#//saflet/SafletContext"/>
+      </eOperations>
+      <eOperations name="executeScript" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"
+          eExceptions="#//scripting/SafletScriptException">
+        <eParameters name="scriptName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="scriptText" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="handleException" eExceptions="#//initiator/ActionStepException">
+        <eParameters name="context" eType="#//saflet/SafletContext"/>
+        <eParameters name="e" eType="#//saflet/Exception"/>
+      </eOperations>
+      <eOperations name="resolveDynamicValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"
+          eExceptions="#//initiator/ActionStepException">
+        <eParameters name="dynamicValue" eType="#//actionstep/DynamicValue"/>
+        <eParameters name="context" eType="#//saflet/SafletContext"/>
+      </eOperations>
+      <eOperations name="createDefaultOutputs"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="paused" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="active" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="outputs" ordered="false"
+          upperBound="-1" eType="#//actionstep/Output" containment="true" resolveProxies="false"
+          eOpposite="#//actionstep/Output/parent"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+          unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-blank"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="saflet" eType="#//saflet/Saflet"
+          eOpposite="#//saflet/Saflet/actionsteps"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="defaultOutput" ordered="false"
+          eType="#//actionstep/Output"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="errorOutput" ordered="false"
+          eType="#//actionstep/Output"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="Map" instanceClassName="java.util.Map">
+      <eTypeParameters name="T"/>
+      <eTypeParameters name="T1"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="BasicEMap" instanceClassName="org.eclipse.emf.common.util.BasicEMap">
+      <eTypeParameters name="T"/>
+      <eTypeParameters name="T1"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExecuteScript" eSuperTypes="#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scriptText" ordered="false"
+          eType="#//actionstep/DynamicValue" containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="ScriptText"/>
+          <details key="isTypeLocked" value="true"/>
+          <details key="description" value="The script to be executed.  Error output will taken in case of error, default output for all other cases"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="InvokeSaflet" eSuperTypes="#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="targetSafletPath" ordered="false"
+          eType="#//actionstep/DynamicValue" containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="true"/>
+          <details key="description" value="The path of the saflet to which control will be transferred"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value="com.safi.workshop.sheet.assist.SafletChooserAssistant"/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="labelText" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DebugLog" eSuperTypes="#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="message" ordered="false"
+          eType="#//actionstep/DynamicValue" containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The message to be logged"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="debugLevel" ordered="false"
+          eType="#//actionstep/DebugLevel" defaultValueLiteral="Debug"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="logFilename" ordered="false"
+          eType="#//actionstep/DynamicValue" containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The full path of the log file to be written to"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="DebugLevel">
+      <eLiterals name="Debug" literal="Debug"/>
+      <eLiterals name="Warn" value="1" literal="Warn"/>
+      <eLiterals name="Error" value="2" literal="Error"/>
+      <eLiterals name="Info" value="3"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OpenDBConnection" eSuperTypes="#//actionstep/ActionStep #//actionstep/Heavyweight">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connection" ordered="false"
+          eType="#//actionstep/DBConnectionId" containment="true">
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CloseDBConnection" eSuperTypes="#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connection" ordered="false"
+          eType="#//actionstep/DBConnectionId">
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OpenQuery" eSuperTypes="#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="query" ordered="false"
+          eType="#//actionstep/DBQueryId" containment="true" resolveProxies="false">
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connection" ordered="false"
+          eType="#//actionstep/DBConnectionId" resolveProxies="false">
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="useCache" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="scrollable" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="readOnly" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="scrollMode" ordered="false"
+          eType="ecore:EEnum ../../SafiDB/model/db.ecore#//RSScrollMode" defaultValueLiteral="ForwardOnly"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="holdabilityMode" ordered="false"
+          eType="ecore:EEnum ../../SafiDB/model/db.ecore#//RSHoldabilityMode" defaultValueLiteral="CloseCursorsOverCommit"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SetQueryParam" eSuperTypes="#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="value" ordered="false"
+          eType="#//actionstep/DynamicValue" containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The value to assign to the parameter"/>
+          <details key="expectedReturnType" value="Unknown"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" ordered="false"
+          eType="#//actionstep/DBQueryParamId" containment="true" resolveProxies="false">
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="paramDatatype" ordered="false"
+          eType="ecore:EEnum ../../SafiDB/model/db.ecore#//SQLDataType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="query" ordered="false"
+          eType="#//actionstep/DBQueryId" resolveProxies="false">
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExecuteUpdate" eSuperTypes="#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="query" ordered="false"
+          eType="#//actionstep/DBQueryId" resolveProxies="false">
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rowsUpdatedVar" ordered="false"
+          eType="#//actionstep/DynamicValue" containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable that will receive the number of rows updated"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+        <eAnnotations source="MetaProperty">
+          <details key="displayText" value="Update Count Variable"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExecuteQuery" eSuperTypes="#//actionstep/ActionStep #//actionstep/Heavyweight">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="query" ordered="false"
+          eType="#//actionstep/DBQueryId" resolveProxies="false">
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resultSet" ordered="false"
+          eType="#//actionstep/DBResultSetId" containment="true" resolveProxies="false">
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="resultSetName" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-blank"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NextRow" eSuperTypes="#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resultSet" ordered="false"
+          eType="#//actionstep/DBResultSetId" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable that will receive the number of rows updated"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GetColValue" eSuperTypes="#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resultSet" ordered="false"
+          eType="#//actionstep/DBResultSetId" resolveProxies="false">
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="variableName" ordered="false"
+          eType="#//actionstep/DynamicValue" containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable that will receive the value of the specified column"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="column" ordered="false"
+          eType="#//actionstep/DynamicValue" containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The resultset column from which to retrieve the value.  If this value is a number, the value will be retrieved by column number."/>
+          <details key="expectedReturnType" value="Unknown"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="getAsDatatype" ordered="false"
+          eType="ecore:EEnum ../../SafiDB/model/db.ecore#//SQLDataType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GetColValues" eSuperTypes="#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resultSet" ordered="false"
+          eType="#//actionstep/DBResultSetId" resolveProxies="false">
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="columnMappings" upperBound="-1"
+          eType="#//actionstep/GetColMapping" containment="true">
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-empty"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SetColValue" eSuperTypes="#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resultSet" ordered="false"
+          eType="#//actionstep/DBResultSetId" resolveProxies="false">
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="column" ordered="false"
+          eType="#//actionstep/DynamicValue" containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The resultset column from which to retrieve the value.  If this value is a number, the value will be retrieved by column number."/>
+          <details key="expectedReturnType" value="Unknown"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="setAsDatatype" ordered="false"
+          eType="ecore:EEnum ../../SafiDB/model/db.ecore#//SQLDataType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="value" ordered="false"
+          eType="#//actionstep/DynamicValue" containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The value to assign to the given column of the resultset. This resultset must be updateable."/>
+          <details key="expectedReturnType" value="Unknown"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SetColValues" eSuperTypes="#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resultSet" ordered="false"
+          eType="#//actionstep/DBResultSetId" resolveProxies="false">
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="columnMappings" upperBound="-1"
+          eType="#//actionstep/SetColMapping" containment="true">
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-empty"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="UpdatetRow" eSuperTypes="#//actionstep/ActionStep #//actionstep/Heavyweight">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resultSet" ordered="false"
+          eType="#//actionstep/DBResultSetId" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable that will receive the number of rows updated"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MoveToRow" eSuperTypes="#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resultSet" ordered="false"
+          eType="#//actionstep/DBResultSetId" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable that will receive the number of rows updated"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rowNum" ordered="false"
+          eType="#//actionstep/DynamicValue" containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The row number of the resultset to move to.  The resultset must be scrollable."/>
+          <details key="expectedReturnType" value="Integer"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MoveToLastRow" eSuperTypes="#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resultSet" ordered="false"
+          eType="#//actionstep/DBResultSetId" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable that will receive the number of rows updated"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DeleteRow" eSuperTypes="#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resultSet" ordered="false"
+          eType="#//actionstep/DBResultSetId" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable that will receive the number of rows updated"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MoveToInsertRow" eSuperTypes="#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resultSet" ordered="false"
+          eType="#//actionstep/DBResultSetId" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable that will receive the number of rows updated"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="InsertRow" eSuperTypes="#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resultSet" ordered="false"
+          eType="#//actionstep/DBResultSetId" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable that will receive the number of rows updated"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MoveToFirstRow" eSuperTypes="#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resultSet" ordered="false"
+          eType="#//actionstep/DBResultSetId" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable that will receive the number of rows updated"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PreviousRow" eSuperTypes="#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resultSet" ordered="false"
+          eType="#//actionstep/DBResultSetId" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable that will receive the number of rows updated"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DBConnectionId">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="jdbcConnection" ordered="false"
+          eType="ecore:EDataType ../../SafiDB/model/db.ecore#//Connection"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DBQueryId">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="jdbcStatement" ordered="false"
+          eType="ecore:EDataType ../../SafiDB/model/db.ecore#//Statement"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DBQueryParamId">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="0"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DBResultSetId">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="jDBCResultSet" ordered="false"
+          eType="ecore:EDataType ../../SafiDB/model/db.ecore#//ResultSet"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GetColMapping" eSuperTypes="#//actionstep/Item">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="variableName" ordered="false"
+          eType="#//actionstep/DynamicValue" containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable that will receive the value of the specified column"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="column" ordered="false"
+          eType="#//actionstep/DynamicValue" containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The resultset column from which to retrieve the value.  If this value is a number, the value will be retrieved by column number."/>
+          <details key="expectedReturnType" value="Unknown"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="getAsDatatype" ordered="false"
+          eType="ecore:EEnum ../../SafiDB/model/db.ecore#//SQLDataType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SetColMapping" eSuperTypes="#//actionstep/Item">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="column" ordered="false"
+          eType="#//actionstep/DynamicValue" containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The resultset column from which to retrieve the value.  If this value is a number, the value will be retrieved by column number."/>
+          <details key="expectedReturnType" value="Unknown"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="setAsDatatype" ordered="false"
+          eType="ecore:EEnum ../../SafiDB/model/db.ecore#//SQLDataType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="value" ordered="false"
+          eType="#//actionstep/DynamicValue" containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The value to assign to the given column of the resultset. This resultset must be updateable."/>
+          <details key="expectedReturnType" value="Unknown"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RunQuery" eSuperTypes="#//actionstep/ActionStep #//actionstep/Heavyweight">
+      <eOperations name="refreshParams">
+        <eParameters name="qry" eType="ecore:EClass ../../SafiDB/model/db.ecore#//Query"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connection" ordered="false"
+          eType="#//actionstep/DBConnectionId" resolveProxies="false">
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="query" ordered="false"
+          eType="#//actionstep/DBQueryId" containment="true" resolveProxies="false">
+        <eAnnotations source="Directionality">
+          <details key="output" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="paramMappings" upperBound="-1"
+          eType="#//actionstep/QueryParamMapping" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="resultSetName" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-blank"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="scrollable" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="readOnly" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resultSet" ordered="false"
+          eType="#//actionstep/DBResultSetId" containment="true" resolveProxies="false">
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rowsUpdatedVar" ordered="false"
+          eType="#//actionstep/DynamicValue" containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable that will receive the number of rows updated"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sql" ordered="false"
+          eType="#//actionstep/DynamicValue" containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable that will receive the number of rows updated"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Directionality">
+          <details key="output" value="false"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="QueryParamMapping" eSuperTypes="#//actionstep/Item">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="queryParam" ordered="false"
+          eType="#//actionstep/DBQueryParamId" containment="true" resolveProxies="false">
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="setAsDatatype" ordered="false"
+          eType="ecore:EEnum ../../SafiDB/model/db.ecore#//SQLDataType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="value" ordered="false"
+          eType="#//actionstep/DynamicValue" containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The value to assign to the given column of the resultset. This resultset must be updateable."/>
+          <details key="expectedReturnType" value="Unknown"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Item">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="labelText" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentActionStep" ordered="false"
+          eType="#//actionstep/ActionStep"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="targetActionStep" ordered="false"
+          eType="#//actionstep/ActionStep"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Heavyweight" abstract="true" interface="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="OutputParameter" eSuperTypes="#//actionstep/InputItem"/>
+  </eSubpackages>
+  <eSubpackages name="scripting" nsURI="http:///com/safi/core.ecore#scripting" nsPrefix="com.safi.core.scripting">
+    <eClassifiers xsi:type="ecore:EClass" name="SafletScript" abstract="true">
+      <eOperations name="execute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"
+          eExceptions="#//scripting/SafletScriptException">
+        <eParameters name="scope" eType="#//scripting/ScriptScope"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="scriptText" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SafletScriptEnvironment" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sharedSafletScript" ordered="false"
+          eType="#//scripting/SafletScript"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sharedScriptScope" ordered="false"
+          eType="#//scripting/ScriptScope"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="safletScriptFactory"
+          ordered="false" eType="#//scripting/SafletScriptFactory"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scriptScopeFactory" ordered="false"
+          eType="#//scripting/ScriptScopeFactory"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SafletScriptFactory" abstract="true">
+      <eOperations name="getSafletScript" eType="#//scripting/SafletScript">
+        <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="scriptText" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="safletScript" ordered="false"
+          eType="#//scripting/SafletScript" changeable="false"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RhinoSafletScript" eSuperTypes="#//scripting/SafletScript">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="rhinoScript" ordered="false"
+          eType="#//scripting/Script"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RhinoSafletScriptEnvironment" eSuperTypes="#//scripting/SafletScriptEnvironment"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RhinoSafletScriptFactory" eSuperTypes="#//scripting/SafletScriptFactory"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RhinoScriptScope" eSuperTypes="#//scripting/ScriptScope"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RhinoScriptScopeFactory" eSuperTypes="#//scripting/ScriptScopeFactory"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ScriptScope" abstract="true">
+      <eOperations name="exposeObjectToScript" eExceptions="#//scripting/SafletScriptException">
+        <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+      </eOperations>
+      <eOperations name="removeObjectFromScope" eExceptions="#//scripting/SafletScriptException">
+        <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="getScopedObject" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"
+          eExceptions="#//saflet/SafletException">
+        <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="scopeObject" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ScriptScopeFactory" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scriptScope" ordered="false"
+          eType="#//scripting/ScriptScope"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="globalScriptScope" ordered="false"
+          eType="#//scripting/ScriptScope"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="SafletScriptException" instanceClassName="com.safi.core.scripting.SafletScriptException"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="Script" instanceClassName="org.mozilla.javascript.Script"/>
+  </eSubpackages>
+  <eSubpackages name="saflet" nsURI="http:///com/safi/core.ecore#saflet" nsPrefix="com.safi.core.saflet">
+    <eClassifiers xsi:type="ecore:EClass" name="Saflet" abstract="true">
+      <eOperations name="getActionStep" eType="#//actionstep/ActionStep">
+        <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="addActionStep" eExceptions="#//saflet/SafletException">
+        <eParameters name="actionstep" eType="#//actionstep/ActionStep"/>
+      </eOperations>
+      <eOperations name="getScript" eType="#//scripting/SafletScript">
+        <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="addScript" eType="#//scripting/SafletScript">
+        <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="scriptText" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="initializeScriptableObjects"/>
+      <eOperations name="init" eExceptions="#//initiator/ActionStepException"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="initiator" ordered="false"
+          eType="#//initiator/Initiator" resolveProxies="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="active" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="New Saflet"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="safletContext" ordered="false"
+          eType="#//saflet/SafletContext" containment="true" resolveProxies="false"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="safletScope" ordered="false"
+          eType="#//scripting/ScriptScope"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="actionsteps" ordered="false"
+          upperBound="-1" eType="#//actionstep/ActionStep" containment="true" resolveProxies="false"
+          eOpposite="#//actionstep/ActionStep/saflet"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scriptingEnvironment"
+          ordered="false" eType="#//scripting/SafletScriptEnvironment"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="safletEnvironment" ordered="false"
+          eType="#//saflet/SafletEnvironment"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral=""/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral=""/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          defaultValueLiteral="-1"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SafletContext" abstract="true">
+      <eOperations name="init"/>
+      <eOperations name="getVariable" eType="ecore:EClass ../../SafiDB/model/db.ecore#//Variable">
+        <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="getVariableRawValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
+        <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="setVariableRawValue">
+        <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+      </eOperations>
+      <eOperations name="addOrUpdateVariable">
+        <eParameters name="v" eType="ecore:EClass ../../SafiDB/model/db.ecore#//Variable"/>
+      </eOperations>
+      <eOperations name="removeVariable" eType="ecore:EClass ../../SafiDB/model/db.ecore#//Variable">
+        <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="addException">
+        <eParameters name="e" eType="#//saflet/Exception"/>
+      </eOperations>
+      <eOperations name="merge">
+        <eParameters name="context" eType="#//saflet/SafletContext"/>
+      </eOperations>
+      <eOperations name="getSessionVar" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
+        <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="setSessionVar">
+        <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="exceptions" ordered="false"
+          upperBound="-1" eType="#//saflet/Exception" changeable="false"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentSaflet" ordered="false"
+          eType="#//saflet/Saflet"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="variables" ordered="false"
+          upperBound="-1" eType="ecore:EClass ../../SafiDB/model/db.ecore#//Variable"
+          containment="true" resolveProxies="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="sessionVariables" transient="true">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SafletEnvironment" abstract="true"
+        interface="true">
+      <eOperations name="getSaflet" eType="#//saflet/Saflet">
+        <eParameters name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="coreServerId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+      <eOperations name="getGlobalExecutor" eType="#//saflet/Executor"/>
+      <eOperations name="getGlobalVariableValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
+        <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="setGlobalVariableValue">
+        <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+      </eOperations>
+      <eOperations name="getGlobalVariable" eType="ecore:EClass ../../SafiDB/model/db.ecore#//Variable">
+        <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="SafletException" instanceClassName="com.safi.core.saflet.SafletException"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="Exception" instanceClassName="java.lang.Exception"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="Executor" instanceClassName="java.util.concurrent.Executor"/>
+  </eSubpackages>
+  <eSubpackages name="initiator" nsURI="http:///com/safi/core.ecore#initiator" nsPrefix="com.safi.core.initiator">
+    <eClassifiers xsi:type="ecore:EClass" name="Initiator" abstract="true" eSuperTypes="#//actionstep/ActionStep">
+      <eOperations name="acceptsRequest" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eParameters name="context" eType="#//initiator/InitiatorInfo"/>
+      </eOperations>
+      <eOperations name="initialize" eExceptions="#//initiator/ActionStepException">
+        <eParameters name="context" eType="#//initiator/InitiatorInfo"/>
+      </eOperations>
+      <eOperations name="beginProcessing" eExceptions="#//initiator/ActionStepException"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="ActionStepException" instanceClassName="com.safi.core.actionstep.ActionStepException"/>
+    <eClassifiers xsi:type="ecore:EEnum" name="InputType">
+      <eLiterals name="Value"/>
+      <eLiterals name="Variable" value="1"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="InitiatorInfo" abstract="true" interface="true"/>
+  </eSubpackages>
+</ecore:EPackage>
