@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="lib" path="commons-collections-3.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="slf4j-log4j12-1.5.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="slf4j-api-1.5.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="hibernate-annotations.jar"/>
+	<classpathentry exported="true" kind="lib" path="hibernate-commons-annotations.jar"/>
+	<classpathentry exported="true" kind="lib" path="hibernate-entitymanager.jar"/>
+	<classpathentry exported="true" kind="lib" path="antlr-2.7.6.jar"/>
+	<classpathentry exported="true" kind="lib" path="asm-attrs.jar"/>
+	<classpathentry exported="true" kind="lib" path="asm.jar"/>
+	<classpathentry exported="true" kind="lib" path="c3p0-0.9.1.jar" sourcepath="D:/javalib/c3p0/c3p0-0.9.1.2.src/src/codegen"/>
+	<classpathentry exported="true" kind="lib" path="cglib-2.1.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="cleanimports.jar"/>
+	<classpathentry exported="true" kind="lib" path="concurrent-1.3.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="dom4j-1.6.1.jar" sourcepath="D:/javalib/dom4j-1.6.1/src/java"/>
+	<classpathentry exported="true" kind="lib" path="ehcache-1.2.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="hibernate3.jar" sourcepath="D:/javalib/hibernate-distribution-3.3.1.GA/project/core"/>
+	<classpathentry exported="true" kind="lib" path="jaas.jar"/>
+	<classpathentry exported="true" kind="lib" path="jacc-1_0-fr.jar"/>
+	<classpathentry exported="true" kind="lib" path="javassist.jar"/>
+	<classpathentry exported="true" kind="lib" path="jaxen-1.1-beta-7.jar"/>
+	<classpathentry exported="true" kind="lib" path="jgroups-2.2.8.jar"/>
+	<classpathentry exported="true" kind="lib" path="jta.jar"/>
+	<classpathentry exported="true" kind="lib" path="oscache-2.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="swarmcache-1.0rc2.jar"/>
+	<classpathentry exported="true" kind="lib" path="syndiag2.jar"/>
+	<classpathentry exported="true" kind="lib" path="xerces-2.6.2.jar" sourcepath="D:/javalib/xerces-2_6_2/src"/>
+	<classpathentry exported="true" kind="lib" path="xml-apis.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
