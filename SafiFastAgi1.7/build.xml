@@ -7,7 +7,7 @@
 <project basedir="." default="build" name="SafiFastAgi1.7">
     <property environment="env"/>
     <property name="SafiServerCore.location" value="../SafiServerCore"/>
-    <property name="ECLIPSE_HOME" value="../../ganymede2/eclipse"/>
+    <property name="ECLIPSE_HOME" value="../../galileo/eclipse"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.6"/>
     <property name="source" value="1.6"/>
@@ -38,10 +38,16 @@
     <target name="init">
         <mkdir dir="bin"/>
         <copy includeemptydirs="false" todir="bin">
-            <fileset dir="src" excludes="**/*.launch, **/*.java"/>
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
         </copy>
         <copy includeemptydirs="false" todir="bin">
-            <fileset dir=".apt_generated" excludes="**/*.launch, **/*.java"/>
+            <fileset dir=".apt_generated">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
         </copy>
     </target>
     <target name="clean">
@@ -62,8 +68,8 @@
         </javac>
     </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects">
-        <ant antfile="${SafiServerCore.location}/build.xml" inheritAll="false" target="clean"/>
-        <ant antfile="${SafiServerCore.location}/build.xml" inheritAll="false" target="build">
+        <ant antfile="${SafiServerCore.location}/build.xml" dir="${SafiServerCore.location}" inheritAll="false" target="clean"/>
+        <ant antfile="${SafiServerCore.location}/build.xml" dir="${SafiServerCore.location}" inheritAll="false" target="build">
             <propertyset>
                 <propertyref name="build.compiler"/>
             </propertyset>
