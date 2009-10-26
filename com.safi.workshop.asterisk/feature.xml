@@ -150,11 +150,12 @@ support@safisystems.com
       <import plugin="org.eclipse.gmf.runtime.common.ui.action" version="1.2.0" match="compatible"/>
       <import plugin="org.eclipse.ui.views.properties.tabbed" version="3.5.0" match="compatible"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.core" version="1.2.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.runtime.draw2d.ui.render" version="1.2.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.2.0" match="compatible"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers" version="1.2.0" match="compatible"/>
       <import plugin="org.eclipse.gmf.runtime.common.ui.printing" version="1.2.0" match="compatible"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing" version="1.2.0" match="compatible"/>
       <import plugin="org.eclipse.gmf.runtime.draw2d.ui.render" version="1.2.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing" version="1.2.0" match="compatible"/>
       <import plugin="org.eclipse.core.databinding" version="1.2.0" match="compatible"/>
       <import plugin="org.eclipse.core.databinding.beans" version="1.2.0" match="compatible"/>
       <import plugin="org.eclipse.jface.databinding" version="1.3.0" match="compatible"/>
@@ -166,6 +167,7 @@ support@safisystems.com
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.actions" version="1.2.0" match="compatible"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing.render" version="1.2.0" match="compatible"/>
       <import plugin="org.eclipse.gmf.runtime.draw2d.ui" version="1.2.0" match="compatible"/>
+      <import plugin="org.eclipse.draw2d" version="3.5.1" match="compatible"/>
       <import plugin="org.apache.batik.ext.awt" version="1.6.0" match="equivalent"/>
       <import plugin="org.apache.batik.transcoder" version="1.6.0" match="equivalent"/>
       <import plugin="org.apache.batik.bridge" version="1.6.0" match="equivalent"/>
@@ -232,8 +234,8 @@ support@safisystems.com
       <import plugin="org.eclipse.update.ui" version="3.1.0" match="compatible"/>
       <import plugin="org.eclipse.ui" version="3.2.0" match="compatible"/>
       <import plugin="org.eclipse.ui.forms" version="3.2.0" match="compatible"/>
-      <import plugin="org.w3c.dom.events"/>
       <import plugin="org.eclipse.equinox.launcher" version="1.0.0" match="equivalent"/>
+      <import plugin="org.eclipse.emf.ecore.xmi" version="2.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jface.text" version="3.3.0" match="compatible"/>
       <import plugin="org.eclipse.ui.ide" version="3.3.0" match="compatible"/>
       <import plugin="org.eclipse.ui.editors" version="3.5.0" match="compatible"/>
@@ -250,6 +252,15 @@ support@safisystems.com
       <import plugin="org.apache.jasper" version="5.5.17" match="greaterOrEqual"/>
       <import plugin="org.eclipse.equinox.jsp.jasper.registry" version="1.0.100" match="greaterOrEqual"/>
       <import plugin="org.eclipse.equinox.http.registry" version="1.0.200" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.databinding" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.dltk.core" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.console" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.launching" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore" version="2.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore.xmi" version="2.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.ui" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.debug" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.console.ui" version="2.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.resources" version="3.3.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.console" version="3.4.0" match="compatible"/>
       <import plugin="org.eclipse.debug.core" version="3.5.0" match="compatible"/>
@@ -266,15 +277,19 @@ support@safisystems.com
       <import plugin="org.eclipse.ui.navigator.resources" version="3.4.0" match="compatible"/>
       <import plugin="Saflets" version="1.1.0" match="greaterOrEqual"/>
       <import plugin="Saflets.edit" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.databinding.property" version="1.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.databinding.observable" version="1.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.compare.core" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.equinox.p2.core" version="1.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.equinox.p2.metadata" version="1.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.compare" version="3.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.help" version="3.3.101" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.cheatsheets" version="3.3.101" match="greaterOrEqual"/>
       <import plugin="org.apache.commons.logging" version="1.0.4" match="greaterOrEqual"/>
       <import plugin="org.jdom" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.dltk" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.dltk.console" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.dltk.console.ui" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.dltk.core" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.dltk.debug" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.dltk.debug.ui" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.dltk.formatter" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.dltk.javascript.core" version="1.0.0" match="greaterOrEqual"/>
@@ -307,17 +322,18 @@ support@safisystems.com
       <import plugin="AsteriskCore" version="1.1.0" match="greaterOrEqual"/>
       <import plugin="AsteriskCore.edit" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="com.safi.server.asterisk" version="1.0.3" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.core.databinding.property" version="1.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.equinox.p2.repository" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="AsteriskSafletDesigner.diagram" version="1.1.2" match="greaterOrEqual"/>
       <import plugin="CoreActionPak1Model" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="CoreActionPak1Model.edit" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="TimeBasedRoutingNew" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="TimeBasedRoutingNew.edit" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.core.databinding.observable" version="1.2.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.compare.core" version="3.5.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.equinox.p2.core" version="1.0.100" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.equinox.p2.metadata" version="1.0.100" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.compare" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.equinox.p2.metadata.repository" version="1.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.jobs" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.equinox.registry" version="3.4.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.equinox.concurrent"/>
+      <import plugin="org.eclipse.ecf" version="1.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ecf.filetransfer" version="2.0.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
