@@ -28,30 +28,30 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface SafiDriverManager extends DBResource {
   /**
-   * Returns the value of the '<em><b>Drivers</b></em>' containment reference list.
-   * The list contents are of type {@link com.safi.db.DBDriver}.
-   * It is bidirectional and its opposite is '{@link com.safi.db.DBDriver#getDriverManager <em>Driver Manager</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Drivers</b></em>' containment reference list.
+	 * The list contents are of type {@link com.safi.db.DBDriver}.
+	 * It is bidirectional and its opposite is '{@link com.safi.db.DBDriver#getDriverManager <em>Driver Manager</em>}'.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Drivers</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Drivers</em>' containment reference list.
-   * @see com.safi.db.DbPackage#getSafiDriverManager_Drivers()
-   * @see com.safi.db.DBDriver#getDriverManager
-   * @model opposite="driverManager" containment="true"
-   *        annotation="teneo.jpa appinfo='@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=\"EAGER\")'"
-   * @generated
-   */
+	 * @return the value of the '<em>Drivers</em>' containment reference list.
+	 * @see com.safi.db.DbPackage#getSafiDriverManager_Drivers()
+	 * @see com.safi.db.DBDriver#getDriverManager
+	 * @model opposite="driverManager" containment="true"
+	 *        annotation="teneo.jpa appinfo='@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=\"EAGER\")'"
+	 * @generated
+	 */
   EList<DBDriver> getDrivers();
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @model
-   * @generated
-   */
+	 * @model
+	 * @generated
+	 */
   DBDriver getDriver(String name);
 
 } // SafiDriverManager

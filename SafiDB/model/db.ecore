@@ -54,10 +54,18 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="driverManager" eType="#//SafiDriverManager"
         eOpposite="#//SafiDriverManager/drivers"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="default" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="guideUrl" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="guideUrl" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="teneo.jpa">
+        <details key="appinfo" value="@Column(length = 1000)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="websiteUrl" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="urlRegexPattern" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="urlRegexPattern" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="teneo.jpa">
+        <details key="appinfo" value="@Column(length = 5000)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Query" eSuperTypes="#//DBResource">
     <eOperations name="getResultSet" eType="#//SafiResultSet">
@@ -294,7 +302,7 @@
       <eClassifiers xsi:type="ecore:EClass" name="Saflet" eSuperTypes="#//server/config/ServerResource">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
           <eAnnotations source="teneo.jpa">
-            <details key="appinfo" value="@Basic(fetch=&quot;LAZY&quot;)"/>
+            <details key="appinfo" value="@Basic(fetch=&quot;LAZY&quot;)&#xD;&#xA;@Lob&#xD;&#xA;@Column(length=1048576)&#xD;&#xA;@Type(type=&quot;clob&quot;)"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="project" eType="#//server/config/SafletProject"

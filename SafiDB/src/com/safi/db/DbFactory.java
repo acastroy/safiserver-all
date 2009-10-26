@@ -18,83 +18,83 @@ import org.eclipse.emf.ecore.EFactory;
  */
 public interface DbFactory extends EFactory {
   /**
-   * The singleton instance of the factory.
-   * <!-- begin-user-doc -->
+	 * The singleton instance of the factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   DbFactory eINSTANCE = com.safi.db.impl.DbFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>DB Connection</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>DB Connection</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>DB Connection</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>DB Connection</em>'.
+	 * @generated
+	 */
   DBConnection createDBConnection();
 
   /**
-   * Returns a new object of class '<em>DB Driver</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>DB Driver</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>DB Driver</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>DB Driver</em>'.
+	 * @generated
+	 */
   DBDriver createDBDriver();
 
   /**
-   * Returns a new object of class '<em>Query</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Query</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Query</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Query</em>'.
+	 * @generated
+	 */
   Query createQuery();
 
   /**
-   * Returns a new object of class '<em>Query Parameter</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Query Parameter</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Query Parameter</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Query Parameter</em>'.
+	 * @generated
+	 */
   QueryParameter createQueryParameter();
 
   /**
-   * Returns a new object of class '<em>Safi Driver Manager</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Safi Driver Manager</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Safi Driver Manager</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Safi Driver Manager</em>'.
+	 * @generated
+	 */
   SafiDriverManager createSafiDriverManager();
 
   /**
-   * Returns a new object of class '<em>Safi Result Set</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Safi Result Set</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Safi Result Set</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Safi Result Set</em>'.
+	 * @generated
+	 */
   SafiResultSet createSafiResultSet();
 
   /**
-   * Returns a new object of class '<em>Variable</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Variable</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Variable</em>'.
+	 * @generated
+	 */
   Variable createVariable();
 
   /**
-   * Returns the package supported by this factory.
-   * <!-- begin-user-doc -->
+	 * Returns the package supported by this factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the package supported by this factory.
-   * @generated
-   */
+	 * @return the package supported by this factory.
+	 * @generated
+	 */
   DbPackage getDbPackage();
   
   

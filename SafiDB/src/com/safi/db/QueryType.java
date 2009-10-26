@@ -23,239 +23,239 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum QueryType implements Enumerator {
   /**
-   * The '<em><b>Select</b></em>' literal object.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>Select</b></em>' literal object.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #SELECT_VALUE
-   * @generated
-   * @ordered
-   */
+	 * @see #SELECT_VALUE
+	 * @generated
+	 * @ordered
+	 */
   SELECT(0, "Select", "Select"),
 
   /**
-   * The '<em><b>Update</b></em>' literal object.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>Update</b></em>' literal object.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #UPDATE_VALUE
-   * @generated
-   * @ordered
-   */
+	 * @see #UPDATE_VALUE
+	 * @generated
+	 * @ordered
+	 */
   UPDATE(1, "Update", "Update"), /**
-   * The '<em><b>SP Select</b></em>' literal object.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>SP Select</b></em>' literal object.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #SP_SELECT_VALUE
-   * @generated
-   * @ordered
-   */
+	 * @see #SP_SELECT_VALUE
+	 * @generated
+	 * @ordered
+	 */
   SP_SELECT(2, "SPSelect", "SPSelect"), /**
-   * The '<em><b>SP Update</b></em>' literal object.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>SP Update</b></em>' literal object.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #SP_UPDATE_VALUE
-   * @generated
-   * @ordered
-   */
+	 * @see #SP_UPDATE_VALUE
+	 * @generated
+	 * @ordered
+	 */
   SP_UPDATE(0, "SPUpdate", "SPUpdate");
 
   /**
-   * The '<em><b>Select</b></em>' literal value.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>Select</b></em>' literal value.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of '<em><b>Select</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @see #SELECT
-   * @model name="Select"
-   * @generated
-   * @ordered
-   */
+	 * @see #SELECT
+	 * @model name="Select"
+	 * @generated
+	 * @ordered
+	 */
   public static final int SELECT_VALUE = 0;
 
   /**
-   * The '<em><b>Update</b></em>' literal value.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>Update</b></em>' literal value.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of '<em><b>Update</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @see #UPDATE
-   * @model name="Update"
-   * @generated
-   * @ordered
-   */
+	 * @see #UPDATE
+	 * @model name="Update"
+	 * @generated
+	 * @ordered
+	 */
   public static final int UPDATE_VALUE = 1;
 
   /**
-   * The '<em><b>SP Select</b></em>' literal value.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>SP Select</b></em>' literal value.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of '<em><b>SP Select</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @see #SP_SELECT
-   * @model name="SPSelect"
-   * @generated
-   * @ordered
-   */
+	 * @see #SP_SELECT
+	 * @model name="SPSelect"
+	 * @generated
+	 * @ordered
+	 */
   public static final int SP_SELECT_VALUE = 2;
 
   /**
-   * The '<em><b>SP Update</b></em>' literal value.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>SP Update</b></em>' literal value.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of '<em><b>SP Update</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @see #SP_UPDATE
-   * @model name="SPUpdate"
-   * @generated
-   * @ordered
-   */
+	 * @see #SP_UPDATE
+	 * @model name="SPUpdate"
+	 * @generated
+	 * @ordered
+	 */
   public static final int SP_UPDATE_VALUE = 0;
 
   /**
-   * An array of all the '<em><b>Query Type</b></em>' enumerators.
-   * <!-- begin-user-doc -->
+	 * An array of all the '<em><b>Query Type</b></em>' enumerators.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private static final QueryType[] VALUES_ARRAY =
     new QueryType[] {
-      SELECT,
-      UPDATE,
-      SP_SELECT,
-      SP_UPDATE,
-    };
+			SELECT,
+			UPDATE,
+			SP_SELECT,
+			SP_UPDATE,
+		};
 
   /**
-   * A public read-only list of all the '<em><b>Query Type</b></em>' enumerators.
-   * <!-- begin-user-doc -->
+	 * A public read-only list of all the '<em><b>Query Type</b></em>' enumerators.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static final List<QueryType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
   /**
-   * Returns the '<em><b>Query Type</b></em>' literal with the specified literal value.
-   * <!-- begin-user-doc -->
+	 * Returns the '<em><b>Query Type</b></em>' literal with the specified literal value.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static QueryType get(String literal) {
-    for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-      QueryType result = VALUES_ARRAY[i];
-      if (result.toString().equals(literal)) {
-        return result;
-      }
-    }
-    return null;
-  }
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+			QueryType result = VALUES_ARRAY[i];
+			if (result.toString().equals(literal)) {
+				return result;
+			}
+		}
+		return null;
+	}
 
   /**
-   * Returns the '<em><b>Query Type</b></em>' literal with the specified name.
-   * <!-- begin-user-doc -->
+	 * Returns the '<em><b>Query Type</b></em>' literal with the specified name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static QueryType getByName(String name) {
-    for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-      QueryType result = VALUES_ARRAY[i];
-      if (result.getName().equals(name)) {
-        return result;
-      }
-    }
-    return null;
-  }
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+			QueryType result = VALUES_ARRAY[i];
+			if (result.getName().equals(name)) {
+				return result;
+			}
+		}
+		return null;
+	}
 
   /**
-   * Returns the '<em><b>Query Type</b></em>' literal with the specified integer value.
-   * <!-- begin-user-doc -->
+	 * Returns the '<em><b>Query Type</b></em>' literal with the specified integer value.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static QueryType get(int value) {
-    switch (value) {
-      case SELECT_VALUE: return SELECT;
-      case UPDATE_VALUE: return UPDATE;
-      case SP_SELECT_VALUE: return SP_SELECT;
-    }
-    return null;
-  }
+		switch (value) {
+			case SELECT_VALUE: return SELECT;
+			case UPDATE_VALUE: return UPDATE;
+			case SP_SELECT_VALUE: return SP_SELECT;
+		}
+		return null;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private final int value;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private final String name;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private final String literal;
 
   /**
-   * Only this class can construct instances.
-   * <!-- begin-user-doc -->
+	 * Only this class can construct instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private QueryType(int value, String name, String literal) {
-    this.value = value;
-    this.name = name;
-    this.literal = literal;
-  }
+		this.value = value;
+		this.name = name;
+		this.literal = literal;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public int getValue() {
-    return value;
-  }
+	  return value;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getName() {
-    return name;
-  }
+	  return name;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getLiteral() {
-    return literal;
-  }
+	  return literal;
+	}
 
   /**
-   * Returns the literal value of the enumerator, which is its string representation.
-   * <!-- begin-user-doc -->
+	 * Returns the literal value of the enumerator, which is its string representation.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    return literal;
-  }
+		return literal;
+	}
   
 } //QueryType

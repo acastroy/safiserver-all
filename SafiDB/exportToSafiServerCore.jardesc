@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="WINDOWS-1252" standalone="no"?>
 <jardesc>
-    <jar path="SafiServerCore/lib/safidb_v20080823.jar"/>
+    <jar path="SafiServerCore/lib/safidb_v20090921.jar"/>
     <options buildIfNeeded="true" compress="true" descriptionLocation="/SafiDB/exportToSafiServerCore.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="true" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
     <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
     <selectedProjects/>
@@ -27,5 +27,4 @@
         <file path="/SafiDB/src/log4j.properties"/>
         <javaElement handleIdentifier="=SafiDB/src&lt;com.safi.db.test"/>
     </selectedElements>
-    <fatjar builder="org.eclipse.jdt.ui.plain_jar_builder" launchConfig=""/>
 </jardesc>

@@ -25,214 +25,214 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
  */
 public class ConfigFactoryImpl extends EFactoryImpl implements ConfigFactory {
   /**
-   * Creates the default factory implementation.
-   * <!-- begin-user-doc -->
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static ConfigFactory init() {
-    try {
-      ConfigFactory theConfigFactory = (ConfigFactory)EPackage.Registry.INSTANCE.getEFactory("http:///com/safi/db.ecore#config"); 
-      if (theConfigFactory != null) {
-        return theConfigFactory;
-      }
-    }
-    catch (Exception exception) {
-      EcorePlugin.INSTANCE.log(exception);
-    }
-    return new ConfigFactoryImpl();
-  }
+		try {
+			ConfigFactory theConfigFactory = (ConfigFactory)EPackage.Registry.INSTANCE.getEFactory("http:///com/safi/db.ecore#config"); 
+			if (theConfigFactory != null) {
+				return theConfigFactory;
+			}
+		}
+		catch (Exception exception) {
+			EcorePlugin.INSTANCE.log(exception);
+		}
+		return new ConfigFactoryImpl();
+	}
 
   /**
-   * Creates an instance of the factory.
-   * <!-- begin-user-doc -->
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ConfigFactoryImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public EObject create(EClass eClass) {
-    switch (eClass.getClassifierID()) {
-      case ConfigPackage.SERVER_RESOURCE: return createServerResource();
-      case ConfigPackage.ASTERISK_SERVER: return createAsteriskServer();
-      case ConfigPackage.SAFI_SERVER: return createSafiServer();
-      case ConfigPackage.ROLE: return createRole();
-      case ConfigPackage.ENTITLEMENT: return createEntitlement();
-      case ConfigPackage.USER: return createUser();
-      case ConfigPackage.SAFLET: return createSaflet();
-      case ConfigPackage.SAFLET_PROJECT: return createSafletProject();
-      case ConfigPackage.PROMPT: return createPrompt();
-      default:
-        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eClass.getClassifierID()) {
+			case ConfigPackage.SERVER_RESOURCE: return createServerResource();
+			case ConfigPackage.ASTERISK_SERVER: return createAsteriskServer();
+			case ConfigPackage.SAFI_SERVER: return createSafiServer();
+			case ConfigPackage.ROLE: return createRole();
+			case ConfigPackage.ENTITLEMENT: return createEntitlement();
+			case ConfigPackage.USER: return createUser();
+			case ConfigPackage.SAFLET: return createSaflet();
+			case ConfigPackage.SAFLET_PROJECT: return createSafletProject();
+			case ConfigPackage.PROMPT: return createPrompt();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object createFromString(EDataType eDataType, String initialValue) {
-    switch (eDataType.getClassifierID()) {
-      case ConfigPackage.SYNCH_MODE:
-        return createSynchModeFromString(eDataType, initialValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eDataType.getClassifierID()) {
+			case ConfigPackage.SYNCH_MODE:
+				return createSynchModeFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String convertToString(EDataType eDataType, Object instanceValue) {
-    switch (eDataType.getClassifierID()) {
-      case ConfigPackage.SYNCH_MODE:
-        return convertSynchModeToString(eDataType, instanceValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eDataType.getClassifierID()) {
+			case ConfigPackage.SYNCH_MODE:
+				return convertSynchModeToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ServerResource createServerResource() {
-    ServerResourceImpl serverResource = new ServerResourceImpl();
-    return serverResource;
-  }
+		ServerResourceImpl serverResource = new ServerResourceImpl();
+		return serverResource;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public AsteriskServer createAsteriskServer() {
-    AsteriskServerImpl asteriskServer = new AsteriskServerImpl();
-    return asteriskServer;
-  }
+		AsteriskServerImpl asteriskServer = new AsteriskServerImpl();
+		return asteriskServer;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public SafiServer createSafiServer() {
-    SafiServerImpl safiServer = new SafiServerImpl();
-    return safiServer;
-  }
+		SafiServerImpl safiServer = new SafiServerImpl();
+		return safiServer;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Role createRole() {
-    RoleImpl role = new RoleImpl();
-    return role;
-  }
+		RoleImpl role = new RoleImpl();
+		return role;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Entitlement createEntitlement() {
-    EntitlementImpl entitlement = new EntitlementImpl();
-    return entitlement;
-  }
+		EntitlementImpl entitlement = new EntitlementImpl();
+		return entitlement;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public User createUser() {
-    UserImpl user = new UserImpl();
-    return user;
-  }
+		UserImpl user = new UserImpl();
+		return user;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Saflet createSaflet() {
-    SafletImpl saflet = new SafletImpl();
-    return saflet;
-  }
+		SafletImpl saflet = new SafletImpl();
+		return saflet;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public SafletProject createSafletProject() {
-    SafletProjectImpl safletProject = new SafletProjectImpl();
-    return safletProject;
-  }
+		SafletProjectImpl safletProject = new SafletProjectImpl();
+		return safletProject;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Prompt createPrompt() {
-    PromptImpl prompt = new PromptImpl();
-    return prompt;
-  }
+		PromptImpl prompt = new PromptImpl();
+		return prompt;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public SynchMode createSynchModeFromString(EDataType eDataType, String initialValue) {
-    SynchMode result = SynchMode.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
+		SynchMode result = SynchMode.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String convertSynchModeToString(EDataType eDataType, Object instanceValue) {
-    return instanceValue == null ? null : instanceValue.toString();
-  }
+		return instanceValue == null ? null : instanceValue.toString();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ConfigPackage getConfigPackage() {
-    return (ConfigPackage)getEPackage();
-  }
+		return (ConfigPackage)getEPackage();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @deprecated
-   * @generated
-   */
+	 * @deprecated
+	 * @generated
+	 */
   @Deprecated
   public static ConfigPackage getPackage() {
-    return ConfigPackage.eINSTANCE;
-  }
+		return ConfigPackage.eINSTANCE;
+	}
 
 } //ConfigFactoryImpl

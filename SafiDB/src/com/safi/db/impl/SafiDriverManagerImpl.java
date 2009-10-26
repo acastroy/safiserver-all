@@ -40,45 +40,45 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class SafiDriverManagerImpl extends DBResourceImpl implements SafiDriverManager {
   /**
-   * The cached value of the '{@link #getDrivers() <em>Drivers</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getDrivers() <em>Drivers</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDrivers()
-   * @generated
-   * @ordered
-   */
+	 * @see #getDrivers()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<DBDriver> drivers;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected SafiDriverManagerImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return DbPackage.Literals.SAFI_DRIVER_MANAGER;
-  }
+		return DbPackage.Literals.SAFI_DRIVER_MANAGER;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<DBDriver> getDrivers() {
-    if (drivers == null) {
-      drivers = new EObjectContainmentWithInverseEList<DBDriver>(DBDriver.class, this, DbPackage.SAFI_DRIVER_MANAGER__DRIVERS, DbPackage.DB_DRIVER__DRIVER_MANAGER);
-    }
-    return drivers;
-  }
+		if (drivers == null) {
+			drivers = new EObjectContainmentWithInverseEList<DBDriver>(DBDriver.class, this, DbPackage.SAFI_DRIVER_MANAGER__DRIVERS, DbPackage.DB_DRIVER__DRIVER_MANAGER);
+		}
+		return drivers;
+	}
 
   /**
    * <!-- begin-user-doc -->
@@ -95,92 +95,92 @@ public class SafiDriverManagerImpl extends DBResourceImpl implements SafiDriverM
   }
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case DbPackage.SAFI_DRIVER_MANAGER__DRIVERS:
-        return ((InternalEList<InternalEObject>)(InternalEList<?>)getDrivers()).basicAdd(otherEnd, msgs);
-    }
-    return super.eInverseAdd(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DbPackage.SAFI_DRIVER_MANAGER__DRIVERS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDrivers()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case DbPackage.SAFI_DRIVER_MANAGER__DRIVERS:
-        return ((InternalEList<?>)getDrivers()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case DbPackage.SAFI_DRIVER_MANAGER__DRIVERS:
+				return ((InternalEList<?>)getDrivers()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case DbPackage.SAFI_DRIVER_MANAGER__DRIVERS:
-        return getDrivers();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case DbPackage.SAFI_DRIVER_MANAGER__DRIVERS:
+				return getDrivers();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case DbPackage.SAFI_DRIVER_MANAGER__DRIVERS:
-        getDrivers().clear();
-        getDrivers().addAll((Collection<? extends DBDriver>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case DbPackage.SAFI_DRIVER_MANAGER__DRIVERS:
+				getDrivers().clear();
+				getDrivers().addAll((Collection<? extends DBDriver>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case DbPackage.SAFI_DRIVER_MANAGER__DRIVERS:
-        getDrivers().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case DbPackage.SAFI_DRIVER_MANAGER__DRIVERS:
+				getDrivers().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case DbPackage.SAFI_DRIVER_MANAGER__DRIVERS:
-        return drivers != null && !drivers.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case DbPackage.SAFI_DRIVER_MANAGER__DRIVERS:
+				return drivers != null && !drivers.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //SafiDriverManagerImpl

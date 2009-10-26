@@ -1232,7 +1232,10 @@ public class DBManager {
         // ResultSet set = meta.getTables(null, null, "saflet", null);
         // if (!set.next()) {
         Statement stat = connection.createStatement();
-        stat.execute("create user 'admin' password 'password' ADMIN;");
+        //
+        
+        stat.execute("SET DATABASE SQL SIZE FALSE");
+        stat.execute("create user safiadmin password 'password' ADMIN;");
         stat.execute("create index promptNameIndex on \"prompt\" (\"name\")");
 
         // stat.execute("create index promptDirNameIndex on \"promptdirectory\" (\"name\")");
@@ -1328,7 +1331,7 @@ public class DBManager {
         session.save(asteriskEntitlement);
 
         User user = ConfigFactory.eINSTANCE.createUser();
-        user.setName("admin");
+        user.setName("safiadmin");
         user.setPassword("password");
         user.setFirstname("Admin");
         user.setDescription("Built-in administrative-level password.  "

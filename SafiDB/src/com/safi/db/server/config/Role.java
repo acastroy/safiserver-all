@@ -26,19 +26,19 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Role extends ServerResource {
   /**
-   * Returns the value of the '<em><b>Entitlements</b></em>' reference list.
-   * The list contents are of type {@link com.safi.db.server.config.Entitlement}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Entitlements</b></em>' reference list.
+	 * The list contents are of type {@link com.safi.db.server.config.Entitlement}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Entitlements</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Entitlements</em>' reference list.
-   * @see com.safi.db.server.config.ConfigPackage#getRole_Entitlements()
-   * @model annotation="teneo.jpa appinfo='@ManyToMany(fetch=\"EAGER\")'"
-   * @generated
-   */
+	 * @return the value of the '<em>Entitlements</em>' reference list.
+	 * @see com.safi.db.server.config.ConfigPackage#getRole_Entitlements()
+	 * @model annotation="teneo.jpa appinfo='@ManyToMany(fetch=\"EAGER\")'"
+	 * @generated
+	 */
   EList<Entitlement> getEntitlements();
 
 } // Role

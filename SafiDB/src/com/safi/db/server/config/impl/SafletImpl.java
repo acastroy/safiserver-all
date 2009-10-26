@@ -36,232 +36,232 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  */
 public class SafletImpl extends ServerResourceImpl implements Saflet {
   /**
-   * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCode()
-   * @generated
-   * @ordered
-   */
+	 * @see #getCode()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String CODE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getCode() <em>Code</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getCode() <em>Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCode()
-   * @generated
-   * @ordered
-   */
+	 * @see #getCode()
+	 * @generated
+	 * @ordered
+	 */
   protected String code = CODE_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected SafletImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ConfigPackage.Literals.SAFLET;
-  }
+		return ConfigPackage.Literals.SAFLET;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getCode() {
-    return code;
-  }
+		return code;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setCode(String newCode) {
-    String oldCode = code;
-    code = newCode;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.SAFLET__CODE, oldCode, code));
-  }
+		String oldCode = code;
+		code = newCode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.SAFLET__CODE, oldCode, code));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public SafletProject getProject() {
-    if (eContainerFeatureID != ConfigPackage.SAFLET__PROJECT) return null;
-    return (SafletProject)eContainer();
-  }
+		if (eContainerFeatureID() != ConfigPackage.SAFLET__PROJECT) return null;
+		return (SafletProject)eContainer();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetProject(SafletProject newProject, NotificationChain msgs) {
-    msgs = eBasicSetContainer((InternalEObject)newProject, ConfigPackage.SAFLET__PROJECT, msgs);
-    return msgs;
-  }
+		msgs = eBasicSetContainer((InternalEObject)newProject, ConfigPackage.SAFLET__PROJECT, msgs);
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setProject(SafletProject newProject) {
-    if (newProject != eInternalContainer() || (eContainerFeatureID != ConfigPackage.SAFLET__PROJECT && newProject != null)) {
-      if (EcoreUtil.isAncestor(this, newProject))
-        throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-      NotificationChain msgs = null;
-      if (eInternalContainer() != null)
-        msgs = eBasicRemoveFromContainer(msgs);
-      if (newProject != null)
-        msgs = ((InternalEObject)newProject).eInverseAdd(this, ConfigPackage.SAFLET_PROJECT__SAFLETS, SafletProject.class, msgs);
-      msgs = basicSetProject(newProject, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.SAFLET__PROJECT, newProject, newProject));
-  }
+		if (newProject != eInternalContainer() || (eContainerFeatureID() != ConfigPackage.SAFLET__PROJECT && newProject != null)) {
+			if (EcoreUtil.isAncestor(this, newProject))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newProject != null)
+				msgs = ((InternalEObject)newProject).eInverseAdd(this, ConfigPackage.SAFLET_PROJECT__SAFLETS, SafletProject.class, msgs);
+			msgs = basicSetProject(newProject, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.SAFLET__PROJECT, newProject, newProject));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ConfigPackage.SAFLET__PROJECT:
-        if (eInternalContainer() != null)
-          msgs = eBasicRemoveFromContainer(msgs);
-        return basicSetProject((SafletProject)otherEnd, msgs);
-    }
-    return super.eInverseAdd(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ConfigPackage.SAFLET__PROJECT:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetProject((SafletProject)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ConfigPackage.SAFLET__PROJECT:
-        return basicSetProject(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ConfigPackage.SAFLET__PROJECT:
+				return basicSetProject(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-    switch (eContainerFeatureID) {
-      case ConfigPackage.SAFLET__PROJECT:
-        return eInternalContainer().eInverseRemove(this, ConfigPackage.SAFLET_PROJECT__SAFLETS, SafletProject.class, msgs);
-    }
-    return super.eBasicRemoveFromContainerFeature(msgs);
-  }
+		switch (eContainerFeatureID()) {
+			case ConfigPackage.SAFLET__PROJECT:
+				return eInternalContainer().eInverseRemove(this, ConfigPackage.SAFLET_PROJECT__SAFLETS, SafletProject.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ConfigPackage.SAFLET__CODE:
-        return getCode();
-      case ConfigPackage.SAFLET__PROJECT:
-        return getProject();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ConfigPackage.SAFLET__CODE:
+				return getCode();
+			case ConfigPackage.SAFLET__PROJECT:
+				return getProject();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ConfigPackage.SAFLET__CODE:
-        setCode((String)newValue);
-        return;
-      case ConfigPackage.SAFLET__PROJECT:
-        setProject((SafletProject)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ConfigPackage.SAFLET__CODE:
+				setCode((String)newValue);
+				return;
+			case ConfigPackage.SAFLET__PROJECT:
+				setProject((SafletProject)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ConfigPackage.SAFLET__CODE:
-        setCode(CODE_EDEFAULT);
-        return;
-      case ConfigPackage.SAFLET__PROJECT:
-        setProject((SafletProject)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ConfigPackage.SAFLET__CODE:
+				setCode(CODE_EDEFAULT);
+				return;
+			case ConfigPackage.SAFLET__PROJECT:
+				setProject((SafletProject)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ConfigPackage.SAFLET__CODE:
-        return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
-      case ConfigPackage.SAFLET__PROJECT:
-        return getProject() != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ConfigPackage.SAFLET__CODE:
+				return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
+			case ConfigPackage.SAFLET__PROJECT:
+				return getProject() != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (code: ");
-    result.append(code);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (code: ");
+		result.append(code);
+		result.append(')');
+		return result.toString();
+	}
 
 } //SafletImpl

@@ -53,817 +53,817 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class AsteriskServerImpl extends ServerResourceImpl implements AsteriskServer {
   /**
-   * The default value of the '{@link #getHostname() <em>Hostname</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getHostname() <em>Hostname</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getHostname()
-   * @generated
-   * @ordered
-   */
+	 * @see #getHostname()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String HOSTNAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getHostname() <em>Hostname</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getHostname() <em>Hostname</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getHostname()
-   * @generated
-   * @ordered
-   */
+	 * @see #getHostname()
+	 * @generated
+	 * @ordered
+	 */
   protected String hostname = HOSTNAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getManagerName() <em>Manager Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getManagerName() <em>Manager Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getManagerName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getManagerName()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String MANAGER_NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getManagerName() <em>Manager Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getManagerName() <em>Manager Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getManagerName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getManagerName()
+	 * @generated
+	 * @ordered
+	 */
   protected String managerName = MANAGER_NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getManagerPassword() <em>Manager Password</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getManagerPassword() <em>Manager Password</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getManagerPassword()
-   * @generated
-   * @ordered
-   */
+	 * @see #getManagerPassword()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String MANAGER_PASSWORD_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getManagerPassword() <em>Manager Password</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getManagerPassword() <em>Manager Password</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getManagerPassword()
-   * @generated
-   * @ordered
-   */
+	 * @see #getManagerPassword()
+	 * @generated
+	 * @ordered
+	 */
   protected String managerPassword = MANAGER_PASSWORD_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getManagerPort() <em>Manager Port</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getManagerPort() <em>Manager Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getManagerPort()
-   * @generated
-   * @ordered
-   */
+	 * @see #getManagerPort()
+	 * @generated
+	 * @ordered
+	 */
   protected static final int MANAGER_PORT_EDEFAULT = 5038;
 
   /**
-   * The cached value of the '{@link #getManagerPort() <em>Manager Port</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getManagerPort() <em>Manager Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getManagerPort()
-   * @generated
-   * @ordered
-   */
+	 * @see #getManagerPort()
+	 * @generated
+	 * @ordered
+	 */
   protected int managerPort = MANAGER_PORT_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getSftpUser() <em>Sftp User</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getSftpUser() <em>Sftp User</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSftpUser()
-   * @generated
-   * @ordered
-   */
+	 * @see #getSftpUser()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String SFTP_USER_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getSftpUser() <em>Sftp User</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSftpUser() <em>Sftp User</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSftpUser()
-   * @generated
-   * @ordered
-   */
+	 * @see #getSftpUser()
+	 * @generated
+	 * @ordered
+	 */
   protected String sftpUser = SFTP_USER_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getSftpPassword() <em>Sftp Password</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getSftpPassword() <em>Sftp Password</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSftpPassword()
-   * @generated
-   * @ordered
-   */
+	 * @see #getSftpPassword()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String SFTP_PASSWORD_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getSftpPassword() <em>Sftp Password</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSftpPassword() <em>Sftp Password</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSftpPassword()
-   * @generated
-   * @ordered
-   */
+	 * @see #getSftpPassword()
+	 * @generated
+	 * @ordered
+	 */
   protected String sftpPassword = SFTP_PASSWORD_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getSftpPort() <em>Sftp Port</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getSftpPort() <em>Sftp Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSftpPort()
-   * @generated
-   * @ordered
-   */
+	 * @see #getSftpPort()
+	 * @generated
+	 * @ordered
+	 */
   protected static final int SFTP_PORT_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getSftpPort() <em>Sftp Port</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSftpPort() <em>Sftp Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSftpPort()
-   * @generated
-   * @ordered
-   */
+	 * @see #getSftpPort()
+	 * @generated
+	 * @ordered
+	 */
   protected int sftpPort = SFTP_PORT_EDEFAULT;
 
   /**
-   * The default value of the '{@link #isRunning() <em>Running</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #isRunning() <em>Running</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isRunning()
-   * @generated
-   * @ordered
-   */
+	 * @see #isRunning()
+	 * @generated
+	 * @ordered
+	 */
   protected static final boolean RUNNING_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isRunning() <em>Running</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #isRunning() <em>Running</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isRunning()
-   * @generated
-   * @ordered
-   */
+	 * @see #isRunning()
+	 * @generated
+	 * @ordered
+	 */
   protected boolean running = RUNNING_EDEFAULT;
 
   /**
-   * The default value of the '{@link #isActive() <em>Active</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #isActive() <em>Active</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isActive()
-   * @generated
-   * @ordered
-   */
+	 * @see #isActive()
+	 * @generated
+	 * @ordered
+	 */
   protected static final boolean ACTIVE_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isActive() <em>Active</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #isActive() <em>Active</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isActive()
-   * @generated
-   * @ordered
-   */
+	 * @see #isActive()
+	 * @generated
+	 * @ordered
+	 */
   protected boolean active = ACTIVE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #isPrivate() <em>Private</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #isPrivate() <em>Private</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isPrivate()
-   * @generated
-   * @ordered
-   */
+	 * @see #isPrivate()
+	 * @generated
+	 * @ordered
+	 */
   protected static final boolean PRIVATE_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isPrivate() <em>Private</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #isPrivate() <em>Private</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isPrivate()
-   * @generated
-   * @ordered
-   */
+	 * @see #isPrivate()
+	 * @generated
+	 * @ordered
+	 */
   protected boolean private_ = PRIVATE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getPromptDirectory() <em>Prompt Directory</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getPromptDirectory() <em>Prompt Directory</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPromptDirectory()
-   * @generated
-   * @ordered
-   */
+	 * @see #getPromptDirectory()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String PROMPT_DIRECTORY_EDEFAULT = "/var/lib/asterisk/sounds/";
 
   /**
-   * The cached value of the '{@link #getPromptDirectory() <em>Prompt Directory</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getPromptDirectory() <em>Prompt Directory</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPromptDirectory()
-   * @generated
-   * @ordered
-   */
+	 * @see #getPromptDirectory()
+	 * @generated
+	 * @ordered
+	 */
   protected String promptDirectory = PROMPT_DIRECTORY_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getAsteriskVersion() <em>Asterisk Version</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getAsteriskVersion() <em>Asterisk Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAsteriskVersion()
-   * @generated
-   * @ordered
-   */
+	 * @see #getAsteriskVersion()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String ASTERISK_VERSION_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getAsteriskVersion() <em>Asterisk Version</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getAsteriskVersion() <em>Asterisk Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAsteriskVersion()
-   * @generated
-   * @ordered
-   */
+	 * @see #getAsteriskVersion()
+	 * @generated
+	 * @ordered
+	 */
   protected String asteriskVersion = ASTERISK_VERSION_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected AsteriskServerImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ConfigPackage.Literals.ASTERISK_SERVER;
-  }
+		return ConfigPackage.Literals.ASTERISK_SERVER;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getHostname() {
-    return hostname;
-  }
+		return hostname;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setHostname(String newHostname) {
-    String oldHostname = hostname;
-    hostname = newHostname;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.ASTERISK_SERVER__HOSTNAME, oldHostname, hostname));
-  }
+		String oldHostname = hostname;
+		hostname = newHostname;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.ASTERISK_SERVER__HOSTNAME, oldHostname, hostname));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getManagerName() {
-    return managerName;
-  }
+		return managerName;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setManagerName(String newManagerName) {
-    String oldManagerName = managerName;
-    managerName = newManagerName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.ASTERISK_SERVER__MANAGER_NAME, oldManagerName, managerName));
-  }
+		String oldManagerName = managerName;
+		managerName = newManagerName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.ASTERISK_SERVER__MANAGER_NAME, oldManagerName, managerName));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getManagerPassword() {
-    return managerPassword;
-  }
+		return managerPassword;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setManagerPassword(String newManagerPassword) {
-    String oldManagerPassword = managerPassword;
-    managerPassword = newManagerPassword;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.ASTERISK_SERVER__MANAGER_PASSWORD, oldManagerPassword, managerPassword));
-  }
+		String oldManagerPassword = managerPassword;
+		managerPassword = newManagerPassword;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.ASTERISK_SERVER__MANAGER_PASSWORD, oldManagerPassword, managerPassword));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public int getManagerPort() {
-    return managerPort;
-  }
+		return managerPort;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setManagerPort(int newManagerPort) {
-    int oldManagerPort = managerPort;
-    managerPort = newManagerPort;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.ASTERISK_SERVER__MANAGER_PORT, oldManagerPort, managerPort));
-  }
+		int oldManagerPort = managerPort;
+		managerPort = newManagerPort;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.ASTERISK_SERVER__MANAGER_PORT, oldManagerPort, managerPort));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getSftpUser() {
-    return sftpUser;
-  }
+		return sftpUser;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setSftpUser(String newSftpUser) {
-    String oldSftpUser = sftpUser;
-    sftpUser = newSftpUser;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.ASTERISK_SERVER__SFTP_USER, oldSftpUser, sftpUser));
-  }
+		String oldSftpUser = sftpUser;
+		sftpUser = newSftpUser;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.ASTERISK_SERVER__SFTP_USER, oldSftpUser, sftpUser));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getSftpPassword() {
-    return sftpPassword;
-  }
+		return sftpPassword;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setSftpPassword(String newSftpPassword) {
-    String oldSftpPassword = sftpPassword;
-    sftpPassword = newSftpPassword;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.ASTERISK_SERVER__SFTP_PASSWORD, oldSftpPassword, sftpPassword));
-  }
+		String oldSftpPassword = sftpPassword;
+		sftpPassword = newSftpPassword;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.ASTERISK_SERVER__SFTP_PASSWORD, oldSftpPassword, sftpPassword));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public int getSftpPort() {
-    return sftpPort;
-  }
+		return sftpPort;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setSftpPort(int newSftpPort) {
-    int oldSftpPort = sftpPort;
-    sftpPort = newSftpPort;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.ASTERISK_SERVER__SFTP_PORT, oldSftpPort, sftpPort));
-  }
+		int oldSftpPort = sftpPort;
+		sftpPort = newSftpPort;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.ASTERISK_SERVER__SFTP_PORT, oldSftpPort, sftpPort));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public SafiServer getSafiServer() {
-    if (eContainerFeatureID != ConfigPackage.ASTERISK_SERVER__SAFI_SERVER) return null;
-    return (SafiServer)eContainer();
-  }
+		if (eContainerFeatureID() != ConfigPackage.ASTERISK_SERVER__SAFI_SERVER) return null;
+		return (SafiServer)eContainer();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetSafiServer(SafiServer newSafiServer, NotificationChain msgs) {
-    msgs = eBasicSetContainer((InternalEObject)newSafiServer, ConfigPackage.ASTERISK_SERVER__SAFI_SERVER, msgs);
-    return msgs;
-  }
+		msgs = eBasicSetContainer((InternalEObject)newSafiServer, ConfigPackage.ASTERISK_SERVER__SAFI_SERVER, msgs);
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setSafiServer(SafiServer newSafiServer) {
-    if (newSafiServer != eInternalContainer() || (eContainerFeatureID != ConfigPackage.ASTERISK_SERVER__SAFI_SERVER && newSafiServer != null)) {
-      if (EcoreUtil.isAncestor(this, newSafiServer))
-        throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-      NotificationChain msgs = null;
-      if (eInternalContainer() != null)
-        msgs = eBasicRemoveFromContainer(msgs);
-      if (newSafiServer != null)
-        msgs = ((InternalEObject)newSafiServer).eInverseAdd(this, ConfigPackage.SAFI_SERVER__ASTERISK_SERVERS, SafiServer.class, msgs);
-      msgs = basicSetSafiServer(newSafiServer, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.ASTERISK_SERVER__SAFI_SERVER, newSafiServer, newSafiServer));
-  }
+		if (newSafiServer != eInternalContainer() || (eContainerFeatureID() != ConfigPackage.ASTERISK_SERVER__SAFI_SERVER && newSafiServer != null)) {
+			if (EcoreUtil.isAncestor(this, newSafiServer))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newSafiServer != null)
+				msgs = ((InternalEObject)newSafiServer).eInverseAdd(this, ConfigPackage.SAFI_SERVER__ASTERISK_SERVERS, SafiServer.class, msgs);
+			msgs = basicSetSafiServer(newSafiServer, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.ASTERISK_SERVER__SAFI_SERVER, newSafiServer, newSafiServer));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public boolean isRunning() {
-    return running;
-  }
+		return running;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setRunning(boolean newRunning) {
-    boolean oldRunning = running;
-    running = newRunning;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.ASTERISK_SERVER__RUNNING, oldRunning, running));
-  }
+		boolean oldRunning = running;
+		running = newRunning;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.ASTERISK_SERVER__RUNNING, oldRunning, running));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public boolean isActive() {
-    return active;
-  }
+		return active;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setActive(boolean newActive) {
-    boolean oldActive = active;
-    active = newActive;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.ASTERISK_SERVER__ACTIVE, oldActive, active));
-  }
+		boolean oldActive = active;
+		active = newActive;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.ASTERISK_SERVER__ACTIVE, oldActive, active));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public boolean isPrivate() {
-    return private_;
-  }
+		return private_;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setPrivate(boolean newPrivate) {
-    boolean oldPrivate = private_;
-    private_ = newPrivate;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.ASTERISK_SERVER__PRIVATE, oldPrivate, private_));
-  }
+		boolean oldPrivate = private_;
+		private_ = newPrivate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.ASTERISK_SERVER__PRIVATE, oldPrivate, private_));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getPromptDirectory() {
-    return promptDirectory;
-  }
+		return promptDirectory;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setPromptDirectory(String newPromptDirectory) {
-    String oldPromptDirectory = promptDirectory;
-    promptDirectory = newPromptDirectory;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.ASTERISK_SERVER__PROMPT_DIRECTORY, oldPromptDirectory, promptDirectory));
-  }
+		String oldPromptDirectory = promptDirectory;
+		promptDirectory = newPromptDirectory;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.ASTERISK_SERVER__PROMPT_DIRECTORY, oldPromptDirectory, promptDirectory));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getAsteriskVersion() {
-    return asteriskVersion;
-  }
+		return asteriskVersion;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setAsteriskVersion(String newAsteriskVersion) {
-    String oldAsteriskVersion = asteriskVersion;
-    asteriskVersion = newAsteriskVersion;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.ASTERISK_SERVER__ASTERISK_VERSION, oldAsteriskVersion, asteriskVersion));
-  }
+		String oldAsteriskVersion = asteriskVersion;
+		asteriskVersion = newAsteriskVersion;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.ASTERISK_SERVER__ASTERISK_VERSION, oldAsteriskVersion, asteriskVersion));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ConfigPackage.ASTERISK_SERVER__SAFI_SERVER:
-        if (eInternalContainer() != null)
-          msgs = eBasicRemoveFromContainer(msgs);
-        return basicSetSafiServer((SafiServer)otherEnd, msgs);
-    }
-    return super.eInverseAdd(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ConfigPackage.ASTERISK_SERVER__SAFI_SERVER:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetSafiServer((SafiServer)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ConfigPackage.ASTERISK_SERVER__SAFI_SERVER:
-        return basicSetSafiServer(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ConfigPackage.ASTERISK_SERVER__SAFI_SERVER:
+				return basicSetSafiServer(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-    switch (eContainerFeatureID) {
-      case ConfigPackage.ASTERISK_SERVER__SAFI_SERVER:
-        return eInternalContainer().eInverseRemove(this, ConfigPackage.SAFI_SERVER__ASTERISK_SERVERS, SafiServer.class, msgs);
-    }
-    return super.eBasicRemoveFromContainerFeature(msgs);
-  }
+		switch (eContainerFeatureID()) {
+			case ConfigPackage.ASTERISK_SERVER__SAFI_SERVER:
+				return eInternalContainer().eInverseRemove(this, ConfigPackage.SAFI_SERVER__ASTERISK_SERVERS, SafiServer.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ConfigPackage.ASTERISK_SERVER__HOSTNAME:
-        return getHostname();
-      case ConfigPackage.ASTERISK_SERVER__MANAGER_NAME:
-        return getManagerName();
-      case ConfigPackage.ASTERISK_SERVER__MANAGER_PASSWORD:
-        return getManagerPassword();
-      case ConfigPackage.ASTERISK_SERVER__MANAGER_PORT:
-        return new Integer(getManagerPort());
-      case ConfigPackage.ASTERISK_SERVER__SFTP_USER:
-        return getSftpUser();
-      case ConfigPackage.ASTERISK_SERVER__SFTP_PASSWORD:
-        return getSftpPassword();
-      case ConfigPackage.ASTERISK_SERVER__SFTP_PORT:
-        return new Integer(getSftpPort());
-      case ConfigPackage.ASTERISK_SERVER__SAFI_SERVER:
-        return getSafiServer();
-      case ConfigPackage.ASTERISK_SERVER__RUNNING:
-        return isRunning() ? Boolean.TRUE : Boolean.FALSE;
-      case ConfigPackage.ASTERISK_SERVER__ACTIVE:
-        return isActive() ? Boolean.TRUE : Boolean.FALSE;
-      case ConfigPackage.ASTERISK_SERVER__PRIVATE:
-        return isPrivate() ? Boolean.TRUE : Boolean.FALSE;
-      case ConfigPackage.ASTERISK_SERVER__PROMPT_DIRECTORY:
-        return getPromptDirectory();
-      case ConfigPackage.ASTERISK_SERVER__ASTERISK_VERSION:
-        return getAsteriskVersion();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ConfigPackage.ASTERISK_SERVER__HOSTNAME:
+				return getHostname();
+			case ConfigPackage.ASTERISK_SERVER__MANAGER_NAME:
+				return getManagerName();
+			case ConfigPackage.ASTERISK_SERVER__MANAGER_PASSWORD:
+				return getManagerPassword();
+			case ConfigPackage.ASTERISK_SERVER__MANAGER_PORT:
+				return getManagerPort();
+			case ConfigPackage.ASTERISK_SERVER__SFTP_USER:
+				return getSftpUser();
+			case ConfigPackage.ASTERISK_SERVER__SFTP_PASSWORD:
+				return getSftpPassword();
+			case ConfigPackage.ASTERISK_SERVER__SFTP_PORT:
+				return getSftpPort();
+			case ConfigPackage.ASTERISK_SERVER__SAFI_SERVER:
+				return getSafiServer();
+			case ConfigPackage.ASTERISK_SERVER__RUNNING:
+				return isRunning();
+			case ConfigPackage.ASTERISK_SERVER__ACTIVE:
+				return isActive();
+			case ConfigPackage.ASTERISK_SERVER__PRIVATE:
+				return isPrivate();
+			case ConfigPackage.ASTERISK_SERVER__PROMPT_DIRECTORY:
+				return getPromptDirectory();
+			case ConfigPackage.ASTERISK_SERVER__ASTERISK_VERSION:
+				return getAsteriskVersion();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ConfigPackage.ASTERISK_SERVER__HOSTNAME:
-        setHostname((String)newValue);
-        return;
-      case ConfigPackage.ASTERISK_SERVER__MANAGER_NAME:
-        setManagerName((String)newValue);
-        return;
-      case ConfigPackage.ASTERISK_SERVER__MANAGER_PASSWORD:
-        setManagerPassword((String)newValue);
-        return;
-      case ConfigPackage.ASTERISK_SERVER__MANAGER_PORT:
-        setManagerPort(((Integer)newValue).intValue());
-        return;
-      case ConfigPackage.ASTERISK_SERVER__SFTP_USER:
-        setSftpUser((String)newValue);
-        return;
-      case ConfigPackage.ASTERISK_SERVER__SFTP_PASSWORD:
-        setSftpPassword((String)newValue);
-        return;
-      case ConfigPackage.ASTERISK_SERVER__SFTP_PORT:
-        setSftpPort(((Integer)newValue).intValue());
-        return;
-      case ConfigPackage.ASTERISK_SERVER__SAFI_SERVER:
-        setSafiServer((SafiServer)newValue);
-        return;
-      case ConfigPackage.ASTERISK_SERVER__RUNNING:
-        setRunning(((Boolean)newValue).booleanValue());
-        return;
-      case ConfigPackage.ASTERISK_SERVER__ACTIVE:
-        setActive(((Boolean)newValue).booleanValue());
-        return;
-      case ConfigPackage.ASTERISK_SERVER__PRIVATE:
-        setPrivate(((Boolean)newValue).booleanValue());
-        return;
-      case ConfigPackage.ASTERISK_SERVER__PROMPT_DIRECTORY:
-        setPromptDirectory((String)newValue);
-        return;
-      case ConfigPackage.ASTERISK_SERVER__ASTERISK_VERSION:
-        setAsteriskVersion((String)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ConfigPackage.ASTERISK_SERVER__HOSTNAME:
+				setHostname((String)newValue);
+				return;
+			case ConfigPackage.ASTERISK_SERVER__MANAGER_NAME:
+				setManagerName((String)newValue);
+				return;
+			case ConfigPackage.ASTERISK_SERVER__MANAGER_PASSWORD:
+				setManagerPassword((String)newValue);
+				return;
+			case ConfigPackage.ASTERISK_SERVER__MANAGER_PORT:
+				setManagerPort((Integer)newValue);
+				return;
+			case ConfigPackage.ASTERISK_SERVER__SFTP_USER:
+				setSftpUser((String)newValue);
+				return;
+			case ConfigPackage.ASTERISK_SERVER__SFTP_PASSWORD:
+				setSftpPassword((String)newValue);
+				return;
+			case ConfigPackage.ASTERISK_SERVER__SFTP_PORT:
+				setSftpPort((Integer)newValue);
+				return;
+			case ConfigPackage.ASTERISK_SERVER__SAFI_SERVER:
+				setSafiServer((SafiServer)newValue);
+				return;
+			case ConfigPackage.ASTERISK_SERVER__RUNNING:
+				setRunning((Boolean)newValue);
+				return;
+			case ConfigPackage.ASTERISK_SERVER__ACTIVE:
+				setActive((Boolean)newValue);
+				return;
+			case ConfigPackage.ASTERISK_SERVER__PRIVATE:
+				setPrivate((Boolean)newValue);
+				return;
+			case ConfigPackage.ASTERISK_SERVER__PROMPT_DIRECTORY:
+				setPromptDirectory((String)newValue);
+				return;
+			case ConfigPackage.ASTERISK_SERVER__ASTERISK_VERSION:
+				setAsteriskVersion((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ConfigPackage.ASTERISK_SERVER__HOSTNAME:
-        setHostname(HOSTNAME_EDEFAULT);
-        return;
-      case ConfigPackage.ASTERISK_SERVER__MANAGER_NAME:
-        setManagerName(MANAGER_NAME_EDEFAULT);
-        return;
-      case ConfigPackage.ASTERISK_SERVER__MANAGER_PASSWORD:
-        setManagerPassword(MANAGER_PASSWORD_EDEFAULT);
-        return;
-      case ConfigPackage.ASTERISK_SERVER__MANAGER_PORT:
-        setManagerPort(MANAGER_PORT_EDEFAULT);
-        return;
-      case ConfigPackage.ASTERISK_SERVER__SFTP_USER:
-        setSftpUser(SFTP_USER_EDEFAULT);
-        return;
-      case ConfigPackage.ASTERISK_SERVER__SFTP_PASSWORD:
-        setSftpPassword(SFTP_PASSWORD_EDEFAULT);
-        return;
-      case ConfigPackage.ASTERISK_SERVER__SFTP_PORT:
-        setSftpPort(SFTP_PORT_EDEFAULT);
-        return;
-      case ConfigPackage.ASTERISK_SERVER__SAFI_SERVER:
-        setSafiServer((SafiServer)null);
-        return;
-      case ConfigPackage.ASTERISK_SERVER__RUNNING:
-        setRunning(RUNNING_EDEFAULT);
-        return;
-      case ConfigPackage.ASTERISK_SERVER__ACTIVE:
-        setActive(ACTIVE_EDEFAULT);
-        return;
-      case ConfigPackage.ASTERISK_SERVER__PRIVATE:
-        setPrivate(PRIVATE_EDEFAULT);
-        return;
-      case ConfigPackage.ASTERISK_SERVER__PROMPT_DIRECTORY:
-        setPromptDirectory(PROMPT_DIRECTORY_EDEFAULT);
-        return;
-      case ConfigPackage.ASTERISK_SERVER__ASTERISK_VERSION:
-        setAsteriskVersion(ASTERISK_VERSION_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ConfigPackage.ASTERISK_SERVER__HOSTNAME:
+				setHostname(HOSTNAME_EDEFAULT);
+				return;
+			case ConfigPackage.ASTERISK_SERVER__MANAGER_NAME:
+				setManagerName(MANAGER_NAME_EDEFAULT);
+				return;
+			case ConfigPackage.ASTERISK_SERVER__MANAGER_PASSWORD:
+				setManagerPassword(MANAGER_PASSWORD_EDEFAULT);
+				return;
+			case ConfigPackage.ASTERISK_SERVER__MANAGER_PORT:
+				setManagerPort(MANAGER_PORT_EDEFAULT);
+				return;
+			case ConfigPackage.ASTERISK_SERVER__SFTP_USER:
+				setSftpUser(SFTP_USER_EDEFAULT);
+				return;
+			case ConfigPackage.ASTERISK_SERVER__SFTP_PASSWORD:
+				setSftpPassword(SFTP_PASSWORD_EDEFAULT);
+				return;
+			case ConfigPackage.ASTERISK_SERVER__SFTP_PORT:
+				setSftpPort(SFTP_PORT_EDEFAULT);
+				return;
+			case ConfigPackage.ASTERISK_SERVER__SAFI_SERVER:
+				setSafiServer((SafiServer)null);
+				return;
+			case ConfigPackage.ASTERISK_SERVER__RUNNING:
+				setRunning(RUNNING_EDEFAULT);
+				return;
+			case ConfigPackage.ASTERISK_SERVER__ACTIVE:
+				setActive(ACTIVE_EDEFAULT);
+				return;
+			case ConfigPackage.ASTERISK_SERVER__PRIVATE:
+				setPrivate(PRIVATE_EDEFAULT);
+				return;
+			case ConfigPackage.ASTERISK_SERVER__PROMPT_DIRECTORY:
+				setPromptDirectory(PROMPT_DIRECTORY_EDEFAULT);
+				return;
+			case ConfigPackage.ASTERISK_SERVER__ASTERISK_VERSION:
+				setAsteriskVersion(ASTERISK_VERSION_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ConfigPackage.ASTERISK_SERVER__HOSTNAME:
-        return HOSTNAME_EDEFAULT == null ? hostname != null : !HOSTNAME_EDEFAULT.equals(hostname);
-      case ConfigPackage.ASTERISK_SERVER__MANAGER_NAME:
-        return MANAGER_NAME_EDEFAULT == null ? managerName != null : !MANAGER_NAME_EDEFAULT.equals(managerName);
-      case ConfigPackage.ASTERISK_SERVER__MANAGER_PASSWORD:
-        return MANAGER_PASSWORD_EDEFAULT == null ? managerPassword != null : !MANAGER_PASSWORD_EDEFAULT.equals(managerPassword);
-      case ConfigPackage.ASTERISK_SERVER__MANAGER_PORT:
-        return managerPort != MANAGER_PORT_EDEFAULT;
-      case ConfigPackage.ASTERISK_SERVER__SFTP_USER:
-        return SFTP_USER_EDEFAULT == null ? sftpUser != null : !SFTP_USER_EDEFAULT.equals(sftpUser);
-      case ConfigPackage.ASTERISK_SERVER__SFTP_PASSWORD:
-        return SFTP_PASSWORD_EDEFAULT == null ? sftpPassword != null : !SFTP_PASSWORD_EDEFAULT.equals(sftpPassword);
-      case ConfigPackage.ASTERISK_SERVER__SFTP_PORT:
-        return sftpPort != SFTP_PORT_EDEFAULT;
-      case ConfigPackage.ASTERISK_SERVER__SAFI_SERVER:
-        return getSafiServer() != null;
-      case ConfigPackage.ASTERISK_SERVER__RUNNING:
-        return running != RUNNING_EDEFAULT;
-      case ConfigPackage.ASTERISK_SERVER__ACTIVE:
-        return active != ACTIVE_EDEFAULT;
-      case ConfigPackage.ASTERISK_SERVER__PRIVATE:
-        return private_ != PRIVATE_EDEFAULT;
-      case ConfigPackage.ASTERISK_SERVER__PROMPT_DIRECTORY:
-        return PROMPT_DIRECTORY_EDEFAULT == null ? promptDirectory != null : !PROMPT_DIRECTORY_EDEFAULT.equals(promptDirectory);
-      case ConfigPackage.ASTERISK_SERVER__ASTERISK_VERSION:
-        return ASTERISK_VERSION_EDEFAULT == null ? asteriskVersion != null : !ASTERISK_VERSION_EDEFAULT.equals(asteriskVersion);
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ConfigPackage.ASTERISK_SERVER__HOSTNAME:
+				return HOSTNAME_EDEFAULT == null ? hostname != null : !HOSTNAME_EDEFAULT.equals(hostname);
+			case ConfigPackage.ASTERISK_SERVER__MANAGER_NAME:
+				return MANAGER_NAME_EDEFAULT == null ? managerName != null : !MANAGER_NAME_EDEFAULT.equals(managerName);
+			case ConfigPackage.ASTERISK_SERVER__MANAGER_PASSWORD:
+				return MANAGER_PASSWORD_EDEFAULT == null ? managerPassword != null : !MANAGER_PASSWORD_EDEFAULT.equals(managerPassword);
+			case ConfigPackage.ASTERISK_SERVER__MANAGER_PORT:
+				return managerPort != MANAGER_PORT_EDEFAULT;
+			case ConfigPackage.ASTERISK_SERVER__SFTP_USER:
+				return SFTP_USER_EDEFAULT == null ? sftpUser != null : !SFTP_USER_EDEFAULT.equals(sftpUser);
+			case ConfigPackage.ASTERISK_SERVER__SFTP_PASSWORD:
+				return SFTP_PASSWORD_EDEFAULT == null ? sftpPassword != null : !SFTP_PASSWORD_EDEFAULT.equals(sftpPassword);
+			case ConfigPackage.ASTERISK_SERVER__SFTP_PORT:
+				return sftpPort != SFTP_PORT_EDEFAULT;
+			case ConfigPackage.ASTERISK_SERVER__SAFI_SERVER:
+				return getSafiServer() != null;
+			case ConfigPackage.ASTERISK_SERVER__RUNNING:
+				return running != RUNNING_EDEFAULT;
+			case ConfigPackage.ASTERISK_SERVER__ACTIVE:
+				return active != ACTIVE_EDEFAULT;
+			case ConfigPackage.ASTERISK_SERVER__PRIVATE:
+				return private_ != PRIVATE_EDEFAULT;
+			case ConfigPackage.ASTERISK_SERVER__PROMPT_DIRECTORY:
+				return PROMPT_DIRECTORY_EDEFAULT == null ? promptDirectory != null : !PROMPT_DIRECTORY_EDEFAULT.equals(promptDirectory);
+			case ConfigPackage.ASTERISK_SERVER__ASTERISK_VERSION:
+				return ASTERISK_VERSION_EDEFAULT == null ? asteriskVersion != null : !ASTERISK_VERSION_EDEFAULT.equals(asteriskVersion);
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (hostname: ");
-    result.append(hostname);
-    result.append(", managerName: ");
-    result.append(managerName);
-    result.append(", managerPassword: ");
-    result.append(managerPassword);
-    result.append(", managerPort: ");
-    result.append(managerPort);
-    result.append(", sftpUser: ");
-    result.append(sftpUser);
-    result.append(", sftpPassword: ");
-    result.append(sftpPassword);
-    result.append(", sftpPort: ");
-    result.append(sftpPort);
-    result.append(", running: ");
-    result.append(running);
-    result.append(", active: ");
-    result.append(active);
-    result.append(", private: ");
-    result.append(private_);
-    result.append(", promptDirectory: ");
-    result.append(promptDirectory);
-    result.append(", asteriskVersion: ");
-    result.append(asteriskVersion);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (hostname: ");
+		result.append(hostname);
+		result.append(", managerName: ");
+		result.append(managerName);
+		result.append(", managerPassword: ");
+		result.append(managerPassword);
+		result.append(", managerPort: ");
+		result.append(managerPort);
+		result.append(", sftpUser: ");
+		result.append(sftpUser);
+		result.append(", sftpPassword: ");
+		result.append(sftpPassword);
+		result.append(", sftpPort: ");
+		result.append(sftpPort);
+		result.append(", running: ");
+		result.append(running);
+		result.append(", active: ");
+		result.append(active);
+		result.append(", private: ");
+		result.append(private_);
+		result.append(", promptDirectory: ");
+		result.append(promptDirectory);
+		result.append(", asteriskVersion: ");
+		result.append(asteriskVersion);
+		result.append(')');
+		return result.toString();
+	}
 
 } //AsteriskServerImpl

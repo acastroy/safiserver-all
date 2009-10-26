@@ -26,22 +26,22 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class EntitlementImpl extends ServerResourceImpl implements Entitlement {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected EntitlementImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ConfigPackage.Literals.ENTITLEMENT;
-  }
+		return ConfigPackage.Literals.ENTITLEMENT;
+	}
 
 } //EntitlementImpl
