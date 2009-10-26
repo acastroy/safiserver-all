@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="lib" path="log4j-1.2.15.jar" sourcepath="D:/javalib/apache-log4j-1.2.15/src/main/java"/>
+	<classpathentry exported="true" kind="lib" path="commons-beanutils.jar"/>
+	<classpathentry exported="true" kind="lib" path="bin/"/>
+	<classpathentry exported="true" kind="lib" path=".settings/"/>
+	<classpathentry exported="true" kind="lib" path="default_drivers/DB2/db2jcc4.jar"/>
+	<classpathentry exported="true" kind="lib" path="default_drivers/Firebird/jaybird-full-2.1.6.jar"/>
+	<classpathentry exported="true" kind="lib" path="default_drivers/HSQLDB/hsqldb.jar" sourcepath="D:/javalib/hsqldb/src"/>
+	<classpathentry exported="true" kind="lib" path="default_drivers/JTDS/jtds-1.2.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="default_drivers/MySQL/mysql-connector-java-5.1.6-bin.jar"/>
+	<classpathentry exported="true" kind="lib" path="default_drivers/Oracle/ojdbc6.jar"/>
+	<classpathentry exported="true" kind="lib" path="default_drivers/Postgres/postgresql-8.3-603.jdbc4.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
