@@ -1,0 +1,1713 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.safi.workshop.asterisk"
+      label="Workshop Asterisk Feature"
+      version="1.5.0"
+      provider-name="SAFI"
+      plugin="AsteriskSafletDesigner.diagram"
+      os="linux,win32"
+      ws="gtk,motif,win32"
+      nl="en_US"
+      arch="x86">
+
+   <description url="http://www.safisystems.com/">
+      Safi workshop provides graphical solution for Asterisk based
+telephony system.
+   </description>
+
+   <copyright url="http://www.safisystems.com/">
+      Copyright © 2009 Safi Systems, LLC.
+All Rights Reserved.
+   </copyright>
+
+   <license url="http://www.safisystems.com/safiworkshop/license.txt">
+      CAREFULLY READ THE FOLLOWING TERMS AND CONDITIONS BEFORE USING THIS SOFTWARE. BY CLICKING OR OTHERWISE SELECTING  ‘ACCEPT,’ ‘AGREE’ OR A SIMILAR AFFIRMATIVE TERM YOU ARE ACCEPTING THESE TERMS AND CONDITIONS.  IF YOU DO NOT AGREE TO BE BOUND BY THESE TERMS AND CONDITIONS, YOU MUST CLICK OR OTHERWISE SELECT ‘DECLINE’, ‘DISAGREE’ OR A SIMILAR NEGATIVE TERM AND PROMPTLY RETURN THE SOFTWARE TO LICENSOR OR TO THE DISTRIBUTOR OR RESELLER WHO PROVIDED THE SOFTWARE TO YOU.  
+ 
+
+This SOFTWARE PRODUCT is protected by copyright laws and international copyright treaties, as well as other intellectual property laws and treaties. This SOFTWARE PRODUCT is licensed, not sold. 
+
+End User License Agreement 
+
+This End User License Agreement (&quot;EULA&quot;) is a legal agreement between you (either an individual or a single entity) and SAFI SYSTEMS LLC with regard to the copyrighted Software (herein referred to as &quot;SOFTWARE PRODUCT&quot; or &quot;SOFTWARE&quot;) provided with this EULA.   The SOFTWARE PRODUCT includes computer software, the associated media, any printed materials, and any &quot;online&quot; or electronic documentation. Use of any software and related documentation (&quot;Software&quot;) provided to you by SAFI SYSTEMS LLC in whatever form or media, will constitute your acceptance of these terms, unless separate terms are provided by the software supplier, in which case certain additional or different terms may apply. If you do not agree with the terms of this EULA, do not download, install, copy or use the Software. By installing, copying or otherwise using the SOFTWARE PRODUCT, you agree to be bound by the terms of this EULA.  If you do not agree to the terms of this EULA, SAFI SYSTEMS LLC is unwilling to license the SOFTWARE PRODUCT to you.  
+
+1.  Eligible Licensees. This Software is available for license solely to SOFTWARE owners, with no right of duplication or further distribution, licensing, or sub-licensing.  IF YOU DO NOT OWN THE SOFTWARE, THEN DO NOT DOWNLOAD, INSTALL, COPY OR USE THE SOFTWARE.
+
+2.  License Grant.  SAFI SYSTEMS LLC grants to you a personal, non-transferable and non-exclusive right to use the copy of the Software provided with this EULA. You agree you will not copy the Software except as necessary to use it on a single computer. You agree that you may not copy the written materials accompanying the Software. Modifying, translating, renting, copying, transferring or assigning all or part of the Software, or any rights granted hereunder, to any other persons and removing any proprietary notices, labels or marks from the Software is strictly prohibited.  Furthermore, you hereby agree not to create derivative works based on the Software.  You may not transfer this Software. 
+
+3.  Copyright.  The Software is licensed, not sold.  You acknowledge that no title to the intellectual property in the Software is transferred to you. You further acknowledge that title and full ownership rights to the Software will remain the exclusive property of SAFI SYSTEMS LLC and/or its suppliers, and you will not acquire any rights to the Software, except as expressly set forth above. All copies of the Software will contain the same proprietary notices as contained in or on the Software. All title and copyrights in and to the SOFTWARE PRODUCT (including but not limited to any images, photographs, animations, video, audio, music, text and &quot;applets,&quot; incorporated into the SOFTWARE PRODUCT), the accompanying printed materials, and any copies of the SOFTWARE PRODUCT, are owned by SAFI SYSTEMS LLC or its suppliers.  The SOFTWARE PRODUCT is protected by copyright laws and international treaty provisions.  You may not copy the printed materials accompanying the SOFTWARE PRODUCT. 
+ 
+
+4.  Reverse Engineering.  You agree that you will not attempt, and if you are a corporation, you will use your best efforts to prevent your employees and contractors from attempting to reverse compile, modify, translate or disassemble the Software in whole or in part. Any failure to comply with the above or any other terms and conditions contained herein will result in the automatic termination of this license and the reversion of the rights granted hereunder to SAFI SYSTEMS LLC. 
+
+5.  Disclaimer of Warranty. The Software is provided &quot;AS IS&quot; without warranty of any kind. SAFI SYSTEMS LLC and its suppliers disclaim and make no express or implied warranties and specifically disclaim the warranties of merchantability, fitness for a particular purpose and non-infringement of third-party rights. The entire risk as to the quality and performance of the Software is with you. Neither SAFI SYSTEMS LLC, nor its suppliers, warrant that the functions contained in the Software will meet your requirements or that the operation of the Software will be uninterrupted or error-free. SAFI SYSTEMS LLC IS NOT OBLIGATED TO PROVIDE ANY UPDATES TO THE SOFTWARE. 
+
+6.  Limitation of Liability. SAFI SYSTEMS LLC&apos;s entire liability and your exclusive remedy under this EULA shall not exceed the price paid for the Software, if any.  In no event shall SAFI SYSTEMS LLC or its suppliers be liable to you for any consequential, special, incidental or indirect damages of any kind arising out of the use or inability to use the software, even if SAFI SYSTEMS LLC or its supplier has been advised of the possibility of such damages, or any claim by a third party.  
+
+7.  Rental.  You may not loan, rent, or lease the SOFTWARE.   
+
+8.  Upgrades.  If the SOFTWARE is an upgrade from an earlier release or previously released version, you now may use that upgraded product only in accordance with this EULA.  If the SOFTWARE PRODUCT is an upgrade of a software program which you licensed as a single product, the SOFTWARE PRODUCT may be used only as part of that single product package and may not be separated for use on more than one computer. 
+
+9.  OEM Product Support. Product support for the SOFTWARE PRODUCT is provided by SAFI SYSTEMS LLC.  For product support, please contact SAFI SYSTEMS LLC.  Should you have any questions concerning this, please refer to the contact information provided in the documentation. 
+
+10.  No Liability for Consequential Damages.  In no event shall SAFI SYSTEMS LLC or its suppliers be liable for any damages whatsoever (including, without limitation, incidental, direct, indirect special and consequential damages, damages for loss of business profits, business interruption, loss of business information, or other pecuniary loss) arising out of the use or inability to use this the SOFTWARE product, even if SAFI SYSTEMS LLC has been advised of the possibility of such damages.  Because some states/countries do not allow the exclusion or limitation of liability for consequential or incidental damages, the above limitation may not apply to you. 
+
+11.  Indemnification By You.  If you distribute the Software in violation of this Agreement, you agree to indemnify, hold harmless and defend SAFI SYSTEMS LLC and its suppliers from and against any claims or lawsuits, including attorney&apos;s fees that arise or result from the use or distribution of the Software in violation of this Agreement. 
+
+SAFI SYSTEMS LLC
+
+info@safisystems.com
+
+support@safisystems.com
+
+503-715-1127
+   </license>
+
+   <url>
+      <update label="Safi Workshop update" url="http://updates.safisystems.com"/>
+   </url>
+
+   <requires>
+      <import plugin="org.apache.commons.lang" version="2.3.0" match="greaterOrEqual"/>
+      <import plugin="Hibernate30" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="SafiCommons" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.apache.lucene" version="1.9.1" match="compatible"/>
+      <import plugin="javax.xml" version="1.3.4" match="compatible"/>
+      <import plugin="org.apache.xml.resolver" version="1.2.0" match="compatible"/>
+      <import plugin="org.apache.xml.serializer" version="2.7.1" match="compatible"/>
+      <import plugin="org.eclipse.core.variables" version="3.1.0" match="compatible"/>
+      <import plugin="org.eclipse.core.runtime" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.equinox.common" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.equinox.preferences" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.equinox.registry" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.core.runtime" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.text" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.core.filesystem" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.equinox.security" version="1.0.0" match="compatible"/>
+      <import plugin="org.eclipse.equinox.common" version="3.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.equinox.preferences" version="3.2.200" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.osgi" version="3.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.equinox.registry" version="3.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.expressions" version="3.1.0" match="compatible"/>
+      <import plugin="org.eclipse.core.resources" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.osgi" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.core.jobs" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.equinox.registry" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.core.contenttype" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.equinox.app" version="1.0.0" match="compatible"/>
+      <import plugin="org.eclipse.update.configurator" version="3.1.100" match="compatible"/>
+      <import plugin="org.eclipse.equinox.registry" version="3.3.0"/>
+      <import plugin="org.eclipse.swt" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.core.runtime" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.ui" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.common" version="2.4.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.ecore" version="2.4.1" match="compatible"/>
+      <import plugin="org.eclipse.emf.edit" version="2.4.1" match="compatible"/>
+      <import plugin="org.eclipse.ui.views" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.workbench" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.common.ui" version="2.4.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.edit" version="2.3.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.ecore.change" version="2.3.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.validation" version="1.2.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.ecore" version="2.3.0" match="compatible"/>
+      <import plugin="org.eclipse.core.expressions" version="3.2.0" match="compatible"/>
+      <import plugin="com.ibm.icu" version="3.4.3" match="compatible"/>
+      <import plugin="org.eclipse.core.resources" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.core.commands" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.transaction" version="1.2.0" match="compatible"/>
+      <import plugin="org.eclipse.draw2d" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.workbench" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.jface" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.core.commands" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.console" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.jface.text" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.runtime.common.core" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.team.core" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.runtime.common.ui" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.runtime.common.ui.services.action" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.swt" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.runtime.common.ui.services" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.runtime.common.core" version="1.0.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.ecore" version="2.4.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.runtime.notation" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.runtime.emf.core" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.runtime.emf.type.core" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.draw2d" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.gef" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.runtime.emf.commands.core" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.runtime.emf.ui" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.runtime.gef.ui" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.runtime.common.ui.action" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.views.properties.tabbed" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.core" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.runtime.common.ui.printing" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.runtime.draw2d.ui.render" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.core.databinding" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.core.databinding.beans" version="1.0.0" match="compatible"/>
+      <import plugin="org.eclipse.jface.databinding" version="1.2.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.runtime.draw2d.ui.render.awt" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.runtime.emf.ui.properties" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.runtime.common.ui.services.properties" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.actions" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing.render" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.runtime.draw2d.ui" version="1.1.0" match="compatible"/>
+      <import plugin="org.apache.batik.ext.awt" version="1.6.0" match="compatible"/>
+      <import plugin="org.apache.batik.transcoder" version="1.6.0" match="compatible"/>
+      <import plugin="org.apache.batik.bridge" version="1.6.0" match="compatible"/>
+      <import plugin="org.apache.batik.dom" version="1.6.0" match="compatible"/>
+      <import plugin="org.apache.batik.dom.svg" version="1.6.0" match="compatible"/>
+      <import plugin="org.apache.batik.svggen" version="1.6.0" match="compatible"/>
+      <import plugin="org.apache.batik.util" version="1.6.0" match="compatible"/>
+      <import plugin="org.w3c.dom.svg" version="1.1.0" match="compatible"/>
+      <import plugin="org.apache.batik.pdf" version="1.6.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.ecore.xmi" version="2.4.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.edit" version="2.4.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.workspace" version="1.2.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.ecore.edit" version="2.4.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.runtime.emf.clipboard.core" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.core.expressions" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.edit.ui" version="2.4.0" match="compatible"/>
+      <import plugin="org.eclipse.core.runtime" version="3.1.0" match="compatible"/>
+      <import plugin="org.eclipse.core.expressions" version="3.3.0" match="compatible"/>
+      <import plugin="org.apache.lucene.analysis" version="1.9.1" match="compatible"/>
+      <import plugin="org.eclipse.core.runtime" version="3.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.help" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.help.base" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.ui" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.forms" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.core.databinding" version="1.0.0" match="compatible"/>
+      <import plugin="org.eclipse.jface" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.ocl" version="1.2.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.ecore" version="2.4.0" match="equivalent"/>
+      <import plugin="org.eclipse.core.resources" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.core.filebuffers" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.ui" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.ide" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.forms" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.ltk.core.refactoring" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.ltk.ui.refactoring" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.swt" version="3.0.0" match="compatible"/>
+      <import plugin="org.eclipse.equinox.common" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.swt" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.help" version="3.1.0" match="compatible"/>
+      <import plugin="org.eclipse.jface.text" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.core.variables" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.core.filesystem" version="1.0.0" match="compatible"/>
+      <import plugin="org.eclipse.help" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.jface.text" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.workbench" version="3.2.1" match="compatible"/>
+      <import plugin="org.eclipse.ui" version="3.2.1" match="compatible"/>
+      <import plugin="org.eclipse.ui.ide" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.navigator" version="3.2.1" match="compatible"/>
+      <import plugin="org.eclipse.ui.views.properties.tabbed" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.views" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.jface.databinding" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.update.configurator" version="3.1.0" match="compatible"/>
+      <import plugin="org.eclipse.core.net" version="1.0.0" match="compatible"/>
+      <import plugin="org.eclipse.update.core" version="3.0.0" match="compatible"/>
+      <import plugin="org.eclipse.update.core" version="3.1.0" match="compatible"/>
+      <import plugin="org.eclipse.update.ui" version="3.1.0" match="compatible"/>
+      <import plugin="org.eclipse.equinox.launcher" version="1.0.0" match="equivalent"/>
+      <import plugin="org.eclipse.ui.editors" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.console" version="3.1.100" match="compatible"/>
+      <import plugin="org.eclipse.core.commands" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.navigator" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.compare" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.team.ui" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.navigator.resources" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.help.base" version="3.1.0" match="compatible"/>
+      <import plugin="org.apache.jasper" version="5.5.17" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.equinox.jsp.jasper.registry" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.equinox.http.registry" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.resources" version="3.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.console" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.debug.core" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.text" version="3.1.0" match="compatible"/>
+      <import plugin="org.eclipse.jdt.core" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.core.filebuffers" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.debug.ui" version="3.3.100" match="compatible"/>
+      <import plugin="org.eclipse.jdt.debug" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.jdt.launching" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.jdt.ui" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.ltk.core.refactoring" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.jdt.core.manipulation" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.search" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.jdt.core" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.search" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.debug.core" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.debug.ui" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.jdt.launching" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.editors" version="3.4.0" match="compatible"/>
+      <import plugin="org.eclipse.jdt.core.manipulation" version="1.2.0" match="compatible"/>
+      <import plugin="Saflets" version="1.1.0" match="greaterOrEqual"/>
+      <import plugin="Saflets.edit" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.help" version="3.3.101" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.cheatsheets" version="3.3.101" match="greaterOrEqual"/>
+      <import plugin="org.apache.commons.logging" version="1.0.4" match="greaterOrEqual"/>
+      <import plugin="org.jdom" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.console" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.console.ui" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.core" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.debug" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.debug.ui" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.formatter" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.javascript.core" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.javascript.core.dom.support" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.javascript.debug" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.javascript.debug.ui" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.javascript.jdt.integration" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.javascript.jsjdtdebugger" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.javascript.launching" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.javascript.rhino" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.javascript.rhino.dbgp" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.javascript.ui" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.launching" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.ui" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.validators.core" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.validators.externalchecker" version="0.95.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.validators.ui" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.databinding" version="1.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.databinding.edit" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.databinding.beans" version="1.1.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface.databinding" version="1.2.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.debug.core" version="3.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.debug.ui" version="3.4.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jdt.core" version="3.4.2" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jdt.debug" version="3.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jdt.launching" version="3.4.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jdt.ui" version="3.4.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jdt.debug.ui" version="3.3.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jdt.core.manipulation" version="1.2.0" match="greaterOrEqual"/>
+      <import plugin="AsteriskCore" version="1.1.0" match="greaterOrEqual"/>
+      <import plugin="AsteriskCore.edit" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="com.safi.server.asterisk" version="1.0.3" match="greaterOrEqual"/>
+      <import plugin="AsteriskSafletDesigner.diagram" version="1.1.2" match="greaterOrEqual"/>
+      <import plugin="CoreActionPak1Model" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="CoreActionPak1Model.edit" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="TimeBasedRoutingNew" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="TimeBasedRoutingNew.edit" version="1.0.0" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="com.ibm.icu"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.safi.asterisk.figures"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="javax.servlet"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="Saflets"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="Saflets.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sourceforge.lpg.lpgjavaruntime"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.batik.bridge"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.batik.css"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.batik.dom"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.batik.dom.svg"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.batik.ext.awt"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.batik.parser"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.batik.svggen"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.batik.transcoder"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.batik.util"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.batik.util.gui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.batik.xml"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.commons.logging"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.lucene"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.lucene.analysis"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.xerces"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.xml.resolver"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ant.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.core.commands"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.core.contenttype"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.core.databinding"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.core.expressions"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.core.filebuffers"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.core.filesystem"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.core.filesystem.win32.x86"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.core.jobs"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.core.net"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.core.resources"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.core.resources.compatibility"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.core.runtime"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.core.runtime.compatibility"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.core.runtime.compatibility.auth"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.core.runtime.compatibility.registry"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"/>
+
+   <plugin
+         id="org.eclipse.core.variables"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.draw2d"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.common"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.common.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.ecore"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.ecore.change"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.ecore.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.ecore.xmi"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.edit.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.transaction"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.validation"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.workspace"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.app"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.common"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.http.jetty"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.http.servlet"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.preferences"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.registry"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gef"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.runtime.common.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.runtime.common.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.runtime.common.ui.action"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.runtime.common.ui.printing"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.runtime.common.ui.printing.win32"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.runtime.common.ui.services"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.runtime.common.ui.services.action"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.runtime.common.ui.services.properties"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.runtime.diagram.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.runtime.diagram.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.runtime.diagram.ui.actions"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.runtime.diagram.ui.printing"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.runtime.diagram.ui.printing.render"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.runtime.diagram.ui.properties"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.runtime.diagram.ui.providers"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.runtime.diagram.ui.render"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.runtime.diagram.ui.resources.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.runtime.draw2d.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.runtime.draw2d.ui.render"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.runtime.draw2d.ui.render.awt"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.runtime.emf.clipboard.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.runtime.emf.commands.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.runtime.emf.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.runtime.emf.type.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.runtime.emf.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.runtime.emf.ui.properties"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.runtime.gef.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.runtime.notation"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.help"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.help.base"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.help.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jface"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jface.databinding"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jface.text"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ocl"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ocl.ecore"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.osgi"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.osgi.services"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.search"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.swt"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.swt.win32.win32.x86"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.text"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui.cheatsheets"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui.console"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui.editors"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui.forms"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui.ide"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui.intro"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui.navigator"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui.navigator.resources"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui.views"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui.views.properties.tabbed"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui.win32"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui.workbench"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui.workbench.texteditor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.update.configurator"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.update.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.update.core.win32"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.update.scheduler"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.update.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.jdom"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.junit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.mortbay.jetty"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.mozilla.javascript"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.w3c.css.sac"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.w3c.dom.smil"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.w3c.dom.svg"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.launcher"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.launcher.win32.win32.x86"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"/>
+
+   <plugin
+         id="SafiDB"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="SafiDB.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.teneo.jpox"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.emf.teneo"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.teneo.annotations"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.compare"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.teneo.hibernate"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.teneo.hibernate.mapper"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.ant"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.emf.validation.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.team.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.safi.workshop.help"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="javax.xml"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.security"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.xml.serializer"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ltk.core.refactoring"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ltk.ui.refactoring"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.batik.pdf"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.core.databinding.beans"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.commons.lang"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="Hibernate30"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="SafiCommons"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.team.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.help.appserver"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.help.webapp"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.jasper"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.jsp.jasper.registry"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.http.registry"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.jsp.jasper"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.commons.el"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="javax.servlet.jsp"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.databinding"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.emf.databinding.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.dltk.console"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.console.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.debug"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.debug.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.formatter"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.javascript.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.javascript.core.dom.support"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.javascript.debug"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.javascript.debug.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.javascript.jdt.integration"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.javascript.jsjdtdebugger"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.javascript.launching"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.javascript.rhino"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.javascript.rhino.dbgp"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.javascript.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.launching"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.validators.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.validators.externalchecker"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.validators.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.debug.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.debug.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jdt.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jdt.debug"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.jdt.debug.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jdt.launching"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jdt.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jdt.core.manipulation"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="AsteriskCore"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="AsteriskCore.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="AsteriskSafletDesigner.diagram"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="CoreActionPak1"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="CoreActionPak1Model"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="CoreActionPak1Model.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="TimeBasedRoutingNew"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="TimeBasedRoutingNew.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="TimeBasedRoutingPakNew"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.safi.server.asterisk"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
