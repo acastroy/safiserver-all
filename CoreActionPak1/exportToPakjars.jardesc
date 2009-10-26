@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="WINDOWS-1252" standalone="no"?>
 <jardesc>
-    <jar path="CoreActionPak1/pakjars/actionpak1_20090823.jar"/>
+    <jar path="CoreActionPak1/pakjars/actionpak1_20091006.jar"/>
     <options buildIfNeeded="true" compress="true" descriptionLocation="/CoreActionPak1/exportToPakjars.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="true" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
     <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
     <selectedProjects/>
@@ -14,5 +14,4 @@
         <javaElement handleIdentifier="=CoreActionPak1Model/src"/>
         <file path="/CoreActionPak1Model/model/actionpak1.ecore"/>
     </selectedElements>
-    <fatjar builder="org.eclipse.jdt.ui.plain_jar_builder" launchConfig=""/>
 </jardesc>

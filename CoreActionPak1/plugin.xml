@@ -176,7 +176,7 @@
          factory="com.safi.workshop.model.actionpak1.provider.Actionpak1ItemProviderAdapterFactory">
    </itemProviderAdapterFactory>
    <pakjar
-         jar="pakjars/actionpak1_20090712.jar">
+         jar="pakjars/actionpak1_20091006.jar">
    </pakjar>
    <description
          descriptionText="Required Core ActionPak ">
@@ -193,19 +193,6 @@
          actionstepClass="com.safi.workshop.actionpak1.editpart.IncomingCall2EditPart"
          factory="com.safi.workshop.actionpak1.factory.IncomingCall2EditorDialogFactory">
    </actionstepEditorDialogFactory>
-   <serverjar
-         description="Bug fixes"
-         jar="serverjars/safidb_v20090712.jar">
-   </serverjar>
-   <serverjar
-         jar="serverjars/asteriskcore_v20090712.jar">
-   </serverjar>
-   <serverjar
-         jar="serverjars/safiServer_v20090712.jar">
-   </serverjar>
-   <serverjar
-         jar="serverjars/safletcore_v20090712.jar">
-   </serverjar>
 </extension>
 
 </plugin>
