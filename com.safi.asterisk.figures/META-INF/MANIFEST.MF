@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: com.safi.asterisk.figures; singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Vendor: %providerName
+Bundle-Activator: com.safi.asterisk.figures.activator.PluginActivator
+Bundle-Localization: plugin
+Export-Package: com.safi.asterisk.figures.activator,
+ com.safi.asterisk.figures
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.draw2d,
+ org.eclipse.gmf.runtime.draw2d.ui,
+ org.eclipse.gmf.runtime.diagram.ui,
+ org.eclipse.gmf.runtime.draw2d.ui.render
+Eclipse-LazyStart: true
