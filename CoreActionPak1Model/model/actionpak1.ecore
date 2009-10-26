@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="actionpak1"
+    nsURI="http:///com/safi/workshop/actionpak1.ecore" nsPrefix="com.safi.workshop.actionpak1">
+  <eClassifiers xsi:type="ecore:EClass" name="ActionstepTest" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="message" ordered="false"
+        eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="DynamicValueAnnotation">
+        <details key="type" value="Saflet Path"/>
+        <details key="isTypeLocked" value="false"/>
+        <details key="description" value="The message to be logged"/>
+        <details key="expectedReturnType" value="Saflet Path"/>
+        <details key="helperClass" value=""/>
+      </eAnnotations>
+      <eAnnotations source="Required">
+        <details key="criteria" value="non-null"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CustomInitiator" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ParameterizedInitiator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IncomingCall2" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ParameterizedInitiator ../../AsteriskCore/model/asterisk.ecore#//CallSource1">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="callName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InvokeSaflet2" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ParameterizedActionstep">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetSafletPath" ordered="false"
+        eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="DynamicValueAnnotation">
+        <details key="type" value="Saflet Path"/>
+        <details key="isTypeLocked" value="false"/>
+        <details key="description" value="The path of the handler to which control will be transferred"/>
+        <details key="expectedReturnType" value="Saflet Path"/>
+        <details key="helperClass" value="com.safi.workshop.sheet.SelectSafletDynamicValueEditorPage"/>
+      </eAnnotations>
+      <eAnnotations source="Required">
+        <details key="criteria" value="non-null"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="labelText" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>
