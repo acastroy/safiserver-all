@@ -40,6 +40,10 @@
 -dontoptimize
 -keepattributes Exceptions,InnerClasses,Signature,Deprecated,SourceFile,LineNumberTable,LocalVariable*Table,*Annotation*,Synthetic,EnclosingMethod
 
+-keep class * extends org.eclipse.emf.ecore.impl.EPackageImpl {
+    <fields>;
+    <methods>;
+}
 
 -keep class * extends com.safi.asterisk.toolstep.CaseItem {
     <fields>;
