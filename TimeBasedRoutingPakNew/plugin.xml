@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.help.toc">
+      <toc
+            file="toc.xml"
+            primary="true">
+      </toc>
+      <toc
+            file="tocconcepts.xml">
+      </toc>
+      <toc
+            file="tocgettingstarted.xml">
+      </toc>
+      <toc
+            file="tocreference.xml">
+      </toc>
+      <toc
+            file="tocsamples.xml">
+      </toc>
+      <toc
+            file="toctasks.xml">
+      </toc>
+   </extension>
+   <extension
+         id="TimeBasedRouting"
+         name="TimeBasedRouting"
+         point="AsteriskSafletDesigner.diagram.actionPak">
+      <actionStep
+            createCommandFactory="com.safi.workshop.timeBasedRouting.pak.factory.TimeBasedRoutingCreateCommandFactory"
+            editPartFactory="com.safi.workshop.timeBasedRouting.pak.factory.TimeBasedRoutingEditPartFactory"
+            elementFactory="com.safi.workshop.timeBasedRouting.pak.factory.TimeBasedRoutingElementFactory"
+            enabled="true"
+            isInitiator="false"
+            itemLabelSemanticHint="40002"
+            itemPanelSemanticHint="60000"
+            itemSemanticHint="50000"
+            labelSemanticHint="40001"
+            modelFactory="com.safi.workshop.timeBasedRouting.pak.factory.TimeBasedRoutingModelFactory"
+            outputItemLabelSemanticHint="40002"
+            outputItemPanelSemanticHint="60000"
+            outputItemSemanticHint="50000"
+            semanticHint="10001"
+            viewFactory="com.safi.workshop.timeBasedRouting.pak.factory.TimeBasedViewFactory">
+      <paletteEntry
+            displayName="Time Based Routing"
+            path="Logic"
+            tooltip="Time based routing support">
+      </paletteEntry>
+   </actionStep>
+      <dynamicValueEditorPage
+            helperClass="com.safi.workshop.timeBasedRouting.pak.editpart.TimeRangeEditorPage">
+      </dynamicValueEditorPage>
+      <itemProviderAdapterFactory
+            factory="com.safi.workshop.model.timeBasedRouting.provider.TimeBasedRoutingItemProviderAdapterFactory">
+      </itemProviderAdapterFactory>
+      <pakjar
+            jar="pakjars/timebasedrouting_20090706.jar">
+      </pakjar>
+      <description
+            descriptionText="This ActionPak includes the TimeBasedRouting ActionStep">
+      </description>
+      <actionstepEditorDialogFactory
+            actionstepClass="com.safi.workshop.timeBasedRouting.pak.editpart.TimeBasedRoutingEditPart"
+            factory="com.safi.workshop.timeBasedRouting.pak.factory.TimeBasedRoutingEditorDialogFactory">
+      </actionstepEditorDialogFactory>
+   </extension>
+   <extension
+         point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+      <metamodel nsURI="http:///com/safi/workshop/timeBasedRouting.ecore">
+         <metamodelType
+               id="TimeBasedRoutingPakNew.TimeItem_50000"
+               name="Time Range"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="TimeItem"
+               edithelper="com.safi.workshop.timeBasedRouting.pak.helper.TimeItemEditHelper">
+            <param name="semanticHint" value="50000"/>
+         </metamodelType>
+      </metamodel>     
+      <metamodel nsURI="http:///com/safi/workshop/timeBasedRouting.ecore">
+         <metamodelType
+               id="TimeBasedRoutingPakNew.TimeBasedRouting_10001"
+               name="Time-based Routing"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="TimeBasedRouting"
+               edithelper="com.safi.workshop.timeBasedRouting.pak.helper.TimeBasedRoutingEditHelper">
+            <param name="semanticHint" value="10001"/>
+         </metamodelType>
+      </metamodel>    
+   </extension>
+<extension
+         point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+      <binding
+            context="AsteriskClientContext">
+            <elementType ref="TimeBasedRoutingPakNew.TimeItem_50000"/>
+            <elementType ref="TimeBasedRoutingPakNew.TimeBasedRouting_10001"/>
+            <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
+      </binding>
+   </extension>
+</plugin>
