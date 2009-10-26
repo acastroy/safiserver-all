@@ -6,6 +6,18 @@
  */
 package com.safi.asterisk.impl;
 
+import org.asteriskjava.fastagi.AgiChannel;
+import org.asteriskjava.fastagi.AgiRequest;
+import org.asteriskjava.manager.ManagerConnection;
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import com.safi.asterisk.AsteriskFactory;
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
@@ -14,30 +26,13 @@ import com.safi.asterisk.CallConsumer2;
 import com.safi.asterisk.CallSource1;
 import com.safi.asterisk.CallSource2;
 import com.safi.asterisk.CallState;
-
 import com.safi.asterisk.actionstep.ActionstepPackage;
-
 import com.safi.asterisk.actionstep.impl.ActionstepPackageImpl;
-
 import com.safi.asterisk.initiator.InitiatorPackage;
-
 import com.safi.asterisk.initiator.impl.InitiatorPackageImpl;
-
 import com.safi.asterisk.saflet.SafletPackage;
 import com.safi.asterisk.saflet.impl.SafletPackageImpl;
 import com.safi.core.CorePackage;
-
-import org.asteriskjava.fastagi.AgiChannel;
-
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
-import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EOperation;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-
-import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -93,7 +88,21 @@ public class AsteriskPackageImpl extends EPackageImpl implements AsteriskPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EDataType agiRequestEDataType = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EDataType agiChannelEDataType = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EDataType managerConnectionEDataType = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -335,8 +344,26 @@ public class AsteriskPackageImpl extends EPackageImpl implements AsteriskPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EDataType getAgiRequest() {
+    return agiRequestEDataType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EDataType getAgiChannel() {
     return agiChannelEDataType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EDataType getManagerConnection() {
+    return managerConnectionEDataType;
   }
 
   /**
@@ -392,7 +419,9 @@ public class AsteriskPackageImpl extends EPackageImpl implements AsteriskPackage
     callStateEEnum = createEEnum(CALL_STATE);
 
     // Create data types
+    agiRequestEDataType = createEDataType(AGI_REQUEST);
     agiChannelEDataType = createEDataType(AGI_CHANNEL);
+    managerConnectionEDataType = createEDataType(MANAGER_CONNECTION);
   }
 
   /**
@@ -478,7 +507,9 @@ public class AsteriskPackageImpl extends EPackageImpl implements AsteriskPackage
     addEEnumLiteral(callStateEEnum, CallState.UNKNOWN);
 
     // Initialize data types
-    initEDataType(agiChannelEDataType, AgiChannel.class, "AgiChannel", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+    initEDataType(agiRequestEDataType, AgiRequest.class, "AgiRequest", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+    initEDataType(agiChannelEDataType, AgiChannel.class, "AgiChannel", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+    initEDataType(managerConnectionEDataType, ManagerConnection.class, "ManagerConnection", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
     // Create resource
     createResource(eNS_URI);

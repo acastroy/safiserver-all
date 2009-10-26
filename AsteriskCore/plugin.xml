@@ -12,22 +12,15 @@
 
   <extension point="org.eclipse.emf.ecore.generated_package">
     <package 
-       uri = "http:///com/safi/asterisk.ecore#toolstep" 
-       class = "com.safi.asterisk.toolstep.ToolstepPackage"
+       uri = "http:///com/safi/asterisk.ecore#actionstep" 
+       class = "com.safi.asterisk.actionstep.ActionstepPackage"
        genModel = "model/asterisk.genmodel" /> 
   </extension>
 
   <extension point="org.eclipse.emf.ecore.generated_package">
     <package 
-       uri = "http:///com/safi/asterisk.ecore#scripting" 
-       class = "com.safi.asterisk.scripting.ScriptingPackage"
-       genModel = "model/asterisk.genmodel" /> 
-  </extension>
-
-  <extension point="org.eclipse.emf.ecore.generated_package">
-    <package 
-       uri = "http:///com/safi/asterisk.ecore#handler" 
-       class = "com.safi.asterisk.handler.HandlerPackage"
+       uri = "http:///com/safi/asterisk.ecore#saflet" 
+       class = "com.safi.asterisk.saflet.SafletPackage"
        genModel = "model/asterisk.genmodel" /> 
   </extension>
 

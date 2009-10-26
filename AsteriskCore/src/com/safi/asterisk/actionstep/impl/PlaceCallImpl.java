@@ -48,26 +48,20 @@ import com.safi.db.VariableType;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link com.safi.asterisk.actionstep.impl.PlaceCallImpl#getNewCall1 <em>New Call1
- * </em>}</li>
- * <li>{@link com.safi.asterisk.actionstep.impl.PlaceCallImpl#getExtension <em>Extension
- * </em>}</li>
- * <li>{@link com.safi.asterisk.actionstep.impl.PlaceCallImpl#getContext <em>Context</em>}
- * </li>
- * <li>{@link com.safi.asterisk.actionstep.impl.PlaceCallImpl#getTimeout <em>Timeout</em>}
- * </li>
- * <li>{@link com.safi.asterisk.actionstep.impl.PlaceCallImpl#getCallerId <em>Caller Id
- * </em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.impl.PlaceCallImpl#getNewCall1 <em>New Call1</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.impl.PlaceCallImpl#getExtension <em>Extension</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.impl.PlaceCallImpl#getContext <em>Context</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.impl.PlaceCallImpl#getTimeout <em>Timeout</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.impl.PlaceCallImpl#getCallerId <em>Caller Id</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
   /**
-   * The cached value of the '{@link #getNewCall1() <em>New Call1</em>}' containment
-   * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
+   * The cached value of the '{@link #getNewCall1() <em>New Call1</em>}' containment reference.
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
    * @see #getNewCall1()
    * @generated
    * @ordered
@@ -75,9 +69,8 @@ public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
   protected Call newCall1;
 
   /**
-   * The cached value of the '{@link #getExtension() <em>Extension</em>}' containment
-   * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
+   * The cached value of the '{@link #getExtension() <em>Extension</em>}' containment reference.
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
    * @see #getExtension()
    * @generated
    * @ordered
@@ -85,9 +78,8 @@ public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
   protected DynamicValue extension;
 
   /**
-   * The cached value of the '{@link #getContext() <em>Context</em>}' containment
-   * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
+   * The cached value of the '{@link #getContext() <em>Context</em>}' containment reference.
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
    * @see #getContext()
    * @generated
    * @ordered
@@ -115,9 +107,8 @@ public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
   protected long timeout = TIMEOUT_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getCallerId() <em>Caller Id</em>}' containment
-   * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
+   * The cached value of the '{@link #getCallerId() <em>Caller Id</em>}' containment reference.
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
    * @see #getCallerId()
    * @generated
    * @ordered
@@ -126,7 +117,6 @@ public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   protected PlaceCallImpl() {
@@ -261,7 +251,6 @@ public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   @Override
@@ -271,7 +260,6 @@ public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public Call getNewCall1() {
@@ -280,48 +268,38 @@ public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public NotificationChain basicSetNewCall1(Call newNewCall1, NotificationChain msgs) {
     Call oldNewCall1 = newCall1;
     newCall1 = newNewCall1;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-          ActionstepPackage.PLACE_CALL__NEW_CALL1, oldNewCall1, newNewCall1);
-      if (msgs == null)
-        msgs = notification;
-      else
-        msgs.add(notification);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.PLACE_CALL__NEW_CALL1, oldNewCall1, newNewCall1);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public void setNewCall1(Call newNewCall1) {
     if (newNewCall1 != newCall1) {
       NotificationChain msgs = null;
       if (newCall1 != null)
-        msgs = ((InternalEObject) newCall1).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-            - ActionstepPackage.PLACE_CALL__NEW_CALL1, null, msgs);
+        msgs = ((InternalEObject)newCall1).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.PLACE_CALL__NEW_CALL1, null, msgs);
       if (newNewCall1 != null)
-        msgs = ((InternalEObject) newNewCall1).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-            - ActionstepPackage.PLACE_CALL__NEW_CALL1, null, msgs);
+        msgs = ((InternalEObject)newNewCall1).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.PLACE_CALL__NEW_CALL1, null, msgs);
       msgs = basicSetNewCall1(newNewCall1, msgs);
-      if (msgs != null)
-        msgs.dispatch();
-    } else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET,
-          ActionstepPackage.PLACE_CALL__NEW_CALL1, newNewCall1, newNewCall1));
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.PLACE_CALL__NEW_CALL1, newNewCall1, newNewCall1));
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public DynamicValue getExtension() {
@@ -330,48 +308,38 @@ public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public NotificationChain basicSetExtension(DynamicValue newExtension, NotificationChain msgs) {
     DynamicValue oldExtension = extension;
     extension = newExtension;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-          ActionstepPackage.PLACE_CALL__EXTENSION, oldExtension, newExtension);
-      if (msgs == null)
-        msgs = notification;
-      else
-        msgs.add(notification);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.PLACE_CALL__EXTENSION, oldExtension, newExtension);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public void setExtension(DynamicValue newExtension) {
     if (newExtension != extension) {
       NotificationChain msgs = null;
       if (extension != null)
-        msgs = ((InternalEObject) extension).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-            - ActionstepPackage.PLACE_CALL__EXTENSION, null, msgs);
+        msgs = ((InternalEObject)extension).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.PLACE_CALL__EXTENSION, null, msgs);
       if (newExtension != null)
-        msgs = ((InternalEObject) newExtension).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-            - ActionstepPackage.PLACE_CALL__EXTENSION, null, msgs);
+        msgs = ((InternalEObject)newExtension).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.PLACE_CALL__EXTENSION, null, msgs);
       msgs = basicSetExtension(newExtension, msgs);
-      if (msgs != null)
-        msgs.dispatch();
-    } else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET,
-          ActionstepPackage.PLACE_CALL__EXTENSION, newExtension, newExtension));
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.PLACE_CALL__EXTENSION, newExtension, newExtension));
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public DynamicValue getContext() {
@@ -380,48 +348,38 @@ public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public NotificationChain basicSetContext(DynamicValue newContext, NotificationChain msgs) {
     DynamicValue oldContext = context;
     context = newContext;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-          ActionstepPackage.PLACE_CALL__CONTEXT, oldContext, newContext);
-      if (msgs == null)
-        msgs = notification;
-      else
-        msgs.add(notification);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.PLACE_CALL__CONTEXT, oldContext, newContext);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public void setContext(DynamicValue newContext) {
     if (newContext != context) {
       NotificationChain msgs = null;
       if (context != null)
-        msgs = ((InternalEObject) context).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-            - ActionstepPackage.PLACE_CALL__CONTEXT, null, msgs);
+        msgs = ((InternalEObject)context).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.PLACE_CALL__CONTEXT, null, msgs);
       if (newContext != null)
-        msgs = ((InternalEObject) newContext).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-            - ActionstepPackage.PLACE_CALL__CONTEXT, null, msgs);
+        msgs = ((InternalEObject)newContext).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.PLACE_CALL__CONTEXT, null, msgs);
       msgs = basicSetContext(newContext, msgs);
-      if (msgs != null)
-        msgs.dispatch();
-    } else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.PLACE_CALL__CONTEXT,
-          newContext, newContext));
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.PLACE_CALL__CONTEXT, newContext, newContext));
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public long getTimeout() {
@@ -430,20 +388,17 @@ public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public void setTimeout(long newTimeout) {
     long oldTimeout = timeout;
     timeout = newTimeout;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.PLACE_CALL__TIMEOUT,
-          oldTimeout, timeout));
+      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.PLACE_CALL__TIMEOUT, oldTimeout, timeout));
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public DynamicValue getCallerId() {
@@ -452,48 +407,38 @@ public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public NotificationChain basicSetCallerId(DynamicValue newCallerId, NotificationChain msgs) {
     DynamicValue oldCallerId = callerId;
     callerId = newCallerId;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-          ActionstepPackage.PLACE_CALL__CALLER_ID, oldCallerId, newCallerId);
-      if (msgs == null)
-        msgs = notification;
-      else
-        msgs.add(notification);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.PLACE_CALL__CALLER_ID, oldCallerId, newCallerId);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public void setCallerId(DynamicValue newCallerId) {
     if (newCallerId != callerId) {
       NotificationChain msgs = null;
       if (callerId != null)
-        msgs = ((InternalEObject) callerId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-            - ActionstepPackage.PLACE_CALL__CALLER_ID, null, msgs);
+        msgs = ((InternalEObject)callerId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.PLACE_CALL__CALLER_ID, null, msgs);
       if (newCallerId != null)
-        msgs = ((InternalEObject) newCallerId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-            - ActionstepPackage.PLACE_CALL__CALLER_ID, null, msgs);
+        msgs = ((InternalEObject)newCallerId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.PLACE_CALL__CALLER_ID, null, msgs);
       msgs = basicSetCallerId(newCallerId, msgs);
-      if (msgs != null)
-        msgs.dispatch();
-    } else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET,
-          ActionstepPackage.PLACE_CALL__CALLER_ID, newCallerId, newCallerId));
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.PLACE_CALL__CALLER_ID, newCallerId, newCallerId));
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   @Override
@@ -514,7 +459,6 @@ public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   @Override
@@ -536,7 +480,6 @@ public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   @SuppressWarnings("unchecked")
@@ -544,19 +487,19 @@ public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
   public void eSet(int featureID, Object newValue) {
     switch (featureID) {
       case ActionstepPackage.PLACE_CALL__NEW_CALL1:
-        setNewCall1((Call) newValue);
+        setNewCall1((Call)newValue);
         return;
       case ActionstepPackage.PLACE_CALL__EXTENSION:
-        setExtension((DynamicValue) newValue);
+        setExtension((DynamicValue)newValue);
         return;
       case ActionstepPackage.PLACE_CALL__CONTEXT:
-        setContext((DynamicValue) newValue);
+        setContext((DynamicValue)newValue);
         return;
       case ActionstepPackage.PLACE_CALL__TIMEOUT:
-        setTimeout(((Long) newValue).longValue());
+        setTimeout(((Long)newValue).longValue());
         return;
       case ActionstepPackage.PLACE_CALL__CALLER_ID:
-        setCallerId((DynamicValue) newValue);
+        setCallerId((DynamicValue)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -564,26 +507,25 @@ public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   @Override
   public void eUnset(int featureID) {
     switch (featureID) {
       case ActionstepPackage.PLACE_CALL__NEW_CALL1:
-        setNewCall1((Call) null);
+        setNewCall1((Call)null);
         return;
       case ActionstepPackage.PLACE_CALL__EXTENSION:
-        setExtension((DynamicValue) null);
+        setExtension((DynamicValue)null);
         return;
       case ActionstepPackage.PLACE_CALL__CONTEXT:
-        setContext((DynamicValue) null);
+        setContext((DynamicValue)null);
         return;
       case ActionstepPackage.PLACE_CALL__TIMEOUT:
         setTimeout(TIMEOUT_EDEFAULT);
         return;
       case ActionstepPackage.PLACE_CALL__CALLER_ID:
-        setCallerId((DynamicValue) null);
+        setCallerId((DynamicValue)null);
         return;
     }
     super.eUnset(featureID);
@@ -591,7 +533,6 @@ public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   @Override
@@ -613,17 +554,14 @@ public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
     if (baseClass == CallSource1.class) {
       switch (derivedFeatureID) {
-        case ActionstepPackage.PLACE_CALL__NEW_CALL1:
-          return AsteriskPackage.CALL_SOURCE1__NEW_CALL1;
-        default:
-          return -1;
+        case ActionstepPackage.PLACE_CALL__NEW_CALL1: return AsteriskPackage.CALL_SOURCE1__NEW_CALL1;
+        default: return -1;
       }
     }
     return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -631,17 +569,14 @@ public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
     if (baseClass == CallSource1.class) {
       switch (baseFeatureID) {
-        case AsteriskPackage.CALL_SOURCE1__NEW_CALL1:
-          return ActionstepPackage.PLACE_CALL__NEW_CALL1;
-        default:
-          return -1;
+        case AsteriskPackage.CALL_SOURCE1__NEW_CALL1: return ActionstepPackage.PLACE_CALL__NEW_CALL1;
+        default: return -1;
       }
     }
     return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
@@ -649,13 +584,11 @@ public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   @Override
   public String toString() {
-    if (eIsProxy())
-      return super.toString();
+    if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (timeout: ");

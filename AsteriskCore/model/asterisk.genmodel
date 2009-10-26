@@ -19,6 +19,7 @@
       <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//CallState/Busy"/>
       <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//CallState/Unknown"/>
     </genEnums>
+    <genDataTypes ecoreDataType="asterisk.ecore#//AgiRequest"/>
     <genDataTypes ecoreDataType="asterisk.ecore#//AgiChannel"/>
     <genClasses ecoreClass="asterisk.ecore#//Call">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//Call/name"/>
@@ -472,8 +473,6 @@
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Initiator" disposableProviderFactory="true" ecorePackage="asterisk.ecore#//initiator">
-      <genDataTypes ecoreDataType="asterisk.ecore#//initiator/AgiRequest"/>
-      <genDataTypes ecoreDataType="asterisk.ecore#//initiator/AgiChannel"/>
       <genDataTypes ecoreDataType="asterisk.ecore#//initiator/ManagerEvent"/>
       <genClasses ecoreClass="asterisk.ecore#//initiator/DIDMatcher">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//initiator/DIDMatcher/dNISPattern"/>
@@ -482,6 +481,11 @@
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//initiator/IncomingCall">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//initiator/IncomingCall/callName"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="asterisk.ecore#//initiator/AsteriskInitiatorInfo">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//initiator/AsteriskInitiatorInfo/channel"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//initiator/AsteriskInitiatorInfo/request"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//initiator/AsteriskInitiatorInfo/managerConnection"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Saflet" disposableProviderFactory="true" ecorePackage="asterisk.ecore#//saflet">

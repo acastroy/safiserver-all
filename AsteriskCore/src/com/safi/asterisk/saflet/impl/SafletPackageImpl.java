@@ -6,32 +6,24 @@
  */
 package com.safi.asterisk.saflet.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import com.safi.asterisk.AsteriskPackage;
-
 import com.safi.asterisk.actionstep.ActionstepPackage;
-
 import com.safi.asterisk.actionstep.impl.ActionstepPackageImpl;
-
 import com.safi.asterisk.impl.AsteriskPackageImpl;
-
 import com.safi.asterisk.initiator.InitiatorPackage;
-
 import com.safi.asterisk.initiator.impl.InitiatorPackageImpl;
-
 import com.safi.asterisk.saflet.AsteriskSaflet;
 import com.safi.asterisk.saflet.AsteriskSafletContext;
 import com.safi.asterisk.saflet.AsteriskSafletEnvironment;
 import com.safi.asterisk.saflet.SafletFactory;
 import com.safi.asterisk.saflet.SafletPackage;
-
 import com.safi.core.CorePackage;
-
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
-import org.eclipse.emf.ecore.EPackage;
-
-import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
  * <!-- begin-user-doc -->

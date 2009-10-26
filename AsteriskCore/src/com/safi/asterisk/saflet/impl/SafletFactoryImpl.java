@@ -7,14 +7,16 @@
 package com.safi.asterisk.saflet.impl;
 
 import com.safi.asterisk.saflet.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import com.safi.asterisk.saflet.AsteriskSaflet;
+import com.safi.asterisk.saflet.AsteriskSafletContext;
+import com.safi.asterisk.saflet.SafletFactory;
+import com.safi.asterisk.saflet.SafletPackage;
 
 /**
  * <!-- begin-user-doc -->

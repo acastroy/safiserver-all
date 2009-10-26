@@ -6,14 +6,20 @@
  */
 package com.safi.asterisk.initiator.util;
 
-import com.safi.asterisk.CallSource1;
-
-import com.safi.asterisk.initiator.*;
-
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+
+import com.safi.asterisk.CallSource1;
+import com.safi.asterisk.initiator.*;
+import com.safi.core.ProductIdentifiable;
+import com.safi.core.actionstep.ActionStep;
+import com.safi.core.initiator.Initiator;
+import com.safi.core.initiator.InitiatorInfo;
+import com.safi.asterisk.initiator.DIDMatcher;
+import com.safi.asterisk.initiator.IncomingCall;
+import com.safi.asterisk.initiator.InitiatorPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -92,13 +98,27 @@ public class InitiatorSwitch<T> {
       case InitiatorPackage.DID_MATCHER: {
         DIDMatcher didMatcher = (DIDMatcher)theEObject;
         T result = caseDIDMatcher(didMatcher);
+        if (result == null) result = caseInitiator(didMatcher);
+        if (result == null) result = caseCallSource1(didMatcher);
+        if (result == null) result = caseActionStep(didMatcher);
+        if (result == null) result = caseProductIdentifiable(didMatcher);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case InitiatorPackage.INCOMING_CALL: {
         IncomingCall incomingCall = (IncomingCall)theEObject;
         T result = caseIncomingCall(incomingCall);
+        if (result == null) result = caseInitiator(incomingCall);
         if (result == null) result = caseCallSource1(incomingCall);
+        if (result == null) result = caseActionStep(incomingCall);
+        if (result == null) result = caseProductIdentifiable(incomingCall);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case InitiatorPackage.ASTERISK_INITIATOR_INFO: {
+        AsteriskInitiatorInfo asteriskInitiatorInfo = (AsteriskInitiatorInfo)theEObject;
+        T result = caseAsteriskInitiatorInfo(asteriskInitiatorInfo);
+        if (result == null) result = caseInitiatorInfo(asteriskInitiatorInfo);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -137,6 +157,66 @@ public class InitiatorSwitch<T> {
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Asterisk Initiator Info</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Asterisk Initiator Info</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAsteriskInitiatorInfo(AsteriskInitiatorInfo object) {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Product Identifiable</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Product Identifiable</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseProductIdentifiable(ProductIdentifiable object) {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Action Step</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Action Step</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseActionStep(ActionStep object) {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Initiator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Initiator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInitiator(Initiator object) {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Call Source1</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -148,6 +228,21 @@ public class InitiatorSwitch<T> {
    * @generated
    */
   public T caseCallSource1(CallSource1 object) {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Info</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Info</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInitiatorInfo(InitiatorInfo object) {
     return null;
   }
 

@@ -6,18 +6,18 @@
  */
 package com.safi.asterisk.impl;
 
+import java.util.Hashtable;
+import java.util.Map;
+
+import org.asteriskjava.fastagi.AgiChannel;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
+
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
 import com.safi.asterisk.CallState;
-
-import org.asteriskjava.fastagi.AgiChannel;
-
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -169,6 +169,9 @@ public class CallImpl extends EObjectImpl implements Call {
    */
   protected CallState callState = CALL_STATE_EDEFAULT;
 
+private AgiChannel channel;
+  
+  private Map<String,Object> dataMap;
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -212,23 +215,30 @@ public class CallImpl extends EObjectImpl implements Call {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
+   * @generated NOT
    */
   public AgiChannel getChannel() {
-    // TODO: implement this method to return the 'Channel' attribute
-    // Ensure that you remove @generated or mark it @generated NOT
-    throw new UnsupportedOperationException();
+
+    return channel;
+  
   }
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
+   * @generated NOT
    */
   public void setChannel(AgiChannel newChannel) {
-    // TODO: implement this method to set the 'Channel' attribute
-    // Ensure that you remove @generated or mark it @generated NOT
-    throw new UnsupportedOperationException();
+    channel = newChannel;
+    if (channel == null)
+      setChannelName(null);
+    else {
+      try {
+        setChannelName(channel.getName());
+      } catch (Exception e) {
+        setChannelName(null);
+      }
+    }
   }
 
   /**
@@ -318,10 +328,18 @@ public class CallImpl extends EObjectImpl implements Call {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
+   * @generated NOT
    */
   public CallState getCallState() {
-    return callState;
+    if (channel != null){
+      try {
+        return CallState.get(channel.getChannelStatus());
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+    }
+    return CallState.UNKNOWN;
+    
   }
 
   /**
@@ -339,24 +357,20 @@ public class CallImpl extends EObjectImpl implements Call {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
+   * @generated NOT
    */
   public void setData(String name, Object value) {
-    // TODO: implement this method
-    // Ensure that you remove @generated or mark it @generated NOT
-    throw new UnsupportedOperationException();
+    if (dataMap == null)
+      dataMap = new Hashtable<String, Object>();
+    dataMap.put(name, value);
   }
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
+   * @generated NOT
    */
-  public Object getData(String name) {
-    // TODO: implement this method
-    // Ensure that you remove @generated or mark it @generated NOT
-    throw new UnsupportedOperationException();
-  }
+  public Object getData(String name) {return dataMap;}
 
   /**
    * <!-- begin-user-doc -->

@@ -8,20 +8,20 @@ package com.safi.asterisk.initiator.impl;
 
 
 import com.safi.asterisk.initiator.*;
-
 import org.asteriskjava.fastagi.AgiChannel;
 import org.asteriskjava.fastagi.AgiRequest;
-
 import org.asteriskjava.manager.event.ManagerEvent;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import com.safi.asterisk.initiator.DIDMatcher;
+import com.safi.asterisk.initiator.IncomingCall;
+import com.safi.asterisk.initiator.InitiatorFactory;
+import com.safi.asterisk.initiator.InitiatorPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -82,10 +82,6 @@ public class InitiatorFactoryImpl extends EFactoryImpl implements InitiatorFacto
   @Override
   public Object createFromString(EDataType eDataType, String initialValue) {
     switch (eDataType.getClassifierID()) {
-      case InitiatorPackage.AGI_REQUEST:
-        return createAgiRequestFromString(eDataType, initialValue);
-      case InitiatorPackage.AGI_CHANNEL:
-        return createAgiChannelFromString(eDataType, initialValue);
       case InitiatorPackage.MANAGER_EVENT:
         return createManagerEventFromString(eDataType, initialValue);
       default:
@@ -101,10 +97,6 @@ public class InitiatorFactoryImpl extends EFactoryImpl implements InitiatorFacto
   @Override
   public String convertToString(EDataType eDataType, Object instanceValue) {
     switch (eDataType.getClassifierID()) {
-      case InitiatorPackage.AGI_REQUEST:
-        return convertAgiRequestToString(eDataType, instanceValue);
-      case InitiatorPackage.AGI_CHANNEL:
-        return convertAgiChannelToString(eDataType, instanceValue);
       case InitiatorPackage.MANAGER_EVENT:
         return convertManagerEventToString(eDataType, instanceValue);
       default:
@@ -130,42 +122,6 @@ public class InitiatorFactoryImpl extends EFactoryImpl implements InitiatorFacto
   public IncomingCall createIncomingCall() {
     IncomingCallImpl incomingCall = new IncomingCallImpl();
     return incomingCall;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public AgiRequest createAgiRequestFromString(EDataType eDataType, String initialValue) {
-    return (AgiRequest)super.createFromString(eDataType, initialValue);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String convertAgiRequestToString(EDataType eDataType, Object instanceValue) {
-    return super.convertToString(eDataType, instanceValue);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public AgiChannel createAgiChannelFromString(EDataType eDataType, String initialValue) {
-    return (AgiChannel)super.createFromString(eDataType, initialValue);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String convertAgiChannelToString(EDataType eDataType, Object instanceValue) {
-    return super.convertToString(eDataType, instanceValue);
   }
 
   /**

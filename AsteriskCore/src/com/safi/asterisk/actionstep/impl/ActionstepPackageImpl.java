@@ -6,8 +6,19 @@
  */
 package com.safi.asterisk.actionstep.impl;
 
-import com.safi.asterisk.AsteriskPackage;
+import java.util.Map;
 
+import org.eclipse.emf.common.util.BasicEMap;
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.actionstep.ActionstepFactory;
 import com.safi.asterisk.actionstep.ActionstepPackage;
 import com.safi.asterisk.actionstep.Answer;
@@ -81,32 +92,13 @@ import com.safi.asterisk.actionstep.WaitExten;
 import com.safi.asterisk.actionstep.WaitForDigit;
 import com.safi.asterisk.actionstep.WaitForRing;
 import com.safi.asterisk.actionstep.WaitMusicOnHold;
-
 import com.safi.asterisk.impl.AsteriskPackageImpl;
-
 import com.safi.asterisk.initiator.InitiatorPackage;
-
 import com.safi.asterisk.initiator.impl.InitiatorPackageImpl;
-
 import com.safi.asterisk.saflet.SafletPackage;
 import com.safi.asterisk.saflet.impl.SafletPackageImpl;
 import com.safi.core.CorePackage;
-
 import com.safi.core.actionstep.ActionStepPackage;
-
-import java.util.Map;
-
-import org.eclipse.emf.common.util.BasicEMap;
-
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
-import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EOperation;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-
-import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
  * <!-- begin-user-doc -->

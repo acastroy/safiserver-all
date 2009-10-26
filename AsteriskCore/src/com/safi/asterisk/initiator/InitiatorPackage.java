@@ -6,13 +6,13 @@
  */
 package com.safi.asterisk.initiator;
 
-import com.safi.asterisk.AsteriskPackage;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
+import com.safi.asterisk.AsteriskPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -73,13 +73,94 @@ public interface InitiatorPackage extends EPackage {
   int DID_MATCHER = 0;
 
   /**
+   * The feature id for the '<em><b>Product Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DID_MATCHER__PRODUCT_ID = com.safi.core.initiator.InitiatorPackage.INITIATOR__PRODUCT_ID;
+
+  /**
+   * The feature id for the '<em><b>Paused</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DID_MATCHER__PAUSED = com.safi.core.initiator.InitiatorPackage.INITIATOR__PAUSED;
+
+  /**
+   * The feature id for the '<em><b>Active</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DID_MATCHER__ACTIVE = com.safi.core.initiator.InitiatorPackage.INITIATOR__ACTIVE;
+
+  /**
+   * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DID_MATCHER__OUTPUTS = com.safi.core.initiator.InitiatorPackage.INITIATOR__OUTPUTS;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DID_MATCHER__NAME = com.safi.core.initiator.InitiatorPackage.INITIATOR__NAME;
+
+  /**
+   * The feature id for the '<em><b>Saflet</b></em>' container reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DID_MATCHER__SAFLET = com.safi.core.initiator.InitiatorPackage.INITIATOR__SAFLET;
+
+  /**
+   * The feature id for the '<em><b>Default Output</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DID_MATCHER__DEFAULT_OUTPUT = com.safi.core.initiator.InitiatorPackage.INITIATOR__DEFAULT_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Error Output</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DID_MATCHER__ERROR_OUTPUT = com.safi.core.initiator.InitiatorPackage.INITIATOR__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>New Call1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DID_MATCHER__NEW_CALL1 = com.safi.core.initiator.InitiatorPackage.INITIATOR_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>DNIS Pattern</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DID_MATCHER__DNIS_PATTERN = 0;
+  int DID_MATCHER__DNIS_PATTERN = com.safi.core.initiator.InitiatorPackage.INITIATOR_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Call</b></em>' containment reference.
@@ -88,7 +169,7 @@ public interface InitiatorPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DID_MATCHER__CALL = 1;
+  int DID_MATCHER__CALL = com.safi.core.initiator.InitiatorPackage.INITIATOR_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Call Name</b></em>' attribute.
@@ -97,7 +178,7 @@ public interface InitiatorPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DID_MATCHER__CALL_NAME = 2;
+  int DID_MATCHER__CALL_NAME = com.safi.core.initiator.InitiatorPackage.INITIATOR_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>DID Matcher</em>' class.
@@ -106,7 +187,7 @@ public interface InitiatorPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DID_MATCHER_FEATURE_COUNT = 3;
+  int DID_MATCHER_FEATURE_COUNT = com.safi.core.initiator.InitiatorPackage.INITIATOR_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.initiator.impl.IncomingCallImpl <em>Incoming Call</em>}' class.
@@ -119,13 +200,85 @@ public interface InitiatorPackage extends EPackage {
   int INCOMING_CALL = 1;
 
   /**
+   * The feature id for the '<em><b>Product Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INCOMING_CALL__PRODUCT_ID = com.safi.core.initiator.InitiatorPackage.INITIATOR__PRODUCT_ID;
+
+  /**
+   * The feature id for the '<em><b>Paused</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INCOMING_CALL__PAUSED = com.safi.core.initiator.InitiatorPackage.INITIATOR__PAUSED;
+
+  /**
+   * The feature id for the '<em><b>Active</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INCOMING_CALL__ACTIVE = com.safi.core.initiator.InitiatorPackage.INITIATOR__ACTIVE;
+
+  /**
+   * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INCOMING_CALL__OUTPUTS = com.safi.core.initiator.InitiatorPackage.INITIATOR__OUTPUTS;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INCOMING_CALL__NAME = com.safi.core.initiator.InitiatorPackage.INITIATOR__NAME;
+
+  /**
+   * The feature id for the '<em><b>Saflet</b></em>' container reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INCOMING_CALL__SAFLET = com.safi.core.initiator.InitiatorPackage.INITIATOR__SAFLET;
+
+  /**
+   * The feature id for the '<em><b>Default Output</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INCOMING_CALL__DEFAULT_OUTPUT = com.safi.core.initiator.InitiatorPackage.INITIATOR__DEFAULT_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Error Output</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INCOMING_CALL__ERROR_OUTPUT = com.safi.core.initiator.InitiatorPackage.INITIATOR__ERROR_OUTPUT;
+
+  /**
    * The feature id for the '<em><b>New Call1</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INCOMING_CALL__NEW_CALL1 = AsteriskPackage.CALL_SOURCE1__NEW_CALL1;
+  int INCOMING_CALL__NEW_CALL1 = com.safi.core.initiator.InitiatorPackage.INITIATOR_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Call Name</b></em>' attribute.
@@ -134,7 +287,7 @@ public interface InitiatorPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int INCOMING_CALL__CALL_NAME = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 0;
+  int INCOMING_CALL__CALL_NAME = com.safi.core.initiator.InitiatorPackage.INITIATOR_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Incoming Call</em>' class.
@@ -143,27 +296,53 @@ public interface InitiatorPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int INCOMING_CALL_FEATURE_COUNT = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 1;
+  int INCOMING_CALL_FEATURE_COUNT = com.safi.core.initiator.InitiatorPackage.INITIATOR_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '<em>Agi Request</em>' data type.
+   * The meta object id for the '{@link com.safi.asterisk.initiator.AsteriskInitiatorInfo <em>Asterisk Initiator Info</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.asteriskjava.fastagi.AgiRequest
-   * @see com.safi.asterisk.initiator.impl.InitiatorPackageImpl#getAgiRequest()
+   * @see com.safi.asterisk.initiator.AsteriskInitiatorInfo
+   * @see com.safi.asterisk.initiator.impl.InitiatorPackageImpl#getAsteriskInitiatorInfo()
    * @generated
    */
-  int AGI_REQUEST = 2;
+  int ASTERISK_INITIATOR_INFO = 2;
 
   /**
-   * The meta object id for the '<em>Agi Channel</em>' data type.
+   * The feature id for the '<em><b>Channel</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.asteriskjava.fastagi.AgiChannel
-   * @see com.safi.asterisk.initiator.impl.InitiatorPackageImpl#getAgiChannel()
    * @generated
+   * @ordered
    */
-  int AGI_CHANNEL = 3;
+  int ASTERISK_INITIATOR_INFO__CHANNEL = com.safi.core.initiator.InitiatorPackage.INITIATOR_INFO_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Request</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASTERISK_INITIATOR_INFO__REQUEST = com.safi.core.initiator.InitiatorPackage.INITIATOR_INFO_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Manager Connection</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASTERISK_INITIATOR_INFO__MANAGER_CONNECTION = com.safi.core.initiator.InitiatorPackage.INITIATOR_INFO_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Asterisk Initiator Info</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASTERISK_INITIATOR_INFO_FEATURE_COUNT = com.safi.core.initiator.InitiatorPackage.INITIATOR_INFO_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '<em>Manager Event</em>' data type.
@@ -173,7 +352,7 @@ public interface InitiatorPackage extends EPackage {
    * @see com.safi.asterisk.initiator.impl.InitiatorPackageImpl#getManagerEvent()
    * @generated
    */
-  int MANAGER_EVENT = 4;
+  int MANAGER_EVENT = 3;
 
 
   /**
@@ -241,26 +420,47 @@ public interface InitiatorPackage extends EPackage {
   EAttribute getIncomingCall_CallName();
 
   /**
-   * Returns the meta object for data type '{@link org.asteriskjava.fastagi.AgiRequest <em>Agi Request</em>}'.
+   * Returns the meta object for class '{@link com.safi.asterisk.initiator.AsteriskInitiatorInfo <em>Asterisk Initiator Info</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for data type '<em>Agi Request</em>'.
-   * @see org.asteriskjava.fastagi.AgiRequest
-   * @model instanceClass="org.asteriskjava.fastagi.AgiRequest"
+   * @return the meta object for class '<em>Asterisk Initiator Info</em>'.
+   * @see com.safi.asterisk.initiator.AsteriskInitiatorInfo
    * @generated
    */
-  EDataType getAgiRequest();
+  EClass getAsteriskInitiatorInfo();
 
   /**
-   * Returns the meta object for data type '{@link org.asteriskjava.fastagi.AgiChannel <em>Agi Channel</em>}'.
+   * Returns the meta object for the attribute '{@link com.safi.asterisk.initiator.AsteriskInitiatorInfo#getChannel <em>Channel</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for data type '<em>Agi Channel</em>'.
-   * @see org.asteriskjava.fastagi.AgiChannel
-   * @model instanceClass="org.asteriskjava.fastagi.AgiChannel"
+   * @return the meta object for the attribute '<em>Channel</em>'.
+   * @see com.safi.asterisk.initiator.AsteriskInitiatorInfo#getChannel()
+   * @see #getAsteriskInitiatorInfo()
    * @generated
    */
-  EDataType getAgiChannel();
+  EAttribute getAsteriskInitiatorInfo_Channel();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.safi.asterisk.initiator.AsteriskInitiatorInfo#getRequest <em>Request</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Request</em>'.
+   * @see com.safi.asterisk.initiator.AsteriskInitiatorInfo#getRequest()
+   * @see #getAsteriskInitiatorInfo()
+   * @generated
+   */
+  EAttribute getAsteriskInitiatorInfo_Request();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.safi.asterisk.initiator.AsteriskInitiatorInfo#getManagerConnection <em>Manager Connection</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Manager Connection</em>'.
+   * @see com.safi.asterisk.initiator.AsteriskInitiatorInfo#getManagerConnection()
+   * @see #getAsteriskInitiatorInfo()
+   * @generated
+   */
+  EAttribute getAsteriskInitiatorInfo_ManagerConnection();
 
   /**
    * Returns the meta object for data type '{@link org.asteriskjava.manager.event.ManagerEvent <em>Manager Event</em>}'.
@@ -348,24 +548,38 @@ public interface InitiatorPackage extends EPackage {
     EAttribute INCOMING_CALL__CALL_NAME = eINSTANCE.getIncomingCall_CallName();
 
     /**
-     * The meta object literal for the '<em>Agi Request</em>' data type.
+     * The meta object literal for the '{@link com.safi.asterisk.initiator.AsteriskInitiatorInfo <em>Asterisk Initiator Info</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.asteriskjava.fastagi.AgiRequest
-     * @see com.safi.asterisk.initiator.impl.InitiatorPackageImpl#getAgiRequest()
+     * @see com.safi.asterisk.initiator.AsteriskInitiatorInfo
+     * @see com.safi.asterisk.initiator.impl.InitiatorPackageImpl#getAsteriskInitiatorInfo()
      * @generated
      */
-    EDataType AGI_REQUEST = eINSTANCE.getAgiRequest();
+    EClass ASTERISK_INITIATOR_INFO = eINSTANCE.getAsteriskInitiatorInfo();
 
     /**
-     * The meta object literal for the '<em>Agi Channel</em>' data type.
+     * The meta object literal for the '<em><b>Channel</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.asteriskjava.fastagi.AgiChannel
-     * @see com.safi.asterisk.initiator.impl.InitiatorPackageImpl#getAgiChannel()
      * @generated
      */
-    EDataType AGI_CHANNEL = eINSTANCE.getAgiChannel();
+    EAttribute ASTERISK_INITIATOR_INFO__CHANNEL = eINSTANCE.getAsteriskInitiatorInfo_Channel();
+
+    /**
+     * The meta object literal for the '<em><b>Request</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ASTERISK_INITIATOR_INFO__REQUEST = eINSTANCE.getAsteriskInitiatorInfo_Request();
+
+    /**
+     * The meta object literal for the '<em><b>Manager Connection</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ASTERISK_INITIATOR_INFO__MANAGER_CONNECTION = eINSTANCE.getAsteriskInitiatorInfo_ManagerConnection();
 
     /**
      * The meta object literal for the '<em>Manager Event</em>' data type.

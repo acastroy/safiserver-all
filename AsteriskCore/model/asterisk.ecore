@@ -3,6 +3,8 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="asterisk"
     nsURI="http:///com/safi/asterisk.ecore" nsPrefix="com.safi.asterisk">
+  <eClassifiers xsi:type="ecore:EDataType" name="AgiRequest" instanceClassName="org.asteriskjava.fastagi.AgiRequest"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="AgiChannel" instanceClassName="org.asteriskjava.fastagi.AgiChannel"/>
   <eClassifiers xsi:type="ecore:EClass" name="Call">
     <eOperations name="setData">
       <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -31,8 +33,6 @@
     <eLiterals name="Busy" value="7"/>
     <eLiterals name="Unknown" value="8"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="AgiChannel" instanceClassName="org.asteriskjava.fastagi.AgiChannel"
-      serializable="false"/>
   <eClassifiers xsi:type="ecore:EClass" name="CallSource1" abstract="true" interface="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="newCall1" eType="#//Call"
         containment="true">
@@ -61,10 +61,11 @@
       eSuperTypes="#//CallConsumer1">
     <eStructuralFeatures xsi:type="ecore:EReference" name="call2" eType="#//Call"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="ManagerConnection" instanceClassName="org.asteriskjava.manager.ManagerConnection"/>
   <eSubpackages name="actionstep" nsURI="http:///com/safi/asterisk.ecore#actionstep"
       nsPrefix="com.safi.asterisk.actionstep">
-    <eClassifiers xsi:type="ecore:EClass" name="Answer" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep"/>
-    <eClassifiers xsi:type="ecore:EClass" name="GetDigits" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="Answer" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1"/>
+    <eClassifiers xsi:type="ecore:EClass" name="GetDigits" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputTimeout" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
           defaultValueLiteral="-1">
         <eAnnotations source="unitsTime">
@@ -99,7 +100,7 @@
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           defaultValueLiteral="0123456789#"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="GetFullVariable" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="GetFullVariable" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="variable" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="Required">
@@ -124,7 +125,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MultiStreamAudio" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="MultiStreamAudio" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="escapeDigits" eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true">
         <eAnnotations source="DynamicValueAnnotation">
@@ -143,8 +144,8 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Hangup" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep"/>
-    <eClassifiers xsi:type="ecore:EClass" name="RecordFile" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="Hangup" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RecordFile" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="beep" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
           defaultValueLiteral="true"/>
@@ -183,7 +184,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SayAlpha" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="SayAlpha" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="escapeDigits" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           defaultValueLiteral="#"/>
@@ -201,7 +202,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SayDateTime" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="SayDateTime" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="escapeDigits" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           defaultValueLiteral="#"/>
@@ -222,7 +223,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="timezone" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SayDigits" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="SayDigits" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="digits" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -241,7 +242,7 @@
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           defaultValueLiteral="#"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SayNumber" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="SayNumber" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="escapeDigits" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           defaultValueLiteral="#"/>
@@ -260,7 +261,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SayPhonetic" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="SayPhonetic" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="escapeDigits" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           defaultValueLiteral="#"/>
@@ -279,7 +280,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SayTime" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="SayTime" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="escapeDigits" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           defaultValueLiteral="#"/>
@@ -295,7 +296,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SetAutoHangup" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="SetAutoHangup" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="time" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
         <eAnnotations source="unitsTime">
@@ -306,7 +307,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SetCallerId" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="SetCallerId" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="callerId" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -322,7 +323,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SetChannelVariable" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="SetChannelVariable" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="value" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -344,7 +345,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SetContext" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="SetContext" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="context" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -360,7 +361,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SetExtension" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="SetExtension" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="extension" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -376,8 +377,8 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="StopMusicOnHold" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep"/>
-    <eClassifiers xsi:type="ecore:EClass" name="SetMusicOn" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="StopMusicOnHold" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SetMusicOn" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="holdClass" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true">
@@ -393,7 +394,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SetPriority" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="SetPriority" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="priority" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -409,7 +410,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="StreamAudio" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="StreamAudio" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="filename" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -428,7 +429,7 @@
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           defaultValueLiteral="#"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="WaitForDigit" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="WaitForDigit" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeout" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong" defaultValueLiteral="-1">
         <eAnnotations source="unitsTime">
@@ -439,7 +440,7 @@
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           defaultValueLiteral="0123456789#"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="OriginateCall" eSuperTypes="#//CallSource1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="OriginateCall" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallSource1">
       <eOperations name="setVariable">
         <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -561,7 +562,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PlayDTMF" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="PlayDTMF" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="digits" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -570,7 +571,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RecordCall" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="RecordCall" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="filename" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -592,7 +593,7 @@
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
           defaultValueLiteral="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Transfer" eSuperTypes="#//CallConsumer2 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="Transfer" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer2">
       <eStructuralFeatures xsi:type="ecore:EReference" name="context" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -621,7 +622,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="1"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ExecuteApplication" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="ExecuteApplication" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="application" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="Required">
@@ -640,7 +641,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="GetCallInfo" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="GetCallInfo" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="accountCodeVar" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -824,7 +825,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PlayMusicOnHold" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="PlayMusicOnHold" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="holdClass" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true">
@@ -837,7 +838,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PromptGetDigits" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="PromptGetDigits" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="filename" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -877,7 +878,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="useBufferedDigits" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Sleep" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="Sleep" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
         <eAnnotations source="unitsTime">
@@ -890,7 +891,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="native" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="StreamAudioExtended" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="StreamAudioExtended" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="filename" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -928,7 +929,7 @@
       <eTypeParameters name="T"/>
       <eTypeParameters name="T1"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Dial" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="Dial" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingChannels" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -1036,7 +1037,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="callerCanPark" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Pickup" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="Pickup" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="group" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="Required">
@@ -1044,7 +1045,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Background" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="Background" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="filenames" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -1066,7 +1067,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="context" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="BackgroundDetect" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="BackgroundDetect" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="filename" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="silence" ordered="false"
@@ -1088,7 +1089,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="WaitExten" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="WaitExten" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="musicOnHoldClass" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeout" ordered="false"
@@ -1098,7 +1099,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SoftHangup" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="SoftHangup" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="hangupAllDeviceCalls"
           ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="channelName" ordered="false"
@@ -1116,7 +1117,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PickupChan" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="PickupChan" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="channels" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -1132,7 +1133,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Pickdown" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="Pickdown" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="group" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="Required">
@@ -1140,8 +1141,8 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Progress" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Bridge" eSuperTypes="#//CallConsumer2 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="Progress" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Bridge" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer2">
       <eStructuralFeatures xsi:type="ecore:EReference" name="channel1" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -1170,7 +1171,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="useCourtesyTone" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PlaceCall" eSuperTypes="#//CallSource1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="PlaceCall" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallSource1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="extension" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -1214,7 +1215,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Voicemail" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="Voicemail" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="mailbox" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -1238,7 +1239,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingGain" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="-1"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="VoicemailMain" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="VoicemailMain" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="mailbox" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -1271,7 +1272,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="VMAuthenticate" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="VMAuthenticate" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="mailbox" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -1291,7 +1292,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="setAccountCode" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MeetMe" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="MeetMe" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="conferenceNumber" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -1373,7 +1374,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="closeOnLastMarkedUserExit"
           ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MeetMeAdmin" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="MeetMeAdmin" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="conferenceNumber" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -1426,7 +1427,7 @@
       <eLiterals name="lower_user_listen_volume" value="16" literal="lower user listen volume"/>
       <eLiterals name="raise_user_listen_volume" value="17" literal="raise user listen volume"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MeetMeCount" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="MeetMeCount" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="conferenceNumber" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -1462,7 +1463,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="WaitForRing" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="WaitForRing" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
         <eAnnotations source="unitsTime">
@@ -1470,7 +1471,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="WaitMusicOnHold" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="WaitMusicOnHold" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
         <eAnnotations source="unitsTime">
@@ -1478,7 +1479,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="GetAvailableChannel" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="GetAvailableChannel" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="channels" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -1515,8 +1516,8 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="jumpPriorityOnFail" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Congestion" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Ringing" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="Congestion" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Ringing" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
         <eAnnotations source="unitsTime">
@@ -1524,7 +1525,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SetCallerPresentation" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="SetCallerPresentation" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="presentation" ordered="false"
           eType="#//actionstep/PresentationType" defaultValueLiteral="allowed"/>
     </eClassifiers>
@@ -1539,7 +1540,7 @@
       <eLiterals name="prohib" value="7"/>
       <eLiterals name="unavailable" value="8" literal="unavailable"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SetGlobalVariable" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="SetGlobalVariable" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="value" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -1561,8 +1562,8 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Echo" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Festival" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="Echo" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Festival" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="text" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -1580,7 +1581,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="interruptKeys" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Playtones" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="Playtones" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="tones" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -1596,8 +1597,8 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="StopPlaytones" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ChanSpy" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="StopPlaytones" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ChanSpy" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="channelnamePrefix" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -1628,7 +1629,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="privateWhisperEnabled"
           ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Dictate" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="Dictate" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="directory" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -1652,7 +1653,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ExtensionSpy" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="ExtensionSpy" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="extension" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -1702,7 +1703,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MixMonitor" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="MixMonitor" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="filename" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -1719,9 +1720,9 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="appendMode" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="StopMixmonitor" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep"/>
-    <eClassifiers xsi:type="ecore:EClass" name="StopMonitor" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Monitor" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="StopMixmonitor" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1"/>
+    <eClassifiers xsi:type="ecore:EClass" name="StopMonitor" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Monitor" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="filenamePrefix" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -1742,7 +1743,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="mix" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Directory" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eClassifiers xsi:type="ecore:EClass" name="Directory" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
       <eStructuralFeatures xsi:type="ecore:EReference" name="vMContext" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -1772,7 +1773,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="enterByFirstOrLastName"
           ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ExtensionTransfer" eSuperTypes="#//CallConsumer2">
+    <eClassifiers xsi:type="ecore:EClass" name="ExtensionTransfer" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer2">
       <eStructuralFeatures xsi:type="ecore:EReference" name="context" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true" resolveProxies="false">
@@ -1807,7 +1808,7 @@
   </eSubpackages>
   <eSubpackages name="initiator" nsURI="http:///com/safi/asterisk.ecore#initiator"
       nsPrefix="com.safi.asterisk.initiator">
-    <eClassifiers xsi:type="ecore:EClass" name="DIDMatcher">
+    <eClassifiers xsi:type="ecore:EClass" name="DIDMatcher" eSuperTypes="../../Saflets/model/core.ecore#//initiator/Initiator #//CallSource1">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="dNISPattern" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="call" ordered="false"
@@ -1816,13 +1817,17 @@
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           defaultValueLiteral="Call1"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EDataType" name="AgiRequest" instanceClassName="org.asteriskjava.fastagi.AgiRequest"/>
-    <eClassifiers xsi:type="ecore:EDataType" name="AgiChannel" instanceClassName="org.asteriskjava.fastagi.AgiChannel"/>
     <eClassifiers xsi:type="ecore:EDataType" name="ManagerEvent" instanceClassName="org.asteriskjava.manager.event.ManagerEvent"/>
-    <eClassifiers xsi:type="ecore:EClass" name="IncomingCall" eSuperTypes="#//CallSource1">
+    <eClassifiers xsi:type="ecore:EClass" name="IncomingCall" eSuperTypes="../../Saflets/model/core.ecore#//initiator/Initiator #//CallSource1">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="callName" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           defaultValueLiteral="Call1"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AsteriskInitiatorInfo" abstract="true"
+        interface="true" eSuperTypes="../../Saflets/model/core.ecore#//initiator/InitiatorInfo">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="channel" eType="#//AgiChannel"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="request" eType="#//AgiRequest"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="managerConnection" eType="#//ManagerConnection"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="saflet" nsURI="http:///com/safi/asterisk.ecore#saflet" nsPrefix="com.safi.asterisk.saflet">

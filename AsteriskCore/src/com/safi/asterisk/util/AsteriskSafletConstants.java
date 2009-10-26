@@ -1,6 +1,8 @@
 package com.safi.asterisk.util;
 
-public interface AsteriskSafletConstants {
+import com.safi.core.saflet.SafletConstants;
+
+public interface AsteriskSafletConstants extends SafletConstants{
 
   public final static String VAR_KEY_CHANNEL             = "_channel_";
   public final static String VAR_KEY_REQUEST             = "_request_";

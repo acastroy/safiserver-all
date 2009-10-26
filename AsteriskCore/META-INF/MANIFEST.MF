@@ -6,14 +6,12 @@ Bundle-Version: 1.1
 Bundle-ClassPath: .,
  lib/js.jar,
  resources/,
- lib/javacsv.jar,
  lib/safiFastagi.jar,
  lib/Zql.jar
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: Zql,
- com.safi.asterisk,
+Export-Package: com.safi.asterisk,
  com.safi.asterisk.actionstep,
  com.safi.asterisk.actionstep.impl,
  com.safi.asterisk.actionstep.util,

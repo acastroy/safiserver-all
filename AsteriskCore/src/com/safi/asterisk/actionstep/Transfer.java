@@ -7,7 +7,6 @@
 package com.safi.asterisk.actionstep;
 
 import com.safi.asterisk.CallConsumer2;
-
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.DynamicValue;
 

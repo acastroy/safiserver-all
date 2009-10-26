@@ -52,42 +52,29 @@ import com.safi.db.VariableType;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl#getNewCall1 <em>New
- * Call1</em>}</li>
- * <li>{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl#isAsync <em>Async</em>}</li>
- * <li>{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl#getAccount <em>Account
- * </em>}</li>
- * <li>{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl#getApplication <em>
- * Application</em>}</li>
- * <li>{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl#getCallerId <em>Caller
- * Id</em>}</li>
- * <li>{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl#getContext <em>Context
- * </em>}</li>
- * <li>{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl#getData <em>Data</em>}</li>
- * <li>{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl#getExtension <em>
- * Extension</em>}</li>
- * <li>{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl#getPriority <em>Priority
- * </em>}</li>
- * <li>{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl#getTimeout <em>Timeout
- * </em>}</li>
- * <li>{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl#getCallingPresentation
- * <em>Calling Presentation</em>}</li>
- * <li>{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl#getChannel <em>Channel
- * </em>}</li>
- * <li>{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl#isTakeControl <em>Take
- * Control</em>}</li>
- * <li>{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl#getVariables <em>
- * Variables</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl#getNewCall1 <em>New Call1</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl#isAsync <em>Async</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl#getAccount <em>Account</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl#getApplication <em>Application</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl#getCallerId <em>Caller Id</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl#getContext <em>Context</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl#getData <em>Data</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl#getExtension <em>Extension</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl#getPriority <em>Priority</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl#getTimeout <em>Timeout</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl#getCallingPresentation <em>Calling Presentation</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl#getChannel <em>Channel</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl#isTakeControl <em>Take Control</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl#getVariables <em>Variables</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
   /**
-   * The cached value of the '{@link #getNewCall1() <em>New Call1</em>}' containment
-   * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
+   * The cached value of the '{@link #getNewCall1() <em>New Call1</em>}' containment reference.
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
    * @see #getNewCall1()
    * @generated
    * @ordered
@@ -115,9 +102,8 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
   protected boolean async = ASYNC_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getAccount() <em>Account</em>}' containment
-   * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
+   * The cached value of the '{@link #getAccount() <em>Account</em>}' containment reference.
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
    * @see #getAccount()
    * @generated
    * @ordered
@@ -125,9 +111,8 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
   protected DynamicValue account;
 
   /**
-   * The cached value of the '{@link #getApplication() <em>Application</em>}' containment
-   * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
+   * The cached value of the '{@link #getApplication() <em>Application</em>}' containment reference.
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
    * @see #getApplication()
    * @generated
    * @ordered
@@ -135,9 +120,8 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
   protected DynamicValue application;
 
   /**
-   * The cached value of the '{@link #getCallerId() <em>Caller Id</em>}' containment
-   * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
+   * The cached value of the '{@link #getCallerId() <em>Caller Id</em>}' containment reference.
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
    * @see #getCallerId()
    * @generated
    * @ordered
@@ -145,9 +129,8 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
   protected DynamicValue callerId;
 
   /**
-   * The cached value of the '{@link #getContext() <em>Context</em>}' containment
-   * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
+   * The cached value of the '{@link #getContext() <em>Context</em>}' containment reference.
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
    * @see #getContext()
    * @generated
    * @ordered
@@ -157,7 +140,6 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
   /**
    * The cached value of the '{@link #getData() <em>Data</em>}' containment reference.
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @see #getData()
    * @generated
    * @ordered
@@ -165,9 +147,8 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
   protected DynamicValue data;
 
   /**
-   * The cached value of the '{@link #getExtension() <em>Extension</em>}' containment
-   * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
+   * The cached value of the '{@link #getExtension() <em>Extension</em>}' containment reference.
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
    * @see #getExtension()
    * @generated
    * @ordered
@@ -237,9 +218,8 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
   protected int callingPresentation = CALLING_PRESENTATION_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getChannel() <em>Channel</em>}' containment
-   * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
+   * The cached value of the '{@link #getChannel() <em>Channel</em>}' containment reference.
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
    * @see #getChannel()
    * @generated
    * @ordered
@@ -249,7 +229,6 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
   /**
    * The default value of the '{@link #isTakeControl() <em>Take Control</em>}' attribute.
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @see #isTakeControl()
    * @generated
    * @ordered
@@ -259,7 +238,6 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
   /**
    * The cached value of the '{@link #isTakeControl() <em>Take Control</em>}' attribute.
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @see #isTakeControl()
    * @generated
    * @ordered
@@ -267,9 +245,8 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
   protected boolean takeControl = TAKE_CONTROL_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment
-   * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
+   * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference.
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
    * @see #getVariables()
    * @generated
    * @ordered
@@ -278,7 +255,6 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   protected OriginateCallImpl() {
@@ -509,7 +485,6 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   @Override
@@ -519,7 +494,6 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public Call getNewCall1() {
@@ -528,48 +502,38 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public NotificationChain basicSetNewCall1(Call newNewCall1, NotificationChain msgs) {
     Call oldNewCall1 = newCall1;
     newCall1 = newNewCall1;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-          ActionstepPackage.ORIGINATE_CALL__NEW_CALL1, oldNewCall1, newNewCall1);
-      if (msgs == null)
-        msgs = notification;
-      else
-        msgs.add(notification);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.ORIGINATE_CALL__NEW_CALL1, oldNewCall1, newNewCall1);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public void setNewCall1(Call newNewCall1) {
     if (newNewCall1 != newCall1) {
       NotificationChain msgs = null;
       if (newCall1 != null)
-        msgs = ((InternalEObject) newCall1).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-            - ActionstepPackage.ORIGINATE_CALL__NEW_CALL1, null, msgs);
+        msgs = ((InternalEObject)newCall1).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.ORIGINATE_CALL__NEW_CALL1, null, msgs);
       if (newNewCall1 != null)
-        msgs = ((InternalEObject) newNewCall1).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-            - ActionstepPackage.ORIGINATE_CALL__NEW_CALL1, null, msgs);
+        msgs = ((InternalEObject)newNewCall1).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.ORIGINATE_CALL__NEW_CALL1, null, msgs);
       msgs = basicSetNewCall1(newNewCall1, msgs);
-      if (msgs != null)
-        msgs.dispatch();
-    } else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET,
-          ActionstepPackage.ORIGINATE_CALL__NEW_CALL1, newNewCall1, newNewCall1));
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.ORIGINATE_CALL__NEW_CALL1, newNewCall1, newNewCall1));
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public boolean isAsync() {
@@ -578,20 +542,17 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public void setAsync(boolean newAsync) {
     boolean oldAsync = async;
     async = newAsync;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET,
-          ActionstepPackage.ORIGINATE_CALL__ASYNC, oldAsync, async));
+      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.ORIGINATE_CALL__ASYNC, oldAsync, async));
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public DynamicValue getAccount() {
@@ -600,48 +561,38 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public NotificationChain basicSetAccount(DynamicValue newAccount, NotificationChain msgs) {
     DynamicValue oldAccount = account;
     account = newAccount;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-          ActionstepPackage.ORIGINATE_CALL__ACCOUNT, oldAccount, newAccount);
-      if (msgs == null)
-        msgs = notification;
-      else
-        msgs.add(notification);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.ORIGINATE_CALL__ACCOUNT, oldAccount, newAccount);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public void setAccount(DynamicValue newAccount) {
     if (newAccount != account) {
       NotificationChain msgs = null;
       if (account != null)
-        msgs = ((InternalEObject) account).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-            - ActionstepPackage.ORIGINATE_CALL__ACCOUNT, null, msgs);
+        msgs = ((InternalEObject)account).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.ORIGINATE_CALL__ACCOUNT, null, msgs);
       if (newAccount != null)
-        msgs = ((InternalEObject) newAccount).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-            - ActionstepPackage.ORIGINATE_CALL__ACCOUNT, null, msgs);
+        msgs = ((InternalEObject)newAccount).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.ORIGINATE_CALL__ACCOUNT, null, msgs);
       msgs = basicSetAccount(newAccount, msgs);
-      if (msgs != null)
-        msgs.dispatch();
-    } else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET,
-          ActionstepPackage.ORIGINATE_CALL__ACCOUNT, newAccount, newAccount));
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.ORIGINATE_CALL__ACCOUNT, newAccount, newAccount));
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public DynamicValue getApplication() {
@@ -650,48 +601,38 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public NotificationChain basicSetApplication(DynamicValue newApplication, NotificationChain msgs) {
     DynamicValue oldApplication = application;
     application = newApplication;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-          ActionstepPackage.ORIGINATE_CALL__APPLICATION, oldApplication, newApplication);
-      if (msgs == null)
-        msgs = notification;
-      else
-        msgs.add(notification);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.ORIGINATE_CALL__APPLICATION, oldApplication, newApplication);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public void setApplication(DynamicValue newApplication) {
     if (newApplication != application) {
       NotificationChain msgs = null;
       if (application != null)
-        msgs = ((InternalEObject) application).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-            - ActionstepPackage.ORIGINATE_CALL__APPLICATION, null, msgs);
+        msgs = ((InternalEObject)application).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.ORIGINATE_CALL__APPLICATION, null, msgs);
       if (newApplication != null)
-        msgs = ((InternalEObject) newApplication).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-            - ActionstepPackage.ORIGINATE_CALL__APPLICATION, null, msgs);
+        msgs = ((InternalEObject)newApplication).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.ORIGINATE_CALL__APPLICATION, null, msgs);
       msgs = basicSetApplication(newApplication, msgs);
-      if (msgs != null)
-        msgs.dispatch();
-    } else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET,
-          ActionstepPackage.ORIGINATE_CALL__APPLICATION, newApplication, newApplication));
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.ORIGINATE_CALL__APPLICATION, newApplication, newApplication));
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public DynamicValue getCallerId() {
@@ -700,48 +641,38 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public NotificationChain basicSetCallerId(DynamicValue newCallerId, NotificationChain msgs) {
     DynamicValue oldCallerId = callerId;
     callerId = newCallerId;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-          ActionstepPackage.ORIGINATE_CALL__CALLER_ID, oldCallerId, newCallerId);
-      if (msgs == null)
-        msgs = notification;
-      else
-        msgs.add(notification);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.ORIGINATE_CALL__CALLER_ID, oldCallerId, newCallerId);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public void setCallerId(DynamicValue newCallerId) {
     if (newCallerId != callerId) {
       NotificationChain msgs = null;
       if (callerId != null)
-        msgs = ((InternalEObject) callerId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-            - ActionstepPackage.ORIGINATE_CALL__CALLER_ID, null, msgs);
+        msgs = ((InternalEObject)callerId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.ORIGINATE_CALL__CALLER_ID, null, msgs);
       if (newCallerId != null)
-        msgs = ((InternalEObject) newCallerId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-            - ActionstepPackage.ORIGINATE_CALL__CALLER_ID, null, msgs);
+        msgs = ((InternalEObject)newCallerId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.ORIGINATE_CALL__CALLER_ID, null, msgs);
       msgs = basicSetCallerId(newCallerId, msgs);
-      if (msgs != null)
-        msgs.dispatch();
-    } else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET,
-          ActionstepPackage.ORIGINATE_CALL__CALLER_ID, newCallerId, newCallerId));
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.ORIGINATE_CALL__CALLER_ID, newCallerId, newCallerId));
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public DynamicValue getContext() {
@@ -750,48 +681,38 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public NotificationChain basicSetContext(DynamicValue newContext, NotificationChain msgs) {
     DynamicValue oldContext = context;
     context = newContext;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-          ActionstepPackage.ORIGINATE_CALL__CONTEXT, oldContext, newContext);
-      if (msgs == null)
-        msgs = notification;
-      else
-        msgs.add(notification);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.ORIGINATE_CALL__CONTEXT, oldContext, newContext);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public void setContext(DynamicValue newContext) {
     if (newContext != context) {
       NotificationChain msgs = null;
       if (context != null)
-        msgs = ((InternalEObject) context).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-            - ActionstepPackage.ORIGINATE_CALL__CONTEXT, null, msgs);
+        msgs = ((InternalEObject)context).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.ORIGINATE_CALL__CONTEXT, null, msgs);
       if (newContext != null)
-        msgs = ((InternalEObject) newContext).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-            - ActionstepPackage.ORIGINATE_CALL__CONTEXT, null, msgs);
+        msgs = ((InternalEObject)newContext).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.ORIGINATE_CALL__CONTEXT, null, msgs);
       msgs = basicSetContext(newContext, msgs);
-      if (msgs != null)
-        msgs.dispatch();
-    } else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET,
-          ActionstepPackage.ORIGINATE_CALL__CONTEXT, newContext, newContext));
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.ORIGINATE_CALL__CONTEXT, newContext, newContext));
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public DynamicValue getData() {
@@ -800,48 +721,38 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public NotificationChain basicSetData(DynamicValue newData, NotificationChain msgs) {
     DynamicValue oldData = data;
     data = newData;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-          ActionstepPackage.ORIGINATE_CALL__DATA, oldData, newData);
-      if (msgs == null)
-        msgs = notification;
-      else
-        msgs.add(notification);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.ORIGINATE_CALL__DATA, oldData, newData);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public void setData(DynamicValue newData) {
     if (newData != data) {
       NotificationChain msgs = null;
       if (data != null)
-        msgs = ((InternalEObject) data).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-            - ActionstepPackage.ORIGINATE_CALL__DATA, null, msgs);
+        msgs = ((InternalEObject)data).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.ORIGINATE_CALL__DATA, null, msgs);
       if (newData != null)
-        msgs = ((InternalEObject) newData).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-            - ActionstepPackage.ORIGINATE_CALL__DATA, null, msgs);
+        msgs = ((InternalEObject)newData).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.ORIGINATE_CALL__DATA, null, msgs);
       msgs = basicSetData(newData, msgs);
-      if (msgs != null)
-        msgs.dispatch();
-    } else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.ORIGINATE_CALL__DATA,
-          newData, newData));
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.ORIGINATE_CALL__DATA, newData, newData));
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public DynamicValue getExtension() {
@@ -850,48 +761,38 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public NotificationChain basicSetExtension(DynamicValue newExtension, NotificationChain msgs) {
     DynamicValue oldExtension = extension;
     extension = newExtension;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-          ActionstepPackage.ORIGINATE_CALL__EXTENSION, oldExtension, newExtension);
-      if (msgs == null)
-        msgs = notification;
-      else
-        msgs.add(notification);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.ORIGINATE_CALL__EXTENSION, oldExtension, newExtension);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public void setExtension(DynamicValue newExtension) {
     if (newExtension != extension) {
       NotificationChain msgs = null;
       if (extension != null)
-        msgs = ((InternalEObject) extension).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-            - ActionstepPackage.ORIGINATE_CALL__EXTENSION, null, msgs);
+        msgs = ((InternalEObject)extension).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.ORIGINATE_CALL__EXTENSION, null, msgs);
       if (newExtension != null)
-        msgs = ((InternalEObject) newExtension).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-            - ActionstepPackage.ORIGINATE_CALL__EXTENSION, null, msgs);
+        msgs = ((InternalEObject)newExtension).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.ORIGINATE_CALL__EXTENSION, null, msgs);
       msgs = basicSetExtension(newExtension, msgs);
-      if (msgs != null)
-        msgs.dispatch();
-    } else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET,
-          ActionstepPackage.ORIGINATE_CALL__EXTENSION, newExtension, newExtension));
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.ORIGINATE_CALL__EXTENSION, newExtension, newExtension));
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public int getPriority() {
@@ -900,20 +801,17 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public void setPriority(int newPriority) {
     int oldPriority = priority;
     priority = newPriority;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET,
-          ActionstepPackage.ORIGINATE_CALL__PRIORITY, oldPriority, priority));
+      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.ORIGINATE_CALL__PRIORITY, oldPriority, priority));
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public long getTimeout() {
@@ -922,20 +820,17 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public void setTimeout(long newTimeout) {
     long oldTimeout = timeout;
     timeout = newTimeout;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET,
-          ActionstepPackage.ORIGINATE_CALL__TIMEOUT, oldTimeout, timeout));
+      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.ORIGINATE_CALL__TIMEOUT, oldTimeout, timeout));
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public int getCallingPresentation() {
@@ -944,21 +839,17 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public void setCallingPresentation(int newCallingPresentation) {
     int oldCallingPresentation = callingPresentation;
     callingPresentation = newCallingPresentation;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET,
-          ActionstepPackage.ORIGINATE_CALL__CALLING_PRESENTATION, oldCallingPresentation,
-          callingPresentation));
+      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.ORIGINATE_CALL__CALLING_PRESENTATION, oldCallingPresentation, callingPresentation));
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public DynamicValue getChannel() {
@@ -967,48 +858,38 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public NotificationChain basicSetChannel(DynamicValue newChannel, NotificationChain msgs) {
     DynamicValue oldChannel = channel;
     channel = newChannel;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-          ActionstepPackage.ORIGINATE_CALL__CHANNEL, oldChannel, newChannel);
-      if (msgs == null)
-        msgs = notification;
-      else
-        msgs.add(notification);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.ORIGINATE_CALL__CHANNEL, oldChannel, newChannel);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public void setChannel(DynamicValue newChannel) {
     if (newChannel != channel) {
       NotificationChain msgs = null;
       if (channel != null)
-        msgs = ((InternalEObject) channel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-            - ActionstepPackage.ORIGINATE_CALL__CHANNEL, null, msgs);
+        msgs = ((InternalEObject)channel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.ORIGINATE_CALL__CHANNEL, null, msgs);
       if (newChannel != null)
-        msgs = ((InternalEObject) newChannel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-            - ActionstepPackage.ORIGINATE_CALL__CHANNEL, null, msgs);
+        msgs = ((InternalEObject)newChannel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.ORIGINATE_CALL__CHANNEL, null, msgs);
       msgs = basicSetChannel(newChannel, msgs);
-      if (msgs != null)
-        msgs.dispatch();
-    } else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET,
-          ActionstepPackage.ORIGINATE_CALL__CHANNEL, newChannel, newChannel));
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.ORIGINATE_CALL__CHANNEL, newChannel, newChannel));
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public boolean isTakeControl() {
@@ -1030,7 +911,6 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public DynamicValue getVariables() {
@@ -1039,48 +919,38 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public NotificationChain basicSetVariables(DynamicValue newVariables, NotificationChain msgs) {
     DynamicValue oldVariables = variables;
     variables = newVariables;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-          ActionstepPackage.ORIGINATE_CALL__VARIABLES, oldVariables, newVariables);
-      if (msgs == null)
-        msgs = notification;
-      else
-        msgs.add(notification);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.ORIGINATE_CALL__VARIABLES, oldVariables, newVariables);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public void setVariables(DynamicValue newVariables) {
     if (newVariables != variables) {
       NotificationChain msgs = null;
       if (variables != null)
-        msgs = ((InternalEObject) variables).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-            - ActionstepPackage.ORIGINATE_CALL__VARIABLES, null, msgs);
+        msgs = ((InternalEObject)variables).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.ORIGINATE_CALL__VARIABLES, null, msgs);
       if (newVariables != null)
-        msgs = ((InternalEObject) newVariables).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-            - ActionstepPackage.ORIGINATE_CALL__VARIABLES, null, msgs);
+        msgs = ((InternalEObject)newVariables).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.ORIGINATE_CALL__VARIABLES, null, msgs);
       msgs = basicSetVariables(newVariables, msgs);
-      if (msgs != null)
-        msgs.dispatch();
-    } else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET,
-          ActionstepPackage.ORIGINATE_CALL__VARIABLES, newVariables, newVariables));
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.ORIGINATE_CALL__VARIABLES, newVariables, newVariables));
   }
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   public void setVariable(String name, String value) {
@@ -1091,7 +961,6 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   @Override
@@ -1122,7 +991,6 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   @Override
@@ -1162,7 +1030,6 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   @SuppressWarnings("unchecked")
@@ -1170,46 +1037,46 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
   public void eSet(int featureID, Object newValue) {
     switch (featureID) {
       case ActionstepPackage.ORIGINATE_CALL__NEW_CALL1:
-        setNewCall1((Call) newValue);
+        setNewCall1((Call)newValue);
         return;
       case ActionstepPackage.ORIGINATE_CALL__ASYNC:
-        setAsync(((Boolean) newValue).booleanValue());
+        setAsync(((Boolean)newValue).booleanValue());
         return;
       case ActionstepPackage.ORIGINATE_CALL__ACCOUNT:
-        setAccount((DynamicValue) newValue);
+        setAccount((DynamicValue)newValue);
         return;
       case ActionstepPackage.ORIGINATE_CALL__APPLICATION:
-        setApplication((DynamicValue) newValue);
+        setApplication((DynamicValue)newValue);
         return;
       case ActionstepPackage.ORIGINATE_CALL__CALLER_ID:
-        setCallerId((DynamicValue) newValue);
+        setCallerId((DynamicValue)newValue);
         return;
       case ActionstepPackage.ORIGINATE_CALL__CONTEXT:
-        setContext((DynamicValue) newValue);
+        setContext((DynamicValue)newValue);
         return;
       case ActionstepPackage.ORIGINATE_CALL__DATA:
-        setData((DynamicValue) newValue);
+        setData((DynamicValue)newValue);
         return;
       case ActionstepPackage.ORIGINATE_CALL__EXTENSION:
-        setExtension((DynamicValue) newValue);
+        setExtension((DynamicValue)newValue);
         return;
       case ActionstepPackage.ORIGINATE_CALL__PRIORITY:
-        setPriority(((Integer) newValue).intValue());
+        setPriority(((Integer)newValue).intValue());
         return;
       case ActionstepPackage.ORIGINATE_CALL__TIMEOUT:
-        setTimeout(((Long) newValue).longValue());
+        setTimeout(((Long)newValue).longValue());
         return;
       case ActionstepPackage.ORIGINATE_CALL__CALLING_PRESENTATION:
-        setCallingPresentation(((Integer) newValue).intValue());
+        setCallingPresentation(((Integer)newValue).intValue());
         return;
       case ActionstepPackage.ORIGINATE_CALL__CHANNEL:
-        setChannel((DynamicValue) newValue);
+        setChannel((DynamicValue)newValue);
         return;
       case ActionstepPackage.ORIGINATE_CALL__TAKE_CONTROL:
-        setTakeControl(((Boolean) newValue).booleanValue());
+        setTakeControl(((Boolean)newValue).booleanValue());
         return;
       case ActionstepPackage.ORIGINATE_CALL__VARIABLES:
-        setVariables((DynamicValue) newValue);
+        setVariables((DynamicValue)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -1217,35 +1084,34 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   @Override
   public void eUnset(int featureID) {
     switch (featureID) {
       case ActionstepPackage.ORIGINATE_CALL__NEW_CALL1:
-        setNewCall1((Call) null);
+        setNewCall1((Call)null);
         return;
       case ActionstepPackage.ORIGINATE_CALL__ASYNC:
         setAsync(ASYNC_EDEFAULT);
         return;
       case ActionstepPackage.ORIGINATE_CALL__ACCOUNT:
-        setAccount((DynamicValue) null);
+        setAccount((DynamicValue)null);
         return;
       case ActionstepPackage.ORIGINATE_CALL__APPLICATION:
-        setApplication((DynamicValue) null);
+        setApplication((DynamicValue)null);
         return;
       case ActionstepPackage.ORIGINATE_CALL__CALLER_ID:
-        setCallerId((DynamicValue) null);
+        setCallerId((DynamicValue)null);
         return;
       case ActionstepPackage.ORIGINATE_CALL__CONTEXT:
-        setContext((DynamicValue) null);
+        setContext((DynamicValue)null);
         return;
       case ActionstepPackage.ORIGINATE_CALL__DATA:
-        setData((DynamicValue) null);
+        setData((DynamicValue)null);
         return;
       case ActionstepPackage.ORIGINATE_CALL__EXTENSION:
-        setExtension((DynamicValue) null);
+        setExtension((DynamicValue)null);
         return;
       case ActionstepPackage.ORIGINATE_CALL__PRIORITY:
         setPriority(PRIORITY_EDEFAULT);
@@ -1257,13 +1123,13 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
         setCallingPresentation(CALLING_PRESENTATION_EDEFAULT);
         return;
       case ActionstepPackage.ORIGINATE_CALL__CHANNEL:
-        setChannel((DynamicValue) null);
+        setChannel((DynamicValue)null);
         return;
       case ActionstepPackage.ORIGINATE_CALL__TAKE_CONTROL:
         setTakeControl(TAKE_CONTROL_EDEFAULT);
         return;
       case ActionstepPackage.ORIGINATE_CALL__VARIABLES:
-        setVariables((DynamicValue) null);
+        setVariables((DynamicValue)null);
         return;
     }
     super.eUnset(featureID);
@@ -1271,7 +1137,6 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   @Override
@@ -1311,17 +1176,14 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
     if (baseClass == CallSource1.class) {
       switch (derivedFeatureID) {
-        case ActionstepPackage.ORIGINATE_CALL__NEW_CALL1:
-          return AsteriskPackage.CALL_SOURCE1__NEW_CALL1;
-        default:
-          return -1;
+        case ActionstepPackage.ORIGINATE_CALL__NEW_CALL1: return AsteriskPackage.CALL_SOURCE1__NEW_CALL1;
+        default: return -1;
       }
     }
     return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -1329,17 +1191,14 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
     if (baseClass == CallSource1.class) {
       switch (baseFeatureID) {
-        case AsteriskPackage.CALL_SOURCE1__NEW_CALL1:
-          return ActionstepPackage.ORIGINATE_CALL__NEW_CALL1;
-        default:
-          return -1;
+        case AsteriskPackage.CALL_SOURCE1__NEW_CALL1: return ActionstepPackage.ORIGINATE_CALL__NEW_CALL1;
+        default: return -1;
       }
     }
     return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
@@ -1347,13 +1206,11 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
    * @generated
    */
   @Override
   public String toString() {
-    if (eIsProxy())
-      return super.toString();
+    if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (async: ");

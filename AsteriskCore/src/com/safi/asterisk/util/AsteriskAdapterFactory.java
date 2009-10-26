@@ -7,13 +7,17 @@
 package com.safi.asterisk.util;
 
 import com.safi.asterisk.*;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
+
+import com.safi.asterisk.AsteriskPackage;
+import com.safi.asterisk.Call;
+import com.safi.asterisk.CallConsumer1;
+import com.safi.asterisk.CallConsumer2;
+import com.safi.asterisk.CallSource1;
+import com.safi.asterisk.CallSource2;
 
 /**
  * <!-- begin-user-doc -->

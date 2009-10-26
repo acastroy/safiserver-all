@@ -284,6 +284,16 @@ public interface AsteriskPackage extends EPackage {
   int CALL_STATE = 5;
 
   /**
+   * The meta object id for the '<em>Agi Request</em>' data type.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.asteriskjava.fastagi.AgiRequest
+   * @see com.safi.asterisk.impl.AsteriskPackageImpl#getAgiRequest()
+   * @generated
+   */
+  int AGI_REQUEST = 6;
+
+  /**
    * The meta object id for the '<em>Agi Channel</em>' data type.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -291,7 +301,18 @@ public interface AsteriskPackage extends EPackage {
    * @see com.safi.asterisk.impl.AsteriskPackageImpl#getAgiChannel()
    * @generated
    */
-  int AGI_CHANNEL = 6;
+  int AGI_CHANNEL = 7;
+
+
+  /**
+   * The meta object id for the '<em>Manager Connection</em>' data type.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.asteriskjava.manager.ManagerConnection
+   * @see com.safi.asterisk.impl.AsteriskPackageImpl#getManagerConnection()
+   * @generated
+   */
+  int MANAGER_CONNECTION = 8;
 
 
   /**
@@ -476,15 +497,37 @@ public interface AsteriskPackage extends EPackage {
   EEnum getCallState();
 
   /**
+   * Returns the meta object for data type '{@link org.asteriskjava.fastagi.AgiRequest <em>Agi Request</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for data type '<em>Agi Request</em>'.
+   * @see org.asteriskjava.fastagi.AgiRequest
+   * @model instanceClass="org.asteriskjava.fastagi.AgiRequest"
+   * @generated
+   */
+  EDataType getAgiRequest();
+
+  /**
    * Returns the meta object for data type '{@link org.asteriskjava.fastagi.AgiChannel <em>Agi Channel</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for data type '<em>Agi Channel</em>'.
    * @see org.asteriskjava.fastagi.AgiChannel
-   * @model instanceClass="org.asteriskjava.fastagi.AgiChannel" serializeable="false"
+   * @model instanceClass="org.asteriskjava.fastagi.AgiChannel"
    * @generated
    */
   EDataType getAgiChannel();
+
+  /**
+   * Returns the meta object for data type '{@link org.asteriskjava.manager.ManagerConnection <em>Manager Connection</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for data type '<em>Manager Connection</em>'.
+   * @see org.asteriskjava.manager.ManagerConnection
+   * @model instanceClass="org.asteriskjava.manager.ManagerConnection"
+   * @generated
+   */
+  EDataType getManagerConnection();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -657,6 +700,16 @@ public interface AsteriskPackage extends EPackage {
     EEnum CALL_STATE = eINSTANCE.getCallState();
 
     /**
+     * The meta object literal for the '<em>Agi Request</em>' data type.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.asteriskjava.fastagi.AgiRequest
+     * @see com.safi.asterisk.impl.AsteriskPackageImpl#getAgiRequest()
+     * @generated
+     */
+    EDataType AGI_REQUEST = eINSTANCE.getAgiRequest();
+
+    /**
      * The meta object literal for the '<em>Agi Channel</em>' data type.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -665,6 +718,16 @@ public interface AsteriskPackage extends EPackage {
      * @generated
      */
     EDataType AGI_CHANNEL = eINSTANCE.getAgiChannel();
+
+    /**
+     * The meta object literal for the '<em>Manager Connection</em>' data type.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.asteriskjava.manager.ManagerConnection
+     * @see com.safi.asterisk.impl.AsteriskPackageImpl#getManagerConnection()
+     * @generated
+     */
+    EDataType MANAGER_CONNECTION = eINSTANCE.getManagerConnection();
 
   }
 

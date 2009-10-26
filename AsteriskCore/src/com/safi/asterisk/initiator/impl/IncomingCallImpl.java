@@ -6,19 +6,19 @@
  */
 package com.safi.asterisk.initiator.impl;
 
-import com.safi.asterisk.Call;
-
-import com.safi.asterisk.initiator.IncomingCall;
-import com.safi.asterisk.initiator.InitiatorPackage;
-
+import com.safi.asterisk.AsteriskPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+
+import com.safi.asterisk.Call;
+import com.safi.asterisk.CallSource1;
+import com.safi.asterisk.initiator.IncomingCall;
+import com.safi.asterisk.initiator.InitiatorPackage;
+import com.safi.core.initiator.impl.InitiatorImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public class IncomingCallImpl extends EObjectImpl implements IncomingCall {
+public class IncomingCallImpl extends InitiatorImpl implements IncomingCall {
   /**
    * The cached value of the '{@link #getNewCall1() <em>New Call1</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -228,6 +228,38 @@ public class IncomingCallImpl extends EObjectImpl implements IncomingCall {
         return CALL_NAME_EDEFAULT == null ? callName != null : !CALL_NAME_EDEFAULT.equals(callName);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+    if (baseClass == CallSource1.class) {
+      switch (derivedFeatureID) {
+        case InitiatorPackage.INCOMING_CALL__NEW_CALL1: return AsteriskPackage.CALL_SOURCE1__NEW_CALL1;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+    if (baseClass == CallSource1.class) {
+      switch (baseFeatureID) {
+        case AsteriskPackage.CALL_SOURCE1__NEW_CALL1: return InitiatorPackage.INCOMING_CALL__NEW_CALL1;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
   /**

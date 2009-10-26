@@ -7,7 +7,6 @@
 package com.safi.asterisk;
 
 import org.asteriskjava.fastagi.AgiChannel;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**

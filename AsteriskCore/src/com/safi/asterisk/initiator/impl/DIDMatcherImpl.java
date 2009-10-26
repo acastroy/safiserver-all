@@ -6,19 +6,19 @@
  */
 package com.safi.asterisk.initiator.impl;
 
-import com.safi.asterisk.Call;
-
-import com.safi.asterisk.initiator.DIDMatcher;
-import com.safi.asterisk.initiator.InitiatorPackage;
-
+import com.safi.asterisk.AsteriskPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+
+import com.safi.asterisk.Call;
+import com.safi.asterisk.CallSource1;
+import com.safi.asterisk.initiator.DIDMatcher;
+import com.safi.asterisk.initiator.InitiatorPackage;
+import com.safi.core.initiator.impl.InitiatorImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.safi.asterisk.initiator.impl.DIDMatcherImpl#getNewCall1 <em>New Call1</em>}</li>
  *   <li>{@link com.safi.asterisk.initiator.impl.DIDMatcherImpl#getDNISPattern <em>DNIS Pattern</em>}</li>
  *   <li>{@link com.safi.asterisk.initiator.impl.DIDMatcherImpl#getCall <em>Call</em>}</li>
  *   <li>{@link com.safi.asterisk.initiator.impl.DIDMatcherImpl#getCallName <em>Call Name</em>}</li>
@@ -35,7 +36,17 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public class DIDMatcherImpl extends EObjectImpl implements DIDMatcher {
+public class DIDMatcherImpl extends InitiatorImpl implements DIDMatcher {
+  /**
+   * The cached value of the '{@link #getNewCall1() <em>New Call1</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNewCall1()
+   * @generated
+   * @ordered
+   */
+  protected Call newCall1;
+
   /**
    * The default value of the '{@link #getDNISPattern() <em>DNIS Pattern</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -103,6 +114,49 @@ public class DIDMatcherImpl extends EObjectImpl implements DIDMatcher {
   @Override
   protected EClass eStaticClass() {
     return InitiatorPackage.Literals.DID_MATCHER;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Call getNewCall1() {
+    return newCall1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetNewCall1(Call newNewCall1, NotificationChain msgs) {
+    Call oldNewCall1 = newCall1;
+    newCall1 = newNewCall1;
+    if (eNotificationRequired()) {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InitiatorPackage.DID_MATCHER__NEW_CALL1, oldNewCall1, newNewCall1);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setNewCall1(Call newNewCall1) {
+    if (newNewCall1 != newCall1) {
+      NotificationChain msgs = null;
+      if (newCall1 != null)
+        msgs = ((InternalEObject)newCall1).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InitiatorPackage.DID_MATCHER__NEW_CALL1, null, msgs);
+      if (newNewCall1 != null)
+        msgs = ((InternalEObject)newNewCall1).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InitiatorPackage.DID_MATCHER__NEW_CALL1, null, msgs);
+      msgs = basicSetNewCall1(newNewCall1, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, InitiatorPackage.DID_MATCHER__NEW_CALL1, newNewCall1, newNewCall1));
   }
 
   /**
@@ -198,6 +252,8 @@ public class DIDMatcherImpl extends EObjectImpl implements DIDMatcher {
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
     switch (featureID) {
+      case InitiatorPackage.DID_MATCHER__NEW_CALL1:
+        return basicSetNewCall1(null, msgs);
       case InitiatorPackage.DID_MATCHER__CALL:
         return basicSetCall(null, msgs);
     }
@@ -212,6 +268,8 @@ public class DIDMatcherImpl extends EObjectImpl implements DIDMatcher {
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
     switch (featureID) {
+      case InitiatorPackage.DID_MATCHER__NEW_CALL1:
+        return getNewCall1();
       case InitiatorPackage.DID_MATCHER__DNIS_PATTERN:
         return getDNISPattern();
       case InitiatorPackage.DID_MATCHER__CALL:
@@ -230,6 +288,9 @@ public class DIDMatcherImpl extends EObjectImpl implements DIDMatcher {
   @Override
   public void eSet(int featureID, Object newValue) {
     switch (featureID) {
+      case InitiatorPackage.DID_MATCHER__NEW_CALL1:
+        setNewCall1((Call)newValue);
+        return;
       case InitiatorPackage.DID_MATCHER__DNIS_PATTERN:
         setDNISPattern((String)newValue);
         return;
@@ -251,6 +312,9 @@ public class DIDMatcherImpl extends EObjectImpl implements DIDMatcher {
   @Override
   public void eUnset(int featureID) {
     switch (featureID) {
+      case InitiatorPackage.DID_MATCHER__NEW_CALL1:
+        setNewCall1((Call)null);
+        return;
       case InitiatorPackage.DID_MATCHER__DNIS_PATTERN:
         setDNISPattern(DNIS_PATTERN_EDEFAULT);
         return;
@@ -272,6 +336,8 @@ public class DIDMatcherImpl extends EObjectImpl implements DIDMatcher {
   @Override
   public boolean eIsSet(int featureID) {
     switch (featureID) {
+      case InitiatorPackage.DID_MATCHER__NEW_CALL1:
+        return newCall1 != null;
       case InitiatorPackage.DID_MATCHER__DNIS_PATTERN:
         return DNIS_PATTERN_EDEFAULT == null ? dNISPattern != null : !DNIS_PATTERN_EDEFAULT.equals(dNISPattern);
       case InitiatorPackage.DID_MATCHER__CALL:
@@ -280,6 +346,38 @@ public class DIDMatcherImpl extends EObjectImpl implements DIDMatcher {
         return CALL_NAME_EDEFAULT == null ? callName != null : !CALL_NAME_EDEFAULT.equals(callName);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+    if (baseClass == CallSource1.class) {
+      switch (derivedFeatureID) {
+        case InitiatorPackage.DID_MATCHER__NEW_CALL1: return AsteriskPackage.CALL_SOURCE1__NEW_CALL1;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+    if (baseClass == CallSource1.class) {
+      switch (baseFeatureID) {
+        case AsteriskPackage.CALL_SOURCE1__NEW_CALL1: return InitiatorPackage.DID_MATCHER__NEW_CALL1;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
   /**

@@ -78,12 +78,9 @@ public class SetContextImpl extends ActionStepImpl implements SetContext {
     }
     AgiChannel channel = call1.getChannel();
     try {
-      String valueStr = (String)VariableTranslator.translateValue(VariableType.TEXT, resolveDynamicValue(value, context));
-      String varStr = (String)VariableTranslator.translateValue(VariableType.TEXT, variable);
-      if (debugLog.isDebugEnabled()) {
-        debug("Setting Asterisk channel variable "+varStr+" to value "+valueStr +" for channel "+ channel.getName());
-      }
-      channel.setVariable(varStr, valueStr);
+      String ctxStr = (String)VariableTranslator.translateValue(VariableType.TEXT, resolveDynamicValue(this.context, context));
+      
+      channel.setContext(ctxStr);
     } catch (Exception e) {
       handleException(context, e);
       return;

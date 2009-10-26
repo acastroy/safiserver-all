@@ -6,9 +6,11 @@
  */
 package com.safi.asterisk.initiator;
 
-import com.safi.asterisk.Call;
-
 import org.eclipse.emf.ecore.EObject;
+
+import com.safi.asterisk.Call;
+import com.safi.asterisk.CallSource1;
+import com.safi.core.initiator.Initiator;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +30,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface DIDMatcher extends EObject {
+public interface DIDMatcher extends Initiator, CallSource1 {
   /**
    * Returns the value of the '<em><b>DNIS Pattern</b></em>' attribute.
    * <!-- begin-user-doc -->

@@ -6,15 +6,14 @@
  */
 package com.safi.asterisk.actionstep;
 
-import com.safi.asterisk.AsteriskPackage;
-
-import com.safi.core.actionstep.ActionStepPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
+import com.safi.core.actionstep.ActionStepPackage;
 
 /**
  * <!-- begin-user-doc -->

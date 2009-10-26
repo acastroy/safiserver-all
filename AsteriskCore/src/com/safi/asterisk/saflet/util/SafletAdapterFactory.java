@@ -7,17 +7,18 @@
 package com.safi.asterisk.saflet.util;
 
 import com.safi.asterisk.saflet.*;
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.Notifier;
+import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+import org.eclipse.emf.ecore.EObject;
 
+import com.safi.asterisk.saflet.AsteriskSaflet;
+import com.safi.asterisk.saflet.AsteriskSafletContext;
+import com.safi.asterisk.saflet.AsteriskSafletEnvironment;
+import com.safi.asterisk.saflet.SafletPackage;
 import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletContext;
 import com.safi.core.saflet.SafletEnvironment;
-
-import org.eclipse.emf.common.notify.Adapter;
-import org.eclipse.emf.common.notify.Notifier;
-
-import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->

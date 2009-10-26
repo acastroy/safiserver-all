@@ -6,22 +6,87 @@
  */
 package com.safi.asterisk.actionstep.util;
 
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.Notifier;
+import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+import org.eclipse.emf.ecore.EObject;
+
 import com.safi.asterisk.CallConsumer1;
 import com.safi.asterisk.CallConsumer2;
 import com.safi.asterisk.CallSource1;
-
 import com.safi.asterisk.actionstep.*;
-
+import com.safi.asterisk.actionstep.ActionstepPackage;
+import com.safi.asterisk.actionstep.Answer;
+import com.safi.asterisk.actionstep.Background;
+import com.safi.asterisk.actionstep.BackgroundDetect;
+import com.safi.asterisk.actionstep.Bridge;
+import com.safi.asterisk.actionstep.ChanSpy;
+import com.safi.asterisk.actionstep.Congestion;
+import com.safi.asterisk.actionstep.Dial;
+import com.safi.asterisk.actionstep.Dictate;
+import com.safi.asterisk.actionstep.Directory;
+import com.safi.asterisk.actionstep.Echo;
+import com.safi.asterisk.actionstep.ExecuteApplication;
+import com.safi.asterisk.actionstep.ExtensionSpy;
+import com.safi.asterisk.actionstep.ExtensionTransfer;
+import com.safi.asterisk.actionstep.Festival;
+import com.safi.asterisk.actionstep.GetAvailableChannel;
+import com.safi.asterisk.actionstep.GetCallInfo;
+import com.safi.asterisk.actionstep.GetDigits;
+import com.safi.asterisk.actionstep.GetFullVariable;
+import com.safi.asterisk.actionstep.Hangup;
+import com.safi.asterisk.actionstep.MeetMe;
+import com.safi.asterisk.actionstep.MeetMeAdmin;
+import com.safi.asterisk.actionstep.MeetMeCount;
+import com.safi.asterisk.actionstep.MixMonitor;
+import com.safi.asterisk.actionstep.Monitor;
+import com.safi.asterisk.actionstep.MultiStreamAudio;
+import com.safi.asterisk.actionstep.OriginateCall;
+import com.safi.asterisk.actionstep.Pickdown;
+import com.safi.asterisk.actionstep.Pickup;
+import com.safi.asterisk.actionstep.PickupChan;
+import com.safi.asterisk.actionstep.PlaceCall;
+import com.safi.asterisk.actionstep.PlayDTMF;
+import com.safi.asterisk.actionstep.PlayMusicOnHold;
+import com.safi.asterisk.actionstep.Playtones;
+import com.safi.asterisk.actionstep.Progress;
+import com.safi.asterisk.actionstep.PromptGetDigits;
+import com.safi.asterisk.actionstep.RecordCall;
+import com.safi.asterisk.actionstep.RecordFile;
+import com.safi.asterisk.actionstep.Ringing;
+import com.safi.asterisk.actionstep.SayAlpha;
+import com.safi.asterisk.actionstep.SayDateTime;
+import com.safi.asterisk.actionstep.SayDigits;
+import com.safi.asterisk.actionstep.SayNumber;
+import com.safi.asterisk.actionstep.SayPhonetic;
+import com.safi.asterisk.actionstep.SayTime;
+import com.safi.asterisk.actionstep.SetAutoHangup;
+import com.safi.asterisk.actionstep.SetCallerId;
+import com.safi.asterisk.actionstep.SetCallerPresentation;
+import com.safi.asterisk.actionstep.SetChannelVariable;
+import com.safi.asterisk.actionstep.SetContext;
+import com.safi.asterisk.actionstep.SetExtension;
+import com.safi.asterisk.actionstep.SetGlobalVariable;
+import com.safi.asterisk.actionstep.SetMusicOn;
+import com.safi.asterisk.actionstep.SetPriority;
+import com.safi.asterisk.actionstep.Sleep;
+import com.safi.asterisk.actionstep.SoftHangup;
+import com.safi.asterisk.actionstep.StopMixmonitor;
+import com.safi.asterisk.actionstep.StopMonitor;
+import com.safi.asterisk.actionstep.StopMusicOnHold;
+import com.safi.asterisk.actionstep.StopPlaytones;
+import com.safi.asterisk.actionstep.StreamAudio;
+import com.safi.asterisk.actionstep.StreamAudioExtended;
+import com.safi.asterisk.actionstep.Transfer;
+import com.safi.asterisk.actionstep.VMAuthenticate;
+import com.safi.asterisk.actionstep.Voicemail;
+import com.safi.asterisk.actionstep.VoicemailMain;
+import com.safi.asterisk.actionstep.WaitExten;
+import com.safi.asterisk.actionstep.WaitForDigit;
+import com.safi.asterisk.actionstep.WaitForRing;
+import com.safi.asterisk.actionstep.WaitMusicOnHold;
 import com.safi.core.ProductIdentifiable;
-
 import com.safi.core.actionstep.ActionStep;
-
-import org.eclipse.emf.common.notify.Adapter;
-import org.eclipse.emf.common.notify.Notifier;
-
-import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
