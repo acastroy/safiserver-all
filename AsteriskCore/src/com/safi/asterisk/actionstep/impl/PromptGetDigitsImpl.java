@@ -199,7 +199,7 @@ public class PromptGetDigitsImpl extends ActionStepImpl implements PromptGetDigi
             ((AsteriskSafletContext)context).flushBufferedDigits();
           
           if (!rcvdEscape && numRemainingDigits > 0) {
-            buf.append(channel.getData(StringUtils.isBlank(filenameStr) ? "silence/1" : filenameStr, timeout, numRemainingDigits));
+            buf.append(channel.getData(StringUtils.isBlank(filenameStr) || (useBufferedDigits && buf.length() > 0) ? "silence/1" : filenameStr, timeout, numRemainingDigits));
           }
           
           if (debugLog.isDebugEnabled())
