@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/TimeBasedRoutingNew/src"
+    modelPluginID="TimeBasedRoutingNew" modelName="TimeBasedRouting" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../Saflets/model/core.genmodel#//core ../../SafiDB/model/db.genmodel#//db">
+  <foreignModel>timeBasedRouting.ecore</foreignModel>
+  <genPackages prefix="TimeBasedRouting" basePackage="com.safi.workshop.model" disposableProviderFactory="true"
+      ecorePackage="timeBasedRouting.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="timeBasedRouting.ecore#//OccursMode">
+      <genEnumLiterals ecoreEnumLiteral="timeBasedRouting.ecore#//OccursMode/DAILY"/>
+      <genEnumLiterals ecoreEnumLiteral="timeBasedRouting.ecore#//OccursMode/WEEKLY"/>
+      <genEnumLiterals ecoreEnumLiteral="timeBasedRouting.ecore#//OccursMode/MONTHLY"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="timeBasedRouting.ecore#//Day">
+      <genEnumLiterals ecoreEnumLiteral="timeBasedRouting.ecore#//Day/SUNDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="timeBasedRouting.ecore#//Day/MONDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="timeBasedRouting.ecore#//Day/TUESDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="timeBasedRouting.ecore#//Day/WEDNESDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="timeBasedRouting.ecore#//Day/THURSDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="timeBasedRouting.ecore#//Day/FRIDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="timeBasedRouting.ecore#//Day/SATURDAY"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="timeBasedRouting.ecore#//DayOccurrence">
+      <genEnumLiterals ecoreEnumLiteral="timeBasedRouting.ecore#//DayOccurrence/FIRST"/>
+      <genEnumLiterals ecoreEnumLiteral="timeBasedRouting.ecore#//DayOccurrence/SECOND"/>
+      <genEnumLiterals ecoreEnumLiteral="timeBasedRouting.ecore#//DayOccurrence/THIRD"/>
+      <genEnumLiterals ecoreEnumLiteral="timeBasedRouting.ecore#//DayOccurrence/FOURTH"/>
+      <genEnumLiterals ecoreEnumLiteral="timeBasedRouting.ecore#//DayOccurrence/LAST"/>
+    </genEnums>
+    <genClasses ecoreClass="timeBasedRouting.ecore#//TimeBasedRouting">
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference timeBasedRouting.ecore#//TimeBasedRouting/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference timeBasedRouting.ecore#//TimeBasedRouting/times"/>
+    </genClasses>
+    <genClasses ecoreClass="timeBasedRouting.ecore#//TimeItem">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute timeBasedRouting.ecore#//TimeItem/description"/>
+    </genClasses>
+    <genClasses ecoreClass="timeBasedRouting.ecore#//OccursModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute timeBasedRouting.ecore#//OccursModel/mode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute timeBasedRouting.ecore#//OccursModel/description"/>
+      <genOperations ecoreOperation="timeBasedRouting.ecore#//OccursModel/isMatch"/>
+    </genClasses>
+    <genClasses ecoreClass="timeBasedRouting.ecore#//DailyOccursModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute timeBasedRouting.ecore#//DailyOccursModel/skipDays"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute timeBasedRouting.ecore#//DailyOccursModel/startDate"/>
+    </genClasses>
+    <genClasses ecoreClass="timeBasedRouting.ecore#//WeeklyOccursModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute timeBasedRouting.ecore#//WeeklyOccursModel/skipWeeks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute timeBasedRouting.ecore#//WeeklyOccursModel/days"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute timeBasedRouting.ecore#//WeeklyOccursModel/startDate"/>
+    </genClasses>
+    <genClasses ecoreClass="timeBasedRouting.ecore#//MonthlyOccursModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute timeBasedRouting.ecore#//MonthlyOccursModel/byIndex"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute timeBasedRouting.ecore#//MonthlyOccursModel/skipMonths"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute timeBasedRouting.ecore#//MonthlyOccursModel/dayIndex"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute timeBasedRouting.ecore#//MonthlyOccursModel/dayOccurence"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute timeBasedRouting.ecore#//MonthlyOccursModel/day"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute timeBasedRouting.ecore#//MonthlyOccursModel/startDate"/>
+    </genClasses>
+    <genClasses ecoreClass="timeBasedRouting.ecore#//TimeRange">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute timeBasedRouting.ecore#//TimeRange/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference timeBasedRouting.ecore#//TimeRange/occursModel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute timeBasedRouting.ecore#//TimeRange/startRange"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute timeBasedRouting.ecore#//TimeRange/endRange"/>
+      <genOperations ecoreOperation="timeBasedRouting.ecore#//TimeRange/isMatch"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

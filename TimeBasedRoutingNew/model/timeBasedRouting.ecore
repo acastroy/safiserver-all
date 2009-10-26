@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="timeBasedRouting"
+    nsURI="http:///com/safi/workshop/timeBasedRouting.ecore" nsPrefix="com.safi.workshop.timeBasedRouting">
+  <eClassifiers xsi:type="ecore:EClass" name="TimeBasedRouting" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" ordered="false"
+        eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="DynamicValueAnnotation">
+        <details key="type" value="VariableName"/>
+        <details key="isTypeLocked" value="false"/>
+        <details key="description" value="The value to assign"/>
+        <details key="expectedReturnType" value="Unknown"/>
+        <details key="helperClass" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="times" upperBound="-1"
+        eType="#//TimeItem" containment="true">
+      <eAnnotations source="Required">
+        <details key="criteria" value="non-empty"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeItem" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/CaseItem">
+    <eAnnotations source="DynamicValueAnnotation" references="../../Saflets/model/core.ecore#//actionstep/CaseItem/dynamicValue">
+      <details key="superProperty" value="dynamicValue"/>
+      <details key="type" value="Custom"/>
+      <details key="isTypeLocked" value="true"/>
+      <details key="description" value="The time range of this output"/>
+      <details key="expectedReturnType" value="TimeRange"/>
+      <details key="helperClass" value="com.safi.workshop.timeBasedRouting.pak.editpart.TimeRangeEditorPage"/>
+    </eAnnotations>
+    <eAnnotations source="Required">
+      <details key="criteria" value="non-null"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OccursModel">
+    <eOperations name="isMatch" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" eType="#//OccursMode"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OccursMode">
+    <eLiterals name="DAILY"/>
+    <eLiterals name="WEEKLY" value="1"/>
+    <eLiterals name="MONTHLY" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Day">
+    <eLiterals name="SUNDAY" literal="Sunday"/>
+    <eLiterals name="MONDAY" value="1" literal="Monday"/>
+    <eLiterals name="TUESDAY" value="2" literal="Tuesday"/>
+    <eLiterals name="WEDNESDAY" value="3" literal="Wednesday"/>
+    <eLiterals name="THURSDAY" value="4" literal="Thursday"/>
+    <eLiterals name="FRIDAY" value="5" literal="Friday"/>
+    <eLiterals name="SATURDAY" value="6" literal="Saturday"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DayOccurrence">
+    <eLiterals name="FIRST" literal="1st"/>
+    <eLiterals name="SECOND" value="1" literal="2nd"/>
+    <eLiterals name="THIRD" value="2" literal="3rd"/>
+    <eLiterals name="FOURTH" value="3" literal="4th"/>
+    <eLiterals name="LAST" value="4" literal="Last"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DailyOccursModel" eSuperTypes="#//OccursModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="skipDays" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WeeklyOccursModel" eSuperTypes="#//OccursModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="skipWeeks" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="days" upperBound="-1" eType="#//Day"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MonthlyOccursModel" eSuperTypes="#//OccursModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="byIndex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="skipMonths" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dayIndex" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dayOccurence" eType="#//DayOccurrence"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="day" eType="#//Day"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeRange">
+    <eOperations name="isMatch" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="occursModel" eType="#//OccursModel"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startRange" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endRange" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+  </eClassifiers>
+</ecore:EPackage>
