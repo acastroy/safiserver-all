@@ -38,358 +38,358 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  */
 public class ConfigItemProviderAdapterFactory extends ConfigAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
   /**
-   * This keeps track of the root adapter factory that delegates to this adapter factory.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the root adapter factory that delegates to this adapter factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ComposedAdapterFactory parentAdapterFactory;
 
   /**
-   * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
-   * <!-- begin-user-doc -->
+	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected IChangeNotifier changeNotifier = new ChangeNotifier();
 
   /**
-   * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
-   * <!-- begin-user-doc -->
+	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
   /**
-   * This constructs an instance.
-   * <!-- begin-user-doc -->
+	 * This constructs an instance.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ConfigItemProviderAdapterFactory() {
-    supportedTypes.add(IEditingDomainItemProvider.class);
-    supportedTypes.add(IStructuredItemContentProvider.class);
-    supportedTypes.add(ITreeItemContentProvider.class);
-    supportedTypes.add(IItemLabelProvider.class);
-    supportedTypes.add(IItemPropertySource.class);
-  }
+		supportedTypes.add(IEditingDomainItemProvider.class);
+		supportedTypes.add(IStructuredItemContentProvider.class);
+		supportedTypes.add(ITreeItemContentProvider.class);
+		supportedTypes.add(IItemLabelProvider.class);
+		supportedTypes.add(IItemPropertySource.class);
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.db.server.config.ServerResource} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.db.server.config.ServerResource} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ServerResourceItemProvider serverResourceItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.db.server.config.ServerResource}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.db.server.config.ServerResource}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createServerResourceAdapter() {
-    if (serverResourceItemProvider == null) {
-      serverResourceItemProvider = new ServerResourceItemProvider(this);
-    }
+		if (serverResourceItemProvider == null) {
+			serverResourceItemProvider = new ServerResourceItemProvider(this);
+		}
 
-    return serverResourceItemProvider;
-  }
+		return serverResourceItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.db.server.config.AsteriskServer} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.db.server.config.AsteriskServer} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected AsteriskServerItemProvider asteriskServerItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.db.server.config.AsteriskServer}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.db.server.config.AsteriskServer}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createAsteriskServerAdapter() {
-    if (asteriskServerItemProvider == null) {
-      asteriskServerItemProvider = new AsteriskServerItemProvider(this);
-    }
+		if (asteriskServerItemProvider == null) {
+			asteriskServerItemProvider = new AsteriskServerItemProvider(this);
+		}
 
-    return asteriskServerItemProvider;
-  }
+		return asteriskServerItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.db.server.config.SafiServer} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.db.server.config.SafiServer} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected SafiServerItemProvider safiServerItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.db.server.config.SafiServer}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.db.server.config.SafiServer}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createSafiServerAdapter() {
-    if (safiServerItemProvider == null) {
-      safiServerItemProvider = new SafiServerItemProvider(this);
-    }
+		if (safiServerItemProvider == null) {
+			safiServerItemProvider = new SafiServerItemProvider(this);
+		}
 
-    return safiServerItemProvider;
-  }
+		return safiServerItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.db.server.config.Role} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.db.server.config.Role} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected RoleItemProvider roleItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.db.server.config.Role}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.db.server.config.Role}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createRoleAdapter() {
-    if (roleItemProvider == null) {
-      roleItemProvider = new RoleItemProvider(this);
-    }
+		if (roleItemProvider == null) {
+			roleItemProvider = new RoleItemProvider(this);
+		}
 
-    return roleItemProvider;
-  }
+		return roleItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.db.server.config.Entitlement} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.db.server.config.Entitlement} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected EntitlementItemProvider entitlementItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.db.server.config.Entitlement}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.db.server.config.Entitlement}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createEntitlementAdapter() {
-    if (entitlementItemProvider == null) {
-      entitlementItemProvider = new EntitlementItemProvider(this);
-    }
+		if (entitlementItemProvider == null) {
+			entitlementItemProvider = new EntitlementItemProvider(this);
+		}
 
-    return entitlementItemProvider;
-  }
+		return entitlementItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.db.server.config.User} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.db.server.config.User} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected UserItemProvider userItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.db.server.config.User}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.db.server.config.User}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createUserAdapter() {
-    if (userItemProvider == null) {
-      userItemProvider = new UserItemProvider(this);
-    }
+		if (userItemProvider == null) {
+			userItemProvider = new UserItemProvider(this);
+		}
 
-    return userItemProvider;
-  }
+		return userItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.db.server.config.Saflet} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.db.server.config.Saflet} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected SafletItemProvider safletItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.db.server.config.Saflet}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.db.server.config.Saflet}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createSafletAdapter() {
-    if (safletItemProvider == null) {
-      safletItemProvider = new SafletItemProvider(this);
-    }
+		if (safletItemProvider == null) {
+			safletItemProvider = new SafletItemProvider(this);
+		}
 
-    return safletItemProvider;
-  }
+		return safletItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.db.server.config.SafletProject} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.db.server.config.SafletProject} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected SafletProjectItemProvider safletProjectItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.db.server.config.SafletProject}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.db.server.config.SafletProject}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createSafletProjectAdapter() {
-    if (safletProjectItemProvider == null) {
-      safletProjectItemProvider = new SafletProjectItemProvider(this);
-    }
+		if (safletProjectItemProvider == null) {
+			safletProjectItemProvider = new SafletProjectItemProvider(this);
+		}
 
-    return safletProjectItemProvider;
-  }
+		return safletProjectItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.db.server.config.Prompt} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.db.server.config.Prompt} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected PromptItemProvider promptItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.db.server.config.Prompt}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.db.server.config.Prompt}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createPromptAdapter() {
-    if (promptItemProvider == null) {
-      promptItemProvider = new PromptItemProvider(this);
-    }
+		if (promptItemProvider == null) {
+			promptItemProvider = new PromptItemProvider(this);
+		}
 
-    return promptItemProvider;
-  }
+		return promptItemProvider;
+	}
 
   /**
-   * This returns the root adapter factory that contains this factory.
-   * <!-- begin-user-doc -->
+	 * This returns the root adapter factory that contains this factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ComposeableAdapterFactory getRootAdapterFactory() {
-    return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
-  }
+		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+	}
 
   /**
-   * This sets the composed adapter factory that contains this factory.
-   * <!-- begin-user-doc -->
+	 * This sets the composed adapter factory that contains this factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
-    this.parentAdapterFactory = parentAdapterFactory;
-  }
+		this.parentAdapterFactory = parentAdapterFactory;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean isFactoryForType(Object type) {
-    return supportedTypes.contains(type) || super.isFactoryForType(type);
-  }
+		return supportedTypes.contains(type) || super.isFactoryForType(type);
+	}
 
   /**
-   * This implementation substitutes the factory itself as the key for the adapter.
-   * <!-- begin-user-doc -->
+	 * This implementation substitutes the factory itself as the key for the adapter.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter adapt(Notifier notifier, Object type) {
-    return super.adapt(notifier, this);
-  }
+		return super.adapt(notifier, this);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object adapt(Object object, Object type) {
-    if (isFactoryForType(type)) {
-      Object adapter = super.adapt(object, type);
-      if (!(type instanceof Class) || (((Class<?>)type).isInstance(adapter))) {
-        return adapter;
-      }
-    }
+		if (isFactoryForType(type)) {
+			Object adapter = super.adapt(object, type);
+			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+				return adapter;
+			}
+		}
 
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * This adds a listener.
-   * <!-- begin-user-doc -->
+	 * This adds a listener.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void addListener(INotifyChangedListener notifyChangedListener) {
-    changeNotifier.addListener(notifyChangedListener);
-  }
+		changeNotifier.addListener(notifyChangedListener);
+	}
 
   /**
-   * This removes a listener.
-   * <!-- begin-user-doc -->
+	 * This removes a listener.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void removeListener(INotifyChangedListener notifyChangedListener) {
-    changeNotifier.removeListener(notifyChangedListener);
-  }
+		changeNotifier.removeListener(notifyChangedListener);
+	}
 
   /**
-   * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
-   * <!-- begin-user-doc -->
+	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void fireNotifyChanged(Notification notification) {
-    changeNotifier.fireNotifyChanged(notification);
+		changeNotifier.fireNotifyChanged(notification);
 
-    if (parentAdapterFactory != null) {
-      parentAdapterFactory.fireNotifyChanged(notification);
-    }
-  }
+		if (parentAdapterFactory != null) {
+			parentAdapterFactory.fireNotifyChanged(notification);
+		}
+	}
 
   /**
-   * This disposes all of the item providers created by this factory. 
-   * <!-- begin-user-doc -->
+	 * This disposes all of the item providers created by this factory. 
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void dispose() {
-    if (serverResourceItemProvider != null) serverResourceItemProvider.dispose();
-    if (asteriskServerItemProvider != null) asteriskServerItemProvider.dispose();
-    if (safiServerItemProvider != null) safiServerItemProvider.dispose();
-    if (roleItemProvider != null) roleItemProvider.dispose();
-    if (entitlementItemProvider != null) entitlementItemProvider.dispose();
-    if (userItemProvider != null) userItemProvider.dispose();
-    if (safletItemProvider != null) safletItemProvider.dispose();
-    if (safletProjectItemProvider != null) safletProjectItemProvider.dispose();
-    if (promptItemProvider != null) promptItemProvider.dispose();
-  }
+		if (serverResourceItemProvider != null) serverResourceItemProvider.dispose();
+		if (asteriskServerItemProvider != null) asteriskServerItemProvider.dispose();
+		if (safiServerItemProvider != null) safiServerItemProvider.dispose();
+		if (roleItemProvider != null) roleItemProvider.dispose();
+		if (entitlementItemProvider != null) entitlementItemProvider.dispose();
+		if (userItemProvider != null) userItemProvider.dispose();
+		if (safletItemProvider != null) safletItemProvider.dispose();
+		if (safletProjectItemProvider != null) safletProjectItemProvider.dispose();
+		if (promptItemProvider != null) promptItemProvider.dispose();
+	}
 
 }
