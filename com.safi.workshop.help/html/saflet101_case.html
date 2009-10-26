@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+</head>
+<body>
+<big style="font-weight: bold;">Choice</big><br>
+<br>
+There exist cases which requires to evaluate multiple conditions. In
+this case, ifthen actionstep can be still used but it could be tedious
+to build structure.<br>
+Choice actionstep can simplify compliicated conditional structrues to a
+single actionstep. We will start by creating current variable varA with
+default value -1.<br>
+add choice actionstep into saflet.<br>
+<img style="width: 459px; height: 250px;" alt=""
+ src="images/help/saflet101/case1.JPG"><br>
+<br>
+Double clicking choice actionstep will bring up actionstep dialog. <br>
+<br>
+<img style="width: 421px; height: 505px;" alt=""
+ src="images/help/saflet101/case2.JPG"><br>
+<br>
+We will evaluate varA value.<br>
+<br>
+<img style="width: 546px; height: 517px;" alt=""
+ src="images/help/saflet101/case3.JPG"><br>
+<br>
+We select &nbsp;varA value to be evaluated with given choices. Now by
+clicking + sign button, we can add value to compare with varA.<br>
+<br>
+<img style="width: 424px; height: 505px;" alt=""
+ src="images/help/saflet101/case4.JPG"><br>
+<br>
+Select Script tab and write down 0.<br>
+<br>
+<img style="width: 545px; height: 521px;" alt=""
+ src="images/help/saflet101/case5.JPG"><br>
+<br>
+Once it is added, add 1 for another choice.<br>
+<br>
+<img style="width: 545px; height: 526px;" alt=""
+ src="images/help/saflet101/case6.JPG">\<br>
+<br>
+It should show 0,1 to be value to compare with varA.<br>
+<br>
+<img style="width: 422px; height: 509px;" alt=""
+ src="images/help/saflet101/case7.JPG"><br>
+<br>
+add -1 to choice value. This should be same value with varA &nbsp;and
+evaluate as true condition.<br>
+Saflet should take this action path in execution.<br>
+<br>
+<img style="width: 546px; height: 521px;" alt=""
+ src="images/help/saflet101/case8.JPG"><br>
+<br>
+So, we have 3 values to compare with value of varA.<br>
+<br>
+<img style="width: 418px; height: 504px;" alt=""
+ src="images/help/saflet101/case9.JPG"><br>
+<br>
+<img style="width: 351px; height: 217px;" alt=""
+ src="images/help/saflet101/case10.JPG"><br>
+Add some debuglog&nbsp; actionsteps. By debugging, we can verify
+whether it is taking correct action path.<br>
+<br>
+<img style="width: 647px; height: 351px;" alt=""
+ src="images/help/saflet101/case11.JPG"><br>
+<br>
+After execution of choice action step, saflet is taking -1 as saflet
+execution path which is correct action path.<br>
+<br>
+<img style="width: 639px; height: 322px;" alt=""
+ src="images/help/saflet101/case12.JPG"><br>
+<br>
+Choice action step can &nbsp;also accept boolean expression by using
+boolean expression editor.<br>
+When expression will evaluate as true condition., saflet will take true
+condition action path.<br>
+</body>
+</html>

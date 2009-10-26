@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?><toc label="Getting Started">
+			
+			
+				
+				
+			
+			
+				<topic href="html/topic_9.html" label="Installing SafiServer on Windows">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/topic_10.html" label="Installing SafiServer on Linux">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/topic_13.html" label="Setting up extensions.conf">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/topic_23.html" label="Setting up FreePBX Module">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+			
+			
+				</toc>

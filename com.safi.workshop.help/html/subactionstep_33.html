@@ -1,0 +1,210 @@
+
+		
+		<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+		
+		<html>
+		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+			<title>Directory</title>
+			<link rel="stylesheet" href="css/help.css" type="text/css" />
+		</head>
+		
+		<body>
+		
+		
+	
+	
+	
+	
+		
+
+		
+		
+		
+		
+		
+		
+		<table width="100%" border="0" cellpadding="0" cellspacing="0">
+			
+				
+				<tr>
+					<td valign="top">
+						<div class="actionstep">
+						<img src="images/help/actionsteps/Directory.gif" />
+						<span></span>
+						</div>
+						</td>
+					<td valign="top">
+						<div class="actionstepinfo">
+						<p class="as_head">ActionStep</p>
+						<p class="as_text">Directory
+						<p class="as_head">Description</p>
+						<div class="as_text">
+						
+						
+
+
+
+
+	
+
+
+	
+
+
+	
+	
+
+	
+	
+
+	
+
+	
+
+
+	
+
+	
+
+	
+
+	
+	
+
+	
+
+	
+	
+
+	
+
+
+	
+	
+
+
+	
+
+	
+	
+
+	
+
+
+	
+
+	
+	
+
+	
+
+
+	
+
+	
+	
+
+	
+
+
+	
+
+	
+	
+
+	
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+	
+
+	
+
+
+	
+
+
+Asterisk menu application the looks up extensions based on the name associated with the mailbox associated with the extension.<br><br>The caller is prompted to key in 3 digits representing the name of the intended destination.  The application then presents the caller with a list of extensions from which they may select one. The list of names and extensions is discovered from voicemail.conf. The <i>VM Context</i> argument is required, and specifies the context of voicemail.conf to use. The dial-context is the context to use for dialing the users, and defaults to the vm-context if unspecified.<br><br>On exit, this ActionStep with dial the selected extension. <br><br><b>Example Contexts (trixbox):</b><br>Dial Context = from-did-direct<br>VM Context = default</div>
+						<p class="as_head">Attributes</p>
+						 <table cellspacing="0" cellpadding="0" border="0" class="att_tbl">
+							<tr>
+								<td width="150"><strong>Name</strong></td>
+								<td width="150"><strong>Default</strong></td>
+								<td><strong>Description</strong></td>
+							</tr>
+							
+							<tr>
+								<td>Call1</td>
+								<td>Call1</td>
+								<td class="attDescription">The object representing the call to run Directory application on</td>
+							</tr>
+							
+							<tr>
+								<td>Dial Context</td>
+								<td></td>
+								<td class="attDescription">The context to use for dialing the found extension</td>
+							</tr>
+							
+							<tr>
+								<td>Enter By First Name</td>
+								<td>false</td>
+								<td class="attDescription">( true | false ) Allow the caller to enter the first name of a user in the directory instead of using the last name.</td>
+							</tr>
+							
+							<tr>
+								<td>Enter By First Or Last Name</td>
+								<td>false</td>
+								<td class="attDescription">( true | false ) Allow the caller to enter the first name OR last name of a user in the directory.</td>
+							</tr>
+							
+							<tr>
+								<td>Name</td>
+								<td>Directory</td>
+								<td class="attDescription">Name used in the SafiWorkshop for the ActionStep</td>
+							</tr>
+							
+							<tr>
+								<td>Read Extension Number</td>
+								<td>false</td>
+								<td class="attDescription">( true | false ) In addition to the name, also read the extension number to the caller before presenting dialing options.</td>
+							</tr>
+							
+							<tr>
+								<td>VM Context</td>
+								<td></td>
+								<td class="attDescription"><i>Required</i>  Specifies the context of voicemail.conf to use</td>
+							</tr>
+							
+						</table>
+					  </div>
+					</td>
+				</tr>
+			
+		</table>
+	
+	
+
+		</body>
+		</html>
+		
+		

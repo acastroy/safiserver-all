@@ -1,0 +1,192 @@
+
+		
+		<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+		
+		<html>
+		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+			<title>VoicemailMain</title>
+			<link rel="stylesheet" href="css/help.css" type="text/css" />
+		</head>
+		
+		<body>
+		
+		
+	
+	
+	
+	
+		
+
+		
+		
+		
+		
+		
+		
+		<table width="100%" border="0" cellpadding="0" cellspacing="0">
+			
+				
+				<tr>
+					<td valign="top">
+						<div class="actionstep">
+						<img src="images/help/actionsteps/VoicemailMain.gif" />
+						<span></span>
+						</div>
+						</td>
+					<td valign="top">
+						<div class="actionstepinfo">
+						<p class="as_head">ActionStep</p>
+						<p class="as_text">VoicemailMain
+						<p class="as_head">Description</p>
+						<div class="as_text">
+						
+						
+
+
+
+
+	
+
+
+	
+
+
+	
+	
+
+	
+	
+
+	
+
+	
+
+
+	
+
+	
+
+	
+
+	
+	
+
+	
+
+	
+	
+
+	
+
+
+	
+	
+
+
+	
+
+	
+	
+
+	
+
+
+	
+
+	
+	
+
+	
+
+
+	
+
+	
+	
+
+	
+
+
+	
+
+	
+	
+
+	
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+	
+
+	
+
+
+	
+
+
+Enters the Asterisk voicemail system for the checking of voicemail. The mailbox can be passed as a property: <b>Mailbox</b>, which will stop the voicemail system from prompting the user for the mailbox.<br><br>If the mailbox property <b>Skip Password Check</b> is set to <i>false</i>; the   password check will be skipped.<br><br><b>VoicemailMain Menu</b><br><ul><li><b>1</b> Read voicemail messages <ul><li><b>3</b> Advanced options   <ul><li><b>1</b> Reply   </li><li><b>2</b> Call back(1)   </li><li><b>3</b> Envelope   </li><li><b>4</b> Outgoing call(1)   </li><li><b>5</b> Send Message (only available if sendvoicemail=yes in voicemail.conf)  </li></ul>  </li><li><b>4</b> Play previous message  </li><li><b>5</b> Repeat current message  </li><li><b>6</b> Play next message  </li><li><b>7</b> Delete current message  </li><li><b>8</b> Forward message to another mailbox  <ul><li><b>1</b> Use Voicemailnumber <i>(only available if usedirectory=yes in voicemail.conf)</i>   </li><li><b>2</b> Use Voicemail Directory <i>(only available if usedirectory=yes in voicemail.conf)</i>  </li></ul>  </li><li><b>9</b> Save message in a folder  <ul><li><b>0</b> Save in new Messages   </li><li><b>1</b> Save in old Messages   </li><li><b>2</b> Save in Work Messages   </li><li><b>3</b> Save in Family Messages   </li><li><b>4</b> Save in Friends Messages   </li></ul>  </li><li><b>*</b> Help; during msg playback: Rewind  </li><li><b>#</b> Exit; during msg playback: Skip forward </li></ul> </li><li><b>2</b> Change folders <ul><li><b>0</b> Switch to new Messages  </li><li><b>1</b> Switch to old Messages  </li><li><b>2</b> Switch to Work Messages  </li><li><b>3</b> Switch to Family Messages  </li><li><b>4</b> Switch to Friends Messages  </li></ul> </li><li><b>3</b> Advanced Options <ul><li><b>5</b> Send Message <i>(only available if sendvoicemail=yes in voicemail.conf)</i>  <ul><li><b>1</b> Use Voicemailnumber <i>(only available if usedirectory=yes in voicemail.conf)</i>   </li><li><b>2</b> Use Voicemail Directory <i>(only available if usedirectory=yes in voicemail.conf)</i>  </li></ul> </li></ul> </li><li><b>0</b> Mailbox options <ul><li><b>1</b> Record your unavailable message  </li><li><b>2</b> Record your busy message  </li><li><b>3</b> Record your name  </li><li><b>4</b> Record your temporary message (new in Asterisk v1.2)  </li><li><b>5</b> Change your password  </li><li><b>*</b> Return to the main menu  </li></ul> </li><li><b>*</b> Help </li><li><b>#</b> Exit</li></ul><br><br><b>After recording a message (incoming message, busy/unavailable greeting, or name)</b><br><ul><li><b>1</b> Accept</li><li><b>2</b> Review</li><li><b>3</b> Re-record</li><li><b>0</b> Reach operator(1) (not available when recording greetings/name)</li></ul><br><br><br>See the following for further information reguarding the Asterisk voicemail system configuration file (voicemail.conf): <a href="http://www.voip-info.org/wiki/index.php?page=Asterisk+config+voicemail.conf">http://www.voip-info.org/wiki/index.php?page=Asterisk+config+voicemail.conf</a><br></div>
+						<p class="as_head">Attributes</p>
+						 <table cellspacing="0" cellpadding="0" border="0" class="att_tbl">
+							<tr>
+								<td width="150"><strong>Name</strong></td>
+								<td width="150"><strong>Default</strong></td>
+								<td><strong>Description</strong></td>
+							</tr>
+							
+							<tr>
+								<td>Call1</td>
+								<td>Call1</td>
+								<td class="attDescription">The object representing the call to transfer to voicemailmain </td>
+							</tr>
+							
+							<tr>
+								<td>Mailbox</td>
+								<td></td>
+								<td class="attDescription">Mailbox formatted like: <i>mailbox</i>@<i>context</i></td>
+							</tr>
+							
+							<tr>
+								<td>Name</td>
+								<td>VoicemailMain</td>
+								<td class="attDescription">Name used in the SafiWorkshop for the ActionStep</td>
+							</tr>
+							
+							<tr>
+								<td>Skip Password Check</td>
+								<td>false</td>
+								<td class="attDescription">( true | false ) Skip checking the passcode for the mailbox.</td>
+							</tr>
+							
+						</table>
+					  </div>
+					</td>
+				</tr>
+			
+		</table>
+	
+	
+
+		</body>
+		</html>
+		
+		

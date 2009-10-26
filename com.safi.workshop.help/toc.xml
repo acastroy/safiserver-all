@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?><toc label="SafiWorkshop Help" topic="html/toc.html">
+				
+				  <topic href="html/toc_1.html" label="Getting Started">
+				      <link toc="toctoc_1.xml"/>
+				   </topic>
+				
+				  <topic href="html/toc_2.html" label="Concepts">
+				      <link toc="toctoc_2.xml"/>
+				   </topic>
+				
+				  <topic href="html/toc_3.html" label="Saflet Developers Guide">
+				      <link toc="toctoc_3.xml"/>
+				   </topic>
+				
+				  <topic href="html/toc_5.html" label="Debugging ">
+				      <link toc="toctoc_5.xml"/>
+				   </topic>
+				
+				</toc>

@@ -1,0 +1,1323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?><toc label="Saflet Developers Guide">
+			
+			
+				
+				
+			
+			
+				<topic href="html/topic_4.html" label="ActionSteps">
+			
+			
+				
+				
+			
+			
+				<topic href="html/safletgroup_11.html" label="Advanced Call Handling">
+			
+			
+				
+				
+			
+			
+				<topic href="html/subactionstep_47.html" label="OriginateCall">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_20.html" label="PlayMusicOnHold">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_46.html" label="Progress">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_10.html" label="Ringing">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_9.html" label="SetAutoHangup">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_8.html" label="WaitForRing">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/safletgroup_4.html" label="Audio: Playback">
+			
+			
+				
+				
+			
+			
+				<topic href="html/subactionstep_35.html" label="MultiStreamAudio">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_17.html" label="PlayDTMF">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_13.html" label="SayAlpha">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_14.html" label="SayDateTime">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_15.html" label="SayDigits">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_39.html" label="SayNumber">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_16.html" label="SayPhonetic">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_38.html" label="SayTime">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_18.html" label="StreamAudio">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_19.html" label="StreamAudioExtended">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_37.html" label="WaitMusicOnHold">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/safletgroup_6.html" label="Audio: Realtime">
+			
+			
+				
+				
+			
+			
+				<topic href="html/subactionstep_50.html" label="ChanSpy">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_67.html" label="ExtensionSpy">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_53.html" label="Monitor">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_68.html" label="RecordCall">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_24.html" label="RecordFile">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_54.html" label="StopMonitor">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/safletgroup_5.html" label="Call Info">
+			
+			
+				
+				
+			
+			
+				<topic href="html/subactionstep_64.html" label="GetAstVar">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_63.html" label="GetCallInfo">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_65.html" label="SetAstChannelVar">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_55.html" label="SetAstGlobalVar">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_28.html" label="SetCallerId">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_40.html" label="SetCallerPresentation">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_23.html" label="SetContext">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_52.html" label="SetMusicOnHold">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_66.html" label="SetPriority">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/safletgroup_1.html" label="Call Managment">
+			
+			
+				
+				
+			
+			
+				<topic href="html/subactionstep_1.html" label="Answer">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_6.html" label="Congestion">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_62.html" label="Extension">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_2.html" label="Hangup">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_34.html" label="PlaceCall">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_4.html" label="Sleep">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_3.html" label="Transfer">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/safletgroup_13.html" label="Database: ActionPak">
+			
+			
+				
+				
+			
+			
+				<topic href="html/subactionstep_59.html" label="CloseDBConnection">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_77.html" label="DeleteRow">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_71.html" label="ExecuteUpdate">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_61.html" label="GetColValue">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_72.html" label="GetColValues">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_79.html" label="InsertRow">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_80.html" label="MoveToFirstRow">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_78.html" label="MoveToInsertRow">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_76.html" label="MoveToRow">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_60.html" label="NextRow">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_57.html" label="OpenDBConnection">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_81.html" label="PreviousRow">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_58.html" label="RunQuery">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_74.html" label="SetColValue">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_73.html" label="SetColValues">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_75.html" label="UpdateRow">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/safletgroup_10.html" label="Initiators">
+			
+			
+				
+				
+			
+			
+				<topic href="html/subactionstep_70.html" label="CustomInitiator">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_45.html" label="IncomingCall">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/safletgroup_3.html" label="Input">
+			
+			
+				
+				
+			
+			
+				<topic href="html/subactionstep_36.html" label="GetDigits">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_12.html" label="PromptGetDigits">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_11.html" label="WaitForDigit">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/safletgroup_7.html" label="Logic">
+			
+			
+				
+				
+			
+			
+				<topic href="html/subactionstep_27.html" label="Assignment">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_26.html" label="Choice">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_48.html" label="ExecuteScript">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_42.html" label="IfThen">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_51.html" label="InvokeSaflet">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_69.html" label="TimeBasedRouting">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/safletgroup_2.html" label="Misc">
+			
+			
+				
+				
+			
+			
+				<topic href="html/subactionstep_7.html" label="DebugLog">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_31.html" label="Echo">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_32.html" label="ExecuteApplication">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/safletgroup_12.html" label="REMOVE">
+			
+			
+				
+				
+			
+			
+				<topic href="html/subactionstep_41.html" label="MixMonitor">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_5.html" label="Pickup">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_21.html" label="PlayTones">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/safletgroup_8.html" label="Voicemail and Conferencing">
+			
+			
+				
+				
+			
+			
+				<topic href="html/subactionstep_22.html" label="Dictate">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_33.html" label="Directory">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_25.html" label="MeetMe">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_43.html" label="MeetMeAdmin">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_44.html" label="MeetMeCount">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_29.html" label="Voicemail">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/subactionstep_30.html" label="VoicemailMain">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/topic_14.html" label="Components">
+			
+			
+				
+				
+			
+			
+				<topic href="html/topic_15.html" label="Palette">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/topic_16.html" label="Navigator">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/topic_17.html" label="Properties Pane">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/topic_18.html" label="Variables Pane">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/topic_19.html" label="Console">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+				
+			
+			
+				<topic href="html/topic_22.html" label="Scripting ">
+			
+			
+			
+				</topic> 
+			
+			
+			
+		
+				
+			
+			
+				</toc>

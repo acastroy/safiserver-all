@@ -1,0 +1,30 @@
+
+		
+		<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+		
+		<html>
+		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+			<title>Setting up extensions.conf</title>
+			<link rel="stylesheet" href="css/help.css" type="text/css" />
+		</head>
+		
+		<body>
+		
+		
+	
+	
+	
+	
+		
+		
+		<h2>Setting up extensions.conf</h2><br>
+		<p><font size="2">A Saflet can be invoked on a SafiServer (or SafiWorkshop) by making a FastAGI call to the server with the proper information (project name and Saflet name). <b><br></b></font></p><p><font size="2"><b><br></b></font></p><p><font size="2"><b>extensions.conf syntax:</b><br>exten = <span style="color: red;"><i>[extension]</i></span>,1,Agi(agi://<span style="color: red;"><i>[IP or FQDN of SafiServer]</i></span>/safletEngine.agi?saflet=<span style="color: red;"><i>[Project]</i></span>/<span style="color: red;"><i>[Saflet]</i></span>)</font></p><p><font size="2"><span style="font-weight: bold;">example:</span><br><span style="font-weight: bold;"></span><span style="font-weight: bold;"></span>exten = 1111,1,Agi(agi://192.168.0.10/safletEngine.agi?saflet=project/saflet)</font></p><p><font size="2"><br></font></p><font size="2">If needed, you might need to specify a different port for the FastAGI connection (i.e. the FastAGI server in SafiWorkshop by default runs on port 3573 instead of the default 4573)<br><br><span style="font-weight: bold;">example:</span><br><span style="font-weight: bold;"></span><span style="font-weight: bold;"></span>exten = 1111,1,Agi(agi://192.168.0.10<span style="color: #0033CC; font-weight: bold;">:3573</span>/safletEngine.agi?saflet=project/saflet)</font><br><br>
+
+	
+	
+
+		</body>
+		</html>
+		
+		

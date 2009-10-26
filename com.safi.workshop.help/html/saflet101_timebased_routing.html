@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+</head>
+<body>
+Time based Routing.<br>
+<br>
+Create datetime variable.<br>
+<br>
+<img style="width: 397px; height: 295px;" alt=""
+ src="images/help/saflet101/tr1.JPG"><br>
+<br>
+Variable is set to be 5:01 AM.<br>
+<br>
+<img style="width: 715px; height: 163px;" alt=""
+ src="images/help/saflet101/tr2.JPG"><br>
+<br>
+Add TimeBasedRouting actionstep.<br>
+<br>
+<img style="width: 345px; height: 207px;" alt=""
+ src="images/help/saflet101/tr3.JPG"><br>
+<br>
+Double clicking TimeBasedRouting Actionstep brings up ActionStep
+Editor. It is similar to choice actionstep.<br>
+You can add multiple time range and conditions as branching point.
+&nbsp;Input variable value is datetimeVar.<br>
+<br>
+<img style="width: 421px; height: 506px;" alt=""
+ src="images/help/saflet101/tr4.JPG"><br>
+<br>
+You can add time range. Clicking + sign button will bring time range
+editor Dialog.<br>
+<br>
+<br>
+<img style="width: 548px; height: 528px;" alt=""
+ src="images/help/saflet101/tr5.JPG"><br>
+<br>
+We assigned first time range to be 12:00AM - 5:00AM.<br>
+<br>
+<img style="width: 423px; height: 504px;" alt=""
+ src="images/help/saflet101/tr6.JPG"><br>
+<br>
+Second Range is between 5AM and 12:00PM.<br>
+<br>
+<br>
+<img style="width: 546px; height: 526px;" alt=""
+ src="images/help/saflet101/tr7.JPG"><br>
+<br>
+Third range is between 12:00 PM and 5:00 PM.<br>
+<br>
+<img style="width: 547px; height: 525px;" alt=""
+ src="images/help/saflet101/tr8.JPG"><br>
+<br>
+Fourth range is between 5:00PM and 11:59:59 PM. make sure it is not
+12:00:00AM. PM value must not pass AM value.&nbsp;<br>
+This will be always false condition when it is executed. Therefore it
+will not be executed. We will restrict this condition in future release.<br>
+<br>
+<img style="width: 547px; height: 533px;" alt=""
+ src="images/help/saflet101/tr9.JPG"><br>
+<br>
+We have 4 time range conditions to check.<br>
+<br>
+<img style="width: 567px; height: 360px;" alt=""
+ src="images/help/saflet101/tr10.JPG"><br>
+<br>
+Each range conditions is reflectioned in TimeBasedRouting actionstep as
+a output.<br>
+<img style="width: 402px; height: 221px;" alt=""
+ src="images/help/saflet101/tr11.JPG"><br>
+For verification and debugging purpose, add some Debuglog actionsteps
+and connect them with outputs.<br>
+<br>
+<img style="width: 553px; height: 414px;" alt=""
+ src="images/help/saflet101/tr12.JPG"><br>
+We can verify whether range conditions work correctly by debugging
+saflet. Input time is datetimeVar.<br>
+Specified time is 5:01 AM. So it will take&nbsp;second time range
+output condition path.<br>
+<br>
+<img style="width: 562px; height: 563px;" alt=""
+ src="images/help/saflet101/tr13.JPG"><br>
+<br>
+It does indeed take a correct actionpath and execute.<br>
+<br>
+<img style="width: 591px; height: 548px;" alt=""
+ src="images/help/saflet101/tr14.JPG"><br>
+<br>
+Let's change input time to be 5:01 PM. &nbsp;In this case, it should
+take fourth time range which is between 5PM amd 11:59:59 PM.<br>
+<br>
+<img style="width: 401px; height: 288px;" alt=""
+ src="images/help/saflet101/tr15.JPG"><br>
+<br>
+It does indeed execute correctly and take fourth time range as a
+actionstep execution path.<br>
+<br>
+<img style="width: 551px; height: 543px;" alt=""
+ src="images/help/saflet101/tr16.JPG"><br>
+<br>
+Let's change fourth time range condition. Duration should not be
+between PM to AM although you can specify range in interface as you can
+see.<br>
+This will be awlays false condition and will not be executed as a
+actionstep execution &nbsp;path.<br>
+<br>
+<img style="width: 547px; height: 531px;" alt=""
+ src="images/help/saflet101/tr17.JPG"><br>
+<br>
+As you can see, 5:01 PM is not falling into time range you specified
+and instead it takes default ouput path.<br>
+<br>
+<br>
+<img style="width: 574px; height: 535px;" alt=""
+ src="images/help/saflet101/tr18.JPG"><br>
+<br>
+Also, you can specify value of datetimeVar as current time. You have to
+use script and assign now() function.<br>
+For details, please refer to time, date and datetime tutorial.
+</body>
+</html>
