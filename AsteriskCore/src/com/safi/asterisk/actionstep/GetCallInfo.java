@@ -39,7 +39,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface GetCallInfo extends CallConsumer1, ActionStep {
+public interface GetCallInfo extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Account Code Var</b></em>' containment reference.
    * <!-- begin-user-doc -->

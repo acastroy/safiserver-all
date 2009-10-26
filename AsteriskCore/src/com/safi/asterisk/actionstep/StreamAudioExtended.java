@@ -32,7 +32,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface StreamAudioExtended extends CallConsumer1, ActionStep {
+public interface StreamAudioExtended extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Filename</b></em>' containment reference.
    * <!-- begin-user-doc -->

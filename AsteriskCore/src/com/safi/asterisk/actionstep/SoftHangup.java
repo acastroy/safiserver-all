@@ -28,7 +28,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface SoftHangup extends CallConsumer1, ActionStep {
+public interface SoftHangup extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Hangup All Device Calls</b></em>' attribute.
    * <!-- begin-user-doc -->

@@ -27,7 +27,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface PlayMusicOnHold extends CallConsumer1, ActionStep {
+public interface PlayMusicOnHold extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Hold Class</b></em>' containment reference.
    * <!-- begin-user-doc -->

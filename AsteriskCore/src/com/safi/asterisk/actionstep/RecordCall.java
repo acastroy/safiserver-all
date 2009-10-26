@@ -29,7 +29,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface RecordCall extends CallConsumer1, ActionStep {
+public interface RecordCall extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Filename</b></em>' containment reference.
    * <!-- begin-user-doc -->

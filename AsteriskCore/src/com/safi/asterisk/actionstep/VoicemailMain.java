@@ -31,7 +31,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface VoicemailMain extends CallConsumer1, ActionStep {
+public interface VoicemailMain extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Mailbox</b></em>' containment reference.
    * <!-- begin-user-doc -->

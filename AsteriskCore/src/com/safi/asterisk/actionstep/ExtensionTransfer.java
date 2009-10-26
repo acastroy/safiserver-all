@@ -8,6 +8,7 @@ package com.safi.asterisk.actionstep;
 
 import com.safi.asterisk.CallConsumer2;
 
+import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.DynamicValue;
 
 /**
@@ -29,7 +30,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface ExtensionTransfer extends CallConsumer2 {
+public interface ExtensionTransfer extends ActionStep, CallConsumer2 {
   /**
    * Returns the value of the '<em><b>Context</b></em>' containment reference.
    * <!-- begin-user-doc -->

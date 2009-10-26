@@ -29,7 +29,7 @@ import com.safi.core.actionstep.ActionStep;
  * @model
  * @generated
  */
-public interface BackgroundDetect extends CallConsumer1, ActionStep {
+public interface BackgroundDetect extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Filename</b></em>' attribute.
    * <!-- begin-user-doc -->

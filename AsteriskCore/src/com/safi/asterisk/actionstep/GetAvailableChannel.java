@@ -30,7 +30,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface GetAvailableChannel extends CallConsumer1, ActionStep {
+public interface GetAvailableChannel extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Channels</b></em>' containment reference.
    * <!-- begin-user-doc -->

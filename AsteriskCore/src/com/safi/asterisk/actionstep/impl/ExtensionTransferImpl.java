@@ -6,21 +6,30 @@
  */
 package com.safi.asterisk.actionstep.impl;
 
-import com.safi.asterisk.Call;
-
-import com.safi.asterisk.actionstep.ActionstepPackage;
-import com.safi.asterisk.actionstep.ExtensionTransfer;
-
-import com.safi.core.actionstep.DynamicValue;
-
+import org.apache.commons.lang.StringUtils;
+import org.asteriskjava.fastagi.AgiChannel;
+import org.asteriskjava.manager.ManagerConnection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+
+import com.safi.asterisk.AsteriskPackage;
+import com.safi.asterisk.Call;
+import com.safi.asterisk.CallConsumer1;
+import com.safi.asterisk.CallConsumer2;
+import com.safi.asterisk.actionstep.ActionstepPackage;
+import com.safi.asterisk.actionstep.ExtensionTransfer;
+import com.safi.core.actionstep.ActionStepException;
+import com.safi.core.actionstep.ActionStepFactory;
+import com.safi.core.actionstep.DynamicValue;
+import com.safi.core.actionstep.Output;
+import com.safi.core.actionstep.OutputType;
+import com.safi.core.actionstep.impl.ActionStepImpl;
+import com.safi.core.actionstep.util.VariableTranslator;
+import com.safi.core.saflet.SafletContext;
+import com.safi.db.VariableType;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,7 +49,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public class ExtensionTransferImpl extends EObjectImpl implements ExtensionTransfer {
+public class ExtensionTransferImpl extends ActionStepImpl implements ExtensionTransfer {
   /**
    * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
    * <!-- begin-user-doc -->
@@ -130,6 +139,127 @@ public class ExtensionTransferImpl extends EObjectImpl implements ExtensionTrans
     super();
   }
 
+  @Override
+  public void beginProcessing(SafletContext context) throws ActionStepException {
+    super.beginProcessing(context);
+    Object variableRawValue = context
+        .getVariableRawValue(com.safi.asterisk.util.AsteriskSafletConstants.VAR_KEY_MANAGER_CONNECTION);
+    if (variableRawValue == null || !(variableRawValue instanceof ManagerConnection)) {
+      handleException(context, new ActionStepException(
+          "No manager connection found in current context"));
+      return;
+    }
+    ManagerConnection connection = (ManagerConnection) variableRawValue;
+
+    if (call1 == null || call1.getChannel() == null) {
+      handleException(context, new ActionStepException(call1 == null ? "No current call found"
+          : "No channel found in current context"));
+      return;
+    }
+    AgiChannel channel = call1.getChannel();
+    Exception exception = null;
+    int idx = 0;
+    try {
+
+      // RedirectAction action = new RedirectAction();
+
+      Object dynValue = resolveDynamicValue(this.context, context);
+      String ctx = (String) VariableTranslator.translateValue(VariableType.TEXT, dynValue);
+      // action.setContext(ctx);
+
+      // action.setPriority(priority);
+
+      dynValue = resolveDynamicValue(extension, context);
+      String ext = (String) VariableTranslator.translateValue(VariableType.TEXT, dynValue);
+      // action.setExten(ext);
+
+      String options = "Local/" + ext;
+      if (StringUtils.isNotBlank(ctx))
+        options += "@" + ctx;
+      if (timeout > 0)
+        options += "|" + timeout;
+
+      // String chan = channel.getName();
+
+      // action.setChannel(chan);
+
+      // if (call2 != null) action.setExtraChannel(call2.getChannelName());
+      // ResultType[] buf = new ResultType[1];
+      // RedirectCallManagerEventListener eventListener = new
+      // RedirectCallManagerEventListener(buf,
+      // channel.getUniqueId());
+
+      // try {
+      // connection.addEventListener(eventListener);
+      if (debugLog.isDebugEnabled())
+        debug("About to dial " + options);
+      // channel.setExtension(ext);
+      // channel.setContext(ctx);
+      // channel.setPriority(String.valueOf(priority));
+      channel.exec("Dial", options);
+      String status = channel.getVariable("DIALSTATUS");
+      if (debugLog.isDebugEnabled())
+        debug("Dial returned status " + status);
+      if (status == null)
+        idx = 0;
+      else {
+        status = status.trim();
+        if ("BUSY".equals(status)) {
+          idx = 2;
+        } else if ("NOANSWER".equals(status)) {
+          idx = 3;
+        } else if ("CANCEL".equals(status)) {
+          idx = 4;
+        } else if ("DONTCALL".equals(status)) {
+          idx = 5;
+        } else if ("CHANUNAVAIL".equals(status)) {
+          idx = 6;
+        } else if ("ANSWER".equals(status)) {
+          idx = 1;
+        } else
+          idx = 0;
+      }
+      if (debugLog.isDebugEnabled())
+        debug("index is " + idx);
+    } catch (Exception e) {
+      exception = e;
+    }
+    if (exception != null) {
+      handleException(context, exception);
+      return;
+    }
+    handleSuccess(context, idx);
+  }
+  
+  @Override
+  public void createDefaultOutputs() {
+    // TODO Auto-generated method stub
+    super.createDefaultOutputs();
+    Output o = ActionStepFactory.eINSTANCE.createOutput();
+    o.setOutputType(OutputType.CHOICE);
+    o.setName("busy");
+    getOutputs().add(o);
+
+    o = ActionStepFactory.eINSTANCE.createOutput();
+    o.setOutputType(OutputType.CHOICE);
+    o.setName("no answer");
+    getOutputs().add(o);
+
+    o = ActionStepFactory.eINSTANCE.createOutput();
+    o.setOutputType(OutputType.CHOICE);
+    o.setName("cancelled");
+    getOutputs().add(o);
+
+    o = ActionStepFactory.eINSTANCE.createOutput();
+    o.setOutputType(OutputType.CHOICE);
+    o.setName("dnd");
+    getOutputs().add(o);
+
+    o = ActionStepFactory.eINSTANCE.createOutput();
+    o.setOutputType(OutputType.CHOICE);
+    o.setName("bad ext");
+    getOutputs().add(o);
+  }
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -468,6 +598,50 @@ public class ExtensionTransferImpl extends EObjectImpl implements ExtensionTrans
         return timeout != TIMEOUT_EDEFAULT;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+    if (baseClass == CallConsumer1.class) {
+      switch (derivedFeatureID) {
+        case ActionstepPackage.EXTENSION_TRANSFER__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
+        default: return -1;
+      }
+    }
+    if (baseClass == CallConsumer2.class) {
+      switch (derivedFeatureID) {
+        case ActionstepPackage.EXTENSION_TRANSFER__CALL2: return AsteriskPackage.CALL_CONSUMER2__CALL2;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+    if (baseClass == CallConsumer1.class) {
+      switch (baseFeatureID) {
+        case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.EXTENSION_TRANSFER__CALL1;
+        default: return -1;
+      }
+    }
+    if (baseClass == CallConsumer2.class) {
+      switch (baseFeatureID) {
+        case AsteriskPackage.CALL_CONSUMER2__CALL2: return ActionstepPackage.EXTENSION_TRANSFER__CALL2;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
   /**

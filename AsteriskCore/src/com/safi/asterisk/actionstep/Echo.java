@@ -20,5 +20,5 @@ import com.safi.core.actionstep.ActionStep;
  * @model
  * @generated
  */
-public interface Echo extends CallConsumer1, ActionStep {
+public interface Echo extends ActionStep, CallConsumer1 {
 } // Echo

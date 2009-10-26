@@ -28,7 +28,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface Dictate extends CallConsumer1, ActionStep {
+public interface Dictate extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Directory</b></em>' containment reference.
    * <!-- begin-user-doc -->

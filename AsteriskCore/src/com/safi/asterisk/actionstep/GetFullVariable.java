@@ -28,7 +28,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface GetFullVariable extends CallConsumer1, ActionStep {
+public interface GetFullVariable extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Variable</b></em>' attribute.
    * <!-- begin-user-doc -->

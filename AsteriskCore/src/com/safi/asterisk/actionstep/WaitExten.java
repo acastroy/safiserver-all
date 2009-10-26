@@ -27,7 +27,7 @@ import com.safi.core.actionstep.ActionStep;
  * @model
  * @generated
  */
-public interface WaitExten extends CallConsumer1, ActionStep {
+public interface WaitExten extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Music On Hold Class</b></em>' attribute.
    * <!-- begin-user-doc -->

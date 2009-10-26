@@ -39,7 +39,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface OriginateCall extends CallSource1, ActionStep {
+public interface OriginateCall extends ActionStep, CallSource1 {
   /**
    * Returns the value of the '<em><b>Async</b></em>' attribute.
    * The default value is <code>"false"</code>.

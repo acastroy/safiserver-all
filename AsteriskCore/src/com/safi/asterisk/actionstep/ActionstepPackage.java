@@ -8,6 +8,7 @@ package com.safi.asterisk.actionstep;
 
 import com.safi.asterisk.AsteriskPackage;
 
+import com.safi.core.actionstep.ActionStepPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -74,22 +75,13 @@ public interface ActionstepPackage extends EPackage {
   int ANSWER = 0;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ANSWER__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ANSWER__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int ANSWER__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -98,7 +90,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ANSWER__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int ANSWER__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -107,7 +99,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ANSWER__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int ANSWER__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -116,7 +108,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ANSWER__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int ANSWER__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -125,7 +117,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ANSWER__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int ANSWER__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -134,7 +126,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ANSWER__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int ANSWER__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -143,7 +135,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ANSWER__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int ANSWER__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -152,7 +144,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ANSWER__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int ANSWER__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANSWER__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Answer</em>' class.
@@ -161,7 +162,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ANSWER_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int ANSWER_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.GetDigitsImpl <em>Get Digits</em>}' class.
@@ -174,22 +175,13 @@ public interface ActionstepPackage extends EPackage {
   int GET_DIGITS = 1;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GET_DIGITS__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GET_DIGITS__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int GET_DIGITS__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -198,7 +190,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_DIGITS__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int GET_DIGITS__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -207,7 +199,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_DIGITS__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int GET_DIGITS__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -216,7 +208,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_DIGITS__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int GET_DIGITS__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -225,7 +217,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_DIGITS__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int GET_DIGITS__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -234,7 +226,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_DIGITS__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int GET_DIGITS__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -243,7 +235,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_DIGITS__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int GET_DIGITS__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -252,7 +244,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_DIGITS__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int GET_DIGITS__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GET_DIGITS__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Input Timeout</b></em>' attribute.
@@ -261,7 +262,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_DIGITS__INPUT_TIMEOUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int GET_DIGITS__INPUT_TIMEOUT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Use Buffered Digits</b></em>' attribute.
@@ -270,7 +271,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_DIGITS__USE_BUFFERED_DIGITS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int GET_DIGITS__USE_BUFFERED_DIGITS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Escape Digits</b></em>' attribute.
@@ -279,7 +280,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_DIGITS__ESCAPE_DIGITS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int GET_DIGITS__ESCAPE_DIGITS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Variable Name</b></em>' containment reference.
@@ -288,7 +289,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_DIGITS__VARIABLE_NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 11;
+  int GET_DIGITS__VARIABLE_NAME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Max Digits</b></em>' attribute.
@@ -297,7 +298,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_DIGITS__MAX_DIGITS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 12;
+  int GET_DIGITS__MAX_DIGITS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Accepted Digits</b></em>' attribute.
@@ -306,7 +307,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_DIGITS__ACCEPTED_DIGITS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 13;
+  int GET_DIGITS__ACCEPTED_DIGITS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 6;
 
   /**
    * The number of structural features of the '<em>Get Digits</em>' class.
@@ -315,7 +316,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_DIGITS_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 14;
+  int GET_DIGITS_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 7;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.GetFullVariableImpl <em>Get Full Variable</em>}' class.
@@ -328,22 +329,13 @@ public interface ActionstepPackage extends EPackage {
   int GET_FULL_VARIABLE = 2;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GET_FULL_VARIABLE__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GET_FULL_VARIABLE__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int GET_FULL_VARIABLE__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -352,7 +344,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_FULL_VARIABLE__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int GET_FULL_VARIABLE__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -361,7 +353,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_FULL_VARIABLE__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int GET_FULL_VARIABLE__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -370,7 +362,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_FULL_VARIABLE__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int GET_FULL_VARIABLE__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -379,7 +371,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_FULL_VARIABLE__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int GET_FULL_VARIABLE__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -388,7 +380,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_FULL_VARIABLE__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int GET_FULL_VARIABLE__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -397,7 +389,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_FULL_VARIABLE__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int GET_FULL_VARIABLE__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -406,7 +398,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_FULL_VARIABLE__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int GET_FULL_VARIABLE__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GET_FULL_VARIABLE__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' attribute.
@@ -415,7 +416,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_FULL_VARIABLE__VARIABLE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int GET_FULL_VARIABLE__VARIABLE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Assign To Var</b></em>' containment reference.
@@ -424,7 +425,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_FULL_VARIABLE__ASSIGN_TO_VAR = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int GET_FULL_VARIABLE__ASSIGN_TO_VAR = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Get Full Variable</em>' class.
@@ -433,7 +434,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_FULL_VARIABLE_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int GET_FULL_VARIABLE_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.MultiStreamAudioImpl <em>Multi Stream Audio</em>}' class.
@@ -446,22 +447,13 @@ public interface ActionstepPackage extends EPackage {
   int MULTI_STREAM_AUDIO = 3;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTI_STREAM_AUDIO__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MULTI_STREAM_AUDIO__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int MULTI_STREAM_AUDIO__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -470,7 +462,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MULTI_STREAM_AUDIO__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int MULTI_STREAM_AUDIO__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -479,7 +471,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MULTI_STREAM_AUDIO__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int MULTI_STREAM_AUDIO__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -488,7 +480,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MULTI_STREAM_AUDIO__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int MULTI_STREAM_AUDIO__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -497,7 +489,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MULTI_STREAM_AUDIO__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int MULTI_STREAM_AUDIO__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -506,7 +498,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MULTI_STREAM_AUDIO__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int MULTI_STREAM_AUDIO__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -515,7 +507,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MULTI_STREAM_AUDIO__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int MULTI_STREAM_AUDIO__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -524,7 +516,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MULTI_STREAM_AUDIO__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int MULTI_STREAM_AUDIO__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTI_STREAM_AUDIO__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Escape Digits</b></em>' containment reference.
@@ -533,7 +534,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MULTI_STREAM_AUDIO__ESCAPE_DIGITS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int MULTI_STREAM_AUDIO__ESCAPE_DIGITS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Audio Filenames</b></em>' containment reference list.
@@ -542,7 +543,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MULTI_STREAM_AUDIO__AUDIO_FILENAMES = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int MULTI_STREAM_AUDIO__AUDIO_FILENAMES = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Multi Stream Audio</em>' class.
@@ -551,7 +552,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MULTI_STREAM_AUDIO_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int MULTI_STREAM_AUDIO_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.HangupImpl <em>Hangup</em>}' class.
@@ -564,22 +565,13 @@ public interface ActionstepPackage extends EPackage {
   int HANGUP = 4;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HANGUP__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int HANGUP__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int HANGUP__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -588,7 +580,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int HANGUP__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int HANGUP__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -597,7 +589,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int HANGUP__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int HANGUP__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -606,7 +598,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int HANGUP__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int HANGUP__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -615,7 +607,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int HANGUP__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int HANGUP__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -624,7 +616,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int HANGUP__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int HANGUP__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -633,7 +625,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int HANGUP__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int HANGUP__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -642,7 +634,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int HANGUP__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int HANGUP__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HANGUP__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Hangup</em>' class.
@@ -651,7 +652,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int HANGUP_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int HANGUP_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.RecordFileImpl <em>Record File</em>}' class.
@@ -664,22 +665,13 @@ public interface ActionstepPackage extends EPackage {
   int RECORD_FILE = 5;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RECORD_FILE__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RECORD_FILE__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int RECORD_FILE__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -688,7 +680,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RECORD_FILE__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int RECORD_FILE__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -697,7 +689,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RECORD_FILE__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int RECORD_FILE__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -706,7 +698,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RECORD_FILE__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int RECORD_FILE__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -715,7 +707,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RECORD_FILE__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int RECORD_FILE__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -724,7 +716,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RECORD_FILE__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int RECORD_FILE__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -733,7 +725,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RECORD_FILE__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int RECORD_FILE__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -742,7 +734,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RECORD_FILE__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int RECORD_FILE__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECORD_FILE__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Beep</b></em>' attribute.
@@ -751,7 +752,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RECORD_FILE__BEEP = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int RECORD_FILE__BEEP = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Escape Digits</b></em>' attribute.
@@ -760,7 +761,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RECORD_FILE__ESCAPE_DIGITS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int RECORD_FILE__ESCAPE_DIGITS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>File</b></em>' containment reference.
@@ -769,7 +770,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RECORD_FILE__FILE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int RECORD_FILE__FILE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Format</b></em>' attribute.
@@ -778,7 +779,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RECORD_FILE__FORMAT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 11;
+  int RECORD_FILE__FORMAT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Offset</b></em>' attribute.
@@ -787,7 +788,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RECORD_FILE__OFFSET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 12;
+  int RECORD_FILE__OFFSET = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Timeout</b></em>' attribute.
@@ -796,7 +797,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RECORD_FILE__TIMEOUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 13;
+  int RECORD_FILE__TIMEOUT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Max Silence</b></em>' attribute.
@@ -805,7 +806,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RECORD_FILE__MAX_SILENCE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 14;
+  int RECORD_FILE__MAX_SILENCE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 7;
 
   /**
    * The number of structural features of the '<em>Record File</em>' class.
@@ -814,7 +815,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RECORD_FILE_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 15;
+  int RECORD_FILE_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 8;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.SayAlphaImpl <em>Say Alpha</em>}' class.
@@ -827,22 +828,13 @@ public interface ActionstepPackage extends EPackage {
   int SAY_ALPHA = 6;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SAY_ALPHA__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SAY_ALPHA__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int SAY_ALPHA__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -851,7 +843,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_ALPHA__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int SAY_ALPHA__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -860,7 +852,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_ALPHA__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int SAY_ALPHA__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -869,7 +861,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_ALPHA__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int SAY_ALPHA__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -878,7 +870,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_ALPHA__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int SAY_ALPHA__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -887,7 +879,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_ALPHA__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int SAY_ALPHA__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -896,7 +888,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_ALPHA__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int SAY_ALPHA__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -905,7 +897,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_ALPHA__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int SAY_ALPHA__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAY_ALPHA__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Escape Digits</b></em>' attribute.
@@ -914,7 +915,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_ALPHA__ESCAPE_DIGITS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int SAY_ALPHA__ESCAPE_DIGITS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -923,7 +924,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_ALPHA__TEXT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int SAY_ALPHA__TEXT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Say Alpha</em>' class.
@@ -932,7 +933,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_ALPHA_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int SAY_ALPHA_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.SayDateTimeImpl <em>Say Date Time</em>}' class.
@@ -945,22 +946,13 @@ public interface ActionstepPackage extends EPackage {
   int SAY_DATE_TIME = 7;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SAY_DATE_TIME__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SAY_DATE_TIME__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int SAY_DATE_TIME__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -969,7 +961,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_DATE_TIME__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int SAY_DATE_TIME__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -978,7 +970,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_DATE_TIME__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int SAY_DATE_TIME__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -987,7 +979,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_DATE_TIME__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int SAY_DATE_TIME__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -996,7 +988,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_DATE_TIME__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int SAY_DATE_TIME__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -1005,7 +997,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_DATE_TIME__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int SAY_DATE_TIME__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -1014,7 +1006,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_DATE_TIME__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int SAY_DATE_TIME__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -1023,7 +1015,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_DATE_TIME__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int SAY_DATE_TIME__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAY_DATE_TIME__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Escape Digits</b></em>' attribute.
@@ -1032,7 +1033,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_DATE_TIME__ESCAPE_DIGITS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int SAY_DATE_TIME__ESCAPE_DIGITS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Format</b></em>' attribute.
@@ -1041,7 +1042,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_DATE_TIME__FORMAT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int SAY_DATE_TIME__FORMAT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Date Time</b></em>' containment reference.
@@ -1050,7 +1051,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_DATE_TIME__DATE_TIME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int SAY_DATE_TIME__DATE_TIME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Timezone</b></em>' attribute.
@@ -1059,7 +1060,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_DATE_TIME__TIMEZONE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 11;
+  int SAY_DATE_TIME__TIMEZONE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Say Date Time</em>' class.
@@ -1068,7 +1069,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_DATE_TIME_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 12;
+  int SAY_DATE_TIME_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.SayDigitsImpl <em>Say Digits</em>}' class.
@@ -1081,22 +1082,13 @@ public interface ActionstepPackage extends EPackage {
   int SAY_DIGITS = 8;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SAY_DIGITS__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SAY_DIGITS__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int SAY_DIGITS__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -1105,7 +1097,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_DIGITS__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int SAY_DIGITS__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -1114,7 +1106,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_DIGITS__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int SAY_DIGITS__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -1123,7 +1115,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_DIGITS__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int SAY_DIGITS__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1132,7 +1124,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_DIGITS__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int SAY_DIGITS__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -1141,7 +1133,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_DIGITS__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int SAY_DIGITS__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -1150,7 +1142,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_DIGITS__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int SAY_DIGITS__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -1159,7 +1151,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_DIGITS__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int SAY_DIGITS__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAY_DIGITS__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Digits</b></em>' containment reference.
@@ -1168,7 +1169,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_DIGITS__DIGITS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int SAY_DIGITS__DIGITS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Escape Digits</b></em>' attribute.
@@ -1177,7 +1178,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_DIGITS__ESCAPE_DIGITS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int SAY_DIGITS__ESCAPE_DIGITS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Say Digits</em>' class.
@@ -1186,7 +1187,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_DIGITS_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int SAY_DIGITS_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.SayNumberImpl <em>Say Number</em>}' class.
@@ -1199,22 +1200,13 @@ public interface ActionstepPackage extends EPackage {
   int SAY_NUMBER = 9;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SAY_NUMBER__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SAY_NUMBER__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int SAY_NUMBER__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -1223,7 +1215,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_NUMBER__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int SAY_NUMBER__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -1232,7 +1224,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_NUMBER__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int SAY_NUMBER__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -1241,7 +1233,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_NUMBER__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int SAY_NUMBER__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1250,7 +1242,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_NUMBER__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int SAY_NUMBER__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -1259,7 +1251,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_NUMBER__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int SAY_NUMBER__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -1268,7 +1260,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_NUMBER__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int SAY_NUMBER__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -1277,7 +1269,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_NUMBER__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int SAY_NUMBER__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAY_NUMBER__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Escape Digits</b></em>' attribute.
@@ -1286,7 +1287,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_NUMBER__ESCAPE_DIGITS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int SAY_NUMBER__ESCAPE_DIGITS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Number</b></em>' containment reference.
@@ -1295,7 +1296,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_NUMBER__NUMBER = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int SAY_NUMBER__NUMBER = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Say Number</em>' class.
@@ -1304,7 +1305,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_NUMBER_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int SAY_NUMBER_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.SayPhoneticImpl <em>Say Phonetic</em>}' class.
@@ -1317,22 +1318,13 @@ public interface ActionstepPackage extends EPackage {
   int SAY_PHONETIC = 10;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SAY_PHONETIC__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SAY_PHONETIC__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int SAY_PHONETIC__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -1341,7 +1333,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_PHONETIC__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int SAY_PHONETIC__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -1350,7 +1342,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_PHONETIC__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int SAY_PHONETIC__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -1359,7 +1351,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_PHONETIC__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int SAY_PHONETIC__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1368,7 +1360,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_PHONETIC__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int SAY_PHONETIC__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -1377,7 +1369,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_PHONETIC__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int SAY_PHONETIC__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -1386,7 +1378,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_PHONETIC__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int SAY_PHONETIC__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -1395,7 +1387,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_PHONETIC__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int SAY_PHONETIC__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAY_PHONETIC__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Escape Digits</b></em>' attribute.
@@ -1404,7 +1405,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_PHONETIC__ESCAPE_DIGITS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int SAY_PHONETIC__ESCAPE_DIGITS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -1413,7 +1414,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_PHONETIC__TEXT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int SAY_PHONETIC__TEXT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Say Phonetic</em>' class.
@@ -1422,7 +1423,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_PHONETIC_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int SAY_PHONETIC_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.SayTimeImpl <em>Say Time</em>}' class.
@@ -1435,22 +1436,13 @@ public interface ActionstepPackage extends EPackage {
   int SAY_TIME = 11;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SAY_TIME__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SAY_TIME__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int SAY_TIME__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -1459,7 +1451,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_TIME__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int SAY_TIME__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -1468,7 +1460,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_TIME__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int SAY_TIME__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -1477,7 +1469,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_TIME__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int SAY_TIME__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1486,7 +1478,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_TIME__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int SAY_TIME__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -1495,7 +1487,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_TIME__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int SAY_TIME__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -1504,7 +1496,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_TIME__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int SAY_TIME__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -1513,7 +1505,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_TIME__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int SAY_TIME__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SAY_TIME__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Escape Digits</b></em>' attribute.
@@ -1522,7 +1523,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_TIME__ESCAPE_DIGITS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int SAY_TIME__ESCAPE_DIGITS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Time</b></em>' containment reference.
@@ -1531,7 +1532,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_TIME__TIME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int SAY_TIME__TIME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Say Time</em>' class.
@@ -1540,7 +1541,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SAY_TIME_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int SAY_TIME_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.SetAutoHangupImpl <em>Set Auto Hangup</em>}' class.
@@ -1553,22 +1554,13 @@ public interface ActionstepPackage extends EPackage {
   int SET_AUTO_HANGUP = 12;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SET_AUTO_HANGUP__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SET_AUTO_HANGUP__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int SET_AUTO_HANGUP__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -1577,7 +1569,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_AUTO_HANGUP__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int SET_AUTO_HANGUP__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -1586,7 +1578,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_AUTO_HANGUP__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int SET_AUTO_HANGUP__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -1595,7 +1587,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_AUTO_HANGUP__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int SET_AUTO_HANGUP__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1604,7 +1596,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_AUTO_HANGUP__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int SET_AUTO_HANGUP__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -1613,7 +1605,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_AUTO_HANGUP__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int SET_AUTO_HANGUP__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -1622,7 +1614,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_AUTO_HANGUP__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int SET_AUTO_HANGUP__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -1631,7 +1623,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_AUTO_HANGUP__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int SET_AUTO_HANGUP__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_AUTO_HANGUP__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Time</b></em>' attribute.
@@ -1640,7 +1641,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_AUTO_HANGUP__TIME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int SET_AUTO_HANGUP__TIME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Set Auto Hangup</em>' class.
@@ -1649,7 +1650,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_AUTO_HANGUP_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int SET_AUTO_HANGUP_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.SetCallerIdImpl <em>Set Caller Id</em>}' class.
@@ -1662,22 +1663,13 @@ public interface ActionstepPackage extends EPackage {
   int SET_CALLER_ID = 13;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SET_CALLER_ID__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SET_CALLER_ID__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int SET_CALLER_ID__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -1686,7 +1678,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CALLER_ID__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int SET_CALLER_ID__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -1695,7 +1687,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CALLER_ID__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int SET_CALLER_ID__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -1704,7 +1696,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CALLER_ID__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int SET_CALLER_ID__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1713,7 +1705,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CALLER_ID__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int SET_CALLER_ID__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -1722,7 +1714,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CALLER_ID__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int SET_CALLER_ID__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -1731,7 +1723,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CALLER_ID__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int SET_CALLER_ID__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -1740,7 +1732,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CALLER_ID__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int SET_CALLER_ID__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_CALLER_ID__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Caller Id</b></em>' containment reference.
@@ -1749,7 +1750,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CALLER_ID__CALLER_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int SET_CALLER_ID__CALLER_ID = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Set Caller Id</em>' class.
@@ -1758,7 +1759,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CALLER_ID_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int SET_CALLER_ID_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.SetChannelVariableImpl <em>Set Channel Variable</em>}' class.
@@ -1771,22 +1772,13 @@ public interface ActionstepPackage extends EPackage {
   int SET_CHANNEL_VARIABLE = 14;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SET_CHANNEL_VARIABLE__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SET_CHANNEL_VARIABLE__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int SET_CHANNEL_VARIABLE__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -1795,7 +1787,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CHANNEL_VARIABLE__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int SET_CHANNEL_VARIABLE__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -1804,7 +1796,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CHANNEL_VARIABLE__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int SET_CHANNEL_VARIABLE__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -1813,7 +1805,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CHANNEL_VARIABLE__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int SET_CHANNEL_VARIABLE__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1822,7 +1814,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CHANNEL_VARIABLE__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int SET_CHANNEL_VARIABLE__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -1831,7 +1823,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CHANNEL_VARIABLE__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int SET_CHANNEL_VARIABLE__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -1840,7 +1832,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CHANNEL_VARIABLE__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int SET_CHANNEL_VARIABLE__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -1849,7 +1841,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CHANNEL_VARIABLE__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int SET_CHANNEL_VARIABLE__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_CHANNEL_VARIABLE__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -1858,7 +1859,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CHANNEL_VARIABLE__VALUE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int SET_CHANNEL_VARIABLE__VALUE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' attribute.
@@ -1867,7 +1868,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CHANNEL_VARIABLE__VARIABLE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int SET_CHANNEL_VARIABLE__VARIABLE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Set Channel Variable</em>' class.
@@ -1876,7 +1877,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CHANNEL_VARIABLE_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int SET_CHANNEL_VARIABLE_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.SetContextImpl <em>Set Context</em>}' class.
@@ -1889,22 +1890,13 @@ public interface ActionstepPackage extends EPackage {
   int SET_CONTEXT = 15;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SET_CONTEXT__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SET_CONTEXT__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int SET_CONTEXT__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -1913,7 +1905,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CONTEXT__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int SET_CONTEXT__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -1922,7 +1914,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CONTEXT__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int SET_CONTEXT__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -1931,7 +1923,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CONTEXT__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int SET_CONTEXT__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1940,7 +1932,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CONTEXT__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int SET_CONTEXT__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -1949,7 +1941,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CONTEXT__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int SET_CONTEXT__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -1958,7 +1950,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CONTEXT__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int SET_CONTEXT__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -1967,7 +1959,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CONTEXT__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int SET_CONTEXT__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_CONTEXT__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Context</b></em>' containment reference.
@@ -1976,7 +1977,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CONTEXT__CONTEXT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int SET_CONTEXT__CONTEXT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Set Context</em>' class.
@@ -1985,7 +1986,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CONTEXT_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int SET_CONTEXT_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.SetExtensionImpl <em>Set Extension</em>}' class.
@@ -1998,22 +1999,13 @@ public interface ActionstepPackage extends EPackage {
   int SET_EXTENSION = 16;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SET_EXTENSION__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SET_EXTENSION__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int SET_EXTENSION__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -2022,7 +2014,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_EXTENSION__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int SET_EXTENSION__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -2031,7 +2023,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_EXTENSION__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int SET_EXTENSION__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -2040,7 +2032,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_EXTENSION__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int SET_EXTENSION__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2049,7 +2041,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_EXTENSION__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int SET_EXTENSION__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -2058,7 +2050,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_EXTENSION__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int SET_EXTENSION__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -2067,7 +2059,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_EXTENSION__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int SET_EXTENSION__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -2076,7 +2068,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_EXTENSION__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int SET_EXTENSION__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_EXTENSION__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Extension</b></em>' containment reference.
@@ -2085,7 +2086,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_EXTENSION__EXTENSION = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int SET_EXTENSION__EXTENSION = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Set Extension</em>' class.
@@ -2094,7 +2095,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_EXTENSION_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int SET_EXTENSION_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.StopMusicOnHoldImpl <em>Stop Music On Hold</em>}' class.
@@ -2107,22 +2108,13 @@ public interface ActionstepPackage extends EPackage {
   int STOP_MUSIC_ON_HOLD = 17;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STOP_MUSIC_ON_HOLD__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STOP_MUSIC_ON_HOLD__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int STOP_MUSIC_ON_HOLD__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -2131,7 +2123,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_MUSIC_ON_HOLD__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int STOP_MUSIC_ON_HOLD__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -2140,7 +2132,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_MUSIC_ON_HOLD__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int STOP_MUSIC_ON_HOLD__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -2149,7 +2141,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_MUSIC_ON_HOLD__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int STOP_MUSIC_ON_HOLD__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2158,7 +2150,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_MUSIC_ON_HOLD__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int STOP_MUSIC_ON_HOLD__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -2167,7 +2159,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_MUSIC_ON_HOLD__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int STOP_MUSIC_ON_HOLD__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -2176,7 +2168,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_MUSIC_ON_HOLD__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int STOP_MUSIC_ON_HOLD__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -2185,7 +2177,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_MUSIC_ON_HOLD__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int STOP_MUSIC_ON_HOLD__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STOP_MUSIC_ON_HOLD__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Stop Music On Hold</em>' class.
@@ -2194,7 +2195,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_MUSIC_ON_HOLD_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int STOP_MUSIC_ON_HOLD_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.SetMusicOnImpl <em>Set Music On</em>}' class.
@@ -2207,22 +2208,13 @@ public interface ActionstepPackage extends EPackage {
   int SET_MUSIC_ON = 18;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SET_MUSIC_ON__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SET_MUSIC_ON__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int SET_MUSIC_ON__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -2231,7 +2223,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_MUSIC_ON__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int SET_MUSIC_ON__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -2240,7 +2232,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_MUSIC_ON__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int SET_MUSIC_ON__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -2249,7 +2241,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_MUSIC_ON__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int SET_MUSIC_ON__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2258,7 +2250,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_MUSIC_ON__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int SET_MUSIC_ON__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -2267,7 +2259,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_MUSIC_ON__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int SET_MUSIC_ON__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -2276,7 +2268,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_MUSIC_ON__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int SET_MUSIC_ON__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -2285,7 +2277,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_MUSIC_ON__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int SET_MUSIC_ON__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_MUSIC_ON__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Hold Class</b></em>' containment reference.
@@ -2294,7 +2295,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_MUSIC_ON__HOLD_CLASS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int SET_MUSIC_ON__HOLD_CLASS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Set Music On</em>' class.
@@ -2303,7 +2304,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_MUSIC_ON_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int SET_MUSIC_ON_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.SetPriorityImpl <em>Set Priority</em>}' class.
@@ -2316,22 +2317,13 @@ public interface ActionstepPackage extends EPackage {
   int SET_PRIORITY = 19;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SET_PRIORITY__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SET_PRIORITY__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int SET_PRIORITY__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -2340,7 +2332,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_PRIORITY__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int SET_PRIORITY__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -2349,7 +2341,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_PRIORITY__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int SET_PRIORITY__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -2358,7 +2350,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_PRIORITY__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int SET_PRIORITY__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2367,7 +2359,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_PRIORITY__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int SET_PRIORITY__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -2376,7 +2368,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_PRIORITY__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int SET_PRIORITY__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -2385,7 +2377,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_PRIORITY__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int SET_PRIORITY__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -2394,7 +2386,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_PRIORITY__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int SET_PRIORITY__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_PRIORITY__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Priority</b></em>' containment reference.
@@ -2403,7 +2404,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_PRIORITY__PRIORITY = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int SET_PRIORITY__PRIORITY = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Set Priority</em>' class.
@@ -2412,7 +2413,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_PRIORITY_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int SET_PRIORITY_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.StreamAudioImpl <em>Stream Audio</em>}' class.
@@ -2425,22 +2426,13 @@ public interface ActionstepPackage extends EPackage {
   int STREAM_AUDIO = 20;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STREAM_AUDIO__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STREAM_AUDIO__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int STREAM_AUDIO__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -2449,7 +2441,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STREAM_AUDIO__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int STREAM_AUDIO__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -2458,7 +2450,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STREAM_AUDIO__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int STREAM_AUDIO__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -2467,7 +2459,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STREAM_AUDIO__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int STREAM_AUDIO__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2476,7 +2468,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STREAM_AUDIO__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int STREAM_AUDIO__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -2485,7 +2477,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STREAM_AUDIO__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int STREAM_AUDIO__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -2494,7 +2486,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STREAM_AUDIO__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int STREAM_AUDIO__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -2503,7 +2495,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STREAM_AUDIO__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int STREAM_AUDIO__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STREAM_AUDIO__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Filename</b></em>' containment reference.
@@ -2512,7 +2513,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STREAM_AUDIO__FILENAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int STREAM_AUDIO__FILENAME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Escape Digits</b></em>' attribute.
@@ -2521,7 +2522,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STREAM_AUDIO__ESCAPE_DIGITS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int STREAM_AUDIO__ESCAPE_DIGITS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Stream Audio</em>' class.
@@ -2530,7 +2531,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STREAM_AUDIO_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int STREAM_AUDIO_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.WaitForDigitImpl <em>Wait For Digit</em>}' class.
@@ -2543,22 +2544,13 @@ public interface ActionstepPackage extends EPackage {
   int WAIT_FOR_DIGIT = 21;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WAIT_FOR_DIGIT__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WAIT_FOR_DIGIT__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int WAIT_FOR_DIGIT__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -2567,7 +2559,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_FOR_DIGIT__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int WAIT_FOR_DIGIT__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -2576,7 +2568,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_FOR_DIGIT__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int WAIT_FOR_DIGIT__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -2585,7 +2577,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_FOR_DIGIT__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int WAIT_FOR_DIGIT__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2594,7 +2586,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_FOR_DIGIT__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int WAIT_FOR_DIGIT__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -2603,7 +2595,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_FOR_DIGIT__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int WAIT_FOR_DIGIT__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -2612,7 +2604,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_FOR_DIGIT__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int WAIT_FOR_DIGIT__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -2621,7 +2613,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_FOR_DIGIT__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int WAIT_FOR_DIGIT__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WAIT_FOR_DIGIT__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Timeout</b></em>' attribute.
@@ -2630,7 +2631,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_FOR_DIGIT__TIMEOUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int WAIT_FOR_DIGIT__TIMEOUT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Accepted Digits</b></em>' attribute.
@@ -2639,7 +2640,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_FOR_DIGIT__ACCEPTED_DIGITS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int WAIT_FOR_DIGIT__ACCEPTED_DIGITS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Wait For Digit</em>' class.
@@ -2648,7 +2649,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_FOR_DIGIT_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int WAIT_FOR_DIGIT_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.OriginateCallImpl <em>Originate Call</em>}' class.
@@ -2661,22 +2662,13 @@ public interface ActionstepPackage extends EPackage {
   int ORIGINATE_CALL = 22;
 
   /**
-   * The feature id for the '<em><b>New Call1</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ORIGINATE_CALL__NEW_CALL1 = AsteriskPackage.CALL_SOURCE1__NEW_CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ORIGINATE_CALL__PRODUCT_ID = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 0;
+  int ORIGINATE_CALL__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -2685,7 +2677,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ORIGINATE_CALL__PAUSED = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 1;
+  int ORIGINATE_CALL__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -2694,7 +2686,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ORIGINATE_CALL__ACTIVE = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 2;
+  int ORIGINATE_CALL__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -2703,7 +2695,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ORIGINATE_CALL__OUTPUTS = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 3;
+  int ORIGINATE_CALL__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2712,7 +2704,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ORIGINATE_CALL__NAME = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 4;
+  int ORIGINATE_CALL__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -2721,7 +2713,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ORIGINATE_CALL__SAFLET = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 5;
+  int ORIGINATE_CALL__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -2730,7 +2722,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ORIGINATE_CALL__DEFAULT_OUTPUT = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 6;
+  int ORIGINATE_CALL__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -2739,7 +2731,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ORIGINATE_CALL__ERROR_OUTPUT = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 7;
+  int ORIGINATE_CALL__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>New Call1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORIGINATE_CALL__NEW_CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Async</b></em>' attribute.
@@ -2748,7 +2749,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ORIGINATE_CALL__ASYNC = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 8;
+  int ORIGINATE_CALL__ASYNC = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Account</b></em>' containment reference.
@@ -2757,7 +2758,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ORIGINATE_CALL__ACCOUNT = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 9;
+  int ORIGINATE_CALL__ACCOUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Application</b></em>' containment reference.
@@ -2766,7 +2767,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ORIGINATE_CALL__APPLICATION = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 10;
+  int ORIGINATE_CALL__APPLICATION = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Caller Id</b></em>' containment reference.
@@ -2775,7 +2776,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ORIGINATE_CALL__CALLER_ID = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 11;
+  int ORIGINATE_CALL__CALLER_ID = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Context</b></em>' containment reference.
@@ -2784,7 +2785,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ORIGINATE_CALL__CONTEXT = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 12;
+  int ORIGINATE_CALL__CONTEXT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Data</b></em>' containment reference.
@@ -2793,7 +2794,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ORIGINATE_CALL__DATA = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 13;
+  int ORIGINATE_CALL__DATA = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Extension</b></em>' containment reference.
@@ -2802,7 +2803,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ORIGINATE_CALL__EXTENSION = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 14;
+  int ORIGINATE_CALL__EXTENSION = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -2811,7 +2812,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ORIGINATE_CALL__PRIORITY = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 15;
+  int ORIGINATE_CALL__PRIORITY = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Timeout</b></em>' attribute.
@@ -2820,7 +2821,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ORIGINATE_CALL__TIMEOUT = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 16;
+  int ORIGINATE_CALL__TIMEOUT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Calling Presentation</b></em>' attribute.
@@ -2829,7 +2830,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ORIGINATE_CALL__CALLING_PRESENTATION = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 17;
+  int ORIGINATE_CALL__CALLING_PRESENTATION = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Channel</b></em>' containment reference.
@@ -2838,7 +2839,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ORIGINATE_CALL__CHANNEL = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 18;
+  int ORIGINATE_CALL__CHANNEL = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Take Control</b></em>' attribute.
@@ -2847,7 +2848,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ORIGINATE_CALL__TAKE_CONTROL = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 19;
+  int ORIGINATE_CALL__TAKE_CONTROL = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Variables</b></em>' containment reference.
@@ -2856,7 +2857,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ORIGINATE_CALL__VARIABLES = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 20;
+  int ORIGINATE_CALL__VARIABLES = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 13;
 
   /**
    * The number of structural features of the '<em>Originate Call</em>' class.
@@ -2865,7 +2866,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ORIGINATE_CALL_FEATURE_COUNT = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 21;
+  int ORIGINATE_CALL_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 14;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.PlayDTMFImpl <em>Play DTMF</em>}' class.
@@ -2878,22 +2879,13 @@ public interface ActionstepPackage extends EPackage {
   int PLAY_DTMF = 23;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PLAY_DTMF__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PLAY_DTMF__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int PLAY_DTMF__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -2902,7 +2894,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLAY_DTMF__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int PLAY_DTMF__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -2911,7 +2903,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLAY_DTMF__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int PLAY_DTMF__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -2920,7 +2912,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLAY_DTMF__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int PLAY_DTMF__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2929,7 +2921,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLAY_DTMF__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int PLAY_DTMF__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -2938,7 +2930,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLAY_DTMF__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int PLAY_DTMF__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -2947,7 +2939,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLAY_DTMF__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int PLAY_DTMF__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -2956,7 +2948,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLAY_DTMF__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int PLAY_DTMF__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PLAY_DTMF__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Digits</b></em>' containment reference.
@@ -2965,7 +2966,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLAY_DTMF__DIGITS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int PLAY_DTMF__DIGITS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Play DTMF</em>' class.
@@ -2974,7 +2975,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLAY_DTMF_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int PLAY_DTMF_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.RecordCallImpl <em>Record Call</em>}' class.
@@ -2987,22 +2988,13 @@ public interface ActionstepPackage extends EPackage {
   int RECORD_CALL = 24;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RECORD_CALL__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RECORD_CALL__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int RECORD_CALL__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -3011,7 +3003,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RECORD_CALL__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int RECORD_CALL__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -3020,7 +3012,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RECORD_CALL__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int RECORD_CALL__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -3029,7 +3021,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RECORD_CALL__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int RECORD_CALL__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3038,7 +3030,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RECORD_CALL__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int RECORD_CALL__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -3047,7 +3039,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RECORD_CALL__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int RECORD_CALL__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -3056,7 +3048,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RECORD_CALL__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int RECORD_CALL__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -3065,7 +3057,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RECORD_CALL__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int RECORD_CALL__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECORD_CALL__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Filename</b></em>' containment reference.
@@ -3074,7 +3075,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RECORD_CALL__FILENAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int RECORD_CALL__FILENAME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Format</b></em>' attribute.
@@ -3083,7 +3084,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RECORD_CALL__FORMAT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int RECORD_CALL__FORMAT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Mix</b></em>' attribute.
@@ -3092,7 +3093,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RECORD_CALL__MIX = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int RECORD_CALL__MIX = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Record Call</em>' class.
@@ -3101,7 +3102,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RECORD_CALL_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 11;
+  int RECORD_CALL_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.TransferImpl <em>Transfer</em>}' class.
@@ -3114,31 +3115,13 @@ public interface ActionstepPackage extends EPackage {
   int TRANSFER = 25;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRANSFER__CALL1 = AsteriskPackage.CALL_CONSUMER2__CALL1;
-
-  /**
-   * The feature id for the '<em><b>Call2</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRANSFER__CALL2 = AsteriskPackage.CALL_CONSUMER2__CALL2;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TRANSFER__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 0;
+  int TRANSFER__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -3147,7 +3130,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int TRANSFER__PAUSED = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 1;
+  int TRANSFER__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -3156,7 +3139,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int TRANSFER__ACTIVE = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 2;
+  int TRANSFER__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -3165,7 +3148,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int TRANSFER__OUTPUTS = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 3;
+  int TRANSFER__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3174,7 +3157,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int TRANSFER__NAME = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 4;
+  int TRANSFER__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -3183,7 +3166,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int TRANSFER__SAFLET = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 5;
+  int TRANSFER__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -3192,7 +3175,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int TRANSFER__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 6;
+  int TRANSFER__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -3201,7 +3184,25 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int TRANSFER__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 7;
+  int TRANSFER__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRANSFER__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Call2</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRANSFER__CALL2 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Context</b></em>' containment reference.
@@ -3210,7 +3211,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int TRANSFER__CONTEXT = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 8;
+  int TRANSFER__CONTEXT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Extension</b></em>' containment reference.
@@ -3219,7 +3220,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int TRANSFER__EXTENSION = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 9;
+  int TRANSFER__EXTENSION = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -3228,7 +3229,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int TRANSFER__PRIORITY = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 10;
+  int TRANSFER__PRIORITY = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Transfer</em>' class.
@@ -3237,7 +3238,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int TRANSFER_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 11;
+  int TRANSFER_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.ExecuteApplicationImpl <em>Execute Application</em>}' class.
@@ -3250,22 +3251,13 @@ public interface ActionstepPackage extends EPackage {
   int EXECUTE_APPLICATION = 26;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXECUTE_APPLICATION__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXECUTE_APPLICATION__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int EXECUTE_APPLICATION__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -3274,7 +3266,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXECUTE_APPLICATION__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int EXECUTE_APPLICATION__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -3283,7 +3275,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXECUTE_APPLICATION__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int EXECUTE_APPLICATION__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -3292,7 +3284,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXECUTE_APPLICATION__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int EXECUTE_APPLICATION__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3301,7 +3293,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXECUTE_APPLICATION__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int EXECUTE_APPLICATION__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -3310,7 +3302,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXECUTE_APPLICATION__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int EXECUTE_APPLICATION__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -3319,7 +3311,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXECUTE_APPLICATION__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int EXECUTE_APPLICATION__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -3328,7 +3320,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXECUTE_APPLICATION__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int EXECUTE_APPLICATION__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXECUTE_APPLICATION__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Application</b></em>' attribute.
@@ -3337,7 +3338,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXECUTE_APPLICATION__APPLICATION = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int EXECUTE_APPLICATION__APPLICATION = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Arguments</b></em>' containment reference.
@@ -3346,7 +3347,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXECUTE_APPLICATION__ARGUMENTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int EXECUTE_APPLICATION__ARGUMENTS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Execute Application</em>' class.
@@ -3355,7 +3356,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXECUTE_APPLICATION_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int EXECUTE_APPLICATION_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl <em>Get Call Info</em>}' class.
@@ -3368,22 +3369,13 @@ public interface ActionstepPackage extends EPackage {
   int GET_CALL_INFO = 27;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GET_CALL_INFO__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GET_CALL_INFO__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int GET_CALL_INFO__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -3392,7 +3384,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_CALL_INFO__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int GET_CALL_INFO__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -3401,7 +3393,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_CALL_INFO__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int GET_CALL_INFO__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -3410,7 +3402,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_CALL_INFO__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int GET_CALL_INFO__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3419,7 +3411,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_CALL_INFO__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int GET_CALL_INFO__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -3428,7 +3420,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_CALL_INFO__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int GET_CALL_INFO__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -3437,7 +3429,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_CALL_INFO__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int GET_CALL_INFO__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -3446,7 +3438,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_CALL_INFO__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int GET_CALL_INFO__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GET_CALL_INFO__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Account Code Var</b></em>' containment reference.
@@ -3455,7 +3456,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_CALL_INFO__ACCOUNT_CODE_VAR = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int GET_CALL_INFO__ACCOUNT_CODE_VAR = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Caller Id Name Var</b></em>' containment reference.
@@ -3464,7 +3465,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_CALL_INFO__CALLER_ID_NAME_VAR = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int GET_CALL_INFO__CALLER_ID_NAME_VAR = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Caller Id Num Var</b></em>' containment reference.
@@ -3473,7 +3474,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_CALL_INFO__CALLER_ID_NUM_VAR = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int GET_CALL_INFO__CALLER_ID_NUM_VAR = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Channel Name Var</b></em>' containment reference.
@@ -3482,7 +3483,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_CALL_INFO__CHANNEL_NAME_VAR = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 11;
+  int GET_CALL_INFO__CHANNEL_NAME_VAR = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Context Var</b></em>' containment reference.
@@ -3491,7 +3492,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_CALL_INFO__CONTEXT_VAR = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 12;
+  int GET_CALL_INFO__CONTEXT_VAR = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Extension Var</b></em>' containment reference.
@@ -3500,7 +3501,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_CALL_INFO__EXTENSION_VAR = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 13;
+  int GET_CALL_INFO__EXTENSION_VAR = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Dialed Number</b></em>' containment reference.
@@ -3509,7 +3510,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_CALL_INFO__DIALED_NUMBER = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 14;
+  int GET_CALL_INFO__DIALED_NUMBER = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Priority Var</b></em>' containment reference.
@@ -3518,7 +3519,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_CALL_INFO__PRIORITY_VAR = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 15;
+  int GET_CALL_INFO__PRIORITY_VAR = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>State Var</b></em>' containment reference.
@@ -3527,7 +3528,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_CALL_INFO__STATE_VAR = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 16;
+  int GET_CALL_INFO__STATE_VAR = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Unique Id Var</b></em>' containment reference.
@@ -3536,7 +3537,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_CALL_INFO__UNIQUE_ID_VAR = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 17;
+  int GET_CALL_INFO__UNIQUE_ID_VAR = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Ani2 Var</b></em>' containment reference.
@@ -3545,7 +3546,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_CALL_INFO__ANI2_VAR = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 18;
+  int GET_CALL_INFO__ANI2_VAR = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Rdnis</b></em>' containment reference.
@@ -3554,7 +3555,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_CALL_INFO__RDNIS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 19;
+  int GET_CALL_INFO__RDNIS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -3563,7 +3564,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_CALL_INFO__TYPE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 20;
+  int GET_CALL_INFO__TYPE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 13;
 
   /**
    * The number of structural features of the '<em>Get Call Info</em>' class.
@@ -3572,7 +3573,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_CALL_INFO_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 21;
+  int GET_CALL_INFO_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 14;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.PlayMusicOnHoldImpl <em>Play Music On Hold</em>}' class.
@@ -3585,22 +3586,13 @@ public interface ActionstepPackage extends EPackage {
   int PLAY_MUSIC_ON_HOLD = 28;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PLAY_MUSIC_ON_HOLD__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PLAY_MUSIC_ON_HOLD__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int PLAY_MUSIC_ON_HOLD__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -3609,7 +3601,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLAY_MUSIC_ON_HOLD__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int PLAY_MUSIC_ON_HOLD__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -3618,7 +3610,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLAY_MUSIC_ON_HOLD__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int PLAY_MUSIC_ON_HOLD__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -3627,7 +3619,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLAY_MUSIC_ON_HOLD__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int PLAY_MUSIC_ON_HOLD__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3636,7 +3628,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLAY_MUSIC_ON_HOLD__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int PLAY_MUSIC_ON_HOLD__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -3645,7 +3637,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLAY_MUSIC_ON_HOLD__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int PLAY_MUSIC_ON_HOLD__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -3654,7 +3646,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLAY_MUSIC_ON_HOLD__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int PLAY_MUSIC_ON_HOLD__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -3663,7 +3655,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLAY_MUSIC_ON_HOLD__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int PLAY_MUSIC_ON_HOLD__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PLAY_MUSIC_ON_HOLD__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Hold Class</b></em>' containment reference.
@@ -3672,7 +3673,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLAY_MUSIC_ON_HOLD__HOLD_CLASS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int PLAY_MUSIC_ON_HOLD__HOLD_CLASS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Play Music On Hold</em>' class.
@@ -3681,7 +3682,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLAY_MUSIC_ON_HOLD_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int PLAY_MUSIC_ON_HOLD_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.PromptGetDigitsImpl <em>Prompt Get Digits</em>}' class.
@@ -3694,22 +3695,13 @@ public interface ActionstepPackage extends EPackage {
   int PROMPT_GET_DIGITS = 29;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROMPT_GET_DIGITS__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROMPT_GET_DIGITS__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int PROMPT_GET_DIGITS__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -3718,7 +3710,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PROMPT_GET_DIGITS__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int PROMPT_GET_DIGITS__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -3727,7 +3719,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PROMPT_GET_DIGITS__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int PROMPT_GET_DIGITS__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -3736,7 +3728,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PROMPT_GET_DIGITS__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int PROMPT_GET_DIGITS__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3745,7 +3737,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PROMPT_GET_DIGITS__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int PROMPT_GET_DIGITS__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -3754,7 +3746,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PROMPT_GET_DIGITS__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int PROMPT_GET_DIGITS__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -3763,7 +3755,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PROMPT_GET_DIGITS__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int PROMPT_GET_DIGITS__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -3772,7 +3764,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PROMPT_GET_DIGITS__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int PROMPT_GET_DIGITS__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROMPT_GET_DIGITS__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Filename</b></em>' containment reference.
@@ -3781,7 +3782,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PROMPT_GET_DIGITS__FILENAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int PROMPT_GET_DIGITS__FILENAME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Timeout</b></em>' attribute.
@@ -3790,7 +3791,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PROMPT_GET_DIGITS__TIMEOUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int PROMPT_GET_DIGITS__TIMEOUT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Variable Name</b></em>' containment reference.
@@ -3799,7 +3800,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PROMPT_GET_DIGITS__VARIABLE_NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int PROMPT_GET_DIGITS__VARIABLE_NAME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Max Digits</b></em>' attribute.
@@ -3808,7 +3809,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PROMPT_GET_DIGITS__MAX_DIGITS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 11;
+  int PROMPT_GET_DIGITS__MAX_DIGITS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Use Buffered Digits</b></em>' attribute.
@@ -3817,7 +3818,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PROMPT_GET_DIGITS__USE_BUFFERED_DIGITS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 12;
+  int PROMPT_GET_DIGITS__USE_BUFFERED_DIGITS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>Prompt Get Digits</em>' class.
@@ -3826,7 +3827,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PROMPT_GET_DIGITS_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 13;
+  int PROMPT_GET_DIGITS_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.SleepImpl <em>Sleep</em>}' class.
@@ -3839,22 +3840,13 @@ public interface ActionstepPackage extends EPackage {
   int SLEEP = 30;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SLEEP__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SLEEP__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int SLEEP__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -3863,7 +3855,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SLEEP__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int SLEEP__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -3872,7 +3864,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SLEEP__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int SLEEP__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -3881,7 +3873,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SLEEP__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int SLEEP__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3890,7 +3882,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SLEEP__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int SLEEP__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -3899,7 +3891,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SLEEP__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int SLEEP__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -3908,7 +3900,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SLEEP__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int SLEEP__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -3917,7 +3909,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SLEEP__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int SLEEP__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SLEEP__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Duration</b></em>' attribute.
@@ -3926,7 +3927,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SLEEP__DURATION = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int SLEEP__DURATION = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Native</b></em>' attribute.
@@ -3935,7 +3936,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SLEEP__NATIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int SLEEP__NATIVE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Sleep</em>' class.
@@ -3944,7 +3945,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SLEEP_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int SLEEP_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.StreamAudioExtendedImpl <em>Stream Audio Extended</em>}' class.
@@ -3957,22 +3958,13 @@ public interface ActionstepPackage extends EPackage {
   int STREAM_AUDIO_EXTENDED = 31;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STREAM_AUDIO_EXTENDED__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STREAM_AUDIO_EXTENDED__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int STREAM_AUDIO_EXTENDED__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -3981,7 +3973,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STREAM_AUDIO_EXTENDED__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int STREAM_AUDIO_EXTENDED__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -3990,7 +3982,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STREAM_AUDIO_EXTENDED__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int STREAM_AUDIO_EXTENDED__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -3999,7 +3991,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STREAM_AUDIO_EXTENDED__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int STREAM_AUDIO_EXTENDED__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4008,7 +4000,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STREAM_AUDIO_EXTENDED__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int STREAM_AUDIO_EXTENDED__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -4017,7 +4009,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STREAM_AUDIO_EXTENDED__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int STREAM_AUDIO_EXTENDED__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -4026,7 +4018,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STREAM_AUDIO_EXTENDED__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int STREAM_AUDIO_EXTENDED__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -4035,7 +4027,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STREAM_AUDIO_EXTENDED__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int STREAM_AUDIO_EXTENDED__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STREAM_AUDIO_EXTENDED__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Filename</b></em>' containment reference.
@@ -4044,7 +4045,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STREAM_AUDIO_EXTENDED__FILENAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int STREAM_AUDIO_EXTENDED__FILENAME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Escape Digits</b></em>' attribute.
@@ -4053,7 +4054,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STREAM_AUDIO_EXTENDED__ESCAPE_DIGITS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int STREAM_AUDIO_EXTENDED__ESCAPE_DIGITS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Offset</b></em>' attribute.
@@ -4062,7 +4063,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STREAM_AUDIO_EXTENDED__OFFSET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int STREAM_AUDIO_EXTENDED__OFFSET = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Forward Digit</b></em>' attribute.
@@ -4071,7 +4072,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STREAM_AUDIO_EXTENDED__FORWARD_DIGIT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 11;
+  int STREAM_AUDIO_EXTENDED__FORWARD_DIGIT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Rewind Digit</b></em>' attribute.
@@ -4080,7 +4081,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STREAM_AUDIO_EXTENDED__REWIND_DIGIT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 12;
+  int STREAM_AUDIO_EXTENDED__REWIND_DIGIT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Pause Digit</b></em>' attribute.
@@ -4089,7 +4090,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STREAM_AUDIO_EXTENDED__PAUSE_DIGIT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 13;
+  int STREAM_AUDIO_EXTENDED__PAUSE_DIGIT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 6;
 
   /**
    * The number of structural features of the '<em>Stream Audio Extended</em>' class.
@@ -4098,7 +4099,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STREAM_AUDIO_EXTENDED_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 14;
+  int STREAM_AUDIO_EXTENDED_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 7;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.DialImpl <em>Dial</em>}' class.
@@ -4111,22 +4112,13 @@ public interface ActionstepPackage extends EPackage {
   int DIAL = 32;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIAL__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DIAL__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int DIAL__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -4135,7 +4127,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int DIAL__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -4144,7 +4136,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int DIAL__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -4153,7 +4145,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int DIAL__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4162,7 +4154,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int DIAL__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -4171,7 +4163,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int DIAL__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -4180,7 +4172,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int DIAL__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -4189,7 +4181,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int DIAL__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIAL__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Outgoing Channels</b></em>' containment reference.
@@ -4198,7 +4199,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__OUTGOING_CHANNELS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int DIAL__OUTGOING_CHANNELS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Retry</b></em>' attribute.
@@ -4207,7 +4208,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__RETRY = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int DIAL__RETRY = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Timeout</b></em>' attribute.
@@ -4216,7 +4217,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__TIMEOUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int DIAL__TIMEOUT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Callee Blind Transfer</b></em>' attribute.
@@ -4225,7 +4226,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__CALLEE_BLIND_TRANSFER = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 11;
+  int DIAL__CALLEE_BLIND_TRANSFER = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Caller Blind Transfer</b></em>' attribute.
@@ -4234,7 +4235,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__CALLER_BLIND_TRANSFER = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 12;
+  int DIAL__CALLER_BLIND_TRANSFER = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Generate Ring Tone</b></em>' attribute.
@@ -4243,7 +4244,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__GENERATE_RING_TONE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 13;
+  int DIAL__GENERATE_RING_TONE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Ring Callee</b></em>' attribute.
@@ -4252,7 +4253,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__RING_CALLEE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 14;
+  int DIAL__RING_CALLEE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Callee Music On Hold</b></em>' attribute.
@@ -4261,7 +4262,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__CALLEE_MUSIC_ON_HOLD = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 15;
+  int DIAL__CALLEE_MUSIC_ON_HOLD = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Private</b></em>' attribute.
@@ -4270,7 +4271,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__PRIVATE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 16;
+  int DIAL__PRIVATE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Use Old Caller ID</b></em>' attribute.
@@ -4279,7 +4280,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__USE_OLD_CALLER_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 17;
+  int DIAL__USE_OLD_CALLER_ID = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Jump Priority</b></em>' attribute.
@@ -4288,7 +4289,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__JUMP_PRIORITY = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 18;
+  int DIAL__JUMP_PRIORITY = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Macro</b></em>' attribute.
@@ -4297,7 +4298,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__MACRO = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 19;
+  int DIAL__MACRO = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Callee Star Hangup</b></em>' attribute.
@@ -4306,7 +4307,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__CALLEE_STAR_HANGUP = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 20;
+  int DIAL__CALLEE_STAR_HANGUP = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Caller Star Hangup</b></em>' attribute.
@@ -4315,7 +4316,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__CALLER_STAR_HANGUP = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 21;
+  int DIAL__CALLER_STAR_HANGUP = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Ignore Forwarding Requests</b></em>' attribute.
@@ -4324,7 +4325,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__IGNORE_FORWARDING_REQUESTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 22;
+  int DIAL__IGNORE_FORWARDING_REQUESTS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Reset CDR</b></em>' attribute.
@@ -4333,7 +4334,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__RESET_CDR = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 23;
+  int DIAL__RESET_CDR = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Enable Screening Mode</b></em>' attribute.
@@ -4342,7 +4343,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__ENABLE_SCREENING_MODE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 24;
+  int DIAL__ENABLE_SCREENING_MODE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Use Privacy Manager</b></em>' attribute.
@@ -4351,7 +4352,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__USE_PRIVACY_MANAGER = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 25;
+  int DIAL__USE_PRIVACY_MANAGER = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>Privace Manager DB</b></em>' attribute.
@@ -4360,7 +4361,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__PRIVACE_MANAGER_DB = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 26;
+  int DIAL__PRIVACE_MANAGER_DB = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Stay Alive</b></em>' attribute.
@@ -4369,7 +4370,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__STAY_ALIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 27;
+  int DIAL__STAY_ALIVE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Announcement</b></em>' attribute.
@@ -4378,7 +4379,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__ANNOUNCEMENT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 28;
+  int DIAL__ANNOUNCEMENT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Auto Hangup Time</b></em>' attribute.
@@ -4387,7 +4388,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__AUTO_HANGUP_TIME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 29;
+  int DIAL__AUTO_HANGUP_TIME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Capture DTMF</b></em>' attribute.
@@ -4396,7 +4397,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__CAPTURE_DTMF = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 30;
+  int DIAL__CAPTURE_DTMF = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>DTMF Digits</b></em>' attribute.
@@ -4405,7 +4406,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__DTMF_DIGITS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 31;
+  int DIAL__DTMF_DIGITS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Max Duration</b></em>' attribute.
@@ -4414,7 +4415,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__MAX_DURATION = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 32;
+  int DIAL__MAX_DURATION = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Call Ending Warning Time</b></em>' attribute.
@@ -4423,7 +4424,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__CALL_ENDING_WARNING_TIME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 33;
+  int DIAL__CALL_ENDING_WARNING_TIME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 26;
 
   /**
    * The feature id for the '<em><b>Warning Repeat Time</b></em>' attribute.
@@ -4432,7 +4433,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__WARNING_REPEAT_TIME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 34;
+  int DIAL__WARNING_REPEAT_TIME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 27;
 
   /**
    * The feature id for the '<em><b>Limit Play Audio Caller</b></em>' attribute.
@@ -4441,7 +4442,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__LIMIT_PLAY_AUDIO_CALLER = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 35;
+  int DIAL__LIMIT_PLAY_AUDIO_CALLER = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 28;
 
   /**
    * The feature id for the '<em><b>Limit Play Audio Callee</b></em>' attribute.
@@ -4450,7 +4451,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__LIMIT_PLAY_AUDIO_CALLEE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 36;
+  int DIAL__LIMIT_PLAY_AUDIO_CALLEE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 29;
 
   /**
    * The feature id for the '<em><b>Limit Timeout Filename</b></em>' attribute.
@@ -4459,7 +4460,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__LIMIT_TIMEOUT_FILENAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 37;
+  int DIAL__LIMIT_TIMEOUT_FILENAME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 30;
 
   /**
    * The feature id for the '<em><b>Limit Connect Filename</b></em>' attribute.
@@ -4468,7 +4469,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__LIMIT_CONNECT_FILENAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 38;
+  int DIAL__LIMIT_CONNECT_FILENAME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 31;
 
   /**
    * The feature id for the '<em><b>Limit Warning Filename</b></em>' attribute.
@@ -4477,7 +4478,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__LIMIT_WARNING_FILENAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 39;
+  int DIAL__LIMIT_WARNING_FILENAME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 32;
 
   /**
    * The feature id for the '<em><b>Force Outgoing Call ID</b></em>' attribute.
@@ -4486,7 +4487,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__FORCE_OUTGOING_CALL_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 40;
+  int DIAL__FORCE_OUTGOING_CALL_ID = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 33;
 
   /**
    * The feature id for the '<em><b>Callee Can Record</b></em>' attribute.
@@ -4495,7 +4496,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__CALLEE_CAN_RECORD = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 41;
+  int DIAL__CALLEE_CAN_RECORD = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 34;
 
   /**
    * The feature id for the '<em><b>Caller Can Record</b></em>' attribute.
@@ -4504,7 +4505,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__CALLER_CAN_RECORD = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 42;
+  int DIAL__CALLER_CAN_RECORD = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 35;
 
   /**
    * The feature id for the '<em><b>Callee Can Park</b></em>' attribute.
@@ -4513,7 +4514,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__CALLEE_CAN_PARK = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 43;
+  int DIAL__CALLEE_CAN_PARK = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 36;
 
   /**
    * The feature id for the '<em><b>Caller Can Park</b></em>' attribute.
@@ -4522,7 +4523,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL__CALLER_CAN_PARK = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 44;
+  int DIAL__CALLER_CAN_PARK = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 37;
 
   /**
    * The number of structural features of the '<em>Dial</em>' class.
@@ -4531,7 +4532,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIAL_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 45;
+  int DIAL_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 38;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.PickupImpl <em>Pickup</em>}' class.
@@ -4544,22 +4545,13 @@ public interface ActionstepPackage extends EPackage {
   int PICKUP = 33;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PICKUP__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PICKUP__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int PICKUP__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -4568,7 +4560,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PICKUP__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int PICKUP__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -4577,7 +4569,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PICKUP__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int PICKUP__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -4586,7 +4578,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PICKUP__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int PICKUP__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4595,7 +4587,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PICKUP__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int PICKUP__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -4604,7 +4596,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PICKUP__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int PICKUP__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -4613,7 +4605,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PICKUP__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int PICKUP__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -4622,7 +4614,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PICKUP__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int PICKUP__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PICKUP__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Group</b></em>' attribute.
@@ -4631,7 +4632,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PICKUP__GROUP = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int PICKUP__GROUP = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Pickup</em>' class.
@@ -4640,7 +4641,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PICKUP_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int PICKUP_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.BackgroundImpl <em>Background</em>}' class.
@@ -4653,22 +4654,13 @@ public interface ActionstepPackage extends EPackage {
   int BACKGROUND = 34;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BACKGROUND__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BACKGROUND__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int BACKGROUND__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -4677,7 +4669,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BACKGROUND__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int BACKGROUND__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -4686,7 +4678,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BACKGROUND__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int BACKGROUND__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -4695,7 +4687,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BACKGROUND__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int BACKGROUND__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4704,7 +4696,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BACKGROUND__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int BACKGROUND__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -4713,7 +4705,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BACKGROUND__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int BACKGROUND__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -4722,7 +4714,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BACKGROUND__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int BACKGROUND__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -4731,7 +4723,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BACKGROUND__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int BACKGROUND__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BACKGROUND__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Filenames</b></em>' containment reference.
@@ -4740,7 +4741,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BACKGROUND__FILENAMES = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int BACKGROUND__FILENAMES = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Play Only If Answered</b></em>' attribute.
@@ -4749,7 +4750,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BACKGROUND__PLAY_ONLY_IF_ANSWERED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int BACKGROUND__PLAY_ONLY_IF_ANSWERED = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Answer If Necessary</b></em>' attribute.
@@ -4758,7 +4759,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BACKGROUND__ANSWER_IF_NECESSARY = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int BACKGROUND__ANSWER_IF_NECESSARY = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Match Only Single Digit</b></em>' attribute.
@@ -4767,7 +4768,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BACKGROUND__MATCH_ONLY_SINGLE_DIGIT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 11;
+  int BACKGROUND__MATCH_ONLY_SINGLE_DIGIT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Context</b></em>' attribute.
@@ -4776,7 +4777,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BACKGROUND__CONTEXT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 12;
+  int BACKGROUND__CONTEXT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>Background</em>' class.
@@ -4785,7 +4786,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BACKGROUND_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 13;
+  int BACKGROUND_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.BackgroundDetectImpl <em>Background Detect</em>}' class.
@@ -4798,22 +4799,13 @@ public interface ActionstepPackage extends EPackage {
   int BACKGROUND_DETECT = 35;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BACKGROUND_DETECT__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BACKGROUND_DETECT__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int BACKGROUND_DETECT__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -4822,7 +4814,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BACKGROUND_DETECT__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int BACKGROUND_DETECT__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -4831,7 +4823,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BACKGROUND_DETECT__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int BACKGROUND_DETECT__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -4840,7 +4832,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BACKGROUND_DETECT__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int BACKGROUND_DETECT__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4849,7 +4841,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BACKGROUND_DETECT__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int BACKGROUND_DETECT__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -4858,7 +4850,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BACKGROUND_DETECT__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int BACKGROUND_DETECT__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -4867,7 +4859,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BACKGROUND_DETECT__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int BACKGROUND_DETECT__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -4876,7 +4868,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BACKGROUND_DETECT__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int BACKGROUND_DETECT__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BACKGROUND_DETECT__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Filename</b></em>' attribute.
@@ -4885,7 +4886,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BACKGROUND_DETECT__FILENAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int BACKGROUND_DETECT__FILENAME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Silence</b></em>' attribute.
@@ -4894,7 +4895,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BACKGROUND_DETECT__SILENCE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int BACKGROUND_DETECT__SILENCE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Min Time</b></em>' attribute.
@@ -4903,7 +4904,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BACKGROUND_DETECT__MIN_TIME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int BACKGROUND_DETECT__MIN_TIME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Max Time</b></em>' attribute.
@@ -4912,7 +4913,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BACKGROUND_DETECT__MAX_TIME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 11;
+  int BACKGROUND_DETECT__MAX_TIME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Background Detect</em>' class.
@@ -4921,7 +4922,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BACKGROUND_DETECT_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 12;
+  int BACKGROUND_DETECT_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.WaitExtenImpl <em>Wait Exten</em>}' class.
@@ -4934,22 +4935,13 @@ public interface ActionstepPackage extends EPackage {
   int WAIT_EXTEN = 36;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WAIT_EXTEN__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WAIT_EXTEN__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int WAIT_EXTEN__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -4958,7 +4950,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_EXTEN__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int WAIT_EXTEN__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -4967,7 +4959,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_EXTEN__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int WAIT_EXTEN__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -4976,7 +4968,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_EXTEN__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int WAIT_EXTEN__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4985,7 +4977,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_EXTEN__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int WAIT_EXTEN__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -4994,7 +4986,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_EXTEN__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int WAIT_EXTEN__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -5003,7 +4995,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_EXTEN__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int WAIT_EXTEN__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -5012,7 +5004,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_EXTEN__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int WAIT_EXTEN__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WAIT_EXTEN__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Music On Hold Class</b></em>' attribute.
@@ -5021,7 +5022,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_EXTEN__MUSIC_ON_HOLD_CLASS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int WAIT_EXTEN__MUSIC_ON_HOLD_CLASS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Timeout</b></em>' attribute.
@@ -5030,7 +5031,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_EXTEN__TIMEOUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int WAIT_EXTEN__TIMEOUT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Wait Exten</em>' class.
@@ -5039,7 +5040,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_EXTEN_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int WAIT_EXTEN_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.SoftHangupImpl <em>Soft Hangup</em>}' class.
@@ -5052,22 +5053,13 @@ public interface ActionstepPackage extends EPackage {
   int SOFT_HANGUP = 37;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SOFT_HANGUP__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SOFT_HANGUP__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int SOFT_HANGUP__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -5076,7 +5068,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SOFT_HANGUP__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int SOFT_HANGUP__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -5085,7 +5077,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SOFT_HANGUP__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int SOFT_HANGUP__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -5094,7 +5086,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SOFT_HANGUP__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int SOFT_HANGUP__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5103,7 +5095,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SOFT_HANGUP__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int SOFT_HANGUP__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -5112,7 +5104,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SOFT_HANGUP__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int SOFT_HANGUP__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -5121,7 +5113,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SOFT_HANGUP__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int SOFT_HANGUP__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -5130,7 +5122,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SOFT_HANGUP__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int SOFT_HANGUP__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SOFT_HANGUP__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Hangup All Device Calls</b></em>' attribute.
@@ -5139,7 +5140,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SOFT_HANGUP__HANGUP_ALL_DEVICE_CALLS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int SOFT_HANGUP__HANGUP_ALL_DEVICE_CALLS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Channel Name</b></em>' containment reference.
@@ -5148,7 +5149,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SOFT_HANGUP__CHANNEL_NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int SOFT_HANGUP__CHANNEL_NAME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Soft Hangup</em>' class.
@@ -5157,7 +5158,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SOFT_HANGUP_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int SOFT_HANGUP_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.PickupChanImpl <em>Pickup Chan</em>}' class.
@@ -5170,22 +5171,13 @@ public interface ActionstepPackage extends EPackage {
   int PICKUP_CHAN = 38;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PICKUP_CHAN__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PICKUP_CHAN__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int PICKUP_CHAN__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -5194,7 +5186,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PICKUP_CHAN__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int PICKUP_CHAN__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -5203,7 +5195,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PICKUP_CHAN__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int PICKUP_CHAN__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -5212,7 +5204,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PICKUP_CHAN__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int PICKUP_CHAN__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5221,7 +5213,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PICKUP_CHAN__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int PICKUP_CHAN__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -5230,7 +5222,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PICKUP_CHAN__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int PICKUP_CHAN__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -5239,7 +5231,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PICKUP_CHAN__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int PICKUP_CHAN__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -5248,7 +5240,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PICKUP_CHAN__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int PICKUP_CHAN__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PICKUP_CHAN__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Channels</b></em>' containment reference.
@@ -5257,7 +5258,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PICKUP_CHAN__CHANNELS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int PICKUP_CHAN__CHANNELS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Pickup Chan</em>' class.
@@ -5266,7 +5267,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PICKUP_CHAN_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int PICKUP_CHAN_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.PickdownImpl <em>Pickdown</em>}' class.
@@ -5279,22 +5280,13 @@ public interface ActionstepPackage extends EPackage {
   int PICKDOWN = 39;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PICKDOWN__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PICKDOWN__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int PICKDOWN__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -5303,7 +5295,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PICKDOWN__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int PICKDOWN__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -5312,7 +5304,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PICKDOWN__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int PICKDOWN__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -5321,7 +5313,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PICKDOWN__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int PICKDOWN__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5330,7 +5322,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PICKDOWN__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int PICKDOWN__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -5339,7 +5331,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PICKDOWN__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int PICKDOWN__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -5348,7 +5340,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PICKDOWN__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int PICKDOWN__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -5357,7 +5349,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PICKDOWN__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int PICKDOWN__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PICKDOWN__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Group</b></em>' attribute.
@@ -5366,7 +5367,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PICKDOWN__GROUP = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int PICKDOWN__GROUP = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Pickdown</em>' class.
@@ -5375,7 +5376,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PICKDOWN_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int PICKDOWN_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.ProgressImpl <em>Progress</em>}' class.
@@ -5388,22 +5389,13 @@ public interface ActionstepPackage extends EPackage {
   int PROGRESS = 40;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROGRESS__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROGRESS__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int PROGRESS__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -5412,7 +5404,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PROGRESS__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int PROGRESS__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -5421,7 +5413,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PROGRESS__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int PROGRESS__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -5430,7 +5422,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PROGRESS__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int PROGRESS__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5439,7 +5431,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PROGRESS__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int PROGRESS__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -5448,7 +5440,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PROGRESS__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int PROGRESS__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -5457,7 +5449,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PROGRESS__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int PROGRESS__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -5466,7 +5458,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PROGRESS__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int PROGRESS__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROGRESS__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Progress</em>' class.
@@ -5475,7 +5476,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PROGRESS_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int PROGRESS_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.BridgeImpl <em>Bridge</em>}' class.
@@ -5488,31 +5489,13 @@ public interface ActionstepPackage extends EPackage {
   int BRIDGE = 41;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BRIDGE__CALL1 = AsteriskPackage.CALL_CONSUMER2__CALL1;
-
-  /**
-   * The feature id for the '<em><b>Call2</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BRIDGE__CALL2 = AsteriskPackage.CALL_CONSUMER2__CALL2;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BRIDGE__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 0;
+  int BRIDGE__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -5521,7 +5504,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BRIDGE__PAUSED = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 1;
+  int BRIDGE__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -5530,7 +5513,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BRIDGE__ACTIVE = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 2;
+  int BRIDGE__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -5539,7 +5522,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BRIDGE__OUTPUTS = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 3;
+  int BRIDGE__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5548,7 +5531,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BRIDGE__NAME = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 4;
+  int BRIDGE__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -5557,7 +5540,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BRIDGE__SAFLET = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 5;
+  int BRIDGE__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -5566,7 +5549,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BRIDGE__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 6;
+  int BRIDGE__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -5575,7 +5558,25 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BRIDGE__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 7;
+  int BRIDGE__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BRIDGE__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Call2</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BRIDGE__CALL2 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Channel1</b></em>' containment reference.
@@ -5584,7 +5585,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BRIDGE__CHANNEL1 = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 8;
+  int BRIDGE__CHANNEL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Channel2</b></em>' containment reference.
@@ -5593,7 +5594,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BRIDGE__CHANNEL2 = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 9;
+  int BRIDGE__CHANNEL2 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Use Courtesy Tone</b></em>' attribute.
@@ -5602,7 +5603,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BRIDGE__USE_COURTESY_TONE = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 10;
+  int BRIDGE__USE_COURTESY_TONE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Bridge</em>' class.
@@ -5611,7 +5612,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int BRIDGE_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 11;
+  int BRIDGE_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.PlaceCallImpl <em>Place Call</em>}' class.
@@ -5624,22 +5625,13 @@ public interface ActionstepPackage extends EPackage {
   int PLACE_CALL = 42;
 
   /**
-   * The feature id for the '<em><b>New Call1</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PLACE_CALL__NEW_CALL1 = AsteriskPackage.CALL_SOURCE1__NEW_CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PLACE_CALL__PRODUCT_ID = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 0;
+  int PLACE_CALL__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -5648,7 +5640,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLACE_CALL__PAUSED = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 1;
+  int PLACE_CALL__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -5657,7 +5649,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLACE_CALL__ACTIVE = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 2;
+  int PLACE_CALL__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -5666,7 +5658,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLACE_CALL__OUTPUTS = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 3;
+  int PLACE_CALL__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5675,7 +5667,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLACE_CALL__NAME = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 4;
+  int PLACE_CALL__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -5684,7 +5676,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLACE_CALL__SAFLET = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 5;
+  int PLACE_CALL__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -5693,7 +5685,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLACE_CALL__DEFAULT_OUTPUT = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 6;
+  int PLACE_CALL__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -5702,7 +5694,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLACE_CALL__ERROR_OUTPUT = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 7;
+  int PLACE_CALL__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>New Call1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PLACE_CALL__NEW_CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Extension</b></em>' containment reference.
@@ -5711,7 +5712,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLACE_CALL__EXTENSION = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 8;
+  int PLACE_CALL__EXTENSION = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Context</b></em>' containment reference.
@@ -5720,7 +5721,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLACE_CALL__CONTEXT = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 9;
+  int PLACE_CALL__CONTEXT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Timeout</b></em>' attribute.
@@ -5729,7 +5730,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLACE_CALL__TIMEOUT = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 10;
+  int PLACE_CALL__TIMEOUT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Caller Id</b></em>' containment reference.
@@ -5738,7 +5739,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLACE_CALL__CALLER_ID = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 11;
+  int PLACE_CALL__CALLER_ID = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Place Call</em>' class.
@@ -5747,7 +5748,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLACE_CALL_FEATURE_COUNT = AsteriskPackage.CALL_SOURCE1_FEATURE_COUNT + 12;
+  int PLACE_CALL_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.VoicemailImpl <em>Voicemail</em>}' class.
@@ -5760,22 +5761,13 @@ public interface ActionstepPackage extends EPackage {
   int VOICEMAIL = 43;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VOICEMAIL__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VOICEMAIL__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int VOICEMAIL__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -5784,7 +5776,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VOICEMAIL__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int VOICEMAIL__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -5793,7 +5785,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VOICEMAIL__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int VOICEMAIL__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -5802,7 +5794,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VOICEMAIL__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int VOICEMAIL__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5811,7 +5803,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VOICEMAIL__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int VOICEMAIL__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -5820,7 +5812,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VOICEMAIL__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int VOICEMAIL__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -5829,7 +5821,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VOICEMAIL__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int VOICEMAIL__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -5838,7 +5830,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VOICEMAIL__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int VOICEMAIL__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VOICEMAIL__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Mailbox</b></em>' containment reference.
@@ -5847,7 +5848,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VOICEMAIL__MAILBOX = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int VOICEMAIL__MAILBOX = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Skip Instructions</b></em>' attribute.
@@ -5856,7 +5857,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VOICEMAIL__SKIP_INSTRUCTIONS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int VOICEMAIL__SKIP_INSTRUCTIONS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Play Unavailable Message</b></em>' attribute.
@@ -5865,7 +5866,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VOICEMAIL__PLAY_UNAVAILABLE_MESSAGE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int VOICEMAIL__PLAY_UNAVAILABLE_MESSAGE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Play Busy Message</b></em>' attribute.
@@ -5874,7 +5875,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VOICEMAIL__PLAY_BUSY_MESSAGE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 11;
+  int VOICEMAIL__PLAY_BUSY_MESSAGE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Recording Gain</b></em>' attribute.
@@ -5883,7 +5884,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VOICEMAIL__RECORDING_GAIN = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 12;
+  int VOICEMAIL__RECORDING_GAIN = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>Voicemail</em>' class.
@@ -5892,7 +5893,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VOICEMAIL_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 13;
+  int VOICEMAIL_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.VoicemailMainImpl <em>Voicemail Main</em>}' class.
@@ -5905,22 +5906,13 @@ public interface ActionstepPackage extends EPackage {
   int VOICEMAIL_MAIN = 44;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VOICEMAIL_MAIN__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VOICEMAIL_MAIN__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int VOICEMAIL_MAIN__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -5929,7 +5921,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VOICEMAIL_MAIN__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int VOICEMAIL_MAIN__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -5938,7 +5930,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VOICEMAIL_MAIN__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int VOICEMAIL_MAIN__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -5947,7 +5939,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VOICEMAIL_MAIN__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int VOICEMAIL_MAIN__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5956,7 +5948,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VOICEMAIL_MAIN__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int VOICEMAIL_MAIN__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -5965,7 +5957,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VOICEMAIL_MAIN__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int VOICEMAIL_MAIN__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -5974,7 +5966,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VOICEMAIL_MAIN__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int VOICEMAIL_MAIN__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -5983,7 +5975,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VOICEMAIL_MAIN__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int VOICEMAIL_MAIN__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VOICEMAIL_MAIN__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Mailbox</b></em>' containment reference.
@@ -5992,7 +5993,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VOICEMAIL_MAIN__MAILBOX = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int VOICEMAIL_MAIN__MAILBOX = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Skip Password Check</b></em>' attribute.
@@ -6001,7 +6002,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VOICEMAIL_MAIN__SKIP_PASSWORD_CHECK = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int VOICEMAIL_MAIN__SKIP_PASSWORD_CHECK = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Use Prefix</b></em>' attribute.
@@ -6010,7 +6011,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VOICEMAIL_MAIN__USE_PREFIX = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int VOICEMAIL_MAIN__USE_PREFIX = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Recording Gain</b></em>' attribute.
@@ -6019,7 +6020,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VOICEMAIL_MAIN__RECORDING_GAIN = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 11;
+  int VOICEMAIL_MAIN__RECORDING_GAIN = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Default Folder</b></em>' containment reference.
@@ -6028,7 +6029,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VOICEMAIL_MAIN__DEFAULT_FOLDER = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 12;
+  int VOICEMAIL_MAIN__DEFAULT_FOLDER = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>Voicemail Main</em>' class.
@@ -6037,7 +6038,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VOICEMAIL_MAIN_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 13;
+  int VOICEMAIL_MAIN_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.VMAuthenticateImpl <em>VM Authenticate</em>}' class.
@@ -6050,22 +6051,13 @@ public interface ActionstepPackage extends EPackage {
   int VM_AUTHENTICATE = 45;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VM_AUTHENTICATE__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VM_AUTHENTICATE__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int VM_AUTHENTICATE__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -6074,7 +6066,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VM_AUTHENTICATE__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int VM_AUTHENTICATE__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -6083,7 +6075,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VM_AUTHENTICATE__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int VM_AUTHENTICATE__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -6092,7 +6084,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VM_AUTHENTICATE__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int VM_AUTHENTICATE__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6101,7 +6093,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VM_AUTHENTICATE__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int VM_AUTHENTICATE__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -6110,7 +6102,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VM_AUTHENTICATE__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int VM_AUTHENTICATE__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -6119,7 +6111,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VM_AUTHENTICATE__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int VM_AUTHENTICATE__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -6128,7 +6120,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VM_AUTHENTICATE__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int VM_AUTHENTICATE__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VM_AUTHENTICATE__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Mailbox</b></em>' containment reference.
@@ -6137,7 +6138,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VM_AUTHENTICATE__MAILBOX = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int VM_AUTHENTICATE__MAILBOX = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Skip Instructions</b></em>' attribute.
@@ -6146,7 +6147,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VM_AUTHENTICATE__SKIP_INSTRUCTIONS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int VM_AUTHENTICATE__SKIP_INSTRUCTIONS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Set Account Code</b></em>' attribute.
@@ -6155,7 +6156,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VM_AUTHENTICATE__SET_ACCOUNT_CODE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int VM_AUTHENTICATE__SET_ACCOUNT_CODE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>VM Authenticate</em>' class.
@@ -6164,7 +6165,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int VM_AUTHENTICATE_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 11;
+  int VM_AUTHENTICATE_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.MeetMeImpl <em>Meet Me</em>}' class.
@@ -6177,22 +6178,13 @@ public interface ActionstepPackage extends EPackage {
   int MEET_ME = 46;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MEET_ME__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MEET_ME__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int MEET_ME__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -6201,7 +6193,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int MEET_ME__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -6210,7 +6202,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int MEET_ME__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -6219,7 +6211,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int MEET_ME__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6228,7 +6220,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int MEET_ME__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -6237,7 +6229,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int MEET_ME__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -6246,7 +6238,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int MEET_ME__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -6255,7 +6247,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int MEET_ME__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MEET_ME__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Conference Number</b></em>' containment reference.
@@ -6264,7 +6265,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__CONFERENCE_NUMBER = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int MEET_ME__CONFERENCE_NUMBER = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Pin</b></em>' containment reference.
@@ -6273,7 +6274,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__PIN = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int MEET_ME__PIN = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Background Script Agi</b></em>' attribute.
@@ -6282,7 +6283,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__BACKGROUND_SCRIPT_AGI = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int MEET_ME__BACKGROUND_SCRIPT_AGI = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Recording Filename</b></em>' attribute.
@@ -6291,7 +6292,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__RECORDING_FILENAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 11;
+  int MEET_ME__RECORDING_FILENAME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Recording Format</b></em>' attribute.
@@ -6300,7 +6301,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__RECORDING_FORMAT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 12;
+  int MEET_ME__RECORDING_FORMAT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Alone Message Enabled</b></em>' attribute.
@@ -6309,7 +6310,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__ALONE_MESSAGE_ENABLED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 13;
+  int MEET_ME__ALONE_MESSAGE_ENABLED = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Admin Mode</b></em>' attribute.
@@ -6318,7 +6319,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__ADMIN_MODE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 14;
+  int MEET_ME__ADMIN_MODE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Use AGI Script</b></em>' attribute.
@@ -6327,7 +6328,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__USE_AGI_SCRIPT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 15;
+  int MEET_ME__USE_AGI_SCRIPT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Announce Count</b></em>' attribute.
@@ -6336,7 +6337,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__ANNOUNCE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 16;
+  int MEET_ME__ANNOUNCE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Dynamically Add Conference</b></em>' attribute.
@@ -6345,7 +6346,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__DYNAMICALLY_ADD_CONFERENCE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 17;
+  int MEET_ME__DYNAMICALLY_ADD_CONFERENCE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Select Empty Conference</b></em>' attribute.
@@ -6354,7 +6355,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__SELECT_EMPTY_CONFERENCE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 18;
+  int MEET_ME__SELECT_EMPTY_CONFERENCE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Select Empty Pinless Conference</b></em>' attribute.
@@ -6363,7 +6364,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__SELECT_EMPTY_PINLESS_CONFERENCE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 19;
+  int MEET_ME__SELECT_EMPTY_PINLESS_CONFERENCE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Pass DTMF</b></em>' attribute.
@@ -6372,7 +6373,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__PASS_DTMF = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 20;
+  int MEET_ME__PASS_DTMF = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Announce Join Leave</b></em>' attribute.
@@ -6381,7 +6382,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__ANNOUNCE_JOIN_LEAVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 21;
+  int MEET_ME__ANNOUNCE_JOIN_LEAVE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Announce Join Leave No Review</b></em>' attribute.
@@ -6390,7 +6391,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__ANNOUNCE_JOIN_LEAVE_NO_REVIEW = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 22;
+  int MEET_ME__ANNOUNCE_JOIN_LEAVE_NO_REVIEW = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Use Music On Hold</b></em>' attribute.
@@ -6399,7 +6400,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__USE_MUSIC_ON_HOLD = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 23;
+  int MEET_ME__USE_MUSIC_ON_HOLD = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Monitor Only Mode</b></em>' attribute.
@@ -6408,7 +6409,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__MONITOR_ONLY_MODE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 24;
+  int MEET_ME__MONITOR_ONLY_MODE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Allow Pound User Exit</b></em>' attribute.
@@ -6417,7 +6418,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__ALLOW_POUND_USER_EXIT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 25;
+  int MEET_ME__ALLOW_POUND_USER_EXIT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>Always Prompt For Pin</b></em>' attribute.
@@ -6426,7 +6427,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__ALWAYS_PROMPT_FOR_PIN = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 26;
+  int MEET_ME__ALWAYS_PROMPT_FOR_PIN = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Quiet Mode</b></em>' attribute.
@@ -6435,7 +6436,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__QUIET_MODE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 27;
+  int MEET_ME__QUIET_MODE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Record Conference</b></em>' attribute.
@@ -6444,7 +6445,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__RECORD_CONFERENCE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 28;
+  int MEET_ME__RECORD_CONFERENCE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Play Menu On Star</b></em>' attribute.
@@ -6453,7 +6454,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__PLAY_MENU_ON_STAR = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 29;
+  int MEET_ME__PLAY_MENU_ON_STAR = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Talk Only Mode</b></em>' attribute.
@@ -6462,7 +6463,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__TALK_ONLY_MODE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 30;
+  int MEET_ME__TALK_ONLY_MODE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Talker Detection</b></em>' attribute.
@@ -6471,7 +6472,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__TALKER_DETECTION = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 31;
+  int MEET_ME__TALKER_DETECTION = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Video Mode</b></em>' attribute.
@@ -6480,7 +6481,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__VIDEO_MODE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 32;
+  int MEET_ME__VIDEO_MODE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Wait For Marked User</b></em>' attribute.
@@ -6489,7 +6490,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__WAIT_FOR_MARKED_USER = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 33;
+  int MEET_ME__WAIT_FOR_MARKED_USER = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 26;
 
   /**
    * The feature id for the '<em><b>Exit On Extension Entered</b></em>' attribute.
@@ -6498,7 +6499,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__EXIT_ON_EXTENSION_ENTERED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 34;
+  int MEET_ME__EXIT_ON_EXTENSION_ENTERED = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 27;
 
   /**
    * The feature id for the '<em><b>Close On Last Marked User Exit</b></em>' attribute.
@@ -6507,7 +6508,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME__CLOSE_ON_LAST_MARKED_USER_EXIT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 35;
+  int MEET_ME__CLOSE_ON_LAST_MARKED_USER_EXIT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 28;
 
   /**
    * The number of structural features of the '<em>Meet Me</em>' class.
@@ -6516,7 +6517,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 36;
+  int MEET_ME_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 29;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.MeetMeAdminImpl <em>Meet Me Admin</em>}' class.
@@ -6529,22 +6530,13 @@ public interface ActionstepPackage extends EPackage {
   int MEET_ME_ADMIN = 47;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MEET_ME_ADMIN__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MEET_ME_ADMIN__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int MEET_ME_ADMIN__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -6553,7 +6545,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME_ADMIN__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int MEET_ME_ADMIN__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -6562,7 +6554,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME_ADMIN__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int MEET_ME_ADMIN__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -6571,7 +6563,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME_ADMIN__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int MEET_ME_ADMIN__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6580,7 +6572,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME_ADMIN__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int MEET_ME_ADMIN__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -6589,7 +6581,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME_ADMIN__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int MEET_ME_ADMIN__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -6598,7 +6590,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME_ADMIN__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int MEET_ME_ADMIN__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -6607,7 +6599,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME_ADMIN__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int MEET_ME_ADMIN__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MEET_ME_ADMIN__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Conference Number</b></em>' containment reference.
@@ -6616,7 +6617,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME_ADMIN__CONFERENCE_NUMBER = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int MEET_ME_ADMIN__CONFERENCE_NUMBER = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Command</b></em>' attribute.
@@ -6625,7 +6626,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME_ADMIN__COMMAND = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int MEET_ME_ADMIN__COMMAND = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>User</b></em>' containment reference.
@@ -6634,7 +6635,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME_ADMIN__USER = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int MEET_ME_ADMIN__USER = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Meet Me Admin</em>' class.
@@ -6643,7 +6644,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME_ADMIN_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 11;
+  int MEET_ME_ADMIN_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.MeetMeCountImpl <em>Meet Me Count</em>}' class.
@@ -6656,22 +6657,13 @@ public interface ActionstepPackage extends EPackage {
   int MEET_ME_COUNT = 48;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MEET_ME_COUNT__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MEET_ME_COUNT__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int MEET_ME_COUNT__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -6680,7 +6672,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME_COUNT__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int MEET_ME_COUNT__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -6689,7 +6681,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME_COUNT__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int MEET_ME_COUNT__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -6698,7 +6690,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME_COUNT__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int MEET_ME_COUNT__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6707,7 +6699,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME_COUNT__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int MEET_ME_COUNT__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -6716,7 +6708,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME_COUNT__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int MEET_ME_COUNT__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -6725,7 +6717,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME_COUNT__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int MEET_ME_COUNT__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -6734,7 +6726,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME_COUNT__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int MEET_ME_COUNT__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MEET_ME_COUNT__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Conference Number</b></em>' containment reference.
@@ -6743,7 +6744,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME_COUNT__CONFERENCE_NUMBER = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int MEET_ME_COUNT__CONFERENCE_NUMBER = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Variable Name</b></em>' containment reference.
@@ -6752,7 +6753,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME_COUNT__VARIABLE_NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int MEET_ME_COUNT__VARIABLE_NAME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Meet Me Count</em>' class.
@@ -6761,7 +6762,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MEET_ME_COUNT_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int MEET_ME_COUNT_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.WaitForRingImpl <em>Wait For Ring</em>}' class.
@@ -6774,22 +6775,13 @@ public interface ActionstepPackage extends EPackage {
   int WAIT_FOR_RING = 49;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WAIT_FOR_RING__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WAIT_FOR_RING__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int WAIT_FOR_RING__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -6798,7 +6790,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_FOR_RING__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int WAIT_FOR_RING__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -6807,7 +6799,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_FOR_RING__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int WAIT_FOR_RING__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -6816,7 +6808,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_FOR_RING__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int WAIT_FOR_RING__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6825,7 +6817,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_FOR_RING__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int WAIT_FOR_RING__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -6834,7 +6826,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_FOR_RING__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int WAIT_FOR_RING__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -6843,7 +6835,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_FOR_RING__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int WAIT_FOR_RING__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -6852,7 +6844,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_FOR_RING__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int WAIT_FOR_RING__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WAIT_FOR_RING__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Duration</b></em>' attribute.
@@ -6861,7 +6862,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_FOR_RING__DURATION = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int WAIT_FOR_RING__DURATION = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Wait For Ring</em>' class.
@@ -6870,7 +6871,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_FOR_RING_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int WAIT_FOR_RING_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.WaitMusicOnHoldImpl <em>Wait Music On Hold</em>}' class.
@@ -6883,22 +6884,13 @@ public interface ActionstepPackage extends EPackage {
   int WAIT_MUSIC_ON_HOLD = 50;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WAIT_MUSIC_ON_HOLD__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WAIT_MUSIC_ON_HOLD__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int WAIT_MUSIC_ON_HOLD__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -6907,7 +6899,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_MUSIC_ON_HOLD__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int WAIT_MUSIC_ON_HOLD__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -6916,7 +6908,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_MUSIC_ON_HOLD__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int WAIT_MUSIC_ON_HOLD__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -6925,7 +6917,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_MUSIC_ON_HOLD__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int WAIT_MUSIC_ON_HOLD__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6934,7 +6926,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_MUSIC_ON_HOLD__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int WAIT_MUSIC_ON_HOLD__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -6943,7 +6935,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_MUSIC_ON_HOLD__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int WAIT_MUSIC_ON_HOLD__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -6952,7 +6944,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_MUSIC_ON_HOLD__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int WAIT_MUSIC_ON_HOLD__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -6961,7 +6953,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_MUSIC_ON_HOLD__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int WAIT_MUSIC_ON_HOLD__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WAIT_MUSIC_ON_HOLD__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Duration</b></em>' attribute.
@@ -6970,7 +6971,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_MUSIC_ON_HOLD__DURATION = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int WAIT_MUSIC_ON_HOLD__DURATION = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Wait Music On Hold</em>' class.
@@ -6979,7 +6980,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int WAIT_MUSIC_ON_HOLD_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int WAIT_MUSIC_ON_HOLD_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.GetAvailableChannelImpl <em>Get Available Channel</em>}' class.
@@ -6992,22 +6993,13 @@ public interface ActionstepPackage extends EPackage {
   int GET_AVAILABLE_CHANNEL = 51;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GET_AVAILABLE_CHANNEL__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GET_AVAILABLE_CHANNEL__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int GET_AVAILABLE_CHANNEL__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -7016,7 +7008,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_AVAILABLE_CHANNEL__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int GET_AVAILABLE_CHANNEL__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -7025,7 +7017,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_AVAILABLE_CHANNEL__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int GET_AVAILABLE_CHANNEL__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -7034,7 +7026,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_AVAILABLE_CHANNEL__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int GET_AVAILABLE_CHANNEL__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7043,7 +7035,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_AVAILABLE_CHANNEL__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int GET_AVAILABLE_CHANNEL__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -7052,7 +7044,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_AVAILABLE_CHANNEL__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int GET_AVAILABLE_CHANNEL__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -7061,7 +7053,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_AVAILABLE_CHANNEL__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int GET_AVAILABLE_CHANNEL__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -7070,7 +7062,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_AVAILABLE_CHANNEL__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int GET_AVAILABLE_CHANNEL__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GET_AVAILABLE_CHANNEL__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Channels</b></em>' containment reference.
@@ -7079,7 +7080,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_AVAILABLE_CHANNEL__CHANNELS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int GET_AVAILABLE_CHANNEL__CHANNELS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Variable Name</b></em>' containment reference.
@@ -7088,7 +7089,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_AVAILABLE_CHANNEL__VARIABLE_NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int GET_AVAILABLE_CHANNEL__VARIABLE_NAME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Ignore In Use</b></em>' attribute.
@@ -7097,7 +7098,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_AVAILABLE_CHANNEL__IGNORE_IN_USE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int GET_AVAILABLE_CHANNEL__IGNORE_IN_USE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Jump Priority On Fail</b></em>' attribute.
@@ -7106,7 +7107,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_AVAILABLE_CHANNEL__JUMP_PRIORITY_ON_FAIL = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 11;
+  int GET_AVAILABLE_CHANNEL__JUMP_PRIORITY_ON_FAIL = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Get Available Channel</em>' class.
@@ -7115,7 +7116,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int GET_AVAILABLE_CHANNEL_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 12;
+  int GET_AVAILABLE_CHANNEL_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.CongestionImpl <em>Congestion</em>}' class.
@@ -7128,22 +7129,13 @@ public interface ActionstepPackage extends EPackage {
   int CONGESTION = 52;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONGESTION__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONGESTION__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int CONGESTION__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -7152,7 +7144,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CONGESTION__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int CONGESTION__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -7161,7 +7153,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CONGESTION__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int CONGESTION__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -7170,7 +7162,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CONGESTION__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int CONGESTION__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7179,7 +7171,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CONGESTION__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int CONGESTION__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -7188,7 +7180,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CONGESTION__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int CONGESTION__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -7197,7 +7189,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CONGESTION__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int CONGESTION__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -7206,7 +7198,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CONGESTION__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int CONGESTION__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONGESTION__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Congestion</em>' class.
@@ -7215,7 +7216,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CONGESTION_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int CONGESTION_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.RingingImpl <em>Ringing</em>}' class.
@@ -7228,22 +7229,13 @@ public interface ActionstepPackage extends EPackage {
   int RINGING = 53;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RINGING__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RINGING__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int RINGING__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -7252,7 +7244,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RINGING__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int RINGING__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -7261,7 +7253,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RINGING__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int RINGING__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -7270,7 +7262,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RINGING__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int RINGING__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7279,7 +7271,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RINGING__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int RINGING__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -7288,7 +7280,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RINGING__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int RINGING__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -7297,7 +7289,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RINGING__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int RINGING__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -7306,7 +7298,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RINGING__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int RINGING__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RINGING__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Duration</b></em>' attribute.
@@ -7315,7 +7316,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RINGING__DURATION = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int RINGING__DURATION = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Ringing</em>' class.
@@ -7324,7 +7325,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int RINGING_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int RINGING_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.SetCallerPresentationImpl <em>Set Caller Presentation</em>}' class.
@@ -7337,22 +7338,13 @@ public interface ActionstepPackage extends EPackage {
   int SET_CALLER_PRESENTATION = 54;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SET_CALLER_PRESENTATION__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SET_CALLER_PRESENTATION__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int SET_CALLER_PRESENTATION__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -7361,7 +7353,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CALLER_PRESENTATION__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int SET_CALLER_PRESENTATION__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -7370,7 +7362,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CALLER_PRESENTATION__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int SET_CALLER_PRESENTATION__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -7379,7 +7371,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CALLER_PRESENTATION__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int SET_CALLER_PRESENTATION__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7388,7 +7380,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CALLER_PRESENTATION__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int SET_CALLER_PRESENTATION__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -7397,7 +7389,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CALLER_PRESENTATION__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int SET_CALLER_PRESENTATION__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -7406,7 +7398,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CALLER_PRESENTATION__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int SET_CALLER_PRESENTATION__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -7415,7 +7407,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CALLER_PRESENTATION__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int SET_CALLER_PRESENTATION__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_CALLER_PRESENTATION__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Presentation</b></em>' attribute.
@@ -7424,7 +7425,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CALLER_PRESENTATION__PRESENTATION = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int SET_CALLER_PRESENTATION__PRESENTATION = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Set Caller Presentation</em>' class.
@@ -7433,7 +7434,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_CALLER_PRESENTATION_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int SET_CALLER_PRESENTATION_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.SetGlobalVariableImpl <em>Set Global Variable</em>}' class.
@@ -7446,22 +7447,13 @@ public interface ActionstepPackage extends EPackage {
   int SET_GLOBAL_VARIABLE = 55;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SET_GLOBAL_VARIABLE__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SET_GLOBAL_VARIABLE__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int SET_GLOBAL_VARIABLE__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -7470,7 +7462,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_GLOBAL_VARIABLE__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int SET_GLOBAL_VARIABLE__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -7479,7 +7471,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_GLOBAL_VARIABLE__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int SET_GLOBAL_VARIABLE__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -7488,7 +7480,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_GLOBAL_VARIABLE__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int SET_GLOBAL_VARIABLE__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7497,7 +7489,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_GLOBAL_VARIABLE__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int SET_GLOBAL_VARIABLE__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -7506,7 +7498,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_GLOBAL_VARIABLE__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int SET_GLOBAL_VARIABLE__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -7515,7 +7507,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_GLOBAL_VARIABLE__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int SET_GLOBAL_VARIABLE__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -7524,7 +7516,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_GLOBAL_VARIABLE__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int SET_GLOBAL_VARIABLE__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_GLOBAL_VARIABLE__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -7533,7 +7534,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_GLOBAL_VARIABLE__VALUE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int SET_GLOBAL_VARIABLE__VALUE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' attribute.
@@ -7542,7 +7543,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_GLOBAL_VARIABLE__VARIABLE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int SET_GLOBAL_VARIABLE__VARIABLE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Set Global Variable</em>' class.
@@ -7551,7 +7552,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int SET_GLOBAL_VARIABLE_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int SET_GLOBAL_VARIABLE_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.EchoImpl <em>Echo</em>}' class.
@@ -7564,22 +7565,13 @@ public interface ActionstepPackage extends EPackage {
   int ECHO = 56;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ECHO__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ECHO__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int ECHO__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -7588,7 +7580,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ECHO__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int ECHO__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -7597,7 +7589,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ECHO__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int ECHO__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -7606,7 +7598,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ECHO__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int ECHO__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7615,7 +7607,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ECHO__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int ECHO__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -7624,7 +7616,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ECHO__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int ECHO__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -7633,7 +7625,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ECHO__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int ECHO__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -7642,7 +7634,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ECHO__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int ECHO__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ECHO__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Echo</em>' class.
@@ -7651,7 +7652,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int ECHO_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int ECHO_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.FestivalImpl <em>Festival</em>}' class.
@@ -7664,22 +7665,13 @@ public interface ActionstepPackage extends EPackage {
   int FESTIVAL = 57;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FESTIVAL__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FESTIVAL__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int FESTIVAL__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -7688,7 +7680,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int FESTIVAL__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int FESTIVAL__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -7697,7 +7689,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int FESTIVAL__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int FESTIVAL__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -7706,7 +7698,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int FESTIVAL__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int FESTIVAL__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7715,7 +7707,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int FESTIVAL__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int FESTIVAL__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -7724,7 +7716,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int FESTIVAL__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int FESTIVAL__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -7733,7 +7725,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int FESTIVAL__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int FESTIVAL__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -7742,7 +7734,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int FESTIVAL__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int FESTIVAL__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FESTIVAL__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -7751,7 +7752,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int FESTIVAL__TEXT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int FESTIVAL__TEXT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Interrupt Keys</b></em>' attribute.
@@ -7760,7 +7761,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int FESTIVAL__INTERRUPT_KEYS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int FESTIVAL__INTERRUPT_KEYS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Festival</em>' class.
@@ -7769,7 +7770,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int FESTIVAL_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int FESTIVAL_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.PlaytonesImpl <em>Playtones</em>}' class.
@@ -7782,22 +7783,13 @@ public interface ActionstepPackage extends EPackage {
   int PLAYTONES = 58;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PLAYTONES__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PLAYTONES__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int PLAYTONES__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -7806,7 +7798,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLAYTONES__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int PLAYTONES__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -7815,7 +7807,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLAYTONES__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int PLAYTONES__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -7824,7 +7816,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLAYTONES__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int PLAYTONES__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7833,7 +7825,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLAYTONES__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int PLAYTONES__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -7842,7 +7834,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLAYTONES__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int PLAYTONES__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -7851,7 +7843,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLAYTONES__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int PLAYTONES__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -7860,7 +7852,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLAYTONES__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int PLAYTONES__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PLAYTONES__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Tones</b></em>' containment reference.
@@ -7869,7 +7870,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLAYTONES__TONES = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int PLAYTONES__TONES = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Playtones</em>' class.
@@ -7878,7 +7879,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int PLAYTONES_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int PLAYTONES_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.StopPlaytonesImpl <em>Stop Playtones</em>}' class.
@@ -7891,22 +7892,13 @@ public interface ActionstepPackage extends EPackage {
   int STOP_PLAYTONES = 59;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STOP_PLAYTONES__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STOP_PLAYTONES__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int STOP_PLAYTONES__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -7915,7 +7907,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_PLAYTONES__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int STOP_PLAYTONES__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -7924,7 +7916,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_PLAYTONES__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int STOP_PLAYTONES__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -7933,7 +7925,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_PLAYTONES__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int STOP_PLAYTONES__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7942,7 +7934,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_PLAYTONES__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int STOP_PLAYTONES__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -7951,7 +7943,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_PLAYTONES__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int STOP_PLAYTONES__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -7960,7 +7952,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_PLAYTONES__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int STOP_PLAYTONES__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -7969,7 +7961,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_PLAYTONES__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int STOP_PLAYTONES__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STOP_PLAYTONES__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Stop Playtones</em>' class.
@@ -7978,7 +7979,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_PLAYTONES_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int STOP_PLAYTONES_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.ChanSpyImpl <em>Chan Spy</em>}' class.
@@ -7991,22 +7992,13 @@ public interface ActionstepPackage extends EPackage {
   int CHAN_SPY = 60;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHAN_SPY__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CHAN_SPY__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int CHAN_SPY__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -8015,7 +8007,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CHAN_SPY__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int CHAN_SPY__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -8024,7 +8016,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CHAN_SPY__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int CHAN_SPY__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -8033,7 +8025,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CHAN_SPY__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int CHAN_SPY__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8042,7 +8034,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CHAN_SPY__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int CHAN_SPY__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -8051,7 +8043,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CHAN_SPY__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int CHAN_SPY__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -8060,7 +8052,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CHAN_SPY__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int CHAN_SPY__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -8069,7 +8061,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CHAN_SPY__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int CHAN_SPY__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHAN_SPY__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Channelname Prefix</b></em>' containment reference.
@@ -8078,7 +8079,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CHAN_SPY__CHANNELNAME_PREFIX = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int CHAN_SPY__CHANNELNAME_PREFIX = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Spy Bridged Only</b></em>' attribute.
@@ -8087,7 +8088,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CHAN_SPY__SPY_BRIDGED_ONLY = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int CHAN_SPY__SPY_BRIDGED_ONLY = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Group</b></em>' attribute.
@@ -8096,7 +8097,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CHAN_SPY__GROUP = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int CHAN_SPY__GROUP = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Beep</b></em>' attribute.
@@ -8105,7 +8106,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CHAN_SPY__BEEP = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 11;
+  int CHAN_SPY__BEEP = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Record Filename Prefix</b></em>' attribute.
@@ -8114,7 +8115,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CHAN_SPY__RECORD_FILENAME_PREFIX = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 12;
+  int CHAN_SPY__RECORD_FILENAME_PREFIX = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Volume</b></em>' attribute.
@@ -8123,7 +8124,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CHAN_SPY__VOLUME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 13;
+  int CHAN_SPY__VOLUME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Whisper Enabled</b></em>' attribute.
@@ -8132,7 +8133,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CHAN_SPY__WHISPER_ENABLED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 14;
+  int CHAN_SPY__WHISPER_ENABLED = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Private Whisper Enabled</b></em>' attribute.
@@ -8141,7 +8142,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CHAN_SPY__PRIVATE_WHISPER_ENABLED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 15;
+  int CHAN_SPY__PRIVATE_WHISPER_ENABLED = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 8;
 
   /**
    * The number of structural features of the '<em>Chan Spy</em>' class.
@@ -8150,7 +8151,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int CHAN_SPY_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 16;
+  int CHAN_SPY_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 9;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.DictateImpl <em>Dictate</em>}' class.
@@ -8163,22 +8164,13 @@ public interface ActionstepPackage extends EPackage {
   int DICTATE = 61;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DICTATE__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DICTATE__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int DICTATE__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -8187,7 +8179,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DICTATE__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int DICTATE__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -8196,7 +8188,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DICTATE__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int DICTATE__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -8205,7 +8197,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DICTATE__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int DICTATE__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8214,7 +8206,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DICTATE__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int DICTATE__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -8223,7 +8215,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DICTATE__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int DICTATE__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -8232,7 +8224,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DICTATE__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int DICTATE__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -8241,7 +8233,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DICTATE__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int DICTATE__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DICTATE__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Directory</b></em>' containment reference.
@@ -8250,7 +8251,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DICTATE__DIRECTORY = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int DICTATE__DIRECTORY = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Filename</b></em>' containment reference.
@@ -8259,7 +8260,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DICTATE__FILENAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int DICTATE__FILENAME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Dictate</em>' class.
@@ -8268,7 +8269,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DICTATE_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int DICTATE_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.ExtensionSpyImpl <em>Extension Spy</em>}' class.
@@ -8281,22 +8282,13 @@ public interface ActionstepPackage extends EPackage {
   int EXTENSION_SPY = 62;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXTENSION_SPY__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXTENSION_SPY__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int EXTENSION_SPY__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -8305,7 +8297,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXTENSION_SPY__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int EXTENSION_SPY__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -8314,7 +8306,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXTENSION_SPY__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int EXTENSION_SPY__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -8323,7 +8315,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXTENSION_SPY__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int EXTENSION_SPY__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8332,7 +8324,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXTENSION_SPY__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int EXTENSION_SPY__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -8341,7 +8333,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXTENSION_SPY__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int EXTENSION_SPY__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -8350,7 +8342,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXTENSION_SPY__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int EXTENSION_SPY__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -8359,7 +8351,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXTENSION_SPY__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int EXTENSION_SPY__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTENSION_SPY__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Extension</b></em>' containment reference.
@@ -8368,7 +8369,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXTENSION_SPY__EXTENSION = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int EXTENSION_SPY__EXTENSION = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Context</b></em>' containment reference.
@@ -8377,7 +8378,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXTENSION_SPY__CONTEXT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int EXTENSION_SPY__CONTEXT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Spy Bridged Only</b></em>' attribute.
@@ -8386,7 +8387,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXTENSION_SPY__SPY_BRIDGED_ONLY = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int EXTENSION_SPY__SPY_BRIDGED_ONLY = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Group</b></em>' attribute.
@@ -8395,7 +8396,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXTENSION_SPY__GROUP = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 11;
+  int EXTENSION_SPY__GROUP = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Beep</b></em>' attribute.
@@ -8404,7 +8405,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXTENSION_SPY__BEEP = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 12;
+  int EXTENSION_SPY__BEEP = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Record Filename Prefix</b></em>' attribute.
@@ -8413,7 +8414,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXTENSION_SPY__RECORD_FILENAME_PREFIX = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 13;
+  int EXTENSION_SPY__RECORD_FILENAME_PREFIX = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Volume</b></em>' attribute.
@@ -8422,7 +8423,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXTENSION_SPY__VOLUME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 14;
+  int EXTENSION_SPY__VOLUME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Whisper Enabled</b></em>' attribute.
@@ -8431,7 +8432,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXTENSION_SPY__WHISPER_ENABLED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 15;
+  int EXTENSION_SPY__WHISPER_ENABLED = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Private Whisper Enabled</b></em>' attribute.
@@ -8440,7 +8441,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXTENSION_SPY__PRIVATE_WHISPER_ENABLED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 16;
+  int EXTENSION_SPY__PRIVATE_WHISPER_ENABLED = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Channel Name</b></em>' containment reference.
@@ -8449,7 +8450,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXTENSION_SPY__CHANNEL_NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 17;
+  int EXTENSION_SPY__CHANNEL_NAME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 10;
 
   /**
    * The number of structural features of the '<em>Extension Spy</em>' class.
@@ -8458,7 +8459,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXTENSION_SPY_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 18;
+  int EXTENSION_SPY_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 11;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.MixMonitorImpl <em>Mix Monitor</em>}' class.
@@ -8471,22 +8472,13 @@ public interface ActionstepPackage extends EPackage {
   int MIX_MONITOR = 63;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MIX_MONITOR__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MIX_MONITOR__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int MIX_MONITOR__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -8495,7 +8487,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MIX_MONITOR__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int MIX_MONITOR__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -8504,7 +8496,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MIX_MONITOR__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int MIX_MONITOR__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -8513,7 +8505,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MIX_MONITOR__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int MIX_MONITOR__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8522,7 +8514,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MIX_MONITOR__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int MIX_MONITOR__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -8531,7 +8523,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MIX_MONITOR__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int MIX_MONITOR__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -8540,7 +8532,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MIX_MONITOR__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int MIX_MONITOR__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -8549,7 +8541,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MIX_MONITOR__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int MIX_MONITOR__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MIX_MONITOR__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Filename</b></em>' containment reference.
@@ -8558,7 +8559,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MIX_MONITOR__FILENAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int MIX_MONITOR__FILENAME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Record Only When Bridged</b></em>' attribute.
@@ -8567,7 +8568,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MIX_MONITOR__RECORD_ONLY_WHEN_BRIDGED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int MIX_MONITOR__RECORD_ONLY_WHEN_BRIDGED = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Append Mode</b></em>' attribute.
@@ -8576,7 +8577,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MIX_MONITOR__APPEND_MODE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int MIX_MONITOR__APPEND_MODE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Mix Monitor</em>' class.
@@ -8585,7 +8586,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MIX_MONITOR_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 11;
+  int MIX_MONITOR_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.StopMixmonitorImpl <em>Stop Mixmonitor</em>}' class.
@@ -8598,22 +8599,13 @@ public interface ActionstepPackage extends EPackage {
   int STOP_MIXMONITOR = 64;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STOP_MIXMONITOR__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STOP_MIXMONITOR__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int STOP_MIXMONITOR__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -8622,7 +8614,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_MIXMONITOR__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int STOP_MIXMONITOR__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -8631,7 +8623,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_MIXMONITOR__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int STOP_MIXMONITOR__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -8640,7 +8632,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_MIXMONITOR__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int STOP_MIXMONITOR__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8649,7 +8641,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_MIXMONITOR__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int STOP_MIXMONITOR__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -8658,7 +8650,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_MIXMONITOR__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int STOP_MIXMONITOR__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -8667,7 +8659,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_MIXMONITOR__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int STOP_MIXMONITOR__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -8676,7 +8668,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_MIXMONITOR__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int STOP_MIXMONITOR__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STOP_MIXMONITOR__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Stop Mixmonitor</em>' class.
@@ -8685,7 +8686,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_MIXMONITOR_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int STOP_MIXMONITOR_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.StopMonitorImpl <em>Stop Monitor</em>}' class.
@@ -8698,22 +8699,13 @@ public interface ActionstepPackage extends EPackage {
   int STOP_MONITOR = 65;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STOP_MONITOR__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STOP_MONITOR__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int STOP_MONITOR__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -8722,7 +8714,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_MONITOR__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int STOP_MONITOR__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -8731,7 +8723,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_MONITOR__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int STOP_MONITOR__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -8740,7 +8732,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_MONITOR__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int STOP_MONITOR__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8749,7 +8741,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_MONITOR__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int STOP_MONITOR__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -8758,7 +8750,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_MONITOR__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int STOP_MONITOR__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -8767,7 +8759,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_MONITOR__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int STOP_MONITOR__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -8776,7 +8768,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_MONITOR__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int STOP_MONITOR__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STOP_MONITOR__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Stop Monitor</em>' class.
@@ -8785,7 +8786,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int STOP_MONITOR_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int STOP_MONITOR_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.MonitorImpl <em>Monitor</em>}' class.
@@ -8798,22 +8799,13 @@ public interface ActionstepPackage extends EPackage {
   int MONITOR = 66;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MONITOR__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MONITOR__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int MONITOR__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -8822,7 +8814,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MONITOR__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int MONITOR__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -8831,7 +8823,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MONITOR__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int MONITOR__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -8840,7 +8832,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MONITOR__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int MONITOR__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8849,7 +8841,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MONITOR__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int MONITOR__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -8858,7 +8850,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MONITOR__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int MONITOR__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -8867,7 +8859,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MONITOR__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int MONITOR__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -8876,7 +8868,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MONITOR__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int MONITOR__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MONITOR__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Filename Prefix</b></em>' containment reference.
@@ -8885,7 +8886,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MONITOR__FILENAME_PREFIX = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int MONITOR__FILENAME_PREFIX = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Format</b></em>' attribute.
@@ -8894,7 +8895,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MONITOR__FORMAT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int MONITOR__FORMAT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Mix</b></em>' attribute.
@@ -8903,7 +8904,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MONITOR__MIX = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int MONITOR__MIX = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Monitor</em>' class.
@@ -8912,7 +8913,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int MONITOR_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 11;
+  int MONITOR_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.DirectoryImpl <em>Directory</em>}' class.
@@ -8925,22 +8926,13 @@ public interface ActionstepPackage extends EPackage {
   int DIRECTORY = 67;
 
   /**
-   * The feature id for the '<em><b>Call1</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIRECTORY__CALL1 = AsteriskPackage.CALL_CONSUMER1__CALL1;
-
-  /**
    * The feature id for the '<em><b>Product Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DIRECTORY__PRODUCT_ID = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 0;
+  int DIRECTORY__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
    * The feature id for the '<em><b>Paused</b></em>' attribute.
@@ -8949,7 +8941,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIRECTORY__PAUSED = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int DIRECTORY__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
 
   /**
    * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -8958,7 +8950,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIRECTORY__ACTIVE = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 2;
+  int DIRECTORY__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
 
   /**
    * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -8967,7 +8959,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIRECTORY__OUTPUTS = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 3;
+  int DIRECTORY__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8976,7 +8968,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIRECTORY__NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 4;
+  int DIRECTORY__NAME = ActionStepPackage.ACTION_STEP__NAME;
 
   /**
    * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -8985,7 +8977,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIRECTORY__SAFLET = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 5;
+  int DIRECTORY__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
 
   /**
    * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -8994,7 +8986,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIRECTORY__DEFAULT_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 6;
+  int DIRECTORY__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
 
   /**
    * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -9003,7 +8995,16 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIRECTORY__ERROR_OUTPUT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 7;
+  int DIRECTORY__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Call1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIRECTORY__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>VM Context</b></em>' containment reference.
@@ -9012,7 +9013,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIRECTORY__VM_CONTEXT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 8;
+  int DIRECTORY__VM_CONTEXT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Dial Context</b></em>' containment reference.
@@ -9021,7 +9022,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIRECTORY__DIAL_CONTEXT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 9;
+  int DIRECTORY__DIAL_CONTEXT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Read Extension Number</b></em>' attribute.
@@ -9030,7 +9031,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIRECTORY__READ_EXTENSION_NUMBER = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 10;
+  int DIRECTORY__READ_EXTENSION_NUMBER = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Enter By First Name</b></em>' attribute.
@@ -9039,7 +9040,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIRECTORY__ENTER_BY_FIRST_NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 11;
+  int DIRECTORY__ENTER_BY_FIRST_NAME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Enter By First Or Last Name</b></em>' attribute.
@@ -9048,7 +9049,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIRECTORY__ENTER_BY_FIRST_OR_LAST_NAME = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 12;
+  int DIRECTORY__ENTER_BY_FIRST_OR_LAST_NAME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>Directory</em>' class.
@@ -9057,7 +9058,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int DIRECTORY_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER1_FEATURE_COUNT + 13;
+  int DIRECTORY_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.ExtensionTransferImpl <em>Extension Transfer</em>}' class.
@@ -9070,13 +9071,85 @@ public interface ActionstepPackage extends EPackage {
   int EXTENSION_TRANSFER = 68;
 
   /**
+   * The feature id for the '<em><b>Product Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTENSION_TRANSFER__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
+
+  /**
+   * The feature id for the '<em><b>Paused</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTENSION_TRANSFER__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
+
+  /**
+   * The feature id for the '<em><b>Active</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTENSION_TRANSFER__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
+
+  /**
+   * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTENSION_TRANSFER__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTENSION_TRANSFER__NAME = ActionStepPackage.ACTION_STEP__NAME;
+
+  /**
+   * The feature id for the '<em><b>Saflet</b></em>' container reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTENSION_TRANSFER__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
+
+  /**
+   * The feature id for the '<em><b>Default Output</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTENSION_TRANSFER__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
+
+  /**
+   * The feature id for the '<em><b>Error Output</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTENSION_TRANSFER__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+  /**
    * The feature id for the '<em><b>Call1</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXTENSION_TRANSFER__CALL1 = AsteriskPackage.CALL_CONSUMER2__CALL1;
+  int EXTENSION_TRANSFER__CALL1 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Call2</b></em>' reference.
@@ -9085,7 +9158,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXTENSION_TRANSFER__CALL2 = AsteriskPackage.CALL_CONSUMER2__CALL2;
+  int EXTENSION_TRANSFER__CALL2 = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Context</b></em>' containment reference.
@@ -9094,7 +9167,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXTENSION_TRANSFER__CONTEXT = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 0;
+  int EXTENSION_TRANSFER__CONTEXT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Extension</b></em>' containment reference.
@@ -9103,7 +9176,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXTENSION_TRANSFER__EXTENSION = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 1;
+  int EXTENSION_TRANSFER__EXTENSION = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -9112,7 +9185,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXTENSION_TRANSFER__PRIORITY = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 2;
+  int EXTENSION_TRANSFER__PRIORITY = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Timeout</b></em>' attribute.
@@ -9121,7 +9194,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXTENSION_TRANSFER__TIMEOUT = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 3;
+  int EXTENSION_TRANSFER__TIMEOUT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>Extension Transfer</em>' class.
@@ -9130,7 +9203,7 @@ public interface ActionstepPackage extends EPackage {
    * @generated
    * @ordered
    */
-  int EXTENSION_TRANSFER_FEATURE_COUNT = AsteriskPackage.CALL_CONSUMER2_FEATURE_COUNT + 4;
+  int EXTENSION_TRANSFER_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link com.safi.asterisk.actionstep.MeetMeAdminCommand <em>Meet Me Admin Command</em>}' enum.

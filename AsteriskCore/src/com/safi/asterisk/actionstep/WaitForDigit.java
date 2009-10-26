@@ -27,7 +27,7 @@ import com.safi.core.actionstep.ActionStep;
  * @model
  * @generated
  */
-public interface WaitForDigit extends CallConsumer1, ActionStep {
+public interface WaitForDigit extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Timeout</b></em>' attribute.
    * The default value is <code>"-1"</code>.

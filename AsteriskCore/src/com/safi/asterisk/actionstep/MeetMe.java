@@ -54,7 +54,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface MeetMe extends CallConsumer1, ActionStep {
+public interface MeetMe extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Conference Number</b></em>' containment reference.
    * <!-- begin-user-doc -->

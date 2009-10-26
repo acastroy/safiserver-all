@@ -29,7 +29,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface VMAuthenticate extends CallConsumer1, ActionStep {
+public interface VMAuthenticate extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Mailbox</b></em>' containment reference.
    * <!-- begin-user-doc -->

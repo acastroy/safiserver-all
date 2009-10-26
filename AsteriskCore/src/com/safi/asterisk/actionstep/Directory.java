@@ -31,7 +31,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface Directory extends CallConsumer1, ActionStep {
+public interface Directory extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>VM Context</b></em>' containment reference.
    * <!-- begin-user-doc -->

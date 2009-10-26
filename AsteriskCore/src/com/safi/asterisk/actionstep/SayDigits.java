@@ -28,7 +28,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface SayDigits extends CallConsumer1, ActionStep {
+public interface SayDigits extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Digits</b></em>' containment reference.
    * <!-- begin-user-doc -->

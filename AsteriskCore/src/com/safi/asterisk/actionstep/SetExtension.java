@@ -27,7 +27,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface SetExtension extends CallConsumer1, ActionStep {
+public interface SetExtension extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Extension</b></em>' containment reference.
    * <!-- begin-user-doc -->

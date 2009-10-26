@@ -26,7 +26,7 @@ import com.safi.core.actionstep.ActionStep;
  * @model
  * @generated
  */
-public interface Ringing extends CallConsumer1, ActionStep {
+public interface Ringing extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Duration</b></em>' attribute.
    * <!-- begin-user-doc -->

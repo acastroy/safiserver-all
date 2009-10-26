@@ -27,7 +27,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface SetContext extends CallConsumer1, ActionStep {
+public interface SetContext extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Context</b></em>' containment reference.
    * <!-- begin-user-doc -->

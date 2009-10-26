@@ -28,7 +28,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface SayTime extends CallConsumer1, ActionStep {
+public interface SayTime extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Escape Digits</b></em>' attribute.
    * The default value is <code>"#"</code>.

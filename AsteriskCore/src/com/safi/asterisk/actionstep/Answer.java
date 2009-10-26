@@ -20,5 +20,5 @@ import com.safi.core.actionstep.ActionStep;
  * @model
  * @generated
  */
-public interface Answer extends CallConsumer1, ActionStep {
+public interface Answer extends ActionStep, CallConsumer1 {
 } // Answer

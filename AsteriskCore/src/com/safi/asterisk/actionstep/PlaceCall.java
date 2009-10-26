@@ -30,7 +30,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface PlaceCall extends CallSource1, ActionStep {
+public interface PlaceCall extends ActionStep, CallSource1 {
   /**
    * Returns the value of the '<em><b>Extension</b></em>' containment reference.
    * <!-- begin-user-doc -->

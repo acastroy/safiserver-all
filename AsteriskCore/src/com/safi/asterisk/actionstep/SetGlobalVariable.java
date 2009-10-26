@@ -28,7 +28,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface SetGlobalVariable extends CallConsumer1, ActionStep {
+public interface SetGlobalVariable extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->

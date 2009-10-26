@@ -356,16 +356,16 @@ public class ActionstepAdapterFactory extends AdapterFactoryImpl {
         return createExtensionTransferAdapter();
       }
       @Override
-      public Adapter caseCallConsumer1(CallConsumer1 object) {
-        return createCallConsumer1Adapter();
-      }
-      @Override
       public Adapter caseProductIdentifiable(ProductIdentifiable object) {
         return createProductIdentifiableAdapter();
       }
       @Override
       public Adapter caseActionStep(ActionStep object) {
         return createActionStepAdapter();
+      }
+      @Override
+      public Adapter caseCallConsumer1(CallConsumer1 object) {
+        return createCallConsumer1Adapter();
       }
       @Override
       public Adapter caseCallSource1(CallSource1 object) {

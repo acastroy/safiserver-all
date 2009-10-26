@@ -26,7 +26,7 @@ import com.safi.core.actionstep.ActionStep;
  * @model
  * @generated
  */
-public interface SetCallerPresentation extends CallConsumer1, ActionStep {
+public interface SetCallerPresentation extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Presentation</b></em>' attribute.
    * The default value is <code>"allowed"</code>.

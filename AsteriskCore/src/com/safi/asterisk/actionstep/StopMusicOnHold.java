@@ -20,5 +20,5 @@ import com.safi.core.actionstep.ActionStep;
  * @model
  * @generated
  */
-public interface StopMusicOnHold extends CallConsumer1, ActionStep {
+public interface StopMusicOnHold extends ActionStep, CallConsumer1 {
 } // StopMusicOnHold

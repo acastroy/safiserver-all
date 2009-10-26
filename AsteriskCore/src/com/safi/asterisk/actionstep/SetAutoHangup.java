@@ -26,7 +26,7 @@ import com.safi.core.actionstep.ActionStep;
  * @model
  * @generated
  */
-public interface SetAutoHangup extends CallConsumer1, ActionStep {
+public interface SetAutoHangup extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Time</b></em>' attribute.
    * <!-- begin-user-doc -->

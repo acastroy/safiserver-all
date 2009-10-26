@@ -27,7 +27,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface SetPriority extends CallConsumer1, ActionStep {
+public interface SetPriority extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Priority</b></em>' containment reference.
    * <!-- begin-user-doc -->

@@ -20,5 +20,5 @@ import com.safi.core.actionstep.ActionStep;
  * @model
  * @generated
  */
-public interface Congestion extends CallConsumer1, ActionStep {
+public interface Congestion extends ActionStep, CallConsumer1 {
 } // Congestion

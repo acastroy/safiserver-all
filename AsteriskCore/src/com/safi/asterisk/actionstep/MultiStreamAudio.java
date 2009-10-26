@@ -31,7 +31,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface MultiStreamAudio extends CallConsumer1, ActionStep {
+public interface MultiStreamAudio extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Escape Digits</b></em>' containment reference.
    * <!-- begin-user-doc -->

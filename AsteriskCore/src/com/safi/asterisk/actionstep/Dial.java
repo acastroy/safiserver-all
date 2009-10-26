@@ -63,7 +63,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface Dial extends CallConsumer1, ActionStep {
+public interface Dial extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Outgoing Channels</b></em>' containment reference.
    * <!-- begin-user-doc -->

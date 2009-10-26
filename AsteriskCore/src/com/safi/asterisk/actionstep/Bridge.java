@@ -29,7 +29,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface Bridge extends CallConsumer2, ActionStep {
+public interface Bridge extends ActionStep, CallConsumer2 {
   /**
    * Returns the value of the '<em><b>Channel1</b></em>' containment reference.
    * <!-- begin-user-doc -->

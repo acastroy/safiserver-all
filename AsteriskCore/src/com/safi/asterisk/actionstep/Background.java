@@ -31,7 +31,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface Background extends CallConsumer1, ActionStep {
+public interface Background extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Filenames</b></em>' containment reference.
    * <!-- begin-user-doc -->

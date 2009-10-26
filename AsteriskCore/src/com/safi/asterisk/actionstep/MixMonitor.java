@@ -29,7 +29,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface MixMonitor extends CallConsumer1, ActionStep {
+public interface MixMonitor extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Filename</b></em>' containment reference.
    * <!-- begin-user-doc -->

@@ -28,7 +28,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface ExecuteApplication extends CallConsumer1, ActionStep {
+public interface ExecuteApplication extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Application</b></em>' attribute.
    * <!-- begin-user-doc -->

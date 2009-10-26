@@ -33,7 +33,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface RecordFile extends CallConsumer1, ActionStep {
+public interface RecordFile extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Beep</b></em>' attribute.
    * The default value is <code>"true"</code>.

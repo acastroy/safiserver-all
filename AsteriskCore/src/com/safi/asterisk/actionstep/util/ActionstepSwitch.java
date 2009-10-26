@@ -98,8 +98,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.ANSWER: {
         Answer answer = (Answer)theEObject;
         T result = caseAnswer(answer);
-        if (result == null) result = caseCallConsumer1(answer);
         if (result == null) result = caseActionStep(answer);
+        if (result == null) result = caseCallConsumer1(answer);
         if (result == null) result = caseProductIdentifiable(answer);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -107,8 +107,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.GET_DIGITS: {
         GetDigits getDigits = (GetDigits)theEObject;
         T result = caseGetDigits(getDigits);
-        if (result == null) result = caseCallConsumer1(getDigits);
         if (result == null) result = caseActionStep(getDigits);
+        if (result == null) result = caseCallConsumer1(getDigits);
         if (result == null) result = caseProductIdentifiable(getDigits);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -116,8 +116,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.GET_FULL_VARIABLE: {
         GetFullVariable getFullVariable = (GetFullVariable)theEObject;
         T result = caseGetFullVariable(getFullVariable);
-        if (result == null) result = caseCallConsumer1(getFullVariable);
         if (result == null) result = caseActionStep(getFullVariable);
+        if (result == null) result = caseCallConsumer1(getFullVariable);
         if (result == null) result = caseProductIdentifiable(getFullVariable);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -125,8 +125,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.MULTI_STREAM_AUDIO: {
         MultiStreamAudio multiStreamAudio = (MultiStreamAudio)theEObject;
         T result = caseMultiStreamAudio(multiStreamAudio);
-        if (result == null) result = caseCallConsumer1(multiStreamAudio);
         if (result == null) result = caseActionStep(multiStreamAudio);
+        if (result == null) result = caseCallConsumer1(multiStreamAudio);
         if (result == null) result = caseProductIdentifiable(multiStreamAudio);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -134,8 +134,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.HANGUP: {
         Hangup hangup = (Hangup)theEObject;
         T result = caseHangup(hangup);
-        if (result == null) result = caseCallConsumer1(hangup);
         if (result == null) result = caseActionStep(hangup);
+        if (result == null) result = caseCallConsumer1(hangup);
         if (result == null) result = caseProductIdentifiable(hangup);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -143,8 +143,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.RECORD_FILE: {
         RecordFile recordFile = (RecordFile)theEObject;
         T result = caseRecordFile(recordFile);
-        if (result == null) result = caseCallConsumer1(recordFile);
         if (result == null) result = caseActionStep(recordFile);
+        if (result == null) result = caseCallConsumer1(recordFile);
         if (result == null) result = caseProductIdentifiable(recordFile);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -152,8 +152,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.SAY_ALPHA: {
         SayAlpha sayAlpha = (SayAlpha)theEObject;
         T result = caseSayAlpha(sayAlpha);
-        if (result == null) result = caseCallConsumer1(sayAlpha);
         if (result == null) result = caseActionStep(sayAlpha);
+        if (result == null) result = caseCallConsumer1(sayAlpha);
         if (result == null) result = caseProductIdentifiable(sayAlpha);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -161,8 +161,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.SAY_DATE_TIME: {
         SayDateTime sayDateTime = (SayDateTime)theEObject;
         T result = caseSayDateTime(sayDateTime);
-        if (result == null) result = caseCallConsumer1(sayDateTime);
         if (result == null) result = caseActionStep(sayDateTime);
+        if (result == null) result = caseCallConsumer1(sayDateTime);
         if (result == null) result = caseProductIdentifiable(sayDateTime);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -170,8 +170,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.SAY_DIGITS: {
         SayDigits sayDigits = (SayDigits)theEObject;
         T result = caseSayDigits(sayDigits);
-        if (result == null) result = caseCallConsumer1(sayDigits);
         if (result == null) result = caseActionStep(sayDigits);
+        if (result == null) result = caseCallConsumer1(sayDigits);
         if (result == null) result = caseProductIdentifiable(sayDigits);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -179,8 +179,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.SAY_NUMBER: {
         SayNumber sayNumber = (SayNumber)theEObject;
         T result = caseSayNumber(sayNumber);
-        if (result == null) result = caseCallConsumer1(sayNumber);
         if (result == null) result = caseActionStep(sayNumber);
+        if (result == null) result = caseCallConsumer1(sayNumber);
         if (result == null) result = caseProductIdentifiable(sayNumber);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -188,8 +188,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.SAY_PHONETIC: {
         SayPhonetic sayPhonetic = (SayPhonetic)theEObject;
         T result = caseSayPhonetic(sayPhonetic);
-        if (result == null) result = caseCallConsumer1(sayPhonetic);
         if (result == null) result = caseActionStep(sayPhonetic);
+        if (result == null) result = caseCallConsumer1(sayPhonetic);
         if (result == null) result = caseProductIdentifiable(sayPhonetic);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -197,8 +197,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.SAY_TIME: {
         SayTime sayTime = (SayTime)theEObject;
         T result = caseSayTime(sayTime);
-        if (result == null) result = caseCallConsumer1(sayTime);
         if (result == null) result = caseActionStep(sayTime);
+        if (result == null) result = caseCallConsumer1(sayTime);
         if (result == null) result = caseProductIdentifiable(sayTime);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -206,8 +206,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.SET_AUTO_HANGUP: {
         SetAutoHangup setAutoHangup = (SetAutoHangup)theEObject;
         T result = caseSetAutoHangup(setAutoHangup);
-        if (result == null) result = caseCallConsumer1(setAutoHangup);
         if (result == null) result = caseActionStep(setAutoHangup);
+        if (result == null) result = caseCallConsumer1(setAutoHangup);
         if (result == null) result = caseProductIdentifiable(setAutoHangup);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -215,8 +215,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.SET_CALLER_ID: {
         SetCallerId setCallerId = (SetCallerId)theEObject;
         T result = caseSetCallerId(setCallerId);
-        if (result == null) result = caseCallConsumer1(setCallerId);
         if (result == null) result = caseActionStep(setCallerId);
+        if (result == null) result = caseCallConsumer1(setCallerId);
         if (result == null) result = caseProductIdentifiable(setCallerId);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -224,8 +224,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.SET_CHANNEL_VARIABLE: {
         SetChannelVariable setChannelVariable = (SetChannelVariable)theEObject;
         T result = caseSetChannelVariable(setChannelVariable);
-        if (result == null) result = caseCallConsumer1(setChannelVariable);
         if (result == null) result = caseActionStep(setChannelVariable);
+        if (result == null) result = caseCallConsumer1(setChannelVariable);
         if (result == null) result = caseProductIdentifiable(setChannelVariable);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -233,8 +233,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.SET_CONTEXT: {
         SetContext setContext = (SetContext)theEObject;
         T result = caseSetContext(setContext);
-        if (result == null) result = caseCallConsumer1(setContext);
         if (result == null) result = caseActionStep(setContext);
+        if (result == null) result = caseCallConsumer1(setContext);
         if (result == null) result = caseProductIdentifiable(setContext);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -242,8 +242,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.SET_EXTENSION: {
         SetExtension setExtension = (SetExtension)theEObject;
         T result = caseSetExtension(setExtension);
-        if (result == null) result = caseCallConsumer1(setExtension);
         if (result == null) result = caseActionStep(setExtension);
+        if (result == null) result = caseCallConsumer1(setExtension);
         if (result == null) result = caseProductIdentifiable(setExtension);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -251,8 +251,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.STOP_MUSIC_ON_HOLD: {
         StopMusicOnHold stopMusicOnHold = (StopMusicOnHold)theEObject;
         T result = caseStopMusicOnHold(stopMusicOnHold);
-        if (result == null) result = caseCallConsumer1(stopMusicOnHold);
         if (result == null) result = caseActionStep(stopMusicOnHold);
+        if (result == null) result = caseCallConsumer1(stopMusicOnHold);
         if (result == null) result = caseProductIdentifiable(stopMusicOnHold);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -260,8 +260,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.SET_MUSIC_ON: {
         SetMusicOn setMusicOn = (SetMusicOn)theEObject;
         T result = caseSetMusicOn(setMusicOn);
-        if (result == null) result = caseCallConsumer1(setMusicOn);
         if (result == null) result = caseActionStep(setMusicOn);
+        if (result == null) result = caseCallConsumer1(setMusicOn);
         if (result == null) result = caseProductIdentifiable(setMusicOn);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -269,8 +269,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.SET_PRIORITY: {
         SetPriority setPriority = (SetPriority)theEObject;
         T result = caseSetPriority(setPriority);
-        if (result == null) result = caseCallConsumer1(setPriority);
         if (result == null) result = caseActionStep(setPriority);
+        if (result == null) result = caseCallConsumer1(setPriority);
         if (result == null) result = caseProductIdentifiable(setPriority);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -278,8 +278,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.STREAM_AUDIO: {
         StreamAudio streamAudio = (StreamAudio)theEObject;
         T result = caseStreamAudio(streamAudio);
-        if (result == null) result = caseCallConsumer1(streamAudio);
         if (result == null) result = caseActionStep(streamAudio);
+        if (result == null) result = caseCallConsumer1(streamAudio);
         if (result == null) result = caseProductIdentifiable(streamAudio);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -287,8 +287,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.WAIT_FOR_DIGIT: {
         WaitForDigit waitForDigit = (WaitForDigit)theEObject;
         T result = caseWaitForDigit(waitForDigit);
-        if (result == null) result = caseCallConsumer1(waitForDigit);
         if (result == null) result = caseActionStep(waitForDigit);
+        if (result == null) result = caseCallConsumer1(waitForDigit);
         if (result == null) result = caseProductIdentifiable(waitForDigit);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -296,8 +296,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.ORIGINATE_CALL: {
         OriginateCall originateCall = (OriginateCall)theEObject;
         T result = caseOriginateCall(originateCall);
-        if (result == null) result = caseCallSource1(originateCall);
         if (result == null) result = caseActionStep(originateCall);
+        if (result == null) result = caseCallSource1(originateCall);
         if (result == null) result = caseProductIdentifiable(originateCall);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -305,8 +305,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.PLAY_DTMF: {
         PlayDTMF playDTMF = (PlayDTMF)theEObject;
         T result = casePlayDTMF(playDTMF);
-        if (result == null) result = caseCallConsumer1(playDTMF);
         if (result == null) result = caseActionStep(playDTMF);
+        if (result == null) result = caseCallConsumer1(playDTMF);
         if (result == null) result = caseProductIdentifiable(playDTMF);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -314,8 +314,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.RECORD_CALL: {
         RecordCall recordCall = (RecordCall)theEObject;
         T result = caseRecordCall(recordCall);
-        if (result == null) result = caseCallConsumer1(recordCall);
         if (result == null) result = caseActionStep(recordCall);
+        if (result == null) result = caseCallConsumer1(recordCall);
         if (result == null) result = caseProductIdentifiable(recordCall);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -323,18 +323,18 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.TRANSFER: {
         Transfer transfer = (Transfer)theEObject;
         T result = caseTransfer(transfer);
-        if (result == null) result = caseCallConsumer2(transfer);
         if (result == null) result = caseActionStep(transfer);
-        if (result == null) result = caseCallConsumer1(transfer);
+        if (result == null) result = caseCallConsumer2(transfer);
         if (result == null) result = caseProductIdentifiable(transfer);
+        if (result == null) result = caseCallConsumer1(transfer);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case ActionstepPackage.EXECUTE_APPLICATION: {
         ExecuteApplication executeApplication = (ExecuteApplication)theEObject;
         T result = caseExecuteApplication(executeApplication);
-        if (result == null) result = caseCallConsumer1(executeApplication);
         if (result == null) result = caseActionStep(executeApplication);
+        if (result == null) result = caseCallConsumer1(executeApplication);
         if (result == null) result = caseProductIdentifiable(executeApplication);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -342,8 +342,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.GET_CALL_INFO: {
         GetCallInfo getCallInfo = (GetCallInfo)theEObject;
         T result = caseGetCallInfo(getCallInfo);
-        if (result == null) result = caseCallConsumer1(getCallInfo);
         if (result == null) result = caseActionStep(getCallInfo);
+        if (result == null) result = caseCallConsumer1(getCallInfo);
         if (result == null) result = caseProductIdentifiable(getCallInfo);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -351,8 +351,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.PLAY_MUSIC_ON_HOLD: {
         PlayMusicOnHold playMusicOnHold = (PlayMusicOnHold)theEObject;
         T result = casePlayMusicOnHold(playMusicOnHold);
-        if (result == null) result = caseCallConsumer1(playMusicOnHold);
         if (result == null) result = caseActionStep(playMusicOnHold);
+        if (result == null) result = caseCallConsumer1(playMusicOnHold);
         if (result == null) result = caseProductIdentifiable(playMusicOnHold);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -360,8 +360,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.PROMPT_GET_DIGITS: {
         PromptGetDigits promptGetDigits = (PromptGetDigits)theEObject;
         T result = casePromptGetDigits(promptGetDigits);
-        if (result == null) result = caseCallConsumer1(promptGetDigits);
         if (result == null) result = caseActionStep(promptGetDigits);
+        if (result == null) result = caseCallConsumer1(promptGetDigits);
         if (result == null) result = caseProductIdentifiable(promptGetDigits);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -369,8 +369,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.SLEEP: {
         Sleep sleep = (Sleep)theEObject;
         T result = caseSleep(sleep);
-        if (result == null) result = caseCallConsumer1(sleep);
         if (result == null) result = caseActionStep(sleep);
+        if (result == null) result = caseCallConsumer1(sleep);
         if (result == null) result = caseProductIdentifiable(sleep);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -378,8 +378,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.STREAM_AUDIO_EXTENDED: {
         StreamAudioExtended streamAudioExtended = (StreamAudioExtended)theEObject;
         T result = caseStreamAudioExtended(streamAudioExtended);
-        if (result == null) result = caseCallConsumer1(streamAudioExtended);
         if (result == null) result = caseActionStep(streamAudioExtended);
+        if (result == null) result = caseCallConsumer1(streamAudioExtended);
         if (result == null) result = caseProductIdentifiable(streamAudioExtended);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -387,8 +387,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.DIAL: {
         Dial dial = (Dial)theEObject;
         T result = caseDial(dial);
-        if (result == null) result = caseCallConsumer1(dial);
         if (result == null) result = caseActionStep(dial);
+        if (result == null) result = caseCallConsumer1(dial);
         if (result == null) result = caseProductIdentifiable(dial);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -396,8 +396,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.PICKUP: {
         Pickup pickup = (Pickup)theEObject;
         T result = casePickup(pickup);
-        if (result == null) result = caseCallConsumer1(pickup);
         if (result == null) result = caseActionStep(pickup);
+        if (result == null) result = caseCallConsumer1(pickup);
         if (result == null) result = caseProductIdentifiable(pickup);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -405,8 +405,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.BACKGROUND: {
         Background background = (Background)theEObject;
         T result = caseBackground(background);
-        if (result == null) result = caseCallConsumer1(background);
         if (result == null) result = caseActionStep(background);
+        if (result == null) result = caseCallConsumer1(background);
         if (result == null) result = caseProductIdentifiable(background);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -414,8 +414,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.BACKGROUND_DETECT: {
         BackgroundDetect backgroundDetect = (BackgroundDetect)theEObject;
         T result = caseBackgroundDetect(backgroundDetect);
-        if (result == null) result = caseCallConsumer1(backgroundDetect);
         if (result == null) result = caseActionStep(backgroundDetect);
+        if (result == null) result = caseCallConsumer1(backgroundDetect);
         if (result == null) result = caseProductIdentifiable(backgroundDetect);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -423,8 +423,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.WAIT_EXTEN: {
         WaitExten waitExten = (WaitExten)theEObject;
         T result = caseWaitExten(waitExten);
-        if (result == null) result = caseCallConsumer1(waitExten);
         if (result == null) result = caseActionStep(waitExten);
+        if (result == null) result = caseCallConsumer1(waitExten);
         if (result == null) result = caseProductIdentifiable(waitExten);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -432,8 +432,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.SOFT_HANGUP: {
         SoftHangup softHangup = (SoftHangup)theEObject;
         T result = caseSoftHangup(softHangup);
-        if (result == null) result = caseCallConsumer1(softHangup);
         if (result == null) result = caseActionStep(softHangup);
+        if (result == null) result = caseCallConsumer1(softHangup);
         if (result == null) result = caseProductIdentifiable(softHangup);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -441,8 +441,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.PICKUP_CHAN: {
         PickupChan pickupChan = (PickupChan)theEObject;
         T result = casePickupChan(pickupChan);
-        if (result == null) result = caseCallConsumer1(pickupChan);
         if (result == null) result = caseActionStep(pickupChan);
+        if (result == null) result = caseCallConsumer1(pickupChan);
         if (result == null) result = caseProductIdentifiable(pickupChan);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -450,8 +450,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.PICKDOWN: {
         Pickdown pickdown = (Pickdown)theEObject;
         T result = casePickdown(pickdown);
-        if (result == null) result = caseCallConsumer1(pickdown);
         if (result == null) result = caseActionStep(pickdown);
+        if (result == null) result = caseCallConsumer1(pickdown);
         if (result == null) result = caseProductIdentifiable(pickdown);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -459,8 +459,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.PROGRESS: {
         Progress progress = (Progress)theEObject;
         T result = caseProgress(progress);
-        if (result == null) result = caseCallConsumer1(progress);
         if (result == null) result = caseActionStep(progress);
+        if (result == null) result = caseCallConsumer1(progress);
         if (result == null) result = caseProductIdentifiable(progress);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -468,18 +468,18 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.BRIDGE: {
         Bridge bridge = (Bridge)theEObject;
         T result = caseBridge(bridge);
-        if (result == null) result = caseCallConsumer2(bridge);
         if (result == null) result = caseActionStep(bridge);
-        if (result == null) result = caseCallConsumer1(bridge);
+        if (result == null) result = caseCallConsumer2(bridge);
         if (result == null) result = caseProductIdentifiable(bridge);
+        if (result == null) result = caseCallConsumer1(bridge);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       case ActionstepPackage.PLACE_CALL: {
         PlaceCall placeCall = (PlaceCall)theEObject;
         T result = casePlaceCall(placeCall);
-        if (result == null) result = caseCallSource1(placeCall);
         if (result == null) result = caseActionStep(placeCall);
+        if (result == null) result = caseCallSource1(placeCall);
         if (result == null) result = caseProductIdentifiable(placeCall);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -487,8 +487,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.VOICEMAIL: {
         Voicemail voicemail = (Voicemail)theEObject;
         T result = caseVoicemail(voicemail);
-        if (result == null) result = caseCallConsumer1(voicemail);
         if (result == null) result = caseActionStep(voicemail);
+        if (result == null) result = caseCallConsumer1(voicemail);
         if (result == null) result = caseProductIdentifiable(voicemail);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -496,8 +496,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.VOICEMAIL_MAIN: {
         VoicemailMain voicemailMain = (VoicemailMain)theEObject;
         T result = caseVoicemailMain(voicemailMain);
-        if (result == null) result = caseCallConsumer1(voicemailMain);
         if (result == null) result = caseActionStep(voicemailMain);
+        if (result == null) result = caseCallConsumer1(voicemailMain);
         if (result == null) result = caseProductIdentifiable(voicemailMain);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -505,8 +505,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.VM_AUTHENTICATE: {
         VMAuthenticate vmAuthenticate = (VMAuthenticate)theEObject;
         T result = caseVMAuthenticate(vmAuthenticate);
-        if (result == null) result = caseCallConsumer1(vmAuthenticate);
         if (result == null) result = caseActionStep(vmAuthenticate);
+        if (result == null) result = caseCallConsumer1(vmAuthenticate);
         if (result == null) result = caseProductIdentifiable(vmAuthenticate);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -514,8 +514,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.MEET_ME: {
         MeetMe meetMe = (MeetMe)theEObject;
         T result = caseMeetMe(meetMe);
-        if (result == null) result = caseCallConsumer1(meetMe);
         if (result == null) result = caseActionStep(meetMe);
+        if (result == null) result = caseCallConsumer1(meetMe);
         if (result == null) result = caseProductIdentifiable(meetMe);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -523,8 +523,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.MEET_ME_ADMIN: {
         MeetMeAdmin meetMeAdmin = (MeetMeAdmin)theEObject;
         T result = caseMeetMeAdmin(meetMeAdmin);
-        if (result == null) result = caseCallConsumer1(meetMeAdmin);
         if (result == null) result = caseActionStep(meetMeAdmin);
+        if (result == null) result = caseCallConsumer1(meetMeAdmin);
         if (result == null) result = caseProductIdentifiable(meetMeAdmin);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -532,8 +532,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.MEET_ME_COUNT: {
         MeetMeCount meetMeCount = (MeetMeCount)theEObject;
         T result = caseMeetMeCount(meetMeCount);
-        if (result == null) result = caseCallConsumer1(meetMeCount);
         if (result == null) result = caseActionStep(meetMeCount);
+        if (result == null) result = caseCallConsumer1(meetMeCount);
         if (result == null) result = caseProductIdentifiable(meetMeCount);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -541,8 +541,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.WAIT_FOR_RING: {
         WaitForRing waitForRing = (WaitForRing)theEObject;
         T result = caseWaitForRing(waitForRing);
-        if (result == null) result = caseCallConsumer1(waitForRing);
         if (result == null) result = caseActionStep(waitForRing);
+        if (result == null) result = caseCallConsumer1(waitForRing);
         if (result == null) result = caseProductIdentifiable(waitForRing);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -550,8 +550,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.WAIT_MUSIC_ON_HOLD: {
         WaitMusicOnHold waitMusicOnHold = (WaitMusicOnHold)theEObject;
         T result = caseWaitMusicOnHold(waitMusicOnHold);
-        if (result == null) result = caseCallConsumer1(waitMusicOnHold);
         if (result == null) result = caseActionStep(waitMusicOnHold);
+        if (result == null) result = caseCallConsumer1(waitMusicOnHold);
         if (result == null) result = caseProductIdentifiable(waitMusicOnHold);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -559,8 +559,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.GET_AVAILABLE_CHANNEL: {
         GetAvailableChannel getAvailableChannel = (GetAvailableChannel)theEObject;
         T result = caseGetAvailableChannel(getAvailableChannel);
-        if (result == null) result = caseCallConsumer1(getAvailableChannel);
         if (result == null) result = caseActionStep(getAvailableChannel);
+        if (result == null) result = caseCallConsumer1(getAvailableChannel);
         if (result == null) result = caseProductIdentifiable(getAvailableChannel);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -568,8 +568,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.CONGESTION: {
         Congestion congestion = (Congestion)theEObject;
         T result = caseCongestion(congestion);
-        if (result == null) result = caseCallConsumer1(congestion);
         if (result == null) result = caseActionStep(congestion);
+        if (result == null) result = caseCallConsumer1(congestion);
         if (result == null) result = caseProductIdentifiable(congestion);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -577,8 +577,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.RINGING: {
         Ringing ringing = (Ringing)theEObject;
         T result = caseRinging(ringing);
-        if (result == null) result = caseCallConsumer1(ringing);
         if (result == null) result = caseActionStep(ringing);
+        if (result == null) result = caseCallConsumer1(ringing);
         if (result == null) result = caseProductIdentifiable(ringing);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -586,8 +586,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.SET_CALLER_PRESENTATION: {
         SetCallerPresentation setCallerPresentation = (SetCallerPresentation)theEObject;
         T result = caseSetCallerPresentation(setCallerPresentation);
-        if (result == null) result = caseCallConsumer1(setCallerPresentation);
         if (result == null) result = caseActionStep(setCallerPresentation);
+        if (result == null) result = caseCallConsumer1(setCallerPresentation);
         if (result == null) result = caseProductIdentifiable(setCallerPresentation);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -595,8 +595,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.SET_GLOBAL_VARIABLE: {
         SetGlobalVariable setGlobalVariable = (SetGlobalVariable)theEObject;
         T result = caseSetGlobalVariable(setGlobalVariable);
-        if (result == null) result = caseCallConsumer1(setGlobalVariable);
         if (result == null) result = caseActionStep(setGlobalVariable);
+        if (result == null) result = caseCallConsumer1(setGlobalVariable);
         if (result == null) result = caseProductIdentifiable(setGlobalVariable);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -604,8 +604,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.ECHO: {
         Echo echo = (Echo)theEObject;
         T result = caseEcho(echo);
-        if (result == null) result = caseCallConsumer1(echo);
         if (result == null) result = caseActionStep(echo);
+        if (result == null) result = caseCallConsumer1(echo);
         if (result == null) result = caseProductIdentifiable(echo);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -613,8 +613,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.FESTIVAL: {
         Festival festival = (Festival)theEObject;
         T result = caseFestival(festival);
-        if (result == null) result = caseCallConsumer1(festival);
         if (result == null) result = caseActionStep(festival);
+        if (result == null) result = caseCallConsumer1(festival);
         if (result == null) result = caseProductIdentifiable(festival);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -622,8 +622,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.PLAYTONES: {
         Playtones playtones = (Playtones)theEObject;
         T result = casePlaytones(playtones);
-        if (result == null) result = caseCallConsumer1(playtones);
         if (result == null) result = caseActionStep(playtones);
+        if (result == null) result = caseCallConsumer1(playtones);
         if (result == null) result = caseProductIdentifiable(playtones);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -631,8 +631,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.STOP_PLAYTONES: {
         StopPlaytones stopPlaytones = (StopPlaytones)theEObject;
         T result = caseStopPlaytones(stopPlaytones);
-        if (result == null) result = caseCallConsumer1(stopPlaytones);
         if (result == null) result = caseActionStep(stopPlaytones);
+        if (result == null) result = caseCallConsumer1(stopPlaytones);
         if (result == null) result = caseProductIdentifiable(stopPlaytones);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -640,8 +640,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.CHAN_SPY: {
         ChanSpy chanSpy = (ChanSpy)theEObject;
         T result = caseChanSpy(chanSpy);
-        if (result == null) result = caseCallConsumer1(chanSpy);
         if (result == null) result = caseActionStep(chanSpy);
+        if (result == null) result = caseCallConsumer1(chanSpy);
         if (result == null) result = caseProductIdentifiable(chanSpy);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -649,8 +649,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.DICTATE: {
         Dictate dictate = (Dictate)theEObject;
         T result = caseDictate(dictate);
-        if (result == null) result = caseCallConsumer1(dictate);
         if (result == null) result = caseActionStep(dictate);
+        if (result == null) result = caseCallConsumer1(dictate);
         if (result == null) result = caseProductIdentifiable(dictate);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -658,8 +658,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.EXTENSION_SPY: {
         ExtensionSpy extensionSpy = (ExtensionSpy)theEObject;
         T result = caseExtensionSpy(extensionSpy);
-        if (result == null) result = caseCallConsumer1(extensionSpy);
         if (result == null) result = caseActionStep(extensionSpy);
+        if (result == null) result = caseCallConsumer1(extensionSpy);
         if (result == null) result = caseProductIdentifiable(extensionSpy);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -667,8 +667,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.MIX_MONITOR: {
         MixMonitor mixMonitor = (MixMonitor)theEObject;
         T result = caseMixMonitor(mixMonitor);
-        if (result == null) result = caseCallConsumer1(mixMonitor);
         if (result == null) result = caseActionStep(mixMonitor);
+        if (result == null) result = caseCallConsumer1(mixMonitor);
         if (result == null) result = caseProductIdentifiable(mixMonitor);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -676,8 +676,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.STOP_MIXMONITOR: {
         StopMixmonitor stopMixmonitor = (StopMixmonitor)theEObject;
         T result = caseStopMixmonitor(stopMixmonitor);
-        if (result == null) result = caseCallConsumer1(stopMixmonitor);
         if (result == null) result = caseActionStep(stopMixmonitor);
+        if (result == null) result = caseCallConsumer1(stopMixmonitor);
         if (result == null) result = caseProductIdentifiable(stopMixmonitor);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -685,8 +685,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.STOP_MONITOR: {
         StopMonitor stopMonitor = (StopMonitor)theEObject;
         T result = caseStopMonitor(stopMonitor);
-        if (result == null) result = caseCallConsumer1(stopMonitor);
         if (result == null) result = caseActionStep(stopMonitor);
+        if (result == null) result = caseCallConsumer1(stopMonitor);
         if (result == null) result = caseProductIdentifiable(stopMonitor);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -694,8 +694,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.MONITOR: {
         Monitor monitor = (Monitor)theEObject;
         T result = caseMonitor(monitor);
-        if (result == null) result = caseCallConsumer1(monitor);
         if (result == null) result = caseActionStep(monitor);
+        if (result == null) result = caseCallConsumer1(monitor);
         if (result == null) result = caseProductIdentifiable(monitor);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -703,8 +703,8 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.DIRECTORY: {
         Directory directory = (Directory)theEObject;
         T result = caseDirectory(directory);
-        if (result == null) result = caseCallConsumer1(directory);
         if (result == null) result = caseActionStep(directory);
+        if (result == null) result = caseCallConsumer1(directory);
         if (result == null) result = caseProductIdentifiable(directory);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -712,7 +712,9 @@ public class ActionstepSwitch<T> {
       case ActionstepPackage.EXTENSION_TRANSFER: {
         ExtensionTransfer extensionTransfer = (ExtensionTransfer)theEObject;
         T result = caseExtensionTransfer(extensionTransfer);
+        if (result == null) result = caseActionStep(extensionTransfer);
         if (result == null) result = caseCallConsumer2(extensionTransfer);
+        if (result == null) result = caseProductIdentifiable(extensionTransfer);
         if (result == null) result = caseCallConsumer1(extensionTransfer);
         if (result == null) result = defaultCase(theEObject);
         return result;

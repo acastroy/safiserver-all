@@ -20,5 +20,5 @@ import com.safi.core.actionstep.ActionStep;
  * @model
  * @generated
  */
-public interface StopMonitor extends CallConsumer1, ActionStep {
+public interface StopMonitor extends ActionStep, CallConsumer1 {
 } // StopMonitor

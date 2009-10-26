@@ -20,5 +20,5 @@ import com.safi.core.actionstep.ActionStep;
  * @model
  * @generated
  */
-public interface StopMixmonitor extends CallConsumer1, ActionStep {
+public interface StopMixmonitor extends ActionStep, CallConsumer1 {
 } // StopMixmonitor

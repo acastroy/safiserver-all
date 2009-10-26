@@ -6,82 +6,70 @@
  */
 package com.safi.asterisk.actionstep.impl;
 
-import com.safi.asterisk.Call;
-
-import com.safi.asterisk.actionstep.ActionstepPackage;
-import com.safi.asterisk.actionstep.GetCallInfo;
-
-import com.safi.core.CorePackage;
-import com.safi.core.ProductIdentifiable;
-
-import com.safi.core.actionstep.ActionStep;
-import com.safi.core.actionstep.ActionStepException;
-import com.safi.core.actionstep.ActionStepPackage;
-import com.safi.core.actionstep.DynamicValue;
-import com.safi.core.actionstep.Output;
-
-import com.safi.core.saflet.Saflet;
-import com.safi.core.saflet.SafletContext;
-import com.safi.core.saflet.SafletPackage;
-
-import com.safi.core.scripting.SafletScriptException;
-
-import java.util.Collection;
-
+import org.asteriskjava.fastagi.AgiChannel;
+import org.asteriskjava.fastagi.AgiRequest;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.InternalEList;
+import com.safi.asterisk.AsteriskPackage;
+import com.safi.asterisk.Call;
+import com.safi.asterisk.CallConsumer1;
+import com.safi.asterisk.actionstep.ActionstepPackage;
+import com.safi.asterisk.actionstep.GetCallInfo;
+import com.safi.asterisk.util.AsteriskSafletConstants;
+import com.safi.core.actionstep.ActionStepException;
+import com.safi.core.actionstep.DynamicValue;
+import com.safi.core.actionstep.impl.ActionStepImpl;
+import com.safi.core.actionstep.util.VariableTranslator;
+import com.safi.core.saflet.SafletContext;
+import com.safi.core.saflet.SafletEnvironment;
+import com.safi.db.Variable;
+import com.safi.db.VariableScope;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Get Call Info</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>Get Call Info</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getCall1 <em>Call1</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getProductId <em>Product Id</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#isPaused <em>Paused</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#isActive <em>Active</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getOutputs <em>Outputs</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getSaflet <em>Saflet</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getDefaultOutput <em>Default Output</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getErrorOutput <em>Error Output</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getAccountCodeVar <em>Account Code Var</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getCallerIdNameVar <em>Caller Id Name Var</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getCallerIdNumVar <em>Caller Id Num Var</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getChannelNameVar <em>Channel Name Var</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getContextVar <em>Context Var</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getExtensionVar <em>Extension Var</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getDialedNumber <em>Dialed Number</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getPriorityVar <em>Priority Var</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getStateVar <em>State Var</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getUniqueIdVar <em>Unique Id Var</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getAni2Var <em>Ani2 Var</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getRdnis <em>Rdnis</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getType <em>Type</em>}</li>
+ * <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getCall1 <em>Call1</em>}</li>
+ * <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getAccountCodeVar <em>
+ * Account Code Var</em>}</li>
+ * <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getCallerIdNameVar <em>
+ * Caller Id Name Var</em>}</li>
+ * <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getCallerIdNumVar <em>
+ * Caller Id Num Var</em>}</li>
+ * <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getChannelNameVar <em>
+ * Channel Name Var</em>}</li>
+ * <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getContextVar <em>Context
+ * Var</em>}</li>
+ * <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getExtensionVar <em>
+ * Extension Var</em>}</li>
+ * <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getDialedNumber <em>Dialed
+ * Number</em>}</li>
+ * <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getPriorityVar <em>
+ * Priority Var</em>}</li>
+ * <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getStateVar <em>State Var
+ * </em>}</li>
+ * <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getUniqueIdVar <em>Unique
+ * Id Var</em>}</li>
+ * <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getAni2Var <em>Ani2 Var
+ * </em>}</li>
+ * <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getRdnis <em>Rdnis</em>}</li>
+ * <li>{@link com.safi.asterisk.actionstep.impl.GetCallInfoImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
-public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
+public class GetCallInfoImpl extends ActionStepImpl implements GetCallInfo {
   /**
-   * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference. <!--
+   * begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @see #getCall1()
    * @generated
    * @ordered
@@ -89,119 +77,9 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   protected Call call1;
 
   /**
-   * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getProductId()
-   * @generated
-   * @ordered
-   */
-  protected static final String PRODUCT_ID_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getProductId()
-   * @generated
-   * @ordered
-   */
-  protected String productId = PRODUCT_ID_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #isPaused() <em>Paused</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isPaused()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean PAUSED_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isPaused() <em>Paused</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isPaused()
-   * @generated
-   * @ordered
-   */
-  protected boolean paused = PAUSED_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #isActive() <em>Active</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isActive()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean ACTIVE_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isActive() <em>Active</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isActive()
-   * @generated
-   * @ordered
-   */
-  protected boolean active = ACTIVE_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getOutputs() <em>Outputs</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOutputs()
-   * @generated
-   * @ordered
-   */
-  protected EList<Output> outputs;
-
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getDefaultOutput() <em>Default Output</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDefaultOutput()
-   * @generated
-   * @ordered
-   */
-  protected Output defaultOutput;
-
-  /**
-   * The cached value of the '{@link #getErrorOutput() <em>Error Output</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getErrorOutput()
-   * @generated
-   * @ordered
-   */
-  protected Output errorOutput;
-
-  /**
-   * The cached value of the '{@link #getAccountCodeVar() <em>Account Code Var</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * The cached value of the '{@link #getAccountCodeVar() <em>Account Code Var</em>}'
+   * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @see #getAccountCodeVar()
    * @generated
    * @ordered
@@ -209,9 +87,9 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   protected DynamicValue accountCodeVar;
 
   /**
-   * The cached value of the '{@link #getCallerIdNameVar() <em>Caller Id Name Var</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * The cached value of the '{@link #getCallerIdNameVar() <em>Caller Id Name Var</em>}'
+   * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @see #getCallerIdNameVar()
    * @generated
    * @ordered
@@ -219,9 +97,9 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   protected DynamicValue callerIdNameVar;
 
   /**
-   * The cached value of the '{@link #getCallerIdNumVar() <em>Caller Id Num Var</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * The cached value of the '{@link #getCallerIdNumVar() <em>Caller Id Num Var</em>}'
+   * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @see #getCallerIdNumVar()
    * @generated
    * @ordered
@@ -229,9 +107,9 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   protected DynamicValue callerIdNumVar;
 
   /**
-   * The cached value of the '{@link #getChannelNameVar() <em>Channel Name Var</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * The cached value of the '{@link #getChannelNameVar() <em>Channel Name Var</em>}'
+   * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @see #getChannelNameVar()
    * @generated
    * @ordered
@@ -239,9 +117,9 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   protected DynamicValue channelNameVar;
 
   /**
-   * The cached value of the '{@link #getContextVar() <em>Context Var</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * The cached value of the '{@link #getContextVar() <em>Context Var</em>}' containment
+   * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @see #getContextVar()
    * @generated
    * @ordered
@@ -249,9 +127,9 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   protected DynamicValue contextVar;
 
   /**
-   * The cached value of the '{@link #getExtensionVar() <em>Extension Var</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * The cached value of the '{@link #getExtensionVar() <em>Extension Var</em>}'
+   * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @see #getExtensionVar()
    * @generated
    * @ordered
@@ -259,9 +137,9 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   protected DynamicValue extensionVar;
 
   /**
-   * The cached value of the '{@link #getDialedNumber() <em>Dialed Number</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * The cached value of the '{@link #getDialedNumber() <em>Dialed Number</em>}'
+   * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @see #getDialedNumber()
    * @generated
    * @ordered
@@ -269,9 +147,9 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   protected DynamicValue dialedNumber;
 
   /**
-   * The cached value of the '{@link #getPriorityVar() <em>Priority Var</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * The cached value of the '{@link #getPriorityVar() <em>Priority Var</em>}' containment
+   * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @see #getPriorityVar()
    * @generated
    * @ordered
@@ -279,9 +157,9 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   protected DynamicValue priorityVar;
 
   /**
-   * The cached value of the '{@link #getStateVar() <em>State Var</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * The cached value of the '{@link #getStateVar() <em>State Var</em>}' containment
+   * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @see #getStateVar()
    * @generated
    * @ordered
@@ -289,9 +167,9 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   protected DynamicValue stateVar;
 
   /**
-   * The cached value of the '{@link #getUniqueIdVar() <em>Unique Id Var</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * The cached value of the '{@link #getUniqueIdVar() <em>Unique Id Var</em>}'
+   * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @see #getUniqueIdVar()
    * @generated
    * @ordered
@@ -299,9 +177,9 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   protected DynamicValue uniqueIdVar;
 
   /**
-   * The cached value of the '{@link #getAni2Var() <em>Ani2 Var</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * The cached value of the '{@link #getAni2Var() <em>Ani2 Var</em>}' containment
+   * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @see #getAni2Var()
    * @generated
    * @ordered
@@ -310,8 +188,8 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
 
   /**
    * The cached value of the '{@link #getRdnis() <em>Rdnis</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @see #getRdnis()
    * @generated
    * @ordered
@@ -320,8 +198,8 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
 
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @see #getType()
    * @generated
    * @ordered
@@ -329,17 +207,177 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   protected DynamicValue type;
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   protected GetCallInfoImpl() {
     super();
   }
 
+  @Override
+  public void beginProcessing(SafletContext context) throws ActionStepException {
+    super.beginProcessing(context);
+
+    if (call1 == null || call1.getChannel() == null) {
+      handleException(context, new ActionStepException(call1 == null ? "No current call found"
+          : "No channel found in current context"));
+      return;
+    }
+    AgiChannel channel = call1.getChannel();
+    Exception exception = null;
+    try {
+      AgiRequest request = (AgiRequest) context
+          .getVariableRawValue(AsteriskSafletConstants.VAR_KEY_REQUEST);
+      if (callerIdNameVar != null)
+        try {
+
+          Object result = call1.getCallerIdName();
+          setVariableValue(callerIdNameVar, result, context);
+
+        } catch (Exception e) {
+          if (debugLog.isDebugEnabled())
+            debugLog.error(e.getLocalizedMessage());
+          exception = e;
+        }
+
+      if (callerIdNumVar != null)
+        try {
+
+          Object result = call1.getCallerIdNum();
+          setVariableValue(callerIdNumVar, result, context);
+        } catch (Exception e) {
+          if (debugLog.isDebugEnabled())
+            debugLog.error(e.getLocalizedMessage());
+          exception = e;
+        }
+
+      if (channelNameVar != null)
+        try {
+          Object result = call1.getChannelName();
+          setVariableValue(channelNameVar, result, context);
+        } catch (Exception e) {
+          if (debugLog.isDebugEnabled())
+            debugLog.error(e.getLocalizedMessage());
+          exception = e;
+        }
+
+      if (contextVar != null)
+        try {
+          Object result = request.getContext();
+          setVariableValue(contextVar, result, context);
+        } catch (Exception e) {
+          if (debugLog.isDebugEnabled())
+            debugLog.error(e.getLocalizedMessage());
+          exception = e;
+        }
+
+      if (extensionVar != null)
+        try {
+          Object result = request.getExtension();
+          setVariableValue(extensionVar, result, context);
+        } catch (Exception e) {
+          if (debugLog.isDebugEnabled())
+            debugLog.error(e.getLocalizedMessage());
+          exception = e;
+        }
+
+      if (dialedNumber != null)
+        try {
+          Object result = request.getDnid();
+          setVariableValue(dialedNumber, result, context);
+        } catch (Exception e) {
+          if (debugLog.isDebugEnabled())
+            debugLog.error(e.getLocalizedMessage());
+          exception = e;
+        }
+
+      if (priorityVar != null)
+        try {
+          Object result = request.getPriority();
+          setVariableValue(priorityVar, result, context);
+        } catch (Exception e) {
+          if (debugLog.isDebugEnabled())
+            debugLog.error(e.getLocalizedMessage());
+          exception = e;
+        }
+
+      if (stateVar != null)
+        try {
+          Object result = call1.getChannel().getChannelStatus();
+          setVariableValue(stateVar, result, context);
+        } catch (Exception e) {
+          if (debugLog.isDebugEnabled())
+            debugLog.error(e.getLocalizedMessage());
+          exception = e;
+        }
+
+      if (uniqueIdVar != null)
+        try {
+          Object result = call1.getUniqueId();
+          setVariableValue(uniqueIdVar, result, context);
+        } catch (Exception e) {
+          if (debugLog.isDebugEnabled())
+            debugLog.error(e.getLocalizedMessage());
+          exception = e;
+        }
+
+      if (rdnis != null)
+        try {
+          Object result = request.getRdnis();
+          setVariableValue(rdnis, result, context);
+        } catch (Exception e) {
+          if (debugLog.isDebugEnabled())
+            debugLog.error(e.getLocalizedMessage());
+          exception = e;
+        }
+
+      if (ani2Var != null)
+        try {
+          Object result = request.getCallingAni2();
+          setVariableValue(ani2Var, result, context);
+        } catch (Exception e) {
+          if (debugLog.isDebugEnabled())
+            debugLog.error(e.getLocalizedMessage());
+          exception = e;
+        }
+
+      if (type != null)
+        try {
+          Object result = request.getType();
+          setVariableValue(type, result, context);
+        } catch (Exception e) {
+          if (debugLog.isDebugEnabled())
+            debugLog.error(e.getLocalizedMessage());
+          exception = e;
+        }
+
+    } catch (Exception e) {
+      handleException(context, e);
+      return;
+    }
+    handleSuccess(context);
+
+  }
+
+  private void setVariableValue(DynamicValue varName, Object result, SafletContext context)
+      throws ActionStepException {
+    Variable v = resolveVariableFromName(varName, context);
+    if (v != null) {
+      if (v.getScope() != VariableScope.GLOBAL)
+        context.setVariableRawValue(v.getName(), VariableTranslator.translateValue(v.getType(),
+            result));
+      else {
+        SafletEnvironment env = getSaflet().getSafletEnvironment();
+        env.setGlobalVariableValue(v.getName(), VariableTranslator.translateValue(v.getType(),
+            result));
+      }
+    }
+  }
+
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   @Override
@@ -348,25 +386,26 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public Call getCall1() {
     if (call1 != null && call1.eIsProxy()) {
-      InternalEObject oldCall1 = (InternalEObject)call1;
-      call1 = (Call)eResolveProxy(oldCall1);
+      InternalEObject oldCall1 = (InternalEObject) call1;
+      call1 = (Call) eResolveProxy(oldCall1);
       if (call1 != oldCall1) {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.GET_CALL_INFO__CALL1, oldCall1, call1));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+              ActionstepPackage.GET_CALL_INFO__CALL1, oldCall1, call1));
       }
     }
     return call1;
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public Call basicGetCall1() {
@@ -374,233 +413,21 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public void setCall1(Call newCall1) {
     Call oldCall1 = call1;
     call1 = newCall1;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__CALL1, oldCall1, call1));
+      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__CALL1,
+          oldCall1, call1));
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getProductId() {
-    return productId;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setProductId(String newProductId) {
-    String oldProductId = productId;
-    productId = newProductId;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__PRODUCT_ID, oldProductId, productId));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public boolean isPaused() {
-    return paused;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setPaused(boolean newPaused) {
-    boolean oldPaused = paused;
-    paused = newPaused;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__PAUSED, oldPaused, paused));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public boolean isActive() {
-    return active;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setActive(boolean newActive) {
-    boolean oldActive = active;
-    active = newActive;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__ACTIVE, oldActive, active));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Output> getOutputs() {
-    if (outputs == null) {
-      outputs = new EObjectContainmentWithInverseEList<Output>(Output.class, this, ActionstepPackage.GET_CALL_INFO__OUTPUTS, ActionStepPackage.OUTPUT__PARENT);
-    }
-    return outputs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName() {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName) {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Saflet getSaflet() {
-    if (eContainerFeatureID != ActionstepPackage.GET_CALL_INFO__SAFLET) return null;
-    return (Saflet)eContainer();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetSaflet(Saflet newSaflet, NotificationChain msgs) {
-    msgs = eBasicSetContainer((InternalEObject)newSaflet, ActionstepPackage.GET_CALL_INFO__SAFLET, msgs);
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setSaflet(Saflet newSaflet) {
-    if (newSaflet != eInternalContainer() || (eContainerFeatureID != ActionstepPackage.GET_CALL_INFO__SAFLET && newSaflet != null)) {
-      if (EcoreUtil.isAncestor(this, newSaflet))
-        throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-      NotificationChain msgs = null;
-      if (eInternalContainer() != null)
-        msgs = eBasicRemoveFromContainer(msgs);
-      if (newSaflet != null)
-        msgs = ((InternalEObject)newSaflet).eInverseAdd(this, SafletPackage.SAFLET__ACTIONSTEPS, Saflet.class, msgs);
-      msgs = basicSetSaflet(newSaflet, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__SAFLET, newSaflet, newSaflet));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Output getDefaultOutput() {
-    if (defaultOutput != null && defaultOutput.eIsProxy()) {
-      InternalEObject oldDefaultOutput = (InternalEObject)defaultOutput;
-      defaultOutput = (Output)eResolveProxy(oldDefaultOutput);
-      if (defaultOutput != oldDefaultOutput) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.GET_CALL_INFO__DEFAULT_OUTPUT, oldDefaultOutput, defaultOutput));
-      }
-    }
-    return defaultOutput;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Output basicGetDefaultOutput() {
-    return defaultOutput;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setDefaultOutput(Output newDefaultOutput) {
-    Output oldDefaultOutput = defaultOutput;
-    defaultOutput = newDefaultOutput;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__DEFAULT_OUTPUT, oldDefaultOutput, defaultOutput));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Output getErrorOutput() {
-    if (errorOutput != null && errorOutput.eIsProxy()) {
-      InternalEObject oldErrorOutput = (InternalEObject)errorOutput;
-      errorOutput = (Output)eResolveProxy(oldErrorOutput);
-      if (errorOutput != oldErrorOutput) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.GET_CALL_INFO__ERROR_OUTPUT, oldErrorOutput, errorOutput));
-      }
-    }
-    return errorOutput;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Output basicGetErrorOutput() {
-    return errorOutput;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setErrorOutput(Output newErrorOutput) {
-    Output oldErrorOutput = errorOutput;
-    errorOutput = newErrorOutput;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__ERROR_OUTPUT, oldErrorOutput, errorOutput));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public DynamicValue getAccountCodeVar() {
@@ -608,42 +435,50 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
-  public NotificationChain basicSetAccountCodeVar(DynamicValue newAccountCodeVar, NotificationChain msgs) {
+  public NotificationChain basicSetAccountCodeVar(DynamicValue newAccountCodeVar,
+      NotificationChain msgs) {
     DynamicValue oldAccountCodeVar = accountCodeVar;
     accountCodeVar = newAccountCodeVar;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__ACCOUNT_CODE_VAR, oldAccountCodeVar, newAccountCodeVar);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+          ActionstepPackage.GET_CALL_INFO__ACCOUNT_CODE_VAR, oldAccountCodeVar, newAccountCodeVar);
+      if (msgs == null)
+        msgs = notification;
+      else
+        msgs.add(notification);
     }
     return msgs;
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public void setAccountCodeVar(DynamicValue newAccountCodeVar) {
     if (newAccountCodeVar != accountCodeVar) {
       NotificationChain msgs = null;
       if (accountCodeVar != null)
-        msgs = ((InternalEObject)accountCodeVar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_CALL_INFO__ACCOUNT_CODE_VAR, null, msgs);
+        msgs = ((InternalEObject) accountCodeVar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+            - ActionstepPackage.GET_CALL_INFO__ACCOUNT_CODE_VAR, null, msgs);
       if (newAccountCodeVar != null)
-        msgs = ((InternalEObject)newAccountCodeVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_CALL_INFO__ACCOUNT_CODE_VAR, null, msgs);
+        msgs = ((InternalEObject) newAccountCodeVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+            - ActionstepPackage.GET_CALL_INFO__ACCOUNT_CODE_VAR, null, msgs);
       msgs = basicSetAccountCodeVar(newAccountCodeVar, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__ACCOUNT_CODE_VAR, newAccountCodeVar, newAccountCodeVar));
+      if (msgs != null)
+        msgs.dispatch();
+    } else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET,
+          ActionstepPackage.GET_CALL_INFO__ACCOUNT_CODE_VAR, newAccountCodeVar, newAccountCodeVar));
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public DynamicValue getCallerIdNameVar() {
@@ -651,42 +486,52 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
-  public NotificationChain basicSetCallerIdNameVar(DynamicValue newCallerIdNameVar, NotificationChain msgs) {
+  public NotificationChain basicSetCallerIdNameVar(DynamicValue newCallerIdNameVar,
+      NotificationChain msgs) {
     DynamicValue oldCallerIdNameVar = callerIdNameVar;
     callerIdNameVar = newCallerIdNameVar;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__CALLER_ID_NAME_VAR, oldCallerIdNameVar, newCallerIdNameVar);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+          ActionstepPackage.GET_CALL_INFO__CALLER_ID_NAME_VAR, oldCallerIdNameVar,
+          newCallerIdNameVar);
+      if (msgs == null)
+        msgs = notification;
+      else
+        msgs.add(notification);
     }
     return msgs;
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public void setCallerIdNameVar(DynamicValue newCallerIdNameVar) {
     if (newCallerIdNameVar != callerIdNameVar) {
       NotificationChain msgs = null;
       if (callerIdNameVar != null)
-        msgs = ((InternalEObject)callerIdNameVar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_CALL_INFO__CALLER_ID_NAME_VAR, null, msgs);
+        msgs = ((InternalEObject) callerIdNameVar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+            - ActionstepPackage.GET_CALL_INFO__CALLER_ID_NAME_VAR, null, msgs);
       if (newCallerIdNameVar != null)
-        msgs = ((InternalEObject)newCallerIdNameVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_CALL_INFO__CALLER_ID_NAME_VAR, null, msgs);
+        msgs = ((InternalEObject) newCallerIdNameVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+            - ActionstepPackage.GET_CALL_INFO__CALLER_ID_NAME_VAR, null, msgs);
       msgs = basicSetCallerIdNameVar(newCallerIdNameVar, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__CALLER_ID_NAME_VAR, newCallerIdNameVar, newCallerIdNameVar));
+      if (msgs != null)
+        msgs.dispatch();
+    } else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET,
+          ActionstepPackage.GET_CALL_INFO__CALLER_ID_NAME_VAR, newCallerIdNameVar,
+          newCallerIdNameVar));
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public DynamicValue getCallerIdNumVar() {
@@ -694,42 +539,50 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
-  public NotificationChain basicSetCallerIdNumVar(DynamicValue newCallerIdNumVar, NotificationChain msgs) {
+  public NotificationChain basicSetCallerIdNumVar(DynamicValue newCallerIdNumVar,
+      NotificationChain msgs) {
     DynamicValue oldCallerIdNumVar = callerIdNumVar;
     callerIdNumVar = newCallerIdNumVar;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__CALLER_ID_NUM_VAR, oldCallerIdNumVar, newCallerIdNumVar);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+          ActionstepPackage.GET_CALL_INFO__CALLER_ID_NUM_VAR, oldCallerIdNumVar, newCallerIdNumVar);
+      if (msgs == null)
+        msgs = notification;
+      else
+        msgs.add(notification);
     }
     return msgs;
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public void setCallerIdNumVar(DynamicValue newCallerIdNumVar) {
     if (newCallerIdNumVar != callerIdNumVar) {
       NotificationChain msgs = null;
       if (callerIdNumVar != null)
-        msgs = ((InternalEObject)callerIdNumVar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_CALL_INFO__CALLER_ID_NUM_VAR, null, msgs);
+        msgs = ((InternalEObject) callerIdNumVar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+            - ActionstepPackage.GET_CALL_INFO__CALLER_ID_NUM_VAR, null, msgs);
       if (newCallerIdNumVar != null)
-        msgs = ((InternalEObject)newCallerIdNumVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_CALL_INFO__CALLER_ID_NUM_VAR, null, msgs);
+        msgs = ((InternalEObject) newCallerIdNumVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+            - ActionstepPackage.GET_CALL_INFO__CALLER_ID_NUM_VAR, null, msgs);
       msgs = basicSetCallerIdNumVar(newCallerIdNumVar, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__CALLER_ID_NUM_VAR, newCallerIdNumVar, newCallerIdNumVar));
+      if (msgs != null)
+        msgs.dispatch();
+    } else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET,
+          ActionstepPackage.GET_CALL_INFO__CALLER_ID_NUM_VAR, newCallerIdNumVar, newCallerIdNumVar));
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public DynamicValue getChannelNameVar() {
@@ -737,42 +590,50 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
-  public NotificationChain basicSetChannelNameVar(DynamicValue newChannelNameVar, NotificationChain msgs) {
+  public NotificationChain basicSetChannelNameVar(DynamicValue newChannelNameVar,
+      NotificationChain msgs) {
     DynamicValue oldChannelNameVar = channelNameVar;
     channelNameVar = newChannelNameVar;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__CHANNEL_NAME_VAR, oldChannelNameVar, newChannelNameVar);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+          ActionstepPackage.GET_CALL_INFO__CHANNEL_NAME_VAR, oldChannelNameVar, newChannelNameVar);
+      if (msgs == null)
+        msgs = notification;
+      else
+        msgs.add(notification);
     }
     return msgs;
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public void setChannelNameVar(DynamicValue newChannelNameVar) {
     if (newChannelNameVar != channelNameVar) {
       NotificationChain msgs = null;
       if (channelNameVar != null)
-        msgs = ((InternalEObject)channelNameVar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_CALL_INFO__CHANNEL_NAME_VAR, null, msgs);
+        msgs = ((InternalEObject) channelNameVar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+            - ActionstepPackage.GET_CALL_INFO__CHANNEL_NAME_VAR, null, msgs);
       if (newChannelNameVar != null)
-        msgs = ((InternalEObject)newChannelNameVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_CALL_INFO__CHANNEL_NAME_VAR, null, msgs);
+        msgs = ((InternalEObject) newChannelNameVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+            - ActionstepPackage.GET_CALL_INFO__CHANNEL_NAME_VAR, null, msgs);
       msgs = basicSetChannelNameVar(newChannelNameVar, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__CHANNEL_NAME_VAR, newChannelNameVar, newChannelNameVar));
+      if (msgs != null)
+        msgs.dispatch();
+    } else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET,
+          ActionstepPackage.GET_CALL_INFO__CHANNEL_NAME_VAR, newChannelNameVar, newChannelNameVar));
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public DynamicValue getContextVar() {
@@ -780,42 +641,49 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public NotificationChain basicSetContextVar(DynamicValue newContextVar, NotificationChain msgs) {
     DynamicValue oldContextVar = contextVar;
     contextVar = newContextVar;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__CONTEXT_VAR, oldContextVar, newContextVar);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+          ActionstepPackage.GET_CALL_INFO__CONTEXT_VAR, oldContextVar, newContextVar);
+      if (msgs == null)
+        msgs = notification;
+      else
+        msgs.add(notification);
     }
     return msgs;
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public void setContextVar(DynamicValue newContextVar) {
     if (newContextVar != contextVar) {
       NotificationChain msgs = null;
       if (contextVar != null)
-        msgs = ((InternalEObject)contextVar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_CALL_INFO__CONTEXT_VAR, null, msgs);
+        msgs = ((InternalEObject) contextVar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+            - ActionstepPackage.GET_CALL_INFO__CONTEXT_VAR, null, msgs);
       if (newContextVar != null)
-        msgs = ((InternalEObject)newContextVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_CALL_INFO__CONTEXT_VAR, null, msgs);
+        msgs = ((InternalEObject) newContextVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+            - ActionstepPackage.GET_CALL_INFO__CONTEXT_VAR, null, msgs);
       msgs = basicSetContextVar(newContextVar, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__CONTEXT_VAR, newContextVar, newContextVar));
+      if (msgs != null)
+        msgs.dispatch();
+    } else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET,
+          ActionstepPackage.GET_CALL_INFO__CONTEXT_VAR, newContextVar, newContextVar));
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public DynamicValue getExtensionVar() {
@@ -823,42 +691,49 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public NotificationChain basicSetExtensionVar(DynamicValue newExtensionVar, NotificationChain msgs) {
     DynamicValue oldExtensionVar = extensionVar;
     extensionVar = newExtensionVar;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__EXTENSION_VAR, oldExtensionVar, newExtensionVar);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+          ActionstepPackage.GET_CALL_INFO__EXTENSION_VAR, oldExtensionVar, newExtensionVar);
+      if (msgs == null)
+        msgs = notification;
+      else
+        msgs.add(notification);
     }
     return msgs;
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public void setExtensionVar(DynamicValue newExtensionVar) {
     if (newExtensionVar != extensionVar) {
       NotificationChain msgs = null;
       if (extensionVar != null)
-        msgs = ((InternalEObject)extensionVar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_CALL_INFO__EXTENSION_VAR, null, msgs);
+        msgs = ((InternalEObject) extensionVar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+            - ActionstepPackage.GET_CALL_INFO__EXTENSION_VAR, null, msgs);
       if (newExtensionVar != null)
-        msgs = ((InternalEObject)newExtensionVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_CALL_INFO__EXTENSION_VAR, null, msgs);
+        msgs = ((InternalEObject) newExtensionVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+            - ActionstepPackage.GET_CALL_INFO__EXTENSION_VAR, null, msgs);
       msgs = basicSetExtensionVar(newExtensionVar, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__EXTENSION_VAR, newExtensionVar, newExtensionVar));
+      if (msgs != null)
+        msgs.dispatch();
+    } else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET,
+          ActionstepPackage.GET_CALL_INFO__EXTENSION_VAR, newExtensionVar, newExtensionVar));
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public DynamicValue getDialedNumber() {
@@ -866,42 +741,49 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public NotificationChain basicSetDialedNumber(DynamicValue newDialedNumber, NotificationChain msgs) {
     DynamicValue oldDialedNumber = dialedNumber;
     dialedNumber = newDialedNumber;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__DIALED_NUMBER, oldDialedNumber, newDialedNumber);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+          ActionstepPackage.GET_CALL_INFO__DIALED_NUMBER, oldDialedNumber, newDialedNumber);
+      if (msgs == null)
+        msgs = notification;
+      else
+        msgs.add(notification);
     }
     return msgs;
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public void setDialedNumber(DynamicValue newDialedNumber) {
     if (newDialedNumber != dialedNumber) {
       NotificationChain msgs = null;
       if (dialedNumber != null)
-        msgs = ((InternalEObject)dialedNumber).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_CALL_INFO__DIALED_NUMBER, null, msgs);
+        msgs = ((InternalEObject) dialedNumber).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+            - ActionstepPackage.GET_CALL_INFO__DIALED_NUMBER, null, msgs);
       if (newDialedNumber != null)
-        msgs = ((InternalEObject)newDialedNumber).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_CALL_INFO__DIALED_NUMBER, null, msgs);
+        msgs = ((InternalEObject) newDialedNumber).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+            - ActionstepPackage.GET_CALL_INFO__DIALED_NUMBER, null, msgs);
       msgs = basicSetDialedNumber(newDialedNumber, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__DIALED_NUMBER, newDialedNumber, newDialedNumber));
+      if (msgs != null)
+        msgs.dispatch();
+    } else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET,
+          ActionstepPackage.GET_CALL_INFO__DIALED_NUMBER, newDialedNumber, newDialedNumber));
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public DynamicValue getPriorityVar() {
@@ -909,42 +791,49 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public NotificationChain basicSetPriorityVar(DynamicValue newPriorityVar, NotificationChain msgs) {
     DynamicValue oldPriorityVar = priorityVar;
     priorityVar = newPriorityVar;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__PRIORITY_VAR, oldPriorityVar, newPriorityVar);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+          ActionstepPackage.GET_CALL_INFO__PRIORITY_VAR, oldPriorityVar, newPriorityVar);
+      if (msgs == null)
+        msgs = notification;
+      else
+        msgs.add(notification);
     }
     return msgs;
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public void setPriorityVar(DynamicValue newPriorityVar) {
     if (newPriorityVar != priorityVar) {
       NotificationChain msgs = null;
       if (priorityVar != null)
-        msgs = ((InternalEObject)priorityVar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_CALL_INFO__PRIORITY_VAR, null, msgs);
+        msgs = ((InternalEObject) priorityVar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+            - ActionstepPackage.GET_CALL_INFO__PRIORITY_VAR, null, msgs);
       if (newPriorityVar != null)
-        msgs = ((InternalEObject)newPriorityVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_CALL_INFO__PRIORITY_VAR, null, msgs);
+        msgs = ((InternalEObject) newPriorityVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+            - ActionstepPackage.GET_CALL_INFO__PRIORITY_VAR, null, msgs);
       msgs = basicSetPriorityVar(newPriorityVar, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__PRIORITY_VAR, newPriorityVar, newPriorityVar));
+      if (msgs != null)
+        msgs.dispatch();
+    } else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET,
+          ActionstepPackage.GET_CALL_INFO__PRIORITY_VAR, newPriorityVar, newPriorityVar));
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public DynamicValue getStateVar() {
@@ -952,42 +841,49 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public NotificationChain basicSetStateVar(DynamicValue newStateVar, NotificationChain msgs) {
     DynamicValue oldStateVar = stateVar;
     stateVar = newStateVar;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__STATE_VAR, oldStateVar, newStateVar);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+          ActionstepPackage.GET_CALL_INFO__STATE_VAR, oldStateVar, newStateVar);
+      if (msgs == null)
+        msgs = notification;
+      else
+        msgs.add(notification);
     }
     return msgs;
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public void setStateVar(DynamicValue newStateVar) {
     if (newStateVar != stateVar) {
       NotificationChain msgs = null;
       if (stateVar != null)
-        msgs = ((InternalEObject)stateVar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_CALL_INFO__STATE_VAR, null, msgs);
+        msgs = ((InternalEObject) stateVar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+            - ActionstepPackage.GET_CALL_INFO__STATE_VAR, null, msgs);
       if (newStateVar != null)
-        msgs = ((InternalEObject)newStateVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_CALL_INFO__STATE_VAR, null, msgs);
+        msgs = ((InternalEObject) newStateVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+            - ActionstepPackage.GET_CALL_INFO__STATE_VAR, null, msgs);
       msgs = basicSetStateVar(newStateVar, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__STATE_VAR, newStateVar, newStateVar));
+      if (msgs != null)
+        msgs.dispatch();
+    } else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET,
+          ActionstepPackage.GET_CALL_INFO__STATE_VAR, newStateVar, newStateVar));
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public DynamicValue getUniqueIdVar() {
@@ -995,42 +891,49 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public NotificationChain basicSetUniqueIdVar(DynamicValue newUniqueIdVar, NotificationChain msgs) {
     DynamicValue oldUniqueIdVar = uniqueIdVar;
     uniqueIdVar = newUniqueIdVar;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__UNIQUE_ID_VAR, oldUniqueIdVar, newUniqueIdVar);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+          ActionstepPackage.GET_CALL_INFO__UNIQUE_ID_VAR, oldUniqueIdVar, newUniqueIdVar);
+      if (msgs == null)
+        msgs = notification;
+      else
+        msgs.add(notification);
     }
     return msgs;
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public void setUniqueIdVar(DynamicValue newUniqueIdVar) {
     if (newUniqueIdVar != uniqueIdVar) {
       NotificationChain msgs = null;
       if (uniqueIdVar != null)
-        msgs = ((InternalEObject)uniqueIdVar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_CALL_INFO__UNIQUE_ID_VAR, null, msgs);
+        msgs = ((InternalEObject) uniqueIdVar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+            - ActionstepPackage.GET_CALL_INFO__UNIQUE_ID_VAR, null, msgs);
       if (newUniqueIdVar != null)
-        msgs = ((InternalEObject)newUniqueIdVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_CALL_INFO__UNIQUE_ID_VAR, null, msgs);
+        msgs = ((InternalEObject) newUniqueIdVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+            - ActionstepPackage.GET_CALL_INFO__UNIQUE_ID_VAR, null, msgs);
       msgs = basicSetUniqueIdVar(newUniqueIdVar, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__UNIQUE_ID_VAR, newUniqueIdVar, newUniqueIdVar));
+      if (msgs != null)
+        msgs.dispatch();
+    } else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET,
+          ActionstepPackage.GET_CALL_INFO__UNIQUE_ID_VAR, newUniqueIdVar, newUniqueIdVar));
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public DynamicValue getAni2Var() {
@@ -1038,42 +941,49 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public NotificationChain basicSetAni2Var(DynamicValue newAni2Var, NotificationChain msgs) {
     DynamicValue oldAni2Var = ani2Var;
     ani2Var = newAni2Var;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__ANI2_VAR, oldAni2Var, newAni2Var);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+          ActionstepPackage.GET_CALL_INFO__ANI2_VAR, oldAni2Var, newAni2Var);
+      if (msgs == null)
+        msgs = notification;
+      else
+        msgs.add(notification);
     }
     return msgs;
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public void setAni2Var(DynamicValue newAni2Var) {
     if (newAni2Var != ani2Var) {
       NotificationChain msgs = null;
       if (ani2Var != null)
-        msgs = ((InternalEObject)ani2Var).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_CALL_INFO__ANI2_VAR, null, msgs);
+        msgs = ((InternalEObject) ani2Var).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+            - ActionstepPackage.GET_CALL_INFO__ANI2_VAR, null, msgs);
       if (newAni2Var != null)
-        msgs = ((InternalEObject)newAni2Var).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_CALL_INFO__ANI2_VAR, null, msgs);
+        msgs = ((InternalEObject) newAni2Var).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+            - ActionstepPackage.GET_CALL_INFO__ANI2_VAR, null, msgs);
       msgs = basicSetAni2Var(newAni2Var, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__ANI2_VAR, newAni2Var, newAni2Var));
+      if (msgs != null)
+        msgs.dispatch();
+    } else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET,
+          ActionstepPackage.GET_CALL_INFO__ANI2_VAR, newAni2Var, newAni2Var));
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public DynamicValue getRdnis() {
@@ -1081,42 +991,49 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public NotificationChain basicSetRdnis(DynamicValue newRdnis, NotificationChain msgs) {
     DynamicValue oldRdnis = rdnis;
     rdnis = newRdnis;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__RDNIS, oldRdnis, newRdnis);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+          ActionstepPackage.GET_CALL_INFO__RDNIS, oldRdnis, newRdnis);
+      if (msgs == null)
+        msgs = notification;
+      else
+        msgs.add(notification);
     }
     return msgs;
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public void setRdnis(DynamicValue newRdnis) {
     if (newRdnis != rdnis) {
       NotificationChain msgs = null;
       if (rdnis != null)
-        msgs = ((InternalEObject)rdnis).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_CALL_INFO__RDNIS, null, msgs);
+        msgs = ((InternalEObject) rdnis).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+            - ActionstepPackage.GET_CALL_INFO__RDNIS, null, msgs);
       if (newRdnis != null)
-        msgs = ((InternalEObject)newRdnis).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_CALL_INFO__RDNIS, null, msgs);
+        msgs = ((InternalEObject) newRdnis).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+            - ActionstepPackage.GET_CALL_INFO__RDNIS, null, msgs);
       msgs = basicSetRdnis(newRdnis, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__RDNIS, newRdnis, newRdnis));
+      if (msgs != null)
+        msgs.dispatch();
+    } else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__RDNIS,
+          newRdnis, newRdnis));
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public DynamicValue getType() {
@@ -1124,125 +1041,55 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public NotificationChain basicSetType(DynamicValue newType, NotificationChain msgs) {
     DynamicValue oldType = type;
     type = newType;
     if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__TYPE, oldType, newType);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+          ActionstepPackage.GET_CALL_INFO__TYPE, oldType, newType);
+      if (msgs == null)
+        msgs = notification;
+      else
+        msgs.add(notification);
     }
     return msgs;
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   public void setType(DynamicValue newType) {
     if (newType != type) {
       NotificationChain msgs = null;
       if (type != null)
-        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_CALL_INFO__TYPE, null, msgs);
+        msgs = ((InternalEObject) type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+            - ActionstepPackage.GET_CALL_INFO__TYPE, null, msgs);
       if (newType != null)
-        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_CALL_INFO__TYPE, null, msgs);
+        msgs = ((InternalEObject) newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+            - ActionstepPackage.GET_CALL_INFO__TYPE, null, msgs);
       msgs = basicSetType(newType, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__TYPE, newType, newType));
+      if (msgs != null)
+        msgs.dispatch();
+    } else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__TYPE,
+          newType, newType));
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void beginProcessing(SafletContext context) throws ActionStepException {
-    // TODO: implement this method
-    // Ensure that you remove @generated or mark it @generated NOT
-    throw new UnsupportedOperationException();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Object executeScript(String scriptName, String scriptText) throws SafletScriptException {
-    // TODO: implement this method
-    // Ensure that you remove @generated or mark it @generated NOT
-    throw new UnsupportedOperationException();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void handleException(SafletContext context, Exception e) throws ActionStepException {
-    // TODO: implement this method
-    // Ensure that you remove @generated or mark it @generated NOT
-    throw new UnsupportedOperationException();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Object resolveDynamicValue(DynamicValue dynamicValue, SafletContext context) throws ActionStepException {
-    // TODO: implement this method
-    // Ensure that you remove @generated or mark it @generated NOT
-    throw new UnsupportedOperationException();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void createDefaultOutputs() {
-    // TODO: implement this method
-    // Ensure that you remove @generated or mark it @generated NOT
-    throw new UnsupportedOperationException();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @SuppressWarnings("unchecked")
-  @Override
-  public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionstepPackage.GET_CALL_INFO__OUTPUTS:
-        return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutputs()).basicAdd(otherEnd, msgs);
-      case ActionstepPackage.GET_CALL_INFO__SAFLET:
-        if (eInternalContainer() != null)
-          msgs = eBasicRemoveFromContainer(msgs);
-        return basicSetSaflet((Saflet)otherEnd, msgs);
-    }
-    return super.eInverseAdd(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID,
+      NotificationChain msgs) {
     switch (featureID) {
-      case ActionstepPackage.GET_CALL_INFO__OUTPUTS:
-        return ((InternalEList<?>)getOutputs()).basicRemove(otherEnd, msgs);
-      case ActionstepPackage.GET_CALL_INFO__SAFLET:
-        return basicSetSaflet(null, msgs);
       case ActionstepPackage.GET_CALL_INFO__ACCOUNT_CODE_VAR:
         return basicSetAccountCodeVar(null, msgs);
       case ActionstepPackage.GET_CALL_INFO__CALLER_ID_NAME_VAR:
@@ -1274,48 +1121,17 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-    switch (eContainerFeatureID) {
-      case ActionstepPackage.GET_CALL_INFO__SAFLET:
-        return eInternalContainer().eInverseRemove(this, SafletPackage.SAFLET__ACTIONSTEPS, Saflet.class, msgs);
-    }
-    return super.eBasicRemoveFromContainerFeature(msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
     switch (featureID) {
       case ActionstepPackage.GET_CALL_INFO__CALL1:
-        if (resolve) return getCall1();
+        if (resolve)
+          return getCall1();
         return basicGetCall1();
-      case ActionstepPackage.GET_CALL_INFO__PRODUCT_ID:
-        return getProductId();
-      case ActionstepPackage.GET_CALL_INFO__PAUSED:
-        return isPaused() ? Boolean.TRUE : Boolean.FALSE;
-      case ActionstepPackage.GET_CALL_INFO__ACTIVE:
-        return isActive() ? Boolean.TRUE : Boolean.FALSE;
-      case ActionstepPackage.GET_CALL_INFO__OUTPUTS:
-        return getOutputs();
-      case ActionstepPackage.GET_CALL_INFO__NAME:
-        return getName();
-      case ActionstepPackage.GET_CALL_INFO__SAFLET:
-        return getSaflet();
-      case ActionstepPackage.GET_CALL_INFO__DEFAULT_OUTPUT:
-        if (resolve) return getDefaultOutput();
-        return basicGetDefaultOutput();
-      case ActionstepPackage.GET_CALL_INFO__ERROR_OUTPUT:
-        if (resolve) return getErrorOutput();
-        return basicGetErrorOutput();
       case ActionstepPackage.GET_CALL_INFO__ACCOUNT_CODE_VAR:
         return getAccountCodeVar();
       case ActionstepPackage.GET_CALL_INFO__CALLER_ID_NAME_VAR:
@@ -1347,8 +1163,8 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   @SuppressWarnings("unchecked")
@@ -1356,157 +1172,108 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   public void eSet(int featureID, Object newValue) {
     switch (featureID) {
       case ActionstepPackage.GET_CALL_INFO__CALL1:
-        setCall1((Call)newValue);
-        return;
-      case ActionstepPackage.GET_CALL_INFO__PRODUCT_ID:
-        setProductId((String)newValue);
-        return;
-      case ActionstepPackage.GET_CALL_INFO__PAUSED:
-        setPaused(((Boolean)newValue).booleanValue());
-        return;
-      case ActionstepPackage.GET_CALL_INFO__ACTIVE:
-        setActive(((Boolean)newValue).booleanValue());
-        return;
-      case ActionstepPackage.GET_CALL_INFO__OUTPUTS:
-        getOutputs().clear();
-        getOutputs().addAll((Collection<? extends Output>)newValue);
-        return;
-      case ActionstepPackage.GET_CALL_INFO__NAME:
-        setName((String)newValue);
-        return;
-      case ActionstepPackage.GET_CALL_INFO__SAFLET:
-        setSaflet((Saflet)newValue);
-        return;
-      case ActionstepPackage.GET_CALL_INFO__DEFAULT_OUTPUT:
-        setDefaultOutput((Output)newValue);
-        return;
-      case ActionstepPackage.GET_CALL_INFO__ERROR_OUTPUT:
-        setErrorOutput((Output)newValue);
+        setCall1((Call) newValue);
         return;
       case ActionstepPackage.GET_CALL_INFO__ACCOUNT_CODE_VAR:
-        setAccountCodeVar((DynamicValue)newValue);
+        setAccountCodeVar((DynamicValue) newValue);
         return;
       case ActionstepPackage.GET_CALL_INFO__CALLER_ID_NAME_VAR:
-        setCallerIdNameVar((DynamicValue)newValue);
+        setCallerIdNameVar((DynamicValue) newValue);
         return;
       case ActionstepPackage.GET_CALL_INFO__CALLER_ID_NUM_VAR:
-        setCallerIdNumVar((DynamicValue)newValue);
+        setCallerIdNumVar((DynamicValue) newValue);
         return;
       case ActionstepPackage.GET_CALL_INFO__CHANNEL_NAME_VAR:
-        setChannelNameVar((DynamicValue)newValue);
+        setChannelNameVar((DynamicValue) newValue);
         return;
       case ActionstepPackage.GET_CALL_INFO__CONTEXT_VAR:
-        setContextVar((DynamicValue)newValue);
+        setContextVar((DynamicValue) newValue);
         return;
       case ActionstepPackage.GET_CALL_INFO__EXTENSION_VAR:
-        setExtensionVar((DynamicValue)newValue);
+        setExtensionVar((DynamicValue) newValue);
         return;
       case ActionstepPackage.GET_CALL_INFO__DIALED_NUMBER:
-        setDialedNumber((DynamicValue)newValue);
+        setDialedNumber((DynamicValue) newValue);
         return;
       case ActionstepPackage.GET_CALL_INFO__PRIORITY_VAR:
-        setPriorityVar((DynamicValue)newValue);
+        setPriorityVar((DynamicValue) newValue);
         return;
       case ActionstepPackage.GET_CALL_INFO__STATE_VAR:
-        setStateVar((DynamicValue)newValue);
+        setStateVar((DynamicValue) newValue);
         return;
       case ActionstepPackage.GET_CALL_INFO__UNIQUE_ID_VAR:
-        setUniqueIdVar((DynamicValue)newValue);
+        setUniqueIdVar((DynamicValue) newValue);
         return;
       case ActionstepPackage.GET_CALL_INFO__ANI2_VAR:
-        setAni2Var((DynamicValue)newValue);
+        setAni2Var((DynamicValue) newValue);
         return;
       case ActionstepPackage.GET_CALL_INFO__RDNIS:
-        setRdnis((DynamicValue)newValue);
+        setRdnis((DynamicValue) newValue);
         return;
       case ActionstepPackage.GET_CALL_INFO__TYPE:
-        setType((DynamicValue)newValue);
+        setType((DynamicValue) newValue);
         return;
     }
     super.eSet(featureID, newValue);
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   @Override
   public void eUnset(int featureID) {
     switch (featureID) {
       case ActionstepPackage.GET_CALL_INFO__CALL1:
-        setCall1((Call)null);
-        return;
-      case ActionstepPackage.GET_CALL_INFO__PRODUCT_ID:
-        setProductId(PRODUCT_ID_EDEFAULT);
-        return;
-      case ActionstepPackage.GET_CALL_INFO__PAUSED:
-        setPaused(PAUSED_EDEFAULT);
-        return;
-      case ActionstepPackage.GET_CALL_INFO__ACTIVE:
-        setActive(ACTIVE_EDEFAULT);
-        return;
-      case ActionstepPackage.GET_CALL_INFO__OUTPUTS:
-        getOutputs().clear();
-        return;
-      case ActionstepPackage.GET_CALL_INFO__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case ActionstepPackage.GET_CALL_INFO__SAFLET:
-        setSaflet((Saflet)null);
-        return;
-      case ActionstepPackage.GET_CALL_INFO__DEFAULT_OUTPUT:
-        setDefaultOutput((Output)null);
-        return;
-      case ActionstepPackage.GET_CALL_INFO__ERROR_OUTPUT:
-        setErrorOutput((Output)null);
+        setCall1((Call) null);
         return;
       case ActionstepPackage.GET_CALL_INFO__ACCOUNT_CODE_VAR:
-        setAccountCodeVar((DynamicValue)null);
+        setAccountCodeVar((DynamicValue) null);
         return;
       case ActionstepPackage.GET_CALL_INFO__CALLER_ID_NAME_VAR:
-        setCallerIdNameVar((DynamicValue)null);
+        setCallerIdNameVar((DynamicValue) null);
         return;
       case ActionstepPackage.GET_CALL_INFO__CALLER_ID_NUM_VAR:
-        setCallerIdNumVar((DynamicValue)null);
+        setCallerIdNumVar((DynamicValue) null);
         return;
       case ActionstepPackage.GET_CALL_INFO__CHANNEL_NAME_VAR:
-        setChannelNameVar((DynamicValue)null);
+        setChannelNameVar((DynamicValue) null);
         return;
       case ActionstepPackage.GET_CALL_INFO__CONTEXT_VAR:
-        setContextVar((DynamicValue)null);
+        setContextVar((DynamicValue) null);
         return;
       case ActionstepPackage.GET_CALL_INFO__EXTENSION_VAR:
-        setExtensionVar((DynamicValue)null);
+        setExtensionVar((DynamicValue) null);
         return;
       case ActionstepPackage.GET_CALL_INFO__DIALED_NUMBER:
-        setDialedNumber((DynamicValue)null);
+        setDialedNumber((DynamicValue) null);
         return;
       case ActionstepPackage.GET_CALL_INFO__PRIORITY_VAR:
-        setPriorityVar((DynamicValue)null);
+        setPriorityVar((DynamicValue) null);
         return;
       case ActionstepPackage.GET_CALL_INFO__STATE_VAR:
-        setStateVar((DynamicValue)null);
+        setStateVar((DynamicValue) null);
         return;
       case ActionstepPackage.GET_CALL_INFO__UNIQUE_ID_VAR:
-        setUniqueIdVar((DynamicValue)null);
+        setUniqueIdVar((DynamicValue) null);
         return;
       case ActionstepPackage.GET_CALL_INFO__ANI2_VAR:
-        setAni2Var((DynamicValue)null);
+        setAni2Var((DynamicValue) null);
         return;
       case ActionstepPackage.GET_CALL_INFO__RDNIS:
-        setRdnis((DynamicValue)null);
+        setRdnis((DynamicValue) null);
         return;
       case ActionstepPackage.GET_CALL_INFO__TYPE:
-        setType((DynamicValue)null);
+        setType((DynamicValue) null);
         return;
     }
     super.eUnset(featureID);
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   @Override
@@ -1514,22 +1281,6 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
     switch (featureID) {
       case ActionstepPackage.GET_CALL_INFO__CALL1:
         return call1 != null;
-      case ActionstepPackage.GET_CALL_INFO__PRODUCT_ID:
-        return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
-      case ActionstepPackage.GET_CALL_INFO__PAUSED:
-        return paused != PAUSED_EDEFAULT;
-      case ActionstepPackage.GET_CALL_INFO__ACTIVE:
-        return active != ACTIVE_EDEFAULT;
-      case ActionstepPackage.GET_CALL_INFO__OUTPUTS:
-        return outputs != null && !outputs.isEmpty();
-      case ActionstepPackage.GET_CALL_INFO__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case ActionstepPackage.GET_CALL_INFO__SAFLET:
-        return getSaflet() != null;
-      case ActionstepPackage.GET_CALL_INFO__DEFAULT_OUTPUT:
-        return defaultOutput != null;
-      case ActionstepPackage.GET_CALL_INFO__ERROR_OUTPUT:
-        return errorOutput != null;
       case ActionstepPackage.GET_CALL_INFO__ACCOUNT_CODE_VAR:
         return accountCodeVar != null;
       case ActionstepPackage.GET_CALL_INFO__CALLER_ID_NAME_VAR:
@@ -1561,81 +1312,39 @@ public class GetCallInfoImpl extends EObjectImpl implements GetCallInfo {
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-    if (baseClass == ProductIdentifiable.class) {
+    if (baseClass == CallConsumer1.class) {
       switch (derivedFeatureID) {
-        case ActionstepPackage.GET_CALL_INFO__PRODUCT_ID: return CorePackage.PRODUCT_IDENTIFIABLE__PRODUCT_ID;
-        default: return -1;
-      }
-    }
-    if (baseClass == ActionStep.class) {
-      switch (derivedFeatureID) {
-        case ActionstepPackage.GET_CALL_INFO__PAUSED: return ActionStepPackage.ACTION_STEP__PAUSED;
-        case ActionstepPackage.GET_CALL_INFO__ACTIVE: return ActionStepPackage.ACTION_STEP__ACTIVE;
-        case ActionstepPackage.GET_CALL_INFO__OUTPUTS: return ActionStepPackage.ACTION_STEP__OUTPUTS;
-        case ActionstepPackage.GET_CALL_INFO__NAME: return ActionStepPackage.ACTION_STEP__NAME;
-        case ActionstepPackage.GET_CALL_INFO__SAFLET: return ActionStepPackage.ACTION_STEP__SAFLET;
-        case ActionstepPackage.GET_CALL_INFO__DEFAULT_OUTPUT: return ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
-        case ActionstepPackage.GET_CALL_INFO__ERROR_OUTPUT: return ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
-        default: return -1;
+        case ActionstepPackage.GET_CALL_INFO__CALL1:
+          return AsteriskPackage.CALL_CONSUMER1__CALL1;
+        default:
+          return -1;
       }
     }
     return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
   }
 
   /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+   * <!-- begin-user-doc --> <!-- end-user-doc -->
+   * 
    * @generated
    */
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-    if (baseClass == ProductIdentifiable.class) {
+    if (baseClass == CallConsumer1.class) {
       switch (baseFeatureID) {
-        case CorePackage.PRODUCT_IDENTIFIABLE__PRODUCT_ID: return ActionstepPackage.GET_CALL_INFO__PRODUCT_ID;
-        default: return -1;
-      }
-    }
-    if (baseClass == ActionStep.class) {
-      switch (baseFeatureID) {
-        case ActionStepPackage.ACTION_STEP__PAUSED: return ActionstepPackage.GET_CALL_INFO__PAUSED;
-        case ActionStepPackage.ACTION_STEP__ACTIVE: return ActionstepPackage.GET_CALL_INFO__ACTIVE;
-        case ActionStepPackage.ACTION_STEP__OUTPUTS: return ActionstepPackage.GET_CALL_INFO__OUTPUTS;
-        case ActionStepPackage.ACTION_STEP__NAME: return ActionstepPackage.GET_CALL_INFO__NAME;
-        case ActionStepPackage.ACTION_STEP__SAFLET: return ActionstepPackage.GET_CALL_INFO__SAFLET;
-        case ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT: return ActionstepPackage.GET_CALL_INFO__DEFAULT_OUTPUT;
-        case ActionStepPackage.ACTION_STEP__ERROR_OUTPUT: return ActionstepPackage.GET_CALL_INFO__ERROR_OUTPUT;
-        default: return -1;
+        case AsteriskPackage.CALL_CONSUMER1__CALL1:
+          return ActionstepPackage.GET_CALL_INFO__CALL1;
+        default:
+          return -1;
       }
     }
     return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString() {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (productId: ");
-    result.append(productId);
-    result.append(", paused: ");
-    result.append(paused);
-    result.append(", active: ");
-    result.append(active);
-    result.append(", name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
-  }
-
-} //GetCallInfoImpl
+} // GetCallInfoImpl

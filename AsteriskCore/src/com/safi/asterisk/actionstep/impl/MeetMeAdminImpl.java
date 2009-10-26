@@ -6,43 +6,26 @@
  */
 package com.safi.asterisk.actionstep.impl;
 
-import com.safi.asterisk.Call;
+import org.apache.commons.lang.StringUtils;
+import org.asteriskjava.fastagi.AgiChannel;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import com.safi.asterisk.AsteriskPackage;
+import com.safi.asterisk.Call;
+import com.safi.asterisk.CallConsumer1;
 import com.safi.asterisk.actionstep.ActionstepPackage;
 import com.safi.asterisk.actionstep.MeetMeAdmin;
 import com.safi.asterisk.actionstep.MeetMeAdminCommand;
-
-import com.safi.core.CorePackage;
-import com.safi.core.ProductIdentifiable;
-
-import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.ActionStepException;
-import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.actionstep.DynamicValue;
-import com.safi.core.actionstep.Output;
-
-import com.safi.core.saflet.Saflet;
+import com.safi.core.actionstep.impl.ActionStepImpl;
+import com.safi.core.actionstep.util.VariableTranslator;
 import com.safi.core.saflet.SafletContext;
-import com.safi.core.saflet.SafletPackage;
-
-import com.safi.core.scripting.SafletScriptException;
-
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.InternalEList;
+import com.safi.db.VariableType;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,14 +35,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.safi.asterisk.actionstep.impl.MeetMeAdminImpl#getCall1 <em>Call1</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.MeetMeAdminImpl#getProductId <em>Product Id</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.MeetMeAdminImpl#isPaused <em>Paused</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.MeetMeAdminImpl#isActive <em>Active</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.MeetMeAdminImpl#getOutputs <em>Outputs</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.MeetMeAdminImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.MeetMeAdminImpl#getSaflet <em>Saflet</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.MeetMeAdminImpl#getDefaultOutput <em>Default Output</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.MeetMeAdminImpl#getErrorOutput <em>Error Output</em>}</li>
  *   <li>{@link com.safi.asterisk.actionstep.impl.MeetMeAdminImpl#getConferenceNumber <em>Conference Number</em>}</li>
  *   <li>{@link com.safi.asterisk.actionstep.impl.MeetMeAdminImpl#getCommand <em>Command</em>}</li>
  *   <li>{@link com.safi.asterisk.actionstep.impl.MeetMeAdminImpl#getUser <em>User</em>}</li>
@@ -68,7 +43,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class MeetMeAdminImpl extends EObjectImpl implements MeetMeAdmin {
+public class MeetMeAdminImpl extends ActionStepImpl implements MeetMeAdmin {
   /**
    * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
    * <!-- begin-user-doc -->
@@ -78,116 +53,6 @@ public class MeetMeAdminImpl extends EObjectImpl implements MeetMeAdmin {
    * @ordered
    */
   protected Call call1;
-
-  /**
-   * The default value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getProductId()
-   * @generated
-   * @ordered
-   */
-  protected static final String PRODUCT_ID_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getProductId() <em>Product Id</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getProductId()
-   * @generated
-   * @ordered
-   */
-  protected String productId = PRODUCT_ID_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #isPaused() <em>Paused</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isPaused()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean PAUSED_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isPaused() <em>Paused</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isPaused()
-   * @generated
-   * @ordered
-   */
-  protected boolean paused = PAUSED_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #isActive() <em>Active</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isActive()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean ACTIVE_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isActive() <em>Active</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isActive()
-   * @generated
-   * @ordered
-   */
-  protected boolean active = ACTIVE_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getOutputs() <em>Outputs</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOutputs()
-   * @generated
-   * @ordered
-   */
-  protected EList<Output> outputs;
-
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getDefaultOutput() <em>Default Output</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDefaultOutput()
-   * @generated
-   * @ordered
-   */
-  protected Output defaultOutput;
-
-  /**
-   * The cached value of the '{@link #getErrorOutput() <em>Error Output</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getErrorOutput()
-   * @generated
-   * @ordered
-   */
-  protected Output errorOutput;
 
   /**
    * The cached value of the '{@link #getConferenceNumber() <em>Conference Number</em>}' containment reference.
@@ -238,6 +103,111 @@ public class MeetMeAdminImpl extends EObjectImpl implements MeetMeAdmin {
     super();
   }
 
+  @Override
+  public void beginProcessing(SafletContext context) throws ActionStepException {
+    super.beginProcessing(context);
+    Exception exception = null;
+    if (call1 == null || call1.getChannel() == null) {
+      exception = new ActionStepException(call1 == null ? "No current call found"
+          : "No channel found in current context");
+    } else {
+      AgiChannel channel = call1.getChannel();
+      try {
+
+        String conferenceNum = (String) VariableTranslator.translateValue(VariableType.TEXT,
+            resolveDynamicValue(conferenceNumber, context));
+        if (debugLog.isDebugEnabled())
+          debug("Getting meetme count for conference: " + conferenceNum);
+        if (StringUtils.isBlank(conferenceNum)) {
+          exception = new ActionStepException("Conference number is required for MeetMeCount");
+        } else {
+
+          Object dynValue = resolveDynamicValue(user, context);
+          String userStr = (String) VariableTranslator
+              .translateValue(VariableType.TEXT, dynValue);
+          
+
+          StringBuffer appCmd = new StringBuffer(conferenceNum);
+          appCmd.append('|').append(translateCommand(command));
+          if (StringUtils.isNotBlank(userStr)){
+            appCmd.append('|').append(userStr.trim());
+          }
+          if (debugLog.isDebugEnabled())
+            debug("MeetMeAdmin being called with args " + appCmd);
+
+          
+          int result = channel.exec("MeetMeAdmin", appCmd.toString());
+
+          if (debugLog.isDebugEnabled())
+            debug("MeetMeAdmin returned " + translateAppReturnValue(result) + " of int "
+                + result);
+
+          if (result == -2) {
+            exception = new ActionStepException("Application MeetMeCount not found");
+          } else if (result == -1) {
+            exception = new ActionStepException("Channel was hung up");
+            // context.addException(exception);
+            // return;
+          } 
+        }
+      } catch (Exception e) {
+        exception = e;
+      }
+    }
+
+    if (exception != null) {
+      handleException(context, exception);
+      return;
+    }
+    handleSuccess(context);
+
+  }
+  
+  private char translateCommand(MeetMeAdminCommand command) {
+    switch (command){
+      case EJECT_LAST_USER:
+        return 'e';
+      case KICK_ALL_USERS:
+        return 'K';
+      case KICK_ONE_USER:
+        return 'k';
+      case LOCK:
+        return 'L';
+      case LOWER_CONF_LISTEN_VOLUME:
+        return 'v';
+      case LOWER_CONF_SPEAK_VOLUME:
+        return 's';
+      case LOWER_USER_LISTEN_VOLUME:
+        return 'u';
+      case LOWER_USER_TALK_VOLUME:
+        return 't';
+      case MUTE_USER:
+        return 'M';
+      case MUTE_NON_ADMIN:
+        return 'N';
+      case RAISE_CONF_LISTEN_VOLUME:
+        return 'V';
+      case RAISE_CONF_SPEAK_VOLUME:
+        return 'S';
+      case RAISE_USER_LISTEN_VOLUME:
+        return 'U';
+      case RAISE_USER_TALK_VOLUME:
+        return 'T';
+      case RESET_ALL_USERS_VOLUME:
+        return 'R';
+      case RESET_USER_VOLUME:
+        return 'r';
+      case UNLOCK:
+        return 'l';
+      case UNMUTE_USER:
+        return 'm';
+      case UNMUTE_ALL_USERS:
+        return 'n';
+       
+    }
+    return 0;
+  }
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -284,219 +254,6 @@ public class MeetMeAdminImpl extends EObjectImpl implements MeetMeAdmin {
     call1 = newCall1;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.MEET_ME_ADMIN__CALL1, oldCall1, call1));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getProductId() {
-    return productId;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setProductId(String newProductId) {
-    String oldProductId = productId;
-    productId = newProductId;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.MEET_ME_ADMIN__PRODUCT_ID, oldProductId, productId));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public boolean isPaused() {
-    return paused;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setPaused(boolean newPaused) {
-    boolean oldPaused = paused;
-    paused = newPaused;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.MEET_ME_ADMIN__PAUSED, oldPaused, paused));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public boolean isActive() {
-    return active;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setActive(boolean newActive) {
-    boolean oldActive = active;
-    active = newActive;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.MEET_ME_ADMIN__ACTIVE, oldActive, active));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Output> getOutputs() {
-    if (outputs == null) {
-      outputs = new EObjectContainmentWithInverseEList<Output>(Output.class, this, ActionstepPackage.MEET_ME_ADMIN__OUTPUTS, ActionStepPackage.OUTPUT__PARENT);
-    }
-    return outputs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName() {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName) {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.MEET_ME_ADMIN__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Saflet getSaflet() {
-    if (eContainerFeatureID != ActionstepPackage.MEET_ME_ADMIN__SAFLET) return null;
-    return (Saflet)eContainer();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetSaflet(Saflet newSaflet, NotificationChain msgs) {
-    msgs = eBasicSetContainer((InternalEObject)newSaflet, ActionstepPackage.MEET_ME_ADMIN__SAFLET, msgs);
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setSaflet(Saflet newSaflet) {
-    if (newSaflet != eInternalContainer() || (eContainerFeatureID != ActionstepPackage.MEET_ME_ADMIN__SAFLET && newSaflet != null)) {
-      if (EcoreUtil.isAncestor(this, newSaflet))
-        throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-      NotificationChain msgs = null;
-      if (eInternalContainer() != null)
-        msgs = eBasicRemoveFromContainer(msgs);
-      if (newSaflet != null)
-        msgs = ((InternalEObject)newSaflet).eInverseAdd(this, SafletPackage.SAFLET__ACTIONSTEPS, Saflet.class, msgs);
-      msgs = basicSetSaflet(newSaflet, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.MEET_ME_ADMIN__SAFLET, newSaflet, newSaflet));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Output getDefaultOutput() {
-    if (defaultOutput != null && defaultOutput.eIsProxy()) {
-      InternalEObject oldDefaultOutput = (InternalEObject)defaultOutput;
-      defaultOutput = (Output)eResolveProxy(oldDefaultOutput);
-      if (defaultOutput != oldDefaultOutput) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.MEET_ME_ADMIN__DEFAULT_OUTPUT, oldDefaultOutput, defaultOutput));
-      }
-    }
-    return defaultOutput;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Output basicGetDefaultOutput() {
-    return defaultOutput;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setDefaultOutput(Output newDefaultOutput) {
-    Output oldDefaultOutput = defaultOutput;
-    defaultOutput = newDefaultOutput;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.MEET_ME_ADMIN__DEFAULT_OUTPUT, oldDefaultOutput, defaultOutput));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Output getErrorOutput() {
-    if (errorOutput != null && errorOutput.eIsProxy()) {
-      InternalEObject oldErrorOutput = (InternalEObject)errorOutput;
-      errorOutput = (Output)eResolveProxy(oldErrorOutput);
-      if (errorOutput != oldErrorOutput) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.MEET_ME_ADMIN__ERROR_OUTPUT, oldErrorOutput, errorOutput));
-      }
-    }
-    return errorOutput;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Output basicGetErrorOutput() {
-    return errorOutput;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setErrorOutput(Output newErrorOutput) {
-    Output oldErrorOutput = errorOutput;
-    errorOutput = newErrorOutput;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.MEET_ME_ADMIN__ERROR_OUTPUT, oldErrorOutput, errorOutput));
   }
 
   /**
@@ -611,87 +368,9 @@ public class MeetMeAdminImpl extends EObjectImpl implements MeetMeAdmin {
    * <!-- end-user-doc -->
    * @generated
    */
-  public void beginProcessing(SafletContext context) throws ActionStepException {
-    // TODO: implement this method
-    // Ensure that you remove @generated or mark it @generated NOT
-    throw new UnsupportedOperationException();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Object executeScript(String scriptName, String scriptText) throws SafletScriptException {
-    // TODO: implement this method
-    // Ensure that you remove @generated or mark it @generated NOT
-    throw new UnsupportedOperationException();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void handleException(SafletContext context, Exception e) throws ActionStepException {
-    // TODO: implement this method
-    // Ensure that you remove @generated or mark it @generated NOT
-    throw new UnsupportedOperationException();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Object resolveDynamicValue(DynamicValue dynamicValue, SafletContext context) throws ActionStepException {
-    // TODO: implement this method
-    // Ensure that you remove @generated or mark it @generated NOT
-    throw new UnsupportedOperationException();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void createDefaultOutputs() {
-    // TODO: implement this method
-    // Ensure that you remove @generated or mark it @generated NOT
-    throw new UnsupportedOperationException();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @SuppressWarnings("unchecked")
-  @Override
-  public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionstepPackage.MEET_ME_ADMIN__OUTPUTS:
-        return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutputs()).basicAdd(otherEnd, msgs);
-      case ActionstepPackage.MEET_ME_ADMIN__SAFLET:
-        if (eInternalContainer() != null)
-          msgs = eBasicRemoveFromContainer(msgs);
-        return basicSetSaflet((Saflet)otherEnd, msgs);
-    }
-    return super.eInverseAdd(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
     switch (featureID) {
-      case ActionstepPackage.MEET_ME_ADMIN__OUTPUTS:
-        return ((InternalEList<?>)getOutputs()).basicRemove(otherEnd, msgs);
-      case ActionstepPackage.MEET_ME_ADMIN__SAFLET:
-        return basicSetSaflet(null, msgs);
       case ActionstepPackage.MEET_ME_ADMIN__CONFERENCE_NUMBER:
         return basicSetConferenceNumber(null, msgs);
       case ActionstepPackage.MEET_ME_ADMIN__USER:
@@ -706,43 +385,11 @@ public class MeetMeAdminImpl extends EObjectImpl implements MeetMeAdmin {
    * @generated
    */
   @Override
-  public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-    switch (eContainerFeatureID) {
-      case ActionstepPackage.MEET_ME_ADMIN__SAFLET:
-        return eInternalContainer().eInverseRemove(this, SafletPackage.SAFLET__ACTIONSTEPS, Saflet.class, msgs);
-    }
-    return super.eBasicRemoveFromContainerFeature(msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
     switch (featureID) {
       case ActionstepPackage.MEET_ME_ADMIN__CALL1:
         if (resolve) return getCall1();
         return basicGetCall1();
-      case ActionstepPackage.MEET_ME_ADMIN__PRODUCT_ID:
-        return getProductId();
-      case ActionstepPackage.MEET_ME_ADMIN__PAUSED:
-        return isPaused() ? Boolean.TRUE : Boolean.FALSE;
-      case ActionstepPackage.MEET_ME_ADMIN__ACTIVE:
-        return isActive() ? Boolean.TRUE : Boolean.FALSE;
-      case ActionstepPackage.MEET_ME_ADMIN__OUTPUTS:
-        return getOutputs();
-      case ActionstepPackage.MEET_ME_ADMIN__NAME:
-        return getName();
-      case ActionstepPackage.MEET_ME_ADMIN__SAFLET:
-        return getSaflet();
-      case ActionstepPackage.MEET_ME_ADMIN__DEFAULT_OUTPUT:
-        if (resolve) return getDefaultOutput();
-        return basicGetDefaultOutput();
-      case ActionstepPackage.MEET_ME_ADMIN__ERROR_OUTPUT:
-        if (resolve) return getErrorOutput();
-        return basicGetErrorOutput();
       case ActionstepPackage.MEET_ME_ADMIN__CONFERENCE_NUMBER:
         return getConferenceNumber();
       case ActionstepPackage.MEET_ME_ADMIN__COMMAND:
@@ -764,31 +411,6 @@ public class MeetMeAdminImpl extends EObjectImpl implements MeetMeAdmin {
     switch (featureID) {
       case ActionstepPackage.MEET_ME_ADMIN__CALL1:
         setCall1((Call)newValue);
-        return;
-      case ActionstepPackage.MEET_ME_ADMIN__PRODUCT_ID:
-        setProductId((String)newValue);
-        return;
-      case ActionstepPackage.MEET_ME_ADMIN__PAUSED:
-        setPaused(((Boolean)newValue).booleanValue());
-        return;
-      case ActionstepPackage.MEET_ME_ADMIN__ACTIVE:
-        setActive(((Boolean)newValue).booleanValue());
-        return;
-      case ActionstepPackage.MEET_ME_ADMIN__OUTPUTS:
-        getOutputs().clear();
-        getOutputs().addAll((Collection<? extends Output>)newValue);
-        return;
-      case ActionstepPackage.MEET_ME_ADMIN__NAME:
-        setName((String)newValue);
-        return;
-      case ActionstepPackage.MEET_ME_ADMIN__SAFLET:
-        setSaflet((Saflet)newValue);
-        return;
-      case ActionstepPackage.MEET_ME_ADMIN__DEFAULT_OUTPUT:
-        setDefaultOutput((Output)newValue);
-        return;
-      case ActionstepPackage.MEET_ME_ADMIN__ERROR_OUTPUT:
-        setErrorOutput((Output)newValue);
         return;
       case ActionstepPackage.MEET_ME_ADMIN__CONFERENCE_NUMBER:
         setConferenceNumber((DynamicValue)newValue);
@@ -814,30 +436,6 @@ public class MeetMeAdminImpl extends EObjectImpl implements MeetMeAdmin {
       case ActionstepPackage.MEET_ME_ADMIN__CALL1:
         setCall1((Call)null);
         return;
-      case ActionstepPackage.MEET_ME_ADMIN__PRODUCT_ID:
-        setProductId(PRODUCT_ID_EDEFAULT);
-        return;
-      case ActionstepPackage.MEET_ME_ADMIN__PAUSED:
-        setPaused(PAUSED_EDEFAULT);
-        return;
-      case ActionstepPackage.MEET_ME_ADMIN__ACTIVE:
-        setActive(ACTIVE_EDEFAULT);
-        return;
-      case ActionstepPackage.MEET_ME_ADMIN__OUTPUTS:
-        getOutputs().clear();
-        return;
-      case ActionstepPackage.MEET_ME_ADMIN__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case ActionstepPackage.MEET_ME_ADMIN__SAFLET:
-        setSaflet((Saflet)null);
-        return;
-      case ActionstepPackage.MEET_ME_ADMIN__DEFAULT_OUTPUT:
-        setDefaultOutput((Output)null);
-        return;
-      case ActionstepPackage.MEET_ME_ADMIN__ERROR_OUTPUT:
-        setErrorOutput((Output)null);
-        return;
       case ActionstepPackage.MEET_ME_ADMIN__CONFERENCE_NUMBER:
         setConferenceNumber((DynamicValue)null);
         return;
@@ -861,22 +459,6 @@ public class MeetMeAdminImpl extends EObjectImpl implements MeetMeAdmin {
     switch (featureID) {
       case ActionstepPackage.MEET_ME_ADMIN__CALL1:
         return call1 != null;
-      case ActionstepPackage.MEET_ME_ADMIN__PRODUCT_ID:
-        return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
-      case ActionstepPackage.MEET_ME_ADMIN__PAUSED:
-        return paused != PAUSED_EDEFAULT;
-      case ActionstepPackage.MEET_ME_ADMIN__ACTIVE:
-        return active != ACTIVE_EDEFAULT;
-      case ActionstepPackage.MEET_ME_ADMIN__OUTPUTS:
-        return outputs != null && !outputs.isEmpty();
-      case ActionstepPackage.MEET_ME_ADMIN__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case ActionstepPackage.MEET_ME_ADMIN__SAFLET:
-        return getSaflet() != null;
-      case ActionstepPackage.MEET_ME_ADMIN__DEFAULT_OUTPUT:
-        return defaultOutput != null;
-      case ActionstepPackage.MEET_ME_ADMIN__ERROR_OUTPUT:
-        return errorOutput != null;
       case ActionstepPackage.MEET_ME_ADMIN__CONFERENCE_NUMBER:
         return conferenceNumber != null;
       case ActionstepPackage.MEET_ME_ADMIN__COMMAND:
@@ -894,21 +476,9 @@ public class MeetMeAdminImpl extends EObjectImpl implements MeetMeAdmin {
    */
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-    if (baseClass == ProductIdentifiable.class) {
+    if (baseClass == CallConsumer1.class) {
       switch (derivedFeatureID) {
-        case ActionstepPackage.MEET_ME_ADMIN__PRODUCT_ID: return CorePackage.PRODUCT_IDENTIFIABLE__PRODUCT_ID;
-        default: return -1;
-      }
-    }
-    if (baseClass == ActionStep.class) {
-      switch (derivedFeatureID) {
-        case ActionstepPackage.MEET_ME_ADMIN__PAUSED: return ActionStepPackage.ACTION_STEP__PAUSED;
-        case ActionstepPackage.MEET_ME_ADMIN__ACTIVE: return ActionStepPackage.ACTION_STEP__ACTIVE;
-        case ActionstepPackage.MEET_ME_ADMIN__OUTPUTS: return ActionStepPackage.ACTION_STEP__OUTPUTS;
-        case ActionstepPackage.MEET_ME_ADMIN__NAME: return ActionStepPackage.ACTION_STEP__NAME;
-        case ActionstepPackage.MEET_ME_ADMIN__SAFLET: return ActionStepPackage.ACTION_STEP__SAFLET;
-        case ActionstepPackage.MEET_ME_ADMIN__DEFAULT_OUTPUT: return ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
-        case ActionstepPackage.MEET_ME_ADMIN__ERROR_OUTPUT: return ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+        case ActionstepPackage.MEET_ME_ADMIN__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
         default: return -1;
       }
     }
@@ -922,21 +492,9 @@ public class MeetMeAdminImpl extends EObjectImpl implements MeetMeAdmin {
    */
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-    if (baseClass == ProductIdentifiable.class) {
+    if (baseClass == CallConsumer1.class) {
       switch (baseFeatureID) {
-        case CorePackage.PRODUCT_IDENTIFIABLE__PRODUCT_ID: return ActionstepPackage.MEET_ME_ADMIN__PRODUCT_ID;
-        default: return -1;
-      }
-    }
-    if (baseClass == ActionStep.class) {
-      switch (baseFeatureID) {
-        case ActionStepPackage.ACTION_STEP__PAUSED: return ActionstepPackage.MEET_ME_ADMIN__PAUSED;
-        case ActionStepPackage.ACTION_STEP__ACTIVE: return ActionstepPackage.MEET_ME_ADMIN__ACTIVE;
-        case ActionStepPackage.ACTION_STEP__OUTPUTS: return ActionstepPackage.MEET_ME_ADMIN__OUTPUTS;
-        case ActionStepPackage.ACTION_STEP__NAME: return ActionstepPackage.MEET_ME_ADMIN__NAME;
-        case ActionStepPackage.ACTION_STEP__SAFLET: return ActionstepPackage.MEET_ME_ADMIN__SAFLET;
-        case ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT: return ActionstepPackage.MEET_ME_ADMIN__DEFAULT_OUTPUT;
-        case ActionStepPackage.ACTION_STEP__ERROR_OUTPUT: return ActionstepPackage.MEET_ME_ADMIN__ERROR_OUTPUT;
+        case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.MEET_ME_ADMIN__CALL1;
         default: return -1;
       }
     }
@@ -953,15 +511,7 @@ public class MeetMeAdminImpl extends EObjectImpl implements MeetMeAdmin {
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (productId: ");
-    result.append(productId);
-    result.append(", paused: ");
-    result.append(paused);
-    result.append(", active: ");
-    result.append(active);
-    result.append(", name: ");
-    result.append(name);
-    result.append(", command: ");
+    result.append(" (command: ");
     result.append(command);
     result.append(')');
     return result.toString();

@@ -28,7 +28,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface Festival extends CallConsumer1, ActionStep {
+public interface Festival extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Text</b></em>' containment reference.
    * <!-- begin-user-doc -->

@@ -27,7 +27,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface SetCallerId extends CallConsumer1, ActionStep {
+public interface SetCallerId extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Caller Id</b></em>' containment reference.
    * <!-- begin-user-doc -->

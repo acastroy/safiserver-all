@@ -34,7 +34,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface ChanSpy extends CallConsumer1, ActionStep {
+public interface ChanSpy extends ActionStep, CallConsumer1 {
   /**
    * Returns the value of the '<em><b>Channelname Prefix</b></em>' containment reference.
    * <!-- begin-user-doc -->

@@ -29,7 +29,7 @@ import com.safi.core.actionstep.DynamicValue;
  * @model
  * @generated
  */
-public interface Transfer extends CallConsumer2, ActionStep {
+public interface Transfer extends ActionStep, CallConsumer2 {
   /**
    * Returns the value of the '<em><b>Context</b></em>' containment reference.
    * <!-- begin-user-doc -->
