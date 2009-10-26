@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.safi.asterisk.handler="http:///com/safi/asterisk.ecore#handler" xmlns:com.safi.asterisk.toolstep="http:///com/safi/asterisk.ecore#toolstep" xmlns:com.safi.workshop.actionpak1="http:///com/safi/workshop/actionpak1.ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xsi:schemaLocation="http:///com/safi/asterisk.ecore#handler http:///com/safi/asterisk.ecore#//handler http:///com/safi/asterisk.ecore#toolstep http:///com/safi/asterisk.ecore#//toolstep">
+  <com.safi.asterisk.handler:Handler xmi:id="_xsFisMaHEd2BK8GoF80hqg" initiator="_xsPTssaHEd2BK8GoF80hqg" name="RecursiveSuicideSafletTest" version="06152008.1" id="163841">
+    <handlerContext xmi:type="com.safi.asterisk.handler:HandlerContext" xmi:id="_xsFiscaHEd2BK8GoF80hqg" parentHandler="_xsFisMaHEd2BK8GoF80hqg">
+      <variables xmi:type="com.safi.asterisk.handler:Variable" name="callCount" defaultValue="ACED00057372000E6A6176612E6C616E672E4C6F6E673B8BE490CC8F23DF0200014A000576616C7565787200106A6176612E6C616E672E4E756D62657286AC951D0B94E08B02000078700000000000000000" type="Integer"/>
+      <variables xmi:type="com.safi.asterisk.handler:Variable" name="callCountStr" type="Text"/>
+    </handlerContext>
+    <toolsteps xmi:type="com.safi.workshop.actionpak1:CustomInitiator" xmi:id="_xsPTssaHEd2BK8GoF80hqg" name="Custom Initiator" defaultOutput="_xsPTs8aHEd2BK8GoF80hqg">
+      <outputs xmi:type="com.safi.asterisk.toolstep:Output" xmi:id="_xsPTs8aHEd2BK8GoF80hqg" target="_zt03UMaPEd28eMhjcHjwHg" name="start"/>
+    </toolsteps>
+    <toolsteps xmi:type="com.safi.asterisk.toolstep:InvokeSaflet" xmi:id="_1t4kMMaHEd2BK8GoF80hqg" name="InvokeSaflet" defaultOutput="_1uBuIcaHEd2BK8GoF80hqg" errorOutput="_1uBuIMaHEd2BK8GoF80hqg">
+      <outputs xmi:type="com.safi.asterisk.toolstep:Output" xmi:id="_1uBuIMaHEd2BK8GoF80hqg" name="error" outputType="Error"/>
+      <outputs xmi:type="com.safi.asterisk.toolstep:Output" xmi:id="_1uBuIcaHEd2BK8GoF80hqg" target="_oSjyEMaIEd2nreeTT4rxsg" name="default"/>
+      <targetSafletPath xmi:type="com.safi.asterisk.toolstep:DynamicValue" xmi:id="_WlP-oMaPEd28eMhjcHjwHg" text="testSaflet/RecursiveSuicideSafletTest"/>
+    </toolsteps>
+    <toolsteps xmi:type="com.safi.asterisk.toolstep:DebugLog" xmi:id="_oSjyEMaIEd2nreeTT4rxsg" name="DebugLog" defaultOutput="_oSjyEsaIEd2nreeTT4rxsg" errorOutput="_oSjyEcaIEd2nreeTT4rxsg">
+      <outputs xmi:type="com.safi.asterisk.toolstep:Output" xmi:id="_oSjyEcaIEd2nreeTT4rxsg" name="error" outputType="Error"/>
+      <outputs xmi:type="com.safi.asterisk.toolstep:Output" xmi:id="_oSjyEsaIEd2nreeTT4rxsg" name="default"/>
+      <message xmi:type="com.safi.asterisk.toolstep:DynamicValue" xmi:id="_qtY1wMaIEd2nreeTT4rxsg" text="&quot;callCount:&quot;+callCount;" type="ScriptText"/>
+    </toolsteps>
+    <toolsteps xmi:type="com.safi.asterisk.toolstep:DebugLog" xmi:id="_wHbAFcaJEd2nreeTT4rxsg" name="DebugLog1" defaultOutput="_wHbAF8aJEd2nreeTT4rxsg" errorOutput="_wHbAFsaJEd2nreeTT4rxsg">
+      <outputs xmi:type="com.safi.asterisk.toolstep:Output" xmi:id="_wHbAFsaJEd2nreeTT4rxsg" name="error" outputType="Error"/>
+      <outputs xmi:type="com.safi.asterisk.toolstep:Output" xmi:id="_wHbAF8aJEd2nreeTT4rxsg" target="_1t4kMMaHEd2BK8GoF80hqg" name="default"/>
+      <message xmi:type="com.safi.asterisk.toolstep:DynamicValue" xmi:id="_wHbAGMaJEd2nreeTT4rxsg" text="&quot;callValue:&quot;+callCount;" type="ScriptText"/>
+    </toolsteps>
+    <toolsteps xmi:type="com.safi.asterisk.toolstep:Assignment" xmi:id="_zt03UMaPEd28eMhjcHjwHg" name="Assignment" defaultOutput="_zt03UsaPEd28eMhjcHjwHg" errorOutput="_zt03UcaPEd28eMhjcHjwHg">
+      <outputs xmi:type="com.safi.asterisk.toolstep:Output" xmi:id="_zt03UcaPEd28eMhjcHjwHg" name="error" outputType="Error"/>
+      <outputs xmi:type="com.safi.asterisk.toolstep:Output" xmi:id="_zt03UsaPEd28eMhjcHjwHg" target="_wHbAFcaJEd2nreeTT4rxsg" name="default"/>
+      <value xmi:type="com.safi.asterisk.toolstep:DynamicValue" xmi:id="_7UDo4MaPEd28eMhjcHjwHg" text="if(callCountStr!=null){&#xD;&#xA;var countVal=parseInt(callCountStr);&#xD;&#xA;callCount=countVal+1;&#xD;&#xA;callCountStr=callCount+&quot;&quot;;&#xD;&#xA;&#xD;&#xA;print(&quot;count is &quot;+callCountStr);&#xD;&#xA;}else&#xD;&#xA;{&#xD;&#xA;callCount=callCount+1;&#xD;&#xA;callCountStr=callCount+&quot;&quot;;&#xD;&#xA;print(&quot;count is &quot;+callCountStr);&#xD;&#xA;}" type="ScriptText"/>
+      <variableName xmi:type="com.safi.asterisk.toolstep:DynamicValue" xmi:id="_2arfIMaPEd28eMhjcHjwHg" text="callCount" type="VariableName"/>
+    </toolsteps>
+  </com.safi.asterisk.handler:Handler>
+  <notation:Diagram xmi:id="_xsPTsMaHEd2BK8GoF80hqg" type="Asterisk" element="_xsFisMaHEd2BK8GoF80hqg" name="callflow1.saflet" measurementUnit="Pixel">
+    <children xmi:type="notation:Node" xmi:id="_xs1JkMaHEd2BK8GoF80hqg" type="10002" element="_xsPTssaHEd2BK8GoF80hqg">
+      <children xmi:type="notation:Node" xmi:id="_xs1Jk8aHEd2BK8GoF80hqg" type="40003"/>
+      <children xmi:type="notation:Node" xmi:id="_xtIrkMaHEd2BK8GoF80hqg" type="60001">
+        <styles xmi:type="notation:SortingStyle" xmi:id="_xtIrkcaHEd2BK8GoF80hqg"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_xtIrksaHEd2BK8GoF80hqg"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_xtlXgMaHEd2BK8GoF80hqg" type="2001" element="_xsPTs8aHEd2BK8GoF80hqg">
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_xtlXgcaHEd2BK8GoF80hqg" fontHeight="8" fillColor="65280"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xtlXgsaHEd2BK8GoF80hqg"/>
+      </children>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_xs1JkcaHEd2BK8GoF80hqg" fontHeight="8"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xs1JksaHEd2BK8GoF80hqg" x="75" y="75"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_1uBuIsaHEd2BK8GoF80hqg" type="1038" element="_1t4kMMaHEd2BK8GoF80hqg">
+      <children xmi:type="notation:Node" xmi:id="_1uBuJcaHEd2BK8GoF80hqg" type="4040"/>
+      <children xmi:type="notation:Node" xmi:id="_1uBuJsaHEd2BK8GoF80hqg" type="4041"/>
+      <children xmi:type="notation:Node" xmi:id="_ONoQkMaIEd2nreeTT4rxsg" type="2001" element="_1uBuIMaHEd2BK8GoF80hqg">
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_ONoQkcaIEd2nreeTT4rxsg" fontHeight="8" fillColor="255"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ONoQksaIEd2nreeTT4rxsg"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_ONoQk8aIEd2nreeTT4rxsg" type="2001" element="_1uBuIcaHEd2BK8GoF80hqg">
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_ONoQlMaIEd2nreeTT4rxsg" fontHeight="8" fillColor="65280"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ONoQlcaIEd2nreeTT4rxsg"/>
+      </children>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_1uBuI8aHEd2BK8GoF80hqg" fontHeight="8"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1uBuJMaHEd2BK8GoF80hqg" x="440" y="88"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_oStjEMaIEd2nreeTT4rxsg" type="1056" element="_oSjyEMaIEd2nreeTT4rxsg">
+      <children xmi:type="notation:Node" xmi:id="_oStjE8aIEd2nreeTT4rxsg" type="4059"/>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_oStjEcaIEd2nreeTT4rxsg" fontHeight="8"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oStjEsaIEd2nreeTT4rxsg" x="502" y="208"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_wHbAEcaJEd2nreeTT4rxsg" type="1056" element="_wHbAFcaJEd2nreeTT4rxsg">
+      <children xmi:type="notation:Node" xmi:id="_wHbAEsaJEd2nreeTT4rxsg" type="4059"/>
+      <children xmi:type="notation:Node" xmi:id="_wHkKAMaJEd2nreeTT4rxsg" type="2001" element="_wHbAFsaJEd2nreeTT4rxsg">
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_wHkKAcaJEd2nreeTT4rxsg" fontHeight="8" fillColor="255"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wHkKAsaJEd2nreeTT4rxsg"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_wHkKA8aJEd2nreeTT4rxsg" type="2001" element="_wHbAF8aJEd2nreeTT4rxsg">
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_wHkKBMaJEd2nreeTT4rxsg" fontHeight="8" fillColor="65280"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wHkKBcaJEd2nreeTT4rxsg"/>
+      </children>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_wHbAE8aJEd2nreeTT4rxsg" fontHeight="8"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wHbAFMaJEd2nreeTT4rxsg" x="344" y="244"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zt03U8aPEd28eMhjcHjwHg" type="1002" element="_zt03UMaPEd28eMhjcHjwHg">
+      <children xmi:type="notation:Node" xmi:id="_zt-oUMaPEd28eMhjcHjwHg" type="4002"/>
+      <children xmi:type="notation:Node" xmi:id="_zuuPMMaPEd28eMhjcHjwHg" type="2001" element="_zt03UcaPEd28eMhjcHjwHg">
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_zuuPMcaPEd28eMhjcHjwHg" fontHeight="8" fillColor="255"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zuuPMsaPEd28eMhjcHjwHg"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_zu4AMMaPEd28eMhjcHjwHg" type="2001" element="_zt03UsaPEd28eMhjcHjwHg">
+        <styles xmi:type="notation:ShapeStyle" xmi:id="_zu4AMcaPEd28eMhjcHjwHg" fontHeight="8" fillColor="65280"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zu4AMsaPEd28eMhjcHjwHg"/>
+      </children>
+      <styles xmi:type="notation:ShapeStyle" xmi:id="_zt03VMaPEd28eMhjcHjwHg" fontHeight="8"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zt03VcaPEd28eMhjcHjwHg" x="95" y="228"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_xsPTscaHEd2BK8GoF80hqg"/>
+    <edges xmi:type="notation:Edge" xmi:id="_1ueaEMaHEd2BK8GoF80hqg" type="3001" source="_xtlXgMaHEd2BK8GoF80hqg" target="_zt03U8aPEd28eMhjcHjwHg">
+      <styles xmi:type="notation:ConnectorStyle" xmi:id="_1ueaEcaHEd2BK8GoF80hqg" routing="Rectilinear" avoidObstructions="true"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_1ueaEsaHEd2BK8GoF80hqg" fontHeight="8"/>
+      <element xsi:nil="true"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1ueaE8aHEd2BK8GoF80hqg" points="[0, 0, 191, 141]$[-191, -141, 0, 0]"/>
+    </edges>
+    <edges xmi:type="notation:Edge" xmi:id="_oTAeAMaIEd2nreeTT4rxsg" type="3001" source="_ONoQk8aIEd2nreeTT4rxsg" target="_oStjEMaIEd2nreeTT4rxsg">
+      <styles xmi:type="notation:ConnectorStyle" xmi:id="_oTAeAcaIEd2nreeTT4rxsg" routing="Rectilinear" avoidObstructions="true"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_oTAeAsaIEd2nreeTT4rxsg" fontHeight="8"/>
+      <element xsi:nil="true"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_oTAeA8aIEd2nreeTT4rxsg" points="[0, 0, 456, 190]$[-456, -190, 0, 0]"/>
+    </edges>
+    <edges xmi:type="notation:Edge" xmi:id="_2wQVQMaJEd2nreeTT4rxsg" type="3001" source="_wHkKA8aJEd2nreeTT4rxsg" target="_1uBuIsaHEd2BK8GoF80hqg">
+      <styles xmi:type="notation:ConnectorStyle" xmi:id="_2wQVQcaJEd2nreeTT4rxsg" routing="Rectilinear" avoidObstructions="true"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_2wQVQsaJEd2nreeTT4rxsg" fontHeight="8"/>
+      <element xsi:nil="true"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2wQVQ8aJEd2nreeTT4rxsg" points="[0, 0, -96, 141]$[96, -141, 0, 0]"/>
+    </edges>
+    <edges xmi:type="notation:Edge" xmi:id="__f-2wMaPEd28eMhjcHjwHg" type="3001" source="_zu4AMMaPEd28eMhjcHjwHg" target="_wHbAEcaJEd2nreeTT4rxsg">
+      <styles xmi:type="notation:ConnectorStyle" xmi:id="__f-2wcaPEd28eMhjcHjwHg" routing="Rectilinear" avoidObstructions="true"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="__f-2wsaPEd28eMhjcHjwHg" fontHeight="8"/>
+      <element xsi:nil="true"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__f-2w8aPEd28eMhjcHjwHg" points="[0, 0, -141, -7]$[141, 7, 0, 0]"/>
+    </edges>
+  </notation:Diagram>
+</xmi:XMI>

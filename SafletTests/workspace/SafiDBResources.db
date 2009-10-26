@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.safi.db:SafiDriverManager xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.safi.db="http:///com/safi/db.ecore" name="SafiDriverManager" lastUpdated="2008-11-28T01:48:33.218-0800" id="1">
+  <drivers name="MS SQL Server" lastUpdated="2008-11-27T22:19:14.000-0800" id="2" driverClassName="net.sourceforge.jtds.jdbc.Driver" exampleUrl="jdbc:jtds:sqlserver://SVBMN14GLB1-03:1433/BEFGAutoDial;TDS=8.0" default="true" guideUrl="jdbc:jtds:sqlserver://[host][port]/[schema];TDS=8.0" websiteUrl="http://jtds.sourceforge.net">
+    <jars></jars>
+  </drivers>
+  <drivers name="MySQL" lastUpdated="2008-11-28T01:48:33.234-0800" id="3" driverClassName="com.mysql.jdbc.Driver" exampleUrl="jdbc:mysql://localhost:3306/test" guideUrl="jdbc:mysql://[host][port]/[schema]" websiteUrl="http://www.mysql.com/products/connector/j/">
+    <connections name="World" lastModified="2008-11-27T22:23:29.187-0800" lastUpdated="2008-11-28T01:48:33.328-0800" id="98304" url="jdbc:mysql://localhost:3306/world" user="root" password="steely12" loginTimeout="100" properties="#Fri Nov 28 01:50:49 PST 2008&#xD;&#xA;">
+      <queries name="CityByName" lastModified="2008-11-27T22:23:29.171-0800" lastUpdated="2008-11-28T01:48:33.328-0800" id="98305" querySql="select * from world.city where name like :name;">
+        <parameters name=":name" lastUpdated="2008-11-28T01:48:33.328-0800" id="98306"/>
+      </queries>
+      <queries name="cities" lastModified="2008-11-27T23:30:43.234-0800" lastUpdated="2008-11-28T01:48:33.328-0800" id="98307" querySql="select * from world.city;"/>
+      <queries name="maxCityID" lastModified="2008-11-27T23:39:44.140-0800" lastUpdated="2008-11-28T01:48:33.328-0800" id="98308" querySql="select max(id) as id from world.city;"/>
+      <queries name="selectSafiCity" lastModified="2008-11-28T01:07:25.937-0800" lastUpdated="2008-11-28T01:48:33.328-0800" id="98309" querySql="select * from world.city where name = 'SafiCity';"/>
+    </connections>
+    <jars></jars>
+  </drivers>
+  <drivers name="Postgres" lastUpdated="2008-11-27T22:19:14.000-0800" id="4" driverClassName="org.postgresql.Driver" exampleUrl="jdbc:postgresql://localhost:5432/database" guideUrl="jdbc:postgresql://[host][port]/[schema]" websiteUrl="http://jdbc.postgresql.org/index.html">
+    <jars></jars>
+  </drivers>
+  <drivers name="IBM DB2" lastUpdated="2008-11-27T22:19:14.000-0800" id="5" driverClassName="COM.ibm.db2.jdbc.app.DB2Driver" exampleUrl="jdbc:db2://192.168.1.101:1527/customers" guideUrl="jdbc:db2://[host][port]/[schema]" websiteUrl="http://www-01.ibm.com/software/data/db2/express/download.html">
+    <jars></jars>
+  </drivers>
+  <drivers name="Oracle Thin" lastUpdated="2008-11-27T22:19:14.000-0800" id="6" driverClassName="oracle.jdbc.driver.OracleDriver" exampleUrl="jdbc:oracle:thin:@machine_name:1521:database_name" guideUrl="jdbc:oracle:thin:@[host][port]:[schema]" websiteUrl="http://jdbc.postgresql.org/index.html">
+    <jars></jars>
+  </drivers>
+  <drivers name="Firebird" lastUpdated="2008-11-27T22:19:14.000-0800" id="7" driverClassName="org.firebirdsql.jdbc.FBDriver" exampleUrl="jdbc:firebirdsql:localhost/3050:c:/database/employee.gdb" guideUrl="jdbc:firebirdsql:[host]/[port]:[schema]" websiteUrl="http://www.firebirdsql.org/">
+    <jars></jars>
+  </drivers>
+</com.safi.db:SafiDriverManager>
