@@ -93,6 +93,12 @@ public class StreamAudioImpl extends ActionStepImpl implements StreamAudio {
     super();
   }
 
+  
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated NOT
+   */
   @Override
   public void beginProcessing(SafletContext context) throws ActionStepException {
     super.beginProcessing(context);

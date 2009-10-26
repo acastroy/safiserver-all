@@ -112,12 +112,18 @@ public class MultiStreamAudioImpl extends ActionStepImpl implements MultiStreamA
           
           for (CaseItem item : audioFilenames) {
             Object dynValue = resolveDynamicValue(item.getDynamicValue(), context);
+//            if (debugLog.isDebugEnabled()) debug("Audio item resolved to " + dynValue);
             String filenameStr = (String) VariableTranslator.translateValue(VariableType.TEXT,
                 dynValue);
             
+//            if (debugLog.isDebugEnabled()) debug("filenameStr resolved to " + filenameStr);
+            
             if (StringUtils.isBlank(filenameStr)) continue;
-            if (item.getDynamicValue().getType() == DynamicValueType.CUSTOM)
+            
+            if (item.getDynamicValue().getType() == DynamicValueType.CUSTOM){
               filenameStr = getSaflet().getPromptPathByName(filenameStr);
+//              if (debugLog.isDebugEnabled()) debug("Prompt by pathname resolved to " + filenameStr);
+            }
             files.add(filenameStr);
           }
           if (files.isEmpty())

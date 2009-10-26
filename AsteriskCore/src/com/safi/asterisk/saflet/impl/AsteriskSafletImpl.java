@@ -107,9 +107,4 @@ public class AsteriskSafletImpl extends SafletImpl implements AsteriskSaflet {
     return 1;
   }
 
-  @Override
-  public String getPromptPathByName(String name) throws DBManagerException {
-    // TODO Auto-generated method stub
-    return null;
-  }
 } //AsteriskSafletImpl
