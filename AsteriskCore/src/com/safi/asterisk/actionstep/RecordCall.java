@@ -41,7 +41,7 @@ public interface RecordCall extends ActionStep, CallConsumer1 {
    * @see #setFilename(DynamicValue)
    * @see com.safi.asterisk.actionstep.ActionstepPackage#getRecordCall_Filename()
    * @model containment="true" ordered="false"
-   *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The name of the file that will be recorded (file extension omitted). ' expectedReturnType='Text' helperClass='com.safi.asterisk.diagram.sheet.assist.DirBrowserAssistant'"
+   *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The name of the file that will be recorded (file extension omitted). ' expectedReturnType='Text' helperClass='com.safi.workshop.sheet.assist.DirBrowserAssistant'"
    *        annotation="Required criteria='non-null'"
    * @generated
    */

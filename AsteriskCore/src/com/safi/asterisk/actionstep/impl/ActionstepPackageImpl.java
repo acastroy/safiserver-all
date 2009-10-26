@@ -4794,7 +4794,7 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
        "isTypeLocked", "false",
        "description", "The name of the file that will be recorded (file extension omitted). ",
        "expectedReturnType", "Text",
-       "helperClass", "com.safi.asterisk.diagram.sheet.assist.FileBrowserAssistant"
+       "helperClass", "com.safi.workshop.sheet.assist.FileBrowserAssistant"
        });					
     addAnnotation
       (getSayAlpha_Text(), 
@@ -4924,7 +4924,7 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
        "isTypeLocked", "false",
        "description", "The audio prompt file name that will be played",
        "expectedReturnType", "Prompt Filename",
-       "helperClass", "com.safi.asterisk.diagram.sheet.PromptChooserDynamicValueEditorPage"
+       "helperClass", "com.safi.workshop.sheet.PromptChooserDynamicValueEditorPage"
        });				
     addAnnotation
       (getOriginateCall_Account(), 
@@ -5024,7 +5024,7 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
        "isTypeLocked", "false",
        "description", "The name of the file that will be recorded (file extension omitted). ",
        "expectedReturnType", "Text",
-       "helperClass", "com.safi.asterisk.diagram.sheet.assist.DirBrowserAssistant"
+       "helperClass", "com.safi.workshop.sheet.assist.DirBrowserAssistant"
        });			
     addAnnotation
       (getTransfer_Context(), 
@@ -5204,7 +5204,7 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
        "isTypeLocked", "false",
        "description", "The audio prompt file name that will be played",
        "expectedReturnType", "Text",
-       "helperClass", "com.safi.asterisk.diagram.sheet.PromptChooserDynamicValueEditorPage"
+       "helperClass", "com.safi.workshop.sheet.PromptChooserDynamicValueEditorPage"
        });			
     addAnnotation
       (getPromptGetDigits_VariableName(), 
@@ -5224,7 +5224,7 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
        "isTypeLocked", "false",
        "description", "The audio prompt file name that will be played",
        "expectedReturnType", "Prompt Filename",
-       "helperClass", "com.safi.asterisk.diagram.sheet.PromptChooserDynamicValueEditorPage"
+       "helperClass", "com.safi.workshop.sheet.PromptChooserDynamicValueEditorPage"
        });			
     addAnnotation
       (getDial_OutgoingChannels(), 

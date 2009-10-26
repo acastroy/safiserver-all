@@ -160,7 +160,7 @@
           <details key="isTypeLocked" value="false"/>
           <details key="description" value="The name of the file that will be recorded (file extension omitted). "/>
           <details key="expectedReturnType" value="Text"/>
-          <details key="helperClass" value="com.safi.asterisk.diagram.sheet.assist.FileBrowserAssistant"/>
+          <details key="helperClass" value="com.safi.workshop.sheet.assist.FileBrowserAssistant"/>
         </eAnnotations>
         <eAnnotations source="Required">
           <details key="criteria" value="non-null"/>
@@ -419,7 +419,7 @@
           <details key="isTypeLocked" value="false"/>
           <details key="description" value="The audio prompt file name that will be played"/>
           <details key="expectedReturnType" value="Prompt Filename"/>
-          <details key="helperClass" value="com.safi.asterisk.diagram.sheet.PromptChooserDynamicValueEditorPage"/>
+          <details key="helperClass" value="com.safi.workshop.sheet.PromptChooserDynamicValueEditorPage"/>
         </eAnnotations>
         <eAnnotations source="Required">
           <details key="criteria" value="non-null"/>
@@ -580,7 +580,7 @@
           <details key="isTypeLocked" value="false"/>
           <details key="description" value="The name of the file that will be recorded (file extension omitted). "/>
           <details key="expectedReturnType" value="Text"/>
-          <details key="helperClass" value="com.safi.asterisk.diagram.sheet.assist.DirBrowserAssistant"/>
+          <details key="helperClass" value="com.safi.workshop.sheet.assist.DirBrowserAssistant"/>
         </eAnnotations>
         <eAnnotations source="Required">
           <details key="criteria" value="non-null"/>
@@ -847,7 +847,7 @@
           <details key="isTypeLocked" value="false"/>
           <details key="description" value="The audio prompt file name that will be played"/>
           <details key="expectedReturnType" value="Text"/>
-          <details key="helperClass" value="com.safi.asterisk.diagram.sheet.PromptChooserDynamicValueEditorPage"/>
+          <details key="helperClass" value="com.safi.workshop.sheet.PromptChooserDynamicValueEditorPage"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeout" ordered="false"
@@ -900,7 +900,7 @@
           <details key="isTypeLocked" value="false"/>
           <details key="description" value="The audio prompt file name that will be played"/>
           <details key="expectedReturnType" value="Prompt Filename"/>
-          <details key="helperClass" value="com.safi.asterisk.diagram.sheet.PromptChooserDynamicValueEditorPage"/>
+          <details key="helperClass" value="com.safi.workshop.sheet.PromptChooserDynamicValueEditorPage"/>
         </eAnnotations>
         <eAnnotations source="Required">
           <details key="criteria" value="non-null"/>
