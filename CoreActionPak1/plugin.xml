@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+         <metamodel nsURI="http:///com/safi/workshop/actionpak1.ecore">
+         <metamodelType
+               id="CoreActionPak1.ActionstepTest_10000"
+               name="%metatype.name.ActionstepTest_10000"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ActionstepTest"
+               edithelper="com.safi.workshop.actionpak1.ActionstepEditHelper">
+            <param name="semanticHint" value="10000"/>
+         </metamodelType>
+         </metamodel>
+         
+         <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="CoreActionPak1.InputItem_50001"
+               name="Parameter"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="InputItem"
+               edithelper="com.safi.workshop.actionpak1.helper.InputItemEditHelper">
+            <param name="semanticHint" value="50001"/>
+         </metamodelType>
+      
+      </metamodel>
+      
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="CoreActionPak1.OutputItem_50002"
+               name="OutputParameter"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="OutputParameter"
+               edithelper="com.safi.workshop.actionpak1.helper.OutputItemEditHelper">
+            <param name="semanticHint" value="50002"/>
+         </metamodelType>
+      </metamodel>
+      
+      <metamodel nsURI="http:///com/safi/workshop/actionpak1.ecore">
+         <metamodelType
+               id="CoreActionPak1.CustomInitiator_10002"
+               name="Custom Initiator"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="CustomInitiator"
+               edithelper="com.safi.workshop.actionpak1.helper.CustomInitiatorEditHelper">
+            <param name="semanticHint" value="10002"/>
+         </metamodelType>
+      </metamodel>
+      
+      <metamodel nsURI="http:///com/safi/workshop/actionpak1.ecore">
+         <metamodelType
+               id="CoreActionPak1.IncomingCall2_10003"
+               name="Incoming Call"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="IncomingCall2"
+               edithelper="com.safi.workshop.actionpak1.helper.IncomingCall2EditHelper">
+            <param name="semanticHint" value="10003"/>
+         </metamodelType>
+      </metamodel>
+      
+      <metamodel nsURI="http:///com/safi/workshop/actionpak1.ecore">
+         <metamodelType
+               id="CoreActionPak1.InvokeSaflet2_10004"
+               name="Invoke Saflet"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="InvokeSaflet2"
+               edithelper="com.safi.workshop.actionpak1.helper.InvokeSaflet2EditHelper">
+            <param name="semanticHint" value="10004"/>
+         </metamodelType>
+      </metamodel>
+   </extension>
+   <extension
+         point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+      <binding
+            context="AsteriskClientContext">
+            <elementType ref="CoreActionPak1.ActionstepTest_10000"/>
+            <elementType ref="CoreActionPak1.CustomInitiator_10002"/>
+            <elementType ref="CoreActionPak1.IncomingCall2_10003"/>
+            <elementType ref="CoreActionPak1.InvokeSaflet2_10004"/>
+            <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
+      </binding>
+   </extension>
+   
+<extension
+      id="CorePak1"
+      name="CorePak1"
+      point="AsteriskSafletDesigner.diagram.actionPak">
+   <actionStep
+         createCommandFactory="com.safi.workshop.actionpak1.ActionstepTestCreateCommandFactory"
+         editPartFactory="com.safi.workshop.actionpak1.ActionstepTestEditPartFactory"
+         elementFactory="com.safi.workshop.actionpak1.ActionstepTestElementFactory"
+         enabled="false"
+         icon="icons/ActionStepTest.gif"
+         isInitiator="false"
+         labelSemanticHint="40000"
+         modelFactory="com.safi.workshop.actionpak1.ActionstepTestModelFactory"
+         semanticHint="10000"
+         viewFactory="com.safi.workshop.actionpak1.ActionstepTestViewFactory">
+      <paletteEntry
+            displayName="ActionstepTest"
+            path="Misc"
+            tooltip="This is a test of external scum">
+      </paletteEntry>
+   </actionStep>
+   
+   <actionStep
+         createCommandFactory="com.safi.workshop.actionpak1.factory.CustomInitiatorCreateCommandFactory"
+         editPartFactory="com.safi.workshop.actionpak1.factory.CustomInitiatorEditPartFactory"
+         elementFactory="com.safi.workshop.actionpak1.factory.CustomInitiatorElementFactory"
+         enabled="true"
+         isInitiator="true"
+         inputItemLabelSemanticHint="40004"
+         inputItemPanelSemanticHint="60001"
+         inputItemSemanticHint="50001"
+         outputItemLabelSemanticHint="40007"
+         outputItemPanelSemanticHint="60002"
+         outputItemSemanticHint="50002"
+         labelSemanticHint="40003"
+         modelFactory="com.safi.workshop.actionpak1.factory.CustomInitiatorModelFactory"
+         semanticHint="10002"
+         viewFactory="com.safi.workshop.actionpak1.factory.CustomInitiatorActionPakViewFactory">
+      <paletteEntry
+            displayName="Custom Initiator"
+            path="Initiators"
+            tooltip="Initiator that can be invoked either externally or internally with custom parameters">
+      </paletteEntry>
+   </actionStep>
+   
+   <actionStep
+         createCommandFactory="com.safi.workshop.actionpak1.factory.IncomingCall2CreateCommandFactory"
+         editPartFactory="com.safi.workshop.actionpak1.factory.IncomingCall2EditPartFactory"
+         elementFactory="com.safi.workshop.actionpak1.factory.IncomingCall2ElementFactory"
+         enabled="true"
+         inputItemLabelSemanticHint="40004"
+         inputItemPanelSemanticHint="60001"
+         inputItemSemanticHint="50001"
+         isInitiator="true"
+         labelSemanticHint="40005"
+         modelFactory="com.safi.workshop.actionpak1.factory.IncomingCall2ModelFactory"
+         outputItemLabelSemanticHint="40007"
+         outputItemPanelSemanticHint="60002"
+         outputItemSemanticHint="50002"
+         semanticHint="10003"
+         viewFactory="com.safi.workshop.actionpak1.factory.IncomingCall2ActionPakViewFactory">
+      <paletteEntry
+            displayName="Incoming Call"
+            path="Initiators"
+            tooltip="Initiator that can be invoked internally with custom parameters or externally via incoming call">
+      </paletteEntry>
+   </actionStep>
+   
+   <actionStep
+         createCommandFactory="com.safi.workshop.actionpak1.factory.InvokeSaflet2CreateCommandFactory"
+         editPartFactory="com.safi.workshop.actionpak1.factory.InvokeSaflet2EditPartFactory"
+         elementFactory="com.safi.workshop.actionpak1.factory.InvokeSaflet2ElementFactory"
+         enabled="true"
+         inputItemLabelSemanticHint="40004"
+         inputItemPanelSemanticHint="60001"
+         inputItemSemanticHint="50001"
+         isInitiator="false"
+         labelSemanticHint="40006"
+         modelFactory="com.safi.workshop.actionpak1.factory.InvokeSaflet2ModelFactory"
+         outputItemLabelSemanticHint="40007"
+         outputItemPanelSemanticHint="60002"
+         outputItemSemanticHint="50002"
+         semanticHint="10004"
+         viewFactory="com.safi.workshop.actionpak1.factory.InvokeSaflet2ActionPakViewFactory">
+      <paletteEntry
+            displayName="Invoke Saflet"
+            path="Logic"
+            tooltip="Invoke another Saflet with specified parameters">
+      </paletteEntry>
+   </actionStep>
+   <itemProviderAdapterFactory
+         factory="com.safi.workshop.model.actionpak1.provider.Actionpak1ItemProviderAdapterFactory">
+   </itemProviderAdapterFactory>
+   <pakjar
+         jar="pakjars/actionpak1_20090712.jar">
+   </pakjar>
+   <description
+         descriptionText="Required Core ActionPak ">
+   </description>
+   <actionstepEditorDialogFactory
+         actionstepClass="com.safi.workshop.actionpak1.editpart.CustomInitiatorEditPart"
+         factory="com.safi.workshop.actionpak1.factory.CustomInitiatorEditorDialogFactory">
+   </actionstepEditorDialogFactory>
+   <actionstepEditorDialogFactory
+         actionstepClass="com.safi.workshop.actionpak1.editpart.InvokeSaflet2EditPart"
+         factory="com.safi.workshop.actionpak1.factory.InvokeSaflet2EditorDialogFactory">
+   </actionstepEditorDialogFactory>
+   <actionstepEditorDialogFactory
+         actionstepClass="com.safi.workshop.actionpak1.editpart.IncomingCall2EditPart"
+         factory="com.safi.workshop.actionpak1.factory.IncomingCall2EditorDialogFactory">
+   </actionstepEditorDialogFactory>
+   <serverjar
+         description="Bug fixes"
+         jar="serverjars/safidb_v20090712.jar">
+   </serverjar>
+   <serverjar
+         jar="serverjars/asteriskcore_v20090712.jar">
+   </serverjar>
+   <serverjar
+         jar="serverjars/safiServer_v20090712.jar">
+   </serverjar>
+   <serverjar
+         jar="serverjars/safletcore_v20090712.jar">
+   </serverjar>
+</extension>
+
+</plugin>

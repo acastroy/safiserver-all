@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="TestActionPak1">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../eclipse-rcp-europa-winter/eclipse"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+    <path id="Plug-in Dependencies.libraryclasspath">
+        <pathelement location="../../Handlers"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore_2.3.2.v200802051830.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.common_2.3.2.v200802051830.jar"/>
+        <pathelement location="../../Handlers.diagram"/>
+        <pathelement location="../../Handlers.edit"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.edit_2.3.2.v200802051830.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore.change_2.3.0.v200802051830.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ocl.ecore_1.1.0.v200706071450.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ocl_1.1.2.v200711262212.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.draw2d.ui_1.0.101.v20080215-1200.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.draw2d_3.2.100.v20070529.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.swt_3.3.2.v3349d.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/com.instantiations.assist.eclipse.fragment.swt_5.3.0/CodeProSWTFragment.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/com.windowtester.swt.runtime.win32_3.0.0.200803061104/win32.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.swt.win32.win32.x86_3.3.3.v3349.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gef_3.2.102.v20080116.jar"/>
+        <pathelement location="../../com.safi.asterisk.figures"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.validation_1.1.1.v200708161445.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore.xmi_2.3.2.v200802051830.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.edit.ui_2.3.1.v200802051830.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.views_3.2.101.M20080207-0800.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.workbench_3.3.2.M20080207-0800.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.common.ui_2.3.1.v200802051830.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui_3.3.1.M20071128-0800.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.jface_3.3.2.M20080207-0800.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.commands_3.3.0.I20070605-0010.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.emf.core_1.0.101.v20080201-0201.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.common.core_1.0.101.v20080118-1415.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime_3.3.100.v20070530.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi_3.3.2.R33x_v20080105.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.common_3.3.0.v20070426.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.jobs_3.3.1.R33x_v20070709.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime.compatibility.registry_3.2.100.v20070316/runtime_registry_compatibility.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.registry_3.3.1.R33x_v20070802.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.preferences_3.2.101.R33x_v20080117.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.contenttype_3.2.100.v20070319.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.app_1.0.1.R33x_v20070828.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.resources_3.3.1.R33x_v20080205.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.workspace_1.1.2.v200712061832.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.transaction_1.1.2.v200712061832.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.emf.clipboard.core_1.0.100.v20070809-0000.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.emf.commands.core_1.0.100.v20080114-2222.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.emf.ui.properties_1.0.2.v20070809-0000.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.common.ui.services.properties_1.0.2.v20071124-0000.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.common.ui_1.0.101.v20070921-0000.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.console_3.2.2.v20071031_r332.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.jface.text_3.3.2.r332_20071017-0800.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.text_3.3.0.v20070606-0010.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.workbench.texteditor_3.3.2.r332_20080109-0800.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.team.core_3.3.1.r33x_20080128.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.diagram.ui_1.0.102.v20080201-0201.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.emf.ui_1.0.100.v20070809-0000.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.common.ui.action_1.0.100.v20070809-0000.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.common.ui.services.action_1.0.100.v20070809-0000.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.common.ui.services_1.0.100.v20070809-0000.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.emf.type.core_1.0.101.v20080114-2222.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.gef.ui_1.0.1.v20070809-0000.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.views.properties.tabbed_3.3.1.M20070831-0800.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.forms_3.3.0.v20070511.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.notation_1.0.101.v20080114-2222.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.diagram.core_1.0.101.v20070915-0000.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.diagram.ui.properties_1.0.102.v20080118-1129.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.diagram.ui.providers_1.0.101.v20080201-0201.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.diagram.ui.render_1.0.101.v20071124-0000.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.diagram.ui.resources.editor_1.0.3.v20070809-0000.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.draw2d.ui.render_1.0.100.v20070809-0000.jar"/>
+        <pathelement location="../../TestActionPak1Model"/>
+        <pathelement location="../../SafiDB"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.teneo.hibernate_1.0.0.v200806030430.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.teneo_1.0.0.v200806030430.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.teneo.annotations_1.0.0.v200806030430.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.teneo.hibernate.mapper_1.0.0.v200806030430.jar"/>
+        <pathelement location="../../Hibernate30"/>
+        <pathelement location="../../TestActionPak1Model.edit"/>
+        <pathelement location="../../SafiDB.edit"/>
+    </path>
+    <path id="TestActionPak1.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="icons/"/>
+        <path refid="Plug-in Dependencies.libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src" excludes="**/*.launch, **/*.java"/>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="TestActionPak1.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+</project>
