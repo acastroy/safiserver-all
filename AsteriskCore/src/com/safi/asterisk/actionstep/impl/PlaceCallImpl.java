@@ -169,6 +169,13 @@ public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
 
     action.setContext("default");
     action.setApplication("Agi");
+    
+    if (callerId != null){
+    	String callerIdStr = (String)VariableTranslator.translateValue(VariableType.TEXT, resolveDynamicValue(callerId, context));
+    	action.setCallerId(callerIdStr);
+    }
+    
+    
     // TODO: get looback address from handler environment
 
     // InetAddress addr = InetAddress.getLocalHost();
