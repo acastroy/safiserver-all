@@ -6,8 +6,6 @@
  */
 package com.safi.asterisk.initiator;
 
-import org.eclipse.emf.ecore.EObject;
-
 import com.safi.asterisk.Call;
 import com.safi.asterisk.CallSource1;
 import com.safi.core.initiator.Initiator;

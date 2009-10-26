@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EObject;
 import com.safi.asterisk.CallConsumer1;
 import com.safi.asterisk.CallConsumer2;
 import com.safi.asterisk.CallSource1;
-import com.safi.asterisk.actionstep.*;
 import com.safi.asterisk.actionstep.ActionstepPackage;
 import com.safi.asterisk.actionstep.Answer;
 import com.safi.asterisk.actionstep.Background;

@@ -16,7 +16,6 @@ import com.safi.asterisk.saflet.AsteriskSaflet;
 import com.safi.asterisk.saflet.SafletPackage;
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.saflet.impl.SafletImpl;
-import com.safi.db.manager.DBManagerException;
 
 /**
  * <!-- begin-user-doc -->

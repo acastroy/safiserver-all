@@ -6,8 +6,6 @@
  */
 package com.safi.asterisk.initiator.impl;
 
-import org.asteriskjava.fastagi.AgiChannel;
-import org.asteriskjava.fastagi.AgiRequest;
 import org.asteriskjava.manager.event.ManagerEvent;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;

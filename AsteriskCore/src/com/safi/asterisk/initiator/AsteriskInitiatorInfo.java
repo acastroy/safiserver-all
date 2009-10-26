@@ -6,10 +6,11 @@
  */
 package com.safi.asterisk.initiator;
 
-import com.safi.core.initiator.InitiatorInfo;
 import org.asteriskjava.fastagi.AgiChannel;
 import org.asteriskjava.fastagi.AgiRequest;
 import org.asteriskjava.manager.ManagerConnection;
+
+import com.safi.core.initiator.InitiatorInfo;
 
 /**
  * <!-- begin-user-doc -->

@@ -12,14 +12,14 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
 import com.safi.asterisk.CallSource1;
-import com.safi.asterisk.initiator.*;
+import com.safi.asterisk.initiator.AsteriskInitiatorInfo;
+import com.safi.asterisk.initiator.DIDMatcher;
+import com.safi.asterisk.initiator.IncomingCall;
+import com.safi.asterisk.initiator.InitiatorPackage;
 import com.safi.core.ProductIdentifiable;
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.initiator.Initiator;
 import com.safi.core.initiator.InitiatorInfo;
-import com.safi.asterisk.initiator.DIDMatcher;
-import com.safi.asterisk.initiator.IncomingCall;
-import com.safi.asterisk.initiator.InitiatorPackage;
 
 /**
  * <!-- begin-user-doc -->

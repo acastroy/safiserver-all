@@ -12,8 +12,6 @@ import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
-import com.safi.asterisk.AsteriskPackage;
-
 /**
  * <!-- begin-user-doc -->
  * The <b>Package</b> for the model.
