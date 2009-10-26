@@ -1,0 +1,1850 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="asterisk"
+    nsURI="http:///com/safi/asterisk.ecore" nsPrefix="com.safi.asterisk">
+  <eClassifiers xsi:type="ecore:EClass" name="Call">
+    <eOperations name="setData">
+      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+    </eOperations>
+    <eOperations name="getData" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
+      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="channel" eType="#//AgiChannel"
+        volatile="true" transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="callerIdName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="callerIdNum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uniqueId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="channelName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="callState" eType="#//CallState"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="CallState">
+    <eLiterals name="Available"/>
+    <eLiterals name="Reserved" value="1"/>
+    <eLiterals name="OffHook" value="2"/>
+    <eLiterals name="Dialing" value="3"/>
+    <eLiterals name="Ringing" value="4"/>
+    <eLiterals name="RingingRemote" value="5"/>
+    <eLiterals name="Up" value="6"/>
+    <eLiterals name="Busy" value="7"/>
+    <eLiterals name="Unknown" value="8"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="AgiChannel" instanceClassName="org.asteriskjava.fastagi.AgiChannel"
+      serializable="false"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CallSource1" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newCall1" eType="#//Call"
+        containment="true">
+      <eAnnotations source="Directionality">
+        <details key="output" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CallSource2" abstract="true" interface="true"
+      eSuperTypes="#//CallSource1">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newCall2" eType="#//Call"
+        containment="true">
+      <eAnnotations source="Directionality">
+        <details key="output" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CallConsumer1" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="call1" eType="#//Call">
+      <eAnnotations source="Required">
+        <details key="criteria" value="non-null"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CallConsumer2" abstract="true" interface="true"
+      eSuperTypes="#//CallConsumer1">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="call2" eType="#//Call"/>
+  </eClassifiers>
+  <eSubpackages name="actionstep" nsURI="http:///com/safi/asterisk.ecore#actionstep"
+      nsPrefix="com.safi.asterisk.actionstep">
+    <eClassifiers xsi:type="ecore:EClass" name="Answer" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep"/>
+    <eClassifiers xsi:type="ecore:EClass" name="GetDigits" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputTimeout" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
+          defaultValueLiteral="-1">
+        <eAnnotations source="unitsTime">
+          <details key="milliseconds" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="useBufferedDigits" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="escapeDigits" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="#"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="variableName" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The assignee variable"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+        <eAnnotations source="MetaProperty">
+          <details key="displayText" value="Variable"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxDigits" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="1"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="acceptedDigits" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="0123456789#"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GetFullVariable" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="variable" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-blank"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="assignToVar" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable owning the value that will be assigned"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MultiStreamAudio" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="escapeDigits" eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="ScriptText"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="DTMF characters that will cause the audio playback to stop"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="audioFilenames" ordered="false"
+          upperBound="-1" eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/AudioFileItem"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-empty"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Hangup" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RecordFile" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="beep" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="escapeDigits" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="#"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="file" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The name of the file that will be recorded (file extension omitted). "/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value="com.safi.asterisk.diagram.sheet.assist.FileBrowserAssistant"/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="wav"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="offset" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="0"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeout" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong" defaultValueLiteral="-1">
+        <eAnnotations source="unitsTime">
+          <details key="milliseconds" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxSilence" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong" defaultValueLiteral="5">
+        <eAnnotations source="unitsTime">
+          <details key="seconds" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SayAlpha" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="escapeDigits" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="#"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="text" eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The text to be verbalized letter by letter"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SayDateTime" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="escapeDigits" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="#"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="ABdY \'digits/at\' IMp"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="dateTime" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The date/time to be verbalized.  May be a number&#xD;&#xA; (representing the number of seconds since 1970) or text in the format&#xD;&#xA; (XX/yy/zzzz) or Date object or variable."/>
+          <details key="expectedReturnType" value="Unknown"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="timezone" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SayDigits" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="digits" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The text containing only numeric values to be verbalized one digit at a time"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="escapeDigits" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="#"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SayNumber" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="escapeDigits" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="#"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="number" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The integer value between 0 and 99,999,999 to be verbalized. "/>
+          <details key="expectedReturnType" value="Integer"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SayPhonetic" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="escapeDigits" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="#"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="text" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The text value to be verbalized one letter at a time (eg.  alpha, bravo, charlie, etc)"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SayTime" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="escapeDigits" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="#"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="time" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The date/time to be verbalized.  May be a number&#xD;&#xA; (representing the number of seconds since 1970) or text in the format&#xD;&#xA; (XX/yy/zzzz) or Date object or variable."/>
+          <details key="expectedReturnType" value="Unknown"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SetAutoHangup" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="time" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
+        <eAnnotations source="unitsTime">
+          <details key="seconds" value="true"/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="non-zero" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SetCallerId" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="callerId" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The  caller ID of the current call will be set to this text value."/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SetChannelVariable" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="value" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The specified variable of the current call will be set to this text value."/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="variable" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-blank"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SetContext" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="context" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The context of the current call will be set to this text value."/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SetExtension" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="extension" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The extension of the current call will be set to this text value."/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StopMusicOnHold" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SetMusicOn" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="holdClass" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The Asterisk music class to play."/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SetPriority" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="priority" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The priority of the current call will be set to this numeric value."/>
+          <details key="expectedReturnType" value="Integer"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StreamAudio" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="filename" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="Prompt Filename"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The audio prompt file name that will be played"/>
+          <details key="expectedReturnType" value="Prompt Filename"/>
+          <details key="helperClass" value="com.safi.asterisk.diagram.sheet.PromptChooserDynamicValueEditorPage"/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="escapeDigits" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="#"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WaitForDigit" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeout" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong" defaultValueLiteral="-1">
+        <eAnnotations source="unitsTime">
+          <details key="milliseconds" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="acceptedDigits" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="0123456789#"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OriginateCall" eSuperTypes="#//CallSource1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eOperations name="setVariable">
+        <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="async" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="false"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="account" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The account code of the new call will be assigned this text value."/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="application" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="Application to use on connect (use Data for parameters)"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="callerId" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="CallerID to use for the call"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="context" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="Context to use on connect (must use Exten &amp; Priority with it)"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="data" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="Data if Application parameter is used"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="extension" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="Extension to use on connect (must use Context &amp; Priority with it)"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="1">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="Priority to use on connect (must use Context &amp; Exten with it)"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeout" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
+        <eAnnotations source="unitsTime">
+          <details key="milliseconds" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="callingPresentation"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          defaultValueLiteral="1"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="channel" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="Context to use on connect (must use Exten &amp; Priority with it)"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="takeControl" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="false"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="variables" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="Array of variables to set [name1, value1, name2, value2...]"/>
+          <details key="expectedReturnType" value="Array"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PlayDTMF" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="digits" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RecordCall" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="filename" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The name of the file that will be recorded (file extension omitted). "/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value="com.safi.asterisk.diagram.sheet.assist.DirBrowserAssistant"/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="wav"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="mix" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Transfer" eSuperTypes="#//CallConsumer2 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="context" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The context of the current call will be set to this text value."/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="extension" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The context of the current call will be set to this text value."/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="1"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExecuteApplication" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="application" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-blank"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="the parameters to pass to the application.  May be single text entry (ex. &quot;SIP/123&quot;) or array or text. (ex. [&quot;Sip/123&quot;,&quot;300&quot;...])"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GetCallInfo" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="accountCodeVar" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable name to where the account code of the current call will be assigned"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="callerIdNameVar" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable name to where the caller ID name of the current call will be assigned"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="callerIdNumVar" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable name to where the caller ID number of the current call will be assigned"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="channelNameVar" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable name to where the channel name of the current call will be assigned"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="contextVar" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable name to where the context of the current call will be assigned"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="extensionVar" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable name to where the extension of the current call will be assigned"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="dialedNumber" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable name to where the dialed number (DNID) of the current call will be assigned"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="priorityVar" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable name to where the priority of the current call will be assigned"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="stateVar" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable name to where the state (see below) of the current call will be assigned.&#xD;&#xA;    *  0 Channel is down and available&#xD;&#xA;    * 1 Channel is down, but reserved&#xD;&#xA;    * 2 Channel is off hook&#xD;&#xA;    * 3 Digits (or equivalent) have been dialed&#xD;&#xA;    * 4 Line is ringing&#xD;&#xA;    * 5 Remote end is ringing&#xD;&#xA;    * 6 Line is up&#xD;&#xA;    * 7 Line is busy "/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="uniqueIdVar" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable name to where the unique ID of the current call will be assigned."/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ani2Var" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable name to where the ani2 info of the current call will be assigned"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rdnis" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable name to where the forwarding number (RDNIS) of the current call will be assigned"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable name to where the call type (e.g. SIP) of the current call will be assigned"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PlayMusicOnHold" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="holdClass" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The Asterisk music class to play."/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PromptGetDigits" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="filename" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="Prompt Filename"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The audio prompt file name that will be played"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value="com.safi.asterisk.diagram.sheet.PromptChooserDynamicValueEditorPage"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeout" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
+        <eAnnotations source="unitsTime">
+          <details key="milliseconds" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="variableName" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The variable name to where digits pressed will be assigned"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+        <eAnnotations source="MetaProperty">
+          <details key="displayText" value="Variable"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxDigits" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="1"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="useBufferedDigits" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Sleep" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
+        <eAnnotations source="unitsTime">
+          <details key="milliseconds" value="true"/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="non-zero" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="native" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StreamAudioExtended" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="filename" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="Prompt Filename"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The audio prompt file name that will be played"/>
+          <details key="expectedReturnType" value="Prompt Filename"/>
+          <details key="helperClass" value="com.safi.asterisk.diagram.sheet.PromptChooserDynamicValueEditorPage"/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="escapeDigits" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="#"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="offset" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="1000"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="forwardDigit" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="3"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="rewindDigit" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="1"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="pauseDigit" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="2"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="Map" instanceClassName="java.util.Map">
+      <eTypeParameters name="T"/>
+      <eTypeParameters name="T1"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="BasicEMap" instanceClassName="org.eclipse.emf.common.util.BasicEMap">
+      <eTypeParameters name="T"/>
+      <eTypeParameters name="T1"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Dial" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingChannels" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="Array of channel names to attempt to dial"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-empty"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="retry" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeout" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="unitsTime">
+          <details key="seconds" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="calleeBlindTransfer"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="callerBlindTransfer"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="generateRingTone" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="ringCallee" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="calleeMusicOnHold" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="private" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="useOldCallerID" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="jumpPriority" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="macro" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="calleeStarHangup" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="callerStarHangup" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="ignoreForwardingRequests"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="resetCDR" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="enableScreeningMode"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="usePrivacyManager" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="privaceManagerDB" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="stayAlive" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="announcement" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="autoHangupTime" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="unitsTime">
+          <details key="seconds" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="captureDTMF" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="dTMFDigits" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxDuration" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="unitsTime">
+          <details key="milliseconds" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="callEndingWarningTime"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="unitsTime">
+          <details key="milliseconds" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="warningRepeatTime" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="unitsTime">
+          <details key="milliseconds" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="limitPlayAudioCaller"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="limitPlayAudioCallee"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="limitTimeoutFilename"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="limitConnectFilename"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="limitWarningFilename"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="forceOutgoingCallID"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="calleeCanRecord" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="callerCanRecord" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="calleeCanPark" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="callerCanPark" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Pickup" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="group" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-blank"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Background" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="filenames" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="Array file names to play"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="playOnlyIfAnswered" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="answerIfNecessary" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="matchOnlySingleDigit"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="context" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BackgroundDetect" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="filename" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="silence" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="1000">
+        <eAnnotations source="unitsTime">
+          <details key="milliseconds" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="minTime" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="100">
+        <eAnnotations source="unitsTime">
+          <details key="milliseconds" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxTime" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="unitsTime">
+          <details key="milliseconds" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WaitExten" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="musicOnHoldClass" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeout" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="unitsTime">
+          <details key="seconds" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SoftHangup" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="hangupAllDeviceCalls"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="channelName" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="Name of the channel to hangup"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PickupChan" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="channels" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="An array of channel names.  First one ringing will be chosen"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-empty"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Pickdown" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="group" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-blank"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Progress" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Bridge" eSuperTypes="#//CallConsumer2 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="channel1" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="Name of channel1"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="channel2" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="Name of channel2"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="useCourtesyTone" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PlaceCall" eSuperTypes="#//CallSource1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="extension" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="Extension to call"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="context" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="Destination context "/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeout" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
+        <eAnnotations source="unitsTime">
+          <details key="milliseconds" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="callerId" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="CallerID to use for the call"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Voicemail" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="mailbox" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="an array of mailbox identifiers"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="skipInstructions" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="playUnavailableMessage"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="playBusyMessage" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingGain" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="-1"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VoicemailMain" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="mailbox" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="the mailbox name"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="skipPasswordCheck" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="usePrefix" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingGain" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="defaultFolder" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="the mailbox folder name to default to. Default is 'INBOX'"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VMAuthenticate" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="mailbox" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="the mailbox name"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="skipInstructions" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="setAccountCode" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MeetMe" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="conferenceNumber" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="the conference number"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="pin" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="the optional conference pin"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="backgroundScriptAgi"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingFilename" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="recordingFormat" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="aloneMessageEnabled"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="adminMode" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="useAGIScript" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="announceCount" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="dynamicallyAddConference"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="selectEmptyConference"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="selectEmptyPinlessConference"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="passDTMF" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="announceJoinLeave" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="announceJoinLeaveNoReview"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="useMusicOnHold" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="monitorOnlyMode" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="allowPoundUserExit" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="alwaysPromptForPin" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="quietMode" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="recordConference" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="playMenuOnStar" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="talkOnlyMode" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="talkerDetection" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="videoMode" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="waitForMarkedUser" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="exitOnExtensionEntered"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="closeOnLastMarkedUserExit"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MeetMeAdmin" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="conferenceNumber" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="the conference number"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="command" ordered="false"
+          eType="#//actionstep/MeetMeAdminCommand"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="user" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="the user at which the command will targeted (if applicable)"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="MeetMeAdminCommand">
+      <eLiterals name="eject_last_user" literal="eject last user"/>
+      <eLiterals name="kick_one_user" value="1" literal="kick one user"/>
+      <eLiterals name="kick_all_users" value="2" literal="kick all users"/>
+      <eLiterals name="unlock" value="3"/>
+      <eLiterals name="lock" value="4"/>
+      <eLiterals name="unmute_user" value="5" literal="unmute user"/>
+      <eLiterals name="mute_user" value="6" literal="mute user"/>
+      <eLiterals name="unmute_all_users" value="18" literal="unmute all users"/>
+      <eLiterals name="mute_non_admin" value="7" literal="mute non-admin"/>
+      <eLiterals name="reset_user_volume" value="8" literal="reset one user volume"/>
+      <eLiterals name="reset_all_users_volume" value="9" literal="reset volume all users"/>
+      <eLiterals name="lower_conf_speak_volume" value="10" literal="lower conf speak volume"/>
+      <eLiterals name="raise_conf_speak_volume" value="11" literal="raise conf speak volume"/>
+      <eLiterals name="lower_conf_listen_volume" value="12" literal="lower conf listen volume"/>
+      <eLiterals name="raise_conf_listen_volume" value="13" literal="raise conf listen volume"/>
+      <eLiterals name="lower_user_talk_volume" value="14" literal="lower user talk volume"/>
+      <eLiterals name="raise_user_talk_volume" value="15" literal="raise user talk volume"/>
+      <eLiterals name="lower_user_listen_volume" value="16" literal="lower user listen volume"/>
+      <eLiterals name="raise_user_listen_volume" value="17" literal="raise user listen volume"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MeetMeCount" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="conferenceNumber" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="the conference number"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="variableName" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="the name of the variable in which to store the count"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+        <eAnnotations source="MetaProperty">
+          <details key="displayText" value="Variable"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WaitForRing" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="unitsTime">
+          <details key="seconds" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WaitMusicOnHold" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="unitsTime">
+          <details key="milliseconds" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GetAvailableChannel" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="channels" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="the array of channels that will be iterated over"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="variableName" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="the name of the variable in which to store the name of the first available channel"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+        <eAnnotations source="MetaProperty">
+          <details key="displayText" value="Variable"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="ignoreInUse" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="jumpPriorityOnFail" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Congestion" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Ringing" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="unitsTime">
+          <details key="milliseconds" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SetCallerPresentation" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="presentation" ordered="false"
+          eType="#//actionstep/PresentationType" defaultValueLiteral="allowed"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="PresentationType">
+      <eLiterals name="allowed" literal="allowed"/>
+      <eLiterals name="allowed_not_screened" value="1" literal="allowed not screened"/>
+      <eLiterals name="allowed_passed_screen" value="2" literal="allowed passed screen"/>
+      <eLiterals name="allowed_failed_screen" value="3" literal="allowed failed screen"/>
+      <eLiterals name="prohib_not_screened" value="4" literal="prohib not screened"/>
+      <eLiterals name="prohib_passed_screen" value="5" literal="prohib passed screen"/>
+      <eLiterals name="prohib_failed_screen" value="6" literal="prohib failed screen"/>
+      <eLiterals name="prohib" value="7"/>
+      <eLiterals name="unavailable" value="8" literal="unavailable"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SetGlobalVariable" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="value" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="the value to be assigned to the asterisk global variable"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="variable" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-blank"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Echo" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Festival" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="text" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="the text to be vocalized"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="interruptKeys" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Playtones" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="tones" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="the tones or tone name to play"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StopPlaytones" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ChanSpy" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="channelnamePrefix" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="the prefix of the channel name to spy on"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="spyBridgedOnly" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="group" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="beep" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="recordFilenamePrefix"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="volume" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="whisperEnabled" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="privateWhisperEnabled"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Dictate" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="directory" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="the directory in which to store the audio files"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="filename" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="the filename (prefix) to use for the recorded files"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExtensionSpy" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="extension" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="the extension of the channel name to spy on"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="context" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The context of the channel to spy on"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="spyBridgedOnly" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="group" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="beep" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="recordFilenamePrefix"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="volume" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="whisperEnabled" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="privateWhisperEnabled"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="channelName" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="the name of the channel name to spy on"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MixMonitor" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="filename" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="the filename (prefix) to use for the recorded files"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="recordOnlyWhenBridged"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="appendMode" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StopMixmonitor" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep"/>
+    <eClassifiers xsi:type="ecore:EClass" name="StopMonitor" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Monitor" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="filenamePrefix" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="the filename (prefix) to use for the recorded files"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="wav"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="mix" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Directory" eSuperTypes="#//CallConsumer1 ../../Saflets/model/core.ecore#//actionstep/ActionStep">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="vMContext" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="the voicemail context"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="dialContext" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="the dialed context"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="readExtensionNumber"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="enterByFirstName" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="enterByFirstOrLastName"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExtensionTransfer" eSuperTypes="#//CallConsumer2">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="context" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The context of the current call will be set to this text value."/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="extension" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The context of the current call will be set to this text value."/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="1"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeout" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
+        <eAnnotations source="unitsTime">
+          <details key="seconds" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="initiator" nsURI="http:///com/safi/asterisk.ecore#initiator"
+      nsPrefix="com.safi.asterisk.initiator">
+    <eClassifiers xsi:type="ecore:EClass" name="DIDMatcher">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="dNISPattern" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="call" ordered="false"
+          eType="#//Call" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="callName" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="Call1"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="AgiRequest" instanceClassName="org.asteriskjava.fastagi.AgiRequest"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="AgiChannel" instanceClassName="org.asteriskjava.fastagi.AgiChannel"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="ManagerEvent" instanceClassName="org.asteriskjava.manager.event.ManagerEvent"/>
+    <eClassifiers xsi:type="ecore:EClass" name="IncomingCall" eSuperTypes="#//CallSource1">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="callName" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="Call1"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="saflet" nsURI="http:///com/safi/asterisk.ecore#saflet" nsPrefix="com.safi.asterisk.saflet">
+    <eClassifiers xsi:type="ecore:EClass" name="AsteriskSaflet" eSuperTypes="../../Saflets/model/core.ecore#//saflet/Saflet"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AsteriskSafletContext" eSuperTypes="../../Saflets/model/core.ecore#//saflet/SafletContext">
+      <eOperations name="appendBufferedDigits">
+        <eParameters name="digits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="flushBufferedDigits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufferedDigits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AsteriskSafletEnvironment" abstract="true"
+        interface="true" eSuperTypes="../../Saflets/model/core.ecore#//saflet/SafletEnvironment">
+      <eOperations name="getLoopbackCall" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
+        <eParameters name="uuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="getLoopbackLock" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
+        <eParameters name="uuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="serverIpAddr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="fastAgiPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="managementPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

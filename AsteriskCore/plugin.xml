@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.8 2008/08/01 06:10:41 jonl Exp $
+-->
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http:///com/safi/asterisk.ecore#toolstep" 
+       class = "com.safi.asterisk.toolstep.ToolstepPackage"
+       genModel = "model/asterisk.genmodel" /> 
+  </extension>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http:///com/safi/asterisk.ecore#scripting" 
+       class = "com.safi.asterisk.scripting.ScriptingPackage"
+       genModel = "model/asterisk.genmodel" /> 
+  </extension>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http:///com/safi/asterisk.ecore#handler" 
+       class = "com.safi.asterisk.handler.HandlerPackage"
+       genModel = "model/asterisk.genmodel" /> 
+  </extension>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http:///com/safi/asterisk.ecore#initiator" 
+       class = "com.safi.asterisk.initiator.InitiatorPackage"
+       genModel = "model/asterisk.genmodel" /> 
+  </extension>
+  <extension
+        id="product"
+        point="org.eclipse.core.runtime.products">
+     <product
+           application="Handlers.diagram.AsteriskApplication"
+           name="SafiWorkshop">
+        <property
+              name="aboutText"
+              value="%aboutText">
+        </property>
+        <property
+              name="appName"
+              value="SafiWorkshop">
+        </property>
+        <property
+              name="windowImages"
+              value="platform:/plugin/Handlers.diagram/icons/product/app16x16-24bit.Bmp,platform:/plugin/Handlers.diagram/icons/product/app32x32-24bit.Bmp,platform:/plugin/Handlers.diagram/icons/product/app48x48-24bit.Bmp">
+        </property>
+        <property
+              name="startupProgressRect"
+              value="10,275,480,15">
+        </property>
+        <property
+              name="preferenceCustomization"
+              value="plugin_customization.ini">
+        </property>
+     </product>
+  </extension>
+
+</plugin>

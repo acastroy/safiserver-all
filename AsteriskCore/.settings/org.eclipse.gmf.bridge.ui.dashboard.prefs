@@ -1,0 +1,9 @@
+#Sun Jan 06 23:41:28 PST 2008
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/Handlers/model/asterisk.genmodel
+gmf_dashboard/domainModel=platform\:/resource/Handlers/model/asterisk.ecore
+gmf_dashboard/generationModel=platform\:/resource/Handlers/model/asterisk.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/Handlers/model/asterisk.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/HandlerEMFProject/model/asterisk.gmfmap
+gmf_dashboard/option_rcp=*
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/Handlers/model/asterisk.gmftool
