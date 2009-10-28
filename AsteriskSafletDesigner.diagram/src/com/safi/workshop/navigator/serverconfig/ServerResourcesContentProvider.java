@@ -24,6 +24,7 @@ import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 
 public class ServerResourcesContentProvider implements ITreeContentProvider, Adapter {
 
+	private static final Object[] EMPTY_ARRAY = new Object[0];
   private UserList userList;
   private AsteriskServerList asteriskList;
   private SafiServer aSafiServer;
@@ -97,7 +98,7 @@ public class ServerResourcesContentProvider implements ITreeContentProvider, Ada
       // }
 
     }
-    return null;
+    return EMPTY_ARRAY;
   }
 
   @Override

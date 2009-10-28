@@ -17,6 +17,7 @@ import org.eclipse.gmf.runtime.common.core.service.IOperation;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.ui.services.modelingassistant.GetTypesForPopupBarOperation;
 import org.eclipse.gmf.runtime.emf.ui.services.modelingassistant.ModelingAssistantProvider;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Node;
@@ -75,6 +76,14 @@ public class AsteriskModelingAssistantProvider extends ModelingAssistantProvider
   @Override
   public boolean provides(IOperation operation) {
     // TODO Auto-generated method stub
+  	if (operation instanceof GetTypesForPopupBarOperation) {
+  		GetTypesForPopupBarOperation op = (GetTypesForPopupBarOperation)operation;
+  		IAdaptable a = op.getHost();
+			return !getTypesForPopupBar(
+				((GetTypesForPopupBarOperation) operation).getHost())
+				.isEmpty();
+		}
+  	
     return super.provides(operation);
   }
   /**

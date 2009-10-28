@@ -1,6 +1,7 @@
 package com.safi.workshop.navigator.db;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.eclipse.core.resources.IWorkspaceRoot;
@@ -26,6 +27,7 @@ import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
 
 public class DBResourcesContentProvider implements ITreeContentProvider, Adapter {
 
+	private static final Object[] EMPTY_ARRAY = new Object[0];
   private SafiDriverManager dm;
   private static DBResourcesContentProvider instance;
 
@@ -85,7 +87,8 @@ public class DBResourcesContentProvider implements ITreeContentProvider, Adapter
       return ((Query) parentElement).getParameters().toArray();
     }
 
-    return null;
+    
+    return EMPTY_ARRAY;
   }
 
   @Override

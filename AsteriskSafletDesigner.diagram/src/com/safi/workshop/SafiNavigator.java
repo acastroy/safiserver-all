@@ -570,36 +570,38 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
     Runnable runnable = new Runnable() {
       public void run() {
 
-        Object select = getCommonViewer().getSelection();
+        final CommonViewer commonViewer = getCommonViewer();
+        if (commonViewer == null) return;
+				Object select = commonViewer.getSelection();
         IStructuredSelection selection = null;
         if (select != null && select instanceof IStructuredSelection) {
           selection = (IStructuredSelection) select;
         }
-        if (!getCommonViewer().getTree().isDisposed()) {
-          TreePath[] p = null;
-          Object[] ee = null;
-          try {
-            p = getCommonViewer().getExpandedTreePaths();
-            ee = getCommonViewer().getExpandedElements();
-          } catch (Exception e) {
-            e.printStackTrace();
-          }
-          getCommonViewer().refresh(true);
-          ServerResourcesDecorator.updateServerResourcesDecorators();// why should i have
-          // to do this?
-          if (selection != null && !selection.isEmpty()) {
-            // User user = null;
-            Object selected = selection.getFirstElement();
-            if (selected != null) {
-              if (ee != null)
-                getCommonViewer().setExpandedElements(ee);
-
-              if (p != null)
-                getCommonViewer().setExpandedTreePaths(p);
-              getCommonViewer().reveal(selected);
-              getCommonViewer().setExpandedState(selected, true);
-            }
-          }
+        if (!commonViewer.getTree().isDisposed()) {
+//          TreePath[] p = null;
+//          Object[] ee = null;
+//          try {
+//            p = commonViewer.getExpandedTreePaths();
+//            ee = commonViewer.getExpandedElements();
+//          } catch (Exception e) {
+//            e.printStackTrace();
+//          }
+          commonViewer.refresh(true);
+//          ServerResourcesDecorator.updateServerResourcesDecorators();// why should i have
+//          // to do this?
+//          if (selection != null && !selection.isEmpty()) {
+//            // User user = null;
+//            Object selected = selection.getFirstElement();
+//            if (selected != null) {
+//              if (ee != null)
+//                commonViewer.setExpandedElements(ee);
+//
+//              if (p != null)
+//                commonViewer.setExpandedTreePaths(p);
+//              commonViewer.reveal(selected);
+//              commonViewer.setExpandedState(selected, true);
+//            }
+//          }
 
         }
       }
@@ -612,7 +614,8 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
   }
 
   public void expandAll() {
-    getCommonViewer().expandAll();
+    final CommonViewer commonViewer = getCommonViewer();
+		if (commonViewer != null) commonViewer.expandAll();
   }
 
   public void refresh(final Object item) {
@@ -622,23 +625,25 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
       return;
     shell.getDisplay().asyncExec(new Runnable() {
       public void run() {
-        Object select = getCommonViewer().getSelection();
+        final CommonViewer commonViewer = getCommonViewer();
+        if (commonViewer == null)return;
+				Object select = commonViewer == null ? null : commonViewer.getSelection();
         IStructuredSelection selection = null;
         if (select != null && select instanceof IStructuredSelection) {
           selection = (IStructuredSelection) select;
         }
 
-        if (!getCommonViewer().getTree().isDisposed()) {
-          TreePath[] p = getCommonViewer().getExpandedTreePaths();
-          getCommonViewer().refresh(item);
+        if (!commonViewer.getTree().isDisposed()) {
+          TreePath[] p = commonViewer.getExpandedTreePaths();
+          commonViewer.refresh(item);
           // getCommonViewer().setExpandedTreePaths(treePaths)
           if (selection != null) {
             // User user = null;
             Object selected = selection.getFirstElement();
             if (selected != null) {
-              getCommonViewer().setExpandedTreePaths(p);
-              getCommonViewer().reveal(selected);
-              getCommonViewer().setExpandedState(selected, true);
+              commonViewer.setExpandedTreePaths(p);
+              commonViewer.reveal(selected);
+              commonViewer.setExpandedState(selected, true);
             }
           }
 
@@ -662,7 +667,9 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
     final Runnable runnable = new Runnable() {
       public void run() {
 
-        Control control = getCommonViewer().getControl();
+        final CommonViewer commonViewer = getCommonViewer();
+        if (commonViewer == null) return;
+				Control control = commonViewer.getControl();
         if (control.isDisposed())
           return;
         Shell shell = control.getShell();
@@ -679,12 +686,12 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
           // TODO Auto-generated catch block
           e.printStackTrace();
           AsteriskDiagramEditorPlugin.getInstance().logError("Couldn't save manager to disk", e);
-          MessageDialog.openError(getCommonViewer().getTree().getShell(), "Write Error",
+          MessageDialog.openError(commonViewer.getTree().getShell(), "Write Error",
               "Coudln't save DB resources to disk: " + e.getLocalizedMessage());
 
         }
 
-        if (!getCommonViewer().getTree().isDisposed()) {
+        if (!commonViewer.getTree().isDisposed()) {
           // IDecoratorManager decoratorManager =
           // AsteriskDiagramEditorPlugin.getInstance()
           // .getWorkbench().getDecoratorManager();
@@ -692,14 +699,14 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
           // decoratorManager.update(DirtyDecorator.DECORATOR_ID);
           // DirtyDecorator.getDirtyDecorator().refresh();
           // DirtyDecorator2.getDirtyDecorator().refresh();
-          ISelection selected = getCommonViewer().getSelection();
+          ISelection selected = commonViewer.getSelection();
 //          getCommonViewer().setInput(getCommonViewer().getInput());
           if (rebuildModel)
             rebuildModel();
           else
-           getCommonViewer().refresh(true);
+           commonViewer.refresh(true);
           refreshToolbar();
-          getCommonViewer().setSelection(selected, true);
+          if (commonViewer != null) commonViewer.setSelection(selected, true);
 
           // DirtyDecorator.getDirtyDecorator().refresh(getAllItems());
         }
@@ -713,7 +720,8 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
 
   //warning...this takes awhile
   public void rebuildModel(){
-    getCommonViewer().setInput(getCommonViewer().getInput());
+    final CommonViewer commonViewer = getCommonViewer();
+		if (commonViewer != null) commonViewer.setInput(commonViewer.getInput());
   }
   
   private void refreshToolbar() {
@@ -779,9 +787,10 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
   }
 
   public IStructuredSelection getViewerSelection() {
-    if (getCommonViewer() == null || getCommonViewer().getTree().isDisposed())
+    final CommonViewer commonViewer = getCommonViewer();
+		if (commonViewer == null || commonViewer.getTree().isDisposed())
       return null;
-    IStructuredSelection selection = (IStructuredSelection) getCommonViewer().getSelection();
+    IStructuredSelection selection = (IStructuredSelection) commonViewer.getSelection();
     if (selection != null && !selection.isEmpty())
       return selection;
     return cachedSelection;
@@ -1037,7 +1046,9 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
     if (element instanceof Alias)
       return (Alias) element;
     else if (element instanceof Session) {
-      ITreeContentProvider provider = (ITreeContentProvider) getCommonViewer().getContentProvider();
+    	final CommonViewer commonViewer = getCommonViewer();
+			if (commonViewer == null) return null;
+      ITreeContentProvider provider = (ITreeContentProvider) commonViewer.getContentProvider();
       return (Alias) provider.getParent(element);
     }
 
@@ -1140,7 +1151,9 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
   public void createPartControl(Composite aParent) {
 
     super.createPartControl(aParent);
-    Menu menu = this.getCommonViewer().getTree().getMenu();
+    final CommonViewer commonViewer = getCommonViewer();
+		if (commonViewer == null) return;
+    Menu menu = commonViewer.getTree().getMenu();
     menu.addMenuListener(this);
     /*
      * MenuManager menuManager=new MenuManager(); Menu menu =
@@ -1234,7 +1247,7 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
         IResourceChangeEvent.POST_CHANGE);
 
     this.getViewSite().getPage().addSelectionListener(this);
-    this.getCommonViewer().addSelectionChangedListener(this);
+    if (commonViewer != null) commonViewer.addSelectionChangedListener(this);
 
   }
 
@@ -1296,7 +1309,8 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
 
   private void close(final IEditorReference ref) {
 
-    this.getCommonViewer().getTree().getDisplay().asyncExec(new Runnable() {
+    final CommonViewer commonViewer = getCommonViewer();
+		if (commonViewer != null) commonViewer.getTree().getDisplay().asyncExec(new Runnable() {
 
       @Override
       public void run() {
@@ -1409,7 +1423,8 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
       // this.getSite().getSelectionProvider().setSelection((ISelection)
       // obj);
       // this.selectReveal(ss);
-      this.getCommonViewer().setSelection(ss, true);
+      final CommonViewer commonViewer = getCommonViewer();
+			if (commonViewer != null) commonViewer.setSelection(ss, true);
 
     } else if (part instanceof com.safi.workshop.SafiNavigator
         && selection instanceof StructuredSelection) {
@@ -1502,7 +1517,7 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
       Object element = selection.getFirstElement();
 
       TreeViewer viewer = getCommonViewer();
-      if (viewer.isExpandable(element)) {
+      if (viewer != null && viewer.isExpandable(element)) {
         viewer.setExpandedState(element, !viewer.getExpandedState(element));
       }
     }
@@ -1595,8 +1610,11 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
     // TODO Auto-generated method stub
     Object obj = e.getSource();
     // System.out.println(obj);
-    StructuredSelection selection = (StructuredSelection) this.getCommonViewer().getSelection();
-    Object aObj = selection.getFirstElement();
+    Object aObj = null;
+    final CommonViewer commonViewer = getCommonViewer();
+    if (commonViewer == null) return;
+    	StructuredSelection selection = (StructuredSelection) this.getCommonViewer().getSelection();
+    	aObj = selection.getFirstElement();
     // System.out.println("aboj"+aObj);
     SafiServerImpl serverImpl = null;
     if (aObj instanceof SafiServerImpl) {

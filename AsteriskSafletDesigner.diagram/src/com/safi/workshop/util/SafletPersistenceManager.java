@@ -451,6 +451,7 @@ public class SafletPersistenceManager {
       project.refreshLocal(IResource.DEPTH_INFINITE, null);
       // }
     } catch (Exception e) {
+    	e.printStackTrace();
       if (transaction != null)
         transaction.rollback();
       throw new PublishResourceException(e);

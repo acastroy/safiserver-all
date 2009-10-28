@@ -43,6 +43,7 @@ public class DiagramEditorWorkbenchAdvisor extends WorkbenchAdvisorHack {
   @Override
   public void initialize(IWorkbenchConfigurer configurer) {
     super.initialize(configurer);
+    org.eclipse.ui.ide.IDE.registerAdapters();
     configurer.setSaveAndRestore(true);
   }
 
