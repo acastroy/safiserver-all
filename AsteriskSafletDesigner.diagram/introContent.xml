@@ -9,7 +9,8 @@
 	<page id="freepbxinstall" content="content/freepbxinstall.xhtml"/>
     <page id="serverconnect" content="content/serverconnect.xhtml"/>
 	<page id="workshopSetupAsterisk" content="content/workshopSetupAsterisk.xhtml"/>
+	<page id="addasterisk" content="content/addasterisk.xhtml"/>
     <page id="step4" content="content/debugsetup_step4.xhtml"/>
-
 	<link id="classId1" content="com.safi.workshop.SafiDiagramActionDelegate"/>
 </introContent>
+
