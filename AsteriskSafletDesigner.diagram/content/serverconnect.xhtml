@@ -28,25 +28,14 @@
 								</tr>
 								
 								<tr>
-									<td class="menuOptionDetails">
-										<br /><br />
-										<b>1) Download a copy of the SafiServer FreePBX Module:</b> 
-										You can download a copy of the SafiServer FreePBX Module <a href="http://org.eclipse.ui.intro/openBrowser?url=http://sourceforge.net/projects/safiserverfreep/">here</a>.
-										<br /><br />
-										<b>2) </b>Go to <b>Module Admin</b> in the FreePBX web admin.
-										<br /><br />
-										<b>3) </b>Click <b>Upload Module</b>
-										<br /><br />
-										<b>4) </b>Browse to the <i>saflets-x.x.x.tar.gz</i> file and click upload
-										<br /><br />
-										<b>5) </b>Go back to the <b>Module Admin</b> and select <b>Saflets</b> under <b>Inbound
-										Call Control</b>
-										<br /><br />
-										<b>6) </b>Select the <b>Install</b> radio button
-										<br /><br />
-										<b>7) </b>Press the <b>Process</b> button (there's one at the top right of the page)
-										then confirm that you want to install
-										<br /><br />
+									<td class="menuOptionDetails"><br /><br />
+										<b>1) </b>Connect to your SafiServer:<br/>
+										Now that the Asterisk server is set up to accept connections from the Debug SafiServer, you will need to set that login/password in SafiWorkshop.  You can open the <b>Debug SafiServer Manager</b> by double clicking on the <b>Local(Debug)</b> Asterisk server node (under the <b>Debug:</b> node) in the the navigator or ...<br/><br/>
+										<a href="http://org.eclipse.ui.intro/runAction?class=com.safi.server.actions.EditDebugAsteriskServerAction&amp;pluginId=AsteriskSafletDesigner.diagram"><img border="0" src="graphics/littlearrow.png" />Click here to open the Asterisk Configuration</a><br/><br/>
+										You should see the following popup:<br />
+										<img border="0" src="graphics/asteriskconfiguration.jpg" /><br/><br/>
+										Fill in the <b>Host(IP)</b> field with the IP address of your Asterisk PBX. <br/><br/>
+										Fill in the <b>Manager Name</b> and <b>Manager Password</b> with the values you set in step 2.<br/><br/>Press <b>OK</b> to save the changes.
 									</td>
 								</tr>
 
@@ -56,7 +45,7 @@
 										<table>
 											<tr>
 												<td valign="middle"><img border="0" src="graphics/action_forward.gif" /></td>
-												<td valign="middle"><a href="http://org.eclipse.ui.intro/showPage?id=asteriskFreePBX">NEXT: Configure the FreePBX Module</a></td>
+												<td valign="middle"><a href="http://org.eclipse.ui.intro/showPage?id=serverConnect&amp;standby=true">NEXT: Configure the Asterisk Connection in SafiWorkshop</a></td>
 											</tr>
 										</table>
 										<br /><br />

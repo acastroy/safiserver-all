@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Setup Asterisk PBX SafiServer</title>
+    <link rel="stylesheet" href="style/safiwelcome.css" type="text/css" />
+</head>
+<body>
+	<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center">
+		<tr height="20" bgcolor="#D1CD9D">
+			<td class="welcometext"></td>
+			<td height="22" align="right">
+				<span class="mainmenucurbtn"><a href="http://org.eclipse.ui.intro/runAction?class=com.safi.asterisk.eclipse.NewSafiProjectAction&amp;pluginId=AsteriskSafletDesigner.diagram">New Project</a></span>
+				<span class="mainmenucurbtn"><a href="http://org.eclipse.ui.intro/runAction?class=com.safi.asterisk.eclipse.SafiDiagramActionDelegate&amp;pluginId=AsteriskSafletDesigner.diagram">New Saflet</a></span>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<table bgcolor="#FFFFFF" cellpadding="2" width="800">
+					<tr>
+						<td align="center">
+							<h3>Setting up SafiServer: Configure Asterisk PBX (FreePBX w/ Saflets module)</h3>
+							<br /> <br />
+						</td>
+					</tr>
+					<tr>
+						<td><hr size="1"/></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center">
+							<table bgcolor="#FFFFFF" cellpadding="2" width="100%">
+								<tr>
+									<td align="right"><a href="http://org.eclipse.ui.intro/navigate?direction=backward"><img border="0" src="graphics/action_back.gif"  alt="Back" /></a>&nbsp;&nbsp;<a href="http://org.eclipse.ui.intro/showPage?id=root"><img border="0" src="graphics/home.png" alt="Welcome Page" /></a></td>
+								</tr>
+								
+								<tr>
+									<td class="menuOptionDetails"><br /><br />
+										<b>1)</b> Navigate to the SafiServer menu option in the FreePBX web administrator: <br /><br />
+										<img border="0" src="graphics/freebpx_safiserver.jpg" /><br /> <br />
+										<b>2)</b> Select <b>Add SafiServer Entry</b> on the right and you should see the following form:<br /> <br />
+										<img border="0" src="graphics/addsafiserverfreepbx.jpg" /><br /> <br />
+										<b>3)</b> Fill in the values as follows:<br /><br />
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>SafiServer Name :</b> This can be any name you want (example: <i>Main SafiServer</i>)<br /><br />
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>SafiServer IP Address :</b> Set this to the IP address (or host name) of your SafiServer<br /><br />
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>SafiServer FastAGI Port :</b> Port that Asterisk will use when making an AGI call (4573 is default)<br /><br />
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>SafiServer IP Netmask :</b> Set this the to subnet associated with the SafiServer IP Address<br /><br />
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Manager Login :</b> Set this to whatever logon you wish to use (example: <i>safi</i>)<br /><br />
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Manager Password :</b> Set this to whatever password you wish to use (example: <i>1234</i>)<br /><br />
+										<b>4)</b> Press <b>Submit Changes</b><br /><br />
+										<b>5)</b> Press the <b>Apply Configuration Changes</b> link on the top of the page
+									</td>
+								</tr>
+								<tr class="menuOptionDetails">
+									<td>
+										<br /><br />
+										<table>
+											<tr>
+												<td valign="middle"><img border="0" src="graphics/action_forward.gif" /></td>
+												<td valign="middle"><a href="http://org.eclipse.ui.intro/showPage?standby=true&amp;id=serverconnect">NEXT: Configure the Asterisk Connection in SafiWorkshop</a></td>
+											</tr>
+										</table>
+										<br /><br />
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

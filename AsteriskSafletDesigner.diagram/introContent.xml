@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <introContent>
     <page id="root" content="content/root.xhtml"/>
-    <page id="settingupdebug" content="content/debugserversettings.xhtml"/>
-    <page id="step2a" content="content/debugsetup_step2a.xhtml"/>
-    <page id="step2b" content="content/debugsetup_step2b.xhtml"/>
-    <page id="step3" content="content/debugsetup_step3.xhtml"/>
+    <page id="settingupsafiserver" content="content/settingupsafiserver.xhtml"/>
+	<page id="installlinux" content="content/installlinux.xhtml"/>
+	<page id="installwindows" content="content/installwindows.xhtml"/>
+    <page id="asteriskConfigFiles" content="content/asteriskConfigFiles.xhtml"/>
+    <page id="asteriskFreePBX" content="content/asteriskFreePBX.xhtml"/>
+	<page id="freepbxinstall" content="content/freepbxinstall.xhtml"/>
+    <page id="serverconnect" content="content/serverconnect.xhtml"/>
+	<page id="workshopSetupAsterisk" content="content/workshopSetupAsterisk.xhtml"/>
     <page id="step4" content="content/debugsetup_step4.xhtml"/>
-    <page id="freepbxinstall" content="content/freepbxinstall.xhtml"/>
+
 	<link id="classId1" content="com.safi.workshop.SafiDiagramActionDelegate"/>
 </introContent>
