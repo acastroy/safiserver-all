@@ -24,6 +24,7 @@
       location="AsteriskSafletDesigner.diagram"
       startupProgressRect="10,275,480,15" />
    <launcher name="SafiWorkshop">
+      <linux icon="/AsteriskSafletDesigner.diagram/icons/logo48.xpm"/>
       <solaris/>
       <win useIco="false">
          <bmp
@@ -43,7 +44,6 @@
       <plugin id="AsteriskCore"/>
       <plugin id="AsteriskCore.edit"/>
       <plugin id="AsteriskSafletDesigner.diagram"/>
-      <plugin id="SafiJSEditor" fragment=""/>
       <plugin id="Saflets"/>
       <plugin id="Saflets.edit"/>
       <plugin id="com.ibm.icu"/>

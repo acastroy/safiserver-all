@@ -361,6 +361,11 @@ public class EmbeddedInitiatorDialog extends Dialog {
     return cause;
   }
 
+  @Override
+	protected boolean isResizable() {
+		// TODO Auto-generated method stub
+		return true;
+	}
   /**
    * Return the initial size of the dialog
    */

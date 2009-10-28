@@ -49,7 +49,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.impl.SessionImpl;
-
+import org.hsqldb.Trace;
 
 import com.safi.db.manager.DBManager;
 import com.safi.db.server.config.Role;
@@ -608,20 +608,16 @@ public class UserDialog extends TitleAreaDialog {
             try {
               stat.execute("drop user '" + oldUsername + "';");
             } catch (SQLException sqle) {
-//              if (sqle.getErrorCode() != -Trace.NO_SUCH_GRANTEE) {
-//                throw sqle;
-//              }
-//            	 if (sqle.getErrorCode() !=  org.hsqldb.error.ErrorCode.) {
-//                 throw sqle;
-//               }
-            	sqle.printStackTrace();
+              if (sqle.getErrorCode() != -Trace.NO_SUCH_GRANTEE) {
+                throw sqle;
+              }
             }
           }
           try {
             stat.execute("create user '" + loginName + "'password '" + pass + "' ADMIN;");
           } catch (SQLException sqle) {
-//            if (sqle.getErrorCode() != -Trace.GRANTEE_ALREADY_EXISTS)
-//              throw sqle;
+            if (sqle.getErrorCode() != -Trace.GRANTEE_ALREADY_EXISTS)
+              throw sqle;
             if (!"sa".equalsIgnoreCase(loginName))
               stat.execute("alter user '" + loginName + "' set password '" + pass + "';");
           }

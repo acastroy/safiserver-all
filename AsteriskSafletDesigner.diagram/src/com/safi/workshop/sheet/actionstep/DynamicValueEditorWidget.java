@@ -153,7 +153,7 @@ public class DynamicValueEditorWidget extends Composite {
     text.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 
     imageLabel = new Label(this, SWT.NONE);
-    imageLabel.setLayoutData(new GridData(20, SWT.DEFAULT));
+    imageLabel.setLayoutData(new GridData(SWT.DEFAULT, SWT.DEFAULT));
     imageLabel.setImage(ResourceManager.getPluginImage(AsteriskDiagramEditorPlugin.getDefault(),
         "icons/dynamicValueEditor/literal_text.gif"));
 
@@ -172,7 +172,7 @@ public class DynamicValueEditorWidget extends Composite {
         "icons/fail.gif"));
 
     editButton = new Button(this, SWT.NONE);
-    editButton.setLayoutData(new GridData(20, 20));
+    editButton.setLayoutData(new GridData(SWT.DEFAULT, 20));
     editButton.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(final SelectionEvent e) {
