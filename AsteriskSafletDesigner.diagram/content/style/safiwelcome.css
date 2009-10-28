@@ -12,7 +12,7 @@ html, body {
    	padding:0;
    	height:100%;
     border:none;
-	font-size: 0.8em;
+	font-size: 12px;
 }
 .rootActionText {
 	padding-top: 0px; 
@@ -26,7 +26,7 @@ html, body {
 }
 
 h4 {
-	font-size: 1.0em;
+	font-size: 14px;
 	font-weight: bold;
 	padding-bottom: 0px;
 	margin-bottom: 2px;
@@ -34,7 +34,7 @@ h4 {
 }
 
 h3 {
-	font-size: 1.1em;
+	font-size: 15px;
 	font-weight: bold;
 	padding-bottom: 0px;
 	margin-bottom: 2px;
@@ -93,7 +93,7 @@ a:hover		{ color: #224122; text-decoration: underline; }
 
 .code {
 	font-family: "courier new",courier,monospace;
-	font-size: 1em;
+	font-size: 14px;
 	color: #224122;
 	border: solid 1px #C6C897;
 	background-color:#F2F4B8;
