@@ -110,12 +110,14 @@ public class AddAsteriskServerAction implements IWorkbenchWindowActionDelegate, 
   @Override
   public void init(IWorkbenchWindow window) {
     // TODO Auto-generated method stub
+	/*
     StructuredSelection selection = (StructuredSelection) window.getSelectionService()
         .getSelection();
     Object object = selection.getFirstElement();
     if (object != null) {
 
     }
+   */
 
   }
 
