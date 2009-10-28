@@ -7,7 +7,6 @@ import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.jface.databinding.swt.ISWTObservableValue;
 import org.eclipse.jface.databinding.swt.SWTObservables;
-import org.eclipse.jface.internal.databinding.swt.TextObservableValue;
 import org.eclipse.jface.viewers.ComboViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
@@ -51,7 +50,7 @@ public class MeetMeAGIScriptEditorPage extends AbstractActionstepEditorPage {
 
     backgroundScriptAgiText = new Text(this, SWT.BORDER);
     backgroundScriptAgiText.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
-    TextObservableValue uiElement = (TextObservableValue) SWTObservables.observeText(
+    ISWTObservableValue uiElement =  SWTObservables.observeText(
         backgroundScriptAgiText, SWT.FocusOut);
     ob = ActionstepEditObservables.observeValue(parent.getEditPart().getEditingDomain(), parent
         .getEditPart().getActionStep(), parent.getEditPart().getActionStep().eClass()

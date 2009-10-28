@@ -3,9 +3,9 @@ package com.safi.workshop.sheet.actionstep;
 import org.eclipse.core.databinding.observable.Diffs;
 import org.eclipse.core.databinding.observable.IObservable;
 import org.eclipse.core.databinding.observable.Realm;
+import org.eclipse.core.databinding.observable.value.AbstractVetoableValue;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.databinding.swt.SWTObservables;
-import org.eclipse.jface.internal.databinding.provisional.swt.AbstractSWTVetoableValue;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.VerifyListener;
 import org.eclipse.swt.widgets.Event;
@@ -30,7 +30,7 @@ import com.safi.core.actionstep.DBConnectionId;
  * 
  * @since 1.0
  */
-public class DBConnectionWidgetObservableValue extends AbstractSWTVetoableValue {
+public class DBConnectionWidgetObservableValue extends AbstractVetoableValue {
 
   /**
    * {@link Text} widget that this is being observed.
@@ -105,7 +105,7 @@ public class DBConnectionWidgetObservableValue extends AbstractSWTVetoableValue 
    */
   public DBConnectionWidgetObservableValue(final Realm realm, NewDBConnectionWidget dvew,
       int updateEventType) {
-    super(realm, dvew);
+    super(realm);
 
     boolean eventValid = false;
     for (int i = 0; !eventValid && i < validUpdateEventTypes.length; i++) {

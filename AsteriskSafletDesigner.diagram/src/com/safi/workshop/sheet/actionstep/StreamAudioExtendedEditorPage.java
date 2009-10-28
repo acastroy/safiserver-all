@@ -12,8 +12,6 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.databinding.swt.ISWTObservableValue;
 import org.eclipse.jface.databinding.swt.SWTObservables;
-import org.eclipse.jface.internal.databinding.swt.ComboObservableValue;
-import org.eclipse.jface.internal.databinding.swt.TextObservableValue;
 import org.eclipse.jface.viewers.ComboViewer;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ILabelProviderListener;
@@ -65,7 +63,7 @@ public class StreamAudioExtendedEditorPage extends AbstractActionstepEditorPage 
     IObservableValue ob = ActionstepEditObservables.observeValue(parent.getEditPart()
         .getEditingDomain(), parent.getEditPart().getActionStep(), parent.getEditPart()
         .getActionStep().eClass().getEStructuralFeature("name"));
-    TextObservableValue uiElement = (TextObservableValue) SWTObservables.observeText(nameText,
+    ISWTObservableValue uiElement =  SWTObservables.observeText(nameText,
         SWT.FocusOut);
     SWTObservables.observeDelayedValue(400, uiElement);
     bindingContext.bindValue(uiElement, ob, null, null);
@@ -140,7 +138,7 @@ public class StreamAudioExtendedEditorPage extends AbstractActionstepEditorPage 
     ob = ActionstepEditObservables.observeValue(parent.getEditPart().getEditingDomain(), parent
         .getEditPart().getActionStep(), parent.getEditPart().getActionStep().eClass()
         .getEStructuralFeature("call1"));
-    ComboObservableValue comboElement = (ComboObservableValue) SWTObservables
+    ISWTObservableValue comboElement =  SWTObservables
         .observeSelection(combo);
     SWTObservables.observeDelayedValue(400, comboElement);
     CallUpdateStrategy cus = new CallUpdateStrategy(calls);
@@ -182,7 +180,7 @@ public class StreamAudioExtendedEditorPage extends AbstractActionstepEditorPage 
     IObservableValue escdigOb = ActionstepEditObservables.observeValue(parent.getEditPart()
         .getEditingDomain(), parent.getEditPart().getActionStep(), parent.getEditPart()
         .getActionStep().eClass().getEStructuralFeature("escapeDigits"));
-    TextObservableValue uiElement3 = (TextObservableValue) SWTObservables.observeText(
+    ISWTObservableValue uiElement3 =  SWTObservables.observeText(
         escapeDigitsText, SWT.FocusOut);
     SWTObservables.observeDelayedValue(400, uiElement3);
     bindingContext.bindValue(uiElement3, escdigOb, null, null);
@@ -200,7 +198,7 @@ public class StreamAudioExtendedEditorPage extends AbstractActionstepEditorPage 
     IObservableValue fwdDigitOb = ActionstepEditObservables.observeValue(parent.getEditPart()
         .getEditingDomain(), parent.getEditPart().getActionStep(), parent.getEditPart()
         .getActionStep().eClass().getEStructuralFeature("forwardDigit"));
-    TextObservableValue uiElement4 = (TextObservableValue) SWTObservables.observeText(fwdDigitText,
+    ISWTObservableValue uiElement4 =  SWTObservables.observeText(fwdDigitText,
         SWT.FocusOut);
     SWTObservables.observeDelayedValue(400, uiElement4);
     bindingContext.bindValue(uiElement4, fwdDigitOb, null, null);
@@ -218,7 +216,7 @@ public class StreamAudioExtendedEditorPage extends AbstractActionstepEditorPage 
     IObservableValue pauseDigitOb = ActionstepEditObservables.observeValue(parent.getEditPart()
         .getEditingDomain(), parent.getEditPart().getActionStep(), parent.getEditPart()
         .getActionStep().eClass().getEStructuralFeature("pauseDigit"));
-    TextObservableValue uiElement5 = (TextObservableValue) SWTObservables.observeText(
+    ISWTObservableValue uiElement5 =  SWTObservables.observeText(
         pauseDigitText, SWT.FocusOut);
     SWTObservables.observeDelayedValue(400, uiElement5);
     bindingContext.bindValue(uiElement5, pauseDigitOb, null, null);
@@ -236,7 +234,7 @@ public class StreamAudioExtendedEditorPage extends AbstractActionstepEditorPage 
     IObservableValue rwdDigitOb = ActionstepEditObservables.observeValue(parent.getEditPart()
         .getEditingDomain(), parent.getEditPart().getActionStep(), parent.getEditPart()
         .getActionStep().eClass().getEStructuralFeature("rewindDigit"));
-    TextObservableValue uiElement6 = (TextObservableValue) SWTObservables.observeText(rwdDigitText,
+    ISWTObservableValue uiElement6 =  SWTObservables.observeText(rwdDigitText,
         SWT.FocusOut);
     SWTObservables.observeDelayedValue(400, uiElement6);
     bindingContext.bindValue(uiElement6, rwdDigitOb, null, null);

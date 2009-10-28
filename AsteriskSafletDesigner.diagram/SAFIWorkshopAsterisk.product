@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?pde version="3.4"?>
+<?pde version="3.5"?>
 
-<product name="SafiWorkshopAsterisk" id="AsteriskSafletDesigner.diagram.SafiWorkshop" application="AsteriskSafletDesigner.diagram.AsteriskApplication" version="1.0" useFeatures="true">
+<product name="SafiWorkshopAsterisk" id="AsteriskSafletDesigner.diagram.SafiWorkshop" application="AsteriskSafletDesigner.diagram.AsteriskApplication" version="1.0" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <text>
@@ -38,12 +38,13 @@
    <vm>
    </vm>
 
+
    <plugins>
-      <plugin id="AnswerEditPolicy"/>
+      <plugin id="AnswerEditPolicy" fragment=""/>
       <plugin id="AsteriskCore"/>
       <plugin id="AsteriskCore.edit"/>
       <plugin id="AsteriskSafletDesigner.diagram"/>
-      <plugin id="SafiJSEditor"/>
+      <plugin id="SafiJSEditor" fragment=""/>
       <plugin id="Saflets"/>
       <plugin id="Saflets.edit"/>
       <plugin id="com.ibm.icu"/>
@@ -72,7 +73,7 @@
       <plugin id="org.eclipse.core.net"/>
       <plugin id="org.eclipse.core.resources"/>
       <plugin id="org.eclipse.core.resources.compatibility" fragment="true"/>
-      <plugin id="org.eclipse.core.resources.win32"/>
+      <plugin id="org.eclipse.core.resources.win32" fragment=""/>
       <plugin id="org.eclipse.core.runtime"/>
       <plugin id="org.eclipse.core.runtime.compatibility"/>
       <plugin id="org.eclipse.core.runtime.compatibility.registry" fragment="true"/>
@@ -161,7 +162,8 @@
 
    <features>
       <feature id="com.safi.workshop.asterisk" version="1.5.0"/>
-      <feature id="org.eclipse.help" version="3.3.1"/>
+      <feature id="org.eclipse.help" version="1.1.0.v20090602-7e7eFAlFEx2XZoYqwI68e2F"/>
    </features>
+
 
 </product>

@@ -8,8 +8,8 @@ import org.eclipse.core.databinding.Binding;
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.jface.databinding.swt.ISWTObservableValue;
 import org.eclipse.jface.databinding.swt.SWTObservables;
-import org.eclipse.jface.internal.databinding.swt.ComboObservableValue;
 import org.eclipse.jface.viewers.ComboViewer;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ILabelProviderListener;
@@ -105,7 +105,7 @@ public class PlaceCallOutputEditorPage extends AbstractActionstepEditorPage {
     IObservableValue ob = ActionstepEditObservables.observeValue(parent.getEditPart()
         .getEditingDomain(), parent.getEditPart().getActionStep(), parent.getEditPart()
         .getActionStep().eClass().getEStructuralFeature("newCall1"));
-    ComboObservableValue comboElement = (ComboObservableValue) SWTObservables
+    ISWTObservableValue comboElement =  SWTObservables
         .observeSelection(combo);
 
     SWTObservables.observeDelayedValue(400, comboElement);

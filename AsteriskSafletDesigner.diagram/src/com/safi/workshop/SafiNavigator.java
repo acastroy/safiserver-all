@@ -74,12 +74,12 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.ActionGroup;
 import org.eclipse.ui.ide.IDE;
 import org.eclipse.ui.internal.navigator.CommonNavigatorActionGroup;
-import org.eclipse.ui.internal.navigator.CommonNavigatorManager;
 import org.eclipse.ui.internal.navigator.NavigatorContentService;
-import org.eclipse.ui.internal.navigator.extensions.LinkHelperService;
 import org.eclipse.ui.navigator.CommonNavigator;
+import org.eclipse.ui.navigator.CommonNavigatorManager;
 import org.eclipse.ui.navigator.CommonViewer;
 import org.eclipse.ui.navigator.ICommonActionConstants;
+import org.eclipse.ui.navigator.LinkHelperService;
 import org.eclipse.ui.navigator.NavigatorActionService;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.IPropertySource;
@@ -87,6 +87,7 @@ import org.eclipse.ui.views.properties.IPropertySourceProvider;
 import org.eclipse.ui.views.properties.PropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 
+import com.ibm.db2.jcc.t4.n;
 import com.safi.db.DBConnection;
 import com.safi.db.Query;
 import com.safi.db.manager.DBManager;
@@ -139,7 +140,7 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
   private static final Set<Query> EMPTY_QUERIES = Collections.emptySet();
   private Clipboard clipboard;
   private User defaultUser;
-  private LinkHelperService linkService;
+//  private LinkHelperService linkService;
   private static IStructuredSelection cachedSelection;
 
   private ExecutorService executor = Executors.newSingleThreadExecutor();
@@ -539,12 +540,16 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
     return ag;
   }
 
-  private synchronized LinkHelperService getLinkHelperService() {
-    if (linkService == null)
-      linkService = new LinkHelperService((NavigatorContentService) getCommonViewer()
-          .getNavigatorContentService());
-    return linkService;
-  }
+//  @Override 
+//  protected synchronized LinkHelperService getLinkHelperService() {
+//    if (linkService==null){
+//      linkService = super.getLinkHelperService();
+//    }
+//    if (linkService == null)
+//      linkService = new LinkHelperService((NavigatorContentService) getCommonViewer()
+//          .getNavigatorContentService());
+//    return linkService;
+//  }
 
   // public Object[] getSelected() {
   // IStructuredSelection selection = getViewerSelection();

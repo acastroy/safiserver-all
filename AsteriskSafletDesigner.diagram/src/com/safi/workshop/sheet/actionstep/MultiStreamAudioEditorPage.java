@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.databinding.swt.ISWTObservableValue;
 import org.eclipse.jface.databinding.swt.SWTObservables;
-import org.eclipse.jface.internal.databinding.swt.ComboObservableValue;
 import org.eclipse.jface.viewers.ComboViewer;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ILabelProviderListener;
@@ -127,7 +126,7 @@ public class MultiStreamAudioEditorPage extends AbstractActionstepEditorPage {
     IObservableValue ob = ActionstepEditObservables.observeValue(parent.getEditPart()
         .getEditingDomain(), parent.getEditPart().getActionStep(), parent.getEditPart()
         .getActionStep().eClass().getEStructuralFeature("call1"));
-    ComboObservableValue comboElement = (ComboObservableValue) SWTObservables
+    ISWTObservableValue comboElement =  SWTObservables
         .observeSelection(combo);
     SWTObservables.observeDelayedValue(400, comboElement);
     CallUpdateStrategy cus = new CallUpdateStrategy(calls);

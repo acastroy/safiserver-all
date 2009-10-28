@@ -13,6 +13,7 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.gmf.runtime.common.core.service.IOperation;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
@@ -71,6 +72,11 @@ public class AsteriskModelingAssistantProvider extends ModelingAssistantProvider
   //   
   // }
 
+  @Override
+  public boolean provides(IOperation operation) {
+    // TODO Auto-generated method stub
+    return super.provides(operation);
+  }
   /**
    * @generated NOT
    */

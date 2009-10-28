@@ -8,7 +8,6 @@ import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.databinding.swt.ISWTObservableValue;
 import org.eclipse.jface.databinding.swt.SWTObservables;
-import org.eclipse.jface.internal.databinding.swt.TextObservableValue;
 import org.eclipse.jface.viewers.ComboViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
@@ -74,7 +73,7 @@ public class MeetMeOptionsEditorPage extends AbstractActionstepEditorPage {
 
     recordFilenameText = new Text(composite, SWT.BORDER);
     recordFilenameText.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
-    TextObservableValue uiElement = (TextObservableValue) SWTObservables.observeText(
+    ISWTObservableValue uiElement =  SWTObservables.observeText(
         recordFilenameText, SWT.FocusOut);
     ob = ActionstepEditObservables.observeValue(parent.getEditPart().getEditingDomain(), parent
         .getEditPart().getActionStep(), parent.getEditPart().getActionStep().eClass()

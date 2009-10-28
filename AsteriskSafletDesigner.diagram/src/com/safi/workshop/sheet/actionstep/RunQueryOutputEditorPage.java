@@ -7,8 +7,8 @@ import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.jface.databinding.swt.ISWTObservableValue;
 import org.eclipse.jface.databinding.swt.SWTObservables;
-import org.eclipse.jface.internal.databinding.swt.TextObservableValue;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -43,7 +43,7 @@ public class RunQueryOutputEditorPage extends AbstractActionstepEditorPage {
     IObservableValue obResultSet = ActionstepEditObservables.observeValue(parent.getEditPart()
         .getEditingDomain(), parent.getEditPart().getActionStep(), parent.getEditPart()
         .getActionStep().eClass().getEStructuralFeature("resultSetName"));
-    TextObservableValue uiResultSet = (TextObservableValue) SWTObservables.observeText(
+    ISWTObservableValue uiResultSet =  SWTObservables.observeText(
         textResultSet, SWT.FocusOut);
     bindingContext.bindValue(uiResultSet, obResultSet, null, null);
 

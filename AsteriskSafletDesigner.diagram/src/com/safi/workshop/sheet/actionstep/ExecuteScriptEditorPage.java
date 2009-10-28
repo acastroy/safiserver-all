@@ -7,8 +7,8 @@ import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.jface.databinding.swt.ISWTObservableValue;
 import org.eclipse.jface.databinding.swt.SWTObservables;
-import org.eclipse.jface.internal.databinding.swt.TextObservableValue;
 import org.eclipse.jface.viewers.ComboViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
@@ -51,7 +51,7 @@ public class ExecuteScriptEditorPage extends AbstractActionstepEditorPage {
     IObservableValue ob = ActionstepEditObservables.observeValue(parent.getEditPart()
         .getEditingDomain(), parent.getEditPart().getActionStep(), parent.getEditPart()
         .getActionStep().eClass().getEStructuralFeature("name"));
-    TextObservableValue uiElement = (TextObservableValue) SWTObservables.observeText(nameText,
+    ISWTObservableValue uiElement =  SWTObservables.observeText(nameText,
         SWT.FocusOut);
     SWTObservables.observeDelayedValue(400, uiElement);
     bindingContext.bindValue(uiElement, ob, null, null);

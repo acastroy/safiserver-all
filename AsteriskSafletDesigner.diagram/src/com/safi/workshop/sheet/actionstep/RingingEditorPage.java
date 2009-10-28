@@ -10,8 +10,6 @@ import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.databinding.swt.ISWTObservableValue;
 import org.eclipse.jface.databinding.swt.SWTObservables;
-import org.eclipse.jface.internal.databinding.swt.ComboObservableValue;
-import org.eclipse.jface.internal.databinding.swt.TextObservableValue;
 import org.eclipse.jface.viewers.ComboViewer;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ILabelProviderListener;
@@ -63,7 +61,7 @@ public class RingingEditorPage extends AbstractActionstepEditorPage {
     IObservableValue ob = ActionstepEditObservables.observeValue(parent.getEditPart()
         .getEditingDomain(), parent.getEditPart().getActionStep(), parent.getEditPart()
         .getActionStep().eClass().getEStructuralFeature("name"));
-    TextObservableValue uiElement = (TextObservableValue) SWTObservables.observeText(text,
+    ISWTObservableValue uiElement =  SWTObservables.observeText(text,
         SWT.FocusOut);
     // SWTObservables.observeDelayedValue(400, uiElement);
     bindingContext.bindValue(uiElement, ob, null, null);
@@ -128,7 +126,7 @@ public class RingingEditorPage extends AbstractActionstepEditorPage {
     ob = ActionstepEditObservables.observeValue(parent.getEditPart().getEditingDomain(), parent
         .getEditPart().getActionStep(), parent.getEditPart().getActionStep().eClass()
         .getEStructuralFeature("call1"));
-    ComboObservableValue comboElement = (ComboObservableValue) SWTObservables
+    ISWTObservableValue comboElement =  SWTObservables
         .observeSelection(combo);
 
     SWTObservables.observeDelayedValue(400, comboElement);
