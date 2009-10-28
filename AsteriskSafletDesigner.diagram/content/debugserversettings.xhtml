@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Setting up debug server</title>
+    <link rel="stylesheet" href="style/safiwelcome.css" type="text/css" />
+  </head>
+
+<body> 
+	<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center">
+	<tr>
+		<td align="center" height="50" bgcolor="#FFFFFF" colspan="2"><img border="0" src="graphics/top_small.png" /></td>
+	</tr>
+	<tr>
+		<td><br/></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">
+			<table bgcolor="#FFFFFF" cellpadding="2" width="500">
+				<tr>
+					<td align="center"><h3>Setting up the debug server in SafiWorkshop</h3></td>
+				</tr>
+				<tr>
+					<td align="left" class="menuOptionDetails">SafiWorkshop comes with a version of SafiServer embedded in the application for debugging and testing of Saflets (i.e. callflow applicatons).  This mini-server also serves the purpose of a way of trying out the SafiServer feature set without needing to install the production standalone SafiServer.
+					</td>
+				</tr>
+				<tr>
+					<td><hr size="1"/></td>
+				</tr>
+				<tr>
+					<td align="right"><a href="http://org.eclipse.ui.intro/navigate?direction=backward"><img border="0" src="graphics/action_back.gif"  alt="Back" /></a>&nbsp;&nbsp;<a href="http://org.eclipse.ui.intro/showPage?id=root"><img border="0" src="graphics/home.png" alt="Welcome Page" /></a></td>
+				</tr>
+				<tr>
+					<td class="menuOptionDetails">
+						<b>1) Configure the Debug SafiServer:</b><br/>
+						This is the server that runs inside SafiWorkshop.  You can configure the debug server by double clicking the <b>Debug:</b> node in the navigator or ... <br/><br/><a href="http://org.eclipse.ui.intro/runAction?class=com.safi.server.actions.EditDebugSafiServerAction&amp;pluginId=AsteriskSafletDesigner.diagram"><img border="0" src="graphics/littlearrow.png" />Click here to open the Debug SafiServer Manager</a><br/>
+						<br/>
+						You should see the following popup:<br/><br/>
+						<img border="0" src="graphics/debugservermanager.jpg" /><br/><br/>
+						Fill in (or use the dropdown list) the <b>Bind IP Address</b> field with an IP address that is visable from the Asterisk server you want to use.  The <b>FastAGI</b> and <b>Safi Mgt</b> can be left with the default values.<br/><br/>Press <b>OK</b> to save the changes.
+					</td>
+				</tr>
+				<tr class="menuOptionDetails">
+					<td>
+					<br /><br />
+					<table>
+						<tr>
+							<td valign="middle"><img border="0" src="graphics/action_forward.gif" /></td>
+							<td valign="middle"><a href="http://org.eclipse.ui.intro/showPage?id=step2a">NEXT STEP: Configure Asterisk PBX (configuration files)</a></td>
+						</tr>
+						<tr><td colspan="2"><br /></td></tr>
+						<tr>
+							<td valign="middle"><img border="0" src="graphics/action_forward.gif" /></td>
+							<td valign="middle"><a href="http://org.eclipse.ui.intro/showPage?id=step2b">NEXT STEP: Configure Asterisk PBX (FreePBX w/ Saflets module)</a></td>
+						</tr>
+					</table>
+					
+					<br /><br />
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	</table>
+</body>
+</html>

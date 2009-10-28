@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<introContent>
+    <page id="root" content="content/root.xhtml"/>
+    <page id="settingupdebug" content="content/debugserversettings.xhtml"/>
+    <page id="step2a" content="content/debugsetup_step2a.xhtml"/>
+    <page id="step2b" content="content/debugsetup_step2b.xhtml"/>
+    <page id="step3" content="content/debugsetup_step3.xhtml"/>
+    <page id="step4" content="content/debugsetup_step4.xhtml"/>
+    <page id="freepbxinstall" content="content/freepbxinstall.xhtml"/>
+	<link id="classId1" content="com.safi.workshop.SafiDiagramActionDelegate"/>
+</introContent>

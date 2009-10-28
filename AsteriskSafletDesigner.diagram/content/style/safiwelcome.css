@@ -1,0 +1,103 @@
+/*
+ * Set up the content for the root page.
+ */
+html, body { 
+    background-image : url("../graphics/backgroundgrad.gif");
+    background-repeat : repeat-x;
+    background-position : bottom;
+    overflow : auto;
+    overflow-clip: rect(0, auto, auto, 0);
+    background-color : #224122;
+	margin:0;
+   	padding:0;
+   	height:100%;
+    border:none
+	font-size: .9em;
+}
+
+.welcometext {
+	font-family: Verdana,Tahoma,arial,sans-serif;
+	font-weight:bold;
+	font-size: 11px;
+	color: #224122;
+	padding-left:10px;
+}
+
+h4 {
+	font-size: 1.3em;
+	font-weight: bold;
+	padding-bottom: 0px;
+	margin-bottom: 2px;
+	font-family: Verdana,Tahoma,arial,sans-serif;
+}
+
+h3 {
+	font-size: 1.1em;
+	font-weight: bold;
+	padding-bottom: 0px;
+	margin-bottom: 2px;
+	font-family: Verdana,Tahoma,arial,sans-serif;
+}
+
+.menuOptionDetails {
+	margin-top: 0px;
+	padding-top: 0px;
+	font-family: Verdana,Tahoma,arial,sans-serif;
+	font-size: 11px;
+	text-align:left;
+}
+
+a 			{ color: #7B806F; font-family: Verdana,Tahoma,arial,sans-serif; text-decoration: none; font-weight: bold;} 
+a:link		{ color: #7B806F; text-decoration: none; } 
+a:visited	{ color: #7B806F; text-decoration: none; } 
+a:active	{ color: #224122; text-decoration: underline;  } 
+a:hover		{ color: #224122; text-decoration: underline; }
+
+
+/* Main menu current links */
+.mainmenucurbtn a 	{
+	color: #2F4D31;
+	font-family: Tahoma, verdana, arial, sans-serif;
+	text-decoration: none;
+	font-weight:bold;
+	font-size: 11px;
+	margin-top: 0px;
+	margin-right: 6px;
+	margin-bottom: 0px;
+	margin-left: 6px;
+	height: 20px;
+	padding-top: 4px;
+	padding-right: 4px;
+	padding-bottom: 4px;
+	padding-left: 4px;
+	background-color: #D1CD9D; 
+} 
+.mainmenucurbtn a:link	{ 
+	color: #2F4D31; 
+	text-decoration: none; 
+} 
+.mainmenucurbtn a:visited { 
+	color: #2F4D31; 
+	text-decoration: none; 
+} 
+.mainmenucurbtna a:active	{ 
+	color: #4595C6;	
+	background-color: #FFFFFF;  
+} 
+.mainmenucurbtn a:hover {
+	color: #4595C6;
+	background-color: #FFFFFF;  
+} 
+
+.code {
+	font-family: "courier new",courier,monospace;
+	font-size: 1em;
+	color: #224122;
+	border: solid 1px #C6C897;
+	background-color:#F2F4B8;
+	overflow: auto;
+	max-height: 200px;
+    padding: 4px 4px 4px 4px;
+    line-height: 15px;
+	 margin:5px 0 5px 0;	
+}

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservices" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://webservices" xmlns:intf="http://webservices" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns1="http://rpc.xml.coldfusion" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by ColdFusion version 8,0,1,195765-->
+ <wsdl:types>
+  <schema targetNamespace="http://rpc.xml.coldfusion" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="CFCInvocationException">
+    <sequence/>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="signupUserResponse">
+
+      <wsdl:part name="signupUserReturn" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="CFCInvocationException">
+
+      <wsdl:part name="fault" type="tns1:CFCInvocationException"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTrialLicenseByTokenResponse">
+
+      <wsdl:part name="getTrialLicenseByTokenReturn" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTrialLicenseByUserRequest">
+
+      <wsdl:part name="username" type="xsd:string"/>
+
+      <wsdl:part name="hashedPassword" type="xsd:string"/>
+
+      <wsdl:part name="safiserverSerial" type="xsd:string"/>
+
+      <wsdl:part name="safiserverMAC" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTrialLicenseByTokenRequest">
+
+      <wsdl:part name="verificationToken" type="xsd:string"/>
+
+      <wsdl:part name="safiserverSerial" type="xsd:string"/>
+
+      <wsdl:part name="safiserverMAC" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="signupUserRequest">
+
+      <wsdl:part name="username" type="xsd:string"/>
+
+      <wsdl:part name="hashedPassword" type="xsd:string"/>
+
+      <wsdl:part name="emaiAddress" type="xsd:string"/>
+
+      <wsdl:part name="companyName" type="xsd:string"/>
+
+      <wsdl:part name="country" type="xsd:string"/>
+
+      <wsdl:part name="howHear" type="xsd:string"/>
+
+      <wsdl:part name="asteriskSys" type="xsd:string"/>
+
+      <wsdl:part name="asteriskExp" type="xsd:string"/>
+
+      <wsdl:part name="industry" type="xsd:string"/>
+
+      <wsdl:part name="employees" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTrialLicenseByUserResponse">
+
+      <wsdl:part name="getTrialLicenseByUserReturn" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="workshopServerLicensing">
+
+      <wsdl:operation name="getTrialLicenseByUser" parameterOrder="username hashedPassword safiserverSerial safiserverMAC">
+
+         <wsdl:input message="impl:getTrialLicenseByUserRequest" name="getTrialLicenseByUserRequest"/>
+
+         <wsdl:output message="impl:getTrialLicenseByUserResponse" name="getTrialLicenseByUserResponse"/>
+
+         <wsdl:fault message="impl:CFCInvocationException" name="CFCInvocationException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTrialLicenseByToken" parameterOrder="verificationToken safiserverSerial safiserverMAC">
+
+         <wsdl:input message="impl:getTrialLicenseByTokenRequest" name="getTrialLicenseByTokenRequest"/>
+
+         <wsdl:output message="impl:getTrialLicenseByTokenResponse" name="getTrialLicenseByTokenResponse"/>
+
+         <wsdl:fault message="impl:CFCInvocationException" name="CFCInvocationException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="signupUser" parameterOrder="username hashedPassword emaiAddress companyName country howHear asteriskSys asteriskExp industry employees">
+
+         <wsdl:input message="impl:signupUserRequest" name="signupUserRequest"/>
+
+         <wsdl:output message="impl:signupUserResponse" name="signupUserResponse"/>
+
+         <wsdl:fault message="impl:CFCInvocationException" name="CFCInvocationException"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="workshopServerLicensing.cfcSoapBinding" type="impl:workshopServerLicensing">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getTrialLicenseByUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getTrialLicenseByUserRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservices" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getTrialLicenseByUserResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservices" use="encoded"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CFCInvocationException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="CFCInvocationException" namespace="http://webservices" use="encoded"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTrialLicenseByToken">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getTrialLicenseByTokenRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservices" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getTrialLicenseByTokenResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservices" use="encoded"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CFCInvocationException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="CFCInvocationException" namespace="http://webservices" use="encoded"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="signupUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="signupUserRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservices" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="signupUserResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservices" use="encoded"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="CFCInvocationException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="CFCInvocationException" namespace="http://webservices" use="encoded"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="workshopServerLicensingService">
+
+      <wsdl:port binding="impl:workshopServerLicensing.cfcSoapBinding" name="workshopServerLicensing.cfc">
+
+         <wsdlsoap:address location="https://www.safisystems.com/webservices/workshopServerLicensing.cfc"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

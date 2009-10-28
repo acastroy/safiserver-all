@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Setting up debug server</title>
+    <link rel="stylesheet" href="style/safiwelcome.css" type="text/css" />
+  </head>
+
+<body> 
+	<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center">
+	<tr>
+		<td align="center" height="50" bgcolor="#FFFFFF" colspan="2"><img border="0" src="graphics/top_small.png" /></td>
+	</tr>
+	<tr>
+		<td><br/></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">
+			<table bgcolor="#FFFFFF" cellpadding="2" width="500">
+				<tr>
+					<td align="right"><a href="http://org.eclipse.ui.intro/navigate?direction=backward"><img border="0" src="graphics/action_back.gif"  alt="Back" /></a>&nbsp;&nbsp;<a href="http://org.eclipse.ui.intro/showPage?id=root"><img border="0" src="graphics/home.png" alt="Welcome Page" /></a></td>
+				</tr>
+				<tr>
+					<td class="menuOptionDetails"><br /><br />
+						<b>2) Configure Asterisk PBX (FreePBX w/ Saflets module):</b><br/>
+						If you are running Asterisk with FreePBX you can quickly configure the settings needed using the <a href="http://org.eclipse.ui.intro/openBrowser?url=http://sourceforge.net/projects/safiserverfreep/">SafiServer FreePBX Module</a>.<br/><br />
+						After you've installed the module (<a href="http://org.eclipse.ui.intro/showPage?id=freepbxinstall">click here for the install guide</a>) go to the SafiServer menu option in the FreePBX web administrator: <br /> <br />
+						<img border="0" src="graphics/freebpx_safiserver.jpg" /><br /> <br />
+						Select <b>Add SafiServer Entry</b> on the right and you should see the following form:<br /> <br />
+						<img border="0" src="graphics/freebpx_form.jpg" /><br /> <br />
+						Fill in the values as follows:<br /><br />
+						<b>SafiServer Name :</b> This can be any name you want (example: <i>Workshop Dev</i>)<br /><br />
+						<b>SafiServer IP Address :</b> Set this to the IP address that your SafiWorkshop is running on (the value set in the first step)<br /><br />
+						<b>SafiServer FastAGI Port :</b> Change this to <b>3573</b> (4573 is for use with a production SafiServer)<br /><br />
+						<b>SafiServer IP Netmask :</b> Set this the to subnet associated with your the IP (SafiServer IP Address)<br /><br />
+						<b>Manager Login :</b> Set this to whatever logon you wish to use (example: <i>safi</i>)<br /><br />
+						<b>Manager Password :</b> Set this to whatever password you wish to use (example: <i>1234</i>)<br /><br />
+						<b>Is debug server? :</b> Leave this checked<br /><br /><br />
+						Here's an example of what the form should look like:<br /><br />
+						<img border="0" src="graphics/freebpx_formfilled.jpg"/><br />
+						Press <b>Submit Changes</b> then press the <b>Apply Configuration Changes</b> link on the top of the page
+					</td>
+				</tr>
+				<tr class="menuOptionDetails">
+			<td>
+			<br /><br />
+			<table>
+				<tr>
+					<td valign="middle"><img border="0" src="graphics/action_forward.gif" /></td>
+					<td valign="middle"><a href="http://org.eclipse.ui.intro/showPage?id=step3">NEXT STEP: Configure the Asterisk Debug Server connection</a></td>
+				</tr>
+			</table>
+			
+			<br /><br />
+			</td>
+		</tr>
+			</table>
+		</td>
+	</tr>
+	</table>
+</body>
+</html>

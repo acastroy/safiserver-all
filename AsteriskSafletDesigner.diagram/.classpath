@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="lib" path="lib/licensews.jar" sourcepath="/LicenseWebservice"/>
+	<classpathentry exported="true" kind="lib" path="lib/layout.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/truezip-6.jar" sourcepath="D:/javalib/truezip6_6/truezip-6-src.zip"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="lib" path="lib/safiRouting.jar" sourcepath="/RectilinearRouting"/>
+	<classpathentry exported="true" kind="lib" path="lib/nanoxml.jar" sourcepath="AsteriskSafletDesigner.diagramsrc.zip"/>
+	<classpathentry exported="true" kind="lib" path="lib/rowset.jar" sourcepath="AsteriskSafletDesigner.diagramsrc.zip"/>
+	<classpathentry exported="true" kind="lib" path="lib/squirrel.jar" sourcepath="AsteriskSafletDesigner.diagramsrc.zip"/>
+	<classpathentry exported="true" kind="lib" path="lib/dom4j-1.6.1.jar" sourcepath="AsteriskSafletDesigner.diagramsrc.zip"/>
+	<classpathentry exported="true" kind="lib" path="lib/jmf.jar" sourcepath="AsteriskSafletDesigner.diagramsrc.zip"/>
+	<classpathentry exported="true" kind="lib" path="lib/com.richclientgui.toolbox.0.4.jar" sourcepath="/RCPToolbox"/>
+	<classpathentry exported="true" kind="lib" path="lib/javalayer.jar" sourcepath="AsteriskSafletDesigner.diagramsrc.zip"/>
+	<classpathentry exported="true" kind="lib" path="lib/tritonus_gsm-0.3.6.jar" sourcepath="AsteriskSafletDesigner.diagramsrc.zip"/>
+	<classpathentry exported="true" kind="lib" path="lib/tritonus_mp3-0.3.6.jar" sourcepath="AsteriskSafletDesigner.diagramsrc.zip"/>
+	<classpathentry exported="true" kind="lib" path="lib/tritonus_remaining-0.3.6.jar" sourcepath="AsteriskSafletDesigner.diagramsrc.zip"/>
+	<classpathentry exported="true" kind="lib" path="lib/tritonus_share-0.3.6.jar" sourcepath="AsteriskSafletDesigner.diagramsrc.zip"/>
+	<classpathentry exported="true" kind="lib" path="lib/nebula_compositetable.jar" sourcepath="AsteriskSafletDesigner.diagramsrc.zip"/>
+	<classpathentry exported="true" kind="lib" path="lib/nebula_cdatetime_0.9.0.jar" sourcepath="/cdatetime_0.9.0/src"/>
+	<classpathentry exported="true" kind="lib" path="lib/tritonus_dsp-0.3.6.jar" sourcepath="AsteriskSafletDesigner.diagramsrc.zip"/>
+	<classpathentry exported="true" kind="lib" path="lib/args4j-2.0.1.jar" sourcepath="AsteriskSafletDesigner.diagramsrc.zip"/>
+	<classpathentry exported="true" kind="lib" path="lib/customInitiator.jar" sourcepath="/CustomInitiator"/>
+	<classpathentry exported="true" kind="lib" path="lib/customInitiatorInvoker.jar" sourcepath="AsteriskSafletDesigner.diagramsrc.zip"/>
+	<classpathentry kind="lib" path="lib/boolExprParser.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

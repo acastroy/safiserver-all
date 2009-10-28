@@ -1,0 +1,3883 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+Safi Systems LLC, Copyright 2008 All Rights Reserved
+-->
+<plugin>
+   <extension
+        id="SafiWorkshop"
+        point="org.eclipse.core.runtime.products">
+     <product
+           application="AsteriskSafletDesigner.diagram.AsteriskApplication"
+           name="SafiWorkshopAsterisk">
+        <property
+              name="windowImages"
+              value="icons/product/app16x16-24bit.png,icons/product/app32x32-24bit.png,icons/product/app48x48-24bit.png">
+        </property>
+        <property
+              name="aboutText"
+              value="%aboutText">
+        </property>
+        <property
+              name="startupProgressRect"
+              value="10,275,480,15">
+        </property>
+        <property
+              name="appName"
+              value="SafiWorkshopAsterisk">
+        </property>
+        <property
+              name="preferenceCustomization"
+              value="plugin_customization.ini">
+        </property>
+     </product>
+  </extension>
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.editorProviders">
+      <EditorProvider
+            class="com.safi.workshop.editor.AsteriskEditorProvider">
+         <Priority
+               name="Highest">
+         </Priority>
+      </EditorProvider>
+   </extension>
+
+   <extension point="org.eclipse.team.core.fileTypes">
+      <?gmfgen generated="true"?>
+      <fileTypes
+         type="text"
+         extension="saflet">
+      </fileTypes>
+   </extension> 
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <?gmfgen generated="true"?>
+      <parser
+         type="saflet"
+         class="com.safi.core.actionstep.util.SafiResourceFactoryImpl">
+      </parser>
+   </extension>
+   <extension point="org.eclipse.ui.editors">
+      <?gmfgen generated="true"?>
+      <editor
+         id="com.safi.workshop.part.AsteriskDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/HandlerDiagramFile.gif"
+         extensions="saflet"
+         default="true"
+         class="com.safi.workshop.part.AsteriskDiagramEditor"
+         matchingStrategy="com.safi.workshop.part.AsteriskMatchingStrategy"
+         contributorClass="com.safi.workshop.part.AsteriskDiagramActionBarContributor">
+      </editor>
+      <editor
+            class="org.eclipse.ui.editors.text.TextEditor"
+            extensions="conf"
+            icon="icons/vareditor/Text.gif"
+            id="AsteriskSafletDesigner.diagram.editor.conf"
+            name="Configuration Editor">
+      </editor>
+      <editor
+            class="com.safi.workshop.serverview.editors.SafiServerPanel"
+            default="false"
+            id="com.safi.workshop.serverview.editors.SafiServerPanel"
+            name="SafiServer View">
+      </editor>
+   </extension>
+   
+   <extension point="org.eclipse.ui.contexts">
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="com.safi.workshop.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <?gmfgen generated="false"?>
+  	  <wizard
+  	     category="org.eclipse.ui.Examples"
+           class="com.safi.workshop.SafletCreationWizard"
+           hasPages="true"
+           icon="icons/product/SafiProject.gif"
+           id="com.safi.workshop.part.AsteriskCreationWizardID2"
+           name="Saflet Diagram">
+           <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.popupMenus">
+      <?gmfgen generated="false"?>
+      <viewerContribution
+            id="AsteriskSafletDesigner.diagram.viewerContribution1"
+            targetID="com.safi.eclipse.NavigatorView">
+         <menu
+               id="org.eclipse.ui.articles.action.contribution.navigator.subMenu"
+               label="New"
+               path="group.new">
+         </menu>
+      </viewerContribution>
+      <objectContribution
+            id="com.safi.workshop.edit.parts.contextMenu"
+            objectClass="com.safi.workshop.edit.parts.ToolstepEditPart">
+         <menu
+               id="AsteriskSafletDesigner.diagram.menu1"
+               label="Toggle Breakpoint"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="com.safi.workshop.actions.ToggleBreakpointAction"
+               enablesFor="1"
+               icon="icons/breakpoint.gif"
+               id="AsteriskSafletDesigner.diagram.newAction"
+               label="Toggle Breakpoint"
+               menubarPath="AsteriskSafletDesigner.diagram.menu1">
+         </action>
+      </objectContribution>
+      <viewerContribution
+            id="AsteriskSafletDesigner.diagram.serverResourcesContributionMenu"
+            targetID="com.safi.eclipse.NavigatorView">
+      </viewerContribution>
+      <objectContribution
+            id="AsteriskSafletDesigner.diagram.objectContribution4"
+            objectClass="com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver">
+         <action
+               class="com.safi.workshop.sqlexplorer.connections.actions.EditDriverAction"
+               icon="icons/DBEditDriver.gif"
+               id="com.safi.workshop.sqlexplorer.connections.actions.EditDriverAction"
+               label="Edit Driver"
+               menubarPath="com.safi.db.Menu"
+               tooltip="Edit selected database driver">
+         </action>
+      </objectContribution>
+      <objectContribution
+            id="com.safi.workshop.sqlexplorer.connections.actions.NewAliasAction"
+            objectClass="java.lang.Object">
+         <visibility>
+            <or>
+               <objectClass
+                     name="com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver">
+               </objectClass>
+               <objectClass
+                     name="com.safi.workshop.sqlexplorer.dbproduct.Alias">
+               </objectClass>
+               <objectClass
+                     name="com.safi.db.Query">
+               </objectClass>
+            </or>
+         </visibility>
+         <action
+               class="com.safi.workshop.navigator.db.UpdateResourceAction"
+               icon="icons/update.gif"
+               id="com.safi.workshop.navigator.db.UpdateResourceAction"
+               label="Update resource"
+               menubarPath="com.safi.db.Menu"
+               tooltip="Update selected resource from production SafiServer">
+            <enablement>
+               <or>
+                  <objectClass
+                        name="com.safi.db.Query">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.Alias">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.User">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.QueryParameter">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IProject">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.edit.parts.HandlerEditPart">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IFile">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IResource">
+                  </objectClass>
+               </or>
+            </enablement>
+         </action>
+         <action
+               class="com.safi.workshop.navigator.db.RetrieveDBResourceAction"
+               icon="icons/RetrieveDB.gif"
+               id="com.safi.workshop.navigator.db.RetrieveDBResourceAction"
+               label="Retrieve DB Resource"
+               menubarPath="com.safi.db.Menu"
+               tooltip="Retrieve DB Resrouce">
+            <enablement>
+               <or>
+                  <objectClass
+                        name="com.safi.db.Query">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.Alias">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.User">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.QueryParameter">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IProject">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.edit.parts.HandlerEditPart">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IFile">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IResource">
+                  </objectClass>
+               </or>
+            </enablement>
+         </action>
+         <action
+               class="com.safi.workshop.navigator.db.CommitResourceAction"
+               icon="icons/commit.gif"
+               id="com.safi.workshop.navigator.db.CommitResourceAction"
+               label="Publish resource"
+               menubarPath="com.safi.db.Menu"
+               tooltip="Publish selected database resource">
+            <enablement>
+               <or>
+                  <objectClass
+                        name="com.safi.db.Query">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.Alias">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.User">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.QueryParameter">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.DriverManager">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IProject">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.edit.parts.HandlerEditPart">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IFile">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IResource">
+                  </objectClass>
+               </or>
+            </enablement>
+         </action>
+         <action
+               class="com.safi.workshop.sqlexplorer.connections.actions.NewAliasAction"
+               icon="icons/NewDatabaseConnection.gif"
+               id="com.safi.workshop.sqlexplorer.connections.actions.NewAliasAction"
+               label="New Connection"
+               menubarPath="com.safi.db.Menu"
+               tooltip="Create a new database connection">
+         </action>
+      </objectContribution>
+      <objectContribution
+            id="AsteriskSafletDesigner.diagram.objectContribution3"
+            objectClass="com.safi.workshop.sqlexplorer.dbproduct.DriverManager">
+         <action
+               class="com.safi.workshop.sqlexplorer.connections.actions.NewDriverAction"
+               icon="icons/NewDatabaseDriver.gif"
+               id="com.safi.workshop.sqlexplorer.connections.actions.NewDriverAction"
+               label="New Driver"
+               menubarPath="com.safi.db.Menu"
+               tooltip="Register new database driver">
+         </action>
+      </objectContribution>
+      <objectContribution
+            id="AsteriskSafletDesigner.diagram.objectContribution6"
+            objectClass="com.safi.workshop.sqlexplorer.dbproduct.Alias">
+         <action
+               class="com.safi.workshop.sqlexplorer.connections.actions.NewQueryAction"
+               icon="icons/Query.gif"
+               id="com.safi.workshop.sqlexplorer.connections.actions.NewQueryAction"
+               label="New Query"
+               menubarPath="com.safi.db.Menu"
+               tooltip="Create new database query">
+         </action>
+         <!--
+         <action
+               class="com.safi.workshop.sqlexplorer.connections.actions.NewEditorAction"
+               icon="icons/new_editor.gif"
+               id="com.safi.workshop.sqlexplorer.actions.newEditor"
+               label="New SQL Editor"
+               menubarPath="com.safi.db.Menu"
+               toolbarPath="additions"
+               tooltip="New SQL Editor">
+         </action>
+         <action
+               class="com.safi.workshop.sqlexplorer.connections.actions.NewDatabaseStructureViewAction"
+               icon="icons/db_structure_view.gif"
+               id="com.safi.workshop.sqlexplorer.connections.actions.NewDatabaseStructureViewAction"
+               label="Show DB Structure View"
+               menubarPath="com.safi.db.Menu"
+               tooltip="Open the selected query in an SQL editor">
+         </action>
+         -->
+         <action
+               class="com.safi.workshop.sqlexplorer.connections.actions.ChangeAliasAction"
+               icon="icons/DBEditConnection.gif"
+               id="com.safi.workshop.sqlexplorer.connections.actions.ChangeAliasAction"
+               label="Edit Connection"
+               menubarPath="com.safi.db.Menu"
+               tooltip="Edit selected database connection">
+         </action>
+      </objectContribution>
+      <objectContribution
+            id="AsteriskSafletDesigner.diagram.objectContribution5"
+            objectClass="com.safi.db.Query">
+         <action
+               class="com.safi.workshop.sqlexplorer.connections.actions.ChangeQueryAction"
+               icon="icons/EditQueryParam.gif"
+               id="com.safi.workshop.sqlexplorer.connections.actions.ChangeQueryAction"
+               label="Edit Params"
+               menubarPath="com.safi.db.Menu">
+         </action>
+         <action
+               class="com.safi.workshop.sqlexplorer.connections.actions.OpenQueryInEditorAction"
+               icon="icons/OpenQuery.gif"
+               id="com.safi.workshop.sqlexplorer.connections.actions.OpenQueryInEditorAction"
+               label="Open Query"
+               menubarPath="com.safi.db.Menu"
+               tooltip="Open the selected query in an SQL editor">
+         </action>
+      </objectContribution>
+      <objectContribution
+            id="AsteriskSafletDesigner.diagram.objectContribution7"
+            objectClass="com.safi.workshop.sqlexplorer.dbproduct.User">
+         <action
+               class="com.safi.workshop.sqlexplorer.connections.actions.EditUserAction"
+               icon="icons/connected_session.gif"
+               id="com.safi.workshop.sqlexplorer.connections.actions.EditUserAction"
+               label="Edit User"
+               menubarPath="com.safi.db.Menu"
+               tooltip="Edit the username/password settings for the connection">
+         </action>
+      </objectContribution>
+      <objectContribution
+            id="AsteriskSafletDesigner.diagram.newSaflet"
+            objectClass="org.eclipse.core.resources.IProject">
+         <action
+               class="com.safi.workshop.audio.NewPromptAction"
+               definitionId="com.safi.workshop.eclipse.objectContribution1"
+               id="com.safi.workshop.audio.ImportAudioAction"
+               label="Import Audio File"
+               menubarPath="group.new">
+         </action>
+         <filter
+               name="projectNature"
+               value="com.safi.workshop.SafiProjectNature">
+         </filter>
+         <action
+               class="com.safi.workshop.SafiDiagramActionDelegate"
+               definitionId="com.safi.workshop.eclipse.objectContribution14"
+               icon="icons/obj16/HandlerDiagramFile.gif"
+               id="com.safi.workshop.part.AsteriskCreationWizardDelegate"
+               label="%newDiagramActionLabel"
+               menubarPath="group.new">
+         </action>
+         <action
+               class="com.safi.workshop.navigator.db.CommitResourceAction"
+               icon="icons/commit.gif"
+               id="com.safi.workshop.navigator.db.CommitResourceAction"
+               label="Publish resource"
+               menubarPath="com.safi.db.Menu"
+               tooltip="Publish selected database resource">
+            <enablement>
+               <or>
+                  <objectClass
+                        name="com.safi.db.Query">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.Alias">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.User">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.QueryParameter">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.DriverManager">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IProject">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.edit.parts.HandlerEditPart">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IFile">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IResource">
+                  </objectClass>
+               </or>
+            </enablement>
+         </action>
+         <action
+               class="com.safi.workshop.navigator.db.UpdateResourceAction"
+               icon="icons/update.gif"
+               id="com.safi.workshop.navigator.db.UpdateResourceAction"
+               label="Update resource"
+               menubarPath="com.safi.db.Menu"
+               tooltip="Update selected resource from production SafiServer">
+            <enablement>
+               <or>
+                  <objectClass
+                        name="com.safi.db.Query">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.Alias">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.User">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.QueryParameter">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IProject">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.edit.parts.HandlerEditPart">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IFile">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IResource">
+                  </objectClass>
+               </or>
+            </enablement>
+         </action>
+         <action
+               class="com.safi.workshop.navigator.db.RetrieveSafletAction"
+               icon="icons/RetrieveSaflet.gif"
+               id="com.safi.workshop.navigator.db.RetrieveSafletAction"
+               label="Retrieve Saflet"
+               menubarPath="com.safi.db.Menu"
+               tooltip="Retrieve Saflet">
+            <enablement>
+               <or>
+                  <objectClass
+                        name="com.safi.db.Query">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.Alias">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.User">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.QueryParameter">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.DriverManager">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IProject">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.edit.parts.HandlerEditPart">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IFile">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IResource">
+                  </objectClass>
+               </or>
+            </enablement>
+         </action>
+      </objectContribution>
+      <objectContribution
+            id="AsteriskSafletDesigner.diagram.objectContribution9"
+            objectClass="com.safi.workshop.navigator.serverconfig.AsteriskServerList">
+         <action
+               class="com.safi.workshop.navigator.serverconfig.AddAsteriskServerAction"
+               icon="icons/server/action/AsteriskServerManager.gif"
+               id="AsteriskSafletDesigner.diagram.action.serverconfig.AddAsteriskServerAction"
+               label="Add Asterisk Server"
+               menubarPath="com.safi.db.Menu"
+               tooltip="Add Asterisk Server">
+         </action>
+         <action
+               class="com.safi.workshop.audio.MultiSynchronizePromptsAction"
+               icon="icons/audio/synch.gif"
+               id="com.safi.workshop.audio.MultiSynchronizePromptsAction"
+               label="Synchronize prompts with Asterisk servers"
+               menubarPath="com.safi.db.Menu"
+               tooltip="Synchronize audio prompts with Asterisk server">
+            <enablement>
+               <not>
+                  <objectState
+                        name="id"
+                        value="-1">
+                  </objectState>
+               </not>
+            </enablement>
+         </action>
+      </objectContribution>
+      <objectContribution
+            id="AsteriskSafletDesigner.diagram.objectContribution10"
+            objectClass="com.safi.workshop.navigator.serverconfig.UserList">
+         <action
+               class="com.safi.workshop.navigator.serverconfig.UserManagerAction"
+               icon="icons/server/action/UserManager.gif"
+               id="AsteriskSafletDesigner.diagram.action.serverconfig.UserManagerAction"
+               label="User Manager"
+               menubarPath="com.safi.db.Menu">
+         </action>
+      </objectContribution>
+      <objectContribution
+            id="AsteriskSafletDesigner.diagram.objectContribution11"
+            objectClass="com.safi.db.server.config.SafiServer">
+         <action
+               class="com.safi.workshop.navigator.serverconfig.RegisterSafiServerAction"
+               icon="icons/server/action/LoginSafiServer.gif"
+               id="AsteriskSafletDesigner.diagram.action.serverconfig.AddSafiServerAction"
+               label="Login SafiServer"
+               menubarPath="com.safi.db.Menu"
+               tooltip="Login SafiServer">
+         </action>
+         <action
+               class="com.safi.workshop.navigator.serverconfig.RestartSafiServerAction"
+               icon="icons/restartserver.gif"
+               id="AsteriskSafletDesigner.diagram.action1.restartServerAction"
+               label="Restart Server"
+               menubarPath="com.safi.db.Menu"
+               tooltip="Restart prodction SafiServer">
+            <enablement>
+               <not>
+                  <objectState
+                        name="id"
+                        value="-1">
+                  </objectState>
+               </not>
+            </enablement>
+         </action>
+         <action
+               class="com.safi.workshop.navigator.serverconfig.OpenServerView"
+               icon="icons/serverview/openserverview.gif"
+               id="com.safi.workshop.navigator.serverconfig.OpenServerView"
+               label="Open SafiServer View"
+               menubarPath="com.safi.db.Menu"
+               tooltip="Open SafiServer maintenance and admin view">
+            <enablement>
+               <not>
+                  <objectState
+                        name="id"
+                        value="-1">
+                  </objectState>
+               </not>
+            </enablement>
+         </action>
+      </objectContribution>
+      <objectContribution
+            id="AsteriskSafletDesigner.diagram.objectContribution1"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               class="com.safi.workshop.navigator.db.CommitResourceAction"
+               icon="icons/commit.gif"
+               id="com.safi.workshop.navigator.db.CommitResourceAction"
+               label="Publish resource"
+               menubarPath="com.safi.db.Menu"
+               tooltip="Publish selected database resource">
+            <enablement>
+               <or>
+                  <objectClass
+                        name="com.safi.db.Query">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.Alias">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.User">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.QueryParameter">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.DriverManager">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IProject">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.edit.parts.HandlerEditPart">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IFile">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IResource">
+                  </objectClass>
+               </or>
+            </enablement>
+         </action>
+         <action
+               class="com.safi.workshop.navigator.db.UpdateResourceAction"
+               icon="icons/update.gif"
+               id="com.safi.workshop.navigator.db.UpdateResourceAction"
+               label="Update resource"
+               menubarPath="com.safi.db.Menu"
+               tooltip="Update selected resource from production SafiServer">
+            <enablement>
+               <or>
+                  <objectClass
+                        name="com.safi.db.Query">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.Alias">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.User">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.QueryParameter">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IProject">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.edit.parts.HandlerEditPart">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IFile">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IResource">
+                  </objectClass>
+               </or>
+            </enablement>
+         </action>
+         <action
+               class="com.safi.workshop.navigator.db.RetrieveSafletAction"
+               icon="icons/RetrieveSaflet.gif"
+               id="com.safi.workshop.navigator.db.RetrieveSafletAction"
+               label="Retrieve Saflet"
+               menubarPath="com.safi.db.Menu"
+               tooltip="Retrieve Saflet">
+            <enablement>
+               <or>
+                  <objectClass
+                        name="com.safi.db.Query">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.Alias">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.User">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.QueryParameter">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.DriverManager">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IProject">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.edit.parts.HandlerEditPart">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IFile">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IResource">
+                  </objectClass>
+               </or>
+            </enablement>
+         </action>
+      </objectContribution>
+      <objectContribution
+            id="AsteriskSafletDesigner.diagram.objectContribution12"
+            objectClass="com.safi.workshop.sqlexplorer.dbproduct.Alias">
+         <action
+               class="com.safi.workshop.sqlexplorer.connections.actions.DeleteAction"
+               definitionId="org.eclipse.ui.edit.delete2"
+               icon="icons/old_delete_edit.gif"
+               id="com.safi.workshop.navigator.DeleteAction"
+               label="Delete"
+               menubarPath="com.safi.db.Menu"
+               overrideActionId="org.eclipse.ui.edit.delete"
+               tooltip="Delete Resource">
+            <enablement>
+               <or>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.Alias">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.User">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.SQLConnection">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.Query">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.QueryParameter">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IResource">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.server.config.User">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.server.config.AsteriskServer">
+                  </objectClass>
+               </or>
+            </enablement>
+         </action>
+      </objectContribution>
+      <objectContribution
+            id="AsteriskSafletDesigner.diagram.objectContribution2"
+            objectClass="com.safi.db.Query">
+         <action
+               class="com.safi.workshop.sqlexplorer.connections.actions.DeleteAction"
+               definitionId="org.eclipse.ui.edit.delete3"
+               icon="icons/old_delete_edit.gif"
+               id="com.safi.workshop.navigator.DeleteAction"
+               label="Delete"
+               menubarPath="com.safi.db.Menu"
+               overrideActionId="org.eclipse.ui.edit.delete"
+               tooltip="Delete Resource">
+            <enablement>
+               <or>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.Alias">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.User">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.SQLConnection">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.Query">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.QueryParameter">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IResource">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.server.config.User">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.server.config.AsteriskServer">
+                  </objectClass>
+               </or>
+            </enablement>
+         </action>
+      </objectContribution>
+      <objectContribution
+            id="AsteriskSafletDesigner.diagram.objectContribution3"
+            objectClass="com.safi.db.server.config.AsteriskServer">
+         <action
+               class="com.safi.workshop.sqlexplorer.connections.actions.DeleteAction"
+               definitionId="org.eclipse.ui.edit.delete4"
+               icon="icons/old_delete_edit.gif"
+               id="com.safi.workshop.navigator.DeleteAction"
+               label="Delete"
+               menubarPath="com.safi.db.Menu"
+               overrideActionId="org.eclipse.ui.edit.delete"
+               tooltip="Delete Resource">
+            <enablement>
+               <or>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.Alias">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.User">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.SQLConnection">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.Query">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.QueryParameter">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IResource">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.server.config.User">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.server.config.AsteriskServer">
+                  </objectClass>
+               </or>
+            </enablement>
+         </action>
+         <!--
+         <action
+               class="com.safi.workshop.audio.SynchronizePromptsAction"
+               id="com.safi.workshop.audio.SynchronizePromptsAction"
+               label="Synchronize Prompts"
+               menubarPath="com.safi.db.Menu"
+               tooltip="Synchronize audio prompts with Asterisk server">
+            <enablement>
+               <not>
+                  <objectState
+                        name="id"
+                        value="-1">
+                  </objectState>
+               </not>
+            </enablement>
+         </action>
+         -->
+         <action
+               class="com.safi.workshop.navigator.ModifyAsteriskServerAction"
+               id="com.safi.workshop.navigator.ModifyAsteriskServerAction"
+               label="Modify Asterisk Server"
+               menubarPath="com.safi.db.Menu"
+               tooltip="Modify Asterisk Server">
+         </action>
+      </objectContribution>
+      <objectContribution
+            id="AsteriskSafletDesigner.diagram.objectContribution4"
+            objectClass="org.eclipse.core.resources.IResource">
+         <action
+               class="com.safi.workshop.sqlexplorer.connections.actions.DeleteAction"
+               definitionId="org.eclipse.ui.edit.delete5"
+               icon="icons/old_delete_edit.gif"
+               id="com.safi.workshop.navigator.DeleteAction"
+               label="Delete"
+               menubarPath="com.safi.db.Menu"
+               overrideActionId="org.eclipse.ui.edit.delete"
+               tooltip="Delete Resource">
+            <enablement>
+               <or>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.Alias">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.User">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.SQLConnection">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.Query">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.QueryParameter">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IResource">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.server.config.User">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.server.config.AsteriskServer">
+                  </objectClass>
+               </or>
+            </enablement>
+         </action>
+         <action
+               class="com.safi.workshop.navigator.db.DeleteSafletAction"
+               icon="icons/DeleteSaflet.gif"
+               id="com.safi.workshop.navigator.db.DeleteSafletAction"
+               label="Delete Saflets on SafiServer"
+               menubarPath="com.safi.db.Menu"
+               toolbarPath="prodServerBar"
+               tooltip="Delete Saflet(s) from production SafiServer">
+            <enablement>
+               <or>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.Alias">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.User">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.SQLConnection">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.Query">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.QueryParameter">
+                  </objectClass>
+                  <objectClass
+                        name="org.eclipse.core.resources.IResource">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.server.config.User">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.server.config.AsteriskServer">
+                  </objectClass>
+               </or>
+            </enablement>
+         </action>
+      </objectContribution>
+      <objectContribution
+            adaptable="false"
+            id="AsteriskSafletDesigner.diagram.objectContribution1"
+            objectClass="org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart">
+         <action
+               class="com.safi.workshop.actions.ToggleLineStyleAction"
+               id="com.safi.workshop.actions.ToggleLineStyleAction"
+               label="Auto Connection Routing"
+               state="true"
+               style="toggle">
+         </action>
+      </objectContribution>
+   </extension>
+
+      <extension point="org.eclipse.ui.actionSets">
+      <?gmfgen generated="false"?>
+      <actionSet
+            id="AsteriskSafletDesigner.diagram.safiServerActionSet"
+            label="SafiServer Action Set"
+            visible="true">
+         <menu
+               id="safiMenu"
+               label="SafiServer">
+            <groupMarker
+                  name="prodServer">
+            </groupMarker>
+            <separator
+                  name="safiGroup">
+            </separator>
+         </menu>
+         <action
+               class="com.safi.workshop.actions.DebugStepAction"
+               icon="icons/server/DebugStep.gif"
+               id="handlers.diagram.actions.DebugStepAction"
+               label="&amp;Step Debug"
+               menubarPath="safidebug/safiGroup"
+               toolbarPath="safiBar/safiGroup"
+               tooltip="Step to next ActionStep">
+         </action>
+         <action
+               class="com.safi.workshop.actions.DebugResumeAction"
+               icon="icons/server/DebugResume.gif"
+               id="handlers.diagram.actions.DebugResumeAction"
+               label="&amp;Resume Debug"
+               menubarPath="safidebug/safiGroup"
+               toolbarPath="safiBar/safiGroup"
+               tooltip="Resume execution (stopping at next breakpoint, if any)">
+         </action>
+         <action
+               class="com.safi.workshop.actions.DebugAction"
+               icon="icons/server/Debug.gif"
+               id="handlers.diagram.actions.DebugAction"
+               label="&amp;Debug Current Saflet "
+               menubarPath="safidebug/safiGroup"
+               toolbarPath="safiBar/safiGroup"
+               tooltip="Debug Current Saflet">
+         </action>
+         <action
+               class="com.safi.workshop.actions.StopDebugAction"
+               icon="icons/server/DebugStop.gif"
+               id="com.safi.workshop.actions.StopDebugAction"
+               label="&amp;Stop Debugging"
+               menubarPath="safidebug/safiGroup"
+               toolbarPath="safiBar/safiGroup"
+               tooltip="Stop Debugging Current Saflet">
+         </action>
+          <action
+                class="com.safi.workshop.part.ValidateActionDelegate"
+                icon="icons/server/ValidateSaflet.png"
+                id="com.safi.workshop.part.ValidateAction"
+                label="Validate Action"
+                toolbarPath="safiBar/safiGroup"
+                tooltip="Validate the current Saflet">
+          </action>
+          <action
+                class="com.safi.workshop.navigator.db.UpdateResourceAction"
+                icon="icons/update.gif"
+                id="com.safi.workshop.navigator.db.UpdateResourceAction"
+                label="Update resource"
+                menubarPath="safiMenu/prodServer"
+                tooltip="Update selected resource from production SafiServer">
+             <enablement>
+                <or>
+                   <objectClass
+                         name="com.safi.db.Query">
+                   </objectClass>
+                   <objectClass
+                         name="com.safi.workshop.sqlexplorer.dbproduct.Alias">
+                   </objectClass>
+                   <objectClass
+                         name="com.safi.workshop.sqlexplorer.dbproduct.User">
+                   </objectClass>
+                   <objectClass
+                         name="com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver">
+                   </objectClass>
+                   <objectClass
+                         name="com.safi.db.QueryParameter">
+                   </objectClass>
+                   <objectClass
+                         name="org.eclipse.core.resources.IProject">
+                   </objectClass>
+                   <objectClass
+                         name="com.safi.workshop.edit.parts.HandlerEditPart">
+                   </objectClass>
+                   <objectClass
+                         name="org.eclipse.core.resources.IFile">
+                   </objectClass>
+                </or>
+             </enablement>
+          </action>
+          <action
+                class="com.safi.workshop.navigator.db.CommitResourceAction"
+                icon="icons/commit.gif"
+                id="com.safi.workshop.navigator.db.CommitResourceAction"
+                label="Publish resource"
+                menubarPath="safiMenu/prodServer"
+                toolbarPath="safiBar/safiGroup"
+                tooltip="Publish selected resource">
+             <enablement>
+                <or>
+                   <objectClass
+                         name="com.safi.db.Query">
+                   </objectClass>
+                   <objectClass
+                         name="com.safi.workshop.sqlexplorer.dbproduct.Alias">
+                   </objectClass>
+                   <objectClass
+                         name="com.safi.workshop.sqlexplorer.dbproduct.User">
+                   </objectClass>
+                   <objectClass
+                         name="com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver">
+                   </objectClass>
+                   <objectClass
+                         name="com.safi.db.QueryParameter">
+                   </objectClass>
+                   <objectClass
+                         name="com.safi.workshop.sqlexplorer.dbproduct.DriverManager">
+                   </objectClass>
+                   <objectClass
+                         name="org.eclipse.core.resources.IProject">
+                   </objectClass>
+                   <objectClass
+                         name="com.safi.workshop.edit.parts.HandlerEditPart">
+                   </objectClass>
+                   <objectClass
+                         name="org.eclipse.core.resources.IFile">
+                   </objectClass>
+                </or>
+             </enablement>
+          </action>
+          <action
+                class="com.safi.workshop.navigator.db.DeleteDBResourceAction"
+                icon="icons/DeleteDB.gif"
+                id="com.safi.workshop.navigator.db.DeleteDBResourceAction"
+                label="Delete Database Resources"
+                menubarPath="safiMenu/safiGroup"
+                tooltip="Delete DB resources from production SafiServer">
+          </action>
+          <action
+                class="com.safi.workshop.navigator.db.RetrieveDBResourceAction"
+                icon="icons/RetrieveDB.gif"
+                id="com.safi.workshop.navigator.db.RetrieveDBResourceAction"
+                label="Retrieve DB Resources"
+                menubarPath="safiMenu/safiGroup"
+                tooltip="Retrieve database resources from production SafiServer">
+          </action>
+          <action
+                class="com.safi.workshop.navigator.db.DeleteSafletAction"
+                icon="icons/DeleteSaflet.gif"
+                id="com.safi.workshop.navigator.db.DeleteSafletAction"
+                label="Delete Saflets on SafiServer"
+                menubarPath="safiMenu/safiGroup"
+                tooltip="Delete Saflet(s) from production SafiServer">
+          </action>
+          <action
+                class="com.safi.workshop.navigator.db.RetrieveSafletAction"
+                icon="icons/RetrieveSaflet.gif"
+                id="com.safi.workshop.navigator.db.RetrieveSafletAction"
+                label="Retrieve Saflets"
+                menubarPath="safiMenu/safiGroup"
+                tooltip="Retrieve Saflet(s) from Production SafiServer">
+          </action>
+          <action
+                class="com.safi.workshop.audio.NewPromptAction"
+                icon="icons/audio/new_prompt.gif"
+                id="com.safi.workshop.audio.NewPromptAction"
+                label="New prompt"
+                menubarPath="safiPrompt/prompt"
+                style="push"
+                toolbarPath="prodServerBar">
+          </action>
+          <action
+                class="com.safi.workshop.audio.ManagePromptsAction"
+                icon="icons/audio/manage_prompts.gif"
+                id="com.safi.workshop.audio.ManagePromptsAction"
+                label="Manage Prompts"
+                menubarPath="safiPrompt/prompt"
+                style="push"
+                toolbarPath="prodServerBar">
+          </action>
+          <menu
+                id="safidebug"
+                label="Debug">
+             <separator
+                   name="safiGroup">
+             </separator>
+             <groupMarker
+                   name="prodServer">
+             </groupMarker>
+             <separator
+                   name="debugServer">
+             </separator>
+          </menu>
+          <menu
+                id="safiPrompt"
+                label="Prompts">
+             <separator
+                   name="safiGroup">
+             </separator>
+             <groupMarker
+                   name="prompt">
+             </groupMarker>
+          </menu>
+          <action
+                class="com.safi.server.actions.EditProductionSafiServerAction"
+                id="com.safi.server.actions.EditProductionSafiServerAction"
+                label="Edit Production SafiServer Action"
+                style="push">
+          </action>
+      </actionSet>
+      <actionSet
+            id="com.safi.workshop.navigator.db.ProductionServerGroup"
+            label="Production Server Group">
+         <menu
+               id="prodServerGroup"
+               label="Prod Server Group">
+         </menu>
+      </actionSet>
+   </extension>
+	
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders">
+      <?gmfgen generated="true"?>
+      <GlobalActionHandlerProvider
+         class="com.safi.workshop.providers.AsteriskDiagramGlobalActionHandlerProvider"
+         id="AsteriskPresentation">
+         <Priority name="Medium"/>
+         <ViewId id="com.safi.workshop.part.AsteriskDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="delete"/>
+               <GlobalActionId
+                     actionId="copy">
+               </GlobalActionId>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
+               <GlobalActionId actionId="save"/>
+               <GlobalActionId
+                     actionId="paste">
+               </GlobalActionId>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.printing.render.providers.DiagramWithPrintGlobalActionHandlerProvider"
+         id="AsteriskPresentationPrint">
+         <Priority name="Lowest"/>
+         <ViewId id="com.safi.workshop.part.AsteriskDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="print"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+            class="com.safi.workshop.providers.AsteriskDiagramGlobalActionHandlerProvider"
+            id="AsteriskRender">
+         <Priority name="Lowest"/>
+         <ViewId id="com.safi.workshop.part.AsteriskDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+      <?gmfgen generated="true"?>
+      <contributionItemProvider class="com.safi.workshop.providers.AsteriskContributionItemProvider">
+         <Priority name="Low">
+         </Priority>
+         <partContribution id="com.safi.workshop.part.AsteriskDiagramEditorID">
+            <partAction menubarPath="/file/print" id="printPreviewAction">
+            </partAction>
+         </partContribution>
+      </contributionItemProvider>
+      <contributionItemProvider
+            class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContributionItemProvider"
+            checkPluginLoaded="false">
+         <Priority name="Low"/>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="com.safi.workshop.edit.parts.OutputTargetEditPart"/>
+            <popupAction path="/editGroup" id="deleteFromModelAction"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+            <popupPredefinedItem
+                  id="FontNameContributionItem"
+                  remove="true">
+            </popupPredefinedItem>
+            <popupPredefinedItem
+                  id="FontNameContributionItem"
+                  remove="true">
+            </popupPredefinedItem>
+            <popupPredefinedItem
+                  id="fillColorContributionItem"
+                  remove="true">
+            </popupPredefinedItem>
+            <popupPredefinedItem
+                  id="hideConnectorLabels"
+                  path="/connectorLabelMenu"
+                  remove="true">
+            </popupPredefinedItem>
+            
+         </popupContribution>
+         
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="com.safi.workshop.edit.parts.InitiatorNextToolstepEditPart"/>
+            <popupAction path="/editGroup" id="deleteFromModelAction"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="com.safi.workshop.edit.parts.CaseItemTargetToolstepEditPart"/>
+            <popupAction path="/editGroup" id="deleteFromModelAction"/>
+            <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.gef.GraphicalEditPart"/>
+            <popupPredefinedItem id="filterFormatGroup" remove="true"/>
+         </popupContribution>
+         <popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria objectClass="org.eclipse.gef.GraphicalEditPart"/>
+            <popupPredefinedItem id="filterFormatGroup" remove="true"/>
+         </popupContribution>
+         <popupContribution
+               class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupAction
+                  id="AsteriskSafletDesigner.diagram.toggleBreakpoint"
+                  path="/debug">
+            </popupAction>
+            <popupStructuredContributionCriteria
+                  objectClass="com.safi.workshop.edit.parts.ToolstepEditPart">
+            </popupStructuredContributionCriteria>
+         </popupContribution>
+         <popupContribution
+               class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+            <popupStructuredContributionCriteria
+                  objectClass="com.safi.workshop.edit.parts.QueryParamMappingEditPart">
+            </popupStructuredContributionCriteria>
+            <popupPredefinedItem
+                  id="deleteFromDiagramAction"
+                  remove="true">
+            </popupPredefinedItem>
+            <popupPredefinedItem
+                  id="deleteFromModelAction"
+                  path="/editGroup"
+                  remove="true">
+            </popupPredefinedItem>
+         </popupContribution>
+         
+      </contributionItemProvider>
+   </extension>
+
+   <extension id="ValidationContributionItemProvider" name="Validation"
+      point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+      <?gmfgen generated="true"?>
+      <contributionItemProvider
+         class="com.safi.workshop.providers.AsteriskValidationProvider">
+         <Priority name="Medium"/>
+         <partContribution id="com.safi.workshop.part.AsteriskDiagramEditorID">
+            <partMenuGroup menubarPath="/diagramMenu/" id="validationGroup"/>
+            <partAction id="validateAction" menubarPath="/diagramMenu/validationGroup"/>
+         </partContribution>
+      </contributionItemProvider>
+   </extension>
+   
+   <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="com.safi.workshop.providers.AsteriskValidationDecoratorProvider">
+         <Priority name="Medium"/>
+         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
+         <context decoratorTargets="PRIMARY_VIEW"/>
+      </decoratorProvider>
+   </extension>
+   
+   
+
+   
+
+   <extension point="org.eclipse.core.runtime.preferences">
+      <?gmfgen generated="true"?>
+      <initializer class="com.safi.workshop.preferences.DiagramPreferenceInitializer"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.preferencePages">
+      <?gmfgen generated="true"?>
+      <page
+            id="AsteriskSafletDesigner.diagram.general"
+            name="%preference.page.title.AsteriskSafletDesigner.diagram.general"
+            class="com.safi.workshop.preferences.DiagramGeneralPreferencePage">
+      </page>
+      <page
+            id="AsteriskSafletDesigner.diagram.appearance"
+            name="%preference.page.title.AsteriskSafletDesigner.diagram.appearance"
+            category="AsteriskSafletDesigner.diagram.general"
+            class="com.safi.workshop.preferences.DiagramAppearancePreferencePage">
+      </page>
+      <page
+            id="AsteriskSafletDesigner.diagram.connections"
+            name="%preference.page.title.AsteriskSafletDesigner.diagram.connections"
+            category="AsteriskSafletDesigner.diagram.general"
+            class="com.safi.workshop.preferences.DiagramConnectionsPreferencePage">
+      </page>
+      <page
+            id="AsteriskSafletDesigner.diagram.printing"
+            name="%preference.page.title.AsteriskSafletDesigner.diagram.printing"
+            category="AsteriskSafletDesigner.diagram.general"
+            class="com.safi.workshop.preferences.DiagramPrintingPreferencePage">
+      </page>
+      <page
+            id="AsteriskSafletDesigner.diagram.rulersAndGrid"
+            name="%preference.page.title.AsteriskSafletDesigner.diagram.rulersAndGrid"
+            category="AsteriskSafletDesigner.diagram.general"
+            class="com.safi.workshop.preferences.DiagramRulersAndGridPreferencePage">
+      </page>
+      <page
+            id="AsteriskSafletDesigner.diagram.pathmaps"
+            name="%preference.page.title.AsteriskSafletDesigner.diagram.pathmaps"
+            category="AsteriskSafletDesigner.diagram.general"
+            class="org.eclipse.gmf.runtime.emf.ui.preferences.PathmapsPreferencePage">
+      </page>
+      <page
+            category="com.safi.workshop.preferences.AudioDevicesPrefPage"
+            class="com.safi.workshop.preferences.AudioControlsPrefPage"
+            id="com.safi.workshop.preferences.AudioPreferences"
+            name="Audio Controls">
+      </page>
+      <page
+            class="com.safi.workshop.preferences.AudioDevicesPrefPage"
+            id="com.safi.workshop.preferences.AudioDevicesPrefPage"
+            name="Audio Devices">
+      </page>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <?gmfgen generated="true"?>
+      <propertyContributor
+            contributorId="AsteriskSafletDesigner.diagram"
+            labelProvider="com.safi.workshop.sheet.AsteriskSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+         <propertyCategory
+               category="Resource">
+         </propertyCategory>
+      </propertyContributor>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <?gmfgen generated="true"?>   
+      <propertyTabs contributorId="AsteriskSafletDesigner.diagram">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="%tab.appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="%tab.diagram"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.domain"
+             label="%tab.domain"/>
+          <propertyTab
+                category="Resource"
+                id="property.tab.resource"
+                label="Resource">
+          </propertyTab>
+      </propertyTabs>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="AsteriskSafletDesigner.diagram">
+         <propertySection id="property.section.ConnectorAppearancePropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>
+         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
+            class="com.safi.workshop.sheet.ActionstepColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection> 
+         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="com.safi.workshop.sheet.AsteriskPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input
+                  type="org.eclipse.core.resources.IResource">
+            </input>
+            <input
+                  type="com.safi.db.DBConnection">
+            </input>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders">
+      <?gmfgen generated="true"?>
+      <viewProvider class="com.safi.workshop.providers.AsteriskViewProvider">
+         <Priority name="Lowest"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Asterisk"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints=""/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints=""/>
+      </viewProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <?gmfgen generated="false"?>
+      <editpartProvider class="com.safi.workshop.providers.AsteriskEditPartProvider">
+         <Priority name="Highest"/>
+      </editpartProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders">
+      <?gmfgen generated="true"?>
+      <modelingAssistantProvider class="com.safi.workshop.providers.AsteriskModelingAssistantProvider">
+         <Priority name="Lowest"/>
+      </modelingAssistantProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders">
+      <?gmfgen generated="true"?>
+      <IconProvider class="com.safi.workshop.providers.AsteriskIconProvider">
+         <Priority name="Low"/>
+      </IconProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders">
+      <?gmfgen generated="true"?>
+      <ParserProvider class="com.safi.workshop.providers.AsteriskParserProvider">
+         <Priority name="Lowest"/>
+      </ParserProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+      <?gmfgen generated="true"?>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#saflet">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.Handler_79"
+               name="%metatype.name.Handler_79"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Handler"
+               edithelper="com.safi.workshop.edit.helpers.HandlerEditHelper">
+            <param name="semanticHint" value="79"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.Answer_1001"
+               name="%metatype.name.Answer_1001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Answer"
+               edithelper="com.safi.workshop.edit.helpers.AnswerEditHelper">
+            <param name="semanticHint" value="1001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.Assignment_1002"
+               name="%metatype.name.Assignment_1002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Assignment"
+               edithelper="com.safi.workshop.edit.helpers.AssignmentEditHelper">
+            <param name="semanticHint" value="1002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.Choice_1003"
+               name="%metatype.name.Choice_1003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Choice"
+               edithelper="com.safi.workshop.edit.helpers.ChoiceEditHelper">
+            <param name="semanticHint" value="1003"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.GetFullVariable_1004"
+               name="%metatype.name.GetFullVariable_1004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="GetFullVariable"
+               edithelper="com.safi.workshop.edit.helpers.GetFullVariableEditHelper">
+            <param name="semanticHint" value="1004"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.MultiStreamAudio_1005"
+               name="%metatype.name.MultiStreamAudio_1005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="MultiStreamAudio"
+               edithelper="com.safi.workshop.edit.helpers.MultiStreamAudioEditHelper">
+            <param name="semanticHint" value="1005"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.Hangup_1006"
+               name="%metatype.name.Hangup_1006"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Hangup"
+               edithelper="com.safi.workshop.edit.helpers.HangupEditHelper">
+            <param name="semanticHint" value="1006"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.IfThen_1007"
+               name="%metatype.name.IfThen_1007"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="IfThen"
+               edithelper="com.safi.workshop.edit.helpers.IfThenEditHelper">
+            <param name="semanticHint" value="1007"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.RecordFile_1008"
+               name="%metatype.name.RecordFile_1008"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="RecordFile"
+               edithelper="com.safi.workshop.edit.helpers.RecordFileEditHelper">
+            <param name="semanticHint" value="1008"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.SayAlpha_1009"
+               name="%metatype.name.SayAlpha_1009"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SayAlpha"
+               edithelper="com.safi.workshop.edit.helpers.SayAlphaEditHelper">
+            <param name="semanticHint" value="1009"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.SayDateTime_1010"
+               name="%metatype.name.SayDateTime_1010"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SayDateTime"
+               edithelper="com.safi.workshop.edit.helpers.SayDateTimeEditHelper">
+            <param name="semanticHint" value="1010"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.SayDigits_1011"
+               name="%metatype.name.SayDigits_1011"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SayDigits"
+               edithelper="com.safi.workshop.edit.helpers.SayDigitsEditHelper">
+            <param name="semanticHint" value="1011"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.SayNumber_1012"
+               name="%metatype.name.SayNumber_1012"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SayNumber"
+               edithelper="com.safi.workshop.edit.helpers.SayNumberEditHelper">
+            <param name="semanticHint" value="1012"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.SayPhonetic_1013"
+               name="%metatype.name.SayPhonetic_1013"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SayPhonetic"
+               edithelper="com.safi.workshop.edit.helpers.SayPhoneticEditHelper">
+            <param name="semanticHint" value="1013"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.SayTime_1014"
+               name="%metatype.name.SayTime_1014"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SayTime"
+               edithelper="com.safi.workshop.edit.helpers.SayTimeEditHelper">
+            <param name="semanticHint" value="1014"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.SetAutoHangup_1015"
+               name="%metatype.name.SetAutoHangup_1015"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SetAutoHangup"
+               edithelper="com.safi.workshop.edit.helpers.SetAutoHangupEditHelper">
+            <param name="semanticHint" value="1015"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.SetCallerId_1016"
+               name="%metatype.name.SetCallerId_1016"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SetCallerId"
+               edithelper="com.safi.workshop.edit.helpers.SetCallerIdEditHelper">
+            <param name="semanticHint" value="1016"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.SetChannelVariable_1017"
+               name="%metatype.name.SetChannelVariable_1017"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SetChannelVariable"
+               edithelper="com.safi.workshop.edit.helpers.SetChannelVariableEditHelper">
+            <param name="semanticHint" value="1017"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.SetContext_1018"
+               name="%metatype.name.SetContext_1018"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SetContext"
+               edithelper="com.safi.workshop.edit.helpers.SetContextEditHelper">
+            <param name="semanticHint" value="1018"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.SetExtension_1019"
+               name="%metatype.name.SetExtension_1019"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SetExtension"
+               edithelper="com.safi.workshop.edit.helpers.SetExtensionEditHelper">
+            <param name="semanticHint" value="1019"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.StopMusicOnHold_1020"
+               name="%metatype.name.StopMusicOnHold_1020"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="StopMusicOnHold"
+               edithelper="com.safi.workshop.edit.helpers.StopMusicOnHoldEditHelper">
+            <param name="semanticHint" value="1020"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.SetMusicOn_1021"
+               name="%metatype.name.SetMusicOn_1021"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SetMusicOn"
+               edithelper="com.safi.workshop.edit.helpers.SetMusicOnEditHelper">
+            <param name="semanticHint" value="1021"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.SetPriority_1022"
+               name="%metatype.name.SetPriority_1022"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SetPriority"
+               edithelper="com.safi.workshop.edit.helpers.SetPriorityEditHelper">
+            <param name="semanticHint" value="1022"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.StreamAudio_1023"
+               name="%metatype.name.StreamAudio_1023"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="StreamAudio"
+               edithelper="com.safi.workshop.edit.helpers.StreamAudioEditHelper">
+            <param name="semanticHint" value="1023"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.WaitForDigit_1024"
+               name="%metatype.name.WaitForDigit_1024"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="WaitForDigit"
+               edithelper="com.safi.workshop.edit.helpers.WaitForDigitEditHelper">
+            <param name="semanticHint" value="1024"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#initiator">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.DIDMatcher_1025"
+               name="%metatype.name.DIDMatcher_1025"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DIDMatcher"
+               edithelper="com.safi.workshop.edit.helpers.DIDMatcherEditHelper">
+            <param name="semanticHint" value="1025"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.GetDigits_1026"
+               name="%metatype.name.GetDigits_1026"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="GetDigits"
+               edithelper="com.safi.workshop.edit.helpers.GetDigitsEditHelper">
+            <param name="semanticHint" value="1026"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.OriginateCall_1027"
+               name="%metatype.name.OriginateCall_1027"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="OriginateCall"
+               edithelper="com.safi.workshop.edit.helpers.OriginateCallEditHelper">
+            <param name="semanticHint" value="1027"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.PlayDTMF_1028"
+               name="%metatype.name.PlayDTMF_1028"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="PlayDTMF"
+               edithelper="com.safi.workshop.edit.helpers.PlayDTMFEditHelper">
+            <param name="semanticHint" value="1028"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.RecordCall_1029"
+               name="%metatype.name.RecordCall_1029"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="RecordCall"
+               edithelper="com.safi.workshop.edit.helpers.RecordCallEditHelper">
+            <param name="semanticHint" value="1029"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.ExecuteApplication_1030"
+               name="%metatype.name.ExecuteApplication_1030"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ExecuteApplication"
+               edithelper="com.safi.workshop.edit.helpers.ExecuteApplicationEditHelper">
+            <param name="semanticHint" value="1030"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.PlayMusicOnHold_1031"
+               name="%metatype.name.PlayMusicOnHold_1031"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="PlayMusicOnHold"
+               edithelper="com.safi.workshop.edit.helpers.PlayMusicOnHoldEditHelper">
+            <param name="semanticHint" value="1031"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.PromptGetDigits_1032"
+               name="%metatype.name.PromptGetDigits_1032"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="PromptGetDigits"
+               edithelper="com.safi.workshop.edit.helpers.PromptGetDigitsEditHelper">
+            <param name="semanticHint" value="1032"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.Sleep_1033"
+               name="%metatype.name.Sleep_1033"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Sleep"
+               edithelper="com.safi.workshop.edit.helpers.SleepEditHelper">
+            <param name="semanticHint" value="1033"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.StreamAudioExtended_1034"
+               name="%metatype.name.StreamAudioExtended_1034"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="StreamAudioExtended"
+               edithelper="com.safi.workshop.edit.helpers.StreamAudioExtendedEditHelper">
+            <param name="semanticHint" value="1034"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#initiator">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.IncomingCall_1035"
+               name="%metatype.name.IncomingCall_1035"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="IncomingCall"
+               edithelper="com.safi.workshop.edit.helpers.IncomingCallEditHelper">
+            <param name="semanticHint" value="1035"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.GetCallInfo_1036"
+               name="%metatype.name.GetCallInfo_1036"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="GetCallInfo"
+               edithelper="com.safi.workshop.edit.helpers.GetCallInfoEditHelper">
+            <param name="semanticHint" value="1036"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.ExecuteScript_1037"
+               name="%metatype.name.ExecuteScript_1037"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ExecuteScript"
+               edithelper="com.safi.workshop.edit.helpers.ExecuteScriptEditHelper">
+            <param name="semanticHint" value="1037"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.InvokeSaflet_1038"
+               name="%metatype.name.InvokeSaflet_1038"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="InvokeSaflet"
+               edithelper="com.safi.workshop.edit.helpers.InvokeSafletEditHelper">
+            <param name="semanticHint" value="1038"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.Dial_1039"
+               name="%metatype.name.Dial_1039"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Dial"
+               edithelper="com.safi.workshop.edit.helpers.DialEditHelper">
+            <param name="semanticHint" value="1039"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.Pickup_1040"
+               name="%metatype.name.Pickup_1040"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Pickup"
+               edithelper="com.safi.workshop.edit.helpers.PickupEditHelper">
+            <param name="semanticHint" value="1040"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.Background_1041"
+               name="%metatype.name.Background_1041"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Background"
+               edithelper="com.safi.workshop.edit.helpers.BackgroundEditHelper">
+            <param name="semanticHint" value="1041"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.BackgroundDetect_1042"
+               name="%metatype.name.BackgroundDetect_1042"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="BackgroundDetect"
+               edithelper="com.safi.workshop.edit.helpers.BackgroundDetectEditHelper">
+            <param name="semanticHint" value="1042"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.WaitExten_1043"
+               name="%metatype.name.WaitExten_1043"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="WaitExten"
+               edithelper="com.safi.workshop.edit.helpers.WaitExtenEditHelper">
+            <param name="semanticHint" value="1043"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.SoftHangup_1044"
+               name="%metatype.name.SoftHangup_1044"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SoftHangup"
+               edithelper="com.safi.workshop.edit.helpers.SoftHangupEditHelper">
+            <param name="semanticHint" value="1044"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.PickupChan_1045"
+               name="%metatype.name.PickupChan_1045"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="PickupChan"
+               edithelper="com.safi.workshop.edit.helpers.PickupChanEditHelper">
+            <param name="semanticHint" value="1045"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.Pickdown_1046"
+               name="%metatype.name.Pickdown_1046"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Pickdown"
+               edithelper="com.safi.workshop.edit.helpers.PickdownEditHelper">
+            <param name="semanticHint" value="1046"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.Progress_1047"
+               name="%metatype.name.Progress_1047"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Progress"
+               edithelper="com.safi.workshop.edit.helpers.ProgressEditHelper">
+            <param name="semanticHint" value="1047"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.Bridge_1048"
+               name="%metatype.name.Bridge_1048"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Bridge"
+               edithelper="com.safi.workshop.edit.helpers.BridgeEditHelper">
+            <param name="semanticHint" value="1048"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.PlaceCall_1049"
+               name="%metatype.name.PlaceCall_1049"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="PlaceCall"
+               edithelper="com.safi.workshop.edit.helpers.PlaceCallEditHelper">
+            <param name="semanticHint" value="1049"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.Voicemail_1050"
+               name="%metatype.name.Voicemail_1050"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Voicemail"
+               edithelper="com.safi.workshop.edit.helpers.VoicemailEditHelper">
+            <param name="semanticHint" value="1050"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.VoicemailMain_1051"
+               name="%metatype.name.VoicemailMain_1051"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="VoicemailMain"
+               edithelper="com.safi.workshop.edit.helpers.VoicemailMainEditHelper">
+            <param name="semanticHint" value="1051"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.VMAuthenticate_1052"
+               name="%metatype.name.VMAuthenticate_1052"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="VMAuthenticate"
+               edithelper="com.safi.workshop.edit.helpers.VMAuthenticateEditHelper">
+            <param name="semanticHint" value="1052"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.MeetMe_1053"
+               name="%metatype.name.MeetMe_1053"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="MeetMe"
+               edithelper="com.safi.workshop.edit.helpers.MeetMeEditHelper">
+            <param name="semanticHint" value="1053"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.MeetMeAdmin_1054"
+               name="%metatype.name.MeetMeAdmin_1054"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="MeetMeAdmin"
+               edithelper="com.safi.workshop.edit.helpers.MeetMeAdminEditHelper">
+            <param name="semanticHint" value="1054"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.MeetMeCount_1055"
+               name="%metatype.name.MeetMeCount_1055"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="MeetMeCount"
+               edithelper="com.safi.workshop.edit.helpers.MeetMeCountEditHelper">
+            <param name="semanticHint" value="1055"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.DebugLog_1056"
+               name="%metatype.name.DebugLog_1056"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DebugLog"
+               edithelper="com.safi.workshop.edit.helpers.DebugLogEditHelper">
+            <param name="semanticHint" value="1056"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.WaitForRing_1057"
+               name="%metatype.name.WaitForRing_1057"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="WaitForRing"
+               edithelper="com.safi.workshop.edit.helpers.WaitForRingEditHelper">
+            <param name="semanticHint" value="1057"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.WaitMusicOnHold_1058"
+               name="%metatype.name.WaitMusicOnHold_1058"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="WaitMusicOnHold"
+               edithelper="com.safi.workshop.edit.helpers.WaitMusicOnHoldEditHelper">
+            <param name="semanticHint" value="1058"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.GetAvailableChannel_1059"
+               name="%metatype.name.GetAvailableChannel_1059"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="GetAvailableChannel"
+               edithelper="com.safi.workshop.edit.helpers.GetAvailableChannelEditHelper">
+            <param name="semanticHint" value="1059"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.Congestion_1060"
+               name="%metatype.name.Congestion_1060"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Congestion"
+               edithelper="com.safi.workshop.edit.helpers.CongestionEditHelper">
+            <param name="semanticHint" value="1060"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.Ringing_1061"
+               name="%metatype.name.Ringing_1061"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Ringing"
+               edithelper="com.safi.workshop.edit.helpers.RingingEditHelper">
+            <param name="semanticHint" value="1061"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.SetCallerPresentation_1062"
+               name="%metatype.name.SetCallerPresentation_1062"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SetCallerPresentation"
+               edithelper="com.safi.workshop.edit.helpers.SetCallerPresentationEditHelper">
+            <param name="semanticHint" value="1062"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.SetGlobalVariable_1063"
+               name="%metatype.name.SetGlobalVariable_1063"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SetGlobalVariable"
+               edithelper="com.safi.workshop.edit.helpers.SetGlobalVariableEditHelper">
+            <param name="semanticHint" value="1063"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.Echo_1064"
+               name="%metatype.name.Echo_1064"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Echo"
+               edithelper="com.safi.workshop.edit.helpers.EchoEditHelper">
+            <param name="semanticHint" value="1064"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.Festival_1065"
+               name="%metatype.name.Festival_1065"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Festival"
+               edithelper="com.safi.workshop.edit.helpers.FestivalEditHelper">
+            <param name="semanticHint" value="1065"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.Playtones_1066"
+               name="%metatype.name.Playtones_1066"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Playtones"
+               edithelper="com.safi.workshop.edit.helpers.PlaytonesEditHelper">
+            <param name="semanticHint" value="1066"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.StopPlaytones_1067"
+               name="%metatype.name.StopPlaytones_1067"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="StopPlaytones"
+               edithelper="com.safi.workshop.edit.helpers.StopPlaytonesEditHelper">
+            <param name="semanticHint" value="1067"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.ChanSpy_1068"
+               name="%metatype.name.ChanSpy_1068"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ChanSpy"
+               edithelper="com.safi.workshop.edit.helpers.ChanSpyEditHelper">
+            <param name="semanticHint" value="1068"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.Dictate_1069"
+               name="%metatype.name.Dictate_1069"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Dictate"
+               edithelper="com.safi.workshop.edit.helpers.DictateEditHelper">
+            <param name="semanticHint" value="1069"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.ExtensionSpy_1070"
+               name="%metatype.name.ExtensionSpy_1070"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ExtensionSpy"
+               edithelper="com.safi.workshop.edit.helpers.ExtensionSpyEditHelper">
+            <param name="semanticHint" value="1070"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.MixMonitor_1071"
+               name="%metatype.name.MixMonitor_1071"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="MixMonitor"
+               edithelper="com.safi.workshop.edit.helpers.MixMonitorEditHelper">
+            <param name="semanticHint" value="1071"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.StopMixmonitor_1072"
+               name="%metatype.name.StopMixmonitor_1072"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="StopMixmonitor"
+               edithelper="com.safi.workshop.edit.helpers.StopMixmonitorEditHelper">
+            <param name="semanticHint" value="1072"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.StopMonitor_1073"
+               name="%metatype.name.StopMonitor_1073"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="StopMonitor"
+               edithelper="com.safi.workshop.edit.helpers.StopMonitorEditHelper">
+            <param name="semanticHint" value="1073"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.Monitor_1074"
+               name="%metatype.name.Monitor_1074"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Monitor"
+               edithelper="com.safi.workshop.edit.helpers.MonitorEditHelper">
+            <param name="semanticHint" value="1074"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.Directory_1075"
+               name="%metatype.name.Directory_1075"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Directory"
+               edithelper="com.safi.workshop.edit.helpers.DirectoryEditHelper">
+            <param name="semanticHint" value="1075"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.Transfer_1076"
+               name="%metatype.name.Transfer_1076"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Transfer"
+               edithelper="com.safi.workshop.edit.helpers.TransferEditHelper">
+            <param name="semanticHint" value="1076"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.OpenDBConnection_1077"
+               name="%metatype.name.OpenDBConnection_1077"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="OpenDBConnection"
+               edithelper="com.safi.workshop.edit.helpers.OpenDBConnectionEditHelper">
+            <param name="semanticHint" value="1077"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.CloseDBConnection_1078"
+               name="%metatype.name.CloseDBConnection_1078"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="CloseDBConnection"
+               edithelper="com.safi.workshop.edit.helpers.CloseDBConnectionEditHelper">
+            <param name="semanticHint" value="1078"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.OpenQuery_1079"
+               name="%metatype.name.OpenQuery_1079"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="OpenQuery"
+               edithelper="com.safi.workshop.edit.helpers.OpenQueryEditHelper">
+            <param name="semanticHint" value="1079"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.SetQueryParam_1080"
+               name="%metatype.name.SetQueryParam_1080"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SetQueryParam"
+               edithelper="com.safi.workshop.edit.helpers.SetQueryParamEditHelper">
+            <param name="semanticHint" value="1080"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.ExecuteUpdate_1081"
+               name="%metatype.name.ExecuteUpdate_1081"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ExecuteUpdate"
+               edithelper="com.safi.workshop.edit.helpers.ExecuteUpdateEditHelper">
+            <param name="semanticHint" value="1081"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.ExecuteQuery_1082"
+               name="%metatype.name.ExecuteQuery_1082"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ExecuteQuery"
+               edithelper="com.safi.workshop.edit.helpers.ExecuteQueryEditHelper">
+            <param name="semanticHint" value="1082"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.NextRow_1083"
+               name="%metatype.name.NextRow_1083"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="NextRow"
+               edithelper="com.safi.workshop.edit.helpers.NextRowEditHelper">
+            <param name="semanticHint" value="1083"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.GetColValue_1084"
+               name="%metatype.name.GetColValue_1084"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="GetColValue"
+               edithelper="com.safi.workshop.edit.helpers.GetColValueEditHelper">
+            <param name="semanticHint" value="1084"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.SetColValue_1085"
+               name="%metatype.name.SetColValue_1085"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SetColValue"
+               edithelper="com.safi.workshop.edit.helpers.SetColValueEditHelper">
+            <param name="semanticHint" value="1085"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.UpdatetRow_1086"
+               name="%metatype.name.UpdatetRow_1086"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="UpdatetRow"
+               edithelper="com.safi.workshop.edit.helpers.UpdatetRowEditHelper">
+            <param name="semanticHint" value="1086"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.MoveToRow_1087"
+               name="%metatype.name.MoveToRow_1087"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="MoveToRow"
+               edithelper="com.safi.workshop.edit.helpers.MoveToRowEditHelper">
+            <param name="semanticHint" value="1087"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.MoveToLastRow_1088"
+               name="%metatype.name.MoveToLastRow_1088"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="MoveToLastRow"
+               edithelper="com.safi.workshop.edit.helpers.MoveToLastRowEditHelper">
+            <param name="semanticHint" value="1088"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.DeleteRow_1089"
+               name="%metatype.name.DeleteRow_1089"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DeleteRow"
+               edithelper="com.safi.workshop.edit.helpers.DeleteRowEditHelper">
+            <param name="semanticHint" value="1089"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.MoveToInsertRow_1090"
+               name="%metatype.name.MoveToInsertRow_1090"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="MoveToInsertRow"
+               edithelper="com.safi.workshop.edit.helpers.MoveToInsertRowEditHelper">
+            <param name="semanticHint" value="1090"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.InsertRow_1091"
+               name="%metatype.name.InsertRow_1091"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="InsertRow"
+               edithelper="com.safi.workshop.edit.helpers.InsertRowEditHelper">
+            <param name="semanticHint" value="1091"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.MoveToFirstRow_1092"
+               name="%metatype.name.MoveToFirstRow_1092"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="MoveToFirstRow"
+               edithelper="com.safi.workshop.edit.helpers.MoveToFirstRowEditHelper">
+            <param name="semanticHint" value="1092"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.PreviousRow_1093"
+               name="%metatype.name.PreviousRow_1093"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="PreviousRow"
+               edithelper="com.safi.workshop.edit.helpers.PreviousRowEditHelper">
+            <param name="semanticHint" value="1093"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.GetColValues_1094"
+               name="%metatype.name.GetColValues_1094"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="GetColValues"
+               edithelper="com.safi.workshop.edit.helpers.GetColValuesEditHelper">
+            <param name="semanticHint" value="1094"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.SetColValues_1095"
+               name="%metatype.name.SetColValues_1095"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SetColValues"
+               edithelper="com.safi.workshop.edit.helpers.SetColValuesEditHelper">
+            <param name="semanticHint" value="1095"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.ExtensionTransfer_1096"
+               name="%metatype.name.ExtensionTransfer_1096"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ExtensionTransfer"
+               edithelper="com.safi.workshop.edit.helpers.ExtensionTransferEditHelper">
+            <param name="semanticHint" value="1096"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.RunQuery_1097"
+               name="%metatype.name.RunQuery_1097"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="RunQuery"
+               edithelper="com.safi.workshop.edit.helpers.RunQueryEditHelper">
+            <param name="semanticHint" value="1097"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.Output_2001"
+               name="%metatype.name.Output_2001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Output"
+               edithelper="com.safi.workshop.edit.helpers.OutputEditHelper">
+            <param name="semanticHint" value="2001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.CaseItem_2002"
+               name="%metatype.name.CaseItem_2002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="CaseItem"
+               edithelper="com.safi.workshop.edit.helpers.CaseItemEditHelper">
+            <param name="semanticHint" value="2002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.AudioFileItem_2003"
+               name="%metatype.name.AudioFileItem_2003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="AudioFileItem"
+               edithelper="com.safi.workshop.edit.helpers.AudioFileItemEditHelper">
+            <param name="semanticHint" value="2003"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.GetColMapping_2004"
+               name="%metatype.name.GetColMapping_2004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="GetColMapping"
+               edithelper="com.safi.workshop.edit.helpers.GetColMappingEditHelper">
+            <param name="semanticHint" value="2004"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.SetColMapping_2005"
+               name="%metatype.name.SetColMapping_2005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SetColMapping"
+               edithelper="com.safi.workshop.edit.helpers.SetColMappingEditHelper">
+            <param name="semanticHint" value="2005"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="AsteriskSafletDesigner.diagram.QueryParamMapping_2006"
+               name="%metatype.name.QueryParamMapping_2006"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="QueryParamMapping"
+               edithelper="com.safi.workshop.edit.helpers.QueryParamMappingEditHelper">
+            <param name="semanticHint" value="2006"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <specializationType
+               id="AsteriskSafletDesigner.diagram.OutputTarget_3001"
+               name="%metatype.name.OutputTarget_3001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="3001"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/asterisk.ecore#initiator">
+         <specializationType
+               id="AsteriskSafletDesigner.diagram.InitiatorNextActionStep_3002"
+               name="%metatype.name.InitiatorNextActionStep_3002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="3002"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <specializationType
+               id="AsteriskSafletDesigner.diagram.CaseItemTargetActionStep_3003"
+               name="%metatype.name.CaseItemTargetActionStep_3003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="3003"/>
+         </specializationType>
+      </metamodel>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+      <?gmfgen generated="true"?>
+      <clientContext id="AsteriskClientContext">
+         <enablement>
+            <test
+               property="org.eclipse.gmf.runtime.emf.core.editingDomain"
+               value="AsteriskSafletDesigner.diagram.EditingDomain"/>
+         </enablement>
+      </clientContext> 
+      <binding context="AsteriskClientContext">
+         <elementType ref="AsteriskSafletDesigner.diagram.Handler_79"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.Answer_1001"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.Assignment_1002"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.Choice_1003"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.GetFullVariable_1004"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.MultiStreamAudio_1005"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.Hangup_1006"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.IfThen_1007"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.RecordFile_1008"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.SayAlpha_1009"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.SayDateTime_1010"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.SayDigits_1011"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.SayNumber_1012"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.SayPhonetic_1013"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.SayTime_1014"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.SetAutoHangup_1015"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.SetCallerId_1016"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.SetChannelVariable_1017"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.SetContext_1018"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.SetExtension_1019"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.StopMusicOnHold_1020"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.SetMusicOn_1021"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.SetPriority_1022"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.StreamAudio_1023"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.WaitForDigit_1024"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.DIDMatcher_1025"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.GetDigits_1026"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.OriginateCall_1027"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.PlayDTMF_1028"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.RecordCall_1029"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.ExecuteApplication_1030"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.PlayMusicOnHold_1031"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.PromptGetDigits_1032"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.Sleep_1033"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.StreamAudioExtended_1034"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.IncomingCall_1035"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.GetCallInfo_1036"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.ExecuteScript_1037"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.InvokeSaflet_1038"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.Dial_1039"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.Pickup_1040"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.Background_1041"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.BackgroundDetect_1042"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.WaitExten_1043"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.SoftHangup_1044"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.PickupChan_1045"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.Pickdown_1046"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.Progress_1047"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.Bridge_1048"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.PlaceCall_1049"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.Voicemail_1050"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.VoicemailMain_1051"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.VMAuthenticate_1052"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.MeetMe_1053"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.MeetMeAdmin_1054"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.MeetMeCount_1055"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.DebugLog_1056"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.WaitForRing_1057"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.WaitMusicOnHold_1058"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.GetAvailableChannel_1059"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.Congestion_1060"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.Ringing_1061"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.SetCallerPresentation_1062"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.SetGlobalVariable_1063"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.Echo_1064"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.Festival_1065"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.Playtones_1066"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.StopPlaytones_1067"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.ChanSpy_1068"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.Dictate_1069"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.ExtensionSpy_1070"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.MixMonitor_1071"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.StopMixmonitor_1072"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.StopMonitor_1073"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.Monitor_1074"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.Directory_1075"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.Transfer_1076"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.OpenDBConnection_1077"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.CloseDBConnection_1078"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.OpenQuery_1079"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.SetQueryParam_1080"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.ExecuteUpdate_1081"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.ExecuteQuery_1082"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.NextRow_1083"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.GetColValue_1084"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.SetColValue_1085"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.UpdatetRow_1086"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.MoveToRow_1087"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.MoveToLastRow_1088"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.DeleteRow_1089"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.MoveToInsertRow_1090"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.InsertRow_1091"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.MoveToFirstRow_1092"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.PreviousRow_1093"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.GetColValues_1094"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.SetColValues_1095"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.ExtensionTransfer_1096"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.RunQuery_1097"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.Output_2001"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.CaseItem_2002"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.AudioFileItem_2003"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.GetColMapping_2004"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.SetColMapping_2005"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.QueryParamMapping_2006"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.OutputTarget_3001"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.InitiatorNextActionStep_3002"/>
+         <elementType ref="AsteriskSafletDesigner.diagram.CaseItemTargetActionStep_3003"/>
+         <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
+      </binding>
+   </extension>
+
+   <extension id="AsteriskApplication" point="org.eclipse.core.runtime.applications">
+      <?gmfgen generated="true"?>
+      <application
+            visible="true">
+         <run class="com.safi.workshop.application.AsteriskApplication"/>
+      </application>
+   </extension>
+
+   <extension point="org.eclipse.ui.perspectives">
+      <?gmfgen generated="false"?>
+      <perspective
+            id="com.safi.workshop.AsteriskPerspective"
+            name="%perspectiveName"
+            class="com.safi.workshop.application.DiagramEditorPerspective">
+      </perspective>
+      <perspective
+            class="com.safi.workshop.application.SafiDBPerspective"
+            id="com.safi.workshop.application.SafiDBPerspective"
+            name="SafiDatabase Perspective">
+      </perspective>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands">
+      <?gmfgen generated="true"?>
+      <command
+            name="%openURIActionLabel"
+            description="%openURIActionDescription"
+            categoryId="org.eclipse.ui.category.file"
+            id="AsteriskSafletDesigner.diagram.OpenURICommand"/>  
+      <command
+            name="%openActionLabel"
+            description="%openActionDescription"
+            categoryId="org.eclipse.ui.category.file"
+            id="AsteriskSafletDesigner.diagram.OpenCommand"/>
+      <command
+            categoryId="org.eclipse.ui.category.file"
+            description="Switch To Different SafiServer Workspace"
+            id="org.eclipse.ui.file.openWorkspace"
+            name="Switch SafiServer Workspace">
+      </command>  
+   </extension>
+
+   <extension point="org.eclipse.ui.bindings">
+      <?gmfgen generated="true"?>
+      <key
+            commandId="AsteriskSafletDesigner.diagram.OpenURICommand"
+            sequence="M1+R"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+      <key
+            commandId="AsteriskSafletDesigner.diagram.OpenCommand"
+            sequence="M1+O"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.actionSets">
+      <?gmfgen generated="false"?>
+      <actionSet
+            label="%applicationActionSetLabel"
+            visible="true"
+            id="AsteriskSafletDesigner.diagram.ActionSet">
+         <action
+               label="%aboutActionLabel"
+               class="com.safi.workshop.application.DiagramEditorActionBarAdvisor$AboutAction"
+               menubarPath="safi_help/additions"
+               id="AsteriskSafletDesigner.diagram.AboutAction">
+         </action>
+         <action
+               label="%openURIActionLabel"
+               definitionId="AsteriskSafletDesigner.diagram.OpenURICommand"
+               class="com.safi.workshop.application.DiagramEditorActionBarAdvisor$OpenURIAction"
+               menubarPath="file/additions"
+               id="AsteriskSafletDesigner.diagram.OpenURIAction">
+         </action>
+         <action
+               class="com.safi.workshop.application.DiagramEditorActionBarAdvisor$NewDiagramAction2"
+               icon="icons/obj16/HandlerDiagramFile.gif"
+               id="AsteriskSafletDesigner.diagram.NewDiagramAction2"
+               label="%newDiagramActionLabel"
+               menubarPath="file/new/additions">
+         </action>
+         <action
+               class="com.safi.workshop.application.DiagramEditorActionBarAdvisor$NewDBConnectionDelegate"
+               icon="icons/NewDatabaseConnection.gif"
+               id="com.safi.workshop.sqlexplorer.connections.actions.NewAliasActionDelegate"
+               label="New Database Connection"
+               menubarPath="file/new/additions"
+               style="push"
+               toolbarPath="new/group"
+               tooltip="Register new database connection">
+         </action>
+         <action
+               class="com.safi.workshop.application.DiagramEditorActionBarAdvisor$NewQueryDelegate"
+               icon="icons/AddQuery.gif"
+               id="com.safi.workshop.sqlexplorer.connections.actions.NewQueryAction"
+               label="New Query"
+               menubarPath="file/new/additions"
+               style="push"
+               toolbarPath="new/group"
+               tooltip="Create new query">
+            <enablement>
+               <or>
+                  <objectClass
+                        name="com.safi.db.DBConnection">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.Query">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.Alias">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.User">
+                  </objectClass>
+               </or>
+            </enablement>
+         </action>
+         <action
+               class="com.safi.workshop.importwiz.ImportSafletAction"
+               id="com.safi.workshop.eclipse.importwiz.ImportSafletAction"
+               label="Import Saflet"
+               menubarPath="file/additions"
+               style="push"
+               tooltip="Import Saflet from file system">
+         </action>
+         <action
+               class="com.safi.workshop.importwiz.ImportDBResourceAction"
+               id="com.safi.workshop.eclipse.importwiz.ImportDBResourceAction"
+               label="Import Database Resources"
+               menubarPath="file/additions"
+               style="push"
+               tooltip="Import database resources from file system">
+         </action>
+         <action
+               class="com.safi.workshop.exportwiz.ExportWorkspaceAction"
+               id="com.safi.workshop.eclipse.exportwiz.ExportWorkspaceAction"
+               label="Export to Safi Archive"
+               menubarPath="file/additions"
+               style="push"
+               tooltip="Export Workspace Resources to Safi Archive file">
+         </action>
+         <action
+               class="com.safi.workshop.exportwiz.ImportWorkspaceAction"
+               id="com.safi.workshop.eclipse.exportwiz.ImportWorkspaceAction"
+               label="Import Safi Archive"
+               menubarPath="file/additions"
+               style="push"
+               tooltip="Import Safi Archive">
+         </action>
+      </actionSet>
+   </extension>
+   <extension point="org.eclipse.ui.commands">
+      <?gmfgen generated="true"?>
+      <command
+            categoryId="org.eclipse.ui.category.edit"
+            defaultHandler="com.safi.workshop.part.AsteriskDiagramUpdateCommand"
+            description="%update.diagram.description"
+            id="com.safi.workshop.updateDiagram"
+            name="%update.diagram.name">
+      </command>
+      <command
+            defaultHandler="com.safi.workshop.audio.NewPromptCommand"
+            description="Create a new audio prompt by either recording a new one or importing an existing audio file"
+            id="com.safi.workshop.audio.NewPromptCommand"
+            name="Create New Audio Prompt">
+      </command>
+      
+   </extension>
+   
+   <extension point="org.eclipse.ui.bindings">
+      <?gmfgen generated="true"?>
+      <key 
+         commandId="com.safi.workshop.updateDiagram"
+         contextId="com.safi.workshop.ui.diagramContext"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="F5"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="com.safi.workshop.AsteriskPerspective">
+         <view
+               id="com.safi.handlers.diagram.views.VariableView"
+               ratio="0.5"
+               relationship="right"
+               relative="org.eclipse.ui.views.TaskList">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="AsteriskSafletDesigner.diagram"
+            name="Safi">
+      </category>
+      <view
+            category="AsteriskSafletDesigner.diagram"
+            class="com.safi.workshop.view.vareditor.VariablesView2"
+            icon="icons/vareditor/VarView.gif"
+            id="com.safi.workshop.view.VariablesView"
+            name="Variables">
+      </view>
+      <view
+            allowMultiple="false"
+            class="com.safi.workshop.SafiNavigator"
+            icon="icons/obj16/filenav_nav.gif"
+            id="com.safi.eclipse.NavigatorView"
+            name="Navigator">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.elementFactories">
+      <factory
+            class="com.safi.workshop.application.NavigatorRoot"
+            id="com.safi.workshop.application.NavigatorRoot">
+      </factory>
+      <factory
+            class="com.safi.workshop.navigator.db.DBResourceFactory"
+            id="com.safi.workshop.navigator.db.DBResourceFactory">
+      </factory>
+      <factory
+            class="com.safi.workshop.sqlexplorer.plugin.editors.SQLEditorInputFactory"
+            id="com.safi.workshop.sqlexplorer.plugin.editors.SQLEditorInputFactory">
+      </factory>
+   </extension>
+   <extension
+         point="org.eclipse.ui.navigator.viewer">
+      <viewer
+            viewerId="com.safi.eclipse.NavigatorView">
+         <popupMenu>
+            <insertionPoint
+                  name="group.new"
+                  separator="true">
+            </insertionPoint>
+            <insertionPoint
+                  name="group.goto">
+            </insertionPoint>
+            <insertionPoint
+                  name="group.open"
+                  separator="true">
+            </insertionPoint>
+            <insertionPoint
+                  name="group.openWith">
+            </insertionPoint>
+            <insertionPoint
+                  name="group.show"
+                  separator="true">
+            </insertionPoint>
+            <insertionPoint
+                  name="group.reorganize">
+            </insertionPoint>
+            <insertionPoint
+                  name="group.port">
+            </insertionPoint>
+            <insertionPoint
+                  name="group.generate"
+                  separator="true">
+            </insertionPoint>
+            <insertionPoint
+                  name="group.search"
+                  separator="true">
+            </insertionPoint>
+            <insertionPoint
+                  name="group.build"
+                  separator="true">
+            </insertionPoint>
+            <insertionPoint
+                  name="additions"
+                  separator="true">
+            </insertionPoint>
+            <insertionPoint
+                  name="group.properties"
+                  separator="true">
+            </insertionPoint>
+            <insertionPoint
+                  name="group.edit"
+                  separator="true">
+            </insertionPoint>
+         </popupMenu>
+      </viewer>
+      <viewerContentBinding
+            viewerId="com.safi.eclipse.NavigatorView">
+         <includes>
+            <contentExtension
+                  pattern="com.safi.workshop.navigator.db.dbResourcesContent">
+            </contentExtension>
+            <contentExtension
+                  pattern="org.eclipse.ui.navigator.resourceContent">
+            </contentExtension>
+            <contentExtension
+                  pattern="org.eclipse.ui.navigator.resources.filters.*">
+            </contentExtension>
+            <contentExtension
+                  pattern="com.safi.workshop.navigator.serverconfig.ServerResourcesContent">
+            </contentExtension>
+            <contentExtension
+                  pattern="com.safi.workshop.eclipse.SAFILinkHelper">
+            </contentExtension>
+            
+         </includes>
+      </viewerContentBinding>
+      <viewerActionBinding
+            viewerId="com.safi.eclipse.NavigatorView">
+         <excludes>
+            <actionExtension
+                  pattern="org.eclipse.ui.navigator.resources.NewActions">
+            </actionExtension>
+            <actionExtension
+                  pattern="org.eclipse.compare.NavigationActions">
+            </actionExtension>
+            <actionExtension
+                  pattern="org.eclipse.ui.*">
+            </actionExtension>
+         </excludes>
+         <includes>
+            <actionExtension
+                  pattern="org.eclipse.ui.navigator.resources.PropertiesActionProvider">
+            </actionExtension>
+            <actionExtension
+                  pattern="defid.source.menu.Rename">
+            </actionExtension>
+            <actionExtension
+                  pattern="com.safi.workshop.sqlexplorer.*">
+            </actionExtension>
+            <actionExtension
+                  pattern="com.safi.workshop.navigator.SafiEditActionProvider">
+            </actionExtension>
+            <actionExtension
+                  pattern="com.safi.workshop.navigator.serverconfig.ServerResourcesActionProvier">
+            </actionExtension>
+         </includes>
+      </viewerActionBinding>
+   </extension>
+   <extension
+         id="com.safi.workshop.SafiProjectNature"
+         name="Safi Nature"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="com.safi.workshop.SafiProjectNature">
+         </run>
+      </runtime>
+   </extension>
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+         <navigatorContent
+            activeByDefault="true"
+            contentProvider="com.safi.workshop.navigator.db.DBResourcesContentProvider"
+            id="com.safi.workshop.navigator.db.dbResourcesContent"
+            labelProvider="com.safi.workshop.navigator.db.ConnectionTreeLabelProvider"
+            name="DB Resources Content"
+            priority="lowest">
+         <triggerPoints>
+            <or>
+               <instanceof
+                     value="org.eclipse.core.resources.IWorkspace">
+               </instanceof>
+               <instanceof
+                     value="org.eclipse.core.resources.IProject">
+               </instanceof>
+               <instanceof
+                     value="org.eclipse.core.resources.IWorkspaceRoot">
+               </instanceof>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <or>
+               <instanceof
+                     value="com.safi.workshop.sqlexplorer.dbproduct.DriverManager">
+               </instanceof>
+               
+            </or>
+         </possibleChildren>
+      </navigatorContent>
+      <actionProvider
+            class="com.safi.workshop.navigator.db.DBActionProvider"
+            id="com.safi.workshop.navigator.db.DBActionProvider"
+            priority="highest">
+         <enablement>
+            <or>
+               <instanceof
+                     value="com.safi.workshop.sqlexplorer.dbproduct.Alias">
+               </instanceof>
+               <instanceof
+                     value="com.safi.workshop.sqlexplorer.dbproduct.User">
+               </instanceof>
+               <instanceof
+                     value="com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver">
+               </instanceof>
+               <instanceof
+                     value="com.safi.db.Query">
+               </instanceof>
+               <instanceof
+                     value="com.safi.db.QueryParameter">
+               </instanceof>
+            </or>
+         </enablement>
+      </actionProvider>
+      <navigatorContent
+            activeByDefault="true"
+            contentProvider="com.safi.workshop.navigator.serverconfig.ServerResourcesContentProvider"
+            id="com.safi.workshop.navigator.serverconfig.ServerResourcesContent"
+            labelProvider="com.safi.workshop.navigator.serverconfig.ServerResourcesLabelProvider"
+            name="Server Resource Content"
+            priority="lowest">
+         <possibleChildren>
+            <or>
+               <instanceof
+                     value="com.safi.workshop.navigator.serverconfig.SafiServerList">
+               </instanceof>
+               <instanceof
+                     value="com.safi.db.server.config.ServerResource">
+               </instanceof>
+            </or>
+         </possibleChildren>
+         <triggerPoints>
+            <or>
+               <instanceof
+                     value="org.eclipse.core.resources.IWorkspaceRoot">
+               </instanceof>
+            </or>
+         </triggerPoints>
+      </navigatorContent>
+      <actionProvider
+            class="com.safi.workshop.navigator.serverconfig.ServerResourcesActionProvider"
+            id="com.safi.workshop.navigator.serverconfig.ServerResourcesActionProvier"
+            priority="highest">
+         <enablement>
+            <or>
+               <instanceof
+                     value="com.safi.db.server.config.SafiServer">
+               </instanceof>
+               <instanceof
+                     value="com.safi.db.server.config.AsteriskServer">
+               </instanceof>
+               <instanceof
+                     value="com.safi.workshop.navigator.serverconfig.SafiServerList">
+               </instanceof>
+               <instanceof
+                     value="com.safi.workshop.navigator.serverconfig.AsteriskServerList">
+               </instanceof>
+            </or>
+         </enablement>
+      </actionProvider>
+      <actionProvider
+            class="com.safi.workshop.navigator.SafiEditActionProvider"
+            id="com.safi.workshop.navigator.SafiEditActionProvider"
+            overrides="org.eclipse.ui.navigator.resources.actions.EditActions"
+            priority="highest">
+         <enablement>
+            <or>
+               <instanceof
+                     value="org.eclipse.core.resources.IResource">
+               </instanceof>
+               <adapt type="org.eclipse.core.resources.IProject" />
+               <instanceof
+                     value="org.eclipse.core.resources.IFile">
+               </instanceof> 
+            </or>
+         </enablement>
+      </actionProvider>
+   </extension>
+   <extension
+         point="org.eclipse.ui.navigator.linkHelper">
+      <linkHelper
+            class="com.safi.workshop.SAFILinkHelper"
+            id="com.safi.workshop.eclipse.SAFILinkHelper">
+         <editorInputEnablement>
+            <instanceof
+                  value="org.eclipse.ui.IEditorInput">
+            </instanceof>
+         </editorInputEnablement>
+         <selectionEnablement>
+            <or>
+               <instanceof
+                     value="org.eclipse.ui.IEditorInput">
+               </instanceof>
+               <instanceof value="org.eclipse.core.resources.IFile"/>
+            </or>
+         </selectionEnablement>
+      </linkHelper>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            description="UI for invoking CustomInitators"
+            id="CustomInitiatorBuiltin.commands.category"
+            name="Custom Initiator">
+      </category>
+      <command
+            name="Open CustomInitiator test dialog"
+            categoryId="CustomInitiatorBuiltin.commands.category"
+            id="CustomInitiatorBuiltin.commands.openCommand">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="CustomInitiatorBuiltin.commands.openCommand"
+            class="com.safi.workshop.util.CustomInitiatorHandler">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="CustomInitiatorBuiltin.commands.openCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+6"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               label="Debug"
+               mnemonic="M"
+               id="safidebug">
+            <separator
+                  name="AsteriskSafletDesigner.diagram.separator2"
+                  visible="true">
+            </separator>
+            <command
+                  commandId="CustomInitiatorBuiltin.commands.openCommand"
+                  icon="icons/custominitiatorlaunch.gif"
+                  id="CustomInitiatorBuiltin.menus.openCommand"
+                  label="Custom Initiator Launcher"
+                  mnemonic="S">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <!-- start sqlexplorer -->
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Safi SQL Editor"
+            id="SQLExplorerPlugin">
+      </category>
+      <view
+            allowMultiple="false"
+            category="SQLExplorerPlugin"
+            class="com.safi.workshop.sqlexplorer.plugin.views.DatabaseStructureView"
+            icon="icons/tree_mode.gif"
+            id="com.safi.workshop.sqlexplorer.plugin.views.DatabaseStructureView"
+            name="Database Structure"/>
+      <view
+            allowMultiple="false"
+            category="SQLExplorerPlugin"
+            class="com.safi.workshop.sqlexplorer.plugin.views.DatabaseDetailView"
+            icon="icons/app_obj.gif"
+            id="com.safi.workshop.sqlexplorer.plugin.views.DatabaseDetailView"
+            name="Database Detail"/>
+      <view
+            allowMultiple="false"
+            category="SQLExplorerPlugin"
+            class="com.safi.workshop.sqlexplorer.plugin.views.SQLHistoryView"
+            icon="icons/sql_history.gif"
+            id="com.safi.workshop.sqlexplorer.plugin.views.SQLHistoryView"
+            name="SQL History">
+      </view>
+      <view
+            allowMultiple="false"
+            category="SQLExplorerPlugin"
+            class="com.safi.workshop.sqlexplorer.plugin.views.DataPreviewView"
+            id="com.safi.workshop.sqlexplorer.plugin.views.DataPreviewView"
+            name="Data Preview">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="com.safi.workshop.sqlexplorer.preferences.GeneralPreferencePage"
+            id="com.safi.workshop.sqlexplorer.preferences.GeneralPreferencePage"
+            name="Safi SQL Editor">
+      </page>
+      
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            name="Safi SQL Editor"
+            category="com.safi.workshop.sqlexplorer.preferences.GeneralPreferencePage"
+            class="com.safi.workshop.sqlexplorer.preferences.SQLPreferencePage"
+            id="com.safi.workshop.sqlexplorer.preferences.SQLPreferencePage">
+      </page>
+      <page
+            category="com.safi.workshop.sqlexplorer.preferences.GeneralPreferencePage"
+            class="com.safi.workshop.sqlexplorer.preferences.ConfirmationsPreferencePage"
+            id="com.safi.workshop.sqlexplorer.preferences.ConfirmationsPreferencePage"
+            name="Confirmations"/>
+   </extension>
+   <extension
+         id="editors"
+         point="org.eclipse.ui.editors">
+      <editor
+            class="com.safi.workshop.sqlexplorer.plugin.editors.SQLEditor"
+            contributorClass="com.safi.workshop.sqlexplorer.plugin.editors.SqlExplorerEditorActionBarContributor"
+            default="true"
+            extensions="sql"
+            icon="icons/editor.gif"
+            id="com.safi.workshop.sqlexplorer.plugin.editors.SQLEditor"
+            name="Sql Editor">
+      </editor>
+      <editor
+            class="com.safi.workshop.sqlexplorer.filelist.FileListEditor"
+            default="true"
+            extensions="fls"
+            icon="icons/filelist.gif"
+            id="com.safi.workshop.sqlexplorer.filelist.FileListEditor"
+            name="File List Editor"/>
+   </extension>
+   <extension point="org.eclipse.ui.viewActions">
+     <!-- <viewContribution
+            id="com.safi.workshop.sqlexplorer.connections.actions.commit"
+            targetID="com.safi.eclipse.NavigatorView">
+         <action
+               class="com.safi.workshop.sqlexplorer.connections.actions.CommitAction"
+               enablesFor="1"
+               icon="icons/commit.gif"
+               id="com.safi.workshop.sqlexplorer.actions.commit"
+               label="Publish"
+               toolbarPath="additions"
+               tooltip="Publish">
+         </action>
+      </viewContribution>     
+      <viewContribution
+            id="com.safi.workshop.sqlexplorer.connections.actions.rollback"
+            targetID="com.safi.eclipse.NavigatorView">
+         <action
+               class="com.safi.workshop.sqlexplorer.connections.actions.RollbackAction"
+               enablesFor="1"
+               icon="icons/rollback.gif"
+               id="com.safi.workshop.sqlexplorer.actions.rollback"
+               label="Roll Back"
+               toolbarPath="additions"
+               tooltip="Rollback">
+         </action>
+      </viewContribution>
+      <viewContribution
+            id="com.safi.workshop.sqlexplorer.connections.actions.closeAll"
+            targetID="com.safi.eclipse.NavigatorView">
+         <action
+               class="com.safi.workshop.sqlexplorer.connections.actions.CloseAllConnectionsAction"
+               disabledIcon="icons/removeall_dis.gif"
+               enablesFor="*"
+               icon="icons/removeAll_co.gif"
+               id="com.safi.workshop.sqlexplorer.actions.closeAll"
+               label="Close All Connections"
+               toolbarPath="additions"
+               tooltip="Close All Connections">
+         </action>
+      </viewContribution>
+      <viewContribution
+            id="com.safi.workshop.sqlexplorer.connections.actions.close"
+            targetID="com.safi.eclipse.NavigatorView">
+         <action
+               class="com.safi.workshop.sqlexplorer.connections.actions.CloseConnectionAction"
+               disabledIcon="icons/remove_dis.gif"
+               enablesFor="*"
+               icon="icons/remove_att.gif"
+               id="com.safi.workshop.sqlexplorer.actions.close"
+               label="Close Connection"
+               toolbarPath="additions"
+               tooltip="Close Connection">
+         </action>
+      </viewContribution>
+-->
+      <viewContribution
+            id="com.safi.workshop.sqlexplorer.connections.actions.NewEditor"
+            targetID="com.safi.eclipse.NavigatorView">
+      </viewContribution>
+      <viewContribution
+            id="com.safi.workshop.sqlexplorer.connections.actions.NewAliasAction"
+            targetID="com.safi.eclipse.NavigatorView">
+         <action
+               class="com.safi.workshop.sqlexplorer.connections.actions.NewAliasAction"
+               icon="icons/NewDatabaseConnection.gif"
+               id="com.safi.workshop.sqlexplorer.connections.actions.NewAliasAction"
+               label="New Database Connection"
+               style="push"
+               tooltip="Register new database connection">
+         </action>
+      </viewContribution>
+      <viewContribution
+            id="com.safi.workshop.sqlexplorer.connections.actions.NewQueryAction"
+            targetID="com.safi.eclipse.NavigatorView">
+         <action
+               class="com.safi.workshop.sqlexplorer.connections.actions.NewQueryAction"
+               icon="icons/AddQuery.gif"
+               id="com.safi.workshop.sqlexplorer.connections.actions.NewQueryAction"
+               label="New Query"
+               style="push"
+               tooltip="Create new query">
+            <enablement>
+               <or>
+                  <objectClass
+                        name="com.safi.db.DBConnection">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.Query">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.Alias">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.workshop.sqlexplorer.dbproduct.User">
+                  </objectClass>
+               </or>
+            </enablement>
+         </action>
+      </viewContribution>
+      <viewContribution
+            id="AsteriskSafletDesigner.diagram.viewContribution1"
+            targetID="com.safi.eclipse.NavigatorView">
+         <action
+               class="com.safi.workshop.SafiProjectActionDelegate"
+               definitionId="com.safi.workshop.eclipse.objectContribution1"
+               icon="icons/obj16/HandlerDiagramFile.gif"
+               id="com.safi.workshop.part.AsteriskCreationWizardDelegate"
+               label="Saflet (CallFlow Diagram)"
+               style="push"
+               tooltip="Create a new Saflet">
+         </action>
+         <action
+               class="com.safi.workshop.SafiProjectActionDelegate"
+               icon="icons/obj16/new_wiz.gif"
+               id="AsteriskSafletDesigner.diagram.action1"
+               label="New Safi Project"
+               menubarPath="additions"
+               tooltip="Create a new Safi Project">
+         </action>
+      </viewContribution>
+   </extension>
+   
+
+
+   <extension-point id="nodeContextAction" name="Database Structure Node Context Menu Action" schema="schema/nodeContextAction.exsd"/>
+   <extension-point id="node" name="Database Structure Node" schema="schema/node.exsd"/>
+   <extension-point id="nodeDetailTab" name="Database Structure Node Detail Tab" schema="schema/nodeDetailTab.exsd"/>
+   <extension-point id="dataSetTableContextAction" name="Table Context Menu Action" schema="schema/dataSetTableContextAction.exsd"/>
+   <extension-point id="editorAction" name="SQL Editor Action" schema="schema/editorAction.exsd"/>
+   <extension-point id="explainPlanContextAction" name="Explain Plan Context Action" schema="schema/explainPlanContextAction.exsd"/>
+   <extension-point id="actionPak" name="Additional ActionSteps" schema="schema/actionPak.exsd"/>
+
+   <extension
+         id="nodeContextAction"
+         point="AsteriskSafletDesigner.diagram.nodeContextAction">
+      <action
+            class="com.safi.workshop.sqlexplorer.dbstructure.actions.RefreshNodeAction"
+            database-product-name="*"
+            id="sqlexplorer.dbstructure.actions.RefreshNodeAction"
+            name="Refresh Node"
+            node-type="*"/>
+      <action
+            class="com.safi.workshop.sqlexplorer.dbstructure.actions.CopyNodeNameAction"
+            database-product-name="*"
+            id="sqlexplorer.dbstructure.actions.CopyNodeNameAction"
+            name="Copy Node Name"
+            node-type="*"/>
+      <action
+            class="com.safi.workshop.sqlexplorer.dbstructure.actions.InsertTextAction"
+            database-product-name="*"
+            id="sqlexplorer.dbstructure.actions.InsertTextAction"
+            name="Copy Node Name to Editor"
+            node-type="*"/>
+      <!-- <action
+            class="com.safi.workshop.sqlexplorer.dbstructure.actions.GenerateSelectSQLAction"
+            database-product-name="*"
+            id="sqlexplorer.dbstructure.actions.GenerateSelectSQLAction"
+            name="Generate SELECT Statement"
+            node-type="table,column"/> -->
+      <action
+            class="com.safi.workshop.sqlexplorer.dbstructure.actions.GenerateSelectQueryAction"
+            database-product-name="*"
+            id="com.safi.workshop.sqlexplorer.dbstructure.actions.GenerateSelectQueryAction"
+            name="Generate Select Query"
+            node-type="table,column"/>
+      <action
+            class="com.safi.workshop.sqlexplorer.dbstructure.actions.CreateTableScriptAction"
+            database-product-name="*"
+            id="sqlexplorer.dbstructure.actions.CreateTableScriptAction"
+            name="Generate TABLE Script"
+            node-type="table"/>
+      <action
+            class="com.safi.workshop.sqlexplorer.dbstructure.actions.RemoveNodeFilterAction"
+            database-product-name="*"
+            id="sqlexplorer.dbstructure.actions.RemoveNodeFilterAction"
+            name="Remove Node Filter"
+            node-type="database"/>
+   </extension>
+   <!--
+   <extension
+         id="dataSetTableContextAction"
+         point="com.safi.workshop.sqlexplorer.dataSetTableContextAction">
+      <action
+            class="com.safi.workshop.sqlexplorer.sqleditor.results.actions.CopyTableAction"
+            id="com.safi.workshop.sqlexplorer.sqleditor.results.actions.CopyTableAction"
+            name="Copy Table Action"/>            
+   </extension>
+   <extension
+         id="dataSetTableContextAction"
+         point="com.safi.workshop.sqlexplorer.dataSetTableContextAction">
+      <action
+            class="com.safi.workshop.sqlexplorer.sqleditor.results.actions.CopyCellAction"
+            id="com.safi.workshop.sqlexplorer.sqleditor.results.actions.CopyCellAction"
+            name="Copy Cell Action"/>
+   </extension>
+   <extension
+         id="dataSetTableContextAction"
+         point="com.safi.workshop.sqlexplorer.dataSetTableContextAction">
+      <action
+            class="com.safi.workshop.sqlexplorer.sqleditor.results.actions.CopyColumnAction"
+            id="com.safi.workshop.sqlexplorer.sqleditor.results.actions.CopyColumnAction"
+            name="Copy Column"/>
+   </extension>
+   <extension
+         id="dataSetTableContextAction"
+         point="com.safi.workshop.sqlexplorer.dataSetTableContextAction">
+      <action
+            class="com.safi.workshop.sqlexplorer.sqleditor.results.actions.CopyColumnNameAction"
+            id="com.safi.workshop.sqlexplorer.sqleditor.results.actions.CopyColumnNameAction"
+            name="Copy Column Name Action"/>            
+   </extension>
+   <extension
+         point="com.safi.workshop.sqlexplorer.dataSetTableContextAction">
+      <action
+            class="com.safi.workshop.sqlexplorer.sqleditor.results.actions.CopyRowAction"
+            id="com.safi.workshop.sqlexplorer.sqleditor.results.actions.CopyRowAction"
+            name="Copy Row"/>
+   </extension>
+   <extension
+         id="dataSetTableContextAction"
+         point="com.safi.workshop.sqlexplorer.dataSetTableContextAction">
+      <action
+            class="com.safi.workshop.sqlexplorer.sqleditor.results.export.ExportAction"
+            id="com.safi.workshop.sqlexplorer.sqleditor.results.actions.ExportAction"
+            name="Export to disk"/>
+
+   </extension>
+   -->
+   <!--
+   <extension
+         id="product"
+         name="SafiWorkshop"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="AsteriskSafletDesigner.diagram.AsteriskApplication"
+            name="SafiWorkshop">
+         <property
+               name="windowImages"
+               value="icons/product/app16x16-24bit.Bmp,icons/product/app32x32-24bit.Bmp,icons/product/app48x48-24bit.Bmp"/>
+         <property
+               name="appName"
+               value="SafiWorkshop">
+         </property>
+         <property
+               name="aboutText"
+               value="%aboutText">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="10,275,480,15">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+      </product>
+   </extension>
+   -->
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <viewerContribution
+            id="com.safi.workshop.sqlexplorer.contribution1"
+            targetID="#TextEditorContext">
+         <menu
+               id="com.safi.workshop.sqlexplorer.menu1"
+               label="Query"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="com.safi.workshop.sqlexplorer.popup.actions.AddQueryAction"
+               id="com.safi.workshop.sqlexplorer.AddQueryAction"
+               label="Add Query"
+               menubarPath="com.safi.workshop.sqlexplorer.menu1">
+         </action>
+      </viewerContribution>
+   </extension>
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+      <decoratorProvider
+            class="com.safi.workshop.providers.ActionStepDecoratorProvider">
+         <Priority
+               name="Medium">
+         </Priority>
+      </decoratorProvider>
+   </extension>
+   <extension id="ValidationContributionItemProvider" name="Validation"
+      point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+      <?gmfgen generated="true"?>
+      <contributionItemProvider
+         class="com.safi.workshop.providers.AsteriskValidationProvider">
+         <Priority name="Medium"/>
+         <partContribution id="com.safi.workshop.part.AsteriskDiagramEditorID">
+            <partMenuGroup menubarPath="/diagramMenu/" id="validationGroup"/>
+            <partAction id="validateAction" menubarPath="/diagramMenu/validationGroup"/>
+         </partContribution>
+      </contributionItemProvider>
+   </extension><extension point="org.eclipse.emf.validation.constraintProviders">
+      <?gmfgen generated="true"?>
+            <category id="SafiAuditContainer" mandatory="false" name="Saflet Audits">
+         <![CDATA[]]>
+      </category>
+      <constraintProvider cache="true">
+         <package
+               namespaceUri="http:///com/safi/core.ecore#actionstep">
+         </package>
+         <package namespaceUri="http:///com/safi/asterisk.ecore#actionstep"/>
+               <constraints categories="SafiAuditContainer">
+                  <constraint id="reachable"
+            lang="Java" class="com.safi.workshop.providers.AsteriskValidationProvider$Adapter1"
+            name="Actionstep Reachable Check"
+            mode="Batch"
+            severity="WARNING" statusCode="200">
+            
+            <description><![CDATA[This audit will detect when an ActionStep is not reachable]]></description>
+            <message><![CDATA[ActionStep is not reachable. ]]></message>
+            <target class="core.actionstep.ActionStep"/>
+         </constraint>
+         <constraint id="requiredProperties"
+            lang="Java" class="com.safi.workshop.providers.AsteriskValidationProvider$Adapter2"
+            name="Unsatisfied Required Properties"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+
+            <description><![CDATA[This audit will detect when an ActionStep has unpopulated required properties]]></description>
+            <message>Property {1}</message>
+            <target class="core.actionstep.ActionStep"/>
+         </constraint>
+         <constraint
+               class="com.safi.workshop.providers.AsteriskValidationProvider$Adapter3"
+               id="custom"
+               lang="Java"
+               mode="Batch"
+               name="Custom Actionstep Validation"
+               severity="ERROR"
+               statusCode="200">
+            <message>
+               {1}
+            </message>
+            <target
+                  class="core.actionstep.ActionStep">
+            </target>
+         </constraint>
+         <constraint
+               class="com.safi.workshop.providers.AsteriskValidationProvider$Adapter4"
+               id="caseItem"
+               lang="Java"
+               mode="Batch"
+               name="CaseItem Validation"
+               severity="ERROR"
+               statusCode="200">
+            <message>
+               {1}
+            </message>
+            <target
+                  class="core.actionstep.CaseItem">
+            </target>
+         </constraint>
+                  </constraints>
+      </constraintProvider>
+   </extension>
+<extension point="org.eclipse.emf.validation.constraintBindings">
+      <?gmfgen generated="true"?>
+                  <clientContext default="false" id="AsteriskSafletDesigner.diagram.DefaultCtx">
+         <selector class="com.safi.workshop.providers.AsteriskValidationProvider$DefaultCtx1"/>
+      </clientContext>
+      <binding context="AsteriskSafletDesigner.diagram.DefaultCtx">
+                  <constraint ref="AsteriskSafletDesigner.diagram.reachable"/>
+                  <constraint ref="AsteriskSafletDesigner.diagram.requiredProperties"/>
+                  <constraint
+                        ref="AsteriskSafletDesigner.diagram.custom">
+                  </constraint>
+                  <constraint
+                        ref="AsteriskSafletDesigner.diagram.caseItem">
+                  </constraint>
+               </binding>
+               </extension>
+               
+               
+<extension point="org.eclipse.emf.validation.ui.UIRegisteredClientContext">
+      <?gmfgen generated="true"?>
+      <clientContext id="AsteriskSafletDesigner.diagram.DefaultCtx"/>
+         </extension>
+<extension
+      point="org.eclipse.ui.decorators">
+   <decorator
+         adaptable="false"
+         class="com.safi.workshop.navigator.ServerResourcesDecorator2"
+         id="com.safi.workshop.navigator.ServerResourcesDecorator2"
+         label="Server Resources Decorator"
+         lightweight="false"
+         state="true">
+      <enablement>
+         <or>
+            <objectClass
+                  name="com.safi.db.server.config.ServerResource">
+            </objectClass>
+           
+         </or>
+      </enablement>
+   </decorator>
+   <decorator
+         adaptable="false"
+         class="com.safi.workshop.navigator.DirtyDecorator"
+         id="com.safi.workshop.navigator.DirtyDecorator"
+         label="Dirty Decorator"
+         lightweight="true"
+         state="true">
+      <enablement>
+            <or>
+              <objectClass
+                    name="org.eclipse.core.resources.IResource">
+              </objectClass>
+               <objectClass
+                     name="com.safi.workshop.sqlexplorer.dbproduct.DriverManager">
+               </objectClass>
+               <objectClass
+                     name="com.safi.workshop.sqlexplorer.dbproduct.Alias">
+               </objectClass>
+               <objectClass
+                     name="com.safi.db.SafiDriverManager">
+               </objectClass>
+               <objectClass
+                     name="com.safi.db.DBResource">
+               </objectClass>
+               <objectClass
+                     name="com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver">
+               </objectClass>
+            </or>
+      </enablement>
+   </decorator>
+</extension>
+<extension
+      point="org.eclipse.core.runtime.adapters">
+   <factory
+         adaptableType="com.safi.db.server.config.ServerResource"
+         class="com.safi.workshop.navigator.ServerResourcePropertiesAdapterFactory">
+      <adapter
+            type="org.eclipse.ui.views.properties.IPropertySource">
+      </adapter>
+   </factory>
+   <factory
+         adaptableType="com.safi.db.DBResource"
+         class="com.safi.workshop.navigator.DBResourcePropertiesAdapterFactory">
+      <adapter
+            type="org.eclipse.ui.views.properties.IPropertySource">
+      </adapter>
+   </factory>
+</extension>
+<extension
+      point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   <contributionItemProvider
+         class="com.safi.workshop.providers.AsteriskContributionItemProvider">
+      <Priority
+            name="Medium">
+      </Priority>
+      <partContribution
+            class="org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramWorkbenchPart">
+         <partAction
+               id="toggleActionstepMinimize"
+               toolbarPath="/toolbarFormatGroup">
+         </partAction>
+      </partContribution>
+   </contributionItemProvider>
+</extension>
+<extension
+      point="org.eclipse.ui.importWizards">
+   <category
+         id="com.safi.workshop.audio.diagram.sampleCategory"
+         name="Import Audio File">
+   </category>
+   <wizard
+         category="com.safi.workshop.audio.sampleCategory"
+         class="com.safi.workshop.audio.ImportAudioFileWizard"
+         icon="icons/sample.gif"
+         id="com.safi.workshop.audio.ImportAudioFile"
+         name="Import File">
+      <description>
+         Import an audio file from the local file system and commit to SafiServer.
+      </description>
+   </wizard>
+</extension>
+<extension
+      point="org.eclipse.ui.intro">
+   <intro
+         class="org.eclipse.ui.intro.config.CustomizableIntroPart"
+         id="AsteriskSafletDesigner.diagram.intro">
+   </intro>
+   <introProductBinding
+         introId="AsteriskSafletDesigner.diagram.intro"
+         productId="AsteriskSafletDesigner.diagram.SafiWorkshop">
+   </introProductBinding>
+</extension>
+<extension
+      point="org.eclipse.ui.intro.config">
+   <config
+         content="introContent.xml"
+         id="AsteriskSafletDesigner.diagram.introConfigId"
+         introId="AsteriskSafletDesigner.diagram.intro">
+      <presentation
+            home-page-id="root">
+         <implementation
+               kind="html"
+               os="win32,linux,macosx"
+               style="content/shared.css">
+         </implementation>
+      </presentation>
+   </config>
+</extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            name="SQLExplorer"
+            id="com.safi.workshop.sqlexplorer.new">
+      </category>
+      <wizard
+            name="SQLExplorer SQL Editor"
+            icon="icons/edittsk_tsk.gif"
+            category="com.safi.workshop.sqlexplorer.new"
+            class="com.safi.workshop.sqlexplorer.plugin.wizards.NewSQLEditorWizard"
+            id="com.safi.workshop.sqlexplorer.plugin.wizards.sqleditor">
+         <description>
+            Create a new empty SQL file
+         </description>
+         <selection
+               class="org.eclipse.core.resources.IResource">
+         </selection>
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.gmf.runtime.emf.clipboard.core.clipboardSupport">
+      <factory
+            class="com.safi.workshop.providers.WorkshopClipboardSupportFactory"
+            nsURI="http://www.eclipse.org/gmf/runtime/1.0.0/notation"
+            priority="medium">
+      </factory>
+   </extension>
+
+  <extension
+         point="org.eclipse.dltk.core.completionEngine">
+      <completionEngine
+            class="com.safi.workshop.sheet.SafiJavaScriptCompletionEngine"
+            nature="org.eclipse.dltk.javascript.core.nature"
+            priority="1">
+      </completionEngine>
+   </extension>
+</plugin>

@@ -1,0 +1,7 @@
+# Tracing options for the AsteriskSafletDesigner.diagram plug-in
+
+# Common issues
+AsteriskSafletDesigner.diagram/debug=false
+
+# Visual IDs
+AsteriskSafletDesigner.diagram/debug/visualID=false
