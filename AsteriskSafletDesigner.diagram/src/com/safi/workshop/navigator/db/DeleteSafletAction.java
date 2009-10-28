@@ -271,7 +271,7 @@ public class DeleteSafletAction extends ServerResourceAction {
       String filename = AsteriskDiagramEditorUtil.getUniqueFileName(project, saflet.getName(),
           "saflet");
       IFile file = project.getFile(filename);
-      file.create(new ByteArrayInputStream(saflet.getCode().getBytes()), true, null);
+      file.create(new ByteArrayInputStream(saflet.getCode()), true, null);
       Date now = new Date();
       file.setPersistentProperty(SafletPersistenceManager.getInstance().RES_ID_KEY, String
           .valueOf(saflet.getId()));

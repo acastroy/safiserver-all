@@ -111,6 +111,7 @@ public class DiagramEditorWorkbenchAdvisor extends WorkbenchAdvisorHack {
             // AsteriskDiagramEditorUtil.getSafiNavigator().refresh();
             // AsteriskDiagramEditorUtil.getSafiNavigator().expandAll();
             ServerResourcesDecorator.updateServerResourcesDecorators();
+            
           } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

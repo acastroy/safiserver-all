@@ -686,7 +686,7 @@ public class ServerViewPanel extends Composite {
     instance.setTimeInMillis(System.currentTimeMillis() - info.getUptime());
     lastRebootLabel.pack();
 
-    label_1.setText(info.getServerID());
+    label_1.setText(info.getServerID()==null ? "" : info.getServerID());
     label_1.pack();
 
     this.safiServerVersionLabel.setText(info.getSafiServerVersion() == null ? "" : info

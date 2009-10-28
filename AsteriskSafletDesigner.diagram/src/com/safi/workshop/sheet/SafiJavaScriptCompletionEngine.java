@@ -33,6 +33,8 @@ import org.eclipse.dltk.internal.javascript.typeinference.CombinedOrReference;
 import org.eclipse.dltk.internal.javascript.typeinference.HostCollection;
 import org.eclipse.dltk.internal.javascript.typeinference.IClassReference;
 import org.eclipse.dltk.internal.javascript.typeinference.IReference;
+import org.eclipse.dltk.internal.javascript.typeinference.NativeStringReference;
+import org.eclipse.dltk.internal.javascript.typeinference.StandardSelfCompletingReference;
 import org.eclipse.dltk.javascript.core.JavaScriptKeywords;
 import org.eclipse.dltk.javascript.internal.core.codeassist.completion.JavaScriptCompletionEngine;
 import org.eclipse.dltk.javascript.internal.core.mixin.JavaScriptMixinModel;
@@ -44,6 +46,7 @@ import com.safi.core.saflet.SafletContext;
 import com.safi.workshop.edit.parts.HandlerEditPart;
 import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
+import com.safi.workshop.part.AsteriskDiagramEditorUtil;
 import com.xored.org.mozilla.javascript.Node.StringNode;
 
 public class SafiJavaScriptCompletionEngine extends JavaScriptCompletionEngine {
@@ -120,11 +123,13 @@ public class SafiJavaScriptCompletionEngine extends JavaScriptCompletionEngine {
     }
     calculator = new SafiJavascriptAssistUtils.PositionCalculator(content, position, false);
     char[] fileName2 = cu.getFileName();
-    IEditorPart editor = AsteriskDiagramEditorPlugin.getInstance().getWorkbench()
-        .getActiveWorkbenchWindow().getActivePage().getActiveEditor();
+    
+    
+    AsteriskDiagramEditor currentEditor  = AsteriskDiagramEditorUtil.getCurrentAsteriskEditor();
+//    IEditorPart editor = AsteriskDiagramEditorPlugin.getInstance().getWorkbench()
+//        .getActiveWorkbenchWindow().getActivePage().getActiveEditor();
     SafletContext context = null;
-    if (editor instanceof AsteriskDiagramEditor) {
-      AsteriskDiagramEditor currentEditor = (AsteriskDiagramEditor) editor;
+    if (currentEditor != null) {
       currentEditor.getHandlerEditPart().getHandlerModel().getSafletContext();
       HandlerEditPart handlerPart = (HandlerEditPart) currentEditor.getDiagramEditPart();
       Diagram diag = (Diagram) handlerPart.getModel();
@@ -250,11 +255,17 @@ public class SafiJavaScriptCompletionEngine extends JavaScriptCompletionEngine {
       it = m1.keySet().iterator();
       while (it.hasNext()) {
         Object next = it.next();
-        if (!(next instanceof String))
-          continue;
-        String key = (String) next;
-        if (!rfs.containsKey(key))
-          rfs.put(key, m1.get(key));
+        if (next instanceof String){
+	        String key = (String) next;
+	        if (!rfs.containsKey(key))
+	          rfs.put(key, m1.get(key));
+        }
+        else
+        if (next instanceof StandardSelfCompletingReference){
+        	String key = ((StandardSelfCompletingReference)next).toString();
+        	if (!rfs.containsKey(key))
+	          rfs.put(key, m1.get(key));
+        }
       }
 
     }
@@ -266,7 +277,11 @@ public class SafiJavaScriptCompletionEngine extends JavaScriptCompletionEngine {
       String name = (String) next;
       if (completedNames.contains(name))
         continue;
-      names.put(name, rfs.get(name));
+      Object value = rfs.get(name);
+//      if (value instanceof StandardSelfCompletingReference){
+//      	value = ((StandardSelfCompletingReference)value).toString();
+//      }
+			names.put(name, value);
 
     }
 
@@ -546,4 +561,6 @@ public class SafiJavaScriptCompletionEngine extends JavaScriptCompletionEngine {
   protected String processFieldName(IField field, String token) {
     return null;
   }
+  
+  
 }

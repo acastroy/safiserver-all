@@ -89,7 +89,7 @@ public class SelectSafletDynamicValueEditorPage extends AbstractDynamicValueEdit
         try {
           SafletPersistenceManager.getInstance().addOrUpdateSaflets(entry.getKey(),
               entry.getValue(), false, false);
-        } catch (CoreException e) {
+        } catch (Exception e) {
           MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Retrieve Error",
               "Couldn't retrieve Saflet: " + e.getLocalizedMessage());
           AsteriskDiagramEditorPlugin.getInstance().logError("Couldn't retrieve Saflet", e);

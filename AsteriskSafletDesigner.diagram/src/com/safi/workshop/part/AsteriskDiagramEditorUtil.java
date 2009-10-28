@@ -99,8 +99,18 @@ import com.safi.workshop.util.SafletPersistenceManager;
 public class AsteriskDiagramEditorUtil {
 
   private static Map<Integer, File> promptCache = new HashMap<Integer, File>();
+  
+  private static volatile AsteriskDiagramEditor currentAsteriskEditor;
 
-  /**
+  public synchronized static AsteriskDiagramEditor getCurrentAsteriskEditor() {
+  	return currentAsteriskEditor;
+  }
+
+	public synchronized static void setCurrentAsteriskEditor(AsteriskDiagramEditor currentAsteriskEditor) {
+  	AsteriskDiagramEditorUtil.currentAsteriskEditor = currentAsteriskEditor;
+  }
+
+	/**
    * @generated
    */
   public static Map getSaveOptions() {
@@ -118,6 +128,23 @@ public class AsteriskDiagramEditorUtil {
     IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
     page.openEditor(new URIEditorInput(diagram.getURI()), AsteriskDiagramEditor.ID);
     return true;
+  }
+  
+  public static IEditorPart getCurrentEditor() {
+  	
+  	Display d = PlatformUI.getWorkbench().getDisplay();
+  	if (Thread.currentThread() == d.getThread())
+  		return PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
+  	else {
+  		final IEditorPart[] parta = new IEditorPart[]{null};
+  		d.syncExec(new Runnable(){
+  			public void run() {
+  				parta[0] = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
+  			};
+  		});
+  		return parta[0];
+  	}
+    	
   }
 
   public static IEditorPart openDiagram(URI fileURI, final boolean isDebugDiagram,

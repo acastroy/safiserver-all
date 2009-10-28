@@ -74,6 +74,7 @@ import org.eclipse.ui.internal.wizards.newresource.ResourceMessages;
 import org.eclipse.ui.statushandlers.StatusAdapter;
 import org.eclipse.ui.statushandlers.StatusManager;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
 import com.safi.asterisk.AsteriskPackage;
@@ -271,11 +272,14 @@ public class SafletPersistenceManager {
     } catch (DBManagerException e1) {
       throw new PublishResourceException(e1);
     }
-    try {
-      session.beginTransaction();
+//    final Transaction transaction = session.getTransaction();
+    Transaction transaction = null;
+		try {
+			transaction = session.beginTransaction();
       Date now = new Date();
       IProject project = safletResource.getProject();
       int pid = getResourceId(project);
+      boolean isNewProject = false;
       SafletProject parentProject = null;
       if (pid != -1) {
         List results = session.createCriteria(SafletProject.class).add(Restrictions.eq("id", pid))
@@ -326,6 +330,7 @@ public class SafletPersistenceManager {
 
       Saflet saflet = null;
       if (parentProject == null) {
+      	isNewProject = true;
         parentProject = ConfigFactory.eINSTANCE.createSafletProject();
         // if (StringUtils.isNotBlank(pid)) {
         // try {
@@ -372,7 +377,7 @@ public class SafletPersistenceManager {
                     + " exists on the server under project " + s.getProject().getName()
                     + ".  Do you want to overwrite?");
             if (!ok) {
-              session.getTransaction().rollback();
+              transaction.rollback();
               return;
             }
             EcoreUtil.remove(s);
@@ -416,12 +421,18 @@ public class SafletPersistenceManager {
       ByteArrayOutputStream strema = new ByteArrayOutputStream();
       emfResource.save(strema, null);
       printProject(saflet.getProject());
-      saflet.setCode(strema.toString());
-
+      
+//      saflet.setCode(new String(strema.toByteArray()));
+      saflet.setCode(strema.toByteArray());
       session.save(saflet);
-
+//      if (isNewProject)
+//      	session.save(parentProject);
+//      else
+//      	session.save(saflet);
+      
       if (!StringUtils.equals(project.getName(), parentProject.getName())) {
         parentProject.setName(project.getName());
+        
         session.save(parentProject);
       }
       if (editor != null) {
@@ -436,12 +447,12 @@ public class SafletPersistenceManager {
       safletResource.setPersistentProperty(UPDATED_KEY, String.valueOf(now.getTime()));
       safletResource.setPersistentProperty(RES_ID_KEY, String.valueOf(saflet.getId()));
 
-      session.getTransaction().commit();
+      transaction.commit();
       project.refreshLocal(IResource.DEPTH_INFINITE, null);
       // }
     } catch (Exception e) {
-      if (session != null)
-        session.getTransaction().rollback();
+      if (transaction != null)
+        transaction.rollback();
       throw new PublishResourceException(e);
     } finally {
       session.close();
@@ -470,8 +481,10 @@ public class SafletPersistenceManager {
       } else
         return;
 
-      if (saflet.getCode() == null)
-        saflet.setCode(DBManager.getInstance().getSafletCode(saflet.getId()));
+      if (saflet.getCode() == null){
+//        saflet.setCode(new String(DBManager.getInstance().getSafletCode(saflet.getId())));
+      	saflet.setCode(DBManager.getInstance().getSafletCode(saflet.getId()));
+      }
       IPath fullPath = writeSafletToExistingFile(resource, saflet);
 
       if (editor != null) {
@@ -496,7 +509,7 @@ public class SafletPersistenceManager {
   public IPath writeSafletToExistingFile(IFile resource, Saflet saflet)
       throws FileNotFoundException, IOException, CoreException {
     IPath rootPath = resource.getWorkspace().getRoot().getLocation();
-    resource.setContents(new ByteArrayInputStream(saflet.getCode().getBytes()), true, true, null);
+    resource.setContents(new ByteArrayInputStream(saflet.getCode()), true, true, null);
     IPath fullPath = rootPath.append(resource.getFullPath());
 
     Date now = new Date();
@@ -1046,9 +1059,9 @@ public class SafletPersistenceManager {
           "saflet");
       IFile file = project.getFile(filename);
       try {
-        String code = saflet.getCode() == null ? DBManager.getInstance().getSafletCode(
-            saflet.getId()) : saflet.getCode();
-        file.create(new ByteArrayInputStream(code.getBytes()), true, null);
+        byte[] code = saflet.getCode() == null ? DBManager.getInstance().getSafletCode(
+            saflet.getId()) : (saflet.getCode() == null ? null : saflet.getCode());
+        file.create(new ByteArrayInputStream(code), true, null);
         Date now = new Date();
         file.setPersistentProperty(RES_ID_KEY, String.valueOf(saflet.getId()));
         file.setPersistentProperty(MODIFIED_KEY, String.valueOf(now.getTime()));
@@ -1460,7 +1473,7 @@ public class SafletPersistenceManager {
     return localResources;
   }
 
-  public String getLocalSafletCode(Saflet saflet) throws CoreException, IOException {
+  public byte[] getLocalSafletCode(Saflet saflet) throws CoreException, IOException {
     IWorkspace ws = ResourcesPlugin.getWorkspace();
     IProject[] projects = ws.getRoot().getProjects();
     SafletProject proj = saflet.getProject();
@@ -1469,7 +1482,7 @@ public class SafletPersistenceManager {
       IFile safletFile = project.getFile(saflet.getName() + ".saflet");
       if (safletFile != null) {
         InputStream stream = safletFile.getContents(true);
-        return FileUtils.convertStreamToString(stream);
+        return FileUtils.convertStreamToString(stream).getBytes();
 
       }
     }

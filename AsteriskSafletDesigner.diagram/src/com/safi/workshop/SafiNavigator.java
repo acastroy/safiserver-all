@@ -1387,6 +1387,14 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
     //
     // }
 
+  	if (part instanceof com.safi.workshop.part.AsteriskDiagramEditor) {
+      AsteriskDiagramEditor ade = (AsteriskDiagramEditor) part;
+      
+      AsteriskDiagramEditorUtil.setCurrentAsteriskEditor(ade);
+  	}
+  	else 
+  		AsteriskDiagramEditorUtil.setCurrentAsteriskEditor(null);
+  	
     if (!this.isLinkingEnabled())
       return;
 

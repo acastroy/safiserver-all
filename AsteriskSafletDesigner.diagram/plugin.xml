@@ -3880,4 +3880,17 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
             priority="1">
       </completionEngine>
    </extension>
+  <!-- 
+  <extension
+		point="org.eclipse.dltk.ui.scriptCompletionProposalComputer"
+		id="JavaScriptTypeCompletionProposalComputer">
+		<scriptCompletionProposalComputer
+        activate="true"
+        categoryId="org.eclipse.dltk.ui.scriptTypeProposalCategory"
+        class="com.safi.workshop.sheet.SafiJavaScriptTypeCompletionProposalComputer"
+        toolkitId="org.eclipse.dltk.javascript.core.nature">
+			<partition type="__dftl_partition_content_type"/>
+		</scriptCompletionProposalComputer>		
+	</extension>
+	-->
 </plugin>
