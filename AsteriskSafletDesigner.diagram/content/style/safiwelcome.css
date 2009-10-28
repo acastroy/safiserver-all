@@ -14,7 +14,9 @@ html, body {
     border:none;
 	font-size: 0.8em;
 }
-
+.rootActionText {
+	padding-top: 0px; 
+}
 .welcometext {
 	font-family: Verdana,Tahoma,arial,sans-serif;
 	font-weight:bold;
