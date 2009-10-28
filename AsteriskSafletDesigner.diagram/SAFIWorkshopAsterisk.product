@@ -14,7 +14,7 @@
 
    <launcherArgs>
       <programArgs>-data @noDefault</programArgs>
-      <vmArgs>-Xbootclasspath/a:plugins\SafiCommons_1.0.0\log4j-1.2.15.jar  -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC -Xms512m -Xmx1024m -DDebugServerMode=true -XX:MaxPermSize=256m</vmArgs>
+      <vmArgs>-Xbootclasspath/a:plugins/SafiCommons_1.0.0/log4j-1.2.15.jar  -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC -Xms512m -Xmx1024m -DDebugServerMode=true -XX:MaxPermSize=256m</vmArgs>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
    </launcherArgs>
 
@@ -153,7 +153,7 @@
       <plugin id="org.eclipse.update.scheduler"/>
       <plugin id="org.eclipse.update.ui"/>
       <plugin id="org.jdom"/>
-      <plugin id="org.mozilla.javascript"/>
+      <plugin id="org.mozilla.javascript" fragment=""/>
       <plugin id="org.w3c.css.sac"/>
       <plugin id="org.w3c.dom.smil"/>
       <plugin id="org.w3c.dom.svg"/>
