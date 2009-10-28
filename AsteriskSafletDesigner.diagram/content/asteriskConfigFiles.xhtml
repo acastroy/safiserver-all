@@ -3,14 +3,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Setup Asterisk PBX SafiServer</title>
+    <title>Setting up SafiServer with Asterisk</title>
     <link rel="stylesheet" href="style/safiwelcome.css" type="text/css" />
 </head>
 <body>
 	<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center">
 		<tr height="20" bgcolor="#D1CD9D">
 			<td colspan="2" height="22" align="center" class="welcometext">
-				Setting up SafiServer: Configuring Asterisk
+				Setting up SafiServer: Configuring Asterisk (config files)
 			</td>
 		</tr>
 		<tr>
@@ -24,11 +24,15 @@
 								</tr>
 								<tr>
 									<td class="menuOptionDetails"><br /><br />
-										<b>1) Configure Asterisk PBX (configuration files):</b><br/>
 										Next, you need to set up the Asterisk PBX that you want to use with your newly installed SafiServer.<br/><br/>  
-										On the Asterisk server you will need to modify the <i>manager.conf</i> file to allow the SafiServer to connect.<br/><br/>
-										The <i>manager.conf</i> is located by default at <i>/etc/asterisk/manager.conf</i><br /><br />
-										Here's an example addition to the <i>manager.conf</i> configuration file that allows a SafiServer with the IP address of <i>192.168.0.10</i>, a user of <i>safi</i>, and a the password of <i>1234</i> manager access:
+										<b>1) </b> Open the <i>manager.conf</i> in your favorite text editor (The <i>manager.conf</i> is located by default at <i>/etc/asterisk/manager.conf</i>)<br/><br/>
+										Example:<br />
+										<div class="code">
+											# nano /etc/asterisk/manager.conf
+										</div>
+										<br /><br />
+										<b>2) </b> You will need to add the following configuration:<br />
+										<b>NOTE: </b>Replace the IP address on <i>permit</i> line with that of your SafiServer.  Also, change the <i>secret</i> value to a password of your choosing<br/><br/>
 										<div class="code">
 											; <br />
 											; SafiServer connection<br />
@@ -40,10 +44,13 @@
 											read = system,call,log,verbose,command,agent,user<br />
 											write = system,call,log,verbose,command,agent,user<br />
 										</div>
-										<br />
-										<b>NOTE:</b> Make sure to use the IP address/subnet (the <b>permit</b> line) of the machine your SafiWorkshop is installed on; otherwise, the debug server will not be able to make the connection.<br/><br/>
 										<br /><br />
 										<b>2) Reload Asterisk:</b><br />After the <i>manager.conf</i> has been modified (and saved), you will need to run the <b>reload</b> command in <a href="http://org.eclipse.ui.intro/openBrowser?url=http://www.voip-info.org/wiki-Asterisk+CLI">Asterisk CLI</a>.
+										Example:<br />
+										<div class="code">
+										# asterisk -r<br />
+										reload
+										</div>
 									</td>
 								</tr>
 								<tr class="menuOptionDetails">
@@ -52,7 +59,7 @@
 										<table>
 											<tr>
 												<td valign="middle"><img border="0" src="graphics/action_forward.gif" /></td>
-												<td valign="middle"><a href="http://org.eclipse.ui.intro/showPage?id=serverconnect">NEXT: Configure the Asterisk Connection in SafiWorkshop</a></td>
+												<td valign="middle"><a href="http://org.eclipse.ui.intro/showPage?id=serverconnect">NEXT STEP: Configure the Asterisk Connection in SafiWorkshop</a></td>
 											</tr>
 										</table>
 										<br /><br />

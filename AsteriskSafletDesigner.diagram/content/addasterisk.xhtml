@@ -3,14 +3,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Install Linux Version of SafiServer</title>
+    <title>Setting up SafiServer with Asterisk</title>
     <link rel="stylesheet" href="style/safiwelcome.css" type="text/css" />
 </head>
 <body>
 	<table border="0" cellpadding="0" cellspacing="0" width="800" align="center">
 		<tr height="20" bgcolor="#D1CD9D">
 			<td colspan="2" height="22" align="center" class="welcometext">
-				Setting up SafiServer: Install Linux Version of SafiServer
+				Setting up SafiServer: Adding an Asterisk Server
 			</td>
 		</tr>
 		<tr>
@@ -27,23 +27,37 @@
 							You should see the following popup:<br />
 							<img border="0" src="graphics/addasteriskserver.png" /><br/><br/><br/>
 							<b>2)</b> Fill out the Asterisk configuration form<br/><br/>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Unique Server Name:</b> A unique name used to identify your Asterisk PBX<br/><br/>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Host(IP):</b> IP address or hostname of your Asterisk PBX.<br/><br/>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Manager Name/Password:</b> The login and password set up earlier in this walkthrough<br/><br/><br/>
-							<b>3)</b> Press <b>OK</b> to save the changes.
+							<table width="500">
+								<tr>
+									<td valign="top" width="175"><b>Unique Server Name:</b></td>
+									<td>A unique name used to identify your Asterisk PBX.<br/><br/></td>
+								</tr>
+								<tr>
+									<td valign="top" width="175"><b>Host(IP):</b></td>
+									<td>IP address or hostname of your Asterisk PBX.<br/><br/></td>
+								</tr>
+								<tr>
+									<td valign="top" width="175"><b>Manager Name/Password:</b></td>
+									<td>The login and password set up earlier in this walkthrough<br/><br/>
+									<b>NOTE: </b> if you followed the configuration file example then use <b>safi</b> as <i>Manager Name</i> and the value you entered for <i>secret</i> property<br/>
+									</td>
+								</tr>
+							</table>
+							<br/><br/>
+							<b>3)</b> Press <b>OK</b> to add the Asterisk Server.<br/><br/>
+							If your settings are correct; you should receive the follow message:<br/><br/>
+							<img border="0" src="graphics/asteriskserverAddedMsg.png" /><br/><br/>
+							...and you should now have an Asterisk server in the Navigator: <br/><br/>
+							<img border="0" src="graphics/asteriskservernode.png" /><br/><br/>
 						</td>
 					</tr>
 					
 					<tr class="menuOptionDetails">
 						<td>
 						<br /><br />
-						<table>
-							<tr>
-								<td valign="middle"><img border="0" src="graphics/action_forward.gif" /></td>
-								<td valign="middle"><a href="http://org.eclipse.ui.intro/showPage?id=asteriskConfigFiles">NEXT: </a></td>
-							</tr>
-						</table>
-						
+						<div align="center">
+						<h3>-- End of Walkthrough --<br/><br/></h3>
+						</div>
 						<br /><br />
 						</td>
 					</tr>
