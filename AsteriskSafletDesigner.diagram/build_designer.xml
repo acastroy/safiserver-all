@@ -236,12 +236,21 @@
 			<fileset dir="D:\temp\safiStaging\non_obfuscated\eclipse">
 				<include name="**/*" />
 			</fileset>
+			<fileset dir="../SAFIInstaller/">
+				<include name="library_license/**" />
+				<include name="safi_license/**" />
+				<include name="splash.bmp" />
+			</fileset>
 		</copy>
 
+		<unzip dest="D:\safi_install\SafiWorkshop" >
+			<fileset file="../SAFIInstaller/jre.zip">
+			</fileset>
+		</unzip>
 		<taskdef name="nsis" classname="net.sf.nsisant.Task">
 			<classpath location="proguard/nsisant-1.2.jar" />
 		</taskdef>
-		<nsis script="../SAFIInstaller/build_workshop.nsi" />
+		<nsis script="../SAFIInstaller/build_workshop.nsi" path="C:\Program Files\NSIS"/>
 
 	</target>
 
@@ -251,7 +260,7 @@
 		<taskdef name="nsis" classname="net.sf.nsisant.Task">
 		      <classpath location="proguard/nsisant-1.2.jar" />
 		    </taskdef>
-		    <nsis script="../SAFIInstaller/build_workshop.nsi" />
+		    <nsis script="../SAFIInstaller/build_workshop.nsi" path="C:\Program Files\NSIS"/>
 		
 	</target>
 	<target name="deploy_server" depends="init">
@@ -268,7 +277,7 @@
 		<taskdef name="nsis" classname="net.sf.nsisant.Task">
 			<classpath location="proguard/nsisant-1.2.jar" />
 		</taskdef>
-		<nsis script="../SafiServerInstaller/SafiServerInstall2.nsi" />
+		<nsis script="../SafiServerInstaller/SafiServerInstall2.nsi" path="C:\Program Files\NSIS" />
 
 	</target>
 
