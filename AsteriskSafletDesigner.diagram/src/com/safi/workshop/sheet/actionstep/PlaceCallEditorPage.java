@@ -33,9 +33,9 @@ import com.safi.workshop.sheet.DynamicValueEditorUtils;
 public class PlaceCallEditorPage extends AbstractActionstepEditorPage {
 
   private Spinner timeoutText;
-  private Combo combo;
-  private ComboViewer comboViewer;
-  private Label call1Label;
+//  private Combo combo;
+//  private ComboViewer comboViewer;
+//  private Label call1Label;
   private Text text;
   private Label nameLabel;
   private DynamicValueEditorWidget extensionDVEWidget, callerIdDVEWidget, contextDVEWidget;
@@ -58,14 +58,7 @@ public class PlaceCallEditorPage extends AbstractActionstepEditorPage {
     gd_text.widthHint = 50;
     text.setLayoutData(gd_text);
 
-    call1Label = new Label(this, SWT.NONE);
-    call1Label.setText("Call1:");
-
-    comboViewer = new ComboViewer(this, SWT.BORDER);
-    combo = comboViewer.getCombo();
-    final GridData gd_combo = new GridData(SWT.FILL, SWT.CENTER, true, false);
-    gd_combo.widthHint = 50;
-    combo.setLayoutData(gd_combo);
+ 
 
     IObservableValue ob = ActionstepEditObservables.observeValue(parent.getEditPart()
         .getEditingDomain(), parent.getEditPart().getActionStep(), parent.getEditPart()
@@ -75,72 +68,8 @@ public class PlaceCallEditorPage extends AbstractActionstepEditorPage {
     // SWTObservables.observeDelayedValue(400, uiElement);
     bindingContext.bindValue(uiElement, ob, null, null);
 
-    List<Call> calls = new ArrayList<Call>();
-    for (Iterator<EObject> iter = parent.getEditPart().getActionStep().eResource().getAllContents(); iter
-        .hasNext();) {
-      EObject obj = iter.next();
-      if (obj instanceof Call)
-        calls.add((Call) obj);
-    }
-    comboViewer.setContentProvider(new IStructuredContentProvider() {
-
-      @Override
-      public void dispose() {
-      }
-
-      @Override
-      public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-      }
-
-      @Override
-      public Object[] getElements(Object inputElement) {
-        return ((List<Call>) inputElement).toArray();
-      }
-
-    });
-    comboViewer.setLabelProvider(new ILabelProvider() {
-
-      @Override
-      public void addListener(ILabelProviderListener listener) {
-      }
-
-      @Override
-      public void dispose() {
-      }
-
-      @Override
-      public boolean isLabelProperty(Object element, String property) {
-        return true;
-      }
-
-      @Override
-      public void removeListener(ILabelProviderListener listener) {
-
-      }
-
-      @Override
-      public Image getImage(Object element) {
-        // TODO Auto-generated method stub
-        return null;
-      }
-
-      @Override
-      public String getText(Object element) {
-        return ((Call) element).getName();
-      }
-
-    });
-    comboViewer.setInput(calls);
-
-    ob = ActionstepEditObservables.observeValue(parent.getEditPart().getEditingDomain(), parent
-        .getEditPart().getActionStep(), parent.getEditPart().getActionStep().eClass()
-        .getEStructuralFeature("newCall1"));
-    ISWTObservableValue comboElement =  SWTObservables
-        .observeSelection(combo);
-
-    SWTObservables.observeDelayedValue(400, comboElement);
-    CallUpdateStrategy cus = new CallUpdateStrategy(calls);
-    bindingContext.bindValue(comboElement, ob, cus, cus);
+//    CallUpdateStrategy cus = new CallUpdateStrategy(calls);
+//    bindingContext.bindValue(comboElement, ob, cus, cus);
 
     // ----------- Extension Field
     final Label extensionLabel = new Label(this, SWT.NONE);
