@@ -578,30 +578,30 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
           selection = (IStructuredSelection) select;
         }
         if (!commonViewer.getTree().isDisposed()) {
-//          TreePath[] p = null;
-//          Object[] ee = null;
-//          try {
-//            p = commonViewer.getExpandedTreePaths();
-//            ee = commonViewer.getExpandedElements();
-//          } catch (Exception e) {
-//            e.printStackTrace();
-//          }
+          TreePath[] p = null;
+          Object[] ee = null;
+          try {
+            p = commonViewer.getExpandedTreePaths();
+            ee = commonViewer.getExpandedElements();
+          } catch (Exception e) {
+            e.printStackTrace();
+          }
           commonViewer.refresh(true);
-//          ServerResourcesDecorator.updateServerResourcesDecorators();// why should i have
-//          // to do this?
-//          if (selection != null && !selection.isEmpty()) {
-//            // User user = null;
-//            Object selected = selection.getFirstElement();
-//            if (selected != null) {
-//              if (ee != null)
-//                commonViewer.setExpandedElements(ee);
-//
-//              if (p != null)
-//                commonViewer.setExpandedTreePaths(p);
-//              commonViewer.reveal(selected);
-//              commonViewer.setExpandedState(selected, true);
-//            }
-//          }
+          ServerResourcesDecorator.updateServerResourcesDecorators();// why should i have
+          // to do this?
+          if (selection != null && !selection.isEmpty()) {
+            // User user = null;
+            Object selected = selection.getFirstElement();
+            if (selected != null) {
+              if (ee != null)
+                commonViewer.setExpandedElements(ee);
+
+              if (p != null)
+                commonViewer.setExpandedTreePaths(p);
+              commonViewer.reveal(selected);
+              commonViewer.setExpandedState(selected, true);
+            }
+          }
 
         }
       }
