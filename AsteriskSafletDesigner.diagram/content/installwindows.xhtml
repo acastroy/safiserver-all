@@ -3,55 +3,81 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Install Windows Version of SafiServer</title>
+    <title>Install Linux Version of SafiServer</title>
     <link rel="stylesheet" href="style/safiwelcome.css" type="text/css" />
 </head>
 <body>
-	<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center">
-	<tr>
-		<td colspan="2" align="center">
-			<table bgcolor="#FFFFFF" cellpadding="2" width="100%">
-				<tr>
-					<td align="center">
-						<h3>Setting up SafiServer</h3>
-						<br /> <br />
-					</td>
-				</tr>
-				<tr>
-					<td><hr size="1"/></td>
-				</tr>
-				<tr>
-					<td align="right"><a href="http://org.eclipse.ui.intro/navigate?direction=backward"><img border="0" src="graphics/action_back.gif"  alt="Back" /></a>&nbsp;&nbsp;<a href="http://org.eclipse.ui.intro/showPage?id=root"><img border="0" src="graphics/home.png" alt="Welcome Page" /></a></td>
-				</tr>
-				<tr>
-					<td class="menuOptionDetails">
-						<b>1) Download SafiServer:</b><br/>
-						SafiServer is avaiable for both Windows and Linux operating systems.<br>
-						You can download both the Linux and Windows version of SafiServer 
-						<a href="http://org.eclipse.ui.intro/openBrowser?url=http://www.safisystems.com/index.cfm?pageMode=downloads">here</a>.<br/><br/>
-					</td>
-				</tr>
-				<tr class="menuOptionDetails">
-					<td>
-					<br /><br />
-					<table>
-						<tr>
-							<td valign="middle"><img border="0" src="graphics/action_forward.gif" /></td>
-							<td valign="middle"><a href="http://org.eclipse.ui.intro/showPage?id=install_linux">NEXT: Install Windows version of SafiServer</a></td>
-						</tr>
-						<tr><td colspan="2"><br /></td></tr>
-						<tr>
-							<td valign="middle"><img border="0" src="graphics/action_forward.gif" /></td>
-							<td valign="middle"><a href="http://org.eclipse.ui.intro/showPage?id=install_windows">NEXT: Install Linux veraion of SafiServer</a></td>
-						</tr>
-					</table>
-					
-					<br /><br />
-					</td>
-				</tr>
-			</table>
-		</td>
-	</tr>
+	<table border="0" cellpadding="0" cellspacing="0" width="800" align="center">
+		<tr height="20" bgcolor="#D1CD9D">
+			<td colspan="2" height="22" align="center" class="welcometext">
+				Setting up SafiServer: Install Linux Version of SafiServer
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<table bgcolor="#FFFFFF" cellpadding="2" width="100%">
+					<tr>
+						<td align="right"><a href="http://org.eclipse.ui.intro/navigate?direction=backward"><img border="0" src="graphics/action_back.gif"  alt="Back" /></a>&nbsp;&nbsp;<a href="http://org.eclipse.ui.intro/showPage?id=root"><img border="0" src="graphics/home.png" alt="Welcome Page" /></a></td>
+					</tr>
+					<tr>
+						<td class="menuOptionDetails">
+							<b>1) </b>Run the SafiServer setup executable
+							<br /><br/>
+							<b>2) </b>Press <b>Next</b> on the welcome screen
+							<br /><br/>
+							<b>3) </b>Press <b>I Agree</b> on the <i>License Agreement</i>
+							<br /><br/>
+							<b>4) </b>Fill out the server setup information:
+							<br /><br/>
+							<img border="0" src="graphics/safiserverSetup.png" />
+							<br /><br />
+							<table width="500">
+								<tr>
+									<td valign="top" width="175"><b>Server Bind IP Address:</b></td>
+									<td> The IP address that the SafiServer will bind to 
+							(must be reachable from all Asterisk servers and from SafiWorkshop as well).<br /><br /> </td>
+								</tr>
+								<tr>
+									<td valign="top"><b>Database Port:</b></td>
+									<td> The SafiServer utilizes a lightweight internal database to 
+							store Saflets (call flow applications), Asterisk server settings, SafiWorkshop users, 
+							and other system settings. This port is used locally on SafiServer (default: 7021) <br /><br /></td>
+								</tr>
+								<tr>
+									<td valign="top"><b>Management Port:</b></td>
+									<td>This is used for control messaging form SafiWorkshop. (default: 7020)<br /><br /></td>
+								</tr>
+								<tr>
+									<td valign="top"><b>FastAGI Port:</b> </td>
+									<td>This is the port upon which the SafiServer will accept FastAGI requests 
+							from the Asterisk server(s). The Asterisk default for this port is 4573.<br /><br /></td>
+								</tr>
+							</table>
+							<br /><br />							
+						</td>
+					</tr>
+				
+					<tr class="menuOptionDetails">
+						<td>
+						<br /><br />
+						<table>
+							<tr>
+								<td valign="middle"><img border="0" src="graphics/action_forward.gif" /></td>
+								<td valign="middle"><a href="http://org.eclipse.ui.intro/showPage?id=asteriskConfigFiles">NEXT: Configure Asterisk with configuration files</a></td>
+							</tr>
+							<tr><td colspan="2"><br /></td></tr>
+							<tr>
+								<td valign="middle"><img border="0" src="graphics/action_forward.gif" /></td>
+								<td valign="middle"><a href="http://org.eclipse.ui.intro/showPage?id=freepbxinstall">NEXT: Configure Asterisk with FreePBX</a></td>
+							</tr>
+						</table>
+						
+						<br /><br />
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
 	</table>
 </body>
 </html>
