@@ -8,95 +8,84 @@
 </head>
 <body>
 	<table border="0" cellpadding="0" cellspacing="0" width="800" align="center">
-	<tr height="20" bgcolor="#D1CD9D">
-		<td class="welcometext"></td>
-		<td height="22" align="right">
-			<span class="mainmenucurbtn"><a href="http://org.eclipse.ui.intro/runAction?class=com.safi.asterisk.eclipse.NewSafiProjectAction&amp;pluginId=AsteriskSafletDesigner.diagram">New Project</a></span>
-			<span class="mainmenucurbtn"><a href="http://org.eclipse.ui.intro/runAction?class=com.safi.asterisk.eclipse.SafiDiagramActionDelegate&amp;pluginId=AsteriskSafletDesigner.diagram">New Saflet</a></span>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2" align="center">
-			<table bgcolor="#FFFFFF" cellpadding="2" width="100%">
-				<tr>
-					<td align="center">
-						<h3>Setting up SafiServer: Install Linux Version of SafiServer</h3>
-						<br /> <br />
-					</td>
-				</tr>
-				<tr>
-					<td><hr size="1"/></td>
-				</tr>
-				<tr>
-					<td align="right"><a href="http://org.eclipse.ui.intro/navigate?direction=backward"><img border="0" src="graphics/action_back.gif"  alt="Back" /></a>&nbsp;&nbsp;<a href="http://org.eclipse.ui.intro/showPage?id=root"><img border="0" src="graphics/home.png" alt="Welcome Page" /></a></td>
-				</tr>
-				<tr>
-					<td class="menuOptionDetails">
-						<b>1) Untar (or unzip) the file into a directory of your choice.</b>
-						<br /><br/>
-						Example:<br />
-						<div class="code"># tar zxfv SafiServer32-1.x.x.tar.gz</div>
-						<br/>
-					</td>
-				</tr>
-				<tr>
-					<td class="menuOptionDetails">
-						<b>2) Navigate to the SafiServer directory.</b>
-						<br /><br/>
-						Example:<br />
-						<div class="code"># cd SafiServer</div>
-						<br/>
-					</td>
-				</tr>
-				<tr>
-					<td class="menuOptionDetails">
-						<b>3) Run the install script file.</b>
-						<br /><br/>
-						Example:<br />
-						<div class="code"># sudo ./installserver.sh</div>
-						<br/>
-					</td>
-				</tr>
-				
-				<tr>
-					<td class="menuOptionDetails">
-						<b>4) Configure server settings</b>
-						<br /><br/>
-						On the first run of the <i>installserver.sh</i> shell script; the following configuration page will be displayed:
-						<br/>
-						<img border="0" src="graphics/installlinux.jpg" /><br/><br/>
-						You will be prompted to enter the following values (press enter to use the values in parenthesis):<br />
-						<ul>
-							<li><b>SafiServer bind IP:</b> This is the local IP address that the SafiServer will use to bind to</li>
-							<li><b>FastAGI port:</b> The TCP port on which to run the SafiServer FastAGI server on</li>
-							<li><b>sa password:</b> This is the system administrator password for the SafiServer database server</li>
-						</ul> 
- 
- 
-					</td>
-				</tr>
-				
-				<tr class="menuOptionDetails">
-					<td>
-					<br /><br />
-					<table>
-						<tr>
-							<td valign="middle"><img border="0" src="graphics/action_forward.gif" /></td>
-							<td valign="middle"><a href="http://org.eclipse.ui.intro/showPage?id=asteriskConfigFiles">NEXT STEP: Configure Asterisk PBX (configuration files)</a></td>
-						</tr>
-						<tr><td colspan="2"><br /></td></tr>
-						<tr>
-							<td valign="middle"><img border="0" src="graphics/action_forward.gif" /></td>
-							<td valign="middle"><a href="http://org.eclipse.ui.intro/showPage?id=freepbxinstall">NEXT STEP: Configure Asterisk PBX (FreePBX w/ Saflets module)</a></td>
-						</tr>
-					</table>
+		<tr height="20" bgcolor="#D1CD9D">
+			<td colspan="2" height="22" align="center" class="welcometext">
+				Setting up SafiServer: Install Linux Version of SafiServer
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<table bgcolor="#FFFFFF" cellpadding="2" width="100%">
+					<tr>
+						<td align="right"><a href="http://org.eclipse.ui.intro/navigate?direction=backward"><img border="0" src="graphics/action_back.gif"  alt="Back" /></a>&nbsp;&nbsp;<a href="http://org.eclipse.ui.intro/showPage?id=root"><img border="0" src="graphics/home.png" alt="Welcome Page" /></a></td>
+					</tr>
+					<tr>
+						<td class="menuOptionDetails">
+							<b>1) Untar (or unzip) the file into a directory of your choice.</b>
+							<br /><br/>
+							Example:<br />
+							<div class="code"># tar zxfv SafiServer32-1.x.x.tar.gz</div>
+							<br/>
+						</td>
+					</tr>
+					<tr>
+						<td class="menuOptionDetails">
+							<b>2) Navigate to the SafiServer directory.</b>
+							<br /><br/>
+							Example:<br />
+							<div class="code"># cd SafiServer</div>
+							<br/>
+						</td>
+					</tr>
+					<tr>
+						<td class="menuOptionDetails">
+							<b>3) Run the install script file.</b>
+							<br /><br/>
+							Example:<br />
+							<div class="code"># sudo ./installserver.sh</div>
+							<br/>
+						</td>
+					</tr>
 					
-					<br /><br />
-					</td>
-				</tr>
-			</table>
-		</td>
-	</tr>
+					<tr>
+						<td class="menuOptionDetails">
+							<b>4) Configure server settings</b>
+							<br /><br/>
+							On the first run of the <i>installserver.sh</i> shell script; the following configuration page will be displayed:
+							<br/><br/>
+							<img border="0" src="graphics/installlinux.jpg" /><br/><br/>
+							You will be prompted to enter the following values (press enter to use the values in parenthesis):<br />
+							<ul>
+								<li><b>SafiServer bind IP:</b> This is the local IP address that the SafiServer will use to bind to</li>
+								<li><b>FastAGI port:</b> The TCP port on which to run the SafiServer FastAGI server on</li>
+								<li><b>sa password:</b> This is the system administrator password for the SafiServer database server</li>
+							</ul> 
+	 
+	 
+						</td>
+					</tr>
+					
+					<tr class="menuOptionDetails">
+						<td>
+						<br /><br />
+						<table>
+							<tr>
+								<td valign="middle"><img border="0" src="graphics/action_forward.gif" /></td>
+								<td valign="middle"><a href="http://org.eclipse.ui.intro/showPage?id=asteriskConfigFiles">NEXT: Configure Asterisk with configuration files</a></td>
+							</tr>
+							<tr><td colspan="2"><br /></td></tr>
+							<tr>
+								<td valign="middle"><img border="0" src="graphics/action_forward.gif" /></td>
+								<td valign="middle"><a href="http://org.eclipse.ui.intro/showPage?id=freepbxinstall">NEXT: Configure Asterisk with FreePBX</a></td>
+							</tr>
+						</table>
+						
+						<br /><br />
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
 	</table>
 </body>
 </html>

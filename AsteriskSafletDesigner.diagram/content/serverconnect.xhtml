@@ -8,18 +8,14 @@
 </head>
 <body>
 	<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center">
+		<tr height="20" bgcolor="#D1CD9D">
+			<td colspan="2" height="22" align="center" class="welcometext">
+				Setting up SafiServer: Configure the Asterisk Connection in SafiWorkshop
+			</td>
+		</tr>
 		<tr>
 			<td colspan="2" align="center">
 				<table bgcolor="#FFFFFF" cellpadding="2" width="800">
-					<tr>
-						<td align="center">
-							<h3>Setting up SafiServer: Configure Asterisk PBX (FreePBX w/ Saflets module)</h3>
-							<br /> <br />
-						</td>
-					</tr>
-					<tr>
-						<td><hr size="1"/></td>
-					</tr>
 					<tr>
 						<td colspan="2" align="center">
 							<table bgcolor="#FFFFFF" cellpadding="2" width="100%">
@@ -29,13 +25,18 @@
 								
 								<tr>
 									<td class="menuOptionDetails"><br /><br />
-										<b>1) </b>Connect to your SafiServer:<br/>
-										Now that the Asterisk server is set up to accept connections from the Debug SafiServer, you will need to set that login/password in SafiWorkshop.  You can open the <b>Debug SafiServer Manager</b> by double clicking on the <b>Local(Debug)</b> Asterisk server node (under the <b>Debug:</b> node) in the the navigator or ...<br/><br/>
-										<a href="http://org.eclipse.ui.intro/runAction?class=com.safi.server.actions.EditDebugAsteriskServerAction&amp;pluginId=AsteriskSafletDesigner.diagram"><img border="0" src="graphics/littlearrow.png" />Click here to open the Asterisk Configuration</a><br/><br/>
-										You should see the following popup:<br />
-										<img border="0" src="graphics/asteriskconfiguration.jpg" /><br/><br/>
-										Fill in the <b>Host(IP)</b> field with the IP address of your Asterisk PBX. <br/><br/>
-										Fill in the <b>Manager Name</b> and <b>Manager Password</b> with the values you set in step 2.<br/><br/>Press <b>OK</b> to save the changes.
+										<b>1) </b>Connect to your SafiServer:<br/><br/>
+										In the Navigator, right-click the SafiServer node and select <b>Login SafiServer</b> or ...<br/><br/>
+										<a href="http://org.eclipse.ui.intro/runAction?class=com.safi.server.actions.EditProductionSafiServerAction&amp;pluginId=AsteriskSafletDesigner.diagram"><img border="0" src="graphics/littlearrow.png" />Click here to open the SafiServer Login</a><br/><br/>
+										<img border="0" src="graphics/navlogintoserver.png" /><br/><br/>
+										You should see the following popup:<br /><br />
+										<img border="0" src="graphics/safiserverlogin.png" /><br/><br/><br/>
+										<b>2) </b>Fill in the login form<br /><br />
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>SafiServer IP or Hostname</b> The IP or hostname of your SafiServer <br/><br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>SafiServer Port</b> TCP/SSH port for your SafiServer (default of 8822)<br/><br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>SafiServer User Name</b> Use <i>sa</i> as the login <br/><br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>SafiServer Password</b> The password you entered durring the install of your SafiServer <br/><br/><br/>
+										<b>3) </b>Press <b>Login</b> to make the connection.
 									</td>
 								</tr>
 
@@ -45,7 +46,7 @@
 										<table>
 											<tr>
 												<td valign="middle"><img border="0" src="graphics/action_forward.gif" /></td>
-												<td valign="middle"><a href="http://org.eclipse.ui.intro/showPage?id=serverConnect&amp;standby=true">NEXT: Configure the Asterisk Connection in SafiWorkshop</a></td>
+												<td valign="middle"><a href="http://org.eclipse.ui.intro/showPage?id=addasterisk">NEXT: Add Asterisk PBX to SafiServer</a></td>
 											</tr>
 										</table>
 										<br /><br />
