@@ -66,7 +66,7 @@ public interface Prompt extends ServerResource {
 	 * @return the value of the '<em>System</em>' attribute.
 	 * @see #setSystem(boolean)
 	 * @see com.safi.db.server.config.ConfigPackage#getPrompt_System()
-	 * @model
+	 * @model annotation="teneo.jpa appinfo='@Type(type=\"boolean\")'"
 	 * @generated
 	 */
   boolean isSystem();

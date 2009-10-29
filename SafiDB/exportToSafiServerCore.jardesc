@@ -16,8 +16,8 @@
         <javaElement handleIdentifier="=SafiDB/src&lt;com.safi.db.manager{DBConnectionStats.java"/>
         <javaElement handleIdentifier="=SafiDB/src&lt;com.safi.db"/>
         <javaElement handleIdentifier="=SafiDB/src&lt;com.safi.db.manager{HSQLCachedTableDialect.java"/>
-        <javaElement handleIdentifier="=SafiDB/src&lt;com.safi.db.server.config.impl"/>
         <javaElement handleIdentifier="=SafiDB/src&lt;com.safi.db.server.config.util"/>
+        <javaElement handleIdentifier="=SafiDB/src&lt;com.safi.db.server.config.impl"/>
         <javaElement handleIdentifier="=SafiDB/src&lt;com.safi.db.util"/>
         <javaElement handleIdentifier="=SafiDB/src&lt;com.safi.db.manager{DBResourceException.java"/>
         <javaElement handleIdentifier="=SafiDB/src&lt;com.safi.db.manager{ResourceModifiedException.java"/>

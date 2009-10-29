@@ -287,7 +287,7 @@ public interface AsteriskServer extends ServerResource {
 	 * @return the value of the '<em>Active</em>' attribute.
 	 * @see #setActive(boolean)
 	 * @see com.safi.db.server.config.ConfigPackage#getAsteriskServer_Active()
-	 * @model
+	 * @model annotation="teneo.jpa appinfo='@Type(type=\"boolean\")'"
 	 * @generated
 	 */
   boolean isActive();
@@ -313,7 +313,7 @@ public interface AsteriskServer extends ServerResource {
 	 * @return the value of the '<em>Private</em>' attribute.
 	 * @see #setPrivate(boolean)
 	 * @see com.safi.db.server.config.ConfigPackage#getAsteriskServer_Private()
-	 * @model
+	 * @model annotation="teneo.jpa appinfo='@Type(type=\"boolean\")'"
 	 * @generated
 	 */
   boolean isPrivate();

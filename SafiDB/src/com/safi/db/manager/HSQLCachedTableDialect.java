@@ -21,6 +21,7 @@ public class HSQLCachedTableDialect extends HSQLDialect{
 	  super();
 //	  registerColumnType( Types.BLOB, "org.hibernate.type.PrimitiveByteArrayBlobType" );
 		registerColumnType( Types.CLOB, "clob" );
+		registerColumnType( Types.BOOLEAN, "bit" );
   }
   @Override
   public String getCreateTableString() {

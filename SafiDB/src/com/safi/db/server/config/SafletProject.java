@@ -57,7 +57,7 @@ public interface SafletProject extends ServerResource {
 	 * @return the value of the '<em>Enabled</em>' attribute.
 	 * @see #setEnabled(boolean)
 	 * @see com.safi.db.server.config.ConfigPackage#getSafletProject_Enabled()
-	 * @model
+	 * @model annotation="teneo.jpa appinfo='@Type(type=\"boolean\")'"
 	 * @generated
 	 */
   boolean isEnabled();

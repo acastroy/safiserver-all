@@ -237,8 +237,16 @@
             <details key="appinfo" value="@Transient"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="active" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="private" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="active" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eAnnotations source="teneo.jpa">
+            <details key="appinfo" value="@Type(type=&quot;boolean&quot;)"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="private" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eAnnotations source="teneo.jpa">
+            <details key="appinfo" value="@Type(type=&quot;boolean&quot;)"/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="promptDirectory" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
             defaultValueLiteral="/var/lib/asterisk/sounds/"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="asteriskVersion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -302,7 +310,7 @@
       <eClassifiers xsi:type="ecore:EClass" name="Saflet" eSuperTypes="#//server/config/ServerResource">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByteArray">
           <eAnnotations source="teneo.jpa">
-            <details key="appinfo" value="@Basic(fetch=&quot;LAZY&quot;)&#xD;&#xA;@Lob&#xD;&#xA;@Column(length=1048576)&#xD;&#xA;@Type(type=&quot;org.hibernate.type.PrimitiveByteArrayBlobType&quot;)"/>
+            <details key="appinfo" value="@Basic(fetch=&quot;LAZY&quot;)&#xD;&#xA;@Lob&#xD;&#xA;@Column(length=&quot;1048576&quot;)&#xD;&#xA;@Type(type=&quot;org.hibernate.type.PrimitiveByteArrayBlobType&quot;)"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="project" eType="#//server/config/SafletProject"
@@ -315,7 +323,11 @@
             <details key="appinfo" value="@OneToMany(fetch=&quot;EAGER&quot; mappedBy=&quot;project&quot;)"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="enabled" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="enabled" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eAnnotations source="teneo.jpa">
+            <details key="appinfo" value="@Type(type=&quot;boolean&quot;)"/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="prompts" upperBound="-1"
             eType="#//server/config/Prompt" containment="true" eOpposite="#//server/config/Prompt/project">
           <eAnnotations source="teneo.jpa">
@@ -326,7 +338,11 @@
       <eClassifiers xsi:type="ecore:EClass" name="Prompt" eSuperTypes="#//server/config/ServerResource">
         <eStructuralFeatures xsi:type="ecore:EReference" name="project" eType="#//server/config/SafletProject"
             eOpposite="#//server/config/SafletProject/prompts"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="system" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="system" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eAnnotations source="teneo.jpa">
+            <details key="appinfo" value="@Type(type=&quot;boolean&quot;)"/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="extension" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EEnum" name="SynchMode">

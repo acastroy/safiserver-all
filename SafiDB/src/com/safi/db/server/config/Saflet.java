@@ -38,7 +38,7 @@ public interface Saflet extends ServerResource {
 	 * @return the value of the '<em>Code</em>' attribute.
 	 * @see #setCode(byte[])
 	 * @see com.safi.db.server.config.ConfigPackage#getSaflet_Code()
-	 * @model annotation="teneo.jpa appinfo='@Basic(fetch=\"LAZY\")\r\n@Lob\r\n@Column(length=1048576)\r\n@Type(type=\"org.hibernate.type.PrimitiveByteArrayBlobType\")'"
+	 * @model annotation="teneo.jpa appinfo='@Basic(fetch=\"LAZY\")\r\n@Lob\r\n@Column(length=\"1048576\")\r\n@Type(type=\"org.hibernate.type.PrimitiveByteArrayBlobType\")'"
 	 * @generated
 	 */
   byte[] getCode();

@@ -320,6 +320,7 @@ public class DBManager {
       final String dataStoreName = DATASTORE_NAME;
       try {
         String driverName = "org.hsqldb.jdbcDriver";
+//      	String driverName = "org.hsqldb.jdbc.JDBCDriver";
 
         String connectionUrl = null;
         if (serverMode) {

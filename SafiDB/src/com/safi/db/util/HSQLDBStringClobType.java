@@ -3,17 +3,14 @@ package com.safi.db.util;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.Serializable;
-import java.io.StringReader;
 import java.sql.Clob;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
-
 import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.usertype.UserType;
-import org.hsqldb.types.ClobType;
 
 /**
  * Map a String to a Clob

@@ -863,6 +863,18 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 			 "appinfo", "@Transient"
 		   });		
 		addAnnotation
+		  (getAsteriskServer_Active(), 
+		   source, 
+		   new String[] {
+			 "appinfo", "@Type(type=\"boolean\")"
+		   });		
+		addAnnotation
+		  (getAsteriskServer_Private(), 
+		   source, 
+		   new String[] {
+			 "appinfo", "@Type(type=\"boolean\")"
+		   });		
+		addAnnotation
 		  (getSafiServer_AsteriskServers(), 
 		   source, 
 		   new String[] {
@@ -902,7 +914,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		  (getSaflet_Code(), 
 		   source, 
 		   new String[] {
-			 "appinfo", "@Basic(fetch=\"LAZY\")\r\n@Lob\r\n@Column(length=1048576)\r\n@Type(type=\"org.hibernate.type.PrimitiveByteArrayBlobType\")"
+			 "appinfo", "@Basic(fetch=\"LAZY\")\r\n@Lob\r\n@Column(length=\"1048576\")\r\n@Type(type=\"org.hibernate.type.PrimitiveByteArrayBlobType\")"
 		   });		
 		addAnnotation
 		  (getSafletProject_Saflets(), 
@@ -911,10 +923,22 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 			 "appinfo", "@OneToMany(fetch=\"EAGER\" mappedBy=\"project\")"
 		   });		
 		addAnnotation
+		  (getSafletProject_Enabled(), 
+		   source, 
+		   new String[] {
+			 "appinfo", "@Type(type=\"boolean\")"
+		   });		
+		addAnnotation
 		  (getSafletProject_Prompts(), 
 		   source, 
 		   new String[] {
 			 "appinfo", "@OneToMany(fetch=\"LAZY\" mappedBy=\"project\")"
+		   });		
+		addAnnotation
+		  (getPrompt_System(), 
+		   source, 
+		   new String[] {
+			 "appinfo", "@Type(type=\"boolean\")"
 		   });
 	}
 
