@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="WINDOWS-1252" standalone="no"?>
 <jardesc>
-    <jar path="SafiServerCore/lib/safidb_v20090921.jar"/>
+    <jar path="SafiServerCore/lib/safidb_v20091006.jar"/>
     <options buildIfNeeded="true" compress="true" descriptionLocation="/SafiDB/exportToSafiServerCore.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="true" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
     <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
     <selectedProjects/>
@@ -16,8 +16,8 @@
         <javaElement handleIdentifier="=SafiDB/src&lt;com.safi.db.manager{DBConnectionStats.java"/>
         <javaElement handleIdentifier="=SafiDB/src&lt;com.safi.db"/>
         <javaElement handleIdentifier="=SafiDB/src&lt;com.safi.db.manager{HSQLCachedTableDialect.java"/>
-        <javaElement handleIdentifier="=SafiDB/src&lt;com.safi.db.server.config.util"/>
         <javaElement handleIdentifier="=SafiDB/src&lt;com.safi.db.server.config.impl"/>
+        <javaElement handleIdentifier="=SafiDB/src&lt;com.safi.db.server.config.util"/>
         <javaElement handleIdentifier="=SafiDB/src&lt;com.safi.db.util"/>
         <javaElement handleIdentifier="=SafiDB/src&lt;com.safi.db.manager{DBResourceException.java"/>
         <javaElement handleIdentifier="=SafiDB/src&lt;com.safi.db.manager{ResourceModifiedException.java"/>
