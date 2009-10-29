@@ -41,6 +41,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.hibernate.lob.SerializableBlob;
 
 /**
  * <!-- begin-user-doc -->

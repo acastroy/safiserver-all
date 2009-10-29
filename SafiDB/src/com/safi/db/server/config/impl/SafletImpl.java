@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.hibernate.lob.SerializableBlob;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,7 +44,7 @@ public class SafletImpl extends ServerResourceImpl implements Saflet {
 	 * @generated
 	 * @ordered
 	 */
-  protected static final String CODE_EDEFAULT = null;
+  protected static final byte[] CODE_EDEFAULT = null;
 
   /**
 	 * The cached value of the '{@link #getCode() <em>Code</em>}' attribute.
@@ -53,7 +54,7 @@ public class SafletImpl extends ServerResourceImpl implements Saflet {
 	 * @generated
 	 * @ordered
 	 */
-  protected String code = CODE_EDEFAULT;
+  protected byte[] code = CODE_EDEFAULT;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -79,23 +80,23 @@ public class SafletImpl extends ServerResourceImpl implements Saflet {
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public String getCode() {
+  public byte[] getCode() {
 		return code;
 	}
 
   /**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setCode(String newCode) {
-		String oldCode = code;
+	public void setCode(byte[] newCode) {
+		byte[] oldCode = code;
 		code = newCode;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.SAFLET__CODE, oldCode, code));
 	}
 
-  /**
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
@@ -205,7 +206,7 @@ public class SafletImpl extends ServerResourceImpl implements Saflet {
   public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ConfigPackage.SAFLET__CODE:
-				setCode((String)newValue);
+				setCode((byte[])newValue);
 				return;
 			case ConfigPackage.SAFLET__PROJECT:
 				setProject((SafletProject)newValue);

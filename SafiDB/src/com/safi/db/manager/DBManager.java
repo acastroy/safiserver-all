@@ -1616,13 +1616,13 @@ public class DBManager {
     }
   }
 
-  public String getSafletCode(int safletId) throws DBManagerException {
+  public byte[] getSafletCode(int safletId) throws DBManagerException {
     Session session = createSession();
     try {
       org.hibernate.Query q = session.createQuery("select s.code from Saflet s where s.id=:id");
       q.setInteger("id", safletId);
       Object o = q.uniqueResult();
-      return (String) o;
+      return (byte[]) o;
     } catch (Exception ex) {
       throw new DBManagerException(ex);
     } finally {

@@ -300,9 +300,9 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Saflet" eSuperTypes="#//server/config/ServerResource">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByteArray">
           <eAnnotations source="teneo.jpa">
-            <details key="appinfo" value="@Basic(fetch=&quot;LAZY&quot;)&#xD;&#xA;@Lob&#xD;&#xA;@Column(length=1048576)&#xD;&#xA;@Type(type=&quot;clob&quot;)"/>
+            <details key="appinfo" value="@Basic(fetch=&quot;LAZY&quot;)&#xD;&#xA;@Lob&#xD;&#xA;@Column(length=1048576)&#xD;&#xA;@Type(type=&quot;org.hibernate.type.PrimitiveByteArrayBlobType&quot;)"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="project" eType="#//server/config/SafletProject"

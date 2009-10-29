@@ -5,7 +5,9 @@
  * $Id: Saflet.java,v 1.2 2008/09/09 02:31:56 zacw Exp $
  */
 package com.safi.db.server.config;
-
+import org.hibernate.lob.SerializableBlob;
+import javax.persistence.*;
+import org.hibernate.annotations.Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,24 +36,24 @@ public interface Saflet extends ServerResource {
    * </p>
    * <!-- end-user-doc -->
 	 * @return the value of the '<em>Code</em>' attribute.
-	 * @see #setCode(String)
+	 * @see #setCode(byte[])
 	 * @see com.safi.db.server.config.ConfigPackage#getSaflet_Code()
-	 * @model annotation="teneo.jpa appinfo='@Basic(fetch=\"LAZY\")\r\n@Lob\r\n@Column(length=1048576)\r\n@Type(type=\"clob\")'"
+	 * @model annotation="teneo.jpa appinfo='@Basic(fetch=\"LAZY\")\r\n@Lob\r\n@Column(length=1048576)\r\n@Type(type=\"org.hibernate.type.PrimitiveByteArrayBlobType\")'"
 	 * @generated
 	 */
-  String getCode();
+  byte[] getCode();
 
   /**
 	 * Sets the value of the '{@link com.safi.db.server.config.Saflet#getCode <em>Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Code</em>' attribute.
 	 * @see #getCode()
 	 * @generated
 	 */
-  void setCode(String value);
+	void setCode(byte[] value);
 
-  /**
+		/**
 	 * Returns the value of the '<em><b>Project</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link com.safi.db.server.config.SafletProject#getSaflets <em>Saflets</em>}'.
 	 * <!-- begin-user-doc -->

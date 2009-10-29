@@ -819,7 +819,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		initEAttribute(getUser_Password(), ecorePackage.getEString(), "password", null, 0, 1, User.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(safletEClass, Saflet.class, "Saflet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSaflet_Code(), ecorePackage.getEString(), "code", null, 0, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSaflet_Code(), ecorePackage.getEByteArray(), "code", null, 0, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSaflet_Project(), this.getSafletProject(), this.getSafletProject_Saflets(), "project", null, 0, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(safletProjectEClass, SafletProject.class, "SafletProject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -902,7 +902,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		  (getSaflet_Code(), 
 		   source, 
 		   new String[] {
-			 "appinfo", "@Basic(fetch=\"LAZY\")\r\n@Lob\r\n@Column(length=1048576)\r\n@Type(type=\"clob\")"
+			 "appinfo", "@Basic(fetch=\"LAZY\")\r\n@Lob\r\n@Column(length=1048576)\r\n@Type(type=\"org.hibernate.type.PrimitiveByteArrayBlobType\")"
 		   });		
 		addAnnotation
 		  (getSafletProject_Saflets(), 
