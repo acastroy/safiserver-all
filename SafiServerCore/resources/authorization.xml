@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Sshtools User Authorization File -->
+<AuthorizedKeys>
+  <!-- Enter authorized public key elements here -->
+  <Key>ssh_host_dsa_key.pub</Key>
+  <Key>ssh_host_rsa_key.pub</Key>
+
+</AuthorizedKeys>

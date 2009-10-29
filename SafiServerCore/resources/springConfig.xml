@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<!--
+		<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:aop="http://www.springframework.org/schema/aop"
+		xmlns:tx="http://www.springframework.org/schema/tx"
+		xsi:schemaLocation=" http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+	-->
+	<bean id="properties"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>environment.properties</value>
+				<value>common.properties</value>
+				<value>fastagi.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="agiServerFactory" class="com.safi.asterisk.handler.BlockingAgiServerFactory" />
+
+	<bean id="safletDispatcher"
+		class="com.safi.asterisk.handler.dispatch.DBBackedSafletDispatch" />
+
+	<bean id="safletConnectionManager"
+		class="com.safi.asterisk.handler.connection.DBBackedConnectionManager">
+		<property name="dispatcher" ref="safletDispatcher" />
+	</bean>
+
+	<bean id="importDir" class="java.io.File">
+		<constructor-arg value="${import.dir}" />
+	</bean>
+
+
+	<bean id="pollManager" class="com.safi.asterisk.handler.importing.SafiArchiveImporter" />
+
+	<bean id="serviceConfigUpdater" class="com.safi.asterisk.handler.util.ServiceConfigUpdater" />
+
+	<bean id="importPoller" class="org.sadun.util.polling.DirectoryPoller">
+
+		<property name="directories">
+			<list>
+				<ref bean="importDir" />
+			</list>
+		</property>
+		<property name="autoMove" value="true" />
+		<property name="timeBased" value="true" />
+		<property name="pollInterval" value="120000" />
+		<property name="startBySleeping" value="false" />
+		<property name="sendSingleFileEvent" value="true" />
+
+	</bean>
+	<!-- uncomment the following for file-based engine -->
+	<!--
+		<bean id="safletDispatcher"
+		class="com.safi.asterisk.handler.FileBackedSafletDispatch" /> <bean
+		id="safletConnectionManager"
+		class="com.safi.asterisk.handler.FileBackedConnectionManager"
+		depends-on="safletDispatcher"> <property name="dispatcher"
+		ref="safletDispatcher"/> </bean>
+	-->
+
+	<!--
+		<bean id="sshdProvider"
+		class="com.safi.asterisk.handler.connection.sshd.maverick.MaverickSSHProvider"/>
+	-->
+
+	<bean id="sshdProvider"
+		class="com.safi.asterisk.handler.connection.sshd.j2ssh.J2SSHDProvider" />
+		
+	<bean id="handlerEngine" class="com.safi.asterisk.handler.SafletEngine">
+		<property name="dispatcher" ref="safletDispatcher" />
+		<property name="connectionManager" ref="safletConnectionManager" />
+		<property name="agiServerFactory" ref="agiServerFactory" />
+		<property name="fastAgiPoolsize" value="${poolSize}" />
+		<property name="fastAgiMaxPoolsize" value="${maximumPoolSize}" />
+		<property name="fastagiPort" value="${fastagi.port}" />
+		<property name="testing" value="false" />
+		<property name="bindIP" value="${bind.addr}" />
+		<property name="managementPort" value="${management.port}" />
+		<property name="databasePort" value="${db.port}" />
+		<property name="defaultPass" value="${user.password}" />
+		<property name="useSecurityManager" value="${useSecurityManager}" />
+		<property name="audioDirectoryRoot" value="${audio.dir}" />
+		<property name="pollManager" ref="pollManager" />
+		<property name="importPoller" ref="importPoller" />
+		<property name="importDirectory" value="${import.dir}" />
+		<property name="serviceConfigUpdater" ref="serviceConfigUpdater" />
+		<property name="sshdProvider" ref="sshdProvider" />
+	</bean>
+
+	<!--
+		<bean id="registry"
+		class="org.springframework.remoting.rmi.RmiRegistryFactoryBean">
+		<property name="port" value="${managment.port}" /> </bean> <bean
+		id="mbeanServer"
+		class="org.springframework.jmx.support.MBeanServerFactoryBean">
+		</bean> <bean id="serverConnector"
+		class="org.springframework.jmx.support.ConnectorServerFactoryBean"
+		depends-on="registry"> <property name="objectName"
+		value="connector:name=rmi" /> <property name="serviceUrl"
+		value="service:jmx:rmi:///jndi/rmi://${bind.addr}:${managment.port}/safiserver"
+		/> <property name="server" ref="mbeanServer"/> </bean> <bean
+		id="wrapperManager"
+		class="org.tanukisoftware.wrapper.jmx.WrapperManager" /> <bean
+		id="safiServerMonitor"
+		class="com.safi.asterisk.handler.SafiServerMonitorImpl"> <property
+		name="handlerEngine" ref="handlerEngine" /> </bean> <bean
+		id="exporter" class="org.springframework.jmx.export.MBeanExporter">
+		<property name="beans"> <map> <entry key="bean:name=serverMonitor"
+		value-ref="safiServerMonitor" /> <entry key="bean:name=WrapperManager"
+		value-ref="wrapperManager" /> </map> </property> <property
+		name="server" ref="mbeanServer" /> </bean>
+	-->
+</beans>

@@ -1,0 +1,10 @@
+/* AUTOMATICALLY GENERATED ON Sat Aug 02 12:35:03 PDT 2008*/
+/* DO NOT EDIT */
+
+
+grant {
+  permission java.security.AllPermission;
+  permission javax.management.MBeanPermission "*", "*";
+  permission java.lang.management.ManagementPermission "monitor";
+};
+

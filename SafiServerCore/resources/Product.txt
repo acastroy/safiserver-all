@@ -1,0 +1,3 @@
+"SAFISERVERSE""SafiServer License""http://www.safisystems.com/index.cfm?pageMode=accountbetasignup"
+"SAFISERVBETA""SafiServer License""http://www.safisystems.com/index.cfm?pageMode=accountbetasignup"
+"APDBTOOLS""Database ActionPacks License""http://www.safisystems.com/index.cfm?pageMode=accountlicense&macaddress=macvalue"

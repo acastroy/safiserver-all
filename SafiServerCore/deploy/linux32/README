@@ -1,0 +1,36 @@
+================================================================================
+                      SafiServer Beta -- Safi Systems LLC
+================================================================================
+
+Configure and Install:
+----------------------
+
+     Initial configuration of the SafiServer can be preformed by running the 
+	 install script:
+	 
+	      ./installserver.sh
+		  
+     The first time this script is ran; it will prompt you for the IP Address 
+	 you want to bind the SafiServer to, the port to run the FastAGI server on, 
+	 and the sa password for the SafiServer database.  To finish the install 
+	 process run:
+	 
+		./installserver.sh start
+	 
+	 This will install and start the SafiServer service.
+	 
+	 Further configuration can be made from the SafiWorkshop (available for 
+	 download at www.safisystems.com) or by changing the values in the 
+	 resources/environment.properties config file.
+	 
+	 
+Other command options
+---------------------
+
+	./installserver.sh start		#starts the SafiServer
+	./installserver.sh stop		    #stops the SafiServer
+	./installserver.sh console		#runs SafiServer in console mode
+	./installserver.sh status		#displays the SafiServer service status
+	
+	
+	

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="WINDOWS-1252" standalone="no"?>
+<jardesc>
+    <jar path="AsteriskSafiServerPlugin/lib/safiServer.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/SafiServerCore/exportToSafiServerPlugin.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="true" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="true" manifestLocation="" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+        <javaElement handleIdentifier="=SafiServerCore/src&lt;com.safi.asterisk.handler.util{FileUtils.java"/>
+        <javaElement handleIdentifier="=SafiServerCore/src&lt;com.safi.asterisk.handler.mbean{EObjectReference.java"/>
+        <javaElement handleIdentifier="=SafiServerCore/src&lt;com.safi.asterisk.handler.mbean{LicenseDesc.java"/>
+        <javaElement handleIdentifier="=SafiServerCore/src&lt;com.safi.asterisk.handler.importing{ImportArchiveException.java"/>
+        <javaElement handleIdentifier="=SafiServerCore/src&lt;com.safi.asterisk.handler.mbean{SysInfoImpl.java"/>
+        <javaElement handleIdentifier="=SafiServerCore/src&lt;com.safi.asterisk.handler.mbean{ILicense.java"/>
+        <javaElement handleIdentifier="=SafiServerCore/src&lt;com.safi.asterisk.handler.mbean{GlobalVarInfo.java"/>
+        <javaElement handleIdentifier="=SafiServerCore/src&lt;com.safi.asterisk.handler{GlobalVariableManager.java"/>
+        <javaElement handleIdentifier="=SafiServerCore/src&lt;com.safi.asterisk.handler.mbean{SysInfo.java"/>
+        <javaElement handleIdentifier="=SafiServerCore/src&lt;com.safi.asterisk.handler.importing{OverwriteMode.java"/>
+        <javaElement handleIdentifier="=SafiServerCore/src&lt;com.safi.asterisk.handler.util{ICustomInitiatorInvoker.java"/>
+        <javaElement handleIdentifier="=SafiServerCore/src&lt;com.safi.asterisk.handler.mbean{EObjectReferenceImpl.java"/>
+        <javaElement handleIdentifier="=SafiServerCore/src&lt;com.safi.asterisk.handler.mbean{FileTransfer.java"/>
+        <javaElement handleIdentifier="=SafiServerCore/src&lt;com.safi.asterisk.handler.mbean{LicenseException.java"/>
+        <javaElement handleIdentifier="=SafiServerCore/src&lt;com.safi.asterisk.handler.connection.sshd"/>
+        <javaElement handleIdentifier="=SafiServerCore/src&lt;com.safi.asterisk.handler.mbean{ENotificationWrapperImpl.java"/>
+        <javaElement handleIdentifier="=SafiServerCore/src&lt;com.safi.asterisk.handler.connection{SSHException.java"/>
+        <javaElement handleIdentifier="=SafiServerCore/src&lt;com.safi.asterisk.handler.mbean{ENotificationWrapper.java"/>
+        <javaElement handleIdentifier="=SafiServerCore/src&lt;com.safi.asterisk.handler.mbean{DebugRemoteControl.java"/>
+        <javaElement handleIdentifier="=SafiServerCore/src&lt;com.safi.asterisk.handler.mbean{FixedPortRMISocketFactory.java"/>
+        <javaElement handleIdentifier="=SafiServerCore/src&lt;com.safi.asterisk.handler.mbean{SafiServerMonitor.java"/>
+    </selectedElements>
+    <fatjar builder="org.eclipse.jdt.ui.plain_jar_builder" launchConfig=""/>
+</jardesc>
