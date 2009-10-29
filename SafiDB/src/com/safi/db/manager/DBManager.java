@@ -1235,7 +1235,7 @@ public class DBManager {
         Statement stat = connection.createStatement();
         //
         
-        stat.execute("SET DATABASE SQL SIZE FALSE");
+        //stat.execute("SET DATABASE SQL SIZE FALSE"); //hsql1.9 only
         stat.execute("create user safiadmin password 'password' ADMIN;");
         stat.execute("create index promptNameIndex on \"prompt\" (\"name\")");
 

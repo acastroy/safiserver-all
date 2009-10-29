@@ -20,8 +20,8 @@ public class HSQLCachedTableDialect extends HSQLDialect{
 	public HSQLCachedTableDialect() {
 	  super();
 //	  registerColumnType( Types.BLOB, "org.hibernate.type.PrimitiveByteArrayBlobType" );
-		registerColumnType( Types.CLOB, "clob" );
-		registerColumnType( Types.BOOLEAN, "bit" );
+//		registerColumnType( Types.CLOB, "clob" );
+//		registerColumnType( Types.BOOLEAN, "bit" );
   }
   @Override
   public String getCreateTableString() {
@@ -31,14 +31,14 @@ public class HSQLCachedTableDialect extends HSQLDialect{
   @Override
   public boolean supportsExpectedLobUsagePattern() {
     // TODO Auto-generated method stub
-//  	return super.supportsExpectedLobUsagePattern()
-    return true;
+  	return super.supportsExpectedLobUsagePattern();
+//    return true;
   }
   
   @Override
   public boolean useInputStreamToInsertBlob() {
     // TODO Auto-generated method stub
-    return true;
+    return super.useInputStreamToInsertBlob();
   }
   @Override
   public boolean supportsUnboundedLobLocatorMaterialization() {
@@ -52,8 +52,8 @@ public class HSQLCachedTableDialect extends HSQLDialect{
     return super.supportsLobValueChangePropogation();
   }
   
-  public LockingStrategy getLockingStrategy(Lockable lockable, LockMode lockMode) {
-  	return new SelectLockingStrategy( lockable, lockMode );
-	}
+//  public LockingStrategy getLockingStrategy(Lockable lockable, LockMode lockMode) {
+//  	return new SelectLockingStrategy( lockable, lockMode );
+//	}
 
 }
