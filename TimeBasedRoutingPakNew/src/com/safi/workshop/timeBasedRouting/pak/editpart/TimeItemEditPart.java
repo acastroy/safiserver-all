@@ -41,7 +41,7 @@ import com.safi.workshop.part.ValidateAction;
 /**
  * @generated
  */
-public class TimeItemEditPart extends ShapeNodeEditPart implements ActionstepSubItem{
+public class TimeItemEditPart extends ShapeNodeEditPart implements ActionstepSubItem {
 
   /**
    * @generated
