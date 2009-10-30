@@ -89,7 +89,7 @@ public class SafletEngine {
   public static final String LICENSE_DIRECTORY = ROOT_DIR + File.separatorChar + "deploy"
       + File.separatorChar + "license";
   private static final String RESOURCES_ENVIRONMENT_PROPERTIES = "environment.properties";
-  private static final String RESOURCES_FASTAGI_PROPERTIES = "fastagi.properties";
+//  private static final String RESOURCES_FASTAGI_PROPERTIES = "fastagi.properties";
 
   public static final String WORKBENCH_DEBUGLOG = "WORKBENCH_DEBUGLOG";
   public static final String STANDARD_LOG = "STANDARD_LOG";
@@ -104,8 +104,8 @@ public class SafletEngine {
   private SafletDispatch dispatcher;
   private AsteriskConnectionManager connectionManager;
   private SafletScriptEnvironment scriptingEnvironment;
-  private int fastAgiPoolsize = 10;
-  private int fastAgiMaxPoolsize = 500;
+  private int fastAgiPoolsize;
+  private int fastAgiMaxPoolsize;
   private int fastagiPort = 5043;
 
   private ThreadPoolExecutor threadPool;
@@ -132,7 +132,7 @@ public class SafletEngine {
   private String importDirectory;
 
   private long startupTime;
-	private Properties poolProperties;
+//	private Properties poolProperties;
 
   public String getDefaultPass() {
     return defaultPass;
@@ -160,7 +160,6 @@ public class SafletEngine {
   private SafletEngine() {
     GlobalVariableManager.getInstance().setDebug(false);
     initScriptingEnvironment();
-    initThreadPool();
     initLogging();
     // LicenseManager.getInstance();
   }
@@ -182,23 +181,23 @@ public class SafletEngine {
 
   }
 
-  public void loadPoolProperties() {
-    poolProperties = new Properties();
-    try {
-    	poolProperties.load(ClassLoader
-          .getSystemResourceAsStream(RESOURCES_FASTAGI_PROPERTIES));
-    } catch (IOException e) {
-      e.printStackTrace();
-      log.error("Couldn't load fastagi properties", e);
-    }
-    
-    fastAgiMaxPoolsize = Integer.valueOf(poolProperties.getProperty("maximumPoolSize", "200"));
-    String name = "queueSize";
-    if (!poolProperties.containsKey("queueSize"))
-    	name = "poolSize";
-    fastAgiPoolsize = Integer.valueOf(poolProperties.getProperty(name, "20"));
-
-  }
+//  public void loadPoolProperties() {
+//    poolProperties = new Properties();
+//    try {
+//    	poolProperties.load(ClassLoader
+//          .getSystemResourceAsStream(RESOURCES_FASTAGI_PROPERTIES));
+//    } catch (IOException e) {
+//      e.printStackTrace();
+//      log.error("Couldn't load fastagi properties", e);
+//    }
+//    
+//    fastAgiMaxPoolsize = Integer.valueOf(poolProperties.getProperty("maximumPoolSize", "200"));
+//    String name = "queueSize";
+//    if (!poolProperties.containsKey("queueSize"))
+//    	name = "poolSize";
+//    fastAgiPoolsize = Integer.valueOf(poolProperties.getProperty(name, "20"));
+//
+//  }
   private void saveEnvironmentProperties() {
     try {
       if (environmentProperties != null && (originalProperties == null)
@@ -216,7 +215,9 @@ public class SafletEngine {
   }
 
   private void initThreadPool() {
-  	loadPoolProperties();
+//  	loadPoolProperties();
+  	if (log.isDebugEnabled())
+  		log.debug("Starting threadpool executor with poolsize "+fastAgiMaxPoolsize+" and queuesize "+fastAgiPoolsize);
     threadPool = new ThreadPoolExecutor(fastAgiMaxPoolsize, fastAgiMaxPoolsize, 0L, TimeUnit.SECONDS,
         new LinkedBlockingQueue<Runnable>(fastAgiMaxPoolsize + fastAgiPoolsize));
   }
@@ -278,6 +279,7 @@ public class SafletEngine {
   public void init() throws SafletEngineException {
     shuttingDown = false;
     try {
+    	initThreadPool();
       if (useSecurityManager)
         installSecurityManager();
       loadEnvironmentProperties();
