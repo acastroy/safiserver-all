@@ -335,7 +335,8 @@ public class SafletEngine {
       createKeysIfNecessary();
       int sshPort = Integer.parseInt(environmentProperties.getProperty("sshPort", "22"));
       sshdProvider.setSSHPort(sshPort);
-      sshdProvider.setSSHHost(getBindIP());
+//      sshdProvider.setSSHHost(getBindIP());
+      sshdProvider.setSSHHost("0.0.0.0");
       sshdProvider.start();
     } catch (Exception e) {
       if (e instanceof SafletEngineException)
@@ -487,25 +488,26 @@ public class SafletEngine {
     DBManager.getInstance().setServerMode(true);
     DBManager.getInstance().setUsername(SA_USER, true);
     DBManager.getInstance().setPassword(isNew ? "" : defaultPass, true);
+    bindIP = "0.0.0.0";
     try {
-      if (StringUtils.isNotBlank(bindIP)) {
-        // if ("0.0.0.0".equals(bindIP.trim()) && OS_NAME.toLowerCase().indexOf("windows")
-        // < 0) {
-        // bindIP = InetAddress.getLocalHost().getHostAddress();
-        // log.warn("Wildcard IP 0.0.0.0 was selected but is invalid for OS " + OS_NAME
-        // + ". Bind IP set to " + bindIP);
-        //
-        // }
-      } else {
-        bindIP = InetAddress.getLocalHost().getHostAddress();
-        log.info("No Bind IP was specified so using reported address " + bindIP);
-      }
+//      if (StringUtils.isNotBlank(bindIP)) {
+//        // if ("0.0.0.0".equals(bindIP.trim()) && OS_NAME.toLowerCase().indexOf("windows")
+//        // < 0) {
+//        // bindIP = InetAddress.getLocalHost().getHostAddress();
+//        // log.warn("Wildcard IP 0.0.0.0 was selected but is invalid for OS " + OS_NAME
+//        // + ". Bind IP set to " + bindIP);
+//        //
+//        // }
+//      } else {
+//        bindIP = InetAddress.getLocalHost().getHostAddress();
+//        log.info("No Bind IP was specified so using reported address " + bindIP);
+//      }
       DBManager.getInstance().setHost(bindIP, true);
 
       // whether it changed or not just set it
       setBindIP(bindIP);
       connectionManager.setBindIP(getBindIP());
-    } catch (UnknownHostException ex) {
+    } catch (Exception ex) {
       ex.printStackTrace();
       DBManager.getInstance().setHost("localhost", true);
     }
@@ -885,22 +887,24 @@ public class SafletEngine {
     // serviceUrl = "service:jmx:rmi:///jndi/rmi://" + bindIP + ":" + port +
     // "/safiserver";
 
-    if ("localhost".equalsIgnoreCase(bindIP.trim()) || "0.0.0.0".equals(bindIP.trim())
-        || "127.0.0.1".equals(bindIP.trim())) {
-
-      List<String> iplist = getLocalIPAddresses();
-
-      for (String ip : iplist) {
-        if (!"127.0.0.1".equals(ip) && !"0.0.0.0".equals(ip)) {
-          bindIP = ip;
-
-          serviceUrl = "service:jmx:rmi://" + ip + ":" + port + "/jndi/rmi://" + ip + ":" + port
-              + "/safiserver";
-          break;
-        }
-      }
-
-    }
+//    if ("localhost".equalsIgnoreCase(bindIP.trim()) || "0.0.0.0".equals(bindIP.trim())
+//        || "127.0.0.1".equals(bindIP.trim())) {
+//
+//      List<String> iplist = getLocalIPAddresses();
+//System.err.println("The iplist is "+iplist);
+//      for (String ip : iplist) {
+//      	
+//        if (!"127.0.0.1".equals(ip) && !"0.0.0.0".equals(ip)) {
+//          bindIP = ip;
+//
+//          serviceUrl = "service:jmx:rmi://" + ip + ":" + port + "/jndi/rmi://" + ip + ":" + port
+//              + "/safiserver";
+//          break;
+//        }
+//      }
+//
+//    }
+    
     if (serviceUrl == null) {
       bindIP = "127.0.0.1";
       serviceUrl = "service:jmx:rmi://" + bindIP + ":" + port + "/jndi/rmi://" + bindIP + ":"

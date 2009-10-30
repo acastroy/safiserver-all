@@ -60,7 +60,6 @@
 	<classpathentry kind="lib" path="deploy/lib/sshd_j2.jar" sourcepath="/J2SSH"/>
 	<classpathentry kind="lib" path="deploy/lib/commons-codec-1.3.jar"/>
 	<classpathentry kind="lib" path="lib/FastInfoset-1.2.3.jar"/>
-	<classpathentry kind="lib" path="lib/jaxb-impl-2.1.9.jar"/>
 	<classpathentry kind="lib" path="lib/neethi-2.0.4.jar"/>
 	<classpathentry kind="lib" path="lib/wsdl4j-1.6.2.jar"/>
 	<classpathentry kind="lib" path="lib/XmlSchema-1.4.5.jar"/>
@@ -79,7 +78,6 @@
 	<classpathentry kind="lib" path="deploy/lib/org.eclipse.osgi_3.5.0.v20090520.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/org.eclipse.osgi.services_3.2.0.v20090520-1800.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/org.eclipse.osgi.util_3.2.0.v20090520-1800.jar"/>
-	<classpathentry kind="lib" path="lib/cxf-2.2.3.jar" sourcepath="D:/javalib/apache-cxf-2.2.3/apache-cxf-2.2.3-src.zip"/>
 	<classpathentry kind="lib" path="lib/cxf-xjc-bug671-2.2.3.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/persistence.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.teneo_1.1.1.v200909151729.jar"/>
@@ -96,5 +94,11 @@
 	<classpathentry kind="lib" path="lib/asteriskcore_v20091006.jar"/>
 	<classpathentry kind="lib" path="lib/safidb_v20091006.jar" sourcepath="/SafiDB"/>
 	<classpathentry kind="lib" path="lib/safletcore_v20091006.jar"/>
+	<classpathentry kind="lib" path="lib/cxf-2.2.4.jar"/>
+	<classpathentry kind="lib" path="lib/cxf-manifest.jar"/>
+	<classpathentry kind="lib" path="lib/jaxb-api-2.1.jar"/>
+	<classpathentry kind="lib" path="lib/jaxb-impl-2.1.12.jar"/>
+	<classpathentry kind="lib" path="lib/jaxb-xjc-2.1.12.jar"/>
+	<classpathentry kind="lib" path="lib/jsr311-api-1.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

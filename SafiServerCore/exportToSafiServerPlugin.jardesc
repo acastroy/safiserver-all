@@ -33,5 +33,4 @@
         <javaElement handleIdentifier="=SafiServerCore/src&lt;com.safi.asterisk.handler.mbean{FixedPortRMISocketFactory.java"/>
         <javaElement handleIdentifier="=SafiServerCore/src&lt;com.safi.asterisk.handler.mbean{SafiServerMonitor.java"/>
     </selectedElements>
-    <fatjar builder="org.eclipse.jdt.ui.plain_jar_builder" launchConfig=""/>
 </jardesc>
