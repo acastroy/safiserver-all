@@ -280,6 +280,36 @@
 		<nsis script="../SafiServerInstaller/SafiServerInstall2.nsi" path="C:\Program Files\NSIS" />
 
 	</target>
+	<target name="linuxDeploy">
+	        <delete file="../SafiServerInstaller/safiServerLinux32.zip" quiet="true" />
+
+	        <delete dir="D:/safi_install/serverLinux32" includeemptydirs="false" quiet="false" />
+
+	        <copy todir="D:/safi_install/serverLinux32/SafiServer" includeemptydirs="true" overwrite="true">
+	            <fileset dir="../SafiServerCore/" defaultexcludes="true">
+	                <include name="default_drivers/**" />
+	                <include name="lib/**" />
+	                <include name="logs/**" />
+	                <include name="deploy/actionpaks/**" />
+	                <include name="resources/**" />
+	                <include name="deploy/lib/**" />
+	                <include name="deploy/linux32/**" />
+	                <include name="deploy/libs.conf" />
+	                <exclude name="deploy/linux32/jre.zip" />
+	                <exclude name="**/*.bak" />
+	                <exclude name="**/*.log" />
+	                <exclude name="**/*.log.*" />
+	                <exclude name="**/*.keepme" />
+	            </fileset>
+	        </copy>
+	        <mkdir dir="D:/safi_install/serverLinux32/SafiServer/deploy/actionpaks" />
+	        <mkdir dir="D:/safi_install/serverLinux32/SafiServer/imports/received" />
+
+	        <move file="D:/safi_install/serverLinux32/SafiServer/deploy/linux32/installserver.sh" todir="D:/safi_install/serverLinux32/SafiServer">
+	        </move>
+	        <tar compression="gzip" basedir="D:\safi_install\serverLinux32" destfile="../SafiServerInstaller/safiServerLinux32.tar.gz" />
+
+	    </target>
 
 
 	

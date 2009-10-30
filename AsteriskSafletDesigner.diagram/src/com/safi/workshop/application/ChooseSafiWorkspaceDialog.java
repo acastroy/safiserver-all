@@ -238,6 +238,10 @@ public class ChooseSafiWorkspaceDialog extends TitleAreaDialog {
     return area;
   }
 
+  @Override
+  protected boolean isResizable() {
+    return true;
+  }
   protected void deleteWorkspace(SafiWorkspaceProfile o) {
     File file = new File(o.getPath());
     if (file.exists()) {
