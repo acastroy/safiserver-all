@@ -19,7 +19,7 @@
 	<classpathentry kind="lib" path="deploy/lib/hibernate-annotations.jar" sourcepath="/Hibernate_Annot3.3.1GA"/>
 	<classpathentry kind="lib" path="deploy/lib/hibernate-commons-annotations.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/hibernate-entitymanager.jar"/>
-	<classpathentry kind="lib" path="deploy/lib/hibernate3.jar" sourcepath="/hibernate3.3.2Core"/>
+	<classpathentry kind="lib" path="deploy/lib/hibernate3.jar" sourcepath="D:/javalib/hibernate3/CoreBranch_3_3_2_GA_CP"/>
 	<classpathentry kind="lib" path="deploy/lib/jaas.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/jacc-1_0-fr.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/javassist.jar"/>
@@ -94,7 +94,7 @@
 	<classpathentry kind="lib" path="deploy/lib/springmodules-sandbox-db-0.9-20080616124518.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/sshd.jar"/>
 	<classpathentry kind="lib" path="lib/asteriskcore_v20091006.jar"/>
-	<classpathentry kind="lib" path="lib/safidb_v20091006.jar"/>
+	<classpathentry kind="lib" path="lib/safidb_v20091006.jar" sourcepath="/SafiDB"/>
 	<classpathentry kind="lib" path="lib/safiServer_v20091006.jar"/>
 	<classpathentry kind="lib" path="lib/safletcore_v20091006.jar"/>
 	<classpathentry kind="output" path="bin"/>

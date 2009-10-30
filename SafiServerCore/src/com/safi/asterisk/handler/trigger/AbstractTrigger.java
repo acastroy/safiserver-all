@@ -1,7 +1,6 @@
 package com.safi.asterisk.handler.trigger;
 
 import org.hsqldb.Trigger;
-import org.hsqldb.types.BinaryData;
 
 public abstract class AbstractTrigger implements Trigger {
 
@@ -9,8 +8,11 @@ public abstract class AbstractTrigger implements Trigger {
 
     switch (type) {
 
+      case INSERT_BEFORE:
       case INSERT_BEFORE_ROW:
+      case UPDATE_BEFORE:
       case UPDATE_BEFORE_ROW:
+      case DELETE_BEFORE:
       case DELETE_BEFORE_ROW: {
         return "BEFORE";
       }
@@ -34,16 +36,19 @@ public abstract class AbstractTrigger implements Trigger {
 
       case INSERT_AFTER:
       case INSERT_AFTER_ROW:
+      case INSERT_BEFORE:
       case INSERT_BEFORE_ROW: {
         return "INSERT";
       }
       case UPDATE_AFTER:
       case UPDATE_AFTER_ROW:
+      case UPDATE_BEFORE:
       case UPDATE_BEFORE_ROW: {
         return "UPDATE";
       }
       case DELETE_AFTER:
       case DELETE_AFTER_ROW:
+      case DELETE_BEFORE:
       case DELETE_BEFORE_ROW: {
         return "DELETE";
       }
@@ -118,18 +123,7 @@ public abstract class AbstractTrigger implements Trigger {
 
   public static boolean isDeleteTrigger(int triggerType) {
     return triggerType == DELETE_AFTER || triggerType == DELETE_AFTER_ROW
-        || triggerType == DELETE_BEFORE_ROW;
+        || triggerType == DELETE_BEFORE || triggerType == DELETE_BEFORE_ROW;
   }
 
-  protected boolean getBooleanVal(Object value) {
-		if (value instanceof BinaryData) {
-			BinaryData data = (BinaryData) value;
-			byte[] bytes = data.getBytes();
-
-			return bytes != null && bytes.length == 1 && bytes[0] > 0;
-		} else if (value instanceof Boolean)
-			return (Boolean) value;
-
-		return false;
-	}
 }
