@@ -82,7 +82,7 @@
 		<property name="dispatcher" ref="safletDispatcher" />
 		<property name="connectionManager" ref="safletConnectionManager" />
 		<property name="agiServerFactory" ref="agiServerFactory" />
-		<property name="fastAgiPoolsize" value="${poolSize}" />
+		<property name="fastAgiPoolsize" value="${queueSize}" />
 		<property name="fastAgiMaxPoolsize" value="${maximumPoolSize}" />
 		<property name="fastagiPort" value="${fastagi.port}" />
 		<property name="testing" value="false" />
