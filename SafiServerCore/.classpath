@@ -26,21 +26,6 @@
 	<classpathentry kind="lib" path="deploy/lib/jaxen-1.1-beta-7.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/jgroups-2.2.8.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/jta.jar"/>
-	<classpathentry kind="lib" path="deploy/lib/org.eclipse.core.runtime_3.4.0.v20080512.jar"/>
-	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.common_2.4.0.v200808251517.jar" sourcepath="D:/ganymede2/eclipse/plugins/org.eclipse.emf.source_2.4.1.v200808251517/src/org.eclipse.emf.common_2.4.0.v200808251517/src.zip"/>
-	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.ecore_2.4.1.v200808251517.jar" sourcepath="D:/ganymede2/eclipse/plugins/org.eclipse.emf.source_2.4.1.v200808251517/src/org.eclipse.emf.ecore_2.4.1.v200808251517/src.zip"/>
-	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.ecore.change_2.4.0.v200808251517.jar"/>
-	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.ecore.xmi_2.4.1.v200808251517.jar" sourcepath="D:/ganymede2/eclipse/plugins/org.eclipse.emf.source_2.4.1.v200808251517/src/org.eclipse.emf.ecore.xmi_2.4.1.v200808251517/src.zip"/>
-	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.edit_2.4.1.v200808251517.jar"/>
-	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.transaction_1.2.1.v200807161719.jar"/>
-	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.workspace_1.2.2.v200809171833.jar"/>
-	<classpathentry kind="lib" path="deploy/lib/org.eclipse.equinox.common_3.4.0.v20080421-2006.jar"/>
-	<classpathentry kind="lib" path="deploy/lib/org.eclipse.gmf_1.0.0.v20080425-1959.jar"/>
-	<classpathentry kind="lib" path="deploy/lib/org.eclipse.gmf.runtime.common.core_1.1.0.v20080425-1959.jar"/>
-	<classpathentry kind="lib" path="deploy/lib/org.eclipse.gmf.runtime.diagram.core_1.1.2.v20080903-1510.jar"/>
-	<classpathentry kind="lib" path="deploy/lib/org.eclipse.osgi_3.4.2.R34x_v20080826-1230.jar"/>
-	<classpathentry kind="lib" path="deploy/lib/org.eclipse.osgi.services_3.1.200.v20071203.jar"/>
-	<classpathentry kind="lib" path="deploy/lib/org.eclipse.osgi.util_3.1.300.v20080303.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/oscache-2.1.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/swarmcache-1.0rc2.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/syndiag2.jar"/>
@@ -56,10 +41,6 @@
 	<classpathentry kind="lib" path="deploy/lib/jsch.jar" sourcepath="/org.eclipse.jsch.core"/>
 	<classpathentry kind="lib" path="deploy/lib/junit.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/ognl-2.7.1.jar"/>
-	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.teneo_1.0.1.v200809211527.jar"/>
-	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.teneo.annotations_1.0.1.v200809211527.jar"/>
-	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.teneo.hibernate.jar"/>
-	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.teneo.hibernate.mapper_1.0.1.v200809211527.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/org.sadun.util.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/pollmgt.jar" sourcepath="D:/javalib/jpoller1.5.2/source"/>
 	<classpathentry kind="lib" path="deploy/lib/spring-sources.jar"/>
@@ -92,5 +73,24 @@
 	<classpathentry kind="lib" path="lib/wsdl4j-1.6.2.jar"/>
 	<classpathentry kind="lib" path="lib/XmlSchema-1.4.5.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/SafiFastAgi1.7"/>
+	<classpathentry kind="lib" path="deploy/lib/org.eclipse.core.runtime_3.5.0.v20090525.jar"/>
+	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.common_2.5.0.v200906151043.jar"/>
+	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.ecore_2.5.0.v200906151043.jar"/>
+	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.ecore.change_2.5.0.v200906151043.jar"/>
+	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.ecore.xmi_2.5.0.v200906151043.jar"/>
+	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.edit_2.5.0.v200906151043.jar"/>
+	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.teneo_1.1.0.v200906180911.jar"/>
+	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.teneo.annotations_1.1.0.v200906180911.jar"/>
+	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.teneo.hibernate_1.1.0.v200906180911.jar"/>
+	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.teneo.hibernate.mapper_1.1.0.v200906180911.jar"/>
+	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.transaction_1.3.0.v200902010221.jar"/>
+	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.workspace_1.3.0.v200902100422.jar"/>
+	<classpathentry kind="lib" path="deploy/lib/org.eclipse.equinox.common_3.5.0.v20090520-1800.jar"/>
+	<classpathentry kind="lib" path="deploy/lib/org.eclipse.gmf_1.2.0.v20090615-0700.jar"/>
+	<classpathentry kind="lib" path="deploy/lib/org.eclipse.gmf.runtime.common.core_1.2.0.v20090403-1720.jar"/>
+	<classpathentry kind="lib" path="deploy/lib/org.eclipse.gmf.runtime.diagram.core_1.2.0.v20090403-1720.jar"/>
+	<classpathentry kind="lib" path="deploy/lib/org.eclipse.osgi_3.5.0.v20090520.jar"/>
+	<classpathentry kind="lib" path="deploy/lib/org.eclipse.osgi.services_3.2.0.v20090520-1800.jar"/>
+	<classpathentry kind="lib" path="deploy/lib/org.eclipse.osgi.util_3.2.0.v20090520-1800.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
