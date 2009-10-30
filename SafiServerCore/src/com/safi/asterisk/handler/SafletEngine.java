@@ -77,7 +77,7 @@ import com.sshtools.j2ssh.transport.publickey.SshKeyGenerator;
 public class SafletEngine {
 
   public static final String DEFAULT_KEY_PASSPHRASE = "safiserver";
-  public final static String SAFISERVER_VERSION = "1.1B_20091006";
+  public final static String SAFISERVER_VERSION = "1.1B_20091020";
   public final static String ROOT_DIR = System.getProperty("user.dir");
   private static final String RESOURCES_DIRECTORY = ROOT_DIR + File.separatorChar + "resources";
   public static final String HOST_KEY_NAME = RESOURCES_DIRECTORY + File.separatorChar
@@ -89,6 +89,7 @@ public class SafletEngine {
   public static final String LICENSE_DIRECTORY = ROOT_DIR + File.separatorChar + "deploy"
       + File.separatorChar + "license";
   private static final String RESOURCES_ENVIRONMENT_PROPERTIES = "environment.properties";
+  private static final String RESOURCES_FASTAGI_PROPERTIES = "fastagi.properties";
 
   public static final String WORKBENCH_DEBUGLOG = "WORKBENCH_DEBUGLOG";
   public static final String STANDARD_LOG = "STANDARD_LOG";
@@ -122,8 +123,8 @@ public class SafletEngine {
   private boolean useDebugAsterisk = true;
   private Properties originalProperties;
   private volatile boolean shuttingDown;
-  private boolean useSecurityManager;
   private volatile boolean actionpakPkgsInitated = false;
+  private boolean useSecurityManager;
   private String audioDirectoryRoot;
   private DirectoryPoller importPoller;
   private SafiArchiveImporter pollManager;
@@ -131,6 +132,7 @@ public class SafletEngine {
   private String importDirectory;
 
   private long startupTime;
+	private Properties poolProperties;
 
   public String getDefaultPass() {
     return defaultPass;
@@ -180,6 +182,23 @@ public class SafletEngine {
 
   }
 
+  public void loadPoolProperties() {
+    poolProperties = new Properties();
+    try {
+    	poolProperties.load(ClassLoader
+          .getSystemResourceAsStream(RESOURCES_FASTAGI_PROPERTIES));
+    } catch (IOException e) {
+      e.printStackTrace();
+      log.error("Couldn't load fastagi properties", e);
+    }
+    
+    fastAgiMaxPoolsize = Integer.valueOf(poolProperties.getProperty("maximumPoolSize", "200"));
+    String name = "queueSize";
+    if (!poolProperties.containsKey("queueSize"))
+    	name = "poolSize";
+    fastAgiPoolsize = Integer.valueOf(poolProperties.getProperty(name, "20"));
+
+  }
   private void saveEnvironmentProperties() {
     try {
       if (environmentProperties != null && (originalProperties == null)
@@ -197,8 +216,9 @@ public class SafletEngine {
   }
 
   private void initThreadPool() {
-    threadPool = new ThreadPoolExecutor(fastAgiPoolsize, fastAgiMaxPoolsize, 10L, TimeUnit.SECONDS,
-        new LinkedBlockingQueue<Runnable>());
+  	loadPoolProperties();
+    threadPool = new ThreadPoolExecutor(fastAgiMaxPoolsize, fastAgiMaxPoolsize, 0L, TimeUnit.SECONDS,
+        new LinkedBlockingQueue<Runnable>(fastAgiMaxPoolsize + fastAgiPoolsize));
   }
 
   private void initScriptingEnvironment() {
