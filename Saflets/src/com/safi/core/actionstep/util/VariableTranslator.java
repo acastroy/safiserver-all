@@ -3,6 +3,8 @@ package com.safi.core.actionstep.util;
 import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.ParsePosition;
@@ -539,10 +541,10 @@ public class VariableTranslator {
     if (Date.class.isAssignableFrom(typeClass)) {
       return VariableType.DATE;
     }
-    if (Long.class.isAssignableFrom(typeClass)) {
+    if (Long.class.isAssignableFrom(typeClass) || BigInteger.class.isAssignableFrom(typeClass)) {
       return VariableType.INTEGER;
     }
-    if (Double.class.isAssignableFrom(typeClass)) {
+    if (Double.class.isAssignableFrom(typeClass) || BigDecimal.class.isAssignableFrom(typeClass)) {
       return VariableType.DECIMAL;
     }
     if (Number.class.isAssignableFrom(typeClass)) {
@@ -560,7 +562,20 @@ public class VariableTranslator {
     if (String.class.isAssignableFrom(typeClass)) {
       return VariableType.TEXT;
     }
-    else
+    if (typeClass != null && typeClass.isPrimitive()) {
+    	if (long.class.isAssignableFrom(typeClass) || short.class.isAssignableFrom(typeClass) || int.class.isAssignableFrom(typeClass)) {
+        return VariableType.INTEGER;
+      }
+      if (double.class.isAssignableFrom(typeClass) || float.class.isAssignableFrom(typeClass)) {
+        return VariableType.DECIMAL;
+      }
+      if (float.class.isAssignableFrom(typeClass)) {
+        return VariableType.DECIMAL;
+      }
+      if (boolean.class.isAssignableFrom(typeClass)) {
+        return VariableType.BOOLEAN;
+      }
+    }
       return VariableType.OBJECT;
   }
 
