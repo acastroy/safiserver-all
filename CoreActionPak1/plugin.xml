@@ -193,6 +193,9 @@
          actionstepClass="com.safi.workshop.actionpak1.editpart.IncomingCall2EditPart"
          factory="com.safi.workshop.actionpak1.factory.IncomingCall2EditorDialogFactory">
    </actionstepEditorDialogFactory>
+   <serverjar
+         jar="serverjars/safiServer_v20091020.jar">
+   </serverjar>
 </extension>
 
 </plugin>
