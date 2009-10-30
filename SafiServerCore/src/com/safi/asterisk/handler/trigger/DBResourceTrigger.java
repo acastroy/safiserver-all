@@ -1,8 +1,8 @@
-package com.safi.asterisk.handler;
+package com.safi.asterisk.handler.trigger;
 
 import org.apache.log4j.Logger;
 
-import com.safi.asterisk.handler.trigger.AbstractTrigger;
+import com.safi.asterisk.handler.SafletEngine;
 import com.safi.db.DBConnection;
 import com.safi.db.DBDriver;
 import com.safi.db.SafiDriverManager;

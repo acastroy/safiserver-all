@@ -49,9 +49,6 @@
 	<classpathentry kind="lib" path="deploy/lib/wrapper.jar" sourcepath="D:/javalib/wrapper_3.2.3_src/src/java"/>
 	<classpathentry kind="lib" path="deploy/lib/Zql.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/log4j-1.2.15.jar" sourcepath="/log4j"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/SafiDB"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/AsteriskCore"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/Saflets"/>
 	<classpathentry kind="lib" path="deploy/lib/slf4j-api-1.5.2.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/slf4j-log4j12-1.5.0.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/commons-collections-3.1.jar"/>
@@ -62,15 +59,11 @@
 	<classpathentry kind="lib" path="deploy/lib/sshd_mv.jar" sourcepath="/J2SSHMaverick/maverick_src.zip"/>
 	<classpathentry kind="lib" path="deploy/lib/sshd_j2.jar" sourcepath="/J2SSH"/>
 	<classpathentry kind="lib" path="deploy/lib/commons-codec-1.3.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/WebServicesPakModel"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/WebServicesPakModel.edit"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/CoreActionPak1Model"/>
 	<classpathentry kind="lib" path="lib/FastInfoset-1.2.3.jar"/>
 	<classpathentry kind="lib" path="lib/jaxb-impl-2.1.9.jar"/>
 	<classpathentry kind="lib" path="lib/neethi-2.0.4.jar"/>
 	<classpathentry kind="lib" path="lib/wsdl4j-1.6.2.jar"/>
 	<classpathentry kind="lib" path="lib/XmlSchema-1.4.5.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/SafiFastAgi1.7"/>
 	<classpathentry kind="lib" path="deploy/lib/org.eclipse.core.runtime_3.5.0.v20090525.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.common_2.5.0.v200906151043.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.ecore_2.5.0.v200906151043.jar"/>
@@ -94,5 +87,15 @@
 	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.teneo.hibernate_1.1.1.v200909151729.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.teneo.hibernate.extra.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.teneo.hibernate.mapper_1.1.1.v200909151729.jar"/>
+	<classpathentry kind="lib" path="lib/asteriskcore_v20090823.jar"/>
+	<classpathentry kind="lib" path="lib/safidb_v20090921.jar"/>
+	<classpathentry kind="lib" path="lib/safiFastagi_v20090823.jar"/>
+	<classpathentry kind="lib" path="lib/safiServer_v20090823.jar"/>
+	<classpathentry kind="lib" path="lib/safletcore_v20090823.jar"/>
+	<classpathentry kind="lib" path="deploy/lib/backport-util-concurrent.jar"/>
+	<classpathentry kind="lib" path="deploy/lib/commons-beanutils.jar"/>
+	<classpathentry kind="lib" path="deploy/lib/hibernate-jmx.jar"/>
+	<classpathentry kind="lib" path="deploy/lib/springmodules-sandbox-db-0.9-20080616124518.jar"/>
+	<classpathentry kind="lib" path="deploy/lib/sshd.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

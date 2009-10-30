@@ -1,6 +1,7 @@
 package com.safi.asterisk.handler.trigger;
 
 import org.hsqldb.Trigger;
+import org.hsqldb.types.BinaryData;
 
 public abstract class AbstractTrigger implements Trigger {
 
@@ -120,4 +121,15 @@ public abstract class AbstractTrigger implements Trigger {
         || triggerType == DELETE_BEFORE_ROW;
   }
 
+  protected boolean getBooleanVal(Object value) {
+		if (value instanceof BinaryData) {
+			BinaryData data = (BinaryData) value;
+			byte[] bytes = data.getBytes();
+
+			return bytes != null && bytes.length == 1 && bytes[0] > 0;
+		} else if (value instanceof Boolean)
+			return (Boolean) value;
+
+		return false;
+	}
 }

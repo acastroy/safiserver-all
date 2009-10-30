@@ -54,6 +54,7 @@ import com.safi.asterisk.handler.mbean.FileTransferImpl;
 import com.safi.asterisk.handler.mbean.SafiServerMonitorImpl;
 import com.safi.asterisk.handler.service.ServiceManager;
 import com.safi.asterisk.handler.trigger.AstServerChangedTrigger;
+import com.safi.asterisk.handler.trigger.DBResourceTrigger;
 import com.safi.asterisk.handler.trigger.SafiServerChangedTrigger;
 import com.safi.asterisk.handler.trigger.SafletChangedTrigger;
 import com.safi.asterisk.handler.trigger.VariableTrigger;

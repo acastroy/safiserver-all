@@ -2,7 +2,6 @@ package com.safi.asterisk.handler.trigger;
 
 import org.apache.log4j.Logger;
 
-import com.safi.asterisk.handler.DBResourceTrigger;
 import com.safi.asterisk.handler.GlobalVariableManager;
 import com.safi.asterisk.handler.SafletEngine;
 import com.safi.db.Variable;
