@@ -106,7 +106,7 @@ public abstract class AbstractSafletDispatch implements SafletDispatch {
   }
 
   @SuppressWarnings("unchecked")
-  public Saflet loadHandler(String xml) throws SafletEngineException {
+  public Saflet loadHandler(byte[] xml) throws SafletEngineException {
     try {
       // if (xmiResourceLoader == null){
       synchronized (SafletEngine.getInstance()) {
@@ -127,7 +127,7 @@ public abstract class AbstractSafletDispatch implements SafletDispatch {
       // }
       // else
       // xmiResourceLoader.unload();
-      xmiResourceLoader.load(new ByteArrayInputStream(xml.getBytes()), xmiLoadOptionsMap);
+      xmiResourceLoader.load(new ByteArrayInputStream(xml), xmiLoadOptionsMap);
       List<EObject> contents = xmiResourceLoader.getContents();
       if (contents.isEmpty())
         return null;

@@ -27,7 +27,6 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -44,9 +43,7 @@ import org.springframework.jmx.export.MBeanExporter;
 import org.springframework.jmx.support.ConnectorServerFactoryBean;
 import org.springframework.jmx.support.MBeanServerFactoryBean;
 import org.springframework.remoting.rmi.RmiRegistryFactoryBean;
-import org.springmodules.db.hsqldb.ServerBean;
 import org.tanukisoftware.wrapper.jmx.WrapperManager;
-
 import com.safi.asterisk.handler.SafletEngineException.SafletExceptionCode;
 import com.safi.asterisk.handler.connection.AbstractConnectionManager;
 import com.safi.asterisk.handler.connection.AsteriskConnectionManager;
@@ -61,6 +58,7 @@ import com.safi.asterisk.handler.trigger.SafiServerChangedTrigger;
 import com.safi.asterisk.handler.trigger.SafletChangedTrigger;
 import com.safi.asterisk.handler.trigger.VariableTrigger;
 import com.safi.asterisk.handler.util.CustomInitiatorInvoker;
+import com.safi.asterisk.handler.util.ServerBean;
 import com.safi.asterisk.handler.util.ServiceConfigUpdater;
 import com.safi.asterisk.saflet.AsteriskSaflet;
 import com.safi.asterisk.saflet.AsteriskSafletEnvironment;
@@ -78,7 +76,6 @@ import com.sshtools.j2ssh.transport.publickey.SshKeyGenerator;
 public class SafletEngine {
 
   public static final String DEFAULT_KEY_PASSPHRASE = "safiserver";
-  private static final String ENV_DEBUG_SERVER_MODE = "DebugServerMode";
   public final static String SAFISERVER_VERSION = "1.0_20090823";
   public final static String ROOT_DIR = System.getProperty("user.dir");
   private static final String RESOURCES_DIRECTORY = ROOT_DIR + File.separatorChar + "resources";
@@ -92,7 +89,6 @@ public class SafletEngine {
       + File.separatorChar + "license";
   private static final String RESOURCES_ENVIRONMENT_PROPERTIES = "environment.properties";
 
-  private static final int DEFAULT_DB_PORT = 7021;
   public static final String WORKBENCH_DEBUGLOG = "WORKBENCH_DEBUGLOG";
   public static final String STANDARD_LOG = "STANDARD_LOG";
 
@@ -106,7 +102,6 @@ public class SafletEngine {
   private SafletDispatch dispatcher;
   private AsteriskConnectionManager connectionManager;
   private SafletScriptEnvironment scriptingEnvironment;
-  private boolean testing;
   private int fastAgiPoolsize = 10;
   private int fastAgiMaxPoolsize = 500;
   private int fastagiPort = 5043;
@@ -619,7 +614,6 @@ public class SafletEngine {
   }
 
   public void setTesting(boolean b) {
-    this.testing = b;
     connectionManager.setTesting(b);
   }
 

@@ -40,7 +40,6 @@ public class VariableTrigger extends AbstractTrigger {
           // TODO Auto-generated method stub
           
           switch (triggerType) {
-            case DELETE_BEFORE:
             case DELETE_BEFORE_ROW:
             {
               GlobalVariableManager.getInstance().globalVariableRemoved(name);

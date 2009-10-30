@@ -1,5 +1,6 @@
 package com.safi.asterisk.handler.dispatch;
 
+import java.sql.SQLException;
 import org.apache.log4j.Logger;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -126,6 +127,7 @@ public class DBBackedSafletDispatch extends AbstractSafletDispatch {
     return null;
   }
 
+  
   @Override
   public void registerHandler(String path, com.safi.core.saflet.Saflet handler)
       throws SafletEngineException {

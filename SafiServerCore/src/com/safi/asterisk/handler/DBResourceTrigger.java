@@ -45,11 +45,9 @@ public class DBResourceTrigger extends AbstractTrigger {
           switch (triggerType) {
             case UPDATE_AFTER:
             case UPDATE_AFTER_ROW:
-            case UPDATE_BEFORE:
             case UPDATE_BEFORE_ROW:
             case INSERT_AFTER:
             case INSERT_AFTER_ROW:
-            case INSERT_BEFORE:
             case INSERT_BEFORE_ROW: {
               DBManager.getInstance().reloadDriverManagerFromDB();
               SafiDriverManager manager = DBManager.getInstance().getDriverManager();
@@ -89,7 +87,6 @@ public class DBResourceTrigger extends AbstractTrigger {
               DBManager.getInstance().reloadDriverManagerFromDB();
               break;
             }
-            case DELETE_BEFORE:
             case DELETE_BEFORE_ROW: {
               SafiDriverManager manager = DBManager.getInstance().getDriverManager();
               Integer id = (Integer) row[0];
@@ -146,11 +143,9 @@ public class DBResourceTrigger extends AbstractTrigger {
           switch (triggerType) {
             case UPDATE_AFTER:
             case UPDATE_AFTER_ROW:
-            case UPDATE_BEFORE:
             case UPDATE_BEFORE_ROW:
             case INSERT_AFTER:
             case INSERT_AFTER_ROW:
-            case INSERT_BEFORE:
             case INSERT_BEFORE_ROW: {
               DBManager.getInstance().reloadDriverManagerFromDB();
               // SafiDriverManager manager = DBManager.getInstance().getDriverManager();
@@ -159,7 +154,6 @@ public class DBResourceTrigger extends AbstractTrigger {
 
             case DELETE_AFTER:
             case DELETE_AFTER_ROW:
-            case DELETE_BEFORE:
             case DELETE_BEFORE_ROW: {
               DBManager.getInstance().reloadDriverManagerFromDB();
               break;

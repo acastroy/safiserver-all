@@ -37,13 +37,10 @@ public class SafiServerChangedTrigger extends AbstractTrigger {
           switch (triggerType) {
             case UPDATE_AFTER:
             case UPDATE_AFTER_ROW:
-            case UPDATE_BEFORE:
             case UPDATE_BEFORE_ROW:
             case INSERT_AFTER:
             case INSERT_AFTER_ROW:
-            case INSERT_BEFORE:
             case INSERT_BEFORE_ROW: 
-            case DELETE_BEFORE:
             case DELETE_BEFORE_ROW: {
               SafletEngine.getInstance().getConnectionManager().safiServerChanged(false);
               break;

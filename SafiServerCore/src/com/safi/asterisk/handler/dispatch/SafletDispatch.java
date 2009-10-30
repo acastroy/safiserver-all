@@ -28,5 +28,5 @@ public interface SafletDispatch {
 
   public abstract boolean clearLicenseCache(Integer integer);
 
-  public Saflet loadHandler(String xml) throws SafletEngineException;
+  public Saflet loadHandler(byte[] xml) throws SafletEngineException;
 }

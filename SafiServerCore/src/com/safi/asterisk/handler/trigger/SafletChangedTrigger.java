@@ -41,16 +41,14 @@ public class SafletChangedTrigger extends AbstractTrigger {
           switch (triggerType) {
             case DELETE_AFTER:
             case DELETE_AFTER_ROW:
-            case DELETE_BEFORE:
             case DELETE_BEFORE_ROW:
             case UPDATE_AFTER:
             case UPDATE_AFTER_ROW:
-            case UPDATE_BEFORE:
             case UPDATE_BEFORE_ROW: {
               SafletDispatch dispatch = SafletEngine.getInstance().getDispatcher();
               com.safi.db.server.config.SafletProject proj = DBManager.getInstance()
                   .getSafletProject(pid);
-              if (proj == null && triggerType == DELETE_BEFORE) {
+              if (proj == null && triggerType == UPDATE_BEFORE_ROW) {
 
                 log.error("Saflet trigger Couldn't find Project for id " + pid
                     + " for trigger type " + triggerType);

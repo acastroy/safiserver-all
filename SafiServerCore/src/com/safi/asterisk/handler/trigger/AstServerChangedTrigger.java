@@ -63,7 +63,6 @@ public class AstServerChangedTrigger extends AbstractTrigger {
               SafletEngine.getInstance().getConnectionManager().asteriskServerAdded(s);
               break;
             }
-            case DELETE_BEFORE:
             case DELETE_BEFORE_ROW: {
               SafletEngine.getInstance().getConnectionManager().asteriskServerRemoved(id);
               break;

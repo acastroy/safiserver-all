@@ -16,7 +16,7 @@ public class DBManagerTests {
     List<SafletProject> pl =  DBManager.getInstance().getProjects();
     for (SafletProject p : pl){
       for (com.safi.db.server.config.Saflet s : p.getSaflets()){
-        String code = DBManager.getInstance().getSafletCode(s.getId());
+        byte[] code = DBManager.getInstance().getSafletCode(s.getId());
       }
     }
   }
