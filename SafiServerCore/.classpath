@@ -77,10 +77,6 @@
 	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.ecore.change_2.5.0.v200906151043.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.ecore.xmi_2.5.0.v200906151043.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.edit_2.5.0.v200906151043.jar"/>
-	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.teneo_1.1.0.v200906180911.jar"/>
-	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.teneo.annotations_1.1.0.v200906180911.jar"/>
-	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.teneo.hibernate_1.1.0.v200906180911.jar"/>
-	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.teneo.hibernate.mapper_1.1.0.v200906180911.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.transaction_1.3.0.v200902010221.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.workspace_1.3.0.v200902100422.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/org.eclipse.equinox.common_3.5.0.v20090520-1800.jar"/>
@@ -93,5 +89,10 @@
 	<classpathentry kind="lib" path="lib/cxf-2.2.3.jar" sourcepath="D:/javalib/apache-cxf-2.2.3/apache-cxf-2.2.3-src.zip"/>
 	<classpathentry kind="lib" path="lib/cxf-xjc-bug671-2.2.3.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/persistence.jar"/>
+	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.teneo_1.1.1.v200909151729.jar"/>
+	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.teneo.annotations_1.1.0.v200909151729.jar"/>
+	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.teneo.hibernate_1.1.1.v200909151729.jar"/>
+	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.teneo.hibernate.extra.jar"/>
+	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.teneo.hibernate.mapper_1.1.1.v200909151729.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

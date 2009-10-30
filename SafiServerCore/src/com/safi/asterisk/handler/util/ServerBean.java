@@ -99,9 +99,9 @@ public class ServerBean implements InitializingBean, DisposableBean {
 
 
         HsqlProperties configProps = new HsqlProperties(serverProperties);
-        if (configProps == null) {
-            configProps = new HsqlProperties();
-        }
+//        if (configProps == null) {
+//            configProps = new HsqlProperties();
+//        }
 
         ServerConfiguration.translateDefaultDatabaseProperty(configProps);
 

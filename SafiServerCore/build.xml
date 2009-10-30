@@ -5,339 +5,277 @@
               directory with the processing instruction <?eclipse.ant.import?>
               as the first entry and export the buildfile again. -->
 <project basedir="." default="build" name="SafiServerCore">
-	<property environment="env" />
-	<property name="ECLIPSE_HOME" value="../../ganymede2/eclipse" />
-	<property name="SafiDB.location" value="../SafiDB" />
-	<property name="SafiFastAgi1.7.location" value="../SafiFastAgi1.7" />
-	<property name="Saflets.location" value="../Saflets" />
-	<property name="AsteriskCore.location" value="../AsteriskCore" />
-	<property name="CoreActionPak1Model.location" value="../CoreActionPak1Model" />
-	<property name="WebServicesPakModel.location" value="../WebServicesPakModel" />
-	<property name="WebServicesPakModel.edit.location" value="../WebServicesPakModel.edit" />
-	<property name="debuglevel" value="source,lines,vars" />
-	<property name="target" value="1.6" />
-	<property name="source" value="1.6" />
-	<path id="Plug-in Dependencies.libraryclasspath">
-		<pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime_3.4.0.v20080512.jar" />
-		<pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi_3.4.2.R34x_v20080826-1230.jar" />
-		<pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.common_3.4.0.v20080421-2006.jar" />
-		<pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.jobs_3.4.0.v20080512.jar" />
-		<pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime.compatibility.registry_3.2.200.v20080610/runtime_registry_compatibility.jar" />
-		<pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.registry_3.4.0.v20080516-0950.jar" />
-		<pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.preferences_3.2.201.R34x_v20080709.jar" />
-		<pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.contenttype_3.3.0.v20080604-1400.jar" />
-		<pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.app_1.1.0.v20080421-2006.jar" />
-		<pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore_2.4.1.v200808251517.jar" />
-		<pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.common_2.4.0.v200808251517.jar" />
-		<pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore.xmi_2.4.1.v200808251517.jar" />
-		<pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.teneo.hibernate_1.0.1.v200809211527" />
-		<pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.teneo.hibernate_1.0.1.v200809211527/org.eclipse.emf.teneo.hibernate.extra.jar" />
-		<pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.teneo.hibernate_1.0.1.v200809211527/org.eclipse.emf.teneo.hibernate.jar" />
-		<pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.teneo_1.0.1.v200809211527.jar" />
-		<pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.teneo.annotations_1.0.1.v200809211527.jar" />
-		<pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.teneo.hibernate.mapper_1.0.1.v200809211527.jar" />
-		<pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.filesystem_1.2.0.v20080604-1400.jar" />
-		<pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.resources_3.4.1.R34x_v20080902.jar" />
-		<pathelement location="${ECLIPSE_HOME}/plugins/org.apache.commons.lang_2.3.0.v200803061910.jar" />
-		<pathelement location="../../Hibernate30" />
-		<pathelement location="../../SafiCommons" />
-	</path>
-	<path id="SafiDB.classpath">
-		<pathelement location="${SafiDB.location}/bin" />
-		<pathelement location="${SafiDB.location}/resources/" />
-		<path refid="Plug-in Dependencies.libraryclasspath" />
-	</path>
-	<path id="AsteriskCore.classpath">
-		<pathelement location="${AsteriskCore.location}/bin" />
-		<pathelement location="${AsteriskCore.location}/lib/safiFastagi.jar" />
-		<pathelement location="${AsteriskCore.location}/resources/" />
-		<path refid="Plug-in Dependencies.libraryclasspath" />
-		<pathelement location="${AsteriskCore.location}/lib/js.jar" />
-	</path>
-	<path id="Saflets.classpath">
-		<pathelement location="${Saflets.location}/bin" />
-		<pathelement location="${Saflets.location}/resources/" />
-		<path refid="Plug-in Dependencies.libraryclasspath" />
-		<pathelement location="${Saflets.location}/lib/js.jar" />
-		<pathelement location="${Saflets.location}/lib/javacsv.jar" />
-		<pathelement location="${Saflets.location}/lib/Zql.jar" />
-	</path>
-	<path id="WebServicesPakModel.classpath">
-		<pathelement location="${WebServicesPakModel.location}/bin" />
-		<pathelement location="${WebServicesPakModel.location}/lib/cxf-2.2.2.jar" />
-		<pathelement location="${WebServicesPakModel.location}/lib/neethi-2.0.4.jar" />
-		<pathelement location="${WebServicesPakModel.location}/lib/wsdl4j-1.6.2.jar" />
-		<pathelement location="${WebServicesPakModel.location}/lib/asm-2.2.3.jar" />
-		<pathelement location="${WebServicesPakModel.location}/lib/bcprov-jdk16-141.jar" />
-		<pathelement location="${WebServicesPakModel.location}/lib/jaxb-impl-2.1.9.jar" />
-		<pathelement location="${WebServicesPakModel.location}/lib/XmlSchema-1.4.5.jar" />
-		<path refid="Plug-in Dependencies.libraryclasspath" />
-	</path>
-	<path id="WebServicesPakModel.edit.classpath">
-		<pathelement location="${WebServicesPakModel.edit.location}/bin" />
-		<path refid="Plug-in Dependencies.libraryclasspath" />
-	</path>
-	<path id="CoreActionPak1Model.classpath">
-		<pathelement location="${CoreActionPak1Model.location}/bin" />
-		<path refid="Plug-in Dependencies.libraryclasspath" />
-	</path>
-	<path id="SafiFastAgi1.7.classpath">
-		<pathelement location="${SafiFastAgi1.7.location}/bin" />
-		<pathelement location="${SafiFastAgi1.7.location}/lib/commons-lang-2.4.jar" />
-		<pathelement location="${SafiFastAgi1.7.location}/lib/slf4j-api-1.5.0.jar" />
-		<pathelement location="${SafiFastAgi1.7.location}/lib/log4j-1.2.14.jar" />
-		<pathelement location="${SafiFastAgi1.7.location}/lib/slf4j-simple-1.5.0.jar" />
-		<pathelement location="${SafiFastAgi1.7.location}/lib/mina-core-2.0.0-M1.jar" />
-		<pathelement location="${SafiFastAgi1.7.location}/lib/mina-core-2.0.0-M1-sources.jar" />
-		<pathelement location="${SafiFastAgi1.7.location}/lib/mina-filter-codec-netty-2.0.0-M1.jar" />
-		<pathelement location="${SafiFastAgi1.7.location}/lib/mina-filter-codec-netty-2.0.0-M1-sources.jar" />
-		<pathelement location="${SafiFastAgi1.7.location}/lib/mina-filter-compression-2.0.0-M1.jar" />
-		<pathelement location="${SafiFastAgi1.7.location}/lib/mina-filter-compression-2.0.0-M1-sources.jar" />
-		<pathelement location="${SafiFastAgi1.7.location}/lib/mina-integration-jmx-2.0.0-M1.jar" />
-		<pathelement location="${SafiFastAgi1.7.location}/lib/mina-integration-jmx-2.0.0-M1-sources.jar" />
-		<pathelement location="${SafiFastAgi1.7.location}/lib/log4j-over-slf4j-1.5.0.jar" />
-		<pathelement location="${SafiFastAgi1.7.location}/lib/slf4j-log4j12-1.5.0.jar" />
-		<pathelement location="${SafiFastAgi1.7.location}/lib/slf4j-migrator-1.5.0.jar" />
-		<pathelement location="${SafiFastAgi1.7.location}/lib/spring.jar" />
-		<pathelement location="${SafiFastAgi1.7.location}/lib/mina-integration-beans-2.0.0-M1.jar" />
-		<pathelement location="${SafiFastAgi1.7.location}/lib/mina-integration-ognl-2.0.0-M1.jar" />
-		<pathelement location="${SafiFastAgi1.7.location}/lib/mina-statemachine-2.0.0-M1.jar" />
-		<pathelement location="${SafiFastAgi1.7.location}/lib/ognl-2.7.1.jar" />
-		<pathelement location="${SafiFastAgi1.7.location}/lib/javassist-3.6.ga.jar" />
-	</path>
-	<path id="SafiServerCore.classpath">
-		<pathelement location="bin" />
-		<pathelement location="resources" />
-		<pathelement location="default_drivers/cfg" />
-		<pathelement location="default_drivers/HSQLDB/hsqldb.jar" />
-		<pathelement location="default_drivers/JTDS/jtds-1.2.2.jar" />
-		<pathelement location="default_drivers/MySQL/mysql-connector-java-5.1.6-bin.jar" />
-		<pathelement location="default_drivers/Postgres/postgresql-8.3-603.jdbc4.jar" />
-		<pathelement location="deploy/lib/antlr-2.7.6.jar" />
-		<pathelement location="deploy/lib/asm-attrs.jar" />
-		<pathelement location="deploy/lib/asm.jar" />
-		<pathelement location="deploy/lib/cglib-2.1.3.jar" />
-		<pathelement location="deploy/lib/cleanimports.jar" />
-		<pathelement location="deploy/lib/concurrent-1.3.2.jar" />
-		<pathelement location="deploy/lib/dom4j-1.6.1.jar" />
-		<pathelement location="deploy/lib/ehcache-1.2.3.jar" />
-		<pathelement location="deploy/lib/hibernate-annotations.jar" />
-		<pathelement location="deploy/lib/hibernate-commons-annotations.jar" />
-		<pathelement location="deploy/lib/hibernate-entitymanager.jar" />
-		<pathelement location="deploy/lib/hibernate3.jar" />
-		<pathelement location="deploy/lib/jaas.jar" />
-		<pathelement location="deploy/lib/jacc-1_0-fr.jar" />
-		<pathelement location="deploy/lib/javassist.jar" />
-		<pathelement location="deploy/lib/jaxen-1.1-beta-7.jar" />
-		<pathelement location="deploy/lib/jgroups-2.2.8.jar" />
-		<pathelement location="deploy/lib/jta.jar" />
-		<pathelement location="deploy/lib/org.eclipse.core.runtime_3.4.0.v20080512.jar" />
-		<pathelement location="deploy/lib/org.eclipse.emf.common_2.4.0.v200808251517.jar" />
-		<pathelement location="deploy/lib/org.eclipse.emf.ecore_2.4.1.v200808251517.jar" />
-		<pathelement location="deploy/lib/org.eclipse.emf.ecore.change_2.4.0.v200808251517.jar" />
-		<pathelement location="deploy/lib/org.eclipse.emf.ecore.xmi_2.4.1.v200808251517.jar" />
-		<pathelement location="deploy/lib/org.eclipse.emf.edit_2.4.1.v200808251517.jar" />
-		<pathelement location="deploy/lib/org.eclipse.emf.transaction_1.2.1.v200807161719.jar" />
-		<pathelement location="deploy/lib/org.eclipse.emf.workspace_1.2.2.v200809171833.jar" />
-		<pathelement location="deploy/lib/org.eclipse.equinox.common_3.4.0.v20080421-2006.jar" />
-		<pathelement location="deploy/lib/org.eclipse.gmf_1.0.0.v20080425-1959.jar" />
-		<pathelement location="deploy/lib/org.eclipse.gmf.runtime.common.core_1.1.0.v20080425-1959.jar" />
-		<pathelement location="deploy/lib/org.eclipse.gmf.runtime.diagram.core_1.1.2.v20080903-1510.jar" />
-		<pathelement location="deploy/lib/org.eclipse.osgi_3.4.2.R34x_v20080826-1230.jar" />
-		<pathelement location="deploy/lib/org.eclipse.osgi.services_3.1.200.v20071203.jar" />
-		<pathelement location="deploy/lib/org.eclipse.osgi.util_3.1.300.v20080303.jar" />
-		<pathelement location="deploy/lib/oscache-2.1.jar" />
-		<pathelement location="deploy/lib/swarmcache-1.0rc2.jar" />
-		<pathelement location="deploy/lib/syndiag2.jar" />
-		<pathelement location="deploy/lib/bcprov-jdk16-141.jar" />
-		<pathelement location="deploy/lib/c3p0-0.9.1.2.jar" />
-		<pathelement location="deploy/lib/clopt.jar" />
-		<pathelement location="deploy/lib/commons-dbcp.jar" />
-		<pathelement location="deploy/lib/commons-lang-2.3.jar" />
-		<pathelement location="deploy/lib/commons-logging.jar" />
-		<pathelement location="deploy/lib/commons-pool.jar" />
-		<pathelement location="deploy/lib/javassist-3.6.ga.jar" />
-		<pathelement location="deploy/lib/js.jar" />
-		<pathelement location="deploy/lib/jsch.jar" />
-		<pathelement location="deploy/lib/junit.jar" />
-		<pathelement location="deploy/lib/ognl-2.7.1.jar" />
-		<pathelement location="deploy/lib/org.eclipse.emf.teneo_1.0.1.v200809211527.jar" />
-		<pathelement location="deploy/lib/org.eclipse.emf.teneo.annotations_1.0.1.v200809211527.jar" />
-		<pathelement location="deploy/lib/org.eclipse.emf.teneo.hibernate.jar" />
-		<pathelement location="deploy/lib/org.eclipse.emf.teneo.hibernate.mapper_1.0.1.v200809211527.jar" />
-		<pathelement location="deploy/lib/org.sadun.util.jar" />
-		<pathelement location="deploy/lib/pollmgt.jar" />
-		<pathelement location="deploy/lib/spring-sources.jar" />
-		<pathelement location="deploy/lib/spring.jar" />
-		<pathelement location="deploy/lib/springmodules-sandbox-db-0.9-20080616124518.jar" />
-		<pathelement location="deploy/lib/truezip-6.jar" />
-		<pathelement location="deploy/lib/wrapper.jar" />
-		<pathelement location="deploy/lib/Zql.jar" />
-		<pathelement location="deploy/lib/log4j-1.2.15.jar" />
-		<path refid="SafiDB.classpath" />
-		<path refid="AsteriskCore.classpath" />
-		<path refid="Saflets.classpath" />
-		<pathelement location="deploy/lib/slf4j-api-1.5.2.jar" />
-		<pathelement location="deploy/lib/slf4j-log4j12-1.5.0.jar" />
-		<pathelement location="deploy/lib/commons-collections-3.1.jar" />
-		<pathelement location="deploy/license" />
-		<pathelement location="deploy/lib/jline-0.9.94.jar" />
-		<pathelement location="deploy/lib/jpam-1.1.jar" />
-		<pathelement location="deploy/lib/mina-core-2.0.0-M4.jar" />
-		<pathelement location="deploy/lib/sshd_mv.jar" />
-		<pathelement location="deploy/lib/sshd_j2.jar" />
-		<pathelement location="deploy/lib/commons-codec-1.3.jar" />
-		<path refid="WebServicesPakModel.classpath" />
-		<path refid="WebServicesPakModel.edit.classpath" />
-		<path refid="CoreActionPak1Model.classpath" />
-		<pathelement location="lib/cxf-2.2.2.jar" />
-		<pathelement location="lib/FastInfoset-1.2.3.jar" />
-		<pathelement location="lib/jaxb-impl-2.1.9.jar" />
-		<pathelement location="lib/neethi-2.0.4.jar" />
-		<pathelement location="lib/wsdl4j-1.6.2.jar" />
-		<pathelement location="lib/XmlSchema-1.4.5.jar" />
-		<path refid="SafiFastAgi1.7.classpath" />
-	</path>
-	<target name="init">
-		<mkdir dir="bin" />
-		<copy includeemptydirs="false" todir="bin">
-			<fileset dir="src" excludes="**/*.launch, **/*.java" />
-		</copy>
-	</target>
-	<target name="clean">
-		<delete dir="bin" />
-	</target>
-	<target depends="clean" name="cleanall">
-		<ant antfile="${SafiDB.location}/build.xml" inheritAll="false" target="clean" />
-		<ant antfile="${SafiFastAgi1.7.location}/build.xml" inheritAll="false" target="clean" />
-		<ant antfile="${Saflets.location}/build.xml" inheritAll="false" target="clean" />
-		<ant antfile="${AsteriskCore.location}/build.xml" inheritAll="false" target="clean" />
-		<ant antfile="${CoreActionPak1Model.location}/build.xml" inheritAll="false" target="clean" />
-		<ant antfile="${WebServicesPakModel.location}/build.xml" inheritAll="false" target="clean" />
-		<ant antfile="${WebServicesPakModel.edit.location}/build.xml" inheritAll="false" target="clean" />
-	</target>
-	<target depends="build-subprojects,build-project" name="build" />
-	<target name="build-subprojects">
-		<ant antfile="${SafiDB.location}/build.xml" inheritAll="false" target="build-project">
-			<propertyset>
-				<propertyref name="build.compiler" />
-			</propertyset>
-		</ant>
-		<ant antfile="${SafiFastAgi1.7.location}/build.xml" inheritAll="false" target="build-project">
-			<propertyset>
-				<propertyref name="build.compiler" />
-			</propertyset>
-		</ant>
-		<ant antfile="${Saflets.location}/build.xml" inheritAll="false" target="build-project">
-			<propertyset>
-				<propertyref name="build.compiler" />
-			</propertyset>
-		</ant>
-		<ant antfile="${AsteriskCore.location}/build.xml" inheritAll="false" target="build-project">
-			<propertyset>
-				<propertyref name="build.compiler" />
-			</propertyset>
-		</ant>
-		<ant antfile="${CoreActionPak1Model.location}/build.xml" inheritAll="false" target="build-project">
-			<propertyset>
-				<propertyref name="build.compiler" />
-			</propertyset>
-		</ant>
-		<ant antfile="${WebServicesPakModel.location}/build.xml" inheritAll="false" target="build-project">
-			<propertyset>
-				<propertyref name="build.compiler" />
-			</propertyset>
-		</ant>
-		<ant antfile="${WebServicesPakModel.edit.location}/build.xml" inheritAll="false" target="build-project">
-			<propertyset>
-				<propertyref name="build.compiler" />
-			</propertyset>
-		</ant>
-	</target>
-	<target depends="init" name="build-project">
-		<echo message="${ant.project.name}: ${ant.file}" />
-		<javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
-			<src path="src" />
-			<classpath refid="SafiServerCore.classpath" />
-		</javac>
-	</target>
-	<target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects" />
-	<target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
-		<copy todir="${ant.library.dir}">
-			<fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar" />
-		</copy>
-		<unzip dest="${ant.library.dir}">
-			<patternset includes="jdtCompilerAdapter.jar" />
-			<fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar" />
-		</unzip>
-	</target>
-	<target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
-		<property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter" />
-		<antcall target="build" />
-	</target>
-	<target name="SafletEngine">
-		<java classname="com.safi.asterisk.handler.SafletEngine" failonerror="true" fork="yes">
-			<classpath refid="SafiServerCore.classpath" />
-		</java>
-	</target>
-
-	<target name="deploy_server" depends="init, init-eclipse-compiler">
-
-		<echo message="Rebuilding SafiDB" />
-		<ant dir="../SafiDB" antfile="../SafiDB/build_enhanced.xml" target="cleanall" />
-		<ant dir="../SafiDB" antfile="../SafiDB/build_enhanced.xml" target="exportToSafiServerCore" />
-
-		<echo message="deleting DB if it exists" />
-		<delete includeEmptyDirs="true" failonerror="false">
-			<fileset dir="../SafiServerCore/db" includes="**/*" />
-		</delete>
-
-		<jar destfile="lib\safiServer_v20090823.jar">
-			<fileset dir="bin/" defaultexcludes="true">
-				<include name="**/*.class" />
-			</fileset>
-		</jar>
-
-		<taskdef name="nsis" classname="net.sf.nsisant.Task">
-			<classpath path="${Plug-in Dependencies.libraryclasspath}" />
-			<classpath path="${SafiDB.classpath}" />
-			<classpath location="proguard/nsisant-1.2.jar" />
-		</taskdef>
-		<nsis script="../SafiServerInstaller/SafiServerInstall2.nsi" />
-
-	</target>
-	
-	
-	<target name="linuxDeploy" depends="init">
-	    <delete file="../SafiServerInstaller/safiServerLinux32.zip" quiet="true" />
-
-	    <delete dir="D:/safi_install/serverLinux32" includeemptydirs="false" quiet="false" />
-
-	    <copy todir="D:/safi_install/serverLinux32/SafiServer" includeemptydirs="true" overwrite="true">
-	      <fileset dir="../SafiServerCore/" defaultexcludes="true">
-	        <include name="default_drivers/**" />
-	      	<include name="safi_license/**" />
-	        <include name="lib/**" />
-	        <include name="logs/**" />
-	        <include name="deploy/actionpaks/**" />
-	        <include name="resources/**" />
-	        <include name="deploy/lib/**" />
-	        <include name="deploy/linux32/**" />
-	        <include name="deploy/libs.conf" />
-	        <exclude name="deploy/linux32/jre.zip" />
-	        <exclude name="**/*.bak" />
-	        <exclude name="**/*.log" />
-	        <exclude name="**/*.log.*" />
-	        <exclude name="**/*.keepme" />
-	      </fileset>
-	    </copy>
-	    <mkdir dir="D:/safi_install/serverLinux32/SafiServer/deploy/actionpaks" />
-	    <mkdir dir="D:/safi_install/serverLinux32/SafiServer/imports/received" />
-
-	    <move file="D:/safi_install/serverLinux32/SafiServer/deploy/linux32/installserver.sh" todir="D:/safi_install/serverLinux32/SafiServer">
-	    </move>
-	    <tar compression="gzip" basedir="D:\safi_install\serverLinux32" destfile="../SafiServerInstaller/safiServerLinux32.tar.gz" />
-
-	  </target>
-
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../galileo/eclipse"/>
+    <property name="SafiDB.location" value="../SafiDB"/>
+    <property name="SafiFastAgi1.7.location" value="../SafiFastAgi1.7"/>
+    <property name="Saflets.location" value="../Saflets"/>
+    <property name="AsteriskCore.location" value="../AsteriskCore"/>
+    <property name="CoreActionPak1Model.location" value="../CoreActionPak1Model"/>
+    <property name="WebServicesPakModel.location" value="../WebServicesPakModel"/>
+    <property name="WebServicesPakModel.edit.location" value="../WebServicesPakModel.edit"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+    <path id="Plug-in Dependencies.libraryclasspath">
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime_3.5.0.v20090525.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi_3.5.0.v20090520.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/javax.transaction_1.1.1.v200906161300.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.persistence.jpa.equinox.weaving_1.1.2.v20090612-r4475.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.common_3.5.0.v20090520-1800.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.jobs_3.4.100.v20090429-1800.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime.compatibility.registry_3.2.200.v20090429-1800/runtime_registry_compatibility.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.registry_3.4.100.v20090520-1800.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.preferences_3.2.300.v20090520-1800.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.contenttype_3.4.0.v20090429-1800.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.app_1.2.0.v20090520-1800.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore_2.5.0.v200906151043.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.common_2.5.0.v200906151043.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore.xmi_2.5.0.v200906151043.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.teneo.hibernate_1.1.0.v200906180911.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.teneo_1.1.0.v200906180911.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.teneo.annotations_1.1.0.v200906180911.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.teneo.hibernate.mapper_1.1.0.v200906180911.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.filesystem_1.2.0.v20090507.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.resources_3.5.0.v20090512.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.apache.commons.lang_2.4.0.v20081016-1030.jar"/>
+        <pathelement location="../../Hibernate30"/>
+        <pathelement location="../../SafiCommons"/>
+    </path>
+    <path id="SafiDB.classpath">
+        <pathelement location="${SafiDB.location}/bin"/>
+        <pathelement location="${SafiDB.location}/resources/"/>
+        <path refid="Plug-in Dependencies.libraryclasspath"/>
+    </path>
+    <path id="AsteriskCore.classpath">
+        <pathelement location="${AsteriskCore.location}/bin"/>
+        <pathelement location="${AsteriskCore.location}/lib/safiFastagi.jar"/>
+        <pathelement location="${AsteriskCore.location}/resources/"/>
+        <path refid="Plug-in Dependencies.libraryclasspath"/>
+        <pathelement location="${AsteriskCore.location}/lib/js.jar"/>
+    </path>
+    <path id="Saflets.classpath">
+        <pathelement location="${Saflets.location}/bin"/>
+        <pathelement location="${Saflets.location}/resources/"/>
+        <path refid="Plug-in Dependencies.libraryclasspath"/>
+        <pathelement location="${Saflets.location}/lib/js.jar"/>
+        <pathelement location="${Saflets.location}/lib/javacsv.jar"/>
+        <pathelement location="${Saflets.location}/lib/Zql.jar"/>
+    </path>
+    <path id="WebServicesPakModel.classpath">
+        <pathelement location="${WebServicesPakModel.location}/bin"/>
+        <pathelement location="${WebServicesPakModel.location}/lib/cxf-2.2.2.jar"/>
+        <pathelement location="${WebServicesPakModel.location}/lib/neethi-2.0.4.jar"/>
+        <pathelement location="${WebServicesPakModel.location}/lib/wsdl4j-1.6.2.jar"/>
+        <pathelement location="${WebServicesPakModel.location}/lib/asm-2.2.3.jar"/>
+        <pathelement location="${WebServicesPakModel.location}/lib/bcprov-jdk16-141.jar"/>
+        <pathelement location="${WebServicesPakModel.location}/lib/jaxb-impl-2.1.9.jar"/>
+        <pathelement location="${WebServicesPakModel.location}/lib/XmlSchema-1.4.5.jar"/>
+        <path refid="Plug-in Dependencies.libraryclasspath"/>
+    </path>
+    <path id="WebServicesPakModel.edit.classpath">
+        <pathelement location="${WebServicesPakModel.edit.location}/bin"/>
+        <path refid="Plug-in Dependencies.libraryclasspath"/>
+    </path>
+    <path id="CoreActionPak1Model.classpath">
+        <pathelement location="${CoreActionPak1Model.location}/bin"/>
+        <path refid="Plug-in Dependencies.libraryclasspath"/>
+    </path>
+    <path id="SafiFastAgi1.7.classpath">
+        <pathelement location="${SafiFastAgi1.7.location}/bin"/>
+        <pathelement location="${SafiFastAgi1.7.location}/lib/commons-lang-2.4.jar"/>
+        <pathelement location="${SafiFastAgi1.7.location}/lib/slf4j-api-1.5.0.jar"/>
+        <pathelement location="${SafiFastAgi1.7.location}/lib/log4j-1.2.14.jar"/>
+        <pathelement location="${SafiFastAgi1.7.location}/lib/slf4j-simple-1.5.0.jar"/>
+        <pathelement location="${SafiFastAgi1.7.location}/lib/mina-core-2.0.0-M1.jar"/>
+        <pathelement location="${SafiFastAgi1.7.location}/lib/mina-core-2.0.0-M1-sources.jar"/>
+        <pathelement location="${SafiFastAgi1.7.location}/lib/mina-filter-codec-netty-2.0.0-M1.jar"/>
+        <pathelement location="${SafiFastAgi1.7.location}/lib/mina-filter-codec-netty-2.0.0-M1-sources.jar"/>
+        <pathelement location="${SafiFastAgi1.7.location}/lib/mina-filter-compression-2.0.0-M1.jar"/>
+        <pathelement location="${SafiFastAgi1.7.location}/lib/mina-filter-compression-2.0.0-M1-sources.jar"/>
+        <pathelement location="${SafiFastAgi1.7.location}/lib/mina-integration-jmx-2.0.0-M1.jar"/>
+        <pathelement location="${SafiFastAgi1.7.location}/lib/mina-integration-jmx-2.0.0-M1-sources.jar"/>
+        <pathelement location="${SafiFastAgi1.7.location}/lib/log4j-over-slf4j-1.5.0.jar"/>
+        <pathelement location="${SafiFastAgi1.7.location}/lib/slf4j-log4j12-1.5.0.jar"/>
+        <pathelement location="${SafiFastAgi1.7.location}/lib/slf4j-migrator-1.5.0.jar"/>
+        <pathelement location="${SafiFastAgi1.7.location}/lib/spring.jar"/>
+        <pathelement location="${SafiFastAgi1.7.location}/lib/mina-integration-beans-2.0.0-M1.jar"/>
+        <pathelement location="${SafiFastAgi1.7.location}/lib/mina-integration-ognl-2.0.0-M1.jar"/>
+        <pathelement location="${SafiFastAgi1.7.location}/lib/mina-statemachine-2.0.0-M1.jar"/>
+        <pathelement location="${SafiFastAgi1.7.location}/lib/ognl-2.7.1.jar"/>
+        <pathelement location="${SafiFastAgi1.7.location}/lib/javassist-3.6.ga.jar"/>
+    </path>
+    <path id="SafiServerCore.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="resources"/>
+        <pathelement location="default_drivers/cfg"/>
+        <pathelement location="default_drivers/HSQLDB/hsqldb.jar"/>
+        <pathelement location="default_drivers/JTDS/jtds-1.2.2.jar"/>
+        <pathelement location="default_drivers/MySQL/mysql-connector-java-5.1.6-bin.jar"/>
+        <pathelement location="default_drivers/Postgres/postgresql-8.3-603.jdbc4.jar"/>
+        <pathelement location="deploy/lib/antlr-2.7.6.jar"/>
+        <pathelement location="deploy/lib/asm-attrs.jar"/>
+        <pathelement location="deploy/lib/asm.jar"/>
+        <pathelement location="deploy/lib/cglib-2.1.3.jar"/>
+        <pathelement location="deploy/lib/cleanimports.jar"/>
+        <pathelement location="deploy/lib/concurrent-1.3.2.jar"/>
+        <pathelement location="deploy/lib/dom4j-1.6.1.jar"/>
+        <pathelement location="deploy/lib/ehcache-1.2.3.jar"/>
+        <pathelement location="deploy/lib/hibernate-annotations.jar"/>
+        <pathelement location="deploy/lib/hibernate-commons-annotations.jar"/>
+        <pathelement location="deploy/lib/hibernate-entitymanager.jar"/>
+        <pathelement location="deploy/lib/hibernate3.jar"/>
+        <pathelement location="deploy/lib/jaas.jar"/>
+        <pathelement location="deploy/lib/jacc-1_0-fr.jar"/>
+        <pathelement location="deploy/lib/javassist.jar"/>
+        <pathelement location="deploy/lib/jaxen-1.1-beta-7.jar"/>
+        <pathelement location="deploy/lib/jgroups-2.2.8.jar"/>
+        <pathelement location="deploy/lib/jta.jar"/>
+        <pathelement location="deploy/lib/oscache-2.1.jar"/>
+        <pathelement location="deploy/lib/swarmcache-1.0rc2.jar"/>
+        <pathelement location="deploy/lib/syndiag2.jar"/>
+        <pathelement location="deploy/lib/bcprov-jdk16-141.jar"/>
+        <pathelement location="deploy/lib/c3p0-0.9.1.2.jar"/>
+        <pathelement location="deploy/lib/clopt.jar"/>
+        <pathelement location="deploy/lib/commons-dbcp.jar"/>
+        <pathelement location="deploy/lib/commons-lang-2.3.jar"/>
+        <pathelement location="deploy/lib/commons-logging.jar"/>
+        <pathelement location="deploy/lib/commons-pool.jar"/>
+        <pathelement location="deploy/lib/javassist-3.6.ga.jar"/>
+        <pathelement location="deploy/lib/js.jar"/>
+        <pathelement location="deploy/lib/jsch.jar"/>
+        <pathelement location="deploy/lib/junit.jar"/>
+        <pathelement location="deploy/lib/ognl-2.7.1.jar"/>
+        <pathelement location="deploy/lib/org.sadun.util.jar"/>
+        <pathelement location="deploy/lib/pollmgt.jar"/>
+        <pathelement location="deploy/lib/spring-sources.jar"/>
+        <pathelement location="deploy/lib/spring.jar"/>
+        <pathelement location="deploy/lib/springmodules-sandbox-db-0.9-20080616124518.jar"/>
+        <pathelement location="deploy/lib/truezip-6.jar"/>
+        <pathelement location="deploy/lib/wrapper.jar"/>
+        <pathelement location="deploy/lib/Zql.jar"/>
+        <pathelement location="deploy/lib/log4j-1.2.15.jar"/>
+        <path refid="SafiDB.classpath"/>
+        <path refid="AsteriskCore.classpath"/>
+        <path refid="Saflets.classpath"/>
+        <pathelement location="deploy/lib/slf4j-api-1.5.2.jar"/>
+        <pathelement location="deploy/lib/slf4j-log4j12-1.5.0.jar"/>
+        <pathelement location="deploy/lib/commons-collections-3.1.jar"/>
+        <pathelement location="deploy/license"/>
+        <pathelement location="deploy/lib/jline-0.9.94.jar"/>
+        <pathelement location="deploy/lib/jpam-1.1.jar"/>
+        <pathelement location="deploy/lib/mina-core-2.0.0-M4.jar"/>
+        <pathelement location="deploy/lib/sshd_mv.jar"/>
+        <pathelement location="deploy/lib/sshd_j2.jar"/>
+        <pathelement location="deploy/lib/commons-codec-1.3.jar"/>
+        <path refid="WebServicesPakModel.classpath"/>
+        <path refid="WebServicesPakModel.edit.classpath"/>
+        <path refid="CoreActionPak1Model.classpath"/>
+        <pathelement location="lib/cxf-2.2.2.jar"/>
+        <pathelement location="lib/FastInfoset-1.2.3.jar"/>
+        <pathelement location="lib/jaxb-impl-2.1.9.jar"/>
+        <pathelement location="lib/neethi-2.0.4.jar"/>
+        <pathelement location="lib/wsdl4j-1.6.2.jar"/>
+        <pathelement location="lib/XmlSchema-1.4.5.jar"/>
+        <path refid="SafiFastAgi1.7.classpath"/>
+        <pathelement location="deploy/lib/org.eclipse.core.runtime_3.5.0.v20090525.jar"/>
+        <pathelement location="deploy/lib/org.eclipse.emf.common_2.5.0.v200906151043.jar"/>
+        <pathelement location="deploy/lib/org.eclipse.emf.ecore_2.5.0.v200906151043.jar"/>
+        <pathelement location="deploy/lib/org.eclipse.emf.ecore.change_2.5.0.v200906151043.jar"/>
+        <pathelement location="deploy/lib/org.eclipse.emf.ecore.xmi_2.5.0.v200906151043.jar"/>
+        <pathelement location="deploy/lib/org.eclipse.emf.edit_2.5.0.v200906151043.jar"/>
+        <pathelement location="deploy/lib/org.eclipse.emf.teneo_1.1.0.v200906180911.jar"/>
+        <pathelement location="deploy/lib/org.eclipse.emf.teneo.annotations_1.1.0.v200906180911.jar"/>
+        <pathelement location="deploy/lib/org.eclipse.emf.teneo.hibernate_1.1.0.v200906180911.jar"/>
+        <pathelement location="deploy/lib/org.eclipse.emf.teneo.hibernate.mapper_1.1.0.v200906180911.jar"/>
+        <pathelement location="deploy/lib/org.eclipse.emf.transaction_1.3.0.v200902010221.jar"/>
+        <pathelement location="deploy/lib/org.eclipse.emf.workspace_1.3.0.v200902100422.jar"/>
+        <pathelement location="deploy/lib/org.eclipse.equinox.common_3.5.0.v20090520-1800.jar"/>
+        <pathelement location="deploy/lib/org.eclipse.gmf_1.2.0.v20090615-0700.jar"/>
+        <pathelement location="deploy/lib/org.eclipse.gmf.runtime.common.core_1.2.0.v20090403-1720.jar"/>
+        <pathelement location="deploy/lib/org.eclipse.gmf.runtime.diagram.core_1.2.0.v20090403-1720.jar"/>
+        <pathelement location="deploy/lib/org.eclipse.osgi_3.5.0.v20090520.jar"/>
+        <pathelement location="deploy/lib/org.eclipse.osgi.services_3.2.0.v20090520-1800.jar"/>
+        <pathelement location="deploy/lib/org.eclipse.osgi.util_3.2.0.v20090520-1800.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall">
+        <ant antfile="${SafiDB.location}/build.xml" dir="${SafiDB.location}" inheritAll="false" target="clean"/>
+        <ant antfile="${SafiFastAgi1.7.location}/build.xml" dir="${SafiFastAgi1.7.location}" inheritAll="false" target="clean"/>
+        <ant antfile="${Saflets.location}/build.xml" dir="${Saflets.location}" inheritAll="false" target="clean"/>
+        <ant antfile="${AsteriskCore.location}/build.xml" dir="${AsteriskCore.location}" inheritAll="false" target="clean"/>
+        <ant antfile="${CoreActionPak1Model.location}/build.xml" dir="${CoreActionPak1Model.location}" inheritAll="false" target="clean"/>
+        <ant antfile="${WebServicesPakModel.location}/build.xml" dir="${WebServicesPakModel.location}" inheritAll="false" target="clean"/>
+        <ant antfile="${WebServicesPakModel.edit.location}/build.xml" dir="${WebServicesPakModel.edit.location}" inheritAll="false" target="clean"/>
+    </target>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects">
+        <ant antfile="${SafiDB.location}/build.xml" dir="${SafiDB.location}" inheritAll="false" target="build-project">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+        <ant antfile="${SafiFastAgi1.7.location}/build.xml" dir="${SafiFastAgi1.7.location}" inheritAll="false" target="build-project">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+        <ant antfile="${Saflets.location}/build.xml" dir="${Saflets.location}" inheritAll="false" target="build-project">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+        <ant antfile="${AsteriskCore.location}/build.xml" dir="${AsteriskCore.location}" inheritAll="false" target="build-project">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+        <ant antfile="${CoreActionPak1Model.location}/build.xml" dir="${CoreActionPak1Model.location}" inheritAll="false" target="build-project">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+        <ant antfile="${WebServicesPakModel.location}/build.xml" dir="${WebServicesPakModel.location}" inheritAll="false" target="build-project">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+        <ant antfile="${WebServicesPakModel.edit.location}/build.xml" dir="${WebServicesPakModel.edit.location}" inheritAll="false" target="build-project">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+    </target>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="SafiServerCore.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
 </project>
