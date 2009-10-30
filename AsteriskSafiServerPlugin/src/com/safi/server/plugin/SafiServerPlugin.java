@@ -797,7 +797,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
       if (monitor != null) {
         if (monitor.isCanceled())
           return;
-        monitor.setTaskName("Initiationg SSH connection");
+        monitor.setTaskName("Initiating SSH connection");
       }
       sshTunnelSession.connect();
       if (monitor != null)
