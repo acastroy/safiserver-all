@@ -484,7 +484,7 @@ public class SafletEngine {
     ServerBean bean = getServerBean();
     // if (bean != null) {
     DBManager.getInstance().setServerMode(true);
-    DBManager.getInstance().setPort(port, true);
+    DBManager.getInstance().setPort(port, false);
     // }
     
     DBManager.getInstance().setUsername(SA_USER, true);
