@@ -30,83 +30,83 @@ import com.safi.core.actionstep.DynamicValue;
  */
 public interface VMAuthenticate extends ActionStep, CallConsumer1 {
   /**
-   * Returns the value of the '<em><b>Mailbox</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Mailbox</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Mailbox</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Mailbox</em>' containment reference.
-   * @see #setMailbox(DynamicValue)
-   * @see com.safi.asterisk.actionstep.ActionstepPackage#getVMAuthenticate_Mailbox()
-   * @model containment="true" ordered="false"
-   *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='the mailbox name' expectedReturnType='Text' helperClass=''"
-   *        annotation="Required criteria='non-null'"
-   * @generated
-   */
+	 * @return the value of the '<em>Mailbox</em>' containment reference.
+	 * @see #setMailbox(DynamicValue)
+	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getVMAuthenticate_Mailbox()
+	 * @model containment="true" ordered="false"
+	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='the mailbox name' expectedReturnType='Text' helperClass=''"
+	 *        annotation="Required criteria='non-null'"
+	 * @generated
+	 */
   DynamicValue getMailbox();
 
   /**
-   * Sets the value of the '{@link com.safi.asterisk.actionstep.VMAuthenticate#getMailbox <em>Mailbox</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.asterisk.actionstep.VMAuthenticate#getMailbox <em>Mailbox</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Mailbox</em>' containment reference.
-   * @see #getMailbox()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Mailbox</em>' containment reference.
+	 * @see #getMailbox()
+	 * @generated
+	 */
   void setMailbox(DynamicValue value);
 
   /**
-   * Returns the value of the '<em><b>Skip Instructions</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Skip Instructions</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Skip Instructions</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Skip Instructions</em>' attribute.
-   * @see #setSkipInstructions(boolean)
-   * @see com.safi.asterisk.actionstep.ActionstepPackage#getVMAuthenticate_SkipInstructions()
-   * @model ordered="false"
-   * @generated
-   */
+	 * @return the value of the '<em>Skip Instructions</em>' attribute.
+	 * @see #setSkipInstructions(boolean)
+	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getVMAuthenticate_SkipInstructions()
+	 * @model ordered="false"
+	 * @generated
+	 */
   boolean isSkipInstructions();
 
   /**
-   * Sets the value of the '{@link com.safi.asterisk.actionstep.VMAuthenticate#isSkipInstructions <em>Skip Instructions</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.asterisk.actionstep.VMAuthenticate#isSkipInstructions <em>Skip Instructions</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Skip Instructions</em>' attribute.
-   * @see #isSkipInstructions()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Skip Instructions</em>' attribute.
+	 * @see #isSkipInstructions()
+	 * @generated
+	 */
   void setSkipInstructions(boolean value);
 
   /**
-   * Returns the value of the '<em><b>Set Account Code</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Set Account Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Set Account Code</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Set Account Code</em>' attribute.
-   * @see #setSetAccountCode(boolean)
-   * @see com.safi.asterisk.actionstep.ActionstepPackage#getVMAuthenticate_SetAccountCode()
-   * @model ordered="false"
-   * @generated
-   */
+	 * @return the value of the '<em>Set Account Code</em>' attribute.
+	 * @see #setSetAccountCode(boolean)
+	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getVMAuthenticate_SetAccountCode()
+	 * @model ordered="false"
+	 * @generated
+	 */
   boolean isSetAccountCode();
 
   /**
-   * Sets the value of the '{@link com.safi.asterisk.actionstep.VMAuthenticate#isSetAccountCode <em>Set Account Code</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.asterisk.actionstep.VMAuthenticate#isSetAccountCode <em>Set Account Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Set Account Code</em>' attribute.
-   * @see #isSetAccountCode()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Set Account Code</em>' attribute.
+	 * @see #isSetAccountCode()
+	 * @generated
+	 */
   void setSetAccountCode(boolean value);
 
 } // VMAuthenticate

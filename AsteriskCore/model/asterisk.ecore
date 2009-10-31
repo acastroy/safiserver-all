@@ -1828,6 +1828,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="channel" eType="#//AgiChannel"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="request" eType="#//AgiRequest"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="managerConnection" eType="#//ManagerConnection"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="asteriskServer" eType="ecore:EClass ../../SafiDB/model/db.ecore#//server/config/AsteriskServer"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="saflet" nsURI="http:///com/safi/asterisk.ecore#saflet" nsPrefix="com.safi.asterisk.saflet">
@@ -1847,7 +1848,6 @@
       <eOperations name="getLoopbackLock" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
         <eParameters name="uuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="serverIpAddr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="fastAgiPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="managementPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eClassifiers>

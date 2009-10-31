@@ -27,30 +27,30 @@ import com.safi.core.actionstep.ActionStep;
  */
 public interface Pickup extends ActionStep, CallConsumer1 {
   /**
-   * Returns the value of the '<em><b>Group</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Group</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Group</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Group</em>' attribute.
-   * @see #setGroup(String)
-   * @see com.safi.asterisk.actionstep.ActionstepPackage#getPickup_Group()
-   * @model ordered="false"
-   *        annotation="Required criteria='non-blank'"
-   * @generated
-   */
+	 * @return the value of the '<em>Group</em>' attribute.
+	 * @see #setGroup(String)
+	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getPickup_Group()
+	 * @model ordered="false"
+	 *        annotation="Required criteria='non-blank'"
+	 * @generated
+	 */
   String getGroup();
 
   /**
-   * Sets the value of the '{@link com.safi.asterisk.actionstep.Pickup#getGroup <em>Group</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.asterisk.actionstep.Pickup#getGroup <em>Group</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Group</em>' attribute.
-   * @see #getGroup()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Group</em>' attribute.
+	 * @see #getGroup()
+	 * @generated
+	 */
   void setGroup(String value);
 
 } // Pickup

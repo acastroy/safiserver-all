@@ -39,424 +39,424 @@ import com.safi.core.actionstep.impl.ActionStepImpl;
  */
 public class GetAvailableChannelImpl extends ActionStepImpl implements GetAvailableChannel {
   /**
-   * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCall1()
-   * @generated
-   * @ordered
-   */
+	 * @see #getCall1()
+	 * @generated
+	 * @ordered
+	 */
   protected Call call1;
 
   /**
-   * The cached value of the '{@link #getChannels() <em>Channels</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getChannels() <em>Channels</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getChannels()
-   * @generated
-   * @ordered
-   */
+	 * @see #getChannels()
+	 * @generated
+	 * @ordered
+	 */
   protected DynamicValue channels;
 
   /**
-   * The cached value of the '{@link #getVariableName() <em>Variable Name</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getVariableName() <em>Variable Name</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVariableName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getVariableName()
+	 * @generated
+	 * @ordered
+	 */
   protected DynamicValue variableName;
 
   /**
-   * The default value of the '{@link #isIgnoreInUse() <em>Ignore In Use</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #isIgnoreInUse() <em>Ignore In Use</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isIgnoreInUse()
-   * @generated
-   * @ordered
-   */
+	 * @see #isIgnoreInUse()
+	 * @generated
+	 * @ordered
+	 */
   protected static final boolean IGNORE_IN_USE_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isIgnoreInUse() <em>Ignore In Use</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #isIgnoreInUse() <em>Ignore In Use</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isIgnoreInUse()
-   * @generated
-   * @ordered
-   */
+	 * @see #isIgnoreInUse()
+	 * @generated
+	 * @ordered
+	 */
   protected boolean ignoreInUse = IGNORE_IN_USE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #isJumpPriorityOnFail() <em>Jump Priority On Fail</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #isJumpPriorityOnFail() <em>Jump Priority On Fail</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isJumpPriorityOnFail()
-   * @generated
-   * @ordered
-   */
+	 * @see #isJumpPriorityOnFail()
+	 * @generated
+	 * @ordered
+	 */
   protected static final boolean JUMP_PRIORITY_ON_FAIL_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isJumpPriorityOnFail() <em>Jump Priority On Fail</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #isJumpPriorityOnFail() <em>Jump Priority On Fail</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isJumpPriorityOnFail()
-   * @generated
-   * @ordered
-   */
+	 * @see #isJumpPriorityOnFail()
+	 * @generated
+	 * @ordered
+	 */
   protected boolean jumpPriorityOnFail = JUMP_PRIORITY_ON_FAIL_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected GetAvailableChannelImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionstepPackage.Literals.GET_AVAILABLE_CHANNEL;
-  }
+		return ActionstepPackage.Literals.GET_AVAILABLE_CHANNEL;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call getCall1() {
-    if (call1 != null && call1.eIsProxy()) {
-      InternalEObject oldCall1 = (InternalEObject)call1;
-      call1 = (Call)eResolveProxy(oldCall1);
-      if (call1 != oldCall1) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.GET_AVAILABLE_CHANNEL__CALL1, oldCall1, call1));
-      }
-    }
-    return call1;
-  }
+		if (call1 != null && call1.eIsProxy()) {
+			InternalEObject oldCall1 = (InternalEObject)call1;
+			call1 = (Call)eResolveProxy(oldCall1);
+			if (call1 != oldCall1) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.GET_AVAILABLE_CHANNEL__CALL1, oldCall1, call1));
+			}
+		}
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call basicGetCall1() {
-    return call1;
-  }
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setCall1(Call newCall1) {
-    Call oldCall1 = call1;
-    call1 = newCall1;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_AVAILABLE_CHANNEL__CALL1, oldCall1, call1));
-  }
+		Call oldCall1 = call1;
+		call1 = newCall1;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_AVAILABLE_CHANNEL__CALL1, oldCall1, call1));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DynamicValue getChannels() {
-    return channels;
-  }
+		return channels;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetChannels(DynamicValue newChannels, NotificationChain msgs) {
-    DynamicValue oldChannels = channels;
-    channels = newChannels;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_AVAILABLE_CHANNEL__CHANNELS, oldChannels, newChannels);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DynamicValue oldChannels = channels;
+		channels = newChannels;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_AVAILABLE_CHANNEL__CHANNELS, oldChannels, newChannels);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setChannels(DynamicValue newChannels) {
-    if (newChannels != channels) {
-      NotificationChain msgs = null;
-      if (channels != null)
-        msgs = ((InternalEObject)channels).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_AVAILABLE_CHANNEL__CHANNELS, null, msgs);
-      if (newChannels != null)
-        msgs = ((InternalEObject)newChannels).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_AVAILABLE_CHANNEL__CHANNELS, null, msgs);
-      msgs = basicSetChannels(newChannels, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_AVAILABLE_CHANNEL__CHANNELS, newChannels, newChannels));
-  }
+		if (newChannels != channels) {
+			NotificationChain msgs = null;
+			if (channels != null)
+				msgs = ((InternalEObject)channels).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_AVAILABLE_CHANNEL__CHANNELS, null, msgs);
+			if (newChannels != null)
+				msgs = ((InternalEObject)newChannels).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_AVAILABLE_CHANNEL__CHANNELS, null, msgs);
+			msgs = basicSetChannels(newChannels, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_AVAILABLE_CHANNEL__CHANNELS, newChannels, newChannels));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DynamicValue getVariableName() {
-    return variableName;
-  }
+		return variableName;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetVariableName(DynamicValue newVariableName, NotificationChain msgs) {
-    DynamicValue oldVariableName = variableName;
-    variableName = newVariableName;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_AVAILABLE_CHANNEL__VARIABLE_NAME, oldVariableName, newVariableName);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DynamicValue oldVariableName = variableName;
+		variableName = newVariableName;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_AVAILABLE_CHANNEL__VARIABLE_NAME, oldVariableName, newVariableName);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setVariableName(DynamicValue newVariableName) {
-    if (newVariableName != variableName) {
-      NotificationChain msgs = null;
-      if (variableName != null)
-        msgs = ((InternalEObject)variableName).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_AVAILABLE_CHANNEL__VARIABLE_NAME, null, msgs);
-      if (newVariableName != null)
-        msgs = ((InternalEObject)newVariableName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_AVAILABLE_CHANNEL__VARIABLE_NAME, null, msgs);
-      msgs = basicSetVariableName(newVariableName, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_AVAILABLE_CHANNEL__VARIABLE_NAME, newVariableName, newVariableName));
-  }
+		if (newVariableName != variableName) {
+			NotificationChain msgs = null;
+			if (variableName != null)
+				msgs = ((InternalEObject)variableName).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_AVAILABLE_CHANNEL__VARIABLE_NAME, null, msgs);
+			if (newVariableName != null)
+				msgs = ((InternalEObject)newVariableName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_AVAILABLE_CHANNEL__VARIABLE_NAME, null, msgs);
+			msgs = basicSetVariableName(newVariableName, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_AVAILABLE_CHANNEL__VARIABLE_NAME, newVariableName, newVariableName));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public boolean isIgnoreInUse() {
-    return ignoreInUse;
-  }
+		return ignoreInUse;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setIgnoreInUse(boolean newIgnoreInUse) {
-    boolean oldIgnoreInUse = ignoreInUse;
-    ignoreInUse = newIgnoreInUse;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_AVAILABLE_CHANNEL__IGNORE_IN_USE, oldIgnoreInUse, ignoreInUse));
-  }
+		boolean oldIgnoreInUse = ignoreInUse;
+		ignoreInUse = newIgnoreInUse;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_AVAILABLE_CHANNEL__IGNORE_IN_USE, oldIgnoreInUse, ignoreInUse));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public boolean isJumpPriorityOnFail() {
-    return jumpPriorityOnFail;
-  }
+		return jumpPriorityOnFail;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setJumpPriorityOnFail(boolean newJumpPriorityOnFail) {
-    boolean oldJumpPriorityOnFail = jumpPriorityOnFail;
-    jumpPriorityOnFail = newJumpPriorityOnFail;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_AVAILABLE_CHANNEL__JUMP_PRIORITY_ON_FAIL, oldJumpPriorityOnFail, jumpPriorityOnFail));
-  }
+		boolean oldJumpPriorityOnFail = jumpPriorityOnFail;
+		jumpPriorityOnFail = newJumpPriorityOnFail;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_AVAILABLE_CHANNEL__JUMP_PRIORITY_ON_FAIL, oldJumpPriorityOnFail, jumpPriorityOnFail));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionstepPackage.GET_AVAILABLE_CHANNEL__CHANNELS:
-        return basicSetChannels(null, msgs);
-      case ActionstepPackage.GET_AVAILABLE_CHANNEL__VARIABLE_NAME:
-        return basicSetVariableName(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionstepPackage.GET_AVAILABLE_CHANNEL__CHANNELS:
+				return basicSetChannels(null, msgs);
+			case ActionstepPackage.GET_AVAILABLE_CHANNEL__VARIABLE_NAME:
+				return basicSetVariableName(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionstepPackage.GET_AVAILABLE_CHANNEL__CALL1:
-        if (resolve) return getCall1();
-        return basicGetCall1();
-      case ActionstepPackage.GET_AVAILABLE_CHANNEL__CHANNELS:
-        return getChannels();
-      case ActionstepPackage.GET_AVAILABLE_CHANNEL__VARIABLE_NAME:
-        return getVariableName();
-      case ActionstepPackage.GET_AVAILABLE_CHANNEL__IGNORE_IN_USE:
-        return isIgnoreInUse() ? Boolean.TRUE : Boolean.FALSE;
-      case ActionstepPackage.GET_AVAILABLE_CHANNEL__JUMP_PRIORITY_ON_FAIL:
-        return isJumpPriorityOnFail() ? Boolean.TRUE : Boolean.FALSE;
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionstepPackage.GET_AVAILABLE_CHANNEL__CALL1:
+				if (resolve) return getCall1();
+				return basicGetCall1();
+			case ActionstepPackage.GET_AVAILABLE_CHANNEL__CHANNELS:
+				return getChannels();
+			case ActionstepPackage.GET_AVAILABLE_CHANNEL__VARIABLE_NAME:
+				return getVariableName();
+			case ActionstepPackage.GET_AVAILABLE_CHANNEL__IGNORE_IN_USE:
+				return isIgnoreInUse();
+			case ActionstepPackage.GET_AVAILABLE_CHANNEL__JUMP_PRIORITY_ON_FAIL:
+				return isJumpPriorityOnFail();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionstepPackage.GET_AVAILABLE_CHANNEL__CALL1:
-        setCall1((Call)newValue);
-        return;
-      case ActionstepPackage.GET_AVAILABLE_CHANNEL__CHANNELS:
-        setChannels((DynamicValue)newValue);
-        return;
-      case ActionstepPackage.GET_AVAILABLE_CHANNEL__VARIABLE_NAME:
-        setVariableName((DynamicValue)newValue);
-        return;
-      case ActionstepPackage.GET_AVAILABLE_CHANNEL__IGNORE_IN_USE:
-        setIgnoreInUse(((Boolean)newValue).booleanValue());
-        return;
-      case ActionstepPackage.GET_AVAILABLE_CHANNEL__JUMP_PRIORITY_ON_FAIL:
-        setJumpPriorityOnFail(((Boolean)newValue).booleanValue());
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionstepPackage.GET_AVAILABLE_CHANNEL__CALL1:
+				setCall1((Call)newValue);
+				return;
+			case ActionstepPackage.GET_AVAILABLE_CHANNEL__CHANNELS:
+				setChannels((DynamicValue)newValue);
+				return;
+			case ActionstepPackage.GET_AVAILABLE_CHANNEL__VARIABLE_NAME:
+				setVariableName((DynamicValue)newValue);
+				return;
+			case ActionstepPackage.GET_AVAILABLE_CHANNEL__IGNORE_IN_USE:
+				setIgnoreInUse((Boolean)newValue);
+				return;
+			case ActionstepPackage.GET_AVAILABLE_CHANNEL__JUMP_PRIORITY_ON_FAIL:
+				setJumpPriorityOnFail((Boolean)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.GET_AVAILABLE_CHANNEL__CALL1:
-        setCall1((Call)null);
-        return;
-      case ActionstepPackage.GET_AVAILABLE_CHANNEL__CHANNELS:
-        setChannels((DynamicValue)null);
-        return;
-      case ActionstepPackage.GET_AVAILABLE_CHANNEL__VARIABLE_NAME:
-        setVariableName((DynamicValue)null);
-        return;
-      case ActionstepPackage.GET_AVAILABLE_CHANNEL__IGNORE_IN_USE:
-        setIgnoreInUse(IGNORE_IN_USE_EDEFAULT);
-        return;
-      case ActionstepPackage.GET_AVAILABLE_CHANNEL__JUMP_PRIORITY_ON_FAIL:
-        setJumpPriorityOnFail(JUMP_PRIORITY_ON_FAIL_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.GET_AVAILABLE_CHANNEL__CALL1:
+				setCall1((Call)null);
+				return;
+			case ActionstepPackage.GET_AVAILABLE_CHANNEL__CHANNELS:
+				setChannels((DynamicValue)null);
+				return;
+			case ActionstepPackage.GET_AVAILABLE_CHANNEL__VARIABLE_NAME:
+				setVariableName((DynamicValue)null);
+				return;
+			case ActionstepPackage.GET_AVAILABLE_CHANNEL__IGNORE_IN_USE:
+				setIgnoreInUse(IGNORE_IN_USE_EDEFAULT);
+				return;
+			case ActionstepPackage.GET_AVAILABLE_CHANNEL__JUMP_PRIORITY_ON_FAIL:
+				setJumpPriorityOnFail(JUMP_PRIORITY_ON_FAIL_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.GET_AVAILABLE_CHANNEL__CALL1:
-        return call1 != null;
-      case ActionstepPackage.GET_AVAILABLE_CHANNEL__CHANNELS:
-        return channels != null;
-      case ActionstepPackage.GET_AVAILABLE_CHANNEL__VARIABLE_NAME:
-        return variableName != null;
-      case ActionstepPackage.GET_AVAILABLE_CHANNEL__IGNORE_IN_USE:
-        return ignoreInUse != IGNORE_IN_USE_EDEFAULT;
-      case ActionstepPackage.GET_AVAILABLE_CHANNEL__JUMP_PRIORITY_ON_FAIL:
-        return jumpPriorityOnFail != JUMP_PRIORITY_ON_FAIL_EDEFAULT;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.GET_AVAILABLE_CHANNEL__CALL1:
+				return call1 != null;
+			case ActionstepPackage.GET_AVAILABLE_CHANNEL__CHANNELS:
+				return channels != null;
+			case ActionstepPackage.GET_AVAILABLE_CHANNEL__VARIABLE_NAME:
+				return variableName != null;
+			case ActionstepPackage.GET_AVAILABLE_CHANNEL__IGNORE_IN_USE:
+				return ignoreInUse != IGNORE_IN_USE_EDEFAULT;
+			case ActionstepPackage.GET_AVAILABLE_CHANNEL__JUMP_PRIORITY_ON_FAIL:
+				return jumpPriorityOnFail != JUMP_PRIORITY_ON_FAIL_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (derivedFeatureID) {
-        case ActionstepPackage.GET_AVAILABLE_CHANNEL__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (derivedFeatureID) {
+				case ActionstepPackage.GET_AVAILABLE_CHANNEL__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (baseFeatureID) {
-        case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.GET_AVAILABLE_CHANNEL__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (baseFeatureID) {
+				case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.GET_AVAILABLE_CHANNEL__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (ignoreInUse: ");
-    result.append(ignoreInUse);
-    result.append(", jumpPriorityOnFail: ");
-    result.append(jumpPriorityOnFail);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (ignoreInUse: ");
+		result.append(ignoreInUse);
+		result.append(", jumpPriorityOnFail: ");
+		result.append(jumpPriorityOnFail);
+		result.append(')');
+		return result.toString();
+	}
 
 } //GetAvailableChannelImpl

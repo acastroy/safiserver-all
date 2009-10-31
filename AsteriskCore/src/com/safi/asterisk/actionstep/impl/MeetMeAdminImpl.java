@@ -45,63 +45,63 @@ import com.safi.db.VariableType;
  */
 public class MeetMeAdminImpl extends ActionStepImpl implements MeetMeAdmin {
   /**
-   * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCall1()
-   * @generated
-   * @ordered
-   */
+	 * @see #getCall1()
+	 * @generated
+	 * @ordered
+	 */
   protected Call call1;
 
   /**
-   * The cached value of the '{@link #getConferenceNumber() <em>Conference Number</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getConferenceNumber() <em>Conference Number</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getConferenceNumber()
-   * @generated
-   * @ordered
-   */
+	 * @see #getConferenceNumber()
+	 * @generated
+	 * @ordered
+	 */
   protected DynamicValue conferenceNumber;
 
   /**
-   * The default value of the '{@link #getCommand() <em>Command</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getCommand() <em>Command</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCommand()
-   * @generated
-   * @ordered
-   */
+	 * @see #getCommand()
+	 * @generated
+	 * @ordered
+	 */
   protected static final MeetMeAdminCommand COMMAND_EDEFAULT = MeetMeAdminCommand.EJECT_LAST_USER;
 
   /**
-   * The cached value of the '{@link #getCommand() <em>Command</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getCommand() <em>Command</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCommand()
-   * @generated
-   * @ordered
-   */
+	 * @see #getCommand()
+	 * @generated
+	 * @ordered
+	 */
   protected MeetMeAdminCommand command = COMMAND_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getUser() <em>User</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getUser() <em>User</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUser()
-   * @generated
-   * @ordered
-   */
+	 * @see #getUser()
+	 * @generated
+	 * @ordered
+	 */
   protected DynamicValue user;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected MeetMeAdminImpl() {
-    super();
-  }
+		super();
+	}
 
   @Override
   public void beginProcessing(SafletContext context) throws ActionStepException {
@@ -209,312 +209,312 @@ public class MeetMeAdminImpl extends ActionStepImpl implements MeetMeAdmin {
   }
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionstepPackage.Literals.MEET_ME_ADMIN;
-  }
+		return ActionstepPackage.Literals.MEET_ME_ADMIN;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call getCall1() {
-    if (call1 != null && call1.eIsProxy()) {
-      InternalEObject oldCall1 = (InternalEObject)call1;
-      call1 = (Call)eResolveProxy(oldCall1);
-      if (call1 != oldCall1) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.MEET_ME_ADMIN__CALL1, oldCall1, call1));
-      }
-    }
-    return call1;
-  }
+		if (call1 != null && call1.eIsProxy()) {
+			InternalEObject oldCall1 = (InternalEObject)call1;
+			call1 = (Call)eResolveProxy(oldCall1);
+			if (call1 != oldCall1) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.MEET_ME_ADMIN__CALL1, oldCall1, call1));
+			}
+		}
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call basicGetCall1() {
-    return call1;
-  }
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setCall1(Call newCall1) {
-    Call oldCall1 = call1;
-    call1 = newCall1;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.MEET_ME_ADMIN__CALL1, oldCall1, call1));
-  }
+		Call oldCall1 = call1;
+		call1 = newCall1;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.MEET_ME_ADMIN__CALL1, oldCall1, call1));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DynamicValue getConferenceNumber() {
-    return conferenceNumber;
-  }
+		return conferenceNumber;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetConferenceNumber(DynamicValue newConferenceNumber, NotificationChain msgs) {
-    DynamicValue oldConferenceNumber = conferenceNumber;
-    conferenceNumber = newConferenceNumber;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.MEET_ME_ADMIN__CONFERENCE_NUMBER, oldConferenceNumber, newConferenceNumber);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DynamicValue oldConferenceNumber = conferenceNumber;
+		conferenceNumber = newConferenceNumber;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.MEET_ME_ADMIN__CONFERENCE_NUMBER, oldConferenceNumber, newConferenceNumber);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setConferenceNumber(DynamicValue newConferenceNumber) {
-    if (newConferenceNumber != conferenceNumber) {
-      NotificationChain msgs = null;
-      if (conferenceNumber != null)
-        msgs = ((InternalEObject)conferenceNumber).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.MEET_ME_ADMIN__CONFERENCE_NUMBER, null, msgs);
-      if (newConferenceNumber != null)
-        msgs = ((InternalEObject)newConferenceNumber).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.MEET_ME_ADMIN__CONFERENCE_NUMBER, null, msgs);
-      msgs = basicSetConferenceNumber(newConferenceNumber, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.MEET_ME_ADMIN__CONFERENCE_NUMBER, newConferenceNumber, newConferenceNumber));
-  }
+		if (newConferenceNumber != conferenceNumber) {
+			NotificationChain msgs = null;
+			if (conferenceNumber != null)
+				msgs = ((InternalEObject)conferenceNumber).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.MEET_ME_ADMIN__CONFERENCE_NUMBER, null, msgs);
+			if (newConferenceNumber != null)
+				msgs = ((InternalEObject)newConferenceNumber).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.MEET_ME_ADMIN__CONFERENCE_NUMBER, null, msgs);
+			msgs = basicSetConferenceNumber(newConferenceNumber, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.MEET_ME_ADMIN__CONFERENCE_NUMBER, newConferenceNumber, newConferenceNumber));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public MeetMeAdminCommand getCommand() {
-    return command;
-  }
+		return command;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setCommand(MeetMeAdminCommand newCommand) {
-    MeetMeAdminCommand oldCommand = command;
-    command = newCommand == null ? COMMAND_EDEFAULT : newCommand;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.MEET_ME_ADMIN__COMMAND, oldCommand, command));
-  }
+		MeetMeAdminCommand oldCommand = command;
+		command = newCommand == null ? COMMAND_EDEFAULT : newCommand;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.MEET_ME_ADMIN__COMMAND, oldCommand, command));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DynamicValue getUser() {
-    return user;
-  }
+		return user;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetUser(DynamicValue newUser, NotificationChain msgs) {
-    DynamicValue oldUser = user;
-    user = newUser;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.MEET_ME_ADMIN__USER, oldUser, newUser);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DynamicValue oldUser = user;
+		user = newUser;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.MEET_ME_ADMIN__USER, oldUser, newUser);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setUser(DynamicValue newUser) {
-    if (newUser != user) {
-      NotificationChain msgs = null;
-      if (user != null)
-        msgs = ((InternalEObject)user).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.MEET_ME_ADMIN__USER, null, msgs);
-      if (newUser != null)
-        msgs = ((InternalEObject)newUser).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.MEET_ME_ADMIN__USER, null, msgs);
-      msgs = basicSetUser(newUser, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.MEET_ME_ADMIN__USER, newUser, newUser));
-  }
+		if (newUser != user) {
+			NotificationChain msgs = null;
+			if (user != null)
+				msgs = ((InternalEObject)user).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.MEET_ME_ADMIN__USER, null, msgs);
+			if (newUser != null)
+				msgs = ((InternalEObject)newUser).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.MEET_ME_ADMIN__USER, null, msgs);
+			msgs = basicSetUser(newUser, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.MEET_ME_ADMIN__USER, newUser, newUser));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionstepPackage.MEET_ME_ADMIN__CONFERENCE_NUMBER:
-        return basicSetConferenceNumber(null, msgs);
-      case ActionstepPackage.MEET_ME_ADMIN__USER:
-        return basicSetUser(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionstepPackage.MEET_ME_ADMIN__CONFERENCE_NUMBER:
+				return basicSetConferenceNumber(null, msgs);
+			case ActionstepPackage.MEET_ME_ADMIN__USER:
+				return basicSetUser(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionstepPackage.MEET_ME_ADMIN__CALL1:
-        if (resolve) return getCall1();
-        return basicGetCall1();
-      case ActionstepPackage.MEET_ME_ADMIN__CONFERENCE_NUMBER:
-        return getConferenceNumber();
-      case ActionstepPackage.MEET_ME_ADMIN__COMMAND:
-        return getCommand();
-      case ActionstepPackage.MEET_ME_ADMIN__USER:
-        return getUser();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionstepPackage.MEET_ME_ADMIN__CALL1:
+				if (resolve) return getCall1();
+				return basicGetCall1();
+			case ActionstepPackage.MEET_ME_ADMIN__CONFERENCE_NUMBER:
+				return getConferenceNumber();
+			case ActionstepPackage.MEET_ME_ADMIN__COMMAND:
+				return getCommand();
+			case ActionstepPackage.MEET_ME_ADMIN__USER:
+				return getUser();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionstepPackage.MEET_ME_ADMIN__CALL1:
-        setCall1((Call)newValue);
-        return;
-      case ActionstepPackage.MEET_ME_ADMIN__CONFERENCE_NUMBER:
-        setConferenceNumber((DynamicValue)newValue);
-        return;
-      case ActionstepPackage.MEET_ME_ADMIN__COMMAND:
-        setCommand((MeetMeAdminCommand)newValue);
-        return;
-      case ActionstepPackage.MEET_ME_ADMIN__USER:
-        setUser((DynamicValue)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionstepPackage.MEET_ME_ADMIN__CALL1:
+				setCall1((Call)newValue);
+				return;
+			case ActionstepPackage.MEET_ME_ADMIN__CONFERENCE_NUMBER:
+				setConferenceNumber((DynamicValue)newValue);
+				return;
+			case ActionstepPackage.MEET_ME_ADMIN__COMMAND:
+				setCommand((MeetMeAdminCommand)newValue);
+				return;
+			case ActionstepPackage.MEET_ME_ADMIN__USER:
+				setUser((DynamicValue)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.MEET_ME_ADMIN__CALL1:
-        setCall1((Call)null);
-        return;
-      case ActionstepPackage.MEET_ME_ADMIN__CONFERENCE_NUMBER:
-        setConferenceNumber((DynamicValue)null);
-        return;
-      case ActionstepPackage.MEET_ME_ADMIN__COMMAND:
-        setCommand(COMMAND_EDEFAULT);
-        return;
-      case ActionstepPackage.MEET_ME_ADMIN__USER:
-        setUser((DynamicValue)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.MEET_ME_ADMIN__CALL1:
+				setCall1((Call)null);
+				return;
+			case ActionstepPackage.MEET_ME_ADMIN__CONFERENCE_NUMBER:
+				setConferenceNumber((DynamicValue)null);
+				return;
+			case ActionstepPackage.MEET_ME_ADMIN__COMMAND:
+				setCommand(COMMAND_EDEFAULT);
+				return;
+			case ActionstepPackage.MEET_ME_ADMIN__USER:
+				setUser((DynamicValue)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.MEET_ME_ADMIN__CALL1:
-        return call1 != null;
-      case ActionstepPackage.MEET_ME_ADMIN__CONFERENCE_NUMBER:
-        return conferenceNumber != null;
-      case ActionstepPackage.MEET_ME_ADMIN__COMMAND:
-        return command != COMMAND_EDEFAULT;
-      case ActionstepPackage.MEET_ME_ADMIN__USER:
-        return user != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.MEET_ME_ADMIN__CALL1:
+				return call1 != null;
+			case ActionstepPackage.MEET_ME_ADMIN__CONFERENCE_NUMBER:
+				return conferenceNumber != null;
+			case ActionstepPackage.MEET_ME_ADMIN__COMMAND:
+				return command != COMMAND_EDEFAULT;
+			case ActionstepPackage.MEET_ME_ADMIN__USER:
+				return user != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (derivedFeatureID) {
-        case ActionstepPackage.MEET_ME_ADMIN__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (derivedFeatureID) {
+				case ActionstepPackage.MEET_ME_ADMIN__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (baseFeatureID) {
-        case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.MEET_ME_ADMIN__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (baseFeatureID) {
+				case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.MEET_ME_ADMIN__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (command: ");
-    result.append(command);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (command: ");
+		result.append(command);
+		result.append(')');
+		return result.toString();
+	}
 
 } //MeetMeAdminImpl

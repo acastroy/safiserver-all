@@ -41,33 +41,33 @@ import com.safi.db.VariableType;
  */
 public class SetExtensionImpl extends ActionStepImpl implements SetExtension {
   /**
-   * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCall1()
-   * @generated
-   * @ordered
-   */
+	 * @see #getCall1()
+	 * @generated
+	 * @ordered
+	 */
   protected Call call1;
 
   /**
-   * The cached value of the '{@link #getExtension() <em>Extension</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getExtension() <em>Extension</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExtension()
-   * @generated
-   * @ordered
-   */
+	 * @see #getExtension()
+	 * @generated
+	 * @ordered
+	 */
   protected DynamicValue extension;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected SetExtensionImpl() {
-    super();
-  }
+		super();
+	}
 
   @Override
   public void beginProcessing(SafletContext context) throws ActionStepException {
@@ -88,210 +88,210 @@ public class SetExtensionImpl extends ActionStepImpl implements SetExtension {
     handleSuccess(context);
   }
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionstepPackage.Literals.SET_EXTENSION;
-  }
+		return ActionstepPackage.Literals.SET_EXTENSION;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call getCall1() {
-    if (call1 != null && call1.eIsProxy()) {
-      InternalEObject oldCall1 = (InternalEObject)call1;
-      call1 = (Call)eResolveProxy(oldCall1);
-      if (call1 != oldCall1) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.SET_EXTENSION__CALL1, oldCall1, call1));
-      }
-    }
-    return call1;
-  }
+		if (call1 != null && call1.eIsProxy()) {
+			InternalEObject oldCall1 = (InternalEObject)call1;
+			call1 = (Call)eResolveProxy(oldCall1);
+			if (call1 != oldCall1) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.SET_EXTENSION__CALL1, oldCall1, call1));
+			}
+		}
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call basicGetCall1() {
-    return call1;
-  }
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setCall1(Call newCall1) {
-    Call oldCall1 = call1;
-    call1 = newCall1;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.SET_EXTENSION__CALL1, oldCall1, call1));
-  }
+		Call oldCall1 = call1;
+		call1 = newCall1;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.SET_EXTENSION__CALL1, oldCall1, call1));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DynamicValue getExtension() {
-    return extension;
-  }
+		return extension;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetExtension(DynamicValue newExtension, NotificationChain msgs) {
-    DynamicValue oldExtension = extension;
-    extension = newExtension;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.SET_EXTENSION__EXTENSION, oldExtension, newExtension);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DynamicValue oldExtension = extension;
+		extension = newExtension;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.SET_EXTENSION__EXTENSION, oldExtension, newExtension);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setExtension(DynamicValue newExtension) {
-    if (newExtension != extension) {
-      NotificationChain msgs = null;
-      if (extension != null)
-        msgs = ((InternalEObject)extension).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.SET_EXTENSION__EXTENSION, null, msgs);
-      if (newExtension != null)
-        msgs = ((InternalEObject)newExtension).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.SET_EXTENSION__EXTENSION, null, msgs);
-      msgs = basicSetExtension(newExtension, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.SET_EXTENSION__EXTENSION, newExtension, newExtension));
-  }
+		if (newExtension != extension) {
+			NotificationChain msgs = null;
+			if (extension != null)
+				msgs = ((InternalEObject)extension).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.SET_EXTENSION__EXTENSION, null, msgs);
+			if (newExtension != null)
+				msgs = ((InternalEObject)newExtension).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.SET_EXTENSION__EXTENSION, null, msgs);
+			msgs = basicSetExtension(newExtension, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.SET_EXTENSION__EXTENSION, newExtension, newExtension));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionstepPackage.SET_EXTENSION__EXTENSION:
-        return basicSetExtension(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionstepPackage.SET_EXTENSION__EXTENSION:
+				return basicSetExtension(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionstepPackage.SET_EXTENSION__CALL1:
-        if (resolve) return getCall1();
-        return basicGetCall1();
-      case ActionstepPackage.SET_EXTENSION__EXTENSION:
-        return getExtension();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionstepPackage.SET_EXTENSION__CALL1:
+				if (resolve) return getCall1();
+				return basicGetCall1();
+			case ActionstepPackage.SET_EXTENSION__EXTENSION:
+				return getExtension();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionstepPackage.SET_EXTENSION__CALL1:
-        setCall1((Call)newValue);
-        return;
-      case ActionstepPackage.SET_EXTENSION__EXTENSION:
-        setExtension((DynamicValue)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionstepPackage.SET_EXTENSION__CALL1:
+				setCall1((Call)newValue);
+				return;
+			case ActionstepPackage.SET_EXTENSION__EXTENSION:
+				setExtension((DynamicValue)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.SET_EXTENSION__CALL1:
-        setCall1((Call)null);
-        return;
-      case ActionstepPackage.SET_EXTENSION__EXTENSION:
-        setExtension((DynamicValue)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.SET_EXTENSION__CALL1:
+				setCall1((Call)null);
+				return;
+			case ActionstepPackage.SET_EXTENSION__EXTENSION:
+				setExtension((DynamicValue)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.SET_EXTENSION__CALL1:
-        return call1 != null;
-      case ActionstepPackage.SET_EXTENSION__EXTENSION:
-        return extension != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.SET_EXTENSION__CALL1:
+				return call1 != null;
+			case ActionstepPackage.SET_EXTENSION__EXTENSION:
+				return extension != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (derivedFeatureID) {
-        case ActionstepPackage.SET_EXTENSION__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (derivedFeatureID) {
+				case ActionstepPackage.SET_EXTENSION__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (baseFeatureID) {
-        case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.SET_EXTENSION__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (baseFeatureID) {
+				case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.SET_EXTENSION__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
 
 } //SetExtensionImpl

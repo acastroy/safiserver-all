@@ -54,43 +54,43 @@ import com.safi.db.VariableType;
  */
 public class MultiStreamAudioImpl extends ActionStepImpl implements MultiStreamAudio {
   /**
-   * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCall1()
-   * @generated
-   * @ordered
-   */
+	 * @see #getCall1()
+	 * @generated
+	 * @ordered
+	 */
   protected Call call1;
 
   /**
-   * The cached value of the '{@link #getEscapeDigits() <em>Escape Digits</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getEscapeDigits() <em>Escape Digits</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEscapeDigits()
-   * @generated
-   * @ordered
-   */
+	 * @see #getEscapeDigits()
+	 * @generated
+	 * @ordered
+	 */
   protected DynamicValue escapeDigits;
 
   /**
-   * The cached value of the '{@link #getAudioFilenames() <em>Audio Filenames</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getAudioFilenames() <em>Audio Filenames</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAudioFilenames()
-   * @generated
-   * @ordered
-   */
+	 * @see #getAudioFilenames()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<AudioFileItem> audioFilenames;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected MultiStreamAudioImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
    * <!-- begin-user-doc -->
@@ -162,235 +162,235 @@ public class MultiStreamAudioImpl extends ActionStepImpl implements MultiStreamA
 
   }
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionstepPackage.Literals.MULTI_STREAM_AUDIO;
-  }
+		return ActionstepPackage.Literals.MULTI_STREAM_AUDIO;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call getCall1() {
-    if (call1 != null && call1.eIsProxy()) {
-      InternalEObject oldCall1 = (InternalEObject)call1;
-      call1 = (Call)eResolveProxy(oldCall1);
-      if (call1 != oldCall1) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.MULTI_STREAM_AUDIO__CALL1, oldCall1, call1));
-      }
-    }
-    return call1;
-  }
+		if (call1 != null && call1.eIsProxy()) {
+			InternalEObject oldCall1 = (InternalEObject)call1;
+			call1 = (Call)eResolveProxy(oldCall1);
+			if (call1 != oldCall1) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.MULTI_STREAM_AUDIO__CALL1, oldCall1, call1));
+			}
+		}
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call basicGetCall1() {
-    return call1;
-  }
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setCall1(Call newCall1) {
-    Call oldCall1 = call1;
-    call1 = newCall1;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.MULTI_STREAM_AUDIO__CALL1, oldCall1, call1));
-  }
+		Call oldCall1 = call1;
+		call1 = newCall1;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.MULTI_STREAM_AUDIO__CALL1, oldCall1, call1));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DynamicValue getEscapeDigits() {
-    return escapeDigits;
-  }
+		return escapeDigits;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetEscapeDigits(DynamicValue newEscapeDigits, NotificationChain msgs) {
-    DynamicValue oldEscapeDigits = escapeDigits;
-    escapeDigits = newEscapeDigits;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.MULTI_STREAM_AUDIO__ESCAPE_DIGITS, oldEscapeDigits, newEscapeDigits);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DynamicValue oldEscapeDigits = escapeDigits;
+		escapeDigits = newEscapeDigits;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.MULTI_STREAM_AUDIO__ESCAPE_DIGITS, oldEscapeDigits, newEscapeDigits);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setEscapeDigits(DynamicValue newEscapeDigits) {
-    if (newEscapeDigits != escapeDigits) {
-      NotificationChain msgs = null;
-      if (escapeDigits != null)
-        msgs = ((InternalEObject)escapeDigits).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.MULTI_STREAM_AUDIO__ESCAPE_DIGITS, null, msgs);
-      if (newEscapeDigits != null)
-        msgs = ((InternalEObject)newEscapeDigits).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.MULTI_STREAM_AUDIO__ESCAPE_DIGITS, null, msgs);
-      msgs = basicSetEscapeDigits(newEscapeDigits, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.MULTI_STREAM_AUDIO__ESCAPE_DIGITS, newEscapeDigits, newEscapeDigits));
-  }
+		if (newEscapeDigits != escapeDigits) {
+			NotificationChain msgs = null;
+			if (escapeDigits != null)
+				msgs = ((InternalEObject)escapeDigits).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.MULTI_STREAM_AUDIO__ESCAPE_DIGITS, null, msgs);
+			if (newEscapeDigits != null)
+				msgs = ((InternalEObject)newEscapeDigits).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.MULTI_STREAM_AUDIO__ESCAPE_DIGITS, null, msgs);
+			msgs = basicSetEscapeDigits(newEscapeDigits, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.MULTI_STREAM_AUDIO__ESCAPE_DIGITS, newEscapeDigits, newEscapeDigits));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<AudioFileItem> getAudioFilenames() {
-    if (audioFilenames == null) {
-      audioFilenames = new EObjectContainmentEList<AudioFileItem>(AudioFileItem.class, this, ActionstepPackage.MULTI_STREAM_AUDIO__AUDIO_FILENAMES);
-    }
-    return audioFilenames;
-  }
+		if (audioFilenames == null) {
+			audioFilenames = new EObjectContainmentEList<AudioFileItem>(AudioFileItem.class, this, ActionstepPackage.MULTI_STREAM_AUDIO__AUDIO_FILENAMES);
+		}
+		return audioFilenames;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionstepPackage.MULTI_STREAM_AUDIO__ESCAPE_DIGITS:
-        return basicSetEscapeDigits(null, msgs);
-      case ActionstepPackage.MULTI_STREAM_AUDIO__AUDIO_FILENAMES:
-        return ((InternalEList<?>)getAudioFilenames()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionstepPackage.MULTI_STREAM_AUDIO__ESCAPE_DIGITS:
+				return basicSetEscapeDigits(null, msgs);
+			case ActionstepPackage.MULTI_STREAM_AUDIO__AUDIO_FILENAMES:
+				return ((InternalEList<?>)getAudioFilenames()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionstepPackage.MULTI_STREAM_AUDIO__CALL1:
-        if (resolve) return getCall1();
-        return basicGetCall1();
-      case ActionstepPackage.MULTI_STREAM_AUDIO__ESCAPE_DIGITS:
-        return getEscapeDigits();
-      case ActionstepPackage.MULTI_STREAM_AUDIO__AUDIO_FILENAMES:
-        return getAudioFilenames();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionstepPackage.MULTI_STREAM_AUDIO__CALL1:
+				if (resolve) return getCall1();
+				return basicGetCall1();
+			case ActionstepPackage.MULTI_STREAM_AUDIO__ESCAPE_DIGITS:
+				return getEscapeDigits();
+			case ActionstepPackage.MULTI_STREAM_AUDIO__AUDIO_FILENAMES:
+				return getAudioFilenames();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionstepPackage.MULTI_STREAM_AUDIO__CALL1:
-        setCall1((Call)newValue);
-        return;
-      case ActionstepPackage.MULTI_STREAM_AUDIO__ESCAPE_DIGITS:
-        setEscapeDigits((DynamicValue)newValue);
-        return;
-      case ActionstepPackage.MULTI_STREAM_AUDIO__AUDIO_FILENAMES:
-        getAudioFilenames().clear();
-        getAudioFilenames().addAll((Collection<? extends AudioFileItem>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionstepPackage.MULTI_STREAM_AUDIO__CALL1:
+				setCall1((Call)newValue);
+				return;
+			case ActionstepPackage.MULTI_STREAM_AUDIO__ESCAPE_DIGITS:
+				setEscapeDigits((DynamicValue)newValue);
+				return;
+			case ActionstepPackage.MULTI_STREAM_AUDIO__AUDIO_FILENAMES:
+				getAudioFilenames().clear();
+				getAudioFilenames().addAll((Collection<? extends AudioFileItem>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.MULTI_STREAM_AUDIO__CALL1:
-        setCall1((Call)null);
-        return;
-      case ActionstepPackage.MULTI_STREAM_AUDIO__ESCAPE_DIGITS:
-        setEscapeDigits((DynamicValue)null);
-        return;
-      case ActionstepPackage.MULTI_STREAM_AUDIO__AUDIO_FILENAMES:
-        getAudioFilenames().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.MULTI_STREAM_AUDIO__CALL1:
+				setCall1((Call)null);
+				return;
+			case ActionstepPackage.MULTI_STREAM_AUDIO__ESCAPE_DIGITS:
+				setEscapeDigits((DynamicValue)null);
+				return;
+			case ActionstepPackage.MULTI_STREAM_AUDIO__AUDIO_FILENAMES:
+				getAudioFilenames().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.MULTI_STREAM_AUDIO__CALL1:
-        return call1 != null;
-      case ActionstepPackage.MULTI_STREAM_AUDIO__ESCAPE_DIGITS:
-        return escapeDigits != null;
-      case ActionstepPackage.MULTI_STREAM_AUDIO__AUDIO_FILENAMES:
-        return audioFilenames != null && !audioFilenames.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.MULTI_STREAM_AUDIO__CALL1:
+				return call1 != null;
+			case ActionstepPackage.MULTI_STREAM_AUDIO__ESCAPE_DIGITS:
+				return escapeDigits != null;
+			case ActionstepPackage.MULTI_STREAM_AUDIO__AUDIO_FILENAMES:
+				return audioFilenames != null && !audioFilenames.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (derivedFeatureID) {
-        case ActionstepPackage.MULTI_STREAM_AUDIO__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (derivedFeatureID) {
+				case ActionstepPackage.MULTI_STREAM_AUDIO__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (baseFeatureID) {
-        case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.MULTI_STREAM_AUDIO__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (baseFeatureID) {
+				case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.MULTI_STREAM_AUDIO__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
 
 } //MultiStreamAudioImpl

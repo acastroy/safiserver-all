@@ -32,58 +32,58 @@ public class AsteriskSafletContextImpl extends SafletContextImpl implements Aste
 
   private final static Logger log = Logger.getLogger(AsteriskSafletContextImpl.class);
   /**
-   * The default value of the '{@link #getBufferedDigits() <em>Buffered Digits</em>}' attribute.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @see #getBufferedDigits()
-   * @generated
-   * @ordered
-   */
+	 * The default value of the '{@link #getBufferedDigits() <em>Buffered Digits</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see #getBufferedDigits()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String BUFFERED_DIGITS_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getBufferedDigits() <em>Buffered Digits</em>}' attribute.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @see #getBufferedDigits()
-   * @generated
-   * @ordered
-   */
+	 * The cached value of the '{@link #getBufferedDigits() <em>Buffered Digits</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see #getBufferedDigits()
+	 * @generated
+	 * @ordered
+	 */
   protected String bufferedDigits = BUFFERED_DIGITS_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   protected AsteriskSafletContextImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return SafletPackage.Literals.ASTERISK_SAFLET_CONTEXT;
-  }
+		return SafletPackage.Literals.ASTERISK_SAFLET_CONTEXT;
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public String getBufferedDigits() {
-    return bufferedDigits;
-  }
+		return bufferedDigits;
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public void setBufferedDigits(String newBufferedDigits) {
-    String oldBufferedDigits = bufferedDigits;
-    bufferedDigits = newBufferedDigits;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SafletPackage.ASTERISK_SAFLET_CONTEXT__BUFFERED_DIGITS, oldBufferedDigits, bufferedDigits));
-  }
+		String oldBufferedDigits = bufferedDigits;
+		bufferedDigits = newBufferedDigits;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SafletPackage.ASTERISK_SAFLET_CONTEXT__BUFFERED_DIGITS, oldBufferedDigits, bufferedDigits));
+	}
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -120,73 +120,73 @@ public class AsteriskSafletContextImpl extends SafletContextImpl implements Aste
   }
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case SafletPackage.ASTERISK_SAFLET_CONTEXT__BUFFERED_DIGITS:
-        return getBufferedDigits();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case SafletPackage.ASTERISK_SAFLET_CONTEXT__BUFFERED_DIGITS:
+				return getBufferedDigits();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case SafletPackage.ASTERISK_SAFLET_CONTEXT__BUFFERED_DIGITS:
-        setBufferedDigits((String)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case SafletPackage.ASTERISK_SAFLET_CONTEXT__BUFFERED_DIGITS:
+				setBufferedDigits((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case SafletPackage.ASTERISK_SAFLET_CONTEXT__BUFFERED_DIGITS:
-        setBufferedDigits(BUFFERED_DIGITS_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case SafletPackage.ASTERISK_SAFLET_CONTEXT__BUFFERED_DIGITS:
+				setBufferedDigits(BUFFERED_DIGITS_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case SafletPackage.ASTERISK_SAFLET_CONTEXT__BUFFERED_DIGITS:
-        return BUFFERED_DIGITS_EDEFAULT == null ? bufferedDigits != null : !BUFFERED_DIGITS_EDEFAULT.equals(bufferedDigits);
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case SafletPackage.ASTERISK_SAFLET_CONTEXT__BUFFERED_DIGITS:
+				return BUFFERED_DIGITS_EDEFAULT == null ? bufferedDigits != null : !BUFFERED_DIGITS_EDEFAULT.equals(bufferedDigits);
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (bufferedDigits: ");
-    result.append(bufferedDigits);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (bufferedDigits: ");
+		result.append(bufferedDigits);
+		result.append(')');
+		return result.toString();
+	}
 
   
 } // AsteriskSafletContextImpl

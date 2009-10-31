@@ -35,282 +35,282 @@ import com.safi.core.actionstep.impl.ActionStepImpl;
  */
 public class WaitExtenImpl extends ActionStepImpl implements WaitExten {
   /**
-   * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCall1()
-   * @generated
-   * @ordered
-   */
+	 * @see #getCall1()
+	 * @generated
+	 * @ordered
+	 */
   protected Call call1;
 
   /**
-   * The default value of the '{@link #getMusicOnHoldClass() <em>Music On Hold Class</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getMusicOnHoldClass() <em>Music On Hold Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMusicOnHoldClass()
-   * @generated
-   * @ordered
-   */
+	 * @see #getMusicOnHoldClass()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String MUSIC_ON_HOLD_CLASS_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getMusicOnHoldClass() <em>Music On Hold Class</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getMusicOnHoldClass() <em>Music On Hold Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMusicOnHoldClass()
-   * @generated
-   * @ordered
-   */
+	 * @see #getMusicOnHoldClass()
+	 * @generated
+	 * @ordered
+	 */
   protected String musicOnHoldClass = MUSIC_ON_HOLD_CLASS_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getTimeout() <em>Timeout</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getTimeout() <em>Timeout</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTimeout()
-   * @generated
-   * @ordered
-   */
+	 * @see #getTimeout()
+	 * @generated
+	 * @ordered
+	 */
   protected static final int TIMEOUT_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getTimeout() <em>Timeout</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTimeout() <em>Timeout</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTimeout()
-   * @generated
-   * @ordered
-   */
+	 * @see #getTimeout()
+	 * @generated
+	 * @ordered
+	 */
   protected int timeout = TIMEOUT_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected WaitExtenImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionstepPackage.Literals.WAIT_EXTEN;
-  }
+		return ActionstepPackage.Literals.WAIT_EXTEN;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call getCall1() {
-    if (call1 != null && call1.eIsProxy()) {
-      InternalEObject oldCall1 = (InternalEObject)call1;
-      call1 = (Call)eResolveProxy(oldCall1);
-      if (call1 != oldCall1) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.WAIT_EXTEN__CALL1, oldCall1, call1));
-      }
-    }
-    return call1;
-  }
+		if (call1 != null && call1.eIsProxy()) {
+			InternalEObject oldCall1 = (InternalEObject)call1;
+			call1 = (Call)eResolveProxy(oldCall1);
+			if (call1 != oldCall1) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.WAIT_EXTEN__CALL1, oldCall1, call1));
+			}
+		}
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call basicGetCall1() {
-    return call1;
-  }
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setCall1(Call newCall1) {
-    Call oldCall1 = call1;
-    call1 = newCall1;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.WAIT_EXTEN__CALL1, oldCall1, call1));
-  }
+		Call oldCall1 = call1;
+		call1 = newCall1;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.WAIT_EXTEN__CALL1, oldCall1, call1));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getMusicOnHoldClass() {
-    return musicOnHoldClass;
-  }
+		return musicOnHoldClass;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setMusicOnHoldClass(String newMusicOnHoldClass) {
-    String oldMusicOnHoldClass = musicOnHoldClass;
-    musicOnHoldClass = newMusicOnHoldClass;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.WAIT_EXTEN__MUSIC_ON_HOLD_CLASS, oldMusicOnHoldClass, musicOnHoldClass));
-  }
+		String oldMusicOnHoldClass = musicOnHoldClass;
+		musicOnHoldClass = newMusicOnHoldClass;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.WAIT_EXTEN__MUSIC_ON_HOLD_CLASS, oldMusicOnHoldClass, musicOnHoldClass));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public int getTimeout() {
-    return timeout;
-  }
+		return timeout;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setTimeout(int newTimeout) {
-    int oldTimeout = timeout;
-    timeout = newTimeout;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.WAIT_EXTEN__TIMEOUT, oldTimeout, timeout));
-  }
+		int oldTimeout = timeout;
+		timeout = newTimeout;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.WAIT_EXTEN__TIMEOUT, oldTimeout, timeout));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionstepPackage.WAIT_EXTEN__CALL1:
-        if (resolve) return getCall1();
-        return basicGetCall1();
-      case ActionstepPackage.WAIT_EXTEN__MUSIC_ON_HOLD_CLASS:
-        return getMusicOnHoldClass();
-      case ActionstepPackage.WAIT_EXTEN__TIMEOUT:
-        return new Integer(getTimeout());
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionstepPackage.WAIT_EXTEN__CALL1:
+				if (resolve) return getCall1();
+				return basicGetCall1();
+			case ActionstepPackage.WAIT_EXTEN__MUSIC_ON_HOLD_CLASS:
+				return getMusicOnHoldClass();
+			case ActionstepPackage.WAIT_EXTEN__TIMEOUT:
+				return getTimeout();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionstepPackage.WAIT_EXTEN__CALL1:
-        setCall1((Call)newValue);
-        return;
-      case ActionstepPackage.WAIT_EXTEN__MUSIC_ON_HOLD_CLASS:
-        setMusicOnHoldClass((String)newValue);
-        return;
-      case ActionstepPackage.WAIT_EXTEN__TIMEOUT:
-        setTimeout(((Integer)newValue).intValue());
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionstepPackage.WAIT_EXTEN__CALL1:
+				setCall1((Call)newValue);
+				return;
+			case ActionstepPackage.WAIT_EXTEN__MUSIC_ON_HOLD_CLASS:
+				setMusicOnHoldClass((String)newValue);
+				return;
+			case ActionstepPackage.WAIT_EXTEN__TIMEOUT:
+				setTimeout((Integer)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.WAIT_EXTEN__CALL1:
-        setCall1((Call)null);
-        return;
-      case ActionstepPackage.WAIT_EXTEN__MUSIC_ON_HOLD_CLASS:
-        setMusicOnHoldClass(MUSIC_ON_HOLD_CLASS_EDEFAULT);
-        return;
-      case ActionstepPackage.WAIT_EXTEN__TIMEOUT:
-        setTimeout(TIMEOUT_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.WAIT_EXTEN__CALL1:
+				setCall1((Call)null);
+				return;
+			case ActionstepPackage.WAIT_EXTEN__MUSIC_ON_HOLD_CLASS:
+				setMusicOnHoldClass(MUSIC_ON_HOLD_CLASS_EDEFAULT);
+				return;
+			case ActionstepPackage.WAIT_EXTEN__TIMEOUT:
+				setTimeout(TIMEOUT_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.WAIT_EXTEN__CALL1:
-        return call1 != null;
-      case ActionstepPackage.WAIT_EXTEN__MUSIC_ON_HOLD_CLASS:
-        return MUSIC_ON_HOLD_CLASS_EDEFAULT == null ? musicOnHoldClass != null : !MUSIC_ON_HOLD_CLASS_EDEFAULT.equals(musicOnHoldClass);
-      case ActionstepPackage.WAIT_EXTEN__TIMEOUT:
-        return timeout != TIMEOUT_EDEFAULT;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.WAIT_EXTEN__CALL1:
+				return call1 != null;
+			case ActionstepPackage.WAIT_EXTEN__MUSIC_ON_HOLD_CLASS:
+				return MUSIC_ON_HOLD_CLASS_EDEFAULT == null ? musicOnHoldClass != null : !MUSIC_ON_HOLD_CLASS_EDEFAULT.equals(musicOnHoldClass);
+			case ActionstepPackage.WAIT_EXTEN__TIMEOUT:
+				return timeout != TIMEOUT_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (derivedFeatureID) {
-        case ActionstepPackage.WAIT_EXTEN__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (derivedFeatureID) {
+				case ActionstepPackage.WAIT_EXTEN__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (baseFeatureID) {
-        case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.WAIT_EXTEN__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (baseFeatureID) {
+				case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.WAIT_EXTEN__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (musicOnHoldClass: ");
-    result.append(musicOnHoldClass);
-    result.append(", timeout: ");
-    result.append(timeout);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (musicOnHoldClass: ");
+		result.append(musicOnHoldClass);
+		result.append(", timeout: ");
+		result.append(timeout);
+		result.append(')');
+		return result.toString();
+	}
 
 } //WaitExtenImpl

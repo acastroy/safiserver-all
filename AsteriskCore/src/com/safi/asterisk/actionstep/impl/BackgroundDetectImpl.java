@@ -44,103 +44,103 @@ import com.safi.core.saflet.SafletContext;
  */
 public class BackgroundDetectImpl extends ActionStepImpl implements BackgroundDetect {
   /**
-   * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCall1()
-   * @generated
-   * @ordered
-   */
+	 * @see #getCall1()
+	 * @generated
+	 * @ordered
+	 */
   protected Call call1;
 
   /**
-   * The default value of the '{@link #getFilename() <em>Filename</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getFilename() <em>Filename</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFilename()
-   * @generated
-   * @ordered
-   */
+	 * @see #getFilename()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String FILENAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getFilename() <em>Filename</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getFilename() <em>Filename</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFilename()
-   * @generated
-   * @ordered
-   */
+	 * @see #getFilename()
+	 * @generated
+	 * @ordered
+	 */
   protected String filename = FILENAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getSilence() <em>Silence</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getSilence() <em>Silence</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSilence()
-   * @generated
-   * @ordered
-   */
+	 * @see #getSilence()
+	 * @generated
+	 * @ordered
+	 */
   protected static final int SILENCE_EDEFAULT = 1000;
 
   /**
-   * The cached value of the '{@link #getSilence() <em>Silence</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSilence() <em>Silence</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSilence()
-   * @generated
-   * @ordered
-   */
+	 * @see #getSilence()
+	 * @generated
+	 * @ordered
+	 */
   protected int silence = SILENCE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getMinTime() <em>Min Time</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getMinTime() <em>Min Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMinTime()
-   * @generated
-   * @ordered
-   */
+	 * @see #getMinTime()
+	 * @generated
+	 * @ordered
+	 */
   protected static final int MIN_TIME_EDEFAULT = 100;
 
   /**
-   * The cached value of the '{@link #getMinTime() <em>Min Time</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getMinTime() <em>Min Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMinTime()
-   * @generated
-   * @ordered
-   */
+	 * @see #getMinTime()
+	 * @generated
+	 * @ordered
+	 */
   protected int minTime = MIN_TIME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getMaxTime() <em>Max Time</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getMaxTime() <em>Max Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMaxTime()
-   * @generated
-   * @ordered
-   */
+	 * @see #getMaxTime()
+	 * @generated
+	 * @ordered
+	 */
   protected static final int MAX_TIME_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getMaxTime() <em>Max Time</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getMaxTime() <em>Max Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMaxTime()
-   * @generated
-   * @ordered
-   */
+	 * @see #getMaxTime()
+	 * @generated
+	 * @ordered
+	 */
   protected int maxTime = MAX_TIME_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected BackgroundDetectImpl() {
-    super();
-  }
+		super();
+	}
 
   @Override
   public void beginProcessing(SafletContext context) throws ActionStepException {
@@ -215,289 +215,289 @@ public class BackgroundDetectImpl extends ActionStepImpl implements BackgroundDe
     getOutputs().add(o);
   }
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionstepPackage.Literals.BACKGROUND_DETECT;
-  }
+		return ActionstepPackage.Literals.BACKGROUND_DETECT;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call getCall1() {
-    if (call1 != null && call1.eIsProxy()) {
-      InternalEObject oldCall1 = (InternalEObject)call1;
-      call1 = (Call)eResolveProxy(oldCall1);
-      if (call1 != oldCall1) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.BACKGROUND_DETECT__CALL1, oldCall1, call1));
-      }
-    }
-    return call1;
-  }
+		if (call1 != null && call1.eIsProxy()) {
+			InternalEObject oldCall1 = (InternalEObject)call1;
+			call1 = (Call)eResolveProxy(oldCall1);
+			if (call1 != oldCall1) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.BACKGROUND_DETECT__CALL1, oldCall1, call1));
+			}
+		}
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call basicGetCall1() {
-    return call1;
-  }
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setCall1(Call newCall1) {
-    Call oldCall1 = call1;
-    call1 = newCall1;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND_DETECT__CALL1, oldCall1, call1));
-  }
+		Call oldCall1 = call1;
+		call1 = newCall1;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND_DETECT__CALL1, oldCall1, call1));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getFilename() {
-    return filename;
-  }
+		return filename;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setFilename(String newFilename) {
-    String oldFilename = filename;
-    filename = newFilename;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND_DETECT__FILENAME, oldFilename, filename));
-  }
+		String oldFilename = filename;
+		filename = newFilename;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND_DETECT__FILENAME, oldFilename, filename));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public int getSilence() {
-    return silence;
-  }
+		return silence;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setSilence(int newSilence) {
-    int oldSilence = silence;
-    silence = newSilence;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND_DETECT__SILENCE, oldSilence, silence));
-  }
+		int oldSilence = silence;
+		silence = newSilence;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND_DETECT__SILENCE, oldSilence, silence));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public int getMinTime() {
-    return minTime;
-  }
+		return minTime;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setMinTime(int newMinTime) {
-    int oldMinTime = minTime;
-    minTime = newMinTime;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND_DETECT__MIN_TIME, oldMinTime, minTime));
-  }
+		int oldMinTime = minTime;
+		minTime = newMinTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND_DETECT__MIN_TIME, oldMinTime, minTime));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public int getMaxTime() {
-    return maxTime;
-  }
+		return maxTime;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setMaxTime(int newMaxTime) {
-    int oldMaxTime = maxTime;
-    maxTime = newMaxTime;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND_DETECT__MAX_TIME, oldMaxTime, maxTime));
-  }
+		int oldMaxTime = maxTime;
+		maxTime = newMaxTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND_DETECT__MAX_TIME, oldMaxTime, maxTime));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionstepPackage.BACKGROUND_DETECT__CALL1:
-        if (resolve) return getCall1();
-        return basicGetCall1();
-      case ActionstepPackage.BACKGROUND_DETECT__FILENAME:
-        return getFilename();
-      case ActionstepPackage.BACKGROUND_DETECT__SILENCE:
-        return new Integer(getSilence());
-      case ActionstepPackage.BACKGROUND_DETECT__MIN_TIME:
-        return new Integer(getMinTime());
-      case ActionstepPackage.BACKGROUND_DETECT__MAX_TIME:
-        return new Integer(getMaxTime());
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionstepPackage.BACKGROUND_DETECT__CALL1:
+				if (resolve) return getCall1();
+				return basicGetCall1();
+			case ActionstepPackage.BACKGROUND_DETECT__FILENAME:
+				return getFilename();
+			case ActionstepPackage.BACKGROUND_DETECT__SILENCE:
+				return getSilence();
+			case ActionstepPackage.BACKGROUND_DETECT__MIN_TIME:
+				return getMinTime();
+			case ActionstepPackage.BACKGROUND_DETECT__MAX_TIME:
+				return getMaxTime();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionstepPackage.BACKGROUND_DETECT__CALL1:
-        setCall1((Call)newValue);
-        return;
-      case ActionstepPackage.BACKGROUND_DETECT__FILENAME:
-        setFilename((String)newValue);
-        return;
-      case ActionstepPackage.BACKGROUND_DETECT__SILENCE:
-        setSilence(((Integer)newValue).intValue());
-        return;
-      case ActionstepPackage.BACKGROUND_DETECT__MIN_TIME:
-        setMinTime(((Integer)newValue).intValue());
-        return;
-      case ActionstepPackage.BACKGROUND_DETECT__MAX_TIME:
-        setMaxTime(((Integer)newValue).intValue());
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionstepPackage.BACKGROUND_DETECT__CALL1:
+				setCall1((Call)newValue);
+				return;
+			case ActionstepPackage.BACKGROUND_DETECT__FILENAME:
+				setFilename((String)newValue);
+				return;
+			case ActionstepPackage.BACKGROUND_DETECT__SILENCE:
+				setSilence((Integer)newValue);
+				return;
+			case ActionstepPackage.BACKGROUND_DETECT__MIN_TIME:
+				setMinTime((Integer)newValue);
+				return;
+			case ActionstepPackage.BACKGROUND_DETECT__MAX_TIME:
+				setMaxTime((Integer)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.BACKGROUND_DETECT__CALL1:
-        setCall1((Call)null);
-        return;
-      case ActionstepPackage.BACKGROUND_DETECT__FILENAME:
-        setFilename(FILENAME_EDEFAULT);
-        return;
-      case ActionstepPackage.BACKGROUND_DETECT__SILENCE:
-        setSilence(SILENCE_EDEFAULT);
-        return;
-      case ActionstepPackage.BACKGROUND_DETECT__MIN_TIME:
-        setMinTime(MIN_TIME_EDEFAULT);
-        return;
-      case ActionstepPackage.BACKGROUND_DETECT__MAX_TIME:
-        setMaxTime(MAX_TIME_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.BACKGROUND_DETECT__CALL1:
+				setCall1((Call)null);
+				return;
+			case ActionstepPackage.BACKGROUND_DETECT__FILENAME:
+				setFilename(FILENAME_EDEFAULT);
+				return;
+			case ActionstepPackage.BACKGROUND_DETECT__SILENCE:
+				setSilence(SILENCE_EDEFAULT);
+				return;
+			case ActionstepPackage.BACKGROUND_DETECT__MIN_TIME:
+				setMinTime(MIN_TIME_EDEFAULT);
+				return;
+			case ActionstepPackage.BACKGROUND_DETECT__MAX_TIME:
+				setMaxTime(MAX_TIME_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.BACKGROUND_DETECT__CALL1:
-        return call1 != null;
-      case ActionstepPackage.BACKGROUND_DETECT__FILENAME:
-        return FILENAME_EDEFAULT == null ? filename != null : !FILENAME_EDEFAULT.equals(filename);
-      case ActionstepPackage.BACKGROUND_DETECT__SILENCE:
-        return silence != SILENCE_EDEFAULT;
-      case ActionstepPackage.BACKGROUND_DETECT__MIN_TIME:
-        return minTime != MIN_TIME_EDEFAULT;
-      case ActionstepPackage.BACKGROUND_DETECT__MAX_TIME:
-        return maxTime != MAX_TIME_EDEFAULT;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.BACKGROUND_DETECT__CALL1:
+				return call1 != null;
+			case ActionstepPackage.BACKGROUND_DETECT__FILENAME:
+				return FILENAME_EDEFAULT == null ? filename != null : !FILENAME_EDEFAULT.equals(filename);
+			case ActionstepPackage.BACKGROUND_DETECT__SILENCE:
+				return silence != SILENCE_EDEFAULT;
+			case ActionstepPackage.BACKGROUND_DETECT__MIN_TIME:
+				return minTime != MIN_TIME_EDEFAULT;
+			case ActionstepPackage.BACKGROUND_DETECT__MAX_TIME:
+				return maxTime != MAX_TIME_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (derivedFeatureID) {
-        case ActionstepPackage.BACKGROUND_DETECT__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (derivedFeatureID) {
+				case ActionstepPackage.BACKGROUND_DETECT__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (baseFeatureID) {
-        case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.BACKGROUND_DETECT__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (baseFeatureID) {
+				case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.BACKGROUND_DETECT__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (filename: ");
-    result.append(filename);
-    result.append(", silence: ");
-    result.append(silence);
-    result.append(", minTime: ");
-    result.append(minTime);
-    result.append(", maxTime: ");
-    result.append(maxTime);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (filename: ");
+		result.append(filename);
+		result.append(", silence: ");
+		result.append(silence);
+		result.append(", minTime: ");
+		result.append(minTime);
+		result.append(", maxTime: ");
+		result.append(maxTime);
+		result.append(')');
+		return result.toString();
+	}
 
 } //BackgroundDetectImpl

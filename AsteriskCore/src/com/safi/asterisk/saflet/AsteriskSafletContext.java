@@ -26,45 +26,45 @@ import com.safi.core.saflet.SafletContext;
  */
 public interface AsteriskSafletContext extends SafletContext {
   /**
-   * Returns the value of the '<em><b>Buffered Digits</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Buffered Digits</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Buffered Digits</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Buffered Digits</em>' attribute.
-   * @see #setBufferedDigits(String)
-   * @see com.safi.asterisk.saflet.SafletPackage#getAsteriskSafletContext_BufferedDigits()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Buffered Digits</em>' attribute.
+	 * @see #setBufferedDigits(String)
+	 * @see com.safi.asterisk.saflet.SafletPackage#getAsteriskSafletContext_BufferedDigits()
+	 * @model
+	 * @generated
+	 */
   String getBufferedDigits();
 
   /**
-   * Sets the value of the '{@link com.safi.asterisk.saflet.AsteriskSafletContext#getBufferedDigits <em>Buffered Digits</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.asterisk.saflet.AsteriskSafletContext#getBufferedDigits <em>Buffered Digits</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Buffered Digits</em>' attribute.
-   * @see #getBufferedDigits()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Buffered Digits</em>' attribute.
+	 * @see #getBufferedDigits()
+	 * @generated
+	 */
   void setBufferedDigits(String value);
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @model
-   * @generated
-   */
+	 * @model
+	 * @generated
+	 */
   void appendBufferedDigits(String digits);
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @model
-   * @generated
-   */
+	 * @model
+	 * @generated
+	 */
   String flushBufferedDigits();
 
   char popBufferedDigit();

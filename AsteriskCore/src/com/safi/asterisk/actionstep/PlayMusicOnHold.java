@@ -28,30 +28,30 @@ import com.safi.core.actionstep.DynamicValue;
  */
 public interface PlayMusicOnHold extends ActionStep, CallConsumer1 {
   /**
-   * Returns the value of the '<em><b>Hold Class</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Hold Class</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Hold Class</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Hold Class</em>' containment reference.
-   * @see #setHoldClass(DynamicValue)
-   * @see com.safi.asterisk.actionstep.ActionstepPackage#getPlayMusicOnHold_HoldClass()
-   * @model containment="true" ordered="false"
-   *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The Asterisk music class to play.' expectedReturnType='Text' helperClass=''"
-   * @generated
-   */
+	 * @return the value of the '<em>Hold Class</em>' containment reference.
+	 * @see #setHoldClass(DynamicValue)
+	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getPlayMusicOnHold_HoldClass()
+	 * @model containment="true" ordered="false"
+	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The Asterisk music class to play.' expectedReturnType='Text' helperClass=''"
+	 * @generated
+	 */
   DynamicValue getHoldClass();
 
   /**
-   * Sets the value of the '{@link com.safi.asterisk.actionstep.PlayMusicOnHold#getHoldClass <em>Hold Class</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.asterisk.actionstep.PlayMusicOnHold#getHoldClass <em>Hold Class</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Hold Class</em>' containment reference.
-   * @see #getHoldClass()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Hold Class</em>' containment reference.
+	 * @see #getHoldClass()
+	 * @generated
+	 */
   void setHoldClass(DynamicValue value);
 
 } // PlayMusicOnHold

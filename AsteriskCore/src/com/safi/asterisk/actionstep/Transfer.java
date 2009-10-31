@@ -30,85 +30,85 @@ import com.safi.core.actionstep.DynamicValue;
  */
 public interface Transfer extends ActionStep, CallConsumer2 {
   /**
-   * Returns the value of the '<em><b>Context</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Context</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Context</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Context</em>' containment reference.
-   * @see #setContext(DynamicValue)
-   * @see com.safi.asterisk.actionstep.ActionstepPackage#getTransfer_Context()
-   * @model containment="true" ordered="false"
-   *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The context of the current call will be set to this text value.' expectedReturnType='Text' helperClass=''"
-   * @generated
-   */
+	 * @return the value of the '<em>Context</em>' containment reference.
+	 * @see #setContext(DynamicValue)
+	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getTransfer_Context()
+	 * @model containment="true" ordered="false"
+	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The context of the current call will be set to this text value.' expectedReturnType='Text' helperClass=''"
+	 * @generated
+	 */
   DynamicValue getContext();
 
   /**
-   * Sets the value of the '{@link com.safi.asterisk.actionstep.Transfer#getContext <em>Context</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.asterisk.actionstep.Transfer#getContext <em>Context</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Context</em>' containment reference.
-   * @see #getContext()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Context</em>' containment reference.
+	 * @see #getContext()
+	 * @generated
+	 */
   void setContext(DynamicValue value);
 
   /**
-   * Returns the value of the '<em><b>Extension</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Extension</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Extension</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Extension</em>' containment reference.
-   * @see #setExtension(DynamicValue)
-   * @see com.safi.asterisk.actionstep.ActionstepPackage#getTransfer_Extension()
-   * @model containment="true" ordered="false"
-   *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The context of the current call will be set to this text value.' expectedReturnType='Text' helperClass=''"
-   *        annotation="Required criteria='non-null'"
-   * @generated
-   */
+	 * @return the value of the '<em>Extension</em>' containment reference.
+	 * @see #setExtension(DynamicValue)
+	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getTransfer_Extension()
+	 * @model containment="true" ordered="false"
+	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The context of the current call will be set to this text value.' expectedReturnType='Text' helperClass=''"
+	 *        annotation="Required criteria='non-null'"
+	 * @generated
+	 */
   DynamicValue getExtension();
 
   /**
-   * Sets the value of the '{@link com.safi.asterisk.actionstep.Transfer#getExtension <em>Extension</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.asterisk.actionstep.Transfer#getExtension <em>Extension</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Extension</em>' containment reference.
-   * @see #getExtension()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Extension</em>' containment reference.
+	 * @see #getExtension()
+	 * @generated
+	 */
   void setExtension(DynamicValue value);
 
   /**
-   * Returns the value of the '<em><b>Priority</b></em>' attribute.
-   * The default value is <code>"1"</code>.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Priority</b></em>' attribute.
+	 * The default value is <code>"1"</code>.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Priority</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Priority</em>' attribute.
-   * @see #setPriority(int)
-   * @see com.safi.asterisk.actionstep.ActionstepPackage#getTransfer_Priority()
-   * @model default="1" ordered="false"
-   * @generated
-   */
+	 * @return the value of the '<em>Priority</em>' attribute.
+	 * @see #setPriority(int)
+	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getTransfer_Priority()
+	 * @model default="1" ordered="false"
+	 * @generated
+	 */
   int getPriority();
 
   /**
-   * Sets the value of the '{@link com.safi.asterisk.actionstep.Transfer#getPriority <em>Priority</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.asterisk.actionstep.Transfer#getPriority <em>Priority</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Priority</em>' attribute.
-   * @see #getPriority()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Priority</em>' attribute.
+	 * @see #getPriority()
+	 * @generated
+	 */
   void setPriority(int value);
 
 } // Transfer

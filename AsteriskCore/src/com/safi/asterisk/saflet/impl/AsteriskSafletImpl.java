@@ -31,23 +31,23 @@ public class AsteriskSafletImpl extends SafletImpl implements AsteriskSaflet {
   private final static Logger log = Logger.getLogger(AsteriskSafletImpl.class);
   
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected AsteriskSafletImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return SafletPackage.Literals.ASTERISK_SAFLET;
-  }
+		return SafletPackage.Literals.ASTERISK_SAFLET;
+	}
 
   @Override
   public String getUniqueCallName(String prefix) {

@@ -40,465 +40,465 @@ import com.safi.core.actionstep.impl.ActionStepImpl;
  */
 public class BackgroundImpl extends ActionStepImpl implements Background {
   /**
-   * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCall1()
-   * @generated
-   * @ordered
-   */
+	 * @see #getCall1()
+	 * @generated
+	 * @ordered
+	 */
   protected Call call1;
 
   /**
-   * The cached value of the '{@link #getFilenames() <em>Filenames</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getFilenames() <em>Filenames</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFilenames()
-   * @generated
-   * @ordered
-   */
+	 * @see #getFilenames()
+	 * @generated
+	 * @ordered
+	 */
   protected DynamicValue filenames;
 
   /**
-   * The default value of the '{@link #isPlayOnlyIfAnswered() <em>Play Only If Answered</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #isPlayOnlyIfAnswered() <em>Play Only If Answered</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isPlayOnlyIfAnswered()
-   * @generated
-   * @ordered
-   */
+	 * @see #isPlayOnlyIfAnswered()
+	 * @generated
+	 * @ordered
+	 */
   protected static final boolean PLAY_ONLY_IF_ANSWERED_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isPlayOnlyIfAnswered() <em>Play Only If Answered</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #isPlayOnlyIfAnswered() <em>Play Only If Answered</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isPlayOnlyIfAnswered()
-   * @generated
-   * @ordered
-   */
+	 * @see #isPlayOnlyIfAnswered()
+	 * @generated
+	 * @ordered
+	 */
   protected boolean playOnlyIfAnswered = PLAY_ONLY_IF_ANSWERED_EDEFAULT;
 
   /**
-   * The default value of the '{@link #isAnswerIfNecessary() <em>Answer If Necessary</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #isAnswerIfNecessary() <em>Answer If Necessary</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isAnswerIfNecessary()
-   * @generated
-   * @ordered
-   */
+	 * @see #isAnswerIfNecessary()
+	 * @generated
+	 * @ordered
+	 */
   protected static final boolean ANSWER_IF_NECESSARY_EDEFAULT = true;
 
   /**
-   * The cached value of the '{@link #isAnswerIfNecessary() <em>Answer If Necessary</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #isAnswerIfNecessary() <em>Answer If Necessary</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isAnswerIfNecessary()
-   * @generated
-   * @ordered
-   */
+	 * @see #isAnswerIfNecessary()
+	 * @generated
+	 * @ordered
+	 */
   protected boolean answerIfNecessary = ANSWER_IF_NECESSARY_EDEFAULT;
 
   /**
-   * The default value of the '{@link #isMatchOnlySingleDigit() <em>Match Only Single Digit</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #isMatchOnlySingleDigit() <em>Match Only Single Digit</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isMatchOnlySingleDigit()
-   * @generated
-   * @ordered
-   */
+	 * @see #isMatchOnlySingleDigit()
+	 * @generated
+	 * @ordered
+	 */
   protected static final boolean MATCH_ONLY_SINGLE_DIGIT_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isMatchOnlySingleDigit() <em>Match Only Single Digit</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #isMatchOnlySingleDigit() <em>Match Only Single Digit</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isMatchOnlySingleDigit()
-   * @generated
-   * @ordered
-   */
+	 * @see #isMatchOnlySingleDigit()
+	 * @generated
+	 * @ordered
+	 */
   protected boolean matchOnlySingleDigit = MATCH_ONLY_SINGLE_DIGIT_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getContext() <em>Context</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getContext() <em>Context</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getContext()
-   * @generated
-   * @ordered
-   */
+	 * @see #getContext()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String CONTEXT_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getContext() <em>Context</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getContext() <em>Context</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getContext()
-   * @generated
-   * @ordered
-   */
+	 * @see #getContext()
+	 * @generated
+	 * @ordered
+	 */
   protected String context = CONTEXT_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected BackgroundImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionstepPackage.Literals.BACKGROUND;
-  }
+		return ActionstepPackage.Literals.BACKGROUND;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call getCall1() {
-    if (call1 != null && call1.eIsProxy()) {
-      InternalEObject oldCall1 = (InternalEObject)call1;
-      call1 = (Call)eResolveProxy(oldCall1);
-      if (call1 != oldCall1) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.BACKGROUND__CALL1, oldCall1, call1));
-      }
-    }
-    return call1;
-  }
+		if (call1 != null && call1.eIsProxy()) {
+			InternalEObject oldCall1 = (InternalEObject)call1;
+			call1 = (Call)eResolveProxy(oldCall1);
+			if (call1 != oldCall1) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.BACKGROUND__CALL1, oldCall1, call1));
+			}
+		}
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call basicGetCall1() {
-    return call1;
-  }
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setCall1(Call newCall1) {
-    Call oldCall1 = call1;
-    call1 = newCall1;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND__CALL1, oldCall1, call1));
-  }
+		Call oldCall1 = call1;
+		call1 = newCall1;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND__CALL1, oldCall1, call1));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DynamicValue getFilenames() {
-    return filenames;
-  }
+		return filenames;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetFilenames(DynamicValue newFilenames, NotificationChain msgs) {
-    DynamicValue oldFilenames = filenames;
-    filenames = newFilenames;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND__FILENAMES, oldFilenames, newFilenames);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DynamicValue oldFilenames = filenames;
+		filenames = newFilenames;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND__FILENAMES, oldFilenames, newFilenames);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setFilenames(DynamicValue newFilenames) {
-    if (newFilenames != filenames) {
-      NotificationChain msgs = null;
-      if (filenames != null)
-        msgs = ((InternalEObject)filenames).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.BACKGROUND__FILENAMES, null, msgs);
-      if (newFilenames != null)
-        msgs = ((InternalEObject)newFilenames).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.BACKGROUND__FILENAMES, null, msgs);
-      msgs = basicSetFilenames(newFilenames, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND__FILENAMES, newFilenames, newFilenames));
-  }
+		if (newFilenames != filenames) {
+			NotificationChain msgs = null;
+			if (filenames != null)
+				msgs = ((InternalEObject)filenames).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.BACKGROUND__FILENAMES, null, msgs);
+			if (newFilenames != null)
+				msgs = ((InternalEObject)newFilenames).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.BACKGROUND__FILENAMES, null, msgs);
+			msgs = basicSetFilenames(newFilenames, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND__FILENAMES, newFilenames, newFilenames));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public boolean isPlayOnlyIfAnswered() {
-    return playOnlyIfAnswered;
-  }
+		return playOnlyIfAnswered;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setPlayOnlyIfAnswered(boolean newPlayOnlyIfAnswered) {
-    boolean oldPlayOnlyIfAnswered = playOnlyIfAnswered;
-    playOnlyIfAnswered = newPlayOnlyIfAnswered;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND__PLAY_ONLY_IF_ANSWERED, oldPlayOnlyIfAnswered, playOnlyIfAnswered));
-  }
+		boolean oldPlayOnlyIfAnswered = playOnlyIfAnswered;
+		playOnlyIfAnswered = newPlayOnlyIfAnswered;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND__PLAY_ONLY_IF_ANSWERED, oldPlayOnlyIfAnswered, playOnlyIfAnswered));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public boolean isAnswerIfNecessary() {
-    return answerIfNecessary;
-  }
+		return answerIfNecessary;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setAnswerIfNecessary(boolean newAnswerIfNecessary) {
-    boolean oldAnswerIfNecessary = answerIfNecessary;
-    answerIfNecessary = newAnswerIfNecessary;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND__ANSWER_IF_NECESSARY, oldAnswerIfNecessary, answerIfNecessary));
-  }
+		boolean oldAnswerIfNecessary = answerIfNecessary;
+		answerIfNecessary = newAnswerIfNecessary;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND__ANSWER_IF_NECESSARY, oldAnswerIfNecessary, answerIfNecessary));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public boolean isMatchOnlySingleDigit() {
-    return matchOnlySingleDigit;
-  }
+		return matchOnlySingleDigit;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setMatchOnlySingleDigit(boolean newMatchOnlySingleDigit) {
-    boolean oldMatchOnlySingleDigit = matchOnlySingleDigit;
-    matchOnlySingleDigit = newMatchOnlySingleDigit;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND__MATCH_ONLY_SINGLE_DIGIT, oldMatchOnlySingleDigit, matchOnlySingleDigit));
-  }
+		boolean oldMatchOnlySingleDigit = matchOnlySingleDigit;
+		matchOnlySingleDigit = newMatchOnlySingleDigit;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND__MATCH_ONLY_SINGLE_DIGIT, oldMatchOnlySingleDigit, matchOnlySingleDigit));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getContext() {
-    return context;
-  }
+		return context;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setContext(String newContext) {
-    String oldContext = context;
-    context = newContext;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND__CONTEXT, oldContext, context));
-  }
+		String oldContext = context;
+		context = newContext;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND__CONTEXT, oldContext, context));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionstepPackage.BACKGROUND__FILENAMES:
-        return basicSetFilenames(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionstepPackage.BACKGROUND__FILENAMES:
+				return basicSetFilenames(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionstepPackage.BACKGROUND__CALL1:
-        if (resolve) return getCall1();
-        return basicGetCall1();
-      case ActionstepPackage.BACKGROUND__FILENAMES:
-        return getFilenames();
-      case ActionstepPackage.BACKGROUND__PLAY_ONLY_IF_ANSWERED:
-        return isPlayOnlyIfAnswered() ? Boolean.TRUE : Boolean.FALSE;
-      case ActionstepPackage.BACKGROUND__ANSWER_IF_NECESSARY:
-        return isAnswerIfNecessary() ? Boolean.TRUE : Boolean.FALSE;
-      case ActionstepPackage.BACKGROUND__MATCH_ONLY_SINGLE_DIGIT:
-        return isMatchOnlySingleDigit() ? Boolean.TRUE : Boolean.FALSE;
-      case ActionstepPackage.BACKGROUND__CONTEXT:
-        return getContext();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionstepPackage.BACKGROUND__CALL1:
+				if (resolve) return getCall1();
+				return basicGetCall1();
+			case ActionstepPackage.BACKGROUND__FILENAMES:
+				return getFilenames();
+			case ActionstepPackage.BACKGROUND__PLAY_ONLY_IF_ANSWERED:
+				return isPlayOnlyIfAnswered();
+			case ActionstepPackage.BACKGROUND__ANSWER_IF_NECESSARY:
+				return isAnswerIfNecessary();
+			case ActionstepPackage.BACKGROUND__MATCH_ONLY_SINGLE_DIGIT:
+				return isMatchOnlySingleDigit();
+			case ActionstepPackage.BACKGROUND__CONTEXT:
+				return getContext();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionstepPackage.BACKGROUND__CALL1:
-        setCall1((Call)newValue);
-        return;
-      case ActionstepPackage.BACKGROUND__FILENAMES:
-        setFilenames((DynamicValue)newValue);
-        return;
-      case ActionstepPackage.BACKGROUND__PLAY_ONLY_IF_ANSWERED:
-        setPlayOnlyIfAnswered(((Boolean)newValue).booleanValue());
-        return;
-      case ActionstepPackage.BACKGROUND__ANSWER_IF_NECESSARY:
-        setAnswerIfNecessary(((Boolean)newValue).booleanValue());
-        return;
-      case ActionstepPackage.BACKGROUND__MATCH_ONLY_SINGLE_DIGIT:
-        setMatchOnlySingleDigit(((Boolean)newValue).booleanValue());
-        return;
-      case ActionstepPackage.BACKGROUND__CONTEXT:
-        setContext((String)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionstepPackage.BACKGROUND__CALL1:
+				setCall1((Call)newValue);
+				return;
+			case ActionstepPackage.BACKGROUND__FILENAMES:
+				setFilenames((DynamicValue)newValue);
+				return;
+			case ActionstepPackage.BACKGROUND__PLAY_ONLY_IF_ANSWERED:
+				setPlayOnlyIfAnswered((Boolean)newValue);
+				return;
+			case ActionstepPackage.BACKGROUND__ANSWER_IF_NECESSARY:
+				setAnswerIfNecessary((Boolean)newValue);
+				return;
+			case ActionstepPackage.BACKGROUND__MATCH_ONLY_SINGLE_DIGIT:
+				setMatchOnlySingleDigit((Boolean)newValue);
+				return;
+			case ActionstepPackage.BACKGROUND__CONTEXT:
+				setContext((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.BACKGROUND__CALL1:
-        setCall1((Call)null);
-        return;
-      case ActionstepPackage.BACKGROUND__FILENAMES:
-        setFilenames((DynamicValue)null);
-        return;
-      case ActionstepPackage.BACKGROUND__PLAY_ONLY_IF_ANSWERED:
-        setPlayOnlyIfAnswered(PLAY_ONLY_IF_ANSWERED_EDEFAULT);
-        return;
-      case ActionstepPackage.BACKGROUND__ANSWER_IF_NECESSARY:
-        setAnswerIfNecessary(ANSWER_IF_NECESSARY_EDEFAULT);
-        return;
-      case ActionstepPackage.BACKGROUND__MATCH_ONLY_SINGLE_DIGIT:
-        setMatchOnlySingleDigit(MATCH_ONLY_SINGLE_DIGIT_EDEFAULT);
-        return;
-      case ActionstepPackage.BACKGROUND__CONTEXT:
-        setContext(CONTEXT_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.BACKGROUND__CALL1:
+				setCall1((Call)null);
+				return;
+			case ActionstepPackage.BACKGROUND__FILENAMES:
+				setFilenames((DynamicValue)null);
+				return;
+			case ActionstepPackage.BACKGROUND__PLAY_ONLY_IF_ANSWERED:
+				setPlayOnlyIfAnswered(PLAY_ONLY_IF_ANSWERED_EDEFAULT);
+				return;
+			case ActionstepPackage.BACKGROUND__ANSWER_IF_NECESSARY:
+				setAnswerIfNecessary(ANSWER_IF_NECESSARY_EDEFAULT);
+				return;
+			case ActionstepPackage.BACKGROUND__MATCH_ONLY_SINGLE_DIGIT:
+				setMatchOnlySingleDigit(MATCH_ONLY_SINGLE_DIGIT_EDEFAULT);
+				return;
+			case ActionstepPackage.BACKGROUND__CONTEXT:
+				setContext(CONTEXT_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.BACKGROUND__CALL1:
-        return call1 != null;
-      case ActionstepPackage.BACKGROUND__FILENAMES:
-        return filenames != null;
-      case ActionstepPackage.BACKGROUND__PLAY_ONLY_IF_ANSWERED:
-        return playOnlyIfAnswered != PLAY_ONLY_IF_ANSWERED_EDEFAULT;
-      case ActionstepPackage.BACKGROUND__ANSWER_IF_NECESSARY:
-        return answerIfNecessary != ANSWER_IF_NECESSARY_EDEFAULT;
-      case ActionstepPackage.BACKGROUND__MATCH_ONLY_SINGLE_DIGIT:
-        return matchOnlySingleDigit != MATCH_ONLY_SINGLE_DIGIT_EDEFAULT;
-      case ActionstepPackage.BACKGROUND__CONTEXT:
-        return CONTEXT_EDEFAULT == null ? context != null : !CONTEXT_EDEFAULT.equals(context);
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.BACKGROUND__CALL1:
+				return call1 != null;
+			case ActionstepPackage.BACKGROUND__FILENAMES:
+				return filenames != null;
+			case ActionstepPackage.BACKGROUND__PLAY_ONLY_IF_ANSWERED:
+				return playOnlyIfAnswered != PLAY_ONLY_IF_ANSWERED_EDEFAULT;
+			case ActionstepPackage.BACKGROUND__ANSWER_IF_NECESSARY:
+				return answerIfNecessary != ANSWER_IF_NECESSARY_EDEFAULT;
+			case ActionstepPackage.BACKGROUND__MATCH_ONLY_SINGLE_DIGIT:
+				return matchOnlySingleDigit != MATCH_ONLY_SINGLE_DIGIT_EDEFAULT;
+			case ActionstepPackage.BACKGROUND__CONTEXT:
+				return CONTEXT_EDEFAULT == null ? context != null : !CONTEXT_EDEFAULT.equals(context);
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (derivedFeatureID) {
-        case ActionstepPackage.BACKGROUND__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (derivedFeatureID) {
+				case ActionstepPackage.BACKGROUND__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (baseFeatureID) {
-        case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.BACKGROUND__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (baseFeatureID) {
+				case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.BACKGROUND__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (playOnlyIfAnswered: ");
-    result.append(playOnlyIfAnswered);
-    result.append(", answerIfNecessary: ");
-    result.append(answerIfNecessary);
-    result.append(", matchOnlySingleDigit: ");
-    result.append(matchOnlySingleDigit);
-    result.append(", context: ");
-    result.append(context);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (playOnlyIfAnswered: ");
+		result.append(playOnlyIfAnswered);
+		result.append(", answerIfNecessary: ");
+		result.append(answerIfNecessary);
+		result.append(", matchOnlySingleDigit: ");
+		result.append(matchOnlySingleDigit);
+		result.append(", context: ");
+		result.append(context);
+		result.append(')');
+		return result.toString();
+	}
 
 } //BackgroundImpl

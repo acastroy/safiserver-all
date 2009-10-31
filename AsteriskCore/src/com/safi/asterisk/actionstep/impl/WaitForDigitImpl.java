@@ -42,63 +42,63 @@ import com.safi.core.saflet.SafletContext;
  */
 public class WaitForDigitImpl extends ActionStepImpl implements WaitForDigit {
   /**
-   * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCall1()
-   * @generated
-   * @ordered
-   */
+	 * @see #getCall1()
+	 * @generated
+	 * @ordered
+	 */
   protected Call call1;
 
   /**
-   * The default value of the '{@link #getTimeout() <em>Timeout</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getTimeout() <em>Timeout</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTimeout()
-   * @generated
-   * @ordered
-   */
+	 * @see #getTimeout()
+	 * @generated
+	 * @ordered
+	 */
   protected static final long TIMEOUT_EDEFAULT = -1L;
 
   /**
-   * The cached value of the '{@link #getTimeout() <em>Timeout</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTimeout() <em>Timeout</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTimeout()
-   * @generated
-   * @ordered
-   */
+	 * @see #getTimeout()
+	 * @generated
+	 * @ordered
+	 */
   protected long timeout = TIMEOUT_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getAcceptedDigits() <em>Accepted Digits</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getAcceptedDigits() <em>Accepted Digits</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAcceptedDigits()
-   * @generated
-   * @ordered
-   */
+	 * @see #getAcceptedDigits()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String ACCEPTED_DIGITS_EDEFAULT = "0123456789#";
 
   /**
-   * The cached value of the '{@link #getAcceptedDigits() <em>Accepted Digits</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getAcceptedDigits() <em>Accepted Digits</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAcceptedDigits()
-   * @generated
-   * @ordered
-   */
+	 * @see #getAcceptedDigits()
+	 * @generated
+	 * @ordered
+	 */
   protected String acceptedDigits = ACCEPTED_DIGITS_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected WaitForDigitImpl() {
-    super();
-  }
+		super();
+	}
 
   @Override
   public void beginProcessing(SafletContext context) throws ActionStepException {
@@ -148,223 +148,223 @@ public class WaitForDigitImpl extends ActionStepImpl implements WaitForDigit {
     getOutputs().add(o);
   }
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionstepPackage.Literals.WAIT_FOR_DIGIT;
-  }
+		return ActionstepPackage.Literals.WAIT_FOR_DIGIT;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call getCall1() {
-    if (call1 != null && call1.eIsProxy()) {
-      InternalEObject oldCall1 = (InternalEObject)call1;
-      call1 = (Call)eResolveProxy(oldCall1);
-      if (call1 != oldCall1) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.WAIT_FOR_DIGIT__CALL1, oldCall1, call1));
-      }
-    }
-    return call1;
-  }
+		if (call1 != null && call1.eIsProxy()) {
+			InternalEObject oldCall1 = (InternalEObject)call1;
+			call1 = (Call)eResolveProxy(oldCall1);
+			if (call1 != oldCall1) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.WAIT_FOR_DIGIT__CALL1, oldCall1, call1));
+			}
+		}
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call basicGetCall1() {
-    return call1;
-  }
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setCall1(Call newCall1) {
-    Call oldCall1 = call1;
-    call1 = newCall1;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.WAIT_FOR_DIGIT__CALL1, oldCall1, call1));
-  }
+		Call oldCall1 = call1;
+		call1 = newCall1;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.WAIT_FOR_DIGIT__CALL1, oldCall1, call1));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public long getTimeout() {
-    return timeout;
-  }
+		return timeout;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setTimeout(long newTimeout) {
-    long oldTimeout = timeout;
-    timeout = newTimeout;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.WAIT_FOR_DIGIT__TIMEOUT, oldTimeout, timeout));
-  }
+		long oldTimeout = timeout;
+		timeout = newTimeout;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.WAIT_FOR_DIGIT__TIMEOUT, oldTimeout, timeout));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getAcceptedDigits() {
-    return acceptedDigits;
-  }
+		return acceptedDigits;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setAcceptedDigits(String newAcceptedDigits) {
-    String oldAcceptedDigits = acceptedDigits;
-    acceptedDigits = newAcceptedDigits;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.WAIT_FOR_DIGIT__ACCEPTED_DIGITS, oldAcceptedDigits, acceptedDigits));
-  }
+		String oldAcceptedDigits = acceptedDigits;
+		acceptedDigits = newAcceptedDigits;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.WAIT_FOR_DIGIT__ACCEPTED_DIGITS, oldAcceptedDigits, acceptedDigits));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionstepPackage.WAIT_FOR_DIGIT__CALL1:
-        if (resolve) return getCall1();
-        return basicGetCall1();
-      case ActionstepPackage.WAIT_FOR_DIGIT__TIMEOUT:
-        return new Long(getTimeout());
-      case ActionstepPackage.WAIT_FOR_DIGIT__ACCEPTED_DIGITS:
-        return getAcceptedDigits();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionstepPackage.WAIT_FOR_DIGIT__CALL1:
+				if (resolve) return getCall1();
+				return basicGetCall1();
+			case ActionstepPackage.WAIT_FOR_DIGIT__TIMEOUT:
+				return getTimeout();
+			case ActionstepPackage.WAIT_FOR_DIGIT__ACCEPTED_DIGITS:
+				return getAcceptedDigits();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionstepPackage.WAIT_FOR_DIGIT__CALL1:
-        setCall1((Call)newValue);
-        return;
-      case ActionstepPackage.WAIT_FOR_DIGIT__TIMEOUT:
-        setTimeout(((Long)newValue).longValue());
-        return;
-      case ActionstepPackage.WAIT_FOR_DIGIT__ACCEPTED_DIGITS:
-        setAcceptedDigits((String)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionstepPackage.WAIT_FOR_DIGIT__CALL1:
+				setCall1((Call)newValue);
+				return;
+			case ActionstepPackage.WAIT_FOR_DIGIT__TIMEOUT:
+				setTimeout((Long)newValue);
+				return;
+			case ActionstepPackage.WAIT_FOR_DIGIT__ACCEPTED_DIGITS:
+				setAcceptedDigits((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.WAIT_FOR_DIGIT__CALL1:
-        setCall1((Call)null);
-        return;
-      case ActionstepPackage.WAIT_FOR_DIGIT__TIMEOUT:
-        setTimeout(TIMEOUT_EDEFAULT);
-        return;
-      case ActionstepPackage.WAIT_FOR_DIGIT__ACCEPTED_DIGITS:
-        setAcceptedDigits(ACCEPTED_DIGITS_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.WAIT_FOR_DIGIT__CALL1:
+				setCall1((Call)null);
+				return;
+			case ActionstepPackage.WAIT_FOR_DIGIT__TIMEOUT:
+				setTimeout(TIMEOUT_EDEFAULT);
+				return;
+			case ActionstepPackage.WAIT_FOR_DIGIT__ACCEPTED_DIGITS:
+				setAcceptedDigits(ACCEPTED_DIGITS_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.WAIT_FOR_DIGIT__CALL1:
-        return call1 != null;
-      case ActionstepPackage.WAIT_FOR_DIGIT__TIMEOUT:
-        return timeout != TIMEOUT_EDEFAULT;
-      case ActionstepPackage.WAIT_FOR_DIGIT__ACCEPTED_DIGITS:
-        return ACCEPTED_DIGITS_EDEFAULT == null ? acceptedDigits != null : !ACCEPTED_DIGITS_EDEFAULT.equals(acceptedDigits);
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.WAIT_FOR_DIGIT__CALL1:
+				return call1 != null;
+			case ActionstepPackage.WAIT_FOR_DIGIT__TIMEOUT:
+				return timeout != TIMEOUT_EDEFAULT;
+			case ActionstepPackage.WAIT_FOR_DIGIT__ACCEPTED_DIGITS:
+				return ACCEPTED_DIGITS_EDEFAULT == null ? acceptedDigits != null : !ACCEPTED_DIGITS_EDEFAULT.equals(acceptedDigits);
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (derivedFeatureID) {
-        case ActionstepPackage.WAIT_FOR_DIGIT__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (derivedFeatureID) {
+				case ActionstepPackage.WAIT_FOR_DIGIT__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (baseFeatureID) {
-        case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.WAIT_FOR_DIGIT__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (baseFeatureID) {
+				case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.WAIT_FOR_DIGIT__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (timeout: ");
-    result.append(timeout);
-    result.append(", acceptedDigits: ");
-    result.append(acceptedDigits);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (timeout: ");
+		result.append(timeout);
+		result.append(", acceptedDigits: ");
+		result.append(acceptedDigits);
+		result.append(')');
+		return result.toString();
+	}
 
 } //WaitForDigitImpl

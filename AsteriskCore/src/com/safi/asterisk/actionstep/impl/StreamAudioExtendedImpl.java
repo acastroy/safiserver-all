@@ -49,133 +49,133 @@ import com.safi.db.VariableType;
  */
 public class StreamAudioExtendedImpl extends ActionStepImpl implements StreamAudioExtended {
   /**
-   * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCall1()
-   * @generated
-   * @ordered
-   */
+	 * @see #getCall1()
+	 * @generated
+	 * @ordered
+	 */
   protected Call call1;
 
   /**
-   * The cached value of the '{@link #getFilename() <em>Filename</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getFilename() <em>Filename</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFilename()
-   * @generated
-   * @ordered
-   */
+	 * @see #getFilename()
+	 * @generated
+	 * @ordered
+	 */
   protected DynamicValue filename;
 
   /**
-   * The default value of the '{@link #getEscapeDigits() <em>Escape Digits</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getEscapeDigits() <em>Escape Digits</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEscapeDigits()
-   * @generated
-   * @ordered
-   */
+	 * @see #getEscapeDigits()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String ESCAPE_DIGITS_EDEFAULT = "#";
 
   /**
-   * The cached value of the '{@link #getEscapeDigits() <em>Escape Digits</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getEscapeDigits() <em>Escape Digits</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEscapeDigits()
-   * @generated
-   * @ordered
-   */
+	 * @see #getEscapeDigits()
+	 * @generated
+	 * @ordered
+	 */
   protected String escapeDigits = ESCAPE_DIGITS_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getOffset() <em>Offset</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getOffset() <em>Offset</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOffset()
-   * @generated
-   * @ordered
-   */
+	 * @see #getOffset()
+	 * @generated
+	 * @ordered
+	 */
   protected static final int OFFSET_EDEFAULT = 1000;
 
   /**
-   * The cached value of the '{@link #getOffset() <em>Offset</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getOffset() <em>Offset</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOffset()
-   * @generated
-   * @ordered
-   */
+	 * @see #getOffset()
+	 * @generated
+	 * @ordered
+	 */
   protected int offset = OFFSET_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getForwardDigit() <em>Forward Digit</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getForwardDigit() <em>Forward Digit</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getForwardDigit()
-   * @generated
-   * @ordered
-   */
+	 * @see #getForwardDigit()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String FORWARD_DIGIT_EDEFAULT = "3";
 
   /**
-   * The cached value of the '{@link #getForwardDigit() <em>Forward Digit</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getForwardDigit() <em>Forward Digit</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getForwardDigit()
-   * @generated
-   * @ordered
-   */
+	 * @see #getForwardDigit()
+	 * @generated
+	 * @ordered
+	 */
   protected String forwardDigit = FORWARD_DIGIT_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getRewindDigit() <em>Rewind Digit</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getRewindDigit() <em>Rewind Digit</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRewindDigit()
-   * @generated
-   * @ordered
-   */
+	 * @see #getRewindDigit()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String REWIND_DIGIT_EDEFAULT = "1";
 
   /**
-   * The cached value of the '{@link #getRewindDigit() <em>Rewind Digit</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRewindDigit() <em>Rewind Digit</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRewindDigit()
-   * @generated
-   * @ordered
-   */
+	 * @see #getRewindDigit()
+	 * @generated
+	 * @ordered
+	 */
   protected String rewindDigit = REWIND_DIGIT_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getPauseDigit() <em>Pause Digit</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getPauseDigit() <em>Pause Digit</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPauseDigit()
-   * @generated
-   * @ordered
-   */
+	 * @see #getPauseDigit()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String PAUSE_DIGIT_EDEFAULT = "2";
 
   /**
-   * The cached value of the '{@link #getPauseDigit() <em>Pause Digit</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getPauseDigit() <em>Pause Digit</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPauseDigit()
-   * @generated
-   * @ordered
-   */
+	 * @see #getPauseDigit()
+	 * @generated
+	 * @ordered
+	 */
   protected String pauseDigit = PAUSE_DIGIT_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected StreamAudioExtendedImpl() {
-    super();
-  }
+		super();
+	}
 
   @Override
   public void beginProcessing(SafletContext context) throws ActionStepException {
@@ -215,389 +215,389 @@ public class StreamAudioExtendedImpl extends ActionStepImpl implements StreamAud
 
   }
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionstepPackage.Literals.STREAM_AUDIO_EXTENDED;
-  }
+		return ActionstepPackage.Literals.STREAM_AUDIO_EXTENDED;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call getCall1() {
-    if (call1 != null && call1.eIsProxy()) {
-      InternalEObject oldCall1 = (InternalEObject)call1;
-      call1 = (Call)eResolveProxy(oldCall1);
-      if (call1 != oldCall1) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.STREAM_AUDIO_EXTENDED__CALL1, oldCall1, call1));
-      }
-    }
-    return call1;
-  }
+		if (call1 != null && call1.eIsProxy()) {
+			InternalEObject oldCall1 = (InternalEObject)call1;
+			call1 = (Call)eResolveProxy(oldCall1);
+			if (call1 != oldCall1) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.STREAM_AUDIO_EXTENDED__CALL1, oldCall1, call1));
+			}
+		}
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call basicGetCall1() {
-    return call1;
-  }
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setCall1(Call newCall1) {
-    Call oldCall1 = call1;
-    call1 = newCall1;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.STREAM_AUDIO_EXTENDED__CALL1, oldCall1, call1));
-  }
+		Call oldCall1 = call1;
+		call1 = newCall1;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.STREAM_AUDIO_EXTENDED__CALL1, oldCall1, call1));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DynamicValue getFilename() {
-    return filename;
-  }
+		return filename;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetFilename(DynamicValue newFilename, NotificationChain msgs) {
-    DynamicValue oldFilename = filename;
-    filename = newFilename;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.STREAM_AUDIO_EXTENDED__FILENAME, oldFilename, newFilename);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DynamicValue oldFilename = filename;
+		filename = newFilename;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.STREAM_AUDIO_EXTENDED__FILENAME, oldFilename, newFilename);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setFilename(DynamicValue newFilename) {
-    if (newFilename != filename) {
-      NotificationChain msgs = null;
-      if (filename != null)
-        msgs = ((InternalEObject)filename).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.STREAM_AUDIO_EXTENDED__FILENAME, null, msgs);
-      if (newFilename != null)
-        msgs = ((InternalEObject)newFilename).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.STREAM_AUDIO_EXTENDED__FILENAME, null, msgs);
-      msgs = basicSetFilename(newFilename, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.STREAM_AUDIO_EXTENDED__FILENAME, newFilename, newFilename));
-  }
+		if (newFilename != filename) {
+			NotificationChain msgs = null;
+			if (filename != null)
+				msgs = ((InternalEObject)filename).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.STREAM_AUDIO_EXTENDED__FILENAME, null, msgs);
+			if (newFilename != null)
+				msgs = ((InternalEObject)newFilename).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.STREAM_AUDIO_EXTENDED__FILENAME, null, msgs);
+			msgs = basicSetFilename(newFilename, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.STREAM_AUDIO_EXTENDED__FILENAME, newFilename, newFilename));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getEscapeDigits() {
-    return escapeDigits;
-  }
+		return escapeDigits;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setEscapeDigits(String newEscapeDigits) {
-    String oldEscapeDigits = escapeDigits;
-    escapeDigits = newEscapeDigits;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.STREAM_AUDIO_EXTENDED__ESCAPE_DIGITS, oldEscapeDigits, escapeDigits));
-  }
+		String oldEscapeDigits = escapeDigits;
+		escapeDigits = newEscapeDigits;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.STREAM_AUDIO_EXTENDED__ESCAPE_DIGITS, oldEscapeDigits, escapeDigits));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public int getOffset() {
-    return offset;
-  }
+		return offset;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setOffset(int newOffset) {
-    int oldOffset = offset;
-    offset = newOffset;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.STREAM_AUDIO_EXTENDED__OFFSET, oldOffset, offset));
-  }
+		int oldOffset = offset;
+		offset = newOffset;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.STREAM_AUDIO_EXTENDED__OFFSET, oldOffset, offset));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getForwardDigit() {
-    return forwardDigit;
-  }
+		return forwardDigit;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setForwardDigit(String newForwardDigit) {
-    String oldForwardDigit = forwardDigit;
-    forwardDigit = newForwardDigit;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.STREAM_AUDIO_EXTENDED__FORWARD_DIGIT, oldForwardDigit, forwardDigit));
-  }
+		String oldForwardDigit = forwardDigit;
+		forwardDigit = newForwardDigit;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.STREAM_AUDIO_EXTENDED__FORWARD_DIGIT, oldForwardDigit, forwardDigit));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getRewindDigit() {
-    return rewindDigit;
-  }
+		return rewindDigit;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setRewindDigit(String newRewindDigit) {
-    String oldRewindDigit = rewindDigit;
-    rewindDigit = newRewindDigit;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.STREAM_AUDIO_EXTENDED__REWIND_DIGIT, oldRewindDigit, rewindDigit));
-  }
+		String oldRewindDigit = rewindDigit;
+		rewindDigit = newRewindDigit;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.STREAM_AUDIO_EXTENDED__REWIND_DIGIT, oldRewindDigit, rewindDigit));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getPauseDigit() {
-    return pauseDigit;
-  }
+		return pauseDigit;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setPauseDigit(String newPauseDigit) {
-    String oldPauseDigit = pauseDigit;
-    pauseDigit = newPauseDigit;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.STREAM_AUDIO_EXTENDED__PAUSE_DIGIT, oldPauseDigit, pauseDigit));
-  }
+		String oldPauseDigit = pauseDigit;
+		pauseDigit = newPauseDigit;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.STREAM_AUDIO_EXTENDED__PAUSE_DIGIT, oldPauseDigit, pauseDigit));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__FILENAME:
-        return basicSetFilename(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__FILENAME:
+				return basicSetFilename(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__CALL1:
-        if (resolve) return getCall1();
-        return basicGetCall1();
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__FILENAME:
-        return getFilename();
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__ESCAPE_DIGITS:
-        return getEscapeDigits();
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__OFFSET:
-        return new Integer(getOffset());
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__FORWARD_DIGIT:
-        return getForwardDigit();
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__REWIND_DIGIT:
-        return getRewindDigit();
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__PAUSE_DIGIT:
-        return getPauseDigit();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__CALL1:
+				if (resolve) return getCall1();
+				return basicGetCall1();
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__FILENAME:
+				return getFilename();
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__ESCAPE_DIGITS:
+				return getEscapeDigits();
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__OFFSET:
+				return getOffset();
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__FORWARD_DIGIT:
+				return getForwardDigit();
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__REWIND_DIGIT:
+				return getRewindDigit();
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__PAUSE_DIGIT:
+				return getPauseDigit();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__CALL1:
-        setCall1((Call)newValue);
-        return;
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__FILENAME:
-        setFilename((DynamicValue)newValue);
-        return;
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__ESCAPE_DIGITS:
-        setEscapeDigits((String)newValue);
-        return;
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__OFFSET:
-        setOffset(((Integer)newValue).intValue());
-        return;
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__FORWARD_DIGIT:
-        setForwardDigit((String)newValue);
-        return;
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__REWIND_DIGIT:
-        setRewindDigit((String)newValue);
-        return;
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__PAUSE_DIGIT:
-        setPauseDigit((String)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__CALL1:
+				setCall1((Call)newValue);
+				return;
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__FILENAME:
+				setFilename((DynamicValue)newValue);
+				return;
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__ESCAPE_DIGITS:
+				setEscapeDigits((String)newValue);
+				return;
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__OFFSET:
+				setOffset((Integer)newValue);
+				return;
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__FORWARD_DIGIT:
+				setForwardDigit((String)newValue);
+				return;
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__REWIND_DIGIT:
+				setRewindDigit((String)newValue);
+				return;
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__PAUSE_DIGIT:
+				setPauseDigit((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__CALL1:
-        setCall1((Call)null);
-        return;
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__FILENAME:
-        setFilename((DynamicValue)null);
-        return;
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__ESCAPE_DIGITS:
-        setEscapeDigits(ESCAPE_DIGITS_EDEFAULT);
-        return;
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__OFFSET:
-        setOffset(OFFSET_EDEFAULT);
-        return;
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__FORWARD_DIGIT:
-        setForwardDigit(FORWARD_DIGIT_EDEFAULT);
-        return;
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__REWIND_DIGIT:
-        setRewindDigit(REWIND_DIGIT_EDEFAULT);
-        return;
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__PAUSE_DIGIT:
-        setPauseDigit(PAUSE_DIGIT_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__CALL1:
+				setCall1((Call)null);
+				return;
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__FILENAME:
+				setFilename((DynamicValue)null);
+				return;
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__ESCAPE_DIGITS:
+				setEscapeDigits(ESCAPE_DIGITS_EDEFAULT);
+				return;
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__OFFSET:
+				setOffset(OFFSET_EDEFAULT);
+				return;
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__FORWARD_DIGIT:
+				setForwardDigit(FORWARD_DIGIT_EDEFAULT);
+				return;
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__REWIND_DIGIT:
+				setRewindDigit(REWIND_DIGIT_EDEFAULT);
+				return;
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__PAUSE_DIGIT:
+				setPauseDigit(PAUSE_DIGIT_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__CALL1:
-        return call1 != null;
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__FILENAME:
-        return filename != null;
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__ESCAPE_DIGITS:
-        return ESCAPE_DIGITS_EDEFAULT == null ? escapeDigits != null : !ESCAPE_DIGITS_EDEFAULT.equals(escapeDigits);
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__OFFSET:
-        return offset != OFFSET_EDEFAULT;
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__FORWARD_DIGIT:
-        return FORWARD_DIGIT_EDEFAULT == null ? forwardDigit != null : !FORWARD_DIGIT_EDEFAULT.equals(forwardDigit);
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__REWIND_DIGIT:
-        return REWIND_DIGIT_EDEFAULT == null ? rewindDigit != null : !REWIND_DIGIT_EDEFAULT.equals(rewindDigit);
-      case ActionstepPackage.STREAM_AUDIO_EXTENDED__PAUSE_DIGIT:
-        return PAUSE_DIGIT_EDEFAULT == null ? pauseDigit != null : !PAUSE_DIGIT_EDEFAULT.equals(pauseDigit);
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__CALL1:
+				return call1 != null;
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__FILENAME:
+				return filename != null;
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__ESCAPE_DIGITS:
+				return ESCAPE_DIGITS_EDEFAULT == null ? escapeDigits != null : !ESCAPE_DIGITS_EDEFAULT.equals(escapeDigits);
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__OFFSET:
+				return offset != OFFSET_EDEFAULT;
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__FORWARD_DIGIT:
+				return FORWARD_DIGIT_EDEFAULT == null ? forwardDigit != null : !FORWARD_DIGIT_EDEFAULT.equals(forwardDigit);
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__REWIND_DIGIT:
+				return REWIND_DIGIT_EDEFAULT == null ? rewindDigit != null : !REWIND_DIGIT_EDEFAULT.equals(rewindDigit);
+			case ActionstepPackage.STREAM_AUDIO_EXTENDED__PAUSE_DIGIT:
+				return PAUSE_DIGIT_EDEFAULT == null ? pauseDigit != null : !PAUSE_DIGIT_EDEFAULT.equals(pauseDigit);
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (derivedFeatureID) {
-        case ActionstepPackage.STREAM_AUDIO_EXTENDED__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (derivedFeatureID) {
+				case ActionstepPackage.STREAM_AUDIO_EXTENDED__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (baseFeatureID) {
-        case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.STREAM_AUDIO_EXTENDED__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (baseFeatureID) {
+				case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.STREAM_AUDIO_EXTENDED__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (escapeDigits: ");
-    result.append(escapeDigits);
-    result.append(", offset: ");
-    result.append(offset);
-    result.append(", forwardDigit: ");
-    result.append(forwardDigit);
-    result.append(", rewindDigit: ");
-    result.append(rewindDigit);
-    result.append(", pauseDigit: ");
-    result.append(pauseDigit);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (escapeDigits: ");
+		result.append(escapeDigits);
+		result.append(", offset: ");
+		result.append(offset);
+		result.append(", forwardDigit: ");
+		result.append(forwardDigit);
+		result.append(", rewindDigit: ");
+		result.append(rewindDigit);
+		result.append(", pauseDigit: ");
+		result.append(pauseDigit);
+		result.append(')');
+		return result.toString();
+	}
 
 } //StreamAudioExtendedImpl

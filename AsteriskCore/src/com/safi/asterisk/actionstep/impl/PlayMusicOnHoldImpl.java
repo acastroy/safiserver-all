@@ -42,33 +42,33 @@ import com.safi.db.VariableType;
  */
 public class PlayMusicOnHoldImpl extends ActionStepImpl implements PlayMusicOnHold {
   /**
-   * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCall1()
-   * @generated
-   * @ordered
-   */
+	 * @see #getCall1()
+	 * @generated
+	 * @ordered
+	 */
   protected Call call1;
 
   /**
-   * The cached value of the '{@link #getHoldClass() <em>Hold Class</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getHoldClass() <em>Hold Class</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getHoldClass()
-   * @generated
-   * @ordered
-   */
+	 * @see #getHoldClass()
+	 * @generated
+	 * @ordered
+	 */
   protected DynamicValue holdClass;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected PlayMusicOnHoldImpl() {
-    super();
-  }
+		super();
+	}
 
   @Override
   public void beginProcessing(SafletContext context) throws ActionStepException {
@@ -100,210 +100,210 @@ public class PlayMusicOnHoldImpl extends ActionStepImpl implements PlayMusicOnHo
 
   }
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionstepPackage.Literals.PLAY_MUSIC_ON_HOLD;
-  }
+		return ActionstepPackage.Literals.PLAY_MUSIC_ON_HOLD;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call getCall1() {
-    if (call1 != null && call1.eIsProxy()) {
-      InternalEObject oldCall1 = (InternalEObject)call1;
-      call1 = (Call)eResolveProxy(oldCall1);
-      if (call1 != oldCall1) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.PLAY_MUSIC_ON_HOLD__CALL1, oldCall1, call1));
-      }
-    }
-    return call1;
-  }
+		if (call1 != null && call1.eIsProxy()) {
+			InternalEObject oldCall1 = (InternalEObject)call1;
+			call1 = (Call)eResolveProxy(oldCall1);
+			if (call1 != oldCall1) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.PLAY_MUSIC_ON_HOLD__CALL1, oldCall1, call1));
+			}
+		}
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call basicGetCall1() {
-    return call1;
-  }
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setCall1(Call newCall1) {
-    Call oldCall1 = call1;
-    call1 = newCall1;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.PLAY_MUSIC_ON_HOLD__CALL1, oldCall1, call1));
-  }
+		Call oldCall1 = call1;
+		call1 = newCall1;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.PLAY_MUSIC_ON_HOLD__CALL1, oldCall1, call1));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DynamicValue getHoldClass() {
-    return holdClass;
-  }
+		return holdClass;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetHoldClass(DynamicValue newHoldClass, NotificationChain msgs) {
-    DynamicValue oldHoldClass = holdClass;
-    holdClass = newHoldClass;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.PLAY_MUSIC_ON_HOLD__HOLD_CLASS, oldHoldClass, newHoldClass);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DynamicValue oldHoldClass = holdClass;
+		holdClass = newHoldClass;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.PLAY_MUSIC_ON_HOLD__HOLD_CLASS, oldHoldClass, newHoldClass);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setHoldClass(DynamicValue newHoldClass) {
-    if (newHoldClass != holdClass) {
-      NotificationChain msgs = null;
-      if (holdClass != null)
-        msgs = ((InternalEObject)holdClass).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.PLAY_MUSIC_ON_HOLD__HOLD_CLASS, null, msgs);
-      if (newHoldClass != null)
-        msgs = ((InternalEObject)newHoldClass).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.PLAY_MUSIC_ON_HOLD__HOLD_CLASS, null, msgs);
-      msgs = basicSetHoldClass(newHoldClass, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.PLAY_MUSIC_ON_HOLD__HOLD_CLASS, newHoldClass, newHoldClass));
-  }
+		if (newHoldClass != holdClass) {
+			NotificationChain msgs = null;
+			if (holdClass != null)
+				msgs = ((InternalEObject)holdClass).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.PLAY_MUSIC_ON_HOLD__HOLD_CLASS, null, msgs);
+			if (newHoldClass != null)
+				msgs = ((InternalEObject)newHoldClass).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.PLAY_MUSIC_ON_HOLD__HOLD_CLASS, null, msgs);
+			msgs = basicSetHoldClass(newHoldClass, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.PLAY_MUSIC_ON_HOLD__HOLD_CLASS, newHoldClass, newHoldClass));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionstepPackage.PLAY_MUSIC_ON_HOLD__HOLD_CLASS:
-        return basicSetHoldClass(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionstepPackage.PLAY_MUSIC_ON_HOLD__HOLD_CLASS:
+				return basicSetHoldClass(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionstepPackage.PLAY_MUSIC_ON_HOLD__CALL1:
-        if (resolve) return getCall1();
-        return basicGetCall1();
-      case ActionstepPackage.PLAY_MUSIC_ON_HOLD__HOLD_CLASS:
-        return getHoldClass();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionstepPackage.PLAY_MUSIC_ON_HOLD__CALL1:
+				if (resolve) return getCall1();
+				return basicGetCall1();
+			case ActionstepPackage.PLAY_MUSIC_ON_HOLD__HOLD_CLASS:
+				return getHoldClass();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionstepPackage.PLAY_MUSIC_ON_HOLD__CALL1:
-        setCall1((Call)newValue);
-        return;
-      case ActionstepPackage.PLAY_MUSIC_ON_HOLD__HOLD_CLASS:
-        setHoldClass((DynamicValue)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionstepPackage.PLAY_MUSIC_ON_HOLD__CALL1:
+				setCall1((Call)newValue);
+				return;
+			case ActionstepPackage.PLAY_MUSIC_ON_HOLD__HOLD_CLASS:
+				setHoldClass((DynamicValue)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.PLAY_MUSIC_ON_HOLD__CALL1:
-        setCall1((Call)null);
-        return;
-      case ActionstepPackage.PLAY_MUSIC_ON_HOLD__HOLD_CLASS:
-        setHoldClass((DynamicValue)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.PLAY_MUSIC_ON_HOLD__CALL1:
+				setCall1((Call)null);
+				return;
+			case ActionstepPackage.PLAY_MUSIC_ON_HOLD__HOLD_CLASS:
+				setHoldClass((DynamicValue)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.PLAY_MUSIC_ON_HOLD__CALL1:
-        return call1 != null;
-      case ActionstepPackage.PLAY_MUSIC_ON_HOLD__HOLD_CLASS:
-        return holdClass != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.PLAY_MUSIC_ON_HOLD__CALL1:
+				return call1 != null;
+			case ActionstepPackage.PLAY_MUSIC_ON_HOLD__HOLD_CLASS:
+				return holdClass != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (derivedFeatureID) {
-        case ActionstepPackage.PLAY_MUSIC_ON_HOLD__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (derivedFeatureID) {
+				case ActionstepPackage.PLAY_MUSIC_ON_HOLD__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (baseFeatureID) {
-        case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.PLAY_MUSIC_ON_HOLD__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (baseFeatureID) {
+				case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.PLAY_MUSIC_ON_HOLD__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
 
 } //PlayMusicOnHoldImpl

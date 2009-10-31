@@ -28,31 +28,31 @@ import com.safi.core.actionstep.DynamicValue;
  */
 public interface SetContext extends ActionStep, CallConsumer1 {
   /**
-   * Returns the value of the '<em><b>Context</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Context</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Context</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Context</em>' containment reference.
-   * @see #setContext(DynamicValue)
-   * @see com.safi.asterisk.actionstep.ActionstepPackage#getSetContext_Context()
-   * @model containment="true" ordered="false"
-   *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The context of the current call will be set to this text value.' expectedReturnType='Text' helperClass=''"
-   *        annotation="Required criteria='non-null'"
-   * @generated
-   */
+	 * @return the value of the '<em>Context</em>' containment reference.
+	 * @see #setContext(DynamicValue)
+	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getSetContext_Context()
+	 * @model containment="true" ordered="false"
+	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The context of the current call will be set to this text value.' expectedReturnType='Text' helperClass=''"
+	 *        annotation="Required criteria='non-null'"
+	 * @generated
+	 */
   DynamicValue getContext();
 
   /**
-   * Sets the value of the '{@link com.safi.asterisk.actionstep.SetContext#getContext <em>Context</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.asterisk.actionstep.SetContext#getContext <em>Context</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Context</em>' containment reference.
-   * @see #getContext()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Context</em>' containment reference.
+	 * @see #getContext()
+	 * @generated
+	 */
   void setContext(DynamicValue value);
 
 } // SetContext

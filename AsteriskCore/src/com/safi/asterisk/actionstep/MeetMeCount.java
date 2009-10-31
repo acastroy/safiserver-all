@@ -29,61 +29,61 @@ import com.safi.core.actionstep.DynamicValue;
  */
 public interface MeetMeCount extends ActionStep, CallConsumer1 {
   /**
-   * Returns the value of the '<em><b>Conference Number</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Conference Number</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Conference Number</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Conference Number</em>' containment reference.
-   * @see #setConferenceNumber(DynamicValue)
-   * @see com.safi.asterisk.actionstep.ActionstepPackage#getMeetMeCount_ConferenceNumber()
-   * @model containment="true" ordered="false"
-   *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='the conference number' expectedReturnType='Text' helperClass=''"
-   *        annotation="Required criteria='non-null'"
-   * @generated
-   */
+	 * @return the value of the '<em>Conference Number</em>' containment reference.
+	 * @see #setConferenceNumber(DynamicValue)
+	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getMeetMeCount_ConferenceNumber()
+	 * @model containment="true" ordered="false"
+	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='the conference number' expectedReturnType='Text' helperClass=''"
+	 *        annotation="Required criteria='non-null'"
+	 * @generated
+	 */
   DynamicValue getConferenceNumber();
 
   /**
-   * Sets the value of the '{@link com.safi.asterisk.actionstep.MeetMeCount#getConferenceNumber <em>Conference Number</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.asterisk.actionstep.MeetMeCount#getConferenceNumber <em>Conference Number</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Conference Number</em>' containment reference.
-   * @see #getConferenceNumber()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Conference Number</em>' containment reference.
+	 * @see #getConferenceNumber()
+	 * @generated
+	 */
   void setConferenceNumber(DynamicValue value);
 
   /**
-   * Returns the value of the '<em><b>Variable Name</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Variable Name</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Variable Name</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Variable Name</em>' containment reference.
-   * @see #setVariableName(DynamicValue)
-   * @see com.safi.asterisk.actionstep.ActionstepPackage#getMeetMeCount_VariableName()
-   * @model containment="true" ordered="false"
-   *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='the name of the variable in which to store the count' expectedReturnType='Text' helperClass=''"
-   *        annotation="Required criteria='non-null'"
-   *        annotation="Directionality output='true'"
-   *        annotation="MetaProperty displayText='Variable'"
-   * @generated
-   */
+	 * @return the value of the '<em>Variable Name</em>' containment reference.
+	 * @see #setVariableName(DynamicValue)
+	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getMeetMeCount_VariableName()
+	 * @model containment="true" ordered="false"
+	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='the name of the variable in which to store the count' expectedReturnType='Text' helperClass=''"
+	 *        annotation="Required criteria='non-null'"
+	 *        annotation="Directionality output='true'"
+	 *        annotation="MetaProperty displayText='Variable'"
+	 * @generated
+	 */
   DynamicValue getVariableName();
 
   /**
-   * Sets the value of the '{@link com.safi.asterisk.actionstep.MeetMeCount#getVariableName <em>Variable Name</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.asterisk.actionstep.MeetMeCount#getVariableName <em>Variable Name</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Variable Name</em>' containment reference.
-   * @see #getVariableName()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Variable Name</em>' containment reference.
+	 * @see #getVariableName()
+	 * @generated
+	 */
   void setVariableName(DynamicValue value);
 
 } // MeetMeCount

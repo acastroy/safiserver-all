@@ -54,103 +54,103 @@ import com.safi.db.VariableType;
  */
 public class PromptGetDigitsImpl extends ActionStepImpl implements PromptGetDigits {
   /**
-   * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCall1()
-   * @generated
-   * @ordered
-   */
+	 * @see #getCall1()
+	 * @generated
+	 * @ordered
+	 */
   protected Call call1;
 
   /**
-   * The cached value of the '{@link #getFilename() <em>Filename</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getFilename() <em>Filename</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFilename()
-   * @generated
-   * @ordered
-   */
+	 * @see #getFilename()
+	 * @generated
+	 * @ordered
+	 */
   protected DynamicValue filename;
 
   /**
-   * The default value of the '{@link #getTimeout() <em>Timeout</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getTimeout() <em>Timeout</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTimeout()
-   * @generated
-   * @ordered
-   */
+	 * @see #getTimeout()
+	 * @generated
+	 * @ordered
+	 */
   protected static final long TIMEOUT_EDEFAULT = 0L;
 
   /**
-   * The cached value of the '{@link #getTimeout() <em>Timeout</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTimeout() <em>Timeout</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTimeout()
-   * @generated
-   * @ordered
-   */
+	 * @see #getTimeout()
+	 * @generated
+	 * @ordered
+	 */
   protected long timeout = TIMEOUT_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getVariableName() <em>Variable Name</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getVariableName() <em>Variable Name</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVariableName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getVariableName()
+	 * @generated
+	 * @ordered
+	 */
   protected DynamicValue variableName;
 
   /**
-   * The default value of the '{@link #getMaxDigits() <em>Max Digits</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getMaxDigits() <em>Max Digits</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMaxDigits()
-   * @generated
-   * @ordered
-   */
+	 * @see #getMaxDigits()
+	 * @generated
+	 * @ordered
+	 */
   protected static final int MAX_DIGITS_EDEFAULT = 1;
 
   /**
-   * The cached value of the '{@link #getMaxDigits() <em>Max Digits</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getMaxDigits() <em>Max Digits</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMaxDigits()
-   * @generated
-   * @ordered
-   */
+	 * @see #getMaxDigits()
+	 * @generated
+	 * @ordered
+	 */
   protected int maxDigits = MAX_DIGITS_EDEFAULT;
 
   /**
-   * The default value of the '{@link #isUseBufferedDigits() <em>Use Buffered Digits</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #isUseBufferedDigits() <em>Use Buffered Digits</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isUseBufferedDigits()
-   * @generated
-   * @ordered
-   */
+	 * @see #isUseBufferedDigits()
+	 * @generated
+	 * @ordered
+	 */
   protected static final boolean USE_BUFFERED_DIGITS_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isUseBufferedDigits() <em>Use Buffered Digits</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #isUseBufferedDigits() <em>Use Buffered Digits</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isUseBufferedDigits()
-   * @generated
-   * @ordered
-   */
+	 * @see #isUseBufferedDigits()
+	 * @generated
+	 * @ordered
+	 */
   protected boolean useBufferedDigits = USE_BUFFERED_DIGITS_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected PromptGetDigitsImpl() {
-    super();
-  }
+		super();
+	}
 
   @Override
   public void beginProcessing(SafletContext context) throws ActionStepException {
@@ -250,378 +250,378 @@ public class PromptGetDigitsImpl extends ActionStepImpl implements PromptGetDigi
     getOutputs().add(o);
   }
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionstepPackage.Literals.PROMPT_GET_DIGITS;
-  }
+		return ActionstepPackage.Literals.PROMPT_GET_DIGITS;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call getCall1() {
-    if (call1 != null && call1.eIsProxy()) {
-      InternalEObject oldCall1 = (InternalEObject)call1;
-      call1 = (Call)eResolveProxy(oldCall1);
-      if (call1 != oldCall1) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.PROMPT_GET_DIGITS__CALL1, oldCall1, call1));
-      }
-    }
-    return call1;
-  }
+		if (call1 != null && call1.eIsProxy()) {
+			InternalEObject oldCall1 = (InternalEObject)call1;
+			call1 = (Call)eResolveProxy(oldCall1);
+			if (call1 != oldCall1) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.PROMPT_GET_DIGITS__CALL1, oldCall1, call1));
+			}
+		}
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call basicGetCall1() {
-    return call1;
-  }
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setCall1(Call newCall1) {
-    Call oldCall1 = call1;
-    call1 = newCall1;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.PROMPT_GET_DIGITS__CALL1, oldCall1, call1));
-  }
+		Call oldCall1 = call1;
+		call1 = newCall1;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.PROMPT_GET_DIGITS__CALL1, oldCall1, call1));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DynamicValue getFilename() {
-    return filename;
-  }
+		return filename;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetFilename(DynamicValue newFilename, NotificationChain msgs) {
-    DynamicValue oldFilename = filename;
-    filename = newFilename;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.PROMPT_GET_DIGITS__FILENAME, oldFilename, newFilename);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DynamicValue oldFilename = filename;
+		filename = newFilename;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.PROMPT_GET_DIGITS__FILENAME, oldFilename, newFilename);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setFilename(DynamicValue newFilename) {
-    if (newFilename != filename) {
-      NotificationChain msgs = null;
-      if (filename != null)
-        msgs = ((InternalEObject)filename).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.PROMPT_GET_DIGITS__FILENAME, null, msgs);
-      if (newFilename != null)
-        msgs = ((InternalEObject)newFilename).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.PROMPT_GET_DIGITS__FILENAME, null, msgs);
-      msgs = basicSetFilename(newFilename, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.PROMPT_GET_DIGITS__FILENAME, newFilename, newFilename));
-  }
+		if (newFilename != filename) {
+			NotificationChain msgs = null;
+			if (filename != null)
+				msgs = ((InternalEObject)filename).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.PROMPT_GET_DIGITS__FILENAME, null, msgs);
+			if (newFilename != null)
+				msgs = ((InternalEObject)newFilename).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.PROMPT_GET_DIGITS__FILENAME, null, msgs);
+			msgs = basicSetFilename(newFilename, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.PROMPT_GET_DIGITS__FILENAME, newFilename, newFilename));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public long getTimeout() {
-    return timeout;
-  }
+		return timeout;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setTimeout(long newTimeout) {
-    long oldTimeout = timeout;
-    timeout = newTimeout;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.PROMPT_GET_DIGITS__TIMEOUT, oldTimeout, timeout));
-  }
+		long oldTimeout = timeout;
+		timeout = newTimeout;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.PROMPT_GET_DIGITS__TIMEOUT, oldTimeout, timeout));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DynamicValue getVariableName() {
-    return variableName;
-  }
+		return variableName;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetVariableName(DynamicValue newVariableName, NotificationChain msgs) {
-    DynamicValue oldVariableName = variableName;
-    variableName = newVariableName;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.PROMPT_GET_DIGITS__VARIABLE_NAME, oldVariableName, newVariableName);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DynamicValue oldVariableName = variableName;
+		variableName = newVariableName;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.PROMPT_GET_DIGITS__VARIABLE_NAME, oldVariableName, newVariableName);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setVariableName(DynamicValue newVariableName) {
-    if (newVariableName != variableName) {
-      NotificationChain msgs = null;
-      if (variableName != null)
-        msgs = ((InternalEObject)variableName).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.PROMPT_GET_DIGITS__VARIABLE_NAME, null, msgs);
-      if (newVariableName != null)
-        msgs = ((InternalEObject)newVariableName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.PROMPT_GET_DIGITS__VARIABLE_NAME, null, msgs);
-      msgs = basicSetVariableName(newVariableName, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.PROMPT_GET_DIGITS__VARIABLE_NAME, newVariableName, newVariableName));
-  }
+		if (newVariableName != variableName) {
+			NotificationChain msgs = null;
+			if (variableName != null)
+				msgs = ((InternalEObject)variableName).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.PROMPT_GET_DIGITS__VARIABLE_NAME, null, msgs);
+			if (newVariableName != null)
+				msgs = ((InternalEObject)newVariableName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.PROMPT_GET_DIGITS__VARIABLE_NAME, null, msgs);
+			msgs = basicSetVariableName(newVariableName, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.PROMPT_GET_DIGITS__VARIABLE_NAME, newVariableName, newVariableName));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public int getMaxDigits() {
-    return maxDigits;
-  }
+		return maxDigits;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setMaxDigits(int newMaxDigits) {
-    int oldMaxDigits = maxDigits;
-    maxDigits = newMaxDigits;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.PROMPT_GET_DIGITS__MAX_DIGITS, oldMaxDigits, maxDigits));
-  }
+		int oldMaxDigits = maxDigits;
+		maxDigits = newMaxDigits;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.PROMPT_GET_DIGITS__MAX_DIGITS, oldMaxDigits, maxDigits));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public boolean isUseBufferedDigits() {
-    return useBufferedDigits;
-  }
+		return useBufferedDigits;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setUseBufferedDigits(boolean newUseBufferedDigits) {
-    boolean oldUseBufferedDigits = useBufferedDigits;
-    useBufferedDigits = newUseBufferedDigits;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.PROMPT_GET_DIGITS__USE_BUFFERED_DIGITS, oldUseBufferedDigits, useBufferedDigits));
-  }
+		boolean oldUseBufferedDigits = useBufferedDigits;
+		useBufferedDigits = newUseBufferedDigits;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.PROMPT_GET_DIGITS__USE_BUFFERED_DIGITS, oldUseBufferedDigits, useBufferedDigits));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionstepPackage.PROMPT_GET_DIGITS__FILENAME:
-        return basicSetFilename(null, msgs);
-      case ActionstepPackage.PROMPT_GET_DIGITS__VARIABLE_NAME:
-        return basicSetVariableName(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionstepPackage.PROMPT_GET_DIGITS__FILENAME:
+				return basicSetFilename(null, msgs);
+			case ActionstepPackage.PROMPT_GET_DIGITS__VARIABLE_NAME:
+				return basicSetVariableName(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionstepPackage.PROMPT_GET_DIGITS__CALL1:
-        if (resolve) return getCall1();
-        return basicGetCall1();
-      case ActionstepPackage.PROMPT_GET_DIGITS__FILENAME:
-        return getFilename();
-      case ActionstepPackage.PROMPT_GET_DIGITS__TIMEOUT:
-        return new Long(getTimeout());
-      case ActionstepPackage.PROMPT_GET_DIGITS__VARIABLE_NAME:
-        return getVariableName();
-      case ActionstepPackage.PROMPT_GET_DIGITS__MAX_DIGITS:
-        return new Integer(getMaxDigits());
-      case ActionstepPackage.PROMPT_GET_DIGITS__USE_BUFFERED_DIGITS:
-        return isUseBufferedDigits() ? Boolean.TRUE : Boolean.FALSE;
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionstepPackage.PROMPT_GET_DIGITS__CALL1:
+				if (resolve) return getCall1();
+				return basicGetCall1();
+			case ActionstepPackage.PROMPT_GET_DIGITS__FILENAME:
+				return getFilename();
+			case ActionstepPackage.PROMPT_GET_DIGITS__TIMEOUT:
+				return getTimeout();
+			case ActionstepPackage.PROMPT_GET_DIGITS__VARIABLE_NAME:
+				return getVariableName();
+			case ActionstepPackage.PROMPT_GET_DIGITS__MAX_DIGITS:
+				return getMaxDigits();
+			case ActionstepPackage.PROMPT_GET_DIGITS__USE_BUFFERED_DIGITS:
+				return isUseBufferedDigits();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionstepPackage.PROMPT_GET_DIGITS__CALL1:
-        setCall1((Call)newValue);
-        return;
-      case ActionstepPackage.PROMPT_GET_DIGITS__FILENAME:
-        setFilename((DynamicValue)newValue);
-        return;
-      case ActionstepPackage.PROMPT_GET_DIGITS__TIMEOUT:
-        setTimeout(((Long)newValue).longValue());
-        return;
-      case ActionstepPackage.PROMPT_GET_DIGITS__VARIABLE_NAME:
-        setVariableName((DynamicValue)newValue);
-        return;
-      case ActionstepPackage.PROMPT_GET_DIGITS__MAX_DIGITS:
-        setMaxDigits(((Integer)newValue).intValue());
-        return;
-      case ActionstepPackage.PROMPT_GET_DIGITS__USE_BUFFERED_DIGITS:
-        setUseBufferedDigits(((Boolean)newValue).booleanValue());
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionstepPackage.PROMPT_GET_DIGITS__CALL1:
+				setCall1((Call)newValue);
+				return;
+			case ActionstepPackage.PROMPT_GET_DIGITS__FILENAME:
+				setFilename((DynamicValue)newValue);
+				return;
+			case ActionstepPackage.PROMPT_GET_DIGITS__TIMEOUT:
+				setTimeout((Long)newValue);
+				return;
+			case ActionstepPackage.PROMPT_GET_DIGITS__VARIABLE_NAME:
+				setVariableName((DynamicValue)newValue);
+				return;
+			case ActionstepPackage.PROMPT_GET_DIGITS__MAX_DIGITS:
+				setMaxDigits((Integer)newValue);
+				return;
+			case ActionstepPackage.PROMPT_GET_DIGITS__USE_BUFFERED_DIGITS:
+				setUseBufferedDigits((Boolean)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.PROMPT_GET_DIGITS__CALL1:
-        setCall1((Call)null);
-        return;
-      case ActionstepPackage.PROMPT_GET_DIGITS__FILENAME:
-        setFilename((DynamicValue)null);
-        return;
-      case ActionstepPackage.PROMPT_GET_DIGITS__TIMEOUT:
-        setTimeout(TIMEOUT_EDEFAULT);
-        return;
-      case ActionstepPackage.PROMPT_GET_DIGITS__VARIABLE_NAME:
-        setVariableName((DynamicValue)null);
-        return;
-      case ActionstepPackage.PROMPT_GET_DIGITS__MAX_DIGITS:
-        setMaxDigits(MAX_DIGITS_EDEFAULT);
-        return;
-      case ActionstepPackage.PROMPT_GET_DIGITS__USE_BUFFERED_DIGITS:
-        setUseBufferedDigits(USE_BUFFERED_DIGITS_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.PROMPT_GET_DIGITS__CALL1:
+				setCall1((Call)null);
+				return;
+			case ActionstepPackage.PROMPT_GET_DIGITS__FILENAME:
+				setFilename((DynamicValue)null);
+				return;
+			case ActionstepPackage.PROMPT_GET_DIGITS__TIMEOUT:
+				setTimeout(TIMEOUT_EDEFAULT);
+				return;
+			case ActionstepPackage.PROMPT_GET_DIGITS__VARIABLE_NAME:
+				setVariableName((DynamicValue)null);
+				return;
+			case ActionstepPackage.PROMPT_GET_DIGITS__MAX_DIGITS:
+				setMaxDigits(MAX_DIGITS_EDEFAULT);
+				return;
+			case ActionstepPackage.PROMPT_GET_DIGITS__USE_BUFFERED_DIGITS:
+				setUseBufferedDigits(USE_BUFFERED_DIGITS_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.PROMPT_GET_DIGITS__CALL1:
-        return call1 != null;
-      case ActionstepPackage.PROMPT_GET_DIGITS__FILENAME:
-        return filename != null;
-      case ActionstepPackage.PROMPT_GET_DIGITS__TIMEOUT:
-        return timeout != TIMEOUT_EDEFAULT;
-      case ActionstepPackage.PROMPT_GET_DIGITS__VARIABLE_NAME:
-        return variableName != null;
-      case ActionstepPackage.PROMPT_GET_DIGITS__MAX_DIGITS:
-        return maxDigits != MAX_DIGITS_EDEFAULT;
-      case ActionstepPackage.PROMPT_GET_DIGITS__USE_BUFFERED_DIGITS:
-        return useBufferedDigits != USE_BUFFERED_DIGITS_EDEFAULT;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.PROMPT_GET_DIGITS__CALL1:
+				return call1 != null;
+			case ActionstepPackage.PROMPT_GET_DIGITS__FILENAME:
+				return filename != null;
+			case ActionstepPackage.PROMPT_GET_DIGITS__TIMEOUT:
+				return timeout != TIMEOUT_EDEFAULT;
+			case ActionstepPackage.PROMPT_GET_DIGITS__VARIABLE_NAME:
+				return variableName != null;
+			case ActionstepPackage.PROMPT_GET_DIGITS__MAX_DIGITS:
+				return maxDigits != MAX_DIGITS_EDEFAULT;
+			case ActionstepPackage.PROMPT_GET_DIGITS__USE_BUFFERED_DIGITS:
+				return useBufferedDigits != USE_BUFFERED_DIGITS_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (derivedFeatureID) {
-        case ActionstepPackage.PROMPT_GET_DIGITS__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (derivedFeatureID) {
+				case ActionstepPackage.PROMPT_GET_DIGITS__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (baseFeatureID) {
-        case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.PROMPT_GET_DIGITS__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (baseFeatureID) {
+				case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.PROMPT_GET_DIGITS__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (timeout: ");
-    result.append(timeout);
-    result.append(", maxDigits: ");
-    result.append(maxDigits);
-    result.append(", useBufferedDigits: ");
-    result.append(useBufferedDigits);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (timeout: ");
+		result.append(timeout);
+		result.append(", maxDigits: ");
+		result.append(maxDigits);
+		result.append(", useBufferedDigits: ");
+		result.append(useBufferedDigits);
+		result.append(')');
+		return result.toString();
+	}
 
 } //PromptGetDigitsImpl

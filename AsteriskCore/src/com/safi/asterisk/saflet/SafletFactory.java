@@ -18,38 +18,38 @@ import org.eclipse.emf.ecore.EFactory;
  */
 public interface SafletFactory extends EFactory {
   /**
-   * The singleton instance of the factory.
-   * <!-- begin-user-doc -->
+	 * The singleton instance of the factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   SafletFactory eINSTANCE = com.safi.asterisk.saflet.impl.SafletFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Asterisk Saflet</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Asterisk Saflet</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Asterisk Saflet</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Asterisk Saflet</em>'.
+	 * @generated
+	 */
   AsteriskSaflet createAsteriskSaflet();
 
   /**
-   * Returns a new object of class '<em>Asterisk Saflet Context</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Asterisk Saflet Context</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Asterisk Saflet Context</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Asterisk Saflet Context</em>'.
+	 * @generated
+	 */
   AsteriskSafletContext createAsteriskSafletContext();
 
   /**
-   * Returns the package supported by this factory.
-   * <!-- begin-user-doc -->
+	 * Returns the package supported by this factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the package supported by this factory.
-   * @generated
-   */
+	 * @return the package supported by this factory.
+	 * @generated
+	 */
   SafletPackage getSafletPackage();
 
 } //SafletFactory

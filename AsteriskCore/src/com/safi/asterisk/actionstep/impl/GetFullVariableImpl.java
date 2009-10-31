@@ -45,53 +45,53 @@ import com.safi.db.VariableScope;
  */
 public class GetFullVariableImpl extends ActionStepImpl implements GetFullVariable {
   /**
-   * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCall1()
-   * @generated
-   * @ordered
-   */
+	 * @see #getCall1()
+	 * @generated
+	 * @ordered
+	 */
   protected Call call1;
 
   /**
-   * The default value of the '{@link #getVariable() <em>Variable</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getVariable() <em>Variable</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVariable()
-   * @generated
-   * @ordered
-   */
+	 * @see #getVariable()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String VARIABLE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getVariable() <em>Variable</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getVariable() <em>Variable</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVariable()
-   * @generated
-   * @ordered
-   */
+	 * @see #getVariable()
+	 * @generated
+	 * @ordered
+	 */
   protected String variable = VARIABLE_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getAssignToVar() <em>Assign To Var</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getAssignToVar() <em>Assign To Var</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAssignToVar()
-   * @generated
-   * @ordered
-   */
+	 * @see #getAssignToVar()
+	 * @generated
+	 * @ordered
+	 */
   protected DynamicValue assignToVar;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected GetFullVariableImpl() {
-    super();
-  }
+		super();
+	}
 
   @Override
   public void beginProcessing(SafletContext context) throws ActionStepException {
@@ -135,257 +135,257 @@ public class GetFullVariableImpl extends ActionStepImpl implements GetFullVariab
 
   }
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionstepPackage.Literals.GET_FULL_VARIABLE;
-  }
+		return ActionstepPackage.Literals.GET_FULL_VARIABLE;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call getCall1() {
-    if (call1 != null && call1.eIsProxy()) {
-      InternalEObject oldCall1 = (InternalEObject)call1;
-      call1 = (Call)eResolveProxy(oldCall1);
-      if (call1 != oldCall1) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.GET_FULL_VARIABLE__CALL1, oldCall1, call1));
-      }
-    }
-    return call1;
-  }
+		if (call1 != null && call1.eIsProxy()) {
+			InternalEObject oldCall1 = (InternalEObject)call1;
+			call1 = (Call)eResolveProxy(oldCall1);
+			if (call1 != oldCall1) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.GET_FULL_VARIABLE__CALL1, oldCall1, call1));
+			}
+		}
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call basicGetCall1() {
-    return call1;
-  }
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setCall1(Call newCall1) {
-    Call oldCall1 = call1;
-    call1 = newCall1;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_FULL_VARIABLE__CALL1, oldCall1, call1));
-  }
+		Call oldCall1 = call1;
+		call1 = newCall1;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_FULL_VARIABLE__CALL1, oldCall1, call1));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getVariable() {
-    return variable;
-  }
+		return variable;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setVariable(String newVariable) {
-    String oldVariable = variable;
-    variable = newVariable;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_FULL_VARIABLE__VARIABLE, oldVariable, variable));
-  }
+		String oldVariable = variable;
+		variable = newVariable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_FULL_VARIABLE__VARIABLE, oldVariable, variable));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DynamicValue getAssignToVar() {
-    return assignToVar;
-  }
+		return assignToVar;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetAssignToVar(DynamicValue newAssignToVar, NotificationChain msgs) {
-    DynamicValue oldAssignToVar = assignToVar;
-    assignToVar = newAssignToVar;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_FULL_VARIABLE__ASSIGN_TO_VAR, oldAssignToVar, newAssignToVar);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DynamicValue oldAssignToVar = assignToVar;
+		assignToVar = newAssignToVar;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_FULL_VARIABLE__ASSIGN_TO_VAR, oldAssignToVar, newAssignToVar);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setAssignToVar(DynamicValue newAssignToVar) {
-    if (newAssignToVar != assignToVar) {
-      NotificationChain msgs = null;
-      if (assignToVar != null)
-        msgs = ((InternalEObject)assignToVar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_FULL_VARIABLE__ASSIGN_TO_VAR, null, msgs);
-      if (newAssignToVar != null)
-        msgs = ((InternalEObject)newAssignToVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_FULL_VARIABLE__ASSIGN_TO_VAR, null, msgs);
-      msgs = basicSetAssignToVar(newAssignToVar, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_FULL_VARIABLE__ASSIGN_TO_VAR, newAssignToVar, newAssignToVar));
-  }
+		if (newAssignToVar != assignToVar) {
+			NotificationChain msgs = null;
+			if (assignToVar != null)
+				msgs = ((InternalEObject)assignToVar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_FULL_VARIABLE__ASSIGN_TO_VAR, null, msgs);
+			if (newAssignToVar != null)
+				msgs = ((InternalEObject)newAssignToVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_FULL_VARIABLE__ASSIGN_TO_VAR, null, msgs);
+			msgs = basicSetAssignToVar(newAssignToVar, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_FULL_VARIABLE__ASSIGN_TO_VAR, newAssignToVar, newAssignToVar));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionstepPackage.GET_FULL_VARIABLE__ASSIGN_TO_VAR:
-        return basicSetAssignToVar(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionstepPackage.GET_FULL_VARIABLE__ASSIGN_TO_VAR:
+				return basicSetAssignToVar(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionstepPackage.GET_FULL_VARIABLE__CALL1:
-        if (resolve) return getCall1();
-        return basicGetCall1();
-      case ActionstepPackage.GET_FULL_VARIABLE__VARIABLE:
-        return getVariable();
-      case ActionstepPackage.GET_FULL_VARIABLE__ASSIGN_TO_VAR:
-        return getAssignToVar();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionstepPackage.GET_FULL_VARIABLE__CALL1:
+				if (resolve) return getCall1();
+				return basicGetCall1();
+			case ActionstepPackage.GET_FULL_VARIABLE__VARIABLE:
+				return getVariable();
+			case ActionstepPackage.GET_FULL_VARIABLE__ASSIGN_TO_VAR:
+				return getAssignToVar();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionstepPackage.GET_FULL_VARIABLE__CALL1:
-        setCall1((Call)newValue);
-        return;
-      case ActionstepPackage.GET_FULL_VARIABLE__VARIABLE:
-        setVariable((String)newValue);
-        return;
-      case ActionstepPackage.GET_FULL_VARIABLE__ASSIGN_TO_VAR:
-        setAssignToVar((DynamicValue)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionstepPackage.GET_FULL_VARIABLE__CALL1:
+				setCall1((Call)newValue);
+				return;
+			case ActionstepPackage.GET_FULL_VARIABLE__VARIABLE:
+				setVariable((String)newValue);
+				return;
+			case ActionstepPackage.GET_FULL_VARIABLE__ASSIGN_TO_VAR:
+				setAssignToVar((DynamicValue)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.GET_FULL_VARIABLE__CALL1:
-        setCall1((Call)null);
-        return;
-      case ActionstepPackage.GET_FULL_VARIABLE__VARIABLE:
-        setVariable(VARIABLE_EDEFAULT);
-        return;
-      case ActionstepPackage.GET_FULL_VARIABLE__ASSIGN_TO_VAR:
-        setAssignToVar((DynamicValue)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.GET_FULL_VARIABLE__CALL1:
+				setCall1((Call)null);
+				return;
+			case ActionstepPackage.GET_FULL_VARIABLE__VARIABLE:
+				setVariable(VARIABLE_EDEFAULT);
+				return;
+			case ActionstepPackage.GET_FULL_VARIABLE__ASSIGN_TO_VAR:
+				setAssignToVar((DynamicValue)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.GET_FULL_VARIABLE__CALL1:
-        return call1 != null;
-      case ActionstepPackage.GET_FULL_VARIABLE__VARIABLE:
-        return VARIABLE_EDEFAULT == null ? variable != null : !VARIABLE_EDEFAULT.equals(variable);
-      case ActionstepPackage.GET_FULL_VARIABLE__ASSIGN_TO_VAR:
-        return assignToVar != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.GET_FULL_VARIABLE__CALL1:
+				return call1 != null;
+			case ActionstepPackage.GET_FULL_VARIABLE__VARIABLE:
+				return VARIABLE_EDEFAULT == null ? variable != null : !VARIABLE_EDEFAULT.equals(variable);
+			case ActionstepPackage.GET_FULL_VARIABLE__ASSIGN_TO_VAR:
+				return assignToVar != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (derivedFeatureID) {
-        case ActionstepPackage.GET_FULL_VARIABLE__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (derivedFeatureID) {
+				case ActionstepPackage.GET_FULL_VARIABLE__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (baseFeatureID) {
-        case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.GET_FULL_VARIABLE__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (baseFeatureID) {
+				case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.GET_FULL_VARIABLE__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (variable: ");
-    result.append(variable);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (variable: ");
+		result.append(variable);
+		result.append(')');
+		return result.toString();
+	}
 
 } //GetFullVariableImpl

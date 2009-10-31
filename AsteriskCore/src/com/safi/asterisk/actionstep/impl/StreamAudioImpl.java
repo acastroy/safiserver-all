@@ -45,53 +45,53 @@ import com.safi.db.VariableType;
  */
 public class StreamAudioImpl extends ActionStepImpl implements StreamAudio {
   /**
-   * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCall1()
-   * @generated
-   * @ordered
-   */
+	 * @see #getCall1()
+	 * @generated
+	 * @ordered
+	 */
   protected Call call1;
 
   /**
-   * The cached value of the '{@link #getFilename() <em>Filename</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getFilename() <em>Filename</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFilename()
-   * @generated
-   * @ordered
-   */
+	 * @see #getFilename()
+	 * @generated
+	 * @ordered
+	 */
   protected DynamicValue filename;
 
   /**
-   * The default value of the '{@link #getEscapeDigits() <em>Escape Digits</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getEscapeDigits() <em>Escape Digits</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEscapeDigits()
-   * @generated
-   * @ordered
-   */
+	 * @see #getEscapeDigits()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String ESCAPE_DIGITS_EDEFAULT = "#";
 
   /**
-   * The cached value of the '{@link #getEscapeDigits() <em>Escape Digits</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getEscapeDigits() <em>Escape Digits</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEscapeDigits()
-   * @generated
-   * @ordered
-   */
+	 * @see #getEscapeDigits()
+	 * @generated
+	 * @ordered
+	 */
   protected String escapeDigits = ESCAPE_DIGITS_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected StreamAudioImpl() {
-    super();
-  }
+		super();
+	}
 
   
   /**
@@ -137,257 +137,257 @@ public class StreamAudioImpl extends ActionStepImpl implements StreamAudio {
 
   }
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionstepPackage.Literals.STREAM_AUDIO;
-  }
+		return ActionstepPackage.Literals.STREAM_AUDIO;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call getCall1() {
-    if (call1 != null && call1.eIsProxy()) {
-      InternalEObject oldCall1 = (InternalEObject)call1;
-      call1 = (Call)eResolveProxy(oldCall1);
-      if (call1 != oldCall1) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.STREAM_AUDIO__CALL1, oldCall1, call1));
-      }
-    }
-    return call1;
-  }
+		if (call1 != null && call1.eIsProxy()) {
+			InternalEObject oldCall1 = (InternalEObject)call1;
+			call1 = (Call)eResolveProxy(oldCall1);
+			if (call1 != oldCall1) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.STREAM_AUDIO__CALL1, oldCall1, call1));
+			}
+		}
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call basicGetCall1() {
-    return call1;
-  }
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setCall1(Call newCall1) {
-    Call oldCall1 = call1;
-    call1 = newCall1;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.STREAM_AUDIO__CALL1, oldCall1, call1));
-  }
+		Call oldCall1 = call1;
+		call1 = newCall1;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.STREAM_AUDIO__CALL1, oldCall1, call1));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DynamicValue getFilename() {
-    return filename;
-  }
+		return filename;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetFilename(DynamicValue newFilename, NotificationChain msgs) {
-    DynamicValue oldFilename = filename;
-    filename = newFilename;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.STREAM_AUDIO__FILENAME, oldFilename, newFilename);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DynamicValue oldFilename = filename;
+		filename = newFilename;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.STREAM_AUDIO__FILENAME, oldFilename, newFilename);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setFilename(DynamicValue newFilename) {
-    if (newFilename != filename) {
-      NotificationChain msgs = null;
-      if (filename != null)
-        msgs = ((InternalEObject)filename).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.STREAM_AUDIO__FILENAME, null, msgs);
-      if (newFilename != null)
-        msgs = ((InternalEObject)newFilename).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.STREAM_AUDIO__FILENAME, null, msgs);
-      msgs = basicSetFilename(newFilename, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.STREAM_AUDIO__FILENAME, newFilename, newFilename));
-  }
+		if (newFilename != filename) {
+			NotificationChain msgs = null;
+			if (filename != null)
+				msgs = ((InternalEObject)filename).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.STREAM_AUDIO__FILENAME, null, msgs);
+			if (newFilename != null)
+				msgs = ((InternalEObject)newFilename).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.STREAM_AUDIO__FILENAME, null, msgs);
+			msgs = basicSetFilename(newFilename, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.STREAM_AUDIO__FILENAME, newFilename, newFilename));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getEscapeDigits() {
-    return escapeDigits;
-  }
+		return escapeDigits;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setEscapeDigits(String newEscapeDigits) {
-    String oldEscapeDigits = escapeDigits;
-    escapeDigits = newEscapeDigits;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.STREAM_AUDIO__ESCAPE_DIGITS, oldEscapeDigits, escapeDigits));
-  }
+		String oldEscapeDigits = escapeDigits;
+		escapeDigits = newEscapeDigits;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.STREAM_AUDIO__ESCAPE_DIGITS, oldEscapeDigits, escapeDigits));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionstepPackage.STREAM_AUDIO__FILENAME:
-        return basicSetFilename(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionstepPackage.STREAM_AUDIO__FILENAME:
+				return basicSetFilename(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionstepPackage.STREAM_AUDIO__CALL1:
-        if (resolve) return getCall1();
-        return basicGetCall1();
-      case ActionstepPackage.STREAM_AUDIO__FILENAME:
-        return getFilename();
-      case ActionstepPackage.STREAM_AUDIO__ESCAPE_DIGITS:
-        return getEscapeDigits();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionstepPackage.STREAM_AUDIO__CALL1:
+				if (resolve) return getCall1();
+				return basicGetCall1();
+			case ActionstepPackage.STREAM_AUDIO__FILENAME:
+				return getFilename();
+			case ActionstepPackage.STREAM_AUDIO__ESCAPE_DIGITS:
+				return getEscapeDigits();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionstepPackage.STREAM_AUDIO__CALL1:
-        setCall1((Call)newValue);
-        return;
-      case ActionstepPackage.STREAM_AUDIO__FILENAME:
-        setFilename((DynamicValue)newValue);
-        return;
-      case ActionstepPackage.STREAM_AUDIO__ESCAPE_DIGITS:
-        setEscapeDigits((String)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionstepPackage.STREAM_AUDIO__CALL1:
+				setCall1((Call)newValue);
+				return;
+			case ActionstepPackage.STREAM_AUDIO__FILENAME:
+				setFilename((DynamicValue)newValue);
+				return;
+			case ActionstepPackage.STREAM_AUDIO__ESCAPE_DIGITS:
+				setEscapeDigits((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.STREAM_AUDIO__CALL1:
-        setCall1((Call)null);
-        return;
-      case ActionstepPackage.STREAM_AUDIO__FILENAME:
-        setFilename((DynamicValue)null);
-        return;
-      case ActionstepPackage.STREAM_AUDIO__ESCAPE_DIGITS:
-        setEscapeDigits(ESCAPE_DIGITS_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.STREAM_AUDIO__CALL1:
+				setCall1((Call)null);
+				return;
+			case ActionstepPackage.STREAM_AUDIO__FILENAME:
+				setFilename((DynamicValue)null);
+				return;
+			case ActionstepPackage.STREAM_AUDIO__ESCAPE_DIGITS:
+				setEscapeDigits(ESCAPE_DIGITS_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.STREAM_AUDIO__CALL1:
-        return call1 != null;
-      case ActionstepPackage.STREAM_AUDIO__FILENAME:
-        return filename != null;
-      case ActionstepPackage.STREAM_AUDIO__ESCAPE_DIGITS:
-        return ESCAPE_DIGITS_EDEFAULT == null ? escapeDigits != null : !ESCAPE_DIGITS_EDEFAULT.equals(escapeDigits);
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.STREAM_AUDIO__CALL1:
+				return call1 != null;
+			case ActionstepPackage.STREAM_AUDIO__FILENAME:
+				return filename != null;
+			case ActionstepPackage.STREAM_AUDIO__ESCAPE_DIGITS:
+				return ESCAPE_DIGITS_EDEFAULT == null ? escapeDigits != null : !ESCAPE_DIGITS_EDEFAULT.equals(escapeDigits);
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (derivedFeatureID) {
-        case ActionstepPackage.STREAM_AUDIO__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (derivedFeatureID) {
+				case ActionstepPackage.STREAM_AUDIO__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (baseFeatureID) {
-        case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.STREAM_AUDIO__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (baseFeatureID) {
+				case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.STREAM_AUDIO__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (escapeDigits: ");
-    result.append(escapeDigits);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (escapeDigits: ");
+		result.append(escapeDigits);
+		result.append(')');
+		return result.toString();
+	}
 
 } //StreamAudioImpl

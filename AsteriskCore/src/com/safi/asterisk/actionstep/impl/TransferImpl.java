@@ -57,76 +57,76 @@ import com.safi.db.VariableType;
  */
 public class TransferImpl extends ActionStepImpl implements Transfer {
   /**
-   * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCall1()
-   * @generated
-   * @ordered
-   */
+	 * @see #getCall1()
+	 * @generated
+	 * @ordered
+	 */
   protected Call call1;
 
   /**
-   * The cached value of the '{@link #getCall2() <em>Call2</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getCall2() <em>Call2</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCall2()
-   * @generated
-   * @ordered
-   */
+	 * @see #getCall2()
+	 * @generated
+	 * @ordered
+	 */
   protected Call call2;
 
   /**
-   * The cached value of the '{@link #getContext() <em>Context</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getContext() <em>Context</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getContext()
-   * @generated
-   * @ordered
-   */
+	 * @see #getContext()
+	 * @generated
+	 * @ordered
+	 */
   protected DynamicValue context;
 
   /**
-   * The cached value of the '{@link #getExtension() <em>Extension</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getExtension() <em>Extension</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExtension()
-   * @generated
-   * @ordered
-   */
+	 * @see #getExtension()
+	 * @generated
+	 * @ordered
+	 */
   protected DynamicValue extension;
 
   /**
-   * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPriority()
-   * @generated
-   * @ordered
-   */
+	 * @see #getPriority()
+	 * @generated
+	 * @ordered
+	 */
   protected static final int PRIORITY_EDEFAULT = 1;
 
   /**
-   * The cached value of the '{@link #getPriority() <em>Priority</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getPriority() <em>Priority</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPriority()
-   * @generated
-   * @ordered
-   */
+	 * @see #getPriority()
+	 * @generated
+	 * @ordered
+	 */
   protected int priority = PRIORITY_EDEFAULT;
 
 
   private Object lock = new Object();
   private Object lock2 = new Object();
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected TransferImpl() {
-    super();
-  }
+		super();
+	}
 
   @Override
   public void beginProcessing(SafletContext context) throws ActionStepException {
@@ -215,374 +215,374 @@ public class TransferImpl extends ActionStepImpl implements Transfer {
     handleSuccess(context);
   }
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionstepPackage.Literals.TRANSFER;
-  }
+		return ActionstepPackage.Literals.TRANSFER;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call getCall1() {
-    if (call1 != null && call1.eIsProxy()) {
-      InternalEObject oldCall1 = (InternalEObject)call1;
-      call1 = (Call)eResolveProxy(oldCall1);
-      if (call1 != oldCall1) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.TRANSFER__CALL1, oldCall1, call1));
-      }
-    }
-    return call1;
-  }
+		if (call1 != null && call1.eIsProxy()) {
+			InternalEObject oldCall1 = (InternalEObject)call1;
+			call1 = (Call)eResolveProxy(oldCall1);
+			if (call1 != oldCall1) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.TRANSFER__CALL1, oldCall1, call1));
+			}
+		}
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call basicGetCall1() {
-    return call1;
-  }
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setCall1(Call newCall1) {
-    Call oldCall1 = call1;
-    call1 = newCall1;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.TRANSFER__CALL1, oldCall1, call1));
-  }
+		Call oldCall1 = call1;
+		call1 = newCall1;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.TRANSFER__CALL1, oldCall1, call1));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call getCall2() {
-    if (call2 != null && call2.eIsProxy()) {
-      InternalEObject oldCall2 = (InternalEObject)call2;
-      call2 = (Call)eResolveProxy(oldCall2);
-      if (call2 != oldCall2) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.TRANSFER__CALL2, oldCall2, call2));
-      }
-    }
-    return call2;
-  }
+		if (call2 != null && call2.eIsProxy()) {
+			InternalEObject oldCall2 = (InternalEObject)call2;
+			call2 = (Call)eResolveProxy(oldCall2);
+			if (call2 != oldCall2) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.TRANSFER__CALL2, oldCall2, call2));
+			}
+		}
+		return call2;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call basicGetCall2() {
-    return call2;
-  }
+		return call2;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setCall2(Call newCall2) {
-    Call oldCall2 = call2;
-    call2 = newCall2;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.TRANSFER__CALL2, oldCall2, call2));
-  }
+		Call oldCall2 = call2;
+		call2 = newCall2;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.TRANSFER__CALL2, oldCall2, call2));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DynamicValue getContext() {
-    return context;
-  }
+		return context;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetContext(DynamicValue newContext, NotificationChain msgs) {
-    DynamicValue oldContext = context;
-    context = newContext;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.TRANSFER__CONTEXT, oldContext, newContext);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DynamicValue oldContext = context;
+		context = newContext;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.TRANSFER__CONTEXT, oldContext, newContext);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setContext(DynamicValue newContext) {
-    if (newContext != context) {
-      NotificationChain msgs = null;
-      if (context != null)
-        msgs = ((InternalEObject)context).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.TRANSFER__CONTEXT, null, msgs);
-      if (newContext != null)
-        msgs = ((InternalEObject)newContext).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.TRANSFER__CONTEXT, null, msgs);
-      msgs = basicSetContext(newContext, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.TRANSFER__CONTEXT, newContext, newContext));
-  }
+		if (newContext != context) {
+			NotificationChain msgs = null;
+			if (context != null)
+				msgs = ((InternalEObject)context).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.TRANSFER__CONTEXT, null, msgs);
+			if (newContext != null)
+				msgs = ((InternalEObject)newContext).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.TRANSFER__CONTEXT, null, msgs);
+			msgs = basicSetContext(newContext, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.TRANSFER__CONTEXT, newContext, newContext));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DynamicValue getExtension() {
-    return extension;
-  }
+		return extension;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetExtension(DynamicValue newExtension, NotificationChain msgs) {
-    DynamicValue oldExtension = extension;
-    extension = newExtension;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.TRANSFER__EXTENSION, oldExtension, newExtension);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DynamicValue oldExtension = extension;
+		extension = newExtension;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.TRANSFER__EXTENSION, oldExtension, newExtension);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setExtension(DynamicValue newExtension) {
-    if (newExtension != extension) {
-      NotificationChain msgs = null;
-      if (extension != null)
-        msgs = ((InternalEObject)extension).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.TRANSFER__EXTENSION, null, msgs);
-      if (newExtension != null)
-        msgs = ((InternalEObject)newExtension).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.TRANSFER__EXTENSION, null, msgs);
-      msgs = basicSetExtension(newExtension, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.TRANSFER__EXTENSION, newExtension, newExtension));
-  }
+		if (newExtension != extension) {
+			NotificationChain msgs = null;
+			if (extension != null)
+				msgs = ((InternalEObject)extension).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.TRANSFER__EXTENSION, null, msgs);
+			if (newExtension != null)
+				msgs = ((InternalEObject)newExtension).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.TRANSFER__EXTENSION, null, msgs);
+			msgs = basicSetExtension(newExtension, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.TRANSFER__EXTENSION, newExtension, newExtension));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public int getPriority() {
-    return priority;
-  }
+		return priority;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setPriority(int newPriority) {
-    int oldPriority = priority;
-    priority = newPriority;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.TRANSFER__PRIORITY, oldPriority, priority));
-  }
+		int oldPriority = priority;
+		priority = newPriority;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.TRANSFER__PRIORITY, oldPriority, priority));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionstepPackage.TRANSFER__CONTEXT:
-        return basicSetContext(null, msgs);
-      case ActionstepPackage.TRANSFER__EXTENSION:
-        return basicSetExtension(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionstepPackage.TRANSFER__CONTEXT:
+				return basicSetContext(null, msgs);
+			case ActionstepPackage.TRANSFER__EXTENSION:
+				return basicSetExtension(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionstepPackage.TRANSFER__CALL1:
-        if (resolve) return getCall1();
-        return basicGetCall1();
-      case ActionstepPackage.TRANSFER__CALL2:
-        if (resolve) return getCall2();
-        return basicGetCall2();
-      case ActionstepPackage.TRANSFER__CONTEXT:
-        return getContext();
-      case ActionstepPackage.TRANSFER__EXTENSION:
-        return getExtension();
-      case ActionstepPackage.TRANSFER__PRIORITY:
-        return new Integer(getPriority());
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionstepPackage.TRANSFER__CALL1:
+				if (resolve) return getCall1();
+				return basicGetCall1();
+			case ActionstepPackage.TRANSFER__CALL2:
+				if (resolve) return getCall2();
+				return basicGetCall2();
+			case ActionstepPackage.TRANSFER__CONTEXT:
+				return getContext();
+			case ActionstepPackage.TRANSFER__EXTENSION:
+				return getExtension();
+			case ActionstepPackage.TRANSFER__PRIORITY:
+				return getPriority();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionstepPackage.TRANSFER__CALL1:
-        setCall1((Call)newValue);
-        return;
-      case ActionstepPackage.TRANSFER__CALL2:
-        setCall2((Call)newValue);
-        return;
-      case ActionstepPackage.TRANSFER__CONTEXT:
-        setContext((DynamicValue)newValue);
-        return;
-      case ActionstepPackage.TRANSFER__EXTENSION:
-        setExtension((DynamicValue)newValue);
-        return;
-      case ActionstepPackage.TRANSFER__PRIORITY:
-        setPriority(((Integer)newValue).intValue());
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionstepPackage.TRANSFER__CALL1:
+				setCall1((Call)newValue);
+				return;
+			case ActionstepPackage.TRANSFER__CALL2:
+				setCall2((Call)newValue);
+				return;
+			case ActionstepPackage.TRANSFER__CONTEXT:
+				setContext((DynamicValue)newValue);
+				return;
+			case ActionstepPackage.TRANSFER__EXTENSION:
+				setExtension((DynamicValue)newValue);
+				return;
+			case ActionstepPackage.TRANSFER__PRIORITY:
+				setPriority((Integer)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.TRANSFER__CALL1:
-        setCall1((Call)null);
-        return;
-      case ActionstepPackage.TRANSFER__CALL2:
-        setCall2((Call)null);
-        return;
-      case ActionstepPackage.TRANSFER__CONTEXT:
-        setContext((DynamicValue)null);
-        return;
-      case ActionstepPackage.TRANSFER__EXTENSION:
-        setExtension((DynamicValue)null);
-        return;
-      case ActionstepPackage.TRANSFER__PRIORITY:
-        setPriority(PRIORITY_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.TRANSFER__CALL1:
+				setCall1((Call)null);
+				return;
+			case ActionstepPackage.TRANSFER__CALL2:
+				setCall2((Call)null);
+				return;
+			case ActionstepPackage.TRANSFER__CONTEXT:
+				setContext((DynamicValue)null);
+				return;
+			case ActionstepPackage.TRANSFER__EXTENSION:
+				setExtension((DynamicValue)null);
+				return;
+			case ActionstepPackage.TRANSFER__PRIORITY:
+				setPriority(PRIORITY_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.TRANSFER__CALL1:
-        return call1 != null;
-      case ActionstepPackage.TRANSFER__CALL2:
-        return call2 != null;
-      case ActionstepPackage.TRANSFER__CONTEXT:
-        return context != null;
-      case ActionstepPackage.TRANSFER__EXTENSION:
-        return extension != null;
-      case ActionstepPackage.TRANSFER__PRIORITY:
-        return priority != PRIORITY_EDEFAULT;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.TRANSFER__CALL1:
+				return call1 != null;
+			case ActionstepPackage.TRANSFER__CALL2:
+				return call2 != null;
+			case ActionstepPackage.TRANSFER__CONTEXT:
+				return context != null;
+			case ActionstepPackage.TRANSFER__EXTENSION:
+				return extension != null;
+			case ActionstepPackage.TRANSFER__PRIORITY:
+				return priority != PRIORITY_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (derivedFeatureID) {
-        case ActionstepPackage.TRANSFER__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
-        default: return -1;
-      }
-    }
-    if (baseClass == CallConsumer2.class) {
-      switch (derivedFeatureID) {
-        case ActionstepPackage.TRANSFER__CALL2: return AsteriskPackage.CALL_CONSUMER2__CALL2;
-        default: return -1;
-      }
-    }
-    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (derivedFeatureID) {
+				case ActionstepPackage.TRANSFER__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
+				default: return -1;
+			}
+		}
+		if (baseClass == CallConsumer2.class) {
+			switch (derivedFeatureID) {
+				case ActionstepPackage.TRANSFER__CALL2: return AsteriskPackage.CALL_CONSUMER2__CALL2;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (baseFeatureID) {
-        case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.TRANSFER__CALL1;
-        default: return -1;
-      }
-    }
-    if (baseClass == CallConsumer2.class) {
-      switch (baseFeatureID) {
-        case AsteriskPackage.CALL_CONSUMER2__CALL2: return ActionstepPackage.TRANSFER__CALL2;
-        default: return -1;
-      }
-    }
-    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (baseFeatureID) {
+				case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.TRANSFER__CALL1;
+				default: return -1;
+			}
+		}
+		if (baseClass == CallConsumer2.class) {
+			switch (baseFeatureID) {
+				case AsteriskPackage.CALL_CONSUMER2__CALL2: return ActionstepPackage.TRANSFER__CALL2;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (priority: ");
-    result.append(priority);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (priority: ");
+		result.append(priority);
+		result.append(')');
+		return result.toString();
+	}
 
   public class RedirectCallManagerEventListener implements ManagerEventListener, Runnable {
     private StringBuffer buf;

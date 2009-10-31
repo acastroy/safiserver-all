@@ -18,38 +18,38 @@ import org.eclipse.emf.ecore.EFactory;
  */
 public interface InitiatorFactory extends EFactory {
   /**
-   * The singleton instance of the factory.
-   * <!-- begin-user-doc -->
+	 * The singleton instance of the factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   InitiatorFactory eINSTANCE = com.safi.asterisk.initiator.impl.InitiatorFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>DID Matcher</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>DID Matcher</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>DID Matcher</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>DID Matcher</em>'.
+	 * @generated
+	 */
   DIDMatcher createDIDMatcher();
 
   /**
-   * Returns a new object of class '<em>Incoming Call</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Incoming Call</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Incoming Call</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Incoming Call</em>'.
+	 * @generated
+	 */
   IncomingCall createIncomingCall();
 
   /**
-   * Returns the package supported by this factory.
-   * <!-- begin-user-doc -->
+	 * Returns the package supported by this factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the package supported by this factory.
-   * @generated
-   */
+	 * @return the package supported by this factory.
+	 * @generated
+	 */
   InitiatorPackage getInitiatorPackage();
 
 } //InitiatorFactory

@@ -7,6 +7,7 @@
 package com.safi.asterisk.initiator.impl;
 
 
+import com.safi.asterisk.initiator.*;
 import org.asteriskjava.manager.event.ManagerEvent;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -28,135 +29,135 @@ import com.safi.asterisk.initiator.InitiatorPackage;
  */
 public class InitiatorFactoryImpl extends EFactoryImpl implements InitiatorFactory {
   /**
-   * Creates the default factory implementation.
-   * <!-- begin-user-doc -->
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static InitiatorFactory init() {
-    try {
-      InitiatorFactory theInitiatorFactory = (InitiatorFactory)EPackage.Registry.INSTANCE.getEFactory("http:///com/safi/asterisk.ecore#initiator"); 
-      if (theInitiatorFactory != null) {
-        return theInitiatorFactory;
-      }
-    }
-    catch (Exception exception) {
-      EcorePlugin.INSTANCE.log(exception);
-    }
-    return new InitiatorFactoryImpl();
-  }
+		try {
+			InitiatorFactory theInitiatorFactory = (InitiatorFactory)EPackage.Registry.INSTANCE.getEFactory("http:///com/safi/asterisk.ecore#initiator"); 
+			if (theInitiatorFactory != null) {
+				return theInitiatorFactory;
+			}
+		}
+		catch (Exception exception) {
+			EcorePlugin.INSTANCE.log(exception);
+		}
+		return new InitiatorFactoryImpl();
+	}
 
   /**
-   * Creates an instance of the factory.
-   * <!-- begin-user-doc -->
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public InitiatorFactoryImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public EObject create(EClass eClass) {
-    switch (eClass.getClassifierID()) {
-      case InitiatorPackage.DID_MATCHER: return createDIDMatcher();
-      case InitiatorPackage.INCOMING_CALL: return createIncomingCall();
-      default:
-        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eClass.getClassifierID()) {
+			case InitiatorPackage.DID_MATCHER: return createDIDMatcher();
+			case InitiatorPackage.INCOMING_CALL: return createIncomingCall();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object createFromString(EDataType eDataType, String initialValue) {
-    switch (eDataType.getClassifierID()) {
-      case InitiatorPackage.MANAGER_EVENT:
-        return createManagerEventFromString(eDataType, initialValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eDataType.getClassifierID()) {
+			case InitiatorPackage.MANAGER_EVENT:
+				return createManagerEventFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String convertToString(EDataType eDataType, Object instanceValue) {
-    switch (eDataType.getClassifierID()) {
-      case InitiatorPackage.MANAGER_EVENT:
-        return convertManagerEventToString(eDataType, instanceValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eDataType.getClassifierID()) {
+			case InitiatorPackage.MANAGER_EVENT:
+				return convertManagerEventToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DIDMatcher createDIDMatcher() {
-    DIDMatcherImpl didMatcher = new DIDMatcherImpl();
-    return didMatcher;
-  }
+		DIDMatcherImpl didMatcher = new DIDMatcherImpl();
+		return didMatcher;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public IncomingCall createIncomingCall() {
-    IncomingCallImpl incomingCall = new IncomingCallImpl();
-    return incomingCall;
-  }
+		IncomingCallImpl incomingCall = new IncomingCallImpl();
+		return incomingCall;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ManagerEvent createManagerEventFromString(EDataType eDataType, String initialValue) {
-    return (ManagerEvent)super.createFromString(eDataType, initialValue);
-  }
+		return (ManagerEvent)super.createFromString(eDataType, initialValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String convertManagerEventToString(EDataType eDataType, Object instanceValue) {
-    return super.convertToString(eDataType, instanceValue);
-  }
+		return super.convertToString(eDataType, instanceValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public InitiatorPackage getInitiatorPackage() {
-    return (InitiatorPackage)getEPackage();
-  }
+		return (InitiatorPackage)getEPackage();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @deprecated
-   * @generated
-   */
+	 * @deprecated
+	 * @generated
+	 */
   @Deprecated
   public static InitiatorPackage getPackage() {
-    return InitiatorPackage.eINSTANCE;
-  }
+		return InitiatorPackage.eINSTANCE;
+	}
 
 } //InitiatorFactoryImpl

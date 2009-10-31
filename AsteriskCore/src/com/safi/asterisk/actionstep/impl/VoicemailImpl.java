@@ -49,113 +49,113 @@ import com.safi.db.VariableType;
  */
 public class VoicemailImpl extends ActionStepImpl implements Voicemail {
   /**
-   * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCall1()
-   * @generated
-   * @ordered
-   */
+	 * @see #getCall1()
+	 * @generated
+	 * @ordered
+	 */
   protected Call call1;
 
   /**
-   * The cached value of the '{@link #getMailbox() <em>Mailbox</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getMailbox() <em>Mailbox</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMailbox()
-   * @generated
-   * @ordered
-   */
+	 * @see #getMailbox()
+	 * @generated
+	 * @ordered
+	 */
   protected DynamicValue mailbox;
 
   /**
-   * The default value of the '{@link #isSkipInstructions() <em>Skip Instructions</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #isSkipInstructions() <em>Skip Instructions</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isSkipInstructions()
-   * @generated
-   * @ordered
-   */
+	 * @see #isSkipInstructions()
+	 * @generated
+	 * @ordered
+	 */
   protected static final boolean SKIP_INSTRUCTIONS_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isSkipInstructions() <em>Skip Instructions</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #isSkipInstructions() <em>Skip Instructions</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isSkipInstructions()
-   * @generated
-   * @ordered
-   */
+	 * @see #isSkipInstructions()
+	 * @generated
+	 * @ordered
+	 */
   protected boolean skipInstructions = SKIP_INSTRUCTIONS_EDEFAULT;
 
   /**
-   * The default value of the '{@link #isPlayUnavailableMessage() <em>Play Unavailable Message</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #isPlayUnavailableMessage() <em>Play Unavailable Message</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isPlayUnavailableMessage()
-   * @generated
-   * @ordered
-   */
+	 * @see #isPlayUnavailableMessage()
+	 * @generated
+	 * @ordered
+	 */
   protected static final boolean PLAY_UNAVAILABLE_MESSAGE_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isPlayUnavailableMessage() <em>Play Unavailable Message</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #isPlayUnavailableMessage() <em>Play Unavailable Message</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isPlayUnavailableMessage()
-   * @generated
-   * @ordered
-   */
+	 * @see #isPlayUnavailableMessage()
+	 * @generated
+	 * @ordered
+	 */
   protected boolean playUnavailableMessage = PLAY_UNAVAILABLE_MESSAGE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #isPlayBusyMessage() <em>Play Busy Message</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #isPlayBusyMessage() <em>Play Busy Message</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isPlayBusyMessage()
-   * @generated
-   * @ordered
-   */
+	 * @see #isPlayBusyMessage()
+	 * @generated
+	 * @ordered
+	 */
   protected static final boolean PLAY_BUSY_MESSAGE_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isPlayBusyMessage() <em>Play Busy Message</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #isPlayBusyMessage() <em>Play Busy Message</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isPlayBusyMessage()
-   * @generated
-   * @ordered
-   */
+	 * @see #isPlayBusyMessage()
+	 * @generated
+	 * @ordered
+	 */
   protected boolean playBusyMessage = PLAY_BUSY_MESSAGE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getRecordingGain() <em>Recording Gain</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getRecordingGain() <em>Recording Gain</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRecordingGain()
-   * @generated
-   * @ordered
-   */
+	 * @see #getRecordingGain()
+	 * @generated
+	 * @ordered
+	 */
   protected static final int RECORDING_GAIN_EDEFAULT = -1;
 
   /**
-   * The cached value of the '{@link #getRecordingGain() <em>Recording Gain</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRecordingGain() <em>Recording Gain</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRecordingGain()
-   * @generated
-   * @ordered
-   */
+	 * @see #getRecordingGain()
+	 * @generated
+	 * @ordered
+	 */
   protected int recordingGain = RECORDING_GAIN_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected VoicemailImpl() {
-    super();
-  }
+		super();
+	}
 
   @Override
   public void beginProcessing(SafletContext context) throws ActionStepException {
@@ -251,356 +251,356 @@ public class VoicemailImpl extends ActionStepImpl implements Voicemail {
     getOutputs().add(o);
   }  
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionstepPackage.Literals.VOICEMAIL;
-  }
+		return ActionstepPackage.Literals.VOICEMAIL;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call getCall1() {
-    if (call1 != null && call1.eIsProxy()) {
-      InternalEObject oldCall1 = (InternalEObject)call1;
-      call1 = (Call)eResolveProxy(oldCall1);
-      if (call1 != oldCall1) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.VOICEMAIL__CALL1, oldCall1, call1));
-      }
-    }
-    return call1;
-  }
+		if (call1 != null && call1.eIsProxy()) {
+			InternalEObject oldCall1 = (InternalEObject)call1;
+			call1 = (Call)eResolveProxy(oldCall1);
+			if (call1 != oldCall1) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.VOICEMAIL__CALL1, oldCall1, call1));
+			}
+		}
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call basicGetCall1() {
-    return call1;
-  }
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setCall1(Call newCall1) {
-    Call oldCall1 = call1;
-    call1 = newCall1;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.VOICEMAIL__CALL1, oldCall1, call1));
-  }
+		Call oldCall1 = call1;
+		call1 = newCall1;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.VOICEMAIL__CALL1, oldCall1, call1));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DynamicValue getMailbox() {
-    return mailbox;
-  }
+		return mailbox;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetMailbox(DynamicValue newMailbox, NotificationChain msgs) {
-    DynamicValue oldMailbox = mailbox;
-    mailbox = newMailbox;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.VOICEMAIL__MAILBOX, oldMailbox, newMailbox);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DynamicValue oldMailbox = mailbox;
+		mailbox = newMailbox;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.VOICEMAIL__MAILBOX, oldMailbox, newMailbox);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setMailbox(DynamicValue newMailbox) {
-    if (newMailbox != mailbox) {
-      NotificationChain msgs = null;
-      if (mailbox != null)
-        msgs = ((InternalEObject)mailbox).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.VOICEMAIL__MAILBOX, null, msgs);
-      if (newMailbox != null)
-        msgs = ((InternalEObject)newMailbox).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.VOICEMAIL__MAILBOX, null, msgs);
-      msgs = basicSetMailbox(newMailbox, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.VOICEMAIL__MAILBOX, newMailbox, newMailbox));
-  }
+		if (newMailbox != mailbox) {
+			NotificationChain msgs = null;
+			if (mailbox != null)
+				msgs = ((InternalEObject)mailbox).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.VOICEMAIL__MAILBOX, null, msgs);
+			if (newMailbox != null)
+				msgs = ((InternalEObject)newMailbox).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.VOICEMAIL__MAILBOX, null, msgs);
+			msgs = basicSetMailbox(newMailbox, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.VOICEMAIL__MAILBOX, newMailbox, newMailbox));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public boolean isSkipInstructions() {
-    return skipInstructions;
-  }
+		return skipInstructions;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setSkipInstructions(boolean newSkipInstructions) {
-    boolean oldSkipInstructions = skipInstructions;
-    skipInstructions = newSkipInstructions;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.VOICEMAIL__SKIP_INSTRUCTIONS, oldSkipInstructions, skipInstructions));
-  }
+		boolean oldSkipInstructions = skipInstructions;
+		skipInstructions = newSkipInstructions;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.VOICEMAIL__SKIP_INSTRUCTIONS, oldSkipInstructions, skipInstructions));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public boolean isPlayUnavailableMessage() {
-    return playUnavailableMessage;
-  }
+		return playUnavailableMessage;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setPlayUnavailableMessage(boolean newPlayUnavailableMessage) {
-    boolean oldPlayUnavailableMessage = playUnavailableMessage;
-    playUnavailableMessage = newPlayUnavailableMessage;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.VOICEMAIL__PLAY_UNAVAILABLE_MESSAGE, oldPlayUnavailableMessage, playUnavailableMessage));
-  }
+		boolean oldPlayUnavailableMessage = playUnavailableMessage;
+		playUnavailableMessage = newPlayUnavailableMessage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.VOICEMAIL__PLAY_UNAVAILABLE_MESSAGE, oldPlayUnavailableMessage, playUnavailableMessage));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public boolean isPlayBusyMessage() {
-    return playBusyMessage;
-  }
+		return playBusyMessage;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setPlayBusyMessage(boolean newPlayBusyMessage) {
-    boolean oldPlayBusyMessage = playBusyMessage;
-    playBusyMessage = newPlayBusyMessage;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.VOICEMAIL__PLAY_BUSY_MESSAGE, oldPlayBusyMessage, playBusyMessage));
-  }
+		boolean oldPlayBusyMessage = playBusyMessage;
+		playBusyMessage = newPlayBusyMessage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.VOICEMAIL__PLAY_BUSY_MESSAGE, oldPlayBusyMessage, playBusyMessage));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public int getRecordingGain() {
-    return recordingGain;
-  }
+		return recordingGain;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setRecordingGain(int newRecordingGain) {
-    int oldRecordingGain = recordingGain;
-    recordingGain = newRecordingGain;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.VOICEMAIL__RECORDING_GAIN, oldRecordingGain, recordingGain));
-  }
+		int oldRecordingGain = recordingGain;
+		recordingGain = newRecordingGain;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.VOICEMAIL__RECORDING_GAIN, oldRecordingGain, recordingGain));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionstepPackage.VOICEMAIL__MAILBOX:
-        return basicSetMailbox(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionstepPackage.VOICEMAIL__MAILBOX:
+				return basicSetMailbox(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionstepPackage.VOICEMAIL__CALL1:
-        if (resolve) return getCall1();
-        return basicGetCall1();
-      case ActionstepPackage.VOICEMAIL__MAILBOX:
-        return getMailbox();
-      case ActionstepPackage.VOICEMAIL__SKIP_INSTRUCTIONS:
-        return isSkipInstructions() ? Boolean.TRUE : Boolean.FALSE;
-      case ActionstepPackage.VOICEMAIL__PLAY_UNAVAILABLE_MESSAGE:
-        return isPlayUnavailableMessage() ? Boolean.TRUE : Boolean.FALSE;
-      case ActionstepPackage.VOICEMAIL__PLAY_BUSY_MESSAGE:
-        return isPlayBusyMessage() ? Boolean.TRUE : Boolean.FALSE;
-      case ActionstepPackage.VOICEMAIL__RECORDING_GAIN:
-        return new Integer(getRecordingGain());
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionstepPackage.VOICEMAIL__CALL1:
+				if (resolve) return getCall1();
+				return basicGetCall1();
+			case ActionstepPackage.VOICEMAIL__MAILBOX:
+				return getMailbox();
+			case ActionstepPackage.VOICEMAIL__SKIP_INSTRUCTIONS:
+				return isSkipInstructions();
+			case ActionstepPackage.VOICEMAIL__PLAY_UNAVAILABLE_MESSAGE:
+				return isPlayUnavailableMessage();
+			case ActionstepPackage.VOICEMAIL__PLAY_BUSY_MESSAGE:
+				return isPlayBusyMessage();
+			case ActionstepPackage.VOICEMAIL__RECORDING_GAIN:
+				return getRecordingGain();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionstepPackage.VOICEMAIL__CALL1:
-        setCall1((Call)newValue);
-        return;
-      case ActionstepPackage.VOICEMAIL__MAILBOX:
-        setMailbox((DynamicValue)newValue);
-        return;
-      case ActionstepPackage.VOICEMAIL__SKIP_INSTRUCTIONS:
-        setSkipInstructions(((Boolean)newValue).booleanValue());
-        return;
-      case ActionstepPackage.VOICEMAIL__PLAY_UNAVAILABLE_MESSAGE:
-        setPlayUnavailableMessage(((Boolean)newValue).booleanValue());
-        return;
-      case ActionstepPackage.VOICEMAIL__PLAY_BUSY_MESSAGE:
-        setPlayBusyMessage(((Boolean)newValue).booleanValue());
-        return;
-      case ActionstepPackage.VOICEMAIL__RECORDING_GAIN:
-        setRecordingGain(((Integer)newValue).intValue());
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionstepPackage.VOICEMAIL__CALL1:
+				setCall1((Call)newValue);
+				return;
+			case ActionstepPackage.VOICEMAIL__MAILBOX:
+				setMailbox((DynamicValue)newValue);
+				return;
+			case ActionstepPackage.VOICEMAIL__SKIP_INSTRUCTIONS:
+				setSkipInstructions((Boolean)newValue);
+				return;
+			case ActionstepPackage.VOICEMAIL__PLAY_UNAVAILABLE_MESSAGE:
+				setPlayUnavailableMessage((Boolean)newValue);
+				return;
+			case ActionstepPackage.VOICEMAIL__PLAY_BUSY_MESSAGE:
+				setPlayBusyMessage((Boolean)newValue);
+				return;
+			case ActionstepPackage.VOICEMAIL__RECORDING_GAIN:
+				setRecordingGain((Integer)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.VOICEMAIL__CALL1:
-        setCall1((Call)null);
-        return;
-      case ActionstepPackage.VOICEMAIL__MAILBOX:
-        setMailbox((DynamicValue)null);
-        return;
-      case ActionstepPackage.VOICEMAIL__SKIP_INSTRUCTIONS:
-        setSkipInstructions(SKIP_INSTRUCTIONS_EDEFAULT);
-        return;
-      case ActionstepPackage.VOICEMAIL__PLAY_UNAVAILABLE_MESSAGE:
-        setPlayUnavailableMessage(PLAY_UNAVAILABLE_MESSAGE_EDEFAULT);
-        return;
-      case ActionstepPackage.VOICEMAIL__PLAY_BUSY_MESSAGE:
-        setPlayBusyMessage(PLAY_BUSY_MESSAGE_EDEFAULT);
-        return;
-      case ActionstepPackage.VOICEMAIL__RECORDING_GAIN:
-        setRecordingGain(RECORDING_GAIN_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.VOICEMAIL__CALL1:
+				setCall1((Call)null);
+				return;
+			case ActionstepPackage.VOICEMAIL__MAILBOX:
+				setMailbox((DynamicValue)null);
+				return;
+			case ActionstepPackage.VOICEMAIL__SKIP_INSTRUCTIONS:
+				setSkipInstructions(SKIP_INSTRUCTIONS_EDEFAULT);
+				return;
+			case ActionstepPackage.VOICEMAIL__PLAY_UNAVAILABLE_MESSAGE:
+				setPlayUnavailableMessage(PLAY_UNAVAILABLE_MESSAGE_EDEFAULT);
+				return;
+			case ActionstepPackage.VOICEMAIL__PLAY_BUSY_MESSAGE:
+				setPlayBusyMessage(PLAY_BUSY_MESSAGE_EDEFAULT);
+				return;
+			case ActionstepPackage.VOICEMAIL__RECORDING_GAIN:
+				setRecordingGain(RECORDING_GAIN_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.VOICEMAIL__CALL1:
-        return call1 != null;
-      case ActionstepPackage.VOICEMAIL__MAILBOX:
-        return mailbox != null;
-      case ActionstepPackage.VOICEMAIL__SKIP_INSTRUCTIONS:
-        return skipInstructions != SKIP_INSTRUCTIONS_EDEFAULT;
-      case ActionstepPackage.VOICEMAIL__PLAY_UNAVAILABLE_MESSAGE:
-        return playUnavailableMessage != PLAY_UNAVAILABLE_MESSAGE_EDEFAULT;
-      case ActionstepPackage.VOICEMAIL__PLAY_BUSY_MESSAGE:
-        return playBusyMessage != PLAY_BUSY_MESSAGE_EDEFAULT;
-      case ActionstepPackage.VOICEMAIL__RECORDING_GAIN:
-        return recordingGain != RECORDING_GAIN_EDEFAULT;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.VOICEMAIL__CALL1:
+				return call1 != null;
+			case ActionstepPackage.VOICEMAIL__MAILBOX:
+				return mailbox != null;
+			case ActionstepPackage.VOICEMAIL__SKIP_INSTRUCTIONS:
+				return skipInstructions != SKIP_INSTRUCTIONS_EDEFAULT;
+			case ActionstepPackage.VOICEMAIL__PLAY_UNAVAILABLE_MESSAGE:
+				return playUnavailableMessage != PLAY_UNAVAILABLE_MESSAGE_EDEFAULT;
+			case ActionstepPackage.VOICEMAIL__PLAY_BUSY_MESSAGE:
+				return playBusyMessage != PLAY_BUSY_MESSAGE_EDEFAULT;
+			case ActionstepPackage.VOICEMAIL__RECORDING_GAIN:
+				return recordingGain != RECORDING_GAIN_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (derivedFeatureID) {
-        case ActionstepPackage.VOICEMAIL__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (derivedFeatureID) {
+				case ActionstepPackage.VOICEMAIL__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (baseFeatureID) {
-        case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.VOICEMAIL__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (baseFeatureID) {
+				case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.VOICEMAIL__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (skipInstructions: ");
-    result.append(skipInstructions);
-    result.append(", playUnavailableMessage: ");
-    result.append(playUnavailableMessage);
-    result.append(", playBusyMessage: ");
-    result.append(playBusyMessage);
-    result.append(", recordingGain: ");
-    result.append(recordingGain);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (skipInstructions: ");
+		result.append(skipInstructions);
+		result.append(", playUnavailableMessage: ");
+		result.append(playUnavailableMessage);
+		result.append(", playBusyMessage: ");
+		result.append(playBusyMessage);
+		result.append(", recordingGain: ");
+		result.append(recordingGain);
+		result.append(')');
+		return result.toString();
+	}
 
 } //VoicemailImpl

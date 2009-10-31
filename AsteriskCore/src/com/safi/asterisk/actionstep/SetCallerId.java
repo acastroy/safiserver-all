@@ -28,31 +28,31 @@ import com.safi.core.actionstep.DynamicValue;
  */
 public interface SetCallerId extends ActionStep, CallConsumer1 {
   /**
-   * Returns the value of the '<em><b>Caller Id</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Caller Id</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Caller Id</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Caller Id</em>' containment reference.
-   * @see #setCallerId(DynamicValue)
-   * @see com.safi.asterisk.actionstep.ActionstepPackage#getSetCallerId_CallerId()
-   * @model containment="true" ordered="false"
-   *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The  caller ID of the current call will be set to this text value.' expectedReturnType='Text' helperClass=''"
-   *        annotation="Required criteria='non-null'"
-   * @generated
-   */
+	 * @return the value of the '<em>Caller Id</em>' containment reference.
+	 * @see #setCallerId(DynamicValue)
+	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getSetCallerId_CallerId()
+	 * @model containment="true" ordered="false"
+	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The  caller ID of the current call will be set to this text value.' expectedReturnType='Text' helperClass=''"
+	 *        annotation="Required criteria='non-null'"
+	 * @generated
+	 */
   DynamicValue getCallerId();
 
   /**
-   * Sets the value of the '{@link com.safi.asterisk.actionstep.SetCallerId#getCallerId <em>Caller Id</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.asterisk.actionstep.SetCallerId#getCallerId <em>Caller Id</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Caller Id</em>' containment reference.
-   * @see #getCallerId()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Caller Id</em>' containment reference.
+	 * @see #getCallerId()
+	 * @generated
+	 */
   void setCallerId(DynamicValue value);
 
 } // SetCallerId

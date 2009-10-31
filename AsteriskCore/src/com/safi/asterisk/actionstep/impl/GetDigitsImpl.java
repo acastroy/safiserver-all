@@ -53,133 +53,133 @@ import com.safi.db.VariableScope;
  */
 public class GetDigitsImpl extends ActionStepImpl implements GetDigits {
   /**
-   * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCall1()
-   * @generated
-   * @ordered
-   */
+	 * @see #getCall1()
+	 * @generated
+	 * @ordered
+	 */
   protected Call call1;
 
   /**
-   * The default value of the '{@link #getInputTimeout() <em>Input Timeout</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getInputTimeout() <em>Input Timeout</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getInputTimeout()
-   * @generated
-   * @ordered
-   */
+	 * @see #getInputTimeout()
+	 * @generated
+	 * @ordered
+	 */
   protected static final long INPUT_TIMEOUT_EDEFAULT = -1L;
 
   /**
-   * The cached value of the '{@link #getInputTimeout() <em>Input Timeout</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getInputTimeout() <em>Input Timeout</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getInputTimeout()
-   * @generated
-   * @ordered
-   */
+	 * @see #getInputTimeout()
+	 * @generated
+	 * @ordered
+	 */
   protected long inputTimeout = INPUT_TIMEOUT_EDEFAULT;
 
   /**
-   * The default value of the '{@link #isUseBufferedDigits() <em>Use Buffered Digits</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #isUseBufferedDigits() <em>Use Buffered Digits</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isUseBufferedDigits()
-   * @generated
-   * @ordered
-   */
+	 * @see #isUseBufferedDigits()
+	 * @generated
+	 * @ordered
+	 */
   protected static final boolean USE_BUFFERED_DIGITS_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isUseBufferedDigits() <em>Use Buffered Digits</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #isUseBufferedDigits() <em>Use Buffered Digits</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isUseBufferedDigits()
-   * @generated
-   * @ordered
-   */
+	 * @see #isUseBufferedDigits()
+	 * @generated
+	 * @ordered
+	 */
   protected boolean useBufferedDigits = USE_BUFFERED_DIGITS_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getEscapeDigits() <em>Escape Digits</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getEscapeDigits() <em>Escape Digits</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEscapeDigits()
-   * @generated
-   * @ordered
-   */
+	 * @see #getEscapeDigits()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String ESCAPE_DIGITS_EDEFAULT = "#";
 
   /**
-   * The cached value of the '{@link #getEscapeDigits() <em>Escape Digits</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getEscapeDigits() <em>Escape Digits</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEscapeDigits()
-   * @generated
-   * @ordered
-   */
+	 * @see #getEscapeDigits()
+	 * @generated
+	 * @ordered
+	 */
   protected String escapeDigits = ESCAPE_DIGITS_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getVariableName() <em>Variable Name</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getVariableName() <em>Variable Name</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVariableName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getVariableName()
+	 * @generated
+	 * @ordered
+	 */
   protected DynamicValue variableName;
 
   /**
-   * The default value of the '{@link #getMaxDigits() <em>Max Digits</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getMaxDigits() <em>Max Digits</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMaxDigits()
-   * @generated
-   * @ordered
-   */
+	 * @see #getMaxDigits()
+	 * @generated
+	 * @ordered
+	 */
   protected static final int MAX_DIGITS_EDEFAULT = 1;
 
   /**
-   * The cached value of the '{@link #getMaxDigits() <em>Max Digits</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getMaxDigits() <em>Max Digits</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMaxDigits()
-   * @generated
-   * @ordered
-   */
+	 * @see #getMaxDigits()
+	 * @generated
+	 * @ordered
+	 */
   protected int maxDigits = MAX_DIGITS_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getAcceptedDigits() <em>Accepted Digits</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getAcceptedDigits() <em>Accepted Digits</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAcceptedDigits()
-   * @generated
-   * @ordered
-   */
+	 * @see #getAcceptedDigits()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String ACCEPTED_DIGITS_EDEFAULT = "0123456789#";
 
   /**
-   * The cached value of the '{@link #getAcceptedDigits() <em>Accepted Digits</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getAcceptedDigits() <em>Accepted Digits</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAcceptedDigits()
-   * @generated
-   * @ordered
-   */
+	 * @see #getAcceptedDigits()
+	 * @generated
+	 * @ordered
+	 */
   protected String acceptedDigits = ACCEPTED_DIGITS_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected GetDigitsImpl() {
-    super();
-  }
+		super();
+	}
 
   @Override
   public void beginProcessing(SafletContext context) throws ActionStepException {
@@ -279,389 +279,389 @@ public class GetDigitsImpl extends ActionStepImpl implements GetDigits {
     getOutputs().add(o);
   }
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionstepPackage.Literals.GET_DIGITS;
-  }
+		return ActionstepPackage.Literals.GET_DIGITS;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call getCall1() {
-    if (call1 != null && call1.eIsProxy()) {
-      InternalEObject oldCall1 = (InternalEObject)call1;
-      call1 = (Call)eResolveProxy(oldCall1);
-      if (call1 != oldCall1) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.GET_DIGITS__CALL1, oldCall1, call1));
-      }
-    }
-    return call1;
-  }
+		if (call1 != null && call1.eIsProxy()) {
+			InternalEObject oldCall1 = (InternalEObject)call1;
+			call1 = (Call)eResolveProxy(oldCall1);
+			if (call1 != oldCall1) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.GET_DIGITS__CALL1, oldCall1, call1));
+			}
+		}
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call basicGetCall1() {
-    return call1;
-  }
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setCall1(Call newCall1) {
-    Call oldCall1 = call1;
-    call1 = newCall1;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_DIGITS__CALL1, oldCall1, call1));
-  }
+		Call oldCall1 = call1;
+		call1 = newCall1;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_DIGITS__CALL1, oldCall1, call1));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public long getInputTimeout() {
-    return inputTimeout;
-  }
+		return inputTimeout;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setInputTimeout(long newInputTimeout) {
-    long oldInputTimeout = inputTimeout;
-    inputTimeout = newInputTimeout;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_DIGITS__INPUT_TIMEOUT, oldInputTimeout, inputTimeout));
-  }
+		long oldInputTimeout = inputTimeout;
+		inputTimeout = newInputTimeout;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_DIGITS__INPUT_TIMEOUT, oldInputTimeout, inputTimeout));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public boolean isUseBufferedDigits() {
-    return useBufferedDigits;
-  }
+		return useBufferedDigits;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setUseBufferedDigits(boolean newUseBufferedDigits) {
-    boolean oldUseBufferedDigits = useBufferedDigits;
-    useBufferedDigits = newUseBufferedDigits;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_DIGITS__USE_BUFFERED_DIGITS, oldUseBufferedDigits, useBufferedDigits));
-  }
+		boolean oldUseBufferedDigits = useBufferedDigits;
+		useBufferedDigits = newUseBufferedDigits;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_DIGITS__USE_BUFFERED_DIGITS, oldUseBufferedDigits, useBufferedDigits));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getEscapeDigits() {
-    return escapeDigits;
-  }
+		return escapeDigits;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setEscapeDigits(String newEscapeDigits) {
-    String oldEscapeDigits = escapeDigits;
-    escapeDigits = newEscapeDigits;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_DIGITS__ESCAPE_DIGITS, oldEscapeDigits, escapeDigits));
-  }
+		String oldEscapeDigits = escapeDigits;
+		escapeDigits = newEscapeDigits;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_DIGITS__ESCAPE_DIGITS, oldEscapeDigits, escapeDigits));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DynamicValue getVariableName() {
-    return variableName;
-  }
+		return variableName;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetVariableName(DynamicValue newVariableName, NotificationChain msgs) {
-    DynamicValue oldVariableName = variableName;
-    variableName = newVariableName;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_DIGITS__VARIABLE_NAME, oldVariableName, newVariableName);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DynamicValue oldVariableName = variableName;
+		variableName = newVariableName;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_DIGITS__VARIABLE_NAME, oldVariableName, newVariableName);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setVariableName(DynamicValue newVariableName) {
-    if (newVariableName != variableName) {
-      NotificationChain msgs = null;
-      if (variableName != null)
-        msgs = ((InternalEObject)variableName).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_DIGITS__VARIABLE_NAME, null, msgs);
-      if (newVariableName != null)
-        msgs = ((InternalEObject)newVariableName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_DIGITS__VARIABLE_NAME, null, msgs);
-      msgs = basicSetVariableName(newVariableName, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_DIGITS__VARIABLE_NAME, newVariableName, newVariableName));
-  }
+		if (newVariableName != variableName) {
+			NotificationChain msgs = null;
+			if (variableName != null)
+				msgs = ((InternalEObject)variableName).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_DIGITS__VARIABLE_NAME, null, msgs);
+			if (newVariableName != null)
+				msgs = ((InternalEObject)newVariableName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.GET_DIGITS__VARIABLE_NAME, null, msgs);
+			msgs = basicSetVariableName(newVariableName, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_DIGITS__VARIABLE_NAME, newVariableName, newVariableName));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public int getMaxDigits() {
-    return maxDigits;
-  }
+		return maxDigits;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setMaxDigits(int newMaxDigits) {
-    int oldMaxDigits = maxDigits;
-    maxDigits = newMaxDigits;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_DIGITS__MAX_DIGITS, oldMaxDigits, maxDigits));
-  }
+		int oldMaxDigits = maxDigits;
+		maxDigits = newMaxDigits;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_DIGITS__MAX_DIGITS, oldMaxDigits, maxDigits));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getAcceptedDigits() {
-    return acceptedDigits;
-  }
+		return acceptedDigits;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setAcceptedDigits(String newAcceptedDigits) {
-    String oldAcceptedDigits = acceptedDigits;
-    acceptedDigits = newAcceptedDigits;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_DIGITS__ACCEPTED_DIGITS, oldAcceptedDigits, acceptedDigits));
-  }
+		String oldAcceptedDigits = acceptedDigits;
+		acceptedDigits = newAcceptedDigits;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_DIGITS__ACCEPTED_DIGITS, oldAcceptedDigits, acceptedDigits));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionstepPackage.GET_DIGITS__VARIABLE_NAME:
-        return basicSetVariableName(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionstepPackage.GET_DIGITS__VARIABLE_NAME:
+				return basicSetVariableName(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionstepPackage.GET_DIGITS__CALL1:
-        if (resolve) return getCall1();
-        return basicGetCall1();
-      case ActionstepPackage.GET_DIGITS__INPUT_TIMEOUT:
-        return new Long(getInputTimeout());
-      case ActionstepPackage.GET_DIGITS__USE_BUFFERED_DIGITS:
-        return isUseBufferedDigits() ? Boolean.TRUE : Boolean.FALSE;
-      case ActionstepPackage.GET_DIGITS__ESCAPE_DIGITS:
-        return getEscapeDigits();
-      case ActionstepPackage.GET_DIGITS__VARIABLE_NAME:
-        return getVariableName();
-      case ActionstepPackage.GET_DIGITS__MAX_DIGITS:
-        return new Integer(getMaxDigits());
-      case ActionstepPackage.GET_DIGITS__ACCEPTED_DIGITS:
-        return getAcceptedDigits();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionstepPackage.GET_DIGITS__CALL1:
+				if (resolve) return getCall1();
+				return basicGetCall1();
+			case ActionstepPackage.GET_DIGITS__INPUT_TIMEOUT:
+				return getInputTimeout();
+			case ActionstepPackage.GET_DIGITS__USE_BUFFERED_DIGITS:
+				return isUseBufferedDigits();
+			case ActionstepPackage.GET_DIGITS__ESCAPE_DIGITS:
+				return getEscapeDigits();
+			case ActionstepPackage.GET_DIGITS__VARIABLE_NAME:
+				return getVariableName();
+			case ActionstepPackage.GET_DIGITS__MAX_DIGITS:
+				return getMaxDigits();
+			case ActionstepPackage.GET_DIGITS__ACCEPTED_DIGITS:
+				return getAcceptedDigits();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionstepPackage.GET_DIGITS__CALL1:
-        setCall1((Call)newValue);
-        return;
-      case ActionstepPackage.GET_DIGITS__INPUT_TIMEOUT:
-        setInputTimeout(((Long)newValue).longValue());
-        return;
-      case ActionstepPackage.GET_DIGITS__USE_BUFFERED_DIGITS:
-        setUseBufferedDigits(((Boolean)newValue).booleanValue());
-        return;
-      case ActionstepPackage.GET_DIGITS__ESCAPE_DIGITS:
-        setEscapeDigits((String)newValue);
-        return;
-      case ActionstepPackage.GET_DIGITS__VARIABLE_NAME:
-        setVariableName((DynamicValue)newValue);
-        return;
-      case ActionstepPackage.GET_DIGITS__MAX_DIGITS:
-        setMaxDigits(((Integer)newValue).intValue());
-        return;
-      case ActionstepPackage.GET_DIGITS__ACCEPTED_DIGITS:
-        setAcceptedDigits((String)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionstepPackage.GET_DIGITS__CALL1:
+				setCall1((Call)newValue);
+				return;
+			case ActionstepPackage.GET_DIGITS__INPUT_TIMEOUT:
+				setInputTimeout((Long)newValue);
+				return;
+			case ActionstepPackage.GET_DIGITS__USE_BUFFERED_DIGITS:
+				setUseBufferedDigits((Boolean)newValue);
+				return;
+			case ActionstepPackage.GET_DIGITS__ESCAPE_DIGITS:
+				setEscapeDigits((String)newValue);
+				return;
+			case ActionstepPackage.GET_DIGITS__VARIABLE_NAME:
+				setVariableName((DynamicValue)newValue);
+				return;
+			case ActionstepPackage.GET_DIGITS__MAX_DIGITS:
+				setMaxDigits((Integer)newValue);
+				return;
+			case ActionstepPackage.GET_DIGITS__ACCEPTED_DIGITS:
+				setAcceptedDigits((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.GET_DIGITS__CALL1:
-        setCall1((Call)null);
-        return;
-      case ActionstepPackage.GET_DIGITS__INPUT_TIMEOUT:
-        setInputTimeout(INPUT_TIMEOUT_EDEFAULT);
-        return;
-      case ActionstepPackage.GET_DIGITS__USE_BUFFERED_DIGITS:
-        setUseBufferedDigits(USE_BUFFERED_DIGITS_EDEFAULT);
-        return;
-      case ActionstepPackage.GET_DIGITS__ESCAPE_DIGITS:
-        setEscapeDigits(ESCAPE_DIGITS_EDEFAULT);
-        return;
-      case ActionstepPackage.GET_DIGITS__VARIABLE_NAME:
-        setVariableName((DynamicValue)null);
-        return;
-      case ActionstepPackage.GET_DIGITS__MAX_DIGITS:
-        setMaxDigits(MAX_DIGITS_EDEFAULT);
-        return;
-      case ActionstepPackage.GET_DIGITS__ACCEPTED_DIGITS:
-        setAcceptedDigits(ACCEPTED_DIGITS_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.GET_DIGITS__CALL1:
+				setCall1((Call)null);
+				return;
+			case ActionstepPackage.GET_DIGITS__INPUT_TIMEOUT:
+				setInputTimeout(INPUT_TIMEOUT_EDEFAULT);
+				return;
+			case ActionstepPackage.GET_DIGITS__USE_BUFFERED_DIGITS:
+				setUseBufferedDigits(USE_BUFFERED_DIGITS_EDEFAULT);
+				return;
+			case ActionstepPackage.GET_DIGITS__ESCAPE_DIGITS:
+				setEscapeDigits(ESCAPE_DIGITS_EDEFAULT);
+				return;
+			case ActionstepPackage.GET_DIGITS__VARIABLE_NAME:
+				setVariableName((DynamicValue)null);
+				return;
+			case ActionstepPackage.GET_DIGITS__MAX_DIGITS:
+				setMaxDigits(MAX_DIGITS_EDEFAULT);
+				return;
+			case ActionstepPackage.GET_DIGITS__ACCEPTED_DIGITS:
+				setAcceptedDigits(ACCEPTED_DIGITS_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.GET_DIGITS__CALL1:
-        return call1 != null;
-      case ActionstepPackage.GET_DIGITS__INPUT_TIMEOUT:
-        return inputTimeout != INPUT_TIMEOUT_EDEFAULT;
-      case ActionstepPackage.GET_DIGITS__USE_BUFFERED_DIGITS:
-        return useBufferedDigits != USE_BUFFERED_DIGITS_EDEFAULT;
-      case ActionstepPackage.GET_DIGITS__ESCAPE_DIGITS:
-        return ESCAPE_DIGITS_EDEFAULT == null ? escapeDigits != null : !ESCAPE_DIGITS_EDEFAULT.equals(escapeDigits);
-      case ActionstepPackage.GET_DIGITS__VARIABLE_NAME:
-        return variableName != null;
-      case ActionstepPackage.GET_DIGITS__MAX_DIGITS:
-        return maxDigits != MAX_DIGITS_EDEFAULT;
-      case ActionstepPackage.GET_DIGITS__ACCEPTED_DIGITS:
-        return ACCEPTED_DIGITS_EDEFAULT == null ? acceptedDigits != null : !ACCEPTED_DIGITS_EDEFAULT.equals(acceptedDigits);
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.GET_DIGITS__CALL1:
+				return call1 != null;
+			case ActionstepPackage.GET_DIGITS__INPUT_TIMEOUT:
+				return inputTimeout != INPUT_TIMEOUT_EDEFAULT;
+			case ActionstepPackage.GET_DIGITS__USE_BUFFERED_DIGITS:
+				return useBufferedDigits != USE_BUFFERED_DIGITS_EDEFAULT;
+			case ActionstepPackage.GET_DIGITS__ESCAPE_DIGITS:
+				return ESCAPE_DIGITS_EDEFAULT == null ? escapeDigits != null : !ESCAPE_DIGITS_EDEFAULT.equals(escapeDigits);
+			case ActionstepPackage.GET_DIGITS__VARIABLE_NAME:
+				return variableName != null;
+			case ActionstepPackage.GET_DIGITS__MAX_DIGITS:
+				return maxDigits != MAX_DIGITS_EDEFAULT;
+			case ActionstepPackage.GET_DIGITS__ACCEPTED_DIGITS:
+				return ACCEPTED_DIGITS_EDEFAULT == null ? acceptedDigits != null : !ACCEPTED_DIGITS_EDEFAULT.equals(acceptedDigits);
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (derivedFeatureID) {
-        case ActionstepPackage.GET_DIGITS__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (derivedFeatureID) {
+				case ActionstepPackage.GET_DIGITS__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (baseFeatureID) {
-        case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.GET_DIGITS__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (baseFeatureID) {
+				case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.GET_DIGITS__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (inputTimeout: ");
-    result.append(inputTimeout);
-    result.append(", useBufferedDigits: ");
-    result.append(useBufferedDigits);
-    result.append(", escapeDigits: ");
-    result.append(escapeDigits);
-    result.append(", maxDigits: ");
-    result.append(maxDigits);
-    result.append(", acceptedDigits: ");
-    result.append(acceptedDigits);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (inputTimeout: ");
+		result.append(inputTimeout);
+		result.append(", useBufferedDigits: ");
+		result.append(useBufferedDigits);
+		result.append(", escapeDigits: ");
+		result.append(escapeDigits);
+		result.append(", maxDigits: ");
+		result.append(maxDigits);
+		result.append(", acceptedDigits: ");
+		result.append(acceptedDigits);
+		result.append(')');
+		return result.toString();
+	}
 
 } //GetDigitsImpl

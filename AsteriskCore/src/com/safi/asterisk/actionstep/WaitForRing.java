@@ -27,30 +27,30 @@ import com.safi.core.actionstep.ActionStep;
  */
 public interface WaitForRing extends ActionStep, CallConsumer1 {
   /**
-   * Returns the value of the '<em><b>Duration</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Duration</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Duration</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Duration</em>' attribute.
-   * @see #setDuration(int)
-   * @see com.safi.asterisk.actionstep.ActionstepPackage#getWaitForRing_Duration()
-   * @model ordered="false"
-   *        annotation="unitsTime seconds='true'"
-   * @generated
-   */
+	 * @return the value of the '<em>Duration</em>' attribute.
+	 * @see #setDuration(int)
+	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getWaitForRing_Duration()
+	 * @model ordered="false"
+	 *        annotation="unitsTime seconds='true'"
+	 * @generated
+	 */
   int getDuration();
 
   /**
-   * Sets the value of the '{@link com.safi.asterisk.actionstep.WaitForRing#getDuration <em>Duration</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.asterisk.actionstep.WaitForRing#getDuration <em>Duration</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Duration</em>' attribute.
-   * @see #getDuration()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Duration</em>' attribute.
+	 * @see #getDuration()
+	 * @generated
+	 */
   void setDuration(int value);
 
 } // WaitForRing

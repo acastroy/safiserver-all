@@ -49,173 +49,173 @@ import com.safi.db.VariableType;
  */
 public class ChanSpyImpl extends ActionStepImpl implements ChanSpy {
   /**
-   * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCall1()
-   * @generated
-   * @ordered
-   */
+	 * @see #getCall1()
+	 * @generated
+	 * @ordered
+	 */
   protected Call call1;
 
   /**
-   * The cached value of the '{@link #getChannelnamePrefix() <em>Channelname Prefix</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getChannelnamePrefix() <em>Channelname Prefix</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getChannelnamePrefix()
-   * @generated
-   * @ordered
-   */
+	 * @see #getChannelnamePrefix()
+	 * @generated
+	 * @ordered
+	 */
   protected DynamicValue channelnamePrefix;
 
   /**
-   * The default value of the '{@link #isSpyBridgedOnly() <em>Spy Bridged Only</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #isSpyBridgedOnly() <em>Spy Bridged Only</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isSpyBridgedOnly()
-   * @generated
-   * @ordered
-   */
+	 * @see #isSpyBridgedOnly()
+	 * @generated
+	 * @ordered
+	 */
   protected static final boolean SPY_BRIDGED_ONLY_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isSpyBridgedOnly() <em>Spy Bridged Only</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #isSpyBridgedOnly() <em>Spy Bridged Only</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isSpyBridgedOnly()
-   * @generated
-   * @ordered
-   */
+	 * @see #isSpyBridgedOnly()
+	 * @generated
+	 * @ordered
+	 */
   protected boolean spyBridgedOnly = SPY_BRIDGED_ONLY_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getGroup() <em>Group</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getGroup() <em>Group</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getGroup()
-   * @generated
-   * @ordered
-   */
+	 * @see #getGroup()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String GROUP_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getGroup() <em>Group</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getGroup() <em>Group</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getGroup()
-   * @generated
-   * @ordered
-   */
+	 * @see #getGroup()
+	 * @generated
+	 * @ordered
+	 */
   protected String group = GROUP_EDEFAULT;
 
   /**
-   * The default value of the '{@link #isBeep() <em>Beep</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #isBeep() <em>Beep</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isBeep()
-   * @generated
-   * @ordered
-   */
+	 * @see #isBeep()
+	 * @generated
+	 * @ordered
+	 */
   protected static final boolean BEEP_EDEFAULT = true;
 
   /**
-   * The cached value of the '{@link #isBeep() <em>Beep</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #isBeep() <em>Beep</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isBeep()
-   * @generated
-   * @ordered
-   */
+	 * @see #isBeep()
+	 * @generated
+	 * @ordered
+	 */
   protected boolean beep = BEEP_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getRecordFilenamePrefix() <em>Record Filename Prefix</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getRecordFilenamePrefix() <em>Record Filename Prefix</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRecordFilenamePrefix()
-   * @generated
-   * @ordered
-   */
+	 * @see #getRecordFilenamePrefix()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String RECORD_FILENAME_PREFIX_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getRecordFilenamePrefix() <em>Record Filename Prefix</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRecordFilenamePrefix() <em>Record Filename Prefix</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRecordFilenamePrefix()
-   * @generated
-   * @ordered
-   */
+	 * @see #getRecordFilenamePrefix()
+	 * @generated
+	 * @ordered
+	 */
   protected String recordFilenamePrefix = RECORD_FILENAME_PREFIX_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getVolume() <em>Volume</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getVolume() <em>Volume</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVolume()
-   * @generated
-   * @ordered
-   */
+	 * @see #getVolume()
+	 * @generated
+	 * @ordered
+	 */
   protected static final int VOLUME_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getVolume() <em>Volume</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getVolume() <em>Volume</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVolume()
-   * @generated
-   * @ordered
-   */
+	 * @see #getVolume()
+	 * @generated
+	 * @ordered
+	 */
   protected int volume = VOLUME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #isWhisperEnabled() <em>Whisper Enabled</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #isWhisperEnabled() <em>Whisper Enabled</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isWhisperEnabled()
-   * @generated
-   * @ordered
-   */
+	 * @see #isWhisperEnabled()
+	 * @generated
+	 * @ordered
+	 */
   protected static final boolean WHISPER_ENABLED_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isWhisperEnabled() <em>Whisper Enabled</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #isWhisperEnabled() <em>Whisper Enabled</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isWhisperEnabled()
-   * @generated
-   * @ordered
-   */
+	 * @see #isWhisperEnabled()
+	 * @generated
+	 * @ordered
+	 */
   protected boolean whisperEnabled = WHISPER_ENABLED_EDEFAULT;
 
   /**
-   * The default value of the '{@link #isPrivateWhisperEnabled() <em>Private Whisper Enabled</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #isPrivateWhisperEnabled() <em>Private Whisper Enabled</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isPrivateWhisperEnabled()
-   * @generated
-   * @ordered
-   */
+	 * @see #isPrivateWhisperEnabled()
+	 * @generated
+	 * @ordered
+	 */
   protected static final boolean PRIVATE_WHISPER_ENABLED_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isPrivateWhisperEnabled() <em>Private Whisper Enabled</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #isPrivateWhisperEnabled() <em>Private Whisper Enabled</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isPrivateWhisperEnabled()
-   * @generated
-   * @ordered
-   */
+	 * @see #isPrivateWhisperEnabled()
+	 * @generated
+	 * @ordered
+	 */
   protected boolean privateWhisperEnabled = PRIVATE_WHISPER_ENABLED_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ChanSpyImpl() {
-    super();
-  }
+		super();
+	}
 
   @Override
   public void beginProcessing(SafletContext context) throws ActionStepException {
@@ -275,455 +275,455 @@ public class ChanSpyImpl extends ActionStepImpl implements ChanSpy {
 
   }
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionstepPackage.Literals.CHAN_SPY;
-  }
+		return ActionstepPackage.Literals.CHAN_SPY;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call getCall1() {
-    if (call1 != null && call1.eIsProxy()) {
-      InternalEObject oldCall1 = (InternalEObject)call1;
-      call1 = (Call)eResolveProxy(oldCall1);
-      if (call1 != oldCall1) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.CHAN_SPY__CALL1, oldCall1, call1));
-      }
-    }
-    return call1;
-  }
+		if (call1 != null && call1.eIsProxy()) {
+			InternalEObject oldCall1 = (InternalEObject)call1;
+			call1 = (Call)eResolveProxy(oldCall1);
+			if (call1 != oldCall1) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.CHAN_SPY__CALL1, oldCall1, call1));
+			}
+		}
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call basicGetCall1() {
-    return call1;
-  }
+		return call1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setCall1(Call newCall1) {
-    Call oldCall1 = call1;
-    call1 = newCall1;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.CHAN_SPY__CALL1, oldCall1, call1));
-  }
+		Call oldCall1 = call1;
+		call1 = newCall1;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.CHAN_SPY__CALL1, oldCall1, call1));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DynamicValue getChannelnamePrefix() {
-    return channelnamePrefix;
-  }
+		return channelnamePrefix;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetChannelnamePrefix(DynamicValue newChannelnamePrefix, NotificationChain msgs) {
-    DynamicValue oldChannelnamePrefix = channelnamePrefix;
-    channelnamePrefix = newChannelnamePrefix;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.CHAN_SPY__CHANNELNAME_PREFIX, oldChannelnamePrefix, newChannelnamePrefix);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DynamicValue oldChannelnamePrefix = channelnamePrefix;
+		channelnamePrefix = newChannelnamePrefix;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.CHAN_SPY__CHANNELNAME_PREFIX, oldChannelnamePrefix, newChannelnamePrefix);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setChannelnamePrefix(DynamicValue newChannelnamePrefix) {
-    if (newChannelnamePrefix != channelnamePrefix) {
-      NotificationChain msgs = null;
-      if (channelnamePrefix != null)
-        msgs = ((InternalEObject)channelnamePrefix).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.CHAN_SPY__CHANNELNAME_PREFIX, null, msgs);
-      if (newChannelnamePrefix != null)
-        msgs = ((InternalEObject)newChannelnamePrefix).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.CHAN_SPY__CHANNELNAME_PREFIX, null, msgs);
-      msgs = basicSetChannelnamePrefix(newChannelnamePrefix, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.CHAN_SPY__CHANNELNAME_PREFIX, newChannelnamePrefix, newChannelnamePrefix));
-  }
+		if (newChannelnamePrefix != channelnamePrefix) {
+			NotificationChain msgs = null;
+			if (channelnamePrefix != null)
+				msgs = ((InternalEObject)channelnamePrefix).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.CHAN_SPY__CHANNELNAME_PREFIX, null, msgs);
+			if (newChannelnamePrefix != null)
+				msgs = ((InternalEObject)newChannelnamePrefix).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.CHAN_SPY__CHANNELNAME_PREFIX, null, msgs);
+			msgs = basicSetChannelnamePrefix(newChannelnamePrefix, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.CHAN_SPY__CHANNELNAME_PREFIX, newChannelnamePrefix, newChannelnamePrefix));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public boolean isSpyBridgedOnly() {
-    return spyBridgedOnly;
-  }
+		return spyBridgedOnly;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setSpyBridgedOnly(boolean newSpyBridgedOnly) {
-    boolean oldSpyBridgedOnly = spyBridgedOnly;
-    spyBridgedOnly = newSpyBridgedOnly;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.CHAN_SPY__SPY_BRIDGED_ONLY, oldSpyBridgedOnly, spyBridgedOnly));
-  }
+		boolean oldSpyBridgedOnly = spyBridgedOnly;
+		spyBridgedOnly = newSpyBridgedOnly;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.CHAN_SPY__SPY_BRIDGED_ONLY, oldSpyBridgedOnly, spyBridgedOnly));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getGroup() {
-    return group;
-  }
+		return group;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setGroup(String newGroup) {
-    String oldGroup = group;
-    group = newGroup;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.CHAN_SPY__GROUP, oldGroup, group));
-  }
+		String oldGroup = group;
+		group = newGroup;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.CHAN_SPY__GROUP, oldGroup, group));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public boolean isBeep() {
-    return beep;
-  }
+		return beep;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setBeep(boolean newBeep) {
-    boolean oldBeep = beep;
-    beep = newBeep;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.CHAN_SPY__BEEP, oldBeep, beep));
-  }
+		boolean oldBeep = beep;
+		beep = newBeep;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.CHAN_SPY__BEEP, oldBeep, beep));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getRecordFilenamePrefix() {
-    return recordFilenamePrefix;
-  }
+		return recordFilenamePrefix;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setRecordFilenamePrefix(String newRecordFilenamePrefix) {
-    String oldRecordFilenamePrefix = recordFilenamePrefix;
-    recordFilenamePrefix = newRecordFilenamePrefix;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.CHAN_SPY__RECORD_FILENAME_PREFIX, oldRecordFilenamePrefix, recordFilenamePrefix));
-  }
+		String oldRecordFilenamePrefix = recordFilenamePrefix;
+		recordFilenamePrefix = newRecordFilenamePrefix;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.CHAN_SPY__RECORD_FILENAME_PREFIX, oldRecordFilenamePrefix, recordFilenamePrefix));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public int getVolume() {
-    return volume;
-  }
+		return volume;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setVolume(int newVolume) {
-    int oldVolume = volume;
-    volume = newVolume;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.CHAN_SPY__VOLUME, oldVolume, volume));
-  }
+		int oldVolume = volume;
+		volume = newVolume;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.CHAN_SPY__VOLUME, oldVolume, volume));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public boolean isWhisperEnabled() {
-    return whisperEnabled;
-  }
+		return whisperEnabled;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setWhisperEnabled(boolean newWhisperEnabled) {
-    boolean oldWhisperEnabled = whisperEnabled;
-    whisperEnabled = newWhisperEnabled;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.CHAN_SPY__WHISPER_ENABLED, oldWhisperEnabled, whisperEnabled));
-  }
+		boolean oldWhisperEnabled = whisperEnabled;
+		whisperEnabled = newWhisperEnabled;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.CHAN_SPY__WHISPER_ENABLED, oldWhisperEnabled, whisperEnabled));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public boolean isPrivateWhisperEnabled() {
-    return privateWhisperEnabled;
-  }
+		return privateWhisperEnabled;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setPrivateWhisperEnabled(boolean newPrivateWhisperEnabled) {
-    boolean oldPrivateWhisperEnabled = privateWhisperEnabled;
-    privateWhisperEnabled = newPrivateWhisperEnabled;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.CHAN_SPY__PRIVATE_WHISPER_ENABLED, oldPrivateWhisperEnabled, privateWhisperEnabled));
-  }
+		boolean oldPrivateWhisperEnabled = privateWhisperEnabled;
+		privateWhisperEnabled = newPrivateWhisperEnabled;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.CHAN_SPY__PRIVATE_WHISPER_ENABLED, oldPrivateWhisperEnabled, privateWhisperEnabled));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionstepPackage.CHAN_SPY__CHANNELNAME_PREFIX:
-        return basicSetChannelnamePrefix(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionstepPackage.CHAN_SPY__CHANNELNAME_PREFIX:
+				return basicSetChannelnamePrefix(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionstepPackage.CHAN_SPY__CALL1:
-        if (resolve) return getCall1();
-        return basicGetCall1();
-      case ActionstepPackage.CHAN_SPY__CHANNELNAME_PREFIX:
-        return getChannelnamePrefix();
-      case ActionstepPackage.CHAN_SPY__SPY_BRIDGED_ONLY:
-        return isSpyBridgedOnly() ? Boolean.TRUE : Boolean.FALSE;
-      case ActionstepPackage.CHAN_SPY__GROUP:
-        return getGroup();
-      case ActionstepPackage.CHAN_SPY__BEEP:
-        return isBeep() ? Boolean.TRUE : Boolean.FALSE;
-      case ActionstepPackage.CHAN_SPY__RECORD_FILENAME_PREFIX:
-        return getRecordFilenamePrefix();
-      case ActionstepPackage.CHAN_SPY__VOLUME:
-        return new Integer(getVolume());
-      case ActionstepPackage.CHAN_SPY__WHISPER_ENABLED:
-        return isWhisperEnabled() ? Boolean.TRUE : Boolean.FALSE;
-      case ActionstepPackage.CHAN_SPY__PRIVATE_WHISPER_ENABLED:
-        return isPrivateWhisperEnabled() ? Boolean.TRUE : Boolean.FALSE;
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionstepPackage.CHAN_SPY__CALL1:
+				if (resolve) return getCall1();
+				return basicGetCall1();
+			case ActionstepPackage.CHAN_SPY__CHANNELNAME_PREFIX:
+				return getChannelnamePrefix();
+			case ActionstepPackage.CHAN_SPY__SPY_BRIDGED_ONLY:
+				return isSpyBridgedOnly();
+			case ActionstepPackage.CHAN_SPY__GROUP:
+				return getGroup();
+			case ActionstepPackage.CHAN_SPY__BEEP:
+				return isBeep();
+			case ActionstepPackage.CHAN_SPY__RECORD_FILENAME_PREFIX:
+				return getRecordFilenamePrefix();
+			case ActionstepPackage.CHAN_SPY__VOLUME:
+				return getVolume();
+			case ActionstepPackage.CHAN_SPY__WHISPER_ENABLED:
+				return isWhisperEnabled();
+			case ActionstepPackage.CHAN_SPY__PRIVATE_WHISPER_ENABLED:
+				return isPrivateWhisperEnabled();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionstepPackage.CHAN_SPY__CALL1:
-        setCall1((Call)newValue);
-        return;
-      case ActionstepPackage.CHAN_SPY__CHANNELNAME_PREFIX:
-        setChannelnamePrefix((DynamicValue)newValue);
-        return;
-      case ActionstepPackage.CHAN_SPY__SPY_BRIDGED_ONLY:
-        setSpyBridgedOnly(((Boolean)newValue).booleanValue());
-        return;
-      case ActionstepPackage.CHAN_SPY__GROUP:
-        setGroup((String)newValue);
-        return;
-      case ActionstepPackage.CHAN_SPY__BEEP:
-        setBeep(((Boolean)newValue).booleanValue());
-        return;
-      case ActionstepPackage.CHAN_SPY__RECORD_FILENAME_PREFIX:
-        setRecordFilenamePrefix((String)newValue);
-        return;
-      case ActionstepPackage.CHAN_SPY__VOLUME:
-        setVolume(((Integer)newValue).intValue());
-        return;
-      case ActionstepPackage.CHAN_SPY__WHISPER_ENABLED:
-        setWhisperEnabled(((Boolean)newValue).booleanValue());
-        return;
-      case ActionstepPackage.CHAN_SPY__PRIVATE_WHISPER_ENABLED:
-        setPrivateWhisperEnabled(((Boolean)newValue).booleanValue());
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionstepPackage.CHAN_SPY__CALL1:
+				setCall1((Call)newValue);
+				return;
+			case ActionstepPackage.CHAN_SPY__CHANNELNAME_PREFIX:
+				setChannelnamePrefix((DynamicValue)newValue);
+				return;
+			case ActionstepPackage.CHAN_SPY__SPY_BRIDGED_ONLY:
+				setSpyBridgedOnly((Boolean)newValue);
+				return;
+			case ActionstepPackage.CHAN_SPY__GROUP:
+				setGroup((String)newValue);
+				return;
+			case ActionstepPackage.CHAN_SPY__BEEP:
+				setBeep((Boolean)newValue);
+				return;
+			case ActionstepPackage.CHAN_SPY__RECORD_FILENAME_PREFIX:
+				setRecordFilenamePrefix((String)newValue);
+				return;
+			case ActionstepPackage.CHAN_SPY__VOLUME:
+				setVolume((Integer)newValue);
+				return;
+			case ActionstepPackage.CHAN_SPY__WHISPER_ENABLED:
+				setWhisperEnabled((Boolean)newValue);
+				return;
+			case ActionstepPackage.CHAN_SPY__PRIVATE_WHISPER_ENABLED:
+				setPrivateWhisperEnabled((Boolean)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.CHAN_SPY__CALL1:
-        setCall1((Call)null);
-        return;
-      case ActionstepPackage.CHAN_SPY__CHANNELNAME_PREFIX:
-        setChannelnamePrefix((DynamicValue)null);
-        return;
-      case ActionstepPackage.CHAN_SPY__SPY_BRIDGED_ONLY:
-        setSpyBridgedOnly(SPY_BRIDGED_ONLY_EDEFAULT);
-        return;
-      case ActionstepPackage.CHAN_SPY__GROUP:
-        setGroup(GROUP_EDEFAULT);
-        return;
-      case ActionstepPackage.CHAN_SPY__BEEP:
-        setBeep(BEEP_EDEFAULT);
-        return;
-      case ActionstepPackage.CHAN_SPY__RECORD_FILENAME_PREFIX:
-        setRecordFilenamePrefix(RECORD_FILENAME_PREFIX_EDEFAULT);
-        return;
-      case ActionstepPackage.CHAN_SPY__VOLUME:
-        setVolume(VOLUME_EDEFAULT);
-        return;
-      case ActionstepPackage.CHAN_SPY__WHISPER_ENABLED:
-        setWhisperEnabled(WHISPER_ENABLED_EDEFAULT);
-        return;
-      case ActionstepPackage.CHAN_SPY__PRIVATE_WHISPER_ENABLED:
-        setPrivateWhisperEnabled(PRIVATE_WHISPER_ENABLED_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.CHAN_SPY__CALL1:
+				setCall1((Call)null);
+				return;
+			case ActionstepPackage.CHAN_SPY__CHANNELNAME_PREFIX:
+				setChannelnamePrefix((DynamicValue)null);
+				return;
+			case ActionstepPackage.CHAN_SPY__SPY_BRIDGED_ONLY:
+				setSpyBridgedOnly(SPY_BRIDGED_ONLY_EDEFAULT);
+				return;
+			case ActionstepPackage.CHAN_SPY__GROUP:
+				setGroup(GROUP_EDEFAULT);
+				return;
+			case ActionstepPackage.CHAN_SPY__BEEP:
+				setBeep(BEEP_EDEFAULT);
+				return;
+			case ActionstepPackage.CHAN_SPY__RECORD_FILENAME_PREFIX:
+				setRecordFilenamePrefix(RECORD_FILENAME_PREFIX_EDEFAULT);
+				return;
+			case ActionstepPackage.CHAN_SPY__VOLUME:
+				setVolume(VOLUME_EDEFAULT);
+				return;
+			case ActionstepPackage.CHAN_SPY__WHISPER_ENABLED:
+				setWhisperEnabled(WHISPER_ENABLED_EDEFAULT);
+				return;
+			case ActionstepPackage.CHAN_SPY__PRIVATE_WHISPER_ENABLED:
+				setPrivateWhisperEnabled(PRIVATE_WHISPER_ENABLED_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionstepPackage.CHAN_SPY__CALL1:
-        return call1 != null;
-      case ActionstepPackage.CHAN_SPY__CHANNELNAME_PREFIX:
-        return channelnamePrefix != null;
-      case ActionstepPackage.CHAN_SPY__SPY_BRIDGED_ONLY:
-        return spyBridgedOnly != SPY_BRIDGED_ONLY_EDEFAULT;
-      case ActionstepPackage.CHAN_SPY__GROUP:
-        return GROUP_EDEFAULT == null ? group != null : !GROUP_EDEFAULT.equals(group);
-      case ActionstepPackage.CHAN_SPY__BEEP:
-        return beep != BEEP_EDEFAULT;
-      case ActionstepPackage.CHAN_SPY__RECORD_FILENAME_PREFIX:
-        return RECORD_FILENAME_PREFIX_EDEFAULT == null ? recordFilenamePrefix != null : !RECORD_FILENAME_PREFIX_EDEFAULT.equals(recordFilenamePrefix);
-      case ActionstepPackage.CHAN_SPY__VOLUME:
-        return volume != VOLUME_EDEFAULT;
-      case ActionstepPackage.CHAN_SPY__WHISPER_ENABLED:
-        return whisperEnabled != WHISPER_ENABLED_EDEFAULT;
-      case ActionstepPackage.CHAN_SPY__PRIVATE_WHISPER_ENABLED:
-        return privateWhisperEnabled != PRIVATE_WHISPER_ENABLED_EDEFAULT;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionstepPackage.CHAN_SPY__CALL1:
+				return call1 != null;
+			case ActionstepPackage.CHAN_SPY__CHANNELNAME_PREFIX:
+				return channelnamePrefix != null;
+			case ActionstepPackage.CHAN_SPY__SPY_BRIDGED_ONLY:
+				return spyBridgedOnly != SPY_BRIDGED_ONLY_EDEFAULT;
+			case ActionstepPackage.CHAN_SPY__GROUP:
+				return GROUP_EDEFAULT == null ? group != null : !GROUP_EDEFAULT.equals(group);
+			case ActionstepPackage.CHAN_SPY__BEEP:
+				return beep != BEEP_EDEFAULT;
+			case ActionstepPackage.CHAN_SPY__RECORD_FILENAME_PREFIX:
+				return RECORD_FILENAME_PREFIX_EDEFAULT == null ? recordFilenamePrefix != null : !RECORD_FILENAME_PREFIX_EDEFAULT.equals(recordFilenamePrefix);
+			case ActionstepPackage.CHAN_SPY__VOLUME:
+				return volume != VOLUME_EDEFAULT;
+			case ActionstepPackage.CHAN_SPY__WHISPER_ENABLED:
+				return whisperEnabled != WHISPER_ENABLED_EDEFAULT;
+			case ActionstepPackage.CHAN_SPY__PRIVATE_WHISPER_ENABLED:
+				return privateWhisperEnabled != PRIVATE_WHISPER_ENABLED_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (derivedFeatureID) {
-        case ActionstepPackage.CHAN_SPY__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (derivedFeatureID) {
+				case ActionstepPackage.CHAN_SPY__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-    if (baseClass == CallConsumer1.class) {
-      switch (baseFeatureID) {
-        case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.CHAN_SPY__CALL1;
-        default: return -1;
-      }
-    }
-    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-  }
+		if (baseClass == CallConsumer1.class) {
+			switch (baseFeatureID) {
+				case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.CHAN_SPY__CALL1;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (spyBridgedOnly: ");
-    result.append(spyBridgedOnly);
-    result.append(", group: ");
-    result.append(group);
-    result.append(", beep: ");
-    result.append(beep);
-    result.append(", recordFilenamePrefix: ");
-    result.append(recordFilenamePrefix);
-    result.append(", volume: ");
-    result.append(volume);
-    result.append(", whisperEnabled: ");
-    result.append(whisperEnabled);
-    result.append(", privateWhisperEnabled: ");
-    result.append(privateWhisperEnabled);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (spyBridgedOnly: ");
+		result.append(spyBridgedOnly);
+		result.append(", group: ");
+		result.append(group);
+		result.append(", beep: ");
+		result.append(beep);
+		result.append(", recordFilenamePrefix: ");
+		result.append(recordFilenamePrefix);
+		result.append(", volume: ");
+		result.append(volume);
+		result.append(", whisperEnabled: ");
+		result.append(whisperEnabled);
+		result.append(", privateWhisperEnabled: ");
+		result.append(privateWhisperEnabled);
+		result.append(')');
+		return result.toString();
+	}
 
 } //ChanSpyImpl

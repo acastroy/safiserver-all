@@ -29,58 +29,58 @@ import com.safi.core.actionstep.DynamicValue;
  */
 public interface SayPhonetic extends ActionStep, CallConsumer1 {
   /**
-   * Returns the value of the '<em><b>Escape Digits</b></em>' attribute.
-   * The default value is <code>"#"</code>.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Escape Digits</b></em>' attribute.
+	 * The default value is <code>"#"</code>.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Escape Digits</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Escape Digits</em>' attribute.
-   * @see #setEscapeDigits(String)
-   * @see com.safi.asterisk.actionstep.ActionstepPackage#getSayPhonetic_EscapeDigits()
-   * @model default="#" ordered="false"
-   * @generated
-   */
+	 * @return the value of the '<em>Escape Digits</em>' attribute.
+	 * @see #setEscapeDigits(String)
+	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getSayPhonetic_EscapeDigits()
+	 * @model default="#" ordered="false"
+	 * @generated
+	 */
   String getEscapeDigits();
 
   /**
-   * Sets the value of the '{@link com.safi.asterisk.actionstep.SayPhonetic#getEscapeDigits <em>Escape Digits</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.asterisk.actionstep.SayPhonetic#getEscapeDigits <em>Escape Digits</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Escape Digits</em>' attribute.
-   * @see #getEscapeDigits()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Escape Digits</em>' attribute.
+	 * @see #getEscapeDigits()
+	 * @generated
+	 */
   void setEscapeDigits(String value);
 
   /**
-   * Returns the value of the '<em><b>Text</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Text</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Text</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Text</em>' containment reference.
-   * @see #setText(DynamicValue)
-   * @see com.safi.asterisk.actionstep.ActionstepPackage#getSayPhonetic_Text()
-   * @model containment="true" ordered="false"
-   *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The text value to be verbalized one letter at a time (eg.  alpha, bravo, charlie, etc)' expectedReturnType='Text' helperClass=''"
-   *        annotation="Required criteria='non-null'"
-   * @generated
-   */
+	 * @return the value of the '<em>Text</em>' containment reference.
+	 * @see #setText(DynamicValue)
+	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getSayPhonetic_Text()
+	 * @model containment="true" ordered="false"
+	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The text value to be verbalized one letter at a time (eg.  alpha, bravo, charlie, etc)' expectedReturnType='Text' helperClass=''"
+	 *        annotation="Required criteria='non-null'"
+	 * @generated
+	 */
   DynamicValue getText();
 
   /**
-   * Sets the value of the '{@link com.safi.asterisk.actionstep.SayPhonetic#getText <em>Text</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.asterisk.actionstep.SayPhonetic#getText <em>Text</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Text</em>' containment reference.
-   * @see #getText()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Text</em>' containment reference.
+	 * @see #getText()
+	 * @generated
+	 */
   void setText(DynamicValue value);
 
 } // SayPhonetic
