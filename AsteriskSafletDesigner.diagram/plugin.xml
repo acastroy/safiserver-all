@@ -3001,19 +3001,19 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
             viewerId="com.safi.eclipse.NavigatorView">
          <includes>
             <contentExtension
-                  pattern="com.safi.workshop.navigator.db.dbResourcesContent">
-            </contentExtension>
-            <contentExtension
                   pattern="org.eclipse.ui.navigator.resourceContent">
             </contentExtension>
             <contentExtension
                   pattern="org.eclipse.ui.navigator.resources.filters.*">
             </contentExtension>
             <contentExtension
-                  pattern="com.safi.workshop.navigator.serverconfig.ServerResourcesContent">
+                  pattern="com.safi.workshop.eclipse.SAFILinkHelper">
             </contentExtension>
             <contentExtension
-                  pattern="com.safi.workshop.eclipse.SAFILinkHelper">
+                  pattern="com.safi.workshop.navigator.db.dbResourcesContent">
+            </contentExtension>
+            <contentExtension
+                  pattern="com.safi.workshop.navigator.serverconfig.ServerResourcesContent">
             </contentExtension>
             
          </includes>
@@ -3062,7 +3062,27 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
    </extension>
    <extension
          point="org.eclipse.ui.navigator.navigatorContent">
-         <navigatorContent
+      <actionProvider
+            appearsBefore="com.safi.workshop.navigator.db.DBActionProvider"
+            class="com.safi.workshop.navigator.SafiEditActionProvider"
+            id="com.safi.workshop.navigator.SafiEditActionProvider"
+            overrides="org.eclipse.ui.navigator.resources.actions.EditActions"
+            priority="highest">
+         <enablement>
+            <or>
+               <instanceof
+                     value="org.eclipse.core.resources.IResource">
+               </instanceof>
+               <adapt
+                     type="org.eclipse.core.resources.IProject">
+               </adapt>
+               <instanceof
+                     value="org.eclipse.core.resources.IFile">
+               </instanceof>
+            </or>
+         </enablement>
+      </actionProvider>
+      <navigatorContent
             activeByDefault="true"
             contentProvider="com.safi.workshop.navigator.db.DBResourcesContentProvider"
             id="com.safi.workshop.navigator.db.dbResourcesContent"
@@ -3075,9 +3095,6 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
                      value="org.eclipse.core.resources.IWorkspace">
                </instanceof>
                <instanceof
-                     value="org.eclipse.core.resources.IProject">
-               </instanceof>
-               <instanceof
                      value="org.eclipse.core.resources.IWorkspaceRoot">
                </instanceof>
             </or>
@@ -3087,14 +3104,14 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
                <instanceof
                      value="com.safi.workshop.sqlexplorer.dbproduct.DriverManager">
                </instanceof>
-               
             </or>
          </possibleChildren>
       </navigatorContent>
       <actionProvider
+            appearsBefore="com.safi.workshop.navigator.serverconfig.ServerResourcesActionProvier"
             class="com.safi.workshop.navigator.db.DBActionProvider"
             id="com.safi.workshop.navigator.db.DBActionProvider"
-            priority="highest">
+            priority="lowest">
          <enablement>
             <or>
                <instanceof
@@ -3115,13 +3132,34 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
             </or>
          </enablement>
       </actionProvider>
+      <actionProvider
+            class="com.safi.workshop.navigator.serverconfig.ServerResourcesActionProvider"
+            id="com.safi.workshop.navigator.serverconfig.ServerResourcesActionProvier"
+            priority="lowest">
+         <enablement>
+            <or>
+               <instanceof
+                     value="com.safi.db.server.config.SafiServer">
+               </instanceof>
+               <instanceof
+                     value="com.safi.db.server.config.AsteriskServer">
+               </instanceof>
+               <instanceof
+                     value="com.safi.workshop.navigator.serverconfig.SafiServerList">
+               </instanceof>
+               <instanceof
+                     value="com.safi.workshop.navigator.serverconfig.AsteriskServerList">
+               </instanceof>
+            </or>
+         </enablement>
+      </actionProvider>
       <navigatorContent
             activeByDefault="true"
             contentProvider="com.safi.workshop.navigator.serverconfig.ServerResourcesContentProvider"
             id="com.safi.workshop.navigator.serverconfig.ServerResourcesContent"
             labelProvider="com.safi.workshop.navigator.serverconfig.ServerResourcesLabelProvider"
             name="Server Resource Content"
-            priority="normal">
+            priority="lowest">
          <possibleChildren>
             <or>
                <instanceof
@@ -3140,44 +3178,6 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
             </or>
          </triggerPoints>
       </navigatorContent>
-      <actionProvider
-            class="com.safi.workshop.navigator.serverconfig.ServerResourcesActionProvider"
-            id="com.safi.workshop.navigator.serverconfig.ServerResourcesActionProvier"
-            priority="highest">
-         <enablement>
-            <or>
-               <instanceof
-                     value="com.safi.db.server.config.SafiServer">
-               </instanceof>
-               <instanceof
-                     value="com.safi.db.server.config.AsteriskServer">
-               </instanceof>
-               <instanceof
-                     value="com.safi.workshop.navigator.serverconfig.SafiServerList">
-               </instanceof>
-               <instanceof
-                     value="com.safi.workshop.navigator.serverconfig.AsteriskServerList">
-               </instanceof>
-            </or>
-         </enablement>
-      </actionProvider>
-      <actionProvider
-            class="com.safi.workshop.navigator.SafiEditActionProvider"
-            id="com.safi.workshop.navigator.SafiEditActionProvider"
-            overrides="org.eclipse.ui.navigator.resources.actions.EditActions"
-            priority="highest">
-         <enablement>
-            <or>
-               <instanceof
-                     value="org.eclipse.core.resources.IResource">
-               </instanceof>
-               <adapt type="org.eclipse.core.resources.IProject" />
-               <instanceof
-                     value="org.eclipse.core.resources.IFile">
-               </instanceof> 
-            </or>
-         </enablement>
-      </actionProvider>
    </extension>
    <extension
          point="org.eclipse.ui.navigator.linkHelper">
