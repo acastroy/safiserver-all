@@ -79,6 +79,8 @@ public abstract class InitiatorImpl extends ActionStepImpl implements Initiator 
     handler.getScriptingEnvironment().getSharedScriptScope().exposeObjectToScript(
         SafletConstants.VAR_KEY_HANDLER_ENVIRONMENT, handler.getSafletEnvironment());
     
+    
+    
   }
 
   /**
