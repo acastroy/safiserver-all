@@ -41,6 +41,7 @@ import com.safi.db.DbFactory;
 import com.safi.db.Variable;
 import com.safi.db.VariableScope;
 import com.safi.db.VariableType;
+import com.safi.db.server.config.AsteriskServer;
 import com.safi.workshop.model.actionpak1.Actionpak1Package;
 import com.safi.workshop.model.actionpak1.IncomingCall2;
 
@@ -179,9 +180,11 @@ public class IncomingCall2Impl extends ParameterizedInitiatorImpl implements Inc
       throw new ActionStepException("No call found for IncomingCall initiator "+getName());
     AgiRequest request = ((AsteriskInitiatorInfo)info).getRequest();
     AgiChannel channel = ((AsteriskInitiatorInfo)info).getChannel();
+    AsteriskServer server = ((AsteriskInitiatorInfo)info).getAsteriskServer();
     ManagerConnection connection = ((AsteriskInitiatorInfo)info).getManagerConnection();
     Saflet handler = getSaflet();
     SafletContext context = handler.getSafletContext();
+    
     if (request != null) {
       Variable requestVar = context.getVariable(AsteriskSafletConstants.VAR_KEY_REQUEST);
       if (requestVar == null) {
@@ -213,6 +216,16 @@ public class IncomingCall2Impl extends ParameterizedInitiatorImpl implements Inc
       connectionVar.setDefaultValue(connection);
       context.addOrUpdateVariable(connectionVar);
     }
+    
+    if (server != null) {
+      Variable serverVar = DbFactory.eINSTANCE.createVariable();
+      serverVar.setName(AsteriskSafletConstants.VAR_KEY_ASTERISK_SERVER);
+      serverVar.setType(VariableType.OBJECT);
+      serverVar.setScope(VariableScope.RUNTIME);
+      serverVar.setDefaultValue(server);
+      context.addOrUpdateVariable(serverVar);
+    }
+    
     
     newCall1.setCallerIdName(request.getCallerIdName());
     newCall1.setCallerIdNum(request.getCallerIdNumber());

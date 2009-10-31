@@ -33,6 +33,7 @@ import com.safi.core.saflet.SafletContext;
 import com.safi.core.saflet.SafletEnvironment;
 import com.safi.db.Variable;
 import com.safi.db.VariableScope;
+import com.safi.db.server.config.AsteriskServer;
 import com.safi.workshop.model.actionpak1.Actionpak1Package;
 import com.safi.workshop.model.actionpak1.InvokeSaflet2;
 
@@ -101,10 +102,12 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
     try {
 
       String handlerPath = (String) resolveDynamicValue(targetSafletPath, context);
-      Object rawVal = context.getVariableRawValue(AsteriskSafletConstants.VAR_KEY_AST_SERVER_ID);
-      Integer id = -1;
-      if (rawVal != null && rawVal instanceof Integer)
-        id = (Integer) rawVal;
+      AsteriskServer server = (AsteriskServer)context.getVariableRawValue(AsteriskSafletConstants.VAR_KEY_ASTERISK_SERVER);
+      
+//      Object rawVal = context.getVariableRawValue(AsteriskSafletConstants.VAR_KEY_AST_SERVER_ID);
+      Integer id = server == null ? -1 : server.getId();
+//      if (rawVal != null && rawVal instanceof Integer)
+//        id = (Integer) rawVal;
       Saflet targetSaflet = getSaflet().getSafletEnvironment().getSaflet(handlerPath, id);
       if (targetSaflet == null)
         exception = new ActionStepException("Couldn't find target handler " + handlerPath);
