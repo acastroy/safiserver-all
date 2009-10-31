@@ -225,16 +225,6 @@ public abstract class ScriptEnabledEditorPage extends AbstractDynamicValueEditor
       return null;
     }
 
-    @Override
-    public String getServerIpAddr() {
-      return null;
-    }
-
-    @Override
-    public void setServerIpAddr(String value) {
-      // TODO Auto-generated method stub
-
-    }
 
     @Override
     public Saflet getSaflet(String path, int astServerId) {

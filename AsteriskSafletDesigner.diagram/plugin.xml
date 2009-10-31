@@ -3121,7 +3121,7 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
             id="com.safi.workshop.navigator.serverconfig.ServerResourcesContent"
             labelProvider="com.safi.workshop.navigator.serverconfig.ServerResourcesLabelProvider"
             name="Server Resource Content"
-            priority="lowest">
+            priority="normal">
          <possibleChildren>
             <or>
                <instanceof

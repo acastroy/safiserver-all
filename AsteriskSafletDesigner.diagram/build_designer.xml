@@ -213,7 +213,7 @@
 
 	<target name="pre-deploy-workshop" depends="build">
 	
-	<ant dir="../SafiDB" antfile="../SafiDB/build_enhanced.xml" target="instrument" />
+		   <ant dir="../SafiDB" antfile="../SafiDB/build_enhanced.xml" target="instrument" />
 
 	    <delete includeEmptyDirs="true">
 	      <fileset dir="D:\temp\safiStaging\non_obfuscated" includes="**/*" />
