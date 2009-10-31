@@ -23,13 +23,13 @@ package org.asteriskjava.manager.event;
  * It is implemented in <code>channels/chan_sip.c</code> and <code>channels/chan_iax.c</code>
  *
  * @author srt
- * @version $Id: PeerEntryEvent.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: PeerEntryEvent.java 1300 2009-04-30 00:28:00Z srt $
  * @since 0.2
  */
 public class PeerEntryEvent extends ResponseEvent
 {
     /**
-     * Serial version identifier
+     * Serial version identifier.
      */
     private static final long serialVersionUID = 0L;
 

@@ -21,7 +21,7 @@ package org.asteriskjava.manager.response;
  * Asterisk server.
  *
  * @author srt
- * @version $Id: CoreSettingsResponse.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: CoreSettingsResponse.java 1127 2008-08-18 10:30:04Z srt $
  * @see org.asteriskjava.manager.action.CoreSettingsAction
  * @since 1.0.0
  */

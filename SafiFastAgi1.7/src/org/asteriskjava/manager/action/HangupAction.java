@@ -19,9 +19,9 @@ package org.asteriskjava.manager.action;
 /**
  * The HangupAction causes Asterisk to hang up a given channel.<p>
  * Hangup with a cause code is only supported by Asterisk versions later than 1.6.2.
- * 
+ *
  * @author srt
- * @version $Id: HangupAction.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: HangupAction.java 1280 2009-04-03 18:54:51Z srt $
  */
 public class HangupAction extends AbstractManagerAction
 {
@@ -43,7 +43,7 @@ public class HangupAction extends AbstractManagerAction
 
     /**
      * Creates a new HangupAction that hangs up the given channel.
-     * 
+     *
      * @param channel the name of the channel to hangup.
      * @since 0.2
      */
@@ -68,14 +68,14 @@ public class HangupAction extends AbstractManagerAction
      * Returns the name of this action, i.e. "Hangup".
      */
     @Override
-   public String getAction()
+    public String getAction()
     {
         return "Hangup";
     }
 
     /**
      * Returns the name of the channel to hangup.
-     * 
+     *
      * @return the name of the channel to hangup.
      */
     public String getChannel()
@@ -86,7 +86,7 @@ public class HangupAction extends AbstractManagerAction
     /**
      * Sets the name of the channel to hangup.<p>
      * This property is mandatory.
-     * 
+     *
      * @param channel the name of the channel to hangup.
      */
     public void setChannel(String channel)

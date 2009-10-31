@@ -22,7 +22,7 @@ package org.asteriskjava.manager.event;
  * Available since Asterisk 1.4
  *
  * @author srt
- * @version $Id: JabberEventEvent.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: JabberEventEvent.java 1134 2008-08-18 13:33:25Z srt $
  * @since 1.0.0
  */
 public class JabberEventEvent extends ManagerEvent

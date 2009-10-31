@@ -27,15 +27,14 @@ import org.asteriskjava.fastagi.reply.AgiReply;
  * Default implementation of the AgiReply interface.
  *
  * @author srt
- * @version $Id: AgiReplyImpl.java,v 1.4 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: AgiReplyImpl.java 1271 2009-03-21 03:41:24Z srt $
  */
-public class AgiReplyImpl implements Serializable, AgiReply
+public class AgiReplyImpl implements AgiReply
 {
     private static final Pattern STATUS_PATTERN = Pattern.compile("^(\\d{3})[ -]");
     private static final Pattern RESULT_PATTERN = Pattern.compile("^200 result=(\\S+)");
     private static final Pattern PARENTHESIS_PATTERN = Pattern.compile("^200 result=\\S* +\\((.*)\\)");
     private static final Pattern ADDITIONAL_ATTRIBUTES_PATTERN = Pattern.compile("^200 result=\\S* +(\\(.*\\) )?(.+)$");
-    private static final Pattern ADDITIONAL_ATTRIBUTE_PATTERN = Pattern.compile("(\\S+)=(\\S+)");
     private static final Pattern SYNOPSIS_PATTERN = Pattern.compile("^\\s*Usage:\\s*(.*)\\s*$");
     private static final String END_OF_PROPER_USAGE = "520 End of proper usage.";
 
@@ -90,7 +89,6 @@ public class AgiReplyImpl implements Serializable, AgiReply
         this();
         if (lines != null)
         {
-          System.err.println("got lines "+lines);
             this.lines = new ArrayList<String>(lines);
             if (!lines.isEmpty())
             {
@@ -170,8 +168,7 @@ public class AgiReplyImpl implements Serializable, AgiReply
         if (matcher.find())
         {
             status = Integer.parseInt(matcher.group(1));
-        
-        return status;
+            return status;
         }
         return -1;
     }
@@ -209,7 +206,7 @@ public class AgiReplyImpl implements Serializable, AgiReply
     }
 
     Map<String, String> parseAttributes(String s)
-            {
+    {
         StringBuilder keyBuilder = new StringBuilder();
         StringBuilder valueBuilder = new StringBuilder();
         Map<String, String> map = new HashMap<String, String>();
@@ -231,7 +228,7 @@ public class AgiReplyImpl implements Serializable, AgiReply
                 keyBuilder.delete(0, keyBuilder.length());
                 valueBuilder.delete(0, valueBuilder.length());
                 inKey = true;
-        }
+            }
             else if (c == '"' && !inKey)
             {
                 if (previousChar == '\\')
@@ -297,17 +294,17 @@ public class AgiReplyImpl implements Serializable, AgiReply
         }
 
         if (synopsis == null && lines.size() > 1)
-            {
+        {
             final String secondLine;
             final Matcher synopsisMatcher;
 
-                secondLine = lines.get(1);
-                synopsisMatcher = SYNOPSIS_PATTERN.matcher(secondLine);
-                if (synopsisMatcher.find())
-                {
-                    synopsis = synopsisMatcher.group(1);
-                }
+            secondLine = lines.get(1);
+            synopsisMatcher = SYNOPSIS_PATTERN.matcher(secondLine);
+            if (synopsisMatcher.find())
+            {
+                synopsis = synopsisMatcher.group(1);
             }
+        }
         return synopsis;
     }
 

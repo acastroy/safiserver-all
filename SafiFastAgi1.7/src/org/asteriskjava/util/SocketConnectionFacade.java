@@ -26,7 +26,7 @@ import java.net.InetAddress;
  * communication.
  * 
  * @author srt
- * @version $Id: SocketConnectionFacade.java,v 1.2 2008/05/14 05:17:18 zacw Exp $
+ * @version $Id: SocketConnectionFacade.java 959 2008-02-02 23:56:59Z srt $
  */
 public interface SocketConnectionFacade
 {

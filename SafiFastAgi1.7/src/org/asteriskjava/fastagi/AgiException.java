@@ -20,7 +20,7 @@ package org.asteriskjava.fastagi;
  * Base class for all AGI specific exceptions.
  * 
  * @author srt
- * @version $Id: AgiException.java,v 1.3 2008/12/12 07:05:01 zacw Exp $
+ * @version $Id: AgiException.java 938 2007-12-31 03:23:38Z srt $
  */
 public class AgiException extends Exception
 {

@@ -29,7 +29,7 @@ import java.util.Iterator;
  * channels has been reported a StatusCompleteEvent is generated.
  *
  * @author srt
- * @version $Id: StatusAction.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: StatusAction.java 1173 2008-09-22 23:39:41Z srt $
  * @see org.asteriskjava.manager.event.StatusEvent
  * @see org.asteriskjava.manager.event.StatusCompleteEvent
  */

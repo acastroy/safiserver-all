@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * A ThreadFactory that creates daemon threads for use with an {@link Executor}.
  * 
  * @author srt
- * @version $Id: DaemonThreadFactory.java,v 1.2 2008/05/14 05:17:18 zacw Exp $
+ * @version $Id: DaemonThreadFactory.java 959 2008-02-02 23:56:59Z srt $
  * @since 0.3
  */
 public class DaemonThreadFactory implements ThreadFactory

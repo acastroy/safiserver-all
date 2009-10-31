@@ -23,7 +23,7 @@ package org.asteriskjava.manager.event;
  * 
  * @see org.asteriskjava.manager.action.DbGetAction
  * @author srt
- * @version $Id: DbGetResponseEvent.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: DbGetResponseEvent.java 1222 2008-12-19 08:10:16Z srt $
  * @since 0.2
  */
 public class DbGetResponseEvent extends ResponseEvent

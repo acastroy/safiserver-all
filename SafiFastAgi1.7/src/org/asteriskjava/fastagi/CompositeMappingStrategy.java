@@ -40,7 +40,7 @@ import java.util.Arrays;
  * @see ClassNameMappingStrategy
  * @author srt
  * @since 0.3
- * @version $Id: CompositeMappingStrategy.java,v 1.2 2008/05/14 05:17:17 zacw Exp $
+ * @version $Id: CompositeMappingStrategy.java 1015 2008-04-04 21:56:36Z srt $
  */
 public class CompositeMappingStrategy implements MappingStrategy
 {

@@ -24,7 +24,7 @@ package org.asteriskjava.manager.event;
  * @see org.asteriskjava.manager.event.StatusEvent
  * 
  * @author srt
- * @version $Id: StatusCompleteEvent.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: StatusCompleteEvent.java 975 2008-02-03 18:39:49Z srt $
  */
 public class StatusCompleteEvent extends ResponseEvent
 {

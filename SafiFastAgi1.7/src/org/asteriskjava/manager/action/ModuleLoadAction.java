@@ -21,7 +21,7 @@ package org.asteriskjava.manager.action;
  * Available since Asterisk 1.6
  *
  * @author srt
- * @version $Id: ModuleLoadAction.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: ModuleLoadAction.java 1123 2008-08-17 11:26:34Z srt $
  * @since 1.0.0
  */
 public class ModuleLoadAction extends AbstractManagerAction

@@ -30,7 +30,7 @@ import org.asteriskjava.config.ConfigFile;
  * Default implementation of the AsteriskServer interface.
  *
  * @author srt
- * @version $Id: DefaultAsteriskServer.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: DefaultAsteriskServer.java 1137 2008-08-18 14:05:05Z srt $
  * @see org.asteriskjava.live.AsteriskServer
  */
 public class DefaultAsteriskServer implements AsteriskServer
@@ -131,7 +131,7 @@ public class DefaultAsteriskServer implements AsteriskServer
     {
         return impl.getManagerConnection();
     }
-
+    
     public AsteriskChannel originate(OriginateAction originateAction) throws ManagerCommunicationException, NoSuchChannelException
 	{
     	return impl.originate(originateAction);
@@ -167,7 +167,7 @@ public class DefaultAsteriskServer implements AsteriskServer
     {
         return impl.originateToApplication(channel, application, data, timeout, callerId, variables);
     }
-
+    
     public void originateAsync(OriginateAction originateAction,
             OriginateCallback cb) throws ManagerCommunicationException
 	{

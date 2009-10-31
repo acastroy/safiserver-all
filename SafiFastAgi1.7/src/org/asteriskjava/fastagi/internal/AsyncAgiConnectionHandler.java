@@ -16,21 +16,13 @@
  */
 package org.asteriskjava.fastagi.internal;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-import org.asteriskjava.fastagi.AgiChannel;
 import org.asteriskjava.fastagi.AgiException;
-import org.asteriskjava.fastagi.AgiRequest;
-import org.asteriskjava.fastagi.AgiScript;
 import org.asteriskjava.fastagi.MappingStrategy;
-import org.asteriskjava.fastagi.command.VerboseCommand;
 import org.asteriskjava.fastagi.command.AsyncAgiBreakCommand;
-import org.asteriskjava.util.Log;
-import org.asteriskjava.util.LogFactory;
-import org.asteriskjava.util.SocketConnectionFacade;
 import org.asteriskjava.manager.event.AsyncAgiEvent;
 import org.asteriskjava.manager.ManagerConnection;
 
@@ -41,7 +33,7 @@ import org.asteriskjava.manager.ManagerConnection;
  * handle this type of request. Finally it sends an {@link org.asteriskjava.fastagi.command.AsyncAgiBreakCommand}.
  *
  * @author srt
- * @version $Id: AsyncAgiConnectionHandler.java,v 1.2 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: AsyncAgiConnectionHandler.java 1140 2008-08-18 18:49:36Z srt $
  */
 public class AsyncAgiConnectionHandler extends AgiConnectionHandler
 {

@@ -23,7 +23,7 @@ package org.asteriskjava.manager.event;
  * Available since Asterisk 1.6
  *
  * @author srt
- * @version $Id: AgentRingNoAnswerEvent.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: AgentRingNoAnswerEvent.java 1120 2008-08-16 19:10:02Z srt $
  * @since 1.0.0
  */
 public class AgentRingNoAnswerEvent extends AbstractAgentEvent

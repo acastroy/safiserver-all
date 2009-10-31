@@ -24,7 +24,7 @@ package org.asteriskjava.manager.event;
  * with the status set to <code>false</code> to indicate unhold.
  *
  * @author srt
- * @version $Id: UnholdEvent.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: UnholdEvent.java 967 2008-02-03 07:28:32Z srt $
  * @see org.asteriskjava.manager.event.HoldEvent
  * @since 0.2
  * @deprecated as of 1.0.0, use {@link org.asteriskjava.manager.event.HoldEvent} and its

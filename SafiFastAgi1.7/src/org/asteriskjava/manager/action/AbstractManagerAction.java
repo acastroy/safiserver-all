@@ -26,7 +26,7 @@ import org.asteriskjava.util.ReflectionUtil;
  * for your concrete Action implementations.
  * 
  * @author srt
- * @version $Id: AbstractManagerAction.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: AbstractManagerAction.java 1140 2008-08-18 18:49:36Z srt $
  * @since 0.2
  */
 public abstract class AbstractManagerAction implements ManagerAction

@@ -25,7 +25,7 @@ import java.util.List;
  * ConfigFile implementation based on the config actions of the Manager API.
  *
  * @author srt
- * @version $Id: ConfigFileImpl.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: ConfigFileImpl.java 992 2008-03-08 23:31:13Z srt $
  * @since 1.0.0
  */
 public class ConfigFileImpl implements ConfigFile

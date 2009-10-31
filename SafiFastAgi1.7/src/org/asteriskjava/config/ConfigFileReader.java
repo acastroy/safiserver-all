@@ -14,7 +14,7 @@ import java.util.*;
  * Client code is not supposed to use this class.
  *
  * @author srt
- * @version $Id: ConfigFileReader.java,v 1.3 2008/12/12 07:05:03 zacw Exp $
+ * @version $Id: ConfigFileReader.java 1140 2008-08-18 18:49:36Z srt $
  */
 public class ConfigFileReader
 {

@@ -14,7 +14,7 @@ package org.asteriskjava.manager.event;
  * Available since Asterisk 1.6
  *
  * @author srt
- * @version $Id: AgiExecEvent.java,v 1.3 2008/12/12 07:05:01 zacw Exp $
+ * @version $Id: AgiExecEvent.java 959 2008-02-02 23:56:59Z srt $
  * @since 1.0.0
  */
 public class AgiExecEvent extends ManagerEvent

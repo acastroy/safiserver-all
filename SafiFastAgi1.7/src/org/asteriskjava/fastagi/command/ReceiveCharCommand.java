@@ -25,7 +25,7 @@ package org.asteriskjava.fastagi.command;
  * channel does not support text reception. Returns -1 only on error/hangup.
  * 
  * @author srt
- * @version $Id: ReceiveCharCommand.java,v 1.2 2008/05/14 05:17:17 zacw Exp $
+ * @version $Id: ReceiveCharCommand.java 938 2007-12-31 03:23:38Z srt $
  */
 public class ReceiveCharCommand extends AbstractAgiCommand
 {

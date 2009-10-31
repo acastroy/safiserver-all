@@ -23,7 +23,7 @@ package org.asteriskjava.manager.event;
  * It is implemented in <code>main/cdr.c</code>
  *
  * @author srt
- * @version $Id: NewAccountCodeEvent.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: NewAccountCodeEvent.java 1095 2008-08-09 01:49:43Z sprior $
  * @since 1.0.0
  */
 public class NewAccountCodeEvent extends ManagerEvent

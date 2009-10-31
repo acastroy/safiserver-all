@@ -28,7 +28,7 @@ import org.asteriskjava.util.SocketConnectionFacade;
  * Default implementation of the AGIWriter interface.
  * 
  * @author srt
- * @version $Id: FastAgiWriter.java,v 1.2 2008/05/29 07:04:19 zacw Exp $
+ * @version $Id: FastAgiWriter.java 1015 2008-04-04 21:56:36Z srt $
  */
 class FastAgiWriter implements AgiWriter
 {
@@ -43,9 +43,7 @@ class FastAgiWriter implements AgiWriter
     {
         try
         {
-            final String cmd = command.buildCommand() + "\n";
-            System.err.println("Sending cmd: "+cmd);
-            socket.write(cmd);
+            socket.write(command.buildCommand() + "\n");
             socket.flush();
         }
         catch (IOException e)

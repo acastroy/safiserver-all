@@ -23,7 +23,7 @@ package org.asteriskjava.manager.action;
  * Available since Asterisk 1.6
  *
  * @author srt
- * @version $Id: AtxferAction.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: AtxferAction.java 1122 2008-08-16 22:34:37Z srt $
  * @since 1.0.0
  */
 public class AtxferAction extends AbstractManagerAction

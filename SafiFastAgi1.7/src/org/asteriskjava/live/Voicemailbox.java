@@ -22,7 +22,7 @@ import java.io.Serializable;
  * An Asterisk voicemailbox with status.
  * 
  * @author srt
- * @version $Id: Voicemailbox.java,v 1.2 2008/05/14 05:17:17 zacw Exp $
+ * @version $Id: Voicemailbox.java 961 2008-02-03 02:53:56Z srt $
  * @since 0.3
  */
 public class Voicemailbox implements Serializable

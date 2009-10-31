@@ -22,7 +22,7 @@ package org.asteriskjava.manager.event;
  * Available since Asterisk 1.2
  * 
  * @author srt
- * @version $Id: AgentConnectEvent.java,v 1.3 2008/12/12 07:05:01 zacw Exp $
+ * @version $Id: AgentConnectEvent.java 1074 2008-06-23 03:15:35Z srt $
  * @since 0.2
  */
 public class AgentConnectEvent extends AbstractAgentEvent

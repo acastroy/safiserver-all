@@ -22,7 +22,7 @@ package org.asteriskjava.manager.action;
  * Available since Asterisk 1.2
  * 
  * @author srt
- * @version $Id: DbPutAction.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: DbPutAction.java 1041 2008-04-24 01:30:23Z srt $
  * @since 0.2
  */
 public class DbPutAction extends AbstractManagerAction

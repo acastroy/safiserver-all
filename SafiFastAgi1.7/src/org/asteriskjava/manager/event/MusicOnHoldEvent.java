@@ -22,7 +22,7 @@ package org.asteriskjava.manager.event;
  * Available since Asterisk 1.6
  *
  * @author srt
- * @version $Id: MusicOnHoldEvent.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: MusicOnHoldEvent.java 1135 2008-08-18 13:46:59Z srt $
  * @since 1.0.0
  */
 public class MusicOnHoldEvent extends ManagerEvent

@@ -39,7 +39,7 @@ import org.asteriskjava.manager.event.QueueMemberEvent;
  * </dl>
  *
  * @author <a href="mailto:patrick.breucking{@nospam}gonicus.de">Patrick Breucking</a>
- * @version $Id: QueueMemberState.java,v 1.2 2008/05/14 05:17:18 zacw Exp $
+ * @version $Id: QueueMemberState.java 962 2008-02-03 03:34:11Z srt $
  * @since 0.3.1
  * @see org.asteriskjava.manager.event.QueueMemberEvent
  */

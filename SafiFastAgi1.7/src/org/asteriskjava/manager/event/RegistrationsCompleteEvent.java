@@ -22,7 +22,7 @@ package org.asteriskjava.manager.event;
  * Available since Asterisk 1.6
  *
  * @author Laureano
- * @version $Id: RegistrationsCompleteEvent.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: RegistrationsCompleteEvent.java 1166 2008-09-18 02:41:44Z sprior $
  * @see RegistryEntryEvent
  * @see org.asteriskjava.manager.action.SipShowRegistryAction
  * @since 1.0.0

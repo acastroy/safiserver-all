@@ -34,7 +34,7 @@ import org.asteriskjava.util.LogFactory;
  * start multiple threads to keep several connections alive. 
  *
  * @author srt
- * @version $Id: PingThread.java,v 1.2 2008/05/14 05:17:18 zacw Exp $
+ * @version $Id: PingThread.java 1355 2009-08-31 13:23:44Z srt $
  */
 public class PingThread extends Thread
 {
@@ -156,7 +156,7 @@ public class PingThread extends Thread
             }
             catch (InterruptedException e) // NOPMD
             {
-                // swallow
+                Thread.currentThread().interrupt();
             }
 
             // exit if die is set

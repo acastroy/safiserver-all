@@ -24,7 +24,7 @@ import java.net.InetAddress;
  * It is implemented in <code>main/rtp.c</code>
  *
  * @author srt
- * @version $Id: RtcpSentEvent.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: RtcpSentEvent.java 1141 2008-08-19 18:08:19Z srt $
  * @since 1.0.0
  */
 public class RtcpSentEvent extends AbstractRtcpEvent

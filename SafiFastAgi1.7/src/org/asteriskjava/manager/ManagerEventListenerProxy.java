@@ -27,7 +27,7 @@ import org.asteriskjava.util.DaemonThreadFactory;
  * 
  * @author srt
  * @since 0.3
- * @version $Id: ManagerEventListenerProxy.java,v 1.2 2008/05/14 05:17:18 zacw Exp $
+ * @version $Id: ManagerEventListenerProxy.java 938 2007-12-31 03:23:38Z srt $
  */
 public class ManagerEventListenerProxy implements ManagerEventListener
 {

@@ -28,7 +28,7 @@ import java.util.Map;
  * </ul>
  * Usage: java org.asteriskjava.tools.HtmlEventTracer host username password
  *
- * @version $Id: HtmlEventTracer.java,v 1.3 2008/12/12 07:05:03 zacw Exp $
+ * @version $Id: HtmlEventTracer.java 1315 2009-06-02 22:36:54Z srt $
  */
 public class HtmlEventTracer implements ManagerEventListener
 {

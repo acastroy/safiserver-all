@@ -4,7 +4,7 @@ package org.asteriskjava.manager.response;
  * Response to a {@link org.asteriskjava.manager.action.SipShowPeerAction}.
  *
  * @author srt
- * @version $Id: SipShowPeerResponse.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: SipShowPeerResponse.java 1150 2008-08-21 18:35:54Z srt $
  * @since 1.0.0
  * @see org.asteriskjava.manager.action.SipShowPeerAction
  */

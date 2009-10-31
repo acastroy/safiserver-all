@@ -32,7 +32,7 @@ package org.asteriskjava.fastagi.command;
  * not be included in the filename.
  * 
  * @author srt
- * @version $Id: StreamFileCommand.java,v 1.3 2008/12/12 07:05:03 zacw Exp $
+ * @version $Id: StreamFileCommand.java 1064 2008-06-03 17:27:52Z msmith $
  */
 public class StreamFileCommand extends AbstractAgiCommand
 {

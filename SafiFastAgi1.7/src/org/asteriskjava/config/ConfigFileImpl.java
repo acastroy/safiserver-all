@@ -25,7 +25,7 @@ import java.util.ArrayList;
  * An Asterisk configuration file read from the filesystem.
  *
  * @author srt
- * @version $Id: ConfigFileImpl.java,v 1.2 2008/05/14 05:17:18 zacw Exp $
+ * @version $Id: ConfigFileImpl.java 1044 2008-05-05 23:45:09Z msmith $
  * @since 1.0.0
  */
 public class ConfigFileImpl implements ConfigFile

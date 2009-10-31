@@ -20,7 +20,7 @@ package org.asteriskjava.manager.event;
  * Abstract base class for RTP statistics events.<p>
  *
  * @author srt
- * @version $Id: AbstractRtpStatEvent.java,v 1.1 2008/12/12 07:05:01 zacw Exp $
+ * @version $Id: AbstractRtpStatEvent.java 1164 2008-09-18 02:40:44Z sprior $
  * @since 1.0.0
  */
 public abstract class AbstractRtpStatEvent extends ManagerEvent

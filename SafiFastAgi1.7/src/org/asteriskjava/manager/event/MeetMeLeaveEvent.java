@@ -22,7 +22,7 @@ package org.asteriskjava.manager.event;
  * It is implemented in <code>apps/app_meetme.c</code>
  * 
  * @author srt
- * @version $Id: MeetMeLeaveEvent.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: MeetMeLeaveEvent.java 1050 2008-05-19 14:59:04Z srt $
  */
 public class MeetMeLeaveEvent extends AbstractMeetMeEvent
 {

@@ -24,7 +24,7 @@ package org.asteriskjava.fastagi.command;
  * Image names should not include extensions.
  * 
  * @author srt
- * @version $Id: SendImageCommand.java,v 1.2 2008/05/14 05:17:17 zacw Exp $
+ * @version $Id: SendImageCommand.java 938 2007-12-31 03:23:38Z srt $
  */
 public class SendImageCommand extends AbstractAgiCommand
 {

@@ -21,7 +21,7 @@ package org.asteriskjava.fastagi.command;
  * Available since Asterisk 1.6.
  *
  * @author srt
- * @version $Id: SpeechActivateGrammarCommand.java,v 1.1 2008/05/14 05:17:17 zacw Exp $
+ * @version $Id: SpeechActivateGrammarCommand.java 1013 2008-03-31 06:51:03Z srt $
  * @see org.asteriskjava.fastagi.command.SpeechLoadGrammarCommand
  * @see org.asteriskjava.fastagi.command.SpeechDeactivateGrammarCommand
  * @since 1.0.0

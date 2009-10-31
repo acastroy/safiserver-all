@@ -21,7 +21,7 @@ package org.asteriskjava.manager.event;
  * It is implemented in <code>channel.c</code>
  *
  * @author srt
- * @version $Id: NewChannelEvent.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: NewChannelEvent.java 1295 2009-04-28 10:07:23Z srt $
  */
 public class NewChannelEvent extends AbstractChannelStateEvent
 {

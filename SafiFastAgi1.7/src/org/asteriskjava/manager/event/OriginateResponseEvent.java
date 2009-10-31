@@ -21,7 +21,7 @@ package org.asteriskjava.manager.event;
  * 
  * @see org.asteriskjava.manager.action.OriginateAction
  * @author srt
- * @version $Id: OriginateResponseEvent.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: OriginateResponseEvent.java 1108 2008-08-16 11:22:50Z srt $
  */
 public class OriginateResponseEvent extends ResponseEvent
 {

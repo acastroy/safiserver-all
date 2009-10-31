@@ -23,7 +23,7 @@ import org.asteriskjava.live.AsteriskAgent;
  * Default implementation of the AsteriskAgent interface.
  *
  * @author <a href="mailto:patrick.breucking{@nospam}gonicus.de">Patrick Breucking</a>
- * @version $Id: AsteriskAgentImpl.java,v 1.2 2008/05/14 05:17:18 zacw Exp $
+ * @version $Id: AsteriskAgentImpl.java 982 2008-02-14 04:09:15Z srt $
  */
 public class AsteriskAgentImpl extends AbstractLiveObject implements AsteriskAgent
 {

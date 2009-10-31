@@ -10,7 +10,7 @@ import java.util.*;
  * Client code is not supposed to use this class.
  *
  * @author srt
- * @version $Id: AstUtil.java 1210 2008-12-09 13:54:42Z srt $
+ * @version $Id: AstUtil.java 1300 2009-04-30 00:28:00Z srt $
  */
 public class AstUtil
 {

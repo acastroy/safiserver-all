@@ -30,7 +30,7 @@ import java.util.*;
  * Manages channel events on behalf of an AsteriskServer.
  *
  * @author srt
- * @version $Id: ChannelManager.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: ChannelManager.java 1381 2009-10-19 19:48:15Z srt $
  */
 class ChannelManager
 {
@@ -62,10 +62,17 @@ class ChannelManager
 
     void initialize() throws ManagerCommunicationException
     {
+        initialize(null);
+    }
+
+    void initialize(List<String> variables) throws ManagerCommunicationException
+    {
         ResponseEvents re;
 
         disconnected();
-        re = server.sendEventGeneratingAction(new StatusAction());
+        StatusAction sa = new StatusAction();
+        sa.setVariables(variables);
+        re = server.sendEventGeneratingAction(sa);
         for (ManagerEvent event : re.getEvents())
         {
             if (event instanceof StatusEvent)
@@ -161,7 +168,7 @@ class ChannelManager
             }
             catch (InterruptedException e)
             {
-                // ignore
+                Thread.currentThread().interrupt();
             }
         }
 
@@ -196,6 +203,7 @@ class ChannelManager
         AsteriskChannelImpl channel;
         final Extension extension;
         boolean isNew = false;
+        Map<String, String> variables = event.getVariables();
 
         channel = getChannelImplById(event.getUniqueId());
         if (channel == null)
@@ -212,6 +220,13 @@ class ChannelManager
             }
             channel = new AsteriskChannelImpl(server, event.getChannel(), event.getUniqueId(), dateOfCreation);
             isNew = true;
+            if (variables != null)
+            {
+                for (String variable : variables.keySet())
+                {
+                    channel.updateVariable(variable, variables.get(variable));
+                }
+            }
         }
 
         if (event.getContext() == null && event.getExtension() == null
@@ -343,8 +358,8 @@ class ChannelManager
             {
                 if (id.equals(channel.getId()))
                 {
-        return channel;
-    }
+                    return channel;
+                }
             }
         }
         return null;
@@ -400,10 +415,17 @@ class ChannelManager
 
         if (channel == null)
         {
-            addNewChannel(
-                    event.getUniqueId(), event.getChannel(), event.getDateReceived(),
-                    event.getCallerIdNum(), event.getCallerIdName(),
-                    ChannelState.valueOf(event.getChannelState()), event.getAccountCode());
+            if (event.getChannel() == null)
+            {
+                logger.info("Ignored NewChannelEvent with empty channel name (uniqueId=" + event.getUniqueId() + ")");
+            }
+            else
+            {
+                addNewChannel(
+                        event.getUniqueId(), event.getChannel(), event.getDateReceived(),
+                        event.getCallerIdNum(), event.getCallerIdName(),
+                        ChannelState.valueOf(event.getChannelState()), event.getAccountCode());
+            }
         }
         else
         {
@@ -456,54 +478,53 @@ class ChannelManager
             if (channel == null)
             {
                 logger.info("Creating new channel due to NewStateEvent '" + event.getChannel() + "' unique id " + event.getUniqueId());
-            // NewStateEvent can occur instead of a NewChannelEvent
-            channel = addNewChannel(
-                    event.getUniqueId(), event.getChannel(), event.getDateReceived(),
-                    event.getCallerIdNum(), event.getCallerIdName(),
-                    ChannelState.valueOf(event.getChannelState()), null /* account code not available */);
-        }
+                // NewStateEvent can occur instead of a NewChannelEvent
+                channel = addNewChannel(
+                        event.getUniqueId(), event.getChannel(), event.getDateReceived(),
+                        event.getCallerIdNum(), event.getCallerIdName(),
+                        ChannelState.valueOf(event.getChannelState()), null /* account code not available */);
+            }
         }
 
-            // NewStateEvent can provide a new CallerIdNum or CallerIdName not previously received through a
-            // NewCallerIdEvent. This happens at least on outgoing legs from the queue application to agents.
+        // NewStateEvent can provide a new CallerIdNum or CallerIdName not previously received through a
+        // NewCallerIdEvent. This happens at least on outgoing legs from the queue application to agents.
+        if (event.getCallerIdNum() != null || event.getCallerIdName() != null)
+        {
+            String cidnum = "";
+            String cidname = "";
+            CallerId currentCallerId = channel.getCallerId();
 
-            if (event.getCallerIdNum() != null || event.getCallerIdName() != null)
+            if (currentCallerId != null)
             {
-                String cidnum = "";
-                String cidname = "";
-                CallerId currentCallerId = channel.getCallerId();
+                cidnum = currentCallerId.getNumber();
+                cidname = currentCallerId.getName();
+            }
 
-                if (currentCallerId != null)
-                {
-                    cidnum = currentCallerId.getNumber();
-                    cidname = currentCallerId.getName();
-                }
+            if (event.getCallerIdNum() != null)
+            {
+                cidnum = event.getCallerIdNum();
+            }
 
-                if (event.getCallerIdNum() != null)
-                {
-                    cidnum = event.getCallerIdNum();
-                }
+            if (event.getCallerIdName() != null)
+            {
+                cidname = event.getCallerIdName();
+            }
 
-                if (event.getCallerIdName() != null)
-                {
-                    cidname = event.getCallerIdName();
-                }
+            CallerId newCallerId = new CallerId(cidname, cidnum);
+            logger.debug("Updating CallerId (following NewStateEvent) to: " + newCallerId.toString());
+            channel.setCallerId(newCallerId);
 
-                CallerId newCallerId = new CallerId(cidname, cidnum);
-                logger.debug("Updating CallerId (following NewStateEvent) to: " + newCallerId.toString());
-                channel.setCallerId(newCallerId);
-            
             // Also, NewStateEvent can return a new channel name for the same channel uniqueid, indicating the channel has been
             // renamed but no related RenameEvent has been received.
             // This happens with mISDN channels (see AJ-153)
-        	if (event.getChannel() != null && ! event.getChannel().equals(channel.getName()) )
-        	{
+            if (event.getChannel() != null && !event.getChannel().equals(channel.getName()))
+            {
                 logger.info("Renaming channel (following NewStateEvent) '" + channel.getName() + "' to '" + event.getChannel() + "'");
                 synchronized (channel)
                 {
                     channel.nameChanged(event.getDateReceived(), event.getChannel());
                 }
-        	}
+            }
         }
 
         if (event.getChannelState() != null)
@@ -531,19 +552,19 @@ class ChannelManager
 
             if (channel == null)
             {
-            // NewCallerIdEvent can occur before NewChannelEvent
+                // NewCallerIdEvent can occur before NewChannelEvent
                 channel = addNewChannel(
-                    event.getUniqueId(), event.getChannel(), event.getDateReceived(),
-                    event.getCallerIdNum(), event.getCallerIdName(),
-                    ChannelState.DOWN, null /* account code not available */);
-        }
-        }
-
-            synchronized (channel)
-            {
-                channel.setCallerId(new CallerId(event.getCallerIdName(), event.getCallerIdNum()));
+                        event.getUniqueId(), event.getChannel(), event.getDateReceived(),
+                        event.getCallerIdNum(), event.getCallerIdName(),
+                        ChannelState.DOWN, null /* account code not available */);
             }
         }
+
+        synchronized (channel)
+        {
+            channel.setCallerId(new CallerId(event.getCallerIdName(), event.getCallerIdNum()));
+        }
+    }
 
     void handleHangupEvent(HangupEvent event)
     {

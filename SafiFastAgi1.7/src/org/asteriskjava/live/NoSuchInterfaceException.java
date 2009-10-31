@@ -20,7 +20,7 @@ package org.asteriskjava.live;
  * Indicates that the interface is not available on the Asterisk server.
  *
  * @author srt
- * @version $Id: NoSuchInterfaceException.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: NoSuchInterfaceException.java 1159 2008-08-27 17:52:12Z srt $
  * @since 1.0.0
  */
 public class NoSuchInterfaceException extends LiveException

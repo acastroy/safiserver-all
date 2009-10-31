@@ -20,7 +20,7 @@ package org.asteriskjava.live;
  * Indicates that the channel is not available on the Asterisk server.
  * 
  * @author srt
- * @version $Id: NoSuchChannelException.java,v 1.2 2008/05/14 05:17:18 zacw Exp $
+ * @version $Id: NoSuchChannelException.java 938 2007-12-31 03:23:38Z srt $
  */
 public class NoSuchChannelException extends LiveException
 {

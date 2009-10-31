@@ -29,7 +29,7 @@ import org.asteriskjava.manager.event.ResponseEvent;
  * @see org.asteriskjava.manager.event.AgentsCompleteEvent
  * 
  * @author srt
- * @version $Id: AgentsAction.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: AgentsAction.java 1162 2008-09-18 02:39:08Z sprior $
  * @since 0.2
  */
 public class AgentsAction extends AbstractManagerAction implements EventGeneratingAction

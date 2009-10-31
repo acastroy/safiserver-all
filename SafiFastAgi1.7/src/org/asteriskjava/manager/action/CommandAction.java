@@ -39,7 +39,7 @@ import org.asteriskjava.manager.response.CommandResponse;
  * {@link org.asteriskjava.manager.ManagerConnection}.
  *
  * @author srt
- * @version $Id: CommandAction.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: CommandAction.java 1124 2008-08-18 03:25:01Z srt $
  * @see org.asteriskjava.manager.response.CommandResponse
  */
 @ExpectedResponse(CommandResponse.class)

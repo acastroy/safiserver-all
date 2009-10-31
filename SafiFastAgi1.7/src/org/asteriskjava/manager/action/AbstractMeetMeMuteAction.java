@@ -20,7 +20,7 @@ package org.asteriskjava.manager.action;
  * Abstract base class for mute and unmute actions.
  * 
  * @author srt
- * @version $Id: AbstractMeetMeMuteAction.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: AbstractMeetMeMuteAction.java 938 2007-12-31 03:23:38Z srt $
  */
 public abstract class AbstractMeetMeMuteAction extends AbstractManagerAction
 {

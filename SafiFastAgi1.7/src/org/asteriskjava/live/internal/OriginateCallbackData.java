@@ -12,7 +12,7 @@ import org.asteriskjava.manager.action.OriginateAction;
  * Wrapper class for OriginateCallbacks.
  * 
  * @author srt
- * @version $Id: OriginateCallbackData.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: OriginateCallbackData.java 1092 2008-08-09 01:46:21Z sprior $
  */
 class OriginateCallbackData
 {

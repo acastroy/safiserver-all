@@ -21,7 +21,7 @@ package org.asteriskjava.manager.action;
  * It is implemented in <code>apps/app_queue.c</code>
  * 
  * @author srt
- * @version $Id: QueueRemoveAction.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: QueueRemoveAction.java 938 2007-12-31 03:23:38Z srt $
  */
 public class QueueRemoveAction extends AbstractManagerAction
 {

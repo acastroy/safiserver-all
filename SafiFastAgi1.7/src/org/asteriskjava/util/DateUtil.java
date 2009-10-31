@@ -30,7 +30,7 @@ import java.util.TimeZone;
  * Client code is not supposed to use this class.
  * 
  * @author srt
- * @version $Id: DateUtil.java,v 1.2 2008/05/14 05:17:18 zacw Exp $
+ * @version $Id: DateUtil.java 1314 2009-05-28 12:24:54Z srt $
  */
 public class DateUtil
 {
@@ -74,7 +74,7 @@ public class DateUtil
 
     /**
      * Converts a date in the form of "yy-MM-dd HH:mm:ss" to a Date object using
-     * the default timezone.
+     * the default time zone.
      * 
      * @param s date string in the form of "yy-MM-dd HH:mm:ss"
      * @return the corresponding Java date object or <code>null</code> if it is not parsable.
@@ -86,7 +86,7 @@ public class DateUtil
 
     /**
      * Converts a date in the form of "yy-MM-dd HH:mm:ss" to a Date object using
-     * the given timezone.
+     * the given time zone.
      * 
      * @param s date string in the form of "yy-MM-dd HH:mm:ss"
      * @param tz the timezone to use or <code>null</code> for the default time zone.

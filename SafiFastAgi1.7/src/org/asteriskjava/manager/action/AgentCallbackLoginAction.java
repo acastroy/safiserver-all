@@ -26,7 +26,7 @@ package org.asteriskjava.manager.action;
  * Available since Asterisk 1.2, deprecated in Asterisk 1.4 and removed in Asterisk 1.6.
  *
  * @author srt
- * @version $Id: AgentCallbackLoginAction.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: AgentCallbackLoginAction.java 1146 2008-08-20 17:04:18Z srt $
  * @since 0.2
  * @deprecated use {@link org.asteriskjava.manager.action.QueueAddAction} instead.
  */

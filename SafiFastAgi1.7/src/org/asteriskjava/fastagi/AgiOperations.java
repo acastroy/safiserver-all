@@ -26,7 +26,7 @@ import org.asteriskjava.fastagi.reply.AgiReply;
  * 
  * @since 0.3
  * @author srt
- * @version $Id: AgiOperations.java,v 1.3 2008/12/12 07:05:01 zacw Exp $
+ * @version $Id: AgiOperations.java 1271 2009-03-21 03:41:24Z srt $
  */
 public class AgiOperations implements AgiChannel
 {

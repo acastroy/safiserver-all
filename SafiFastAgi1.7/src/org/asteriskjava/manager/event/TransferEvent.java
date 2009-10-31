@@ -22,7 +22,7 @@ package org.asteriskjava.manager.event;
  * Available since Asterisk 1.6 for SIP channels.
  *
  * @author srt
- * @version $Id: TransferEvent.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: TransferEvent.java 1117 2008-08-16 16:43:57Z srt $
  * @since 1.0.0
  */
 public class TransferEvent extends ManagerEvent

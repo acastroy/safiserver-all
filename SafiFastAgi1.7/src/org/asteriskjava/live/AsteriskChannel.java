@@ -272,7 +272,7 @@ public interface AsteriskChannel extends LiveObject
      * @return the Extension to dial, <code>null</code> if not currently parked.
      */
     Extension getParkedAt();
-    
+
     /**
      * Returns the channel variables as received by
      * {@link org.asteriskjava.manager.event.VarSetEvent VarSetEvents}.<p>

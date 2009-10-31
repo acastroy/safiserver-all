@@ -27,7 +27,7 @@ import org.asteriskjava.util.SocketConnectionFacade;
  * Default implementation of ManagerWriter interface.
  * 
  * @author srt
- * @version $Id: ManagerWriterImpl.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: ManagerWriterImpl.java 1098 2008-08-09 02:02:08Z sprior $
  */
 public class ManagerWriterImpl implements ManagerWriter
 {

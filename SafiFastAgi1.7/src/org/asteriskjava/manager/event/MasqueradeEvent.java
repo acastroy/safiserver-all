@@ -24,7 +24,7 @@ import org.asteriskjava.util.AstState;
  * It is implemented in <code>main/channel.c</code>
  *
  * @author srt
- * @version $Id: MasqueradeEvent.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: MasqueradeEvent.java 1112 2008-08-16 14:03:18Z srt $
  * @since 1.0.0
  */
 public class MasqueradeEvent extends ManagerEvent

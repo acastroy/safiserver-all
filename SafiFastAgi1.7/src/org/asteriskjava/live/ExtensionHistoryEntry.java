@@ -23,7 +23,7 @@ import java.util.Date;
  * An entry in the extension history of an {@link AsteriskChannel}.
  *
  * @author srt
- * @version $Id: ExtensionHistoryEntry.java,v 1.2 2008/05/14 05:17:18 zacw Exp $
+ * @version $Id: ExtensionHistoryEntry.java 938 2007-12-31 03:23:38Z srt $
  * @since 0.3
  */
 public class ExtensionHistoryEntry implements Serializable

@@ -22,7 +22,7 @@ package org.asteriskjava.manager.event;
  * It is implemented in <code>apps/app_queue.c</code>
  *
  * @author srt
- * @version $Id: QueueParamsEvent.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: QueueParamsEvent.java 1292 2009-04-27 22:14:03Z srt $
  * @see org.asteriskjava.manager.action.QueueStatusAction
  */
 public class QueueParamsEvent extends ResponseEvent

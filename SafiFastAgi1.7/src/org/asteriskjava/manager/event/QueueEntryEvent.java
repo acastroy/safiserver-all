@@ -23,7 +23,7 @@ package org.asteriskjava.manager.event;
  * 
  * @see org.asteriskjava.manager.action.QueueStatusAction
  * @author srt
- * @version $Id: QueueEntryEvent.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: QueueEntryEvent.java 1360 2009-09-04 01:08:57Z srt $
  */
 public class QueueEntryEvent extends ResponseEvent
 {
@@ -33,6 +33,7 @@ public class QueueEntryEvent extends ResponseEvent
     private static final long serialVersionUID = 3419114730595151514L;
     private String queue;
     private Integer position;
+    private String uniqueId;
     private String channel;
     private String callerId;
     private String callerIdName;
@@ -84,6 +85,23 @@ public class QueueEntryEvent extends ResponseEvent
     public String getChannel()
     {
         return channel;
+    }
+
+    /**
+     * Returns the unique id of the channel of this entry.<p>
+     * Available since Asterisk 1.6.
+     *
+     * @return the unique id of the channel of this entry.
+     * @since 1.0.0
+     */
+    public String getUniqueId()
+    {
+        return uniqueId;
+    }
+
+    public void setUniqueId(String uniqueId)
+    {
+        this.uniqueId = uniqueId;
     }
 
     /**

@@ -26,7 +26,7 @@ package org.asteriskjava.manager.internal;
  * only. 
  * 
  * @author srt
- * @version $Id: ManagerUtil.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: ManagerUtil.java 1124 2008-08-18 03:25:01Z srt $
  */
 public class ManagerUtil
 {

@@ -21,7 +21,7 @@ package org.asteriskjava.manager.action;
  * Available since Asterisk 1.6.0
  *
  * @author srt
- * @version $Id: JabberSendAction.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: JabberSendAction.java 1131 2008-08-18 12:41:36Z srt $
  * @since 1.0.0
  */
 public class JabberSendAction extends AbstractManagerAction

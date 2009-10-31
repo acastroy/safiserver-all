@@ -25,7 +25,7 @@ import java.io.IOException;
  * communication.
  * 
  * @author srt
- * @version $Id: ServerSocketFacade.java,v 1.2 2008/05/14 05:17:18 zacw Exp $
+ * @version $Id: ServerSocketFacade.java 938 2007-12-31 03:23:38Z srt $
  */
 public interface ServerSocketFacade
 {
@@ -44,5 +44,5 @@ public interface ServerSocketFacade
      */
     void close() throws IOException;
     
-    public String getIpAddr();
+    public String getIpAddr(); 
 }

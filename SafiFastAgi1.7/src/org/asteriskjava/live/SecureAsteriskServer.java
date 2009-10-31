@@ -8,7 +8,7 @@ import org.asteriskjava.manager.ManagerConnection;
  * Uses SSL for the connection to Asterisk.
  *
  * @author srt
- * @version $Id: SecureAsteriskServer.java,v 1.2 2008/05/14 05:17:18 zacw Exp $
+ * @version $Id: SecureAsteriskServer.java 961 2008-02-03 02:53:56Z srt $
  * @see org.asteriskjava.live.AsteriskServer
  */
 public class SecureAsteriskServer extends DefaultAsteriskServer

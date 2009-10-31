@@ -34,7 +34,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * Default implementation of the ManagerReader interface.
  *
  * @author srt
- * @version $Id: ManagerReaderImpl.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: ManagerReaderImpl.java 1154 2008-08-24 02:05:26Z srt $
  */
 public class ManagerReaderImpl implements ManagerReader
 {

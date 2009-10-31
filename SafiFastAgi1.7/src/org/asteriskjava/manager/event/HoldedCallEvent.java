@@ -21,7 +21,7 @@ package org.asteriskjava.manager.event;
  * It is implemented in <code>res/res_features.c</code>
  * 
  * @author srt
- * @version $Id: HoldedCallEvent.java,v 1.3 2008/12/12 07:05:01 zacw Exp $
+ * @version $Id: HoldedCallEvent.java 967 2008-02-03 07:28:32Z srt $
  */
 public class HoldedCallEvent extends ManagerEvent
 {

@@ -28,7 +28,7 @@ import org.asteriskjava.manager.response.SipShowPeerResponse;
  * Available since Asterisk 1.2
  * 
  * @author srt
- * @version $Id: SipShowPeerAction.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: SipShowPeerAction.java 1142 2008-08-20 12:02:59Z srt $
  * @since 0.2
  * @see org.asteriskjava.manager.action.SipPeersAction
  * @see org.asteriskjava.manager.response.SipShowPeerResponse

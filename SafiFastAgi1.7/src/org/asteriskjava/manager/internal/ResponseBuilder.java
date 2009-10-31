@@ -25,7 +25,7 @@ import org.asteriskjava.manager.response.ManagerResponse;
  * Transforms maps of attributes to instances of ManagerResponse.
  *
  * @author srt
- * @version $Id: ResponseBuilder.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: ResponseBuilder.java 1154 2008-08-24 02:05:26Z srt $
  * @see org.asteriskjava.manager.response.ManagerResponse
  */
 interface ResponseBuilder

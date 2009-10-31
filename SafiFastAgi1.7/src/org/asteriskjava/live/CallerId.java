@@ -26,7 +26,7 @@ import java.io.Serializable;
  * Objects of this type are immutable.
  *
  * @author srt
- * @version $Id: CallerId.java,v 1.2 2008/05/14 05:17:17 zacw Exp $
+ * @version $Id: CallerId.java 1286 2009-04-04 09:40:40Z srt $
  * @since 0.3
  */
 public class CallerId implements Serializable
@@ -124,9 +124,9 @@ public class CallerId implements Serializable
             return true;
         }
         if (o == null || getClass() != o.getClass())
-            {
-                return false;
-            }
+        {
+            return false;
+        }
 
         CallerId callerId = (CallerId) o;
 
@@ -135,16 +135,16 @@ public class CallerId implements Serializable
             return false;
         }
         if (number != null ? !number.equals(callerId.number) : callerId.number != null)
-            {
-                return false;
-            }
+        {
+            return false;
+        }
 
         return true;
-        }
+    }
 
     @Override
     public int hashCode()
-        {
+    {
         int result = name != null ? name.hashCode() : 0;
         result = 31 * result + (number != null ? number.hashCode() : 0);
         return result;

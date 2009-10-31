@@ -18,14 +18,7 @@ package org.asteriskjava.fastagi.internal;
 
 import java.io.IOException;
 
-import org.asteriskjava.fastagi.AgiChannel;
-import org.asteriskjava.fastagi.AgiException;
-import org.asteriskjava.fastagi.AgiRequest;
-import org.asteriskjava.fastagi.AgiScript;
 import org.asteriskjava.fastagi.MappingStrategy;
-import org.asteriskjava.fastagi.command.VerboseCommand;
-import org.asteriskjava.util.Log;
-import org.asteriskjava.util.LogFactory;
 import org.asteriskjava.util.SocketConnectionFacade;
 
 /**
@@ -35,7 +28,7 @@ import org.asteriskjava.util.SocketConnectionFacade;
  * handle this type of request. Finally it closes the socket connection.
  *
  * @author srt
- * @version $Id: FastAgiConnectionHandler.java,v 1.2 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: FastAgiConnectionHandler.java 1091 2008-08-09 01:44:37Z sprior $
  */
 public class FastAgiConnectionHandler extends AgiConnectionHandler
 {

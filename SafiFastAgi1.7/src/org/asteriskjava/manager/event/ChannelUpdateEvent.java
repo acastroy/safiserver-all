@@ -24,7 +24,7 @@ package org.asteriskjava.manager.event;
  * <code>channels/chan_gtalk.c</code>
  *
  * @author srt
- * @version $Id: ChannelUpdateEvent.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: ChannelUpdateEvent.java 1118 2008-08-16 18:26:54Z srt $
  * @since 1.0.0
  */
 public class ChannelUpdateEvent extends ManagerEvent

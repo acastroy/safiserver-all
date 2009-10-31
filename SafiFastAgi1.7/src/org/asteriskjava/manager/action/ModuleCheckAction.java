@@ -27,7 +27,7 @@ import org.asteriskjava.manager.response.ModuleCheckResponse;
  * Available since Asterisk 1.6
  *
  * @author srt
- * @version $Id: ModuleCheckAction.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: ModuleCheckAction.java 1132 2008-08-18 13:00:35Z srt $
  * @since 1.0.0
  */
 @ExpectedResponse(ModuleCheckResponse.class)

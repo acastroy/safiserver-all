@@ -29,7 +29,7 @@ import java.util.Map;
  * action.
  *
  * @author srt
- * @version $Id: ManagerResponse.java 1267 2009-03-14 06:31:04Z srt $
+ * @version $Id: ManagerResponse.java 1286 2009-04-04 09:40:40Z srt $
  * @see org.asteriskjava.manager.action.ManagerAction
  */
 public class ManagerResponse implements Serializable
@@ -247,7 +247,7 @@ public class ManagerResponse implements Serializable
         this.uniqueId = uniqueId;
     }
 
-    protected Integer stringToInteger(String s, String suffix)
+    protected Integer stringToInteger(String s, String suffix) throws NumberFormatException
     {
         if (s == null || s.length() == 0)
         {
@@ -258,10 +258,11 @@ public class ManagerResponse implements Serializable
         {
             return Integer.parseInt(s.substring(0, s.length() - suffix.length()).trim());
         }
-        return Integer.parseInt(s.substring(0, s.length() - suffix.length()).trim());
+
+        return Integer.parseInt(s.trim());
     }
 
-    protected Long stringToLong(String s, String suffix)
+    protected Long stringToLong(String s, String suffix) throws NumberFormatException
     {
         if (s == null || s.length() == 0)
         {
@@ -272,7 +273,8 @@ public class ManagerResponse implements Serializable
         {
             return Long.parseLong(s.substring(0, s.length() - suffix.length()).trim());
         }
-        return Long.parseLong(s.substring(0, s.length() - suffix.length()).trim());
+        
+        return Long.parseLong(s.trim());
     }
 
     @Override

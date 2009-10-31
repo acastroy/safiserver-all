@@ -36,7 +36,7 @@ package org.asteriskjava.manager.event;
  * Available since Asterisk 1.6
  *
  * @author srt
- * @version $Id: DtmfEvent.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: DtmfEvent.java 961 2008-02-03 02:53:56Z srt $
  * @since 1.0.0
  */
 public class DtmfEvent extends ManagerEvent

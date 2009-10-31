@@ -26,7 +26,7 @@ import org.asteriskjava.manager.response.CoreSettingsResponse;
  * Available since Asterisk 1.6.0
  *
  * @author srt
- * @version $Id: CoreSettingsAction.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: CoreSettingsAction.java 1298 2009-04-29 23:31:56Z srt $
  * @see org.asteriskjava.manager.response.CoreSettingsResponse
  * @since 1.0.0
  */

@@ -23,7 +23,7 @@ package org.asteriskjava.manager.response;
  * @see org.asteriskjava.manager.action.MailboxStatusAction
  * 
  * @author srt
- * @version $Id: MailboxStatusResponse.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: MailboxStatusResponse.java 938 2007-12-31 03:23:38Z srt $
  */
 public class MailboxStatusResponse extends ManagerResponse
 {

@@ -20,7 +20,7 @@ package org.asteriskjava.fastagi.command;
  * Breaks the Async AGI loop.
  *
  * @author srt
- * @version $Id: AsyncAgiBreakCommand.java,v 1.1 2008/05/14 05:17:17 zacw Exp $
+ * @version $Id: AsyncAgiBreakCommand.java 1015 2008-04-04 21:56:36Z srt $
  */
 public class AsyncAgiBreakCommand extends AbstractAgiCommand
 {

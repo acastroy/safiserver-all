@@ -24,7 +24,7 @@ import java.util.Map;
  * A StatusEvent is triggered for each active channel in response to a StatusAction.
  *
  * @author srt
- * @version $Id: StatusEvent.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: StatusEvent.java 1173 2008-09-22 23:39:41Z srt $
  * @see org.asteriskjava.manager.action.StatusAction
  */
 public class StatusEvent extends ResponseEvent

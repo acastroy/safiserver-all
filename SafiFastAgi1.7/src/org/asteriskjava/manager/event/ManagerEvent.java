@@ -17,11 +17,7 @@
 package org.asteriskjava.manager.event;
 
 import java.lang.reflect.Method;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.EventObject;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import org.asteriskjava.util.ReflectionUtil;
 
@@ -36,7 +32,7 @@ import org.asteriskjava.util.ReflectionUtil;
  * Event.
  *
  * @author srt
- * @version $Id: ManagerEvent.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: ManagerEvent.java 1351 2009-07-21 21:01:45Z srt $
  */
 public abstract class ManagerEvent extends EventObject
 {
@@ -193,9 +189,9 @@ public abstract class ManagerEvent extends EventObject
     }
 
     public void setFile(String file)
-        {
+    {
         this.file = file;
-        }
+    }
 
     /**
      * Returns the line number in Asterisk's source code where this event was triggered.<p>
@@ -275,7 +271,7 @@ public abstract class ManagerEvent extends EventObject
         appendPropertyIfNotNull(sb, "privilege", getPrivilege());
 
         final Map<String, Method> getters = ReflectionUtil.getGetters(getClass());
-        for (Map.Entry<String, Method> entry: getters.entrySet())
+        for (Map.Entry<String, Method> entry : getters.entrySet())
         {
             final String property = entry.getKey();
             if (ignoredProperties.contains(property))

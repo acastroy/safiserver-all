@@ -25,7 +25,7 @@ import org.asteriskjava.manager.response.ExtensionStateResponse;
  * device connected to the extension.
  *
  * @author srt
- * @version $Id: ExtensionStateAction.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: ExtensionStateAction.java 1124 2008-08-18 03:25:01Z srt $
  */
 @ExpectedResponse(ExtensionStateResponse.class)
 public class ExtensionStateAction extends AbstractManagerAction

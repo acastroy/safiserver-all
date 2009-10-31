@@ -39,7 +39,7 @@ import java.util.*;
  * id of this OriginateAction.
  *
  * @author srt
- * @version $Id: OriginateAction.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: OriginateAction.java 1174 2008-09-22 23:42:11Z srt $
  * @see org.asteriskjava.manager.event.OriginateResponseEvent
  */
 public class OriginateAction extends AbstractManagerAction implements EventGeneratingAction

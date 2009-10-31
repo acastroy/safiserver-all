@@ -61,11 +61,6 @@ public class AsyncAgiServer extends AbstractAgiServer implements ManagerEventLis
         setMappingStrategy(new StaticMappingStrategy(agiScript));
     }
 
-    public void shutdown()
-    {
-        super.shutdown();
-    }
-
     public void onManagerEvent(ManagerEvent event)
     {
         if (event instanceof AsyncAgiEvent)
@@ -129,7 +124,7 @@ public class AsyncAgiServer extends AbstractAgiServer implements ManagerEventLis
         }
 
         removeConnectionHandler(connection, renameEvent.getChannel());
-        setConnectionHandler(connection,  renameEvent.getNewname(), connectionHandler);
+        setConnectionHandler(connection, renameEvent.getNewname(), connectionHandler);
 
         connectionHandler.updateChannelName(renameEvent.getNewname());
     }

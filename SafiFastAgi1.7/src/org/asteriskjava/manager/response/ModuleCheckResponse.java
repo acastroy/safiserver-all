@@ -20,7 +20,7 @@ package org.asteriskjava.manager.response;
  * Corresponds to a ModuleCheckAction and contains the version of the module.
  *
  * @author srt
- * @version $Id: ModuleCheckResponse.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: ModuleCheckResponse.java 1132 2008-08-18 13:00:35Z srt $
  * @see org.asteriskjava.manager.action.ModuleCheckAction
  * @since 1.0.0
  */

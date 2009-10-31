@@ -22,7 +22,7 @@ package org.asteriskjava.manager.event;
  * It is implemented in <code>res/res_monitor.c</code>
  *
  * @author srt
- * @version $Id: MonitorStartEvent.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: MonitorStartEvent.java 1095 2008-08-09 01:49:43Z sprior $
  * @since 1.0.0
  * @see org.asteriskjava.manager.event.MonitorStopEvent
  */

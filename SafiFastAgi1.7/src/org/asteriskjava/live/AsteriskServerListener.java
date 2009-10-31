@@ -12,7 +12,7 @@ import org.asteriskjava.live.internal.AsteriskAgentImpl;
  * in future versions of Asterisk-Java.
  * 
  * @author srt
- * @version $Id: AsteriskServerListener.java,v 1.2 2008/05/14 05:17:18 zacw Exp $
+ * @version $Id: AsteriskServerListener.java 958 2008-02-02 23:19:43Z srt $
  * @since 0.3
  */
 public interface AsteriskServerListener

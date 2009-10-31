@@ -23,7 +23,7 @@ import org.asteriskjava.util.AstState;
  * NewStateEvent.
  *
  * @author srt
- * @version $Id: AbstractChannelStateEvent.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: AbstractChannelStateEvent.java 1026 2008-04-06 09:35:12Z srt $
  */
 public abstract class AbstractChannelStateEvent extends AbstractChannelEvent
 {

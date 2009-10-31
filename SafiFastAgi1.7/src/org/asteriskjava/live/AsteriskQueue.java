@@ -23,7 +23,7 @@ import java.util.List;
  * An Asterisk ACD queue.
  *
  * @author srt
- * @version $Id: AsteriskQueue.java,v 1.2 2008/05/14 05:17:17 zacw Exp $
+ * @version $Id: AsteriskQueue.java 1242 2009-03-09 15:49:12Z srt $
  */
 public interface AsteriskQueue
 {

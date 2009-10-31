@@ -21,7 +21,7 @@ package org.asteriskjava.manager.event;
  * Monitoring events are implemented in <code>res/res_monitor.c</code>
  *
  * @author srt
- * @version $Id: AbstractMonitorEvent.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: AbstractMonitorEvent.java 1059 2008-05-20 01:09:56Z srt $
  * @since 1.0.0
  */
 public abstract class AbstractMonitorEvent extends ManagerEvent

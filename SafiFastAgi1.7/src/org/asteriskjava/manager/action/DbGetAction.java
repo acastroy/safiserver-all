@@ -27,13 +27,11 @@ import org.asteriskjava.manager.event.ResponseEvent;
  * Available since Asterisk 1.2
  *
  * @author srt
- * @version $Id: DbGetAction.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: DbGetAction.java 1307 2009-05-27 00:49:36Z srt $
  * @see org.asteriskjava.manager.event.DbGetResponseEvent
  * @since 0.2
  */
-public class DbGetAction extends AbstractManagerAction
-        implements
-        EventGeneratingAction
+public class DbGetAction extends AbstractManagerAction implements EventGeneratingAction
 {
     /**
      * Serial version identifier

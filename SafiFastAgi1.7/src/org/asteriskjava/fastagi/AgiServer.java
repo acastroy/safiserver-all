@@ -25,7 +25,7 @@ import java.io.IOException;
  * 
  * @see org.asteriskjava.fastagi.AgiServerThread
  * @author srt
- * @version $Id: AgiServer.java,v 1.4 2008/12/12 07:05:01 zacw Exp $
+ * @version $Id: AgiServer.java 938 2007-12-31 03:23:38Z srt $
  */
 public interface AgiServer
 {

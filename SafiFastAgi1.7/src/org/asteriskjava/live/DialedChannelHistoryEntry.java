@@ -22,7 +22,7 @@ import java.util.Date;
  * An entry in the dialed channels history of an {@link AsteriskChannel}.
  *
  * @author srt
- * @version $Id: DialedChannelHistoryEntry.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: DialedChannelHistoryEntry.java 1161 2008-09-18 02:37:49Z sprior $
  * @since 0.3
  */
 public class DialedChannelHistoryEntry

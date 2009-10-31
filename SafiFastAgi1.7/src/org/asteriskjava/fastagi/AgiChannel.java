@@ -28,7 +28,7 @@ import org.asteriskjava.fastagi.reply.AgiReply;
  * Asterisk server.
  *
  * @author srt
- * @version $Id: AgiChannel.java 1246 2009-03-10 04:00:32Z srt $
+ * @version $Id: AgiChannel.java 1274 2009-03-21 11:08:19Z srt $
  */
 public interface AgiChannel
 {
@@ -404,7 +404,7 @@ public interface AgiChannel
      * the caller id you can use <code>getVariable("CALLERID(name)");<code><p>
      * Does not support expression parsing, use {@link #getFullVariable(String)} in those cases.
      *
-     * @param name the name of the variable to retrieve.
+     * @param name the name of the variable (or function call) to retrieve.
      * @return the value of the given variable or <code>null</code> if not
      *         set.
      * @since 0.2
@@ -714,8 +714,8 @@ public interface AgiChannel
      * speech engine configuration, e.g. the <code>[grammars]</code> section of <code>lumenvox.conf</code>.
      *
      * @param label the name of the grammar, used for subsequent calls to {@link #speechActivateGrammar(String)},
-     *             {@link #speechDeactivateGrammar(String)} and {@link #speechUnloadGrammar(String)}.
-     * @param path the path to the grammar to load.
+     *              {@link #speechDeactivateGrammar(String)} and {@link #speechUnloadGrammar(String)}.
+     * @param path  the path to the grammar to load.
      * @throws AgiSpeechException if the grammar cannot be loaded.
      * @see #speechUnloadGrammar(String)
      * @see #speechActivateGrammar(String)
@@ -783,7 +783,7 @@ public interface AgiChannel
      * Defines the point in the dialplan where the call will continue when the AGI script
      * returns.<p>
      * This is a shortcut for calling {@link #setContext(String)}, {@link #setExtension(String)}
-     * and {@link #setPriority(String)} in series. 
+     * and {@link #setPriority(String)} in series.
      *
      * @param context   the context for continuation upon exiting the application.
      * @param extension the extension for continuation upon exiting the

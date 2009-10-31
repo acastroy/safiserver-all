@@ -21,7 +21,7 @@ package org.asteriskjava.manager.event;
  * It is implemented in <code>main/loader.c</code>
  *
  * @author srt
- * @version $Id: ModuleLoadReportEvent.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: ModuleLoadReportEvent.java 1149 2008-08-21 18:29:12Z srt $
  * @since 1.0.0
  */
 public class ModuleLoadReportEvent extends ManagerEvent

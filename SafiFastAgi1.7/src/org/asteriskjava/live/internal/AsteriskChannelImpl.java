@@ -49,7 +49,7 @@ import org.asteriskjava.manager.response.ManagerResponse;
  * Default implementation of the AsteriskChannel interface.
  *
  * @author srt
- * @version $Id: AsteriskChannelImpl.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: AsteriskChannelImpl.java 1380 2009-10-19 19:26:05Z srt $
  */
 class AsteriskChannelImpl extends AbstractLiveObject implements AsteriskChannel
 {
@@ -164,10 +164,23 @@ class AsteriskChannelImpl extends AbstractLiveObject implements AsteriskChannel
     {
         super(server);
 
-        if (server == null || name == null || id == null || dateOfCreation == null)
+        if (server == null)
         {
-            throw new IllegalArgumentException("Parameters passed to AsteriskChannelImpl() must not be null.");
+            throw new IllegalArgumentException("Parameter 'server' passed to AsteriskChannelImpl() must not be null.");
         }
+        if (name == null)
+        {
+            throw new IllegalArgumentException("Parameter 'name' passed to AsteriskChannelImpl() must not be null.");
+        }
+        if (id == null)
+        {
+            throw new IllegalArgumentException("Parameter 'id' passed to AsteriskChannelImpl() must not be null.");
+        }
+        if (dateOfCreation == null)
+        {
+            throw new IllegalArgumentException("Parameter 'dateOfCreation' passed to AsteriskChannelImpl() must not be null.");
+        }
+
         this.name = name;
         this.id = id;
         this.dateOfCreation = dateOfCreation;
@@ -187,7 +200,7 @@ class AsteriskChannelImpl extends AbstractLiveObject implements AsteriskChannel
      * Changes the id of this channel.
      *
      * @param date date of the name change.
-     * @param id the new unique id of this channel.
+     * @param id   the new unique id of this channel.
      */
     void idChanged(Date date, String id)
     {
@@ -601,7 +614,7 @@ class AsteriskChannelImpl extends AbstractLiveObject implements AsteriskChannel
         else
         {
             action = new HangupAction(name);
-    }
+        }
 
         response = server.sendAction(action);
         if (response instanceof ManagerError)
@@ -659,15 +672,27 @@ class AsteriskChannelImpl extends AbstractLiveObject implements AsteriskChannel
         ManagerResponse response;
         String value;
 
-        response = server.sendAction(new GetVarAction(name, variable));
-        if (response instanceof ManagerError)
+        synchronized (variables)
         {
-            throw new NoSuchChannelException("Channel '" + name + "' is not available: " + response.getMessage());
-        }
-        value = response.getAttribute("Value");
-        if (value == null)
-        {
-            value = response.getAttribute(variable); // for Asterisk 1.0.x
+
+            value = variables.get(variable);
+            if (value != null)
+            {
+                return value;
+            }
+
+            response = server.sendAction(new GetVarAction(name, variable));
+            if (response instanceof ManagerError)
+            {
+                throw new NoSuchChannelException("Channel '" + name + "' is not available: " + response.getMessage());
+            }
+            value = response.getAttribute("Value");
+            if (value == null)
+            {
+                value = response.getAttribute(variable); // for Asterisk 1.0.x
+            }
+
+            variables.put(variable, value);
         }
         return value;
     }
@@ -680,6 +705,10 @@ class AsteriskChannelImpl extends AbstractLiveObject implements AsteriskChannel
         if (response instanceof ManagerError)
         {
             throw new NoSuchChannelException("Channel '" + name + "' is not available: " + response.getMessage());
+        }
+        synchronized (variables)
+        {
+            variables.put(variable, value);
         }
     }
 

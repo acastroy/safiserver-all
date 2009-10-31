@@ -21,7 +21,7 @@ package org.asteriskjava.fastagi;
  * problem while talking to the Asterisk server.
  * 
  * @author srt
- * @version $Id: AgiNetworkException.java,v 1.3 2008/12/12 07:05:01 zacw Exp $
+ * @version $Id: AgiNetworkException.java 938 2007-12-31 03:23:38Z srt $
  */
 public class AgiNetworkException extends AgiException
 {

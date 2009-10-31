@@ -30,7 +30,7 @@ import org.asteriskjava.util.SocketConnectionFacade;
  * DefaultManagerConnection.
  *
  * @author srt
- * @version $Id: ManagerReader.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: ManagerReader.java 1155 2008-08-25 20:22:46Z srt $
  * @see org.asteriskjava.manager.internal.EventBuilder
  * @see org.asteriskjava.manager.internal.ResponseBuilder
  * @see org.asteriskjava.manager.DefaultManagerConnection

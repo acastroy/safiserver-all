@@ -23,7 +23,7 @@ package org.asteriskjava.fastagi.command;
  * numerical value of the digit if one was pressed or -1 on error/hangup.
  * 
  * @author srt
- * @version $Id: SayNumberCommand.java,v 1.2 2008/05/14 05:17:17 zacw Exp $
+ * @version $Id: SayNumberCommand.java 938 2007-12-31 03:23:38Z srt $
  */
 public class SayNumberCommand extends AbstractAgiCommand
 {

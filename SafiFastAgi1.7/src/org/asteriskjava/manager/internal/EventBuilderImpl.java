@@ -26,7 +26,7 @@ import java.util.*;
  * Default implementation of the EventBuilder interface.
  *
  * @author srt
- * @version $Id: EventBuilderImpl.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: EventBuilderImpl.java 1348 2009-07-10 13:48:31Z srt $
  * @see org.asteriskjava.manager.event.ManagerEvent
  */
 class EventBuilderImpl extends AbstractBuilder implements EventBuilder
@@ -222,7 +222,7 @@ class EventBuilderImpl extends AbstractBuilder implements EventBuilder
             logger.error("No event type in properties");
             return null;
         }
-        if (! (attributes.get("event") instanceof String))
+        if (!(attributes.get("event") instanceof String))
         {
             logger.error("Event type is not a String");
             return null;
@@ -241,13 +241,13 @@ class EventBuilderImpl extends AbstractBuilder implements EventBuilder
                 logger.error("No user event type in properties");
                 return null;
             }
-            if (! (attributes.get("userevent") instanceof String))
+            if (!(attributes.get("userevent") instanceof String))
             {
                 logger.error("User event type is not a String");
                 return null;
             }
 
-            userEventType = ((String) attributes.get("userevent")).toLowerCase();
+            userEventType = ((String) attributes.get("userevent")).toLowerCase(Locale.US);
             eventType = eventType + userEventType;
         }
 

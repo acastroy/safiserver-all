@@ -18,7 +18,7 @@ import java.util.*;
  * Available since Asterisk 1.6
  *
  * @author srt
- * @version $Id: AsyncAgiEvent.java,v 1.4 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: AsyncAgiEvent.java 1169 2008-09-18 07:06:52Z srt $
  * @see org.asteriskjava.manager.action.AgiAction
  * @since 1.0.0
  */

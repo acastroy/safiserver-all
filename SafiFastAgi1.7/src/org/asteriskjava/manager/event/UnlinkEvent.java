@@ -22,7 +22,7 @@ package org.asteriskjava.manager.event;
  * It is implemented in <code>channel.c</code>
  * 
  * @author srt
- * @version $Id: UnlinkEvent.java,v 1.3 2008/12/12 07:05:01 zacw Exp $
+ * @version $Id: UnlinkEvent.java 972 2008-02-03 15:17:59Z srt $
  * @deprecated as of 1.0.0, use {@link org.asteriskjava.manager.event.BridgeEvent} and
  *             {@link BridgeEvent#isUnlink()} instead
  */

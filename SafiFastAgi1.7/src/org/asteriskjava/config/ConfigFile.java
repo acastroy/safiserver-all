@@ -23,7 +23,7 @@ import java.util.List;
  * An Asterisk configuration file.
  *
  * @author srt
- * @version $Id: ConfigFile.java,v 1.2 2008/05/14 05:17:18 zacw Exp $
+ * @version $Id: ConfigFile.java 992 2008-03-08 23:31:13Z srt $
  * @since 1.0.0
  */
 public interface ConfigFile

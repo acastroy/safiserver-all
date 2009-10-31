@@ -25,7 +25,7 @@ import java.util.Map;
  * parameters passed from the dialplan.
  * 
  * @author srt
- * @version $Id: AgiRequest.java 1265 2009-03-14 04:49:35Z srt $
+ * @version $Id: AgiRequest.java 1286 2009-04-04 09:40:40Z srt $
  */
 public interface AgiRequest
 {

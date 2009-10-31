@@ -28,7 +28,7 @@ package org.asteriskjava.fastagi.command;
  * Available since Asterisk 1.2
  * 
  * @author srt
- * @version $Id: ControlStreamFileCommand.java,v 1.2 2008/05/14 05:17:17 zacw Exp $
+ * @version $Id: ControlStreamFileCommand.java 938 2007-12-31 03:23:38Z srt $
  * @since 0.2
  */
 public class ControlStreamFileCommand extends AbstractAgiCommand

@@ -31,7 +31,7 @@ package org.asteriskjava.manager.event;
  * <code>include/asterisk/pbx.h</code>.
  *
  * @author srt
- * @version $Id: ExtensionStatusEvent.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: ExtensionStatusEvent.java 1087 2008-08-08 19:22:24Z srt $
  */
 public class ExtensionStatusEvent extends ManagerEvent
 {

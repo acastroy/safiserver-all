@@ -21,7 +21,7 @@ package org.asteriskjava.fastagi.command;
  * Since Asterisk 1.2 SetPriorityCommand also supports labels.
  * 
  * @author srt
- * @version $Id: SetPriorityCommand.java,v 1.2 2008/05/14 05:17:17 zacw Exp $
+ * @version $Id: SetPriorityCommand.java 938 2007-12-31 03:23:38Z srt $
  */
 public class SetPriorityCommand extends AbstractAgiCommand
 {

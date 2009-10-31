@@ -26,7 +26,7 @@ import org.asteriskjava.util.DateUtil;
  * Asterisk server.
  *
  * @author srt
- * @version $Id: CoreStatusResponse.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: CoreStatusResponse.java 1314 2009-05-28 12:24:54Z srt $
  * @see org.asteriskjava.manager.action.CoreStatusAction
  * @since 1.0.0
  */

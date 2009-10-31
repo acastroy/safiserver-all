@@ -23,7 +23,7 @@ import java.net.UnknownHostException;
  * Abstract base class for RTCP related events.<p>
  *
  * @author srt
- * @version $Id: AbstractRtcpEvent.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: AbstractRtcpEvent.java 1141 2008-08-19 18:08:19Z srt $
  * @since 1.0.0
  */
 public abstract class AbstractRtcpEvent extends ManagerEvent

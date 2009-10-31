@@ -23,7 +23,7 @@ package org.asteriskjava.manager.action;
  * Available since Asterisk 1.6.0
  *
  * @author Laureano
- * @version $Id: SendTextAction.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: SendTextAction.java 1156 2008-08-25 20:24:25Z srt $
  * @since 1.0.0
  */
 public class SendTextAction extends AbstractManagerAction

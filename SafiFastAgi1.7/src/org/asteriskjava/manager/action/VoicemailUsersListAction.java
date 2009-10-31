@@ -29,7 +29,7 @@ import org.asteriskjava.manager.event.ResponseEvent;
  * Available since Asterisk 1.6
  *
  * @author srt
- * @version $Id: VoicemailUsersListAction.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: VoicemailUsersListAction.java 1121 2008-08-16 20:54:12Z srt $
  * @see org.asteriskjava.manager.event.VoicemailUserEntryEvent
  * @see org.asteriskjava.manager.event.VoicemailUserEntryCompleteEvent
  * @since 1.0.0

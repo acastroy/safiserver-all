@@ -45,7 +45,7 @@ import org.asteriskjava.util.LogFactory;
  *
  * @author <a href="mailto:patrick.breucking{@nospam}gonicus.de">Patrick
  *         Breucking</a>
- * @version $Id: AgentManager.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: AgentManager.java 1184 2008-10-24 00:13:47Z srt $
  * @since 0.3.1
  */
 public class AgentManager
@@ -212,7 +212,7 @@ public class AgentManager
         }
         agent.updateState(AgentState.AGENT_ONCALL);
     }
-
+    
     /**
      * Change state if agent logs in.
      *

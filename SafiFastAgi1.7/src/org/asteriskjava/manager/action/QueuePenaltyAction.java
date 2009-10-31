@@ -22,7 +22,7 @@ package org.asteriskjava.manager.action;
  * Available since Asterisk 1.6.
  *
  * @author srt
- * @version $Id: QueuePenaltyAction.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: QueuePenaltyAction.java 963 2008-02-03 06:25:21Z srt $
  * @since 1.0.0
  */
 public class QueuePenaltyAction extends AbstractManagerAction

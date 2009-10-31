@@ -22,7 +22,7 @@ package org.asteriskjava.manager.event;
  * It is implemented in <code>manager.c</code>
  *
  * @author srt
- * @version $Id: ReloadEvent.java,v 1.3 2008/12/12 07:05:01 zacw Exp $
+ * @version $Id: ReloadEvent.java 973 2008-02-03 16:21:12Z srt $
  */
 public class ReloadEvent extends ManagerEvent
 {

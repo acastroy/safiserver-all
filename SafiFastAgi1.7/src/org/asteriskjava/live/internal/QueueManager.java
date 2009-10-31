@@ -35,7 +35,7 @@ import org.asteriskjava.util.LogFactory;
  * Manages queue events on behalf of an AsteriskServer.
  *
  * @author srt
- * @version $Id: QueueManager.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: QueueManager.java 1157 2008-08-27 11:56:48Z srt $
  */
 class QueueManager
 {

@@ -27,7 +27,7 @@ import org.asteriskjava.manager.event.ShowDialplanCompleteEvent;
  * Available since Asterisk 1.6
  *
  * @author srt
- * @version $Id: ShowDialplanAction.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: ShowDialplanAction.java 1121 2008-08-16 20:54:12Z srt $
  * @see org.asteriskjava.manager.event.ListDialplanEvent
  * @see org.asteriskjava.manager.event.ShowDialplanCompleteEvent
  * @since 1.0.0

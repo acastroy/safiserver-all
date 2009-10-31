@@ -20,7 +20,7 @@ package org.asteriskjava.manager.response;
  * Corresponds to a GetVarAction and contains the value of the requested variable.
  *
  * @author srt
- * @version $Id: GetVarResponse.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: GetVarResponse.java 1153 2008-08-22 10:10:22Z srt $
  * @see org.asteriskjava.manager.action.GetVarAction
  * @since 1.0.0
  */

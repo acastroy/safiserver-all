@@ -7,7 +7,7 @@ package org.asteriskjava.manager.event;
  * It is implemented in <code>main/pbx.c</code>
  *
  * @author srt
- * @version $Id: ListDialplanEvent.java,v 1.1 2008/12/12 07:05:01 zacw Exp $
+ * @version $Id: ListDialplanEvent.java 1164 2008-09-18 02:40:44Z sprior $
  * @see org.asteriskjava.manager.action.ShowDialplanAction
  * @see ShowDialplanCompleteEvent
  * @since 1.0.0

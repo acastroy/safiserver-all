@@ -27,7 +27,7 @@ import org.asteriskjava.manager.event.ResponseEvent;
  * Available since Asterisk 1.2
  *
  * @author srt
- * @version $Id: SipPeersAction.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: SipPeersAction.java 1148 2008-08-21 18:13:49Z srt $
  * @see org.asteriskjava.manager.event.PeerEntryEvent
  * @see org.asteriskjava.manager.event.PeerlistCompleteEvent
  * @since 0.2

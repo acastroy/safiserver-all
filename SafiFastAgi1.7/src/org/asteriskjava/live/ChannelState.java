@@ -24,7 +24,7 @@ import org.asteriskjava.util.AstState;
  * Defined in <code>channel.c</code> function <code>ast_state2str</code>.
  * 
  * @author srt
- * @version $Id: ChannelState.java,v 1.2 2008/05/14 05:17:18 zacw Exp $
+ * @version $Id: ChannelState.java 1026 2008-04-06 09:35:12Z srt $
  */
 public enum ChannelState
 {

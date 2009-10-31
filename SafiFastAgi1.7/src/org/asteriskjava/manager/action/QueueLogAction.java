@@ -22,7 +22,7 @@ package org.asteriskjava.manager.action;
  * Available since Asterisk 1.6.
  *
  * @author srt
- * @version $Id: QueueLogAction.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: QueueLogAction.java 1138 2008-08-18 15:44:13Z srt $
  * @since 1.0.0
  */
 public class QueueLogAction extends AbstractManagerAction

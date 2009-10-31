@@ -23,7 +23,7 @@ import java.util.Date;
  * 
  * @see org.asteriskjava.manager.event.CdrEvent
  * @author srt
- * @version $Id: CallDetailRecord.java,v 1.2 2008/05/14 05:17:17 zacw Exp $
+ * @version $Id: CallDetailRecord.java 938 2007-12-31 03:23:38Z srt $
  * @since 0.3
  */
 public interface CallDetailRecord

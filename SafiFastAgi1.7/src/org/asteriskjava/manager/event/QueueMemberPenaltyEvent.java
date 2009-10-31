@@ -23,7 +23,7 @@ package org.asteriskjava.manager.event;
  * Available since Asterisk 1.6
  *
  * @author srt
- * @version $Id: QueueMemberPenaltyEvent.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: QueueMemberPenaltyEvent.java 965 2008-02-03 06:47:03Z srt $
  * @since 1.0.0
  */
 public class QueueMemberPenaltyEvent extends ManagerEvent

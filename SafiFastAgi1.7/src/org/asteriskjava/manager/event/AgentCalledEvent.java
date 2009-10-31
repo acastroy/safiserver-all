@@ -27,7 +27,7 @@ import java.util.Map;
  * This event is implemented in <code>apps/app_queue.c</code>
  *
  * @author srt
- * @version $Id: AgentCalledEvent.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: AgentCalledEvent.java 1154 2008-08-24 02:05:26Z srt $
  */
 public class AgentCalledEvent extends ManagerEvent
 {

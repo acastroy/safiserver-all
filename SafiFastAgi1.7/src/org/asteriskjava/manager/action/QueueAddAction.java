@@ -23,7 +23,7 @@ package org.asteriskjava.manager.action;
  * <code>stateInterface</code> property in Asterisk 1.6.
  *
  * @author srt
- * @version $Id: QueueAddAction.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: QueueAddAction.java 1145 2008-08-20 16:57:45Z srt $
  */
 public class QueueAddAction extends AbstractManagerAction
 {

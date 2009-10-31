@@ -81,4 +81,39 @@ public class BridgeExecEvent extends ManagerEvent
     {
         return reason;
     }
+
+    public void setReason(String reason)
+    {
+        this.reason = reason;
+    }
+
+    /**
+     * The name of the first channel.
+     *
+     * @return name of the first channel.
+     */
+    public String getChannel1()
+    {
+        return channel1;
+    }
+
+    public void setChannel1(String channel1)
+    {
+        this.channel1 = channel1;
+    }
+
+    /**
+     * The name of the second channel.
+     *
+     * @return name of the second channel.
+     */
+    public String getChannel2()
+    {
+        return channel2;
+    }
+
+    public void setChannel2(String channel2)
+    {
+        this.channel2 = channel2;
+    }
 }

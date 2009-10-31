@@ -21,7 +21,7 @@ package org.asteriskjava.manager.action;
  * this manager connection.
  * 
  * @author srt
- * @version $Id: EventsAction.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: EventsAction.java 968 2008-02-03 07:48:33Z srt $
  */
 public class EventsAction extends AbstractManagerAction
 {

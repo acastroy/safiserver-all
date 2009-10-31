@@ -54,7 +54,7 @@ import org.asteriskjava.manager.response.GetVarResponse;
  * <code>DB()</code>, <code>CALLERID()</code> and <code>ENV()</code>.
  * 
  * @author srt
- * @version $Id: GetVarAction.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: GetVarAction.java 1153 2008-08-22 10:10:22Z srt $
  */
 @ExpectedResponse(GetVarResponse.class)
 public class GetVarAction extends AbstractManagerAction

@@ -25,7 +25,7 @@ import org.asteriskjava.manager.response.CoreStatusResponse;
  * Available since Asterisk 1.6.0
  *
  * @author srt
- * @version $Id: CoreStatusAction.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: CoreStatusAction.java 1127 2008-08-18 10:30:04Z srt $
  * @see org.asteriskjava.manager.response.CoreStatusResponse
  * @since 1.0.0
  */

@@ -28,7 +28,7 @@ import org.asteriskjava.manager.event.ResponseEvent;
  * Available since Asterisk 1.6
  *
  * @author Laureano
- * @version $Id: SipShowRegistryAction.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: SipShowRegistryAction.java 1163 2008-09-18 02:39:52Z sprior $
  * @see RegistrationsCompleteEvent
  * @see RegistryEntryEvent
  * @since 1.0.0

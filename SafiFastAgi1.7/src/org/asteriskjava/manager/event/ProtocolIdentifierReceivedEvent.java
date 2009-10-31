@@ -24,7 +24,7 @@ package org.asteriskjava.manager.event;
  * probably never see it.
  * 
  * @author srt
- * @version $Id: ProtocolIdentifierReceivedEvent.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: ProtocolIdentifierReceivedEvent.java 938 2007-12-31 03:23:38Z srt $
  */
 public class ProtocolIdentifierReceivedEvent extends ManagerEvent
 {

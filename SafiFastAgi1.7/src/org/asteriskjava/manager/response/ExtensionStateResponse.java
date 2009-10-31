@@ -20,7 +20,7 @@ package org.asteriskjava.manager.response;
  * Response to an {@link org.asteriskjava.manager.action.ExtensionStateAction}.  
  *
  * @author srt
- * @version $Id: ExtensionStateResponse.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: ExtensionStateResponse.java 1124 2008-08-18 03:25:01Z srt $
  * @see org.asteriskjava.manager.action.ExtensionStateAction
  */
 public class ExtensionStateResponse extends ManagerResponse

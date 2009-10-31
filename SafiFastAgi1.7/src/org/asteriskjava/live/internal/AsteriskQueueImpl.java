@@ -35,7 +35,7 @@ import org.asteriskjava.util.LogFactory;
  * Default implementation of the AsteriskQueue interface.
  *
  * @author srt
- * @version $Id: AsteriskQueueImpl.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: AsteriskQueueImpl.java 1242 2009-03-09 15:49:12Z srt $
  */
 class AsteriskQueueImpl extends AbstractLiveObject implements AsteriskQueue
 {
@@ -388,7 +388,7 @@ class AsteriskQueueImpl extends AbstractLiveObject implements AsteriskQueue
             }
         }
     }
-    
+
     /**
      * Returns a collection of members of this queue.
      *
@@ -575,7 +575,7 @@ class AsteriskQueueImpl extends AbstractLiveObject implements AsteriskQueue
                 // For consistency with the above method,
                 // swallow. We might indeed request the 1st one from time to time
             } // NOPMD
-            }
+        }
         return foundEntry;
     }
 }

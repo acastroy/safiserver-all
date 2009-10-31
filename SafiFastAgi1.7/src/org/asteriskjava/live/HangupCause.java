@@ -24,7 +24,7 @@ import java.util.Map;
  * Definitions from <code>/include/asterisk/causes.h</code>.
  *
  * @author srt
- * @version $Id: HangupCause.java,v 1.2 2008/05/14 05:17:17 zacw Exp $
+ * @version $Id: HangupCause.java 962 2008-02-03 03:34:11Z srt $
  */
 public enum HangupCause
 {

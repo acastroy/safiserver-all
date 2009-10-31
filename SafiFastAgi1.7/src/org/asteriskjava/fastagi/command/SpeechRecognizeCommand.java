@@ -21,7 +21,7 @@ package org.asteriskjava.fastagi.command;
  * Available since Asterisk 1.6.
  *
  * @author srt
- * @version $Id: SpeechRecognizeCommand.java,v 1.1 2008/05/14 05:17:17 zacw Exp $
+ * @version $Id: SpeechRecognizeCommand.java 1013 2008-03-31 06:51:03Z srt $
  * @since 1.0.0
  */
 public class SpeechRecognizeCommand extends AbstractAgiCommand

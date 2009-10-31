@@ -23,7 +23,7 @@ import org.asteriskjava.fastagi.command.AgiCommand;
  * The AgiWriter sends commands to Asterisk.
  * 
  * @author srt
- * @version $Id: AgiWriter.java,v 1.2 2008/05/14 05:17:18 zacw Exp $
+ * @version $Id: AgiWriter.java 938 2007-12-31 03:23:38Z srt $
  */
 public interface AgiWriter
 {

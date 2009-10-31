@@ -21,7 +21,7 @@ package org.asteriskjava.fastagi.command;
  * Returns 1 if successful, 0 otherwise.
  * 
  * @author srt
- * @version $Id: DatabaseDelTreeCommand.java,v 1.2 2008/05/14 05:17:17 zacw Exp $
+ * @version $Id: DatabaseDelTreeCommand.java 1286 2009-04-04 09:40:40Z srt $
  */
 public class DatabaseDelTreeCommand extends AbstractAgiCommand
 {

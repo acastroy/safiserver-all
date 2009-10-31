@@ -23,7 +23,7 @@ import java.io.Serializable;
  * implementing AgiCommand classes.
  * 
  * @author srt
- * @version $Id: AbstractAgiCommand.java,v 1.2 2008/05/14 05:17:17 zacw Exp $
+ * @version $Id: AbstractAgiCommand.java 1372 2009-10-13 04:31:20Z srt $
  */
 public abstract class AbstractAgiCommand implements Serializable, AgiCommand
 {
@@ -51,7 +51,8 @@ public abstract class AbstractAgiCommand implements Serializable, AgiCommand
         }
 
         tmp = s;
-        tmp = tmp.replaceAll("\\\"", "\\\\\""); // escape quotes
+        tmp = tmp.replaceAll("\\\\", "\\\\\\\\");
+        tmp = tmp.replaceAll("\\\"", "\\\\\"");
         tmp = tmp.replaceAll("\\\n", ""); // filter newline
         return "\"" + tmp + "\""; // add quotes
     }

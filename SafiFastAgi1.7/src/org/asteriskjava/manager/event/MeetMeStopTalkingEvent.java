@@ -26,7 +26,7 @@ package org.asteriskjava.manager.event;
  * <code>false</code> instead.
  *
  * @author srt
- * @version $Id: MeetMeStopTalkingEvent.java,v 1.3 2008/12/12 07:05:01 zacw Exp $
+ * @version $Id: MeetMeStopTalkingEvent.java 1123 2008-08-17 11:26:34Z srt $
  * @see org.asteriskjava.manager.event.MeetMeTalkingEvent
  * @since 0.2
  * @deprecated as of 1.0.0, use {@link org.asteriskjava.manager.event.MeetMeTalkingEvent} instead and check for

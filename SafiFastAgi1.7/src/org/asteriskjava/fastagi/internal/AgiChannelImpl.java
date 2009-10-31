@@ -80,7 +80,6 @@ public class AgiChannelImpl implements AgiChannel
 
         if (lastReply.getStatus() == AgiReply.SC_INVALID_OR_UNKNOWN_COMMAND)
         {
-          System.err.println("the lastreply of agi is "+lastReply);
             throw new InvalidOrUnknownCommandException(command.buildCommand());
         }
         if (lastReply.getStatus() == AgiReply.SC_DEAD_CHANNEL)

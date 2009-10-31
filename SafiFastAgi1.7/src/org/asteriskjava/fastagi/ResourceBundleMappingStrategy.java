@@ -36,7 +36,7 @@ import java.util.*;
  * the classpath.
  * 
  * @author srt
- * @version $Id: ResourceBundleMappingStrategy.java,v 1.3 2008/12/12 07:05:01 zacw Exp $
+ * @version $Id: ResourceBundleMappingStrategy.java 1140 2008-08-18 18:49:36Z srt $
  */
 public class ResourceBundleMappingStrategy extends AbstractMappingStrategy
 {
@@ -179,11 +179,11 @@ public class ResourceBundleMappingStrategy extends AbstractMappingStrategy
     }
 
     public synchronized AgiScript determineScript(AgiRequest request)
+    {
+        if (mappings == null || (shareInstances && instances == null))
         {
-            if (mappings == null || (shareInstances && instances == null))
-            {
-                loadResourceBundle();
-            }
+            loadResourceBundle();
+        }
 
         if (shareInstances)
         {

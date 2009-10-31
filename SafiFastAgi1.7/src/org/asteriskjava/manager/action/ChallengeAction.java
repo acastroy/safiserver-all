@@ -25,7 +25,7 @@ import org.asteriskjava.manager.response.ChallengeResponse;
  * results in a ChallengeResponse being received from the server.
  *
  * @author srt
- * @version $Id: ChallengeAction.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: ChallengeAction.java 1124 2008-08-18 03:25:01Z srt $
  * @see org.asteriskjava.manager.action.LoginAction
  * @see org.asteriskjava.manager.response.ChallengeResponse
  */

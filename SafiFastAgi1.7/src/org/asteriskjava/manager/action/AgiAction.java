@@ -29,7 +29,7 @@ import org.asteriskjava.manager.event.ResponseEvent;
  *
  * @see org.asteriskjava.manager.event.AsyncAgiEvent
  * @author srt
- * @version $Id: AgiAction.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: AgiAction.java 1169 2008-09-18 07:06:52Z srt $
  * @since 1.0.0
  */
 public class AgiAction extends AbstractManagerAction implements EventGeneratingAction

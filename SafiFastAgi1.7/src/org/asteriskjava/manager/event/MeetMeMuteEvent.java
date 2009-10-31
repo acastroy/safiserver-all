@@ -23,7 +23,7 @@ package org.asteriskjava.manager.event;
  * Available since Asterisk 1.4.
  * 
  * @author srt
- * @version $Id: MeetMeMuteEvent.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: MeetMeMuteEvent.java 1057 2008-05-20 00:56:28Z srt $
  */
 public class MeetMeMuteEvent extends AbstractMeetMeEvent
 {

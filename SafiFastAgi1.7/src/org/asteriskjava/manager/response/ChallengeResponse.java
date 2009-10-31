@@ -21,7 +21,7 @@ package org.asteriskjava.manager.response;
  * challenge/response.
  *
  * @author srt
- * @version $Id: ChallengeResponse.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: ChallengeResponse.java 1127 2008-08-18 10:30:04Z srt $
  * @see org.asteriskjava.manager.action.ChallengeAction
  * @see org.asteriskjava.manager.action.LoginAction
  */

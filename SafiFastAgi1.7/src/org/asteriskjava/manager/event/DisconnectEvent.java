@@ -21,7 +21,7 @@ package org.asteriskjava.manager.event;
  * It is a pseudo event not directly related to an Asterisk generated event.
  * 
  * @author srt
- * @version $Id: DisconnectEvent.java,v 1.3 2008/12/12 07:05:01 zacw Exp $
+ * @version $Id: DisconnectEvent.java 1046 2008-05-16 13:42:24Z srt $
  * @see org.asteriskjava.manager.event.ConnectEvent
  */
 public class DisconnectEvent extends ManagerEvent

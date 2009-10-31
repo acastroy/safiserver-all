@@ -21,7 +21,7 @@ package org.asteriskjava.live;
  * 
  * @since 0.3.1
  * @author <a href="mailto:patrick.breucking{@nospam}gonicus.de">Patrick Breucking</a>
- * @version $Id: AgentState.java,v 1.2 2008/05/14 05:17:17 zacw Exp $
+ * @version $Id: AgentState.java 962 2008-02-03 03:34:11Z srt $
  */
 public enum AgentState
 {

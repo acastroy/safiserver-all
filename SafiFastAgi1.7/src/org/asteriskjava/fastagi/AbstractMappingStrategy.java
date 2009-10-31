@@ -48,8 +48,9 @@ public abstract class AbstractMappingStrategy implements MappingStrategy
     /**
      * Returns the ClassLoader to use for loading AgiScript classes and load
      * other resources like the mapping properties file.<p>
-     * By default this method returns the context ClassLoader of the current
-     * thread.
+     * By default this method returns a class loader that searches for classes in the
+     * "agi" subdirectory (if it exists) and uses the context class loader of the
+     * current thread as the parent class loader.<p>
      * You can override this method if you prefer using a different class loader.
      *
      * @return the ClassLoader to use for loading AgiScript classes and load

@@ -19,14 +19,14 @@ package org.asteriskjava.manager.event;
 /**
  * A JoinEvent is triggered when a channel joines a queue.<p>
  * It is implemented in <code>apps/app_queue.c</code>
- * 
+ *
  * @author srt
- * @version $Id: JoinEvent.java,v 1.3 2008/12/12 07:05:01 zacw Exp $
+ * @version $Id: JoinEvent.java 1296 2009-04-28 10:07:47Z srt $
  */
 public class JoinEvent extends QueueEvent
 {
     /**
-     * Serializable version identifier
+     * Serializable version identifier.
      */
     static final long serialVersionUID = 0L;
 

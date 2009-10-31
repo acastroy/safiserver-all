@@ -10,7 +10,7 @@ import java.util.Map;
  * Available since Asterisk 1.6
  *
  * @author Laureano
- * @version $Id: SipNotifyAction.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: SipNotifyAction.java 1152 2008-08-22 07:15:35Z srt $
  * @since 1.0.0
  */
 public class SipNotifyAction extends AbstractManagerAction

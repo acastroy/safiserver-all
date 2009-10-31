@@ -23,7 +23,7 @@ package org.asteriskjava.manager.event;
  * <code>channels/chan_sip.c</code>
  *
  * @author srt
- * @version $Id: PeerStatusEvent.java,v 1.3 2008/12/12 07:05:01 zacw Exp $
+ * @version $Id: PeerStatusEvent.java 1025 2008-04-06 08:52:04Z srt $
  */
 public class PeerStatusEvent extends ManagerEvent
 {

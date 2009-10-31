@@ -29,7 +29,7 @@ import org.asteriskjava.util.LogFactory;
  * handle this type of request. Finally it closes the AGI connection.
  * 
  * @author srt
- * @version $Id: AgiConnectionHandler.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: AgiConnectionHandler.java 1302 2009-05-12 16:39:11Z srt $
  */
 public abstract class AgiConnectionHandler implements Runnable
 {
@@ -118,18 +118,12 @@ public abstract class AgiConnectionHandler implements Runnable
         }
         catch (AgiException e)
         {
-            if (channel != null)
-            {
             setStatusVariable(channel, AJ_AGISTATUS_FAILED);
-            }
             logger.error("AgiException while handling request", e);
         }
         catch (Exception e)
         {
-            if (channel != null)
-            {
             setStatusVariable(channel, AJ_AGISTATUS_FAILED);
-            }
             logger.error("Unexpected Exception while handling request", e);
         }
         finally

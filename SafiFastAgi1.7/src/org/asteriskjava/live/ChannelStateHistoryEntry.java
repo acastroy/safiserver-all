@@ -23,7 +23,7 @@ import java.util.Date;
  * An entry in the channel state history of an {@link AsteriskChannel}.
  *
  * @author srt
- * @version $Id: ChannelStateHistoryEntry.java,v 1.2 2008/05/14 05:17:18 zacw Exp $
+ * @version $Id: ChannelStateHistoryEntry.java 938 2007-12-31 03:23:38Z srt $
  * @since 0.3
  */
 public class ChannelStateHistoryEntry implements Serializable

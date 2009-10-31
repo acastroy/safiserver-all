@@ -27,7 +27,7 @@ package org.asteriskjava.live;
  * </ul>
  *
  * @author <a href="mailto:patrick.breucking{@nospam}gonicus.de">Patrick Breucking</a>
- * @version $Id: AsteriskQueueMember.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: AsteriskQueueMember.java 1159 2008-08-27 17:52:12Z srt $
  * @since 0.3.1
  */
 public interface AsteriskQueueMember extends LiveObject
@@ -137,9 +137,9 @@ public interface AsteriskQueueMember extends LiveObject
      * Available since Asterisk 1.6.
      *
      * @param penalty the new penalty value, must not be negative.
-     * @throws IllegalArgumentException if the penalty is negative.
+     * @throws IllegalArgumentException      if the penalty is negative.
      * @throws ManagerCommunicationException if the QueuePenaltyAction could not be send to Asterisk.
-     * @throws InvalidPenaltyException if Asterisk refused to set the new penalty.
+     * @throws InvalidPenaltyException       if Asterisk refused to set the new penalty.
      * @since 1.0.0
      */
     void setPenalty(int penalty) throws IllegalArgumentException, ManagerCommunicationException, InvalidPenaltyException;

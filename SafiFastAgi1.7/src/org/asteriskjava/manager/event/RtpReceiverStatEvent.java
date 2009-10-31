@@ -23,7 +23,7 @@ package org.asteriskjava.manager.event;
  * It is implemented in <code>main/rtp.c</code>
  *
  * @author srt
- * @version $Id: RtpReceiverStatEvent.java,v 1.1 2008/12/12 07:05:01 zacw Exp $
+ * @version $Id: RtpReceiverStatEvent.java 1141 2008-08-19 18:08:19Z srt $
  * @since 1.0.0
  */
 public class RtpReceiverStatEvent extends AbstractRtpStatEvent

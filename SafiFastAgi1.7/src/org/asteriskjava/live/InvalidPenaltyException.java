@@ -20,7 +20,7 @@ package org.asteriskjava.live;
  * Indicates that the penalty could not be assigned to the queue member.
  *
  * @author srt
- * @version $Id: InvalidPenaltyException.java,v 1.2 2008/05/14 05:17:18 zacw Exp $
+ * @version $Id: InvalidPenaltyException.java 965 2008-02-03 06:47:03Z srt $
  */
 public class InvalidPenaltyException extends LiveException
 {

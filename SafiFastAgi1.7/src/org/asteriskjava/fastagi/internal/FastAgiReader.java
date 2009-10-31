@@ -31,7 +31,7 @@ import org.asteriskjava.util.SocketConnectionFacade;
  * Default implementation of the AgiReader implementation.
  * 
  * @author srt
- * @version $Id: FastAgiReader.java,v 1.6 2008/07/05 21:23:48 zacw Exp $
+ * @version $Id: FastAgiReader.java 1268 2009-03-14 12:30:01Z srt $
  */
 class FastAgiReader implements AgiReader
 {
@@ -58,7 +58,7 @@ class FastAgiReader implements AgiReader
                 {
                     break;
                 }
-//                System.err.println("RQSTIN: "+line);
+
                 lines.add(line);
             }
         }
@@ -80,7 +80,7 @@ class FastAgiReader implements AgiReader
     {
         AgiReply reply;
         List<String> lines;
-        String line = null;
+        String line;
 
         lines = new ArrayList<String>();
 
@@ -90,8 +90,8 @@ class FastAgiReader implements AgiReader
         }
         catch (IOException e)
         {
-            throw new AgiNetworkException("Unable to read reply from Asterisk: " + e.getMessage(), e);
-//          e.printStackTrace();
+            // readline throws IOException if the connection has been closed
+            throw new AgiHangupException();
         }
 
         if (line == null)
@@ -123,7 +123,6 @@ class FastAgiReader implements AgiReader
                 while ((line = socket.readLine()) != null)
                 {
                     lines.add(line);
-//                    System.err.println("REPLYOUT: "+line);
                     if (line.startsWith(Integer.toString(AgiReply.SC_INVALID_COMMAND_SYNTAX)))
                     {
                         break;
@@ -137,7 +136,7 @@ class FastAgiReader implements AgiReader
         }
 
         reply = new AgiReplyImpl(lines);
-        
+
         return reply;
     }
 }

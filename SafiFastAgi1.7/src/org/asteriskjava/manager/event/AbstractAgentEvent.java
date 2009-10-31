@@ -23,7 +23,7 @@ import java.util.Map;
  *
  * @author srt
  * @author martins
- * @version $Id: AbstractAgentEvent.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: AbstractAgentEvent.java 1154 2008-08-24 02:05:26Z srt $
  * @since 0.2
  */
 public abstract class AbstractAgentEvent extends ManagerEvent

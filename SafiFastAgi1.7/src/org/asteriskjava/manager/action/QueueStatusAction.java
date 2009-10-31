@@ -34,7 +34,7 @@ import org.asteriskjava.manager.event.ResponseEvent;
  * @see org.asteriskjava.manager.event.QueueEntryEvent
  * @see org.asteriskjava.manager.event.QueueStatusCompleteEvent
  * @author srt
- * @version $Id: QueueStatusAction.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: QueueStatusAction.java 1121 2008-08-16 20:54:12Z srt $
  */
 public class QueueStatusAction extends AbstractManagerAction
         implements

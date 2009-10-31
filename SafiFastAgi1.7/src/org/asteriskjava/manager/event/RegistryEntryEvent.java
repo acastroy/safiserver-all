@@ -22,7 +22,7 @@ package org.asteriskjava.manager.event;
  * It is implemented in <code>channels/chan_sip.c</code>
  *
  * @author Laureano
- * @version $Id: RegistryEntryEvent.java,v 1.1 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: RegistryEntryEvent.java 1166 2008-09-18 02:41:44Z sprior $
  * @since 1.0.0
  */
 public class RegistryEntryEvent extends ResponseEvent

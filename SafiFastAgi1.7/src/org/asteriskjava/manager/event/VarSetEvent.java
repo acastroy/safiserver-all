@@ -22,7 +22,7 @@ package org.asteriskjava.manager.event;
  * It is implemented in <code>main/pbx.c</code>
  *
  * @author srt
- * @version $Id: VarSetEvent.java,v 1.1 2008/12/12 07:05:01 zacw Exp $
+ * @version $Id: VarSetEvent.java 1109 2008-08-16 11:27:26Z srt $
  * @since 1.0.0
  */
 public class VarSetEvent extends ManagerEvent

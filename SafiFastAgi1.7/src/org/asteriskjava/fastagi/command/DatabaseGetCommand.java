@@ -23,7 +23,7 @@ package org.asteriskjava.fastagi.command;
  * Example return code: 200 result=1 (testvariable)
  * 
  * @author srt
- * @version $Id: DatabaseGetCommand.java,v 1.2 2008/05/14 05:17:17 zacw Exp $
+ * @version $Id: DatabaseGetCommand.java 938 2007-12-31 03:23:38Z srt $
  */
 public class DatabaseGetCommand extends AbstractAgiCommand
 {

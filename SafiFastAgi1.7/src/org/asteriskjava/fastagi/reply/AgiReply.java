@@ -17,6 +17,7 @@
 package org.asteriskjava.fastagi.reply;
 
 import java.util.List;
+import java.io.Serializable;
 
 /**
  * Reply received in response to an AgiCommand.<p>
@@ -27,9 +28,9 @@ import java.util.List;
  * 
  * @see org.asteriskjava.fastagi.command.AgiCommand
  * @author srt
- * @version $Id: AgiReply.java,v 1.2 2008/05/14 05:17:18 zacw Exp $
+ * @version $Id: AgiReply.java 1271 2009-03-21 03:41:24Z srt $
  */
-public interface AgiReply
+public interface AgiReply extends Serializable
 {
     /**
      * Status code (200) indicating Asterisk successfully processed the

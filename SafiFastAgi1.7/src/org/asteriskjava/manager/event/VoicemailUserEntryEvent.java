@@ -24,7 +24,7 @@ package org.asteriskjava.manager.event;
  * Available since Asterisk 1.6
  *
  * @author srt
- * @version $Id: VoicemailUserEntryEvent.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: VoicemailUserEntryEvent.java 948 2008-01-30 03:09:42Z srt $
  * @see org.asteriskjava.manager.event.VoicemailUserEntryCompleteEvent
  * @see org.asteriskjava.manager.action.VoicemailUsersListAction
  * @since 1.0.0

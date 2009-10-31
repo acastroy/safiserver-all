@@ -24,7 +24,7 @@ import org.asteriskjava.manager.response.ManagerResponse;
  * 
  * @see org.asteriskjava.manager.ManagerConnection#sendAction(ManagerAction, SendActionCallback)
  * @author srt
- * @version $Id: SendActionCallback.java,v 1.2 2008/05/14 05:17:18 zacw Exp $
+ * @version $Id: SendActionCallback.java 938 2007-12-31 03:23:38Z srt $
  */
 public interface SendActionCallback
 {

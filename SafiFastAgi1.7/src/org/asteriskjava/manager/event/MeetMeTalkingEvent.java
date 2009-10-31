@@ -25,7 +25,7 @@ package org.asteriskjava.manager.event;
  * 
  * @see org.asteriskjava.manager.event.MeetMeStopTalkingEvent
  * @author srt
- * @version $Id: MeetMeTalkingEvent.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: MeetMeTalkingEvent.java 1123 2008-08-17 11:26:34Z srt $
  * @since 0.2
  */
 public class MeetMeTalkingEvent extends AbstractMeetMeEvent

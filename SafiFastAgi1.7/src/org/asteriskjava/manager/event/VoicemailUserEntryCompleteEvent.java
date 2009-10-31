@@ -26,7 +26,7 @@ package org.asteriskjava.manager.event;
  * @see VoicemailUserEntryEvent
  * @see org.asteriskjava.manager.action.VoicemailUsersListAction
  * @author srt
- * @version $Id: VoicemailUserEntryCompleteEvent.java,v 1.3 2008/12/12 07:05:02 zacw Exp $
+ * @version $Id: VoicemailUserEntryCompleteEvent.java 946 2008-01-30 02:52:35Z srt $
  * @since 1.0.0
  */
 public class VoicemailUserEntryCompleteEvent extends ResponseEvent

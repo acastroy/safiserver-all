@@ -505,7 +505,7 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
                 }
                 catch (InterruptedException e) // NOPMD
                 {
-                    // swallow
+                    Thread.currentThread().interrupt();
                 }
             }
 
@@ -819,6 +819,7 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
                 catch (InterruptedException ex)
                 {
                     logger.warn("Interrupted while waiting for result");
+                    Thread.currentThread().interrupt();
                 }
             }
         }
@@ -965,6 +966,7 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
                 catch (InterruptedException e)
                 {
                     logger.warn("Interrupted while waiting for response events.");
+                    Thread.currentThread().interrupt();
                 }
             }
         }
@@ -1321,7 +1323,7 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
             }
             catch (InterruptedException e1)
             {
-                // ignore
+                Thread.currentThread().interrupt();
             }
 
             try
