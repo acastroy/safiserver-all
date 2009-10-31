@@ -79,6 +79,7 @@ public class AsteriskServerItemProvider
 			addPrivatePropertyDescriptor(object);
 			addPromptDirectoryPropertyDescriptor(object);
 			addAsteriskVersionPropertyDescriptor(object);
+			addVisibleSafiServerIPPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -348,6 +349,28 @@ public class AsteriskServerItemProvider
 	}
 
   /**
+	 * This adds a property descriptor for the Visible Safi Server IP feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addVisibleSafiServerIPPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AsteriskServer_visibleSafiServerIP_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AsteriskServer_visibleSafiServerIP_feature", "_UI_AsteriskServer_type"),
+				 ConfigPackage.Literals.ASTERISK_SERVER__VISIBLE_SAFI_SERVER_IP,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+		/**
 	 * This returns AsteriskServer.gif.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -396,6 +419,7 @@ public class AsteriskServerItemProvider
 			case ConfigPackage.ASTERISK_SERVER__PRIVATE:
 			case ConfigPackage.ASTERISK_SERVER__PROMPT_DIRECTORY:
 			case ConfigPackage.ASTERISK_SERVER__ASTERISK_VERSION:
+			case ConfigPackage.ASTERISK_SERVER__VISIBLE_SAFI_SERVER_IP:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
