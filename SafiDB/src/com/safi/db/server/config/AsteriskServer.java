@@ -30,6 +30,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.safi.db.server.config.AsteriskServer#isPrivate <em>Private</em>}</li>
  *   <li>{@link com.safi.db.server.config.AsteriskServer#getPromptDirectory <em>Prompt Directory</em>}</li>
  *   <li>{@link com.safi.db.server.config.AsteriskServer#getAsteriskVersion <em>Asterisk Version</em>}</li>
+ *   <li>{@link com.safi.db.server.config.AsteriskServer#getVisibleSafiServerIP <em>Visible Safi Server IP</em>}</li>
  * </ul>
  * </p>
  *
@@ -380,5 +381,31 @@ public interface AsteriskServer extends ServerResource {
 	 * @generated
 	 */
   void setAsteriskVersion(String value);
+
+		/**
+	 * Returns the value of the '<em><b>Visible Safi Server IP</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Visible Safi Server IP</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Visible Safi Server IP</em>' attribute.
+	 * @see #setVisibleSafiServerIP(String)
+	 * @see com.safi.db.server.config.ConfigPackage#getAsteriskServer_VisibleSafiServerIP()
+	 * @model
+	 * @generated
+	 */
+	String getVisibleSafiServerIP();
+
+		/**
+	 * Sets the value of the '{@link com.safi.db.server.config.AsteriskServer#getVisibleSafiServerIP <em>Visible Safi Server IP</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Visible Safi Server IP</em>' attribute.
+	 * @see #getVisibleSafiServerIP()
+	 * @generated
+	 */
+	void setVisibleSafiServerIP(String value);
 
 } // AsteriskServer

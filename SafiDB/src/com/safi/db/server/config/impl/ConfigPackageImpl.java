@@ -374,6 +374,15 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 
   /**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAsteriskServer_VisibleSafiServerIP() {
+		return (EAttribute)asteriskServerEClass.getEStructuralFeatures().get(13);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -693,6 +702,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		createEAttribute(asteriskServerEClass, ASTERISK_SERVER__PRIVATE);
 		createEAttribute(asteriskServerEClass, ASTERISK_SERVER__PROMPT_DIRECTORY);
 		createEAttribute(asteriskServerEClass, ASTERISK_SERVER__ASTERISK_VERSION);
+		createEAttribute(asteriskServerEClass, ASTERISK_SERVER__VISIBLE_SAFI_SERVER_IP);
 
 		safiServerEClass = createEClass(SAFI_SERVER);
 		createEAttribute(safiServerEClass, SAFI_SERVER__BIND_IP);
@@ -795,6 +805,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		initEAttribute(getAsteriskServer_Private(), ecorePackage.getEBoolean(), "private", null, 0, 1, AsteriskServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAsteriskServer_PromptDirectory(), ecorePackage.getEString(), "promptDirectory", "/var/lib/asterisk/sounds/", 0, 1, AsteriskServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAsteriskServer_AsteriskVersion(), ecorePackage.getEString(), "asteriskVersion", null, 0, 1, AsteriskServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAsteriskServer_VisibleSafiServerIP(), ecorePackage.getEString(), "visibleSafiServerIP", null, 0, 1, AsteriskServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(safiServerEClass, SafiServer.class, "SafiServer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSafiServer_BindIP(), ecorePackage.getEString(), "bindIP", null, 1, 1, SafiServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

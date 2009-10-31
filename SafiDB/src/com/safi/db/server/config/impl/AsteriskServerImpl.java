@@ -46,6 +46,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.safi.db.server.config.impl.AsteriskServerImpl#isPrivate <em>Private</em>}</li>
  *   <li>{@link com.safi.db.server.config.impl.AsteriskServerImpl#getPromptDirectory <em>Prompt Directory</em>}</li>
  *   <li>{@link com.safi.db.server.config.impl.AsteriskServerImpl#getAsteriskVersion <em>Asterisk Version</em>}</li>
+ *   <li>{@link com.safi.db.server.config.impl.AsteriskServerImpl#getVisibleSafiServerIP <em>Visible Safi Server IP</em>}</li>
  * </ul>
  * </p>
  *
@@ -293,6 +294,26 @@ public class AsteriskServerImpl extends ServerResourceImpl implements AsteriskSe
   protected String asteriskVersion = ASTERISK_VERSION_EDEFAULT;
 
   /**
+	 * The default value of the '{@link #getVisibleSafiServerIP() <em>Visible Safi Server IP</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVisibleSafiServerIP()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VISIBLE_SAFI_SERVER_IP_EDEFAULT = null;
+
+		/**
+	 * The cached value of the '{@link #getVisibleSafiServerIP() <em>Visible Safi Server IP</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVisibleSafiServerIP()
+	 * @generated
+	 * @ordered
+	 */
+	protected String visibleSafiServerIP = VISIBLE_SAFI_SERVER_IP_EDEFAULT;
+
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
@@ -606,6 +627,27 @@ public class AsteriskServerImpl extends ServerResourceImpl implements AsteriskSe
 
   /**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getVisibleSafiServerIP() {
+		return visibleSafiServerIP;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setVisibleSafiServerIP(String newVisibleSafiServerIP) {
+		String oldVisibleSafiServerIP = visibleSafiServerIP;
+		visibleSafiServerIP = newVisibleSafiServerIP;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.ASTERISK_SERVER__VISIBLE_SAFI_SERVER_IP, oldVisibleSafiServerIP, visibleSafiServerIP));
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -683,6 +725,8 @@ public class AsteriskServerImpl extends ServerResourceImpl implements AsteriskSe
 				return getPromptDirectory();
 			case ConfigPackage.ASTERISK_SERVER__ASTERISK_VERSION:
 				return getAsteriskVersion();
+			case ConfigPackage.ASTERISK_SERVER__VISIBLE_SAFI_SERVER_IP:
+				return getVisibleSafiServerIP();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -735,6 +779,9 @@ public class AsteriskServerImpl extends ServerResourceImpl implements AsteriskSe
 			case ConfigPackage.ASTERISK_SERVER__ASTERISK_VERSION:
 				setAsteriskVersion((String)newValue);
 				return;
+			case ConfigPackage.ASTERISK_SERVER__VISIBLE_SAFI_SERVER_IP:
+				setVisibleSafiServerIP((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -786,6 +833,9 @@ public class AsteriskServerImpl extends ServerResourceImpl implements AsteriskSe
 			case ConfigPackage.ASTERISK_SERVER__ASTERISK_VERSION:
 				setAsteriskVersion(ASTERISK_VERSION_EDEFAULT);
 				return;
+			case ConfigPackage.ASTERISK_SERVER__VISIBLE_SAFI_SERVER_IP:
+				setVisibleSafiServerIP(VISIBLE_SAFI_SERVER_IP_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -824,6 +874,8 @@ public class AsteriskServerImpl extends ServerResourceImpl implements AsteriskSe
 				return PROMPT_DIRECTORY_EDEFAULT == null ? promptDirectory != null : !PROMPT_DIRECTORY_EDEFAULT.equals(promptDirectory);
 			case ConfigPackage.ASTERISK_SERVER__ASTERISK_VERSION:
 				return ASTERISK_VERSION_EDEFAULT == null ? asteriskVersion != null : !ASTERISK_VERSION_EDEFAULT.equals(asteriskVersion);
+			case ConfigPackage.ASTERISK_SERVER__VISIBLE_SAFI_SERVER_IP:
+				return VISIBLE_SAFI_SERVER_IP_EDEFAULT == null ? visibleSafiServerIP != null : !VISIBLE_SAFI_SERVER_IP_EDEFAULT.equals(visibleSafiServerIP);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -862,6 +914,8 @@ public class AsteriskServerImpl extends ServerResourceImpl implements AsteriskSe
 		result.append(promptDirectory);
 		result.append(", asteriskVersion: ");
 		result.append(asteriskVersion);
+		result.append(", visibleSafiServerIP: ");
+		result.append(visibleSafiServerIP);
 		result.append(')');
 		return result.toString();
 	}

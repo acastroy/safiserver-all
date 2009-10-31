@@ -333,13 +333,22 @@ public interface ConfigPackage extends EPackage {
   int ASTERISK_SERVER__ASTERISK_VERSION = SERVER_RESOURCE_FEATURE_COUNT + 12;
 
   /**
+	 * The feature id for the '<em><b>Visible Safi Server IP</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASTERISK_SERVER__VISIBLE_SAFI_SERVER_IP = SERVER_RESOURCE_FEATURE_COUNT + 13;
+
+		/**
 	 * The number of structural features of the '<em>Asterisk Server</em>' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int ASTERISK_SERVER_FEATURE_COUNT = SERVER_RESOURCE_FEATURE_COUNT + 13;
+  int ASTERISK_SERVER_FEATURE_COUNT = SERVER_RESOURCE_FEATURE_COUNT + 14;
 
   /**
 	 * The meta object id for the '{@link com.safi.db.server.config.impl.SafiServerImpl <em>Safi Server</em>}' class.
@@ -1369,6 +1378,17 @@ public interface ConfigPackage extends EPackage {
   EAttribute getAsteriskServer_AsteriskVersion();
 
   /**
+	 * Returns the meta object for the attribute '{@link com.safi.db.server.config.AsteriskServer#getVisibleSafiServerIP <em>Visible Safi Server IP</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Visible Safi Server IP</em>'.
+	 * @see com.safi.db.server.config.AsteriskServer#getVisibleSafiServerIP()
+	 * @see #getAsteriskServer()
+	 * @generated
+	 */
+	EAttribute getAsteriskServer_VisibleSafiServerIP();
+
+		/**
 	 * Returns the meta object for class '{@link com.safi.db.server.config.SafiServer <em>Safi Server</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1893,6 +1913,14 @@ public interface ConfigPackage extends EPackage {
     EAttribute ASTERISK_SERVER__ASTERISK_VERSION = eINSTANCE.getAsteriskServer_AsteriskVersion();
 
     /**
+		 * The meta object literal for the '<em><b>Visible Safi Server IP</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASTERISK_SERVER__VISIBLE_SAFI_SERVER_IP = eINSTANCE.getAsteriskServer_VisibleSafiServerIP();
+
+				/**
 		 * The meta object literal for the '{@link com.safi.db.server.config.impl.SafiServerImpl <em>Safi Server</em>}' class.
 		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

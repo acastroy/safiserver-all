@@ -250,6 +250,8 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="promptDirectory" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
             defaultValueLiteral="/var/lib/asterisk/sounds/"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="asteriskVersion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibleSafiServerIP"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SafiServer" eSuperTypes="#//server/config/ServerResource">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindIP" lowerBound="1"

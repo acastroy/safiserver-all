@@ -312,7 +312,7 @@ public class DBManager {
   }
 
   private Session createSessionHelper() throws DBManagerException {
-    if (host == null || host.trim().length() == 0 || username == null
+    if ((!serverMode && StringUtils.isBlank(host)) || username == null
         || username.trim().length() == 0)
       throw new DBManagerException(
           "Username or hostname was null.  Please specify server host and username");
@@ -2291,7 +2291,7 @@ public class DBManager {
     if (StringUtils.equals(this.host, host))
       return;
     this.host = host;
-    if (restartDatastore)
+    if (restartDatastore && !serverMode)
       shutdownDatastore();
   }
 
