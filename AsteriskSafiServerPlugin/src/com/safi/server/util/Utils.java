@@ -86,4 +86,13 @@ public class Utils {
   public static boolean isLocalIP(String ipaddr) {
     return getLocalIPAddresses().contains(ipaddr);
   }
+  
+  public static String getLocalIPAddress(){
+  	for (String ip : getLocalIPAddresses()){
+  		if (!("127.0.0.1".equals(ip) || "0.0.0.0".equals(ip) || "localhost".equalsIgnoreCase(ip)))
+  			return ip;
+  	}
+  	
+  	return null;
+  }
 }

@@ -917,5 +917,17 @@ public class RegisterAsterisksDialog extends Dialog {
 
     }
 
+		@Override
+    public String getVisibleSafiServerIP() {
+	    // TODO Auto-generated method stub
+	    return null;
+    }
+
+		@Override
+    public void setVisibleSafiServerIP(String value) {
+	    // TODO Auto-generated method stub
+	    
+    }
+
   }
 }
