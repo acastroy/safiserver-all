@@ -67,7 +67,7 @@ public interface AsteriskConnectionManager {
 
   public abstract void setManagementPort(int managementPort);
 
-  public abstract void setBindIP(String bindIP);
+//  public abstract void setBindIP(String bindIP);
 
   public abstract void notifyServerStarted();
 

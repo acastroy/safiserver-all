@@ -86,7 +86,6 @@
 		<property name="fastAgiMaxPoolsize" value="${maximumPoolSize}" />
 		<property name="fastagiPort" value="${fastagi.port}" />
 		<property name="testing" value="false" />
-		<property name="bindIP" value="${bind.addr}" />
 		<property name="managementPort" value="${management.port}" />
 		<property name="databasePort" value="${db.port}" />
 		<property name="defaultPass" value="${user.password}" />

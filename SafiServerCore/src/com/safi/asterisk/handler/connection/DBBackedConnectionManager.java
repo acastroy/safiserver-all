@@ -82,6 +82,7 @@ public class DBBackedConnectionManager extends AbstractConnectionManager {
         AstInitInfo info = new AstInitInfo();
         info.setRequest(request);
         info.setChannel(channel);
+        info.setAsteriskServer(server);
         if (server != null) {
           final SafiManagerConnection managerConnection = SafletEngine.getInstance().getConnectionManager()
               .getManagerConnection(server.getId());

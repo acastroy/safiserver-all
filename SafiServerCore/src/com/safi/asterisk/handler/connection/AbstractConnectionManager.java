@@ -84,7 +84,7 @@ public abstract class AbstractConnectionManager implements AsteriskConnectionMan
   private SafiFastAgiServerFactory fastAgiServerFactory;
 
   private SafiFastAgiServerFactory factory;
-  private String currentHostname;
+//  private String currentHostname;
   private int currentFastAgiPort;
   private int currentManagementPort;
   private Timer managerConnectionPoller;
@@ -156,10 +156,10 @@ public abstract class AbstractConnectionManager implements AsteriskConnectionMan
   public boolean removeListener(SafiServerListener listener) {
     return listeners.remove(listener);
   }
-
-  public void setBindIP(String ip) {
-    this.currentHostname = ip;
-  }
+//
+//  public void setBindIP(String ip) {
+//    this.currentHostname = ip;
+//  }
 
   public void setManagementPort(int port) {
     this.currentManagementPort = port;
@@ -343,22 +343,23 @@ public abstract class AbstractConnectionManager implements AsteriskConnectionMan
     // ((SafiFastAgiServer) agiServer).setMaximumPoolSize(fastAgiMaxPoolsize);
     agiServer.setPool(SafletEngine.getInstance().getThreadPool());
     agiServer.setMappingStrategy(new HandlerMappingStrategy());
+    agiServer.setBindAddr("0.0.0.0");
     // String bindIP = safiServerConfig.getBindIP();
-    String bindIP = SafletEngine.getInstance().getBindIP();
-    if (bindIP != null) {
-      if (Pattern.matches(PATTERN_IP, bindIP))
-        agiServer.setBindAddr(bindIP);
-      else {
-        try {
-
-          agiServer.setBindAddr(InetAddress.getByName(bindIP).getHostAddress());
-        } catch (UnknownHostException e) {
-          log.warn("Couldn't connect to host " + bindIP + ".  Defaulting...", e);
-          agiServer.setBindAddr(InetAddress.getLocalHost().getHostAddress());
-
-        }
-      }
-    }
+//    String bindIP = SafletEngine.getInstance().getBindIP();
+//    if (bindIP != null) {
+//      if (Pattern.matches(PATTERN_IP, bindIP))
+//        agiServer.setBindAddr(bindIP);
+//      else {
+//        try {
+//
+//          agiServer.setBindAddr(InetAddress.getByName(bindIP).getHostAddress());
+//        } catch (UnknownHostException e) {
+//          log.warn("Couldn't connect to host " + bindIP + ".  Defaulting...", e);
+//          agiServer.setBindAddr(InetAddress.getLocalHost().getHostAddress());
+//
+//        }
+//      }
+//    }
 
     for (SafiServerListener ls : listeners) {
       agiServer.addListener(ls);
@@ -600,28 +601,25 @@ public abstract class AbstractConnectionManager implements AsteriskConnectionMan
 
     if (startup
         || (newConfig != null && safiServerConfig != null
-            && StringUtils.equals(newConfig.getBindIP(), currentHostname) && currentFastAgiPort == newConfig
+             && currentFastAgiPort == newConfig
             .getPort())) {
       shouldReloadAgi = false;
     } else
       SafletEngine.getInstance().setFastagiPort(newConfig.getPort());
     int oldMgrPort = currentManagementPort;
-    String oldIp = currentHostname;
+//    String oldIp = currentHostname;
     int oldDBPort = currentDBPort;
     setSafiServerConfig(newConfig);
 
     // restart RMI
     if (!startup
         && newConfig != null
-        && (oldMgrPort != newConfig.getManagementPort() || !StringUtils.equals(newConfig
-            .getBindIP(), oldIp))) {
+        && (oldMgrPort != newConfig.getManagementPort())) {
       // should restart MBean server
       try {
 
         SafletEngine.getInstance().setManagementPort(newConfig.getManagementPort());
-        SafletEngine.getInstance().setBindIP(newConfig.getBindIP());
-        SafletEngine.getInstance().initJMXServer(newConfig.getManagementPort(),
-            newConfig.getBindIP());
+        SafletEngine.getInstance().initJMXServer(newConfig.getManagementPort());
       } catch (Exception e) {
         e.printStackTrace();
         // log.error("Couldn't init JMX server on new settings...rolling back", e);
@@ -653,7 +651,7 @@ public abstract class AbstractConnectionManager implements AsteriskConnectionMan
     // restart AGI
     if (shouldReloadAgi) {
       try {
-        SafletEngine.getInstance().setBindIP(newConfig.getBindIP());
+//        SafletEngine.getInstance().setBindIP(newConfig.getBindIP());
         // HandlerEngine.getInstance().setDatabasePort(newConfig.getDbPort());
 
         shutdownAGIServer();
@@ -879,11 +877,11 @@ public abstract class AbstractConnectionManager implements AsteriskConnectionMan
       currentManagementPort = -1;
       currentFastAgiPort = -1;
       currentDBPort = -1;
-      currentHostname = null;
+//      currentHostname = null;
     } else {
       currentManagementPort = safiServerConfig.getManagementPort();
       currentFastAgiPort = safiServerConfig.getPort();
-      currentHostname = safiServerConfig.getBindIP();
+//      currentHostname = safiServerConfig.getBindIP();
       currentDBPort = safiServerConfig.getDbPort();
     }
   }
@@ -1128,6 +1126,7 @@ public abstract class AbstractConnectionManager implements AsteriskConnectionMan
     private AgiRequest request;
     private AgiChannel channel;
     private ManagerConnection managerConnection;
+    private AsteriskServer server;
 
     public AgiRequest getRequest() {
       return request;
@@ -1151,6 +1150,15 @@ public abstract class AbstractConnectionManager implements AsteriskConnectionMan
 
     public void setManagerConnection(ManagerConnection managerConnection) {
       this.managerConnection = managerConnection;
+    }
+
+		public void setAsteriskServer(AsteriskServer server) {
+	    this.server = server;
+	    
+    }
+		
+		public AsteriskServer getAsteriskServer() {
+	    return server;
     }
 
   }

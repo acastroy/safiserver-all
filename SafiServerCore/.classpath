@@ -85,20 +85,21 @@
 	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.teneo.hibernate_1.1.1.v200909151729.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.teneo.hibernate.extra.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/org.eclipse.emf.teneo.hibernate.mapper_1.1.1.v200909151729.jar"/>
-	<classpathentry kind="lib" path="lib/safiFastagi_v20090823.jar" sourcepath="/SafiFastAgi1.7"/>
 	<classpathentry kind="lib" path="deploy/lib/backport-util-concurrent.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/commons-beanutils.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/hibernate-jmx.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/springmodules-sandbox-db-0.9-20080616124518.jar"/>
 	<classpathentry kind="lib" path="deploy/lib/sshd.jar"/>
-	<classpathentry kind="lib" path="lib/asteriskcore_v20091006.jar"/>
-	<classpathentry kind="lib" path="lib/safidb_v20091006.jar" sourcepath="/SafiDB"/>
-	<classpathentry kind="lib" path="lib/safletcore_v20091006.jar"/>
 	<classpathentry kind="lib" path="lib/cxf-2.2.4.jar"/>
 	<classpathentry kind="lib" path="lib/cxf-manifest.jar"/>
 	<classpathentry kind="lib" path="lib/jaxb-api-2.1.jar"/>
 	<classpathentry kind="lib" path="lib/jaxb-impl-2.1.12.jar"/>
 	<classpathentry kind="lib" path="lib/jaxb-xjc-2.1.12.jar"/>
 	<classpathentry kind="lib" path="lib/jsr311-api-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/asteriskcore_v20091030.jar"/>
+	<classpathentry kind="lib" path="lib/safidb_v20091030.jar"/>
+	<classpathentry kind="lib" path="lib/safiFastagi_v20091030.jar"/>
+	<classpathentry kind="lib" path="lib/safiServer_v20091030.jar"/>
+	<classpathentry kind="lib" path="lib/safletcore_v20091030.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

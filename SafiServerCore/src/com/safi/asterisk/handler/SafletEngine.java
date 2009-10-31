@@ -77,7 +77,7 @@ import com.sshtools.j2ssh.transport.publickey.SshKeyGenerator;
 public class SafletEngine {
 
   public static final String DEFAULT_KEY_PASSPHRASE = "safiserver";
-  public final static String SAFISERVER_VERSION = "1.1B_20091020";
+  public final static String SAFISERVER_VERSION = "1.1B_20091030";
   public final static String ROOT_DIR = System.getProperty("user.dir");
   private static final String RESOURCES_DIRECTORY = ROOT_DIR + File.separatorChar + "resources";
   public static final String HOST_KEY_NAME = RESOURCES_DIRECTORY + File.separatorChar
@@ -112,7 +112,7 @@ public class SafletEngine {
   private ApplicationContext applicationContext;
   private GenericApplicationContext dynamicApplicationContext;
   private SafiServer debugSafiServer;
-  private String bindIP;
+//  private String bindIP;
   private String defaultPass;
   private SafiServerMonitorImpl safiServerMonitor;
   private Properties environmentProperties;
@@ -292,7 +292,7 @@ public class SafletEngine {
       if (debuggerLog.isInfoEnabled())
         debuggerLog.info("Management listener started on " + getManagementPort());
       connectionManager.setManagementPort(getManagementPort());
-      connectionManager.setBindIP(getBindIP());
+//      connectionManager.setBindIP(getBindIP());
       initializeDB(getDatabasePort());
       // Give DB time to start
 
@@ -307,7 +307,7 @@ public class SafletEngine {
           SafletEngineException.SafletExceptionCode.SAFISERVER_DB_ERROR);
     }
     try {
-      initJMXServer(getManagementPort(), getBindIP());
+      initJMXServer(getManagementPort());
     } catch (Exception e) {
       throw new SafletEngineException("Couldn't initialize JMX Server: "
           + e.getCause().getLocalizedMessage(), e,
@@ -483,12 +483,13 @@ public class SafletEngine {
     // dynamicApplicationContext.refresh();
     ServerBean bean = getServerBean();
     // if (bean != null) {
+    DBManager.getInstance().setServerMode(true);
     DBManager.getInstance().setPort(port, true);
     // }
-    DBManager.getInstance().setServerMode(true);
+    
     DBManager.getInstance().setUsername(SA_USER, true);
     DBManager.getInstance().setPassword(isNew ? "" : defaultPass, true);
-    bindIP = "0.0.0.0";
+    
     try {
 //      if (StringUtils.isNotBlank(bindIP)) {
 //        // if ("0.0.0.0".equals(bindIP.trim()) && OS_NAME.toLowerCase().indexOf("windows")
@@ -502,11 +503,11 @@ public class SafletEngine {
 //        bindIP = InetAddress.getLocalHost().getHostAddress();
 //        log.info("No Bind IP was specified so using reported address " + bindIP);
 //      }
-      DBManager.getInstance().setHost(bindIP, true);
+      
 
       // whether it changed or not just set it
-      setBindIP(bindIP);
-      connectionManager.setBindIP(getBindIP());
+      //DBManager.getInstance().setHost(getBindIP(), true);
+//      connectionManager.setBindIP(getBindIP());
     } catch (Exception ex) {
       ex.printStackTrace();
       DBManager.getInstance().setHost("localhost", true);
@@ -683,16 +684,10 @@ public class SafletEngine {
       return threadPool;
     }
 
-    @Override
-    public String getServerIpAddr() {
-      return connectionManager.getServerIpAddress();
-    }
-
-    @Override
-    public void setServerIpAddr(String value) {
-      // TODO Auto-generated method stub
-
-    }
+//    @Override
+//    public String getServerIpAddr() {
+//      return connectionManager.getServerIpAddress();
+//    }
 
     @Override
     public Saflet getSaflet(String path, int astServerId) {
@@ -805,13 +800,13 @@ public class SafletEngine {
   }
 
   public String getBindIP() {
-    return bindIP;
+    return "0.0.0.0";
   }
 
   public void setBindIP(String bindIP) {
-    this.bindIP = bindIP;
-    if (environmentProperties != null)
-      environmentProperties.setProperty("bind.addr", bindIP);
+//    this.bindIP = bindIP;
+//    if (environmentProperties != null)
+//      environmentProperties.setProperty("bind.addr", bindIP);
   }
 
   public void setServerMonitor(SafiServerMonitorImpl safiServerMonitor) {
@@ -825,7 +820,7 @@ public class SafletEngine {
 
   public void stopJMX() {
     if (log.isDebugEnabled())
-      log.debug("Stopping JMX Server");
+      log.debug("Stopping JMX Server if running...");
     if (dynamicApplicationContext.containsBean("exporter"))
       dynamicApplicationContext.removeBeanDefinition("exporter");
 
@@ -861,7 +856,7 @@ public class SafletEngine {
 
   }
 
-  public void initJMXServer(int port, String bindIP) {
+  public void initJMXServer(int port) {
     stopJMX();
     // FixedPortRMISocketFactory factory = new FixedPortRMISocketFactory(port);
     BeanDefinitionBuilder builder1 = BeanDefinitionBuilder.rootBeanDefinition(
@@ -906,9 +901,11 @@ public class SafletEngine {
 //    }
     
     if (serviceUrl == null) {
-      bindIP = "127.0.0.1";
-      serviceUrl = "service:jmx:rmi://" + bindIP + ":" + port + "/jndi/rmi://" + bindIP + ":"
+      serviceUrl = "service:jmx:rmi://127.0.0.1:" + port + "/jndi/rmi://127.0.0.1:"
           + port + "/safiserver";
+    	
+//    	serviceUrl = "service:jmx:rmi://10.209.190.133:" + port + "/jndi/rmi://127.0.0.1:"
+//      + port + "/safiserver";
     }
 
     // System.setProperty("java.rmi.server.hostname", bindIP);
