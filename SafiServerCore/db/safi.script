@@ -1,0 +1,100 @@
+CREATE SCHEMA PUBLIC AUTHORIZATION DBA
+CREATE CACHED TABLE "asteriskserver"("id" INTEGER NOT NULL PRIMARY KEY,E_VERSION INTEGER NOT NULL,"name" VARCHAR(255) NOT NULL,"lastmodified" TIMESTAMP,"lastupdated" TIMESTAMP,"user_createdby_id" INTEGER,"user_modifiedby_id" INTEGER,"description" VARCHAR(255),"hostname" VARCHAR(255) NOT NULL,"managername" VARCHAR(255) NOT NULL,"managerpassword" VARCHAR(255),"managerport" INTEGER,"sftpuser" VARCHAR(255),"sftppassword" VARCHAR(255),"sftpport" INTEGER,"asteriskserver_safiserver_id" INTEGER,"active" BOOLEAN,"private" BOOLEAN,"promptdirectory" VARCHAR(255),"asteriskversion" VARCHAR(255),"visiblesafiserverip" VARCHAR(255),"safiserver_asteriskservers_idx" INTEGER)
+CREATE INDEX HOSTNAMEINDEX ON "asteriskserver"("hostname")
+CREATE TRIGGER ASTSERVERTRIGGER_INS AFTER INSERT ON "asteriskserver" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.AstServerChangedTrigger"
+CREATE TRIGGER ASTSERVERTRIGGER_DELAFTER AFTER DELETE ON "asteriskserver" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.AstServerChangedTrigger"
+CREATE TRIGGER ASTSERVERTRIGGER_UPD AFTER UPDATE ON "asteriskserver" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.AstServerChangedTrigger"
+CREATE TRIGGER ASTSERVERTRIGGER_DELBEFORE BEFORE DELETE ON "asteriskserver" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.AstServerChangedTrigger"
+CREATE CACHED TABLE "dbconnection"("id" INTEGER NOT NULL PRIMARY KEY,E_VERSION INTEGER NOT NULL,"name" VARCHAR(255) NOT NULL,"lastmodified" TIMESTAMP,"lastupdated" TIMESTAMP,"url" VARCHAR(255),"user" VARCHAR(255),"password" VARCHAR(255),"logintimeout" INTEGER,"properties" VARCHAR(255),"transactionmode" VARCHAR(255),"minpoolsize" INTEGER,"maxpoolsize" INTEGER,"acquireincrement" INTEGER,"maxidletime" INTEGER,"dbconnection_driver_id" INTEGER,"dbdriver_connections_idx" INTEGER)
+CREATE TRIGGER CONNECTIONTRIGGER_INS AFTER INSERT ON "dbconnection" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.DBResourceTrigger"
+CREATE TRIGGER CONNECTIONTRIGGER_DELAFTER AFTER DELETE ON "dbconnection" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.DBResourceTrigger"
+CREATE TRIGGER CONNECTIONTRIGGER_UPD AFTER UPDATE ON "dbconnection" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.DBResourceTrigger"
+CREATE TRIGGER CONNECTIONTRIGGER_DELBEFORE BEFORE DELETE ON "dbconnection" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.DBResourceTrigger"
+CREATE CACHED TABLE "dbdriver_jars"("dbdriver_jars_id" INTEGER NOT NULL,ELT VARCHAR(255),"dbdriver_jars_idx" INTEGER NOT NULL,PRIMARY KEY("dbdriver_jars_id","dbdriver_jars_idx"))
+CREATE CACHED TABLE "dbdriver"("id" INTEGER NOT NULL PRIMARY KEY,E_VERSION INTEGER NOT NULL,"name" VARCHAR(255) NOT NULL,"lastmodified" TIMESTAMP,"lastupdated" TIMESTAMP,"driverclassname" VARCHAR(255),"pooling" BOOLEAN,"exampleurl" VARCHAR(255),"dbdriver_drivermanager_id" INTEGER,"default" BOOLEAN,"guideurl" VARCHAR(1000),"websiteurl" VARCHAR(255),"defaultport" INTEGER,"urlregexpattern" VARCHAR(5000),"safidrivermanager_drivers_idx" INTEGER)
+CREATE TRIGGER DRIVERTRIGGER_INS AFTER INSERT ON "dbdriver" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.DBResourceTrigger"
+CREATE TRIGGER DRIVERTRIGGER_DELAFTER AFTER DELETE ON "dbdriver" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.DBResourceTrigger"
+CREATE TRIGGER DRIVERTRIGGER_UPD AFTER UPDATE ON "dbdriver" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.DBResourceTrigger"
+CREATE TRIGGER DRIVERTRIGGER_DELBEFORE BEFORE DELETE ON "dbdriver" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.DBResourceTrigger"
+CREATE CACHED TABLE "entitlement"("id" INTEGER NOT NULL PRIMARY KEY,E_VERSION INTEGER NOT NULL,"name" VARCHAR(255) NOT NULL,"lastmodified" TIMESTAMP,"lastupdated" TIMESTAMP,"user_createdby_id" INTEGER,"user_modifiedby_id" INTEGER,"description" VARCHAR(255))
+CREATE CACHED TABLE "prompt"("id" INTEGER NOT NULL PRIMARY KEY,E_VERSION INTEGER NOT NULL,"name" VARCHAR(255) NOT NULL,"lastmodified" TIMESTAMP,"lastupdated" TIMESTAMP,"user_createdby_id" INTEGER,"user_modifiedby_id" INTEGER,"description" VARCHAR(255),"prompt_project_id" INTEGER,"system" BOOLEAN,"extension" VARCHAR(255),"safletproject_prompts_idx" INTEGER)
+CREATE INDEX PROMPTNAMEINDEX ON "prompt"("name")
+CREATE CACHED TABLE "query"("id" INTEGER NOT NULL PRIMARY KEY,E_VERSION INTEGER NOT NULL,"name" VARCHAR(255) NOT NULL,"lastmodified" TIMESTAMP,"lastupdated" TIMESTAMP,"querytype" VARCHAR(255),"querysql" VARCHAR(255),"query_connection_id" INTEGER,"catalog" VARCHAR(255),"dbconnection_queries_idx" INTEGER,CONSTRAINT QUERY_CONNECTION FOREIGN KEY("query_connection_id") REFERENCES "dbconnection"("id"))
+CREATE TRIGGER QUERYTRIGGER_INS AFTER INSERT ON "query" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.DBResourceTrigger"
+CREATE TRIGGER QUERYTRIGGER_DELAFTER AFTER DELETE ON "query" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.DBResourceTrigger"
+CREATE TRIGGER QUERYTRIGGER_UPD AFTER UPDATE ON "query" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.DBResourceTrigger"
+CREATE TRIGGER QUERYTRIGGER_DELBEFORE BEFORE DELETE ON "query" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.DBResourceTrigger"
+CREATE CACHED TABLE "queryparameter"("id" INTEGER NOT NULL PRIMARY KEY,E_VERSION INTEGER NOT NULL,"name" VARCHAR(255) NOT NULL,"lastmodified" TIMESTAMP,"lastupdated" TIMESTAMP,"datatype" VARCHAR(255),"queryparameter_query_id" INTEGER,"query_parameters_idx" INTEGER,CONSTRAINT QUERYPARAMETER_QUERY FOREIGN KEY("queryparameter_query_id") REFERENCES "query"("id"))
+CREATE CACHED TABLE "role_entitlements"(ID INTEGER NOT NULL,ELT INTEGER NOT NULL,"role_entitlements_idx" INTEGER NOT NULL,PRIMARY KEY(ID,"role_entitlements_idx"),CONSTRAINT ROLE_ENTITLEMENTS FOREIGN KEY(ELT) REFERENCES "entitlement"("id"))
+CREATE CACHED TABLE "role"("id" INTEGER NOT NULL PRIMARY KEY,E_VERSION INTEGER NOT NULL,"name" VARCHAR(255) NOT NULL,"lastmodified" TIMESTAMP,"lastupdated" TIMESTAMP,"user_createdby_id" INTEGER,"user_modifiedby_id" INTEGER,"description" VARCHAR(255))
+CREATE CACHED TABLE "safidrivermanager"("id" INTEGER NOT NULL PRIMARY KEY,E_VERSION INTEGER NOT NULL,"name" VARCHAR(255) NOT NULL,"lastmodified" TIMESTAMP,"lastupdated" TIMESTAMP)
+CREATE CACHED TABLE "safiresultset"("id" INTEGER NOT NULL PRIMARY KEY,E_VERSION INTEGER NOT NULL,"name" VARCHAR(255) NOT NULL,"lastmodified" TIMESTAMP,"lastupdated" TIMESTAMP,"usecache" BOOLEAN,"scrollable" BOOLEAN,"readonly" BOOLEAN,"scrollmode" VARCHAR(255),"holdabilitymode" VARCHAR(255))
+CREATE CACHED TABLE "safiserver"("id" INTEGER NOT NULL PRIMARY KEY,E_VERSION INTEGER NOT NULL,"name" VARCHAR(255) NOT NULL,"lastmodified" TIMESTAMP,"lastupdated" TIMESTAMP,"user_createdby_id" INTEGER,"user_modifiedby_id" INTEGER,"description" VARCHAR(255),"bindip" VARCHAR(255) NOT NULL,"port" INTEGER,"managementport" INTEGER,"user_user_id" INTEGER,"dbport" INTEGER)
+CREATE TRIGGER SAFISERVERTRIGGER_INS AFTER INSERT ON "safiserver" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.SafiServerChangedTrigger"
+CREATE TRIGGER SAFISERVERTRIGGER_DELAFTER AFTER DELETE ON "safiserver" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.SafiServerChangedTrigger"
+CREATE TRIGGER SAFISERVERTRIGGER_UPD AFTER UPDATE ON "safiserver" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.SafiServerChangedTrigger"
+CREATE TRIGGER SAFISERVERTRIGGER_DELBEFORE BEFORE DELETE ON "safiserver" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.SafiServerChangedTrigger"
+CREATE CACHED TABLE "saflet"("id" INTEGER NOT NULL PRIMARY KEY,E_VERSION INTEGER NOT NULL,"name" VARCHAR(255) NOT NULL,"lastmodified" TIMESTAMP,"lastupdated" TIMESTAMP,"user_createdby_id" INTEGER,"user_modifiedby_id" INTEGER,"description" VARCHAR(255),"code" LONGVARBINARY,"saflet_project_id" INTEGER,"safletproject_saflets_idx" INTEGER)
+CREATE INDEX SAFLETNAMEINDEX ON "saflet"("name")
+CREATE TRIGGER SAFLETTRIGGER_INS AFTER INSERT ON "saflet" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.SafletChangedTrigger"
+CREATE TRIGGER SAFLETTRIGGER_DELAFTER AFTER DELETE ON "saflet" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.SafletChangedTrigger"
+CREATE TRIGGER SAFLETTRIGGER_UPD AFTER UPDATE ON "saflet" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.SafletChangedTrigger"
+CREATE TRIGGER SAFLETTRIGGER_DELBEFORE BEFORE DELETE ON "saflet" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.SafletChangedTrigger"
+CREATE CACHED TABLE "safletproject"("id" INTEGER NOT NULL PRIMARY KEY,E_VERSION INTEGER NOT NULL,"name" VARCHAR(255) NOT NULL,"lastmodified" TIMESTAMP,"lastupdated" TIMESTAMP,"user_createdby_id" INTEGER,"user_modifiedby_id" INTEGER,"description" VARCHAR(255),"enabled" BOOLEAN)
+CREATE INDEX PROJECTNAMEINDEX ON "safletproject"("name")
+CREATE CACHED TABLE "serverresource"("id" INTEGER NOT NULL PRIMARY KEY,E_VERSION INTEGER NOT NULL,"name" VARCHAR(255) NOT NULL,"lastmodified" TIMESTAMP,"lastupdated" TIMESTAMP,"user_createdby_id" INTEGER,"user_modifiedby_id" INTEGER,"description" VARCHAR(255))
+CREATE CACHED TABLE "user_roles"(ID INTEGER NOT NULL,ELT INTEGER NOT NULL,"user_roles_idx" INTEGER NOT NULL,PRIMARY KEY(ID,"user_roles_idx"),CONSTRAINT USER_ROLES FOREIGN KEY(ELT) REFERENCES "role"("id"))
+CREATE CACHED TABLE "user"("id" INTEGER NOT NULL PRIMARY KEY,E_VERSION INTEGER NOT NULL,"name" VARCHAR(255) NOT NULL,"lastmodified" TIMESTAMP,"lastupdated" TIMESTAMP,"user_createdby_id" INTEGER,"user_modifiedby_id" INTEGER,"description" VARCHAR(255),"firstname" VARCHAR(255),"lastname" VARCHAR(255),"password" VARCHAR(255),"safiserver_users_id" INTEGER,"safiserver_users_idx" INTEGER,ECONTAINER_CLASS VARCHAR(255),E_CONTAINER VARCHAR(255),E_CONTAINER_FEATURE_NAME VARCHAR(255),CONSTRAINT SERVERRESOURCE_MODIFIEDBY36EBCB FOREIGN KEY("user_modifiedby_id") REFERENCES "user"("id"),CONSTRAINT SERVERRESOURCE_CREATEDBY36EBCB FOREIGN KEY("user_createdby_id") REFERENCES "user"("id"),CONSTRAINT SAFISERVER_USERS FOREIGN KEY("safiserver_users_id") REFERENCES "safiserver"("id"))
+CREATE TRIGGER USERTRIGGER_INS AFTER INSERT ON "user" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.UserChangedTrigger"
+CREATE TRIGGER USERTRIGGER_DELAFTER AFTER DELETE ON "user" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.UserChangedTrigger"
+CREATE TRIGGER USERTRIGGER_UPD AFTER UPDATE ON "user" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.UserChangedTrigger"
+CREATE TRIGGER USERTRIGGER_DELBEFORE BEFORE DELETE ON "user" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.UserChangedTrigger"
+CREATE CACHED TABLE "variable"("name" VARCHAR(255) NOT NULL PRIMARY KEY,E_VERSION INTEGER NOT NULL,"defaultvalue" VARCHAR(255),"type" VARCHAR(255),"scope" VARCHAR(255))
+CREATE TRIGGER VARTRIGGER_INS AFTER INSERT ON "variable" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.VariableTrigger"
+CREATE TRIGGER VARTRIGGER_DELAFTER AFTER DELETE ON "variable" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.VariableTrigger"
+CREATE TRIGGER VARTRIGGER_UPD AFTER UPDATE ON "variable" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.VariableTrigger"
+CREATE TRIGGER VARTRIGGER_DELBEFORE BEFORE DELETE ON "variable" FOR EACH ROW CALL "com.safi.asterisk.handler.trigger.VariableTrigger"
+CREATE CACHED TABLE UID_TABLE(NEXT_HI_VALUE_COLUMN INTEGER)
+ALTER TABLE "asteriskserver" ADD CONSTRAINT SERVERRESOURCE_MODIFIEDBY1DC8C935 FOREIGN KEY("user_modifiedby_id") REFERENCES "user"("id")
+ALTER TABLE "asteriskserver" ADD CONSTRAINT SERVERRESOURCE_CREATEDBY1DC8C935 FOREIGN KEY("user_createdby_id") REFERENCES "user"("id")
+ALTER TABLE "asteriskserver" ADD CONSTRAINT ASTERISKSERVER_SAFISERVER FOREIGN KEY("asteriskserver_safiserver_id") REFERENCES "safiserver"("id")
+ALTER TABLE "dbconnection" ADD CONSTRAINT DBCONNECTION_DRIVER FOREIGN KEY("dbconnection_driver_id") REFERENCES "dbdriver"("id")
+ALTER TABLE "dbdriver_jars" ADD CONSTRAINT FK67E07C31FA42722F FOREIGN KEY("dbdriver_jars_id") REFERENCES "dbdriver"("id")
+ALTER TABLE "dbdriver" ADD CONSTRAINT DBDRIVER_DRIVERMANAGER FOREIGN KEY("dbdriver_drivermanager_id") REFERENCES "safidrivermanager"("id")
+ALTER TABLE "entitlement" ADD CONSTRAINT SERVERRESOURCE_MODIFIEDBY36876D2D FOREIGN KEY("user_modifiedby_id") REFERENCES "user"("id")
+ALTER TABLE "entitlement" ADD CONSTRAINT SERVERRESOURCE_CREATEDBY36876D2D FOREIGN KEY("user_createdby_id") REFERENCES "user"("id")
+ALTER TABLE "prompt" ADD CONSTRAINT SERVERRESOURCE_MODIFIEDBYC5995964 FOREIGN KEY("user_modifiedby_id") REFERENCES "user"("id")
+ALTER TABLE "prompt" ADD CONSTRAINT SERVERRESOURCE_CREATEDBYC5995964 FOREIGN KEY("user_createdby_id") REFERENCES "user"("id")
+ALTER TABLE "prompt" ADD CONSTRAINT PROMPT_PROJECT FOREIGN KEY("prompt_project_id") REFERENCES "safletproject"("id")
+ALTER TABLE "role_entitlements" ADD CONSTRAINT FKDBFB120F2701B1 FOREIGN KEY(ID) REFERENCES "role"("id")
+ALTER TABLE "role" ADD CONSTRAINT SERVERRESOURCE_MODIFIEDBY358076 FOREIGN KEY("user_modifiedby_id") REFERENCES "user"("id")
+ALTER TABLE "role" ADD CONSTRAINT SERVERRESOURCE_CREATEDBY358076 FOREIGN KEY("user_createdby_id") REFERENCES "user"("id")
+ALTER TABLE "safiserver" ADD CONSTRAINT SERVERRESOURCE_MODIFIEDBYCB143E14 FOREIGN KEY("user_modifiedby_id") REFERENCES "user"("id")
+ALTER TABLE "safiserver" ADD CONSTRAINT SERVERRESOURCE_CREATEDBYCB143E14 FOREIGN KEY("user_createdby_id") REFERENCES "user"("id")
+ALTER TABLE "safiserver" ADD CONSTRAINT SAFISERVER_USER FOREIGN KEY("user_user_id") REFERENCES "user"("id")
+ALTER TABLE "saflet" ADD CONSTRAINT SERVERRESOURCE_MODIFIEDBYC9C43743 FOREIGN KEY("user_modifiedby_id") REFERENCES "user"("id")
+ALTER TABLE "saflet" ADD CONSTRAINT SAFLET_PROJECT FOREIGN KEY("saflet_project_id") REFERENCES "safletproject"("id")
+ALTER TABLE "saflet" ADD CONSTRAINT SERVERRESOURCE_CREATEDBYC9C43743 FOREIGN KEY("user_createdby_id") REFERENCES "user"("id")
+ALTER TABLE "safletproject" ADD CONSTRAINT SERVERRESOURCE_MODIFIEDBYEFDEF276 FOREIGN KEY("user_modifiedby_id") REFERENCES "user"("id")
+ALTER TABLE "safletproject" ADD CONSTRAINT SERVERRESOURCE_CREATEDBYEFDEF276 FOREIGN KEY("user_createdby_id") REFERENCES "user"("id")
+ALTER TABLE "serverresource" ADD CONSTRAINT SERVERRESOURCE_MODIFIEDBY FOREIGN KEY("user_modifiedby_id") REFERENCES "user"("id")
+ALTER TABLE "serverresource" ADD CONSTRAINT SERVERRESOURCE_CREATEDBY FOREIGN KEY("user_createdby_id") REFERENCES "user"("id")
+ALTER TABLE "user_roles" ADD CONSTRAINT FK73429949286D06 FOREIGN KEY(ID) REFERENCES "user"("id")
+SET TABLE "asteriskserver" INDEX'4816 4816 4816 4816 4816 0'
+SET TABLE "dbdriver_jars" INDEX'9616 9616 0'
+SET TABLE "dbdriver" INDEX'7320 7856 0'
+SET TABLE "entitlement" INDEX'3952 3952 3952 0'
+SET TABLE "role_entitlements" INDEX'10000 10000 10000 0'
+SET TABLE "role" INDEX'3248 3248 3248 0'
+SET TABLE "safidrivermanager" INDEX'96 0'
+SET TABLE "safiserver" INDEX'5968 5968 5968 5968 0'
+SET TABLE "saflet" INDEX'15928 15928 15928 15928 15928 0'
+SET TABLE "safletproject" INDEX'5464 5464 5464 5464 0'
+SET TABLE "user_roles" INDEX'10432 10432 10432 0'
+SET TABLE "user" INDEX'672 672 672 672 0'
+SET TABLE UID_TABLE INDEX'32 0'
+CREATE USER SA PASSWORD ""
+CREATE USER SAFIADMIN PASSWORD "PASSWORD"
+GRANT DBA TO SA
+GRANT DBA TO SAFIADMIN
+SET WRITE_DELAY 10
