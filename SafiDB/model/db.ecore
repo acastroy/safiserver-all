@@ -254,8 +254,7 @@
             eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SafiServer" eSuperTypes="#//server/config/ServerResource">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindIP" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindIP" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
             defaultValueLiteral="4573"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="managementPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"

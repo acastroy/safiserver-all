@@ -45,7 +45,7 @@ public interface SafiServer extends ServerResource {
 	 * @return the value of the '<em>Bind IP</em>' attribute.
 	 * @see #setBindIP(String)
 	 * @see com.safi.db.server.config.ConfigPackage#getSafiServer_BindIP()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
   String getBindIP();
