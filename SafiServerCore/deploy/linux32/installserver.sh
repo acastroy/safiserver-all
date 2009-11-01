@@ -150,6 +150,7 @@ if [ "$runfirstsetup" == "true" ];
    sed -e 's:SAFISERVER_DIR=:SAFISERVER_DIR='$SSPATH':g' safiserverd.org > safiserverd
    cp safiserverd /etc/init.d/safiserverd
    chmod +x /etc/init.d/safiserverd
+   chkconfig safiserverd on
    
    
    echo "runfirstsetup=false" > $SETUPFILE
