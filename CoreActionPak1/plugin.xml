@@ -200,10 +200,10 @@
          jar="serverjars/safiFastagi_v20091030.jar">
    </serverjar>
    <serverjar
-         jar="serverjars/safiServer_v20091030.jar">
+         jar="serverjars/safiServer_v20091031.jar">
    </serverjar>
    <serverjar
-         jar="serverjars/safidb_v20091030.jar">
+         jar="serverjars/safidb_v20091031.jar">
    </serverjar>
    <serverjar
          jar="serverjars/safletcore_v20091030.jar">
