@@ -61,6 +61,10 @@ public class DynamicValueEditorWidget extends Composite {
    */
   public DynamicValueEditorWidget(Composite parent, int style) {
     super(parent, style);
+    initUI();
+  }
+  
+  protected void initUI() {
     final GridLayout gridLayout = new GridLayout();
     gridLayout.marginHeight = 0;
     gridLayout.horizontalSpacing = 0;
@@ -287,7 +291,7 @@ public class DynamicValueEditorWidget extends Composite {
 
   }
 
-  private void refresh() {
+  protected void refresh() {
     info = DynamicValueEditorUtils.extractAnnotationInfo(object, feature);
     if (dynamicValue == null) {
       text.setText("");

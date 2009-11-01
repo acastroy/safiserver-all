@@ -40,8 +40,8 @@ public class DynamicValueEditor2 extends TitleAreaDialog {
   protected boolean typeLocked;
   protected DynamicValueEditorPage selectedPage;
   protected List<DynamicValueEditorPage> pages = new ArrayList<DynamicValueEditorPage>();
-  private String defaultType;
-  private EObject parent;
+  protected String defaultType;
+  protected EObject parent;
 
   /**
    * Create the dialog
@@ -170,7 +170,7 @@ public class DynamicValueEditor2 extends TitleAreaDialog {
       setMessage(description);
   }
 
-  private DynamicValueEditorPage getPageForType(String type) {
+  public DynamicValueEditorPage getPageForType(String type) {
     if (StringUtils.equals(type, DynamicValueType.LITERAL_TEXT.getLiteral()))
       type = DynamicValueType.SCRIPT_TEXT.getLiteral();
 
