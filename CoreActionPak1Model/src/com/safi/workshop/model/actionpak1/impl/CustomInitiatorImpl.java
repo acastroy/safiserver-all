@@ -113,6 +113,9 @@ public class CustomInitiatorImpl extends ParameterizedInitiatorImpl implements C
       SafletContext context = handler.getSafletContext();
       context.setVariableRawValue(AsteriskSafletConstants.VAR_KEY_MANAGER_CONNECTION,
           ((AsteriskInitiatorInfo) ictx).getManagerConnection());
+      
+      context.setVariableRawValue(AsteriskSafletConstants.VAR_KEY_ASTERISK_SERVER,
+          ((AsteriskInitiatorInfo) ictx).getAsteriskServer());
     }
   }
 
