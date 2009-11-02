@@ -161,6 +161,7 @@ public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
   	
     OriginateAction action = new OriginateAction();
 
+    
     Object dynValue = resolveDynamicValue(this.extension, context);
     String exten = (String) VariableTranslator.translateValue(VariableType.TEXT, dynValue);
     if (StringUtils.isBlank(exten)) {
@@ -169,7 +170,7 @@ public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
     if (debugLog.isDebugEnabled())
       debug("Placing call to " + exten);
 
-    action.setContext("default");
+//    action.setContext("default");
     action.setApplication("Agi");
     
     if (callerId != null){
@@ -190,8 +191,12 @@ public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
     
     AsteriskSafletEnvironment handlerEnvironment = (AsteriskSafletEnvironment)getSaflet().getSafletEnvironment();
 //    String serverAddr = handlerEnvironment.getServerIpAddr();
-    AsteriskServer server = (AsteriskServer)context
+    final Object serverRawValue = context
     .getVariableRawValue(AsteriskSafletConstants.VAR_KEY_ASTERISK_SERVER);
+    
+		AsteriskServer server = null;
+		if (serverRawValue != null && serverRawValue instanceof AsteriskServer)
+			server = (AsteriskServer)serverRawValue;
     String serverAddr = server == null ? null : server.getVisibleSafiServerIP();
     if (StringUtils.isBlank(serverAddr))
     	serverAddr = connection.getLocalAddress().getCanonicalHostName();
