@@ -1663,7 +1663,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
     }
 
     public boolean promptYesNo(final String str) {
-      System.err.println("PRompt yesnow? " + str);
+    //  System.err.println("PRompt yesnow? " + str);
       final Display d = Display.getDefault();
       final boolean[] result = new boolean[] { false };
       d.syncExec(new Runnable() {
@@ -1683,12 +1683,12 @@ public class SafiServerPlugin extends AbstractUIPlugin {
     }
 
     public boolean promptPassphrase(String message) {
-      System.err.println("gimme passfrase " + message);
+    //  System.err.println("gimme passfrase " + message);
       return true;
     }
 
     public boolean promptPassword(String message) {
-      System.err.println("gimme message " + message);
+     // System.err.println("gimme message " + message);
       return true;
     }
 
@@ -1702,7 +1702,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 
         }
       });
-      System.err.println("shotfuckingmessg " + message);
+      //System.err.println("shotfuckingmessg " + message);
     }
 
     // public String[] promptKeyboardInteractive(String destination, String name, String
