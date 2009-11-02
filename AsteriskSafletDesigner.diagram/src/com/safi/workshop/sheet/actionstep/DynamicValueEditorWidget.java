@@ -73,6 +73,7 @@ public class DynamicValueEditorWidget extends Composite {
     setLayout(gridLayout);
 
     text = new Text(this, SWT.BORDER);
+    text.setBackground(this.getDisplay().getSystemColor(SWT.COLOR_CYAN));
     text.addMouseListener(new MouseAdapter() {
       @Override
       public void mouseDown(final MouseEvent e) {
