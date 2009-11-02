@@ -130,6 +130,7 @@ public class SafletEngine {
   private SafiArchiveImporter pollManager;
   private ServiceConfigUpdater serviceConfigUpdater;
   private String importDirectory;
+  private boolean useManagerPing = true;
 
   private long startupTime;
 //	private Properties poolProperties;
@@ -292,6 +293,7 @@ public class SafletEngine {
       if (debuggerLog.isInfoEnabled())
         debuggerLog.info("Management listener started on " + getManagementPort());
       connectionManager.setManagementPort(getManagementPort());
+      connectionManager.setUsePing(isUseManagerPing());
 //      connectionManager.setBindIP(getBindIP());
       initializeDB(getDatabasePort());
       // Give DB time to start
@@ -1177,6 +1179,14 @@ public class SafletEngine {
 
   public void setSshdProvider(SSHDProvider sshdProvider) {
     this.sshdProvider = sshdProvider;
+  }
+
+	public boolean isUseManagerPing() {
+  	return useManagerPing;
+  }
+
+	public void setUseManagerPing(boolean useManagerPing) {
+  	this.useManagerPing = useManagerPing;
   }
 
 }

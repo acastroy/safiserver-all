@@ -87,6 +87,7 @@
 		<property name="fastagiPort" value="${fastagi.port}" />
 		<property name="testing" value="false" />
 		<property name="managementPort" value="${management.port}" />
+		<property name="useManagerPing" value="${useManagerPing}" />
 		<property name="databasePort" value="${db.port}" />
 		<property name="defaultPass" value="${user.password}" />
 		<property name="useSecurityManager" value="${useSecurityManager}" />

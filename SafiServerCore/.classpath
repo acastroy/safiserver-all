@@ -96,10 +96,10 @@
 	<classpathentry kind="lib" path="lib/jaxb-impl-2.1.12.jar"/>
 	<classpathentry kind="lib" path="lib/jaxb-xjc-2.1.12.jar"/>
 	<classpathentry kind="lib" path="lib/jsr311-api-1.0.jar"/>
-	<classpathentry kind="lib" path="lib/asteriskcore_v20091030.jar"/>
 	<classpathentry kind="lib" path="lib/safidb_v20091031.jar" sourcepath="/SafiDB"/>
-	<classpathentry kind="lib" path="lib/safiFastagi_v20091030.jar"/>
-	<classpathentry kind="lib" path="lib/safletcore_v20091030.jar"/>
-	<classpathentry kind="lib" path="lib/safiServer_v20091031.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/SafiFastAgi1.7"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/AsteriskCore"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/CoreActionPak1"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Saflets"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

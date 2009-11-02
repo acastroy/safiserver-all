@@ -79,5 +79,8 @@ public interface AsteriskConnectionManager {
 
   public abstract int getNumCustomInitiations();
   
+  public abstract void setUsePing(boolean usePing);
+  
+  public abstract boolean isUsePing();
 
 }
