@@ -72,14 +72,14 @@ public class FileTrace implements Trace
         sb.append(df.format(new Date()));
         sb.append("_");
         sb.append(socket.getLocalAddress().getHostAddress());
-        sb.append(":");
+        sb.append("_");
         sb.append(socket.getLocalPort());
         sb.append("_");
         sb.append(socket.getInetAddress().getHostAddress());
-        sb.append(":");
+        sb.append("_");
         sb.append(socket.getPort());
         sb.append(FILE_SUFFIX);
-        return sb.toString();
+        return sb.toString().replace(':', '-');
     }
 
     public synchronized void received(String s)

@@ -28,6 +28,9 @@ public class PingResponse extends ManagerResponse
     private static final long serialVersionUID = 0L;
 
     private String ping;
+    
+    
+    private String pong;
 
     /**
      * Returns always "Pong".
@@ -42,5 +45,13 @@ public class PingResponse extends ManagerResponse
     public void setPing(String ping)
     {
         this.ping = ping;
+    }
+
+		public String getPong() {
+    	return pong;
+    }
+
+		public void setPong(String pong) {
+    	this.pong = pong;
     }
 }

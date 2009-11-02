@@ -54,6 +54,10 @@ public class SafiManagerConnection extends DefaultManagerConnection {
     // TODO Auto-generated method stub
     return new SafiManagerConnectionImpl();
   }
+  
+  public boolean isConnected(){
+  	return impl == null ? false : ((SafiManagerConnectionImpl)impl).isConnected();
+  }
   // public synchronized boolean isRunning(){
   // if (impl == null) return false;
   // impl.getState()

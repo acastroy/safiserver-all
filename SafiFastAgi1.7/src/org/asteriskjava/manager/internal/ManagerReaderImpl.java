@@ -224,6 +224,7 @@ public class ManagerReaderImpl implements ManagerReader
                             logger.debug("buildEvent returned null");
                         }
                     }
+//                    else if (buffer.containsKey("response")&&!buffer.containsKey("ping")) // if we have a ping key, then it's a ping response, we don't want to dispatch this response
                     else if (buffer.containsKey("response"))
                     {
                         ManagerResponse response = buildResponse(buffer);

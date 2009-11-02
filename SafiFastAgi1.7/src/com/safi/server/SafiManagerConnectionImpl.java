@@ -66,4 +66,8 @@ public class SafiManagerConnectionImpl extends ManagerConnectionImpl {
       numTries++;
     }
   }
+  
+  public boolean isConnected(){
+  	return this.socket == null ? false : this.socket.isConnected();
+  }
 }
