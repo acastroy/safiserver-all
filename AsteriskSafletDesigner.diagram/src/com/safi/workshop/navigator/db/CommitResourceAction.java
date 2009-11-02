@@ -296,13 +296,14 @@ public class CommitResourceAction implements IWorkbenchWindowActionDelegate,IPar
 
   @Override
   public void selectionChanged(IAction action, ISelection selection) {
+	  cachedSelection = selection;
 	  if (this.action != action) {
 	    } else
 	      return;
 
 	 this.action = action;
 	 action.setEnabled(enabled);
-     cachedSelection = selection;
+    
   }
 
   private synchronized ResourceSet getResourceLoader() {
@@ -353,7 +354,9 @@ public class CommitResourceAction implements IWorkbenchWindowActionDelegate,IPar
 	@Override
 	public void partDeactivated(IWorkbenchPartReference partRef) {
 		// TODO Auto-generated method stub
-
+		//IWorkbenchPart part = partRef.getPart(false);
+		//System.out.println(part);
+        
 	}
 
 	@Override
