@@ -1,5 +1,6 @@
 package com.safi.workshop.navigator.db;
 
+import java.lang.ref.WeakReference;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -21,7 +22,10 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IEditorReference;
+import org.eclipse.ui.IPartListener2;
 import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IWorkbenchPartReference;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 
@@ -45,7 +49,7 @@ import com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
 import com.safi.workshop.util.SafletPersistenceManager;
 
-public class CommitResourceAction implements IWorkbenchWindowActionDelegate {
+public class CommitResourceAction implements IWorkbenchWindowActionDelegate,IPartListener2 {
 
   private enum Result {
     OK, CANCEL, ERROR
@@ -59,12 +63,36 @@ public class CommitResourceAction implements IWorkbenchWindowActionDelegate {
     // TODO Auto-generated method stub
 
   }
+  
+  private WeakReference<IWorkbenchWindow> window;
+  private WeakReference<AsteriskDiagramEditor> currentEditor;
+  private boolean enabled = false;
+  private IAction action;
 
-  @Override
-  public void init(IWorkbenchWindow window) {
-    // TODO Auto-generated method stub
+	@Override
+	public void init(IWorkbenchWindow window) {
+		if (this.window != null && this.window.get() != null) {
+			this.window.get().getActivePage().removePartListener(this);
+		}
 
-  }
+		this.window = new WeakReference<IWorkbenchWindow>(window);
+		window.getActivePage().addPartListener(this);
+		hookCurrentAsteriskEditor();
+
+	}
+
+	private void disable() {
+
+		enabled = false;
+		if (action != null)
+			action.setEnabled(false);
+	}
+
+	public void enable() {
+		enabled = true;
+		if (action != null)
+			action.setEnabled(true);
+	}
 
   @Override
   public void run(IAction action) {
@@ -268,7 +296,13 @@ public class CommitResourceAction implements IWorkbenchWindowActionDelegate {
 
   @Override
   public void selectionChanged(IAction action, ISelection selection) {
-    cachedSelection = selection;
+	  if (this.action != action) {
+	    } else
+	      return;
+
+	 this.action = action;
+	 action.setEnabled(enabled);
+     cachedSelection = selection;
   }
 
   private synchronized ResourceSet getResourceLoader() {
@@ -290,4 +324,90 @@ public class CommitResourceAction implements IWorkbenchWindowActionDelegate {
     }
     return resourceLoader;
   }
+
+	@Override
+	public void partActivated(IWorkbenchPartReference partRef) {
+		IWorkbenchPart part = partRef.getPart(false);
+		if (part instanceof AsteriskDiagramEditor) {
+			updateEnabledState((AsteriskDiagramEditor) part);
+		}
+
+	}
+
+	@Override
+	public void partBroughtToTop(IWorkbenchPartReference partRef) {
+		IWorkbenchPart part = partRef.getPart(false);
+		if (part instanceof AsteriskDiagramEditor) {
+			updateEnabledState((AsteriskDiagramEditor) part);
+		}
+	}
+
+	@Override
+	public void partClosed(IWorkbenchPartReference partRef) {
+		IWorkbenchPart part = partRef.getPart(false);
+		if (currentEditor != null && part == currentEditor.get()) {
+			disable();
+		}
+	}
+
+	@Override
+	public void partDeactivated(IWorkbenchPartReference partRef) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void partHidden(IWorkbenchPartReference partRef) {
+		IWorkbenchPart part = partRef.getPart(false);
+		if (currentEditor != null && part == currentEditor.get()) {
+			disable();
+		}
+	}
+
+	@Override
+	public void partInputChanged(IWorkbenchPartReference partRef) {
+		IWorkbenchPart part = partRef.getPart(false);
+		if (currentEditor != null && part == currentEditor.get()) {
+			currentEditor.clear();
+			updateEnabledState((AsteriskDiagramEditor) part);
+		}
+
+	}
+
+	@Override
+	public void partOpened(IWorkbenchPartReference partRef) {
+		IWorkbenchPart part = partRef.getPart(false);
+		if (part instanceof AsteriskDiagramEditor) {
+			updateEnabledState((AsteriskDiagramEditor) part);
+		}
+	}
+
+	@Override
+	public void partVisible(IWorkbenchPartReference partRef) {
+		IWorkbenchPart part = partRef.getPart(false);
+		if (part instanceof AsteriskDiagramEditor) {
+			updateEnabledState((AsteriskDiagramEditor) part);
+		}
+	}
+
+	private void hookCurrentAsteriskEditor() {
+		IEditorPart editor = AsteriskDiagramEditorPlugin.getDefault()
+				.getWorkbench().getActiveWorkbenchWindow().getActivePage()
+				.getActiveEditor();
+		if (editor instanceof AsteriskDiagramEditor)
+			updateEnabledState((AsteriskDiagramEditor) editor);
+	}
+
+	private void updateEnabledState(AsteriskDiagramEditor editor) {
+
+		disable();
+		if (editor != null && editor instanceof AsteriskDiagramEditor) {
+			currentEditor = new WeakReference<AsteriskDiagramEditor>(editor);
+			ResourceSet set = (editor).getEditingDomain().getResourceSet();
+		
+			enable();
+
+		}
+	}
+
 }
