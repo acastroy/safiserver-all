@@ -98,7 +98,8 @@ public class VariableChooser2 extends Composite implements org.eclipse.emf.commo
     globalVariables.setName("Global");
     rootCategory.getChildCategories().add(globalVariables);
 
-    SafiServerPlugin.getDefault().addGlobalVarListener(this);
+//    if (SafiServerPlugin.getDefault().isConnected())
+    	SafiServerPlugin.getDefault().addGlobalVarListener(this);
     createPartControl(this);
   }
 
@@ -237,8 +238,10 @@ public class VariableChooser2 extends Composite implements org.eclipse.emf.commo
     viewer.expandToLevel(localVariables, AbstractTreeViewer.ALL_LEVELS);
     // PlatformUI.getWorkbench().getHelpSystem().setHelp(viewer.getControl(),
     // "com.safi.workshop.help.MultiStreamAudio");
-
+    
     buildButtonPanel();
+    
+    viewer.setSelection(new StructuredSelection(localVariables));
   }
 
   private void buildButtonPanel() {
