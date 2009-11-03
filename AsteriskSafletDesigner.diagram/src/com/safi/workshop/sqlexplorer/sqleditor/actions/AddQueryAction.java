@@ -125,6 +125,7 @@ public class AddQueryAction extends AbstractEditorAction {
 
   @Override
   public boolean isEnabled() {
-    return !isDisabled();
+    //return !isDisabled();
+	  return true;
   }
 }

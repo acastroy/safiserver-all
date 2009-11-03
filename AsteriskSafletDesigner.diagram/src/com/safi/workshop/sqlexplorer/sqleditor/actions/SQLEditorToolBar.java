@@ -86,7 +86,7 @@ public class SQLEditorToolBar {
     actions.add(new OpenFileAction(_editor));
     // actions.add(new SaveFileAsAction(_editor));
     actions.add(new SaveEditorAction(_editor));
-    // actions.add(new AddQueryAction(_editor));
+    actions.add(new AddQueryAction(_editor));
     actions.add(new ClearTextAction(_editor));
     actions.add(new OptionsDropDownAction(_editor, parent));
 
