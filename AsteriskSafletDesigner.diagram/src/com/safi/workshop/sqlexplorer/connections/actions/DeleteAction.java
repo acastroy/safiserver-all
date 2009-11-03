@@ -79,9 +79,17 @@ public class DeleteAction extends AbstractConnectionTreeAction {
     List<Object> dbResources = new ArrayList<Object>();
     List<ServerResource> serverResources = new ArrayList<ServerResource>();
     for (Object selected : viewerSelection.toArray()) {
+      if(selected instanceof ManagedDriver){
+    	  
+    	  MessageDialog.openInformation(Display.getCurrent().getActiveShell(),
+    		        "Delete Driver rejected", "You can not delete Driver Resource.");
+    	  return;
+     
+      }
       if (selected instanceof DBResource || selected instanceof User || selected instanceof Alias
-          || selected instanceof ManagedDriver)
+          /*|| selected instanceof ManagedDriver*/){
         dbResources.add(selected);
+      }
       else if (selected instanceof IResource)
         resources.add((IResource) selected);
       else if (selected instanceof ServerResource)
