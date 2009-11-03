@@ -300,14 +300,6 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
       <objectContribution
             id="AsteriskSafletDesigner.diagram.objectContribution3"
             objectClass="com.safi.workshop.sqlexplorer.dbproduct.DriverManager">
-         <action
-               class="com.safi.workshop.sqlexplorer.connections.actions.NewDriverAction"
-               icon="icons/NewDatabaseDriver.gif"
-               id="com.safi.workshop.sqlexplorer.connections.actions.NewDriverAction"
-               label="New Driver"
-               menubarPath="com.safi.db.Menu"
-               tooltip="Register new database driver">
-         </action>
       </objectContribution>
       <objectContribution
             id="AsteriskSafletDesigner.diagram.objectContribution6"
