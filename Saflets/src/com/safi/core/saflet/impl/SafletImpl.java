@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.WeakHashMap;
 
+import org.apache.commons.collections.ReferenceMap;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Appender;
 import org.apache.log4j.FileAppender;
@@ -79,8 +80,8 @@ public abstract class SafletImpl extends EObjectImpl implements Saflet {
   private final static int MAX_INVOCATIONS = DEFAULT_MAX_INVOCATIONS;
   private final static Logger log = Logger.getLogger(SafletImpl.class);
 
-  protected transient final static Map<String, SafletScript> scriptRegistry = Collections
-      .synchronizedMap(new WeakHashMap<String, SafletScript>());
+  protected transient final static Map scriptRegistry = Collections
+      .synchronizedMap(new ReferenceMap());
 
   @Override
   public int getMaxIterations() {
@@ -743,7 +744,7 @@ public abstract class SafletImpl extends EObjectImpl implements Saflet {
    * @generated NOT
    */
   public SafletScript getScript(String name) {
-    return scriptRegistry.get(this.name + ":" + name);
+    return (SafletScript)scriptRegistry.get(this.name + ":" + name);
 
   }
 
