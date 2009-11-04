@@ -334,7 +334,14 @@ public class DynamicValueEditorUtils {
           break;
         }
       }
+    } else
+    
+    if (dynamicValue != null && !info.isTypeLocked) {
+    	DynamicValueEditorPage newDef = dve.getPageForType(dynamicValue.getType().getLiteral());
+    	if (newDef != null)
+    	dve.setDefaultPage(newDef);
     }
+    
     dve.setBlockOnOpen(true);
     return dve;
   }
