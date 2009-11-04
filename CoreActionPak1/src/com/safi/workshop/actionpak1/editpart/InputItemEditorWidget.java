@@ -52,7 +52,7 @@ public class InputItemEditorWidget extends AbstractItemEditorWidget {
   class ListLabelProvider extends LabelProvider {
     public String getText(Object element) {
       InputItem item = (InputItem) element;
-      return item.getParameterName() + " -> "
+      return item.getParameterName() + " = "
           + (item.getDynamicValue() == null ? "" : item.getDynamicValue().getText());
     }
 
