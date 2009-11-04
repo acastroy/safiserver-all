@@ -15,7 +15,7 @@ Bundle-ClassPath: default_drivers/DB2/db2jcc4.jar,
  .,
  bin/,
  log4j-1.2.15.jar,
- commons-beanutils-1.8.1.jar
+ commons-beanutils.jar
 Bundle-Activator: com.safi.commons.SafiCommons
 Require-Bundle: org.eclipse.core.runtime
 Eclipse-BuddyPolicy: dependent
