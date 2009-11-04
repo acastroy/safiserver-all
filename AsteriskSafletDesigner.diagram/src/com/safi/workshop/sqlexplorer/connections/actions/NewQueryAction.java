@@ -95,6 +95,8 @@ public class NewQueryAction extends AbstractConnectionTreeAction {
             public String isValid(String newText) {
               if (StringUtils.isBlank(newText)) {
                 return "Query name must not be blank";
+              }else if(StringUtils.contains(newText, ".")){
+            	return "Query name must not contain '.'";  
               }
               Query q = fconn.getQuery(newText);
               if (q != null) {

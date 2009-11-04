@@ -244,13 +244,21 @@ public class NewQueryDialog extends org.eclipse.jface.dialogs.TitleAreaDialog {
     typeComboViewer.setSelection(new StructuredSelection(query.getQueryType()));
   }
 
-  private void commitChanges() {
+  private boolean commitChanges() {
+	 if (!StringUtils.isNotBlank(queryNameField.getText())){
+		  setMessage("Specify the name of the query.");
+		  return false;
+	 }
+	 if(StringUtils.contains(queryNameField.getText(), ".")){
+		  setMessage("Query name should not contain '.'");
+		 return false;
+	 }
     if (selectedParameter != null) {
       selectedParameter.setDataType((SQLDataType) ((StructuredSelection) parameterTypeComboViewer
           .getSelection()).getFirstElement());
 
     }
-    if (StringUtils.isNotBlank(queryNameField.getText()))
+    if (StringUtils.isNotBlank(queryNameField.getText())&&!StringUtils.contains(queryNameField.getText(), "."))
       query.setName(queryNameField.getText());
     if (queryText.isEnabled())
       query.setQuerySql(queryText.getText());
@@ -259,7 +267,7 @@ public class NewQueryDialog extends org.eclipse.jface.dialogs.TitleAreaDialog {
       QueryType qryType = (QueryType) ((StructuredSelection) selection).getFirstElement();
       query.setQueryType(qryType);
     }
-
+    return true;
   }
 
   /**
@@ -283,12 +291,13 @@ public class NewQueryDialog extends org.eclipse.jface.dialogs.TitleAreaDialog {
 
   @Override
   protected void okPressed() {
-    commitChanges();
-    applyChanges(originalQuery, query);
-    if (originalQuery.getConnection() == null && mode == Mode.ADD && connection != null) {
-      originalQuery.setConnection(connection);
+    if(commitChanges()){
+      applyChanges(originalQuery, query);
+      if (originalQuery.getConnection() == null && mode == Mode.ADD && connection != null) {
+       originalQuery.setConnection(connection);
+      }
+      super.okPressed();
     }
-    super.okPressed();
   }
 
   private void applyChanges(Query originalQuery, Query query) {
