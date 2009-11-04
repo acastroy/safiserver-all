@@ -101,5 +101,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/AsteriskCore"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/CoreActionPak1"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Saflets"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/WebServicesPakModel"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
