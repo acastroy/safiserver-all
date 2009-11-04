@@ -1,10 +1,8 @@
 package com.safi.asterisk.handler;
 
 import java.io.File;
-import java.lang.ref.WeakReference;
-
+import java.lang.ref.SoftReference;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-
 import com.safi.core.saflet.Saflet;
 
 public class FileBackedHandlerInfo implements HandlerInfo {
@@ -12,7 +10,7 @@ public class FileBackedHandlerInfo implements HandlerInfo {
   public TransactionalEditingDomain editingDomain;
   public long timestamp;
   public File file;
-  public WeakReference<Saflet> handlerRef;
+  public SoftReference<Saflet> handlerRef;
   public Object lock; // used for debugging
 
   public FileBackedHandlerInfo(FileBackedHandlerInfo info, Saflet handler){
@@ -24,7 +22,7 @@ public class FileBackedHandlerInfo implements HandlerInfo {
   }
   
   public FileBackedHandlerInfo(Saflet handler, File file) {
-    handlerRef = new WeakReference<Saflet>(handler);
+    handlerRef = new SoftReference<Saflet>(handler);
     this.file = file;
     if (file != null)
       timestamp = file.lastModified();
@@ -41,7 +39,7 @@ public class FileBackedHandlerInfo implements HandlerInfo {
    * @see com.safi.asterisk.handler.HandlerInfo#setHandler(com.safi.asterisk.handler.Saflet)
    */
   public void setHandler(Saflet h) {
-    handlerRef = new WeakReference<Saflet>(h);
+    handlerRef = new SoftReference<Saflet>(h);
   }
 
   /* (non-Javadoc)
