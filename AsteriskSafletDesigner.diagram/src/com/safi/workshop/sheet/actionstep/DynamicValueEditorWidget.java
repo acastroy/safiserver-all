@@ -16,6 +16,7 @@ import org.eclipse.swt.events.MouseAdapter;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
@@ -52,6 +53,7 @@ public class DynamicValueEditorWidget extends Composite {
   private MyEventTable eventTable;
   private DynamicValueAnnotationInfo info = new DynamicValueAnnotationInfo();
   private SafletContext handlerContext;
+  private Color lightBlue;
 
   /**
    * Create the composite
@@ -65,6 +67,7 @@ public class DynamicValueEditorWidget extends Composite {
   }
   
   protected void initUI() {
+  	lightBlue = new Color(this.getDisplay(), 102, 217, 255);
     final GridLayout gridLayout = new GridLayout();
     gridLayout.marginHeight = 0;
     gridLayout.horizontalSpacing = 0;
@@ -73,28 +76,37 @@ public class DynamicValueEditorWidget extends Composite {
     setLayout(gridLayout);
 
     text = new Text(this, SWT.BORDER);
-    text.setBackground(this.getDisplay().getSystemColor(SWT.COLOR_CYAN));
+    
     text.addMouseListener(new MouseAdapter() {
       @Override
       public void mouseDown(final MouseEvent e) {
-        if (!(info.isTypeLocked && !(DynamicValueType.SCRIPT_TEXT.getLiteral().equals(
-            info.dynValueTypeStr) || DynamicValueType.LITERAL_TEXT.getLiteral().equals(
-            info.dynValueTypeStr)))
-            && (dynamicValue == null || dynamicValue.getType() == DynamicValueType.LITERAL_TEXT || dynamicValue
-                .getType() == DynamicValueType.SCRIPT_TEXT)) {
-          // if (dynamicValue == null){
-          // dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
-          // dynamicValue.setType(DynamicValueType.SCRIPT_TEXT);
-          // }
-          String script = dynamicValue == null ? "" : dynamicValue.getText();
-          if (script == null)
-            script = "";
-          if (script.indexOf('\n') < 0) {
-            text.setEditable(true);
-          } else {
-            text.setEditable(false);
-          }
-        }
+      	if (isDirectEditable()){
+      		text.setEditable(true);
+      		text.setBackground(getDisplay().getSystemColor(SWT.COLOR_WHITE));
+      	}
+      	else{
+      		text.setEditable(false);
+      		text.setBackground(getDisplay().getSystemColor(SWT.COLOR_WIDGET_BACKGROUND));
+      	}
+//      	text.setEditable(isDirectEditable());
+//        if (!(info.isTypeLocked && !(DynamicValueType.SCRIPT_TEXT.getLiteral().equals(
+//            info.dynValueTypeStr) || DynamicValueType.LITERAL_TEXT.getLiteral().equals(
+//            info.dynValueTypeStr)))
+//            && (dynamicValue == null || dynamicValue.getType() == DynamicValueType.LITERAL_TEXT || dynamicValue
+//                .getType() == DynamicValueType.SCRIPT_TEXT)) {
+//          // if (dynamicValue == null){
+//          // dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
+//          // dynamicValue.setType(DynamicValueType.SCRIPT_TEXT);
+//          // }
+//          String script = dynamicValue == null ? "" : dynamicValue.getText();
+//          if (script == null)
+//            script = "";
+//          if (script.indexOf('\n') < 0) {
+//            text.setEditable(true);
+//          } else {
+//            text.setEditable(false);
+//          }
+//        }
       }
     });
     text.addFocusListener(new FocusAdapter() {
@@ -117,14 +129,15 @@ public class DynamicValueEditorWidget extends Composite {
               dynamicValue = null;
               changed = true;
               // object.eSet(feature, dynamicValue);
-              text.setEditable(false);
+//              text.setEditable(false);
+              
             }
 
           } else {
             if (StringUtils.isBlank(newtext)) {
               dynamicValue = null;
               changed = true;
-              text.setEditable(false);
+//              text.setEditable(false);
               // object.eSet(feature, dynamicValue);
             } else if (!StringUtils.equals(newtext, dynamicValue.getText())) {
               DynamicValueType currType = dynamicValue.getType();
@@ -147,14 +160,29 @@ public class DynamicValueEditorWidget extends Composite {
               changed = true;
             }
           }
-          if (changed)
+          
+          updateTextDirectEditCapability(isDirectEditable());
+          if (changed){
             fireModifiedEvent();
+          }
         }
 
       }
+      
+      @Override
+      public void focusGained(FocusEvent e) {
+      	if (isDirectEditable()){
+      		text.setEditable(true);
+      		text.setBackground(getDisplay().getSystemColor(SWT.COLOR_WHITE));
+      	}
+      	else{
+      		text.setEditable(false);
+      		text.setBackground(getDisplay().getSystemColor(SWT.COLOR_WIDGET_BACKGROUND));
+      	}
+      }
 
     });
-    text.setEditable(false);
+    updateTextDirectEditCapability(false);
     text.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 
     imageLabel = new Label(this, SWT.NONE);
@@ -187,6 +215,26 @@ public class DynamicValueEditorWidget extends Composite {
     editButton.setText("...");
     //
   }
+  
+  protected boolean isDirectEditable(){
+  	if (!(info.isTypeLocked && !(DynamicValueType.SCRIPT_TEXT.getLiteral().equals(
+        info.dynValueTypeStr) || DynamicValueType.LITERAL_TEXT.getLiteral().equals(
+        info.dynValueTypeStr)))
+        && (dynamicValue == null || dynamicValue.getType() == DynamicValueType.LITERAL_TEXT || dynamicValue
+            .getType() == DynamicValueType.SCRIPT_TEXT)) {
+      // if (dynamicValue == null){
+      // dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
+      // dynamicValue.setType(DynamicValueType.SCRIPT_TEXT);
+      // }
+      String script = dynamicValue == null ? "" : dynamicValue.getText();
+      if (script == null || (script.indexOf('\n') < 0)) {
+        return true;
+      } else {
+        return false;
+      }
+  	}
+  	return false;
+  }
 
   @Override
   public void addListener(int eventType, Listener listener) {
@@ -204,6 +252,8 @@ public class DynamicValueEditorWidget extends Composite {
       eventTable.dispose();
       eventTable = null;
     }
+    if (lightBlue != null)
+    	lightBlue.dispose();
     super.dispose();
   }
 
@@ -296,18 +346,20 @@ public class DynamicValueEditorWidget extends Composite {
     info = DynamicValueEditorUtils.extractAnnotationInfo(object, feature);
     if (dynamicValue == null) {
       text.setText("");
-      text.setEditable(false);
+//      text.setEditable(false);
+      
 
       // dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
       // dynamicValue.setText("");
       // dynamicValue.setType(DynamicValueType.LITERAL_TEXT);
     } else {
-      text.setEditable(false);
+//    	updateTextDirectEditCapability(false);
       switch (dynamicValue.getType()) {
         case LITERAL_TEXT:
           imageLabel.setImage(ResourceManager.getPluginImage(AsteriskDiagramEditorPlugin
               .getDefault(), "icons/dynamicValueEditor/literal_text.gif"));
-          text.setEditable(true);
+//          updateTextDirectEditCapability(true);
+//          text.setEditable(true);
           text.setText(dynamicValue.getText());
           break;
         case CUSTOM:
@@ -333,10 +385,10 @@ public class DynamicValueEditorWidget extends Composite {
           if (script == null)
             script = "";
           if (script.indexOf('\n') < 0) {
-            text.setEditable(true);
+//          	updateTextDirectEditCapability(true);
             text.setText(script);
           } else {
-            text.setEditable(false);
+//          	updateTextDirectEditCapability(false);
             text.setText("Script: "
                 + script.substring(script.lastIndexOf('\n') + 1, script.length()));
           }
@@ -348,8 +400,15 @@ public class DynamicValueEditorWidget extends Composite {
           break;
       }
     }
+    
+    updateTextDirectEditCapability(isDirectEditable());
   }
 
+  protected void updateTextDirectEditCapability(boolean b){
+  	text.setEditable(b);
+  	text.setBackground(b ? lightBlue : 
+  		this.getDisplay().getSystemColor(SWT.COLOR_WIDGET_BACKGROUND));
+  }
   public EStructuralFeature getFeature() {
     return feature;
   }

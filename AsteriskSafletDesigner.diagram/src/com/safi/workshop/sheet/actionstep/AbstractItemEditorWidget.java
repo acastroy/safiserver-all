@@ -12,6 +12,7 @@ import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.ListViewer;
+import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -21,6 +22,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Table;
 
 import com.safi.core.actionstep.Item;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
@@ -34,8 +36,8 @@ public abstract class AbstractItemEditorWidget extends Composite {
   protected Button moveDownButton;
   protected Button moveUpButton;
   protected Composite composite;
-  protected org.eclipse.swt.widgets.List itemListWidget;
-  protected ListViewer listViewer;
+  protected Table itemListWidget;
+  protected TableViewer listViewer;
   protected List<Item> itemList;
   protected TransactionalEditingDomain editingDomain;
   protected ActionstepEditorDialog actionstepEditorDialog;
@@ -54,7 +56,7 @@ public abstract class AbstractItemEditorWidget extends Composite {
     gridLayout.numColumns = 2;
     setLayout(gridLayout);
 
-    listViewer = new ListViewer(this, SWT.BORDER);
+    listViewer = new TableViewer(this, SWT.BORDER|SWT.FULL_SELECTION );
     listViewer.addDoubleClickListener(new IDoubleClickListener() {
       public void doubleClick(final DoubleClickEvent event) {
         if (!((IStructuredSelection) event.getSelection()).isEmpty()) {
@@ -64,7 +66,7 @@ public abstract class AbstractItemEditorWidget extends Composite {
     });
     listViewer.setLabelProvider(createLabelProvider());
     listViewer.setContentProvider(createContentProvider());
-    itemListWidget = listViewer.getList();
+    itemListWidget = listViewer.getTable();
     itemListWidget.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 
     composite = new Composite(this, SWT.NONE);
@@ -236,7 +238,7 @@ public abstract class AbstractItemEditorWidget extends Composite {
     listViewer.refresh();
   }
 
-  public org.eclipse.swt.widgets.List getItemListWidget() {
+  public Table getItemListWidget() {
     return itemListWidget;
   }
 
