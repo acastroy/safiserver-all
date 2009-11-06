@@ -67,8 +67,9 @@ public class DynamicValueEditorWidget extends Composite {
   }
   
   protected void initUI() {
-  	lightBlue = new Color(this.getDisplay(), 102, 217, 255);
-    final GridLayout gridLayout = new GridLayout();
+  	//lightBlue = new Color(this.getDisplay(), 102, 217, 255);
+	lightBlue = new Color(this.getDisplay(), 146, 211, 255);
+	final GridLayout gridLayout = new GridLayout();
     gridLayout.marginHeight = 0;
     gridLayout.horizontalSpacing = 0;
     gridLayout.marginWidth = 0;

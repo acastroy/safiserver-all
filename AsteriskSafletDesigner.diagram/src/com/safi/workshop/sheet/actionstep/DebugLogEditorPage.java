@@ -52,7 +52,7 @@ public class DebugLogEditorPage extends AbstractActionstepEditorPage {
     new Label(this, SWT.NONE);
 
     final Label debugLevelLabel = new Label(this, SWT.NONE);
-    debugLevelLabel.setText("Debug Level :");
+    //debugLevelLabel.setText("Debug Level:");
     debugLevelLabel.setText("Debug Level:");
 
     comboViewer = new ComboViewer(this, SWT.BORDER);
@@ -139,7 +139,7 @@ public class DebugLogEditorPage extends AbstractActionstepEditorPage {
     new Label(this, SWT.NONE);
 
     final Label logFileNameLabel = new Label(this, SWT.NONE);
-    logFileNameLabel.setText("Log Filename :");
+    logFileNameLabel.setText("Log Filename:");
 
     DynamicValueEditorWidget valueDVEWidget0 = new DynamicValueEditorWidget(this, SWT.NONE);
     valueDVEWidget0.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
