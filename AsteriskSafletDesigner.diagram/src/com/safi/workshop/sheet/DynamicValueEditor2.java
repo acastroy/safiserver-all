@@ -25,6 +25,8 @@ import org.eclipse.swt.widgets.Shell;
 import com.safi.core.actionstep.ActionStepFactory;
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.DynamicValueType;
+import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
+import com.swtdesigner.ResourceManager;
 
 public class DynamicValueEditor2 extends TitleAreaDialog {
 
@@ -107,6 +109,7 @@ public class DynamicValueEditor2 extends TitleAreaDialog {
         setMessage("no information about this property available");
       }
     });
+		setTitleImage(ResourceManager.getPluginImage(AsteriskDiagramEditorPlugin.getDefault(), "icons/dynamicValueEditor/DynamicValueEditor.gif"));
     //
     return area;
   }

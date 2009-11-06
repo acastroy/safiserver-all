@@ -3,6 +3,7 @@ package com.safi.workshop.part;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.eclipse.gef.Tool;
 import org.eclipse.gef.palette.PaletteContainer;
 import org.eclipse.gef.palette.PaletteDrawer;
@@ -40,14 +41,23 @@ public class AsteriskPaletteFactory {
         .getInstance().getActionstepProfiles()) {
       String palettePath = a.palettePath;
       PaletteDrawer drawer = null;
-      for (Object o : paletteRoot.getChildren()) {
-        if (o instanceof PaletteDrawer) {
-          if (palettePath.equals(((PaletteDrawer) o).getLabel())) {
-            drawer = (PaletteDrawer) o;
-            break;
-          }
-        }
+      boolean isBlank = StringUtils.isBlank(palettePath);
+      
+      if (!isBlank)
+	      for (Object o : paletteRoot.getChildren()) {
+	        if (o instanceof PaletteDrawer) {
+	          if (palettePath.equals(((PaletteDrawer) o).getLabel())) {
+	            drawer = (PaletteDrawer) o;
+	            break;
+	          }
+	        }
+	      }
+      
+      if (drawer == null && !isBlank){
+      	drawer = new PaletteDrawer(palettePath);
+      	paletteRoot.add(drawer);
       }
+      
       if (drawer == null) {
         for (Object o : paletteRoot.getChildren()) {
           if (o instanceof PaletteDrawer) {
