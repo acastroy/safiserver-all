@@ -248,6 +248,7 @@ public class DynamicValueEditor2 extends TitleAreaDialog {
     if (!page.commit()) {
       return;
     }
+   
     if (dynamicValue == null)
       dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
 

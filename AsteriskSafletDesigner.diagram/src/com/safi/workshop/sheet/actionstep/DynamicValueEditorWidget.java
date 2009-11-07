@@ -1,5 +1,7 @@
 package com.safi.workshop.sheet.actionstep;
 
+import java.lang.ref.WeakReference;
+
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EObject;
@@ -25,6 +27,7 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
+import org.eclipse.ui.IEditorPart;
 
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.ActionStepFactory;
@@ -34,10 +37,13 @@ import com.safi.core.actionstep.Item;
 import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletConstants;
 import com.safi.core.saflet.SafletContext;
+import com.safi.db.Variable;
+import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.safi.workshop.sheet.DynamicValueEditor2;
 import com.safi.workshop.sheet.DynamicValueEditorUtils;
 import com.safi.workshop.sheet.DynamicValueEditorUtils.DynamicValueAnnotationInfo;
+import com.safi.workshop.view.vareditor.VariableEditor;
 import com.swtdesigner.ResourceManager;
 
 public class DynamicValueEditorWidget extends Composite {
@@ -112,64 +118,156 @@ public class DynamicValueEditorWidget extends Composite {
     });
     text.addFocusListener(new FocusAdapter() {
       @Override
-      public void focusLost(final FocusEvent e) {
-        if (text.getEnabled() && text.getEditable()) {
-          String newtext = text.getText();
-          boolean changed = false;
-          if (dynamicValue == null) {
-            if (StringUtils.isNotBlank(newtext)) {
-              changed = true;
-              dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
-              dynamicValue.setText(newtext);
-              if (newtext.matches(DynamicValueEditorUtils.PATT_QUOTED_TEXT))
-                dynamicValue.setType(DynamicValueType.LITERAL_TEXT);
-              else
-                dynamicValue.setType(DynamicValueType.SCRIPT_TEXT);
-              // object.eSet(feature, dynamicValue);
-            } else {
-              dynamicValue = null;
-              changed = true;
-              // object.eSet(feature, dynamicValue);
-//              text.setEditable(false);
-              
-            }
+			public void focusLost(final FocusEvent e) {
+				if (text.getEnabled() && text.getEditable()) {
+					String newtext = text.getText();
+					boolean changed = false;
+					if (dynamicValue == null) {
+						if (StringUtils.isNotBlank(newtext)) {
+							String expectedReturn = info.expectedReturnType;
+							if (info.dynValueTypeStr
+									.equalsIgnoreCase("VariableName")) {
+								IEditorPart editor = AsteriskDiagramEditorPlugin
+										.getDefault().getWorkbench()
+										.getActiveWorkbenchWindow()
+										.getActivePage().getActiveEditor();
+								if (editor instanceof AsteriskDiagramEditor) {
 
-          } else {
-            if (StringUtils.isBlank(newtext)) {
-              dynamicValue = null;
-              changed = true;
-//              text.setEditable(false);
-              // object.eSet(feature, dynamicValue);
-            } else if (!StringUtils.equals(newtext, dynamicValue.getText())) {
-              DynamicValueType currType = dynamicValue.getType();
+									AsteriskDiagramEditor currentEditor = (AsteriskDiagramEditor) editor;
+								
+							       try{
+							    	    if (handlerContext == null) {
+							    	    	initHandlerContext();
+							    	    }
+							      
+                                    Variable variable=handlerContext.getVariable(newtext);
+                                    if(variable!=null){
+                                    
+										VariableEditor variableEditor = new VariableEditor(
+												getShell(), currentEditor,
+												VariableEditor.Mode.EDIT);
+										 variableEditor.setVariable(variable);
+										// obj);
+										if(variableEditor.open()==SWT.OK){
+											
+											variable=variableEditor.getVariable();
+										}else
+										{
+											return;
+										}
+                                    }else
+                                    {
+                                      VariableEditor variableEditor = new VariableEditor(
+											getShell(), currentEditor,
+											VariableEditor.Mode.NEW_LOCAL);
+									// variableEditor.setVariable((Variable)
+									// obj);
+									  if(variableEditor.open()==SWT.OK){
+										  
+											variable=variableEditor.getVariable();
+									  }else
+									  {
+										  return;
+									  }
+									  							
+									
+                                    }
+                                    changed = true;
+                                	dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
+									dynamicValue.setType(DynamicValueType.VARIABLE_NAME);
+									dynamicValue.setText(variable.getName());
+								     return;
+							       }catch(Exception ex){
 
-              editingDomain.getCommandStack().execute(
-                  SetCommand.create(editingDomain, dynamicValue, dynamicValue.eClass()
-                      .getEStructuralFeature("text"), newtext));
-              boolean isText = newtext.matches(DynamicValueEditorUtils.PATT_QUOTED_TEXT);
-              if (isText && currType != DynamicValueType.LITERAL_TEXT) {
-                editingDomain.getCommandStack().execute(
-                    SetCommand.create(editingDomain, dynamicValue, dynamicValue.eClass()
-                        .getEStructuralFeature("type"), DynamicValueType.LITERAL_TEXT));
-              } else if (!isText && currType != DynamicValueType.SCRIPT_TEXT) {
-                editingDomain.getCommandStack().execute(
-                    SetCommand.create(editingDomain, dynamicValue, dynamicValue.eClass()
-                        .getEStructuralFeature("type"), DynamicValueType.SCRIPT_TEXT));
-              }
-              // dynamicValue.setText(newtext);
-              // getA
-              changed = true;
-            }
-          }
-          
-          updateTextDirectEditCapability(isDirectEditable());
-          if (changed){
-            fireModifiedEvent();
-          }
-        }
+							       }
+                                    
+                                    	
+                                    	
+                                    
+								}
+							}
+							changed = true;
+							dynamicValue = ActionStepFactory.eINSTANCE
+									.createDynamicValue();
+							dynamicValue.setText(newtext);
+							if (newtext
+									.matches(DynamicValueEditorUtils.PATT_QUOTED_TEXT))
+								dynamicValue
+										.setType(DynamicValueType.LITERAL_TEXT);
+							else {
 
-      }
-      
+								// if(info.expectedReturnType.equalsIgnoreCase("Text")){
+								// dynamicValue.setType(DynamicValueType.LITERAL_TEXT);
+								// String val="\""+newtext+"\"";
+								// dynamicValue.setText(val);
+								// text.setText(val);
+								// }else
+								// {
+
+								dynamicValue
+										.setType(DynamicValueType.SCRIPT_TEXT);
+
+								// }
+							}
+							// object.eSet(feature, dynamicValue);
+						} else {
+							dynamicValue = null;
+							changed = true;
+							// object.eSet(feature, dynamicValue);
+							// text.setEditable(false);
+
+						}
+
+					} else {
+						if (StringUtils.isBlank(newtext)) {
+							dynamicValue = null;
+							changed = true;
+							// text.setEditable(false);
+							// object.eSet(feature, dynamicValue);
+						} else if (!StringUtils.equals(newtext, dynamicValue
+								.getText())) {
+							DynamicValueType currType = dynamicValue.getType();
+
+							editingDomain.getCommandStack().execute(
+									SetCommand.create(editingDomain,
+											dynamicValue, dynamicValue.eClass()
+													.getEStructuralFeature(
+															"text"), newtext));
+							boolean isText = newtext
+									.matches(DynamicValueEditorUtils.PATT_QUOTED_TEXT);
+							if (isText
+									&& currType != DynamicValueType.LITERAL_TEXT) {
+								editingDomain.getCommandStack().execute(
+										SetCommand.create(editingDomain,
+												dynamicValue, dynamicValue
+														.eClass()
+														.getEStructuralFeature(
+																"type"),
+												DynamicValueType.LITERAL_TEXT));
+							} else if (!isText
+									&& currType != DynamicValueType.SCRIPT_TEXT) {
+								editingDomain.getCommandStack().execute(
+										SetCommand.create(editingDomain,
+												dynamicValue, dynamicValue
+														.eClass()
+														.getEStructuralFeature(
+																"type"),
+												DynamicValueType.SCRIPT_TEXT));
+							}
+							// dynamicValue.setText(newtext);
+							// getA
+							changed = true;
+						}
+					}
+
+					updateTextDirectEditCapability(isDirectEditable());
+					if (changed) {
+						fireModifiedEvent();
+					}
+				}
+
+			}
+
       @Override
       public void focusGained(FocusEvent e) {
       	if (isDirectEditable()){
@@ -257,36 +355,43 @@ public class DynamicValueEditorWidget extends Composite {
     	lightBlue.dispose();
     super.dispose();
   }
+  
+	private void initHandlerContext(){
+	   if (handlerContext == null) {
+		   if (object instanceof ActionStep) {
+		        handlerContext = ((ActionStep) object).getSaflet().getSafletContext();
+		      } else if (object instanceof Item) {
+		        ActionStep ts = ((Item) object).getParentActionStep();
+		        if (ts != null)
+		          handlerContext = ts.getSaflet().getSafletContext();
+		      } else {
+		        Saflet h = null;
+		        Object obj = editingDomain.getRoot(object);
+		        if (obj instanceof ResourceSet)
+		          for (Resource r : ((ResourceSet) obj).getResources()) {
+		            for (EObject o : r.getContents()) {
+		              if (o instanceof Saflet) {
+		                h = (Saflet) o;
+		                break;
+		              }
+
+		            }
+		          }
+
+		        if (h != null)
+		          handlerContext = h.getSafletContext();
+
+		      }
+	   }
+  }
 
   protected void openEditor() {
     // first check for subclassed dynvalue annotations
     info = DynamicValueEditorUtils.extractAnnotationInfo(object, feature);
+    
 
     if (handlerContext == null) {
-      if (object instanceof ActionStep) {
-        handlerContext = ((ActionStep) object).getSaflet().getSafletContext();
-      } else if (object instanceof Item) {
-        ActionStep ts = ((Item) object).getParentActionStep();
-        if (ts != null)
-          handlerContext = ts.getSaflet().getSafletContext();
-      } else {
-        Saflet h = null;
-        Object obj = editingDomain.getRoot(object);
-        if (obj instanceof ResourceSet)
-          for (Resource r : ((ResourceSet) obj).getResources()) {
-            for (EObject o : r.getContents()) {
-              if (o instanceof Saflet) {
-                h = (Saflet) o;
-                break;
-              }
-
-            }
-          }
-
-        if (h != null)
-          handlerContext = h.getSafletContext();
-
-      }
+    	initHandlerContext();
 
       if (handlerContext == null)
         throw new IllegalStateException("Couldn't retrieve SafletContext from object " + object);
@@ -297,10 +402,12 @@ public class DynamicValueEditorWidget extends Composite {
 
     if (Window.OK == dve.open()) {
       DynamicValue dv = dve.getDynamicValue();
+      String returnType=info.expectedReturnType;
       if (dv == null || StringUtils.isBlank(dv.getText())) {
         dynamicValue = null;
-      } else
+      } else{
         dynamicValue = dv;
+      }
       fireModifiedEvent();
       refresh();
     }
