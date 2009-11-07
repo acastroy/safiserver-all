@@ -148,7 +148,8 @@ public class DynamicValueEditorWidget extends Composite {
 												VariableEditor.Mode.EDIT);
 										 variableEditor.setVariable(variable);
 										// obj);
-										if(variableEditor.open()==SWT.OK){
+										 int val=variableEditor.open();
+										if(val==0){
 											
 											variable=variableEditor.getVariable();
 										}else
@@ -162,7 +163,9 @@ public class DynamicValueEditorWidget extends Composite {
 											VariableEditor.Mode.NEW_LOCAL);
 									// variableEditor.setVariable((Variable)
 									// obj);
-									  if(variableEditor.open()==SWT.OK){
+                                      variableEditor.setSuggestedVariableName(text.getText().trim());
+                                      int val=variableEditor.open();
+									  if(val==0){
 										  
 											variable=variableEditor.getVariable();
 									  }else
@@ -175,26 +178,32 @@ public class DynamicValueEditorWidget extends Composite {
                                     changed = true;
                                 	dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
 									dynamicValue.setType(DynamicValueType.VARIABLE_NAME);
-									dynamicValue.setText(variable.getName());
-								     return;
+                                    dynamicValue.setText(variable.getName());
+									text.setText("Var: " + dynamicValue.getText());
+									//refresh();
+								    
 							       }catch(Exception ex){
-
+                                       ex.printStackTrace();
 							       }
                                     
                                     	
                                     	
                                     
 								}
-							}
+							}else
+							{
 							changed = true;
 							dynamicValue = ActionStepFactory.eINSTANCE
 									.createDynamicValue();
 							dynamicValue.setText(newtext);
+							}
+							
 							if (newtext
-									.matches(DynamicValueEditorUtils.PATT_QUOTED_TEXT))
+									.matches(DynamicValueEditorUtils.PATT_QUOTED_TEXT)){
 								dynamicValue
 										.setType(DynamicValueType.LITERAL_TEXT);
-							else {
+							}
+							else if(!dynamicValue.getType().equals(DynamicValueType.VARIABLE_NAME)){
 
 								// if(info.expectedReturnType.equalsIgnoreCase("Text")){
 								// dynamicValue.setType(DynamicValueType.LITERAL_TEXT);

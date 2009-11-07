@@ -62,6 +62,7 @@ public class VariableEditor extends TitleAreaDialog {
 
   private CLabel imageLabel;
   private Composite composite;
+  private String suggestedName;
   class ContentProvider implements IStructuredContentProvider {
     public Object[] getElements(Object inputElement) {
       return ((List<VariableType>) inputElement).toArray();
@@ -125,6 +126,9 @@ public class VariableEditor extends TitleAreaDialog {
         quickValidateName(variableNameText.getText());
       }
     });
+    if(this.suggestedName!=null){
+    	variableNameText.setText(this.suggestedName);
+    }
     // variableNameText.addVerifyListener(new VerifyListener() {
     // public void verifyText(final VerifyEvent e) {
     // quickValidateName(variableNameText.getText() + e.text);
@@ -281,6 +285,7 @@ public class VariableEditor extends TitleAreaDialog {
           v.setType(type);
           v.setScope(scope);
           v.setDefaultValue(newObjVal);
+          this.variable=v;
           SafiServerPlugin.getDefault().addGlobalVariable(v);
         } catch (Exception e) {
           e.printStackTrace();
@@ -295,6 +300,8 @@ public class VariableEditor extends TitleAreaDialog {
         cmd.setType(type);
         cmd.setDefaultValue(newObjVal);
         editingDomain.getCommandStack().execute(cmd);
+        this.variable=currentEditor
+        .getHandlerEditPart().getHandlerModel().getSafletContext().getVariable(variableNameText.getText());
       }
       // viewer.add(cmd.newVariable);
       // if (scope == VariableScope.GLOBAL)
@@ -417,7 +424,12 @@ public class VariableEditor extends TitleAreaDialog {
     if (variableNameText == null || variableNameText.isDisposed())
       return;
     if (variable == null) {
-      variableNameText.setText("");
+    	if(this.suggestedName!=null){
+           variableNameText.setText(this.suggestedName);
+    	}else
+    	{
+    		variableNameText.setText(this.suggestedName);
+    	}
       typeComboViewer.setSelection(new StructuredSelection(VariableType.TEXT));
       valueText.setText("");
     } else {
@@ -527,4 +539,11 @@ public class VariableEditor extends TitleAreaDialog {
       return super.getImage(element);
     }
   }
+
+public void setSuggestedVariableName(String aSuggestedName) {
+	// TODO Auto-generated method stub
+	this.suggestedName=aSuggestedName;
+	//this.variableNameText.setText(this.suggestedName);
+	
+}
 }
