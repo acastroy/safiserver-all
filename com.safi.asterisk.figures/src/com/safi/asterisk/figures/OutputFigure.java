@@ -260,7 +260,8 @@ public class OutputFigure extends NodeFigure {
   public Color getBackgroundColor() {
     if (rectangleFigure.getTipColor() != null)
       return rectangleFigure.getTipColor();
-    return rectangleFigure.getBackgroundColor();
+//    return rectangleFigure.getBackgroundColor();
+    return super.getBackgroundColor();
   }
   
   public void setLabelText(String text){
