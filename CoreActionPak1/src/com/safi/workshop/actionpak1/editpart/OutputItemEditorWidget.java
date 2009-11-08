@@ -48,15 +48,12 @@ public class OutputItemEditorWidget extends AbstractItemEditorWidget {
     // TODO Auto-generated method stub
     return new ListLabelProvider();
   }
-  class ListLabelProvider extends LabelProvider {
+  class ListLabelProvider extends DefaultListLabelProvider {
     public String getText(Object element) {
       OutputParameter item = (OutputParameter) element;
       return item.getParameterName() + " -> "
           + (item.getDynamicValue() == null ? "" : item.getDynamicValue().getText());
     }
 
-    public Image getImage(Object element) {
-      return null;
-    }
   }
 }
