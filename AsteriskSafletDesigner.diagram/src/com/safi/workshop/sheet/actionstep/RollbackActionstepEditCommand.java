@@ -1,9 +1,8 @@
 package com.safi.workshop.sheet.actionstep;
 
-import java.lang.ref.WeakReference;
+import java.lang.ref.SoftReference;
 import java.util.Collections;
 import java.util.List;
-
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.EditingDomain;
@@ -21,7 +20,8 @@ public class RollbackActionstepEditCommand extends AbstractActionstepEditCommand
 
   @Override
   public void doExecute() {
-    for (WeakReference<ActionstepEditorPage> ref : pagemap) {
+  	System.err.println("This big ol sucka RollbackActionstepEditCommand is exeking");
+    for (SoftReference<ActionstepEditorPage> ref : pagemap) {
       ActionstepEditorPage page = ref.get();
       if (page != null)
         page.operationsComplete();
@@ -51,11 +51,17 @@ public class RollbackActionstepEditCommand extends AbstractActionstepEditCommand
     doRollback(domain);
     canUndo = false;
     // flushOperations((TransactionalEditingDomain)domain, 0);
+    
+    System.err.println("in doUndo: the initialstaksize was "+initialStackHistorySize+" but now undosize is "+getCurrentOperationUndoSize()+
+    		" and redo is "+getCurrentOperationRedoSize()+" and cmdhist "+commandHistory.size());
+    dumpCurrentOperationUndoSize();
+    dumpCurrentOperationRedoSize();
   }
 
   private void redoRollback(EditingDomain domain) {
     for (Command command : commandHistory) {
       try {
+      	System.err.println("redoin "+command);
         command.redo();
         // op.redo(monitor, null);
       } catch (Exception e) {
@@ -63,12 +69,17 @@ public class RollbackActionstepEditCommand extends AbstractActionstepEditCommand
       }
     }
 
-    for (WeakReference<ActionstepEditorPage> ref : pagemap) {
+    for (SoftReference<ActionstepEditorPage> ref : pagemap) {
       ActionstepEditorPage page = ref.get();
       if (page != null)
         page.operationsComplete();
     }
 
+    System.err.println("in redoRollback: the initialstaksize was "+initialStackHistorySize+" but now undosize is "+getCurrentOperationUndoSize()+
+    		" and redo is "+getCurrentOperationRedoSize()+" and cmdhist "+commandHistory.size());
+    dumpCurrentOperationUndoSize();
+    dumpCurrentOperationRedoSize();
+    
   }
 
 }

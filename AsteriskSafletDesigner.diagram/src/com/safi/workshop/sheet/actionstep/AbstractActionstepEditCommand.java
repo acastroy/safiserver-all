@@ -1,5 +1,6 @@
 package com.safi.workshop.sheet.actionstep;
 
+import java.lang.ref.SoftReference;
 import java.lang.ref.WeakReference;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -17,10 +18,10 @@ import org.eclipse.emf.workspace.impl.WorkspaceCommandStackImpl;
 
 public abstract class AbstractActionstepEditCommand extends AbstractOverrideableCommand {
 
-  private int initialStackHistorySize;
-  private Resource resource;
+  protected int initialStackHistorySize;
+  protected Resource resource;
   protected List<Command> commandHistory;
-  protected List<WeakReference<ActionstepEditorPage>> pagemap = new LinkedList<WeakReference<ActionstepEditorPage>>();
+  protected List<SoftReference<ActionstepEditorPage>> pagemap = new LinkedList<SoftReference<ActionstepEditorPage>>();
   protected volatile boolean flushedOperations;
 
   public AbstractActionstepEditCommand(EditingDomain domain, Resource resource,
@@ -30,7 +31,7 @@ public abstract class AbstractActionstepEditCommand extends AbstractOverrideable
     this.resource = resource;
     this.commandHistory = commandHistory;
     for (ActionstepEditorPage page : pages) {
-      pagemap.add(new WeakReference<ActionstepEditorPage>(page));
+      pagemap.add(new SoftReference<ActionstepEditorPage>(page));
     }
   }
 
@@ -58,15 +59,54 @@ public abstract class AbstractActionstepEditCommand extends AbstractOverrideable
         if (currIdx >= 0) {
           if (cmdSkip-- <= 0) {
             ((EMFCommandOperation) ops[currIdx]).addContext(ctx);
+            System.err.println("Ading cmd "+((EMFCommandOperation) ops[currIdx]).getCommand());
             commandHistory.add(((EMFCommandOperation) ops[currIdx]).getCommand());
             // if (flush)
             stack.getOperationHistory().replaceOperation(ops[currIdx], new IUndoableOperation[0]);
           }
+          else {
+          	System.err.println("boi i'm skippin op "+((EMFCommandOperation) ops[currIdx]).toString());
+//          	if (flush)
+              stack.getOperationHistory().replaceOperation(ops[currIdx], new IUndoableOperation[0]);
+          }
         }
       }
+      System.err.println("the initialstaksize was "+initialStackHistorySize+" but now its "+getCurrentOperationUndoSize());
       flushedOperations = true;
     }
 
+  }
+  
+  protected int getCurrentOperationUndoSize(){
+  	IUndoableOperation[] ops = ((WorkspaceCommandStackImpl)getDomain().getCommandStack()).getOperationHistory().getUndoHistory(
+  			((WorkspaceCommandStackImpl)getDomain().getCommandStack()).getDefaultUndoContext());
+  	return ops == null ? 0 : ops.length;
+  }
+  
+  protected int getCurrentOperationRedoSize(){
+  	IUndoableOperation[] ops = ((WorkspaceCommandStackImpl)getDomain().getCommandStack()).getOperationHistory().getRedoHistory(
+  			((WorkspaceCommandStackImpl)getDomain().getCommandStack()).getDefaultUndoContext());
+  	return ops == null ? 0 : ops.length;
+  }
+  
+  protected void dumpCurrentOperationUndoSize(){
+  	IUndoableOperation[] ops = ((WorkspaceCommandStackImpl)getDomain().getCommandStack()).getOperationHistory().getUndoHistory(
+  			((WorkspaceCommandStackImpl)getDomain().getCommandStack()).getDefaultUndoContext());
+  	
+  	System.err.println("UNDO STACK:");
+  	for (IUndoableOperation op : ops){
+  		System.err.println("\tUndoableOP: "+op);
+  	}
+  }
+  
+  protected void dumpCurrentOperationRedoSize(){
+  	IUndoableOperation[] ops = ((WorkspaceCommandStackImpl)getDomain().getCommandStack()).getOperationHistory().getRedoHistory(
+  			((WorkspaceCommandStackImpl)getDomain().getCommandStack()).getDefaultUndoContext());
+  	System.err.println("REDO STACK:");
+  	for (IUndoableOperation op : ops){
+  		System.err.println("\tUndoableOP: "+op);
+  	}
+  	
   }
 
   protected void doRollback(EditingDomain domain) {
@@ -75,6 +115,7 @@ public abstract class AbstractActionstepEditCommand extends AbstractOverrideable
     Collections.reverse(commandHistory);
     for (Command command : commandHistory) {
       try {
+      	System.err.println("Rollin back "+command);
         command.undo();
         // op.redo(monitor, null);
       } catch (Exception e) {
@@ -82,7 +123,7 @@ public abstract class AbstractActionstepEditCommand extends AbstractOverrideable
       }
     }
 
-    for (WeakReference<ActionstepEditorPage> ref : pagemap) {
+    for (SoftReference<ActionstepEditorPage> ref : pagemap) {
       ActionstepEditorPage page = ref.get();
       if (page != null)
         page.operationsUndone();

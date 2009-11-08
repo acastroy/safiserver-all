@@ -42,17 +42,13 @@ public class AudioFileItemEditorWidget extends AbstractItemEditorWidget {
     return new ListLabelProvider();
   }
 
-  class ListLabelProvider extends LabelProvider {
+  class ListLabelProvider extends DefaultListLabelProvider {
     @Override
     public String getText(Object element) {
       AudioFileItem item = (AudioFileItem) element;
       return item.getDynamicValue() == null ? "" : item.getDynamicValue().getText();
     }
 
-    @Override
-    public Image getImage(Object element) {
-      return null;
-    }
   }
 
 }

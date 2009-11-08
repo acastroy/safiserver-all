@@ -258,6 +258,9 @@ public class ActionstepEditorDialog extends TitleAreaDialog {
         }
       }
       flushedOperations = true;
+//      ops = stack.getOperationHistory().getUndoHistory(
+//          stack.getDefaultUndoContext());
+//      System.err.println("the initialstaksize was "+initialStackHistorySize+" but now its "+ops.length);
     }
   }
 

@@ -1,6 +1,7 @@
 package com.safi.workshop.edit.parts;
 
 import java.util.ArrayList;
+import java.util.EventObject;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -36,6 +37,8 @@ import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.command.AbstractCommand;
+import org.eclipse.emf.common.command.BasicCommandStack;
+import org.eclipse.emf.common.command.CommandStackListener;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
@@ -317,6 +320,14 @@ public class HandlerEditPart extends DiagramEditPart {
     installEditPolicy(EditPolicyRoles.CREATION_ROLE, getCreationPolicy());
     // removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
     installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, getContainerNodeEditPolicy());
+    getEditingDomain().getCommandStack().addCommandStackListener(new CommandStackListener() {
+			
+			@Override
+			public void commandStackChanged(EventObject event) {
+				System.err.println("Shitmanatago did something "+((BasicCommandStack)event.getSource()).getMostRecentCommand());
+				
+			}
+		});
   }
 
   private EditPolicy getContainerNodeEditPolicy() {

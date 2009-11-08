@@ -79,8 +79,9 @@ public class AsteriskModelingAssistantProvider extends ModelingAssistantProvider
   	if (operation instanceof GetTypesForPopupBarOperation) {
   		GetTypesForPopupBarOperation op = (GetTypesForPopupBarOperation)operation;
   		IAdaptable a = op.getHost();
-			return !getTypesForPopupBar(
-				((GetTypesForPopupBarOperation) operation).getHost())
+			final List typesForPopupBar = getTypesForPopupBar(
+				((GetTypesForPopupBarOperation) operation).getHost());
+			return typesForPopupBar != null && !typesForPopupBar
 				.isEmpty();
 		}
   	

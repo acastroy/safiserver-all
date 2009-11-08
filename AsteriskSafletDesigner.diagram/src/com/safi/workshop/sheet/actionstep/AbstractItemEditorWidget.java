@@ -252,10 +252,10 @@ public abstract class AbstractItemEditorWidget extends Composite {
   }
 
   protected LabelProvider createLabelProvider() {
-    return new ListLabelProvider();
+    return new DefaultListLabelProvider();
   }
 
-  class ListLabelProvider extends LabelProvider {
+  public static class DefaultListLabelProvider extends LabelProvider {
     @Override
     public String getText(Object element) {
       Item item = (Item) element;
@@ -264,7 +264,7 @@ public abstract class AbstractItemEditorWidget extends Composite {
 
     @Override
     public Image getImage(Object element) {
-      return null;
+      return AsteriskDiagramEditorPlugin.getInstance().getItemImage(element);
     }
   }
 

@@ -45,8 +45,8 @@ public class CaseItemReorderCommand extends AbstractOverrideableCommand {
     if (editPart instanceof ActionstepWithCompartment) {
       ActionstepWithCompartment cep = (ActionstepWithCompartment) editPart;
       ItemPanelEditPart panel = getInputCompartment(cep);
-      if (panel != null) {
-        panel.refresh();
+      if (panel != null && panel.getParent() != null && panel.getRoot() != null) {
+      	panel.refresh();
         ActionStep ts = editPart.getActionStep();
         panel.reorderFromItemList(getItems(ts));
         panel.refresh();
@@ -55,7 +55,7 @@ public class CaseItemReorderCommand extends AbstractOverrideableCommand {
     if (editPart instanceof ActionstepWithOutputParameters) {
       ActionstepWithOutputParameters cep = (ActionstepWithOutputParameters) editPart;
       ItemPanelEditPart panel = getOutputCompartment(cep);
-      if (panel != null) {
+      if (panel != null && panel.getParent() != null && panel.getRoot() != null) {
         panel.refresh();
         ActionStep ts = editPart.getActionStep();
         panel.reorderFromItemList(getItems(ts));
