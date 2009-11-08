@@ -42,14 +42,10 @@ public class TimeItemEditorWidget extends AbstractItemEditorWidget {
     return new ListLabelProvider();
   }
 
-  class ListLabelProvider extends LabelProvider {
+  class ListLabelProvider extends DefaultListLabelProvider {
     public String getText(Object element) {
       TimeItem item = (TimeItem) element;
       return item.getDescription();
-    }
-
-    public Image getImage(Object element) {
-      return null;
     }
   }
 

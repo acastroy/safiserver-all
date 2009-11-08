@@ -49,5 +49,11 @@ public class TimeItemCreateCommand extends CreateElementCommand {
   protected EClass getEClassToEdit() {
     return TimeBasedRoutingPackage.eINSTANCE.getTimeBasedRouting();
   }
+  
+  @Override
+  public boolean canExecute() {
+    // TODO Auto-generated method stub
+    return super.canExecute();
+  }
 
 }
