@@ -228,8 +228,10 @@ public class SafiServerRemoteManager implements NotificationListener {
           rmiPort = servicePort;
 
         }
-        String urlString = "service:jmx:rmi://" + rmiHost + ":" + rmiPort + "/jndi/rmi://"
-            + serviceHost + ":" + servicePort + "/safiserver";
+//        String urlString = "service:jmx:rmi://" + rmiHost + ":" + rmiPort + "/jndi/rmi://"
+//            + serviceHost + ":" + servicePort + "/safiserver";
+        
+        String urlString = "service:jmx:rmi://127.0.0.1:" + rmiPort + "/jndi/rmi://127.0.0.1:" + servicePort + "/safiserver";
         SafiServerPlugin.getDefault().getLog().log(
             new Status(Status.INFO, SafiServerPlugin.PLUGIN_ID,
                 "SafiServerRemoteManager connecting to " + urlString));
