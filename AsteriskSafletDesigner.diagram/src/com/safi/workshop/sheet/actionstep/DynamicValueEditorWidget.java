@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.FocusAdapter;
@@ -215,6 +216,9 @@ public class DynamicValueEditorWidget extends Composite {
 								dynamicValue.setText(newtext);
 							}else
 							{
+							  MessageDialog.openError(getShell(), "Variable Error",
+								            "Could not set value. Value is illegal." );
+								  
 								text.setText("");
 								dynamicValue=null;
 								refresh();

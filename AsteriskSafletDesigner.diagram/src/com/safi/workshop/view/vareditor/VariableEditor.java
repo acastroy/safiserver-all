@@ -250,7 +250,9 @@ public class VariableEditor extends TitleAreaDialog {
 
   @Override
   protected void okPressed() {
-
+	if(!this.quickValidateName(this.variableNameText.getText())){
+		return;
+	}
     VariableType type = getSelectedType();
     EAttribute setAttr = DbPackage.eINSTANCE.getVariable_DefaultValue();
     Object newObjVal = null;
