@@ -35,6 +35,7 @@ import org.eclipse.swt.graphics.ImageData;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
@@ -395,6 +396,7 @@ public class VariableEditor extends TitleAreaDialog {
   protected void createButtonsForButtonBar(Composite parent) {
     createButton(parent, IDialogConstants.OK_ID, IDialogConstants.OK_LABEL, true);
     createButton(parent, IDialogConstants.CANCEL_ID, IDialogConstants.CANCEL_LABEL, false);
+
   }
 
   /**
@@ -451,8 +453,12 @@ public class VariableEditor extends TitleAreaDialog {
   }
 
   private boolean quickValidateName(String name) {
+	 Button butt= this.getButton(IDialogConstants.OK_ID);
+	  
     if (!name.matches(NAME_PATTERN)) {
       setMessage("Variable name " + name + " is invalid", IMessageProvider.ERROR);
+    if(butt!=null) butt.setEnabled(false);
+    
       return false;
     } else {
       if ((mode == Mode.EDIT && variable.getScope() == VariableScope.LOCAL)
@@ -460,6 +466,7 @@ public class VariableEditor extends TitleAreaDialog {
         Variable v = getCurrentContext().getVariable(name);
         if (v != null && v != variable) {
           setMessage("Variable with name " + name + " already exists", IMessageProvider.ERROR);
+          if(butt!=null) butt.setEnabled(false);
           return false;
         } else
           setMessage("", IMessageProvider.NONE);
@@ -468,11 +475,13 @@ public class VariableEditor extends TitleAreaDialog {
         if (v != null && v != variable) {
           setMessage("Global Variable with name " + name + " already exists",
               IMessageProvider.ERROR);
+          if(butt!=null) butt.setEnabled(false);
           return false;
         } else
           setMessage("", IMessageProvider.NONE);
       }
     }
+    if(butt!=null) butt.setEnabled(true);
     return true;
   }
 
