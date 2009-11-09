@@ -4,20 +4,25 @@ import java.lang.ref.SoftReference;
 import java.util.Collections;
 import java.util.List;
 import org.eclipse.emf.common.command.Command;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import com.safi.workshop.edit.parts.ToolstepEditPart;
 
 public class RollbackActionstepEditCommand extends AbstractActionstepEditCommand {
 
   private boolean canUndo;
-
-  public RollbackActionstepEditCommand(EditingDomain domain, Resource resource,
+  
+  public RollbackActionstepEditCommand(ToolstepEditPart editPart,
       int initialStackHistorySize, List<ActionstepEditorPage> pages, List<Command> commandHistory) {
-    super(domain, resource, initialStackHistorySize, pages, commandHistory);
+    super(editPart, initialStackHistorySize, pages, commandHistory);
 
   }
 
+  @Override
+  public boolean doCanExecute() {
+    // TODO Auto-generated method stub
+    return !canUndo;
+  }
   @Override
   public void doExecute() {
   	System.err.println("This big ol sucka RollbackActionstepEditCommand is exeking");
@@ -34,13 +39,16 @@ public class RollbackActionstepEditCommand extends AbstractActionstepEditCommand
 
   @Override
   public void doRedo() {
-    redoRollback(domain);
+  	if (!canUndo)
+  		redoRollback(domain);
   }
 
   @Override
   public boolean doCanUndo() {
-    return true;
+    return canUndo;
   }
+  
+  
 
   @Override
   public void doUndo() {
@@ -75,6 +83,7 @@ public class RollbackActionstepEditCommand extends AbstractActionstepEditCommand
         page.operationsComplete();
     }
 
+    canUndo = true;
     System.err.println("in redoRollback: the initialstaksize was "+initialStackHistorySize+" but now undosize is "+getCurrentOperationUndoSize()+
     		" and redo is "+getCurrentOperationRedoSize()+" and cmdhist "+commandHistory.size());
     dumpCurrentOperationUndoSize();

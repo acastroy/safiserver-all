@@ -17,6 +17,7 @@ public class AggregatingEObjectObservableList extends EditingDomainEObjectObserv
   @Override
   protected boolean execute(Command command) {
     // command.canExecute();
+  	System.err.println("AggregatingEObjectobservable bich is executing "+command);
     boolean b = super.execute(command);
     // if (b){
     // dlg.appendRollbackItem(new ActionstepEditorDialog.RollbackItem(command));

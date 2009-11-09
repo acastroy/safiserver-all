@@ -150,8 +150,7 @@ public class ActionstepEditorDialog extends TitleAreaDialog {
     if (command != null) {
       try {
 
-        RollbackActionstepEditCommand cmd = new RollbackActionstepEditCommand(editPart
-            .getEditingDomain(), getEditPart().getActionStep().eResource(),
+        RollbackActionstepEditCommand cmd = new RollbackActionstepEditCommand(editPart,
             initialStackHistorySize, pages, new ArrayList<Command>(commandHistory));
         command.append(cmd);
         editPart.getEditingDomain().getCommandStack().execute(command);
@@ -203,8 +202,7 @@ public class ActionstepEditorDialog extends TitleAreaDialog {
     // transaction = null;
     // }
 
-    CancelActionstepEditCommand cmd = new CancelActionstepEditCommand(editPart.getEditingDomain(),
-        getEditPart().getActionStep().eResource(), initialStackHistorySize, pages,
+    CancelActionstepEditCommand cmd = new CancelActionstepEditCommand(editPart, initialStackHistorySize, pages,
         new ArrayList<Command>(commandHistory));
     // AbstractOverrideableCommand cmd = new
     // AbstractOverrideableCommand(editPart.getEditingDomain(),

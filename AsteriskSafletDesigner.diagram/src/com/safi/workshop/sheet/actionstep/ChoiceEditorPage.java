@@ -32,6 +32,7 @@ public class ChoiceEditorPage extends AbstractActionstepEditorPage {
   private Label valueLabel;
   private Text text;
   private Label nameLabel;
+	private IObservableList uiList;
 
   public ChoiceEditorPage(ActionstepEditorDialog parent) {
     super(parent);
@@ -86,12 +87,21 @@ public class ChoiceEditorPage extends AbstractActionstepEditorPage {
     IObservableList modelList = ActionstepEditObservables.observeList(editingDomain, choice, choice
         .eClass().getEStructuralFeature("choices"));
 
-    IObservableList uiList = new WritableList(new ArrayList<CaseItem>(choice.getChoices()),
+    uiList = new WritableList(new ArrayList<CaseItem>(choice.getChoices()),
         CaseItem.class);
     bindingContext.bindList(uiList, modelList, null, null);
 
     caseItemEditorWidget.setItemList(uiList);
     caseItemEditorWidget.setActionstepEditorDialog(parent);
+  }
+  
+  @Override
+  public void dispose() {
+    // TODO Auto-generated method stub
+    super.dispose();
+    uiList.dispose();
+//    uiList.clear();
+    uiList = null;
   }
 
   // @Override

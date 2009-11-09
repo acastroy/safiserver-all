@@ -7,6 +7,7 @@ import java.util.List;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
@@ -65,7 +66,7 @@ public class ChoiceReorderEditPolicy extends FlowLayoutEditPolicy {
 
       final Choice choice = (Choice) getHostObject();
       AbstractTransactionalCommand reorderCommand = new AbstractTransactionalCommand(
-          ((IGraphicalEditPart) getHost()).getEditingDomain(), "reorder kids", null) {
+          ((IGraphicalEditPart) getHost()).getEditingDomain(), "reorder choice kids", null) {
 
         @Override
         protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
@@ -111,6 +112,19 @@ public class ChoiceReorderEditPolicy extends FlowLayoutEditPolicy {
           return CommandResult.newOKCommandResult();
         }
 
+        @Override
+            protected IStatus doRedo(IProgressMonitor monitor, IAdaptable info)
+                throws ExecutionException {
+              // TODO Auto-generated method stub
+              return super.doRedo(monitor, info);
+            }
+        
+        @Override
+            protected IStatus doUndo(IProgressMonitor monitor, IAdaptable info)
+                throws ExecutionException {
+              // TODO Auto-generated method stub
+              return super.doUndo(monitor, info);
+            }
       };
 
       return new ICommandProxy(reorderCommand);
