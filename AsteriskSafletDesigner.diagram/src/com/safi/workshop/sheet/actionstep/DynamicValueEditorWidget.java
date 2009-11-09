@@ -356,8 +356,8 @@ public class DynamicValueEditorWidget extends Composite {
 				&& DynamicValueType.VARIABLE_NAME.getLiteral().equals(
 						info.dynValueTypeStr))) && (dynamicValue == null
 				|| dynamicValue.getType() == DynamicValueType.LITERAL_TEXT
-				|| dynamicValue.getType() == DynamicValueType.SCRIPT_TEXT || DynamicValueType.VARIABLE_NAME == dynamicValue
-				.getType()))) {
+				|| dynamicValue.getType() == DynamicValueType.SCRIPT_TEXT ||(  DynamicValueType.VARIABLE_NAME.getLiteral().equals(
+						info.dynValueTypeStr) && dynamicValue == null)))) {
 			// if (dynamicValue == null){
 			// dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
 			// dynamicValue.setType(DynamicValueType.SCRIPT_TEXT);
