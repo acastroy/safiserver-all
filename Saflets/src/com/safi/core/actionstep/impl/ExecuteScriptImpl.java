@@ -63,6 +63,7 @@ public class ExecuteScriptImpl extends ActionStepImpl implements ExecuteScript {
       if (debugLog.isDebugEnabled())
         debug("Script "+name+" executed successfully");
     } catch (Exception e) {
+    	e.printStackTrace();
       handleException(context, e);
       return;
     }
