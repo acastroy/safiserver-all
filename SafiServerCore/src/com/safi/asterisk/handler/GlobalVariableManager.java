@@ -168,6 +168,7 @@ public class GlobalVariableManager {
         v.setDefaultValue(value);
         // if (!debug)
         DBManager.getInstance().saveOrUpdateGlobalVariable(v);
+        
       }
     }
   }
@@ -208,7 +209,7 @@ public class GlobalVariableManager {
       globalVariables.add(v);
     }
     v.eAdapters().add(varListener);
-
+    
   }
 
   public void globalVariableRemoved(String name) {

@@ -77,7 +77,7 @@ import com.sshtools.j2ssh.transport.publickey.SshKeyGenerator;
 public class SafletEngine {
 
   public static final String DEFAULT_KEY_PASSPHRASE = "safiserver";
-  public final static String SAFISERVER_VERSION = "1.1B_20091031";
+  public final static String SAFISERVER_VERSION = "1.1.9B_20091108";
   public final static String ROOT_DIR = System.getProperty("user.dir");
   private static final String RESOURCES_DIRECTORY = ROOT_DIR + File.separatorChar + "resources";
   public static final String HOST_KEY_NAME = RESOURCES_DIRECTORY + File.separatorChar
