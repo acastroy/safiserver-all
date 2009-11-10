@@ -39,6 +39,7 @@ import com.safi.core.saflet.impl.SafletImpl;
 import com.safi.core.scripting.SafletScript;
 import com.safi.core.scripting.SafletScriptException;
 import com.safi.db.Variable;
+import com.safi.db.VariableScope;
 import com.safi.db.VariableType;
 
 /**
@@ -605,7 +606,15 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
       case DynamicValueType.VARIABLE_NAME_VALUE:
         // Variable v =
         // getHandler().getHandlerContext().getVariable(dynamicValue.getText());
-        return context.getVariableRawValue(dynamicValue.getText());
+      	Variable v = resolveVariableFromName(dynamicValue, context);
+      	if (v == null)
+      		return context.getVariableRawValue(dynamicValue.getText());
+      	else {
+      		if (v.getScope() == VariableScope.GLOBAL)
+      			return v.getDefaultValue();
+      		else
+      			return context.getVariableRawValue(v.getName());
+      	}
         // return getHandler().getHandlerContext().getVariable(dynamicValue.getText());
       case DynamicValueType.CUSTOM_VALUE:
         return text;
