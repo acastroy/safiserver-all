@@ -1,7 +1,6 @@
 package com.safi.workshop.sheet.actionstep;
 
 import java.lang.ref.WeakReference;
-
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EObject;
@@ -29,7 +28,6 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.IEditorPart;
-
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.ActionStepFactory;
 import com.safi.core.actionstep.DynamicValue;
@@ -90,12 +88,10 @@ public class DynamicValueEditorWidget extends Composite {
 			public void mouseDown(final MouseEvent e) {
 				if (isDirectEditable()) {
 					text.setEditable(true);
-					text.setBackground(getDisplay().getSystemColor(
-							SWT.COLOR_WHITE));
+					text.setBackground(getDisplay().getSystemColor(SWT.COLOR_WHITE));
 				} else {
 					text.setEditable(false);
-					text.setBackground(getDisplay().getSystemColor(
-							SWT.COLOR_WIDGET_BACKGROUND));
+					text.setBackground(getDisplay().getSystemColor(SWT.COLOR_WIDGET_BACKGROUND));
 				}
 				// text.setEditable(isDirectEditable());
 				// if (!(info.isTypeLocked &&
@@ -133,15 +129,13 @@ public class DynamicValueEditorWidget extends Composite {
 					if (dynamicValue == null) {
 						if (StringUtils.isNotBlank(newtext)) {
 							boolean isQuoted = newtext
-									.matches(DynamicValueEditorUtils.PATT_QUOTED_TEXT);
+							    .matches(DynamicValueEditorUtils.PATT_QUOTED_TEXT);
 							if (!isQuoted) {
 								String expectedReturn = info.expectedReturnType;
-								if (info.dynValueTypeStr
-										.equalsIgnoreCase("VariableName")) {
-									IEditorPart editor = AsteriskDiagramEditorPlugin
-											.getDefault().getWorkbench()
-											.getActiveWorkbenchWindow()
-											.getActivePage().getActiveEditor();
+								if (StringUtils.equals(expectedReturn, "VariableName")) {
+									IEditorPart editor = AsteriskDiagramEditorPlugin.getDefault()
+									    .getWorkbench().getActiveWorkbenchWindow().getActivePage()
+									    .getActiveEditor();
 									if (editor instanceof AsteriskDiagramEditor) {
 
 										AsteriskDiagramEditor currentEditor = (AsteriskDiagramEditor) editor;
@@ -151,55 +145,40 @@ public class DynamicValueEditorWidget extends Composite {
 												initHandlerContext();
 											}
 
-											Variable variable = handlerContext
-													.getVariable(newtext);
+											Variable variable = handlerContext.getVariable(newtext);
 											if (variable != null) {
 
-												VariableEditor variableEditor = new VariableEditor(
-														getShell(),
-														currentEditor,
-														VariableEditor.Mode.EDIT);
-												variableEditor
-														.setVariable(variable);
+												VariableEditor variableEditor = new VariableEditor(getShell(),
+												    currentEditor, VariableEditor.Mode.EDIT);
+												variableEditor.setVariable(variable);
 												// obj);
 												int val = variableEditor.open();
 												if (val == 0) {
 
-													variable = variableEditor
-															.getVariable();
+													variable = variableEditor.getVariable();
 												} else {
 													return;
 												}
 											} else {
-												VariableEditor variableEditor = new VariableEditor(
-														getShell(),
-														currentEditor,
-														VariableEditor.Mode.NEW_LOCAL);
+												VariableEditor variableEditor = new VariableEditor(getShell(),
+												    currentEditor, VariableEditor.Mode.NEW_LOCAL);
 												// variableEditor.setVariable((Variable)
 												// obj);
-												variableEditor
-														.setSuggestedVariableName(text
-																.getText()
-																.trim());
+												variableEditor.setSuggestedVariableName(text.getText().trim());
 												int val = variableEditor.open();
 												if (val == 0) {
 
-													variable = variableEditor
-															.getVariable();
+													variable = variableEditor.getVariable();
 												} else {
 													return;
 												}
 
 											}
 											changed = true;
-											dynamicValue = ActionStepFactory.eINSTANCE
-													.createDynamicValue();
-											dynamicValue
-													.setType(DynamicValueType.VARIABLE_NAME);
-											dynamicValue.setText(variable
-													.getName());
-											text.setText("Var: "
-													+ dynamicValue.getText());
+											dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
+											dynamicValue.setType(DynamicValueType.VARIABLE_NAME);
+											dynamicValue.setText(variable.getName());
+											text.setText("Var: " + dynamicValue.getText());
 											// refresh();
 
 										} catch (Exception ex) {
@@ -208,28 +187,28 @@ public class DynamicValueEditorWidget extends Composite {
 
 									}
 								}
-							} else if (!info.expectedReturnType
-									.equalsIgnoreCase("VariableName")) {
+								else {
+									changed = true;
+									dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
+									dynamicValue.setText(newtext);
+								}
+							} else if (!"VariableName".equals(info.expectedReturnType)) {
 								changed = true;
-								dynamicValue = ActionStepFactory.eINSTANCE
-										.createDynamicValue();
+								dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
 								dynamicValue.setText(newtext);
-							}else
-							{
-							  MessageDialog.openError(getShell(), "Variable Error",
-								            "Could not set value. Value is illegal." );
-								  
+							} else {
+								MessageDialog.openError(getShell(), "Variable Error",
+								    "Could not set value. Value is illegal.");
+
 								text.setText("");
-								dynamicValue=null;
+								dynamicValue = null;
 								refresh();
 								return;
 							}
-							if (newtext
-									.matches(DynamicValueEditorUtils.PATT_QUOTED_TEXT)) {
-								dynamicValue
-										.setType(DynamicValueType.LITERAL_TEXT);
-							} else if (!dynamicValue.getType().equals(
-									DynamicValueType.VARIABLE_NAME)) {
+							
+							if (isQuoted) {
+								dynamicValue.setType(DynamicValueType.LITERAL_TEXT);
+							} else if (dynamicValue.getType() != DynamicValueType.VARIABLE_NAME) {
 
 								// if(info.expectedReturnType.equalsIgnoreCase("Text")){
 								// dynamicValue.setType(DynamicValueType.LITERAL_TEXT);
@@ -239,8 +218,7 @@ public class DynamicValueEditorWidget extends Composite {
 								// }else
 								// {
 
-								dynamicValue
-										.setType(DynamicValueType.SCRIPT_TEXT);
+								dynamicValue.setType(DynamicValueType.SCRIPT_TEXT);
 
 								// }
 							}
@@ -259,35 +237,21 @@ public class DynamicValueEditorWidget extends Composite {
 							changed = true;
 							// text.setEditable(false);
 							// object.eSet(feature, dynamicValue);
-						} else if (!StringUtils.equals(newtext, dynamicValue
-								.getText())) {
+						} else if (!StringUtils.equals(newtext, dynamicValue.getText())) {
 							DynamicValueType currType = dynamicValue.getType();
 
 							editingDomain.getCommandStack().execute(
-									SetCommand.create(editingDomain,
-											dynamicValue, dynamicValue.eClass()
-													.getEStructuralFeature(
-															"text"), newtext));
-							boolean isText = newtext
-									.matches(DynamicValueEditorUtils.PATT_QUOTED_TEXT);
-							if (isText
-									&& currType != DynamicValueType.LITERAL_TEXT) {
+							    SetCommand.create(editingDomain, dynamicValue, dynamicValue.eClass()
+							        .getEStructuralFeature("text"), newtext));
+							boolean isText = newtext.matches(DynamicValueEditorUtils.PATT_QUOTED_TEXT);
+							if (isText && currType != DynamicValueType.LITERAL_TEXT) {
 								editingDomain.getCommandStack().execute(
-										SetCommand.create(editingDomain,
-												dynamicValue, dynamicValue
-														.eClass()
-														.getEStructuralFeature(
-																"type"),
-												DynamicValueType.LITERAL_TEXT));
-							} else if (!isText
-									&& currType != DynamicValueType.SCRIPT_TEXT) {
+								    SetCommand.create(editingDomain, dynamicValue, dynamicValue.eClass()
+								        .getEStructuralFeature("type"), DynamicValueType.LITERAL_TEXT));
+							} else if (!isText && currType != DynamicValueType.SCRIPT_TEXT) {
 								editingDomain.getCommandStack().execute(
-										SetCommand.create(editingDomain,
-												dynamicValue, dynamicValue
-														.eClass()
-														.getEStructuralFeature(
-																"type"),
-												DynamicValueType.SCRIPT_TEXT));
+								    SetCommand.create(editingDomain, dynamicValue, dynamicValue.eClass()
+								        .getEStructuralFeature("type"), DynamicValueType.SCRIPT_TEXT));
 							}
 							// dynamicValue.setText(newtext);
 							// getA
@@ -307,12 +271,10 @@ public class DynamicValueEditorWidget extends Composite {
 			public void focusGained(FocusEvent e) {
 				if (isDirectEditable()) {
 					text.setEditable(true);
-					text.setBackground(getDisplay().getSystemColor(
-							SWT.COLOR_WHITE));
+					text.setBackground(getDisplay().getSystemColor(SWT.COLOR_WHITE));
 				} else {
 					text.setEditable(false);
-					text.setBackground(getDisplay().getSystemColor(
-							SWT.COLOR_WIDGET_BACKGROUND));
+					text.setBackground(getDisplay().getSystemColor(SWT.COLOR_WIDGET_BACKGROUND));
 				}
 			}
 
@@ -322,9 +284,8 @@ public class DynamicValueEditorWidget extends Composite {
 
 		imageLabel = new Label(this, SWT.NONE);
 		imageLabel.setLayoutData(new GridData(SWT.DEFAULT, SWT.DEFAULT));
-		imageLabel.setImage(ResourceManager.getPluginImage(
-				AsteriskDiagramEditorPlugin.getDefault(),
-				"icons/dynamicValueEditor/literal_text.gif"));
+		imageLabel.setImage(ResourceManager.getPluginImage(AsteriskDiagramEditorPlugin
+		    .getDefault(), "icons/dynamicValueEditor/literal_text.gif"));
 
 		clearButton = new Button(this, SWT.NONE);
 		clearButton.addSelectionListener(new SelectionAdapter() {
@@ -337,8 +298,8 @@ public class DynamicValueEditorWidget extends Composite {
 		});
 		final GridData gd_clearButton = new GridData(20, 20);
 		clearButton.setLayoutData(gd_clearButton);
-		clearButton.setImage(ResourceManager.getPluginImage(
-				AsteriskDiagramEditorPlugin.getDefault(), "icons/fail.gif"));
+		clearButton.setImage(ResourceManager.getPluginImage(AsteriskDiagramEditorPlugin
+		    .getDefault(), "icons/fail.gif"));
 
 		editButton = new Button(this, SWT.NONE);
 		editButton.setLayoutData(new GridData(SWT.DEFAULT, 20));
@@ -353,22 +314,19 @@ public class DynamicValueEditorWidget extends Composite {
 	}
 
 	protected boolean isDirectEditable() {
-		if ((!(info.isTypeLocked && !(DynamicValueType.SCRIPT_TEXT.getLiteral()
-				.equals(info.dynValueTypeStr)
-				|| DynamicValueType.LITERAL_TEXT.getLiteral().equals(
-						info.dynValueTypeStr) || dynamicValue == null
-				&& DynamicValueType.VARIABLE_NAME.getLiteral().equals(
-						info.dynValueTypeStr))) && (dynamicValue == null
-				|| dynamicValue.getType() == DynamicValueType.LITERAL_TEXT
-				|| dynamicValue.getType() == DynamicValueType.SCRIPT_TEXT ||(  DynamicValueType.VARIABLE_NAME.getLiteral().equals(
-						info.dynValueTypeStr) && dynamicValue == null)))) {
+		if ((!(info.isTypeLocked && !(DynamicValueType.SCRIPT_TEXT.getLiteral().equals(
+		    info.dynValueTypeStr)
+		    || DynamicValueType.LITERAL_TEXT.getLiteral().equals(info.dynValueTypeStr) || dynamicValue == null
+		    && DynamicValueType.VARIABLE_NAME.getLiteral().equals(info.dynValueTypeStr))) && (dynamicValue == null
+		    || dynamicValue.getType() == DynamicValueType.LITERAL_TEXT
+		    || dynamicValue.getType() == DynamicValueType.SCRIPT_TEXT || (DynamicValueType.VARIABLE_NAME
+		    .getLiteral().equals(info.dynValueTypeStr) && dynamicValue == null)))) {
 			// if (dynamicValue == null){
 			// dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
 			// dynamicValue.setType(DynamicValueType.SCRIPT_TEXT);
 			// }
 			String script = dynamicValue == null ? "" : dynamicValue.getText();
-			if (script == null || script.trim().length() == 0
-					|| (script.indexOf('\n') < 0)) {
+			if (script == null || script.trim().length() == 0 || (script.indexOf('\n') < 0)) {
 				return true;
 			} else {
 				return false;
@@ -401,8 +359,7 @@ public class DynamicValueEditorWidget extends Composite {
 	private void initHandlerContext() {
 		if (handlerContext == null) {
 			if (object instanceof ActionStep) {
-				handlerContext = ((ActionStep) object).getSaflet()
-						.getSafletContext();
+				handlerContext = ((ActionStep) object).getSaflet().getSafletContext();
 			} else if (object instanceof Item) {
 				ActionStep ts = ((Item) object).getParentActionStep();
 				if (ts != null)
@@ -436,13 +393,12 @@ public class DynamicValueEditorWidget extends Composite {
 			initHandlerContext();
 
 			if (handlerContext == null)
-				throw new IllegalStateException(
-						"Couldn't retrieve SafletContext from object " + object);
+				throw new IllegalStateException("Couldn't retrieve SafletContext from object "
+				    + object);
 		}
 
-		DynamicValueEditor2 dve = DynamicValueEditorUtils
-				.createDynamicValueEditor(info, object, editingDomain,
-						dynamicValue, handlerContext, getShell());
+		DynamicValueEditor2 dve = DynamicValueEditorUtils.createDynamicValueEditor(info,
+		    object, editingDomain, dynamicValue, handlerContext, getShell());
 
 		if (Window.OK == dve.open()) {
 			DynamicValue dv = dve.getDynamicValue();
@@ -507,24 +463,21 @@ public class DynamicValueEditorWidget extends Composite {
 			// updateTextDirectEditCapability(false);
 			switch (dynamicValue.getType()) {
 			case LITERAL_TEXT:
-				imageLabel.setImage(ResourceManager.getPluginImage(
-						AsteriskDiagramEditorPlugin.getDefault(),
-						"icons/dynamicValueEditor/literal_text.gif"));
+				imageLabel.setImage(ResourceManager.getPluginImage(AsteriskDiagramEditorPlugin
+				    .getDefault(), "icons/dynamicValueEditor/literal_text.gif"));
 				// updateTextDirectEditCapability(true);
 				// text.setEditable(true);
 				text.setText(dynamicValue.getText());
 				break;
 			case CUSTOM:
-				imageLabel.setImage(ResourceManager.getPluginImage(
-						AsteriskDiagramEditorPlugin.getDefault(),
-						"icons/dynamicValueEditor/custom.gif"));
+				imageLabel.setImage(ResourceManager.getPluginImage(AsteriskDiagramEditorPlugin
+				    .getDefault(), "icons/dynamicValueEditor/custom.gif"));
 				EMap<String, String> data = dynamicValue.getData();
 				String prefix = null;
 				if (data != null) {
 					prefix = data.get(SafletConstants.DYNVALKEY_DISPLAY_TYPE);
 					if (StringUtils.isBlank(prefix))
-						prefix = data
-								.get(SafletConstants.DYNVALKEY_ACTUAL_TYPE);
+						prefix = data.get(SafletConstants.DYNVALKEY_ACTUAL_TYPE);
 				}
 				if (StringUtils.isBlank(prefix))
 					prefix = "Custom: ";
@@ -533,9 +486,8 @@ public class DynamicValueEditorWidget extends Composite {
 				text.setText(prefix + dynamicValue.getText());
 				break;
 			case SCRIPT_TEXT:
-				imageLabel.setImage(ResourceManager.getPluginImage(
-						AsteriskDiagramEditorPlugin.getDefault(),
-						"icons/dynamicValueEditor/script.gif"));
+				imageLabel.setImage(ResourceManager.getPluginImage(AsteriskDiagramEditorPlugin
+				    .getDefault(), "icons/dynamicValueEditor/script.gif"));
 				String script = dynamicValue.getText();
 				if (script == null)
 					script = "";
@@ -545,14 +497,12 @@ public class DynamicValueEditorWidget extends Composite {
 				} else {
 					// updateTextDirectEditCapability(false);
 					text.setText("Script: "
-							+ script.substring(script.lastIndexOf('\n') + 1,
-									script.length()));
+					    + script.substring(script.lastIndexOf('\n') + 1, script.length()));
 				}
 				break;
 			case VARIABLE_NAME:
-				imageLabel.setImage(ResourceManager.getPluginImage(
-						AsteriskDiagramEditorPlugin.getDefault(),
-						"icons/dynamicValueEditor/variable.gif"));
+				imageLabel.setImage(ResourceManager.getPluginImage(AsteriskDiagramEditorPlugin
+				    .getDefault(), "icons/dynamicValueEditor/variable.gif"));
 				text.setText("Var: " + dynamicValue.getText());
 				break;
 			}
@@ -564,7 +514,7 @@ public class DynamicValueEditorWidget extends Composite {
 	protected void updateTextDirectEditCapability(boolean b) {
 		text.setEditable(b);
 		text.setBackground(b ? lightBlue : this.getDisplay().getSystemColor(
-				SWT.COLOR_WIDGET_BACKGROUND));
+		    SWT.COLOR_WIDGET_BACKGROUND));
 	}
 
 	public EStructuralFeature getFeature() {

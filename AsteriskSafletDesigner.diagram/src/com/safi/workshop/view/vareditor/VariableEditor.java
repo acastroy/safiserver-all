@@ -385,6 +385,14 @@ public class VariableEditor extends TitleAreaDialog {
       // return null;
     }
     valueText.setText(textVal == null ? "" : textVal);
+    quickValidateName(variableNameText.getText());
+  }
+  
+  @Override
+  public void create() {
+    // TODO Auto-generated method stub
+    super.create();
+    quickValidateName(variableNameText.getText());
   }
 
   /**
@@ -428,21 +436,19 @@ public class VariableEditor extends TitleAreaDialog {
     if (variableNameText == null || variableNameText.isDisposed())
       return;
     if (variable == null) {
-    	if(this.suggestedName!=null){
-           variableNameText.setText(this.suggestedName);
-    	}else
-    	{
-    		variableNameText.setText(this.suggestedName);
-    	}
+    	variableNameText.setText(this.suggestedName!=null ? suggestedName : "");
       typeComboViewer.setSelection(new StructuredSelection(VariableType.TEXT));
       valueText.setText("");
     } else {
-      variableNameText.setText(variable.getName());
+      variableNameText.setText(variable.getName() == null ? "" : variable.getName());
       typeComboViewer.setSelection(new StructuredSelection(variable.getType()));
       valueText.setText(VariableTranslator.translateToText(variable.getType(), variable
           .getDefaultValue()));
     }
+    quickValidateName(variableNameText.getText());
+//    quickValidateName()
   }
+  
 
   private VariableType getSelectedType() {
     return (VariableType) ((IStructuredSelection) typeComboViewer.getSelection()).getFirstElement();
