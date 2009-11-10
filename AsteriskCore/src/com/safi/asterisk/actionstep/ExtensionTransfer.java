@@ -22,6 +22,7 @@ import com.safi.core.actionstep.DynamicValue;
  *   <li>{@link com.safi.asterisk.actionstep.ExtensionTransfer#getExtension <em>Extension</em>}</li>
  *   <li>{@link com.safi.asterisk.actionstep.ExtensionTransfer#getPriority <em>Priority</em>}</li>
  *   <li>{@link com.safi.asterisk.actionstep.ExtensionTransfer#getTimeout <em>Timeout</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.ExtensionTransfer#getOptions <em>Options</em>}</li>
  * </ul>
  * </p>
  *
@@ -137,5 +138,32 @@ public interface ExtensionTransfer extends ActionStep, CallConsumer2 {
 	 * @generated
 	 */
   void setTimeout(long value);
+
+		/**
+	 * Returns the value of the '<em><b>Options</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Options</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Options</em>' containment reference.
+	 * @see #setOptions(DynamicValue)
+	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getExtensionTransfer_Options()
+	 * @model containment="true" ordered="false"
+	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='A string containing Asterisk flags and parameters to be applied to the \'Dial\' command' expectedReturnType='Text' helperClass=''"
+	 * @generated
+	 */
+	DynamicValue getOptions();
+
+		/**
+	 * Sets the value of the '{@link com.safi.asterisk.actionstep.ExtensionTransfer#getOptions <em>Options</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Options</em>' containment reference.
+	 * @see #getOptions()
+	 * @generated
+	 */
+	void setOptions(DynamicValue value);
 
 } // ExtensionTransfer

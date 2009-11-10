@@ -1804,6 +1804,17 @@
           <details key="seconds" value="true"/>
         </eAnnotations>
       </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="options" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="VariableName"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="A string containing Asterisk flags and parameters to be applied to the 'Dial' command"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="initiator" nsURI="http:///com/safi/asterisk.ecore#initiator"

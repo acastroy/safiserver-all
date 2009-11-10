@@ -3530,6 +3530,15 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 
   /**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getExtensionTransfer_Options() {
+		return (EReference)extensionTransferEClass.getEStructuralFeatures().get(4);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -3975,6 +3984,7 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		createEReference(extensionTransferEClass, EXTENSION_TRANSFER__EXTENSION);
 		createEAttribute(extensionTransferEClass, EXTENSION_TRANSFER__PRIORITY);
 		createEAttribute(extensionTransferEClass, EXTENSION_TRANSFER__TIMEOUT);
+		createEReference(extensionTransferEClass, EXTENSION_TRANSFER__OPTIONS);
 
 		// Create enums
 		meetMeAdminCommandEEnum = createEEnum(MEET_ME_ADMIN_COMMAND);
@@ -4548,6 +4558,7 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		initEReference(getExtensionTransfer_Extension(), theActionStepPackage.getDynamicValue(), null, "extension", null, 0, 1, ExtensionTransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getExtensionTransfer_Priority(), ecorePackage.getEInt(), "priority", "1", 0, 1, ExtensionTransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getExtensionTransfer_Timeout(), ecorePackage.getELong(), "timeout", null, 0, 1, ExtensionTransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getExtensionTransfer_Options(), theActionStepPackage.getDynamicValue(), null, "options", null, 0, 1, ExtensionTransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(meetMeAdminCommandEEnum, MeetMeAdminCommand.class, "MeetMeAdminCommand");
@@ -4738,7 +4749,7 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		   source, 
 		   new String[] {
 			 "seconds", "true"
-		   });
+		   });	
 	}
 
   /**
@@ -5578,7 +5589,17 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 			 "description", "The context of the current call will be set to this text value.",
 			 "expectedReturnType", "Text",
 			 "helperClass", ""
-		   });	
+		   });			
+		addAnnotation
+		  (getExtensionTransfer_Options(), 
+		   source, 
+		   new String[] {
+			 "type", "VariableName",
+			 "isTypeLocked", "false",
+			 "description", "A string containing Asterisk flags and parameters to be applied to the \'Dial\' command",
+			 "expectedReturnType", "Text",
+			 "helperClass", ""
+		   });
 	}
 
   /**
@@ -5696,7 +5717,7 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		   source, 
 		   new String[] {
 			 "output", "true"
-		   });																									
+		   });																										
 	}
 
   /**
@@ -5730,7 +5751,7 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		   source, 
 		   new String[] {
 			 "displayText", "Variable"
-		   });																							
+		   });																								
 	}
 
   /**
@@ -6016,7 +6037,7 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		   source, 
 		   new String[] {
 			 "criteria", "non-null"
-		   });					
+		   });						
 	}
 
 } //ActionstepPackageImpl

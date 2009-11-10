@@ -9196,13 +9196,22 @@ public interface ActionstepPackage extends EPackage {
   int EXTENSION_TRANSFER__TIMEOUT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 5;
 
   /**
+	 * The feature id for the '<em><b>Options</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENSION_TRANSFER__OPTIONS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 6;
+
+		/**
 	 * The number of structural features of the '<em>Extension Transfer</em>' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int EXTENSION_TRANSFER_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 6;
+  int EXTENSION_TRANSFER_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 7;
 
   /**
 	 * The meta object id for the '{@link com.safi.asterisk.actionstep.MeetMeAdminCommand <em>Meet Me Admin Command</em>}' enum.
@@ -12642,6 +12651,17 @@ public interface ActionstepPackage extends EPackage {
   EAttribute getExtensionTransfer_Timeout();
 
   /**
+	 * Returns the meta object for the containment reference '{@link com.safi.asterisk.actionstep.ExtensionTransfer#getOptions <em>Options</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Options</em>'.
+	 * @see com.safi.asterisk.actionstep.ExtensionTransfer#getOptions()
+	 * @see #getExtensionTransfer()
+	 * @generated
+	 */
+	EReference getExtensionTransfer_Options();
+
+		/**
 	 * Returns the meta object for enum '{@link com.safi.asterisk.actionstep.MeetMeAdminCommand <em>Meet Me Admin Command</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -15364,6 +15384,14 @@ public interface ActionstepPackage extends EPackage {
     EAttribute EXTENSION_TRANSFER__TIMEOUT = eINSTANCE.getExtensionTransfer_Timeout();
 
     /**
+		 * The meta object literal for the '<em><b>Options</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTENSION_TRANSFER__OPTIONS = eINSTANCE.getExtensionTransfer_Options();
+
+				/**
 		 * The meta object literal for the '{@link com.safi.asterisk.actionstep.MeetMeAdminCommand <em>Meet Me Admin Command</em>}' enum.
 		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
