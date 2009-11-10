@@ -109,6 +109,10 @@ public class DebugRemoteControlImpl implements DebugRemoteControl {
     private static final long serialVersionUID = -8232714931288880028L;
 
     @Override
+    public boolean isAdapterForType(Object type) {
+      return true;
+    }
+    @Override
     public void notifyChanged(Notification msg) {
       if (msg instanceof ENotificationImpl) {
         ENotificationImpl not = (ENotificationImpl) msg;

@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FilenameFilter;
 import java.io.IOException;
+import java.io.Serializable;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
@@ -27,9 +28,18 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.apache.commons.lang.ObjectUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.Notifier;
+import org.eclipse.emf.common.notify.impl.AdapterImpl;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.hibernate.Session;
 import org.sadun.util.polling.DirectoryPoller;
@@ -51,6 +61,8 @@ import com.safi.asterisk.handler.connection.AsteriskConnectionManager;
 import com.safi.asterisk.handler.connection.SSHDProvider;
 import com.safi.asterisk.handler.dispatch.SafletDispatch;
 import com.safi.asterisk.handler.importing.SafiArchiveImporter;
+import com.safi.asterisk.handler.mbean.ENotificationWrapperImpl;
+import com.safi.asterisk.handler.mbean.EObjectReferenceImpl;
 import com.safi.asterisk.handler.mbean.FileTransferImpl;
 import com.safi.asterisk.handler.mbean.SafiServerMonitorImpl;
 import com.safi.asterisk.handler.service.ServiceManager;
@@ -67,6 +79,7 @@ import com.safi.core.saflet.Saflet;
 import com.safi.core.scripting.SafletScriptEnvironment;
 import com.safi.core.scripting.ScriptingFactory;
 import com.safi.db.Variable;
+import com.safi.db.VariableScope;
 import com.safi.db.manager.DBManager;
 import com.safi.db.manager.DBManagerException;
 import com.safi.db.manager.PooledDataSourceManager;
@@ -133,6 +146,7 @@ public class SafletEngine {
   private boolean useManagerPing = true;
 
   private long startupTime;
+	private GlobalVariableListener globalVariableListener;
 //	private Properties poolProperties;
 
   public String getDefaultPass() {
@@ -229,19 +243,21 @@ public class SafletEngine {
         .createRhinoSafletScriptFactory());
     scriptingEnvironment.setScriptScopeFactory(ScriptingFactory.eINSTANCE
         .createRhinoScriptScopeFactory());
+    
+   
   }
 
   public void addWorkbenchDebugStatement(Level level, String message) {
     debuggerLog.log(level, message);
   }
 
-  public void hookHandler(Saflet handler) {
-    boolean astSaflet = handler instanceof AsteriskSaflet;
+  public void hookHandler(Saflet saflet) {
+    boolean astSaflet = saflet instanceof AsteriskSaflet;
     // if (astSaflet && !testing && astServerId != null)
     // ((AsteriskSaflet)handler).setManagerConnection(connectionManager.getManagerConnection(astServerId));
-    handler.setScriptingEnvironment(scriptingEnvironment);
+    saflet.setScriptingEnvironment(scriptingEnvironment);
     if (astSaflet)
-      ((AsteriskSaflet) handler).setSafletEnvironment(new EngineHandlerEnvironment(handler));
+      ((AsteriskSaflet) saflet).setSafletEnvironment(new EngineHandlerEnvironment(saflet));
 
   }
 
@@ -298,6 +314,7 @@ public class SafletEngine {
       initializeDB(getDatabasePort());
       // Give DB time to start
 
+      hookGlobalVars();
       initShutdownHook();
       connectionManager.initSafiServer();
       connectionManager.initManagerConnections();
@@ -319,7 +336,17 @@ public class SafletEngine {
     startPoller();
 
   }
-  private SSHDProvider sshdProvider;
+  private void hookGlobalVars() {
+  	 if (scriptingEnvironment.getSharedScriptScope() != null)
+       for (Variable v : GlobalVariableManager.getInstance().getGlobalVariables()) {
+       	scriptingEnvironment.getSharedScriptScope().exposeObjectToScript(v.getName(), v.getDefaultValue());
+       }
+  	 if (globalVariableListener == null) {
+  		 globalVariableListener = new GlobalVariableListener();
+  		 GlobalVariableManager.getInstance().addGlobalVarListener(globalVariableListener);
+  	 }
+  }
+	private SSHDProvider sshdProvider;
 
   private void initSSHD() throws SafletEngineException {
     try {
@@ -1188,5 +1215,61 @@ public class SafletEngine {
 	public void setUseManagerPing(boolean useManagerPing) {
   	this.useManagerPing = useManagerPing;
   }
+	
+	class GlobalVariableListener extends AdapterImpl {
+
+		
+
+		@Override
+    public boolean isAdapterForType(Object arg0) {
+	    // TODO Auto-generated method stub
+	    return true;
+    }
+
+		@Override
+    public void notifyChanged(Notification msg) {
+      if (msg instanceof ENotificationImpl) {
+//      	System.err.println("GlobalVariableListerns got not "+msg);
+        ENotificationImpl not = (ENotificationImpl) msg;
+        Object feature = not.getFeature();
+        EStructuralFeature ef = (EStructuralFeature) feature;
+        Object newVal = not.getNewValue();
+        
+        if (not.getNotifier() instanceof Variable && ((Variable)not.getNotifier()).getScope() == VariableScope.GLOBAL){
+        	Variable v = (Variable)not.getNotifier();
+        	switch (not.getEventType()){
+        	case Notification.SET:
+        	case Notification.UNSET:
+        		scriptingEnvironment.getSharedScriptScope().exposeObjectToScript(v.getName(), newVal);
+        	}
+        	
+        }
+        else if (newVal instanceof Variable && ((Variable)newVal).getScope() == VariableScope.GLOBAL){
+        	Variable v = (Variable)newVal;
+        	switch (not.getEventType()){
+        	case Notification.REMOVE:
+        	case Notification.UNSET:
+        		scriptingEnvironment.getSharedScriptScope().removeObjectFromScope(v.getName());
+        		break;
+        	case Notification.SET:
+        	case Notification.ADD:
+        	case Notification.MOVE:
+        		scriptingEnvironment.getSharedScriptScope().exposeObjectToScript(v.getName(), v.getDefaultValue());
+        		break;
+        	}
+        }
+        
+       
+      }
+      
+    }
+
+		@Override
+    public void setTarget(Notifier arg0) {
+	    // TODO Auto-generated method stub
+	    
+    }
+		
+	}
 
 }
