@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: CoreActionPak1Model.edit;singleton:=true
-Bundle-Version: 1.0.7
+Bundle-Version: 1.0.9
 Bundle-ClassPath: .
 Bundle-Activator: com.safi.workshop.model.actionpak1.provider.Actionpak1EditPlugin$Implementation
 Bundle-Vendor: %providerName
