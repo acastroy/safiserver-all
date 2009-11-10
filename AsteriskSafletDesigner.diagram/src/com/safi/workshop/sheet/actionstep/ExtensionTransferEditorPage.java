@@ -39,6 +39,7 @@ public class ExtensionTransferEditorPage extends AbstractActionstepEditorPage {
   private Text nameText;
   private Label nameLabel;
   private DynamicValueEditorWidget textDVEWidget;
+  private DynamicValueEditorWidget optionsDVEWidget;
   private Spinner timeoutSpinner;
 
   public ExtensionTransferEditorPage(ActionstepEditorDialog parent) {
@@ -185,6 +186,28 @@ public class ExtensionTransferEditorPage extends AbstractActionstepEditorPage {
     uiElement2 = SWTObservables.observeDelayedValue(400, uiElement2);
     bindingContext.bindValue(uiElement2, ob2, us, us);
 
+    // --------- Additional Options 
+    
+    final Label optionsLabel = new Label(this, SWT.NONE);
+    optionsLabel.setText("Options:");
+    optionsLabel.setToolTipText("Additional options for the Asterisk 'Dial' command");
+
+    optionsDVEWidget = new DynamicValueEditorWidget(this, SWT.NONE);
+    optionsDVEWidget.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
+    optionsDVEWidget.setDynamicValue(DynamicValueEditorUtils.copyDynamicValue(extensiontransfer
+        .getOptions()));
+    optionsDVEWidget.setEditingDomain(editingDomain);
+    optionsDVEWidget.setObject(extensiontransfer);
+
+    EStructuralFeature optionsFeature = extensiontransfer.eClass().getEStructuralFeature(
+        "options");
+    optionsDVEWidget.setFeature(extensionFeature);
+
+    ob = ActionstepEditObservables.observeValue(editingDomain, extensiontransfer, optionsFeature);
+    DynamicValueWidgetObservableValue optionsVal = new DynamicValueWidgetObservableValue(
+    		optionsDVEWidget, SWT.Modify);
+
+    bindingContext.bindValue(optionsVal, ob, null, null);
   }
 
   @Override
