@@ -324,7 +324,7 @@ public class DBManager {
 
         String connectionUrl = null;
         if (serverMode) {
-          connectionUrl = "jdbc:hsqldb:hsql://localhost:" + port
+          connectionUrl = "jdbc:hsqldb:hsql://127.0.0.1:" + port
               + "/safi;hsqldb.default_table_type=cached";
         } else
           connectionUrl = "jdbc:hsqldb:hsql://" + host + ":" + port + "/safi";
@@ -1938,7 +1938,7 @@ public class DBManager {
 
   }
 
-  public synchronized void saveOrUpdateGlobalVariable(Variable var) throws DBManagerException {
+  public synchronized boolean saveOrUpdateGlobalVariable(Variable var) throws DBManagerException {
     Session session = createSession();
 //    try {
 //      session.beginTransaction();
@@ -1961,6 +1961,7 @@ public class DBManager {
       session.beginTransaction();
       session.saveOrUpdate(var);
       session.getTransaction().commit();
+      return  true;
 //    } catch (StaleObjectStateException e) {
     } catch (Exception e) {
       try {
@@ -1976,7 +1977,7 @@ public class DBManager {
         }
         
         session.getTransaction().commit();
-        return;
+        return false;
       } catch (Exception ex) {
         Transaction t = session.getTransaction();
         if (t != null)
