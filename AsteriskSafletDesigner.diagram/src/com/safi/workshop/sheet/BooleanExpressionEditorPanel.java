@@ -1376,9 +1376,12 @@ public class BooleanExpressionEditorPanel extends Composite {
 		@Override
 		public String getScriptText() {
 			// TODO Auto-generated method stub
+//			return var == null ? VAR_NOT_FOUND_STR
+//			    : (var.getScope() == VariableScope.GLOBAL ? "getGlobalVariable(\""
+//			        + var.getName() + "\")" : var.getName());
+			
 			return var == null ? VAR_NOT_FOUND_STR
-			    : (var.getScope() == VariableScope.GLOBAL ? "getGlobalVariable(\""
-			        + var.getName() + "\")" : var.getName());
+			    :var.getName();
 		}
 
 		@Override
