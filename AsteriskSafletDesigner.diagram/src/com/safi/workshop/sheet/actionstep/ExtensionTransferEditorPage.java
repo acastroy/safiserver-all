@@ -21,6 +21,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Spinner;
@@ -208,6 +209,16 @@ public class ExtensionTransferEditorPage extends AbstractActionstepEditorPage {
     		optionsDVEWidget, SWT.Modify);
 
     bindingContext.bindValue(optionsVal, ob, null, null);
+    
+ // ----------- do pre-status check Field
+    final Button preStatusCheckBox = new Button(this, SWT.CHECK);
+    preStatusCheckBox.setText("Check Status First:");
+    preStatusCheckBox.setToolTipText("If checked, the given extension will be queried for it's status before placing the call, using an AMI command");
+
+    IObservableValue preStatusCheckVal = ActionstepEditObservables.observeValue(editingDomain, extensiontransfer, 
+    		extensiontransfer.eClass().getEStructuralFeature("doPreExtenStatusCheck"));
+    ISWTObservableValue preStatusObservable = SWTObservables.observeSelection(preStatusCheckBox);
+    bindingContext.bindValue(preStatusObservable, preStatusCheckVal, null, null);
   }
 
   @Override
