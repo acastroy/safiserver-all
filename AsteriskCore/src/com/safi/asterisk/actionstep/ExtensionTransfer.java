@@ -23,6 +23,7 @@ import com.safi.core.actionstep.DynamicValue;
  *   <li>{@link com.safi.asterisk.actionstep.ExtensionTransfer#getPriority <em>Priority</em>}</li>
  *   <li>{@link com.safi.asterisk.actionstep.ExtensionTransfer#getTimeout <em>Timeout</em>}</li>
  *   <li>{@link com.safi.asterisk.actionstep.ExtensionTransfer#getOptions <em>Options</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.ExtensionTransfer#isDoPreExtenStatusCheck <em>Do Pre Exten Status Check</em>}</li>
  * </ul>
  * </p>
  *
@@ -165,5 +166,31 @@ public interface ExtensionTransfer extends ActionStep, CallConsumer2 {
 	 * @generated
 	 */
 	void setOptions(DynamicValue value);
+
+		/**
+	 * Returns the value of the '<em><b>Do Pre Exten Status Check</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Do Pre Exten Status Check</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Do Pre Exten Status Check</em>' attribute.
+	 * @see #setDoPreExtenStatusCheck(boolean)
+	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getExtensionTransfer_DoPreExtenStatusCheck()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	boolean isDoPreExtenStatusCheck();
+
+		/**
+	 * Sets the value of the '{@link com.safi.asterisk.actionstep.ExtensionTransfer#isDoPreExtenStatusCheck <em>Do Pre Exten Status Check</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Do Pre Exten Status Check</em>' attribute.
+	 * @see #isDoPreExtenStatusCheck()
+	 * @generated
+	 */
+	void setDoPreExtenStatusCheck(boolean value);
 
 } // ExtensionTransfer

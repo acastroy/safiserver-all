@@ -1815,6 +1815,8 @@
           <details key="helperClass" value=""/>
         </eAnnotations>
       </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="doPreExtenStatusCheck"
+          ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="initiator" nsURI="http:///com/safi/asterisk.ecore#initiator"

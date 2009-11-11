@@ -471,6 +471,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/ExtensionTransfer/priority"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/ExtensionTransfer/timeout"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/ExtensionTransfer/options"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/ExtensionTransfer/doPreExtenStatusCheck"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Initiator" disposableProviderFactory="true" ecorePackage="asterisk.ecore#//initiator">

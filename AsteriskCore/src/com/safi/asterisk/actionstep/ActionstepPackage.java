@@ -9205,13 +9205,22 @@ public interface ActionstepPackage extends EPackage {
 	int EXTENSION_TRANSFER__OPTIONS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 6;
 
 		/**
+	 * The feature id for the '<em><b>Do Pre Exten Status Check</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENSION_TRANSFER__DO_PRE_EXTEN_STATUS_CHECK = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 7;
+
+		/**
 	 * The number of structural features of the '<em>Extension Transfer</em>' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int EXTENSION_TRANSFER_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 7;
+  int EXTENSION_TRANSFER_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 8;
 
   /**
 	 * The meta object id for the '{@link com.safi.asterisk.actionstep.MeetMeAdminCommand <em>Meet Me Admin Command</em>}' enum.
@@ -12662,6 +12671,17 @@ public interface ActionstepPackage extends EPackage {
 	EReference getExtensionTransfer_Options();
 
 		/**
+	 * Returns the meta object for the attribute '{@link com.safi.asterisk.actionstep.ExtensionTransfer#isDoPreExtenStatusCheck <em>Do Pre Exten Status Check</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Do Pre Exten Status Check</em>'.
+	 * @see com.safi.asterisk.actionstep.ExtensionTransfer#isDoPreExtenStatusCheck()
+	 * @see #getExtensionTransfer()
+	 * @generated
+	 */
+	EAttribute getExtensionTransfer_DoPreExtenStatusCheck();
+
+		/**
 	 * Returns the meta object for enum '{@link com.safi.asterisk.actionstep.MeetMeAdminCommand <em>Meet Me Admin Command</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -15390,6 +15410,14 @@ public interface ActionstepPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EXTENSION_TRANSFER__OPTIONS = eINSTANCE.getExtensionTransfer_Options();
+
+				/**
+		 * The meta object literal for the '<em><b>Do Pre Exten Status Check</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXTENSION_TRANSFER__DO_PRE_EXTEN_STATUS_CHECK = eINSTANCE.getExtensionTransfer_DoPreExtenStatusCheck();
 
 				/**
 		 * The meta object literal for the '{@link com.safi.asterisk.actionstep.MeetMeAdminCommand <em>Meet Me Admin Command</em>}' enum.
