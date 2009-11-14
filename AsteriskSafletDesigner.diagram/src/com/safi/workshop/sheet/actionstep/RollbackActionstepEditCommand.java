@@ -10,85 +10,92 @@ import com.safi.workshop.edit.parts.ToolstepEditPart;
 
 public class RollbackActionstepEditCommand extends AbstractActionstepEditCommand {
 
-  private boolean canUndo;
-  
-  public RollbackActionstepEditCommand(ToolstepEditPart editPart,
-      int initialStackHistorySize, List<ActionstepEditorPage> pages, List<Command> commandHistory) {
-    super(editPart, initialStackHistorySize, pages, commandHistory);
+	private boolean canUndo;
 
-  }
+	public RollbackActionstepEditCommand(ToolstepEditPart editPart,
+	    int initialStackHistorySize, List<ActionstepEditorPage> pages,
+	    List<Command> commandHistory) {
+		super(editPart, initialStackHistorySize, pages, commandHistory);
 
-  @Override
-  public boolean doCanExecute() {
-    // TODO Auto-generated method stub
-    return !canUndo;
-  }
-  @Override
-  public void doExecute() {
-  	System.err.println("This big ol sucka RollbackActionstepEditCommand is exeking");
-    for (SoftReference<ActionstepEditorPage> ref : pagemap) {
-      ActionstepEditorPage page = ref.get();
-      if (page != null)
-        page.operationsComplete();
-    }
-    canUndo = true;
-    // flushOperations((TransactionalEditingDomain) domain, 0, true);
-    // Collections.reverse(commandHistory);
-    // doRollback(domain);
-  }
+	}
 
-  @Override
-  public void doRedo() {
-  	if (!canUndo)
-  		redoRollback(domain);
-  }
+	@Override
+	public boolean doCanExecute() {
+		// TODO Auto-generated method stub
+		return !canUndo;
+	}
 
-  @Override
-  public boolean doCanUndo() {
-    return canUndo;
-  }
-  
-  
+	@Override
+	public void doExecute() {
+		System.err.println("This big ol sucka RollbackActionstepEditCommand is exeking");
+		for (SoftReference<ActionstepEditorPage> ref : pagemap) {
+			ActionstepEditorPage page = ref.get();
+			if (page != null)
+				page.operationsComplete();
+		}
+		canUndo = true;
+		// flushOperations((TransactionalEditingDomain) domain, 0, true);
+		// Collections.reverse(commandHistory);
+		// doRollback(domain);
+		
+	}
 
-  @Override
-  public void doUndo() {
-    if (!flushedOperations) {
-      flushOperations((TransactionalEditingDomain) domain, 1, true);
-      Collections.reverse(commandHistory);
-    }
-    doRollback(domain);
-    canUndo = false;
-    // flushOperations((TransactionalEditingDomain)domain, 0);
-    
-    System.err.println("in doUndo: the initialstaksize was "+initialStackHistorySize+" but now undosize is "+getCurrentOperationUndoSize()+
-    		" and redo is "+getCurrentOperationRedoSize()+" and cmdhist "+commandHistory.size());
-    dumpCurrentOperationUndoSize();
-    dumpCurrentOperationRedoSize();
-  }
+	@Override
+	public void doRedo() {
+		if (!canUndo)
+			redoRollback(domain);
+	}
 
-  private void redoRollback(EditingDomain domain) {
-    for (Command command : commandHistory) {
-      try {
-      	System.err.println("redoin "+command);
-        command.redo();
-        // op.redo(monitor, null);
-      } catch (Exception e) {
-        e.printStackTrace();
-      }
-    }
+	@Override
+	public boolean doCanUndo() {
+		return canUndo;
+	}
 
-    for (SoftReference<ActionstepEditorPage> ref : pagemap) {
-      ActionstepEditorPage page = ref.get();
-      if (page != null)
-        page.operationsComplete();
-    }
+	@Override
+	public void doUndo() {
+		if (!flushedOperations) {
+//			commandHistory.add(0, new WrappedToggleCanonicalModeCommand(false, editPart));
+//			commandHistory.add(new WrappedToggleCanonicalModeCommand(true, editPart));
+//			initialStackHistorySize = Math.max(0, initialStackHistorySize - 2);
+			flushOperations((TransactionalEditingDomain) domain, 1, true);
+			Collections.reverse(commandHistory);
+		}
+		doRollback(domain);
+		canUndo = false;
+		// flushOperations((TransactionalEditingDomain)domain, 0);
 
-    canUndo = true;
-    System.err.println("in redoRollback: the initialstaksize was "+initialStackHistorySize+" but now undosize is "+getCurrentOperationUndoSize()+
-    		" and redo is "+getCurrentOperationRedoSize()+" and cmdhist "+commandHistory.size());
-    dumpCurrentOperationUndoSize();
-    dumpCurrentOperationRedoSize();
-    
-  }
+		System.err.println("in doUndo: the initialstaksize was " + initialStackHistorySize
+		    + " but now undosize is " + getCurrentOperationUndoSize() + " and redo is "
+		    + getCurrentOperationRedoSize() + " and cmdhist " + commandHistory.size());
+		dumpCurrentOperationUndoSize();
+		dumpCurrentOperationRedoSize();
+	}
+
+	private void redoRollback(EditingDomain domain) {
+		for (Command command : commandHistory) {
+			try {
+				System.err.println("redoin " + command);
+				command.redo();
+				// op.redo(monitor, null);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		for (SoftReference<ActionstepEditorPage> ref : pagemap) {
+			ActionstepEditorPage page = ref.get();
+			if (page != null)
+				page.operationsComplete();
+		}
+
+		canUndo = true;
+		System.err.println("in redoRollback: the initialstaksize was "
+		    + initialStackHistorySize + " but now undosize is "
+		    + getCurrentOperationUndoSize() + " and redo is " + getCurrentOperationRedoSize()
+		    + " and cmdhist " + commandHistory.size());
+		dumpCurrentOperationUndoSize();
+		dumpCurrentOperationRedoSize();
+
+	}
 
 }

@@ -13,7 +13,6 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.EMFCommandOperation;
 import org.eclipse.emf.workspace.ResourceUndoContext;
 import org.eclipse.emf.workspace.impl.WorkspaceCommandStackImpl;
-import org.eclipse.gmf.runtime.diagram.ui.internal.commands.ToggleCanonicalModeCommand;
 import com.safi.workshop.edit.parts.ToolstepEditPart;
 
 public abstract class AbstractActionstepEditCommand extends AbstractOverrideableCommand {
@@ -82,8 +81,8 @@ public abstract class AbstractActionstepEditCommand extends AbstractOverrideable
 			    + " but now its " + getCurrentOperationUndoSize());
 			flushedOperations = true;
 
-//			commandHistory.add(0, new WrappedToggleCanonicalModeCommand(false, editPart));
-//			commandHistory.add(new WrappedToggleCanonicalModeCommand(true, editPart));
+//			commandHistory.add(0, new WrappedToggleCanonicalModeCommand(true, editPart));
+//			commandHistory.add(new WrappedToggleCanonicalModeCommand(false, editPart));
 
 		}
 
@@ -149,36 +148,5 @@ public abstract class AbstractActionstepEditCommand extends AbstractOverrideable
 				page.operationsUndone();
 		}
 		Collections.reverse(commandHistory);
-	}
-
-	class WrappedToggleCanonicalModeCommand extends AbstractOverrideableCommand {
-		private ToolstepEditPart editPart;
-		ToggleCanonicalModeCommand cmd;
-
-		public WrappedToggleCanonicalModeCommand(boolean enable, ToolstepEditPart editPart) {
-			super(editPart.getEditingDomain());
-			cmd = new ToggleCanonicalModeCommand(editPart, enable);
-		}
-
-		@Override
-		public boolean doCanExecute() {
-			return cmd.canExecute();
-		}
-
-		@Override
-		public void doUndo() {
-			cmd.undo();
-		}
-
-		@Override
-		public void doRedo() {
-			cmd.redo();
-
-		}
-
-		@Override
-		public void doExecute() {
-			cmd.execute();
-		}
 	}
 }

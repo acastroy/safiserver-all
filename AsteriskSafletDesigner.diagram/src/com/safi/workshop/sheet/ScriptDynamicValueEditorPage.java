@@ -194,7 +194,7 @@ public class ScriptDynamicValueEditorPage extends ScriptEnabledEditorPage implem
   private Composite scriptPanel;
   // private HandlerEnvironment handlerEnvironment;
   private TreeViewer tv;
-  private ScriptSourceViewer fViewer;
+//  private ScriptSourceViewer fViewer;
   private SafiJavaScriptUILanguageToolkit toolkit;
   private SafiJavaScriptConfiguration svConfiguration;
   // private IVerticalRuler fVerticalRuler;
@@ -1103,6 +1103,8 @@ public class ScriptDynamicValueEditorPage extends ScriptEnabledEditorPage implem
     // initialText = null;
     // }
     // jsWidget.getControl().forceFocus();
+    if (this.jeditor != null)
+    	 jeditor.setFocus();
   }
 
   @Override

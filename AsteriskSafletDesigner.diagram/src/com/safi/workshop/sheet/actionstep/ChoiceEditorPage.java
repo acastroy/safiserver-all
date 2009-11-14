@@ -84,8 +84,8 @@ public class ChoiceEditorPage extends AbstractActionstepEditorPage {
     caseItemEditorWidget.setEditingDomain(parent.getEditPart().getEditingDomain());
     caseItemEditorWidget.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
     bindingContext.bindValue(valVal, ob, null, null);
-    IObservableList modelList = ActionstepEditObservables.observeList(editingDomain, choice, choice
-        .eClass().getEStructuralFeature("choices"));
+    IObservableList modelList = ActionstepEditObservables.observeListDisableCanonical(editingDomain, choice, choice
+        .eClass().getEStructuralFeature("choices"), editPart);
 
     uiList = new WritableList(new ArrayList<CaseItem>(choice.getChoices()),
         CaseItem.class);
@@ -135,6 +135,7 @@ public class ChoiceEditorPage extends AbstractActionstepEditorPage {
 
   @Override
   public void operationsUndone() {
+//  	editPart.getEditingDomain().getCommandStack().execute(new WrappedToggleCanonicalModeCommand(false, editPart));
     new CaseItemReorderCommand(editPart.getEditingDomain(), editPart) {
       @Override
       protected List<Item> getItems(ActionStep ts) {

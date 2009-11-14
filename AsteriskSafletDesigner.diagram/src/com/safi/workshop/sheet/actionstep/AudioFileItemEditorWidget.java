@@ -8,6 +8,7 @@ import com.safi.core.actionstep.ActionStepFactory;
 import com.safi.core.actionstep.AudioFileItem;
 import com.safi.core.actionstep.Item;
 import com.safi.workshop.edit.policies.EditAudioFileItemValueCommand;
+import com.safi.workshop.edit.policies.EditCaseItemValueCommand;
 
 public class AudioFileItemEditorWidget extends AbstractItemEditorWidget {
 
@@ -27,10 +28,13 @@ public class AudioFileItemEditorWidget extends AbstractItemEditorWidget {
   @Override
   protected void newItem() {
     AudioFileItem item = ActionStepFactory.eINSTANCE.createAudioFileItem();
-    editingDomain.getCommandStack().execute(
-        EditAudioFileItemValueCommand.getEMFCommand(item, editingDomain,
-            getActionstepEditorDialog().getEditPart().getActionStep().getSaflet()
-                .getSafletContext()));
+    
+    EditAudioFileItemValueCommand.openEditor(item, editingDomain, getActionstepEditorDialog()
+        .getEditPart().getActionStep().getSaflet().getSafletContext());
+//    editingDomain.getCommandStack().execute(
+//        EditAudioFileItemValueCommand.getEMFCommand(item, editingDomain,
+//            getActionstepEditorDialog().getEditPart().getActionStep().getSaflet()
+//                .getSafletContext()));
     if (item.getDynamicValue() != null) {
       itemList.add(item);
     }

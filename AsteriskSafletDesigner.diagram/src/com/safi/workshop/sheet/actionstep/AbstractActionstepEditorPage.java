@@ -12,7 +12,6 @@ public abstract class AbstractActionstepEditorPage extends Composite implements
     ActionstepEditorPage {
 
   protected ActionstepEditorDialog editorDialog;
-  protected CompoundCommand parentCommand;
   protected EMFDataBindingContext bindingContext;
   protected ToolstepEditPart editPart;
 
@@ -26,7 +25,6 @@ public abstract class AbstractActionstepEditorPage extends Composite implements
     super(parent.getTabFolder(), SWT.NONE);
     this.editorDialog = parent;
     editPart = editorDialog.getEditPart();
-    this.parentCommand = parent.getCommand();
     bindingContext = new EMFDataBindingContext();
     // getShell().addDisposeListener(new DisposeListener(){
     //
@@ -51,7 +49,6 @@ public abstract class AbstractActionstepEditorPage extends Composite implements
         control.dispose();
     }
     editorDialog = null;
-    parentCommand = null;
     bindingContext = null;
     super.dispose();
   }
@@ -75,7 +72,7 @@ public abstract class AbstractActionstepEditorPage extends Composite implements
   @Override
   public void okPressed() {
     // TODO Auto-generated method stub
-
+  	operationsComplete();
   }
 
   @Override

@@ -26,14 +26,28 @@ public class CaseItemEditorWidget extends AbstractItemEditorWidget {
 
   @Override
   protected void newItem() {
+//  	new WrappedToggleCanonicalModeCommand(false, getActionstepEditorDialog()
+//      .getEditPart()).execute();
+//  	editingDomain.getCommandStack().execute(new WrappedToggleCanonicalModeCommand(false, getActionstepEditorDialog()
+//        .getEditPart()));
+	
     CaseItem item = ActionStepFactory.eINSTANCE.createCaseItem();
-    editingDomain.getCommandStack().execute(
-        EditCaseItemValueCommand.getEMFCommand(item, editingDomain, getActionstepEditorDialog()
-            .getEditPart().getActionStep().getSaflet().getSafletContext()));
+    EditCaseItemValueCommand.openEditor(item, editingDomain, getActionstepEditorDialog()
+        .getEditPart().getActionStep().getSaflet().getSafletContext());
+//    editingDomain.getCommandStack().execute(
+//        EditCaseItemValueCommand.getEMFCommand(item, editingDomain, getActionstepEditorDialog()
+//            .getEditPart().getActionStep().getSaflet().getSafletContext()));
+    
+   
     if (item.getDynamicValue() != null) {
       itemList.add(item);
     }
+   
+//    editingDomain.getCommandStack().execute(new WrappedToggleCanonicalModeCommand(true, getActionstepEditorDialog()
+//        .getEditPart()));
     listViewer.refresh();
+//    new WrappedToggleCanonicalModeCommand(true, getActionstepEditorDialog()
+//        .getEditPart()).execute();
   }
 
   @Override

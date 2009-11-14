@@ -25,6 +25,7 @@ import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import com.safi.workshop.edit.parts.ToolstepEditPart;
 
 /**
  * PROVISIONAL This API is subject to arbitrary change, including renaming or removal.
@@ -81,6 +82,11 @@ public class ActionstepEditObservables {
   public static IObservableList observeList(EditingDomain domain, EObject eObject,
       EStructuralFeature eStructuralFeature) {
     return new AggregatingEObjectObservableList(domain, eObject, eStructuralFeature);
+  }
+  
+  public static IObservableList observeListDisableCanonical(EditingDomain domain, EObject eObject,
+      EStructuralFeature eStructuralFeature, ToolstepEditPart part) {
+    return new AggregatingEObjectObservableList(domain, eObject, eStructuralFeature, part);
   }
 
   // public static IObservableList observeListWithSurrogate(EditingDomain domain, EObject

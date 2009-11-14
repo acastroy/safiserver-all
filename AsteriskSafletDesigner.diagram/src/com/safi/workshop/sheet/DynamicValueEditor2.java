@@ -254,7 +254,8 @@ public class DynamicValueEditor2 extends TitleAreaDialog {
 
     UpdateDynamicValueCommand cmd = new UpdateDynamicValueCommand(editingDomain, dynamicValue,
         scratch);
-    editingDomain.getCommandStack().execute(cmd);
+//    editingDomain.getCommandStack().execute(cmd);
+    cmd.execute();
     super.okPressed();
   }
 

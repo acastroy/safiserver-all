@@ -18,8 +18,12 @@ public class AggregatingEObjectObservableValue extends EditingDomainEObjectObser
 
   @Override
   protected void doSetValue(Object value) {
+//  	eObject.eSet(eStructuralFeature, value);
     Command command = SetCommand.create(domain, eObject, eStructuralFeature, value);
-    domain.getCommandStack().execute(command);
+//    domain.getCommandStack().execute(command);
+    if (command.canExecute())
+    	command.execute();
+//    comman
   }
 
   @Override
