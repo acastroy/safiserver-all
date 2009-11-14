@@ -142,39 +142,41 @@ public class SetOutputItemValueCommand extends
       // if (newval != dynamicValue) {
       // item.setDynamicValue(newval);
       // }
-      AbstractOverrideableCommand cmd = new AbstractOverrideableCommand(domain,
-          "Set CaseItem DynamicValue") {
-        private DynamicValue oldDynValue;
-        private String oldName;
-
-        @Override
-        public void doExecute() {
-          oldDynValue = item.getDynamicValue();
-          oldName = item.getParameterName();
-          item.setDynamicValue(newval);
-          item.setParameterName(newParamName);
-        }
-
-        @Override
-        public void doRedo() {
-          doExecute();
-
-        }
-
-        @Override
-        public void doUndo() {
-          item.setDynamicValue(oldDynValue);
-          item.setParameterName(oldName);
-          oldDynValue = null;
-          oldName = null;
-        }
-
-        @Override
-        public boolean doCanExecute() {
-          return true;
-        }
-      };
-      domain.getCommandStack().execute(cmd);
+      item.setDynamicValue(newval);
+      item.setParameterName(newParamName);
+//      AbstractOverrideableCommand cmd = new AbstractOverrideableCommand(domain,
+//          "Set CaseItem DynamicValue") {
+//        private DynamicValue oldDynValue;
+//        private String oldName;
+//
+//        @Override
+//        public void doExecute() {
+//          oldDynValue = item.getDynamicValue();
+//          oldName = item.getParameterName();
+//          item.setDynamicValue(newval);
+//          item.setParameterName(newParamName);
+//        }
+//
+//        @Override
+//        public void doRedo() {
+//          doExecute();
+//
+//        }
+//
+//        @Override
+//        public void doUndo() {
+//          item.setDynamicValue(oldDynValue);
+//          item.setParameterName(oldName);
+//          oldDynValue = null;
+//          oldName = null;
+//        }
+//
+//        @Override
+//        public boolean doCanExecute() {
+//          return true;
+//        }
+//      };
+//      domain.getCommandStack().execute(cmd);
       return true;
     } else
       return false;
