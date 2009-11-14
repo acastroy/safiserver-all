@@ -81,33 +81,34 @@ public class EditTimeItemValueCommand extends
     if (DynamicValueEditor2.OK == result) {
       final DynamicValue newval = dve.getDynamicValue();
       if (newval != dynamicValue) {
-        AbstractOverrideableCommand cmd = new AbstractOverrideableCommand(editingDomain,
-            "Set CaseItem DynamicValue") {
-          private DynamicValue oldValue;
-
-          @Override
-          public void doExecute() {
-            oldValue = item.getDynamicValue();
-            item.setDynamicValue(newval);
-          }
-
-          @Override
-          public void doRedo() {
-            doExecute();
-          }
-
-          @Override
-          public void doUndo() {
-            item.setDynamicValue(oldValue);
-            oldValue = null;
-          }
-
-          @Override
-          public boolean doCanExecute() {
-            return true;
-          }
-        };
-        editingDomain.getCommandStack().execute(cmd);
+      	item.setDynamicValue(newval);
+//        AbstractOverrideableCommand cmd = new AbstractOverrideableCommand(editingDomain,
+//            "Set CaseItem DynamicValue") {
+//          private DynamicValue oldValue;
+//
+//          @Override
+//          public void doExecute() {
+//            oldValue = item.getDynamicValue();
+//            item.setDynamicValue(newval);
+//          }
+//
+//          @Override
+//          public void doRedo() {
+//            doExecute();
+//          }
+//
+//          @Override
+//          public void doUndo() {
+//            item.setDynamicValue(oldValue);
+//            oldValue = null;
+//          }
+//
+//          @Override
+//          public boolean doCanExecute() {
+//            return true;
+//          }
+//        };
+//        editingDomain.getCommandStack().execute(cmd);
       }
 
       success = true;
