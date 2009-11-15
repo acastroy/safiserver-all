@@ -349,8 +349,10 @@ public class DynamicValueEditorWidget extends Composite {
 
 	protected void refresh() {
 		info = DynamicValueEditorUtils.extractAnnotationInfo(object, feature);
+		String toolTipText="";
 		if (dynamicValue == null) {
 			text.setText("");
+			
 			// text.setEditable(false);
 
 			// dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
@@ -365,6 +367,7 @@ public class DynamicValueEditorWidget extends Composite {
 				// updateTextDirectEditCapability(true);
 				// text.setEditable(true);
 				text.setText(dynamicValue.getText());
+				toolTipText=dynamicValue.getText();
 				break;
 			case CUSTOM:
 				imageLabel.setImage(ResourceManager.getPluginImage(AsteriskDiagramEditorPlugin
@@ -381,6 +384,7 @@ public class DynamicValueEditorWidget extends Composite {
 				else
 					prefix += ": ";
 				text.setText(prefix + dynamicValue.getText());
+				toolTipText=prefix + dynamicValue.getText();
 				break;
 			case SCRIPT_TEXT:
 				imageLabel.setImage(ResourceManager.getPluginImage(AsteriskDiagramEditorPlugin
@@ -396,15 +400,17 @@ public class DynamicValueEditorWidget extends Composite {
 					text.setText("Script: "
 					    + script.substring(script.lastIndexOf('\n') + 1, script.length()));
 				}
+				toolTipText=script;
 				break;
 			case VARIABLE_NAME:
 				imageLabel.setImage(ResourceManager.getPluginImage(AsteriskDiagramEditorPlugin
 				    .getDefault(), "icons/dynamicValueEditor/variable.gif"));
 				text.setText("Var: " + dynamicValue.getText());
+				toolTipText="Var: " + dynamicValue.getText();
 				break;
 			}
 		}
-
+        text.setToolTipText(toolTipText);
 		updateTextDirectEditCapability(isDirectEditable());
 	}
 
