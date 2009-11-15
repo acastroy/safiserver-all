@@ -665,8 +665,8 @@ public class DynamicValueEditorWidget extends Composite {
 	class VariableIContentProposal implements IContentProposal {
 		private Variable variable;
 
-		public VariableIContentProposal(Variable variable) {
-			this.variable = variable;
+		public VariableIContentProposal(Variable aVariable) {
+			this.variable = aVariable;
 		}
 
 		@Override
@@ -698,8 +698,8 @@ public class DynamicValueEditorWidget extends Composite {
 			return variable;
 		}
 
-		public void setVariable(Variable variable) {
-			this.variable = variable;
+		public void setVariable(Variable aVariable) {
+			this.variable = aVariable;
 		}
 
 	}
@@ -753,8 +753,10 @@ public class DynamicValueEditorWidget extends Composite {
 		}
 		@Override
 		public int execute() {
-			if (openNewVariableEditor(StringUtils.trim(text.getText())))
+			if (openNewVariableEditor(StringUtils.trim(text.getText()))){
+	
 				return Dialog.OK;
+			}
 
 			return Dialog.CANCEL;
 		}

@@ -251,7 +251,8 @@ public class VariableEditor extends TitleAreaDialog {
 
   @Override
   protected void okPressed() {
-	if(!this.quickValidateName(this.variableNameText.getText())){
+	String tmpVariableName=this.variableNameText.getText().trim();
+	if(!this.quickValidateName(tmpVariableName)){
 		return;
 	}
     VariableType type = getSelectedType();
@@ -282,7 +283,7 @@ public class VariableEditor extends TitleAreaDialog {
 
         try {
           String name = DBManager.getInstance().getUniqueGlobalVariableName(
-              variableNameText.getText());
+        		  tmpVariableName);
           Variable v = DbFactory.eINSTANCE.createVariable();
           v.setName(name);
           v.setType(type);
@@ -299,12 +300,15 @@ public class VariableEditor extends TitleAreaDialog {
       } else {
         VariableCreateCommand cmd = new VariableCreateCommand(editingDomain, currentEditor
             .getHandlerEditPart().getHandlerModel().getSafletContext(), currentEditor, scope);
-        cmd.setName(variableNameText.getText());
+        cmd.setName(tmpVariableName);
         cmd.setType(type);
         cmd.setDefaultValue(newObjVal);
         editingDomain.getCommandStack().execute(cmd);
+        this.variable=cmd.getNewVariable();
+        /*
         this.variable=currentEditor
-        .getHandlerEditPart().getHandlerModel().getSafletContext().getVariable(variableNameText.getText());
+        .getHandlerEditPart().getHandlerModel().getSafletContext().getVariable(tmpVariableName);
+        */
       }
       // viewer.add(cmd.newVariable);
       // if (scope == VariableScope.GLOBAL)
@@ -318,9 +322,9 @@ public class VariableEditor extends TitleAreaDialog {
       // SetCommand.create(editingDomain, variable, nameAttr, value.toString()));
 
     } else {
-      if (!quickValidateName(variableNameText.getText())) {
+      if (!quickValidateName(tmpVariableName)) {
         MessageDialog.openError(getShell(), "Name Conflict", "Var with name "
-            + variableNameText.getText() + " already exists");
+            + tmpVariableName + " already exists");
         return;
       }
       try {
@@ -337,7 +341,7 @@ public class VariableEditor extends TitleAreaDialog {
 
           EAttribute nameAttr = DbPackage.eINSTANCE.getVariable_Name();
           Command setNameCommand = SetCommand.create(editingDomain, variable, nameAttr,
-              variableNameText.getText());
+        		  tmpVariableName);
           cmd.append(setNameCommand);
 
           command = cmd;
@@ -352,8 +356,8 @@ public class VariableEditor extends TitleAreaDialog {
           if (type != variable.getType())
             variable.setType(type);
 
-          if (!StringUtils.equals(variable.getName(), variableNameText.getText()))
-            variable.setName(variableNameText.getText());
+          if (!StringUtils.equals(variable.getName(), tmpVariableName))
+            variable.setName(tmpVariableName);
 
           DBManager.getInstance().saveOrUpdateGlobalVariable(variable);
 
@@ -476,6 +480,15 @@ public class VariableEditor extends TitleAreaDialog {
           return false;
         } else
           setMessage("", IMessageProvider.NONE);
+        Variable v2 = SafiServerPlugin.getDefault().getGlobalVariable(name);
+        if (v2 != null && v2 != variable) {
+          setMessage("Global Variable with name " + name + " already exists",
+              IMessageProvider.ERROR);
+          if(butt!=null) butt.setEnabled(false);
+          return false;
+        } else
+          setMessage("", IMessageProvider.NONE);
+        
       } else {
         Variable v = SafiServerPlugin.getDefault().getGlobalVariable(name);
         if (v != null && v != variable) {
