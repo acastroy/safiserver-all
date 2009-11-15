@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.bindings.keys.KeyStroke;
+import org.eclipse.jface.bindings.keys.ParseException;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.fieldassist.ContentProposalAdapter;
@@ -69,7 +70,6 @@ import com.swtdesigner.ResourceManager;
 
 public class DynamicValueEditorWidget extends Composite {
 
-	
 	private Button clearButton;
 	private Button editButton;
 	private Text text;
@@ -79,7 +79,7 @@ public class DynamicValueEditorWidget extends Composite {
 	private EObject object;
 	private EditingDomain editingDomain;
 	private MyEventTable eventTable;
-	private DynamicValueAnnotationInfo info = new DynamicValueAnnotationInfo();
+	private DynamicValueAnnotationInfo info;
 	private SafletContext safletContext;
 	private Color lightBlue;
 	private DynamicValueContentProposalAdapter proposalAdapter;
@@ -173,13 +173,22 @@ public class DynamicValueEditorWidget extends Composite {
 		editButton.setText("...");
 		//
 
-		proposalAdapter = new DynamicValueContentProposalAdapter(text, new TextContentAdapter(),
-		    new DynValueContentProposalProvider(), null, null);
-		proposalAdapter.setProposalAcceptanceStyle(ContentProposalAdapter.PROPOSAL_IGNORE);
-		final DynValueContentProposalListener proposalListener = new DynValueContentProposalListener();
-		proposalAdapter.addContentProposalListener((IContentProposalListener)proposalListener);
-		proposalAdapter.addContentProposalListener((IContentProposalListener2)proposalListener);
-		proposalAdapter.setLabelProvider(new DynValueProposalLabelProvider());
+		try {
+			proposalAdapter = new DynamicValueContentProposalAdapter(text,
+			    new TextContentAdapter(), new DynValueContentProposalProvider(), KeyStroke
+			        .getInstance("Ctrl+Space"), "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_".toCharArray());
+			proposalAdapter.setProposalAcceptanceStyle(ContentProposalAdapter.PROPOSAL_IGNORE);
+			final DynValueContentProposalListener proposalListener = new DynValueContentProposalListener();
+			proposalAdapter
+			    .addContentProposalListener((IContentProposalListener) proposalListener);
+			proposalAdapter
+			    .addContentProposalListener((IContentProposalListener2) proposalListener);
+			proposalAdapter.setLabelProvider(new DynValueProposalLabelProvider());
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
 	}
 
 	protected boolean isDirectEditable() {
@@ -194,9 +203,9 @@ public class DynamicValueEditorWidget extends Composite {
 			return false; // already populated with non-text type dynval
 
 		if (dynamicValue == null
-		    && !(DynamicValueType.LITERAL_TEXT.getLiteral().equals(info.dynValueTypeStr)
-		        || DynamicValueType.VARIABLE_NAME.getLiteral().equals(info.dynValueTypeStr) || DynamicValueType.SCRIPT_TEXT
-		        .getLiteral().equals(info.dynValueTypeStr)))
+		    && !(DynamicValueType.LITERAL_TEXT.getLiteral().equals(getDynamicValueInfo().dynValueTypeStr)
+		        || DynamicValueType.VARIABLE_NAME.getLiteral().equals(getDynamicValueInfo().dynValueTypeStr) || DynamicValueType.SCRIPT_TEXT
+		        .getLiteral().equals(getDynamicValueInfo().dynValueTypeStr)))
 			return false;
 
 		String script = dynamicValue == null ? null : dynamicValue.getText();
@@ -282,9 +291,14 @@ public class DynamicValueEditorWidget extends Composite {
 		}
 	}
 
+	protected DynamicValueAnnotationInfo getDynamicValueInfo() {
+		if (info == null)
+			info = DynamicValueEditorUtils.extractAnnotationInfo(object, feature);
+		return info;
+	}
+
 	protected void openEditor() {
 		// first check for subclassed dynvalue annotations
-		info = DynamicValueEditorUtils.extractAnnotationInfo(object, feature);
 
 		if (safletContext == null) {
 			initSafletContext();
@@ -294,12 +308,12 @@ public class DynamicValueEditorWidget extends Composite {
 				    + object);
 		}
 
-		DynamicValueEditor2 dve = DynamicValueEditorUtils.createDynamicValueEditor(info,
+		DynamicValueEditor2 dve = DynamicValueEditorUtils.createDynamicValueEditor(getDynamicValueInfo(),
 		    object, editingDomain, dynamicValue, safletContext, getShell());
 
 		if (Window.OK == dve.open()) {
 			DynamicValue dv = dve.getDynamicValue();
-			String returnType = info.expectedReturnType;
+			String returnType = getDynamicValueInfo().expectedReturnType;
 			if (dv == null || StringUtils.isBlank(dv.getText())) {
 				dynamicValue = null;
 			} else {
@@ -348,11 +362,10 @@ public class DynamicValueEditorWidget extends Composite {
 	}
 
 	protected void refresh() {
-		info = DynamicValueEditorUtils.extractAnnotationInfo(object, feature);
-		String toolTipText="";
+	String toolTipText="";
 		if (dynamicValue == null) {
 			text.setText("");
-			
+			imageLabel.setImage(null);
 			// text.setEditable(false);
 
 			// dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
@@ -452,9 +465,10 @@ public class DynamicValueEditorWidget extends Composite {
 	}
 
 	private void textFocusLost() {
-		if (assistantShowing) return;
+		if (assistantShowing)
+			return;
 		if (text.getEnabled() && text.getEditable()) {
-			
+
 			String newtext = text.getText();
 
 			boolean changed = false;
@@ -466,16 +480,17 @@ public class DynamicValueEditorWidget extends Composite {
 						changed = true;
 						dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
 						dynamicValue.setText(newtext);
-//						if (StringUtils.equals(info.dynValueTypeStr, DynamicValueType.VARIABLE_NAME
-//						    .getLiteral())) {
-//							changed = openNewVariableEditor(newtext);
-//
-//						} else {
-//							changed = true;
-//							dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
-//							dynamicValue.setText(newtext);
-//						}
-					} else if (!"VariableName".equals(info.expectedReturnType)) {
+						// if (StringUtils.equals(info.dynValueTypeStr,
+						// DynamicValueType.VARIABLE_NAME
+						// .getLiteral())) {
+						// changed = openNewVariableEditor(newtext);
+						//
+						// } else {
+						// changed = true;
+						// dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
+						// dynamicValue.setText(newtext);
+						// }
+					} else if (!"VariableName".equals(getDynamicValueInfo().expectedReturnType)) {
 						changed = true;
 						dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
 						dynamicValue.setText(newtext);
@@ -483,7 +498,6 @@ public class DynamicValueEditorWidget extends Composite {
 						MessageDialog.openError(getShell(), "Variable Error",
 						    "Could not set value. Value is illegal.");
 
-						text.setText("");
 						dynamicValue = null;
 						refresh();
 						return;
@@ -491,8 +505,9 @@ public class DynamicValueEditorWidget extends Composite {
 
 					if (isQuoted) {
 						if (dynamicValue != null)
-						dynamicValue.setType(DynamicValueType.LITERAL_TEXT);
-					} else if (dynamicValue != null && dynamicValue.getType() != DynamicValueType.VARIABLE_NAME) {
+							dynamicValue.setType(DynamicValueType.LITERAL_TEXT);
+					} else if (dynamicValue != null
+					    && dynamicValue.getType() != DynamicValueType.VARIABLE_NAME) {
 
 						// if(info.expectedReturnType.equalsIgnoreCase("Text")){
 						// dynamicValue.setType(DynamicValueType.LITERAL_TEXT);
@@ -543,9 +558,10 @@ public class DynamicValueEditorWidget extends Composite {
 				}
 			}
 
-			updateTextDirectEditCapability(isDirectEditable());
+			// updateTextDirectEditCapability(isDirectEditable());
 			if (changed) {
 				fireModifiedEvent();
+				refresh();
 			}
 		}
 	}
@@ -574,11 +590,11 @@ public class DynamicValueEditorWidget extends Composite {
 				if (val == Dialog.OK) {
 					variable = variableEditor.getVariable();
 				} else {
-					if (info.isTypeLocked)
+					if (getDynamicValueInfo().isTypeLocked)
 						text.setText("");
 					// text.selectAll();
 					// text.forceFocus();
-
+					refresh();
 					return false;
 				}
 			} else { // existing var
@@ -591,11 +607,11 @@ public class DynamicValueEditorWidget extends Composite {
 				if (val == Dialog.OK) {
 					variable = variableEditor.getVariable();
 				} else {
-					if (info.isTypeLocked)
+					if (getDynamicValueInfo().isTypeLocked)
 						text.setText("");
 					// text.selectAll();
 					// text.forceFocus();
-
+					refresh();
 					return false;
 				}
 
@@ -604,7 +620,7 @@ public class DynamicValueEditorWidget extends Composite {
 			dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
 			dynamicValue.setType(DynamicValueType.VARIABLE_NAME);
 			dynamicValue.setText(variable.getName());
-			text.setText("Var: " + dynamicValue.getText());
+			refresh();
 			// refresh();
 
 		} catch (Exception ex) {
@@ -628,12 +644,10 @@ public class DynamicValueEditorWidget extends Composite {
 					if (p.getContent().length() >= contents.length()
 					    && p.getContent().substring(0, contents.length()).equals(contents))
 						props.add(p);
+				} else if (p instanceof ActionContentProposal) {
+					if (((ActionContentProposal) p).isEnabled())
+						props.add(p);
 				}
-				else
-			  if (p instanceof ActionContentProposal){
-			  	if (((ActionContentProposal)p).isEnabled())
-			  		props.add(p);
-			  }
 
 			}
 
@@ -665,8 +679,8 @@ public class DynamicValueEditorWidget extends Composite {
 	class VariableIContentProposal implements IContentProposal {
 		private Variable variable;
 
-		public VariableIContentProposal(Variable aVariable) {
-			this.variable = aVariable;
+		public VariableIContentProposal(Variable variable) {
+			this.variable = variable;
 		}
 
 		@Override
@@ -698,8 +712,8 @@ public class DynamicValueEditorWidget extends Composite {
 			return variable;
 		}
 
-		public void setVariable(Variable aVariable) {
-			this.variable = aVariable;
+		public void setVariable(Variable variable) {
+			this.variable = variable;
 		}
 
 	}
@@ -748,29 +762,28 @@ public class DynamicValueEditorWidget extends Composite {
 
 		@Override
 		public boolean isEnabled() {
-		  // TODO Auto-generated method stub
-		  return canAcceptVarType();
+			// TODO Auto-generated method stub
+			return canAcceptVarType();
 		}
+
 		@Override
 		public int execute() {
-			if (openNewVariableEditor(StringUtils.trim(text.getText()))){
-	
+			if (openNewVariableEditor(StringUtils.trim(text.getText())))
 				return Dialog.OK;
-			}
 
 			return Dialog.CANCEL;
 		}
 
 		@Override
-    public String getImagePath() {
-	    return "icons/vareditor/AddVariable.gif";
-    }
+		public String getImagePath() {
+			return "icons/vareditor/AddVariable.gif";
+		}
 
 	}
 
 	public boolean canAcceptVarType() {
-		if (info.isTypeLocked
-		    && !DynamicValueType.VARIABLE_NAME.getLiteral().equals(info.dynValueTypeStr))
+		if (getDynamicValueInfo().isTypeLocked
+		    && !DynamicValueType.VARIABLE_NAME.getLiteral().equals(getDynamicValueInfo().dynValueTypeStr))
 			return false;
 
 		return isDirectEditable();
@@ -784,7 +797,8 @@ public class DynamicValueEditorWidget extends Composite {
 		// return false;
 	}
 
-	public class DynValueContentProposalListener implements IContentProposalListener, IContentProposalListener2 {
+	public class DynValueContentProposalListener implements IContentProposalListener,
+	    IContentProposalListener2 {
 
 		public DynValueContentProposalListener() {
 			// TODO Auto-generated constructor stub
@@ -792,7 +806,7 @@ public class DynamicValueEditorWidget extends Composite {
 
 		@Override
 		public void proposalAccepted(IContentProposal proposal) {
-			proposalAdapter.closeProposalPopup();
+
 			if (proposal instanceof VariableIContentProposal) {
 				Variable variable = ((VariableIContentProposal) proposal).variable;
 				if (variable != null) {
@@ -800,127 +814,124 @@ public class DynamicValueEditorWidget extends Composite {
 						dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
 					dynamicValue.setType(DynamicValueType.VARIABLE_NAME);
 					dynamicValue.setText(variable.getName());
-					text.setText("Var: " + dynamicValue.getText());
-					updateTextDirectEditCapability(isDirectEditable());
+					refresh();
+					// text.setText("Var: " + dynamicValue.getText());
+					// updateTextDirectEditCapability(isDirectEditable());
 					fireModifiedEvent();
 				}
-			}
-			else if (proposal instanceof ActionContentProposal){
-				((ActionContentProposal)proposal).execute();
+			} else if (proposal instanceof ActionContentProposal) {
+				((ActionContentProposal) proposal).execute();
 			}
 
 		}
 
 		@Override
-    public void proposalPopupClosed(ContentProposalAdapter adapter) {
-	    // TODO Auto-generated method stub
-	    assistantShowing = false;
-    }
+		public void proposalPopupClosed(ContentProposalAdapter adapter) {
+			// TODO Auto-generated method stub
+			assistantShowing = false;
+		}
 
 		@Override
-    public void proposalPopupOpened(ContentProposalAdapter adapter) {
-	    // TODO Auto-generated method stub
-	    assistantShowing = true;
-    }
+		public void proposalPopupOpened(ContentProposalAdapter adapter) {
+			// TODO Auto-generated method stub
+			assistantShowing = true;
+		}
 
 	}
-	
-
 
 	class DynValueProposalLabelProvider extends LabelProvider {
-    Map<String, Image> imageHash = new HashMap<String, Image>();
+		Map<String, Image> imageHash = new HashMap<String, Image>();
 
-    @Override
-    public String getText(Object element) {
-      if (element instanceof IContentProposal)
-        return ((IContentProposal) element).getLabel();
-      else
-        return element.toString();
-    }
-    
-    @Override
-    public void dispose() {
-      for (Image img : imageHash.values())
-      	img.dispose();
-      imageHash.clear();
-    }
+		@Override
+		public String getText(Object element) {
+			if (element instanceof IContentProposal)
+				return ((IContentProposal) element).getLabel();
+			else
+				return element.toString();
+		}
 
-    @Override
-    public Image getImage(Object element) {
-      if (element instanceof VariableIContentProposal) {
-      	
-        VariableType varType = ((VariableIContentProposal)element).variable.getType();
-        String relPath = null;
-        switch (varType) {
-          case ARRAY:
-            relPath = "icons/vareditor/Array.gif";
-            break;
-          case BOOLEAN:
-            relPath = "icons/vareditor/Boolean.gif";
-            break;
-          case DATE:
-            relPath = "icons/vareditor/Date.gif";
-            break;
-          case DATETIME:
-            relPath = "icons/vareditor/DateTime.gif";
-            break;
-          case DECIMAL:
-            relPath = "icons/vareditor/Decimal.gif";
-            break;
-          case INTEGER:
-            relPath = "icons/vareditor/Integer.gif";
-            break;
-          case OBJECT:
-            relPath = "icons/vareditor/Object.gif";
-            break;
-          case TEXT:
-            relPath = "icons/vareditor/Text.gif";
-            break;
-          case TIME:
-            relPath = "icons/vareditor/Time.gif";
-            break;
-        }
-        if (relPath != null) {
-          Image img = imageHash.get(relPath);
-          if (img == null) {
-          	img = AsteriskDiagramEditorPlugin.getInstance().getBundledImage(relPath);
-            imageHash.put(relPath, img);
-          }
-          return img;
-        } else
-          return null;
-      }
-      else if (element instanceof ActionContentProposal){
-      	String relPath = ((ActionContentProposal)element).getImagePath();
-      	if (StringUtils.isNotBlank(relPath)){
-      		Image img = imageHash.get(relPath);
-          if (img == null) {
-          	img = AsteriskDiagramEditorPlugin.getInstance().getBundledImage(relPath);
-            imageHash.put(relPath, img);
-          }
-          return img;
-      	}
-      }
-      // TODO Auto-generated method stub
-      return super.getImage(element);
-    }
-  }
-	
+		@Override
+		public void dispose() {
+			for (Image img : imageHash.values())
+				img.dispose();
+			imageHash.clear();
+		}
+
+		@Override
+		public Image getImage(Object element) {
+			if (element instanceof VariableIContentProposal) {
+
+				VariableType varType = ((VariableIContentProposal) element).variable.getType();
+				String relPath = null;
+				switch (varType) {
+				case ARRAY:
+					relPath = "icons/vareditor/Array.gif";
+					break;
+				case BOOLEAN:
+					relPath = "icons/vareditor/Boolean.gif";
+					break;
+				case DATE:
+					relPath = "icons/vareditor/Date.gif";
+					break;
+				case DATETIME:
+					relPath = "icons/vareditor/DateTime.gif";
+					break;
+				case DECIMAL:
+					relPath = "icons/vareditor/Decimal.gif";
+					break;
+				case INTEGER:
+					relPath = "icons/vareditor/Integer.gif";
+					break;
+				case OBJECT:
+					relPath = "icons/vareditor/Object.gif";
+					break;
+				case TEXT:
+					relPath = "icons/vareditor/Text.gif";
+					break;
+				case TIME:
+					relPath = "icons/vareditor/Time.gif";
+					break;
+				}
+				if (relPath != null) {
+					Image img = imageHash.get(relPath);
+					if (img == null) {
+						img = AsteriskDiagramEditorPlugin.getInstance().getBundledImage(relPath);
+						imageHash.put(relPath, img);
+					}
+					return img;
+				} else
+					return null;
+			} else if (element instanceof ActionContentProposal) {
+				String relPath = ((ActionContentProposal) element).getImagePath();
+				if (StringUtils.isNotBlank(relPath)) {
+					Image img = imageHash.get(relPath);
+					if (img == null) {
+						img = AsteriskDiagramEditorPlugin.getInstance().getBundledImage(relPath);
+						imageHash.put(relPath, img);
+					}
+					return img;
+				}
+			} else
+				System.err.println("Wut the hell is this? " + element);
+			return null;
+		}
+	}
+
 	class DynamicValueContentProposalAdapter extends ContentProposalAdapter {
 
 		public DynamicValueContentProposalAdapter(Control control,
-        IControlContentAdapter controlContentAdapter,
-        IContentProposalProvider proposalProvider, KeyStroke keyStroke,
-        char[] autoActivationCharacters) {
-	    super(control, controlContentAdapter, proposalProvider, keyStroke,
-	        autoActivationCharacters);
-    }
-		
+		    IControlContentAdapter controlContentAdapter,
+		    IContentProposalProvider proposalProvider, KeyStroke keyStroke,
+		    char[] autoActivationCharacters) {
+			super(control, controlContentAdapter, proposalProvider, keyStroke,
+			    autoActivationCharacters);
+		}
+
 		@Override
 		public void closeProposalPopup() {
-		  // TODO Auto-generated method stub
-		  super.closeProposalPopup();
+			// TODO Auto-generated method stub
+			super.closeProposalPopup();
 		}
-		
+
 	}
 }
