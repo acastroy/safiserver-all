@@ -9,6 +9,8 @@ import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.DynamicValueType;
 import com.safi.core.saflet.SafletConstants;
 import com.safi.core.saflet.SafletContext;
+import com.safi.workshop.sheet.actionstep.EditInScriptEvent;
+import com.safi.workshop.sheet.actionstep.EditInScriptEventListener;
 
 public class BooleanBuilderDynamicValueEditorPage extends ScriptEnabledEditorPage {
 
@@ -26,6 +28,18 @@ public class BooleanBuilderDynamicValueEditorPage extends ScriptEnabledEditorPag
 
     builderPanel.setScriptingEnvironment(scriptingEnvironment);
     builderPanel.setHandlerEnvironment(getHandlerEnvironment());
+    builderPanel.addEditInScriptEventListener(new EditInScriptEventListener() {
+
+			@Override
+			public void editInScriptEventFired(EditInScriptEvent evt) {
+				DynamicValueEditorPage page = editor.getPageForType(DynamicValueType.SCRIPT_TEXT
+				    .getLiteral());
+				String path = evt.getText();
+				page.setInitialText(path);
+				editor.selectPage(page);
+
+			}
+		});
     return builderPanel;
   }
 

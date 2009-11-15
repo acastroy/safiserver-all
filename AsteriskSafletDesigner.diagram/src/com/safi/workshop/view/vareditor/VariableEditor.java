@@ -495,6 +495,13 @@ public class VariableEditor extends TitleAreaDialog {
     Map<String, Image> imageHash = new HashMap<String, Image>();
 
     @Override
+    public void dispose() {
+      for (Image img : imageHash.values())
+      	img.dispose();
+      imageHash.clear();
+    }
+
+    @Override
     public String getText(Object element) {
       if (element instanceof VariableType)
         return ((VariableType) element).getName();

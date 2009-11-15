@@ -150,6 +150,7 @@ public class ScriptDynamicValueEditorPage extends ScriptEnabledEditorPage implem
   public SafiJavaScriptEditor jeditor = new SafiJavaScriptEditor(this);
   public Shell activeShell;
 
+  
   static {
     try {
       // Button Images
@@ -350,6 +351,7 @@ public class ScriptDynamicValueEditorPage extends ScriptEnabledEditorPage implem
 
   }
 
+  
   @Override
   public Composite createControl(Composite parent) {
     this.activeShell = parent.getShell();

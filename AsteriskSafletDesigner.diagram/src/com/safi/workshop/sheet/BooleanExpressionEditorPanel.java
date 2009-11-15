@@ -10,6 +10,7 @@ import java.util.List;
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.emf.edit.ui.dnd.LocalTransfer;
 import org.eclipse.emf.edit.ui.dnd.ViewerDragAdapter;
+import org.eclipse.jface.dialogs.InputDialog;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ComboViewer;
 import org.eclipse.jface.viewers.DoubleClickEvent;
@@ -37,12 +38,14 @@ import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
@@ -71,6 +74,8 @@ import com.safi.expr.bool.BoolExpressionParser;
 import com.safi.expr.bool.SimpleNode;
 import com.safi.expr.bool.Token;
 import com.safi.server.plugin.SafiServerPlugin;
+import com.safi.workshop.sheet.actionstep.EditInScriptEvent;
+import com.safi.workshop.sheet.actionstep.EditInScriptEventListener;
 
 public class BooleanExpressionEditorPanel extends Composite {
 
@@ -78,6 +83,7 @@ public class BooleanExpressionEditorPanel extends Composite {
 	private Composite rightOperandStackLayout;
 	private Button executeButton;
 	private static BoolExpressionParser parser = null;
+	private List<EditInScriptEventListener> eventListenerList;
 
 	class ListLabelProvider extends LabelProvider {
 		@Override
@@ -328,7 +334,7 @@ public class BooleanExpressionEditorPanel extends Composite {
 		    false, 2, 1));
 		final GridLayout gridLayout = new GridLayout();
 		gridLayout.marginHeight = 2;
-		gridLayout.numColumns = 3;
+		gridLayout.numColumns = 4;
 		booleanExpressionBuilderGroup.setLayout(gridLayout);
 		booleanExpressionBuilderGroup.setText("Boolean Expression Builder");
 
@@ -464,22 +470,8 @@ public class BooleanExpressionEditorPanel extends Composite {
 		composite_2.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, true, false, 2, 1));
 		final GridLayout gridLayout_6 = new GridLayout();
 		gridLayout_6.marginHeight = 0;
-		gridLayout_6.numColumns = 2;
+		gridLayout_6.numColumns = 3;
 		composite_2.setLayout(gridLayout_6);
-
-		setExpressionButton = new Button(composite_2, SWT.NONE);
-		setExpressionButton.setLayoutData(new GridData());
-		setExpressionButton.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(final SelectionEvent e) {
-				ExprNode node = getSelectedExpressionNode();
-				if (node != null) {
-					applyChanges(node);
-					updateExpression();
-				}
-			}
-		});
-		setExpressionButton.setText("Set Expression");
 
 		executeButton = new Button(composite_2, SWT.NONE);
 		executeButton.addSelectionListener(new SelectionAdapter() {
@@ -491,6 +483,54 @@ public class BooleanExpressionEditorPanel extends Composite {
 			}
 		});
 		executeButton.setText("Execute");
+
+		final Button editInScriptButton = new Button(composite_2, SWT.NONE);
+		editInScriptButton.addSelectionListener(new SelectionAdapter() {
+			public void widgetSelected(final SelectionEvent e) {
+				fireEditInScriptEvent();
+//				EditInScriptEvent evt = new EditInScriptEvent(this, expressionString);
+//				for (EditInScriptEventListener l : eventListenerList) {
+//					l.editInScriptEventFired(evt);
+//				}
+			}
+		});
+		editInScriptButton.setText("Edit In Script");
+
+		final Button importButton = new Button(composite_2, SWT.NONE);
+		importButton.addSelectionListener(new SelectionAdapter() {
+			public void widgetSelected(final SelectionEvent e) {
+				InputDialog dlg = new InputDialog(getShell(), "Import Boolean Expression", "Enter or paste boolean expression", "", null) {
+					protected int getInputTextStyle() {
+						return SWT.MULTI | SWT.BORDER;
+					};
+					
+					@Override
+					protected boolean isResizable() {
+					  // TODO Auto-generated method stub
+					  return true;
+					}
+					
+					protected org.eclipse.swt.graphics.Point getInitialSize() {
+						Point size = super.getInitialSize();
+						System.err.println("size is "+size);
+						size.y += 100;
+						return size;
+					};
+					@Override
+					protected Control createDialogArea(Composite parent) {
+					  // TODO Auto-generated method stub
+					  Control c =  super.createDialogArea(parent);
+					  
+					  getText().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+					  return c;
+					}
+				};
+				if (InputDialog.OK == dlg.open()){
+					buildModelFromExpression(dlg.getValue());
+				}
+			}
+		});
+		importButton.setText("Import...");
 
 		resultantExpressionGroup = new Group(this, SWT.NONE);
 		resultantExpressionGroup.setText("Resultant Expression");
@@ -519,9 +559,27 @@ public class BooleanExpressionEditorPanel extends Composite {
 		comboViewer_Op.setInput(new Object());
 		comboViewer_right.setInput(new Object());
 
+		setExpressionButton = new Button(booleanExpressionBuilderGroup, SWT.NONE);
+		setExpressionButton.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(final SelectionEvent e) {
+				ExprNode node = getSelectedExpressionNode();
+				if (node != null) {
+					applyChanges(node);
+					updateExpression();
+				}
+			}
+		});
+		setExpressionButton.setText("Set Expr");
+
 		treeViewer.setSelection(new StructuredSelection(defaultExpr), true);
 	}
 
+	@Override
+	public void dispose() {
+		eventListenerList.clear();
+	  super.dispose();
+	}
 	protected boolean isExpressionChanged() {
 		if (selectedNode != null && selectedNode instanceof ExprNode) {
 			ExprNode en = (ExprNode) selectedNode;
@@ -1684,4 +1742,16 @@ public class BooleanExpressionEditorPanel extends Composite {
 		this.handlerEnvironment = handlerEnvironment;
 	}
 
+	protected void fireEditInScriptEvent() {
+		EditInScriptEvent evt = new EditInScriptEvent(this, expressionString);
+		for (EditInScriptEventListener l : eventListenerList) {
+			l.editInScriptEventFired(evt);
+		}
+	}
+
+	public void addEditInScriptEventListener(EditInScriptEventListener evt) {
+		if (eventListenerList == null)
+			eventListenerList = new ArrayList<EditInScriptEventListener>();
+		eventListenerList.add(evt);
+	}
 }

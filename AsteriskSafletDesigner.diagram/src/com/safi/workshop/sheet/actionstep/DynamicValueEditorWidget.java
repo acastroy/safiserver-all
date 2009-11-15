@@ -1,6 +1,11 @@
 package com.safi.workshop.sheet.actionstep;
 
-import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EObject;
@@ -9,7 +14,20 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.jface.bindings.keys.KeyStroke;
+import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.fieldassist.ContentProposalAdapter;
+import org.eclipse.jface.fieldassist.IContentProposal;
+import org.eclipse.jface.fieldassist.IContentProposalListener;
+import org.eclipse.jface.fieldassist.IContentProposalListener2;
+import org.eclipse.jface.fieldassist.IContentProposalProvider;
+import org.eclipse.jface.fieldassist.IControlContentAdapter;
+import org.eclipse.jface.fieldassist.TextContentAdapter;
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.jface.viewers.ILabelProvider;
+import org.eclipse.jface.viewers.ILabelProviderListener;
+import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.FocusAdapter;
@@ -19,15 +37,17 @@ import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.graphics.ImageData;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.ui.IEditorPart;
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.ActionStepFactory;
 import com.safi.core.actionstep.DynamicValue;
@@ -37,8 +57,10 @@ import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletConstants;
 import com.safi.core.saflet.SafletContext;
 import com.safi.db.Variable;
+import com.safi.db.VariableType;
 import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
+import com.safi.workshop.part.AsteriskDiagramEditorUtil;
 import com.safi.workshop.sheet.DynamicValueEditor2;
 import com.safi.workshop.sheet.DynamicValueEditorUtils;
 import com.safi.workshop.sheet.DynamicValueEditorUtils.DynamicValueAnnotationInfo;
@@ -47,6 +69,7 @@ import com.swtdesigner.ResourceManager;
 
 public class DynamicValueEditorWidget extends Composite {
 
+	
 	private Button clearButton;
 	private Button editButton;
 	private Text text;
@@ -57,8 +80,10 @@ public class DynamicValueEditorWidget extends Composite {
 	private EditingDomain editingDomain;
 	private MyEventTable eventTable;
 	private DynamicValueAnnotationInfo info = new DynamicValueAnnotationInfo();
-	private SafletContext handlerContext;
+	private SafletContext safletContext;
 	private Color lightBlue;
+	private DynamicValueContentProposalAdapter proposalAdapter;
+	private volatile boolean assistantShowing;
 
 	/**
 	 * Create the composite
@@ -93,177 +118,13 @@ public class DynamicValueEditorWidget extends Composite {
 					text.setEditable(false);
 					text.setBackground(getDisplay().getSystemColor(SWT.COLOR_WIDGET_BACKGROUND));
 				}
-				// text.setEditable(isDirectEditable());
-				// if (!(info.isTypeLocked &&
-				// !(DynamicValueType.SCRIPT_TEXT.getLiteral().equals(
-				// info.dynValueTypeStr) ||
-				// DynamicValueType.LITERAL_TEXT.getLiteral().equals(
-				// info.dynValueTypeStr)))
-				// && (dynamicValue == null || dynamicValue.getType() ==
-				// DynamicValueType.LITERAL_TEXT || dynamicValue
-				// .getType() == DynamicValueType.SCRIPT_TEXT)) {
-				// // if (dynamicValue == null){
-				// // dynamicValue =
-				// ActionStepFactory.eINSTANCE.createDynamicValue();
-				// // dynamicValue.setType(DynamicValueType.SCRIPT_TEXT);
-				// // }
-				// String script = dynamicValue == null ? "" :
-				// dynamicValue.getText();
-				// if (script == null)
-				// script = "";
-				// if (script.indexOf('\n') < 0) {
-				// text.setEditable(true);
-				// } else {
-				// text.setEditable(false);
-				// }
-				// }
+
 			}
 		});
 		text.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(final FocusEvent e) {
-				if (text.getEnabled() && text.getEditable()) {
-					String newtext = text.getText();
-
-					boolean changed = false;
-					if (dynamicValue == null) {
-						if (StringUtils.isNotBlank(newtext)) {
-							boolean isQuoted = newtext
-							    .matches(DynamicValueEditorUtils.PATT_QUOTED_TEXT);
-							if (!isQuoted) {
-								String expectedReturn = info.expectedReturnType;
-								if (StringUtils.equals(expectedReturn, "VariableName")) {
-									IEditorPart editor = AsteriskDiagramEditorPlugin.getDefault()
-									    .getWorkbench().getActiveWorkbenchWindow().getActivePage()
-									    .getActiveEditor();
-									if (editor instanceof AsteriskDiagramEditor) {
-
-										AsteriskDiagramEditor currentEditor = (AsteriskDiagramEditor) editor;
-
-										try {
-											if (handlerContext == null) {
-												initHandlerContext();
-											}
-
-											Variable variable = handlerContext.getVariable(newtext);
-											if (variable != null) {
-
-												VariableEditor variableEditor = new VariableEditor(getShell(),
-												    currentEditor, VariableEditor.Mode.EDIT);
-												variableEditor.setVariable(variable);
-												// obj);
-												int val = variableEditor.open();
-												if (val == 0) {
-
-													variable = variableEditor.getVariable();
-												} else {
-													return;
-												}
-											} else {
-												VariableEditor variableEditor = new VariableEditor(getShell(),
-												    currentEditor, VariableEditor.Mode.NEW_LOCAL);
-												// variableEditor.setVariable((Variable)
-												// obj);
-												variableEditor.setSuggestedVariableName(text.getText().trim());
-												int val = variableEditor.open();
-												if (val == 0) {
-
-													variable = variableEditor.getVariable();
-												} else {
-													return;
-												}
-
-											}
-											changed = true;
-											dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
-											dynamicValue.setType(DynamicValueType.VARIABLE_NAME);
-											dynamicValue.setText(variable.getName());
-											text.setText("Var: " + dynamicValue.getText());
-											// refresh();
-
-										} catch (Exception ex) {
-											ex.printStackTrace();
-										}
-
-									}
-								}
-								else {
-									changed = true;
-									dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
-									dynamicValue.setText(newtext);
-								}
-							} else if (!"VariableName".equals(info.expectedReturnType)) {
-								changed = true;
-								dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
-								dynamicValue.setText(newtext);
-							} else {
-								MessageDialog.openError(getShell(), "Variable Error",
-								    "Could not set value. Value is illegal.");
-
-								text.setText("");
-								dynamicValue = null;
-								refresh();
-								return;
-							}
-							
-							if (isQuoted) {
-								dynamicValue.setType(DynamicValueType.LITERAL_TEXT);
-							} else if (dynamicValue.getType() != DynamicValueType.VARIABLE_NAME) {
-
-								// if(info.expectedReturnType.equalsIgnoreCase("Text")){
-								// dynamicValue.setType(DynamicValueType.LITERAL_TEXT);
-								// String val="\""+newtext+"\"";
-								// dynamicValue.setText(val);
-								// text.setText(val);
-								// }else
-								// {
-
-								dynamicValue.setType(DynamicValueType.SCRIPT_TEXT);
-
-								// }
-							}
-							// object.eSet(feature, dynamicValue);
-						} else {
-							dynamicValue = null;
-							changed = true;
-							// object.eSet(feature, dynamicValue);
-							// text.setEditable(false);
-
-						}
-
-					} else {
-						if (StringUtils.isBlank(newtext)) {
-							dynamicValue = null;
-							changed = true;
-							// text.setEditable(false);
-							// object.eSet(feature, dynamicValue);
-						} else if (!StringUtils.equals(newtext, dynamicValue.getText())) {
-							DynamicValueType currType = dynamicValue.getType();
-
-							editingDomain.getCommandStack().execute(
-							    SetCommand.create(editingDomain, dynamicValue, dynamicValue.eClass()
-							        .getEStructuralFeature("text"), newtext));
-							boolean isText = newtext.matches(DynamicValueEditorUtils.PATT_QUOTED_TEXT);
-							if (isText && currType != DynamicValueType.LITERAL_TEXT) {
-								editingDomain.getCommandStack().execute(
-								    SetCommand.create(editingDomain, dynamicValue, dynamicValue.eClass()
-								        .getEStructuralFeature("type"), DynamicValueType.LITERAL_TEXT));
-							} else if (!isText && currType != DynamicValueType.SCRIPT_TEXT) {
-								editingDomain.getCommandStack().execute(
-								    SetCommand.create(editingDomain, dynamicValue, dynamicValue.eClass()
-								        .getEStructuralFeature("type"), DynamicValueType.SCRIPT_TEXT));
-							}
-							// dynamicValue.setText(newtext);
-							// getA
-							changed = true;
-						}
-					}
-
-					updateTextDirectEditCapability(isDirectEditable());
-					if (changed) {
-						fireModifiedEvent();
-					}
-				}
+				textFocusLost();
 
 			}
 
@@ -311,28 +172,64 @@ public class DynamicValueEditorWidget extends Composite {
 		});
 		editButton.setText("...");
 		//
+
+		proposalAdapter = new DynamicValueContentProposalAdapter(text, new TextContentAdapter(),
+		    new DynValueContentProposalProvider(), null, null);
+		proposalAdapter.setProposalAcceptanceStyle(ContentProposalAdapter.PROPOSAL_IGNORE);
+		final DynValueContentProposalListener proposalListener = new DynValueContentProposalListener();
+		proposalAdapter.addContentProposalListener((IContentProposalListener)proposalListener);
+		proposalAdapter.addContentProposalListener((IContentProposalListener2)proposalListener);
+		proposalAdapter.setLabelProvider(new DynValueProposalLabelProvider());
 	}
 
 	protected boolean isDirectEditable() {
-		if ((!(info.isTypeLocked && !(DynamicValueType.SCRIPT_TEXT.getLiteral().equals(
-		    info.dynValueTypeStr)
-		    || DynamicValueType.LITERAL_TEXT.getLiteral().equals(info.dynValueTypeStr) || dynamicValue == null
-		    && DynamicValueType.VARIABLE_NAME.getLiteral().equals(info.dynValueTypeStr))) && (dynamicValue == null
-		    || dynamicValue.getType() == DynamicValueType.LITERAL_TEXT
-		    || dynamicValue.getType() == DynamicValueType.SCRIPT_TEXT || (DynamicValueType.VARIABLE_NAME
-		    .getLiteral().equals(info.dynValueTypeStr) && dynamicValue == null)))) {
-			// if (dynamicValue == null){
-			// dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
-			// dynamicValue.setType(DynamicValueType.SCRIPT_TEXT);
-			// }
-			String script = dynamicValue == null ? "" : dynamicValue.getText();
-			if (script == null || script.trim().length() == 0 || (script.indexOf('\n') < 0)) {
-				return true;
-			} else {
-				return false;
-			}
-		}
+		// if (info.isTypeLocked
+		// &&
+		// !DynamicValueType.SCRIPT_TEXT.getLiteral().equals(info.dynValueTypeStr))
+		// return false; // type locked to non-direct-editable type
+
+		if (dynamicValue != null
+		    && !(dynamicValue.getType() == DynamicValueType.LITERAL_TEXT || dynamicValue
+		        .getType() == DynamicValueType.SCRIPT_TEXT))
+			return false; // already populated with non-text type dynval
+
+		if (dynamicValue == null
+		    && !(DynamicValueType.LITERAL_TEXT.getLiteral().equals(info.dynValueTypeStr)
+		        || DynamicValueType.VARIABLE_NAME.getLiteral().equals(info.dynValueTypeStr) || DynamicValueType.SCRIPT_TEXT
+		        .getLiteral().equals(info.dynValueTypeStr)))
+			return false;
+
+		String script = dynamicValue == null ? null : dynamicValue.getText();
+		if (!StringUtils.contains(script, '\n'))
+			return true;
 		return false;
+
+		// if (!(info.isTypeLocked &&
+		// !(DynamicValueType.SCRIPT_TEXT.getLiteral().equals(
+		// info.dynValueTypeStr)
+		// ||
+		// DynamicValueType.LITERAL_TEXT.getLiteral().equals(info.dynValueTypeStr)
+		// || dynamicValue == null
+		// &&
+		// DynamicValueType.VARIABLE_NAME.getLiteral().equals(info.dynValueTypeStr)))
+		// && (dynamicValue == null
+		// || dynamicValue.getType() == DynamicValueType.LITERAL_TEXT
+		// || dynamicValue.getType() == DynamicValueType.SCRIPT_TEXT ||
+		// DynamicValueType.VARIABLE_NAME
+		// .getLiteral().equals(info.dynValueTypeStr) && dynamicValue == null)) {
+		// // if (dynamicValue == null){
+		// // dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
+		// // dynamicValue.setType(DynamicValueType.SCRIPT_TEXT);
+		// // }
+		// String script = dynamicValue == null ? "" : dynamicValue.getText();
+		// if (script == null || script.trim().length() == 0 ||
+		// (script.indexOf('\n') < 0)) {
+		// return true;
+		// } else {
+		// return false;
+		// }
+		// }
+		// return false;
 	}
 
 	@Override
@@ -356,14 +253,14 @@ public class DynamicValueEditorWidget extends Composite {
 		super.dispose();
 	}
 
-	private void initHandlerContext() {
-		if (handlerContext == null) {
+	private void initSafletContext() {
+		if (safletContext == null) {
 			if (object instanceof ActionStep) {
-				handlerContext = ((ActionStep) object).getSaflet().getSafletContext();
+				safletContext = ((ActionStep) object).getSaflet().getSafletContext();
 			} else if (object instanceof Item) {
 				ActionStep ts = ((Item) object).getParentActionStep();
 				if (ts != null)
-					handlerContext = ts.getSaflet().getSafletContext();
+					safletContext = ts.getSaflet().getSafletContext();
 			} else {
 				Saflet h = null;
 				Object obj = editingDomain.getRoot(object);
@@ -379,7 +276,7 @@ public class DynamicValueEditorWidget extends Composite {
 					}
 
 				if (h != null)
-					handlerContext = h.getSafletContext();
+					safletContext = h.getSafletContext();
 
 			}
 		}
@@ -389,16 +286,16 @@ public class DynamicValueEditorWidget extends Composite {
 		// first check for subclassed dynvalue annotations
 		info = DynamicValueEditorUtils.extractAnnotationInfo(object, feature);
 
-		if (handlerContext == null) {
-			initHandlerContext();
+		if (safletContext == null) {
+			initSafletContext();
 
-			if (handlerContext == null)
+			if (safletContext == null)
 				throw new IllegalStateException("Couldn't retrieve SafletContext from object "
 				    + object);
 		}
 
 		DynamicValueEditor2 dve = DynamicValueEditorUtils.createDynamicValueEditor(info,
-		    object, editingDomain, dynamicValue, handlerContext, getShell());
+		    object, editingDomain, dynamicValue, safletContext, getShell());
 
 		if (Window.OK == dve.open()) {
 			DynamicValue dv = dve.getDynamicValue();
@@ -544,12 +441,478 @@ public class DynamicValueEditorWidget extends Composite {
 		this.editingDomain = editingDomain;
 	}
 
-	public SafletContext getSafletContext() {
-		return handlerContext;
-	}
-
 	public void setHandlerContext(SafletContext handlerContext) {
-		this.handlerContext = handlerContext;
+		this.safletContext = handlerContext;
 	}
 
+	private void textFocusLost() {
+		if (assistantShowing) return;
+		if (text.getEnabled() && text.getEditable()) {
+			
+			String newtext = text.getText();
+
+			boolean changed = false;
+			if (dynamicValue == null) {
+				if (StringUtils.isNotBlank(newtext)) {
+					boolean isQuoted = newtext.matches(DynamicValueEditorUtils.PATT_QUOTED_TEXT);
+					if (!isQuoted) {
+						// String expectedReturn = info.expectedReturnType;
+						changed = true;
+						dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
+						dynamicValue.setText(newtext);
+//						if (StringUtils.equals(info.dynValueTypeStr, DynamicValueType.VARIABLE_NAME
+//						    .getLiteral())) {
+//							changed = openNewVariableEditor(newtext);
+//
+//						} else {
+//							changed = true;
+//							dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
+//							dynamicValue.setText(newtext);
+//						}
+					} else if (!"VariableName".equals(info.expectedReturnType)) {
+						changed = true;
+						dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
+						dynamicValue.setText(newtext);
+					} else {
+						MessageDialog.openError(getShell(), "Variable Error",
+						    "Could not set value. Value is illegal.");
+
+						text.setText("");
+						dynamicValue = null;
+						refresh();
+						return;
+					}
+
+					if (isQuoted) {
+						if (dynamicValue != null)
+						dynamicValue.setType(DynamicValueType.LITERAL_TEXT);
+					} else if (dynamicValue != null && dynamicValue.getType() != DynamicValueType.VARIABLE_NAME) {
+
+						// if(info.expectedReturnType.equalsIgnoreCase("Text")){
+						// dynamicValue.setType(DynamicValueType.LITERAL_TEXT);
+						// String val="\""+newtext+"\"";
+						// dynamicValue.setText(val);
+						// text.setText(val);
+						// }else
+						// {
+
+						dynamicValue.setType(DynamicValueType.SCRIPT_TEXT);
+
+						// }
+					}
+					// object.eSet(feature, dynamicValue);
+				} else {
+					dynamicValue = null;
+					changed = true;
+					// object.eSet(feature, dynamicValue);
+					// text.setEditable(false);
+
+				}
+
+			} else {
+				if (StringUtils.isBlank(newtext)) {
+					dynamicValue = null;
+					changed = true;
+					// text.setEditable(false);
+					// object.eSet(feature, dynamicValue);
+				} else if (!StringUtils.equals(newtext, dynamicValue.getText())) {
+					DynamicValueType currType = dynamicValue.getType();
+
+					editingDomain.getCommandStack().execute(
+					    SetCommand.create(editingDomain, dynamicValue, dynamicValue.eClass()
+					        .getEStructuralFeature("text"), newtext));
+					boolean isText = newtext.matches(DynamicValueEditorUtils.PATT_QUOTED_TEXT);
+					if (isText && currType != DynamicValueType.LITERAL_TEXT) {
+						editingDomain.getCommandStack().execute(
+						    SetCommand.create(editingDomain, dynamicValue, dynamicValue.eClass()
+						        .getEStructuralFeature("type"), DynamicValueType.LITERAL_TEXT));
+					} else if (!isText && currType != DynamicValueType.SCRIPT_TEXT) {
+						editingDomain.getCommandStack().execute(
+						    SetCommand.create(editingDomain, dynamicValue, dynamicValue.eClass()
+						        .getEStructuralFeature("type"), DynamicValueType.SCRIPT_TEXT));
+					}
+					// dynamicValue.setText(newtext);
+					// getA
+					changed = true;
+				}
+			}
+
+			updateTextDirectEditCapability(isDirectEditable());
+			if (changed) {
+				fireModifiedEvent();
+			}
+		}
+	}
+
+	public SafletContext getSafletContext() {
+		if (safletContext == null)
+			initSafletContext();
+		return safletContext;
+	}
+
+	private boolean openNewVariableEditor(String varName) {
+		boolean changed = false;
+		AsteriskDiagramEditor currentEditor = AsteriskDiagramEditorUtil
+		    .getCurrentAsteriskEditor();
+
+		try {
+
+			Variable variable = getSafletContext().getVariable(varName);
+			if (variable != null) { // new var
+
+				VariableEditor variableEditor = new VariableEditor(getShell(), currentEditor,
+				    VariableEditor.Mode.EDIT);
+				variableEditor.setVariable(variable);
+				// obj);
+				int val = variableEditor.open();
+				if (val == Dialog.OK) {
+					variable = variableEditor.getVariable();
+				} else {
+					if (info.isTypeLocked)
+						text.setText("");
+					// text.selectAll();
+					// text.forceFocus();
+
+					return false;
+				}
+			} else { // existing var
+				VariableEditor variableEditor = new VariableEditor(getShell(), currentEditor,
+				    VariableEditor.Mode.NEW_LOCAL);
+				// variableEditor.setVariable((Variable)
+				// obj);
+				variableEditor.setSuggestedVariableName(text.getText().trim());
+				int val = variableEditor.open();
+				if (val == Dialog.OK) {
+					variable = variableEditor.getVariable();
+				} else {
+					if (info.isTypeLocked)
+						text.setText("");
+					// text.selectAll();
+					// text.forceFocus();
+
+					return false;
+				}
+
+			}
+			changed = true;
+			dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
+			dynamicValue.setType(DynamicValueType.VARIABLE_NAME);
+			dynamicValue.setText(variable.getName());
+			text.setText("Var: " + dynamicValue.getText());
+			// refresh();
+
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		return changed;
+	}
+
+	class DynValueContentProposalProvider implements IContentProposalProvider {
+
+		private List<IContentProposal> proposals;
+
+		@Override
+		public IContentProposal[] getProposals(String contents, int position) {
+			if (proposals == null)
+				initProposals();
+
+			List<IContentProposal> props = new ArrayList<IContentProposal>();
+			for (IContentProposal p : proposals) {
+				if (p instanceof VariableIContentProposal) {
+					if (p.getContent().length() >= contents.length()
+					    && p.getContent().substring(0, contents.length()).equals(contents))
+						props.add(p);
+				}
+				else
+			  if (p instanceof ActionContentProposal){
+			  	if (((ActionContentProposal)p).isEnabled())
+			  		props.add(p);
+			  }
+
+			}
+
+			return props.toArray(new IContentProposal[proposals.size()]);
+		}
+
+		private void initProposals() {
+			// TODO Auto-generated method stub
+			proposals = new ArrayList<IContentProposal>();
+			if (canAcceptVarType()) {
+				final List<Variable> variables = new ArrayList<Variable>(getSafletContext()
+				    .getVariables());
+				Collections.sort(variables, new Comparator<Variable>() {
+
+					@Override
+					public int compare(Variable o1, Variable o2) {
+						return o1.getName().compareTo(o2.getName());
+					}
+				});
+				proposals.add(new NewVariableActionContentProposal());
+				for (Variable v : variables) {
+					proposals.add(new VariableIContentProposal(v));
+				}
+			}
+		}
+
+	}
+
+	class VariableIContentProposal implements IContentProposal {
+		private Variable variable;
+
+		public VariableIContentProposal(Variable variable) {
+			this.variable = variable;
+		}
+
+		@Override
+		public String getContent() {
+			// TODO Auto-generated method stub
+			return variable.getName();
+		}
+
+		@Override
+		public int getCursorPosition() {
+			// TODO Auto-generated method stub
+			return getContent() == null ? 0 : getContent().length();
+		}
+
+		@Override
+		public String getDescription() {
+			// TODO Auto-generated method stub
+			return "Var name: " + variable.getName() + ", type: " + variable.getType()
+			    + ", scope: " + variable.getScope();
+		}
+
+		@Override
+		public String getLabel() {
+			// TODO Auto-generated method stub
+			return getContent();
+		}
+
+		public Variable getVariable() {
+			return variable;
+		}
+
+		public void setVariable(Variable variable) {
+			this.variable = variable;
+		}
+
+	}
+
+	abstract class ActionContentProposal implements IContentProposal {
+		private String name;
+		private String description;
+
+		public ActionContentProposal(String name, String description) {
+			this.name = name;
+			this.description = description;
+		}
+
+		public abstract boolean isEnabled();
+
+		@Override
+		public String getContent() {
+			return name;
+		}
+
+		@Override
+		public int getCursorPosition() {
+			return getContent() == null ? 0 : getContent().length();
+		}
+
+		@Override
+		public String getDescription() {
+			return description;
+		}
+
+		@Override
+		public String getLabel() {
+			return getContent();
+		}
+
+		public abstract int execute();
+
+		public abstract String getImagePath();
+	}
+
+	class NewVariableActionContentProposal extends ActionContentProposal {
+
+		public NewVariableActionContentProposal() {
+			super("New variable...", "Create a new variable");
+		}
+
+		@Override
+		public boolean isEnabled() {
+		  // TODO Auto-generated method stub
+		  return canAcceptVarType();
+		}
+		@Override
+		public int execute() {
+			if (openNewVariableEditor(StringUtils.trim(text.getText())))
+				return Dialog.OK;
+
+			return Dialog.CANCEL;
+		}
+
+		@Override
+    public String getImagePath() {
+	    return "icons/vareditor/AddVariable.gif";
+    }
+
+	}
+
+	public boolean canAcceptVarType() {
+		if (info.isTypeLocked
+		    && !DynamicValueType.VARIABLE_NAME.getLiteral().equals(info.dynValueTypeStr))
+			return false;
+
+		return isDirectEditable();
+		// if (dynamicValue == null
+		// &&
+		// !(DynamicValueType.LITERAL_TEXT.getLiteral().equals(info.dynValueTypeStr)
+		// ||
+		// DynamicValueType.VARIABLE_NAME.getLiteral().equals(info.dynValueTypeStr)
+		// || DynamicValueType.SCRIPT_TEXT
+		// .getLiteral().equals(info.dynValueTypeStr)))
+		// return false;
+	}
+
+	public class DynValueContentProposalListener implements IContentProposalListener, IContentProposalListener2 {
+
+		public DynValueContentProposalListener() {
+			// TODO Auto-generated constructor stub
+		}
+
+		@Override
+		public void proposalAccepted(IContentProposal proposal) {
+			proposalAdapter.closeProposalPopup();
+			if (proposal instanceof VariableIContentProposal) {
+				Variable variable = ((VariableIContentProposal) proposal).variable;
+				if (variable != null) {
+					if (dynamicValue == null)
+						dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
+					dynamicValue.setType(DynamicValueType.VARIABLE_NAME);
+					dynamicValue.setText(variable.getName());
+					text.setText("Var: " + dynamicValue.getText());
+					updateTextDirectEditCapability(isDirectEditable());
+					fireModifiedEvent();
+				}
+			}
+			else if (proposal instanceof ActionContentProposal){
+				((ActionContentProposal)proposal).execute();
+			}
+
+		}
+
+		@Override
+    public void proposalPopupClosed(ContentProposalAdapter adapter) {
+	    // TODO Auto-generated method stub
+	    assistantShowing = false;
+    }
+
+		@Override
+    public void proposalPopupOpened(ContentProposalAdapter adapter) {
+	    // TODO Auto-generated method stub
+	    assistantShowing = true;
+    }
+
+	}
+	
+
+
+	class DynValueProposalLabelProvider extends LabelProvider {
+    Map<String, Image> imageHash = new HashMap<String, Image>();
+
+    @Override
+    public String getText(Object element) {
+      if (element instanceof IContentProposal)
+        return ((IContentProposal) element).getLabel();
+      else
+        return element.toString();
+    }
+    
+    @Override
+    public void dispose() {
+      for (Image img : imageHash.values())
+      	img.dispose();
+      imageHash.clear();
+    }
+
+    @Override
+    public Image getImage(Object element) {
+      if (element instanceof VariableIContentProposal) {
+      	
+        VariableType varType = ((VariableIContentProposal)element).variable.getType();
+        String relPath = null;
+        switch (varType) {
+          case ARRAY:
+            relPath = "icons/vareditor/Array.gif";
+            break;
+          case BOOLEAN:
+            relPath = "icons/vareditor/Boolean.gif";
+            break;
+          case DATE:
+            relPath = "icons/vareditor/Date.gif";
+            break;
+          case DATETIME:
+            relPath = "icons/vareditor/DateTime.gif";
+            break;
+          case DECIMAL:
+            relPath = "icons/vareditor/Decimal.gif";
+            break;
+          case INTEGER:
+            relPath = "icons/vareditor/Integer.gif";
+            break;
+          case OBJECT:
+            relPath = "icons/vareditor/Object.gif";
+            break;
+          case TEXT:
+            relPath = "icons/vareditor/Text.gif";
+            break;
+          case TIME:
+            relPath = "icons/vareditor/Time.gif";
+            break;
+        }
+        if (relPath != null) {
+          Image img = imageHash.get(relPath);
+          if (img == null) {
+          	img = AsteriskDiagramEditorPlugin.getInstance().getBundledImage(relPath);
+            imageHash.put(relPath, img);
+          }
+          return img;
+        } else
+          return null;
+      }
+      else if (element instanceof ActionContentProposal){
+      	String relPath = ((ActionContentProposal)element).getImagePath();
+      	if (StringUtils.isNotBlank(relPath)){
+      		Image img = imageHash.get(relPath);
+          if (img == null) {
+          	img = AsteriskDiagramEditorPlugin.getInstance().getBundledImage(relPath);
+            imageHash.put(relPath, img);
+          }
+          return img;
+      	}
+      }
+      // TODO Auto-generated method stub
+      return super.getImage(element);
+    }
+  }
+	
+	class DynamicValueContentProposalAdapter extends ContentProposalAdapter {
+
+		public DynamicValueContentProposalAdapter(Control control,
+        IControlContentAdapter controlContentAdapter,
+        IContentProposalProvider proposalProvider, KeyStroke keyStroke,
+        char[] autoActivationCharacters) {
+	    super(control, controlContentAdapter, proposalProvider, keyStroke,
+	        autoActivationCharacters);
+    }
+		
+		@Override
+		public void closeProposalPopup() {
+		  // TODO Auto-generated method stub
+		  super.closeProposalPopup();
+		}
+		
+	}
 }
