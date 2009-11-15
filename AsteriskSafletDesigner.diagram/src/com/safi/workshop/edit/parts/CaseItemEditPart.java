@@ -358,11 +358,14 @@ public class CaseItemEditPart extends ShapeNodeEditPart implements ActionstepSub
         .getType(CaseItemLabelTextEditPart.VISUAL_ID));
   }
 
-  @Override
-  public Command getCommand(Request request) {
-    // TODO Auto-generated method stub
-    Command cmd = super.getCommand(request);
-    return cmd;
+ @Override
+protected void refreshVisuals() {
+  // TODO Auto-generated method stub
+  super.refreshVisuals();
+  CaseItem item = getCaseItemModel();
+  if (item != null){
+  	getOutputFigure().setLabelText(item.getDynamicValue() == null ? "" : item.getDynamicValue().getText());
   }
+}
 
 }
