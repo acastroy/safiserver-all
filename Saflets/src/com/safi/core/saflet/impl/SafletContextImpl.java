@@ -324,7 +324,7 @@ public abstract class SafletContextImpl extends EObjectImpl implements SafletCon
       return null;
     Variable removed = getVariable(name);
     if (removed != null)
-    	variables.remove(name);
+    	variables.remove(removed);
     
 //    for (Iterator<Variable> iter = variables.iterator(); iter.hasNext();) {
 //      Variable v = iter.next();
