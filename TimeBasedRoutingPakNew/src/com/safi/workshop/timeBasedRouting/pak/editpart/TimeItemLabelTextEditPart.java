@@ -212,8 +212,10 @@ public class TimeItemLabelTextEditPart extends CompartmentEditPart implements IT
    * @generated
    */
   protected String getLabelText() {
+  	
     String text = null;
     EObject parserElement = getParserElement();
+    
     if (parserElement != null && getParser() != null) {
       text = getParser().getPrintString(new EObjectAdapter(parserElement),
           getParserOptions().intValue());
