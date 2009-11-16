@@ -127,7 +127,7 @@ public class DynamicValueEditorWidget extends Composite {
 		text.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(final FocusEvent e) {
-				textFocusLost();
+				commit();
 
 			}
 
@@ -478,7 +478,7 @@ public class DynamicValueEditorWidget extends Composite {
 		this.safletContext = handlerContext;
 	}
 
-	private void textFocusLost() {
+	private void commit() {
 		if (assistantShowing.get() || proposalAdapter.hasProposalPopupFocus() || dialogShowing.get())
 			return;
 		
@@ -885,6 +885,8 @@ public class DynamicValueEditorWidget extends Composite {
 		public void proposalPopupClosed(ContentProposalAdapter adapter) {
 			// TODO Auto-generated method stub
 			assistantShowing.set(false);
+			if (!dialogShowing.get())
+				commit();
 //			refresh();
 		}
 
