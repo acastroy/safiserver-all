@@ -188,6 +188,7 @@ public class DynamicValueEditorWidget extends Composite {
 			proposalAdapter
 			    .addContentProposalListener((IContentProposalListener2) proposalListener);
 			proposalAdapter.setLabelProvider(new DynValueProposalLabelProvider());
+			
 		} catch (ParseException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -478,7 +479,7 @@ public class DynamicValueEditorWidget extends Composite {
 	}
 
 	private void textFocusLost() {
-		if ((assistantShowing.get() && proposalAdapter.hasProposalPopupFocus()) || dialogShowing.get())
+		if (assistantShowing.get() || proposalAdapter.hasProposalPopupFocus() || dialogShowing.get())
 			return;
 		
 		proposalAdapter.closeProposalPopup();
@@ -883,14 +884,14 @@ public class DynamicValueEditorWidget extends Composite {
 		@Override
 		public void proposalPopupClosed(ContentProposalAdapter adapter) {
 			// TODO Auto-generated method stub
-			assistantShowing.set(true);
+			assistantShowing.set(false);
 //			refresh();
 		}
 
 		@Override
 		public void proposalPopupOpened(ContentProposalAdapter adapter) {
 			// TODO Auto-generated method stub
-			assistantShowing.set(false);
+			assistantShowing.set(true);
 		}
 
 	}
