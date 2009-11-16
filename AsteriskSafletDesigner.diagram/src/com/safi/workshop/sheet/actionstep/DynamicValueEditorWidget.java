@@ -176,7 +176,8 @@ public class DynamicValueEditorWidget extends Composite {
 		try {
 			proposalAdapter = new DynamicValueContentProposalAdapter(text,
 			    new TextContentAdapter(), new DynValueContentProposalProvider(), KeyStroke
-			        .getInstance("Ctrl+Space"), "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_".toCharArray());
+			        .getInstance("Ctrl+Space"),
+			    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_".toCharArray());
 			proposalAdapter.setProposalAcceptanceStyle(ContentProposalAdapter.PROPOSAL_IGNORE);
 			final DynValueContentProposalListener proposalListener = new DynValueContentProposalListener();
 			proposalAdapter
@@ -203,8 +204,10 @@ public class DynamicValueEditorWidget extends Composite {
 			return false; // already populated with non-text type dynval
 
 		if (dynamicValue == null
-		    && !(DynamicValueType.LITERAL_TEXT.getLiteral().equals(getDynamicValueInfo().dynValueTypeStr)
-		        || DynamicValueType.VARIABLE_NAME.getLiteral().equals(getDynamicValueInfo().dynValueTypeStr) || DynamicValueType.SCRIPT_TEXT
+		    && !(DynamicValueType.LITERAL_TEXT.getLiteral().equals(
+		        getDynamicValueInfo().dynValueTypeStr)
+		        || DynamicValueType.VARIABLE_NAME.getLiteral().equals(
+		            getDynamicValueInfo().dynValueTypeStr) || DynamicValueType.SCRIPT_TEXT
 		        .getLiteral().equals(getDynamicValueInfo().dynValueTypeStr)))
 			return false;
 
@@ -308,8 +311,9 @@ public class DynamicValueEditorWidget extends Composite {
 				    + object);
 		}
 
-		DynamicValueEditor2 dve = DynamicValueEditorUtils.createDynamicValueEditor(getDynamicValueInfo(),
-		    object, editingDomain, dynamicValue, safletContext, getShell());
+		DynamicValueEditor2 dve = DynamicValueEditorUtils.createDynamicValueEditor(
+		    getDynamicValueInfo(), object, editingDomain, dynamicValue, safletContext,
+		    getShell());
 
 		if (Window.OK == dve.open()) {
 			DynamicValue dv = dve.getDynamicValue();
@@ -362,7 +366,7 @@ public class DynamicValueEditorWidget extends Composite {
 	}
 
 	protected void refresh() {
-	String toolTipText="";
+		String toolTipText = "";
 		if (dynamicValue == null) {
 			text.setText("");
 			imageLabel.setImage(null);
@@ -380,7 +384,7 @@ public class DynamicValueEditorWidget extends Composite {
 				// updateTextDirectEditCapability(true);
 				// text.setEditable(true);
 				text.setText(dynamicValue.getText());
-				toolTipText=dynamicValue.getText();
+				toolTipText = dynamicValue.getText();
 				break;
 			case CUSTOM:
 				imageLabel.setImage(ResourceManager.getPluginImage(AsteriskDiagramEditorPlugin
@@ -397,7 +401,7 @@ public class DynamicValueEditorWidget extends Composite {
 				else
 					prefix += ": ";
 				text.setText(prefix + dynamicValue.getText());
-				toolTipText=prefix + dynamicValue.getText();
+				toolTipText = prefix + dynamicValue.getText();
 				break;
 			case SCRIPT_TEXT:
 				imageLabel.setImage(ResourceManager.getPluginImage(AsteriskDiagramEditorPlugin
@@ -413,17 +417,17 @@ public class DynamicValueEditorWidget extends Composite {
 					text.setText("Script: "
 					    + script.substring(script.lastIndexOf('\n') + 1, script.length()));
 				}
-				toolTipText=script;
+				toolTipText = script;
 				break;
 			case VARIABLE_NAME:
 				imageLabel.setImage(ResourceManager.getPluginImage(AsteriskDiagramEditorPlugin
 				    .getDefault(), "icons/dynamicValueEditor/variable.gif"));
 				text.setText("Var: " + dynamicValue.getText());
-				toolTipText="Var: " + dynamicValue.getText();
+				toolTipText = "Var: " + dynamicValue.getText();
 				break;
 			}
 		}
-        text.setToolTipText(toolTipText);
+		text.setToolTipText(toolTipText);
 		updateTextDirectEditCapability(isDirectEditable());
 	}
 
@@ -465,8 +469,9 @@ public class DynamicValueEditorWidget extends Composite {
 	}
 
 	private void textFocusLost() {
-		if (assistantShowing)
+		if (assistantShowing && proposalAdapter.hasProposalPopupFocus())
 			return;
+		proposalAdapter.closeProposalPopup();
 		if (text.getEnabled() && text.getEditable()) {
 
 			String newtext = text.getText();
@@ -476,10 +481,25 @@ public class DynamicValueEditorWidget extends Composite {
 				if (StringUtils.isNotBlank(newtext)) {
 					boolean isQuoted = newtext.matches(DynamicValueEditorUtils.PATT_QUOTED_TEXT);
 					if (!isQuoted) {
-						// String expectedReturn = info.expectedReturnType;
-						changed = true;
-						dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
-						dynamicValue.setText(newtext);
+
+						if (info.isTypeLocked
+						    && StringUtils.equals(info.dynValueTypeStr,
+						        DynamicValueType.VARIABLE_NAME.getLiteral())) {
+							Variable v = getSafletContext().getVariable(newtext.trim());
+							if (v != null) {
+								dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
+								dynamicValue.setText(newtext.trim());
+								dynamicValue.setType(DynamicValueType.VARIABLE_NAME);
+								changed = true;
+							} else {
+								changed = openNewVariableEditor(newtext);
+							}
+						} else {
+							// String expectedReturn = info.expectedReturnType;
+							changed = true;
+							dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
+							dynamicValue.setText(newtext);
+						}
 						// if (StringUtils.equals(info.dynValueTypeStr,
 						// DynamicValueType.VARIABLE_NAME
 						// .getLiteral())) {
@@ -783,7 +803,8 @@ public class DynamicValueEditorWidget extends Composite {
 
 	public boolean canAcceptVarType() {
 		if (getDynamicValueInfo().isTypeLocked
-		    && !DynamicValueType.VARIABLE_NAME.getLiteral().equals(getDynamicValueInfo().dynValueTypeStr))
+		    && !DynamicValueType.VARIABLE_NAME.getLiteral().equals(
+		        getDynamicValueInfo().dynValueTypeStr))
 			return false;
 
 		return isDirectEditable();
@@ -829,6 +850,7 @@ public class DynamicValueEditorWidget extends Composite {
 		public void proposalPopupClosed(ContentProposalAdapter adapter) {
 			// TODO Auto-generated method stub
 			assistantShowing = false;
+//			refresh();
 		}
 
 		@Override
@@ -911,8 +933,7 @@ public class DynamicValueEditorWidget extends Composite {
 					}
 					return img;
 				}
-			} else
-				System.err.println("Wut the hell is this? " + element);
+			}
 			return null;
 		}
 	}
