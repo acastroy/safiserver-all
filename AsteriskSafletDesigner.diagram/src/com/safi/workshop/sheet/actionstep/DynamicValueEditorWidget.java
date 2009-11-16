@@ -72,6 +72,7 @@ import com.swtdesigner.ResourceManager;
 
 public class DynamicValueEditorWidget extends Composite {
 
+	private final static String NAME_PATTERN = "[a-zA-Z_][a-zA-Z0-9_]*";
 	private Button clearButton;
 	private Button editButton;
 	private Text text;
@@ -85,8 +86,13 @@ public class DynamicValueEditorWidget extends Composite {
 	private SafletContext safletContext;
 	private Color lightBlue;
 	private DynamicValueContentProposalAdapter proposalAdapter;
-	private volatile AtomicBoolean assistantShowing = new AtomicBoolean(false);
+	private AtomicBoolean assistantShowing = new AtomicBoolean(false);
 	private AtomicBoolean dialogShowing = new AtomicBoolean(false);
+	private AtomicBoolean textHasFocus = new AtomicBoolean(false);
+	private Image variableNameImage;
+	private Image scriptImage;
+	private Image customImage;
+	private Image literalTextImage;
 
 	/**
 	 * Create the composite
@@ -114,32 +120,37 @@ public class DynamicValueEditorWidget extends Composite {
 		text.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseDown(final MouseEvent e) {
-				if (isDirectEditable()) {
-					text.setEditable(true);
-					text.setBackground(getDisplay().getSystemColor(SWT.COLOR_WHITE));
-				} else {
-					text.setEditable(false);
-					text.setBackground(getDisplay().getSystemColor(SWT.COLOR_WIDGET_BACKGROUND));
-				}
+				textHasFocus.set(true);
+				updateTextDirectEditCapability(isDirectEditable());
+//				if (isDirectEditable()) {
+//					text.setEditable(true);
+//					text.setBackground(getDisplay().getSystemColor(SWT.COLOR_WHITE));
+//				} else {
+//					text.setEditable(false);
+//					text.setBackground(getDisplay().getSystemColor(SWT.COLOR_WIDGET_BACKGROUND));
+//				}
 
 			}
 		});
 		text.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(final FocusEvent e) {
+				textHasFocus.set(false);
 				commit();
 
 			}
 
 			@Override
 			public void focusGained(FocusEvent e) {
-				if (isDirectEditable()) {
-					text.setEditable(true);
-					text.setBackground(getDisplay().getSystemColor(SWT.COLOR_WHITE));
-				} else {
-					text.setEditable(false);
-					text.setBackground(getDisplay().getSystemColor(SWT.COLOR_WIDGET_BACKGROUND));
-				}
+				textHasFocus.set(true);
+				updateTextDirectEditCapability(isDirectEditable());
+//				if (isDirectEditable()) {
+//					text.setEditable(true);
+//					text.setBackground(getDisplay().getSystemColor(SWT.COLOR_WHITE));
+//				} else {
+//					text.setEditable(false);
+//					text.setBackground(getDisplay().getSystemColor(SWT.COLOR_WIDGET_BACKGROUND));
+//				}
 			}
 
 		});
@@ -148,8 +159,7 @@ public class DynamicValueEditorWidget extends Composite {
 
 		imageLabel = new Label(this, SWT.NONE);
 		imageLabel.setLayoutData(new GridData(SWT.DEFAULT, SWT.DEFAULT));
-		imageLabel.setImage(ResourceManager.getPluginImage(AsteriskDiagramEditorPlugin
-		    .getDefault(), "icons/dynamicValueEditor/literal_text.gif"));
+		imageLabel.setImage(getLiteralTextImage());
 
 		clearButton = new Button(this, SWT.NONE);
 		clearButton.addSelectionListener(new SelectionAdapter() {
@@ -188,7 +198,6 @@ public class DynamicValueEditorWidget extends Composite {
 			proposalAdapter
 			    .addContentProposalListener((IContentProposalListener2) proposalListener);
 			proposalAdapter.setLabelProvider(new DynValueProposalLabelProvider());
-			
 		} catch (ParseException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -299,14 +308,13 @@ public class DynamicValueEditorWidget extends Composite {
 	}
 
 	protected DynamicValueAnnotationInfo getDynamicValueInfo() {
-		
-		
+
 		if (info == null) {
 			if (object == null || feature == null)
 				return new DynamicValueAnnotationInfo();
 			info = DynamicValueEditorUtils.extractAnnotationInfo(object, feature);
 		}
-		
+
 		return info;
 	}
 
@@ -378,8 +386,11 @@ public class DynamicValueEditorWidget extends Composite {
 	protected void refresh() {
 		String toolTipText = "";
 		if (dynamicValue == null) {
-			text.setText("");
-			imageLabel.setImage(null);
+			if (!StringUtils.equals(text.getText(), ""))
+				text.setText("");
+
+			if (imageLabel.getImage() != null)
+				imageLabel.setImage(null);
 			// text.setEditable(false);
 
 			// dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
@@ -389,16 +400,16 @@ public class DynamicValueEditorWidget extends Composite {
 			// updateTextDirectEditCapability(false);
 			switch (dynamicValue.getType()) {
 			case LITERAL_TEXT:
-				imageLabel.setImage(ResourceManager.getPluginImage(AsteriskDiagramEditorPlugin
-				    .getDefault(), "icons/dynamicValueEditor/literal_text.gif"));
+				if (imageLabel.getImage() != getLiteralTextImage())
+					imageLabel.setImage(getLiteralTextImage());
 				// updateTextDirectEditCapability(true);
 				// text.setEditable(true);
 				text.setText(dynamicValue.getText());
 				toolTipText = dynamicValue.getText();
 				break;
 			case CUSTOM:
-				imageLabel.setImage(ResourceManager.getPluginImage(AsteriskDiagramEditorPlugin
-				    .getDefault(), "icons/dynamicValueEditor/custom.gif"));
+				if (imageLabel.getImage() != getCustomImage())
+					imageLabel.setImage(getCustomImage());
 				EMap<String, String> data = dynamicValue.getData();
 				String prefix = null;
 				if (data != null) {
@@ -410,12 +421,14 @@ public class DynamicValueEditorWidget extends Composite {
 					prefix = "Custom: ";
 				else
 					prefix += ": ";
-				text.setText(prefix + dynamicValue.getText());
-				toolTipText = prefix + dynamicValue.getText();
+
+				String labelText = prefix + dynamicValue.getText();
+				text.setText(labelText);
+				toolTipText = labelText;
 				break;
 			case SCRIPT_TEXT:
-				imageLabel.setImage(ResourceManager.getPluginImage(AsteriskDiagramEditorPlugin
-				    .getDefault(), "icons/dynamicValueEditor/script.gif"));
+				if (imageLabel.getImage() != getScriptImage())
+					imageLabel.setImage(getScriptImage());
 				String script = dynamicValue.getText();
 				if (script == null)
 					script = "";
@@ -430,8 +443,9 @@ public class DynamicValueEditorWidget extends Composite {
 				toolTipText = script;
 				break;
 			case VARIABLE_NAME:
-				imageLabel.setImage(ResourceManager.getPluginImage(AsteriskDiagramEditorPlugin
-				    .getDefault(), "icons/dynamicValueEditor/variable.gif"));
+
+				if (imageLabel.getImage() != getVariableNameImage())
+					imageLabel.setImage(getVariableNameImage());
 				text.setText("Var: " + dynamicValue.getText());
 				toolTipText = "Var: " + dynamicValue.getText();
 				break;
@@ -441,10 +455,44 @@ public class DynamicValueEditorWidget extends Composite {
 		updateTextDirectEditCapability(isDirectEditable());
 	}
 
+	private Image getVariableNameImage() {
+		if (variableNameImage == null)
+			variableNameImage = ResourceManager.getPluginImage(AsteriskDiagramEditorPlugin
+			    .getDefault(), "icons/dynamicValueEditor/variable.gif");
+
+		return variableNameImage;
+	}
+
+	private Image getScriptImage() {
+		if (scriptImage == null)
+			scriptImage = ResourceManager.getPluginImage(AsteriskDiagramEditorPlugin
+			    .getDefault(), "icons/dynamicValueEditor/script.gif");
+
+		return scriptImage;
+	}
+
+	private Image getCustomImage() {
+
+		if (customImage == null)
+			customImage = ResourceManager.getPluginImage(AsteriskDiagramEditorPlugin
+			    .getDefault(), "icons/dynamicValueEditor/custom.gif");
+		return customImage;
+	}
+
+	private Image getLiteralTextImage() {
+		if (literalTextImage == null)
+			literalTextImage = ResourceManager.getPluginImage(AsteriskDiagramEditorPlugin
+			    .getDefault(), "icons/dynamicValueEditor/literal_text.gif");
+		return literalTextImage;
+	}
+
 	protected void updateTextDirectEditCapability(boolean b) {
 		text.setEditable(b);
-		text.setBackground(b ? lightBlue : this.getDisplay().getSystemColor(
-		    SWT.COLOR_WIDGET_BACKGROUND));
+		if (b) {
+			text.setBackground(textHasFocus.get() ? this.getDisplay().getSystemColor(
+			    SWT.COLOR_WHITE) : lightBlue);
+		} else
+			text.setBackground(this.getDisplay().getSystemColor(SWT.COLOR_WIDGET_BACKGROUND));
 	}
 
 	public EStructuralFeature getFeature() {
@@ -479,127 +527,132 @@ public class DynamicValueEditorWidget extends Composite {
 	}
 
 	private void commit() {
-		if (assistantShowing.get() || proposalAdapter.hasProposalPopupFocus() || dialogShowing.get())
+		if (assistantShowing.get() || proposalAdapter.hasProposalPopupFocus()
+		    || dialogShowing.get())
 			return;
-		
+		System.err.println("dis shitz be unfocusst");
 		proposalAdapter.closeProposalPopup();
-		if (text.getEnabled() && text.getEditable()) {
+		boolean changed = false;
+		try {
+			if (text.getEnabled() && text.getEditable()) {
 
-			String newtext = text.getText();
+				String newtext = text.getText();
 
-			boolean changed = false;
-			if (dynamicValue == null) {
-				if (StringUtils.isNotBlank(newtext)) {
-					boolean isQuoted = newtext.matches(DynamicValueEditorUtils.PATT_QUOTED_TEXT);
-					if (!isQuoted) {
+				if (dynamicValue == null) {
+					if (StringUtils.isNotBlank(newtext)) {
+						boolean isQuoted = newtext.matches(DynamicValueEditorUtils.PATT_QUOTED_TEXT);
+						if (!isQuoted) {
 
-						if (getDynamicValueInfo().isTypeLocked
-						    && StringUtils.equals(getDynamicValueInfo().dynValueTypeStr,
-						        DynamicValueType.VARIABLE_NAME.getLiteral())) {
-							Variable v = getSafletContext().getVariable(newtext.trim());
-							if (v == null && SafiServerPlugin.getDefault().isConnected()){
-								v = SafiServerPlugin.getDefault().getGlobalVariable(newtext.trim());
-							}
-							if (v != null) {
-								dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
-								dynamicValue.setText(newtext.trim());
-								dynamicValue.setType(DynamicValueType.VARIABLE_NAME);
-								changed = true;
+							if (getDynamicValueInfo().isTypeLocked
+							    && StringUtils.equals(getDynamicValueInfo().dynValueTypeStr,
+							        DynamicValueType.VARIABLE_NAME.getLiteral())) {
+								Variable v = getSafletContext().getVariable(newtext.trim());
+								if (v == null && SafiServerPlugin.getDefault().isConnected()) {
+									v = SafiServerPlugin.getDefault().getGlobalVariable(newtext.trim());
+								}
+								if (v != null) {
+									dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
+									dynamicValue.setText(newtext.trim());
+									dynamicValue.setType(DynamicValueType.VARIABLE_NAME);
+									changed = true;
+								} else {
+									// changed = openNewVariableEditor(newtext);
+									dynamicValue = null;
+									return;
+								}
 							} else {
-//								changed = openNewVariableEditor(newtext);
-								dynamicValue = null;
-								refresh();
-								return;
+								// String expectedReturn = info.expectedReturnType;
+								changed = true;
+								dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
+								dynamicValue.setText(newtext);
 							}
-						} else {
-							// String expectedReturn = info.expectedReturnType;
+							// if (StringUtils.equals(info.dynValueTypeStr,
+							// DynamicValueType.VARIABLE_NAME
+							// .getLiteral())) {
+							// changed = openNewVariableEditor(newtext);
+							//
+							// } else {
+							// changed = true;
+							// dynamicValue =
+							// ActionStepFactory.eINSTANCE.createDynamicValue();
+							// dynamicValue.setText(newtext);
+							// }
+						} else if (!"VariableName".equals(getDynamicValueInfo().expectedReturnType)) {
 							changed = true;
 							dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
 							dynamicValue.setText(newtext);
+						} else {
+							MessageDialog.openError(getShell(), "Variable Error",
+							    "Could not set value. Value is illegal.");
+
+							dynamicValue = null;
+							return;
 						}
-						// if (StringUtils.equals(info.dynValueTypeStr,
-						// DynamicValueType.VARIABLE_NAME
-						// .getLiteral())) {
-						// changed = openNewVariableEditor(newtext);
-						//
-						// } else {
-						// changed = true;
-						// dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
-						// dynamicValue.setText(newtext);
-						// }
-					} else if (!"VariableName".equals(getDynamicValueInfo().expectedReturnType)) {
-						changed = true;
-						dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
-						dynamicValue.setText(newtext);
+
+						if (isQuoted) {
+							if (dynamicValue != null)
+								dynamicValue.setType(DynamicValueType.LITERAL_TEXT);
+						} else if (dynamicValue != null
+						    && dynamicValue.getType() != DynamicValueType.VARIABLE_NAME) {
+
+							// if(info.expectedReturnType.equalsIgnoreCase("Text")){
+							// dynamicValue.setType(DynamicValueType.LITERAL_TEXT);
+							// String val="\""+newtext+"\"";
+							// dynamicValue.setText(val);
+							// text.setText(val);
+							// }else
+							// {
+
+							dynamicValue.setType(DynamicValueType.SCRIPT_TEXT);
+
+							// }
+						}
+						// object.eSet(feature, dynamicValue);
 					} else {
-						MessageDialog.openError(getShell(), "Variable Error",
-						    "Could not set value. Value is illegal.");
-
 						dynamicValue = null;
-						refresh();
-						return;
+						changed = true;
+						// object.eSet(feature, dynamicValue);
+						// text.setEditable(false);
+
 					}
 
-					if (isQuoted) {
-						if (dynamicValue != null)
-							dynamicValue.setType(DynamicValueType.LITERAL_TEXT);
-					} else if (dynamicValue != null
-					    && dynamicValue.getType() != DynamicValueType.VARIABLE_NAME) {
-
-						// if(info.expectedReturnType.equalsIgnoreCase("Text")){
-						// dynamicValue.setType(DynamicValueType.LITERAL_TEXT);
-						// String val="\""+newtext+"\"";
-						// dynamicValue.setText(val);
-						// text.setText(val);
-						// }else
-						// {
-
-						dynamicValue.setType(DynamicValueType.SCRIPT_TEXT);
-
-						// }
-					}
-					// object.eSet(feature, dynamicValue);
 				} else {
-					dynamicValue = null;
-					changed = true;
-					// object.eSet(feature, dynamicValue);
-					// text.setEditable(false);
+					if (StringUtils.isBlank(newtext)) {
+						dynamicValue = null;
+						changed = true;
+						// text.setEditable(false);
+						// object.eSet(feature, dynamicValue);
+					} else if (!StringUtils.equals(newtext, dynamicValue.getText())) {
+						DynamicValueType currType = dynamicValue.getType();
 
-				}
-
-			} else {
-				if (StringUtils.isBlank(newtext)) {
-					dynamicValue = null;
-					changed = true;
-					// text.setEditable(false);
-					// object.eSet(feature, dynamicValue);
-				} else if (!StringUtils.equals(newtext, dynamicValue.getText())) {
-					DynamicValueType currType = dynamicValue.getType();
-
-					editingDomain.getCommandStack().execute(
-					    SetCommand.create(editingDomain, dynamicValue, dynamicValue.eClass()
-					        .getEStructuralFeature("text"), newtext));
-					boolean isText = newtext.matches(DynamicValueEditorUtils.PATT_QUOTED_TEXT);
-					if (isText && currType != DynamicValueType.LITERAL_TEXT) {
 						editingDomain.getCommandStack().execute(
 						    SetCommand.create(editingDomain, dynamicValue, dynamicValue.eClass()
-						        .getEStructuralFeature("type"), DynamicValueType.LITERAL_TEXT));
-					} else if (!isText && currType != DynamicValueType.SCRIPT_TEXT) {
-						editingDomain.getCommandStack().execute(
-						    SetCommand.create(editingDomain, dynamicValue, dynamicValue.eClass()
-						        .getEStructuralFeature("type"), DynamicValueType.SCRIPT_TEXT));
+						        .getEStructuralFeature("text"), newtext));
+						boolean isText = newtext.matches(DynamicValueEditorUtils.PATT_QUOTED_TEXT);
+						if (isText && currType != DynamicValueType.LITERAL_TEXT) {
+							editingDomain.getCommandStack().execute(
+							    SetCommand.create(editingDomain, dynamicValue, dynamicValue.eClass()
+							        .getEStructuralFeature("type"), DynamicValueType.LITERAL_TEXT));
+						} else if (!isText && currType != DynamicValueType.SCRIPT_TEXT) {
+							editingDomain.getCommandStack().execute(
+							    SetCommand.create(editingDomain, dynamicValue, dynamicValue.eClass()
+							        .getEStructuralFeature("type"), DynamicValueType.SCRIPT_TEXT));
+						}
+						// dynamicValue.setText(newtext);
+						// getA
+						changed = true;
 					}
-					// dynamicValue.setText(newtext);
-					// getA
-					changed = true;
 				}
-			}
 
-			// updateTextDirectEditCapability(isDirectEditable());
-			if (changed) {
-				fireModifiedEvent();
-				refresh();
+				// updateTextDirectEditCapability(isDirectEditable());
+
 			}
+		} finally {
+			refresh();
+		}
+
+		if (changed) {
+			fireModifiedEvent();
 		}
 	}
 
@@ -617,7 +670,7 @@ public class DynamicValueEditorWidget extends Composite {
 		try {
 
 			Variable variable = getSafletContext().getVariable(varName);
-			if (variable == null && SafiServerPlugin.getDefault().isConnected()){
+			if (variable == null && SafiServerPlugin.getDefault().isConnected()) {
 				variable = SafiServerPlugin.getDefault().getGlobalVariable(varName);
 			}
 			if (variable != null) { // new var
@@ -685,13 +738,13 @@ public class DynamicValueEditorWidget extends Composite {
 					    && p.getContent().substring(0, contents.length()).equals(contents))
 						props.add(p);
 				} else if (p instanceof ActionContentProposal) {
-					if (((ActionContentProposal) p).isEnabled())
+					if (((ActionContentProposal) p).isEnabled(contents, position))
 						props.add(p);
 				}
 
 			}
 
-			return props.toArray(new IContentProposal[proposals.size()]);
+			return props.toArray(new IContentProposal[props.size()]);
 		}
 
 		private void initProposals() {
@@ -700,13 +753,13 @@ public class DynamicValueEditorWidget extends Composite {
 			if (canAcceptVarType()) {
 				final List<Variable> variables = new ArrayList<Variable>(getSafletContext()
 				    .getVariables());
-				
-				if (SafiServerPlugin.getDefault().isConnected()){
+
+				if (SafiServerPlugin.getDefault().isConnected()) {
 					List<Variable> globalz = SafiServerPlugin.getDefault().getGlobalVariables();
 					if (globalz != null)
 						variables.addAll(globalz);
 				}
-				
+
 				Collections.sort(variables, new Comparator<Variable>() {
 
 					@Override
@@ -714,7 +767,7 @@ public class DynamicValueEditorWidget extends Composite {
 						return o1.getName().compareTo(o2.getName());
 					}
 				});
-				
+
 				proposals.add(new NewVariableActionContentProposal());
 				for (Variable v : variables) {
 					proposals.add(new VariableIContentProposal(v));
@@ -775,7 +828,7 @@ public class DynamicValueEditorWidget extends Composite {
 			this.description = description;
 		}
 
-		public abstract boolean isEnabled();
+		public abstract boolean isEnabled(String contents, int position);
 
 		@Override
 		public String getContent() {
@@ -809,21 +862,23 @@ public class DynamicValueEditorWidget extends Composite {
 		}
 
 		@Override
-		public boolean isEnabled() {
+		public boolean isEnabled(String contents, int position) {
 			// TODO Auto-generated method stub
-			return canAcceptVarType();
+			if (canAcceptVarType() && (contents == null || contents.matches(NAME_PATTERN)))
+				return true;
+
+			return false;
 		}
 
 		@Override
 		public int execute() {
 			dialogShowing.set(true);
 			try {
-			if (openNewVariableEditor(StringUtils.trim(text.getText())))
-				return Dialog.OK;
+				if (openNewVariableEditor(StringUtils.trim(text.getText())))
+					return Dialog.OK;
 
-			return Dialog.CANCEL;
-			} 
-			finally {
+				return Dialog.CANCEL;
+			} finally {
 				dialogShowing.set(false);
 			}
 		}
@@ -887,7 +942,7 @@ public class DynamicValueEditorWidget extends Composite {
 			assistantShowing.set(false);
 			if (!dialogShowing.get())
 				commit();
-//			refresh();
+			// refresh();
 		}
 
 		@Override
