@@ -96,7 +96,7 @@ public class VariablesView2 extends ViewPart implements ISelectionListener, Adap
     rootCategory.getChildCategories().add(runtimeVariables);
 
     localVariables = new VariableCategory();
-    localVariables.setName("Current");
+    localVariables.setName("Local");
     rootCategory.getChildCategories().add(localVariables);
 
     globalVariables = new VariableCategory();

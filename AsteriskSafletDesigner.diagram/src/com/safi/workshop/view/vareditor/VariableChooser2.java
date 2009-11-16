@@ -91,7 +91,7 @@ public class VariableChooser2 extends Composite implements org.eclipse.emf.commo
     rootCategory.getChildCategories().add(runtimeVariables);
 
     localVariables = new VariableCategory();
-    localVariables.setName("Current");
+    localVariables.setName("Local");
     rootCategory.getChildCategories().add(localVariables);
 
     globalVariables = new VariableCategory();
