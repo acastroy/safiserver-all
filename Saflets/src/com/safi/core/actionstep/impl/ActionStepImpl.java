@@ -638,6 +638,7 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
     String varNameStr = resolveVariableName(dynamicValue, context);
     Variable v = context.getVariable(varNameStr);
     if (v == null) {
+    	
       v = getSaflet().getSafletEnvironment().getGlobalVariable(varNameStr);
     }
     if (v == null)

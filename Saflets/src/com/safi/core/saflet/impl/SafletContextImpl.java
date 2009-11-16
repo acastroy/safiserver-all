@@ -238,6 +238,9 @@ public abstract class SafletContextImpl extends EObjectImpl implements SafletCon
       if (name.equals(v.getName()))
         return v;
     }
+    if (getParentSaflet() != null && getParentSaflet().getSafletEnvironment() != null)
+    	return getParentSaflet().getSafletEnvironment().getGlobalVariable(name);
+    
     return null;
   }
 
@@ -274,7 +277,14 @@ public abstract class SafletContextImpl extends EObjectImpl implements SafletCon
         v.setDefaultValue(value);
       }
     } else {
-
+    	Variable v = getVariable(name);
+      if (v != null) {
+      	if (v.getScope() == VariableScope.GLOBAL){
+      		parentSaflet.getSafletEnvironment().setGlobalVariableValue(name, value);
+      	}
+      	else
+      		v.setDefaultValue(value);
+      }
     }
     if (parentSaflet != null && parentSaflet.getSafletScope() != null) {// && newVar){
       parentSaflet.getSafletScope().exposeObjectToScript(name, value);
@@ -312,19 +322,23 @@ public abstract class SafletContextImpl extends EObjectImpl implements SafletCon
   public Variable removeVariable(String name) {
     if (variables == null)
       return null;
-    Variable removed = null;
-    for (Iterator<Variable> iter = variables.iterator(); iter.hasNext();) {
-      Variable v = iter.next();
-      if (name.equals(v.getName())) {
-        iter.remove();
-        removed = v;
-        break;
-      }
-    }
+    Variable removed = getVariable(name);
+    if (removed != null)
+    	variables.remove(name);
+    
+//    for (Iterator<Variable> iter = variables.iterator(); iter.hasNext();) {
+//      Variable v = iter.next();
+//      if (name.equals(v.getName())) {
+//        iter.remove();
+//        removed = v;
+//        break;
+//      }
+//    }
+    
     if (removed != null && parentSaflet != null && parentSaflet.getSafletScope() != null) {
       parentSaflet.getSafletScope().removeObjectFromScope(name);
     }
-
+    
     // if (eNotificationRequired())
     // eNotify(new ENotificationImpl(this, Notification.REMOVE,
     // SafletPackage.HANDLER_CONTEXT__VARIABLES, removed, null));
