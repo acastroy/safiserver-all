@@ -60,6 +60,7 @@ import com.safi.core.saflet.SafletConstants;
 import com.safi.core.saflet.SafletContext;
 import com.safi.db.Variable;
 import com.safi.db.VariableType;
+import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.safi.workshop.part.AsteriskDiagramEditorUtil;
@@ -297,8 +298,14 @@ public class DynamicValueEditorWidget extends Composite {
 	}
 
 	protected DynamicValueAnnotationInfo getDynamicValueInfo() {
-		if (info == null)
+		
+		
+		if (info == null) {
+			if (object == null || feature == null)
+				return new DynamicValueAnnotationInfo();
 			info = DynamicValueEditorUtils.extractAnnotationInfo(object, feature);
+		}
+		
 		return info;
 	}
 
@@ -485,10 +492,13 @@ public class DynamicValueEditorWidget extends Composite {
 					boolean isQuoted = newtext.matches(DynamicValueEditorUtils.PATT_QUOTED_TEXT);
 					if (!isQuoted) {
 
-						if (info.isTypeLocked
-						    && StringUtils.equals(info.dynValueTypeStr,
+						if (getDynamicValueInfo().isTypeLocked
+						    && StringUtils.equals(getDynamicValueInfo().dynValueTypeStr,
 						        DynamicValueType.VARIABLE_NAME.getLiteral())) {
 							Variable v = getSafletContext().getVariable(newtext.trim());
+							if (v == null && SafiServerPlugin.getDefault().isConnected()){
+								v = SafiServerPlugin.getDefault().getGlobalVariable(newtext.trim());
+							}
 							if (v != null) {
 								dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
 								dynamicValue.setText(newtext.trim());
@@ -606,6 +616,9 @@ public class DynamicValueEditorWidget extends Composite {
 		try {
 
 			Variable variable = getSafletContext().getVariable(varName);
+			if (variable == null && SafiServerPlugin.getDefault().isConnected()){
+				variable = SafiServerPlugin.getDefault().getGlobalVariable(varName);
+			}
 			if (variable != null) { // new var
 
 				VariableEditor variableEditor = new VariableEditor(getShell(), currentEditor,
@@ -686,6 +699,13 @@ public class DynamicValueEditorWidget extends Composite {
 			if (canAcceptVarType()) {
 				final List<Variable> variables = new ArrayList<Variable>(getSafletContext()
 				    .getVariables());
+				
+				if (SafiServerPlugin.getDefault().isConnected()){
+					List<Variable> globalz = SafiServerPlugin.getDefault().getGlobalVariables();
+					if (globalz != null)
+						variables.addAll(globalz);
+				}
+				
 				Collections.sort(variables, new Comparator<Variable>() {
 
 					@Override
@@ -693,6 +713,7 @@ public class DynamicValueEditorWidget extends Composite {
 						return o1.getName().compareTo(o2.getName());
 					}
 				});
+				
 				proposals.add(new NewVariableActionContentProposal());
 				for (Variable v : variables) {
 					proposals.add(new VariableIContentProposal(v));
