@@ -76,6 +76,7 @@ import com.safi.expr.bool.Token;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.sheet.actionstep.EditInScriptEvent;
 import com.safi.workshop.sheet.actionstep.EditInScriptEventListener;
+import com.swtdesigner.SWTResourceManager;
 
 public class BooleanExpressionEditorPanel extends Composite {
 
@@ -360,6 +361,11 @@ public class BooleanExpressionEditorPanel extends Composite {
 			@Override
 			public void focusLost(final FocusEvent e) {
 				updateSetButton();
+//				ExprNode node = getSelectedExpressionNode();
+//				if (node != null) {
+//					applyChanges(node);
+//					updateExpression();
+//				}
 			}
 		});
 		comboViewer_left.setLabelProvider(new OperandLabelProvider());
@@ -559,7 +565,10 @@ public class BooleanExpressionEditorPanel extends Composite {
 		comboViewer_Op.setInput(new Object());
 		comboViewer_right.setInput(new Object());
 
-		setExpressionButton = new Button(booleanExpressionBuilderGroup, SWT.NONE);
+		setExpressionButton = new Button(booleanExpressionBuilderGroup, SWT.BORDER);
+		final GridData gd_setExpressionButton = new GridData(SWT.LEFT, SWT.FILL, false, true);
+		gd_setExpressionButton.verticalIndent = 5;
+		setExpressionButton.setLayoutData(gd_setExpressionButton);
 		setExpressionButton.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(final SelectionEvent e) {

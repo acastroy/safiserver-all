@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EObject;
@@ -83,7 +84,8 @@ public class DynamicValueEditorWidget extends Composite {
 	private SafletContext safletContext;
 	private Color lightBlue;
 	private DynamicValueContentProposalAdapter proposalAdapter;
-	private volatile boolean assistantShowing;
+	private volatile AtomicBoolean assistantShowing = new AtomicBoolean(false);
+	private AtomicBoolean dialogShowing = new AtomicBoolean(false);
 
 	/**
 	 * Create the composite
@@ -469,8 +471,9 @@ public class DynamicValueEditorWidget extends Composite {
 	}
 
 	private void textFocusLost() {
-		if (assistantShowing && proposalAdapter.hasProposalPopupFocus())
+		if ((assistantShowing.get() && proposalAdapter.hasProposalPopupFocus()) || dialogShowing.get())
 			return;
+		
 		proposalAdapter.closeProposalPopup();
 		if (text.getEnabled() && text.getEditable()) {
 
@@ -492,7 +495,10 @@ public class DynamicValueEditorWidget extends Composite {
 								dynamicValue.setType(DynamicValueType.VARIABLE_NAME);
 								changed = true;
 							} else {
-								changed = openNewVariableEditor(newtext);
+//								changed = openNewVariableEditor(newtext);
+								dynamicValue = null;
+								refresh();
+								return;
 							}
 						} else {
 							// String expectedReturn = info.expectedReturnType;
@@ -788,10 +794,16 @@ public class DynamicValueEditorWidget extends Composite {
 
 		@Override
 		public int execute() {
+			dialogShowing.set(true);
+			try {
 			if (openNewVariableEditor(StringUtils.trim(text.getText())))
 				return Dialog.OK;
 
 			return Dialog.CANCEL;
+			} 
+			finally {
+				dialogShowing.set(false);
+			}
 		}
 
 		@Override
@@ -842,6 +854,7 @@ public class DynamicValueEditorWidget extends Composite {
 				}
 			} else if (proposal instanceof ActionContentProposal) {
 				((ActionContentProposal) proposal).execute();
+				fireModifiedEvent();
 			}
 
 		}
@@ -849,14 +862,14 @@ public class DynamicValueEditorWidget extends Composite {
 		@Override
 		public void proposalPopupClosed(ContentProposalAdapter adapter) {
 			// TODO Auto-generated method stub
-			assistantShowing = false;
+			assistantShowing.set(true);
 //			refresh();
 		}
 
 		@Override
 		public void proposalPopupOpened(ContentProposalAdapter adapter) {
 			// TODO Auto-generated method stub
-			assistantShowing = true;
+			assistantShowing.set(false);
 		}
 
 	}
