@@ -101,7 +101,6 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
            icon="icons/product/SafiProject.gif"
            id="com.safi.workshop.part.AsteriskCreationWizardID2"
            name="Saflet Diagram">
-           <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
 

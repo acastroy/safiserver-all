@@ -233,7 +233,7 @@ public class SafiserverRegisterDialog extends Dialog {
   protected void configureShell(Shell newShell) {
     newShell.setMinimumSize(new Point(200, 250));
     super.configureShell(newShell);
-    newShell.setText("Production SafiServer Login");
+    newShell.setText("SafiServer Login");
   }
 
   @Override

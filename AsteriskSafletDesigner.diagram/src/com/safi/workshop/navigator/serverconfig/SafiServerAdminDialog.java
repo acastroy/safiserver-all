@@ -31,7 +31,9 @@ import com.safi.db.manager.DBManager;
 import com.safi.db.server.config.SafiServer;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.preferences.PreferenceConstants;
+//NOT USED
 
+@Deprecated
 public class SafiServerAdminDialog extends Dialog {
 
   private Text textDBPort;

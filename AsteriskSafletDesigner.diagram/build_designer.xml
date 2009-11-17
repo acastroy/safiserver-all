@@ -268,6 +268,7 @@
 		<echo message="Rebuilding SafiDB" />
 		<ant dir="../SafiDB" antfile="../SafiDB/build_enhanced.xml" target="cleanall" />
 		<ant dir="../SafiDB" antfile="../SafiDB/build_enhanced.xml" target="build" />
+		<ant dir="../SafiDB" antfile="../SafiDB/build_enhanced.xml" target="exportToSafiServerCore" />
 
 		<echo message="deleting DB if it exists" />
 		<delete includeEmptyDirs="true" failonerror="false">

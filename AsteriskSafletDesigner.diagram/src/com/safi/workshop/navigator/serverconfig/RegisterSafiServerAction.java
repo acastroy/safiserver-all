@@ -60,9 +60,9 @@ public class RegisterSafiServerAction implements IWorkbenchWindowActionDelegate,
       this.safiServer = (SafiServer) elem;
       {
         try {
-          User user = SafiServerPlugin.getDefault().getCurrentUser();
+        		
           action.setImageDescriptor(loginImage);
-          if (user != null) {
+          if (SafiServerPlugin.getDefault().isConnected()) {
             action.setText("Change SafiServer Login");
           } else {
             action.setText("Login SafiServer");

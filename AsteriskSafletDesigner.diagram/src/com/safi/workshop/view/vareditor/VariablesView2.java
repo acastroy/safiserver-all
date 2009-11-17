@@ -1,5 +1,6 @@
 package com.safi.workshop.view.vareditor;
 
+import java.lang.ref.SoftReference;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
@@ -70,8 +71,8 @@ public class VariablesView2 extends ViewPart implements ISelectionListener, Adap
   private Action createAction;
   private Action deleteAction;
   private Action editAction;
-  private WeakReference<SafletContext> currentContext;
-  private WeakReference<AsteriskDiagramEditor> currentEditor;
+  private SoftReference<SafletContext> currentContext;
+  private SoftReference<AsteriskDiagramEditor> currentEditor;
   private VariableCategory localVariables;
   private VariableCategory runtimeVariables;
   private VariableCategory globalVariables;
@@ -470,7 +471,7 @@ public class VariablesView2 extends ViewPart implements ISelectionListener, Adap
         currentEditor = null;
         return;
       }
-      currentEditor = new WeakReference<AsteriskDiagramEditor>((AsteriskDiagramEditor) editor);
+      currentEditor = new SoftReference<AsteriskDiagramEditor>((AsteriskDiagramEditor) editor);
 
       HandlerEditPart handlerPart = (HandlerEditPart) currentEditor.get().getDiagramEditPart();
       Diagram diag = (Diagram) handlerPart.getModel();
@@ -486,7 +487,9 @@ public class VariablesView2 extends ViewPart implements ISelectionListener, Adap
         // for (Variable v : globalVariables.getVariables()) {
         // v.eAdapters().remove(adapter);
         // }
-        currentContext = new WeakReference<SafletContext>(context);
+        
+        currentContext = new SoftReference<SafletContext>(context);
+        
         updateUI();
       }
       

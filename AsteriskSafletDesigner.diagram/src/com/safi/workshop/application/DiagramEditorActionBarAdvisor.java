@@ -696,14 +696,15 @@ public class DiagramEditorActionBarAdvisor extends ActionBarAdvisor implements
 
     @Override
     public void selectionChanged(IAction action, ISelection selection) {
-      if (selection instanceof IStructuredSelection) {
-        Object elem = ((IStructuredSelection) selection).getFirstElement();
-        if (elem instanceof IResource || elem instanceof SafletProject || elem instanceof Saflet
-            || elem instanceof ServerResource)
-          action.setEnabled(true);
-        else
-          action.setEnabled(false);
-      }
+    	action.setEnabled(true);
+//      if (selection instanceof IStructuredSelection) {
+//        Object elem = ((IStructuredSelection) selection).getFirstElement();
+//        if (elem instanceof IResource || elem instanceof SafletProject || elem instanceof Saflet
+//            || elem instanceof ServerResource)
+//          action.setEnabled(true);
+//        else
+//          action.setEnabled(false);
+//      }
     }
 
   }
