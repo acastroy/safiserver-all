@@ -47,7 +47,9 @@ import org.eclipse.ui.IPropertyListener;
 import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.IViewSite;
 import org.eclipse.ui.IWorkbenchActionConstants;
+import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IWorkbenchPartSite;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
@@ -81,6 +83,7 @@ public class VariablesView2 extends ViewPart implements ISelectionListener, Adap
   // private VariableTypeEditingSupport variableTypeEditingSupport;
   // private VariableValueEditingSupport variableValueEditingSupport;
   private Adapter adapter;
+	private SafiServerStatusListener safiServerStatusListener;
 
   //  
   // class NameSorter extends ViewerSorter {
@@ -515,13 +518,18 @@ public class VariablesView2 extends ViewPart implements ISelectionListener, Adap
       }
     currentContext = null;
     currentEditor = null;
+    
+    if ( getSite() != null &&  getSite().getPage() != null)
+    	getSite().getPage().removePartListener(this);
+    if (safiServerStatusListener != null)
+    	SafiServerPlugin.getDefault().removeAuthListener(safiServerStatusListener);
     super.dispose();
   }
 
   @Override
   public void init(IViewSite site) throws PartInitException {
     super.init(site);
-    SafiServerPlugin.getDefault().addAuthListener(new SafiServerStatusListener() {
+    safiServerStatusListener = new SafiServerStatusListener() {
 
       @Override
       public void resourcesChanged() {
@@ -560,7 +568,8 @@ public class VariablesView2 extends ViewPart implements ISelectionListener, Adap
         }
       }
 
-    });
+    };
+		SafiServerPlugin.getDefault().addAuthListener(safiServerStatusListener);
 
     SafiServerPlugin.getDefault().addGlobalVarListener(this);
     // if (SafiServerPlugin.getDefault().isConnected()){
