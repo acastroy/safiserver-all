@@ -9,6 +9,7 @@ runfirstsetup="true"
 CONFIG="./resources/environment.properties"
 CONFIGBAK="./resources/environment.properties.bak"
 SETUPFILE="./resources/setup.properties"
+APPDEPLOYDIR="./deploy/linux32/"
 
 while read line; do
    # skip comments
@@ -146,17 +147,33 @@ if [ "$runfirstsetup" == "true" ];
 
    echo ""
    echo ""
-   echo "  Creating ${BLUE}safiserverd${NC} service..." 
+   echo -e  "  Creating ${BLUE}safiserverd${NC} service..."
+   cd $SSPATH
+   cd $APPDEPLOYDIR
    sed -e 's:SAFISERVER_DIR=:SAFISERVER_DIR='$SSPATH':g' safiserverd.org > safiserverd
-   cp safiserverd /etc/init.d/safiserverd
+   cp -f safiserverd /etc/init.d/safiserverd
    chmod +x /etc/init.d/safiserverd
-   chkconfig safiserverd on
+   
+   if [ -x /sbin/chkconfig ] ; then
+		echo ""
+		echo "  Adding SafiServer service to auto-start (with chkconfig)"
+		echo ""
+   else
+		echo ""
+		echo "  ***  Unable to install SafiServer as an auto-start service  ***"
+		echo "  ***  Enter the following command to start SafiServer:       ***"
+		echo "  ***  sudo /etc/init.d/safiserverd start                     ***"
+		echo ""
+	fi
    
    
+   cd $SSPATH
    echo "runfirstsetup=false" > $SETUPFILE
    echo ""
    echo ""
-   echo  -e  "  Running ${BLUE}./init.d/safiserverd start${NC} ..."
+   echo -e  "  Running ${BLUE}/etc/init.d/safiserverd start${NC} ..."
+   echo ""
+   echo ""
    /etc/init.d/safiserverd start
    
    exit 0

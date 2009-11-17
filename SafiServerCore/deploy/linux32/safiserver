@@ -18,8 +18,11 @@ APP_NAME="SafiServer"
 APP_LONG_NAME="SafiServer"
 
 # Wrapper
-WRAPPER_CMD="./deploy/linux32/wrapper"
-WRAPPER_CONF="./deploy/linux32/wrapper.conf"
+#WRAPPER_CMD="./deploy/linux32/wrapper"
+#WRAPPER_CONF="./deploy/linux32/wrapper.conf"
+WRAPPER_CMD="wrapper"
+WRAPPER_CONF="wrapper.conf"
+
 
 # Priority at which to run the wrapper.  See "man nice" for valid priorities.
 #  nice is only used if a priority is specified.

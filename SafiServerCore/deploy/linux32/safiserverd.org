@@ -11,11 +11,13 @@
 SAFISERVER_DIR=
 
 # Source function library.
-. /etc/rc.d/init.d/functions
+if [ -x /etc/rc.d/init.d/functions ]; then
+	. /etc/rc.d/init.d/functions
+fi
 
 
-if ! [ -x $SAFISERVER_DIR/installserver.sh ] ; then
-	echo "ERROR: $SAFISERVER_DIR/installserver.sh not found"
+if ! [ -x $SAFISERVER_DIR/deploy/linux32/safiserver ] ; then
+	echo "ERROR: $SAFISERVER_DIR/safiserver not found"
 	exit 0
 fi
 
@@ -26,7 +28,7 @@ start() {
 	echo -n $"  Running safiserver wrapper service..."
 	echo ""
 	cd $SAFISERVER_DIR
-	./safiserver start
+	./deploy/linux32/safiserver start
 	touch /var/lock/safiserver
     return
 }
@@ -35,9 +37,14 @@ stop() {
 	# Stop daemons.
 	echo -n "  Shutting down safiserver wrapper service..."
 	cd $SAFISERVER_DIR
-	./safiserver stop
+	./deploy/linux32/safiserver stop
     rm -f /var/lock/safiserver
     return 
+}
+console() {
+	echo -n $"  Running safiserver in console mode ..."
+	cd $SAFISERVER_DIR
+	./deploy/linux32/safiserver console
 }
 
 restart() {
@@ -61,6 +68,9 @@ case "$1" in
   restart)
 	restart
 	;;
+  console)
+	console
+	;;
   reload)
 	reload
 	;;
@@ -68,7 +78,7 @@ case "$1" in
 	[ -f /var/lock/safiserver ] && restart || :
 	;;
   *)
-	echo "Usage: safiserverd {start|stop|restart|reload|condrestart}"
+	echo "Usage: safiserverd {start|stop|restart|console}"
 	exit 1
 esac
 
