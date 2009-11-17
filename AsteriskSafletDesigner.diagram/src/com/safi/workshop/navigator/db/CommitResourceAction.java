@@ -68,8 +68,8 @@ public class CommitResourceAction implements IWorkbenchWindowActionDelegate,IPar
   }
   
   private WeakReference<IWorkbenchWindow> window;
-  private WeakReference<AsteriskDiagramEditor> currentEditor;
-  private boolean enabled = false;
+  private WeakReference<AsteriskDiagramEditor> currentEditor = new WeakReference<AsteriskDiagramEditor>(null);
+//  private boolean enabled = true;
   private IAction action;
 
 	@Override
@@ -85,16 +85,16 @@ public class CommitResourceAction implements IWorkbenchWindowActionDelegate,IPar
 	}
 
 	private void disable() {
-
-		enabled = false;
-		if (action != null)
-			action.setEnabled(false);
+//
+//		enabled = false;
+//		if (action != null)
+//			action.setEnabled(false);
 	}
 
 	public void enable() {
-		enabled = true;
-		if (action != null)
-			action.setEnabled(true);
+//		enabled = true;
+//		if (action != null)
+//			action.setEnabled(true);
 	}
 
   @Override
@@ -300,32 +300,52 @@ public class CommitResourceAction implements IWorkbenchWindowActionDelegate,IPar
   @Override
   public void selectionChanged(IAction action, ISelection selection) {
 	  cachedSelection = selection;
-	  if(selection instanceof IStructuredSelection){
-	   IStructuredSelection checkSelection=(IStructuredSelection)selection; 
-	   Object selected =checkSelection.getFirstElement();
-      if (selected instanceof IFile) {
-          IFile file = (IFile) selected;
-          String fileName = file.toString();
-          if (fileName != null && fileName.endsWith(".saflet")) {
-            // URI uri = URI.createFileURI(file.getFullPath().toOSString());
-          	if(SafiServerRemoteManager.getInstance().isConnected()){
-          		 action.setEnabled(true);
-          	}else
-          	{
-          		
-          		 action.setEnabled(false);
-          	}
-            
-          } 
-        }
+	  this.action = action;
+	  if (!SafiServerPlugin.getDefault().isConnected()) {
+	  	action.setEnabled(false);
+	  	return;
 	  }
-	  
-	  if (this.action != action) {
-	    } else
-	      return;
 
-	 this.action = action;
-	 action.setEnabled(enabled);
+	  if (currentEditor.get() != null) {
+			action.setEnabled(true);
+		}
+	  if(selection instanceof IStructuredSelection && !((IStructuredSelection)selection).isEmpty()){
+	  	
+	  	for (Object o : ((IStructuredSelection)selection).toList()){
+	  		if (!(o instanceof Alias || o instanceof ManagedDriver || o instanceof Query || 
+	  				o instanceof com.safi.workshop.sqlexplorer.dbproduct.DriverManager || o instanceof IResource)){
+	  			System.err.println("The object selected is "+o);
+	  			action.setEnabled(false);
+	  			return;
+	  		}
+	  		
+	  	}
+	  	action.setEnabled(true);
+	  }
+	  else {
+			
+//			else
+				action.setEnabled(false);
+	  }
+	  	
+//	   IStructuredSelection checkSelection=(IStructuredSelection)selection; 
+//	   Object selected =checkSelection.getFirstElement();
+//      if (selected instanceof IFile) {
+//          IFile file = (IFile) selected;
+//          String fileName = file.toString();
+//          if (fileName != null && fileName.endsWith(".saflet")) {
+//            // URI uri = URI.createFileURI(file.getFullPath().toOSString());
+//          	if(SafiServerRemoteManager.getInstance().isConnected()){
+//          		 action.setEnabled(true);
+//          	}else
+//          	{
+//          		 action.setEnabled(true);
+//          	}
+//            
+//          } 
+//        }
+	 
+	  
     
   }
 
@@ -369,8 +389,8 @@ public class CommitResourceAction implements IWorkbenchWindowActionDelegate,IPar
 	@Override
 	public void partClosed(IWorkbenchPartReference partRef) {
 		IWorkbenchPart part = partRef.getPart(false);
-		if (currentEditor != null && part == currentEditor.get()) {
-			disable();
+		if (part != null && part == currentEditor.get()) {
+			updateEnabledState(null);
 		}
 	}
 
@@ -385,16 +405,15 @@ public class CommitResourceAction implements IWorkbenchWindowActionDelegate,IPar
 	@Override
 	public void partHidden(IWorkbenchPartReference partRef) {
 		IWorkbenchPart part = partRef.getPart(false);
-		if (currentEditor != null && part == currentEditor.get()) {
-			disable();
+		if (part == currentEditor.get()) {
+		updateEnabledState(null);
 		}
 	}
 
 	@Override
 	public void partInputChanged(IWorkbenchPartReference partRef) {
 		IWorkbenchPart part = partRef.getPart(false);
-		if (currentEditor != null && part == currentEditor.get()) {
-			currentEditor.clear();
+		if (part == currentEditor.get()) {
 			updateEnabledState((AsteriskDiagramEditor) part);
 		}
 
@@ -425,15 +444,26 @@ public class CommitResourceAction implements IWorkbenchWindowActionDelegate,IPar
 	}
 
 	private void updateEnabledState(AsteriskDiagramEditor editor) {
-
-		disable();
-		if (editor != null && editor instanceof AsteriskDiagramEditor) {
+		if (editor == null)
+				currentEditor.clear();
+		else
+		if (currentEditor.get() != editor)
 			currentEditor = new WeakReference<AsteriskDiagramEditor>(editor);
-			ResourceSet set = (editor).getEditingDomain().getResourceSet();
 		
-			enable();
-
+		if (action != null){
+			if (currentEditor.get() == null)
+				selectionChanged(action, AsteriskDiagramEditorUtil.getSafiNavigator().getCommonViewer().getSelection());
+			else
+				action.setEnabled(true);
 		}
+//		disable();
+//		if (editor != null && editor instanceof AsteriskDiagramEditor) {
+//			currentEditor = new WeakReference<AsteriskDiagramEditor>(editor);
+//			ResourceSet set = (editor).getEditingDomain().getResourceSet();
+//		
+//			enable();
+//
+//		}
 	}
 
 }

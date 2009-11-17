@@ -252,40 +252,6 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
                label="Publish resource"
                menubarPath="com.safi.db.Menu"
                tooltip="Publish selected database resource">
-            <enablement>
-               <or>
-                  <objectClass
-                        name="com.safi.db.Query">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.workshop.sqlexplorer.dbproduct.Alias">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.workshop.sqlexplorer.dbproduct.User">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.db.QueryParameter">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.workshop.sqlexplorer.dbproduct.DriverManager">
-                  </objectClass>
-                  <objectClass
-                        name="org.eclipse.core.resources.IProject">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.workshop.edit.parts.HandlerEditPart">
-                  </objectClass>
-                  <objectClass
-                        name="org.eclipse.core.resources.IFile">
-                  </objectClass>
-                  <objectClass
-                        name="org.eclipse.core.resources.IResource">
-                  </objectClass>
-               </or>
-            </enablement>
          </action>
          <action
                class="com.safi.workshop.sqlexplorer.connections.actions.NewAliasAction"
@@ -399,40 +365,6 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
                label="Publish resource"
                menubarPath="com.safi.db.Menu"
                tooltip="Publish selected database resource">
-            <enablement>
-               <or>
-                  <objectClass
-                        name="com.safi.db.Query">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.workshop.sqlexplorer.dbproduct.Alias">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.workshop.sqlexplorer.dbproduct.User">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.db.QueryParameter">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.workshop.sqlexplorer.dbproduct.DriverManager">
-                  </objectClass>
-                  <objectClass
-                        name="org.eclipse.core.resources.IProject">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.workshop.edit.parts.HandlerEditPart">
-                  </objectClass>
-                  <objectClass
-                        name="org.eclipse.core.resources.IFile">
-                  </objectClass>
-                  <objectClass
-                        name="org.eclipse.core.resources.IResource">
-                  </objectClass>
-               </or>
-            </enablement>
          </action>
          <action
                class="com.safi.workshop.navigator.db.UpdateResourceAction"
@@ -609,40 +541,6 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
                label="Publish resource"
                menubarPath="com.safi.db.Menu"
                tooltip="Publish selected database resource">
-            <enablement>
-               <or>
-                  <objectClass
-                        name="com.safi.db.Query">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.workshop.sqlexplorer.dbproduct.Alias">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.workshop.sqlexplorer.dbproduct.User">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.db.QueryParameter">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.workshop.sqlexplorer.dbproduct.DriverManager">
-                  </objectClass>
-                  <objectClass
-                        name="org.eclipse.core.resources.IProject">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.workshop.edit.parts.HandlerEditPart">
-                  </objectClass>
-                  <objectClass
-                        name="org.eclipse.core.resources.IFile">
-                  </objectClass>
-                  <objectClass
-                        name="org.eclipse.core.resources.IResource">
-                  </objectClass>
-               </or>
-            </enablement>
          </action>
          <action
                class="com.safi.workshop.navigator.db.UpdateResourceAction"
