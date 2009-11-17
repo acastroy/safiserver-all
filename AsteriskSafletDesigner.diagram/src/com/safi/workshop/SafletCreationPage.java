@@ -51,7 +51,13 @@ import com.safi.workshop.util.SafletPersistenceManager;
  * editing after creation.
  */
 public class SafletCreationPage extends WizardNewFileCreationPage {
-  private IWorkbench workbench;
+  private static final String SAFLET = "saflet";
+
+private static final String SAFLET_EXT = ".saflet";
+
+private static final String FLOW = "flow";
+
+private IWorkbench workbench;
 
   // widgets
   // private Button sectionCheckbox;
@@ -79,7 +85,7 @@ public class SafletCreationPage extends WizardNewFileCreationPage {
    */
   public SafletCreationPage(IWorkbench workbench, IStructuredSelection selection) {
     super("sampleCreateReadmePage1", selection); //$NON-NLS-1$
-    this.setTitle("Create Saflet(Call Flow Diagram)");
+    this.setTitle("Create Saflet(Flow Diagram)");
     // this.setTitle(MessageUtil.getString("Create_Readme_File"));
     // //$NON-NLS-1$
     // this.setDescription(MessageUtil.getString("Create_a_new_Readme_file_resource"));
@@ -122,13 +128,13 @@ public class SafletCreationPage extends WizardNewFileCreationPage {
         }
         if (!arrayList.contains(this.getFileName())) {
           int count = 1;
-          String newString = "callflow" + count + ".saflet";
+          String newString = FLOW + count + SAFLET_EXT;
           while (arrayList.contains(newString) && count < 100) {
             count++;
-            newString = "callflow" + count + ".saflet";
+            newString = FLOW + count + SAFLET_EXT;
           }
 
-          this.setFileExtension("saflet");
+          this.setFileExtension(SAFLET);
           try {
             this.setFileName(newString);
           } catch (Exception ex) {
@@ -405,16 +411,16 @@ public class SafletCreationPage extends WizardNewFileCreationPage {
     }
     if (!arrayList.contains(this.getFileName())) {
       int count = 1;
-      String newString = "callflow" + count + ".saflet";
+      String newString = FLOW + count + SAFLET_EXT;
       while (arrayList.contains(newString) && count < 1000) {
         count++;
-        newString = "callflow" + count + ".saflet";
+        newString = FLOW + count + SAFLET_EXT;
       }
 
       try {
 
         this.setFileName(newString);
-        this.setFileExtension("saflet");
+        this.setFileExtension(SAFLET);
       } catch (Exception ex) {
         ex.printStackTrace();
       }

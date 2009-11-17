@@ -96,6 +96,7 @@ import com.safi.db.manager.PooledDataSourceManager;
 import com.safi.db.server.config.AsteriskServer;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.impl.SafiServerImpl;
+import com.safi.server.manager.SafiServerRemoteManager;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.preferences.AsteriskConfigurationDialog;
 import com.safi.workshop.application.DiagramEditorActionBarAdvisor;
@@ -234,6 +235,7 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
           Object selected = selection.getFirstElement();
           if (selected != null) {
             _treeViewer.setExpandedState(selected, true);
+                 
           }
         }
       }

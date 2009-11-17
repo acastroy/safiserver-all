@@ -4,6 +4,7 @@ import java.lang.ref.WeakReference;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceVisitor;
@@ -19,6 +20,7 @@ import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IEditorReference;
@@ -39,6 +41,7 @@ import com.safi.db.DbPackage;
 import com.safi.db.Query;
 import com.safi.db.manager.EntitlementUtils;
 import com.safi.db.server.config.User;
+import com.safi.server.manager.SafiServerRemoteManager;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.SafiNavigator;
 import com.safi.workshop.part.AsteriskDiagramEditor;
@@ -297,6 +300,26 @@ public class CommitResourceAction implements IWorkbenchWindowActionDelegate,IPar
   @Override
   public void selectionChanged(IAction action, ISelection selection) {
 	  cachedSelection = selection;
+	  if(selection instanceof IStructuredSelection){
+	   IStructuredSelection checkSelection=(IStructuredSelection)selection; 
+	   Object selected =checkSelection.getFirstElement();
+      if (selected instanceof IFile) {
+          IFile file = (IFile) selected;
+          String fileName = file.toString();
+          if (fileName != null && fileName.endsWith(".saflet")) {
+            // URI uri = URI.createFileURI(file.getFullPath().toOSString());
+          	if(SafiServerRemoteManager.getInstance().isConnected()){
+          		 action.setEnabled(true);
+          	}else
+          	{
+          		
+          		 action.setEnabled(false);
+          	}
+            
+          } 
+        }
+	  }
+	  
 	  if (this.action != action) {
 	    } else
 	      return;

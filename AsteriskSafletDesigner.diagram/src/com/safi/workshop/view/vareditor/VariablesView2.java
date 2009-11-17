@@ -41,6 +41,8 @@ import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.IPartListener;
+import org.eclipse.ui.IPropertyListener;
 import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.IViewSite;
 import org.eclipse.ui.IWorkbenchActionConstants;
@@ -63,7 +65,7 @@ import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.safi.workshop.part.AsteriskDiagramEditorUtil;
 
-public class VariablesView2 extends ViewPart implements ISelectionListener, Adapter {
+public class VariablesView2 extends ViewPart implements ISelectionListener, Adapter,  IPartListener {
   private TreeViewer viewer;
   private Action createAction;
   private Action deleteAction;
@@ -241,13 +243,14 @@ public class VariablesView2 extends ViewPart implements ISelectionListener, Adap
     makeActions();
     hookContextMenu();
     contributeToActionBars();
-
+   
     getSite().getPage().addSelectionListener(this);
     buildModel();
     viewer.setInput(rootCategory);
     viewer.expandToLevel(localVariables, AbstractTreeViewer.ALL_LEVELS);
     PlatformUI.getWorkbench().getHelpSystem().setHelp(viewer.getControl(),
         "com.safi.workshop.help.MultiStreamAudio");
+    getSite().getPage().addPartListener(this);
   }
 
   protected void updateVariable(final Variable variable, final int type) {
@@ -326,7 +329,8 @@ public class VariablesView2 extends ViewPart implements ISelectionListener, Adap
       runna.run();
     else
       Display.getDefault().syncExec(runna);
-
+   // getSite().getPage().addPartListener(this);
+ 
   }
 
   private void buildModel() {
@@ -442,9 +446,15 @@ public class VariablesView2 extends ViewPart implements ISelectionListener, Adap
 
   @Override
   public void selectionChanged(IWorkbenchPart part, ISelection selection) {
-    hookCurrentAsteriskEditor();
-
+	  if(getSite().getPage().getActiveEditor()==null){
+		  showUnavailablePanel();
+	  }
+	  else
+	  {
+         hookCurrentAsteriskEditor();
+	  }
   }
+ 
 
   private void hookCurrentAsteriskEditor() {
     IEditorPart editor = getSite().getPage().getActiveEditor();
@@ -479,6 +489,8 @@ public class VariablesView2 extends ViewPart implements ISelectionListener, Adap
         currentContext = new WeakReference<SafletContext>(context);
         updateUI();
       }
+      
+      
     } else
       showUnavailablePanel();
   }
@@ -795,6 +807,23 @@ public class VariablesView2 extends ViewPart implements ISelectionListener, Adap
       }
       if (scope == VariableScope.GLOBAL && !SafiServerPlugin.getDefault().isConnected())
         return;
+      if(scope==VariableScope.LOCAL){
+    	  if(currentEditor==null||currentEditor.get()==null||currentContext==null){
+    		  return;
+    	  }
+    	  if(getSite().getPage().getActiveEditor()==null){
+    		  if (localVariables != null) {
+    		      for (Variable v : localVariables.getVariables()) {
+    		        v.eAdapters().remove(adapter);
+    		      }
+
+    		      localVariables.clear();
+    		    }
+    		  return;
+    	  }
+    	  
+    	  
+      }
 
       VariableEditor editor = new VariableEditor(getViewSite().getShell(),
           currentEditor == null ? null : currentEditor.get(),
@@ -822,4 +851,50 @@ public class VariablesView2 extends ViewPart implements ISelectionListener, Adap
     }
 
   }
+
+
+
+@Override
+public void partActivated(IWorkbenchPart part) {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public void partBroughtToTop(IWorkbenchPart part) {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public void partClosed(IWorkbenchPart part) {
+	// TODO Auto-generated method stub
+	  if(getSite().getPage().getActiveEditor()==null){
+		  showUnavailablePanel();
+	  }
+	  else
+	  {
+         hookCurrentAsteriskEditor();
+	  }
+	
+}
+
+@Override
+public void partDeactivated(IWorkbenchPart part) {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public void partOpened(IWorkbenchPart part) {
+	// TODO Auto-generated method stub
+	  if(getSite().getPage().getActiveEditor()==null){
+		  showUnavailablePanel();
+	  }
+	  else
+	  {
+         hookCurrentAsteriskEditor();
+	  }
+	
+}
 }
