@@ -3,6 +3,9 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="db"
     nsURI="http:///com/safi/db.ecore" nsPrefix="com.safi.db">
+  <eAnnotations source="teneo.jpa">
+    <details key="appinfo" value="@GenericGenerator(name=&quot;hibassigned&quot;, strategy = &quot;assigned&quot;)"/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="DBConnection" eSuperTypes="#//DBResource">
     <eOperations name="getQuery" eType="#//Query">
       <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -175,7 +178,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true">
       <eAnnotations source="teneo.jpa">
-        <details key="appinfo" value="@GeneratedValue(strategy=&quot;TABLE&quot;)"/>
+        <details key="appinfo" value="@GeneratedValue(generator=&quot;hibassigned&quot;)"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" ordered="false"

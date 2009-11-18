@@ -1138,6 +1138,12 @@ public class DbPackageImpl extends EPackageImpl implements DbPackage {
   protected void createTeneoAnnotations() {
 		String source = "teneo.jpa";		
 		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "appinfo", "@GenericGenerator(name=\"hibassigned\", strategy = \"assigned\")"
+		   });		
+		addAnnotation
 		  (getDBConnection_Queries(), 
 		   source, 
 		   new String[] {
@@ -1189,7 +1195,7 @@ public class DbPackageImpl extends EPackageImpl implements DbPackage {
 		  (getVariable_Name(), 
 		   source, 
 		   new String[] {
-			 "appinfo", "@GeneratedValue(strategy=\"TABLE\")"
+			 "appinfo", "@GeneratedValue(generator=\"hibassigned\")"
 		   });
 	}
 

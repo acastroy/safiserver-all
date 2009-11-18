@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see com.safi.db.DbFactory
  * @model kind="package"
+ *        annotation="teneo.jpa appinfo='@GenericGenerator(name=\"hibassigned\", strategy = \"assigned\")'"
  * @generated
  */
 public interface DbPackage extends EPackage {

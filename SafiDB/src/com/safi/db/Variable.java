@@ -40,7 +40,7 @@ public interface Variable extends EObject {
 	 * @see #setName(String)
 	 * @see com.safi.db.DbPackage#getVariable_Name()
 	 * @model id="true" ordered="false"
-	 *        annotation="teneo.jpa appinfo='@GeneratedValue(strategy=\"TABLE\")'"
+	 *        annotation="teneo.jpa appinfo='@GeneratedValue(generator=\"hibassigned\")'"
 	 * @generated
 	 */
   String getName();
