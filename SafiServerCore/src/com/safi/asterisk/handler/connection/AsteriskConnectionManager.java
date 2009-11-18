@@ -83,4 +83,8 @@ public interface AsteriskConnectionManager {
   
   public abstract boolean isUsePing();
 
+	long getManagerRetryPeriod();
+
+	void setManagerRetryPeriod(long managerRetryPeriod);
+
 }

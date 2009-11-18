@@ -89,7 +89,8 @@ import com.sshtools.j2ssh.transport.publickey.SshKeyGenerator;
 
 public class SafletEngine {
 
-  public static final String DEFAULT_KEY_PASSPHRASE = "safiserver";
+  
+	public static final String DEFAULT_KEY_PASSPHRASE = "safiserver";
   public final static String SAFISERVER_VERSION = "1.1.10B_20091115";
   public final static String ROOT_DIR = System.getProperty("user.dir");
   private static final String RESOURCES_DIRECTORY = ROOT_DIR + File.separatorChar + "resources";
@@ -110,7 +111,7 @@ public class SafletEngine {
   private final static Logger log = Logger.getLogger(SafletEngine.class.getName());
   final static public Logger debuggerLog = Logger.getLogger(WORKBENCH_DEBUGLOG);
   public static final String CONTEXT_CONFIG_LOCATION = "springConfig.xml";
-
+  private static final String PROP_AMI_RETRY_PERIOD = "ami.retry.period";
   private static SafletEngine instance = new SafletEngine();
   private static ServiceManager serviceManager;
 
@@ -310,6 +311,15 @@ public class SafletEngine {
         debuggerLog.info("Management listener started on " + getManagementPort());
       connectionManager.setManagementPort(getManagementPort());
       connectionManager.setUsePing(isUseManagerPing());
+      
+      if (environmentProperties.containsKey(PROP_AMI_RETRY_PERIOD)){
+      	String period = environmentProperties.getProperty(PROP_AMI_RETRY_PERIOD);
+      	try {
+      		connectionManager.setManagerRetryPeriod(Long.valueOf(period));
+        } catch (Exception e) {
+	        log.error("Couldn't set manager retry period", e);
+        }
+      }
 //      connectionManager.setBindIP(getBindIP());
       initializeDB(getDatabasePort());
       // Give DB time to start

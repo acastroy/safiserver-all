@@ -59,8 +59,10 @@ public class GlobalVariableManager {
 
       final List<Variable> vars = DBManager.getInstance().getGlobalVariables();
       for (Variable v : vars) {
-        v.eAdapters().add(varListener);
-        globalVariables.add(v);
+      	if (!v.eAdapters().contains(varListener))
+      		v.eAdapters().add(varListener);
+        if (!globalVariables.contains(v))
+        	globalVariables.add(v);
       }
 
       // check for nulls...happens sometimes not sure why Zac Wolfe 6/16/2009
@@ -179,8 +181,11 @@ public class GlobalVariableManager {
     synchronized (globalVariables) {
       DBManager.getInstance().addGlobalVariable(v);
       if (debug) {
-        globalVariables.add(v);
-        v.eAdapters().add(varListener);
+      	if (!v.eAdapters().contains(varListener))
+      		v.eAdapters().add(varListener);
+        if (!globalVariables.contains(v))
+        	globalVariables.add(v);
+        
       }
     }
     // globalVariables.add(v);
@@ -188,6 +193,9 @@ public class GlobalVariableManager {
 
   public void globalVariableAdded(String name) {
     Variable v = getGlobalVariable(name, false);
+    if (log.isDebugEnabled()){
+  		log.debug("GlobalVarManager adding var "+name+" : "+v);
+  	}
     if (v != null)
       return;
 
@@ -215,7 +223,11 @@ public class GlobalVariableManager {
   public void globalVariableRemoved(String name) {
     // if (debug)
     // return;
+  	
     Variable v = getGlobalVariable(name, false);
+    if (log.isDebugEnabled()){
+  		log.debug("GlobalVarManager removing var "+name+" : "+v);
+  	}
     if (v == null)
       return;
     globalVariableRemoved(v);
@@ -248,6 +260,9 @@ public class GlobalVariableManager {
     synchronized (globalVariables) {
       try {
 
+      	if (log.isDebugEnabled()){
+      		log.debug("GlobalVarManager updating  var "+name+" : witholdname "+oldname);
+      	}
         Variable oldvar = null;
         if (StringUtils.isNotBlank(oldname)) {
 
@@ -276,6 +291,9 @@ public class GlobalVariableManager {
         if (oldvar != null) {
           URI oldURI = EcoreUtil.getURI(oldvar);
           URI newURI = EcoreUtil.getURI(v);
+          if (log.isDebugEnabled()){
+          	log.debug("Updating old variable "+oldvar+" with uri "+oldURI+" to new var "+v+" with uri "+newURI);
+          }
           if (oldURI.equals(newURI)) {
             if (!ObjectUtils.equals(oldvar.getDefaultValue(), v.getDefaultValue()))
               oldvar.setDefaultValue(v.getDefaultValue());

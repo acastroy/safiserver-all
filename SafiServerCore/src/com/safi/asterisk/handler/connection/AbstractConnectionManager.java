@@ -65,6 +65,7 @@ public abstract class AbstractConnectionManager implements AsteriskConnectionMan
 																															 // debugging
 
 	public final static String PATTERN_IP = "\\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b";
+	private static final long DEFAULT_MANAGER_RETRY = 180;
 	// public static final String SHARED_JS_FILE = "shared.js";
 
 	protected SafiFastAgiServer agiServer;
@@ -93,6 +94,7 @@ public abstract class AbstractConnectionManager implements AsteriskConnectionMan
 	private int numAgiRequests;
 	private int numCustomInitiations;
 	private boolean usePing = true;
+	private long managerRetryPeriod = DEFAULT_MANAGER_RETRY; //in seconds
 
 	public AbstractConnectionManager() {
 
@@ -988,7 +990,8 @@ public abstract class AbstractConnectionManager implements AsteriskConnectionMan
 	}
 
 	private void setupManagerDaemon() {
-		managerConnectionPoller.schedule(new ManagerDaemon(), 10000, 3 * 60 * 1000);
+		if (managerRetryPeriod > 0)
+			managerConnectionPoller.schedule(new ManagerDaemon(), 10000, managerRetryPeriod * 1000);
 
 	}
 
@@ -1204,5 +1207,14 @@ public abstract class AbstractConnectionManager implements AsteriskConnectionMan
 
 	public void setUsePing(boolean usePing) {
   	this.usePing = usePing;
+  }
+
+	@Override
+	public long getManagerRetryPeriod() {
+  	return managerRetryPeriod;
+  }
+	@Override
+	public void setManagerRetryPeriod(long managerRetryPeriod) {
+  	this.managerRetryPeriod = managerRetryPeriod;
   }
 }
