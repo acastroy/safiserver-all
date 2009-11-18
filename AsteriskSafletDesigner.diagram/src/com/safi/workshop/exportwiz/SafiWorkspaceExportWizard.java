@@ -118,7 +118,6 @@ public class SafiWorkspaceExportWizard extends org.eclipse.jface.wizard.Wizard {
           for (Saflet saf : ss) {
             Saflet copy = (Saflet) EcoreUtil.copy(saf);
             copy.setId(-1);
-//            copy.setCode(new String(getLocalSafletCode(saf)));
             copy.setCode(getLocalSafletCode(saf));
             proj.getSaflets().add(copy);
             Element safletElem = safletProjectElem.addElement("Saflet");

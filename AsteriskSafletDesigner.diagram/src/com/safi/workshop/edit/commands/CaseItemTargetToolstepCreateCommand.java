@@ -3,7 +3,6 @@ package com.safi.workshop.edit.commands;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
@@ -75,19 +74,7 @@ public class CaseItemTargetToolstepCreateCommand extends EditElementCommand {
     return CommandResult.newOKCommandResult();
   }
  
-  @Override
-  protected IStatus doUndo(IProgressMonitor monitor, IAdaptable info)
-      throws ExecutionException {
-    // TODO Auto-generated method stub
-    return super.doUndo(monitor, info);
-  }
   
-  @Override
-  protected IStatus doRedo(IProgressMonitor monitor, IAdaptable info)
-      throws ExecutionException {
-    // TODO Auto-generated method stub
-    return super.doRedo(monitor, info);
-  }
 
   /**
    * @generated
