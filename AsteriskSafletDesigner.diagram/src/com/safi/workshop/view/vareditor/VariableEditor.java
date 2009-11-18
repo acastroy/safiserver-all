@@ -43,6 +43,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
+import com.safi.asterisk.handler.GlobalVariableManager;
 import com.safi.core.actionstep.util.VariableTranslator;
 import com.safi.core.saflet.SafletContext;
 import com.safi.db.DbFactory;
@@ -321,7 +322,7 @@ public class VariableEditor extends TitleAreaDialog {
       // editingDomain.getCommandStack().execute(
       // SetCommand.create(editingDomain, variable, nameAttr, value.toString()));
 
-    } else {
+    } else { //in edit mode
       if (!quickValidateName(tmpVariableName)) {
         MessageDialog.openError(getShell(), "Name Conflict", "Var with name "
             + tmpVariableName + " already exists");
@@ -347,9 +348,18 @@ public class VariableEditor extends TitleAreaDialog {
           command = cmd;
           editingDomain.getCommandStack().execute(command);
           currentEditor.setDirty();
-        } else {
+        } else {  //globalvar
           if (newObjVal == null)
             newObjVal = VariableTranslator.getDefaultForVarType(type);
+          boolean newName = false;
+//          String oldName = variable.getName();
+          if (!StringUtils.equals(variable.getName(), tmpVariableName)){
+          	GlobalVariableManager.getInstance().deleteGlobalVariable(variable);
+//          	variable = GlobalVariableManager.getInstance().changeGlobalVariableName(variable, tmpVariableName);
+            variable.setName(tmpVariableName);
+            newName = true;
+          }
+          
           if (!ObjectUtils.equals(variable.getDefaultValue(), newObjVal))
             variable.setDefaultValue(newObjVal);
 
@@ -358,8 +368,18 @@ public class VariableEditor extends TitleAreaDialog {
 
           if (!StringUtils.equals(variable.getName(), tmpVariableName))
             variable.setName(tmpVariableName);
-
+          
+//          GlobalVariableManager.getInstance().
+          if (newName){
+          	
+          	GlobalVariableManager.getInstance().addGlobalVariable(variable);
+//          	DBManager.getInstance().saveOrUpdateGlobalVariable(variable);
+          }
+          else
+//          if (newName)
+//          	GlobalVariableManager.getInstance().updateVariable(oldName, tmpVariableName);
           DBManager.getInstance().saveOrUpdateGlobalVariable(variable);
+          
 
         }
       } catch (Exception e) {
