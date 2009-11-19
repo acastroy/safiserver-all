@@ -316,7 +316,7 @@ public class CommitResourceAction implements IWorkbenchWindowActionDelegate,IPar
 	  			return;
 	  		}
 	  		if (!(o instanceof Alias || o instanceof ManagedDriver || o instanceof Query || 
-	  				o instanceof com.safi.workshop.sqlexplorer.dbproduct.DriverManager || o instanceof IResource)){
+	  				o instanceof com.safi.workshop.sqlexplorer.dbproduct.DriverManager)){
 	  			System.err.println("The object selected is "+o);
 	  			action.setEnabled(false);
 	  			return;
