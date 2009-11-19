@@ -41,7 +41,6 @@ import com.safi.db.DbPackage;
 import com.safi.db.Query;
 import com.safi.db.manager.EntitlementUtils;
 import com.safi.db.server.config.User;
-import com.safi.server.manager.SafiServerRemoteManager;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.SafiNavigator;
 import com.safi.workshop.part.AsteriskDiagramEditor;
@@ -312,6 +311,10 @@ public class CommitResourceAction implements IWorkbenchWindowActionDelegate,IPar
 	  if(selection instanceof IStructuredSelection && !((IStructuredSelection)selection).isEmpty()){
 	  	
 	  	for (Object o : ((IStructuredSelection)selection).toList()){
+	  		if(o instanceof IFile){
+	  			action.setEnabled(true);
+	  			return;
+	  		}
 	  		if (!(o instanceof Alias || o instanceof ManagedDriver || o instanceof Query || 
 	  				o instanceof com.safi.workshop.sqlexplorer.dbproduct.DriverManager || o instanceof IResource)){
 	  			System.err.println("The object selected is "+o);
