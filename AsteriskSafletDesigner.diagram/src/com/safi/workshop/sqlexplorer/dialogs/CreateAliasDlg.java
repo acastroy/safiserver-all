@@ -676,8 +676,16 @@ public class CreateAliasDlg extends TitleAreaDialog {
   void validate() {
 
     if ((urlField.getText().trim().length() > 0) && (nameField.getText().trim().length() > 0)
-        && (cboDriver.getSelectionIndex() >= 0))
-      setDialogComplete(true);
+        && (cboDriver.getSelectionIndex() >= 0)){
+      String conName=this.nameField.getText().trim();
+     if(conName.contains(".")){
+    	 setDialogComplete(false);
+    	 this.setErrorMessage("Connection Name should not contain \".\"");
+    	 return;
+     }
+      this.setErrorMessage("");
+    	setDialogComplete(true);
+    }
     else
       setDialogComplete(false);
   }
