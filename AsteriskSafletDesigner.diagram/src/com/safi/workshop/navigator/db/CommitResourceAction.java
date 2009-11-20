@@ -43,6 +43,7 @@ import com.safi.db.manager.EntitlementUtils;
 import com.safi.db.server.config.User;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.SafiNavigator;
+import com.safi.workshop.edit.parts.HandlerEditPart;
 import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.safi.workshop.part.AsteriskDiagramEditorUtil;
@@ -311,7 +312,7 @@ public class CommitResourceAction implements IWorkbenchWindowActionDelegate,IPar
 	  if(selection instanceof IStructuredSelection && !((IStructuredSelection)selection).isEmpty()){
 	  	
 	  	for (Object o : ((IStructuredSelection)selection).toList()){
-	  		if(o instanceof IFile){
+	  		if(o instanceof IFile ||o instanceof HandlerEditPart){
 	  			action.setEnabled(true);
 	  			return;
 	  		}
