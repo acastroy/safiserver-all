@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
+import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
@@ -43,7 +44,6 @@ import com.safi.db.manager.EntitlementUtils;
 import com.safi.db.server.config.User;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.SafiNavigator;
-import com.safi.workshop.edit.parts.HandlerEditPart;
 import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.safi.workshop.part.AsteriskDiagramEditorUtil;
@@ -312,7 +312,7 @@ public class CommitResourceAction implements IWorkbenchWindowActionDelegate,IPar
 	  if(selection instanceof IStructuredSelection && !((IStructuredSelection)selection).isEmpty()){
 	  	
 	  	for (Object o : ((IStructuredSelection)selection).toList()){
-	  		if(o instanceof IFile ||o instanceof HandlerEditPart){
+	  		if(o instanceof IFile ||o instanceof AbstractGraphicalEditPart){
 	  			action.setEnabled(true);
 	  			return;
 	  		}
