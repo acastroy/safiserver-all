@@ -318,7 +318,6 @@ public class ExtensionTransferImpl extends ActionStepImpl implements ExtensionTr
 
 	@Override
 	public void createDefaultOutputs() {
-		// TODO Auto-generated method stub
 		super.createDefaultOutputs();
 		Output o = ActionStepFactory.eINSTANCE.createOutput();
 		o.setOutputType(OutputType.CHOICE);
