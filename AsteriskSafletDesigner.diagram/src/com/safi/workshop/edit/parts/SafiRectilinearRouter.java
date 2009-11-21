@@ -76,7 +76,9 @@ public class SafiRectilinearRouter extends ObliqueRouter implements OrthogonalRo
         points = handlerEditPart.get().getRectilinearRoute(sourceOwner, endOwner, "output");
       }
 
-      if (points == null || points.size() < 2) {
+      if (points == null)
+      	return;
+      if (points.size() < 2) {
         points = calculateBendPoints(conn);
         routeLine(conn, 0, points);
       } else {
