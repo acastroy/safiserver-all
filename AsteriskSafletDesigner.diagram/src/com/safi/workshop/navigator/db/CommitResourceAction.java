@@ -310,7 +310,7 @@ public class CommitResourceAction implements IWorkbenchWindowActionDelegate,IPar
 	  if(selection instanceof IStructuredSelection && !((IStructuredSelection)selection).isEmpty()){
 	  	
 	  	for (Object o : ((IStructuredSelection)selection).toList()){
-	  		if(o instanceof IFile ||o instanceof EditPart){
+	  		if(o instanceof IResource ||o instanceof EditPart){
 	  			action.setEnabled(true);
 	  			return;
 	  		}
