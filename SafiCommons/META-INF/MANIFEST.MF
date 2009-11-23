@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: SafiCommons Plug-in
 Bundle-SymbolicName: SafiCommons;singleton:=true
-Bundle-Version: 1.0.0
+Bundle-Version: 1.0.1
 Bundle-Vendor: Safi Systems LLC
 Bundle-ClassPath: default_drivers/DB2/db2jcc4.jar,
  default_drivers/Firebird/jaybird-full-2.1.6.jar,
