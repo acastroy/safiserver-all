@@ -154,6 +154,7 @@ public class VariableEditor extends TitleAreaDialog {
     composite = new Composite(container, SWT.NONE);
     composite.setLayoutData(new GridData());
     final GridLayout gridLayout_1 = new GridLayout();
+    gridLayout_1.marginWidth = 0;
     gridLayout_1.numColumns = 2;
     composite.setLayout(gridLayout_1);
 
@@ -643,10 +644,10 @@ private void updateTypeFormat(VariableType varType) {
       this.formatValueLabel.setText("1");
       break;
     case OBJECT:
-      this.formatValueLabel.setText("Script object can be assigned.");
+      this.formatValueLabel.setText("Any object type can be assigned.");
       break;
     case TEXT:
-      this.formatValueLabel.setText("Enter without quotes");
+      this.formatValueLabel.setText("Mary had a little lamb");
       break;
     case TIME:
       this.formatValueLabel.setText("12:45 PM");
