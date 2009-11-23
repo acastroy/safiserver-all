@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: SafiServerPlugin Plug-in
 Bundle-SymbolicName: com.safi.server.asterisk;singleton:=true
-Bundle-Version: 1.1.7
+Bundle-Version: 1.1.8
 Bundle-Activator: com.safi.server.plugin.SafiServerPlugin
 Bundle-Vendor: Safi Systems LLC
 Require-Bundle: Saflets.edit;bundle-version="1.0.0",
