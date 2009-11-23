@@ -89,6 +89,8 @@ public class VariableEditor extends TitleAreaDialog {
   private Variable variable;
   private AsteriskDiagramEditor currentEditor;
   private VarTypeLabelProvider labelProvider;
+  private Label formatNameLabel;
+  private Label formatValueLabel;
 
   /**
    * Create the dialog
@@ -172,6 +174,7 @@ public class VariableEditor extends TitleAreaDialog {
         if (!sel.isEmpty()) {
 
           VariableType type = (VariableType) sel.getFirstElement();
+          updateTypeFormat(type);
           updateValueTextByType(type, false);
           Image img = labelProvider.getImage(type);
           imageLabel.setImage(img);
@@ -219,6 +222,18 @@ public class VariableEditor extends TitleAreaDialog {
     });
     final GridData gd_valueText = new GridData(SWT.FILL, SWT.TOP, true, true);
     valueText.setLayoutData(gd_valueText);
+    this.formatNameLabel=new Label(container,SWT.FLAT);
+    this.formatNameLabel.setLayoutData(new GridData(SWT.LEFT,SWT.TOP,false,true));
+    this.formatNameLabel.setText("Data Format Example :");
+    this.formatValueLabel=new Label(container,SWT.FLAT);
+    GridData valueGridData=new GridData(SWT.FILL,SWT.TOP,true,true);
+    valueGridData.grabExcessVerticalSpace=true;
+    valueGridData.grabExcessHorizontalSpace=true;
+    this.formatValueLabel.setLayoutData(valueGridData);
+    this.formatValueLabel.setText("");
+    
+   // this.formatValueLabel.setBackground(composite.getDisplay().getSystemColor(SWT.COLOR_GRAY));
+   
     //
     if (mode == Mode.EDIT) {
       setTitle("Edit Variable " + (variable == null ? "" : variable.getName()));
@@ -601,6 +616,42 @@ public void setSuggestedVariableName(String aSuggestedName) {
 	// TODO Auto-generated method stub
 	this.suggestedName=aSuggestedName;
 	//this.variableNameText.setText(this.suggestedName);
+	
+}
+private void updateTypeFormat(VariableType varType) {
+	// TODO Auto-generated method stub
+	// this.valueText.setFormatter(this.stringFormatter);
+	 this.formatValueLabel.setText("");
+    switch (varType) {
+    case ARRAY:
+     this.formatValueLabel.setText("[1,2,3,4] or [one,two,three,four]");
+      break;
+    case BOOLEAN:
+     this.formatValueLabel.setText("true or false");
+      break;
+    case DATE:
+    // this.valueText.setFormatter(this.dateFormatter);
+     this.formatValueLabel.setText("12/25/09");
+      break;
+    case DATETIME:
+     this.formatValueLabel.setText("12/25/09 12:47 PM");
+      break;
+    case DECIMAL:
+      this.formatValueLabel.setText("3.141592");
+      break;
+    case INTEGER:
+      this.formatValueLabel.setText("1");
+      break;
+    case OBJECT:
+      this.formatValueLabel.setText("Script object can be assigned.");
+      break;
+    case TEXT:
+      this.formatValueLabel.setText("Enter without quotes");
+      break;
+    case TIME:
+      this.formatValueLabel.setText("12:45 PM");
+      break;
+  }
 	
 }
 }
