@@ -284,6 +284,8 @@ public class FileUtils {
 	}
 
 	public static boolean jarIsNewer(String newname, File[] libfiles) {
+		if (libfiles == null)
+			return true;
 		String[] newnames = FileUtils.getJarBaseNameAndSuffix(newname);
 		for (File lf : libfiles) {
 			String[] names = FileUtils.getJarBaseNameAndSuffix(lf.getName());
