@@ -206,7 +206,7 @@ public interface ExtensionTransfer extends ActionStep, CallConsumer2 {
 	 * @see #setChannelType(DynamicValue)
 	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getExtensionTransfer_ChannelType()
 	 * @model containment="true" ordered="false"
-	 *        annotation="DynamicValueAnnotation type='Channel Type' isTypeLocked='false' description='It should be one of the registered channel types, such as \"Zap\", \"SIP\", \"IAX2\", etc' expectedReturnType='Text' helperClass='com.safi.workshop.sheet.ChannelTypeDVEP' enumeratedValues='Local, SIP, Zap, IAX2, MGCP, H.323, Modem, Phone, CAPI, ALSA, Skinny'"
+	 *        annotation="DynamicValueAnnotation type='LiteralText' isTypeLocked='false' description='It should be one of the registered channel types, such as \"Zap\", \"SIP\", \"IAX2\", etc' expectedReturnType='Channel Type' helperClass='com.safi.workshop.sheet.ChannelTypeDVEP' enumeratedValues='Local, SIP, Zap, IAX2, MGCP, H.323, Modem, Phone, CAPI, ALSA, Skinny'"
 	 * @generated
 	 */
 	DynamicValue getChannelType();

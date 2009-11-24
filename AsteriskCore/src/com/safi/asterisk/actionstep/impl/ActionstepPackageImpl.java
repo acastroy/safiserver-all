@@ -5626,10 +5626,10 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		  (getExtensionTransfer_ChannelType(), 
 		   source, 
 		   new String[] {
-			 "type", "Channel Type",
+			 "type", "LiteralText",
 			 "isTypeLocked", "false",
 			 "description", "It should be one of the registered channel types, such as \"Zap\", \"SIP\", \"IAX2\", etc",
-			 "expectedReturnType", "Text",
+			 "expectedReturnType", "Channel Type",
 			 "helperClass", "com.safi.workshop.sheet.ChannelTypeDVEP",
 			 "enumeratedValues", "Local, SIP, Zap, IAX2, MGCP, H.323, Modem, Phone, CAPI, ALSA, Skinny"
 		   });
