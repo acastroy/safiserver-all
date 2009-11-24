@@ -1817,6 +1817,18 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="doPreExtenStatusCheck"
           ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="channelType" ordered="false"
+          eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+          containment="true" resolveProxies="false">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="Channel Type"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="It should be one of the registered channel types, such as &quot;Zap&quot;, &quot;SIP&quot;, &quot;IAX2&quot;, etc"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value="com.safi.workshop.sheet.ChannelTypeDVEP"/>
+          <details key="enumeratedValues" value="Local, SIP, Zap, IAX2, MGCP, H.323, Modem, Phone, CAPI, ALSA, Skinny"/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="initiator" nsURI="http:///com/safi/asterisk.ecore#initiator"

@@ -24,6 +24,7 @@ import com.safi.core.actionstep.DynamicValue;
  *   <li>{@link com.safi.asterisk.actionstep.ExtensionTransfer#getTimeout <em>Timeout</em>}</li>
  *   <li>{@link com.safi.asterisk.actionstep.ExtensionTransfer#getOptions <em>Options</em>}</li>
  *   <li>{@link com.safi.asterisk.actionstep.ExtensionTransfer#isDoPreExtenStatusCheck <em>Do Pre Exten Status Check</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.ExtensionTransfer#getChannelType <em>Channel Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -192,5 +193,32 @@ public interface ExtensionTransfer extends ActionStep, CallConsumer2 {
 	 * @generated
 	 */
 	void setDoPreExtenStatusCheck(boolean value);
+
+		/**
+	 * Returns the value of the '<em><b>Channel Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Channel Type</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Channel Type</em>' containment reference.
+	 * @see #setChannelType(DynamicValue)
+	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getExtensionTransfer_ChannelType()
+	 * @model containment="true" ordered="false"
+	 *        annotation="DynamicValueAnnotation type='Channel Type' isTypeLocked='false' description='It should be one of the registered channel types, such as \"Zap\", \"SIP\", \"IAX2\", etc' expectedReturnType='Text' helperClass='com.safi.workshop.sheet.ChannelTypeDVEP' enumeratedValues='Local, SIP, Zap, IAX2, MGCP, H.323, Modem, Phone, CAPI, ALSA, Skinny'"
+	 * @generated
+	 */
+	DynamicValue getChannelType();
+
+		/**
+	 * Sets the value of the '{@link com.safi.asterisk.actionstep.ExtensionTransfer#getChannelType <em>Channel Type</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Channel Type</em>' containment reference.
+	 * @see #getChannelType()
+	 * @generated
+	 */
+	void setChannelType(DynamicValue value);
 
 } // ExtensionTransfer

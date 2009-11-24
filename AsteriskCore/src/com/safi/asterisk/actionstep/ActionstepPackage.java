@@ -9214,13 +9214,22 @@ public interface ActionstepPackage extends EPackage {
 	int EXTENSION_TRANSFER__DO_PRE_EXTEN_STATUS_CHECK = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 7;
 
 		/**
+	 * The feature id for the '<em><b>Channel Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENSION_TRANSFER__CHANNEL_TYPE = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 8;
+
+		/**
 	 * The number of structural features of the '<em>Extension Transfer</em>' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int EXTENSION_TRANSFER_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 8;
+  int EXTENSION_TRANSFER_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 9;
 
   /**
 	 * The meta object id for the '{@link com.safi.asterisk.actionstep.MeetMeAdminCommand <em>Meet Me Admin Command</em>}' enum.
@@ -12682,6 +12691,17 @@ public interface ActionstepPackage extends EPackage {
 	EAttribute getExtensionTransfer_DoPreExtenStatusCheck();
 
 		/**
+	 * Returns the meta object for the containment reference '{@link com.safi.asterisk.actionstep.ExtensionTransfer#getChannelType <em>Channel Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Channel Type</em>'.
+	 * @see com.safi.asterisk.actionstep.ExtensionTransfer#getChannelType()
+	 * @see #getExtensionTransfer()
+	 * @generated
+	 */
+	EReference getExtensionTransfer_ChannelType();
+
+		/**
 	 * Returns the meta object for enum '{@link com.safi.asterisk.actionstep.MeetMeAdminCommand <em>Meet Me Admin Command</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -15418,6 +15438,14 @@ public interface ActionstepPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EXTENSION_TRANSFER__DO_PRE_EXTEN_STATUS_CHECK = eINSTANCE.getExtensionTransfer_DoPreExtenStatusCheck();
+
+				/**
+		 * The meta object literal for the '<em><b>Channel Type</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTENSION_TRANSFER__CHANNEL_TYPE = eINSTANCE.getExtensionTransfer_ChannelType();
 
 				/**
 		 * The meta object literal for the '{@link com.safi.asterisk.actionstep.MeetMeAdminCommand <em>Meet Me Admin Command</em>}' enum.

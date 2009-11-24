@@ -50,6 +50,7 @@ import com.safi.db.VariableType;
  *   <li>{@link com.safi.asterisk.actionstep.impl.ExtensionTransferImpl#getTimeout <em>Timeout</em>}</li>
  *   <li>{@link com.safi.asterisk.actionstep.impl.ExtensionTransferImpl#getOptions <em>Options</em>}</li>
  *   <li>{@link com.safi.asterisk.actionstep.impl.ExtensionTransferImpl#isDoPreExtenStatusCheck <em>Do Pre Exten Status Check</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.impl.ExtensionTransferImpl#getChannelType <em>Channel Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -158,6 +159,16 @@ public class ExtensionTransferImpl extends ActionStepImpl implements ExtensionTr
 	protected boolean doPreExtenStatusCheck = DO_PRE_EXTEN_STATUS_CHECK_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getChannelType() <em>Channel Type</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChannelType()
+	 * @generated
+	 * @ordered
+	 */
+	protected DynamicValue channelType;
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -247,7 +258,16 @@ public class ExtensionTransferImpl extends ActionStepImpl implements ExtensionTr
 				}
 			}
 			if (idx == 0) {
-				String options = "Local/" + ext;
+				dynValue = resolveDynamicValue(channelType, context);
+				String type = StringUtils.trim((String) VariableTranslator
+				    .translateValue(VariableType.TEXT, dynValue));
+				if (StringUtils.isBlank(type))
+					type = "Local/";
+				else
+					if (!type.endsWith("/"))
+						type += "/";
+				
+				String options = type + ext;
 				if (StringUtils.isNotBlank(ctx))
 					options += "@" + ctx;
 				if (timeout > 0)
@@ -605,6 +625,49 @@ public class ExtensionTransferImpl extends ActionStepImpl implements ExtensionTr
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DynamicValue getChannelType() {
+		return channelType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetChannelType(DynamicValue newChannelType, NotificationChain msgs) {
+		DynamicValue oldChannelType = channelType;
+		channelType = newChannelType;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.EXTENSION_TRANSFER__CHANNEL_TYPE, oldChannelType, newChannelType);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setChannelType(DynamicValue newChannelType) {
+		if (newChannelType != channelType) {
+			NotificationChain msgs = null;
+			if (channelType != null)
+				msgs = ((InternalEObject)channelType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.EXTENSION_TRANSFER__CHANNEL_TYPE, null, msgs);
+			if (newChannelType != null)
+				msgs = ((InternalEObject)newChannelType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionstepPackage.EXTENSION_TRANSFER__CHANNEL_TYPE, null, msgs);
+			msgs = basicSetChannelType(newChannelType, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.EXTENSION_TRANSFER__CHANNEL_TYPE, newChannelType, newChannelType));
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -618,6 +681,8 @@ public class ExtensionTransferImpl extends ActionStepImpl implements ExtensionTr
 				return basicSetExtension(null, msgs);
 			case ActionstepPackage.EXTENSION_TRANSFER__OPTIONS:
 				return basicSetOptions(null, msgs);
+			case ActionstepPackage.EXTENSION_TRANSFER__CHANNEL_TYPE:
+				return basicSetChannelType(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -647,6 +712,8 @@ public class ExtensionTransferImpl extends ActionStepImpl implements ExtensionTr
 				return getOptions();
 			case ActionstepPackage.EXTENSION_TRANSFER__DO_PRE_EXTEN_STATUS_CHECK:
 				return isDoPreExtenStatusCheck();
+			case ActionstepPackage.EXTENSION_TRANSFER__CHANNEL_TYPE:
+				return getChannelType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -681,6 +748,9 @@ public class ExtensionTransferImpl extends ActionStepImpl implements ExtensionTr
 				return;
 			case ActionstepPackage.EXTENSION_TRANSFER__DO_PRE_EXTEN_STATUS_CHECK:
 				setDoPreExtenStatusCheck((Boolean)newValue);
+				return;
+			case ActionstepPackage.EXTENSION_TRANSFER__CHANNEL_TYPE:
+				setChannelType((DynamicValue)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -717,6 +787,9 @@ public class ExtensionTransferImpl extends ActionStepImpl implements ExtensionTr
 			case ActionstepPackage.EXTENSION_TRANSFER__DO_PRE_EXTEN_STATUS_CHECK:
 				setDoPreExtenStatusCheck(DO_PRE_EXTEN_STATUS_CHECK_EDEFAULT);
 				return;
+			case ActionstepPackage.EXTENSION_TRANSFER__CHANNEL_TYPE:
+				setChannelType((DynamicValue)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -744,6 +817,8 @@ public class ExtensionTransferImpl extends ActionStepImpl implements ExtensionTr
 				return options != null;
 			case ActionstepPackage.EXTENSION_TRANSFER__DO_PRE_EXTEN_STATUS_CHECK:
 				return doPreExtenStatusCheck != DO_PRE_EXTEN_STATUS_CHECK_EDEFAULT;
+			case ActionstepPackage.EXTENSION_TRANSFER__CHANNEL_TYPE:
+				return channelType != null;
 		}
 		return super.eIsSet(featureID);
 	}

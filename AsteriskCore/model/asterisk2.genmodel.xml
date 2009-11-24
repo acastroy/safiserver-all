@@ -2,12 +2,10 @@
 <genmodel:GenModel xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/AsteriskCore/src"
-    modelPluginID="AsteriskCore" modelName="Asterisk" runtimeCompatibility="true"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    usedGenPackages="../../Saflets/model/core.genmodel#//core ../../SafiDB/model/db.genmodel#//db">
+    modelPluginID="AsteriskCore" modelName="Asterisk2" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../Saflets/model/core.genmodel#//core ../../SafiDB/model/db.genmodel#//db">
   <foreignModel>asterisk.ecore</foreignModel>
-  <genPackages prefix="Asterisk" basePackage="com.safi" disposableProviderFactory="true"
-      ecorePackage="asterisk.ecore#/">
+  <genPackages prefix="Asterisk" disposableProviderFactory="true" ecorePackage="asterisk.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="asterisk.ecore#//CallState">
       <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//CallState/Available"/>
       <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//CallState/Reserved"/>
@@ -21,6 +19,7 @@
     </genEnums>
     <genDataTypes ecoreDataType="asterisk.ecore#//AgiRequest"/>
     <genDataTypes ecoreDataType="asterisk.ecore#//AgiChannel"/>
+    <genDataTypes ecoreDataType="asterisk.ecore#//ManagerConnection"/>
     <genClasses ecoreClass="asterisk.ecore#//Call">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//Call/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//Call/channel"/>
@@ -38,10 +37,10 @@
       </genOperations>
     </genClasses>
     <genClasses image="false" ecoreClass="asterisk.ecore#//CallSource1">
-      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//CallSource1/newCall1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//CallSource1/newCall1"/>
     </genClasses>
     <genClasses image="false" ecoreClass="asterisk.ecore#//CallSource2">
-      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//CallSource2/newCall2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//CallSource2/newCall2"/>
     </genClasses>
     <genClasses image="false" ecoreClass="asterisk.ecore#//CallConsumer1">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference asterisk.ecore#//CallConsumer1/call1"/>
@@ -95,23 +94,23 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/GetDigits/inputTimeout"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/GetDigits/useBufferedDigits"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/GetDigits/escapeDigits"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetDigits/variableName"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetDigits/variableName"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/GetDigits/maxDigits"/>
-        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/GetDigits/acceptedDigits"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/GetDigits/acceptedDigits"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/GetFullVariable">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/GetFullVariable/variable"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetFullVariable/assignToVar"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetFullVariable/assignToVar"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/MultiStreamAudio">
-        <genFeatures children="true" createChild="true" propertyCategory="" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/MultiStreamAudio/escapeDigits"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/MultiStreamAudio/escapeDigits"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/MultiStreamAudio/audioFilenames"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/Hangup"/>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/RecordFile">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/RecordFile/beep"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/RecordFile/escapeDigits"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/RecordFile/file"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/RecordFile/file"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/RecordFile/format"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/RecordFile/offset"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/RecordFile/timeout"/>
@@ -119,55 +118,55 @@
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/SayAlpha">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/SayAlpha/escapeDigits"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/SayAlpha/text"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/SayAlpha/text"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/SayDateTime">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/SayDateTime/escapeDigits"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/SayDateTime/format"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/SayDateTime/dateTime"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/SayDateTime/dateTime"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/SayDateTime/timezone"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/SayDigits">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/SayDigits/digits"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/SayDigits/digits"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/SayDigits/escapeDigits"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/SayNumber">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/SayNumber/escapeDigits"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/SayNumber/number"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/SayNumber/number"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/SayPhonetic">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/SayPhonetic/escapeDigits"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/SayPhonetic/text"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/SayPhonetic/text"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/SayTime">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/SayTime/escapeDigits"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/SayTime/time"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/SayTime/time"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/SetAutoHangup">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/SetAutoHangup/time"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/SetCallerId">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/SetCallerId/callerId"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/SetCallerId/callerId"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/SetChannelVariable">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/SetChannelVariable/value"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/SetChannelVariable/value"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/SetChannelVariable/variable"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/SetContext">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/SetContext/context"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/SetContext/context"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/SetExtension">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/SetExtension/extension"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/SetExtension/extension"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/StopMusicOnHold"/>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/SetMusicOn">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/SetMusicOn/holdClass"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/SetMusicOn/holdClass"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/SetPriority">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/SetPriority/priority"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/SetPriority/priority"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/StreamAudio">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/StreamAudio/filename"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/StreamAudio/filename"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/StreamAudio/escapeDigits"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/WaitForDigit">
@@ -176,73 +175,71 @@
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/OriginateCall">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/OriginateCall/async"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/OriginateCall/account"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/OriginateCall/application"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/OriginateCall/callerId"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/OriginateCall/context"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/OriginateCall/data"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/OriginateCall/extension"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/OriginateCall/account"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/OriginateCall/application"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/OriginateCall/callerId"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/OriginateCall/context"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/OriginateCall/data"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/OriginateCall/extension"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/OriginateCall/priority"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/OriginateCall/timeout"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/OriginateCall/callingPresentation"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/OriginateCall/channel"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/OriginateCall/callingPresentation"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/OriginateCall/channel"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/OriginateCall/takeControl"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/OriginateCall/variables"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/OriginateCall/variables"/>
         <genOperations ecoreOperation="asterisk.ecore#//actionstep/OriginateCall/setVariable">
           <genParameters ecoreParameter="asterisk.ecore#//actionstep/OriginateCall/setVariable/name"/>
           <genParameters ecoreParameter="asterisk.ecore#//actionstep/OriginateCall/setVariable/value"/>
         </genOperations>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/PlayDTMF">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/PlayDTMF/digits"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/PlayDTMF/digits"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/RecordCall">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/RecordCall/filename"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/RecordCall/filename"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/RecordCall/format"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/RecordCall/mix"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/Transfer">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/Transfer/context"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/Transfer/extension"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/Transfer/context"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/Transfer/extension"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/Transfer/priority"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/ExecuteApplication">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/ExecuteApplication/application"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/ExecuteApplication/arguments"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/ExecuteApplication/arguments"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/GetCallInfo">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetCallInfo/accountCodeVar"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetCallInfo/callerIdNameVar"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetCallInfo/callerIdNumVar"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetCallInfo/channelNameVar"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetCallInfo/contextVar"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetCallInfo/extensionVar"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetCallInfo/accountCodeVar"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetCallInfo/callerIdNameVar"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetCallInfo/callerIdNumVar"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetCallInfo/channelNameVar"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetCallInfo/contextVar"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetCallInfo/extensionVar"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetCallInfo/dialedNumber"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetCallInfo/priorityVar"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetCallInfo/stateVar"/>
-        <genFeatures children="true" createChild="true" propertyCategory="" propertyDescription="The unique ID of the call will be placed in this variable"
-            ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetCallInfo/uniqueIdVar"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetCallInfo/priorityVar"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetCallInfo/stateVar"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetCallInfo/uniqueIdVar"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetCallInfo/ani2Var"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetCallInfo/rdnis"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetCallInfo/type"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/PlayMusicOnHold">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/PlayMusicOnHold/holdClass"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/PlayMusicOnHold/holdClass"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/PromptGetDigits">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/PromptGetDigits/filename"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/PromptGetDigits/filename"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/PromptGetDigits/timeout"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/PromptGetDigits/variableName"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/PromptGetDigits/variableName"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/PromptGetDigits/maxDigits"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/PromptGetDigits/useBufferedDigits"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/Sleep">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/Sleep/duration"/>
-        <genFeatures createChild="false" propertyCategory="" propertyDescription="If true native asterisk &quot;Wait&quot; command will be invoked"
-            ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/Sleep/native"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/Sleep/native"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/StreamAudioExtended">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/StreamAudioExtended/filename"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/StreamAudioExtended/filename"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/StreamAudioExtended/escapeDigits"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/StreamAudioExtended/offset"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/StreamAudioExtended/forwardDigit"/>
@@ -250,7 +247,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/StreamAudioExtended/pauseDigit"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/Dial">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/Dial/outgoingChannels"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/Dial/outgoingChannels"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/Dial/retry"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/Dial/timeout"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/Dial/calleeBlindTransfer"/>
@@ -292,7 +289,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/Pickup/group"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/Background">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/Background/filenames"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/Background/filenames"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/Background/playOnlyIfAnswered"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/Background/answerIfNecessary"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/Background/matchOnlySingleDigit"/>
@@ -310,48 +307,48 @@
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/SoftHangup">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/SoftHangup/hangupAllDeviceCalls"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/SoftHangup/channelName"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/SoftHangup/channelName"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/PickupChan">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/PickupChan/channels"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/PickupChan/channels"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/Pickdown">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/Pickdown/group"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/Progress"/>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/Bridge">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/Bridge/channel1"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/Bridge/channel2"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/Bridge/channel1"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/Bridge/channel2"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/Bridge/useCourtesyTone"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/PlaceCall">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/PlaceCall/extension"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/PlaceCall/context"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/PlaceCall/extension"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/PlaceCall/context"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/PlaceCall/timeout"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/PlaceCall/callerId"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/PlaceCall/callerId"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/Voicemail">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/Voicemail/mailbox"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/Voicemail/mailbox"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/Voicemail/skipInstructions"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/Voicemail/playUnavailableMessage"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/Voicemail/playBusyMessage"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/Voicemail/recordingGain"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/VoicemailMain">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/VoicemailMain/mailbox"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/VoicemailMain/mailbox"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/VoicemailMain/skipPasswordCheck"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/VoicemailMain/usePrefix"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/VoicemailMain/recordingGain"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/VoicemailMain/defaultFolder"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/VoicemailMain/defaultFolder"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/VMAuthenticate">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/VMAuthenticate/mailbox"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/VMAuthenticate/mailbox"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/VMAuthenticate/skipInstructions"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/VMAuthenticate/setAccountCode"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/MeetMe">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/MeetMe/conferenceNumber"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/MeetMe/pin"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/MeetMe/conferenceNumber"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/MeetMe/pin"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/MeetMe/backgroundScriptAgi"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/MeetMe/recordingFilename"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/MeetMe/recordingFormat"/>
@@ -380,13 +377,13 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/MeetMe/closeOnLastMarkedUserExit"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/MeetMeAdmin">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/MeetMeAdmin/conferenceNumber"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/MeetMeAdmin/command"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/MeetMeAdmin/user"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/MeetMeAdmin/conferenceNumber"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/MeetMeAdmin/command"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/MeetMeAdmin/user"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/MeetMeCount">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/MeetMeCount/conferenceNumber"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/MeetMeCount/variableName"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/MeetMeCount/conferenceNumber"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/MeetMeCount/variableName"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/WaitForRing">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/WaitForRing/duration"/>
@@ -395,8 +392,8 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/WaitMusicOnHold/duration"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/GetAvailableChannel">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetAvailableChannel/channels"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetAvailableChannel/variableName"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetAvailableChannel/channels"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/GetAvailableChannel/variableName"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/GetAvailableChannel/ignoreInUse"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/GetAvailableChannel/jumpPriorityOnFail"/>
       </genClasses>
@@ -405,23 +402,23 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/Ringing/duration"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/SetCallerPresentation">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/SetCallerPresentation/presentation"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/SetCallerPresentation/presentation"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/SetGlobalVariable">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/SetGlobalVariable/value"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/SetGlobalVariable/value"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/SetGlobalVariable/variable"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/Echo"/>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/Festival">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/Festival/text"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/Festival/text"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/Festival/interruptKeys"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/Playtones">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/Playtones/tones"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/Playtones/tones"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/StopPlaytones"/>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/ChanSpy">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/ChanSpy/channelnamePrefix"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/ChanSpy/channelnamePrefix"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/ChanSpy/spyBridgedOnly"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/ChanSpy/group"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/ChanSpy/beep"/>
@@ -431,12 +428,12 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/ChanSpy/privateWhisperEnabled"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/Dictate">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/Dictate/directory"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/Dictate/filename"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/Dictate/directory"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/Dictate/filename"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/ExtensionSpy">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/ExtensionSpy/extension"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/ExtensionSpy/context"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/ExtensionSpy/extension"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/ExtensionSpy/context"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/ExtensionSpy/spyBridgedOnly"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/ExtensionSpy/group"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/ExtensionSpy/beep"/>
@@ -444,35 +441,35 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/ExtensionSpy/volume"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/ExtensionSpy/whisperEnabled"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/ExtensionSpy/privateWhisperEnabled"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/ExtensionSpy/channelName"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/ExtensionSpy/channelName"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/MixMonitor">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/MixMonitor/filename"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/MixMonitor/filename"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/MixMonitor/recordOnlyWhenBridged"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/MixMonitor/appendMode"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/StopMixmonitor"/>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/StopMonitor"/>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/Monitor">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/Monitor/filenamePrefix"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/Monitor/filenamePrefix"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/Monitor/format"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/Monitor/mix"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/Directory">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/Directory/vMContext"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/Directory/dialContext"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/Directory/vMContext"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/Directory/dialContext"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/Directory/readExtensionNumber"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/Directory/enterByFirstName"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/Directory/enterByFirstOrLastName"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/ExtensionTransfer">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/ExtensionTransfer/context"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/ExtensionTransfer/extension"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/ExtensionTransfer/context"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/ExtensionTransfer/extension"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/ExtensionTransfer/priority"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/ExtensionTransfer/timeout"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/ExtensionTransfer/options"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/ExtensionTransfer/options"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/ExtensionTransfer/doPreExtenStatusCheck"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/ExtensionTransfer/channelType"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/ExtensionTransfer/channelType"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Initiator" disposableProviderFactory="true" ecorePackage="asterisk.ecore#//initiator">
@@ -489,6 +486,8 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//initiator/AsteriskInitiatorInfo/channel"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//initiator/AsteriskInitiatorInfo/request"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//initiator/AsteriskInitiatorInfo/managerConnection"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference asterisk.ecore#//initiator/AsteriskInitiatorInfo/asteriskServer"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Saflet" disposableProviderFactory="true" ecorePackage="asterisk.ecore#//saflet">
@@ -500,8 +499,7 @@
         </genOperations>
         <genOperations ecoreOperation="asterisk.ecore#//saflet/AsteriskSafletContext/flushBufferedDigits"/>
       </genClasses>
-      <genClasses ecoreClass="asterisk.ecore#//saflet/AsteriskSafletEnvironment">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//saflet/AsteriskSafletEnvironment/serverIpAddr"/>
+      <genClasses image="false" ecoreClass="asterisk.ecore#//saflet/AsteriskSafletEnvironment">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//saflet/AsteriskSafletEnvironment/fastAgiPort"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//saflet/AsteriskSafletEnvironment/managementPort"/>
         <genOperations ecoreOperation="asterisk.ecore#//saflet/AsteriskSafletEnvironment/getLoopbackCall">
