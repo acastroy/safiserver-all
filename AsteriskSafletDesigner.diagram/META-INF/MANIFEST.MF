@@ -25,7 +25,8 @@ Bundle-ClassPath: .,
  lib/truezip-6.jar,
  lib/boolExprParser.jar,
  lib/layout.jar,
- lib/licensews.jar
+ lib/licensews.jar,
+ lib/org.eclipse.nebula.widgets.formattedtext_1.0.0.HEAD.jar
 Bundle-Activator: com.safi.workshop.part.AsteriskDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
@@ -44,6 +45,7 @@ Export-Package: com.safi.workshop,
  com.safi.workshop.view.factories,
  com.safi.workshop.view.vareditor,
  com.swtdesigner,
+ org.eclipse.nebula.widgets.formattedtext,
  org.eclipse.swt.nebula.widgets.cdatetime,
  org.eclipse.swt.nebula.widgets.compositetable,
  org.eclipse.swt.nebula.widgets.compositetable.day,

@@ -24,6 +24,10 @@ import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.nebula.widgets.formattedtext.DateFormatter;
+import org.eclipse.nebula.widgets.formattedtext.DateTimeFormatter;
+import org.eclipse.nebula.widgets.formattedtext.FormattedText;
+import org.eclipse.nebula.widgets.formattedtext.StringFormatter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.events.FocusAdapter;
@@ -78,7 +82,7 @@ public class VariableEditor extends TitleAreaDialog {
     }
   }
   private final static String NAME_PATTERN = "[a-zA-Z_][a-zA-Z0-9_]*";
-  private Text valueText;
+  private FormattedText valueText;
   private Label initialValueLabel;
   private Combo combo;
   private ComboViewer typeComboViewer;
@@ -91,6 +95,10 @@ public class VariableEditor extends TitleAreaDialog {
   private VarTypeLabelProvider labelProvider;
   private Label formatNameLabel;
   private Label formatValueLabel;
+  private org.eclipse.nebula.widgets.formattedtext.DateFormatter dateFormatter;
+  private org.eclipse.nebula.widgets.formattedtext.DateTimeFormatter dateTimeFormatter;
+  private org.eclipse.nebula.widgets.formattedtext.DateTimeFormatter timeFormatter;
+  private org.eclipse.nebula.widgets.formattedtext.StringFormatter stringFormatter;
 
   /**
    * Create the dialog
@@ -118,7 +126,10 @@ public class VariableEditor extends TitleAreaDialog {
     gridLayout.numColumns = 2;
     container.setLayout(gridLayout);
     container.setLayoutData(new GridData(GridData.FILL_BOTH));
-
+    this.stringFormatter=new StringFormatter();
+    this.dateFormatter=new DateFormatter("MM/dd/yyyy");
+    this.dateTimeFormatter=new DateTimeFormatter("MM/dd/yyyy hh:mm:ss a");
+    this.timeFormatter=new DateTimeFormatter("hh:mm:ss a");
     nameLabel = new Label(container, SWT.NONE);
     nameLabel.setLayoutData(new GridData(SWT.LEFT, SWT.BOTTOM, false, true));
     nameLabel.setText("Name:");
@@ -213,8 +224,8 @@ public class VariableEditor extends TitleAreaDialog {
     initialValueLabel.setLayoutData(new GridData(SWT.LEFT, SWT.TOP, false, true));
     initialValueLabel.setText("Initial value:");
 
-    valueText = new Text(container, SWT.BORDER);
-    valueText.addFocusListener(new FocusAdapter() {
+    valueText = new FormattedText(container, SWT.BORDER);
+    valueText.getControl().addFocusListener(new FocusAdapter() {
       @Override
       public void focusLost(final FocusEvent e) {
         VariableType type = getSelectedType();
@@ -222,7 +233,7 @@ public class VariableEditor extends TitleAreaDialog {
       }
     });
     final GridData gd_valueText = new GridData(SWT.FILL, SWT.TOP, true, true);
-    valueText.setLayoutData(gd_valueText);
+    valueText.getControl().setLayoutData(gd_valueText);
     this.formatNameLabel=new Label(container,SWT.FLAT);
     this.formatNameLabel.setLayoutData(new GridData(SWT.LEFT,SWT.TOP,false,true));
     this.formatNameLabel.setText("Data Format Example :");
@@ -245,7 +256,7 @@ public class VariableEditor extends TitleAreaDialog {
   }
 
   protected void updateValueTextByType(VariableType type, boolean showError) {
-    String val = valueText.getText();
+    String val = valueText.getControl().getText();
     if (StringUtils.isBlank(val))
       return;
     try {
@@ -263,7 +274,8 @@ public class VariableEditor extends TitleAreaDialog {
     if (StringUtils.isBlank(val)) {
       val = VariableTranslator.translateToText(type, VariableTranslator.getDefaultForVarType(type));
     }
-    valueText.setText(val == null ? "" : val);
+    valueText.getControl().setText(val == null ? "" : val);
+    //valueText.setValue(val == null ? "" : val);
   }
 
   @Override
@@ -276,7 +288,7 @@ public class VariableEditor extends TitleAreaDialog {
     EAttribute setAttr = DbPackage.eINSTANCE.getVariable_DefaultValue();
     Object newObjVal = null;
     try {
-      newObjVal = VariableTranslator.translateValue(type, valueText.getText());
+      newObjVal = VariableTranslator.translateValue(type, valueText.getControl().getText());
     } catch (Exception ignore) {
 
     }
@@ -424,7 +436,7 @@ public class VariableEditor extends TitleAreaDialog {
           .getDefaultForVarType(type));
       // return null;
     }
-    valueText.setText(textVal == null ? "" : textVal);
+    valueText.getControl().setText(textVal == null ? "" : textVal);
     quickValidateName(variableNameText.getText());
   }
   
@@ -478,11 +490,11 @@ public class VariableEditor extends TitleAreaDialog {
     if (variable == null) {
     	variableNameText.setText(this.suggestedName!=null ? suggestedName : "");
       typeComboViewer.setSelection(new StructuredSelection(VariableType.TEXT));
-      valueText.setText("");
+      valueText.getControl().setText("");
     } else {
       variableNameText.setText(variable.getName() == null ? "" : variable.getName());
       typeComboViewer.setSelection(new StructuredSelection(variable.getType()));
-      valueText.setText(VariableTranslator.translateToText(variable.getType(), variable
+      valueText.getControl().setText(VariableTranslator.translateToText(variable.getType(), variable
           .getDefaultValue()));
     }
     quickValidateName(variableNameText.getText());
@@ -621,7 +633,7 @@ public void setSuggestedVariableName(String aSuggestedName) {
 }
 private void updateTypeFormat(VariableType varType) {
 	// TODO Auto-generated method stub
-	// this.valueText.setFormatter(this.stringFormatter);
+	 this.valueText.setFormatter(this.stringFormatter);
 	 this.formatValueLabel.setText("");
     switch (varType) {
     case ARRAY:
@@ -631,11 +643,12 @@ private void updateTypeFormat(VariableType varType) {
      this.formatValueLabel.setText("true or false");
       break;
     case DATE:
-    // this.valueText.setFormatter(this.dateFormatter);
-     this.formatValueLabel.setText("12/25/09");
+    this.valueText.setFormatter(this.dateFormatter);
+     this.formatValueLabel.setText("12/25/2009");
       break;
     case DATETIME:
-     this.formatValueLabel.setText("12/25/09 12:47 PM");
+    this.valueText.setFormatter(this.dateTimeFormatter);	
+     this.formatValueLabel.setText("12/25/2009 12:47:00 PM");
       break;
     case DECIMAL:
       this.formatValueLabel.setText("3.141592");
@@ -650,7 +663,8 @@ private void updateTypeFormat(VariableType varType) {
       this.formatValueLabel.setText("Mary had a little lamb");
       break;
     case TIME:
-      this.formatValueLabel.setText("12:45 PM");
+      this.valueText.setFormatter(this.timeFormatter);	
+      this.formatValueLabel.setText("12:45:00 PM");
       break;
   }
 	
