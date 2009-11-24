@@ -165,7 +165,6 @@ public class VariableEditor extends TitleAreaDialog {
     composite = new Composite(container, SWT.NONE);
     composite.setLayoutData(new GridData());
     final GridLayout gridLayout_1 = new GridLayout();
-    gridLayout_1.marginWidth = 0;
     gridLayout_1.numColumns = 2;
     composite.setLayout(gridLayout_1);
 
@@ -643,12 +642,12 @@ private void updateTypeFormat(VariableType varType) {
      this.formatValueLabel.setText("true or false");
       break;
     case DATE:
-    this.valueText.setFormatter(this.dateFormatter);
+    //this.valueText.setFormatter(this.dateFormatter);
      this.formatValueLabel.setText("12/25/2009");
       break;
     case DATETIME:
-    this.valueText.setFormatter(this.dateTimeFormatter);	
-     this.formatValueLabel.setText("12/25/2009 12:47:00 PM");
+   // this.valueText.setFormatter(this.dateTimeFormatter);	
+     this.formatValueLabel.setText("12/25/2009 12:47 PM");
       break;
     case DECIMAL:
       this.formatValueLabel.setText("3.141592");
@@ -657,14 +656,14 @@ private void updateTypeFormat(VariableType varType) {
       this.formatValueLabel.setText("1");
       break;
     case OBJECT:
-      this.formatValueLabel.setText("Any object type can be assigned.");
+      this.formatValueLabel.setText("Script object can be assigned.");
       break;
     case TEXT:
-      this.formatValueLabel.setText("Mary had a little lamb");
+      this.formatValueLabel.setText("Enter without quotes");
       break;
     case TIME:
-      this.valueText.setFormatter(this.timeFormatter);	
-      this.formatValueLabel.setText("12:45:00 PM");
+      //this.valueText.setFormatter(this.timeFormatter);	
+      this.formatValueLabel.setText("12:45 PM");
       break;
   }
 	
