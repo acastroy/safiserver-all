@@ -734,12 +734,12 @@ public class DynamicValueEditorWidget extends Composite {
 			List<IContentProposal> props = new ArrayList<IContentProposal>();
 			for (IContentProposal p : proposals) {
 				if (p instanceof EnumeratedTypeProposal) {
-					if (p.getLabel().length() >= contents.length()
-					    && p.getLabel().substring(0, contents.length()).equalsIgnoreCase(contents))
-						props.add(p);
-					else
-						if (p.getContent().length() >= contents.length()
-						    && p.getContent().substring(0, contents.length()).equalsIgnoreCase(contents))
+//					if (p.getLabel().length() >= contents.length()
+//					    && p.getLabel().substring(0, contents.length()).equalsIgnoreCase(contents))
+//						props.add(p);
+//					else
+//						if (p.getContent().length() >= contents.length()
+//						    && p.getContent().substring(0, contents.length()).equalsIgnoreCase(contents))
 							props.add(p);
 				} 
 				else
@@ -1082,6 +1082,17 @@ public class DynamicValueEditorWidget extends Composite {
 					return null;
 			} else if (element instanceof ActionContentProposal) {
 				String relPath = ((ActionContentProposal) element).getImagePath();
+				if (StringUtils.isNotBlank(relPath)) {
+					Image img = imageHash.get(relPath);
+					if (img == null) {
+						img = AsteriskDiagramEditorPlugin.getInstance().getBundledImage(relPath);
+						imageHash.put(relPath, img);
+					}
+					return img;
+				}
+			}
+			else if (element instanceof EnumeratedTypeProposal){
+				String relPath = "icons/js/property.gif";
 				if (StringUtils.isNotBlank(relPath)) {
 					Image img = imageHash.get(relPath);
 					if (img == null) {
