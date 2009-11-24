@@ -26,6 +26,7 @@ import com.safi.core.actionstep.ActionStepFactory;
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.DynamicValueType;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
+import com.safi.workshop.sheet.DynamicValueEditorUtils.DynamicValueAnnotationInfo;
 import com.swtdesigner.ResourceManager;
 
 public class DynamicValueEditor2 extends TitleAreaDialog {
@@ -44,6 +45,7 @@ public class DynamicValueEditor2 extends TitleAreaDialog {
   protected List<DynamicValueEditorPage> pages = new ArrayList<DynamicValueEditorPage>();
   protected String defaultType;
   protected EObject parent;
+  protected DynamicValueAnnotationInfo info;
 
   /**
    * Create the dialog
@@ -174,6 +176,8 @@ public class DynamicValueEditor2 extends TitleAreaDialog {
   }
 
   public DynamicValueEditorPage getPageForType(String type) {
+  	if (type == null)
+  		return null;
     if (StringUtils.equals(type, DynamicValueType.LITERAL_TEXT.getLiteral()))
       type = DynamicValueType.SCRIPT_TEXT.getLiteral();
 
@@ -358,5 +362,13 @@ public class DynamicValueEditor2 extends TitleAreaDialog {
 
   public void setParent(EObject parent) {
     this.parent = parent;
+  }
+
+	public DynamicValueAnnotationInfo getInfo() {
+  	return info;
+  }
+
+	public void setInfo(DynamicValueAnnotationInfo info) {
+  	this.info = info;
   }
 }

@@ -733,6 +733,16 @@ public class DynamicValueEditorWidget extends Composite {
 
 			List<IContentProposal> props = new ArrayList<IContentProposal>();
 			for (IContentProposal p : proposals) {
+				if (p instanceof EnumeratedTypeProposal) {
+					if (p.getLabel().length() >= contents.length()
+					    && p.getLabel().substring(0, contents.length()).equalsIgnoreCase(contents))
+						props.add(p);
+					else
+						if (p.getContent().length() >= contents.length()
+						    && p.getContent().substring(0, contents.length()).equalsIgnoreCase(contents))
+							props.add(p);
+				} 
+				else
 				if (p instanceof VariableIContentProposal) {
 					if (p.getContent().length() >= contents.length()
 					    && p.getContent().substring(0, contents.length()).equals(contents))
@@ -740,7 +750,7 @@ public class DynamicValueEditorWidget extends Composite {
 				} else if (p instanceof ActionContentProposal) {
 					if (((ActionContentProposal) p).isEnabled(contents, position))
 						props.add(p);
-				}
+				} 
 
 			}
 
@@ -750,6 +760,11 @@ public class DynamicValueEditorWidget extends Composite {
 		private void initProposals() {
 			// TODO Auto-generated method stub
 			proposals = new ArrayList<IContentProposal>();
+			if (getDynamicValueInfo().enumeratedValues != null && getDynamicValueInfo().enumeratedValues.length > 0){
+				for (String val : getDynamicValueInfo().enumeratedValues){
+					proposals.add(new EnumeratedTypeProposal(val));
+				}
+			}
 			if (canAcceptVarType()) {
 				final List<Variable> variables = new ArrayList<Variable>(getSafletContext()
 				    .getVariables());
@@ -890,6 +905,47 @@ public class DynamicValueEditorWidget extends Composite {
 
 	}
 
+	
+	class EnumeratedTypeProposal implements IContentProposal {
+		private String type;
+		
+		public EnumeratedTypeProposal(String type) {
+			this.type = type;
+		}
+		@Override
+    public String getContent() {
+	    
+	    if (StringUtils.isBlank(type))
+	    	return "";
+	    
+	    String t = type.trim();
+	    if (!t.startsWith("\""))
+	    	t = '\"'+t;
+	    
+	    if (!t.endsWith("\""))
+	    	t += '\"';
+	    
+	    return t;
+    }
+
+		@Override
+    public int getCursorPosition() {
+	    // TODO Auto-generated method stub
+	    return 0;
+    }
+
+		@Override
+    public String getDescription() {
+	    return "Suggested valid value for "+getDynamicValueInfo().attributeName;
+    }
+
+		@Override
+    public String getLabel() {
+	    // TODO Auto-generated method stub
+	    return type;
+    }
+		
+	}
 	public boolean canAcceptVarType() {
 		if (getDynamicValueInfo().isTypeLocked
 		    && !DynamicValueType.VARIABLE_NAME.getLiteral().equals(
@@ -931,6 +987,15 @@ public class DynamicValueEditorWidget extends Composite {
 				}
 			} else if (proposal instanceof ActionContentProposal) {
 				((ActionContentProposal) proposal).execute();
+				fireModifiedEvent();
+			} else if (proposal instanceof EnumeratedTypeProposal){
+				if (dynamicValue == null)
+					dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
+				dynamicValue.setType(DynamicValueType.LITERAL_TEXT);
+				dynamicValue.setText(((EnumeratedTypeProposal)proposal).getContent());
+				refresh();
+				// text.setText("Var: " + dynamicValue.getText());
+				// updateTextDirectEditCapability(isDirectEditable());
 				fireModifiedEvent();
 			}
 
@@ -1038,6 +1103,23 @@ public class DynamicValueEditorWidget extends Composite {
 		    char[] autoActivationCharacters) {
 			super(control, controlContentAdapter, proposalProvider, keyStroke,
 			    autoActivationCharacters);
+			
+			
+			control.addListener(SWT.KeyDown, new Listener() {
+				
+				@Override
+				public void handleEvent(Event e) {
+					switch (e.type) {
+					case SWT.KeyDown:
+						if (assistantShowing.get() || dialogShowing.get()|| proposalAdapter.hasProposalPopupFocus()){
+							return;
+						}
+						if (e.keyCode == SWT.ARROW_DOWN)
+							openProposalPopup();
+					}
+					
+				}
+			});
 		}
 
 		@Override
@@ -1045,6 +1127,13 @@ public class DynamicValueEditorWidget extends Composite {
 			// TODO Auto-generated method stub
 			super.closeProposalPopup();
 		}
+		
+		@Override
+		public void openProposalPopup() {
+		  // TODO Auto-generated method stub
+		  super.openProposalPopup();
+		}
+		
 
 	}
 }

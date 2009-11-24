@@ -35,7 +35,7 @@ public class ExtensionTransferEditorPage2 extends AbstractActionstepEditorPage {
   private Text escapeDigitsText;
   private Combo combo;
   private ComboViewer comboViewer;
-  private Label call1Label;
+  private Label call2Label;
   private Text nameText;
   private Label nameLabel;
   private DynamicValueEditorWidget contextDVEWidget;
@@ -51,8 +51,8 @@ public class ExtensionTransferEditorPage2 extends AbstractActionstepEditorPage {
     ExtensionTransfer extensiontransfer = (ExtensionTransfer) parent.getEditPart().getActionStep();
 
     // ----------- Call2 Combo
-    call1Label = new Label(this, SWT.NONE);
-    call1Label.setText("Call2:");
+    call2Label = new Label(this, SWT.NONE);
+    call2Label.setText("Call2:");
 
     comboViewer = new ComboViewer(this, SWT.BORDER);
     combo = comboViewer.getCombo();
