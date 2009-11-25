@@ -14,6 +14,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 
 import com.safi.asterisk.figures.OutputTargetFigure;
+import com.safi.core.actionstep.Output;
 import com.safi.core.actionstep.OutputType;
 import com.safi.workshop.edit.parts.AsteriskRootEditPart.AsteriskConnectionLayerEx;
 import com.safi.workshop.edit.policies.OutputTargetItemSemanticEditPolicy;
@@ -76,7 +77,16 @@ public class OutputTargetEditPart extends ConnectionNodeEditPart {
   @Override
   public void setSelected(int value) {
     // TODO Auto-generated method stub
-    int selection = getSelected();
+  	OutputEditPart editPart = (OutputEditPart) getSource();
+    if (editPart == null)
+      return;
+    final Output outputModel = editPart.getOutputModel();
+    if (outputModel == null)
+    	return;
+    
+  	int selection = getSelected();
+    
+    
     boolean wasSelected = selection == EditPart.SELECTED || selection == EditPart.SELECTED_PRIMARY;
     super.setSelected(value);
     selection = getSelected();
@@ -123,11 +133,15 @@ public class OutputTargetEditPart extends ConnectionNodeEditPart {
     OutputEditPart editPart = (OutputEditPart) getSource();
     if (editPart == null)
       return;
+    final Output outputModel = editPart.getOutputModel();
+    if (outputModel == null)
+    	return;
     int selection = getSelected();
 
     boolean isSelected = selection == EditPart.SELECTED || selection == EditPart.SELECTED_PRIMARY;
 
-    OutputType type = editPart.getOutputModel().getOutputType();
+   
+		OutputType type = outputModel.getOutputType();
     if (isSelected) {
       newColor = ColorConstants.black;
     } else if (type == OutputType.ERROR)
