@@ -1147,19 +1147,19 @@ public class DbPackageImpl extends EPackageImpl implements DbPackage {
 		  (getDBConnection_Queries(), 
 		   source, 
 		   new String[] {
-			 "appinfo", "@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=\"EAGER\")"
+			 "appinfo", "@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=\"EAGER\"  indexed=\"false\")"
 		   });		
 		addAnnotation
 		  (getDBDriver_Connections(), 
 		   source, 
 		   new String[] {
-			 "appinfo", "@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=\"EAGER\")"
+			 "appinfo", "@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=\"EAGER\"  indexed=\"false\")"
 		   });		
 		addAnnotation
 		  (getDBDriver_Jars(), 
 		   source, 
 		   new String[] {
-			 "appinfo", "@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=\"EAGER\")"
+			 "appinfo", "@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=\"EAGER\"  indexed=\"false\")"
 		   });		
 		addAnnotation
 		  (getDBDriver_GuideUrl(), 
@@ -1177,13 +1177,13 @@ public class DbPackageImpl extends EPackageImpl implements DbPackage {
 		  (getQuery_Parameters(), 
 		   source, 
 		   new String[] {
-			 "appinfo", "@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=\"EAGER\")"
+			 "appinfo", "@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=\"EAGER\"  indexed=\"false\")"
 		   });		
 		addAnnotation
 		  (getSafiDriverManager_Drivers(), 
 		   source, 
 		   new String[] {
-			 "appinfo", "@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=\"EAGER\")"
+			 "appinfo", "@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=\"EAGER\"  indexed=\"false\")"
 		   });		
 		addAnnotation
 		  (getDBResource_Id(), 

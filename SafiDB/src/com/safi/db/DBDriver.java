@@ -104,7 +104,7 @@ public interface DBDriver extends DBResource {
 	 * @see com.safi.db.DbPackage#getDBDriver_Connections()
 	 * @see com.safi.db.DBConnection#getDriver
 	 * @model opposite="driver" containment="true"
-	 *        annotation="teneo.jpa appinfo='@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=\"EAGER\")'"
+	 *        annotation="teneo.jpa appinfo='@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=\"EAGER\"  indexed=\"false\")'"
 	 * @generated
 	 */
   EList<DBConnection> getConnections();
@@ -146,7 +146,7 @@ public interface DBDriver extends DBResource {
    * <!-- end-user-doc -->
 	 * @return the value of the '<em>Jars</em>' attribute list.
 	 * @see com.safi.db.DbPackage#getDBDriver_Jars()
-	 * @model annotation="teneo.jpa appinfo='@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=\"EAGER\")'"
+	 * @model annotation="teneo.jpa appinfo='@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=\"EAGER\"  indexed=\"false\")'"
 	 * @generated
 	 */
   EList<String> getJars();

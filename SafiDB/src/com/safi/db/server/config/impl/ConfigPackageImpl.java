@@ -889,13 +889,13 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		  (getSafiServer_AsteriskServers(), 
 		   source, 
 		   new String[] {
-			 "appinfo", "@OneToMany(fetch=\"EAGER\")"
+			 "appinfo", "@OneToMany(fetch=\"EAGER\" indexed=\"false\" cascade=\"ALL\")"
 		   });		
 		addAnnotation
 		  (getSafiServer_Users(), 
 		   source, 
 		   new String[] {
-			 "appinfo", "@OneToMany(fetch=\"EAGER\")"
+			 "appinfo", "@OneToMany(fetch=\"EAGER\" indexed=\"false\" cascade=\"ALL\")"
 		   });		
 		addAnnotation
 		  (getSafiServer_Running(), 
@@ -919,7 +919,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		  (getUser_Roles(), 
 		   source, 
 		   new String[] {
-			 "appinfo", "@ManyToMany(fetch=\"EAGER\")"
+			 "appinfo", "@ManyToMany(fetch=\"EAGER\" indexed=\"false\" cascade=\"ALL\")"
 		   });		
 		addAnnotation
 		  (getSaflet_Code(), 
@@ -931,7 +931,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		  (getSafletProject_Saflets(), 
 		   source, 
 		   new String[] {
-			 "appinfo", "@OneToMany(fetch=\"EAGER\" mappedBy=\"project\")"
+			 "appinfo", "@OneToMany(fetch=\"EAGER\" mappedBy=\"project\" indexed=\"false\" cascade=\"ALL\")"
 		   });		
 		addAnnotation
 		  (getSafletProject_Enabled(), 
@@ -943,7 +943,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		  (getSafletProject_Prompts(), 
 		   source, 
 		   new String[] {
-			 "appinfo", "@OneToMany(fetch=\"LAZY\" mappedBy=\"project\")"
+			 "appinfo", "@OneToMany(fetch=\"LAZY\" mappedBy=\"project\"  indexed=\"false\" cascade=\"ALL\")"
 		   });		
 		addAnnotation
 		  (getPrompt_System(), 

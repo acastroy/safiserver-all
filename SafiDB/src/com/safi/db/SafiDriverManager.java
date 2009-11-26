@@ -41,7 +41,7 @@ public interface SafiDriverManager extends DBResource {
 	 * @see com.safi.db.DbPackage#getSafiDriverManager_Drivers()
 	 * @see com.safi.db.DBDriver#getDriverManager
 	 * @model opposite="driverManager" containment="true"
-	 *        annotation="teneo.jpa appinfo='@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=\"EAGER\")'"
+	 *        annotation="teneo.jpa appinfo='@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=\"EAGER\"  indexed=\"false\")'"
 	 * @generated
 	 */
   EList<DBDriver> getDrivers();

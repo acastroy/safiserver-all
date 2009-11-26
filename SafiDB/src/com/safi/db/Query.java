@@ -101,7 +101,7 @@ public interface Query extends DBResource {
 	 * @see com.safi.db.DbPackage#getQuery_Parameters()
 	 * @see com.safi.db.QueryParameter#getQuery
 	 * @model opposite="query" containment="true"
-	 *        annotation="teneo.jpa appinfo='@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=\"EAGER\")'"
+	 *        annotation="teneo.jpa appinfo='@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=\"EAGER\"  indexed=\"false\")'"
 	 * @generated
 	 */
   EList<QueryParameter> getParameters();

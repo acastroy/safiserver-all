@@ -352,7 +352,7 @@ public interface DBConnection extends DBResource {
 	 * @see com.safi.db.DbPackage#getDBConnection_Queries()
 	 * @see com.safi.db.Query#getConnection
 	 * @model opposite="connection" containment="true"
-	 *        annotation="teneo.jpa appinfo='@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=\"EAGER\")'"
+	 *        annotation="teneo.jpa appinfo='@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=\"EAGER\"  indexed=\"false\")'"
 	 * @generated
 	 */
   EList<Query> getQueries();

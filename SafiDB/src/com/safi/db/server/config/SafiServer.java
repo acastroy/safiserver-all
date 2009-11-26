@@ -128,7 +128,7 @@ public interface SafiServer extends ServerResource {
 	 * @see com.safi.db.server.config.ConfigPackage#getSafiServer_AsteriskServers()
 	 * @see com.safi.db.server.config.AsteriskServer#getSafiServer
 	 * @model opposite="safiServer" containment="true"
-	 *        annotation="teneo.jpa appinfo='@OneToMany(fetch=\"EAGER\")'"
+	 *        annotation="teneo.jpa appinfo='@OneToMany(fetch=\"EAGER\" indexed=\"false\" cascade=\"ALL\")'"
 	 * @generated
 	 */
   EList<AsteriskServer> getAsteriskServers();
@@ -171,7 +171,7 @@ public interface SafiServer extends ServerResource {
 	 * @return the value of the '<em>Users</em>' containment reference list.
 	 * @see com.safi.db.server.config.ConfigPackage#getSafiServer_Users()
 	 * @model containment="true"
-	 *        annotation="teneo.jpa appinfo='@OneToMany(fetch=\"EAGER\")'"
+	 *        annotation="teneo.jpa appinfo='@OneToMany(fetch=\"EAGER\" indexed=\"false\" cascade=\"ALL\")'"
 	 * @generated
 	 */
   EList<User> getUsers();

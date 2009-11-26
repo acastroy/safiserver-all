@@ -31,7 +31,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="queries" upperBound="-1"
         eType="#//Query" containment="true" resolveProxies="false" eOpposite="#//Query/connection">
       <eAnnotations source="teneo.jpa">
-        <details key="appinfo" value="@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=&quot;EAGER&quot;)"/>
+        <details key="appinfo" value="@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=&quot;EAGER&quot;  indexed=&quot;false&quot;)"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -45,13 +45,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="connections" upperBound="-1"
         eType="#//DBConnection" containment="true" resolveProxies="false" eOpposite="#//DBConnection/driver">
       <eAnnotations source="teneo.jpa">
-        <details key="appinfo" value="@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=&quot;EAGER&quot;)"/>
+        <details key="appinfo" value="@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=&quot;EAGER&quot;  indexed=&quot;false&quot;)"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="exampleUrl" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="jars" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="teneo.jpa">
-        <details key="appinfo" value="@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=&quot;EAGER&quot;)"/>
+        <details key="appinfo" value="@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=&quot;EAGER&quot;  indexed=&quot;false&quot;)"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="driverManager" eType="#//SafiDriverManager"
@@ -85,7 +85,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
         eType="#//QueryParameter" containment="true" resolveProxies="false" eOpposite="#//QueryParameter/query">
       <eAnnotations source="teneo.jpa">
-        <details key="appinfo" value="@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=&quot;EAGER&quot;)"/>
+        <details key="appinfo" value="@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=&quot;EAGER&quot;  indexed=&quot;false&quot;)"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="connection" eType="#//DBConnection"
@@ -136,7 +136,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="drivers" upperBound="-1"
         eType="#//DBDriver" containment="true" resolveProxies="false" eOpposite="#//DBDriver/driverManager">
       <eAnnotations source="teneo.jpa">
-        <details key="appinfo" value="@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=&quot;EAGER&quot;)"/>
+        <details key="appinfo" value="@OneToMany(cascade={MERGE,PERSIST,REMOVE} fetch=&quot;EAGER&quot;  indexed=&quot;false&quot;)"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -265,7 +265,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="asteriskServers" upperBound="-1"
             eType="#//server/config/AsteriskServer" containment="true" eOpposite="#//server/config/AsteriskServer/safiServer">
           <eAnnotations source="teneo.jpa">
-            <details key="appinfo" value="@OneToMany(fetch=&quot;EAGER&quot;)"/>
+            <details key="appinfo" value="@OneToMany(fetch=&quot;EAGER&quot; indexed=&quot;false&quot; cascade=&quot;ALL&quot;)"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="user" eType="#//server/config/User"
@@ -273,7 +273,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="users" upperBound="-1"
             eType="#//server/config/User" containment="true">
           <eAnnotations source="teneo.jpa">
-            <details key="appinfo" value="@OneToMany(fetch=&quot;EAGER&quot;)"/>
+            <details key="appinfo" value="@OneToMany(fetch=&quot;EAGER&quot; indexed=&quot;false&quot; cascade=&quot;ALL&quot;)"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="running" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
@@ -306,7 +306,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
             eType="#//server/config/Role">
           <eAnnotations source="teneo.jpa">
-            <details key="appinfo" value="@ManyToMany(fetch=&quot;EAGER&quot;)"/>
+            <details key="appinfo" value="@ManyToMany(fetch=&quot;EAGER&quot; indexed=&quot;false&quot; cascade=&quot;ALL&quot;)"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -324,7 +324,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="saflets" upperBound="-1"
             eType="#//server/config/Saflet" containment="true" eOpposite="#//server/config/Saflet/project">
           <eAnnotations source="teneo.jpa">
-            <details key="appinfo" value="@OneToMany(fetch=&quot;EAGER&quot; mappedBy=&quot;project&quot;)"/>
+            <details key="appinfo" value="@OneToMany(fetch=&quot;EAGER&quot; mappedBy=&quot;project&quot; indexed=&quot;false&quot; cascade=&quot;ALL&quot;)"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="enabled" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -335,7 +335,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="prompts" upperBound="-1"
             eType="#//server/config/Prompt" containment="true" eOpposite="#//server/config/Prompt/project">
           <eAnnotations source="teneo.jpa">
-            <details key="appinfo" value="@OneToMany(fetch=&quot;LAZY&quot; mappedBy=&quot;project&quot;)"/>
+            <details key="appinfo" value="@OneToMany(fetch=&quot;LAZY&quot; mappedBy=&quot;project&quot;  indexed=&quot;false&quot; cascade=&quot;ALL&quot;)"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>

@@ -104,7 +104,7 @@
 	</target>
 
 	<target name="exportToSafiServerCore" depends="build">
-		<jar destfile="D:\workspace\SafiServerCore\lib\safidb_v20091108.jar">
+		<jar destfile="D:\workspace\SafiServerCore\lib\safidb_v20091125.jar">
 			<fileset dir="bin/" defaultexcludes="true">
 				<include name="**/*.class" />
 

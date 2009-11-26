@@ -41,7 +41,7 @@ public interface SafletProject extends ServerResource {
 	 * @see com.safi.db.server.config.ConfigPackage#getSafletProject_Saflets()
 	 * @see com.safi.db.server.config.Saflet#getProject
 	 * @model opposite="project" containment="true"
-	 *        annotation="teneo.jpa appinfo='@OneToMany(fetch=\"EAGER\" mappedBy=\"project\")'"
+	 *        annotation="teneo.jpa appinfo='@OneToMany(fetch=\"EAGER\" mappedBy=\"project\" indexed=\"false\" cascade=\"ALL\")'"
 	 * @generated
 	 */
   EList<Saflet> getSaflets();
@@ -86,7 +86,7 @@ public interface SafletProject extends ServerResource {
 	 * @see com.safi.db.server.config.ConfigPackage#getSafletProject_Prompts()
 	 * @see com.safi.db.server.config.Prompt#getProject
 	 * @model opposite="project" containment="true"
-	 *        annotation="teneo.jpa appinfo='@OneToMany(fetch=\"LAZY\" mappedBy=\"project\")'"
+	 *        annotation="teneo.jpa appinfo='@OneToMany(fetch=\"LAZY\" mappedBy=\"project\"  indexed=\"false\" cascade=\"ALL\")'"
 	 * @generated
 	 */
   EList<Prompt> getPrompts();
