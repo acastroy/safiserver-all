@@ -29,14 +29,30 @@ import com.safi.db.server.config.Prompt;
 
 public class SFTPConnectionManager {
 
-  private static final int CONNECT_TIMEOUT = 20000;
-  private static final int MAX_DEPTH = 10;
+  private static final String PROP_MAX_SAFI_PROMPT_DEPTH = "max.safi.prompt.depth";
+	private static final String PROP_MAX_SYSTEM_PROMPT_DEPTH = "max.system.prompt.depth";
+	private static final int CONNECT_TIMEOUT = 20000;
+  private static final int MAX_SAFIPROMPT_DEPTH = 10;
   private final static Logger log = Logger.getLogger(SFTPConnectionManager.class);
   private static final int MAX_SYSTEMPROMPT_DEPTH = 0;
+  
   private static SFTPConnectionManager instance = new SFTPConnectionManager();
 
+  private int maxSystemPromptRecurseDepth;
+  private int maxSafiPromptRecurseDepth;
   private SFTPConnectionManager() {
-
+  	try {
+	    maxSystemPromptRecurseDepth = Integer.valueOf(SafletEngine.getInstance().getProperty(PROP_MAX_SYSTEM_PROMPT_DEPTH, String.valueOf(MAX_SYSTEMPROMPT_DEPTH)));
+    } catch (NumberFormatException e) {
+	    log.error("Invalid value for "+PROP_MAX_SYSTEM_PROMPT_DEPTH,e);
+	    maxSystemPromptRecurseDepth = MAX_SYSTEMPROMPT_DEPTH;
+    }
+  	try {
+	    maxSafiPromptRecurseDepth = Integer.valueOf(SafletEngine.getInstance().getProperty(PROP_MAX_SAFI_PROMPT_DEPTH, String.valueOf(MAX_SAFIPROMPT_DEPTH)));
+    } catch (NumberFormatException e) {
+    	log.error("Invalid value for "+PROP_MAX_SAFI_PROMPT_DEPTH,e);
+    	maxSafiPromptRecurseDepth = MAX_SAFIPROMPT_DEPTH;
+    }
   }
 
   public static SFTPConnectionManager getInstance() {
@@ -153,13 +169,18 @@ public class SFTPConnectionManager {
               SftpATTRS attrs = entry.getAttrs();
               if (attrs.isDir()) {
 
-                if (currentDepth <= MAX_DEPTH) {
+                
                   if (!(".".equals(entry.getFilename()) || "..".equals(entry.getFilename()))) {
 
                     String subdir = path + '/' + entry.getFilename();
-                    if (!subdir.startsWith(safiSubdirPrefix)
-                        && currentDepth >= MAX_SYSTEMPROMPT_DEPTH) {
+                    final boolean isSafiSubdir = subdir.startsWith(safiSubdirPrefix);
+										if (!isSafiSubdir
+                        && currentDepth >= maxSystemPromptRecurseDepth) {
                       continue;
+                    }
+                    else
+                    if (isSafiSubdir && currentDepth >= maxSafiPromptRecurseDepth) {
+                    	continue;
                     }
                     // currentPath += entry.getFilename() + '/';
 
@@ -168,7 +189,6 @@ public class SFTPConnectionManager {
                       log.debug("Adding subdir " + subdir);
                     paths.add(subdir);
                   }
-                }
               } else if (!attrs.isLink()) {
                 String name = entry.getFilename();
                 int i = name.lastIndexOf('.');
@@ -502,5 +522,21 @@ public class SFTPConnectionManager {
         }
       }
     }
+  }
+
+	public int getMaxSystemPromptRecurseDepth() {
+  	return maxSystemPromptRecurseDepth;
+  }
+
+	public void setMaxSystemPromptRecurseDepth(int maxSystemPromptRecurseDepth) {
+  	this.maxSystemPromptRecurseDepth = maxSystemPromptRecurseDepth;
+  }
+
+	public int getMaxSafiPromptRecurseDepth() {
+  	return maxSafiPromptRecurseDepth;
+  }
+
+	public void setMaxSafiPromptRecurseDepth(int maxSafiPromptRecurseDepth) {
+  	this.maxSafiPromptRecurseDepth = maxSafiPromptRecurseDepth;
   }
 }
