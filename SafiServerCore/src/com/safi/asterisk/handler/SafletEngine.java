@@ -943,13 +943,11 @@ public class SafletEngine {
 //
 //    }
     
-    if (serviceUrl == null) {
       serviceUrl = "service:jmx:rmi://127.0.0.1:" + port + "/jndi/rmi://127.0.0.1:"
           + port + "/safiserver";
     	
 //    	serviceUrl = "service:jmx:rmi://10.209.190.133:" + port + "/jndi/rmi://127.0.0.1:"
 //      + port + "/safiserver";
-    }
 
     // System.setProperty("java.rmi.server.hostname", bindIP);
     // serviceUrl = "service:jmx:rmi:///jndi/rmi://127.0.0.1:" + port + "/safiserver";
