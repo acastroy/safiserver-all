@@ -101,6 +101,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/CoreActionPak1"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Saflets"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/WebServicesPakModel"/>
-	<classpathentry kind="lib" path="lib/safidb_v20091108.jar" sourcepath="/SafiDB"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/SafiDB"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

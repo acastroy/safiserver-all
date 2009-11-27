@@ -1,7 +1,6 @@
 package com.safi.asterisk.handler.trigger;
 
 import org.apache.log4j.Logger;
-
 import com.safi.asterisk.handler.SafletEngine;
 import com.safi.asterisk.handler.dispatch.SafletDispatch;
 import com.safi.db.manager.DBManager;
@@ -36,7 +35,7 @@ public class SafletChangedTrigger extends AbstractTrigger {
           row = newRow;
         try {
           // TODO Auto-generated method stub
-          Integer pid = (Integer) row[row.length - 2];
+          Integer pid = (Integer) row[row.length - 1];
           switch (triggerType) {
             case DELETE_AFTER:
             case DELETE_AFTER_ROW:
