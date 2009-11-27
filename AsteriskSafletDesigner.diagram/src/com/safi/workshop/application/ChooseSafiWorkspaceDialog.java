@@ -131,17 +131,18 @@ public class ChooseSafiWorkspaceDialog extends TitleAreaDialog {
     });
     tableViewer.addDoubleClickListener(new IDoubleClickListener() {
       public void doubleClick(final DoubleClickEvent event) {
-        if (!tableViewer.getSelection().isEmpty()) {
-          Object o = ((StructuredSelection) tableViewer.getSelection()).getFirstElement();
-          if (o instanceof ChooseSafiServerWorkspaceData.SafiWorkspaceProfile) {
-            EditWorkspaceProfileDialog dialog = new EditWorkspaceProfileDialog(getShell(),
-                (ChooseSafiServerWorkspaceData.SafiWorkspaceProfile) o, data.getRecentWorkspaces());
-            if (Window.OK == dialog.open()) {
-              tableViewer.setSelection(new StructuredSelection(dialog.getProfile()));
-              tableViewer.refresh();
-            }
-          }
-        }
+//        if (!tableViewer.getSelection().isEmpty()) {
+//          Object o = ((StructuredSelection) tableViewer.getSelection()).getFirstElement();
+//          if (o instanceof ChooseSafiServerWorkspaceData.SafiWorkspaceProfile) {
+//            EditWorkspaceProfileDialog dialog = new EditWorkspaceProfileDialog(getShell(),
+//                (ChooseSafiServerWorkspaceData.SafiWorkspaceProfile) o, data.getRecentWorkspaces());
+//            if (Window.OK == dialog.open()) {
+//              tableViewer.setSelection(new StructuredSelection(dialog.getProfile()));
+//              tableViewer.refresh();
+//            }
+//          }
+//        }
+      	okPressed();
       }
     });
     tableViewer.setLabelProvider(new TableLabelProvider());
@@ -234,7 +235,7 @@ public class ChooseSafiWorkspaceDialog extends TitleAreaDialog {
         "icons/titlearea/WorkspaceChooser.gif"));
     setTitle("SafiServer Workspace Chooser");
     setMessage("Select, add, edit, or delete SafiServer Workspace");
-
+    tableViewer.getTable().setToolTipText("Double-click a workspace to open it");
     return area;
   }
 
@@ -336,7 +337,7 @@ public class ChooseSafiWorkspaceDialog extends TitleAreaDialog {
    */
   @Override
   protected Point getInitialSize() {
-    return new Point(500, 375);
+    return new Point(547, 375);
   }
 
   @Override

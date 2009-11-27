@@ -40,7 +40,7 @@ public class EmbeddedInitiatorDialog extends Dialog {
   // private Button localDebugServerButton;
   private Composite composite;
   private CCombo safletNameText;
-  private Text safiServerManagementPort;
+//  private Text safiServerManagementPort;
   private CCombo asteriskServerIPText;
   private Text safiServerIPText;
   private CustomInitiatorClient client;
@@ -127,14 +127,14 @@ public class EmbeddedInitiatorDialog extends Dialog {
     if (client.getAstIp() != null)
       asteriskServerIPText.setText(client.getAstIp());
 
-    final Label safiserverManagementPortLabel = new Label(container, SWT.NONE);
-    safiserverManagementPortLabel.setText("SafiServer Management Port:");
+//    final Label safiserverManagementPortLabel = new Label(container, SWT.NONE);
+//    safiserverManagementPortLabel.setText("SafiServer Management Port:");
 
-    safiServerManagementPort = new Text(container, SWT.BORDER);
-    final GridData gd_safiServerManagementPort = new GridData(SWT.FILL, SWT.CENTER, true, false);
-    safiServerManagementPort.setLayoutData(gd_safiServerManagementPort);
-    safiServerManagementPort.setText(String.valueOf(client.getPort()));
-    safiServerManagementPort.setData(client.getPort());
+//    safiServerManagementPort = new Text(container, SWT.BORDER);
+//    final GridData gd_safiServerManagementPort = new GridData(SWT.FILL, SWT.CENTER, true, false);
+//    safiServerManagementPort.setLayoutData(gd_safiServerManagementPort);
+//    safiServerManagementPort.setText(String.valueOf(client.getPort()));
+//    safiServerManagementPort.setData(client.getPort());
 
     final Label safletNameLabel = new Label(container, SWT.NONE);
     safletNameLabel.setText("Saflet Name");
@@ -179,20 +179,21 @@ public class EmbeddedInitiatorDialog extends Dialog {
         safletNameText.setItems(new String[0]);
       } else {
         SafiServer server = SafiServerPlugin.getDefault().getSafiServer(true);
-        safiServerIPText.setText(server.getBindIP());
+        safiServerIPText.setText(SafiServerPlugin.getDefault().getProductionServerDisplayHostname());
+//        safiServerIPText.setText(server.getBindIP());
         boolean b = !SafiServerPlugin.getDefault().isLocalSafiServer();
         if (b)
           safiServerIPText.setData("127.0.0.1");
         else
-          safiServerIPText.setData(server.getBindIP());
+          safiServerIPText.setData(safiServerIPText.getText());
 
-        safiServerManagementPort.setText(String.valueOf(server.getManagementPort()));
+//        safiServerManagementPort.setText(String.valueOf(server.getManagementPort()));
         // if (b) {
         // int sshMgmtPort = SafiServerPlugin.getDefault().getPreferenceStore().getInt(
         // PreferenceConstants.PREF_SSH_FORWARDING_MANAGEMENT_PORT_LOCAL);
         // safiServerManagementPort.setData(sshMgmtPort);
         // } else
-        safiServerManagementPort.setData(server.getManagementPort());
+//        safiServerManagementPort.setData(server.getManagementPort());
 
         asteriskServerIPText.setItems(getProductionAsteriskServers());
         safletNameText.setItems(getProdSafletCompletions());
@@ -293,7 +294,7 @@ public class EmbeddedInitiatorDialog extends Dialog {
       client.setAstIp(asteriskServerIPText.getText());
       client.setHost((String) safiServerIPText.getData());
       try {
-        client.setPort((Integer) safiServerManagementPort.getData());
+        client.setPort(SafiServerPlugin.getDefault().getActualManagementPort());
       } catch (NumberFormatException e) {
         // TODO Auto-generated catch block
         e.printStackTrace();

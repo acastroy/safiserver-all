@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.TitleAreaDialog;
 import org.eclipse.jface.viewers.CheckStateChangedEvent;
@@ -258,7 +259,15 @@ public class SelectSafletPanel extends Composite {
     if (selectedSaflets != null && !selectedSaflets.isEmpty()) {
 
       for (SafletProject p : projects) {
+      	if (p == null || StringUtils.isBlank(p.getName())){
+      		System.err.println("Got a damn bogus project");
+      		continue;
+      	}
         for (Saflet s : p.getSaflets()) {
+        	if (s == null || StringUtils.isBlank(s.getName())){
+        		System.err.println("Got a damn bogus saflet from project "+p.getName());
+        		continue;
+        	}
           String sname = p.getName() + '/' + s.getName();
           if (selectedSaflets.contains(sname)) {
             checkboxTreeViewer.setChecked(s, true);
