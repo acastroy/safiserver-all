@@ -142,6 +142,9 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
     filterLabel.setText("Filter by Name");
     filterText = new Text(composite, SWT.BORDER);
     filterListener = new Listener() {
+    	long lastUpdate = 0;
+    	StringBuilder sb = new StringBuilder();
+    	
       final Display display = getShell().getDisplay();
       ScheduledFuture<Boolean> future = null;
       Callable<Boolean> runna = new Callable<Boolean>() {
@@ -155,11 +158,15 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
           }
           return true;
         }
+        
+        
       };
 
       @Override
       public void handleEvent(Event event) {
         if (event.type == SWT.Modify) {
+        	long now = event.time & 0xFFFFFFFFL;
+        	
           if (future != null) {
             if (!future.cancel(true)) {
               display.syncExec(new Runnable() {
@@ -1299,7 +1306,7 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
         // }
 
         lastText = ft;
-        treeViewer.refresh();
+        treeViewer.refresh(false);
         // Item[] items = treeViewer.getChildren(tree, null);
 
         PromptNode[] leaves = getLeaves();
