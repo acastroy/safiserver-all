@@ -48,7 +48,7 @@ public class Utils {
     } finally {
       try {
         server.close();
-      } catch (IOException e) {
+      } catch (Exception e) {
       }
     }
 
