@@ -485,68 +485,72 @@ public class ViewArchiveContentsPage extends WizardPage {
     return null;
   }
 
-  public List<SafletProject> getSafletProjects() throws Exception {
-    String filePath = getFilePath();
-    FileInputStream is = null;
-    List<SafletProject> projects = new ArrayList<SafletProject>();
-    File file = new File(filePath + "/projects");
-    String[] names = file.list(new FilenameFilter() {
-      @Override
-      public boolean accept(java.io.File dir, String name) {
-        if (name.endsWith(".spj"))
-          return true;
-        return false;
-      }
-    });
-    XMIResourceImpl xmiResource = new XMIResourceImpl(URI.createURI(file.toURI().toString()));
-    xmiResource.getDefaultLoadOptions()
-        .put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
+	public List<SafletProject> getSafletProjects() throws Exception {
+		String filePath = getFilePath();
+		FileInputStream is = null;
+		List<SafletProject> projects = new ArrayList<SafletProject>();
+		File file = new File(filePath + "/projects");
+		String[] names = file.list(new FilenameFilter() {
+			@Override
+			public boolean accept(java.io.File dir, String name) {
+				if (name.endsWith(".spj"))
+					return true;
+				return false;
+			}
+		});
+		XMIResourceImpl xmiResource = new XMIResourceImpl(URI.createURI(file
+				.toURI().toString()));
+		xmiResource.getDefaultLoadOptions().put(
+				XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
+		if (names != null) {
+			for (String f : names) {
+				if (xmiResource.isLoaded())
+					xmiResource.unload();
+				is = new FileInputStream(filePath + "/projects/" + f);
+				xmiResource.load(is, null);
+				for (EObject obj : xmiResource.getContents()) {
+					if (obj instanceof SafletProject) {
+						projects.add((SafletProject) obj);
+						break;
+					}
+				}
+			}
+		}
+		return projects;
+	}
 
-    for (String f : names) {
-      if (xmiResource.isLoaded())
-        xmiResource.unload();
-      is = new FileInputStream(filePath + "/projects/" + f);
-      xmiResource.load(is, null);
-      for (EObject obj : xmiResource.getContents()) {
-        if (obj instanceof SafletProject) {
-          projects.add((SafletProject) obj);
-          break;
-        }
-      }
-    }
-    return projects;
-  }
-
-  public List<Variable> getGlobalVariables() throws Exception {
-    String filePath = getFilePath();
-    FileInputStream is = null;
-    List<Variable> variables = new ArrayList<Variable>();
-    File file = new File(filePath + "/globals");
-    String[] names = file.list(new FilenameFilter() {
-      @Override
-      public boolean accept(java.io.File dir, String name) {
-        if (name.endsWith(".gbl"))
-          return true;
-        return false;
-      }
-    });
-    XMIResourceImpl xmiResource = new XMIResourceImpl(URI.createURI(file.toURI().toString()));
-    xmiResource.getDefaultLoadOptions()
-        .put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
-    // xmiResource.setURI(uri)
-
-    for (String f : names) {
-      if (xmiResource.isLoaded())
-        xmiResource.unload();
-      is = new FileInputStream(filePath + "/globals/" + f);
-      xmiResource.load(is, null);
-      for (EObject obj : xmiResource.getContents()) {
-        if (obj instanceof Variable) {
-          variables.add((Variable) obj);
-          break;
-        }
-      }
-    }
-    return variables;
-  }
+	public List<Variable> getGlobalVariables() throws Exception {
+		String filePath = getFilePath();
+		FileInputStream is = null;
+		List<Variable> variables = new ArrayList<Variable>();
+		File file = new File(filePath + "/globals");
+		String[] names = file.list(new FilenameFilter() {
+			@Override
+			public boolean accept(java.io.File dir, String name) {
+				if (name.endsWith(".gbl"))
+					return true;
+				return false;
+			}
+		});
+		XMIResourceImpl xmiResource = new XMIResourceImpl(URI.createURI(file
+				.toURI().toString()));
+		xmiResource.getDefaultLoadOptions().put(
+				XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
+		// xmiResource.setURI(uri)
+		if (names != null) {
+			for (String f : names) {
+				if (xmiResource.isLoaded())
+					xmiResource.unload();
+				is = new FileInputStream(filePath + "/globals/" + f);
+				xmiResource.load(is, null);
+				for (EObject obj : xmiResource.getContents()) {
+					if (obj instanceof Variable) {
+						variables.add((Variable) obj);
+						break;
+					}
+				}
+			}
+		}
+		return variables;
+	}
 }
