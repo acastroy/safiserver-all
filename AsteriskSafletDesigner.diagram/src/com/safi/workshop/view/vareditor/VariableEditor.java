@@ -3,7 +3,6 @@ package com.safi.workshop.view.vareditor;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import org.apache.commons.lang.ObjectUtils;
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.emf.common.command.Command;
@@ -46,7 +45,6 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
-
 import com.safi.asterisk.handler.GlobalVariableManager;
 import com.safi.core.actionstep.util.VariableTranslator;
 import com.safi.core.saflet.SafletContext;
@@ -60,7 +58,7 @@ import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 
-public class VariableEditor extends TitleAreaDialog {
+public class VariableEditor extends TitleAreaDialog { 
 
   public enum Mode {
     EDIT, NEW_LOCAL, NEW_GLOBAL
