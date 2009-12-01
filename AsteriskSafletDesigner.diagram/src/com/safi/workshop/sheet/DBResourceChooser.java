@@ -451,6 +451,7 @@ public class DBResourceChooser extends TitleAreaDialog {
 
           return selectedId;
         }
+        
         break;
       case QUERY:
         if (selected instanceof Query) {
