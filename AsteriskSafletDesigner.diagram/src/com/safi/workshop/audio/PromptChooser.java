@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -113,6 +114,10 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
 	private boolean needsSynch;
 	private Listener filterListener;
 	private boolean pathFilterActive;
+	private PromptNode exactMatchNode;
+	private ScheduledFuture<Boolean> future = null;
+	private Set<PromptNode> expandSet = Collections.synchronizedSet(new HashSet<PromptNode>());
+	protected boolean filterListenerDisabled;
 
 	public PromptChooser(Composite parent, Mode mode) {
 		this(parent, SWT.NONE, mode);
@@ -139,12 +144,14 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
 		final Label filterLabel = new Label(composite, SWT.SHADOW_NONE | SWT.RIGHT);
 		filterLabel.setText("Filter by Name");
 		filterText = new Text(composite, SWT.BORDER);
+
 		filterListener = new Listener() {
+			
 			long lastUpdate = 0;
 			StringBuilder sb = new StringBuilder();
 
 			final Display display = getShell().getDisplay();
-			ScheduledFuture<Boolean> future = null;
+
 			Callable<Boolean> runna = new Callable<Boolean>() {
 				@Override
 				public Boolean call() {
@@ -161,24 +168,37 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
 
 			@Override
 			public void handleEvent(Event event) {
+				if (filterListenerDisabled)
+					return;
 				if (event.type == SWT.Modify) {
 					long now = event.time & 0xFFFFFFFFL;
 
 					if (future != null) {
-						if (!future.cancel(true)) {
-							display.syncExec(new Runnable() {
-								@Override
-								public void run() {
-									try {
-										future.get();
-									} catch (Exception e) {
-										// TODO Auto-generated catch block
-										e.printStackTrace();
-									}
+//						synchronized (future) {
+							System.err.println("future is blight! and isdun "+future.isDone());
+							if (!future.isDone() && !future.cancel(true)) {
+								System.err.println("Future coodnt bin cancelled....mutter futkake");
+								try {
+									future.get();
+								} catch (Exception e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
 								}
-							});
-						}
-					}
+								// display.syncExec(new Runnable() {
+								// @Override
+								// public void run() {
+								// try {
+								// future.get();
+								// } catch (Exception e) {
+								// // TODO Auto-generated catch block
+								// e.printStackTrace();
+								// }
+								// }
+								// });
+							}
+//						}
+					} else
+						System.err.println("branew fewtcha");
 
 					future = executor.schedule(runna, 500, TimeUnit.MILLISECONDS);
 				}
@@ -601,6 +621,7 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
 		// categories.toArray(new String[categories.size()]));
 		constructModel(false);
 		treeViewer.setUseHashlookup(true);
+		
 		try {
 			if (mode == Mode.MULTIPLE) {
 				refreshModel();
@@ -613,6 +634,12 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
 			    "Couldn't retrieve all prompts: " + e1.getLocalizedMessage());
 		}
 		treeViewer.setInput(model);
+//		ViewerFilter[] filters = treeViewer.getFilters();
+//		ViewerFilter[] newf = new ViewerFilter[filters.length + 1];
+//		System.arraycopy(filters, 0, newf, 0, filters.length);
+//		newf[filters.length] = nameFilter;
+//		treeViewer.setFilters(newf);
+//		pathFilterActive = true;
 		// tree.setItemCount(2);
 	}
 
@@ -732,32 +759,39 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
 		}
 	}
 
-	PromptNode initialNode;
+	
 
 	public void selectPromptByName(String name, boolean filter) {
+		filterListenerDisabled = true;
+		lastText = null;
+		filterText.setText(name);
+		filterListenerDisabled = false;
+		
 		String[] path = name.split("/");
-		if (path[0].startsWith("safi/")) {
+		if (path[0].startsWith("safi")) {
 			if (path.length == 1)
 				return;
 			String[] newpath = new String[path.length - 1];
-			System.arraycopy(path, 0, newpath, 1, newpath.length);
+			System.arraycopy(path, 1, newpath, 0, newpath.length);
 			path = newpath;
 		}
+		
 		PromptNode node = findNode(path, 0, model);
 		if (node != null) {
+			treeViewer.expandToLevel(node, 0);
 			treeViewer.setSelection(new StructuredSelection(node), true);
-			// treeViewer.expandToLevel(node, 0);
+			
 
 		}
-		initialNode = node;
+		exactMatchNode = node;
 		if (!filter) {
 			setNameFilterActive(false);
 			// filterText.removeListener(SWT.Modify, filterListener);
 		}
-		filterText.setText(name);
+		
 		// if (node != null && getShell().isVisible())
 		// expandElement(node);
-		treeViewer.refresh();
+//		treeViewer.refresh();
 		// if (!filter)
 		// filterText.addListener(SWT.Modify, filterListener);
 		// if (!filter)
@@ -1281,108 +1315,135 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
 	}
 
 	private void updateFilter() {
+		try {
+	    
+   
 		if (isDisposed())
 			return;
 
 		Display d = treeViewer.getControl().getDisplay();
-		d.syncExec(new Runnable() {
+		final Runnable runna = new Runnable() {
 			@Override
 			public void run() {
-				String ft = filterText.getText();
-				if (StringUtils.equals(lastText, ft)) {
-					return;
-				}
-				lastText = ft;
-				treeViewer.setSelection(StructuredSelection.EMPTY);
-				System.err.println("just cleared selection and running filter again...");
-				if (!pathFilterActive) {
-					ViewerFilter[] filters = treeViewer.getFilters();
-					ViewerFilter[] newf = new ViewerFilter[filters.length + 1];
-					System.arraycopy(filters, 0, newf, 0, filters.length);
-					newf[filters.length] = nameFilter;
-					treeViewer.setFilters(newf);
-					pathFilterActive = true;
-				}
-				else
-					treeViewer.refresh(false);
-				
-				// boolean found = false;
-				// ViewerFilter[] filters = treeViewer.getFilters();
-				// if (filters != null){
-				// for (ViewerFilter filter : filters){
-				// if (filter == nameFilter){
-				// found = true;
-				// break;
-				// }
-				// }
-				// }
-				// if (!found){
-				// ViewerFilter[] newf = new ViewerFilter[filters.length+1];
-				// System.arraycopy(filters, 0, newf, 0, filters.length);
-				// newf[filters.length] = nameFilter;
-				// treeViewer.setFilters(newf);
-				// }
+				try {
 
-				
-				// if (initialNode != null)
-				// Item[] items = treeViewer.getChildren(tree, null);
+					String ft = filterText.getText();
+					if (StringUtils.equals(lastText, ft)) {
+						return;
+					}
+					lastText = ft;
+					expandSet.clear();
+					exactMatchNode = null;
+					treeViewer.setSelection(StructuredSelection.EMPTY);
+					System.err.println("just cleared selection and running filter again...");
+					if (!pathFilterActive) {
+						ViewerFilter[] filters = treeViewer.getFilters();
+						ViewerFilter[] newf = new ViewerFilter[filters.length + 1];
+						System.arraycopy(filters, 0, newf, 0, filters.length);
+						newf[filters.length] = nameFilter;
+						treeViewer.setFilters(newf);
+						pathFilterActive = true;
+					} 
+						treeViewer.refresh(false);
 
-				PromptNode[] leaves = getLeaves();
-				if (initialNode != null) {
-					expandElement(initialNode, true);
-					// treeViewer.setSelection(new StructuredSelection(initialNode),
-					// true);
-
-					// Runnable runna = new Runnable() {
-					// @Override
-					// public void run() {
-					// try {
-					// Thread.sleep(500);
-					// } catch (InterruptedException e) {
-					// // TODO Auto-generated catch block
-					// e.printStackTrace();
+					// boolean found = false;
+					// ViewerFilter[] filters = treeViewer.getFilters();
+					// if (filters != null){
+					// for (ViewerFilter filter : filters){
+					// if (filter == nameFilter){
+					// found = true;
+					// break;
 					// }
-					// Display.getDefault().asyncExec(new Runnable() {
-					// public void run() {
-					// expandElement(initialNode);
-					// treeViewer.setSelection(new StructuredSelection(initialNode),
-					// true);
-					// treeViewer.refresh(initialNode);
-					// // treeViewer.expandToLevel(initialNode, 0);
-					// initialNode = null;
-					// };
-					// });
-					// //
 					// }
-					// };
-					// new Thread(runna).start();
-				} else if (leaves.length == 1) {
-					treeViewer.setSelection(new StructuredSelection(leaves[0]), true);
-					treeViewer.expandToLevel(leaves[0], 0);
-				} else if (!treeViewer.getSelection().isEmpty()) {
-					final IStructuredSelection selection = (IStructuredSelection) treeViewer
-					    .getSelection();
-
-					final Object elem = selection.getFirstElement();
-					treeViewer.setSelection(new StructuredSelection(elem), true);
-					// if (selection.toArray().length > 1){
-					// treeViewer.setSelection(new StructuredSelection(elem), true);
 					// }
-					// else
-					// treeViewer.reveal(elem);
-					treeViewer.setExpandedState(elem, true);
-					// treeViewer.expandToLevel(((IStructuredSelection)treeViewer.getSelection()).getFirstElement(),
-					// TreeViewer.ALL_LEVELS);
-				} else {
-					System.err.println("no selection boiz");
-				}
-				// treeViewer.setSelection(StructuredSelection.EMPTY);
+					// if (!found){
+					// ViewerFilter[] newf = new ViewerFilter[filters.length+1];
+					// System.arraycopy(filters, 0, newf, 0, filters.length);
+					// newf[filters.length] = nameFilter;
+					// treeViewer.setFilters(newf);
+					// }
 
-				if (!nameFilter.isActive()) {
-					nameFilter.setActive(true);
+					// if (initialNode != null)
+					// Item[] items = treeViewer.getChildren(tree, null);
+
+					PromptNode[] leaves = getLeaves();
+					if (exactMatchNode != null) {
+						System.err.println("got exact match so i'm sweeting "+exactMatchNode);
+						treeViewer.expandToLevel(exactMatchNode, 0);
+						treeViewer.setSelection(new StructuredSelection(exactMatchNode), true);
+						
+//						expandElement(exactMatchNode, true);
+						// treeViewer.setSelection(new StructuredSelection(initialNode),
+						// true);
+
+						// Runnable runna = new Runnable() {
+						// @Override
+						// public void run() {
+						// try {
+						// Thread.sleep(500);
+						// } catch (InterruptedException e) {
+						// // TODO Auto-generated catch block
+						// e.printStackTrace();
+						// }
+						// Display.getDefault().asyncExec(new Runnable() {
+						// public void run() {
+						// expandElement(initialNode);
+						// treeViewer.setSelection(new StructuredSelection(initialNode),
+						// true);
+						// treeViewer.refresh(initialNode);
+						// // treeViewer.expandToLevel(initialNode, 0);
+						// initialNode = null;
+						// };
+						// });
+						// //
+						// }
+						// };
+						// new Thread(runna).start();
+					} else if (leaves.length == 1) {
+						treeViewer.expandToLevel(leaves[0], 0);
+						System.err.println("got single leef so i'm selecting "+leaves[0]);
+						treeViewer.setSelection(new StructuredSelection(leaves[0]), true);
+						
+					}  
+					
+					if (!expandSet.isEmpty()) {
+						System.err.println("got elements to expand! "+expandSet.size()+" elems!");
+						treeViewer.setExpandedElements(expandSet.toArray());
+					}
+					
+					/*else if (!treeViewer.getSelection().isEmpty()) {
+						final IStructuredSelection selection = (IStructuredSelection) treeViewer
+						    .getSelection();
+
+						final Object elem = selection.getFirstElement();
+						treeViewer.setSelection(new StructuredSelection(elem), true);
+						// if (selection.toArray().length > 1){
+						// treeViewer.setSelection(new StructuredSelection(elem), true);
+						// }
+						// else
+						// treeViewer.reveal(elem);
+						treeViewer.setExpandedState(elem, true);
+						// treeViewer.expandToLevel(((IStructuredSelection)treeViewer.getSelection()).getFirstElement(),
+						// TreeViewer.ALL_LEVELS);
+					} */
+					// treeViewer.setSelection(StructuredSelection.EMPTY);
+
+					if (!nameFilter.isActive()) {
+						nameFilter.setActive(true);
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
 				}
 			}
-		});
+		};
+		if (Thread.currentThread() != d.getThread())
+			d.syncExec(runna);
+		else
+			runna.run();
+		
+		 } catch (Exception e) {
+		    e.printStackTrace();
+	    }
 	}
 
 	private PromptNode[] getLeaves() {
@@ -1441,10 +1502,12 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
 	class PathFilter extends ViewerFilter {
 
 		boolean active = true;
+		private boolean firstFilter = true;
 
 		@Override
 		public boolean select(Viewer viewer, Object parentElement, Object element) {
-
+			if (!active)
+				return true;
 			PromptNode node = (PromptNode) element;
 			boolean expand = false;
 			boolean select = false;
@@ -1511,17 +1574,38 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
 				} else if ((pathnode = getPath(node)).matches(text)) {
 					expand = true;
 					return true;
-				} else if (initialNode != null && initialNode == element) {
+				} else if (exactMatchNode != null && exactMatchNode == element) {
 					expand = true;
 					return true;
 				}
 				return !active;
 
 			} finally {
-
-				if (expand) {
-					expandElement(element, select);
+				if (select){
+					exactMatchNode = node;
+					System.err.println("exactnode be "+node);
 				}
+				else
+				if (expand)
+					expandSet.add(node);
+				
+				if (firstFilter && select){
+					firstFilter = false;
+					expandElement(node, select);
+				}
+//				if (select){
+//					synchronized(this){
+//						active = false;
+//						try {
+//							treeViewer.setSelection(new StructuredSelection(element));
+//            } finally {
+//            	active = true;
+//            }
+//					}
+//				}
+//				if (expand) {
+//					expandElement(element, select);
+//				}
 			}
 
 		}
@@ -1542,9 +1626,11 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
 	}
 
 	public void expandElement(final Object element, final boolean select) {
+		System.err.println("expanding into my assole "+select+" and promtp "+element);
 		if (!treeViewer.isBusy()) {
 			if (select) {
-				treeViewer.setSelection(new StructuredSelection(element));
+				System.err.println("shitdog i'm selecting "+element);
+				treeViewer.setSelection(new StructuredSelection(element), true);
 				treeViewer.reveal(element);
 			}
 			treeViewer.setExpandedState(element, true);
@@ -1567,12 +1653,16 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
 					}
 					if (!treeViewer.isBusy()) {
 						if (select) {
-							treeViewer.setSelection(new StructuredSelection(element));
+							System.err.println("shitdog wuz bizzy but i'm selecting "+element);
+							treeViewer.setSelection(new StructuredSelection(element), true);
 							treeViewer.reveal(element);
 						}
 						treeViewer.setExpandedState(element, true);
 						// treeViewer.expandToLevel(felement, TreeViewer.ALL_LEVELS);
 						// treeViewer.reveal(felement);
+					}
+					else {
+						System.err.println("shit bitch is so bizzy!");
 					}
 
 				}
