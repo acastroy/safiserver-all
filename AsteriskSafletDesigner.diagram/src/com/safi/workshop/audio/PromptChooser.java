@@ -175,9 +175,7 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
 
 					if (future != null) {
 //						synchronized (future) {
-							System.err.println("future is blight! and isdun "+future.isDone());
 							if (!future.isDone() && !future.cancel(true)) {
-								System.err.println("Future coodnt bin cancelled....mutter futkake");
 								try {
 									future.get();
 								} catch (Exception e) {
@@ -197,8 +195,7 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
 								// });
 							}
 //						}
-					} else
-						System.err.println("branew fewtcha");
+					} 
 
 					future = executor.schedule(runna, 500, TimeUnit.MILLISECONDS);
 				}
@@ -1335,7 +1332,6 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
 					expandSet.clear();
 					exactMatchNode = null;
 					treeViewer.setSelection(StructuredSelection.EMPTY);
-					System.err.println("just cleared selection and running filter again...");
 					if (!pathFilterActive) {
 						ViewerFilter[] filters = treeViewer.getFilters();
 						ViewerFilter[] newf = new ViewerFilter[filters.length + 1];
@@ -1368,7 +1364,6 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
 
 					PromptNode[] leaves = getLeaves();
 					if (exactMatchNode != null) {
-						System.err.println("got exact match so i'm sweeting "+exactMatchNode);
 						treeViewer.expandToLevel(exactMatchNode, 0);
 						treeViewer.setSelection(new StructuredSelection(exactMatchNode), true);
 						
@@ -1401,13 +1396,11 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
 						// new Thread(runna).start();
 					} else if (leaves.length == 1) {
 						treeViewer.expandToLevel(leaves[0], 0);
-						System.err.println("got single leef so i'm selecting "+leaves[0]);
 						treeViewer.setSelection(new StructuredSelection(leaves[0]), true);
 						
 					}  
 					
 					if (!expandSet.isEmpty()) {
-						System.err.println("got elements to expand! "+expandSet.size()+" elems!");
 						treeViewer.setExpandedElements(expandSet.toArray());
 					}
 					
@@ -1554,7 +1547,6 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
 
 				if (StringUtils.equalsIgnoreCase(StringUtils.trim(nodeName), StringUtils
 				    .trim(text))) {
-					System.err.println("ok nodeName " + nodeName + " and text " + text);
 					expand = true;
 					select = true;
 					return true;
@@ -1583,7 +1575,6 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
 			} finally {
 				if (select){
 					exactMatchNode = node;
-					System.err.println("exactnode be "+node);
 				}
 				else
 				if (expand)
@@ -1626,10 +1617,8 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
 	}
 
 	public void expandElement(final Object element, final boolean select) {
-		System.err.println("expanding into my assole "+select+" and promtp "+element);
 		if (!treeViewer.isBusy()) {
 			if (select) {
-				System.err.println("shitdog i'm selecting "+element);
 				treeViewer.setSelection(new StructuredSelection(element), true);
 				treeViewer.reveal(element);
 			}
@@ -1653,7 +1642,6 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
 					}
 					if (!treeViewer.isBusy()) {
 						if (select) {
-							System.err.println("shitdog wuz bizzy but i'm selecting "+element);
 							treeViewer.setSelection(new StructuredSelection(element), true);
 							treeViewer.reveal(element);
 						}
@@ -1661,9 +1649,7 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
 						// treeViewer.expandToLevel(felement, TreeViewer.ALL_LEVELS);
 						// treeViewer.reveal(felement);
 					}
-					else {
-						System.err.println("shit bitch is so bizzy!");
-					}
+					
 
 				}
 
