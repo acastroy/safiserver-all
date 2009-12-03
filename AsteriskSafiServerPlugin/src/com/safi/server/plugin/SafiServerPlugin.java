@@ -1090,12 +1090,13 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 
 		if (isUseTunnel()) {
 			if (currentSSHMgmtNum <= 0) {
-//				currentSSHMgmtNum = Utils.findFreePort();
-				 currentSSHMgmtNum = sshMgmtPort;
+				currentSSHMgmtNum = Utils.findFreePort();
+//				 currentSSHMgmtNum = sshMgmtPort;
 			}
 
 			if (!isLocalPortForwarded(currentSSHMgmtNum)) {
 //				currentSSHMgmtNum = updateForwardedPortIfNecessary(currentSSHMgmtNum);
+//				System.err.println("fwding "+currentSSHMgmtNum+" to remote "+sshMgmtPort);
 				addTunnel(currentSSHMgmtNum, sshMgmtPort, "127.0.0.1");
 			}
 		}
