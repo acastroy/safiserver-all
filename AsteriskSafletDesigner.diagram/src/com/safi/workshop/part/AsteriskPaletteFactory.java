@@ -9,6 +9,7 @@ import org.eclipse.gef.palette.PaletteContainer;
 import org.eclipse.gef.palette.PaletteDrawer;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gef.palette.ToolEntry;
+import org.eclipse.gmf.runtime.diagram.ui.internal.services.palette.PaletteToolEntry;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
 
 import com.safi.workshop.providers.AsteriskElementTypes;
@@ -1343,7 +1344,7 @@ public class AsteriskPaletteFactory {
   /**
    * @generated NOT
    */
-  public static class NodeToolEntry extends ToolEntry {
+  public static class NodeToolEntry extends PaletteToolEntry  {
 
     /**
      * @generated
@@ -1354,7 +1355,8 @@ public class AsteriskPaletteFactory {
      * @generated NOT
      */
     private NodeToolEntry(String title, String description, List elementTypes) {
-      super(title, description, null, null);
+    	super(null, title, null);
+    	this.setDescription(description);
       this.elementTypes = elementTypes;
     }
 
