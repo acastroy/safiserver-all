@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: SafiServerPlugin Plug-in
 Bundle-SymbolicName: com.safi.server.asterisk;singleton:=true
-Bundle-Version: 1.2.1
+Bundle-Version: 1.2.3
 Bundle-Activator: com.safi.server.plugin.SafiServerPlugin
 Bundle-Vendor: Safi Systems LLC
 Require-Bundle: Saflets.edit;bundle-version="1.0.0",
@@ -34,9 +34,13 @@ Bundle-ClassPath: lib/safiServer.jar,
  resources/,
  lib/org.eclipse.nebula.jface.gridviewer_1.0.0.jar,
  lib/org.eclipse.nebula.widgets.grid_1.0.0.jar,
- lib/jsch-0.1.41.jar,
- lib/wrapper.jar
-Export-Package: com.safi.asterisk.handler,
+ lib/wrapper.jar,
+ lib/jsch-0.1.42.jar
+Export-Package: com.jcraft.jsch,
+ com.jcraft.jsch.jce,
+ com.jcraft.jsch.jcraft,
+ com.jcraft.jsch.jgss,
+ com.safi.asterisk.handler,
  com.safi.asterisk.handler.importing,
  com.safi.asterisk.handler.mbean,
  com.safi.asterisk.handler.util,

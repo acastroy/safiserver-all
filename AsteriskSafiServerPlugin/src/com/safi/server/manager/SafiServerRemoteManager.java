@@ -222,7 +222,22 @@ public class SafiServerRemoteManager implements NotificationListener {
   }
 
   public boolean isConnected() {
-    return listenerRegistered;
+    return this.isConnected(false);
+  }
+  
+  public boolean isConnected(boolean ping) {
+  	if (!listenerRegistered)
+  		return false;
+  	
+  	if (!ping)
+    return true;
+  	try {
+  		serverMonitor.getTracelogLevel();
+    } catch (Exception e) {
+	    return false;
+    }
+    return true;
+  	
   }
 
   public void connect() throws SafiServerManagementException {

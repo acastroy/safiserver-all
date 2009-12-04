@@ -6,6 +6,7 @@ import java.io.OutputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.net.InetSocketAddress;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -901,12 +902,19 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 		// sshMgmtPortRemote);
 		// currentSSHMgmtNum = sshMgmtPort;
 
+		List<String> fwdEntries = new ArrayList<String>(Arrays.asList(sshTunnelSession.getPortForwardingL()));
 		for (Map.Entry<Integer, Integer> entry : tunnels.entrySet()) {
-			try {
-				sshTunnelSession.delPortForwardingL(entry.getValue());
-			} catch (Exception e) {
-			}
-			sshTunnelSession.setPortForwardingL(entry.getValue(), "127.0.0.1", entry.getKey());
+			
+			
+//			try {
+//				sshTunnelSession.delPortForwardingL(entry.getValue());
+//			} catch (Exception e) {
+//			}
+			final String fwdKee = entry.getValue()+":127.0.0.1:"+entry.getKey();
+			if (!fwdEntries.contains(fwdKee))
+				sshTunnelSession.setPortForwardingL(entry.getValue(), "127.0.0.1", entry.getKey());
+			else
+				System.err.println("port is already fwded "+fwdKee);
 		}
 		// System.out.println("local:"+this.ssh_fastport_num_local+" ssh_ip:"+ssh_ip+" fastport:"+this.ssh_fastport_num_remote);
 
@@ -967,14 +975,16 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 	}
 
 	private boolean refreshRemoteManagement() throws SafiServerManagementException {
-		boolean success = false;
+		boolean success = true;
 		SafiServerManagementException exception = null;
-		try {
-			success = SafiServerRemoteManager.getInstance().restartConnection();
-		} catch (SafiServerManagementException e) {
-			logWarn("Couldn't refresh remote connection", e);
-			disconnectSSHTunnel();
-			exception = e;
+		if (!SafiServerRemoteManager.getInstance().isConnected(true)){
+			try {
+				success = SafiServerRemoteManager.getInstance().restartConnection();
+			} catch (SafiServerManagementException e) {
+				logWarn("Couldn't refresh remote connection", e);
+				disconnectSSHTunnel();
+				exception = e;
+			}
 		}
 		notifyListenersConnectionChange(success);
 		if (success) {
@@ -990,6 +1000,8 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 
 		try {
 			String level = SafiServerRemoteManager.getInstance().getServerTracelogLevel();
+			if (level == null)
+				return;
 			getPreferenceStore()
 			    .setValue(PreferenceConstants.PREF_SERVER_TRACELOG_LEVEL, level);
 			setServerTracelogLevel(level);
