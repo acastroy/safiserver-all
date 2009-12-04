@@ -623,6 +623,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 	public void updateServerResources(IProgressMonitor monitor)
 	    throws SafiServerManagementException, DBManagerException, JSchException, Exception {
 
+		DBManager.getInstance().resetLastConnectionAttempt();
 		// String serverHostName;
 		// int dbPort;
 		String sshIP = getPreferenceStore().getString(
