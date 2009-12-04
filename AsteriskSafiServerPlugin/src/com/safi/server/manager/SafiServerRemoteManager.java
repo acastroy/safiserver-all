@@ -62,12 +62,15 @@ public class SafiServerRemoteManager implements NotificationListener {
   private volatile boolean isClosing;
 
   private List<DebugEventListener> debugEventListeners;
+	private int currentActualRMIPort;
+	private HashMap<String, Object> jmxEnvProperties;
 
   public static SafiServerRemoteManager getInstance() {
     return instance;
   }
 
   private SafiServerRemoteManager() {
+  	initSockeFactory();
 //    serverInfoNotificationFilter = new ServerInfoNotificationFilter();
 
     // Thread.currentThread().setContextClassLoader(this.getClass().getClassLoader());
@@ -76,6 +79,45 @@ public class SafiServerRemoteManager implements NotificationListener {
     // System.setSecurityManager(new MySecurityManager());
   }
 
+  private void initSockeFactory(){
+  	jmxEnvProperties = new HashMap<String, Object>();
+  	RMISocketFactory csf = new RMIMasterSocketFactory(){
+    	@Override
+    	public Socket createSocket(String host, int port) throws IOException {
+    	  // TODO Auto-generated method stub
+//    		System.err.println("Actually connecting too "+host+":"+actualRMIPort);
+//    		return super.createSocket(host, port);
+    	  return super.createSocket(host, currentActualRMIPort);
+    	}
+    	
+    	@Override
+    	public ServerSocket createServerSocket(int port) throws IOException {
+//    		System.err.println("Actually serving up too "+actualRMIPort);
+    	  return super.createServerSocket(currentActualRMIPort);
+    	}
+    	
+    	
+    };
+//    SslRMIServerSocketFactory ssf = new SslRMIServerSocketFactory(){
+//    	@Override
+//    	public ServerSocket createServerSocket(int port) throws IOException {
+//    	  // TODO Auto-generated method stub
+//    		return super.createServerSocket(port);
+////    	  return super.createServerSocket(actualRMIPort);
+//    	}
+//    };
+    
+    jmxEnvProperties.put(RMIConnectorServer.RMI_CLIENT_SOCKET_FACTORY_ATTRIBUTE, csf);
+    jmxEnvProperties.put(RMIConnectorServer.RMI_SERVER_SOCKET_FACTORY_ATTRIBUTE, csf);
+    try {
+	    RMISocketFactory.setSocketFactory(csf);
+    } catch (IOException e) {
+	    // TODO Auto-generated catch block
+	    e.printStackTrace();
+    }
+    // Needed to avoid "non-JRMP server at remote endpoint" error
+    jmxEnvProperties.put("com.sun.jndi.rmi.factory.socket", csf);
+  }
   @Override
   public void handleNotification(final Notification notification, Object handback) {
     if (handback == serverMonitorHandback) {
@@ -242,52 +284,11 @@ public class SafiServerRemoteManager implements NotificationListener {
             new Status(Status.INFO, SafiServerPlugin.PLUGIN_ID,
                 "SafiServerRemoteManager connecting to " + urlString));
         JMXServiceURL url = new JMXServiceURL(urlString);
-        HashMap<String, Object> env = new HashMap<String, Object>();
-//        env.put("jmx.remote.tls.socket.factory", yourFactory);
         
-        final int actualRMIPort = rmiPort;
-//        SslRMIClientSocketFactory csf = new SslRMIClientSocketFactory(){
-//        	@Override
-//        	public Socket createSocket(String host, int port) throws IOException {
-//        	  // TODO Auto-generated method stub
-//        		return super.createSocket(host, port);
-////        	  return super.createSocket(host, actualRMIPort);
-//        	}
-//        };
-//        RMISocketFactory.getDefaultSocketFactory()
-        RMISocketFactory csf = new RMIMasterSocketFactory(){
-        	@Override
-        	public Socket createSocket(String host, int port) throws IOException {
-        	  // TODO Auto-generated method stub
-//        		System.err.println("Actually connecting too "+host+":"+actualRMIPort);
-//        		return super.createSocket(host, port);
-        	  return super.createSocket(host, actualRMIPort);
-        	}
-        	
-        	@Override
-        	public ServerSocket createServerSocket(int port) throws IOException {
-//        		System.err.println("Actually serving up too "+actualRMIPort);
-        	  return super.createServerSocket(actualRMIPort);
-        	}
-        	
-        	
-        };
-//        SslRMIServerSocketFactory ssf = new SslRMIServerSocketFactory(){
-//        	@Override
-//        	public ServerSocket createServerSocket(int port) throws IOException {
-//        	  // TODO Auto-generated method stub
-//        		return super.createServerSocket(port);
-////        	  return super.createServerSocket(actualRMIPort);
-//        	}
-//        };
+        currentActualRMIPort = rmiPort;
         
-        env.put(RMIConnectorServer.RMI_CLIENT_SOCKET_FACTORY_ATTRIBUTE, csf);
-        env.put(RMIConnectorServer.RMI_SERVER_SOCKET_FACTORY_ATTRIBUTE, csf);
-        RMISocketFactory.setSocketFactory(csf);
-        // Needed to avoid "non-JRMP server at remote endpoint" error
-        env.put("com.sun.jndi.rmi.factory.socket", csf);
 //        env = null;
-        jmxc = JMXConnectorFactory.connect(url, env);
+        jmxc = JMXConnectorFactory.connect(url, jmxEnvProperties);
         // Create listener
         //
         // Get an MBeanServerConnection
