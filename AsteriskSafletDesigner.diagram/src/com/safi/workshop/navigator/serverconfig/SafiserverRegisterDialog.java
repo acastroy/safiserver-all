@@ -448,8 +448,9 @@ public class SafiserverRegisterDialog extends Dialog {
           }
 
           DBManager.getInstance().resetLastConnectionAttempt();
-          SafiServerPlugin.getDefault().disconnectSSHTunnel();
           SafiServerPlugin.getDefault().disconnectManagement();
+          SafiServerPlugin.getDefault().disconnectSSHTunnel();
+          
           SafiServerPlugin.getDefault().updateServerResources(monitor);
 
           // return new Status(IStatus.OK, getClass().getName(), IStatus.OK,

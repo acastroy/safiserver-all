@@ -384,14 +384,17 @@ public class DeleteAction extends AbstractConnectionTreeAction {
   private void deleteServerResources(SafiServer production, List<ServerResource> deleted) {
     Session session = null;
     try {
-
+    	
       session = DBManager.getInstance().createSession();
-      session.beginTransaction();
+      
       for (ServerResource s : deleted) {
-        session.delete(s);
+      	DBManager.getInstance().deleteServerResource(session, s);
+//        session.delete(s);
       }
-      session.saveOrUpdate(production);
-      session.getTransaction().commit();
+      DBManager.getInstance().saveOrUpdateServerResource(session, production);
+//      session.beginTransaction();
+//      session.saveOrUpdate(production);
+//      session.getTransaction().commit();
 
     } catch (Exception e) {
       e.printStackTrace();
