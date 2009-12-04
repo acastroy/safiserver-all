@@ -2,7 +2,7 @@
 <feature
       id="com.safi.workshop.asterisk"
       label="Workshop Asterisk Feature"
-      version="1.5.1"
+      version="1.5.2"
       provider-name="SAFI"
       plugin="AsteriskSafletDesigner.diagram"
       os="linux,win32"
