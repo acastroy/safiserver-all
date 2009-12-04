@@ -203,7 +203,7 @@
          jar="serverjars/safiServer_v20091130.jar">
    </serverjar>
    <serverjar
-         jar="serverjars/safidb_v20091125.jar">
+         jar="serverjars/safidb_v20091203.jar">
    </serverjar>
    <serverjar
          jar="serverjars/safletcore_v20091130.jar">
