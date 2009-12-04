@@ -36,7 +36,7 @@ public interface Role extends ServerResource {
    * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entitlements</em>' reference list.
 	 * @see com.safi.db.server.config.ConfigPackage#getRole_Entitlements()
-	 * @model annotation="teneo.jpa appinfo='@ManyToMany(fetch=\"EAGER\")'"
+	 * @model annotation="teneo.jpa appinfo='@ManyToMany(fetch=\"EAGER\" indexed=\"false\" )'"
 	 * @generated
 	 */
   EList<Entitlement> getEntitlements();

@@ -913,13 +913,13 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		  (getRole_Entitlements(), 
 		   source, 
 		   new String[] {
-			 "appinfo", "@ManyToMany(fetch=\"EAGER\")"
+			 "appinfo", "@ManyToMany(fetch=\"EAGER\" indexed=\"false\" )"
 		   });		
 		addAnnotation
 		  (getUser_Roles(), 
 		   source, 
 		   new String[] {
-			 "appinfo", "@ManyToMany(fetch=\"EAGER\" indexed=\"false\" cascade=\"ALL\")"
+			 "appinfo", "@ManyToMany(fetch=\"EAGER\" indexed=\"false\")"
 		   });		
 		addAnnotation
 		  (getSaflet_Code(), 

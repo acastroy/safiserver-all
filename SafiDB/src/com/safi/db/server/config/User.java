@@ -91,7 +91,7 @@ public interface User extends ServerResource {
    * <!-- end-user-doc -->
 	 * @return the value of the '<em>Roles</em>' reference list.
 	 * @see com.safi.db.server.config.ConfigPackage#getUser_Roles()
-	 * @model annotation="teneo.jpa appinfo='@ManyToMany(fetch=\"EAGER\" indexed=\"false\" cascade=\"ALL\")'"
+	 * @model annotation="teneo.jpa appinfo='@ManyToMany(fetch=\"EAGER\" indexed=\"false\")'"
 	 * @generated
 	 */
   EList<Role> getRoles();

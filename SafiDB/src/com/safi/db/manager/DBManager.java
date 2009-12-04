@@ -1735,9 +1735,34 @@ public class DBManager {
 	public void deleteServerResource(Session session, ServerResource resource)
 	    throws DBManagerException {
 		try {
+			session.beginTransaction();
 			session.delete(resource);
-		} catch (Exception e) {
-			throw new DBManagerException(e);
+			session.getTransaction().commit();
+		} catch (StaleObjectStateException e) {
+
+			try {
+				session.getTransaction().rollback();
+				session.beginTransaction();
+				resource = (ServerResource)session.createCriteria(resource.getClass()).add(
+				    Restrictions.eq("id", resource.getId())).uniqueResult();
+				session.delete(resource);
+				session.getTransaction().commit();
+				return;
+			} catch (Exception ex) {
+				Transaction t = session.getTransaction();
+				if (t != null)
+					t.rollback();
+				throw new DBManagerException(ex);
+			}
+		} 
+	}
+
+	public void deleteServerResource(ServerResource resource) throws DBManagerException {
+		Session session = createSession();
+		try {
+			deleteServerResource(session,resource);
+		} finally {
+			session.close();
 		}
 	}
 

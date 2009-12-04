@@ -295,7 +295,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="entitlements" upperBound="-1"
             eType="#//server/config/Entitlement">
           <eAnnotations source="teneo.jpa">
-            <details key="appinfo" value="@ManyToMany(fetch=&quot;EAGER&quot;)"/>
+            <details key="appinfo" value="@ManyToMany(fetch=&quot;EAGER&quot; indexed=&quot;false&quot; )"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -306,7 +306,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
             eType="#//server/config/Role">
           <eAnnotations source="teneo.jpa">
-            <details key="appinfo" value="@ManyToMany(fetch=&quot;EAGER&quot; indexed=&quot;false&quot; cascade=&quot;ALL&quot;)"/>
+            <details key="appinfo" value="@ManyToMany(fetch=&quot;EAGER&quot; indexed=&quot;false&quot;)"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
