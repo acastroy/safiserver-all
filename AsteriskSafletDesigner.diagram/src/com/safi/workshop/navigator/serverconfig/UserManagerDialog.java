@@ -93,6 +93,7 @@ public class UserManagerDialog extends TitleAreaDialog {
 	private SafiServer safiServer;
 	private TableViewer tableViewer;
 	private Button buttonRole;
+	private boolean needsRefresh;
 
 	/**
 	 * Create the dialog
@@ -253,19 +254,20 @@ public class UserManagerDialog extends TitleAreaDialog {
 
 	@Override
 	protected void okPressed() {
-		// TODO Auto-generated method stub
-		// try {
-		// SafiServerPlugin.getDefault().updateServerResources(new
-		// NullProgressMonitor());
-		// } catch (Exception e) {
-		// e.printStackTrace();
-		// MessageDialog.openError(tableViewer.getControl().getShell(),
-		// "Database Error",
-		// "Couldn't commit changes to production SafiServer: " +
-		// e.getLocalizedMessage());
-		// return;
-		// }
+		
 		super.okPressed();
+	}
+	
+	@Override
+	public boolean close() {
+		try {
+			SafiServerPlugin.getDefault().updateServerResources(new NullProgressMonitor());
+		} catch (Exception e) {
+			e.printStackTrace();
+			MessageDialog.openError(tableViewer.getControl().getShell(), "Database Error",
+			    "Couldn't refresh from production SafiServer: " + e.getLocalizedMessage());
+		}
+	  return super.close();
 	}
 
 	/**
@@ -290,8 +292,10 @@ public class UserManagerDialog extends TitleAreaDialog {
 		// User aUser=(User)EcoreUtil.copy(user);
 		UserDialog userDialog = new UserDialog(this.getShell(), user);
 		int result = userDialog.open();
-		if (Window.OK == result)
+		if (Window.OK == result) {
 			reloadTable();
+			needsRefresh = true;
+		}
 	}
 
 	private void add() {
@@ -301,8 +305,10 @@ public class UserManagerDialog extends TitleAreaDialog {
 		// User aUser=(User)EcoreUtil.copy(user);
 		UserDialog userDialog = new UserDialog(this.getShell(), user);
 		int result = userDialog.open();
-		if (Window.OK == result)
+		if (Window.OK == result) {
 			reloadTable();
+			needsRefresh = true;
+		}
 	}
 
 	/**
@@ -379,14 +385,7 @@ public class UserManagerDialog extends TitleAreaDialog {
 		}
 
 		reloadTable();
-		try {
-			SafiServerPlugin.getDefault().updateServerResources(new NullProgressMonitor());
-		} catch (Exception e) {
-			e.printStackTrace();
-			MessageDialog.openError(tableViewer.getControl().getShell(), "Database Error",
-			    "Couldn't commit changes to production SafiServer: " + e.getLocalizedMessage());
-			return;
-		}
+		needsRefresh = true;
 		
 //		 AsteriskDiagramEditorUtil.getSafiNavigator().modelChanged(true);
 

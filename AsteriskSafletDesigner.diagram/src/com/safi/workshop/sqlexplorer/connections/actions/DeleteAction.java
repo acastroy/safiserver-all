@@ -23,6 +23,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -286,10 +287,19 @@ public class DeleteAction extends AbstractConnectionTreeAction {
 
     }
 
-    if (dbResources.isEmpty())
+    if (dbResources.isEmpty() && serverResources.isEmpty())
       nav.refresh();
-    else
-      nav.modelChanged(SafiServerPlugin.getDefault().isConnected());
+    else {
+    	try {
+  			SafiServerPlugin.getDefault().updateServerResources(new NullProgressMonitor());
+  		} catch (Exception e) {
+  			e.printStackTrace();
+  			MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Database Error",
+  			    "Couldn't refresh from production SafiServer: " + e.getLocalizedMessage());
+  			return;
+  		}
+//      nav.modelChanged(SafiServerPlugin.getDefault().isConnected());
+    }
 
     // if (!viewerSelection.isEmpty() && viewerSelection.getFirstElement() instanceof
     // IResource){
