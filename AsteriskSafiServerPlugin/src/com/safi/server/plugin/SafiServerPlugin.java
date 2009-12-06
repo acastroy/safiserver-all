@@ -774,6 +774,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 				sshTunnelSession.disconnect();
 			} catch (Exception e) {
 			}
+			sshTunnelSession = null;
 		}
 		tunnels.clear();
 	}
@@ -813,8 +814,9 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 		if (sshTunnelSession != null && sshTunnelSession.isConnected()) {
 			if (!StringUtils.equals(sshTunnelSession.getHost(), sshIP)
 			    || sshPort != sshTunnelSession.getPort()) {
-				sshTunnelSession.disconnect();
-				sshTunnelSession = null;
+				disconnectSSHTunnel();
+//				sshTunnelSession.disconnect();
+//				sshTunnelSession = null;
 			}
 		}
 
@@ -1124,7 +1126,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 	// return currentSSHMgmtNum;
 	// }
 
-	private int updateForwardedPortIfNecessary(int port) throws IOException {
+	public int updateForwardedPortIfNecessary(int port) throws IOException {
 		// TODO Auto-generated method stub
 		if (!isLocalPortForwarded(port)
 		    && !com.safi.server.util.Utils.isServerPortAvail(port)) {
