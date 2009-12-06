@@ -299,6 +299,14 @@ public class ManagedDriver implements Comparable<ManagedDriver>, IAdaptable {
           tunnelledPort = Utils.findFreePort();
           this.tunnelledPortMap.put(port, tunnelledPort);
         }
+        else {
+        	int oldPort = tunnelledPort;
+        	tunnelledPort = SafiServerPlugin.getDefault().updateForwardedPortIfNecessary(tunnelledPort);
+        	if (oldPort != tunnelledPort)
+        	{
+        		tunnelledPortMap.put(port, tunnelledPort);
+        	}
+        }
 
         String dbhost = url.substring(m.start(1), m.end(1));
         if (tunnelledPort != -1) {

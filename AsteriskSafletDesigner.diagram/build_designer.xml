@@ -312,6 +312,8 @@
 
 	    </target>
 
-
+    
+	   <target name="deployAll" depends="deploy_workshop, deploy_server, linuxDeploy">
+	   </target>
 	
 </project>
