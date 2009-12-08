@@ -4,8 +4,8 @@
   id="1">
   <drivers lastUpdated="2008-06-24T22:32:36.000-0700" default="true"
     name="MS SQL Server" driverClassName="net.sourceforge.jtds.jdbc.Driver"
-    exampleUrl="jdbc:jtds:sqlserver://SVBMN14GLB1-03:1433/BEFGAutoDial;TDS=8.0"
-    guideUrl="jdbc:jtds:[servertype]://[host][port][/database_name]"
+    exampleUrl="jdbc:jtds:sqlserver://MYSERVER:1433/myDataSchema"
+    guideUrl="jdbc:jtds:sqlserver://[host][port][/database_name]"
     urlRegexPattern="^jdbc:jtds:(?:sybase|sqlserver)://(?:([a-zA-Z0-9\-\._]+)|(?:(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])))?(?:\:([0-9]+))?(?:/[a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~]*)?$"
     id="2">
     <jars></jars>
@@ -28,7 +28,7 @@
   </drivers>
 
   <drivers default="false" name="IBM DB2" driverClassName="COM.ibm.db2.jdbc.app.DB2Driver"
-    exampleUrl="jdbc:db2://192.168.1.101:1527/customers" guideUrl="jdbc:db2://[host][port]/[schema]"
+    exampleUrl="jdbc:db2://myServer:1527/myDatabase" guideUrl="jdbc:db2://[host][port]/[schema]"
     websiteUrl="http://www-01.ibm.com/software/data/db2/express/download.html"
     defaultPort="1527"
     urlRegexPattern="jdbc:db2://(?:([a-zA-Z0-9\-\._]+)|(?:(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])))?(?:\:([0-9]+))?(?:/[a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~]*)?$"
@@ -46,7 +46,7 @@
   </drivers>
 
   <drivers default="false" name="Firebird" driverClassName="org.firebirdsql.jdbc.FBDriver"
-    exampleUrl="jdbc:firebirdsql:localhost/3050:c:/database/employee.gdb"
+    exampleUrl="jdbc:firebirdsql:localhost/3050:c:/database/myDatabase.gdb"
     guideUrl="jdbc:firebirdsql:[host]/[port]:[schema]" websiteUrl="http://www.firebirdsql.org/"
     defaultPort="3050"
     urlRegexPattern="jdbc:firebirdsql:(?:([a-zA-Z0-9\-\._]+)|(?:(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])))?(?:\/([0-9]+))?(?:\:[a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~\:]*)?$"
