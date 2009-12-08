@@ -90,7 +90,7 @@ public class DBConnectionWizardSummaryPage extends DBConnectionWizardPage {
     testConnectionButton.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        String result = createConnection();
+        String result = testConnection();
         if (result == null)
           MessageDialog.openInformation(getShell(), "Test Connection", "Connection Established");
         else
@@ -122,11 +122,11 @@ public class DBConnectionWizardSummaryPage extends DBConnectionWizardPage {
     connectionURLLabel.setText(constructUrl == null ? "" : constructUrl);
   }
 
-  private String createConnection() {
+  private String testConnection() {
     Connection connection = null;
     try {
       final DBConnectionWizard wiz = getDBConnectionWizard();
-      String testUrl = wiz.getDriver().getDriver().getExampleUrl();
+      String testUrl = wiz.constructUrl();
       if (StringUtils.isBlank(testUrl))
         return "Guide URL not available for driver " + wiz.getDriver().getId();
 
