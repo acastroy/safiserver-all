@@ -946,6 +946,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 
 			// sshTunnelSession.setPortForwardingL(boundaddress, lport, host, rport)
 			// 192.168.0.145
+			System.err.println("setting up tunnel "+localPort+":"+host+":"+remotePort);
 			sshTunnelSession.setPortForwardingL(localPort, host, remotePort);
 			tunnels.put(remotePort, localPort);
 			// if (bidirectional)
