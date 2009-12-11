@@ -178,7 +178,7 @@ public class NewQueryDialog extends org.eclipse.jface.dialogs.TitleAreaDialog {
     String title = null;
     switch (mode) {
       case ADD:
-        title = "Add Query";
+        title = "New Query";
         break;
       case MODIFY:
       case MODIFY_PARAMS:
