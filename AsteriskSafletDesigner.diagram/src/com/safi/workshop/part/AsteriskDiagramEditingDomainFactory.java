@@ -343,15 +343,15 @@ public class AsteriskDiagramEditingDomainFactory extends GMFEditingDomainFactory
     @Override
     public void dispose() {
       // TODO Auto-generated method stub
-      WorkspaceCommandStackImpl stack = (WorkspaceCommandStackImpl) getCommandStack();
-      IUndoableOperation[] ops = stack.getOperationHistory().getUndoHistory(
-          stack.getDefaultUndoContext());
-      EditingDomainUndoContext undoctx = new EditingDomainUndoContext(this);
-      for (IUndoableOperation op : ops) {
-        if (op.hasContext(undoctx)) {
-          stack.getOperationHistory().replaceOperation(op, new IUndoableOperation[0]);
-        }
-      }
+//      WorkspaceCommandStackImpl stack = (WorkspaceCommandStackImpl) getCommandStack();
+//      IUndoableOperation[] ops = stack.getOperationHistory().getUndoHistory(
+//          stack.getDefaultUndoContext());
+//      EditingDomainUndoContext undoctx = new EditingDomainUndoContext(this);
+//      for (IUndoableOperation op : ops) {
+//        if (op.hasContext(undoctx)) {
+//          stack.getOperationHistory().replaceOperation(op, new IUndoableOperation[0]);
+//        }
+//      }
 
       if (debugResourceListener != null)
         removeResourceSetListener(debugResourceListener);
@@ -361,22 +361,22 @@ public class AsteriskDiagramEditingDomainFactory extends GMFEditingDomainFactory
       if (debWrapper != null)
         removeResourceSetListener(debWrapper);
 
-      for (ResourceSetListener l : getAggregatePrecommitListeners()) {
-        removeResourceSetListener(l);
-      }
-
-      for (ResourceSetListener l : getPrecommitListeners()) {
-        removeResourceSetListener(l);
-      }
-
-      for (ResourceSetListener l : getPostcommitListeners()) {
-        removeResourceSetListener(l);
-      }
-
-      if (getResourceSet() != null)
-        getResourceSet().eAdapters().clear();
-
-      setDefaultTransactionOptions(Collections.emptyMap());
+//      for (ResourceSetListener l : getAggregatePrecommitListeners()) {
+//        removeResourceSetListener(l);
+//      }
+//
+//      for (ResourceSetListener l : getPrecommitListeners()) {
+//        removeResourceSetListener(l);
+//      }
+//
+//      for (ResourceSetListener l : getPostcommitListeners()) {
+//        removeResourceSetListener(l);
+//      }
+//
+//      if (getResourceSet() != null)
+//        getResourceSet().eAdapters().clear();
+//
+//      setDefaultTransactionOptions(Collections.emptyMap());
       super.dispose();
       // this.resourceSet = null;
     }

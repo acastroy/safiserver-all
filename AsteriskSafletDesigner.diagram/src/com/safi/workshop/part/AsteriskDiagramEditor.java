@@ -22,13 +22,16 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.draw2d.LightweightSystem;
 import org.eclipse.draw2d.Viewport;
+import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.common.ui.URIEditorInput;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.impl.TransactionalEditingDomainImpl;
 import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.emf.workspace.impl.WorkspaceCommandStackImpl;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gef.EditPartViewer;
 import org.eclipse.gef.KeyHandler;
@@ -45,6 +48,7 @@ import org.eclipse.gef.ui.parts.ContentOutlinePage;
 import org.eclipse.gef.ui.parts.TreeViewer;
 import org.eclipse.gmf.runtime.common.core.util.Log;
 import org.eclipse.gmf.runtime.common.core.util.Trace;
+import org.eclipse.gmf.runtime.diagram.core.DiagramEditingDomainFactory;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.diagram.ui.actions.ActionIds;
@@ -103,6 +107,7 @@ import com.safi.asterisk.handler.mbean.DebugRemoteControl;
 import com.safi.core.saflet.Saflet;
 import com.safi.workshop.SafiNavigator;
 import com.safi.workshop.edit.parts.HandlerEditPart;
+import com.safi.workshop.part.AsteriskDiagramEditingDomainFactory.AsteriskDiagramEditingDomain;
 import com.safi.workshop.util.SafletPersistenceManager;
 
 /**
@@ -945,13 +950,10 @@ public class AsteriskDiagramEditor extends DiagramDocumentEditor {
         // if (handlerPart.getEditingDomain().getResourceSet() != null)
         // handlerPart.getEditingDomain().getResourceSet().eAdapters().clear();
       }
-      TransactionalEditingDomain domain = getEditingDomain();
-      if (domain != null) {
-        domain.dispose();
-      }
+      
       handlerPart = null;
     }
-
+   
     super.dispose();
     DiagramEditDomain domain = (DiagramEditDomain) getEditDomain();
 
@@ -966,6 +968,16 @@ public class AsteriskDiagramEditor extends DiagramDocumentEditor {
       if (domain.getPaletteViewer() != null) {
         domain.getPaletteViewer().deselectAll();
       }
+    }
+    
+    AsteriskDiagramEditingDomain dm = (AsteriskDiagramEditingDomain)getEditingDomain();
+    if (dm != null) {
+//    	dm.dispose()
+//    		CommandStack stack = dm.getCommandStack();
+//    		if (stack instanceof WorkspaceCommandStackImpl && ((WorkspaceCommandStackImpl)stack).getDomain() == dm){
+//    			((WorkspaceCommandStackImpl)stack).dispose();
+//    		}
+      dm.dispose();
     }
   }
 

@@ -381,6 +381,18 @@ public class AsteriskDiagramEditorUtil {
         }
         return CommandResult.newOKCommandResult();
       }
+      
+      @Override
+          public boolean canUndo() {
+            // TODO Auto-generated method stub
+            return false;
+          }
+      @Override
+          public boolean canRedo() {
+            // TODO Auto-generated method stub
+            return false;
+          }
+      
     };
     try {
       OperationHistoryFactory.getOperationHistory().execute(command,
@@ -865,50 +877,50 @@ public class AsteriskDiagramEditorUtil {
         @Override
         protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
             throws ExecutionException {
-          Saflet model = createInitialModel();
-          attachModelToResource(model, diagramResource);
+        Saflet model = createInitialModel();
+        attachModelToResource(model, diagramResource);
 
-          Diagram diagram = ViewService.createDiagram(model, HandlerEditPart.MODEL_ID,
-              AsteriskDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
-          String safletName = fURI.trimFileExtension().lastSegment();
-          if (diagram != null) {
-            diagramResource.getContents().add(diagram);
-            diagram.setName(diagramName);
-            diagram.setElement(model);
-            Saflet handler = (Saflet) diagram.getElement();
-            handler.setName(safletName);
-            Initiator initiator = (Initiator) asp.modelFactory.getModel(Integer
-                .valueOf(asp.semanticHint));
-            initiator.createDefaultOutputs();
-            initiator.setName(asp.displayName);
-            handler.setInitiator(initiator);
-            initiator.setSaflet(handler);
-            if (initiator instanceof CallSource1) {
-              Call call1 = AsteriskFactory.eINSTANCE.createCall();
-              call1.setName("Call1");
-              ((CallSource1) initiator).setNewCall1(call1);
-            }
-            // Call call1 = AsteriskFactory.eINSTANCE.createCall();
-            // call1.setName("Call1");
-            // call.setNewCall1(call1);
-
+        Diagram diagram = ViewService.createDiagram(model, HandlerEditPart.MODEL_ID,
+            AsteriskDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+        String safletName = fURI.trimFileExtension().lastSegment();
+        if (diagram != null) {
+          diagramResource.getContents().add(diagram);
+          diagram.setName(diagramName);
+          diagram.setElement(model);
+          Saflet handler = (Saflet) diagram.getElement();
+          handler.setName(safletName);
+          Initiator initiator = (Initiator) asp.modelFactory.getModel(Integer
+              .valueOf(asp.semanticHint));
+          initiator.createDefaultOutputs();
+          initiator.setName(asp.displayName);
+          handler.setInitiator(initiator);
+          initiator.setSaflet(handler);
+          if (initiator instanceof CallSource1) {
+            Call call1 = AsteriskFactory.eINSTANCE.createCall();
+            call1.setName("Call1");
+            ((CallSource1) initiator).setNewCall1(call1);
           }
+          // Call call1 = AsteriskFactory.eINSTANCE.createCall();
+          // call1.setName("Call1");
+          // call.setNewCall1(call1);
 
+        }
+
+        try {
+
+          diagramResource.save(com.safi.workshop.part.AsteriskDiagramEditorUtil.getSaveOptions());
           try {
-
-            diagramResource.save(com.safi.workshop.part.AsteriskDiagramEditorUtil.getSaveOptions());
-            try {
-              WorkspaceSynchronizer.getFile(diagramResource).setPersistentProperty(
-                  SafletPersistenceManager.SAFLET_NAME_KEY, safletName);
-            } catch (CoreException e) {
-              AsteriskDiagramEditorPlugin.getDefault().logError(
-                  "Unable to set persistent property", e); //$NON-NLS-1$
-            }
-          } catch (IOException e) {
-
+            WorkspaceSynchronizer.getFile(diagramResource).setPersistentProperty(
+                SafletPersistenceManager.SAFLET_NAME_KEY, safletName);
+          } catch (CoreException e) {
             AsteriskDiagramEditorPlugin.getDefault().logError(
-                "Unable to store model and diagram resources", e); //$NON-NLS-1$
+                "Unable to set persistent property", e); //$NON-NLS-1$
           }
+        } catch (IOException e) {
+
+          AsteriskDiagramEditorPlugin.getDefault().logError(
+              "Unable to store model and diagram resources", e); //$NON-NLS-1$
+        }
           return CommandResult.newOKCommandResult();
         }
       };
