@@ -187,7 +187,7 @@
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/OriginateCall/callingPresentation"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/OriginateCall/channel"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/OriginateCall/takeControl"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/OriginateCall/variables"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/OriginateCall/variables"/>
         <genOperations ecoreOperation="asterisk.ecore#//actionstep/OriginateCall/setVariable">
           <genParameters ecoreParameter="asterisk.ecore#//actionstep/OriginateCall/setVariable/name"/>
           <genParameters ecoreParameter="asterisk.ecore#//actionstep/OriginateCall/setVariable/value"/>
@@ -489,6 +489,8 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//initiator/AsteriskInitiatorInfo/channel"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//initiator/AsteriskInitiatorInfo/request"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//initiator/AsteriskInitiatorInfo/managerConnection"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference asterisk.ecore#//initiator/AsteriskInitiatorInfo/asteriskServer"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Saflet" disposableProviderFactory="true" ecorePackage="asterisk.ecore#//saflet">
@@ -500,8 +502,7 @@
         </genOperations>
         <genOperations ecoreOperation="asterisk.ecore#//saflet/AsteriskSafletContext/flushBufferedDigits"/>
       </genClasses>
-      <genClasses ecoreClass="asterisk.ecore#//saflet/AsteriskSafletEnvironment">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//saflet/AsteriskSafletEnvironment/serverIpAddr"/>
+      <genClasses image="false" ecoreClass="asterisk.ecore#//saflet/AsteriskSafletEnvironment">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//saflet/AsteriskSafletEnvironment/fastAgiPort"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//saflet/AsteriskSafletEnvironment/managementPort"/>
         <genOperations ecoreOperation="asterisk.ecore#//saflet/AsteriskSafletEnvironment/getLoopbackCall">
