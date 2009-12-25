@@ -38,238 +38,262 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  */
 public class Actionpak1ItemProviderAdapterFactory extends Actionpak1AdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
   /**
-   * This keeps track of the root adapter factory that delegates to this adapter factory.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the root adapter factory that delegates to this adapter factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ComposedAdapterFactory parentAdapterFactory;
 
   /**
-   * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
-   * <!-- begin-user-doc -->
+	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected IChangeNotifier changeNotifier = new ChangeNotifier();
 
   /**
-   * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
-   * <!-- begin-user-doc -->
+	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
   /**
-   * This constructs an instance.
-   * <!-- begin-user-doc -->
+	 * This constructs an instance.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Actionpak1ItemProviderAdapterFactory() {
-    supportedTypes.add(IEditingDomainItemProvider.class);
-    supportedTypes.add(IStructuredItemContentProvider.class);
-    supportedTypes.add(ITreeItemContentProvider.class);
-    supportedTypes.add(IItemLabelProvider.class);
-    supportedTypes.add(IItemPropertySource.class);
-  }
+		supportedTypes.add(IEditingDomainItemProvider.class);
+		supportedTypes.add(IStructuredItemContentProvider.class);
+		supportedTypes.add(ITreeItemContentProvider.class);
+		supportedTypes.add(IItemLabelProvider.class);
+		supportedTypes.add(IItemPropertySource.class);
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.workshop.model.actionpak1.ActionstepTest} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.workshop.model.actionpak1.ActionstepTest} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ActionstepTestItemProvider actionstepTestItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.workshop.model.actionpak1.ActionstepTest}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.workshop.model.actionpak1.ActionstepTest}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createActionstepTestAdapter() {
-    if (actionstepTestItemProvider == null) {
-      actionstepTestItemProvider = new ActionstepTestItemProvider(this);
-    }
+		if (actionstepTestItemProvider == null) {
+			actionstepTestItemProvider = new ActionstepTestItemProvider(this);
+		}
 
-    return actionstepTestItemProvider;
-  }
+		return actionstepTestItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.workshop.model.actionpak1.CustomInitiator} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.workshop.model.actionpak1.CustomInitiator} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected CustomInitiatorItemProvider customInitiatorItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.workshop.model.actionpak1.CustomInitiator}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.workshop.model.actionpak1.CustomInitiator}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createCustomInitiatorAdapter() {
-    if (customInitiatorItemProvider == null) {
-      customInitiatorItemProvider = new CustomInitiatorItemProvider(this);
-    }
+		if (customInitiatorItemProvider == null) {
+			customInitiatorItemProvider = new CustomInitiatorItemProvider(this);
+		}
 
-    return customInitiatorItemProvider;
-  }
+		return customInitiatorItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.workshop.model.actionpak1.IncomingCall2} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.workshop.model.actionpak1.IncomingCall2} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected IncomingCall2ItemProvider incomingCall2ItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.workshop.model.actionpak1.IncomingCall2}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.workshop.model.actionpak1.IncomingCall2}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createIncomingCall2Adapter() {
-    if (incomingCall2ItemProvider == null) {
-      incomingCall2ItemProvider = new IncomingCall2ItemProvider(this);
-    }
+		if (incomingCall2ItemProvider == null) {
+			incomingCall2ItemProvider = new IncomingCall2ItemProvider(this);
+		}
 
-    return incomingCall2ItemProvider;
-  }
+		return incomingCall2ItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.workshop.model.actionpak1.InvokeSaflet2} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.workshop.model.actionpak1.InvokeSaflet2} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected InvokeSaflet2ItemProvider invokeSaflet2ItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.workshop.model.actionpak1.InvokeSaflet2}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.workshop.model.actionpak1.InvokeSaflet2}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createInvokeSaflet2Adapter() {
-    if (invokeSaflet2ItemProvider == null) {
-      invokeSaflet2ItemProvider = new InvokeSaflet2ItemProvider(this);
-    }
+		if (invokeSaflet2ItemProvider == null) {
+			invokeSaflet2ItemProvider = new InvokeSaflet2ItemProvider(this);
+		}
 
-    return invokeSaflet2ItemProvider;
-  }
+		return invokeSaflet2ItemProvider;
+	}
 
   /**
-   * This returns the root adapter factory that contains this factory.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.workshop.model.actionpak1.ManagerAction} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ManagerActionItemProvider managerActionItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link com.safi.workshop.model.actionpak1.ManagerAction}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createManagerActionAdapter() {
+		if (managerActionItemProvider == null) {
+			managerActionItemProvider = new ManagerActionItemProvider(this);
+		}
+
+		return managerActionItemProvider;
+	}
+
+		/**
+	 * This returns the root adapter factory that contains this factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ComposeableAdapterFactory getRootAdapterFactory() {
-    return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
-  }
+		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+	}
 
   /**
-   * This sets the composed adapter factory that contains this factory.
-   * <!-- begin-user-doc -->
+	 * This sets the composed adapter factory that contains this factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
-    this.parentAdapterFactory = parentAdapterFactory;
-  }
+		this.parentAdapterFactory = parentAdapterFactory;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean isFactoryForType(Object type) {
-    return supportedTypes.contains(type) || super.isFactoryForType(type);
-  }
+		return supportedTypes.contains(type) || super.isFactoryForType(type);
+	}
 
   /**
-   * This implementation substitutes the factory itself as the key for the adapter.
-   * <!-- begin-user-doc -->
+	 * This implementation substitutes the factory itself as the key for the adapter.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter adapt(Notifier notifier, Object type) {
-    return super.adapt(notifier, this);
-  }
+		return super.adapt(notifier, this);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object adapt(Object object, Object type) {
-    if (isFactoryForType(type)) {
-      Object adapter = super.adapt(object, type);
-      if (!(type instanceof Class) || (((Class<?>)type).isInstance(adapter))) {
-        return adapter;
-      }
-    }
+		if (isFactoryForType(type)) {
+			Object adapter = super.adapt(object, type);
+			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+				return adapter;
+			}
+		}
 
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * This adds a listener.
-   * <!-- begin-user-doc -->
+	 * This adds a listener.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void addListener(INotifyChangedListener notifyChangedListener) {
-    changeNotifier.addListener(notifyChangedListener);
-  }
+		changeNotifier.addListener(notifyChangedListener);
+	}
 
   /**
-   * This removes a listener.
-   * <!-- begin-user-doc -->
+	 * This removes a listener.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void removeListener(INotifyChangedListener notifyChangedListener) {
-    changeNotifier.removeListener(notifyChangedListener);
-  }
+		changeNotifier.removeListener(notifyChangedListener);
+	}
 
   /**
-   * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
-   * <!-- begin-user-doc -->
+	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void fireNotifyChanged(Notification notification) {
-    changeNotifier.fireNotifyChanged(notification);
+		changeNotifier.fireNotifyChanged(notification);
 
-    if (parentAdapterFactory != null) {
-      parentAdapterFactory.fireNotifyChanged(notification);
-    }
-  }
+		if (parentAdapterFactory != null) {
+			parentAdapterFactory.fireNotifyChanged(notification);
+		}
+	}
 
   /**
-   * This disposes all of the item providers created by this factory. 
-   * <!-- begin-user-doc -->
+	 * This disposes all of the item providers created by this factory. 
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void dispose() {
-    if (actionstepTestItemProvider != null) actionstepTestItemProvider.dispose();
-    if (customInitiatorItemProvider != null) customInitiatorItemProvider.dispose();
-    if (incomingCall2ItemProvider != null) incomingCall2ItemProvider.dispose();
-    if (invokeSaflet2ItemProvider != null) invokeSaflet2ItemProvider.dispose();
-  }
+		if (actionstepTestItemProvider != null) actionstepTestItemProvider.dispose();
+		if (customInitiatorItemProvider != null) customInitiatorItemProvider.dispose();
+		if (incomingCall2ItemProvider != null) incomingCall2ItemProvider.dispose();
+		if (invokeSaflet2ItemProvider != null) invokeSaflet2ItemProvider.dispose();
+		if (managerActionItemProvider != null) managerActionItemProvider.dispose();
+	}
 
 }

@@ -9,6 +9,7 @@ package com.safi.workshop.model.actionpak1.provider;
 
 import com.safi.core.actionstep.ActionStepFactory;
 
+import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.actionstep.provider.ParameterizedActionstepItemProvider;
 import com.safi.core.actionstep.provider.ParameterizedInitiatorItemProvider;
 
@@ -50,179 +51,202 @@ public class InvokeSaflet2ItemProvider
     IItemLabelProvider,
     IItemPropertySource {
   /**
-   * This constructs an instance from a factory and a notifier.
-   * <!-- begin-user-doc -->
+	 * This constructs an instance from a factory and a notifier.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public InvokeSaflet2ItemProvider(AdapterFactory adapterFactory) {
-    super(adapterFactory);
-  }
+		super(adapterFactory);
+	}
 
   /**
-   * This returns the property descriptors for the adapted class.
-   * <!-- begin-user-doc -->
+	 * This returns the property descriptors for the adapted class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-    if (itemPropertyDescriptors == null) {
-      super.getPropertyDescriptors(object);
+		if (itemPropertyDescriptors == null) {
+			super.getPropertyDescriptors(object);
 
-      addTargetSafletPathPropertyDescriptor(object);
-      addLabelTextPropertyDescriptor(object);
-    }
-    return itemPropertyDescriptors;
-  }
+			addTargetSafletPathPropertyDescriptor(object);
+			addLabelTextPropertyDescriptor(object);
+		}
+		return itemPropertyDescriptors;
+	}
 
   /**
-   * This adds a property descriptor for the Target Saflet Path feature.
-   * <!-- begin-user-doc -->
+	 * This adds a property descriptor for the Target Saflet Path feature.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected void addTargetSafletPathPropertyDescriptor(Object object) {
-    itemPropertyDescriptors.add
-      (createItemPropertyDescriptor
-        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-         getResourceLocator(),
-         getString("_UI_InvokeSaflet2_targetSafletPath_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_InvokeSaflet2_targetSafletPath_feature", "_UI_InvokeSaflet2_type"),
-         Actionpak1Package.Literals.INVOKE_SAFLET2__TARGET_SAFLET_PATH,
-         true,
-         false,
-         false,
-         null,
-         null,
-         null));
-  }
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InvokeSaflet2_targetSafletPath_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InvokeSaflet2_targetSafletPath_feature", "_UI_InvokeSaflet2_type"),
+				 Actionpak1Package.Literals.INVOKE_SAFLET2__TARGET_SAFLET_PATH,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
 
   /**
-   * This adds a property descriptor for the Label Text feature.
-   * <!-- begin-user-doc -->
+	 * This adds a property descriptor for the Label Text feature.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected void addLabelTextPropertyDescriptor(Object object) {
-    itemPropertyDescriptors.add
-      (createItemPropertyDescriptor
-        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-         getResourceLocator(),
-         getString("_UI_InvokeSaflet2_labelText_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_InvokeSaflet2_labelText_feature", "_UI_InvokeSaflet2_type"),
-         Actionpak1Package.Literals.INVOKE_SAFLET2__LABEL_TEXT,
-         true,
-         false,
-         false,
-         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-         null,
-         null));
-  }
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InvokeSaflet2_labelText_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InvokeSaflet2_labelText_feature", "_UI_InvokeSaflet2_type"),
+				 Actionpak1Package.Literals.INVOKE_SAFLET2__LABEL_TEXT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
 
   /**
-   * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-   * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-   * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-   * <!-- begin-user-doc -->
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-    if (childrenFeatures == null) {
-      super.getChildrenFeatures(object);
-      childrenFeatures.add(Actionpak1Package.Literals.INVOKE_SAFLET2__TARGET_SAFLET_PATH);
-    }
-    return childrenFeatures;
-  }
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(Actionpak1Package.Literals.INVOKE_SAFLET2__TARGET_SAFLET_PATH);
+		}
+		return childrenFeatures;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EStructuralFeature getChildFeature(Object object, Object child) {
-    // Check the type of the specified child object and return the proper feature to use for
-    // adding (see {@link AddCommand}) it as a child.
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
 
-    return super.getChildFeature(object, child);
-  }
+		return super.getChildFeature(object, child);
+	}
 
   /**
-   * This returns InvokeSaflet2.gif.
-   * <!-- begin-user-doc -->
+	 * This returns InvokeSaflet2.gif.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/InvokeSaflet2"));
-  }
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/InvokeSaflet2"));
+	}
 
   /**
-   * This returns the label text for the adapted class.
-   * <!-- begin-user-doc -->
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String getText(Object object) {
-    String label = ((InvokeSaflet2)object).getName();
-    return label == null || label.length() == 0 ?
-      getString("_UI_InvokeSaflet2_type") :
-      getString("_UI_InvokeSaflet2_type") + " " + label;
-  }
+		String label = ((InvokeSaflet2)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_InvokeSaflet2_type") :
+			getString("_UI_InvokeSaflet2_type") + " " + label;
+	}
 
   /**
-   * This handles model notifications by calling {@link #updateChildren} to update any cached
-   * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-   * <!-- begin-user-doc -->
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void notifyChanged(Notification notification) {
-    updateChildren(notification);
+		updateChildren(notification);
 
-    switch (notification.getFeatureID(InvokeSaflet2.class)) {
-      case Actionpak1Package.INVOKE_SAFLET2__LABEL_TEXT:
-        fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-        return;
-      case Actionpak1Package.INVOKE_SAFLET2__TARGET_SAFLET_PATH:
-        fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-        return;
-    }
-    super.notifyChanged(notification);
-  }
+		switch (notification.getFeatureID(InvokeSaflet2.class)) {
+			case Actionpak1Package.INVOKE_SAFLET2__LABEL_TEXT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case Actionpak1Package.INVOKE_SAFLET2__TARGET_SAFLET_PATH:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
+		}
+		super.notifyChanged(notification);
+	}
 
   /**
-   * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
-   * that can be created under this object.
-   * <!-- begin-user-doc -->
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-    super.collectNewChildDescriptors(newChildDescriptors, object);
+		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-    newChildDescriptors.add
-      (createChildParameter
-        (Actionpak1Package.Literals.INVOKE_SAFLET2__TARGET_SAFLET_PATH,
-         ActionStepFactory.eINSTANCE.createDynamicValue()));
-  }
+		newChildDescriptors.add
+			(createChildParameter
+				(Actionpak1Package.Literals.INVOKE_SAFLET2__TARGET_SAFLET_PATH,
+				 ActionStepFactory.eINSTANCE.createDynamicValue()));
+	}
 
   /**
-   * Return the resource locator for this item provider's resources.
-   * <!-- begin-user-doc -->
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == ActionStepPackage.eINSTANCE.getParameterizedActionstep_Inputs() ||
+			childFeature == ActionStepPackage.eINSTANCE.getParameterizedActionstep_OutputParameters();
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
+	}
+
+		/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public ResourceLocator getResourceLocator() {
-    return Actionpak1EditPlugin.INSTANCE;
-  }
+		return Actionpak1EditPlugin.INSTANCE;
+	}
 
 }
