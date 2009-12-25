@@ -36,18 +36,17 @@ import com.safi.workshop.model.actionpak1.CustomInitiator;
  * <em><b>Custom Initiator</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
- * 
+ *
  * @generated
  */
 public class CustomInitiatorImpl extends ParameterizedInitiatorImpl implements CustomInitiator {
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   protected CustomInitiatorImpl() {
-    super();
-  }
+		super();
+	}
 
   @SuppressWarnings("unchecked")
   @Override
@@ -127,13 +126,12 @@ public class CustomInitiatorImpl extends ParameterizedInitiatorImpl implements C
   // }
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return Actionpak1Package.Literals.CUSTOM_INITIATOR;
-  }
+		return Actionpak1Package.Literals.CUSTOM_INITIATOR;
+	}
 
 } // CustomInitiatorImpl

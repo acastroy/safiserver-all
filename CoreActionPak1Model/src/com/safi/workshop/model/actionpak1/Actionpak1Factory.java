@@ -18,56 +18,65 @@ import org.eclipse.emf.ecore.EFactory;
  */
 public interface Actionpak1Factory extends EFactory {
   /**
-   * The singleton instance of the factory.
-   * <!-- begin-user-doc -->
+	 * The singleton instance of the factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   Actionpak1Factory eINSTANCE = com.safi.workshop.model.actionpak1.impl.Actionpak1FactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Actionstep Test</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Actionstep Test</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Actionstep Test</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Actionstep Test</em>'.
+	 * @generated
+	 */
   ActionstepTest createActionstepTest();
 
   /**
-   * Returns a new object of class '<em>Custom Initiator</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Custom Initiator</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Custom Initiator</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Custom Initiator</em>'.
+	 * @generated
+	 */
   CustomInitiator createCustomInitiator();
 
   /**
-   * Returns a new object of class '<em>Incoming Call2</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Incoming Call2</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Incoming Call2</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Incoming Call2</em>'.
+	 * @generated
+	 */
   IncomingCall2 createIncomingCall2();
 
   /**
-   * Returns a new object of class '<em>Invoke Saflet2</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Invoke Saflet2</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Invoke Saflet2</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Invoke Saflet2</em>'.
+	 * @generated
+	 */
   InvokeSaflet2 createInvokeSaflet2();
 
   /**
-   * Returns the package supported by this factory.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Manager Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Manager Action</em>'.
+	 * @generated
+	 */
+	ManagerAction createManagerAction();
+
+		/**
+	 * Returns the package supported by this factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the package supported by this factory.
-   * @generated
-   */
+	 * @return the package supported by this factory.
+	 * @generated
+	 */
   Actionpak1Package getActionpak1Package();
 
 } //Actionpak1Factory

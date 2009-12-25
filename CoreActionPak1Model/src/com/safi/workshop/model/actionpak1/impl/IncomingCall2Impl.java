@@ -61,43 +61,43 @@ import com.safi.workshop.model.actionpak1.IncomingCall2;
  */
 public class IncomingCall2Impl extends ParameterizedInitiatorImpl implements IncomingCall2 {
   /**
-   * The cached value of the '{@link #getNewCall1() <em>New Call1</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getNewCall1() <em>New Call1</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNewCall1()
-   * @generated
-   * @ordered
-   */
+	 * @see #getNewCall1()
+	 * @generated
+	 * @ordered
+	 */
   protected Call newCall1;
 
   /**
-   * The default value of the '{@link #getCallName() <em>Call Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getCallName() <em>Call Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCallName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getCallName()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String CALL_NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getCallName() <em>Call Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getCallName() <em>Call Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCallName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getCallName()
+	 * @generated
+	 * @ordered
+	 */
   protected String callName = CALL_NAME_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected IncomingCall2Impl() {
-    super();
-  }
+		super();
+	}
 
   @Override
   public void beginProcessing() throws ActionStepException {
@@ -235,66 +235,66 @@ public class IncomingCall2Impl extends ParameterizedInitiatorImpl implements Inc
     super.initialize(info);
   }
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return Actionpak1Package.Literals.INCOMING_CALL2;
-  }
+		return Actionpak1Package.Literals.INCOMING_CALL2;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Call getNewCall1() {
-    return newCall1;
-  }
+		return newCall1;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetNewCall1(Call newNewCall1, NotificationChain msgs) {
-    Call oldNewCall1 = newCall1;
-    newCall1 = newNewCall1;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Actionpak1Package.INCOMING_CALL2__NEW_CALL1, oldNewCall1, newNewCall1);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		Call oldNewCall1 = newCall1;
+		newCall1 = newNewCall1;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Actionpak1Package.INCOMING_CALL2__NEW_CALL1, oldNewCall1, newNewCall1);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setNewCall1(Call newNewCall1) {
-    if (newNewCall1 != newCall1) {
-      NotificationChain msgs = null;
-      if (newCall1 != null)
-        msgs = ((InternalEObject)newCall1).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Actionpak1Package.INCOMING_CALL2__NEW_CALL1, null, msgs);
-      if (newNewCall1 != null)
-        msgs = ((InternalEObject)newNewCall1).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Actionpak1Package.INCOMING_CALL2__NEW_CALL1, null, msgs);
-      msgs = basicSetNewCall1(newNewCall1, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Actionpak1Package.INCOMING_CALL2__NEW_CALL1, newNewCall1, newNewCall1));
-  }
+		if (newNewCall1 != newCall1) {
+			NotificationChain msgs = null;
+			if (newCall1 != null)
+				msgs = ((InternalEObject)newCall1).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Actionpak1Package.INCOMING_CALL2__NEW_CALL1, null, msgs);
+			if (newNewCall1 != null)
+				msgs = ((InternalEObject)newNewCall1).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Actionpak1Package.INCOMING_CALL2__NEW_CALL1, null, msgs);
+			msgs = basicSetNewCall1(newNewCall1, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Actionpak1Package.INCOMING_CALL2__NEW_CALL1, newNewCall1, newNewCall1));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getCallName() {
-    return callName;
-  }
+		return callName;
+	}
 
   /**
    * <!-- begin-user-doc -->
@@ -315,133 +315,133 @@ public class IncomingCall2Impl extends ParameterizedInitiatorImpl implements Inc
   }
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case Actionpak1Package.INCOMING_CALL2__NEW_CALL1:
-        return basicSetNewCall1(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case Actionpak1Package.INCOMING_CALL2__NEW_CALL1:
+				return basicSetNewCall1(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case Actionpak1Package.INCOMING_CALL2__NEW_CALL1:
-        return getNewCall1();
-      case Actionpak1Package.INCOMING_CALL2__CALL_NAME:
-        return getCallName();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case Actionpak1Package.INCOMING_CALL2__NEW_CALL1:
+				return getNewCall1();
+			case Actionpak1Package.INCOMING_CALL2__CALL_NAME:
+				return getCallName();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case Actionpak1Package.INCOMING_CALL2__NEW_CALL1:
-        setNewCall1((Call)newValue);
-        return;
-      case Actionpak1Package.INCOMING_CALL2__CALL_NAME:
-        setCallName((String)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case Actionpak1Package.INCOMING_CALL2__NEW_CALL1:
+				setNewCall1((Call)newValue);
+				return;
+			case Actionpak1Package.INCOMING_CALL2__CALL_NAME:
+				setCallName((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case Actionpak1Package.INCOMING_CALL2__NEW_CALL1:
-        setNewCall1((Call)null);
-        return;
-      case Actionpak1Package.INCOMING_CALL2__CALL_NAME:
-        setCallName(CALL_NAME_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case Actionpak1Package.INCOMING_CALL2__NEW_CALL1:
+				setNewCall1((Call)null);
+				return;
+			case Actionpak1Package.INCOMING_CALL2__CALL_NAME:
+				setCallName(CALL_NAME_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case Actionpak1Package.INCOMING_CALL2__NEW_CALL1:
-        return newCall1 != null;
-      case Actionpak1Package.INCOMING_CALL2__CALL_NAME:
-        return CALL_NAME_EDEFAULT == null ? callName != null : !CALL_NAME_EDEFAULT.equals(callName);
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case Actionpak1Package.INCOMING_CALL2__NEW_CALL1:
+				return newCall1 != null;
+			case Actionpak1Package.INCOMING_CALL2__CALL_NAME:
+				return CALL_NAME_EDEFAULT == null ? callName != null : !CALL_NAME_EDEFAULT.equals(callName);
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-    if (baseClass == CallSource1.class) {
-      switch (derivedFeatureID) {
-        case Actionpak1Package.INCOMING_CALL2__NEW_CALL1: return AsteriskPackage.CALL_SOURCE1__NEW_CALL1;
-        default: return -1;
-      }
-    }
-    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-  }
+		if (baseClass == CallSource1.class) {
+			switch (derivedFeatureID) {
+				case Actionpak1Package.INCOMING_CALL2__NEW_CALL1: return AsteriskPackage.CALL_SOURCE1__NEW_CALL1;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-    if (baseClass == CallSource1.class) {
-      switch (baseFeatureID) {
-        case AsteriskPackage.CALL_SOURCE1__NEW_CALL1: return Actionpak1Package.INCOMING_CALL2__NEW_CALL1;
-        default: return -1;
-      }
-    }
-    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-  }
+		if (baseClass == CallSource1.class) {
+			switch (baseFeatureID) {
+				case AsteriskPackage.CALL_SOURCE1__NEW_CALL1: return Actionpak1Package.INCOMING_CALL2__NEW_CALL1;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (callName: ");
-    result.append(callName);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (callName: ");
+		result.append(callName);
+		result.append(')');
+		return result.toString();
+	}
 
 } //IncomingCall2Impl

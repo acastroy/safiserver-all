@@ -28,29 +28,29 @@ import com.safi.core.actionstep.ParameterizedInitiator;
  */
 public interface IncomingCall2 extends ParameterizedInitiator, CallSource1 {
   /**
-   * Returns the value of the '<em><b>Call Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Call Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Call Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Call Name</em>' attribute.
-   * @see #setCallName(String)
-   * @see com.safi.workshop.model.actionpak1.Actionpak1Package#getIncomingCall2_CallName()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Call Name</em>' attribute.
+	 * @see #setCallName(String)
+	 * @see com.safi.workshop.model.actionpak1.Actionpak1Package#getIncomingCall2_CallName()
+	 * @model
+	 * @generated
+	 */
   String getCallName();
 
   /**
-   * Sets the value of the '{@link com.safi.workshop.model.actionpak1.IncomingCall2#getCallName <em>Call Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.workshop.model.actionpak1.IncomingCall2#getCallName <em>Call Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Call Name</em>' attribute.
-   * @see #getCallName()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Call Name</em>' attribute.
+	 * @see #getCallName()
+	 * @generated
+	 */
   void setCallName(String value);
 
 } // IncomingCall2

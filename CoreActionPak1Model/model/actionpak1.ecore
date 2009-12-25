@@ -41,4 +41,79 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="labelText" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ManagerActionType">
+    <eLiterals name="AbsoluteTimeoutAction" literal="AbsoluteTimeoutAction"/>
+    <eLiterals name="AgentCallbackLoginAction" value="1" literal="AgentCallbackLoginAction"/>
+    <eLiterals name="AgentLogoffAction" value="2" literal="AgentLogoffAction"/>
+    <eLiterals name="AgentsAction" value="3" literal="AgentsAction"/>
+    <eLiterals name="AgiAction" value="4" literal="AgiAction"/>
+    <eLiterals name="AtxferAction" value="5" literal="AtxferAction"/>
+    <eLiterals name="BridgeAction" value="6" literal="BridgeAction"/>
+    <eLiterals name="ChallengeAction" value="7" literal="ChallengeAction"/>
+    <eLiterals name="ChangeMonitorAction" value="8" literal="ChangeMonitorAction"/>
+    <eLiterals name="CommandAction" value="9" literal="CommandAction"/>
+    <eLiterals name="CoreSettingsAction" value="10" literal="CoreSettingsAction"/>
+    <eLiterals name="CoreShowChannelsAction" value="11" literal="CoreShowChannelsAction"/>
+    <eLiterals name="CoreStatusAction" value="12" literal="CoreStatusAction"/>
+    <eLiterals name="DbDelAction" value="13" literal="DbDelAction"/>
+    <eLiterals name="DbDelTreeAction" value="14" literal="DbDelTreeAction"/>
+    <eLiterals name="DbGetAction" value="15" literal="DbGetAction"/>
+    <eLiterals name="DbPutAction" value="16" literal="DbPutAction"/>
+    <eLiterals name="EventsAction" value="17" literal="EventsAction"/>
+    <eLiterals name="ExtensionStateAction" value="18" literal="ExtensionStateAction"/>
+    <eLiterals name="GetConfigAction" value="19" literal="GetConfigAction"/>
+    <eLiterals name="GetVarAction" value="20" literal="GetVarAction"/>
+    <eLiterals name="HangupAction" value="21" literal="HangupAction"/>
+    <eLiterals name="IaxPeerListAction" value="22" literal="IaxPeerListAction"/>
+    <eLiterals name="JabberSendAction" value="23" literal="JabberSendAction"/>
+    <eLiterals name="ListCommandsAction" value="24" literal="ListCommandsAction"/>
+    <eLiterals name="LoginAction" value="25" literal="LoginAction"/>
+    <eLiterals name="LogoffAction" value="26" literal="LogoffAction"/>
+    <eLiterals name="MailboxCountAction" value="27" literal="MailboxCountAction"/>
+    <eLiterals name="MailboxStatusAction" value="28" literal="MailboxStatusAction"/>
+    <eLiterals name="MeetMeMuteAction" value="29" literal="MeetMeMuteAction"/>
+    <eLiterals name="MeetMeUnmuteAction" value="30" literal="MeetMeUnmuteAction"/>
+    <eLiterals name="ModuleCheckAction" value="31" literal="ModuleCheckAction"/>
+    <eLiterals name="ModuleLoadAction" value="32" literal="ModuleLoadAction"/>
+    <eLiterals name="MonitorAction" value="33" literal="MonitorAction"/>
+    <eLiterals name="OriginateAction" value="34" literal="OriginateAction"/>
+    <eLiterals name="ParkAction" value="35" literal="ParkAction"/>
+    <eLiterals name="ParkedCallsAction" value="36" literal="ParkedCallsAction"/>
+    <eLiterals name="PauseMonitorAction" value="37" literal="PauseMonitorAction"/>
+    <eLiterals name="PingAction" value="38" literal="PingAction"/>
+    <eLiterals name="PlayDtmfAction" value="39" literal="PlayDtmfAction"/>
+    <eLiterals name="QueueAddAction" value="40" literal="QueueAddAction"/>
+    <eLiterals name="QueueLogAction" value="41" literal="QueueLogAction"/>
+    <eLiterals name="QueuePauseAction" value="42" literal="QueuePauseAction"/>
+    <eLiterals name="QueuePenaltyAction" value="43" literal="QueuePenaltyAction"/>
+    <eLiterals name="QueueRemoveAction" value="44" literal="QueueRemoveAction"/>
+    <eLiterals name="QueueResetAction" value="45" literal="QueueResetAction"/>
+    <eLiterals name="QueueStatusAction" value="46" literal="QueueStatusAction"/>
+    <eLiterals name="QueueSummaryAction" value="47" literal="QueueSummaryAction"/>
+    <eLiterals name="RedirectAction" value="48" literal="RedirectAction"/>
+    <eLiterals name="SendTextAction" value="49" literal="SendTextAction"/>
+    <eLiterals name="SetCdrUserFieldAction" value="50" literal="SetCdrUserFieldAction"/>
+    <eLiterals name="SetVarAction" value="51" literal="SetVarAction"/>
+    <eLiterals name="ShowDialplanAction" value="52" literal="ShowDialplanAction"/>
+    <eLiterals name="SipNotifyAction" value="53" literal="SipNotifyAction"/>
+    <eLiterals name="SipPeersAction" value="54" literal="SipPeersAction"/>
+    <eLiterals name="SipShowPeerAction" value="55" literal="SipShowPeerAction"/>
+    <eLiterals name="SipShowRegistryAction" value="56" literal="SipShowRegistryAction"/>
+    <eLiterals name="StatusAction" value="57" literal="StatusAction"/>
+    <eLiterals name="StopMonitorAction" value="58" literal="StopMonitorAction"/>
+    <eLiterals name="UnpauseMonitorAction" value="59" literal="UnpauseMonitorAction"/>
+    <eLiterals name="UpdateConfigAction" value="60" literal="UpdateConfigAction"/>
+    <eLiterals name="UserEventAction" value="61" literal="UserEventAction"/>
+    <eLiterals name="VoicemailUsersListAction" value="62" literal="VoicemailUsersListAction"/>
+    <eLiterals name="ZapDialOffhookAction" value="63" literal="ZapDialOffhookAction"/>
+    <eLiterals name="ZapDndOffAction" value="64" literal="ZapDndOffAction"/>
+    <eLiterals name="ZapDndOnAction" value="65" literal="ZapDndOnAction"/>
+    <eLiterals name="ZapHangupAction" value="66" literal="ZapHangupAction"/>
+    <eLiterals name="ZapRestartAction" value="67" literal="ZapRestartAction"/>
+    <eLiterals name="ZapShowChannelsAction" value="68" literal="ZapShowChannelsAction"/>
+    <eLiterals name="ZapTransferAction" value="69" literal="ZapTransferAction"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ManagerAction" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ParameterizedActionstep">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="managerActionType" eType="#//ManagerActionType"/>
+  </eClassifiers>
 </ecore:EPackage>
