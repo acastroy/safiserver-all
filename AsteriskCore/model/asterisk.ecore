@@ -1904,14 +1904,6 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ManagerAction" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ParameterizedActionstep">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="managerActionType" eType="#//actionstep/ManagerActionType"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" upperBound="-1"
-          eType="#//actionstep/ManagerItem"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="outputs" upperBound="-1"
-          eType="#//actionstep/ManagerItem"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ManagerItem" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/Item">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="initiator" nsURI="http:///com/safi/asterisk.ecore#initiator"
