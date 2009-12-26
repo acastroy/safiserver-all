@@ -77,7 +77,7 @@
         <details key="type" value="Prompt Filename"/>
         <details key="isTypeLocked" value="false"/>
         <details key="description" value="The audio prompt file name that will be played"/>
-        <details key="expectedReturnType" value="Prompt Filename"/>
+        <details key="expectedReturnType" value="Text"/>
         <details key="helperClass" value="com.safi.workshop.sheet.PromptChooserDynamicValueEditorPage"/>
       </eAnnotations>
       <eAnnotations source="Required">

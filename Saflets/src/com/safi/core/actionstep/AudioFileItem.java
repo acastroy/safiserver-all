@@ -14,7 +14,7 @@ package com.safi.core.actionstep;
  *
  *
  * @see com.safi.core.actionstep.ActionStepPackage#getAudioFileItem()
- * @model annotation="DynamicValueAnnotation superProperty='dynamicValue' type='Prompt Filename' isTypeLocked='false' description='The audio prompt file name that will be played' expectedReturnType='Prompt Filename' helperClass='com.safi.workshop.sheet.PromptChooserDynamicValueEditorPage'"
+ * @model annotation="DynamicValueAnnotation superProperty='dynamicValue' type='Prompt Filename' isTypeLocked='false' description='The audio prompt file name that will be played' expectedReturnType='Text' helperClass='com.safi.workshop.sheet.PromptChooserDynamicValueEditorPage'"
  *        annotation="Required criteria='non-null'"
  * @generated
  */
