@@ -40,7 +40,7 @@ public interface StreamAudio extends ActionStep, CallConsumer1 {
 	 * @see #setFilename(DynamicValue)
 	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getStreamAudio_Filename()
 	 * @model containment="true" ordered="false"
-	 *        annotation="DynamicValueAnnotation type='Prompt Filename' isTypeLocked='false' description='The audio prompt file name that will be played' expectedReturnType='Prompt Filename' helperClass='com.safi.workshop.sheet.PromptChooserDynamicValueEditorPage'"
+	 *        annotation="DynamicValueAnnotation type='Prompt Filename' isTypeLocked='false' description='The audio prompt file name that will be played' expectedReturnType='Text' helperClass='com.safi.workshop.sheet.PromptChooserDynamicValueEditorPage'"
 	 *        annotation="Required criteria='non-null'"
 	 * @generated
 	 */

@@ -4949,7 +4949,7 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 			 "type", "Prompt Filename",
 			 "isTypeLocked", "false",
 			 "description", "The audio prompt file name that will be played",
-			 "expectedReturnType", "Prompt Filename",
+			 "expectedReturnType", "Text",
 			 "helperClass", "com.safi.workshop.sheet.PromptChooserDynamicValueEditorPage"
 		   });				
 		addAnnotation
@@ -5249,7 +5249,7 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 			 "type", "Prompt Filename",
 			 "isTypeLocked", "false",
 			 "description", "The audio prompt file name that will be played",
-			 "expectedReturnType", "Prompt Filename",
+			 "expectedReturnType", "Text",
 			 "helperClass", "com.safi.workshop.sheet.PromptChooserDynamicValueEditorPage"
 		   });			
 		addAnnotation
