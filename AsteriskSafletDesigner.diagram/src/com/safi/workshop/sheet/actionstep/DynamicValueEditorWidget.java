@@ -335,7 +335,7 @@ public class DynamicValueEditorWidget extends Composite {
 
 		if (Window.OK == dve.open()) {
 			DynamicValue dv = dve.getDynamicValue();
-			String returnType = getDynamicValueInfo().expectedReturnType;
+//			String returnType = getDynamicValueInfo().expectedReturnType;
 			if (dv == null || StringUtils.isBlank(dv.getText())) {
 				dynamicValue = null;
 			} else {
@@ -577,7 +577,7 @@ public class DynamicValueEditorWidget extends Composite {
 							// ActionStepFactory.eINSTANCE.createDynamicValue();
 							// dynamicValue.setText(newtext);
 							// }
-						} else if (!"VariableName".equals(getDynamicValueInfo().expectedReturnType)) {
+						} else if (!"VariableName".equals(getDynamicValueInfo().dynValueTypeStr)) {
 							changed = true;
 							dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
 							dynamicValue.setText(newtext);

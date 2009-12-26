@@ -291,7 +291,8 @@ public class DynamicValueEditorUtils {
 										    .buildEditorPage(s, handlerContext, editingDomain);
 										if (page != null) {
 											dve.addPage(page);
-											dve.setDefaultPage(page);
+//											if (dynamicValue == null)
+												dve.setDefaultPage(page);
 										}
 									}
 								} finally {

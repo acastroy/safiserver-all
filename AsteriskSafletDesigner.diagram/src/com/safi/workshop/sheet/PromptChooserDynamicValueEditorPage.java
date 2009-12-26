@@ -44,7 +44,7 @@ public class PromptChooserDynamicValueEditorPage extends AbstractDynamicValueEdi
   @Override
   public String getType() {
     // TODO Auto-generated method stub
-    return "Prompt Filename";
+    return "Custom";
   }
 
   @Override

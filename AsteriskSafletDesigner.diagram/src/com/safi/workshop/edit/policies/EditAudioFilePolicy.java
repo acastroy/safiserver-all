@@ -13,6 +13,7 @@ import org.eclipse.jface.window.Window;
 import com.safi.asterisk.actionstep.MultiStreamAudio;
 import com.safi.core.actionstep.CaseItem;
 import com.safi.core.actionstep.DynamicValue;
+import com.safi.core.actionstep.DynamicValueType;
 import com.safi.core.saflet.SafletContext;
 import com.safi.workshop.edit.parts.AudioFileItemEditPart;
 import com.safi.workshop.edit.parts.AudioFileItemLabelTextEditPart;
@@ -57,7 +58,8 @@ public class EditAudioFilePolicy extends OpenEditPolicy {
 
     PromptChooserDynamicValueEditorPage promptPage = new PromptChooserDynamicValueEditorPage();
     dve2.addPage(promptPage);
-    dve2.setDefaultPage(promptPage);
+//    if (dynamicValue == null || dynamicValue.getType()==DynamicValueType.LITERAL_TEXT)
+    	dve2.setDefaultPage(promptPage);
     return dve2;
 
   }
@@ -82,7 +84,7 @@ public class EditAudioFilePolicy extends OpenEditPolicy {
 
       DynamicValueEditor2 dve = createDynamicValueEditor("Audio File #"
           + ((MultiStreamAudio) item.getParentActionStep()).getAudioFilenames().indexOf(item),
-          "Prompt Filename", "Provide the name of a valid Asterisk prompt or audio file", false,
+          "Text", "Provide the name of a valid Asterisk prompt or audio file", false,
           null, dynamicValue, part.getAudioFileItem().getParentActionStep().getSaflet()
               .getSafletContext(), part);
       int result = dve.open();

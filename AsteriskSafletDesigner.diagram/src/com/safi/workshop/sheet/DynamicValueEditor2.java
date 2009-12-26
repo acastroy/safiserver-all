@@ -133,7 +133,9 @@ public class DynamicValueEditor2 extends TitleAreaDialog {
     super.create();
 
     DynamicValueEditorPage page = null;
-    if (defaultPage != null) {
+    if (defaultPage != null && 
+    		(dynamicValue == null || 
+    				StringUtils.equalsIgnoreCase(defaultPage.getType(), dynamicValue.getType().getLiteral()))) {
       page = defaultPage;
     } else {
       boolean defaultSelected = false;
@@ -157,6 +159,10 @@ public class DynamicValueEditor2 extends TitleAreaDialog {
 
     }
     addPages();
+    
+    if (page == null)
+    	page = defaultPage;
+    
     if (page != null) {
       page.setInitialText(scratch.getText());
       selectPage(page);
