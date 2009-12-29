@@ -297,9 +297,9 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 	        	 if(method.getDeclaringClass()==AbsoluteTimeoutAction.class){
 	        		  System.out.println("it is base method:"+method);
 	        		  InputItem item = ActionStepFactory.eINSTANCE.createInputItem();
-						item.setParentActionStep(managerAction);
-					
-						item.setParameterName(method.getName());
+						item.setParentActionStep(managerAction); 
+						//item.setLabelText(method.getName().replace("set", ""));
+						item.setParameterName(method.getName().replace("set", ""));
 						list.add(item);
 	        		
 	        	  }
