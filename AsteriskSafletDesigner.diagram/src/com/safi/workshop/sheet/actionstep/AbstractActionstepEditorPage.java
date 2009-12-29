@@ -1,10 +1,10 @@
 package com.safi.workshop.sheet.actionstep;
 
-import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.databinding.EMFDataBindingContext;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Shell;
 
 import com.safi.workshop.edit.parts.ToolstepEditPart;
 
@@ -15,16 +15,20 @@ public abstract class AbstractActionstepEditorPage extends Composite implements
   protected EMFDataBindingContext bindingContext;
   protected ToolstepEditPart editPart;
 
+  public AbstractActionstepEditorPage(){
+	  super(new Shell(),SWT.DEFAULT);
+	  System.out.println("this constructor should nerver be called! used by designer only.:AbstractActionstepEditorPage");
+  }
   /**
    * Create the composite
    * 
    * @param parent
    * @param style
    */
-  public AbstractActionstepEditorPage(ActionstepEditorDialog parent) {
-    super(parent.getTabFolder(), SWT.NONE);
-    this.editorDialog = parent;
-    editPart = editorDialog.getEditPart();
+  public AbstractActionstepEditorPage(ActionstepEditorDialog parent) {	
+     super(parent.getTabFolder(), SWT.NONE);
+      this.editorDialog = parent;
+      editPart = editorDialog.getEditPart();
     bindingContext = new EMFDataBindingContext();
     // getShell().addDisposeListener(new DisposeListener(){
     //

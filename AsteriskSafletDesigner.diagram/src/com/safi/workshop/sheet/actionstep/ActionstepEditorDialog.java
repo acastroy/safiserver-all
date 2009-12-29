@@ -52,6 +52,12 @@ public class ActionstepEditorDialog extends TitleAreaDialog {
 
 	// private int rollbackCount = 0;
 
+	public ActionstepEditorDialog(){
+		//this is strictrly for designer purpose.
+		//this should never be called;
+	   super(new Shell());
+	   System.out.println("this constructor is strictly for designer. It never should be called.");
+	}
 	/**
 	 * Create the dialog
 	 * 
