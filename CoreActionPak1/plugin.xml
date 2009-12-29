@@ -69,6 +69,20 @@
             <param name="semanticHint" value="10004"/>
          </metamodelType>
       </metamodel>
+      <metamodel
+            nsURI="http:///com/safi/workshop/actionpak1.ecore">
+         <metamodelType
+               eclass="ManagerAction"
+               edithelper="com.safi.workshop.actionpak1.helper.ManagerActionEditHelper"
+               id="CoreActionPak1.ManagerAction_10005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               name="ManagerAction">
+            <param
+                  name="semanticHint"
+                  value="10005">
+            </param>
+         </metamodelType>
+      </metamodel>
    </extension>
    <extension
          point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
@@ -79,6 +93,9 @@
             <elementType ref="CoreActionPak1.IncomingCall2_10003"/>
             <elementType ref="CoreActionPak1.InvokeSaflet2_10004"/>
             <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
+            <elementType
+                  ref="CoreActionPak1.ManagerAction_10005">
+            </elementType>
       </binding>
    </extension>
    
@@ -208,6 +225,26 @@
    <serverjar
          jar="serverjars/safletcore_v20091130.jar">
    </serverjar>
+   <actionStep
+         createCommandFactory="com.safi.workshop.actionpak1.factory.ManagerActionCreateCommandFactory"
+         editPartFactory="com.safi.workshop.actionpak1.factory.ManagerActionEditPartFactory"
+         elementFactory="com.safi.workshop.actionpak1.factory.ManagerActionElementFactory"
+         enabled="true"
+         isInitiator="false"
+         labelSemanticHint="40009"
+         modelFactory="com.safi.workshop.actionpak1.factory.ManagerActionModelFactory"
+         semanticHint="10005"
+         viewFactory="com.safi.workshop.actionpak1.factory.ManagerActionPakViewFactory">
+      <paletteEntry
+            displayName="Manager Action"
+            path="Logic"
+            tooltip="Manager Action">
+      </paletteEntry>
+   </actionStep>
+   <actionstepEditorDialogFactory
+         actionstepClass="com.safi.workshop.actionpak1.editpart.ManagerActionEditPart"
+         factory="com.safi.workshop.actionpak1.factory.ManagerActionEditorDialogFactory">
+   </actionstepEditorDialogFactory>
 </extension>
 
 </plugin>

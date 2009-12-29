@@ -32,4 +32,7 @@ public class ElementTypes {
 
   public static IElementType elementType_InvokeSaflet2_10004 = 
     ElementTypeRegistry.getInstance().getType("CoreActionPak1.InvokeSaflet2_10004"); //$NON-NLS-1$
+  
+  public static IElementType elementType_ManagerAction_10005 = 
+	    ElementTypeRegistry.getInstance().getType("CoreActionPak1.ManagerAction_10005"); //$NON-NLS-1$
 }
