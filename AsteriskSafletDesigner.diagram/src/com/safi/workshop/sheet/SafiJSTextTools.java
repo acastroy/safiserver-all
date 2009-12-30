@@ -12,6 +12,7 @@ import org.eclipse.ui.texteditor.ITextEditor;
 import org.osgi.framework.Bundle;
 
 import com.safi.asterisk.handler.util.FileUtils;
+import com.safi.core.scripting.impl.RhinoSafletScriptEnvironmentImpl;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 
 public class SafiJSTextTools extends JavascriptTextTools {
@@ -47,7 +48,12 @@ public class SafiJSTextTools extends JavascriptTextTools {
                 SHARED_JS_FILE);
           }
           if (scriptStream == null) {
-            Bundle bundle = Platform.getBundle("Saflets");
+          	scriptStream = RhinoSafletScriptEnvironmentImpl.class.getResourceAsStream(
+                SHARED_JS_FILE);
+            
+          }
+          if (scriptStream == null){
+          	Bundle bundle = Platform.getBundle("Saflets");
             if (BundleUtility.isReady(bundle)) {
               URL location = BundleUtility.find(bundle, "resources/" + SHARED_JS_FILE);
               scriptStream = location.openStream();

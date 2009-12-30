@@ -48,11 +48,20 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
          extension="saflet">
       </fileTypes>
    </extension> 
+   <!--
    <extension point="org.eclipse.emf.ecore.extension_parser">
       <?gmfgen generated="true"?>
       <parser
          type="saflet"
          class="com.safi.core.actionstep.util.SafiResourceFactoryImpl">
+      </parser>
+   </extension>
+   -->
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <?gmfgen generated="true"?>
+      <parser
+         type="saflet"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
       </parser>
    </extension>
    <extension point="org.eclipse.ui.editors">
@@ -94,8 +103,8 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
 
    <extension point="org.eclipse.ui.newWizards">
       <?gmfgen generated="false"?>
-  	  <wizard
-  	     category="org.eclipse.ui.Examples"
+      <wizard
+         category="org.eclipse.ui.Examples"
            class="com.safi.workshop.SafletCreationWizard"
            hasPages="true"
            icon="icons/product/SafiProject.gif"
@@ -1061,7 +1070,7 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
          </menu>
       </actionSet>
    </extension>
-	
+    
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders">
       <?gmfgen generated="true"?>
       <GlobalActionHandlerProvider
@@ -3740,15 +3749,15 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
    </extension>
   <!-- 
   <extension
-		point="org.eclipse.dltk.ui.scriptCompletionProposalComputer"
-		id="JavaScriptTypeCompletionProposalComputer">
-		<scriptCompletionProposalComputer
+        point="org.eclipse.dltk.ui.scriptCompletionProposalComputer"
+        id="JavaScriptTypeCompletionProposalComputer">
+        <scriptCompletionProposalComputer
         activate="true"
         categoryId="org.eclipse.dltk.ui.scriptTypeProposalCategory"
         class="com.safi.workshop.sheet.SafiJavaScriptTypeCompletionProposalComputer"
         toolkitId="org.eclipse.dltk.javascript.core.nature">
-			<partition type="__dftl_partition_content_type"/>
-		</scriptCompletionProposalComputer>		
-	</extension>
-	-->
+            <partition type="__dftl_partition_content_type"/>
+        </scriptCompletionProposalComputer>     
+    </extension>
+    -->
 </plugin>

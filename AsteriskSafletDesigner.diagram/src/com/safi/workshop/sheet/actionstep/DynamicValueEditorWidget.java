@@ -577,17 +577,17 @@ public class DynamicValueEditorWidget extends Composite {
 							// ActionStepFactory.eINSTANCE.createDynamicValue();
 							// dynamicValue.setText(newtext);
 							// }
-						} else if (!"VariableName".equals(getDynamicValueInfo().dynValueTypeStr)) {
+						} else { // if (!"VariableName".equals(getDynamicValueInfo().dynValueTypeStr)) {
 							changed = true;
 							dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
 							dynamicValue.setText(newtext);
-						} else {
+						} /*else {
 							MessageDialog.openError(getShell(), "Variable Error",
 							    "Could not set value. Value is illegal.");
 
 							dynamicValue = null;
 							return;
-						}
+						}*/
 
 						if (isQuoted) {
 							if (dynamicValue != null)
