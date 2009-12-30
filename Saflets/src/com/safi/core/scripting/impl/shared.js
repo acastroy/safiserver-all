@@ -1,10 +1,10 @@
 function now() { return new java.util.Date(); }
 
-function debug(text) { Packages.com.safi.asterisk.handler.impl.HandlerImpl.debugLog.debug(text); }
+function debug(text) { Packages.com.safi.asterisk.saflet.impl.SafletImpl.debugLog.debug(text); }
 
-function info(text) { Packages.com.safi.asterisk.handler.impl.HandlerImpl.debugLog.info(text); }
+function info(text) { Packages.com.safi.asterisk.saflet.impl.SafletImpl.debugLog.info(text); }
 
-function error(text) { Packages.com.safi.asterisk.handler.impl.HandlerImpl.debugLog.error(text); }
+function error(text) { Packages.com.safi.asterisk.saflet.impl.SafletImpl.debugLog.error(text); }
 
 function print(text) { java.lang.System.out.print(text); }
 

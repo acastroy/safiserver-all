@@ -8,17 +8,11 @@ package com.safi.core.scripting.impl;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.URL;
-
 import org.apache.log4j.Logger;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.ui.internal.util.BundleUtility;
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.ContextFactory;
 import org.mozilla.javascript.Kit;
-import org.osgi.framework.Bundle;
-
 import com.safi.core.scripting.RhinoSafletScript;
 import com.safi.core.scripting.RhinoSafletScriptEnvironment;
 import com.safi.core.scripting.SafletScriptException;
@@ -97,13 +91,15 @@ public class RhinoSafletScriptEnvironmentImpl extends SafletScriptEnvironmentImp
         // while (enm.hasMoreElements())
       }
       if (scriptStream == null) {
-        Bundle bundle = Platform.getBundle("Saflets");
-        if (BundleUtility.isReady(bundle)) {
-          URL location = BundleUtility.find(bundle, "resources/"+SHARED_JS_FILE);
-          if (log.isDebugEnabled())
-            log.debug("Found "+SHARED_JS_FILE+" at "+location);
-          scriptStream = location.openStream();
-        }
+      	scriptStream = this.getClass().getResourceAsStream(
+            SHARED_JS_FILE);
+//        Bundle bundle = Platform.getBundle("Saflets");
+//        if (BundleUtility.isReady(bundle)) {
+//          URL location = BundleUtility.find(bundle, "resources/"+SHARED_JS_FILE);
+//          if (log.isDebugEnabled())
+//            log.debug("Found "+SHARED_JS_FILE+" at "+location);
+//          scriptStream = location.openStream();
+//        }
       }
       if (scriptStream == null) {
         throw new SafletScriptException("Couldn't load shared javascript file " + SHARED_JS_FILE);
