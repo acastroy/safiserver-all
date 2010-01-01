@@ -372,16 +372,17 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 	        			  System.out.println(paraclasses[i]);
 	        		  }
 	        		  InputItem item = ActionStepFactory.eINSTANCE.createInputItem();
-	   
+	                    
 						item.setParentActionStep(managerAction); 
 						String typeName=paraclasses[0].getSimpleName();
 						//String typeName=typeNames[typeNames.length-1];
 						//item.setLabelText(method.getName().replace("set", ""));
-						item.setParameterName(method.getName().replace("set", ""));
-						item.setLabelText(typeName);
+						
 						DynamicValue dynaValue=ActionStepFactory.eINSTANCE.createDynamicValue();
 						dynaValue.setType(DynamicValueType.SCRIPT_TEXT);
                         item.setDynamicValue(dynaValue);
+                        item.setParameterName(method.getName().replace("set", ""));
+						item.setLabelText(typeName);
 					    
 						list.add(item);
 	        		

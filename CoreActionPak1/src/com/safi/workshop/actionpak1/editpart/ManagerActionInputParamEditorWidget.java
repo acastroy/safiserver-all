@@ -110,7 +110,6 @@ public class ManagerActionInputParamEditorWidget extends InputItemEditorWidget {
 		 case 0:
 			 return item.getParameterName();
 		 case 1:
-			 
 			  return item.getLabelText();
 		 case 2:
 			 DynamicValue value=item.getDynamicValue();
