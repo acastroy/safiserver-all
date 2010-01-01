@@ -99,6 +99,8 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
 import com.safi.core.actionstep.ActionStepFactory;
+import com.safi.core.actionstep.DynamicValue;
+import com.safi.core.actionstep.DynamicValueType;
 import com.safi.core.actionstep.InputItem;
 import com.safi.core.actionstep.Item;
 import com.safi.workshop.model.actionpak1.ManagerAction;
@@ -376,6 +378,10 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 						//String typeName=typeNames[typeNames.length-1];
 						//item.setLabelText(method.getName().replace("set", ""));
 						item.setParameterName(method.getName().replace("set", ""));
+						item.setLabelText(typeName);
+						DynamicValue dynaValue=ActionStepFactory.eINSTANCE.createDynamicValue();
+						dynaValue.setType(DynamicValueType.SCRIPT_TEXT);
+                        item.setDynamicValue(dynaValue);
 					    
 						list.add(item);
 	        		

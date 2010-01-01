@@ -111,7 +111,7 @@ public class ManagerActionInputParamEditorWidget extends InputItemEditorWidget {
 			 return item.getParameterName();
 		 case 1:
 			 
-			  return "String";
+			  return item.getLabelText();
 		 case 2:
 			 DynamicValue value=item.getDynamicValue();
 			 if(value!=null){
