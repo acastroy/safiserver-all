@@ -6,6 +6,74 @@ import java.util.List;
 import java.util.Map;
 
 import org.asteriskjava.manager.action.AbsoluteTimeoutAction;
+import org.asteriskjava.manager.action.AgentCallbackLoginAction;
+import org.asteriskjava.manager.action.AgentLogoffAction;
+import org.asteriskjava.manager.action.AgentsAction;
+import org.asteriskjava.manager.action.AgiAction;
+import org.asteriskjava.manager.action.AtxferAction;
+import org.asteriskjava.manager.action.BridgeAction;
+import org.asteriskjava.manager.action.ChallengeAction;
+import org.asteriskjava.manager.action.ChangeMonitorAction;
+import org.asteriskjava.manager.action.CommandAction;
+import org.asteriskjava.manager.action.CoreSettingsAction;
+import org.asteriskjava.manager.action.CoreShowChannelsAction;
+import org.asteriskjava.manager.action.CoreStatusAction;
+import org.asteriskjava.manager.action.DbDelAction;
+import org.asteriskjava.manager.action.DbDelTreeAction;
+import org.asteriskjava.manager.action.DbGetAction;
+import org.asteriskjava.manager.action.DbPutAction;
+import org.asteriskjava.manager.action.EventsAction;
+import org.asteriskjava.manager.action.ExtensionStateAction;
+import org.asteriskjava.manager.action.GetConfigAction;
+import org.asteriskjava.manager.action.GetVarAction;
+import org.asteriskjava.manager.action.HangupAction;
+import org.asteriskjava.manager.action.IaxPeerListAction;
+import org.asteriskjava.manager.action.JabberSendAction;
+import org.asteriskjava.manager.action.ListCommandsAction;
+import org.asteriskjava.manager.action.LoginAction;
+import org.asteriskjava.manager.action.LogoffAction;
+import org.asteriskjava.manager.action.MailboxCountAction;
+import org.asteriskjava.manager.action.MailboxStatusAction;
+import org.asteriskjava.manager.action.MeetMeMuteAction;
+import org.asteriskjava.manager.action.MeetMeUnmuteAction;
+import org.asteriskjava.manager.action.ModuleCheckAction;
+import org.asteriskjava.manager.action.ModuleLoadAction;
+import org.asteriskjava.manager.action.MonitorAction;
+import org.asteriskjava.manager.action.OriginateAction;
+import org.asteriskjava.manager.action.ParkAction;
+import org.asteriskjava.manager.action.ParkedCallsAction;
+import org.asteriskjava.manager.action.PauseMonitorAction;
+import org.asteriskjava.manager.action.PingAction;
+import org.asteriskjava.manager.action.PlayDtmfAction;
+import org.asteriskjava.manager.action.QueueAddAction;
+import org.asteriskjava.manager.action.QueueLogAction;
+import org.asteriskjava.manager.action.QueuePauseAction;
+import org.asteriskjava.manager.action.QueuePenaltyAction;
+import org.asteriskjava.manager.action.QueueRemoveAction;
+import org.asteriskjava.manager.action.QueueResetAction;
+import org.asteriskjava.manager.action.QueueStatusAction;
+import org.asteriskjava.manager.action.QueueSummaryAction;
+import org.asteriskjava.manager.action.RedirectAction;
+import org.asteriskjava.manager.action.SendTextAction;
+import org.asteriskjava.manager.action.SetCdrUserFieldAction;
+import org.asteriskjava.manager.action.SetVarAction;
+import org.asteriskjava.manager.action.ShowDialplanAction;
+import org.asteriskjava.manager.action.SipNotifyAction;
+import org.asteriskjava.manager.action.SipPeersAction;
+import org.asteriskjava.manager.action.SipShowRegistryAction;
+import org.asteriskjava.manager.action.StatusAction;
+import org.asteriskjava.manager.action.StopMonitorAction;
+import org.asteriskjava.manager.action.UnpauseMonitorAction;
+import org.asteriskjava.manager.action.UpdateConfigAction;
+import org.asteriskjava.manager.action.UserEventAction;
+import org.asteriskjava.manager.action.VoicemailUsersListAction;
+import org.asteriskjava.manager.action.ZapDialOffhookAction;
+import org.asteriskjava.manager.action.ZapDndOffAction;
+import org.asteriskjava.manager.action.ZapDndOnAction;
+import org.asteriskjava.manager.action.ZapHangupAction;
+import org.asteriskjava.manager.action.ZapRestartAction;
+import org.asteriskjava.manager.action.ZapShowChannelsAction;
+import org.asteriskjava.manager.action.ZapTransferAction;
 import org.asteriskjava.util.ReflectionUtil;
 import org.eclipse.core.databinding.Binding;
 import org.eclipse.core.databinding.observable.list.IObservableList;
@@ -286,15 +354,16 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
     	try{
     		inputItemEditorWidget.getItemList().clear();
     		
-	    	  Map<String,Method> reflectMap=ReflectionUtil.getSetters(AbsoluteTimeoutAction.class);
+	    	  Map<String,Method> reflectMap=ReflectionUtil.getSetters(managerActionClass);
 	    	  List<Item> list=new ArrayList<Item>();
 	    	 
 	  		final ManagerAction managerAction = (ManagerAction)  this.getEditorDialog().getEditPart().getActionStep();
 	    	  //BeanInfo beanInfo=Introspector.getBeanInfo(AbsoluteTimeoutAction.class);
 	          //PropertyDescriptor [] descriptors=beanInfo.getPropertyDescriptors();
+	  	
 	          for(Method method : reflectMap.values() ){
 	        	 // Method method=propertyDescriptor.getWriteMethod();
-	        	 if(method.getDeclaringClass()==AbsoluteTimeoutAction.class){
+	        	 if(method.getDeclaringClass()==managerActionClass){
 	        		  System.out.println("it is base method:"+method);
 	        		  Class[]paraclasses=method.getParameterTypes();
 	        		  for(int i=0;i<paraclasses.length;i++){
@@ -306,7 +375,7 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 						String typeName=paraclasses[0].getSimpleName();
 						//String typeName=typeNames[typeNames.length-1];
 						//item.setLabelText(method.getName().replace("set", ""));
-						item.setParameterName(method.getName().replace("set", "")+":"+typeName);
+						item.setParameterName(method.getName().replace("set", ""));
 					    
 						list.add(item);
 	        		
@@ -334,140 +403,208 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 		    
 			break;
 		    case AGENT_CALLBACK_LOGIN_ACTION:
+		    updateSetters(AgentCallbackLoginAction.class);		
 		    break;
 		    case AGENT_LOGOFF_ACTION:
+		    updateSetters(AgentLogoffAction.class);		
 		    break;
 		    case AGENTS_ACTION:
+		    updateSetters(AgentsAction.class);		
 		    break;
 		    case AGI_ACTION:
+		    updateSetters(AgiAction.class);		
 		    break;
 		    case ATXFER_ACTION:
+		    updateSetters(AtxferAction.class);		
 		    break;
 		    case BRIDGE_ACTION:
+		    updateSetters(BridgeAction.class);	
 		    break;
 		    case CHALLENGE_ACTION:
+		    updateSetters(ChallengeAction.class);	
 		    break;
 		    case CHANGE_MONITOR_ACTION:
+		    updateSetters(ChangeMonitorAction.class);		
 		    break;
 		    case COMMAND_ACTION:
+		    updateSetters(CommandAction.class);		
 		    break;
 		    case CORE_SETTINGS_ACTION:
+		    updateSetters(CoreSettingsAction.class);		
 		    break;
 		    case CORE_SHOW_CHANNELS_ACTION:
+		    updateSetters(CoreShowChannelsAction.class);		
 		    break;
 		    case CORE_STATUS_ACTION:
+		    updateSetters(CoreStatusAction.class);		
 		    break;
 		    case DB_DEL_ACTION:
+		    updateSetters(DbDelAction.class);		
 		    break;
 		    case DB_DEL_TREE_ACTION:
+		    updateSetters(DbDelTreeAction.class);		
 		    break;
 		    case DB_GET_ACTION:
+		    updateSetters(DbGetAction.class);		
 		    break;
 		    case DB_PUT_ACTION:
+		    updateSetters(DbPutAction.class);		
 		    break;
 		    case EVENTS_ACTION:
+		    updateSetters(EventsAction.class);		
 		    break;
 		    case EXTENSION_STATE_ACTION:
+		    updateSetters(ExtensionStateAction.class);		
 		    break;
 		    case GET_CONFIG_ACTION:
+		    updateSetters(GetConfigAction.class);		
 		    break;
 		    case GET_VAR_ACTION:
+		    updateSetters(GetVarAction.class);		
 		    break;
 		    case HANGUP_ACTION:
+		    updateSetters(HangupAction.class);		
 		    break;
 		    case IAX_PEER_LIST_ACTION:
+		    updateSetters(IaxPeerListAction.class);		
 		    break;
 		    case JABBER_SEND_ACTION:
+		    updateSetters(JabberSendAction.class);		
 		    break;
 		    case LIST_COMMANDS_ACTION:
+		    updateSetters(ListCommandsAction.class);		
 		    break;
 		    case LOGIN_ACTION:
+		    updateSetters(LoginAction.class);		
 		    break;
 		    case LOGOFF_ACTION:
+		    updateSetters(LogoffAction.class);		
 		    break;
 		    case MAILBOX_COUNT_ACTION:
+		    updateSetters(MailboxCountAction.class);		
 		    break;
 		    case MAILBOX_STATUS_ACTION:
+		    updateSetters(MailboxStatusAction.class);		
 		    break;
 		    case MEET_ME_MUTE_ACTION:
+		    updateSetters(MeetMeMuteAction.class);		
 		    break;
 		    case MEET_ME_UNMUTE_ACTION:
+		    updateSetters(MeetMeUnmuteAction.class);		
 		    break;
 		    case MODULE_CHECK_ACTION:
+		    updateSetters(ModuleCheckAction.class);		
 		    break;
 		    case MODULE_LOAD_ACTION:
+		    updateSetters(ModuleLoadAction.class);		
 		    break;
 		    case MONITOR_ACTION:
+		    updateSetters(MonitorAction.class);		
 		    break;
 		    case ORIGINATE_ACTION:
+		    updateSetters(OriginateAction.class);		
 		    break;
 		    case PARK_ACTION:
+		    updateSetters(ParkAction.class);		
 		    break;
 		    case PARKED_CALLS_ACTION:
+		    updateSetters(ParkedCallsAction.class);		
 		    break;
 		    case PAUSE_MONITOR_ACTION:
+		    updateSetters(PauseMonitorAction.class);		
 		    break;
 		    case PING_ACTION:
+		    updateSetters(PingAction.class);		
 		    break;
 		    case PLAY_DTMF_ACTION:
+		    updateSetters(PlayDtmfAction.class);		
 		    break;
 		    case QUEUE_ADD_ACTION:
+		    updateSetters(QueueAddAction.class);		
 		    break;
 		    case QUEUE_LOG_ACTION:
+		    updateSetters(QueueLogAction.class);		
 		    break;
 		    case QUEUE_PAUSE_ACTION:
+		    updateSetters(QueuePauseAction.class);		
 		    break;
 		    case QUEUE_PENALTY_ACTION:
+		    updateSetters(QueuePenaltyAction.class);		
 		    break;
 		    case QUEUE_REMOVE_ACTION:
+		    updateSetters(QueueRemoveAction.class);		
 		    break;
 		    case QUEUE_RESET_ACTION:
+		    updateSetters(QueueResetAction.class);		
 		    break;
 		    case QUEUE_STATUS_ACTION:
+		    updateSetters(QueueStatusAction.class);		
 		    break;
 		    case QUEUE_SUMMARY_ACTION:
+		    updateSetters(QueueSummaryAction.class);		
 		    break;
 		    case REDIRECT_ACTION:
+		    updateSetters(RedirectAction.class);		
 		    break;
 		    case SEND_TEXT_ACTION:
+		    updateSetters(SendTextAction.class);		
 		    break;
 		    case SET_CDR_USER_FIELD_ACTION:
+		    updateSetters(SetCdrUserFieldAction.class);		
 		    break;
 		    case SET_VAR_ACTION:
+		    updateSetters(SetVarAction.class);		
 		    break;
 		    case SHOW_DIALPLAN_ACTION:
+		    updateSetters(ShowDialplanAction.class);		
 		    break;
 		    case SIP_NOTIFY_ACTION:
+		    updateSetters(SipNotifyAction.class);		
 		    break;
 		    case SIP_PEERS_ACTION:
+		    updateSetters(SipPeersAction.class);		
 		    break;
 		    case SIP_SHOW_REGISTRY_ACTION:
+		    updateSetters(SipShowRegistryAction.class);		
 		    break;
 		    case STATUS_ACTION:
+		    updateSetters(StatusAction.class);		
 		    break;
 		    case STOP_MONITOR_ACTION:
+		    updateSetters(StopMonitorAction.class);		
 		    break;
 		    case UNPAUSE_MONITOR_ACTION:
+		    updateSetters(UnpauseMonitorAction.class);		
 		    break;
 		    case UPDATE_CONFIG_ACTION:
+		    updateSetters(UpdateConfigAction.class);		
 		    break;
 		    case USER_EVENT_ACTION:
+		    updateSetters(UserEventAction.class);		
 		    break;
 		    case VOICEMAIL_USERS_LIST_ACTION:
+		    updateSetters(VoicemailUsersListAction.class);		
 		    break;
 		    case ZAP_DIAL_OFFHOOK_ACTION:
+		    updateSetters(ZapDialOffhookAction.class);		
 		    break;
 		    case ZAP_DND_OFF_ACTION:
+		    updateSetters(ZapDndOffAction.class);		
 		    break;
 		    case ZAP_DND_ON_ACTION:
+		    updateSetters(ZapDndOnAction.class);		
 		    break;
 		    case ZAP_HANGUP_ACTION:
+		    updateSetters(ZapHangupAction.class);		
 		    break;
 		    case ZAP_RESTART_ACTION:
+		    updateSetters(ZapRestartAction.class);		
 		    break;
 		    case ZAP_SHOW_CHANNELS_ACTION:
+		    updateSetters(ZapShowChannelsAction.class);		
 		    break;
 		    case ZAP_TRANSFER_ACTION:
+		    updateSetters(ZapTransferAction.class);		
 		    break;
 		    
 		    
