@@ -74,6 +74,7 @@ import org.asteriskjava.manager.action.ZapHangupAction;
 import org.asteriskjava.manager.action.ZapRestartAction;
 import org.asteriskjava.manager.action.ZapShowChannelsAction;
 import org.asteriskjava.manager.action.ZapTransferAction;
+import org.asteriskjava.manager.response.ManagerResponse;
 import org.asteriskjava.util.ReflectionUtil;
 import org.eclipse.core.databinding.Binding;
 import org.eclipse.core.databinding.observable.list.IObservableList;
@@ -99,8 +100,6 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
 import com.safi.core.actionstep.ActionStepFactory;
-import com.safi.core.actionstep.DynamicValue;
-import com.safi.core.actionstep.DynamicValueType;
 import com.safi.core.actionstep.InputItem;
 import com.safi.core.actionstep.Item;
 import com.safi.workshop.model.actionpak1.ManagerAction;
@@ -355,6 +354,7 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
     private void updateSetters(Class managerActionClass){
     	try{
     		inputItemEditorWidget.getItemList().clear();
+    		
     		
 	    	  Map<String,Method> reflectMap=ReflectionUtil.getSetters(managerActionClass);
 	    	  List<Item> list=new ArrayList<Item>();

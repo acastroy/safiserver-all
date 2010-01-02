@@ -33,7 +33,7 @@ public class ManagerActionOutputEditorPage extends AbstractActionstepEditorPage 
   private Label paramsLabel;
 
   //private PropertyMappingItemEditorWidget outputItemEditorWidget;
-  private Label outputsLabel;
+  //private Label outputsLabel;
   
   public ManagerActionOutputEditorPage(ActionstepEditorDialog parent) {
     super(parent);
@@ -76,9 +76,9 @@ public class ManagerActionOutputEditorPage extends AbstractActionstepEditorPage 
     ob = ActionstepEditObservables.observeValue(editingDomain, callws, faultFeat);
     bindingContext.bindValue(faultVal, ob, null, null);
     
-    outputsLabel = new Label(this, SWT.NONE);
-    outputsLabel.setLayoutData(new GridData(SWT.LEFT, SWT.TOP, false, false));
-    outputsLabel.setText("Output Params: ");
+   // outputsLabel = new Label(this, SWT.NONE);
+   // outputsLabel.setLayoutData(new GridData(SWT.LEFT, SWT.TOP, false, false));
+   // outputsLabel.setText("Output Params: ");
 
 //    outputItemEditorWidget = new PropertyMappingItemEditorWidget(this, SWT.NONE);
 //    outputItemEditorWidget.setEditingDomain(parent.getEditPart().getEditingDomain());
