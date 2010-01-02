@@ -237,7 +237,7 @@
          viewFactory="com.safi.workshop.actionpak1.factory.ManagerActionPakViewFactory">
       <paletteEntry
             displayName="Manager Action"
-            path="Logic"
+            path="Advanced Call Handling"
             tooltip="Manager Action">
       </paletteEntry>
    </actionStep>

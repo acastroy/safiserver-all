@@ -11,7 +11,7 @@ import org.eclipse.swt.widgets.TableColumn;
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.InputItem;
 import com.safi.core.actionstep.Item;
-import com.safi.workshop.actionpak1.command.SetInputItemValueCommand;
+import com.safi.workshop.actionpak1.command.SetManagerInputItemValueCommand;
 
 public class ManagerActionInputParamEditorWidget extends InputItemEditorWidget {
 
@@ -46,7 +46,7 @@ public class ManagerActionInputParamEditorWidget extends InputItemEditorWidget {
   @Override
   protected void editItem(Item item) {
     
-    if (!SetInputItemValueCommand.executeCmd((InputItem)item, editingDomain,
+    if (!SetManagerInputItemValueCommand.executeCmd((InputItem)item, editingDomain,
         getActionstepEditorDialog().getEditPart().getActionStep().getSaflet().getSafletContext(), false))
         return;
 //    Command command = getActionstepEditorDialog().getEditPart().getEditingDomain().getCommandStack().getMostRecentCommand();

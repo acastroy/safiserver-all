@@ -311,7 +311,7 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 		gd_paramsLabel.verticalIndent = 4;
 		paramsLabel.setLayoutData(gd_paramsLabel);
 		paramsLabel.setText("Parameters:");
-
+        
 		inputItemEditorWidget = new ManagerActionInputParamEditorWidget(this,
 				SWT.NONE);
 		inputItemEditorWidget.setEditingDomain(parent.getEditPart()
@@ -371,18 +371,21 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 	        		  for(int i=0;i<paraclasses.length;i++){
 	        			  System.out.println(paraclasses[i]);
 	        		  }
-	        		  InputItem item = ActionStepFactory.eINSTANCE.createInputItem();
+	        		    InputItem item = ActionStepFactory.eINSTANCE.createInputItem();
 	                    
 						item.setParentActionStep(managerAction); 
 						String typeName=paraclasses[0].getSimpleName();
 						//String typeName=typeNames[typeNames.length-1];
 						//item.setLabelText(method.getName().replace("set", ""));
-						
+						item.setLabelText(typeName);
+						/*
 						DynamicValue dynaValue=ActionStepFactory.eINSTANCE.createDynamicValue();
+					    
 						dynaValue.setType(DynamicValueType.SCRIPT_TEXT);
                         item.setDynamicValue(dynaValue);
+                        */
                         item.setParameterName(method.getName().replace("set", ""));
-						item.setLabelText(typeName);
+					    
 					    
 						list.add(item);
 	        		
