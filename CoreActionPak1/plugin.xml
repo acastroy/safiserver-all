@@ -193,7 +193,7 @@
          factory="com.safi.workshop.model.actionpak1.provider.Actionpak1ItemProviderAdapterFactory">
    </itemProviderAdapterFactory>
    <pakjar
-         jar="pakjars/actionpak1_20091115.jar">
+         jar="pakjars/actionpak1_v20100102_00063.jar">
    </pakjar>
    <description
          descriptionText="Required Core ActionPak ">
