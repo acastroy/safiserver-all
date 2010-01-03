@@ -88,45 +88,10 @@ public class SetManagerInputItemValueCommand extends SetInputItemValueCommand {
 		    if (DynamicValueEditor2.OK == result) {
 
 		      final DynamicValue newval = dve.getDynamicValue();
-		      // if (newval != dynamicValue) {
-		      // item.setDynamicValue(newval);
-		      // }
 		      item.setDynamicValue(newval);
 		      item.setParameterName(newParamName);
 		      item.setLabelText(labelText);
-//		      AbstractOverrideableCommand cmd = new AbstractOverrideableCommand(domain,
-//		          "Set CaseItem DynamicValue") {
-//		        private DynamicValue oldDynValue;
-//		        private String oldName;
-		//
-//		        @Override
-//		        public void doExecute() {
-//		          oldDynValue = item.getDynamicValue();
-//		          oldName = item.getParameterName();
-//		          item.setDynamicValue(newval);
-//		          item.setParameterName(newParamName);
-//		        }
-		//
-//		        @Override
-//		        public void doRedo() {
-//		          doExecute();
-		//
-//		        }
-		//
-//		        @Override
-//		        public void doUndo() {
-//		          item.setDynamicValue(oldDynValue);
-//		          item.setParameterName(oldName);
-//		          oldDynValue = null;
-//		          oldName = null;
-//		        }
-		//
-//		        @Override
-//		        public boolean doCanExecute() {
-//		          return true;
-//		        }
-//		      };
-//		      domain.getCommandStack().execute(cmd);
+
 		      return true;
 		    } else
 		      return false;
@@ -145,14 +110,12 @@ public class SetManagerInputItemValueCommand extends SetInputItemValueCommand {
 		    dve2.setTypeLocked(isTypeLocked);
 
 		    dve2.setDynamicValue(dynamicValue);
+		    
 
 		    dve2.setEditingDomain(domain);
 
 		    VariableDynamicValueEditorPage variablePage = new VariableDynamicValueEditorPage(handlerContext);
 		    dve2.addPage(variablePage);
-
-		    // LiteralDynamicValueEditorPage literalPage = new LiteralDynamicValueEditorPage();
-		    // dve2.addPage(literalPage);
 		    ProgressMonitorDialog pmd = new ProgressMonitorDialog(AsteriskDiagramEditorUtil
 		        .getActiveShell());
 		    try {
@@ -181,15 +144,7 @@ public class SetManagerInputItemValueCommand extends SetInputItemValueCommand {
 		      e.printStackTrace();
 		    }
 
-		    //    
-		    // BusyIndicator.showWhile(Display.getCurrent(), new Runnable() {
-		    //
-		    // public void run() {
-		    // ScriptDynamicValueEditorPage scriptPage = new
-		    // ScriptDynamicValueEditorPage(handlerContext);
-		    // dve2.addPage(scriptPage);
-		    // }
-		    // });
+	
 
 		    if (dynamicValue == null) {
 		      dve2.setDefaultPage(variablePage);

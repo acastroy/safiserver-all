@@ -29,7 +29,7 @@ import com.safi.workshop.sheet.actionstep.DynamicValueWidgetObservableValue;
 public class ManagerActionOutputEditorPage extends AbstractActionstepEditorPage {
 
   private DynamicValueEditorWidget returnVarDVEWidget;
-  private DynamicValueEditorWidget faultDVEWidget;
+  //private DynamicValueEditorWidget faultDVEWidget;
   private Label paramsLabel;
 
   //private PropertyMappingItemEditorWidget outputItemEditorWidget;
@@ -60,6 +60,7 @@ public class ManagerActionOutputEditorPage extends AbstractActionstepEditorPage 
     IObservableValue ob = ActionstepEditObservables.observeValue(editingDomain, callws, returnVarFeat);
     bindingContext.bindValue(outputVal, ob, null, null);
     
+/*    
     Label faultLabel = new Label(this, SWT.NONE);
     final GridData gd_faultLabel = new GridData(SWT.LEFT, SWT.TOP, false, false);
     faultLabel.setLayoutData(gd_faultLabel);
@@ -75,6 +76,7 @@ public class ManagerActionOutputEditorPage extends AbstractActionstepEditorPage 
     faultDVEWidget.setObject(callws);
     ob = ActionstepEditObservables.observeValue(editingDomain, callws, faultFeat);
     bindingContext.bindValue(faultVal, ob, null, null);
+*/
     
    // outputsLabel = new Label(this, SWT.NONE);
    // outputsLabel.setLayoutData(new GridData(SWT.LEFT, SWT.TOP, false, false));

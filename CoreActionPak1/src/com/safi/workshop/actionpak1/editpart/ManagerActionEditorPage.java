@@ -2,6 +2,7 @@ package com.safi.workshop.actionpak1.editpart;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -74,7 +75,6 @@ import org.asteriskjava.manager.action.ZapHangupAction;
 import org.asteriskjava.manager.action.ZapRestartAction;
 import org.asteriskjava.manager.action.ZapShowChannelsAction;
 import org.asteriskjava.manager.action.ZapTransferAction;
-import org.asteriskjava.manager.response.ManagerResponse;
 import org.asteriskjava.util.ReflectionUtil;
 import org.eclipse.core.databinding.Binding;
 import org.eclipse.core.databinding.observable.list.IObservableList;
@@ -152,72 +152,30 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 
 		// targetLabel = new Label(this, SWT.NONE);
 		// targetLabel.setText("WSDL Location:");
-		final ManagerAction callws = (ManagerAction) parent.getEditPart()
+		final ManagerAction managerAction = (ManagerAction) parent.getEditPart()
 				.getActionStep();
-		// wsdlDVEWidget = new DynamicValueEditorWidget(this, SWT.NONE){
-		// @Override
-		// protected void openEditor() {
-		// super.openEditor();
-		//	        
-		// inputItemEditorWidget.refreshListViewer();
-		// // ActionstepEditorPage page = getEditorDialog().getPage(0);
-		// // if (page != null && page instanceof
-		// WSDLChooserDynamicValueEditorPage){
-		// // String code =
-		// ((WSDLChooserDynamicValueEditorPage)page).getWSDLCode();
-		// // if (!StringUtils.equals(callws.getWsdl(), code)){
-		// // getEditingDomain().getCommandStack().execute(
-		// // SetCommand.create(getEditingDomain(), callws,
-		// callws.eClass().getEStructuralFeature("wsdl"), code));
-		// //
-		// // }
-		// // }
-		// }
-		// };
-		// wsdlDVEWidget.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true,
-		// false));
-
-		//
+		
+		
 
 		TransactionalEditingDomain editingDomain = parent.getEditPart()
 				.getEditingDomain();
 		IObservableValue ob = ActionstepEditObservables.observeValue(
-				editingDomain, callws, callws.eClass().getEStructuralFeature(
+				editingDomain, managerAction, managerAction.eClass().getEStructuralFeature(
 						"name"));
-		// IObservableValue ob =
-		// EMFObservables.observeValue(parent.getEditPart().getToolstep(),
-		// parent
-		// .getEditPart().getToolstep().eClass().getEStructuralFeature("name"));
+
 		ISWTObservableValue uiElement = SWTObservables.observeText(text,
 				SWT.FocusOut);
 		uiElement = SWTObservables.observeDelayedValue(400, uiElement);
 		bindingContext.bindValue(uiElement, ob, null, null);
 
-		// wsdlDVEWidget.setDynamicValue(DynamicValueEditorUtils.copyDynamicValue(callws.getWsdlLocation()));
-		// wsdlDVEWidget.setEditingDomain(editingDomain);
-		// wsdlDVEWidget.setObject(callws);
-		// EStructuralFeature valueFeature =
-		// callws.eClass().getEStructuralFeature("wsdlLocation");
-		// wsdlDVEWidget.setFeature(valueFeature);
-		// ob = ActionstepEditObservables.observeValue(editingDomain, callws,
-		// valueFeature);
-		// DynamicValueWidgetObservableValue valVal = new
-		// DynamicValueWidgetObservableValue(
-		// wsdlDVEWidget, SWT.Modify);
-		// bindingContext.bindValue(valVal, ob, null, null);
-
+	
 		operationLabel = new Label(this, SWT.NONE);
 		final GridData gd_operationLabel = new GridData(SWT.RIGHT, SWT.TOP,
 				false, false);
 		gd_operationLabel.verticalIndent = 5;
 		operationLabel.setLayoutData(gd_operationLabel);
 		operationLabel.setText("Manager Action:");
-		// EStructuralFeature methodFeature =
-		// callws.eClass().getEStructuralFeature("managerActionType");
-		// operationDVEWidget.setDynamicValue(DynamicValueEditorUtils.copyDynamicValue(callws.getManagerActionType().getLiteral()));
-		// ob = ActionstepEditObservables.observeValue(editingDomain, callws,
-		// methodFeature);
-		// bindingContext.bindValue(methodVal, ob, null, null);
+
 		final List<ManagerActionType> managerActionTypes = new ArrayList<ManagerActionType>();
 		managerActionTypes.addAll(ManagerActionType.VALUES);
 
@@ -296,7 +254,7 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 		ob = ActionstepEditObservables.observeValue(parent.getEditPart()
 				.getEditingDomain(), parent.getEditPart().getActionStep(),
 				parent.getEditPart().getActionStep().eClass()
-						.getEStructuralFeature("ManagerActionType"));
+						.getEStructuralFeature("managerActionType"));
 		ISWTObservableValue managerComboElement = SWTObservables
 				.observeSelection(combo);
 
@@ -319,40 +277,25 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 				true, false));
 
 		IObservableList modelList = ActionstepEditObservables.observeList(
-				editingDomain, callws, callws.eClass().getEStructuralFeature(
+				editingDomain, managerAction, managerAction.eClass().getEStructuralFeature(
 						"inputs"));
 
 		IObservableList uiList = new WritableList((
-				callws.getInputs()), InputItem.class);
+				managerAction.getInputs()), InputItem.class);
 		bindingContext.bindList(uiList, modelList, null, null);
 
 		inputItemEditorWidget.setItemList(uiList);
 		inputItemEditorWidget.setActionstepEditorDialog(parent);
+		if(uiList.isEmpty()){
+			updateSelectedManagerAction(managerAction.getManagerActionType());
+		}
 	}
 
-	// @Override
-	// public void aboutToExecute(CompoundCommand command) {
-	// final ToolstepEditPart editPart = editorDialog.getEditPart();
-	// Command cmd = new CaseItemReorderCommand(editPart.getEditingDomain(),
-	// editPart);
-	// // editPart.getEditingDomain().getCommandStack().execute(cmd);
-	// // editorDialog.appendRollbackItem(new
-	// ActionstepEditorDialog.RollbackItem(cmd));
-	// command.append(cmd);
-	// super.aboutToExecute(command);
-	// }
-	//  
-	// @Override
-	// public void rollbackCommandAdded(CompoundCommand command) {
-	// // TODO Auto-generated method stub
-	// final ToolstepEditPart editPart = editorDialog.getEditPart();
-	// Command cmd = new CaseItemReorderCommand(editPart.getEditingDomain(),
-	// editPart);
-	// command.append(cmd);
-	// super.rollbackCommandAdded(command);
-	// }
+	
     private void updateSetters(Class managerActionClass){
     	try{
+    		if(managerActionClass==null) return;
+    		
     		inputItemEditorWidget.getItemList().clear();
     		
     		
@@ -360,9 +303,7 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 	    	  List<Item> list=new ArrayList<Item>();
 	    	 
 	  		final ManagerAction managerAction = (ManagerAction)  this.getEditorDialog().getEditPart().getActionStep();
-	    	  //BeanInfo beanInfo=Introspector.getBeanInfo(AbsoluteTimeoutAction.class);
-	          //PropertyDescriptor [] descriptors=beanInfo.getPropertyDescriptors();
-	  	
+	
 	          for(Method method : reflectMap.values() ){
 	        	 // Method method=propertyDescriptor.getWriteMethod();
 	        	 if(method.getDeclaringClass()==managerActionClass){
@@ -378,12 +319,7 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 						//String typeName=typeNames[typeNames.length-1];
 						//item.setLabelText(method.getName().replace("set", ""));
 						item.setLabelText(typeName);
-						/*
-						DynamicValue dynaValue=ActionStepFactory.eINSTANCE.createDynamicValue();
-					    
-						dynaValue.setType(DynamicValueType.SCRIPT_TEXT);
-                        item.setDynamicValue(dynaValue);
-                        */
+				
                         item.setParameterName(method.getName().replace("set", ""));
 					    
 					    
@@ -394,6 +330,7 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 	          }
 	         // managerAction.getInputs().clear();
 	         // managerAction.getInputs().addAll(list);
+	          managerAction.getInputs().addAll((Collection<? extends InputItem>) list);
 	          this.inputItemEditorWidget.setItemList(list);
 	          
 	    	}catch(Exception ex){
@@ -648,7 +585,10 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 		for (Binding b : (List<Binding>) list) {
 			b.validateTargetToModel();
 		}
+	
 		return true;
 	}
+	
+	
 
 }

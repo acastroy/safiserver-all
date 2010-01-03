@@ -72,27 +72,7 @@ public class ManagerActionInputParamEditorWidget extends InputItemEditorWidget {
 //    super.moveUp();
   }
   
-/*
-  @Override
-  protected LabelProvider createLabelProvider() {
-    // TODO Auto-generated method stub
-	 
-	  
-    return new LabelProvider() {
-      public String getText(Object element) {
-        InputItem item = (InputItem) element;
-        return item.getParameterName() + " = "
-            + (item.getDynamicValue() == null ? "" : item.getDynamicValue().getText());
-      }
 
-      public Image getImage(Object element) {
-       // return WebServicesPlugin.getInstance().getBundledImage("icons/parameter.gif");
-    	  return null;
-      }
-    };
-    
-  }
-*/  
   private class MyLabelProvider implements ITableLabelProvider{
 
 	@Override
