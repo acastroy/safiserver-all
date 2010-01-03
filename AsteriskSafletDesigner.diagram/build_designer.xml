@@ -6,150 +6,158 @@
               as the first entry and export the buildfile again. -->
 <project basedir="." default="build" name="AsteriskSafletDesigner.diagram">
   <property environment="env"/>
-  <property name="ECLIPSE_HOME" value="../../galileo/eclipse"/>
+  <property name="ECLIPSE_HOME" value="../../"/>
+  <property name="ECLIPSE_WORKSPACE" value="../" />
+  <property name="JAR_STORE" value="${ECLIPSE_WORKSPACE}SafiJARStore" />
   <property name="debuglevel" value="source,lines,vars"/>
   <property name="target" value="1.6"/>
   <property name="source" value="1.6"/>
   <path id="Plug-in Dependencies.libraryclasspath">
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.ide_3.5.0.I20090525-2000.jar"/>
-    <pathelement location="../../Saflets"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore_2.5.0.v200906151043.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.common_2.5.0.v200906151043.jar"/>
-    <pathelement location="../../Saflets.edit"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.edit_2.5.0.v200906151043.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore.change_2.5.0.v200906151043.jar"/>
-    <pathelement location="../../SafiDB"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.teneo.hibernate_1.1.0.v200906180911.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.teneo_1.1.0.v200906180911.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.teneo.annotations_1.1.0.v200906180911.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.teneo.hibernate.mapper_1.1.0.v200906180911.jar"/>
-    <pathelement location="../../SafiDB.edit"/>
-    <pathelement location="../../SafiCommons"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime_3.5.0.v20090525.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi_3.5.0.v20090520.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/javax.transaction_1.1.1.v200906161300.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.persistence.jpa.equinox.weaving_1.1.2.v20090612-r4475.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.common_3.5.0.v20090520-1800.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.jobs_3.4.100.v20090429-1800.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime.compatibility.registry_3.2.200.v20090429-1800/runtime_registry_compatibility.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.registry_3.4.100.v20090520-1800.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.preferences_3.2.300.v20090520-1800.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.contenttype_3.4.0.v20090429-1800.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.app_1.2.0.v20090520-1800.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.jface_3.5.0.I20090525-2000.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.swt_3.5.0.v3550b.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.swt.win32.win32.x86_3.5.0.v3550b.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.commands_3.5.0.I20090525-2000.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.views_3.4.0.I20090525-2000.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore.xmi_2.5.0.v200906151043.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.edit.ui_2.5.0.v200906151043.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.workbench_3.5.0.I20090603-2000.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.common.ui_2.5.0.v200906151043.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui_3.5.0.I20090604-2000.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.emf.core_1.2.0.v20090422-1925.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.common.core_1.2.0.v20090403-1720.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.resources_3.5.0.v20090512.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.workspace_1.3.0.v200902100422.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.transaction_1.3.0.v200902010221.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.validation_1.3.0.v200901271722.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.emf.clipboard.core_1.2.0.v20090403-1720.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.emf.commands.core_1.2.0.v20090403-1720.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.emf.ui.properties_1.2.0.v20090501-1750.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.common.ui.services.properties_1.2.0.v20090403-1720.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.common.ui_1.2.0.v20090526-1925.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.console_3.4.0.v20090513.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.jface.text_3.5.0.v20090602.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.text_3.5.0.v20090513-2000.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.workbench.texteditor_3.5.0.v20090603.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.team.core_3.5.0.I20090527-0620.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.diagram.ui_1.2.0.v20090526-1925.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gef_3.5.0.v20090528-1511.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.draw2d_3.5.0.v20090528-1511.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.emf.ui_1.2.0.v20090403-1720.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.common.ui.action_1.2.0.v20090403-1720.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.common.ui.services.action_1.2.0.v20090403-1720.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.common.ui.services_1.2.0.v20090403-1720.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.emf.type.core_1.2.0.v20090403-1720.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.gef.ui_1.2.0.v20090520-1343.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.draw2d.ui_1.2.0.v20090526-1925.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.views.properties.tabbed_3.5.0.I20090429-1800.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.forms_3.4.0.v20090526.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.notation_1.2.0.v20090521-1925.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.diagram.core_1.2.0.v20090403-1720.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.diagram.ui.properties_1.2.0.v20090403-1720.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.diagram.ui.providers_1.2.0.v20090526-1925.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.diagram.ui.render_1.2.0.v20090520-1343.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.diagram.ui.resources.editor_1.2.0.v20090526-1925.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ocl.ecore_1.3.0.v200905271400.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ocl_1.3.0.v200905271400.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/net.sourceforge.lpg.lpgjavaruntime_1.1.0.v200803061910.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.draw2d.ui.render_1.2.0.v20090526-1925.jar"/>
-    <pathelement location="../../com.safi.asterisk.figures"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.editors_3.5.0.v20090527-2000.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.filebuffers_3.5.0.v20090526-2000.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.navigator_3.4.0.I20090525-2000.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.navigator.resources_3.4.0.I20090525-2000.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.expressions_3.4.100.v20090429-1800.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.diagram.ui.printing_1.2.0.v20090526-1925.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.diagram.ui.printing.render_1.2.0.v20090403-1720.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.update.core_3.2.300.v20090525.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.update.scheduler_3.2.200.v20081127.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.update.ui_3.2.200.v20090213.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.filesystem_1.2.0.v20090507.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.databinding.property_1.2.0.I20090526-2000.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.databinding.observable_1.2.0.I20090604-2000.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.compare.core_3.5.0.I20090430-0408.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.p2.core_1.0.100.v20090520-1905.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.p2.metadata_1.0.100.v20090525.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.compare_3.5.0.I20090514-0808.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.intro_3.3.0.v20090526.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.help_3.4.0.v20090526.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.cheatsheets_3.3.200.v20090526.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.apache.commons.lang_2.4.0.v20081016-1030.jar"/>
-    <pathelement location="../../Hibernate30"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.apache.commons.logging_1.0.4.v200904062259.jar"/>
-    <pathelement location="../../org.jdom"/>
-    <pathelement location="../../org.eclipse.dltk.console"/>
-    <pathelement location="../../org.eclipse.dltk.console.ui"/>
-    <pathelement location="../../org.eclipse.dltk.core"/>
-    <pathelement location="../../org.eclipse.dltk.debug"/>
-    <pathelement location="../../org.eclipse.dltk.debug.ui"/>
-    <pathelement location="../../org.eclipse.dltk.formatter"/>
-    <pathelement location="../../org.eclipse.dltk.javascript.core"/>
-    <pathelement location="../../org.eclipse.dltk.javascript.core.dom.support"/>
-    <pathelement location="../../org.eclipse.dltk.javascript.debug"/>
-    <pathelement location="../../org.eclipse.dltk.javascript.debug.ui"/>
-    <pathelement location="../../org.eclipse.dltk.javascript.jdt.integration"/>
-    <pathelement location="../../org.eclipse.dltk.javascript.jsjdtdebugger"/>
-    <pathelement location="../../org.eclipse.dltk.javascript.launching"/>
-    <pathelement location="../../org.eclipse.dltk.javascript.rhino"/>
-    <pathelement location="../../org.eclipse.dltk.javascript.rhino.dbgp"/>
-    <pathelement location="../../org.eclipse.dltk.javascript.ui"/>
-    <pathelement location="../../org.eclipse.dltk.launching"/>
-    <pathelement location="../../org.eclipse.dltk.ui"/>
-    <pathelement location="../../org.eclipse.dltk.validators.core"/>
-    <pathelement location="../../org.eclipse.dltk.validators.externalchecker"/>
-    <pathelement location="../../org.eclipse.dltk.validators.ui"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.databinding_1.1.0.v200906151043.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.databinding_1.2.0.I20090604-2000.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.databinding.edit_1.1.0.v200906151043.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.databinding.beans_1.2.0.I20090525-2000.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.jface.databinding_1.3.0.I20090525-2000.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.debug.core_3.5.0.v20090526-1600.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.debug.ui_3.5.0.v20090603.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.jdt.core_3.5.0.v_963.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.jdt.compiler.apt_1.0.200.v20090528-1135.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.jdt.compiler.tool_1.0.100.v_963.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.jdt.debug_3.5.0.v20090526/jdi.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.jdt.debug_3.5.0.v20090526/jdimodel.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.jdt.launching_3.5.0.v20090527.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.jdt.ui_3.5.0.v20090604.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.jdt.debug.ui_3.4.0.v20090527.jar"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.jdt.core.manipulation_1.3.0.v20090603.jar"/>
-    <pathelement location="../../AsteriskCore"/>
-    <pathelement location="../../AsteriskCore.edit"/>
-    <pathelement location="../../AsteriskSafiServerPlugin"/>
-    <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.p2.repository_1.0.0.v20090601-1921.jar"/>
+  	<pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.ide_3.5.1.M20090826-0800.jar"/>
+  	        <pathelement location="../../../Saflets"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore_2.5.0.v200906151043.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.common_2.5.0.v200906151043.jar"/>
+  	        <pathelement location="../../../Saflets.edit"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.edit_2.5.0.v200906151043.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore.change_2.5.0.v200906151043.jar"/>
+  	        <pathelement location="../../../SafiDB"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.teneo.hibernate_1.1.1.v200909151729"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.teneo.hibernate_1.1.1.v200909151729/org.eclipse.emf.teneo.hibernate.extra.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.teneo_1.1.1.v200909151729.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.teneo.annotations_1.1.0.v200909151729.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.teneo.hibernate.mapper_1.1.1.v200909151729.jar"/>
+  	        <pathelement location="../../../SafiDB.edit"/>
+  	        <pathelement location="../../../SafiCommons"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime_3.5.0.v20090525.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi_3.5.1.R35x_v20090827.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/javax.transaction_1.1.1.v200909161740.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.persistence.jpa.equinox.weaving_1.1.2.v20090612-r4475.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.common_3.5.1.R35x_v20090807-1100.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.jobs_3.4.100.v20090429-1800.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime.compatibility.registry_3.2.200.v20090429-1800/runtime_registry_compatibility.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.registry_3.4.100.v20090520-1800.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.preferences_3.2.300.v20090520-1800.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.contenttype_3.4.1.R35x_v20090826-0451.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.app_1.2.0.v20090520-1800.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.jface_3.5.1.M20090826-0800.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.swt_3.5.1.v3555a.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.swt.win32.win32.x86_3.5.1.v3555a.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.commands_3.5.0.I20090525-2000.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.views_3.4.1.M20090826-0800.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore.xmi_2.5.0.v200906151043.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.edit.ui_2.5.0.v200906151043.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.workbench_3.5.1.M20090826-0800a.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.common.ui_2.5.0.v200906151043.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui_3.5.1.M20090902-1000.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.emf.core_1.2.0.v20090422-1925.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.common.core_1.2.0.v20090403-1720.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.resources_3.5.1.R35x_v20090826-0451.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.workspace_1.3.0.v200902100422.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.transaction_1.3.0.v200902010221.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.validation_1.3.0.v200901271722.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.emf.clipboard.core_1.2.0.v20090403-1720.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.emf.commands.core_1.2.0.v20090403-1720.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.emf.ui.properties_1.2.0.v20090501-1750.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.common.ui.services.properties_1.2.0.v20090403-1720.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.common.ui_1.2.1.v20090729-2029.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.console_3.4.0.v20090513.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.jface.text_3.5.1.r351_v20090708-0800.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.text_3.5.0.v20090513-2000.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.workbench.texteditor_3.5.0.v20090603.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.team.core_3.5.0.I20090527-0620.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.diagram.ui_1.2.1.v20090825-1647.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gef_3.5.0.v20090528-1511.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.draw2d_3.5.1.v20090813-1341.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.emf.ui_1.2.0.v20090403-1720.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.common.ui.action_1.2.0.v20090403-1720.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.common.ui.services.action_1.2.1.v20090825-1800.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.common.ui.services_1.2.0.v20090403-1720.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.emf.type.core_1.2.0.v20090403-1720.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.gef.ui_1.2.0.v20090520-1343.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.draw2d.ui_1.2.1.v20090825-1800.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.views.properties.tabbed_3.5.0.I20090429-1800.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.forms_3.4.1.v20090714_35x.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.notation_1.2.0.v20090521-1925.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.diagram.core_1.2.1.v20090729-2029.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.diagram.ui.properties_1.2.1.v20090729-2029.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.diagram.ui.providers_1.2.1.v20090729-2029.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.diagram.ui.render_1.2.1.v20090729-2029.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.diagram.ui.resources.editor_1.2.0.v20090526-1925.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ocl.ecore_1.3.0.v200905271400.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ocl_1.3.0.v200905271400.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/net.sourceforge.lpg.lpgjavaruntime_1.1.0.v200803061910.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.draw2d.ui.render_1.2.1.v20090729-2029.jar"/>
+  	        <pathelement location="../../../com.safi.asterisk.figures"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.editors_3.5.0.v20090527-2000.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.filebuffers_3.5.0.v20090526-2000.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.navigator_3.4.1.M20090911-1550.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.navigator.resources_3.4.1.M20090826-0800.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.expressions_3.4.100.v20090429-1800.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.diagram.ui.printing_1.2.1.v20090729-2029.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.gmf.runtime.diagram.ui.printing.render_1.2.1.v20090729-2029.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.update.core_3.2.300.v20090525.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.update.scheduler_3.2.200.v20081127.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.update.ui_3.2.201.R35x_v20090813.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.filesystem_1.2.0.v20090507.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.databinding.property_1.2.0.M20090819-0800.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.databinding.observable_1.2.0.M20090902-0800.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.compare.core_3.5.0.I20090430-0408.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.p2.core_1.0.101.R35x_v20090819.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.p2.metadata_1.0.100.v20090525.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.compare_3.5.0.I20090514-0808.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.intro_3.3.1.v20090805_35x.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.help_3.4.1.v20090805_35x.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.cheatsheets_3.3.200.v20090526.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.apache.commons.lang_2.3.0.v200803061910.jar"/>
+  	        <pathelement location="../../../Hibernate30"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.apache.commons.logging_1.1.1.v200904062255.jar"/>
+  	        <pathelement location="../../../org.jdom"/>
+  	        <pathelement location="../../../org.eclipse.dltk.console"/>
+  	        <pathelement location="../../../org.eclipse.dltk.console.ui"/>
+  	        <pathelement location="../../../org.eclipse.dltk.core"/>
+  	        <pathelement location="../../../org.eclipse.dltk.debug"/>
+  	        <pathelement location="../../../org.eclipse.dltk.debug.ui"/>
+  	        <pathelement location="../../../org.eclipse.dltk.formatter"/>
+  	        <pathelement location="../../../org.eclipse.dltk.javascript.core"/>
+  	        <pathelement location="../../../org.eclipse.dltk.javascript.core.dom.support"/>
+  	        <pathelement location="../../../org.eclipse.dltk.javascript.debug"/>
+  	        <pathelement location="../../../org.eclipse.dltk.javascript.debug.ui"/>
+  	        <pathelement location="../../../org.eclipse.dltk.javascript.jdt.integration"/>
+  	        <pathelement location="../../../org.eclipse.dltk.javascript.jsjdtdebugger"/>
+  	        <pathelement location="../../../org.eclipse.dltk.javascript.launching"/>
+  	        <pathelement location="../../../org.eclipse.dltk.javascript.rhino"/>
+  	        <pathelement location="../../../org.eclipse.dltk.javascript.rhino.dbgp"/>
+  	        <pathelement location="../../../org.eclipse.dltk.javascript.ui"/>
+  	        <pathelement location="../../../org.eclipse.dltk.launching"/>
+  	        <pathelement location="../../../org.eclipse.dltk.ui"/>
+  	        <pathelement location="../../../org.eclipse.dltk.validators.core"/>
+  	        <pathelement location="../../../org.eclipse.dltk.validators.externalchecker"/>
+  	        <pathelement location="../../../org.eclipse.dltk.validators.ui"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.databinding_1.1.0.v200906151043.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.databinding_1.2.0.M20090819-0800.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.databinding.edit_1.1.0.v200906151043.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.databinding.beans_1.2.0.I20090525-2000.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.jface.databinding_1.3.1.M20090826-0800.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.debug.core_3.5.0.v20090526-1600.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.debug.ui_3.5.1.v20090811_r351.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.jdt.core_3.5.1.v_972_R35x.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/com.instantiations.designer.jdt.fragment_7.2.0.r35x200912161122.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.jdt.compiler.apt_1.0.201.R35x_v20090825-1530.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.jdt.compiler.tool_1.0.100.v_972_R35x.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.jdt.debug_3.5.0.v20090526/jdi.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.jdt.debug_3.5.0.v20090526/jdimodel.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.jdt.launching_3.5.0.v20090527.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.jdt.ui_3.5.1.r351_v20090821-0800.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.jdt.debug.ui_3.4.1.v20090811_r351.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.jdt.core.manipulation_1.3.0.v20090603.jar"/>
+  	        <pathelement location="../../../AsteriskCore"/>
+  	        <pathelement location="../../../AsteriskCore.edit"/>
+  	        <pathelement location="../../../AsteriskSafiServerPlugin"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.p2.repository_1.0.1.v20090901-1041.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime.compatibility_3.2.0.v20090413.jar"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.update.configurator_3.3.0.v20090312.jar"/>
+  	        <pathelement location="../../../org.eclipse.dltk.javascript.formatter"/>
+  	        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.concurrent_1.0.0.v20090520-1800.jar"/>
   </path>
   <path id="AsteriskSafletDesigner.diagram.classpath">
       <pathelement location="lib/licensews.jar"/>
@@ -213,10 +221,10 @@
 
 	<target name="pre-deploy-workshop" depends="build">
 	
-		   <ant dir="../SafiDB" antfile="../SafiDB/build_enhanced.xml" target="instrument" />
+		<ant dir="../SafiDB" antfile="../SafiDB/build_enhanced.xml" target="instrument" />
 
 	    <delete includeEmptyDirs="true">
-	      <fileset dir="D:\temp\safiStaging\non_obfuscated" includes="**/*" />
+	      <fileset dir="C:/safi_install/safiStaging/non_obfuscated" includes="**/*" />
 	    </delete>
 	</target>
 	
@@ -224,16 +232,16 @@
 
 		<echo message="Cleaning staging dir" />
 		<delete verbose="true" quiet="true" includeemptydirs="true">
-			<fileset file="D:\safi_install\SafiWorkshop\SafiWorkshop.*" />
-			<fileset file="D:\safi_install\SafiWorkshop\.eclipseproduct" />
-			<fileset dir="D:\safi_install\SafiWorkshop\plugins" />
-			<fileset dir="D:\safi_install\SafiWorkshop\features" />
-			<fileset dir="D:\safi_install\SafiWorkshop\configuration" />
+			<fileset file="C:/safi_install/SafiWorkshop/SafiWorkshop.*" />
+			<fileset file="C:/safi_install/SafiWorkshop/.eclipseproduct" />
+			<fileset dir="C:/safi_install/SafiWorkshop/plugins" />
+			<fileset dir="C:/safi_install/SafiWorkshop/features" />
+			<fileset dir="C:/safi_install/SafiWorkshop/configuration" />
 		</delete>
 
 		<echo message="copying to staging dir" />
-		<copy todir="D:\safi_install\SafiWorkshop" overwrite="true">
-			<fileset dir="D:\temp\safiStaging\non_obfuscated\eclipse">
+		<copy todir="C:/safi_install/SafiWorkshop" overwrite="true">
+			<fileset dir="C:/safi_install/safiStaging/non_obfuscated/eclipse">
 				<include name="**/*" />
 			</fileset>
 			<fileset dir="../SAFIInstaller/">
@@ -243,14 +251,14 @@
 			</fileset>
 		</copy>
 
-		<unzip dest="D:\safi_install\SafiWorkshop" >
+		<unzip dest="C:/safi_install/SafiWorkshop" >
 			<fileset file="../SAFIInstaller/jre.zip">
 			</fileset>
 		</unzip>
 		<taskdef name="nsis" classname="net.sf.nsisant.Task">
 			<classpath location="proguard/nsisant-1.2.jar" />
 		</taskdef>
-		<nsis script="../SAFIInstaller/build_workshop.nsi" path="C:\Program Files\NSIS"/>
+		<nsis script="../SAFIInstaller/build_workshop.nsi" path="C:/Program Files/NSIS"/>
 
 	</target>
 
@@ -260,15 +268,15 @@
 		<taskdef name="nsis" classname="net.sf.nsisant.Task">
 		      <classpath location="proguard/nsisant-1.2.jar" />
 		    </taskdef>
-		    <nsis script="../SAFIInstaller/build_workshop.nsi" path="C:\Program Files\NSIS"/>
+		    <nsis script="../SAFIInstaller/build_workshop.nsi" path="C:/Program Files/NSIS"/>
 		
 	</target>
 	<target name="deploy_server" depends="init">
 
-		<echo message="Rebuilding SafiDB" />
+		<!-- <echo message="Rebuilding SafiDB" /> 
 		<ant dir="../SafiDB" antfile="../SafiDB/build_enhanced.xml" target="cleanall" />
 		<ant dir="../SafiDB" antfile="../SafiDB/build_enhanced.xml" target="build" />
-		<ant dir="../SafiDB" antfile="../SafiDB/build_enhanced.xml" target="exportToSafiServerCore" />
+		<ant dir="../SafiDB" antfile="../SafiDB/build_enhanced.xml" target="exportToSafiServerCore" />-->
 
 		<echo message="deleting DB if it exists" />
 		<delete includeEmptyDirs="true" failonerror="false">
@@ -278,39 +286,48 @@
 		<taskdef name="nsis" classname="net.sf.nsisant.Task">
 			<classpath location="proguard/nsisant-1.2.jar" />
 		</taskdef>
-		<nsis script="../SafiServerInstaller/SafiServerInstall2.nsi" path="C:\Program Files\NSIS" />
+		<nsis script="../SafiServerInstaller/SafiServerInstall2.nsi" path="C:/Program Files/NSIS" />
 
 	</target>
+	
 	<target name="linuxDeploy">
-	        <delete file="../SafiServerInstaller/safiServerLinux32.zip" quiet="true" />
+		<!-- Get Version File Suffix -->
+        <property file="${JAR_STORE}\version\currentversion.number" />
+		<tstamp>
+			  <format property="server.formattedDate" pattern="yyyyMMdd"/>
+        </tstamp>
+		<property file="${JAR_STORE}\version\currentversion.number" />
+        <property name="version.filesuffix" value="${version.major}-${version.minor}-${version.point}-${server.formattedDate}" />
+        <echo message="Current version number: ${version.startcurrent}" />
+		
+        <delete file="../SafiServerInstaller/safiServer*.zip" quiet="true" />
+        <delete dir="C:/safi_install/serverLinux32" includeemptydirs="false" quiet="false" />
 
-	        <delete dir="D:/safi_install/serverLinux32" includeemptydirs="false" quiet="false" />
+        <copy todir="C:/safi_install/serverLinux32/SafiServer" includeemptydirs="true" overwrite="true">
+            <fileset dir="../SafiServerCore/" defaultexcludes="true">
+                <include name="default_drivers/**" />
+                <include name="lib/**" />
+                <include name="logs/**" />
+                <include name="deploy/actionpaks/**" />
+                <include name="resources/**" />
+                <include name="deploy/lib/**" />
+                <include name="deploy/linux32/**" />
+                <include name="deploy/libs.conf" />
+                <exclude name="deploy/linux32/jre.zip" />
+                <exclude name="**/*.bak" />
+                <exclude name="**/*.log" />
+                <exclude name="**/*.log.*" />
+                <exclude name="**/*.keepme" />
+            </fileset>
+        </copy>
+		
+        <mkdir dir="C:/safi_install/serverLinux32/SafiServer/deploy/actionpaks" />
+        <mkdir dir="C:/safi_install/serverLinux32/SafiServer/imports/received" />
 
-	        <copy todir="D:/safi_install/serverLinux32/SafiServer" includeemptydirs="true" overwrite="true">
-	            <fileset dir="../SafiServerCore/" defaultexcludes="true">
-	                <include name="default_drivers/**" />
-	                <include name="lib/**" />
-	                <include name="logs/**" />
-	                <include name="deploy/actionpaks/**" />
-	                <include name="resources/**" />
-	                <include name="deploy/lib/**" />
-	                <include name="deploy/linux32/**" />
-	                <include name="deploy/libs.conf" />
-	                <exclude name="deploy/linux32/jre.zip" />
-	                <exclude name="**/*.bak" />
-	                <exclude name="**/*.log" />
-	                <exclude name="**/*.log.*" />
-	                <exclude name="**/*.keepme" />
-	            </fileset>
-	        </copy>
-	        <mkdir dir="D:/safi_install/serverLinux32/SafiServer/deploy/actionpaks" />
-	        <mkdir dir="D:/safi_install/serverLinux32/SafiServer/imports/received" />
-
-	        <move file="D:/safi_install/serverLinux32/SafiServer/deploy/linux32/installserver.sh" todir="D:/safi_install/serverLinux32/SafiServer">
-	        </move>
-	        <tar compression="gzip" basedir="D:\safi_install\serverLinux32" destfile="../SafiServerInstaller/safiServerLinux32.tar.gz" />
-
-	    </target>
+        <!-- <move file="C:/safi_install/serverLinux32/SafiServer/deploy/linux32/installserver.sh" todir="C:/safi_install/serverLinux32/SafiServer"></move> -->
+        
+		<tar compression="gzip" basedir="C:/safi_install/serverLinux32" destfile="../SafiServerInstaller/safiServer-${version.filesuffix}.tar.gz" />
+	</target>
 
     
 	   <target name="deployAll" depends="deploy_workshop, deploy_server, linuxDeploy">
