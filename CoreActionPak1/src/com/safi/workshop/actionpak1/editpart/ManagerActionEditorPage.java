@@ -295,7 +295,7 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
     private void updateSetters(Class managerActionClass){
     	try{
     		if(managerActionClass==null) return;
-    		
+    
     		inputItemEditorWidget.getItemList().clear();
     		
     		
@@ -303,7 +303,7 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 	    	  List<Item> list=new ArrayList<Item>();
 	    	 
 	  		final ManagerAction managerAction = (ManagerAction)  this.getEditorDialog().getEditPart().getActionStep();
-	
+	          managerAction.getInputs().clear();
 	          for(Method method : reflectMap.values() ){
 	        	 // Method method=propertyDescriptor.getWriteMethod();
 	        	 if(method.getDeclaringClass()==managerActionClass){

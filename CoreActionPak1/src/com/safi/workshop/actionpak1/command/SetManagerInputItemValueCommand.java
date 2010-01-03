@@ -108,10 +108,7 @@ public class SetManagerInputItemValueCommand extends SetInputItemValueCommand {
 		    dve2.setExpectedReturnType(expectedReturnType);
 		    dve2.setDescription(description);
 		    dve2.setTypeLocked(isTypeLocked);
-
 		    dve2.setDynamicValue(dynamicValue);
-		    
-
 		    dve2.setEditingDomain(domain);
 
 		    VariableDynamicValueEditorPage variablePage = new VariableDynamicValueEditorPage(handlerContext);
