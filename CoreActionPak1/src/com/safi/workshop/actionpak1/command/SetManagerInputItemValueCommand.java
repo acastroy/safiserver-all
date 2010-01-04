@@ -91,6 +91,8 @@ public class SetManagerInputItemValueCommand extends SetInputItemValueCommand {
 		      item.setDynamicValue(newval);
 		      item.setParameterName(newParamName);
 		      item.setLabelText(labelText);
+		      item.setParentActionStep(parentToolstep);
+		   
 
 		      return true;
 		    } else

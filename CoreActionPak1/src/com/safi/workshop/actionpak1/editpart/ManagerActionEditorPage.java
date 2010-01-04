@@ -107,7 +107,7 @@ import com.safi.workshop.model.actionpak1.ManagerActionType;
 import com.safi.workshop.sheet.actionstep.AbstractActionstepEditorPage;
 import com.safi.workshop.sheet.actionstep.ActionstepEditObservables;
 import com.safi.workshop.sheet.actionstep.ActionstepEditorDialog;
-import com.safi.workshop.sheet.actionstep.CaseItemReorderCommand;
+import com.safi.workshop.sheet.actionstep.ManagerActionCaseItemReorderCommand;
 
 
 public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
@@ -138,6 +138,7 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 	}
 
 	private void init(ActionstepEditorDialog parent) {
+	
 		final GridLayout gridLayout = new GridLayout();
 		gridLayout.numColumns = 2;
 		setLayout(gridLayout);
@@ -279,16 +280,19 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 		IObservableList modelList = ActionstepEditObservables.observeList(
 				editingDomain, managerAction, managerAction.eClass().getEStructuralFeature(
 						"inputs"));
-
+		if(modelList.size()==0){
+			updateSelectedManagerAction(managerAction.getManagerActionType());
+			modelList = ActionstepEditObservables.observeList(
+					editingDomain, managerAction, managerAction.eClass().getEStructuralFeature(
+							"inputs"));
+		}
 		IObservableList uiList = new WritableList((
 				managerAction.getInputs()), InputItem.class);
 		bindingContext.bindList(uiList, modelList, null, null);
 
 		inputItemEditorWidget.setItemList(uiList);
+		
 		inputItemEditorWidget.setActionstepEditorDialog(parent);
-		if(uiList.isEmpty()){
-			updateSelectedManagerAction(managerAction.getManagerActionType());
-		}
 	}
 
 	
@@ -296,7 +300,7 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
     	try{
     		if(managerActionClass==null) return;
     
-    		inputItemEditorWidget.getItemList().clear();
+    		//inputItemEditorWidget.getItemList()
     		
     		
 	    	  Map<String,Method> reflectMap=ReflectionUtil.getSetters(managerActionClass);
@@ -324,14 +328,16 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 					    
 					    
 						list.add(item);
-	        		
+						managerAction.getInputs().add(item);
 	        	  }
 	        	 // System.out.println("Property Dscriptor:"+propertyDescriptor);
 	          }
 	         // managerAction.getInputs().clear();
 	         // managerAction.getInputs().addAll(list);
-	          managerAction.getInputs().addAll((Collection<? extends InputItem>) list);
-	          this.inputItemEditorWidget.setItemList(list);
+	        
+	          //managerAction.getInputs().addAll((Collection<? extends InputItem>) list);
+	          
+	          //this.inputItemEditorWidget.setItemList(list);
 	          
 	    	}catch(Exception ex){
 	    		ex.printStackTrace();
@@ -563,14 +569,18 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 
 	@Override
 	public void operationsComplete() {
-		new CaseItemReorderCommand(editPart.getEditingDomain(), editPart)
+		
+		new ManagerActionCaseItemReorderCommand(editPart.getEditingDomain(), editPart)
 				.execute();
+				
 	}
 
 	@Override
 	public void operationsUndone() {
-		new CaseItemReorderCommand(editPart.getEditingDomain(), editPart)
+		
+		new ManagerActionCaseItemReorderCommand(editPart.getEditingDomain(), editPart)
 				.execute();
+				
 	}
 
 	@Override
@@ -581,6 +591,7 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 
 	@Override
 	public boolean validate() {
+	
 		IObservableList list = bindingContext.getBindings();
 		for (Binding b : (List<Binding>) list) {
 			b.validateTargetToModel();

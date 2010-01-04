@@ -1,5 +1,8 @@
 package com.safi.workshop.actionpak1.editpart;
 
+import java.util.List;
+
+import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.jface.viewers.ITableLabelProvider;
 import org.eclipse.swt.SWT;
@@ -53,6 +56,14 @@ public class ManagerActionInputParamEditorWidget extends InputItemEditorWidget {
 //    getActionstepEditorDialog().rollbackCount++;
     listViewer.refresh();
   }
+  
+  public void setItemList(List<Item> itemList) {
+	    this.itemList = itemList;
+	    if (itemList == null)
+	      itemList = ECollections.emptyEList();
+	    listViewer.setInput(itemList);
+	    listViewer.refresh();
+ }
   
   @Override
   protected void delete() {
