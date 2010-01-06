@@ -77,6 +77,7 @@ import org.asteriskjava.manager.action.ZapShowChannelsAction;
 import org.asteriskjava.manager.action.ZapTransferAction;
 import org.asteriskjava.util.ReflectionUtil;
 import org.eclipse.core.databinding.Binding;
+import org.eclipse.core.databinding.UpdateListStrategy;
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.observable.list.WritableList;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
@@ -107,7 +108,7 @@ import com.safi.workshop.model.actionpak1.ManagerActionType;
 import com.safi.workshop.sheet.actionstep.AbstractActionstepEditorPage;
 import com.safi.workshop.sheet.actionstep.ActionstepEditObservables;
 import com.safi.workshop.sheet.actionstep.ActionstepEditorDialog;
-import com.safi.workshop.sheet.actionstep.ManagerActionCaseItemReorderCommand;
+import com.safi.workshop.sheet.actionstep.CaseItemReorderCommand;
 
 
 public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
@@ -138,7 +139,6 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 	}
 
 	private void init(ActionstepEditorDialog parent) {
-	
 		final GridLayout gridLayout = new GridLayout();
 		gridLayout.numColumns = 2;
 		setLayout(gridLayout);
@@ -233,7 +233,7 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 
 		});
 
-		comboViewer.setInput(managerActionTypes);
+		comboViewer.setInput(managerAction.getManagerActionType());
 		comboViewer
 				.addSelectionChangedListener(new ISelectionChangedListener() {
 
@@ -280,19 +280,25 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 		IObservableList modelList = ActionstepEditObservables.observeList(
 				editingDomain, managerAction, managerAction.eClass().getEStructuralFeature(
 						"inputs"));
-		if(modelList.size()==0){
+		if(modelList.isEmpty()){
 			updateSelectedManagerAction(managerAction.getManagerActionType());
+			/*
 			modelList = ActionstepEditObservables.observeList(
 					editingDomain, managerAction, managerAction.eClass().getEStructuralFeature(
 							"inputs"));
+			*/
+							
 		}
+
 		IObservableList uiList = new WritableList((
 				managerAction.getInputs()), InputItem.class);
-		bindingContext.bindList(uiList, modelList, null, null);
+		
+		bindingContext.bindList(uiList, modelList,null,null);
+	
 
 		inputItemEditorWidget.setItemList(uiList);
-		
 		inputItemEditorWidget.setActionstepEditorDialog(parent);
+	
 	}
 
 	
@@ -300,7 +306,7 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
     	try{
     		if(managerActionClass==null) return;
     
-    		//inputItemEditorWidget.getItemList()
+    		inputItemEditorWidget.getItemList().clear();
     		
     		
 	    	  Map<String,Method> reflectMap=ReflectionUtil.getSetters(managerActionClass);
@@ -328,16 +334,14 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 					    
 					    
 						list.add(item);
-						managerAction.getInputs().add(item);
+	        		
 	        	  }
 	        	 // System.out.println("Property Dscriptor:"+propertyDescriptor);
 	          }
 	         // managerAction.getInputs().clear();
 	         // managerAction.getInputs().addAll(list);
-	        
-	          //managerAction.getInputs().addAll((Collection<? extends InputItem>) list);
-	          
-	          //this.inputItemEditorWidget.setItemList(list);
+	          managerAction.getInputs().addAll((Collection<? extends InputItem>) list);
+	          this.inputItemEditorWidget.setItemList(list);
 	          
 	    	}catch(Exception ex){
 	    		ex.printStackTrace();
@@ -349,7 +353,8 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 		System.out.println("here is ManagerAction:" + selectedManagerAction);
 		if (selectedManagerAction == null)
 			return;
-
+		final ManagerAction managerAction = (ManagerAction)  this.getEditorDialog().getEditPart().getActionStep();
+		managerAction.setManagerActionType(selectedManagerAction);
 		switch (selectedManagerAction) {
 		    case ABSOLUTE_TIMEOUT_ACTION:
 		    updateSetters(AbsoluteTimeoutAction.class);	
@@ -569,18 +574,14 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 
 	@Override
 	public void operationsComplete() {
-		
-		new ManagerActionCaseItemReorderCommand(editPart.getEditingDomain(), editPart)
+		new CaseItemReorderCommand(editPart.getEditingDomain(), editPart)
 				.execute();
-				
 	}
 
 	@Override
 	public void operationsUndone() {
-		
-		new ManagerActionCaseItemReorderCommand(editPart.getEditingDomain(), editPart)
+		new CaseItemReorderCommand(editPart.getEditingDomain(), editPart)
 				.execute();
-				
 	}
 
 	@Override
@@ -591,7 +592,6 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 
 	@Override
 	public boolean validate() {
-	
 		IObservableList list = bindingContext.getBindings();
 		for (Binding b : (List<Binding>) list) {
 			b.validateTargetToModel();

@@ -34,6 +34,7 @@ public class SetManagerInputItemValueCommand extends SetInputItemValueCommand {
 	
 	public static boolean executeCmd(final InputItem item, final EditingDomain domain,
 		      final SafletContext context, final boolean canChangeName) {
+		
             String labelText=item.getLabelText();
 		    String paramName = item.getParameterName();
 		    if (canChangeName) {
@@ -96,6 +97,14 @@ public class SetManagerInputItemValueCommand extends SetInputItemValueCommand {
 
 		      return true;
 		    } else
+		    {
+		    	 // final DynamicValue newval = dve.getDynamicValue();
+			      item.setDynamicValue(dynamicValue);
+			      item.setParameterName(newParamName);
+			      item.setLabelText(labelText);
+			      item.setParentActionStep(parentToolstep);
+		    	
+		    }
 		      return false;
 		  }
 	
