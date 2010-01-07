@@ -32,6 +32,8 @@ public class SetManagerInputItemValueCommand extends SetInputItemValueCommand {
 		// TODO Auto-generated constructor stub
 	}
 	
+	
+	
 	public static boolean executeCmd(final InputItem item, final EditingDomain domain,
 		      final SafletContext context, final boolean canChangeName) {
 		
@@ -91,19 +93,20 @@ public class SetManagerInputItemValueCommand extends SetInputItemValueCommand {
 		      final DynamicValue newval = dve.getDynamicValue();
 		      item.setDynamicValue(newval);
 		      item.setParameterName(newParamName);
-		      item.setLabelText(labelText);
+		      //item.setLabelText(labelText);
 		      item.setParentActionStep(parentToolstep);
+		      
 		   
 
 		      return true;
 		    } else
 		    {
 		    	 // final DynamicValue newval = dve.getDynamicValue();
-			      item.setDynamicValue(dynamicValue);
-			      item.setParameterName(newParamName);
-			      item.setLabelText(labelText);
-			      item.setParentActionStep(parentToolstep);
-		    	
+			     // item.setDynamicValue(dynamicValue);
+			     // item.setParameterName(newParamName);
+			      //item.setLabelText(labelText);
+			      //item.setParentActionStep(parentToolstep);
+		    	  
 		    }
 		      return false;
 		  }

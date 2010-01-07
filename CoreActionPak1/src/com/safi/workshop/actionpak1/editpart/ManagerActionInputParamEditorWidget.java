@@ -1,5 +1,6 @@
 package com.safi.workshop.actionpak1.editpart;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.eclipse.emf.common.util.ECollections;
@@ -18,6 +19,8 @@ import com.safi.workshop.actionpak1.command.SetManagerInputItemValueCommand;
 
 public class ManagerActionInputParamEditorWidget extends InputItemEditorWidget {
 
+  private HashMap<String,String> typeMap;	
+	
   public ManagerActionInputParamEditorWidget(Composite parent, int style) {
     super(parent, style);
     addButton.setEnabled(false);
@@ -96,12 +99,15 @@ public class ManagerActionInputParamEditorWidget extends InputItemEditorWidget {
 	public String getColumnText(Object element, int columnIndex) {
 		// TODO Auto-generated method stub
 		 InputItem item = (InputItem) element;
+		 String paraName=item.getParameterName();
 		 if(item==null)return null;
 		 switch(columnIndex){
 		 case 0:
-			 return item.getParameterName();
+			 return paraName;
 		 case 1:
-			  return item.getLabelText();
+			 String typeName=typeMap.get(paraName);
+			 if(typeName==null) return "";
+			 return typeName;
 		 case 2:
 			 DynamicValue value=item.getDynamicValue();
 			 if(value!=null){
@@ -138,6 +144,14 @@ public class ManagerActionInputParamEditorWidget extends InputItemEditorWidget {
 
 	  
   }
+
+
+
+
+public void setTypeMap(HashMap<String, String> types) {
+	// TODO Auto-generated method stub
+	typeMap=types;
+}
   
  
 

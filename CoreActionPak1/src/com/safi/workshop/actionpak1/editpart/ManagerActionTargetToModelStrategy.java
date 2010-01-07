@@ -6,6 +6,7 @@ public class ManagerActionTargetToModelStrategy extends UpdateListStrategy {
 
 	public Object convert(Object element) {
 		//return converter == null ? element : converter.convert(element);
+		
 		return element;
 	}
 }
