@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: Saflets; singleton:=true
-Bundle-Version: 1.2.5.67
+Bundle-Version: 1.2.5.83
 Bundle-ClassPath: .,
  lib/js.jar,
  lib/javacsv.jar,
