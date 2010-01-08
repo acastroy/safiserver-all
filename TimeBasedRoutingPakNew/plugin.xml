@@ -57,7 +57,7 @@
             factory="com.safi.workshop.model.timeBasedRouting.provider.TimeBasedRoutingItemProviderAdapterFactory">
       </itemProviderAdapterFactory>
       <pakjar
-            jar="pakjars/timebasedrouting_v20100102_00068.jar">
+            jar="pakjars/timebasedrouting_v20100103_00084.jar">
       </pakjar>
       <description
             descriptionText="This ActionPak includes the TimeBasedRouting ActionStep">
