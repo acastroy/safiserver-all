@@ -157,7 +157,7 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 		
 		
 
-		TransactionalEditingDomain editingDomain = this.getEditorDialog().getEditPart()
+		final TransactionalEditingDomain editingDomain = this.getEditorDialog().getEditPart()
 				.getEditingDomain();
 		IObservableValue ob = ActionstepEditObservables.observeValue(
 				editingDomain, managerAction, managerAction.eClass().getEStructuralFeature(
@@ -245,6 +245,29 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 								.getFirstElement();
 						updateSelectedManagerAction(selectedManagerAction);
 						managerAction.setManagerActionType(selectedManagerAction);
+						IObservableList modelList = ActionstepEditObservables.observeList(
+								editingDomain, managerAction, managerAction.eClass().getEStructuralFeature(
+										"inputs"));
+						if(modelList.isEmpty()){
+							updateSelectedManagerAction(managerAction.getManagerActionType());
+							
+							modelList = ActionstepEditObservables.observeList(
+									editingDomain, managerAction, managerAction.eClass().getEStructuralFeature(
+											"inputs"));
+							
+											
+						}
+
+						IObservableList uiList = new WritableList((
+								managerAction.getInputs()), InputItem.class);
+						
+						//bindingContext.bindList(uiList, modelList,null,null);
+					    bindingContext.bindList(uiList,modelList,null,null);
+					    //bindingContext.updateModels();
+
+						inputItemEditorWidget.setItemList(uiList);
+						//inputItemEditorWidget.setActionstepEditorDialog(parent);
+					
 
 					}
 
@@ -261,6 +284,7 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 
 		managerComboElement = SWTObservables.observeDelayedValue(400,
 				managerComboElement);
+	
 		bindingContext.bindValue(managerComboElement, ob, null, null);
 
 		paramsLabel = new Label(this, SWT.NONE);
@@ -299,6 +323,7 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 		
 		//bindingContext.bindList(uiList, modelList,null,null);
 	    bindingContext.bindList(uiList,modelList,null,null);
+	    //bindingContext.updateModels();
 
 		inputItemEditorWidget.setItemList(uiList);
 		inputItemEditorWidget.setActionstepEditorDialog(parent);
@@ -309,12 +334,12 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
     private void updateSetters(Class managerActionClass){
     	try{
     		if(managerActionClass==null) return;
-    
+    /*
     		List<Item> inputLists=inputItemEditorWidget.getItemList();
     		if(inputLists!=null){
     			inputLists.clear();
     		}
-    		
+    */		
     		
 	    	  Map<String,Method> reflectMap=ReflectionUtil.getSetters(managerActionClass);
 	    	  List<Item> list=new ArrayList<Item>();
@@ -332,7 +357,7 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 	        		  }
 	        		    InputItem item = ActionStepFactory.eINSTANCE.createInputItem();
 	                    
-						//item.setParentActionStep(managerAction); 
+						item.setParentActionStep(managerAction); 
 						//String typeName=paraclasses[0].getSimpleName();
 						//String typeName=typeNames[typeNames.length-1];
 						//item.setLabelText(method.getName().replace("set", ""));
@@ -349,8 +374,9 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 	         // managerAction.getInputs().clear();
 	         // managerAction.getInputs().addAll(list);
 	          managerAction.getInputs().addAll((Collection<? extends InputItem>) list);
+	          
 	          this.inputItemEditorWidget.setTypeMap(this.getTypeInfo(managerActionClass));
-	          this.inputItemEditorWidget.setItemList(list);
+	          //this.inputItemEditorWidget.setItemList(list);
 	          
 	          
 	    	}catch(Exception ex){
@@ -825,13 +851,16 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 		}
 
 	}
+	
+	
 
 	@Override
 	public void operationsComplete() {
 		
 		new CaseItemReorderCommand(editPart.getEditingDomain(), editPart)
 				.execute();
-			
+		
+		//bindingContext.updateModels();	
 	}
 
 	@Override
