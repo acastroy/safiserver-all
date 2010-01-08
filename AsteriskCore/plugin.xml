@@ -34,19 +34,19 @@
         id="product"
         point="org.eclipse.core.runtime.products">
      <product
-           application="Handlers.diagram.AsteriskApplication"
-           name="SafiWorkshop">
+           application="AsteriskSafletDesigner.diagram.AsteriskApplication"
+           name="SafiWorkshopAsterisk">
         <property
               name="aboutText"
               value="%aboutText">
         </property>
         <property
               name="appName"
-              value="SafiWorkshop">
+              value="SafiWorkshopAsterisk">
         </property>
         <property
               name="windowImages"
-              value="platform:/plugin/Handlers.diagram/icons/product/app16x16-24bit.Bmp,platform:/plugin/Handlers.diagram/icons/product/app32x32-24bit.Bmp,platform:/plugin/Handlers.diagram/icons/product/app48x48-24bit.Bmp">
+              value="platform:/plugin/AsteriskSafletDesigner.diagram/icons/product/app16x16-24bit.png,platform:/plugin/AsteriskSafletDesigner.diagram/icons/product/app32x32-24bit.png,platform:/plugin/AsteriskSafletDesigner.diagram/icons/product/app48x48-24bit.png">
         </property>
         <property
               name="startupProgressRect"
