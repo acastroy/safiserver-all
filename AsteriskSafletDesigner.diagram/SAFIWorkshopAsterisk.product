@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="SafiWorkshopAsterisk" uid="SafiWorkshopAsterisk" id="AsteriskSafletDesigner.diagram.SafiWorkshop" application="AsteriskSafletDesigner.diagram.AsteriskApplication" version="1.0" useFeatures="true" includeLaunchers="false">
+<product name="SafiWorkshopAsterisk" uid="SafiWorkshopAsterisk" id="AsteriskSafletDesigner.diagram.SafiWorkshop" application="AsteriskSafletDesigner.diagram.AsteriskApplication" version="1.2.5" useFeatures="true" includeLaunchers="false">
 
    <aboutInfo>
       <text>
@@ -14,7 +14,7 @@
 
    <launcherArgs>
       <programArgs>-data @noDefault</programArgs>
-      <vmArgs>-Xbootclasspath/a:plugins/SafiCommons_1.0.1/log4j-1.2.15.jar  -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC -Xms512m -Xmx1024m -DDebugServerMode=true -XX:MaxPermSize=256m</vmArgs>
+      <vmArgs>-Xbootclasspath/a:plugins/SafiCommons_1.2.5/log4j-1.2.15.jar  -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC -Xms512m -Xmx1024m -DDebugServerMode=true -XX:MaxPermSize=256m</vmArgs>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
    </launcherArgs>
 
