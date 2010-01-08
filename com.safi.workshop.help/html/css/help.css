@@ -1,0 +1,178 @@
+/* CSS Document */
+
+h1 {
+	font-family: "Trebuchet MS", verdana,arial, sans-serif;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #224122;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+
+.actionstepHeader {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	height: 20px;
+	color: #000000;
+	margin-bottom: 0px;
+	padding-left: 20px;
+	padding-top: 4px;
+}
+
+#helpcontent {
+	margin: 5px;
+}
+
+.actionstep {
+	width: 34px;
+	height: 28px;
+	text-align: center;
+	background:#FFFFFF;
+	margin: 5px;
+	padding-top: 3px;
+}
+
+.actionstep span {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.actionstepinfo {
+	padding-left: 10px;
+	margin-top: 2px;
+}
+
+.as_head {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 0;
+}
+
+.as_text {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	margin-top: 2px;
+	margin-bottom: 15px;
+	color: #000000;
+}
+
+
+
+
+.att_tbl{
+	border-collapse:collapse;
+	border-style:solid;
+	border-width:1px;
+	width: 95%;
+	margin-top: 5px;
+}
+
+.att_tbl td{
+	border-collapse:collapse;
+	border-style:solid;
+	border-width:1px;
+	padding: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+	background: #FFFFFF;
+}
+
+.attDescription table tr td {
+	border-style:solid;
+	padding: 3px;
+	border-width:1px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+	background: #FFFFFF;
+}
+
+.tbl_asgroup{
+	border-collapse:collapse;
+	border-style:solid;
+	border-width:1px;
+	border-color:#999999;
+}
+
+.as_row1 {
+	background-color:#FFFFFF;
+}
+
+.as_row2 {
+	background-color:#F2F2F2;
+}
+
+
+
+/* extra links */
+.extralinks A 	{
+	color: #2F4D31;
+	font-family: Verdana,Tahoma,arial,sans-serif;
+	text-decoration: underline;
+	font-size: 12px;
+} 
+.extralinks A:link	{ 
+	color: #2F4D31; 
+	text-decoration: underline; 
+} 
+.extralinks A:visited { 
+	color: #2F4D31; 
+	text-decoration: underline; 
+} 
+.extralinks A:active	{ 
+	color: #4595C6;	
+	text-decoration: none; 
+	background-color: #FFFFFF;  
+} 
+.extralinks A:hover {
+	color: #4595C6;
+	text-decoration: none; 
+	background-color: #FFFFFF;  
+} 
+
+li {
+	padding-bottom: 5px;
+}
+
+.input_attsm {
+	border:1px solid #D1CD9D;
+	color:#224122;
+	font-size:11px;
+	height:20px;
+	padding:2px;
+	width:100px;
+	}
+	
+.input_att {
+	border:1px solid #D1CD9D;
+	color:#224122;
+	font-size:11px;
+	height:20px;
+	padding:2px;
+	width:220px;
+	}
+	
+.textarea_desc {
+	border:1px solid #D1CD9D;
+	color:#224122;
+	font-size:11px;
+	height:200px;
+	padding:2px;
+	width:600px;
+	}
+
+.midshade {
+	border: 1px solid #E9E9E9;
+	background-color: #F5F5F5;
+	padding: 2px;
+}

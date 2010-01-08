@@ -1,0 +1,29 @@
+
+		
+		<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+		
+		<html>
+		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+			<title>Installing SafiServer on Linux</title>
+			<link rel="stylesheet" href="css/help.css" type="text/css" />
+		</head>
+		
+		<body>
+		
+		
+	
+	
+	
+	
+		
+		
+		<h2>Installing SafiServer on Linux</h2><br>
+		<div style="text-align: center;"><div style="text-align: left;"><br style="font-family: Arial;"><font size="2"><span style="font-family: Arial; font-weight: bold;">Download the compressed SafiServer directory.</span><br>You can download a copy of SafiServer at <a name="" target="" classname="" class="" href="index.cfm?pageMode=downloadtrial&amp;product_id=7">http://www.safisystems.com/index.cfm?pageMode=downloadtrial</a><br style="font-family: Arial;"><br><br style="font-family: Arial; font-weight: bold;"><span style="font-family: Arial; font-weight: bold;">Untar (or unzip) the file into a directory of your choice.&nbsp; i.e:</span><br style="font-family: Arial;"></font><font style="font-family: Arial; font-style: italic;" size="2"><font size="2"># tar zxfv SafiServer32-B1-3-0.tar.gz<br></font></font><font size="2"><br><br style="font-family: Arial;"><span style="font-family: Arial; font-weight: bold;">Navigate to the SafiServer directory:</span><br style="font-family: Arial;"><span style="font-family: Arial; font-style: italic;">#&nbsp; cd SafiServer</span><br><br><br><span style="font-weight: bold;">Run the install script file.&nbsp; </span><br><span style="font-style: italic;"># ./installserver.sh</span><br><br>NOTE: when this is ran the first time you should see the following:<br><br><img alt="" src="images/help/firstinstallscript.jpg" border="0" hspace="" vspace=""><br><br>You will be prompted to enter the following values:<br><span style="font-weight: bold;">SafiServer bind IP: </span>This is the local IP address that the SafiServer will use to bind to<br><span style="font-weight: bold;">FastAGI port:</span> The TCP port on which to run the SafiServer FastAGI server on<br><span style="font-weight: bold;">sa password:</span> This is the system administrator password for the SafiServer database server<br><br><br><span style="font-weight: bold;">Finish Install and Start Server<br></span>When you are finished with the initial configuration: run the following the finish the install and start the SafiServer:<br><br><span style="font-style: italic;"># ./installserver.sh start</span><br><br>The install will take place in the background and you can check the status of the SafiServer by running:<br><br><span style="font-style: italic;"># ./installserver.sh status<br><br><br></span><br style="font-weight: bold;"><span style="font-weight: bold;">Software Firewall<br></span>In order to connect to the SafiServer; you may have to open ports (or turn off) any software firewall that might be running on your Linux machine (i.e. iptables).<span style="font-weight: bold;"><br><span style="font-weight: bold;"><span style="font-weight: bold;"></span></span></span><span style="font-style: italic;"></span><br></font><br></div></div>
+	
+	
+
+		</body>
+		</html>
+		
+		
