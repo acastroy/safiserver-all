@@ -53,7 +53,11 @@ public class RhinoSafletScriptEnvironmentImpl extends SafletScriptEnvironmentImp
   }
 
   static {
-    ContextFactory.initGlobal(new ScriptContextFactory());
+  	if (ContextFactory.hasExplicitGlobal()){
+  		log.error("ContextFactory already has explicit global factory set!: "+ContextFactory.getGlobal());
+  	}
+  	else
+  		ContextFactory.initGlobal(new ScriptContextFactory());
   }
 
   /**
