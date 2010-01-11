@@ -3,7 +3,6 @@ package com.safi.workshop.actionpak1.editpart;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
@@ -47,9 +46,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.PlatformUI;
-
 import com.safi.asterisk.figures.ParameterizedFigure;
-import com.safi.asterisk.handler.mbean.DebugRemoteControl;
 import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.ActionStepFactory;
 import com.safi.core.actionstep.DynamicValue;
@@ -62,6 +59,7 @@ import com.safi.core.initiator.Initiator;
 import com.safi.core.saflet.Saflet;
 import com.safi.db.VariableType;
 import com.safi.server.manager.SafiServerRemoteManager;
+import com.safi.server.saflet.mbean.DebugRemoteControl;
 import com.safi.workshop.actionpak1.ElementTypes;
 import com.safi.workshop.edit.parts.ActionstepWithOutputParameters;
 import com.safi.workshop.edit.parts.HandlerEditPart;
