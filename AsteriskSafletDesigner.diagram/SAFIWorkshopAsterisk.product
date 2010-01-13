@@ -14,7 +14,7 @@
 
    <launcherArgs>
       <programArgs>-data @noDefault</programArgs>
-      <vmArgs>-Xbootclasspath/a:plugins/SafiCommons_1.2.5/log4j-1.2.15.jar  -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC -Xms512m -Xmx1024m -DDebugServerMode=true -XX:MaxPermSize=256m</vmArgs>
+      <vmArgs>-XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC -Xms512m -Xmx1024m -DDebugServerMode=true -XX:MaxPermSize=256m</vmArgs>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
    </launcherArgs>
 
