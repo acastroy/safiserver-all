@@ -4,7 +4,6 @@ import org.apache.commons.lang.StringUtils;
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Composite;
-
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.DynamicValueType;
 import com.safi.core.saflet.SafletConstants;

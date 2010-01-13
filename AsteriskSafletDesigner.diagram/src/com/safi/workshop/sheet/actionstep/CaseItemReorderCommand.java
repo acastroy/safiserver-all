@@ -2,12 +2,10 @@ package com.safi.workshop.sheet.actionstep;
 
 import java.util.Collections;
 import java.util.List;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.command.AbstractOverrideableCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
-
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.Item;
 import com.safi.workshop.edit.parts.ActionstepWithCompartment;

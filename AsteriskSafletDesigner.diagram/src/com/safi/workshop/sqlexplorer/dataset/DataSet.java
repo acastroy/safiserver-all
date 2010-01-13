@@ -29,7 +29,6 @@ import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
-
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.safi.workshop.sqlexplorer.ExplorerException;
 import com.safi.workshop.sqlexplorer.IConstants;

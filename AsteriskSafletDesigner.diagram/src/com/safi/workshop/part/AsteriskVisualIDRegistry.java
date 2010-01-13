@@ -2,7 +2,6 @@ package com.safi.workshop.part;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EAnnotation;
@@ -10,7 +9,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
-
 import com.safi.asterisk.initiator.InitiatorPackage;
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.saflet.Saflet;

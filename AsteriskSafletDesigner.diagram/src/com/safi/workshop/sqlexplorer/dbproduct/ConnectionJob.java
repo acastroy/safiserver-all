@@ -19,7 +19,6 @@
 package com.safi.workshop.sqlexplorer.dbproduct;
 
 import java.sql.SQLException;
-
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
@@ -31,7 +30,6 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbenchSite;
 import org.eclipse.ui.progress.IWorkbenchSiteProgressService;
-
 import com.safi.workshop.part.AsteriskDiagramEditorUtil;
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.connections.SessionEstablishedListener;

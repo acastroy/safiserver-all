@@ -21,11 +21,9 @@ package com.safi.workshop.sqlexplorer.plugin.perspectives;
 
 import java.util.Iterator;
 import java.util.List;
-
 import org.eclipse.ui.IFolderLayout;
 import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;
-
 import com.safi.workshop.sqlexplorer.plugin.views.SqlexplorerViewConstants;
 
 /**

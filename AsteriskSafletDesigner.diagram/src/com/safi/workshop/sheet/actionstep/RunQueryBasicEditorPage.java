@@ -43,9 +43,6 @@ import com.safi.core.actionstep.DBQueryId;
 import com.safi.core.actionstep.QueryParamMapping;
 import com.safi.core.actionstep.RunQuery;
 import com.safi.db.Query;
-import com.safi.db.manager.DBManager;
-import com.safi.db.manager.DBManagerException;
-import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.sheet.DBResourceChooser;
 import com.safi.workshop.sheet.DynamicValueEditorUtils;
 

@@ -32,7 +32,6 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
-
 import com.safi.db.manager.DBManager;
 import com.safi.db.manager.DBManagerException;
 import com.safi.db.manager.EntitlementUtils;

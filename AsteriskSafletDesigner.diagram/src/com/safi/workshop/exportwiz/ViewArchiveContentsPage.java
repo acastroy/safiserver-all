@@ -8,7 +8,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import org.apache.commons.lang.StringUtils;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -37,13 +36,11 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Tree;
-
 import com.safi.db.SafiDriverManager;
 import com.safi.db.Variable;
 import com.safi.db.VariableType;
 import com.safi.db.server.config.SafletProject;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-
 import de.schlichtherle.io.ArchiveException;
 import de.schlichtherle.io.File;
 import de.schlichtherle.io.FileInputStream;

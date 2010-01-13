@@ -46,7 +46,6 @@ import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.User;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
 
 public class UserManagerDialog extends TitleAreaDialog {
 

@@ -5,7 +5,6 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Composite;
-
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.DynamicValueType;
 

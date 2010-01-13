@@ -10,7 +10,6 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
-
 import com.safi.db.DBConnection;
 import com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver;
 

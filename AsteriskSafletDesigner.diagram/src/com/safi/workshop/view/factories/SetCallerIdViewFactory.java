@@ -2,7 +2,6 @@ package com.safi.workshop.view.factories;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
@@ -12,7 +11,6 @@ import org.eclipse.gmf.runtime.diagram.ui.view.factories.AbstractShapeViewFactor
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
-
 import com.safi.workshop.edit.parts.HandlerEditPart;
 import com.safi.workshop.edit.parts.SetCallerIdEditPart;
 import com.safi.workshop.edit.parts.SetCallerIdNameEditPart;

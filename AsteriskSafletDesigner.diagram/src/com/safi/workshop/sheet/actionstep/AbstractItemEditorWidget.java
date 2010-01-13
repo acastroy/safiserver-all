@@ -1,7 +1,6 @@
 package com.safi.workshop.sheet.actionstep;
 
 import java.util.List;
-
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
@@ -11,7 +10,6 @@ import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.LabelProvider;
-import org.eclipse.jface.viewers.ListViewer;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.SWT;
@@ -23,7 +21,6 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Table;
-
 import com.safi.core.actionstep.Item;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.swtdesigner.ResourceManager;

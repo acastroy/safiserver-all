@@ -19,7 +19,6 @@
 package com.safi.workshop.sqlexplorer.dbdetail.tab;
 
 import java.sql.ResultSet;
-
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.dataset.DataSet;
 import com.safi.workshop.sqlexplorer.dbstructure.nodes.INode;

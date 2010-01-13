@@ -6,11 +6,9 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
-
 import com.safi.asterisk.actionstep.Answer;
 import com.safi.asterisk.actionstep.Background;
 import com.safi.asterisk.actionstep.BackgroundDetect;

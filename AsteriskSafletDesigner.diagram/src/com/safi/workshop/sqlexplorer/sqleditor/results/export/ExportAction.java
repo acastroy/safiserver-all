@@ -20,7 +20,6 @@ package com.safi.workshop.sqlexplorer.sqleditor.results.export;
 
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.widgets.Shell;
-
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.sqleditor.results.ResultsTableAction;
 import com.safi.workshop.sqlexplorer.util.ImageUtil;

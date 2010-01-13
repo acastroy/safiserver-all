@@ -23,8 +23,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
-
-import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.ILogListener;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
@@ -38,7 +36,6 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
-
 import com.safi.db.DBConnection;
 import com.safi.db.DBDriver;
 import com.safi.db.DBResource;
@@ -81,8 +78,6 @@ public class SQLExplorerPlugin extends AbstractUIPlugin {
   private ResourceBundle resourceBundle;
 
   private SQLHistory _history = null;
-
-  private static final Logger _logger = Logger.getLogger(SQLExplorerPlugin.class);
 
   // The shared instance.
   private static SQLExplorerPlugin plugin;
@@ -303,7 +298,6 @@ public class SQLExplorerPlugin extends AbstractUIPlugin {
       getDefault().getLog().log(
           new Status(IStatus.ERROR, AsteriskDiagramEditorPlugin.ID, IStatus.ERROR, String
               .valueOf(message), t));
-      _logger.error(message, t);
     }
   }
 
@@ -316,7 +310,6 @@ public class SQLExplorerPlugin extends AbstractUIPlugin {
     getDefault().getLog().log(
         new Status(IStatus.ERROR, AsteriskDiagramEditorPlugin.ID, IStatus.ERROR, String
             .valueOf(message), null));
-    _logger.error(message);
   }
 
   /**

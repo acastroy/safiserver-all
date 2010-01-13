@@ -2,7 +2,6 @@ package com.safi.workshop.edit.commands;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
-
 import com.safi.asterisk.AsteriskFactory;
 import com.safi.asterisk.Call;
 import com.safi.asterisk.actionstep.PlaceCall;

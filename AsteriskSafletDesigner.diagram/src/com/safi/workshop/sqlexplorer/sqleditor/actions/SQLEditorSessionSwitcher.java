@@ -19,7 +19,6 @@
 package com.safi.workshop.sqlexplorer.sqleditor.actions;
 
 import java.util.HashMap;
-
 import org.eclipse.jface.action.ControlContribution;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -27,7 +26,6 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
-
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.connections.SessionEstablishedListener;
 import com.safi.workshop.sqlexplorer.dbproduct.Alias;

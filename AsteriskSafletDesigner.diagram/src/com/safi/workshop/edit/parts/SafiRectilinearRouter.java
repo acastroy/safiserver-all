@@ -2,7 +2,6 @@ package com.safi.workshop.edit.parts;
 
 import java.lang.ref.WeakReference;
 import java.util.List;
-
 import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.ConnectionAnchor;
 import org.eclipse.draw2d.IFigure;
@@ -15,7 +14,6 @@ import org.eclipse.gmf.runtime.draw2d.ui.geometry.LineSeg;
 import org.eclipse.gmf.runtime.draw2d.ui.geometry.PointListUtilities;
 import org.eclipse.gmf.runtime.draw2d.ui.internal.routers.ObliqueRouter;
 import org.eclipse.gmf.runtime.draw2d.ui.internal.routers.OrthogonalRouter;
-
 import com.safi.asterisk.figures.OutputFigure;
 
 public class SafiRectilinearRouter extends ObliqueRouter implements OrthogonalRouter {

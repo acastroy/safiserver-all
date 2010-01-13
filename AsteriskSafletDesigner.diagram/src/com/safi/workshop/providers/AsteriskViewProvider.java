@@ -9,7 +9,6 @@ import org.eclipse.gmf.runtime.diagram.ui.view.factories.BasicNodeViewFactory;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.gmf.runtime.notation.View;
-
 import com.safi.workshop.edit.parts.*;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.safi.workshop.part.AsteriskVisualIDRegistry;

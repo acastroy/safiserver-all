@@ -1,7 +1,6 @@
 package com.safi.workshop.sqlexplorer.wizard;
 
 import java.sql.Connection;
-
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;

@@ -1,7 +1,6 @@
 package com.safi.workshop.audio;
 
 import java.io.File;
-
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.MessageDialog;

@@ -24,7 +24,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.text.Collator;
-
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.viewers.ColumnWeightData;
@@ -62,7 +61,6 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.ui.browser.IWebBrowser;
 import org.eclipse.ui.internal.browser.WorkbenchBrowserSupport;
-
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
 import com.safi.workshop.sqlexplorer.util.ImageUtil;

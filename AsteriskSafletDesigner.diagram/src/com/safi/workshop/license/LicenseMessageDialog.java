@@ -10,8 +10,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Link;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
-
-import com.safi.asterisk.handler.mbean.LicenseException;
+import com.safi.server.saflet.mbean.LicenseException;
 
 public class LicenseMessageDialog extends Dialog {
 

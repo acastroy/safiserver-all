@@ -2,7 +2,6 @@ package com.safi.workshop.edit.policies;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -15,7 +14,6 @@ import org.eclipse.gmf.runtime.emf.commands.core.commands.DuplicateEObjectsComma
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
-
 import com.safi.core.saflet.SafletPackage;
 import com.safi.workshop.edit.commands.AnswerCreateCommand;
 import com.safi.workshop.edit.commands.AssignmentCreateCommand;

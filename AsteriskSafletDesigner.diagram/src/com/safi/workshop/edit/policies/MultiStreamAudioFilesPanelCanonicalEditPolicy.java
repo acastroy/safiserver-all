@@ -6,10 +6,8 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
-
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.notation.View;
-
 import com.safi.asterisk.actionstep.ActionstepPackage;
 import com.safi.workshop.edit.parts.AudioFileItemEditPart;
 import com.safi.workshop.part.AsteriskDiagramUpdater;

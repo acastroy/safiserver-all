@@ -1,16 +1,13 @@
 package com.safi.workshop.edit.parts;
 
 import java.util.ArrayList;
-import java.util.EventObject;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.WeakHashMap;
-
 import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
@@ -74,7 +71,6 @@ import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.widgets.Display;
-
 import com.safi.asterisk.figures.FixedConnectionAnchor;
 import com.safi.asterisk.figures.OutputFigure;
 import com.safi.asterisk.figures.OutputFigure.TerminalLocator;
@@ -104,7 +100,6 @@ public class HandlerEditPart extends DiagramEditPart {
 
   private static final Dimension MIN_VIEWPORT_SIZE = new Dimension(2500, 1300);
 
-  private final static Logger log = Logger.getLogger(HandlerEditPart.class);
   /**
    * @generated
    */
@@ -826,7 +821,7 @@ public class HandlerEditPart extends DiagramEditPart {
     String anchorName = String.valueOf(fig.hashCode());// fig.getFigureOutputNameFigure().getText();
     Anchor a = obs.getOutputAnchor(anchorName);
     if (a == null) {
-      log.warn("anchor for obstacle " + parentFig + " not found");
+    	AsteriskDiagramEditorPlugin.getInstance().logWarn("anchor for obstacle " + parentFig + " not found");
       a = new Anchor(String.valueOf(fig.hashCode()));
       a.setParentAffixedSide(PositionConstants.EAST);
       obs.addOutputAnchor(a);

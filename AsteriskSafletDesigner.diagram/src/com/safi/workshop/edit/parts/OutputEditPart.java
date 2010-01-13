@@ -22,7 +22,6 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
-
 import com.safi.asterisk.figures.OutputFigure;
 import com.safi.core.actionstep.Output;
 import com.safi.core.actionstep.OutputType;

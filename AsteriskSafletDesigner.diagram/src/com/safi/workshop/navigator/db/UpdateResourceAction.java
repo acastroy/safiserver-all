@@ -11,7 +11,6 @@ import org.eclipse.gmf.runtime.diagram.ui.DiagramUtil;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.StructuredSelection;
-
 import com.safi.core.saflet.Saflet;
 import com.safi.db.Query;
 import com.safi.db.manager.DBManagerException;

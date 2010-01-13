@@ -20,9 +20,7 @@ package com.safi.workshop.sqlexplorer.dbstructure.nodes;
 
 import java.util.Comparator;
 import java.util.Iterator;
-
 import net.sourceforge.squirrel_sql.fw.sql.ITableInfo;
-
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
 

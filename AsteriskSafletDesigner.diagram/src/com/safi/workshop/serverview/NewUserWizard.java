@@ -2,7 +2,6 @@ package com.safi.workshop.serverview;
 
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.wizard.Wizard;
-
 import com.safi.server.ws.Licrs;
 import com.safi.server.ws.WorkshopServerLicensing;
 import com.safi.server.ws.WorkshopServerLicensingService;

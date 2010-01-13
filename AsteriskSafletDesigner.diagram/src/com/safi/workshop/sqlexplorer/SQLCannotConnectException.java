@@ -1,7 +1,6 @@
 package com.safi.workshop.sqlexplorer;
 
 import java.sql.SQLException;
-
 import com.safi.workshop.sqlexplorer.dbproduct.User;
 
 public class SQLCannotConnectException extends SQLException {

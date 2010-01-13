@@ -22,7 +22,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
-
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferencePage;
@@ -52,7 +51,6 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 import org.eclipse.ui.PlatformUI;
-
 import com.safi.workshop.sqlexplorer.ExplorerException;
 import com.safi.workshop.sqlexplorer.IConstants;
 import com.safi.workshop.sqlexplorer.Messages;
@@ -61,7 +59,7 @@ import com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver;
 import com.safi.workshop.sqlexplorer.dialogs.CreateDriverDlg;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
 import com.safi.workshop.sqlexplorer.util.ImageUtil;
-
+ 
 /**
  * This class is used to define a preference page for JDBC drivers.
  * 

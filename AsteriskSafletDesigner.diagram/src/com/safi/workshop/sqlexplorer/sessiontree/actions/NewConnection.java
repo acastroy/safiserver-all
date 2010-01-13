@@ -1,7 +1,6 @@
 package com.safi.workshop.sqlexplorer.sessiontree.actions;
 
 import org.eclipse.jface.action.Action;
-
 import com.safi.workshop.sqlexplorer.dbproduct.User;
 import com.safi.workshop.sqlexplorer.plugin.actions.OpenPasswordConnectDialogAction;
 import com.safi.workshop.sqlexplorer.util.TextUtil;

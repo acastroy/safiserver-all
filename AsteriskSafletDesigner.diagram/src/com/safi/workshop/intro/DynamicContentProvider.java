@@ -2,7 +2,6 @@ package com.safi.workshop.intro;
 
 import java.io.PrintWriter;
 import java.util.Date;
-
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.intro.config.IIntroContentProviderSite;

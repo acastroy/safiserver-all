@@ -16,9 +16,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import org.eclipse.core.commands.operations.IOperationHistory;
-import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.core.commands.operations.OperationHistoryFactory;
 import org.eclipse.emf.common.command.AbstractCommand;
 import org.eclipse.emf.common.command.Command;
@@ -48,7 +46,6 @@ import org.eclipse.emf.transaction.util.TriggerCommand;
 import org.eclipse.emf.workspace.impl.WorkspaceCommandStackImpl;
 import org.eclipse.gmf.runtime.diagram.core.internal.listener.NotationSemProc;
 import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
-import org.eclipse.gmf.runtime.emf.commands.core.command.EditingDomainUndoContext;
 import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 
 /**

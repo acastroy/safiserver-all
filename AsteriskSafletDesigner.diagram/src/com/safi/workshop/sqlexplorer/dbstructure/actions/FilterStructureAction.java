@@ -21,7 +21,6 @@ package com.safi.workshop.sqlexplorer.dbstructure.actions;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.window.Window;
-
 import com.safi.workshop.sqlexplorer.dbproduct.Alias;
 import com.safi.workshop.sqlexplorer.dbproduct.Session;
 import com.safi.workshop.sqlexplorer.dialogs.FilterStructureDialog;

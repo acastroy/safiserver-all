@@ -2,7 +2,6 @@ package com.safi.workshop.sheet;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
@@ -21,7 +20,6 @@ import org.eclipse.ui.views.properties.IPropertyDescriptor;
 import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
 import org.eclipse.ui.views.properties.TextPropertyDescriptor;
-
 import com.safi.core.actionstep.provider.ActionStepItemProvider;
 
 /**

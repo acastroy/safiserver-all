@@ -2,7 +2,6 @@ package com.safi.workshop.navigator.serverconfig;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.dialogs.IDialogConstants;
@@ -39,7 +38,6 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
-
 import com.safi.db.manager.DBManager;
 import com.safi.db.manager.DBManagerException;
 import com.safi.db.manager.EntitlementUtils;

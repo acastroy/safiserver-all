@@ -26,7 +26,6 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
-
 import com.safi.asterisk.figures.OutputFigure;
 import com.safi.core.actionstep.CaseItem;
 import com.safi.core.actionstep.Item;

@@ -5,7 +5,6 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-
 import org.apache.commons.lang.StringUtils;
 import org.dom4j.Document;
 import org.eclipse.core.databinding.DataBindingContext;
@@ -33,15 +32,14 @@ import org.eclipse.swt.widgets.ProgressBar;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.Text;
-
-import com.safi.asterisk.handler.mbean.SysInfo;
-import com.safi.asterisk.handler.util.FileUtils;
 import com.safi.db.manager.EntitlementUtils;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.User;
 import com.safi.server.manager.SafiServerManagementException;
 import com.safi.server.manager.SafiServerRemoteManager;
 import com.safi.server.plugin.SafiServerPlugin;
+import com.safi.server.saflet.mbean.SysInfo;
+import com.safi.server.saflet.util.FileUtils;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.safi.workshop.part.AsteriskDiagramEditorUtil;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin.ActionPak;

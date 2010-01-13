@@ -3,7 +3,6 @@ package com.safi.workshop.view.vareditor;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
@@ -43,7 +42,6 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.IWorkbenchActionConstants;
 import org.eclipse.ui.PlatformUI;
-
 import com.safi.core.actionstep.util.VariableTranslator;
 import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletContext;

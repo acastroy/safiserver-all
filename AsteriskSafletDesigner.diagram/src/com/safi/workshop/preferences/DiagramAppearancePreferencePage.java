@@ -7,7 +7,6 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
-
 import com.safi.server.preferences.PreferenceConstants;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 

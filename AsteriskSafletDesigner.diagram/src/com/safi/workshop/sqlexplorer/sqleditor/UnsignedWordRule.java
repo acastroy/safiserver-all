@@ -23,14 +23,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeSet;
-
 import org.eclipse.jface.text.rules.ICharacterScanner;
 import org.eclipse.jface.text.rules.IRule;
 import org.eclipse.jface.text.rules.IToken;
 import org.eclipse.jface.text.rules.IWordDetector;
 import org.eclipse.jface.text.rules.Token;
 import org.eclipse.jface.util.Assert;
-
 import com.safi.workshop.sqlexplorer.dbstructure.nodes.TableNode;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
 import com.safi.workshop.sqlexplorer.sessiontree.model.utility.Dictionary;

@@ -1,7 +1,6 @@
 package com.safi.workshop.view.vareditor;
 
 import java.lang.ref.WeakReference;
-
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EAttribute;
@@ -11,7 +10,6 @@ import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.ColumnViewer;
 import org.eclipse.jface.viewers.EditingSupport;
-
 import com.safi.core.actionstep.util.VariableTranslator;
 import com.safi.db.DbPackage;
 import com.safi.db.Variable;

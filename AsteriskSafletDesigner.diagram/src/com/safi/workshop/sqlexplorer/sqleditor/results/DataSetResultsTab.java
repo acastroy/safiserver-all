@@ -3,7 +3,6 @@ package com.safi.workshop.sqlexplorer.sqleditor.results;
 import org.eclipse.swt.custom.TableCursor;
 import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.ui.IWorkbenchPage;
-
 import com.safi.workshop.sqlexplorer.ExplorerException;
 import com.safi.workshop.sqlexplorer.dataset.DataSetRow;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;

@@ -11,7 +11,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import org.eclipse.dltk.codeassist.IAssistParser;
 import org.eclipse.dltk.codeassist.RelevanceConstants;
 import org.eclipse.dltk.compiler.CharOperation;
@@ -33,19 +32,15 @@ import org.eclipse.dltk.internal.javascript.typeinference.CombinedOrReference;
 import org.eclipse.dltk.internal.javascript.typeinference.HostCollection;
 import org.eclipse.dltk.internal.javascript.typeinference.IClassReference;
 import org.eclipse.dltk.internal.javascript.typeinference.IReference;
-import org.eclipse.dltk.internal.javascript.typeinference.NativeStringReference;
 import org.eclipse.dltk.internal.javascript.typeinference.StandardSelfCompletingReference;
 import org.eclipse.dltk.javascript.core.JavaScriptKeywords;
 import org.eclipse.dltk.javascript.internal.core.codeassist.completion.JavaScriptCompletionEngine;
 import org.eclipse.dltk.javascript.internal.core.mixin.JavaScriptMixinModel;
 import org.eclipse.gmf.runtime.notation.Diagram;
-import org.eclipse.ui.IEditorPart;
-
 import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletContext;
 import com.safi.workshop.edit.parts.HandlerEditPart;
 import com.safi.workshop.part.AsteriskDiagramEditor;
-import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.safi.workshop.part.AsteriskDiagramEditorUtil;
 import com.xored.org.mozilla.javascript.Node.StringNode;
 

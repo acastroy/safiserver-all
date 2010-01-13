@@ -7,7 +7,6 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.actions.ActionGroup;
-
 import com.safi.workshop.sqlexplorer.history.SQLHistory;
 import com.safi.workshop.sqlexplorer.plugin.views.SQLHistoryView;
 

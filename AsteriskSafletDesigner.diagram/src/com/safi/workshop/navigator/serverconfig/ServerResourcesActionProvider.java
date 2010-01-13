@@ -4,7 +4,6 @@ import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.navigator.CommonActionProvider;
 import org.eclipse.ui.navigator.ICommonActionExtensionSite;
-
 import com.safi.workshop.sqlexplorer.connections.actions.AbstractConnectionTreeAction;
 
 public class ServerResourcesActionProvider extends CommonActionProvider {

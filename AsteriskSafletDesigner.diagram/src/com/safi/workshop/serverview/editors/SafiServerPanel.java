@@ -8,8 +8,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.part.EditorPart;
-
-import com.safi.asterisk.handler.mbean.SysInfo;
+import com.safi.server.saflet.mbean.SysInfo;
 import com.safi.workshop.serverview.ServerViewEditorInput;
 import com.safi.workshop.serverview.ServerViewPanel;
 

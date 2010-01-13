@@ -3,7 +3,6 @@ package com.safi.workshop.sheet.actionstep;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
 import org.eclipse.core.databinding.Binding;
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
@@ -21,7 +20,6 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Label;
-
 import com.safi.asterisk.Call;
 
 public class PlaceCallOutputEditorPage extends AbstractActionstepEditorPage {

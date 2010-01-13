@@ -4,9 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
-import org.apache.log4j.Logger;
-
+import java.util.logging.Logger;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.safi.workshop.sqlexplorer.IConstants;
 import com.safi.workshop.sqlexplorer.dataset.DataSet;
@@ -15,7 +13,7 @@ import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
 
 public abstract class AbstractSQLTab extends AbstractDataSetTab {
 
-  protected static final Logger _logger = Logger.getLogger(AbstractSQLTab.class);
+  protected static final Logger _logger = Logger.getLogger(AbstractSQLTab.class.getName());
 
   @Override
   public final DataSet getDataSet() throws Exception {

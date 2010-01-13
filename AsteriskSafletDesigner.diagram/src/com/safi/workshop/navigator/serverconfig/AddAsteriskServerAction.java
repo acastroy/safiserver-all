@@ -3,14 +3,12 @@ package com.safi.workshop.navigator.serverconfig;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IViewActionDelegate;
 import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
-
 import com.safi.db.manager.EntitlementUtils;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.preferences.AsteriskConfigurationDialog;

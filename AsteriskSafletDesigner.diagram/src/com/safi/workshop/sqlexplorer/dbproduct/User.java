@@ -23,10 +23,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-
 import org.dom4j.Element;
 import org.eclipse.core.runtime.Preferences;
-
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.safi.workshop.sqlexplorer.ExplorerException;
 import com.safi.workshop.sqlexplorer.IConstants;

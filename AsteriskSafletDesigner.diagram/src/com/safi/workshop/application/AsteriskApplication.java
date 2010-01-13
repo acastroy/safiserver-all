@@ -9,7 +9,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 import java.util.Properties;
-
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
@@ -29,7 +28,6 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.internal.ide.IDEWorkbenchMessages;
 import org.eclipse.ui.internal.ide.IDEWorkbenchPlugin;
 import org.eclipse.ui.internal.ide.StatusUtil;
-
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.application.ChooseSafiServerWorkspaceData.SafiWorkspaceProfile;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;

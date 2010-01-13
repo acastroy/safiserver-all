@@ -23,7 +23,6 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Display;
-
 import com.safi.db.Query;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.SafiNavigator;

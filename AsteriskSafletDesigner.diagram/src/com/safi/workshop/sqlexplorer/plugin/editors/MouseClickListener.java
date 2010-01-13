@@ -19,7 +19,6 @@
 package com.safi.workshop.sqlexplorer.plugin.editors;
 
 import java.util.ArrayList;
-
 import org.eclipse.jface.text.BadLocationException;
 import org.eclipse.jface.text.DocumentEvent;
 import org.eclipse.jface.text.IDocument;
@@ -53,7 +52,6 @@ import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
-
 import com.safi.workshop.sqlexplorer.dbstructure.nodes.INode;
 import com.safi.workshop.sqlexplorer.dbstructure.nodes.TableNode;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;

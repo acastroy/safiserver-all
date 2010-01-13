@@ -21,10 +21,8 @@ package com.safi.workshop.sqlexplorer.dbstructure.actions;
 
 import java.util.Iterator;
 import java.util.List;
-
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.IWorkbenchPage;
-
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.dbstructure.nodes.ColumnNode;
 import com.safi.workshop.sqlexplorer.dbstructure.nodes.INode;

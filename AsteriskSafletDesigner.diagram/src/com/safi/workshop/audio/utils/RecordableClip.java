@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
-
 import javax.sound.sampled.AudioFileFormat;
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
@@ -22,9 +21,7 @@ import javax.sound.sampled.LineEvent;
 import javax.sound.sampled.LineListener;
 import javax.sound.sampled.Mixer;
 import javax.sound.sampled.TargetDataLine;
-
 import org.tritonus.share.sampled.FloatSampleBuffer;
-
 import com.safi.workshop.audio.utils.AudioUtils.LineAndStream;
 import com.safi.workshop.audio.utils.MyByteArrayOutputStream.NewDataListener;
 import com.safi.workshop.preferences.AudioDevicesPrefPage;

@@ -3,7 +3,6 @@ package com.safi.workshop.sheet;
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
-
 import com.safi.core.actionstep.DynamicValueType;
 import com.safi.core.saflet.SafletContext;
 import com.safi.workshop.view.vareditor.VariableChooser2;

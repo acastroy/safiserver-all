@@ -15,7 +15,6 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.List;
-
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.swtdesigner.ResourceManager;
 

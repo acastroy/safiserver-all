@@ -20,7 +20,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IFile;
@@ -76,10 +75,8 @@ import org.eclipse.ui.statushandlers.StatusManager;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
-
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.actionstep.ActionstepPackage;
-import com.safi.asterisk.handler.util.FileUtils;
 import com.safi.asterisk.initiator.InitiatorPackage;
 import com.safi.core.actionstep.ActionStepFactory;
 import com.safi.core.actionstep.DynamicValue;
@@ -99,6 +96,7 @@ import com.safi.db.server.config.ServerResource;
 import com.safi.db.server.config.User;
 import com.safi.server.manager.SafiServerRemoteManager;
 import com.safi.server.plugin.SafiServerPlugin;
+import com.safi.server.saflet.util.FileUtils;
 import com.safi.workshop.SafiProjectNature;
 import com.safi.workshop.navigator.PersistenceProperties;
 import com.safi.workshop.navigator.db.PublishSafletDialog;

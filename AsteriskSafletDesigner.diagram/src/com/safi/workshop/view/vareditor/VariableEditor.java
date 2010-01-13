@@ -45,7 +45,6 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
-import com.safi.asterisk.handler.GlobalVariableManager;
 import com.safi.core.actionstep.util.VariableTranslator;
 import com.safi.core.saflet.SafletContext;
 import com.safi.db.DbFactory;
@@ -55,6 +54,7 @@ import com.safi.db.VariableScope;
 import com.safi.db.VariableType;
 import com.safi.db.manager.DBManager;
 import com.safi.server.plugin.SafiServerPlugin;
+import com.safi.server.saflet.GlobalVariableManager;
 import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 

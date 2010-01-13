@@ -14,7 +14,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.OperationHistoryFactory;
 import org.eclipse.core.resources.IProject;
@@ -75,11 +74,9 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
-
 import com.safi.asterisk.AsteriskFactory;
 import com.safi.asterisk.Call;
 import com.safi.asterisk.CallSource1;
-import com.safi.asterisk.handler.util.FileUtils;
 import com.safi.asterisk.saflet.AsteriskSaflet;
 import com.safi.asterisk.saflet.SafletFactory;
 import com.safi.core.initiator.Initiator;
@@ -87,6 +84,7 @@ import com.safi.core.saflet.Saflet;
 import com.safi.db.Query;
 import com.safi.db.server.config.Prompt;
 import com.safi.server.manager.SafiServerRemoteManager;
+import com.safi.server.saflet.util.FileUtils;
 import com.safi.workshop.SafiNavigator;
 import com.safi.workshop.edit.parts.HandlerEditPart;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin.ActionStepProfile;

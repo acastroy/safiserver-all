@@ -23,10 +23,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.TreeSet;
-
-import org.apache.log4j.Logger;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
-
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.dbstructure.nodes.CatalogNode;
 import com.safi.workshop.sqlexplorer.dbstructure.nodes.DatabaseNode;
@@ -41,7 +40,7 @@ public class Dictionary {
   private static final String[] SUPPORTED_CONTENT_ASSIST_TYPES = new String[] { "TABLE_FOLDER",
       "TABLE_TYPE", "VIEW_FOLDER", "VIEW_TYPE" };
 
-  private static final Logger _logger = Logger.getLogger(Dictionary.class);
+  private static final Logger log = Logger.getLogger(Dictionary.class.getName());
 
   public Dictionary() {
 
@@ -309,8 +308,8 @@ public class Dictionary {
    */
   private void loadSchemaCatalog(INode iNode, IProgressMonitor monitor) throws InterruptedException {
 
-    if (_logger.isDebugEnabled()) {
-      _logger.debug("Loading dictionary: " + iNode.getName());
+    if (log.isLoggable(Level.FINEST)) {
+      log.log(Level.FINEST, "Loading dictionary: " + iNode.getName());
     }
 
     // check for cancellation by user
@@ -336,8 +335,8 @@ public class Dictionary {
 
       for (INode typeNode : children) {
 
-        if (_logger.isDebugEnabled()) {
-          _logger.debug("Loading dictionary: " + typeNode.getName());
+        if (log.isLoggable(Level.FINEST)) {
+          log.log(Level.FINEST, "Loading dictionary: " + typeNode.getName());
         }
 
         // only load a few types like tables and view nodes into the
@@ -371,8 +370,8 @@ public class Dictionary {
 
           for (INode tableNode : tableNodes) {
 
-            if (_logger.isDebugEnabled()) {
-              _logger.debug("Loading dictionary: " + tableNode.getName());
+            if (log.isLoggable(Level.FINEST)) {
+              log.log(Level.FINEST, "Loading dictionary: " + tableNode.getName());
             }
 
             if (monitor != null) {
@@ -380,8 +379,8 @@ public class Dictionary {
               monitor.worked(tableNodeWorkUnit);
               typeNodeWorkCompleted = typeNodeWorkCompleted + tableNodeWorkUnit;
 
-              if (_logger.isDebugEnabled()) {
-                _logger.debug("worked table: " + tableNodeWorkUnit + ", total type work: "
+              if (log.isLoggable(Level.FINEST)) {
+                log.log(Level.FINEST, "worked table: " + tableNodeWorkUnit + ", total type work: "
                     + typeNodeWorkCompleted);
               }
 
@@ -422,8 +421,8 @@ public class Dictionary {
         if (typeNodeWorkCompleted < typeNodeWorkUnit) {
           // consume remainder of work for this type node
 
-          if (_logger.isDebugEnabled()) {
-            _logger.debug("consuming remainder: " + (typeNodeWorkUnit - typeNodeWorkCompleted));
+          if (log.isLoggable(Level.FINEST)) {
+            log.log(Level.FINEST, "consuming remainder: " + (typeNodeWorkUnit - typeNodeWorkCompleted));
           }
 
           monitor.worked(typeNodeWorkUnit - typeNodeWorkCompleted);

@@ -21,16 +21,13 @@ package com.safi.workshop.sqlexplorer.dbstructure.nodes;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.logging.Logger;
 import net.sourceforge.squirrel_sql.fw.sql.ITableInfo;
-
-import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtension;
 import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
-
 import com.safi.workshop.sqlexplorer.dbproduct.MetaDataSession;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
 import com.safi.workshop.sqlexplorer.util.ImageUtil;
@@ -42,7 +39,7 @@ public class SchemaNode extends AbstractNode {
 
   private String[] _filteredNames;
 
-  private static final Logger _logger = Logger.getLogger(SchemaNode.class);
+  private static final Logger _logger = Logger.getLogger(SchemaNode.class.getName());
 
   /**
    * Create new database Schema node.
@@ -288,7 +285,7 @@ public class SchemaNode extends AbstractNode {
       try {
         tables = _session.getMetaData().getTables(_name, _name, "%", tableTypes, null);
       } catch (Throwable e) {
-        _logger.debug("Loading all tables at once is not supported");
+        _logger.severe("Loading all tables at once is not supported");
       }
 
       for (int i = 0; i < tableTypes.length; ++i) {

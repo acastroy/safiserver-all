@@ -20,7 +20,6 @@
 package com.safi.workshop.sqlexplorer.dbstructure.actions;
 
 import org.eclipse.jface.resource.ImageDescriptor;
-
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.dbproduct.Alias;
 import com.safi.workshop.sqlexplorer.util.ImageUtil;

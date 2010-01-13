@@ -2,7 +2,6 @@ package com.safi.workshop.edit.policies;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
-
 import com.safi.asterisk.actionstep.ActionstepPackage;
 import com.safi.workshop.edit.commands.AudioFileItemCreateCommand;
 import com.safi.workshop.providers.AsteriskElementTypes;

@@ -1,12 +1,9 @@
 package com.safi.workshop.sqlexplorer.dbproduct;
 
 import java.sql.SQLException;
-
 import net.sourceforge.squirrel_sql.fw.sql.SQLDatabaseMetaData;
-
 import org.eclipse.core.runtime.jobs.IJobChangeEvent;
 import org.eclipse.core.runtime.jobs.JobChangeAdapter;
-
 import com.safi.workshop.sqlexplorer.ExplorerException;
 import com.safi.workshop.sqlexplorer.dbdetail.DetailTabManager;
 import com.safi.workshop.sqlexplorer.dbstructure.DatabaseModel;

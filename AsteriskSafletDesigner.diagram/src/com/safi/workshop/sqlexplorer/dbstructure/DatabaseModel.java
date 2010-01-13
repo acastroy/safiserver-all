@@ -19,10 +19,8 @@
 package com.safi.workshop.sqlexplorer.dbstructure;
 
 import java.sql.SQLException;
-
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
-
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.dbproduct.MetaDataSession;
 import com.safi.workshop.sqlexplorer.dbproduct.Session;

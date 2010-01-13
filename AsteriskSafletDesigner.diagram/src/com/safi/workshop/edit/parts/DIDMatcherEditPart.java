@@ -16,7 +16,6 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
-
 import com.safi.asterisk.figures.DIDMatcherFigure;
 import com.safi.workshop.edit.policies.DIDMatcherItemSemanticEditPolicy;
 import com.safi.workshop.part.AsteriskVisualIDRegistry;

@@ -1,7 +1,6 @@
 package com.safi.workshop.sheet;
 
 import java.lang.reflect.InvocationTargetException;
-
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.ui.celleditor.ExtendedDialogCellEditor;
@@ -27,7 +26,6 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.FileDialog;
-
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.ActionStepFactory;
 import com.safi.core.actionstep.DynamicValue;

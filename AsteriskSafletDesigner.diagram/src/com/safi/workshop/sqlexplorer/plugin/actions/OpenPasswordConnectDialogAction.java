@@ -21,7 +21,6 @@ package com.safi.workshop.sqlexplorer.plugin.actions;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Display;
-
 import com.safi.workshop.sqlexplorer.SQLCannotConnectException;
 import com.safi.workshop.sqlexplorer.connections.SessionEstablishedAdapter;
 import com.safi.workshop.sqlexplorer.connections.SessionEstablishedListener;

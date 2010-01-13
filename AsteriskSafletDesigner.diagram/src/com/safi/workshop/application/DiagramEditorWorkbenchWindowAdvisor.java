@@ -17,7 +17,6 @@ import org.eclipse.ui.application.IWorkbenchWindowConfigurer;
 import org.eclipse.ui.application.WorkbenchWindowAdvisor;
 import org.eclipse.ui.internal.WorkbenchWindow;
 import org.eclipse.ui.internal.progress.ProgressRegion;
-
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.safi.workshop.part.Messages;
 

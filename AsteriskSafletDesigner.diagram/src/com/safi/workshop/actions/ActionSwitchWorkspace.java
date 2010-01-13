@@ -7,7 +7,6 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.ActionFactory.IWorkbenchAction;
-
 import com.safi.workshop.application.PickWorkspaceDialog;
 
 public class ActionSwitchWorkspace extends Action implements IWorkbenchAction {

@@ -8,7 +8,6 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.actions.OpenFileAction;
 import org.eclipse.ui.ide.IDE;
-
 import com.safi.workshop.application.DiagramEditorActionBarAdvisor;
 
 public class SafiOpenFileAction extends OpenFileAction {

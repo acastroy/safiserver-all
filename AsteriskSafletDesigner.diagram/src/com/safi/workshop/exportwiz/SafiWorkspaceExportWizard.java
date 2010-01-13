@@ -9,7 +9,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import org.apache.commons.lang.StringUtils;
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
@@ -24,7 +23,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.jface.dialogs.MessageDialog;
-
 import com.safi.db.DBConnection;
 import com.safi.db.DBDriver;
 import com.safi.db.DBResource;
@@ -40,7 +38,6 @@ import com.safi.db.server.config.User;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.safi.workshop.part.AsteriskDiagramEditorUtil;
 import com.safi.workshop.util.SafletPersistenceManager;
-
 import de.schlichtherle.io.File;
 import de.schlichtherle.io.FileInputStream;
 import de.schlichtherle.io.FileOutputStream;

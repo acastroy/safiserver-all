@@ -10,14 +10,12 @@ import java.util.Date;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.Map;
-
 import org.apache.commons.lang.NotImplementedException;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PlatformUI;
-
 import com.safi.core.actionstep.util.VariableTranslator;
 import com.safi.db.SQLDataType;
 import com.safi.db.VariableType;

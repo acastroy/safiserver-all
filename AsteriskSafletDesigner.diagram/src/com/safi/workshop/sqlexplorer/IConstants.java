@@ -1,7 +1,6 @@
 package com.safi.workshop.sqlexplorer;
 
 import org.eclipse.swt.graphics.Color;
-
 import com.safi.workshop.sqlexplorer.plugin.editors.SQLEditor;
 
 /*

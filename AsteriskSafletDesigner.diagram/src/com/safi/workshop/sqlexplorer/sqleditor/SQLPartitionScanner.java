@@ -21,7 +21,6 @@ package com.safi.workshop.sqlexplorer.sqleditor;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.eclipse.jface.text.rules.EndOfLineRule;
 import org.eclipse.jface.text.rules.IPredicateRule;
 import org.eclipse.jface.text.rules.IToken;
@@ -31,7 +30,6 @@ import org.eclipse.jface.text.rules.RuleBasedPartitionScanner;
 import org.eclipse.jface.text.rules.SingleLineRule;
 import org.eclipse.jface.text.rules.Token;
 import org.eclipse.jface.text.rules.WordRule;
-
 import com.safi.workshop.sqlexplorer.IConstants;
 
 public class SQLPartitionScanner extends RuleBasedPartitionScanner {

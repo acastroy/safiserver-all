@@ -19,7 +19,6 @@
 package com.safi.workshop.sqlexplorer.preview;
 
 import java.util.HashSet;
-
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
 
 /**

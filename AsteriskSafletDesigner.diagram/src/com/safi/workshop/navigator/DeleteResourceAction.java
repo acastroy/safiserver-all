@@ -1,7 +1,6 @@
 package com.safi.workshop.navigator;
 
 import java.util.List;
-
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
@@ -12,7 +11,6 @@ import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.SelectionListenerAction;
 import org.eclipse.ui.progress.WorkbenchJob;
-
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 
 /*

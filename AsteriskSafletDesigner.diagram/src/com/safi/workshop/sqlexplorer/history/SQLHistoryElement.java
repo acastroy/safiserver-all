@@ -2,10 +2,8 @@ package com.safi.workshop.sqlexplorer.history;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import org.dom4j.Element;
 import org.dom4j.tree.DefaultElement;
-
 import com.safi.db.Query;
 import com.safi.db.manager.DBManager;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;

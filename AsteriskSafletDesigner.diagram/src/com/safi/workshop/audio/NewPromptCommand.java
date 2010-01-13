@@ -4,7 +4,6 @@ import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.jface.window.Window;
 import org.eclipse.jface.wizard.WizardDialog;
-
 import com.safi.workshop.part.AsteriskDiagramEditorUtil;
 
 public class NewPromptCommand extends org.eclipse.core.commands.AbstractHandler {

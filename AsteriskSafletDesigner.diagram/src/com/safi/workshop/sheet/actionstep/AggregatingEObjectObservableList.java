@@ -1,17 +1,10 @@
 package com.safi.workshop.sheet.actionstep;
 
-import java.util.Collections;
 import org.eclipse.emf.common.command.Command;
-import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.databinding.edit.EditingDomainEObjectObservableList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.command.AddCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.gef.EditPart;
-import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
-import org.eclipse.gmf.runtime.diagram.ui.internal.commands.ToggleCanonicalModeCommand;
 import com.safi.workshop.edit.parts.ToolstepEditPart;
 
 public class AggregatingEObjectObservableList extends EditingDomainEObjectObservableList {

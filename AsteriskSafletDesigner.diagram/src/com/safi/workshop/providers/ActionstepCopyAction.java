@@ -6,7 +6,6 @@ import org.eclipse.gmf.runtime.emf.clipboard.core.OverrideCopyOperation;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.impl.DiagramImpl;
 import org.eclipse.ui.IEditorPart;
-
 import com.safi.workshop.edit.parts.HandlerEditPart;
 import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;

@@ -2,7 +2,6 @@ package com.safi.workshop.view.vareditor;
 
 import org.eclipse.emf.edit.command.AbstractOverrideableCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
-
 import com.safi.core.saflet.SafletContext;
 import com.safi.db.DbFactory;
 import com.safi.db.Variable;

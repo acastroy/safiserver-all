@@ -20,16 +20,13 @@ package com.safi.workshop.sqlexplorer.dbstructure.actions;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-
 import net.sourceforge.squirrel_sql.fw.sql.ITableInfo;
 import net.sourceforge.squirrel_sql.fw.sql.PrimaryKeyInfo;
 import net.sourceforge.squirrel_sql.fw.sql.SQLDatabaseMetaData;
 import net.sourceforge.squirrel_sql.fw.sql.TableColumnInfo;
-
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
-
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.dbstructure.nodes.TableNode;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;

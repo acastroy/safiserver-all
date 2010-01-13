@@ -23,9 +23,7 @@ import java.sql.Driver;
 import java.sql.SQLException;
 import java.util.Collection;
 import java.util.LinkedList;
-
 import net.sourceforge.squirrel_sql.fw.sql.SQLDriverClassLoader;
-
 import com.safi.workshop.sqlexplorer.parsers.BasicQueryParser;
 import com.safi.workshop.sqlexplorer.parsers.Query;
 import com.safi.workshop.sqlexplorer.parsers.QueryParser;

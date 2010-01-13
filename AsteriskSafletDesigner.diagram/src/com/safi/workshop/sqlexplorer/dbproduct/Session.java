@@ -21,7 +21,6 @@ package com.safi.workshop.sqlexplorer.dbproduct;
 import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.concurrent.locks.ReentrantLock;
-
 import com.safi.workshop.part.AsteriskDiagramEditorUtil;
 import com.safi.workshop.sqlexplorer.ExplorerException;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;

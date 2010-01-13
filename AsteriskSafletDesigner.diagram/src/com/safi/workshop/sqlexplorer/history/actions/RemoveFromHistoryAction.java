@@ -2,7 +2,6 @@ package com.safi.workshop.sqlexplorer.history.actions;
 
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.widgets.TableItem;
-
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.history.SQLHistoryElement;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;

@@ -4,7 +4,6 @@ import org.eclipse.jface.action.Action;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
-
 import com.safi.server.preferences.PreferenceConstants;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 

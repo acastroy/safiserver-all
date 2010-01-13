@@ -19,7 +19,6 @@
 package com.safi.workshop.sqlexplorer.preview;
 
 import org.eclipse.swt.widgets.Composite;
-
 import com.safi.workshop.sqlexplorer.ExplorerException;
 
 /**

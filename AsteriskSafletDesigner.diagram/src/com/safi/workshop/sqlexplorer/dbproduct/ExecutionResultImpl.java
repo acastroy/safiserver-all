@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.TreeMap;
-
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.dataset.DataSet;
 import com.safi.workshop.sqlexplorer.dbproduct.DatabaseProduct.ExecutionResults;

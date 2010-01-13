@@ -1,7 +1,6 @@
 package com.safi.workshop.sqlexplorer.wizard;
 
 import java.util.Properties;
-
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;

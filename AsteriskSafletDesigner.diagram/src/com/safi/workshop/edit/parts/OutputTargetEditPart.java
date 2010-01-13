@@ -1,7 +1,6 @@
 package com.safi.workshop.edit.parts;
 
 import java.beans.PropertyChangeEvent;
-
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.IFigure;
@@ -12,7 +11,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
-
 import com.safi.asterisk.figures.OutputTargetFigure;
 import com.safi.core.actionstep.Output;
 import com.safi.core.actionstep.OutputType;

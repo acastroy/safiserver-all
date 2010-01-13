@@ -26,7 +26,6 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
-
 import com.safi.workshop.sqlexplorer.dialogs.AboutDlg;
 import com.safi.workshop.sqlexplorer.util.ImageUtil;
 

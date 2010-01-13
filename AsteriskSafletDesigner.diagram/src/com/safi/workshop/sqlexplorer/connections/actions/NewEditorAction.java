@@ -20,13 +20,11 @@ package com.safi.workshop.sqlexplorer.connections.actions;
 
 import java.util.HashSet;
 import java.util.Set;
-
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IViewActionDelegate;
-
 import com.safi.db.Query;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.SafiNavigator;

@@ -3,7 +3,6 @@ package com.safi.workshop.part;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
-
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.OperationHistoryFactory;
 import org.eclipse.core.runtime.IAdaptable;
@@ -26,7 +25,6 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.ui.PartInitException;
-
 import com.safi.workshop.application.WizardNewFileCreationPage;
 import com.safi.workshop.edit.parts.HandlerEditPart;
 

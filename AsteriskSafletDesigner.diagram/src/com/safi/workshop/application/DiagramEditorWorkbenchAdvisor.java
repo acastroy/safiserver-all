@@ -1,7 +1,6 @@
 package com.safi.workshop.application;
 
 import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -13,7 +12,6 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.application.IWorkbenchConfigurer;
 import org.eclipse.ui.application.IWorkbenchWindowConfigurer;
 import org.eclipse.ui.application.WorkbenchWindowAdvisor;
-
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.navigator.ServerResourcesDecorator;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;

@@ -3,7 +3,6 @@ package com.safi.workshop.sheet;
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Composite;
-
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.DynamicValueType;
 import com.safi.db.manager.DBManagerException;

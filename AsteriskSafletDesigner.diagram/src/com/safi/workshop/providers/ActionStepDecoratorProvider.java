@@ -10,7 +10,6 @@ import org.eclipse.gmf.runtime.diagram.ui.services.decorator.IDecoratorTarget;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Image;
-
 import com.safi.core.actionstep.ActionStep;
 import com.safi.workshop.edit.parts.ToolstepEditPart;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;

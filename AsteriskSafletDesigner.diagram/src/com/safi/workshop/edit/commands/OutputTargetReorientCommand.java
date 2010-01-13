@@ -8,7 +8,6 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
-
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.Output;
 import com.safi.workshop.edit.policies.AsteriskBaseItemSemanticEditPolicy;

@@ -18,7 +18,6 @@ import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.TreeColumn;
 import org.eclipse.swt.widgets.TreeItem;
-
 import com.safi.workshop.part.AsteriskDiagramEditorUtil;
 import com.safi.workshop.sqlexplorer.Messages;
 

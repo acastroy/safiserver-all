@@ -8,13 +8,12 @@ import org.eclipse.emf.edit.command.AddCommand;
 import org.eclipse.emf.edit.command.RemoveCommand;
 import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.swt.widgets.Display;
-
-import com.safi.asterisk.handler.mbean.ENotificationWrapper;
-import com.safi.asterisk.handler.mbean.EObjectReference;
 import com.safi.core.actionstep.ActionStep;
 import com.safi.db.Variable;
 import com.safi.server.manager.DebugEventListener;
 import com.safi.server.plugin.SafiServerPlugin;
+import com.safi.server.saflet.mbean.ENotificationWrapper;
+import com.safi.server.saflet.mbean.EObjectReference;
 import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.safi.workshop.part.AsteriskDiagramEditorUtil;

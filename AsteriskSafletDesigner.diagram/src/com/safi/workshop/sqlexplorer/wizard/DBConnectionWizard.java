@@ -1,11 +1,9 @@
 package com.safi.workshop.sqlexplorer.wizard;
 
 import java.util.Properties;
-
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.Wizard;
-
 import com.safi.workshop.sqlexplorer.dbproduct.Alias;
 import com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver;
 

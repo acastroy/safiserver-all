@@ -2,7 +2,6 @@ package com.safi.workshop.application;
 
 import java.io.File;
 import java.util.List;
-
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.IMessageProvider;
@@ -26,7 +25,6 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.internal.ide.IDEWorkbenchMessages;
-
 import com.safi.workshop.application.ChooseSafiServerWorkspaceData.SafiWorkspaceProfile;
 
 public class EditWorkspaceProfileDialog extends TitleAreaDialog {

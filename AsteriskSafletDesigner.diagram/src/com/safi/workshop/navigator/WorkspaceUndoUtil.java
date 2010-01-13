@@ -2,7 +2,6 @@ package com.safi.workshop.navigator;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.eclipse.core.commands.operations.IUndoContext;
 import org.eclipse.core.commands.operations.ObjectUndoContext;
 import org.eclipse.core.resources.IFile;

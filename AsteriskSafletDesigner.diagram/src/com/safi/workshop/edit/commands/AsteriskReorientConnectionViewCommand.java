@@ -1,7 +1,6 @@
 package com.safi.workshop.edit.commands;
 
 import java.util.List;
-
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;

@@ -1,12 +1,10 @@
 package com.safi.workshop.sheet.actionstep;
 
 import java.util.List;
-
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.core.databinding.conversion.Converter;
 import org.eclipse.core.databinding.conversion.IConverter;
 import org.eclipse.emf.databinding.EMFUpdateValueStrategy;
-
 import com.safi.core.actionstep.DBResultSetId;
 
 public class ResultSetUpdateStrategy extends EMFUpdateValueStrategy {

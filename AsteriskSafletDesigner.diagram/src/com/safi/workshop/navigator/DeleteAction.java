@@ -3,7 +3,6 @@ package com.safi.workshop.navigator;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
 import org.eclipse.core.resources.IResource;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -16,7 +15,6 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IViewActionDelegate;
 import org.eclipse.ui.IViewPart;
-
 import com.safi.db.DBResource;
 import com.safi.db.Query;
 import com.safi.db.manager.EntitlementUtils;

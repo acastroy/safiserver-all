@@ -15,7 +15,6 @@ import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
-
 import com.safi.core.actionstep.DBConnectionId;
 
 public class DBQueryPropertyDescriptor extends PropertyDescriptor {

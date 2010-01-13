@@ -9,7 +9,6 @@ import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IEditorActionDelegate;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PlatformUI;
-
 import com.safi.db.DbFactory;
 import com.safi.db.Query;
 import com.safi.workshop.sqlexplorer.dbproduct.User;

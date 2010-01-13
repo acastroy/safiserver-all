@@ -3,12 +3,10 @@ package com.safi.workshop.navigator.db;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.hibernate.HibernateException;
-
 import com.safi.db.DBConnection;
 import com.safi.db.DBDriver;
 import com.safi.db.DBResource;

@@ -38,7 +38,6 @@ import org.eclipse.jface.text.rules.RuleBasedScanner;
 import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.jface.text.source.SourceViewerConfiguration;
 import org.eclipse.swt.widgets.Shell;
-
 import com.safi.workshop.sqlexplorer.IConstants;
 
 public class SQLSourceViewerConfiguration extends SourceViewerConfiguration {

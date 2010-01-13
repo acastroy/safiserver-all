@@ -6,7 +6,6 @@ import org.eclipse.gmf.runtime.diagram.ui.printing.actions.PrintPreviewAction;
 import org.eclipse.gmf.runtime.diagram.ui.printing.render.actions.EnhancedPrintActionHelper;
 import org.eclipse.gmf.runtime.diagram.ui.printing.render.actions.RenderedPrintPreviewAction;
 import org.eclipse.jface.action.IAction;
-
 import com.safi.workshop.actions.MinimizeActionstepToggleAction;
 
 /**

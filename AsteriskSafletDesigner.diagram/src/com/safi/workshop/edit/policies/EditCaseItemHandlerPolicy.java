@@ -4,7 +4,6 @@ import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.OpenEditPolicy;
-
 import com.safi.workshop.edit.parts.CaseItemEditPart;
 import com.safi.workshop.edit.parts.CaseItemLabelTextEditPart;
 

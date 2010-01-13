@@ -20,9 +20,7 @@
 package com.safi.workshop.sqlexplorer.dbstructure.nodes;
 
 import java.util.LinkedList;
-
 import net.sourceforge.squirrel_sql.fw.sql.ITableInfo;
-
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.dbproduct.MetaDataSession;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;

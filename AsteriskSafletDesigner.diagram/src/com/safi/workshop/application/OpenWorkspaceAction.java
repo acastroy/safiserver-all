@@ -11,7 +11,6 @@ package com.safi.workshop.application;
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
 import java.util.List;
-
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.ActionContributionItem;
@@ -28,7 +27,6 @@ import org.eclipse.swt.widgets.Menu;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.actions.ActionFactory;
 import org.eclipse.ui.internal.ide.IDEWorkbenchMessages;
-
 import com.safi.workshop.application.ChooseSafiServerWorkspaceData.SafiWorkspaceProfile;
 
 /**

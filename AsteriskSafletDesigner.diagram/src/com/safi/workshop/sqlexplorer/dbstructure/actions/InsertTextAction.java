@@ -9,7 +9,6 @@ import org.eclipse.swt.dnd.Clipboard;
 import org.eclipse.swt.dnd.TextTransfer;
 import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.swt.widgets.Display;
-
 import com.safi.workshop.sqlexplorer.dbstructure.nodes.INode;
 import com.safi.workshop.sqlexplorer.plugin.actions.CopyTextProvider;
 import com.safi.workshop.sqlexplorer.plugin.actions.CopyTextToEditorAction;

@@ -1,7 +1,6 @@
 package com.safi.workshop.edit.parts;
 
 import java.util.List;
-
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.gef.EditPart;
@@ -19,7 +18,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
-
 import com.safi.asterisk.figures.DefaultInitiatorFigure;
 import com.safi.asterisk.initiator.IncomingCall;
 import com.safi.workshop.edit.policies.InitiatorItemSemanticEditPolicy;

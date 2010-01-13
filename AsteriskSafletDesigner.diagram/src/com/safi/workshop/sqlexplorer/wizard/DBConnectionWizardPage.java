@@ -5,7 +5,6 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.wizard.IWizard;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.widgets.Composite;
-
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 
 public class DBConnectionWizardPage extends WizardPage {

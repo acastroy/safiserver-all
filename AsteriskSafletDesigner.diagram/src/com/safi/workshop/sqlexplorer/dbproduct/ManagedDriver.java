@@ -11,12 +11,10 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import net.sourceforge.squirrel_sql.fw.id.IIdentifier;
 import net.sourceforge.squirrel_sql.fw.persist.ValidationException;
 import net.sourceforge.squirrel_sql.fw.sql.ISQLDriver;
 import net.sourceforge.squirrel_sql.fw.util.beanwrapper.StringWrapper;
-
 import org.apache.commons.lang.StringUtils;
 import org.dom4j.Element;
 import org.eclipse.core.runtime.IAdaptable;
@@ -26,7 +24,6 @@ import org.eclipse.ui.views.properties.IPropertyDescriptor;
 import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.PropertyDescriptor;
 import org.eclipse.ui.views.properties.TextPropertyDescriptor;
-
 import com.safi.db.DBDriver;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.util.Utils;

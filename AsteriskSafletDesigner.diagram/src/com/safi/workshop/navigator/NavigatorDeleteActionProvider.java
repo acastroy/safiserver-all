@@ -8,7 +8,6 @@ import org.eclipse.ui.navigator.CommonActionProvider;
 import org.eclipse.ui.navigator.ICommonActionExtensionSite;
 import org.eclipse.ui.navigator.ICommonMenuConstants;
 import org.eclipse.ui.navigator.ICommonViewerWorkbenchSite;
-
 import com.safi.workshop.sqlexplorer.connections.actions.DeleteAction;
 
 public class NavigatorDeleteActionProvider extends CommonActionProvider {

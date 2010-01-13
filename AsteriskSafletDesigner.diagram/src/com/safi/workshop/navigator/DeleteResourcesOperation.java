@@ -12,7 +12,6 @@ package com.safi.workshop.navigator;
  *******************************************************************************/
 
 import java.util.ArrayList;
-
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.mapping.IResourceChangeDescriptionFactory;
 import org.eclipse.core.runtime.CoreException;

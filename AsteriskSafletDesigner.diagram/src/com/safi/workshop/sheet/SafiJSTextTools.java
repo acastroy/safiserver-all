@@ -2,7 +2,6 @@ package com.safi.workshop.sheet;
 
 import java.io.InputStream;
 import java.net.URL;
-
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.dltk.javascript.internal.ui.text.JavascriptTextTools;
 import org.eclipse.dltk.ui.text.ScriptSourceViewerConfiguration;
@@ -10,9 +9,8 @@ import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.ui.internal.util.BundleUtility;
 import org.eclipse.ui.texteditor.ITextEditor;
 import org.osgi.framework.Bundle;
-
-import com.safi.asterisk.handler.util.FileUtils;
 import com.safi.core.scripting.impl.RhinoSafletScriptEnvironmentImpl;
+import com.safi.server.saflet.util.FileUtils;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 
 public class SafiJSTextTools extends JavascriptTextTools {

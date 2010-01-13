@@ -1,12 +1,12 @@
 package com.safi.workshop.sqlexplorer.dbdetail.tab;
 
-import org.apache.log4j.Logger;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
-
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.dataset.DataSet;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
@@ -16,7 +16,7 @@ public abstract class AbstractDataSetTab extends AbstractTab {
 
   private DataSet _dataSet;
 
-  protected static final Logger _logger = Logger.getLogger(AbstractDataSetTab.class);
+  protected static final Logger _logger = Logger.getLogger(AbstractDataSetTab.class.getName());
 
   private Composite _composite;
 
@@ -68,7 +68,7 @@ public abstract class AbstractDataSetTab extends AbstractTab {
    */
   public final DataSet getCachedDataSet() throws Exception {
 
-    _logger.debug("getting cached data for " + this.getClass().getName());
+    _logger.log(Level.FINEST, "getting cached data for " + this.getClass().getName());
 
     if (_dataSet != null) {
       return _dataSet;

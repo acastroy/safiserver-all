@@ -1,7 +1,6 @@
 package com.safi.workshop.sqlexplorer.dialogs;
 
 import org.eclipse.swt.widgets.Shell;
-
 import com.safi.workshop.sqlexplorer.Messages;
 
 /**

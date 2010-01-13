@@ -21,7 +21,6 @@ package com.safi.workshop.sqlexplorer.plugin.wizards;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -39,7 +38,6 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.ide.IDE;
 import org.eclipse.ui.part.ISetSelectionTarget;
-
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
 
 public class NewSQLEditorPage extends WizardNewFileCreationPage {

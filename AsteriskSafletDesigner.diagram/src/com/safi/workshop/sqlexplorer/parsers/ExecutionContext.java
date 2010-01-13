@@ -5,9 +5,7 @@ package com.safi.workshop.sqlexplorer.parsers;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import org.eclipse.jface.preference.IPreferenceStore;
-
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.safi.workshop.sqlexplorer.IConstants;
 

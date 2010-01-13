@@ -2,7 +2,6 @@ package com.safi.workshop.sheet.actionstep;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.eclipse.core.databinding.Binding;
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.observable.list.WritableList;
@@ -16,7 +15,6 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
-
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.CaseItem;
 import com.safi.core.actionstep.Choice;

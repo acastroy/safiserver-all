@@ -4,7 +4,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
-
 import com.safi.core.actionstep.ActionStepFactory;
 import com.safi.core.actionstep.GetColMapping;
 import com.safi.core.actionstep.Item;

@@ -1,14 +1,11 @@
 package com.safi.workshop.sheet.actionstep;
 
 import org.eclipse.jface.viewers.LabelProvider;
-import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
-
 import com.safi.core.actionstep.ActionStepFactory;
 import com.safi.core.actionstep.AudioFileItem;
 import com.safi.core.actionstep.Item;
 import com.safi.workshop.edit.policies.EditAudioFileItemValueCommand;
-import com.safi.workshop.edit.policies.EditCaseItemValueCommand;
 
 public class AudioFileItemEditorWidget extends AbstractItemEditorWidget {
 

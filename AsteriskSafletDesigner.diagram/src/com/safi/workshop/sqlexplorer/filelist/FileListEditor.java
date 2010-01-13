@@ -5,8 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.LinkedList;
-
-import org.apache.log4j.Logger;
+import java.util.logging.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.ToolBarManager;
@@ -37,7 +36,6 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.editors.text.TextEditor;
 import org.eclipse.ui.part.EditorPart;
 import org.eclipse.ui.progress.IWorkbenchSiteProgressService;
-
 import com.safi.workshop.SafiNavigator;
 import com.safi.workshop.part.AsteriskDiagramEditorUtil;
 import com.safi.workshop.sqlexplorer.IConstants;
@@ -53,7 +51,7 @@ import com.safi.workshop.sqlexplorer.util.PartAdapter2;
 
 public class FileListEditor extends EditorPart implements SwitchableSessionEditor {
 
-  private static final Logger _logger = Logger.getLogger(BatchJob.class);
+  private static final Logger _logger = Logger.getLogger(BatchJob.class.getName());
 
   private TextEditor editor;
   private Session session;
@@ -284,7 +282,7 @@ public class FileListEditor extends EditorPart implements SwitchableSessionEdito
     if (getSession() != null && session != this.session)
       this.session.close();
     this.session = session;
-    _logger.fatal("Session set to " + session);
+    _logger.severe("Session set to " + session);
   }
 
   @Override

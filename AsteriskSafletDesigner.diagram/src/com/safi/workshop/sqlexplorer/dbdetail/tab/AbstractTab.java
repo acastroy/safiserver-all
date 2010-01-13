@@ -21,7 +21,6 @@ package com.safi.workshop.sqlexplorer.dbdetail.tab;
 import org.eclipse.swt.custom.BusyIndicator;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
-
 import com.safi.workshop.sqlexplorer.dbdetail.IDetailTab;
 import com.safi.workshop.sqlexplorer.dbstructure.nodes.INode;
 

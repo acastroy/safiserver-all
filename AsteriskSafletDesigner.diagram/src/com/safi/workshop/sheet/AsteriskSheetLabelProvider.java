@@ -8,7 +8,6 @@ import org.eclipse.jface.viewers.DecoratingLabelProvider;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.graphics.Image;
-
 import com.safi.core.saflet.Saflet;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 

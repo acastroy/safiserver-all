@@ -2,7 +2,6 @@ package com.safi.workshop.sqlexplorer.sqleditor.results;
 
 import org.eclipse.swt.custom.CTabItem;
 import org.eclipse.swt.widgets.Composite;
-
 import com.safi.workshop.sqlexplorer.plugin.editors.SQLEditor;
 
 /**

@@ -19,7 +19,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
-
 import com.safi.asterisk.figures.DefaultToolstepFigure;
 import com.safi.workshop.edit.policies.CloseDBConnectionCanonicalEditPolicy;
 import com.safi.workshop.edit.policies.CloseDBConnectionItemSemanticEditPolicy;

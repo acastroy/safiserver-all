@@ -3,7 +3,6 @@ package com.safi.workshop.sqlexplorer.connections.actions;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbenchPage;
-
 import com.safi.db.Query;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.SafiNavigator;

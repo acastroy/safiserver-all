@@ -9,7 +9,6 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
-
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.swtdesigner.ResourceManager;
 

@@ -19,7 +19,6 @@
 package com.safi.workshop.sqlexplorer.history;
 
 import java.util.Comparator;
-
 import org.eclipse.swt.SWT;
 
 /**

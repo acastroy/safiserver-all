@@ -3,7 +3,6 @@ package com.safi.workshop.sheet;
 import org.eclipse.emf.common.util.BasicEMap;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.DynamicValueType;
 

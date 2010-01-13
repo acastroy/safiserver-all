@@ -1,7 +1,6 @@
 package com.safi.workshop.application;
 
 import java.io.IOException;
-
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
@@ -12,7 +11,6 @@ import org.eclipse.ui.forms.events.HyperlinkEvent;
 import org.eclipse.ui.forms.events.IHyperlinkListener;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Hyperlink;
-
 import com.safi.workshop.util.BrowserControl;
 
 public class HelpComposite extends Composite {

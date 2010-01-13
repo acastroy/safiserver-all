@@ -3,7 +3,6 @@ package com.safi.workshop.edit.parts;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
@@ -45,7 +44,6 @@ import org.eclipse.swt.accessibility.AccessibleEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
-
 import com.safi.workshop.edit.policies.AsteriskTextSelectionEditPolicy;
 import com.safi.workshop.edit.policies.EditAudioFilePolicy;
 import com.safi.workshop.providers.AsteriskElementTypes;

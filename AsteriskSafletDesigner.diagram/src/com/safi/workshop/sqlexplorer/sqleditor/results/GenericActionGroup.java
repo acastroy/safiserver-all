@@ -1,7 +1,6 @@
 package com.safi.workshop.sqlexplorer.sqleditor.results;
 
 import java.util.HashMap;
-
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtension;
 import org.eclipse.core.runtime.IExtensionPoint;
@@ -12,7 +11,6 @@ import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.actions.ActionGroup;
-
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;

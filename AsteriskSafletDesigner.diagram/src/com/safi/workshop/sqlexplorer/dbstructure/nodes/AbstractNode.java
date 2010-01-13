@@ -22,11 +22,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
-
-import org.apache.log4j.Logger;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
-
 import com.safi.workshop.sqlexplorer.dbproduct.MetaDataSession;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
 import com.safi.workshop.sqlexplorer.util.ImageUtil;
@@ -38,7 +37,7 @@ import com.safi.workshop.sqlexplorer.util.ImageUtil;
  */
 public abstract class AbstractNode implements INode {
 
-  private static final Logger _logger = Logger.getLogger(AbstractNode.class);
+  private static final Logger _logger = Logger.getLogger(AbstractNode.class.getName());
 
   protected ArrayList<INode> _children = new ArrayList<INode>();
 
@@ -313,8 +312,8 @@ public abstract class AbstractNode implements INode {
 
       try {
 
-        if (_logger.isDebugEnabled()) {
-          _logger.debug("Loading child nodes for " + _name);
+        if (_logger.isLoggable(Level.FINEST)) {
+          _logger.log(Level.FINEST, "Loading child nodes for " + _name);
         }
 
         loadChildren();

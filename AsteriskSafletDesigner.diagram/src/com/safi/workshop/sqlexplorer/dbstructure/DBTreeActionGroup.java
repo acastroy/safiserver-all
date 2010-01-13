@@ -21,7 +21,6 @@ package com.safi.workshop.sqlexplorer.dbstructure;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtension;
 import org.eclipse.core.runtime.IExtensionPoint;
@@ -33,7 +32,6 @@ import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.events.MouseAdapter;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.ui.actions.ActionGroup;
-
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.safi.workshop.sqlexplorer.dbstructure.actions.AbstractDBTreeContextAction;
 import com.safi.workshop.sqlexplorer.dbstructure.nodes.INode;

@@ -3,7 +3,6 @@ package com.safi.workshop.importwiz;
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.wizard.Wizard;
-
 import com.safi.db.SafiDriverManager;
 import com.safi.db.manager.DBManager;
 import com.safi.server.plugin.SafiServerPlugin;

@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.locks.ReentrantLock;
 import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IConfigurationElement;
@@ -43,7 +42,6 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
-import com.safi.asterisk.handler.mbean.SysInfo;
 import com.safi.db.provider.DbItemProviderAdapterFactory;
 import com.safi.db.server.config.SafiServer;
 import com.safi.server.manager.DebugEventListener;
@@ -51,6 +49,7 @@ import com.safi.server.manager.SafiServerManagementException;
 import com.safi.server.manager.SafiServerRemoteManager;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.preferences.SafiServerStatusListener;
+import com.safi.server.saflet.mbean.SysInfo;
 import com.safi.workshop.application.DiagramEditorPerspective;
 import com.safi.workshop.application.DiagramEditorWorkbenchWindowAdvisor;
 import com.safi.workshop.application.SafiDBPerspective;
@@ -77,7 +76,6 @@ import de.schlichtherle.io.DefaultArchiveDetector;
  */
 public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 
-	public final static Logger logger = Logger.getLogger(AsteriskDiagramEditorPlugin.class);
 	/**
 	 * @generated
 	 */
@@ -112,7 +110,6 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 	private SafiDBPerspective safiDBPerspective;
 	private DiagramEditorPerspective safletPerspective;
 
-	private final static Logger log = Logger.getLogger(AsteriskDiagramEditorPlugin.class);
 
 	private SafiServerStatusListener safiServerAuthListener;
 	// private List<ActionStepProfile> actionstepProfiles = new
@@ -972,7 +969,7 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 									final SafiServer safiServer = SafiServerPlugin.getDefault()
 									    .getSafiServer(true);
 									if (safiServer == null) {
-										log.error("Unable to open SafiServer View: couldn't find SafiServer");
+										logError("Unable to open SafiServer View: couldn't find SafiServer");
 										for (IEditorReference ref : page.getEditorReferences()) {
 											try {
 												if (ref.getEditorInput() instanceof ServerViewEditorInput) {
@@ -992,7 +989,7 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 										if (ep instanceof SafiServerPanel) {
 											serverPanel = (SafiServerPanel) ep;
 										} else {
-											log.error("Unable to open SafiServer View");
+											logError("Unable to open SafiServer View");
 											return;
 										}
 									}
@@ -1002,7 +999,7 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 									requestImmediateServerInfoUpdate();
 								} catch (Exception e) {
 									e.printStackTrace();
-									log.error("Unable to open SafiServer View", e);
+									logError("Unable to open SafiServer View", e);
 								}
 							} else {
 								for (IEditorReference ref : page.getEditorReferences()) {

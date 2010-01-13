@@ -23,12 +23,10 @@ import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.Set;
 import java.util.regex.Pattern;
-
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.core.runtime.Preferences;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.jface.dialogs.MessageDialog;
-
 import com.safi.db.DbFactory;
 import com.safi.workshop.part.AsteriskDiagramEditorUtil;
 import com.safi.workshop.sqlexplorer.IConstants;

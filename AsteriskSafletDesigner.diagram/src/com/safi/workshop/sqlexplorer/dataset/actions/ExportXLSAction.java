@@ -20,13 +20,11 @@ package com.safi.workshop.sqlexplorer.dataset.actions;
 
 import java.io.File;
 import java.io.PrintStream;
-
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.custom.BusyIndicator;
 import org.eclipse.swt.widgets.Display;
-
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.dataset.DataSet;
 import com.safi.workshop.sqlexplorer.dataset.DataSetRow;

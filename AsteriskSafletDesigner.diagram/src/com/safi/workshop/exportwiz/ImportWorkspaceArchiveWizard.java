@@ -6,7 +6,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IWorkspace;
@@ -14,16 +13,15 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.swt.SWT;
-
-import com.safi.asterisk.handler.importing.ImportArchiveException;
-import com.safi.asterisk.handler.importing.OverwriteMode;
-import com.safi.asterisk.handler.util.FileUtils;
 import com.safi.db.SafiDriverManager;
 import com.safi.db.Variable;
 import com.safi.db.server.config.Saflet;
 import com.safi.db.server.config.SafletProject;
 import com.safi.server.manager.SafiServerRemoteManager;
 import com.safi.server.plugin.SafiServerPlugin;
+import com.safi.server.saflet.importing.ImportArchiveException;
+import com.safi.server.saflet.importing.OverwriteMode;
+import com.safi.server.saflet.util.FileUtils;
 import com.safi.workshop.importwiz.ImportUtils;
 import com.safi.workshop.navigator.db.RetrieveSafletAction;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;

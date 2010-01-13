@@ -22,13 +22,10 @@ package com.safi.workshop.sqlexplorer;
 import java.text.MessageFormat;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
-
 import net.sourceforge.squirrel_sql.fw.util.log.ILogger;
 import net.sourceforge.squirrel_sql.fw.util.log.LoggerController;
-
 import org.eclipse.core.runtime.Platform;
 import org.osgi.framework.Bundle;
-
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 
 /**

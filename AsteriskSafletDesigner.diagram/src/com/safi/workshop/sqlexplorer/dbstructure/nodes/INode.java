@@ -20,7 +20,6 @@ package com.safi.workshop.sqlexplorer.dbstructure.nodes;
 
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
-
 import com.safi.workshop.sqlexplorer.dbproduct.MetaDataSession;
 
 /**

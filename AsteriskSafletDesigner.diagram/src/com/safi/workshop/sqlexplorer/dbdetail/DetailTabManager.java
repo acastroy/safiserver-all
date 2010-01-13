@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-
-import org.apache.log4j.Logger;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtension;
 import org.eclipse.core.runtime.IExtensionPoint;
@@ -20,7 +20,6 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.TabFolder;
 import org.eclipse.swt.widgets.TabItem;
-
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.dbdetail.tab.ColumnInfoTab;
 import com.safi.workshop.sqlexplorer.dbdetail.tab.ColumnPriviligesTab;
@@ -52,7 +51,7 @@ public class DetailTabManager {
 
   private static String _activeTabName = null;
 
-  private static final Logger _logger = Logger.getLogger(DetailTabManager.class);
+  private static final Logger _logger = Logger.getLogger(DetailTabManager.class.getName());
 
   private static final HashMap<Session, HashMap<String, List<IDetailTab>>> _sessionTabCache = new HashMap();
 
@@ -64,8 +63,8 @@ public class DetailTabManager {
    */
   public static void clearCacheForNode(INode node) {
 
-    if (_logger.isDebugEnabled()) {
-      _logger.debug("Clearing tab cache for: " + node.getUniqueIdentifier());
+    if (_logger.isLoggable(Level.FINEST)) {
+      _logger.log(Level.FINEST, "Clearing tab cache for: " + node.getUniqueIdentifier());
     }
 
     HashMap<String, List<IDetailTab>> tabCache = _sessionTabCache.get(node.getSession());
@@ -82,8 +81,8 @@ public class DetailTabManager {
    */
   public static void clearCacheForSession(MetaDataSession session) {
 
-    if (_logger.isDebugEnabled()) {
-      _logger.debug("Clearing tab cache for: " + session.toString());
+    if (_logger.isLoggable(Level.FINEST)) {
+      _logger.log(Level.FINEST, "Clearing tab cache for: " + session.toString());
     }
 
     _sessionTabCache.remove(session);
@@ -198,8 +197,8 @@ public class DetailTabManager {
    */
   private static List<IDetailTab> createTabs(INode node) {
 
-    if (_logger.isDebugEnabled()) {
-      _logger.debug("Creating tabs for: " + node.getUniqueIdentifier());
+    if (_logger.isLoggable(Level.FINEST)) {
+      _logger.log(Level.FINEST, "Creating tabs for: " + node.getUniqueIdentifier());
     }
 
     ArrayList<IDetailTab> tabList = new ArrayList<IDetailTab>();
@@ -357,8 +356,8 @@ public class DetailTabManager {
    */
   private static List getTabs(INode node) {
 
-    if (_logger.isDebugEnabled()) {
-      _logger.debug("Loading tabs for: " + node.getUniqueIdentifier());
+    if (_logger.isLoggable(Level.FINEST)) {
+      _logger.log(Level.FINEST, "Loading tabs for: " + node.getUniqueIdentifier());
     }
 
     HashMap<String, List<IDetailTab>> tabCache = _sessionTabCache.get(node.getSession());

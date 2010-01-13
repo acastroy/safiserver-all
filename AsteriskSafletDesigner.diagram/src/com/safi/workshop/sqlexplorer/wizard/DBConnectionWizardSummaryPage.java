@@ -2,7 +2,6 @@ package com.safi.workshop.sqlexplorer.wizard;
 
 import java.sql.Connection;
 import java.util.Properties;
-
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.SWT;
@@ -14,7 +13,6 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
-
 import com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver;
 
 public class DBConnectionWizardSummaryPage extends DBConnectionWizardPage {

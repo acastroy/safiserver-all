@@ -8,7 +8,6 @@ import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.swt.events.HelpListener;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.ui.actions.ActionFactory.IWorkbenchAction;
-
 import com.safi.workshop.part.AsteriskDiagramEditorUtil;
 
 public class NavRefreshAction implements IWorkbenchAction {

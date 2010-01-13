@@ -22,11 +22,9 @@ package com.safi.workshop.sqlexplorer.sqleditor.actions;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.FileDialog;
-
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
 import com.safi.workshop.sqlexplorer.plugin.editors.SQLEditor;

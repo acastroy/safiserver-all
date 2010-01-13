@@ -5,7 +5,6 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
-
 import com.safi.workshop.part.AsteriskDiagramEditorUtil;
 
 public class ImportSafletAction implements IWorkbenchWindowActionDelegate {

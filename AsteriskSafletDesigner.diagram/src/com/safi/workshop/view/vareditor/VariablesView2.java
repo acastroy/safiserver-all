@@ -1,10 +1,8 @@
 package com.safi.workshop.view.vareditor;
 
 import java.lang.ref.SoftReference;
-import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
@@ -43,18 +41,13 @@ import org.eclipse.swt.widgets.Tree;
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IPartListener;
-import org.eclipse.ui.IPropertyListener;
 import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.IViewSite;
 import org.eclipse.ui.IWorkbenchActionConstants;
-import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.ui.IWorkbenchPartSite;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
-
-import com.safi.asterisk.handler.mbean.SysInfo;
 import com.safi.core.actionstep.util.VariableTranslator;
 import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletContext;
@@ -63,6 +56,7 @@ import com.safi.db.VariableScope;
 import com.safi.db.VariableType;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.preferences.SafiServerStatusListener;
+import com.safi.server.saflet.mbean.SysInfo;
 import com.safi.workshop.edit.parts.HandlerEditPart;
 import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;

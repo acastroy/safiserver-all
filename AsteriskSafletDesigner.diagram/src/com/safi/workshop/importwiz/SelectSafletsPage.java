@@ -3,7 +3,6 @@ package com.safi.workshop.importwiz;
 import java.io.File;
 import java.util.HashSet;
 import java.util.Set;
-
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.ListViewer;
 import org.eclipse.jface.viewers.Viewer;
@@ -17,7 +16,6 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.List;
-
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.swtdesigner.ResourceManager;
 

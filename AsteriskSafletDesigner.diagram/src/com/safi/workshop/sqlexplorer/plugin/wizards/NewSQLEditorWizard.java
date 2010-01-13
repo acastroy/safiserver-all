@@ -23,7 +23,6 @@ import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
-
 import com.safi.workshop.sqlexplorer.util.ImageUtil;
 
 public class NewSQLEditorWizard extends Wizard implements INewWizard {

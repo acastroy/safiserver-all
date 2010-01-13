@@ -4,7 +4,6 @@
 package com.safi.workshop.edit.policies;
 
 import java.util.Iterator;
-
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
@@ -15,7 +14,6 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
-
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.workshop.edit.commands.CaseItemTargetToolstepCreateCommand;
 import com.safi.workshop.edit.commands.CaseItemTargetToolstepReorientCommand;

@@ -59,7 +59,6 @@ import com.safi.core.saflet.SafletEnvironment;
 import com.safi.core.scripting.RhinoSafletScriptEnvironment;
 import com.safi.db.DbFactory;
 import com.safi.db.Variable;
-import com.safi.db.VariableScope;
 import com.safi.db.VariableType;
 import com.safi.expr.bool.ASTBooleanExpression;
 import com.safi.expr.bool.ASTIdentifier;
@@ -76,7 +75,6 @@ import com.safi.expr.bool.Token;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.sheet.actionstep.EditInScriptEvent;
 import com.safi.workshop.sheet.actionstep.EditInScriptEventListener;
-import com.swtdesigner.SWTResourceManager;
 
 public class BooleanExpressionEditorPanel extends Composite {
 

@@ -5,7 +5,6 @@ import java.util.HashSet;
 import java.util.IdentityHashMap;
 import java.util.Map;
 import java.util.Set;
-
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.Path;
@@ -20,7 +19,6 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
-
 import com.safi.asterisk.actionstep.ActionstepPackage;
 import com.safi.asterisk.initiator.InitiatorPackage;
 import com.safi.core.actionstep.ActionStepPackage;

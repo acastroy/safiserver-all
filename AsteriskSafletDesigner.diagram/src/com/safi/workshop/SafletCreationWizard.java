@@ -17,7 +17,6 @@ import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
-
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 
 /**

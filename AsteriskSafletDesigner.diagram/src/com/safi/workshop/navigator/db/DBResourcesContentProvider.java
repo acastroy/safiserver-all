@@ -1,9 +1,7 @@
 package com.safi.workshop.navigator.db;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.common.notify.Adapter;
@@ -11,7 +9,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
-
 import com.safi.db.DBConnection;
 import com.safi.db.Query;
 import com.safi.db.QueryParameter;

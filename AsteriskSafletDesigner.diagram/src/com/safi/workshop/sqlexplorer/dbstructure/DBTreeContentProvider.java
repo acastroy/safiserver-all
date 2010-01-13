@@ -20,7 +20,6 @@ package com.safi.workshop.sqlexplorer.dbstructure;
 
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
-
 import com.safi.workshop.sqlexplorer.dbstructure.nodes.INode;
 
 /**

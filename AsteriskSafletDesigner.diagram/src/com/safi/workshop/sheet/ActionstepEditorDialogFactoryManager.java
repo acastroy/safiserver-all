@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import com.safi.workshop.edit.parts.AnswerEditPart;
 import com.safi.workshop.edit.parts.AssignmentEditPart;
 import com.safi.workshop.edit.parts.ChanSpyEditPart;

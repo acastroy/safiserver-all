@@ -4,7 +4,6 @@ import org.eclipse.emf.common.ui.celleditor.ExtendedDialogCellEditor;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
-
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.workshop.util.SafletPersistenceManager;
 

@@ -40,7 +40,6 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
-
 import com.safi.asterisk.figures.DefaultToolstepFigure;
 import com.safi.asterisk.figures.ToolstepAnchor;
 import com.safi.core.actionstep.ActionStep;

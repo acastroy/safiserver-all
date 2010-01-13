@@ -19,7 +19,6 @@
 package com.safi.workshop.sqlexplorer.connections.actions;
 
 import java.util.Date;
-
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.IInputValidator;
@@ -30,7 +29,6 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
-
 import com.safi.db.DBConnection;
 import com.safi.db.DbFactory;
 import com.safi.db.Query;
