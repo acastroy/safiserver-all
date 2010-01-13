@@ -8,9 +8,8 @@ package com.safi.workshop.model.actionpak1.impl;
 
 import java.util.List;
 import java.util.Map;
-
+import java.util.logging.Level;
 import org.eclipse.emf.ecore.EClass;
-
 import com.safi.asterisk.initiator.AsteriskInitiatorInfo;
 import com.safi.asterisk.util.AsteriskSafletConstants;
 import com.safi.core.actionstep.ActionStepException;
@@ -66,7 +65,7 @@ public class CustomInitiatorImpl extends ParameterizedInitiatorImpl implements C
             DynamicValue variableName = item.getDynamicValue();
             Variable v = resolveVariableFromName(variableName, handlerContext);
             if (v != null) {
-              if (debugLog.isDebugEnabled())
+              if (debugLog.isLoggable(Level.FINEST))
                 debug("Got variable " + v.getName() + " of type " + v.getType());
 
               final Object translated = VariableTranslator.translateValue(v.getType(), val);

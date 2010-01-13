@@ -12,9 +12,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import com.safi.asterisk.AsteriskPackage;
-import com.safi.asterisk.initiator.InitiatorPackage;
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.workshop.model.actionpak1.Actionpak1Factory;
 import com.safi.workshop.model.actionpak1.Actionpak1Package;

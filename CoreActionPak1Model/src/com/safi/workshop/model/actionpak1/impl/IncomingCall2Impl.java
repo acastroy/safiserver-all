@@ -8,7 +8,7 @@ package com.safi.workshop.model.actionpak1.impl;
 
 import java.util.List;
 import java.util.Map;
-
+import java.util.logging.Level;
 import org.apache.commons.lang.StringUtils;
 import org.asteriskjava.fastagi.AgiChannel;
 import org.asteriskjava.fastagi.AgiRequest;
@@ -18,7 +18,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
 import com.safi.asterisk.CallSource1;
@@ -116,7 +115,7 @@ public class IncomingCall2Impl extends ParameterizedInitiatorImpl implements Inc
             DynamicValue variableName = item.getDynamicValue();
             Variable v = resolveVariableFromName(variableName, handlerContext);
             if (v != null) {
-              if (debugLog.isDebugEnabled())
+              if (debugLog.isLoggable(Level.FINEST))
                 debug("Got variable " + v.getName() + " of type " + v.getType());
 
               final Object translated = VariableTranslator.translateValue(v.getType(), val);

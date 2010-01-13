@@ -6,16 +6,20 @@
  */
 package com.safi.workshop.model.actionpak1.impl;
 
-import com.safi.workshop.model.actionpak1.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import com.safi.workshop.model.actionpak1.Actionpak1Factory;
+import com.safi.workshop.model.actionpak1.Actionpak1Package;
+import com.safi.workshop.model.actionpak1.ActionstepTest;
+import com.safi.workshop.model.actionpak1.CustomInitiator;
+import com.safi.workshop.model.actionpak1.IncomingCall2;
+import com.safi.workshop.model.actionpak1.InvokeSaflet2;
+import com.safi.workshop.model.actionpak1.ManagerAction;
+import com.safi.workshop.model.actionpak1.ManagerActionType;
 
 /**
  * <!-- begin-user-doc -->

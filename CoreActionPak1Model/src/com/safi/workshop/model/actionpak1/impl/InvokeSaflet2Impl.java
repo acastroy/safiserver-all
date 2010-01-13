@@ -7,7 +7,7 @@
 package com.safi.workshop.model.actionpak1.impl;
 
 import java.util.List;
-
+import java.util.logging.Level;
 import org.apache.commons.lang.StringUtils;
 import org.asteriskjava.fastagi.AgiChannel;
 import org.asteriskjava.fastagi.AgiRequest;
@@ -16,7 +16,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import com.safi.asterisk.Call;
 import com.safi.asterisk.CallSource1;
 import com.safi.asterisk.util.AsteriskSafletConstants;
@@ -145,7 +144,7 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
                   DynamicValue variableName = input.getDynamicValue();
                   Variable v = resolveVariableFromName(variableName, targetContext);
                   if (v != null) {
-                    if (debugLog.isDebugEnabled())
+                    if (debugLog.isLoggable(Level.FINEST))
                       debug("Got variable " + v.getName() + " of type " + v.getType());
 
                     final Object translated = VariableTranslator.translateValue(v.getType(),

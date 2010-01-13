@@ -6,17 +6,13 @@
  */
 package com.safi.workshop.model.actionpak1.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import com.safi.core.actionstep.impl.ParameterizedActionstepImpl;
-
 import com.safi.workshop.model.actionpak1.Actionpak1Package;
 import com.safi.workshop.model.actionpak1.ManagerAction;
 import com.safi.workshop.model.actionpak1.ManagerActionType;
-
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
