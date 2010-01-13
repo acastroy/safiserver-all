@@ -6,7 +6,7 @@ Bundle-Version: 1.2.5.78
 Bundle-ClassPath: .,
  lib/js.jar,
  resources/,
- lib/safiFastagi.jar
+ lib/SafiFastAgi-1.7.3.jar
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
@@ -22,8 +22,10 @@ Export-Package: com.safi.asterisk,
  com.safi.asterisk.saflet.impl,
  com.safi.asterisk.saflet.util,
  com.safi.asterisk.util,
- com.safi.server,
+ com.safi.fastagi,
  org.asteriskjava,
+ org.asteriskjava.config,
+ org.asteriskjava.config.dialplan,
  org.asteriskjava.fastagi,
  org.asteriskjava.fastagi.command,
  org.asteriskjava.fastagi.internal,
@@ -35,6 +37,8 @@ Export-Package: com.safi.asterisk,
  org.asteriskjava.manager.event,
  org.asteriskjava.manager.internal,
  org.asteriskjava.manager.response,
+ org.asteriskjava.mbean,
+ org.asteriskjava.tools,
  org.asteriskjava.util,
  org.asteriskjava.util.internal,
  org.mozilla.classfile,
@@ -61,5 +65,5 @@ Require-Bundle: org.eclipse.core.runtime,
  Saflets;bundle-version="1.1.0",
  SafiDB,
  Hibernate30;bundle-version="1.0.0",
- SafiCommons;bundle-version="1.0.0"
+ SafiCommons;bundle-version="1.2.5"
 Eclipse-LazyStart: true
