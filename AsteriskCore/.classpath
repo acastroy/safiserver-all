@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry exported="true" kind="lib" path="lib/safiFastagi.jar" sourcepath="/SafiFastAgi1.7"/>
 	<classpathentry exported="true" kind="lib" path="resources/"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
-	<classpathentry exported="true" kind="lib" path="lib/js.jar" sourcepath="D:/javalib/rhino1_7R1/rhino1_7R1/src"/>
+	<classpathentry kind="lib" path="lib/js.jar"/>
+	<classpathentry kind="lib" path="lib/SafiFastAgi-1.7.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
