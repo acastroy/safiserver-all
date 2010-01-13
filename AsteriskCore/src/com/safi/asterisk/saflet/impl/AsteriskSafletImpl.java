@@ -6,9 +6,8 @@
  */
 package com.safi.asterisk.saflet.impl;
 
-import org.apache.log4j.Logger;
+import java.util.logging.Logger;
 import org.eclipse.emf.ecore.EClass;
-
 import com.safi.asterisk.Call;
 import com.safi.asterisk.CallSource1;
 import com.safi.asterisk.CallSource2;
@@ -28,7 +27,7 @@ import com.safi.core.saflet.impl.SafletImpl;
  */
 public class AsteriskSafletImpl extends SafletImpl implements AsteriskSaflet {
   
-  private final static Logger log = Logger.getLogger(AsteriskSafletImpl.class);
+  private final static Logger log = Logger.getLogger(AsteriskSafletImpl.class.getName());
   
   /**
 	 * <!-- begin-user-doc -->

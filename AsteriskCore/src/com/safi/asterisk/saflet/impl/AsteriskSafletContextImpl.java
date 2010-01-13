@@ -6,8 +6,8 @@
  */
 package com.safi.asterisk.saflet.impl;
 
+import java.util.logging.Logger;
 import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.Logger;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -30,7 +30,7 @@ import com.safi.core.saflet.impl.SafletContextImpl;
  */
 public class AsteriskSafletContextImpl extends SafletContextImpl implements AsteriskSafletContext {
 
-  private final static Logger log = Logger.getLogger(AsteriskSafletContextImpl.class);
+  private final static Logger log = Logger.getLogger(AsteriskSafletContextImpl.class.getName());
   /**
 	 * The default value of the '{@link #getBufferedDigits() <em>Buffered Digits</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
