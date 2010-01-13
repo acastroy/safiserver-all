@@ -5,9 +5,6 @@
  * $Id: Saflet.java,v 1.2 2008/09/09 02:31:56 zacw Exp $
  */
 package com.safi.db.server.config;
-import org.hibernate.lob.SerializableBlob;
-import javax.persistence.*;
-import org.hibernate.annotations.Type;
 
 /**
  * <!-- begin-user-doc -->

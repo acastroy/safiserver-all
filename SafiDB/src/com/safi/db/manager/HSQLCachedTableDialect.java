@@ -1,21 +1,11 @@
 package com.safi.db.manager;
 
-import java.io.Serializable;
-import java.sql.Types;
-import org.apache.log4j.Logger;
-import org.hibernate.JDBCException;
-import org.hibernate.LockMode;
-import org.hibernate.StaleObjectStateException;
+import java.util.logging.Logger;
 import org.hibernate.dialect.HSQLDialect;
-import org.hibernate.dialect.HSQLDialect.ReadUncommittedLockingStrategy;
-import org.hibernate.dialect.lock.LockingStrategy;
-import org.hibernate.dialect.lock.SelectLockingStrategy;
-import org.hibernate.engine.SessionImplementor;
-import org.hibernate.persister.entity.Lockable;
 
 public class HSQLCachedTableDialect extends HSQLDialect{
 
-	private final static Logger log = Logger.getLogger(HSQLCachedTableDialect.class);
+	private final static Logger log = Logger.getLogger(HSQLCachedTableDialect.class.getName());
 
 	public HSQLCachedTableDialect() {
 	  super();

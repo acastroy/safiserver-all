@@ -10,11 +10,9 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
-
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.sql.DataSource;
-
-import org.apache.log4j.Logger;
-
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import com.safi.db.DBConnection;
 
@@ -30,7 +28,7 @@ public class PooledDataSourceManager {
 
   private static final PooledDataSourceManager instance = new PooledDataSourceManager();
 
-  private final static Logger log = Logger.getLogger(PooledDataSourceManager.class);
+  private final static Logger log = Logger.getLogger(PooledDataSourceManager.class.getName());
 
   private final Executor initThreadPool = Executors.newSingleThreadExecutor();
 
@@ -58,7 +56,7 @@ public class PooledDataSourceManager {
       } catch (SQLException e) {
         // TODO Auto-generated catch block
         e.printStackTrace();
-        log.error("Couldn't refresh datasource " + scopedName, e);
+        log.log(Level.SEVERE, "Couldn't refresh datasource " + scopedName, e);
       }
     }
   }
@@ -112,7 +110,7 @@ public class PooledDataSourceManager {
         pds.setDriverClass(safiConn.getDriver().getDriverClassName());
       } catch (PropertyVetoException e) {
         // TODO Auto-generated catch block
-        log.error("PropertyVetoException from driver class initialization", e);
+        log.log(Level.SEVERE, "PropertyVetoException from driver class initialization", e);
         throw new SQLException("PropertyVetoException from driver class initialization", e);
       }
       Properties props = safiConn.getProperties();
@@ -146,7 +144,7 @@ public class PooledDataSourceManager {
               }
             } catch (SQLException e) {
               e.printStackTrace();
-              log.error("Couldn't initialize connection " + safiConn.getName() + ":"
+              log.log(Level.SEVERE, "Couldn't initialize connection " + safiConn.getName() + ":"
                   + safiConn.getId(), e);
             } finally {
               for (Connection c : conns) {
@@ -200,7 +198,7 @@ public class PooledDataSourceManager {
       try {
         ((ComboPooledDataSource) ds).close();
       } catch (Exception e) {
-        log.error("Error caught while closing datasource", e);
+        log.log(Level.SEVERE, "Error caught while closing datasource", e);
       }
     }
     datasourceMap.clear();

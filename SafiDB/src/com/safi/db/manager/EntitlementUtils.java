@@ -1,7 +1,6 @@
 package com.safi.db.manager;
 
 import org.apache.commons.lang.StringUtils;
-
 import com.safi.db.server.config.Entitlement;
 import com.safi.db.server.config.Role;
 import com.safi.db.server.config.User;

@@ -1,7 +1,6 @@
 package com.safi.db.test;
 
 import java.io.IOException;
-
 import com.safi.db.SafiDriverManager;
 import com.safi.db.manager.DBManager;
 import com.safi.db.manager.DBManagerException;

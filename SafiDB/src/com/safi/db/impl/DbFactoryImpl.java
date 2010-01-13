@@ -6,26 +6,35 @@
  */
 package com.safi.db.impl;
 
-import com.safi.db.*;
-
 import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.sql.Connection;
 import java.sql.ResultSet;
-
 import java.sql.Statement;
 import java.util.Properties;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.hibernate.lob.SerializableBlob;
+import com.safi.db.DBConnection;
+import com.safi.db.DBDriver;
+import com.safi.db.DbFactory;
+import com.safi.db.DbPackage;
+import com.safi.db.Query;
+import com.safi.db.QueryParameter;
+import com.safi.db.QueryType;
+import com.safi.db.RSHoldabilityMode;
+import com.safi.db.RSScrollMode;
+import com.safi.db.SQLDataType;
+import com.safi.db.SafiDriverManager;
+import com.safi.db.SafiResultSet;
+import com.safi.db.TransactionMode;
+import com.safi.db.Variable;
+import com.safi.db.VariableScope;
+import com.safi.db.VariableType;
 
 /**
  * <!-- begin-user-doc -->

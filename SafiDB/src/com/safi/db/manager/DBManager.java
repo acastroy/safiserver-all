@@ -15,8 +15,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -71,7 +72,7 @@ public class DBManager {
 
 	public final static int DEFAULT_LOGIN_TIMEOUT = 10;
 	private static final String DATASTORE_NAME = "SafiDBDatastore";
-	private final static Logger log = Logger.getLogger(DBManager.class);
+	private final static Logger log = Logger.getLogger(DBManager.class.getName());
 	protected final static DBManager instance = new DBManager();
 	protected SafiDriverManager defaultDrivers;
 	protected SafiDriverManager serverDriverManager;
@@ -320,6 +321,11 @@ public class DBManager {
 			final String dataStoreName = DATASTORE_NAME;
 			try {
 				String driverName = "org.hsqldb.jdbcDriver";
+				if (log.isLoggable(Level.FINEST))
+					log.finest("loading hsqldb driver...");
+				Class.forName(driverName);
+				if (log.isLoggable(Level.FINEST))
+					log.finest("loaded hsqldb driver: " + driverName);
 				// String driverName = "org.hsqldb.jdbc.JDBCDriver";
 
 				String connectionUrl = null;
@@ -331,6 +337,8 @@ public class DBManager {
 				if (!connectionTest(driverName, connectionUrl))
 					throw new DBManagerException("Couldn't connect to SafiServer at "
 					    + connectionUrl);
+				else
+					log.info("Got connection to " + connectionUrl);
 				dataStore = HbHelper.INSTANCE.createRegisterDataStore(dataStoreName);
 				final Properties props = new Properties();
 				// props.setProperty(Environment.DRIVER, "com.mysql.jdbc.Driver");
@@ -499,7 +507,7 @@ public class DBManager {
 			return true;
 		} catch (Exception e) {
 			lastTry = System.currentTimeMillis();
-			log.error("Couldn't connect to SafiServer", e);
+			log.log(Level.SEVERE, "Couldn't connect to SafiServer", e);
 		} finally {
 			if (conn != null)
 				try {
@@ -514,26 +522,61 @@ public class DBManager {
 		lastTry = -1;
 	}
 
-	public void addTrigger(Trigger trigger, String tableName, String name)
-	    throws DBManagerException {
+	public void addTrigger(Class clz, String tableName, String name,
+	    boolean deleteExisting) throws DBManagerException {
 		Session session = createSession();
 		try {
-			SQLQuery qry = session.createSQLQuery("CREATE TRIGGER " + name
-			    + "_ins AFTER INSERT ON " + tableName + " FOR EACH ROW CALL \""
-			    + trigger.getClass().getName() + "\"");
-			qry.executeUpdate();
-			qry = session.createSQLQuery("CREATE TRIGGER " + name + "_upd AFTER UPDATE ON "
-			    + tableName + " FOR EACH ROW CALL \"" + trigger.getClass().getName() + "\"");
+			SQLQuery qry = null;
+
+			if (deleteExisting) {
+				try {
+					qry = session.createSQLQuery("DROP TRIGGER " + name + "_ins");
+					qry.executeUpdate();
+				} catch (Exception e) {
+					log.log(Level.SEVERE, "Couldn't delete trigger: " + e.getLocalizedMessage(), e);
+				}
+			}
+			qry = session.createSQLQuery("CREATE TRIGGER " + name + "_ins AFTER INSERT ON "
+			    + tableName + " FOR EACH ROW CALL \"" + clz.getName() + "\"");
 			qry.executeUpdate();
 
+			if (deleteExisting) {
+				try {
+					qry = session.createSQLQuery("DROP TRIGGER " + name + "_upd");
+					qry.executeUpdate();
+				} catch (Exception e) {
+					log.log(Level.SEVERE, "Couldn't delete trigger: " + e.getLocalizedMessage(), e);
+				}
+			}
+			qry = session.createSQLQuery("CREATE TRIGGER " + name + "_upd AFTER UPDATE ON "
+			    + tableName + " FOR EACH ROW CALL \"" + clz.getName() + "\"");
+			qry.executeUpdate();
+
+			if (deleteExisting) {
+				try {
+					qry = session.createSQLQuery("DROP TRIGGER " + name + "_delbefore");
+					qry.executeUpdate();
+				} catch (Exception e) {
+					log.log(Level.SEVERE, "Couldn't delete trigger: " + e.getLocalizedMessage(), e);
+				}
+			}
+			
 			qry = session.createSQLQuery("CREATE TRIGGER " + name
 			    + "_delbefore BEFORE DELETE ON " + tableName + " FOR EACH ROW CALL \""
-			    + trigger.getClass().getName() + "\"");
+			    + clz.getName() + "\"");
 			qry.executeUpdate();
 
+			if (deleteExisting) {
+				try {
+					qry = session.createSQLQuery("DROP TRIGGER " + name + "_delafter");
+					qry.executeUpdate();
+				} catch (Exception e) {
+					log.log(Level.SEVERE, "Couldn't delete trigger: " + e.getLocalizedMessage(), e);
+				}
+			}
 			qry = session.createSQLQuery("CREATE TRIGGER " + name
 			    + "_delafter AFTER DELETE ON " + tableName + " FOR EACH ROW CALL \""
-			    + trigger.getClass().getName() + "\"");
+			    + clz.getName() + "\"");
 			qry.executeUpdate();
 		} catch (Exception e) {
 			throw new DBManagerException(e);
@@ -1211,8 +1254,8 @@ public class DBManager {
 		if (to.getClass() != from.getClass())
 			throw new DBManagerException("Classes aren't the same");
 		for (EStructuralFeature feat : to.eClass().getEAllStructuralFeatures()) {
-			if (log.isDebugEnabled())
-				log.debug("Setting property " + feat.getName() + " of " + to.getClass());
+			if (log.isLoggable(Level.FINEST))
+				log.finest("Setting property " + feat.getName() + " of " + to.getClass());
 			to.eSet(feat, from.eGet(feat, true));
 		}
 	}
@@ -1742,7 +1785,7 @@ public class DBManager {
 			try {
 				session.getTransaction().rollback();
 				session.beginTransaction();
-				resource = (ServerResource)session.createCriteria(resource.getClass()).add(
+				resource = (ServerResource) session.createCriteria(resource.getClass()).add(
 				    Restrictions.eq("id", resource.getId())).uniqueResult();
 				session.delete(resource);
 				session.getTransaction().commit();
@@ -1753,13 +1796,13 @@ public class DBManager {
 					t.rollback();
 				throw new DBManagerException(ex);
 			}
-		} 
+		}
 	}
 
 	public void deleteServerResource(ServerResource resource) throws DBManagerException {
 		Session session = createSession();
 		try {
-			deleteServerResource(session,resource);
+			deleteServerResource(session, resource);
 		} finally {
 			session.close();
 		}

@@ -6,10 +6,14 @@
  */
 package com.safi.db.server.config.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
 import com.safi.db.DbPackage;
-
 import com.safi.db.impl.DbPackageImpl;
-
 import com.safi.db.server.config.AsteriskServer;
 import com.safi.db.server.config.ConfigFactory;
 import com.safi.db.server.config.ConfigPackage;
@@ -20,16 +24,8 @@ import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.Saflet;
 import com.safi.db.server.config.SafletProject;
 import com.safi.db.server.config.ServerResource;
-
 import com.safi.db.server.config.SynchMode;
 import com.safi.db.server.config.User;
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-
-import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
  * <!-- begin-user-doc -->

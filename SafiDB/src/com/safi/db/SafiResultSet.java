@@ -6,9 +6,6 @@
  */
 package com.safi.db;
 
-import java.sql.ResultSet;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->

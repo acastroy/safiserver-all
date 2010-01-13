@@ -6,6 +6,18 @@
  */
 package com.safi.db.impl;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Properties;
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
 import com.safi.db.DBConnection;
 import com.safi.db.DBDriver;
 import com.safi.db.DBResource;
@@ -20,28 +32,11 @@ import com.safi.db.SQLDataType;
 import com.safi.db.SafiDriverManager;
 import com.safi.db.SafiResultSet;
 import com.safi.db.TransactionMode;
-
 import com.safi.db.Variable;
 import com.safi.db.VariableScope;
 import com.safi.db.VariableType;
 import com.safi.db.server.config.ConfigPackage;
 import com.safi.db.server.config.impl.ConfigPackageImpl;
-import java.sql.Connection;
-import java.sql.ResultSet;
-
-import java.sql.Statement;
-import java.util.Properties;
-
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
-import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EOperation;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-
-import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.hibernate.lob.SerializableBlob;
 
 /**
  * <!-- begin-user-doc -->

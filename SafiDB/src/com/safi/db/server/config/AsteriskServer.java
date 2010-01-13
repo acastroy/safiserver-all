@@ -6,7 +6,6 @@
  */
 package com.safi.db.server.config;
 
-import org.eclipse.emf.common.util.EList;
 
 
 /**

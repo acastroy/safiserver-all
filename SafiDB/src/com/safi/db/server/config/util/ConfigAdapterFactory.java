@@ -6,14 +6,20 @@
  */
 package com.safi.db.server.config.util;
 
-import com.safi.db.server.config.*;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
+import com.safi.db.server.config.AsteriskServer;
+import com.safi.db.server.config.ConfigPackage;
+import com.safi.db.server.config.Entitlement;
+import com.safi.db.server.config.Prompt;
+import com.safi.db.server.config.Role;
+import com.safi.db.server.config.SafiServer;
+import com.safi.db.server.config.Saflet;
+import com.safi.db.server.config.SafletProject;
+import com.safi.db.server.config.ServerResource;
+import com.safi.db.server.config.User;
 
 /**
  * <!-- begin-user-doc -->

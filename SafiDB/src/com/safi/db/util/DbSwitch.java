@@ -6,12 +6,18 @@
  */
 package com.safi.db.util;
 
-import com.safi.db.*;
-
 import java.util.List;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import com.safi.db.DBConnection;
+import com.safi.db.DBDriver;
+import com.safi.db.DBResource;
+import com.safi.db.DbPackage;
+import com.safi.db.Query;
+import com.safi.db.QueryParameter;
+import com.safi.db.SafiDriverManager;
+import com.safi.db.SafiResultSet;
+import com.safi.db.Variable;
 
 /**
  * <!-- begin-user-doc -->

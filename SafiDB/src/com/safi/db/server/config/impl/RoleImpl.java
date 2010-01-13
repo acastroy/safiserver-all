@@ -6,17 +6,13 @@
  */
 package com.safi.db.server.config.impl;
 
+import java.util.Collection;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import com.safi.db.server.config.ConfigPackage;
 import com.safi.db.server.config.Entitlement;
 import com.safi.db.server.config.Role;
-
-import java.util.Collection;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->

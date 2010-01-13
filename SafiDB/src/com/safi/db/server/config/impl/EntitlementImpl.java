@@ -6,14 +6,9 @@
  */
 package com.safi.db.server.config.impl;
 
+import org.eclipse.emf.ecore.EClass;
 import com.safi.db.server.config.ConfigPackage;
 import com.safi.db.server.config.Entitlement;
-
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->

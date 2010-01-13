@@ -6,12 +6,8 @@
  */
 package com.safi.db;
 
-import java.sql.Connection;
 import java.util.Properties;
-
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->

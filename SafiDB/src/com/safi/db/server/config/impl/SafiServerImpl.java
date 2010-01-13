@@ -6,24 +6,20 @@
  */
 package com.safi.db.server.config.impl;
 
-import com.safi.db.server.config.AsteriskServer;
-import com.safi.db.server.config.ConfigPackage;
-import com.safi.db.server.config.SafiServer;
-
-import com.safi.db.server.config.User;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import com.safi.db.server.config.AsteriskServer;
+import com.safi.db.server.config.ConfigPackage;
+import com.safi.db.server.config.SafiServer;
+import com.safi.db.server.config.User;
 
 /**
  * <!-- begin-user-doc -->
