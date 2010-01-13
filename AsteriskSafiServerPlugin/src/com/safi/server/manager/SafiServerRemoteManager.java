@@ -32,12 +32,12 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.console.MessageConsole;
 import org.tanukisoftware.wrapper.jmx.WrapperManagerMBean;
 import sun.rmi.transport.proxy.RMIMasterSocketFactory;
-import com.safi.asterisk.handler.importing.OverwriteMode;
-import com.safi.asterisk.handler.mbean.DebugRemoteControl;
-import com.safi.asterisk.handler.mbean.ENotificationWrapper;
-import com.safi.asterisk.handler.mbean.FileTransfer;
-import com.safi.asterisk.handler.mbean.SafiServerMonitor;
-import com.safi.asterisk.handler.mbean.SysInfo;
+import com.safi.server.saflet.importing.OverwriteMode;
+import com.safi.server.saflet.mbean.DebugRemoteControl;
+import com.safi.server.saflet.mbean.ENotificationWrapper;
+import com.safi.server.saflet.mbean.FileTransfer;
+import com.safi.server.saflet.mbean.SafiServerMonitor;
+import com.safi.server.saflet.mbean.SysInfo;
 import com.safi.db.server.config.AsteriskServer;
 import com.safi.db.server.config.SafiServer;
 import com.safi.server.plugin.SafiServerPlugin;
@@ -248,57 +248,51 @@ public class SafiServerRemoteManager implements NotificationListener {
 
       final SafiServer server = SafiServerPlugin.getDefault().getSafiServer(true);
       if (serverConnection == null && server != null) {
-    	  
         // RMISocketFactory.setSocketFactory(new
         // FixedPortRMISocketFactory(server.getManagementPort()));
-    	  
         String rmiHost, serviceHost = server.getBindIP();
         int rmiPort, servicePort = server.getManagementPort();
-        if (!SafiServerPlugin.getDefault().isLocalSafiServer()) 
-        {
-        	rmiHost = "127.0.0.1";
+        if (!SafiServerPlugin.getDefault().isLocalSafiServer()) {
+          rmiHost = "127.0.0.1";
           
-			//servicePort = getPreferenceStore().getInt(
-			//PreferenceConstants.PREF_SSH_FORWARDING_MANAGEMENT_PORT_LOCAL);
-			//rmiPort = servicePort;
-          
-        	try {
-        		SafiServerPlugin.getDefault().refreshMgmtTunnelIfNecessary();
-        	} catch (Exception e) {
-        		e.printStackTrace();
-        		SafiServerPlugin.getDefault().logError("Couldn't establish management tunnel to " + serviceHost, e);
-        		final Display d = Display.getDefault();
-        		d.asyncExec(new Runnable(){
-	              @Override
-	              public void run() {
-	                if (d.getActiveShell() != null)
-	                  MessageDialog.openError(d.getActiveShell(), "Management Connection Failure",
-	                      "Management tunnel to " + server.getBindIP()
-	                          + " could not be established. Please ensure that port " + server.getManagementPort()
-	                          + " is available on this machine. Note that if you're running an instance of SafiServer locally and " +
-	                          		"you're attempting to connect to a remote SafiServer, you will " +
-	                          		"need to either stop it or choose different ports for database and management functions of the remote SafiServer.");
-	                
-	              	}
-        		});
-        		throw new SafiServerManagementException("Couldn't connect", e);
-        	}
-          
-        	rmiPort = SafiServerPlugin.getDefault().getCurrentSSHMgmtNum();
-        	serviceHost = rmiHost;
-        	
-        	// rmiHost = serviceHost;
-        	// rmiPort = servicePort;
-        	// if (!SafiServerPlugin.getDefault().isLocalPortForwarded(rmiPort)){
-        	//		SafiServerPlugin.getDefault().addTunnel(rmiPort, servicePort, rmiHost);
-        	//   }
-        	
+//          servicePort = getPreferenceStore().getInt(
+//              PreferenceConstants.PREF_SSH_FORWARDING_MANAGEMENT_PORT_LOCAL);
+//          rmiPort = servicePort;
+          try {
+          SafiServerPlugin.getDefault().refreshMgmtTunnelIfNecessary();
+          } catch (Exception e) {
+            e.printStackTrace();
+            SafiServerPlugin.getDefault().logError("Couldn't establish management tunnel to " + serviceHost, e);
+            final Display d = Display.getDefault();
+            d.asyncExec(new Runnable(){
+              @Override
+              public void run() {
+                if (d.getActiveShell() != null)
+                  MessageDialog.openError(d.getActiveShell(), "Management Connection Failure",
+                      "Management tunnel to " + server.getBindIP()
+                          + " could not be established. Please ensure that port " + server.getManagementPort()
+                          + " is available on this machine. Note that if you're running an instance of SafiServer locally and " +
+                          		"you're attempting to connect to a remote SafiServer, you will " +
+                          		"need to either stop it or choose different ports for database and management functions of the remote SafiServer.");
+                
+              }
+            });
+            throw new SafiServerManagementException("Couldn't connect", e);
+          }
+          rmiPort = SafiServerPlugin.getDefault().getCurrentSSHMgmtNum();
+          serviceHost = rmiHost;
+          // rmiHost = serviceHost;
+          // rmiPort = servicePort;
+//          if (!SafiServerPlugin.getDefault().isLocalPortForwarded(rmiPort)){
+//            SafiServerPlugin.getDefault().addTunnel(rmiPort, servicePort, rmiHost);
+//          }
         } else {
-        	rmiHost = serviceHost;
-			rmiPort = servicePort;
+          rmiHost = serviceHost;
+          rmiPort = servicePort;
+
         }
-			// String urlString = "service:jmx:rmi://" + rmiHost + ":" + rmiPort + "/jndi/rmi://"
-			// + serviceHost + ":" + servicePort + "/safiserver";
+//        String urlString = "service:jmx:rmi://" + rmiHost + ":" + rmiPort + "/jndi/rmi://"
+//            + serviceHost + ":" + servicePort + "/safiserver";
         
         String urlString = "service:jmx:rmi://127.0.0.1:" + servicePort + "/jndi/rmi://127.0.0.1:" + servicePort + "/safiserver";
         SafiServerPlugin.getDefault().getLog().log(
@@ -308,10 +302,10 @@ public class SafiServerRemoteManager implements NotificationListener {
         
         currentActualRMIPort = rmiPort;
         
-        // env = null;
-        
+//        env = null;
         jmxc = JMXConnectorFactory.connect(url, jmxEnvProperties);
         // Create listener
+        //
         // Get an MBeanServerConnection
         //
         serverConnection = jmxc.getMBeanServerConnection();
@@ -322,15 +316,13 @@ public class SafiServerRemoteManager implements NotificationListener {
         serverMonitor = (SafiServerMonitor) MBeanServerInvocationHandler.newProxyInstance(
             serverConnection, serverMonitorName, SafiServerMonitor.class, true);
         // if (fileTransferMBeanName==null)
-        
         fileTransferMBeanName = new ObjectName("bean:name=actionpakFileTransfer");
         fileTransfer = (FileTransfer) MBeanServerInvocationHandler.newProxyInstance(
             serverConnection, fileTransferMBeanName, FileTransfer.class, true);
-        
-        // this.licenseMBeanName = new ObjectName("bean:name=licenseManager");
+//        this.licenseMBeanName = new ObjectName("bean:name=licenseManager");
+       
         // serverInfoNotificationFilter.refreshSettings();
         // if (wrapperMBeanName == null)
-        
         wrapperMBeanName = new ObjectName("bean:name=WrapperManager");
         wrapperProxy = (org.tanukisoftware.wrapper.jmx.WrapperManagerMBean) MBeanServerInvocationHandler
             .newProxyInstance(serverConnection, wrapperMBeanName, WrapperManagerMBean.class, true);
