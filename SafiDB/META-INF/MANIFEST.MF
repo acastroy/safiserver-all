@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: SafiDB; singleton:=true
+Bundle-SymbolicName: SafiDB;singleton:=true
 Bundle-Version: 1.2.5.80
 Bundle-ClassPath: .,
  resources/
@@ -21,6 +21,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.teneo.hibernate;visibility:=reexport,
  org.apache.commons.lang;bundle-version="2.3.0",
  Hibernate30;bundle-version="1.0.0",
- SafiCommons;bundle-version="1.0.0"
-Eclipse-LazyStart: true
-Eclipse-BuddyPolicy: dependent
+ SafiCommons;bundle-version="1.2.5"
+Eclipse-LazyStart: false
