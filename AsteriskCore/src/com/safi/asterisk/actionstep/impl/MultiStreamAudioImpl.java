@@ -9,7 +9,7 @@ package com.safi.asterisk.actionstep.impl;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-
+import java.util.logging.Level;
 import org.apache.commons.lang.StringUtils;
 import org.asteriskjava.fastagi.AgiChannel;
 import org.eclipse.emf.common.notify.Notification;
@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
 import com.safi.asterisk.CallConsumer1;
@@ -112,24 +111,24 @@ public class MultiStreamAudioImpl extends ActionStepImpl implements MultiStreamA
           
           for (CaseItem item : audioFilenames) {
             Object dynValue = resolveDynamicValue(item.getDynamicValue(), context);
-//            if (debugLog.isDebugEnabled()) debug("Audio item resolved to " + dynValue);
+//            if (debugLog.isLoggable(Level.FINEST)) debug("Audio item resolved to " + dynValue);
             String filenameStr = (String) VariableTranslator.translateValue(VariableType.TEXT,
                 dynValue);
             
-//            if (debugLog.isDebugEnabled()) debug("filenameStr resolved to " + filenameStr);
+//            if (debugLog.isLoggable(Level.FINEST)) debug("filenameStr resolved to " + filenameStr);
             
             if (StringUtils.isBlank(filenameStr)) continue;
             
             if (item.getDynamicValue().getType() == DynamicValueType.CUSTOM){
               filenameStr = getSaflet().getPromptPathByName(filenameStr);
-//              if (debugLog.isDebugEnabled()) debug("Prompt by pathname resolved to " + filenameStr);
+//              if (debugLog.isLoggable(Level.FINEST)) debug("Prompt by pathname resolved to " + filenameStr);
             }
             files.add(filenameStr);
           }
           if (files.isEmpty())
             exception = new ActionStepException("No Filenames Specified");
           else {
-            if (debugLog.isDebugEnabled()) debug("Streaming files " + files);
+            if (debugLog.isLoggable(Level.FINEST)) debug("Streaming files " + files);
             StringBuffer appCmd = new StringBuffer();
             for (int i=0; i < files.size(); i++) {
               if (i > 0)
@@ -143,7 +142,7 @@ public class MultiStreamAudioImpl extends ActionStepImpl implements MultiStreamA
             } else if (c == -1) {
               exception = new ActionStepException("Channel was hung up.");
             }
-            if (debugLog.isDebugEnabled())
+            if (debugLog.isLoggable(Level.FINEST))
               debug("StreamAudio returned " + translateAppReturnValue(c));
 
           }

@@ -6,11 +6,11 @@
  */
 package com.safi.asterisk.actionstep.impl;
 
+import java.util.logging.Level;
 import org.apache.commons.lang.StringUtils;
 import org.asteriskjava.fastagi.AgiChannel;
 import org.asteriskjava.manager.ManagerConnection;
 import org.asteriskjava.manager.action.ExtensionStateAction;
-import org.asteriskjava.manager.event.ExtensionStatusEvent;
 import org.asteriskjava.manager.response.ExtensionStateResponse;
 import org.asteriskjava.manager.response.ManagerResponse;
 import org.eclipse.emf.common.notify.Notification;
@@ -295,14 +295,14 @@ public class ExtensionTransferImpl extends ActionStepImpl implements ExtensionTr
 
 				// try {
 				// connection.addEventListener(eventListener);
-				if (debugLog.isDebugEnabled())
+				if (debugLog.isLoggable(Level.FINEST))
 					debug("About to dial " + options);
 				// channel.setExtension(ext);
 				// channel.setContext(ctx);
 				// channel.setPriority(String.valueOf(priority));
 				channel.exec("Dial", options);
 				String status = channel.getVariable("DIALSTATUS");
-				if (debugLog.isDebugEnabled())
+				if (debugLog.isLoggable(Level.FINEST))
 					debug("Dial returned status " + status);
 				if (status == null)
 					idx = 0;
@@ -324,7 +324,7 @@ public class ExtensionTransferImpl extends ActionStepImpl implements ExtensionTr
 						idx = 0;
 				}
 			}
-			if (debugLog.isDebugEnabled())
+			if (debugLog.isLoggable(Level.FINEST))
 				debug("index is " + idx);
 		} catch (Exception e) {
 			exception = e;

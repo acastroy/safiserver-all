@@ -6,6 +6,7 @@
  */
 package com.safi.asterisk.actionstep.impl;
 
+import java.util.logging.Level;
 import org.apache.commons.lang.StringUtils;
 import org.asteriskjava.fastagi.AgiChannel;
 import org.eclipse.emf.common.notify.Notification;
@@ -13,7 +14,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
 import com.safi.asterisk.CallConsumer1;
@@ -103,7 +103,7 @@ public class FestivalImpl extends ActionStepImpl implements Festival {
       try {
         
         String txt = (String)VariableTranslator.translateValue(VariableType.TEXT, resolveDynamicValue(text, context));
-        if (debugLog.isDebugEnabled())
+        if (debugLog.isLoggable(Level.FINEST))
           debug("Festival about to vocalize: "+txt);
         
         StringBuffer appCmd = new StringBuffer(txt);
@@ -112,7 +112,7 @@ public class FestivalImpl extends ActionStepImpl implements Festival {
         
         int result = channel.exec("Festival", appCmd.toString());
         
-        if (debugLog.isDebugEnabled())
+        if (debugLog.isLoggable(Level.FINEST))
           debug("Festival returned "+translateAppReturnValue(result)+" of int "+result);
         
         if (result == -2){

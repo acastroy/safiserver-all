@@ -7,7 +7,6 @@
 package com.safi.asterisk.actionstep.impl;
 
 import java.util.Map;
-
 import org.eclipse.emf.common.util.BasicEMap;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -17,7 +16,6 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.actionstep.ActionstepFactory;
 import com.safi.asterisk.actionstep.ActionstepPackage;

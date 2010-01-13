@@ -6,6 +6,7 @@
  */
 package com.safi.asterisk.actionstep.impl;
 
+import java.util.logging.Level;
 import org.apache.commons.lang.StringUtils;
 import org.asteriskjava.manager.ManagerConnection;
 import org.asteriskjava.manager.TimeoutException;
@@ -17,7 +18,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
 import com.safi.asterisk.CallConsumer1;
@@ -113,7 +113,7 @@ public class PlayDTMFImpl extends ActionStepImpl implements PlayDTMF {
             }
             else
               if (!(ch == '#' || ch == '*' || Character.isDigit(ch))){
-                if (debugLog.isDebugEnabled())
+                if (debugLog.isLoggable(Level.FINEST))
                   getSaflet().warn("skipping char "+ch);
               }
             action.setDigit(String.valueOf(ch));

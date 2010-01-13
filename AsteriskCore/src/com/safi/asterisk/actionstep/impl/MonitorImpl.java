@@ -6,6 +6,7 @@
  */
 package com.safi.asterisk.actionstep.impl;
 
+import java.util.logging.Level;
 import org.asteriskjava.manager.ManagerConnection;
 import org.asteriskjava.manager.action.MonitorAction;
 import org.asteriskjava.manager.response.ManagerError;
@@ -15,7 +16,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
 import com.safi.asterisk.CallConsumer1;
@@ -139,7 +139,7 @@ public class MonitorImpl extends ActionStepImpl implements Monitor {
 
       String filename = (String) VariableTranslator.translateValue(VariableType.TEXT,
           resolveDynamicValue(filenamePrefix, context));
-      if (debugLog.isDebugEnabled())
+      if (debugLog.isLoggable(Level.FINEST))
         debug("Monitor recording to filename with prefix: " + filename);
       action.setFile(filename);
       action.setFormat(format);
@@ -148,7 +148,7 @@ public class MonitorImpl extends ActionStepImpl implements Monitor {
 
       ManagerResponse response = connection.sendAction(action,
           Saflet.DEFAULT_MANAGER_ACTION_TIMEOUT);
-      if (debugLog.isDebugEnabled())
+      if (debugLog.isLoggable(Level.FINEST))
         debug("Monitor returned " + response.getMessage() + " of type " + response.getResponse());
       if (response instanceof ManagerError)
         exception = new ActionStepException("Couldn't monitor channel: " + response.getMessage());

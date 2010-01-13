@@ -6,6 +6,7 @@
  */
 package com.safi.asterisk.actionstep.impl;
 
+import java.util.logging.Level;
 import org.apache.commons.lang.StringUtils;
 import org.asteriskjava.fastagi.AgiChannel;
 import org.eclipse.emf.common.notify.Notification;
@@ -13,7 +14,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
 import com.safi.asterisk.CallConsumer1;
@@ -157,7 +157,7 @@ public class VoicemailMainImpl extends ActionStepImpl implements VoicemailMain {
 
         String mb = (String) VariableTranslator.translateValue(VariableType.TEXT,
             resolveDynamicValue(mailbox, context));
-        if (debugLog.isDebugEnabled())
+        if (debugLog.isLoggable(Level.FINEST))
           debug("Getting VoicemailMain for mailbox: " + mb);
         if (StringUtils.isBlank(mb)) {
           exception = new ActionStepException("mailbox is required for VoicemailMain");
@@ -185,13 +185,13 @@ public class VoicemailMainImpl extends ActionStepImpl implements VoicemailMain {
           if (folder != null)
             appCmd.append("|a(").append(folder).append(")");
           
-          if (debugLog.isDebugEnabled()){
+          if (debugLog.isLoggable(Level.FINEST)){
             debug("sending: VoiceMailMain "+appCmd);
           }
           
           int result = channel.exec("VoiceMailMain", appCmd.toString());
 
-          if (debugLog.isDebugEnabled())
+          if (debugLog.isLoggable(Level.FINEST))
             debug("VoiceMailMain returned " + translateAppReturnValue(result) + " of int "
                 + result);
 

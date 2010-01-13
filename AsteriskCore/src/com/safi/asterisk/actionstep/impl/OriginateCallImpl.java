@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-
+import java.util.logging.Level;
 import org.apache.commons.lang.StringUtils;
 import org.asteriskjava.fastagi.AgiChannel;
 import org.asteriskjava.fastagi.AgiException;
@@ -25,7 +25,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import com.safi.asterisk.AsteriskFactory;
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
@@ -313,7 +312,7 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
           dynValue = resolveDynamicValue(this.channel, context);
           String chan = (String) VariableTranslator.translateValue(VariableType.TEXT, dynValue);
           if (StringUtils.isBlank(chan)) {
-            if (debugLog.isDebugEnabled())
+            if (debugLog.isLoggable(Level.FINEST))
               debug("No channel specified, using current: " + chan);
             exception = new ActionStepException("Channel name must be specified");
           } else {
@@ -346,8 +345,8 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
                 }
                 action.setVariables(vars);
               } else {
-                if (debugLog.isDebugEnabled())
-                  debugLog.warn("Variables must be in array format.  Ignoring variables " + vo);
+                if (debugLog.isLoggable(Level.FINEST))
+                  debugLog.warning("Variables must be in array format.  Ignoring variables " + vo);
               }
             }
             ManagerResponse response = connection.sendAction(action,
@@ -416,7 +415,7 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
     if (StringUtils.isBlank(chan)) {
       return new ActionStepException("Channel name must be specified");
     }
-    if (debugLog.isDebugEnabled())
+    if (debugLog.isLoggable(Level.FINEST))
       debug("Creating call from channel " + chan);
     action.setContext("default");
     action.setApplication("Agi");

@@ -6,6 +6,7 @@
  */
 package com.safi.asterisk.actionstep.impl;
 
+import java.util.logging.Level;
 import org.apache.commons.lang.StringUtils;
 import org.asteriskjava.fastagi.AgiChannel;
 import org.eclipse.emf.common.notify.Notification;
@@ -13,7 +14,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
 import com.safi.asterisk.CallConsumer1;
@@ -171,7 +171,7 @@ public class VoicemailImpl extends ActionStepImpl implements Voicemail {
 
         String mb = (String) VariableTranslator.translateValue(VariableType.TEXT,
             resolveDynamicValue(mailbox, context));
-        if (debugLog.isDebugEnabled())
+        if (debugLog.isLoggable(Level.FINEST))
           debug("Getting Voicemail for mailbox: " + mb);
         if (StringUtils.isBlank(mb)) {
           exception = new ActionStepException("mailbox is required for Voicemail");
@@ -200,12 +200,12 @@ public class VoicemailImpl extends ActionStepImpl implements Voicemail {
             appCmd.append("g(").append(recordingGain).append(")");
           }
           
-          if (debugLog.isDebugEnabled())
+          if (debugLog.isLoggable(Level.FINEST))
             debug("sending VoiceMail "+appCmd);
           
           int result = channel.exec("VoiceMail", appCmd.toString());
 
-          if (debugLog.isDebugEnabled())
+          if (debugLog.isLoggable(Level.FINEST))
             debug("VoiceMail returned " + translateAppReturnValue(result) + " of int "
                 + result);
 

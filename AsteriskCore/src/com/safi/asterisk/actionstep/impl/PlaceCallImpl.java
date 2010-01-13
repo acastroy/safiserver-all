@@ -8,7 +8,7 @@ package com.safi.asterisk.actionstep.impl;
 
 import java.io.IOException;
 import java.util.UUID;
-
+import java.util.logging.Level;
 import org.apache.commons.lang.StringUtils;
 import org.asteriskjava.fastagi.AgiChannel;
 import org.asteriskjava.fastagi.AgiException;
@@ -22,7 +22,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
 import com.safi.asterisk.CallSource1;
@@ -167,7 +166,7 @@ public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
     if (StringUtils.isBlank(exten)) {
       return new ActionStepException("Extension must be specified");
     }
-    if (debugLog.isDebugEnabled())
+    if (debugLog.isLoggable(Level.FINEST))
       debug("Placing call to " + exten);
 
 //    action.setContext("default");
@@ -204,7 +203,7 @@ public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
     int fastAgiPort = handlerEnvironment.getFastAgiPort();
     String addr = "agi://" + serverAddr + ":" + fastAgiPort + "/safletEngine.agi?loopback=true";
     action.setData(addr);
-    if (debugLog.isDebugEnabled())
+    if (debugLog.isLoggable(Level.FINEST))
       debug("Loopback address " + addr);
     // action.setExten("5555");
     dynValue = resolveDynamicValue(this.context, context);
@@ -221,7 +220,7 @@ public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
     action.setContext(ctx);
     String originatingChannel = "Local/" + ext + "@" + ctx;
     action.setChannel(originatingChannel);
-    if (debugLog.isDebugEnabled())
+    if (debugLog.isLoggable(Level.FINEST))
       debug("Originating channel: " + originatingChannel);
     // action.setPriority(1);
     action.setAsync(true);

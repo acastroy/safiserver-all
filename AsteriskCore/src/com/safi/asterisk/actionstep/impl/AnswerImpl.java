@@ -6,12 +6,12 @@
  */
 package com.safi.asterisk.actionstep.impl;
 
+import java.util.logging.Level;
 import org.asteriskjava.fastagi.AgiChannel;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
 import com.safi.asterisk.CallConsumer1;
@@ -117,7 +117,7 @@ public class AnswerImpl extends ActionStepImpl implements Answer {
     AgiChannel channel = call1.getChannel();
     try {
       channel.answer();
-      if (debugLog.isDebugEnabled())
+      if (debugLog.isLoggable(Level.FINEST))
         debug("Channel "+channel.getName()+" answered successfully");
     } catch (Exception e) {
       handleException(context, e);

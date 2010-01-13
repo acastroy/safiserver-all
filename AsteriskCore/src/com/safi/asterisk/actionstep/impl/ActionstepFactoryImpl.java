@@ -6,9 +6,7 @@
  */
 package com.safi.asterisk.actionstep.impl;
 
-import com.safi.asterisk.actionstep.*;
 import java.util.Map;
-
 import org.eclipse.emf.common.util.BasicEMap;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -16,7 +14,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
 import com.safi.asterisk.actionstep.ActionstepFactory;
 import com.safi.asterisk.actionstep.ActionstepPackage;
 import com.safi.asterisk.actionstep.Answer;

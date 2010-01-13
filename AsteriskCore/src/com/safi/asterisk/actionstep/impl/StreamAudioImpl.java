@@ -6,6 +6,7 @@
  */
 package com.safi.asterisk.actionstep.impl;
 
+import java.util.logging.Level;
 import org.apache.commons.lang.StringUtils;
 import org.asteriskjava.fastagi.AgiChannel;
 import org.eclipse.emf.common.notify.Notification;
@@ -13,7 +14,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
 import com.safi.asterisk.CallConsumer1;
@@ -117,11 +117,11 @@ public class StreamAudioImpl extends ActionStepImpl implements StreamAudio {
         else {
           if (filename.getType() == DynamicValueType.CUSTOM)
             filenameStr = getSaflet().getPromptPathByName(filenameStr);
-          if (debugLog.isDebugEnabled())
+          if (debugLog.isLoggable(Level.FINEST))
             debug("Streaming file "+filenameStr);
           char c = channel.streamFile(filenameStr, escapeDigits);
           if (c > 0) ((AsteriskSafletContext)context).appendBufferedDigits(String.valueOf(c));
-          if (debugLog.isDebugEnabled())
+          if (debugLog.isLoggable(Level.FINEST))
             debug("StreamAudio returned "+translateAppReturnValue(c));
         }
       } catch (Exception e) {

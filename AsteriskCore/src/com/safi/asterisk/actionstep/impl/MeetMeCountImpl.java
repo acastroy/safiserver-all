@@ -6,6 +6,7 @@
  */
 package com.safi.asterisk.actionstep.impl;
 
+import java.util.logging.Level;
 import org.apache.commons.lang.StringUtils;
 import org.asteriskjava.fastagi.AgiChannel;
 import org.eclipse.emf.common.notify.Notification;
@@ -13,7 +14,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
 import com.safi.asterisk.CallConsumer1;
@@ -99,7 +99,7 @@ public class MeetMeCountImpl extends ActionStepImpl implements MeetMeCount {
 
         String conferenceNum = (String) VariableTranslator.translateValue(VariableType.TEXT,
             resolveDynamicValue(conferenceNumber, context));
-        if (debugLog.isDebugEnabled())
+        if (debugLog.isLoggable(Level.FINEST))
           debug("Getting meetme count for conference: " + conferenceNum);
         if (StringUtils.isBlank(conferenceNum)) {
           exception = new ActionStepException("Conference number is required for MeetMeCount");
@@ -115,7 +115,7 @@ public class MeetMeCountImpl extends ActionStepImpl implements MeetMeCount {
 
           int result = channel.exec("MeetMeCount", appCmd.toString());
 
-          if (debugLog.isDebugEnabled())
+          if (debugLog.isLoggable(Level.FINEST))
             debug("MeetMeCount returned " + translateAppReturnValue(result) + " of int "
                 + result);
 
@@ -127,7 +127,7 @@ public class MeetMeCountImpl extends ActionStepImpl implements MeetMeCount {
             // return;
           } else if (v != null) {
             String count = channel.getVariable(MEETME_COUNT_VARNAME);
-            if (debugLog.isDebugEnabled()) {
+            if (debugLog.isLoggable(Level.FINEST)) {
               debug("MEET_ME_COUNT var was " + count);
             }
             int meetmeCount = -1;
@@ -135,7 +135,7 @@ public class MeetMeCountImpl extends ActionStepImpl implements MeetMeCount {
               try {
                 meetmeCount = Integer.parseInt(count);
 
-                if (debugLog.isDebugEnabled()) {
+                if (debugLog.isLoggable(Level.FINEST)) {
                   debug("MeetMe count was " + meetmeCount);
                 }
                 

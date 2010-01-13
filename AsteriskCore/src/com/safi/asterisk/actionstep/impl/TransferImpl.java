@@ -6,6 +6,7 @@
  */
 package com.safi.asterisk.actionstep.impl;
 
+import java.util.logging.Level;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.asteriskjava.fastagi.AgiChannel;
@@ -22,7 +23,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
 import com.safi.asterisk.CallConsumer1;
@@ -192,7 +192,7 @@ public class TransferImpl extends ActionStepImpl implements Transfer {
           if (buf.length() == 0) {
             exception = new ActionStepException("Call to " + ext + " failed to initiate");
           } else {
-            if (debugLog.isDebugEnabled())
+            if (debugLog.isLoggable(Level.FINEST))
               debug("The call was established "+buf);
           }
           

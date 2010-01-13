@@ -6,12 +6,12 @@
  */
 package com.safi.asterisk.actionstep.impl;
 
+import java.util.logging.Level;
 import org.asteriskjava.fastagi.AgiChannel;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
 import com.safi.asterisk.CallConsumer1;
@@ -87,13 +87,13 @@ public class SetCallerPresentationImpl extends ActionStepImpl implements SetCall
       AgiChannel channel = call1.getChannel();
       try {
 
-        if (debugLog.isDebugEnabled())
+        if (debugLog.isLoggable(Level.FINEST))
           debug("SetCallerPresentation is starting with presentation "
               + presentation);
 
         int result = channel.exec("SetCallerPres", presentation.toString());
 
-        if (debugLog.isDebugEnabled())
+        if (debugLog.isLoggable(Level.FINEST))
           debug("Dictate return value was " + translateAppReturnValue(result));
         if (result == -1) {
           exception = new ActionStepException("Channel was hung up");

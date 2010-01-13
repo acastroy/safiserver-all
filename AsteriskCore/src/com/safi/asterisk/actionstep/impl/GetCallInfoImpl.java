@@ -6,6 +6,7 @@
  */
 package com.safi.asterisk.actionstep.impl;
 
+import java.util.logging.Level;
 import org.asteriskjava.fastagi.AgiChannel;
 import org.asteriskjava.fastagi.AgiRequest;
 import org.eclipse.emf.common.notify.Notification;
@@ -13,7 +14,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
 import com.safi.asterisk.CallConsumer1;
@@ -212,8 +212,8 @@ public class GetCallInfoImpl extends ActionStepImpl implements GetCallInfo {
           setVariableValue(accountCodeVar, result, context);
 
         } catch (Exception e) {
-          if (debugLog.isDebugEnabled())
-            debugLog.error(e.getLocalizedMessage());
+          if (debugLog.isLoggable(Level.FINEST))
+           debugLog.log(Level.SEVERE, e.getLocalizedMessage());
           exception = e;
         }
 
@@ -224,8 +224,8 @@ public class GetCallInfoImpl extends ActionStepImpl implements GetCallInfo {
           setVariableValue(callerIdNameVar, result, context);
 
         } catch (Exception e) {
-          if (debugLog.isDebugEnabled())
-            debugLog.error(e.getLocalizedMessage());
+          if (debugLog.isLoggable(Level.FINEST))
+           debugLog.log(Level.SEVERE, e.getLocalizedMessage());
           exception = e;
         }
 
@@ -235,8 +235,8 @@ public class GetCallInfoImpl extends ActionStepImpl implements GetCallInfo {
           Object result = call1.getCallerIdNum();
           setVariableValue(callerIdNumVar, result, context);
         } catch (Exception e) {
-          if (debugLog.isDebugEnabled())
-            debugLog.error(e.getLocalizedMessage());
+          if (debugLog.isLoggable(Level.FINEST))
+           debugLog.log(Level.SEVERE, e.getLocalizedMessage());
           exception = e;
         }
 
@@ -245,8 +245,8 @@ public class GetCallInfoImpl extends ActionStepImpl implements GetCallInfo {
           Object result = call1.getChannelName();
           setVariableValue(channelNameVar, result, context);
         } catch (Exception e) {
-          if (debugLog.isDebugEnabled())
-            debugLog.error(e.getLocalizedMessage());
+          if (debugLog.isLoggable(Level.FINEST))
+           debugLog.log(Level.SEVERE, e.getLocalizedMessage());
           exception = e;
         }
 
@@ -255,8 +255,8 @@ public class GetCallInfoImpl extends ActionStepImpl implements GetCallInfo {
           Object result = request.getContext();
           setVariableValue(contextVar, result, context);
         } catch (Exception e) {
-          if (debugLog.isDebugEnabled())
-            debugLog.error(e.getLocalizedMessage());
+          if (debugLog.isLoggable(Level.FINEST))
+           debugLog.log(Level.SEVERE, e.getLocalizedMessage());
           exception = e;
         }
 
@@ -265,8 +265,8 @@ public class GetCallInfoImpl extends ActionStepImpl implements GetCallInfo {
           Object result = request.getExtension();
           setVariableValue(extensionVar, result, context);
         } catch (Exception e) {
-          if (debugLog.isDebugEnabled())
-            debugLog.error(e.getLocalizedMessage());
+          if (debugLog.isLoggable(Level.FINEST))
+           debugLog.log(Level.SEVERE, e.getLocalizedMessage());
           exception = e;
         }
 
@@ -275,8 +275,8 @@ public class GetCallInfoImpl extends ActionStepImpl implements GetCallInfo {
           Object result = request.getDnid();
           setVariableValue(dialedNumber, result, context);
         } catch (Exception e) {
-          if (debugLog.isDebugEnabled())
-            debugLog.error(e.getLocalizedMessage());
+          if (debugLog.isLoggable(Level.FINEST))
+           debugLog.log(Level.SEVERE, e.getLocalizedMessage());
           exception = e;
         }
 
@@ -285,8 +285,8 @@ public class GetCallInfoImpl extends ActionStepImpl implements GetCallInfo {
           Object result = request.getPriority();
           setVariableValue(priorityVar, result, context);
         } catch (Exception e) {
-          if (debugLog.isDebugEnabled())
-            debugLog.error(e.getLocalizedMessage());
+          if (debugLog.isLoggable(Level.FINEST))
+           debugLog.log(Level.SEVERE, e.getLocalizedMessage());
           exception = e;
         }
 
@@ -295,8 +295,8 @@ public class GetCallInfoImpl extends ActionStepImpl implements GetCallInfo {
           Object result = call1.getChannel().getChannelStatus();
           setVariableValue(stateVar, result, context);
         } catch (Exception e) {
-          if (debugLog.isDebugEnabled())
-            debugLog.error(e.getLocalizedMessage());
+          if (debugLog.isLoggable(Level.FINEST))
+           debugLog.log(Level.SEVERE, e.getLocalizedMessage());
           exception = e;
         }
 
@@ -305,8 +305,8 @@ public class GetCallInfoImpl extends ActionStepImpl implements GetCallInfo {
           Object result = call1.getUniqueId();
           setVariableValue(uniqueIdVar, result, context);
         } catch (Exception e) {
-          if (debugLog.isDebugEnabled())
-            debugLog.error(e.getLocalizedMessage());
+          if (debugLog.isLoggable(Level.FINEST))
+           debugLog.log(Level.SEVERE, e.getLocalizedMessage());
           exception = e;
         }
 
@@ -315,8 +315,8 @@ public class GetCallInfoImpl extends ActionStepImpl implements GetCallInfo {
           Object result = request.getRdnis();
           setVariableValue(rdnis, result, context);
         } catch (Exception e) {
-          if (debugLog.isDebugEnabled())
-            debugLog.error(e.getLocalizedMessage());
+          if (debugLog.isLoggable(Level.FINEST))
+           debugLog.log(Level.SEVERE, e.getLocalizedMessage());
           exception = e;
         }
 
@@ -325,8 +325,8 @@ public class GetCallInfoImpl extends ActionStepImpl implements GetCallInfo {
           Object result = request.getCallingAni2();
           setVariableValue(ani2Var, result, context);
         } catch (Exception e) {
-          if (debugLog.isDebugEnabled())
-            debugLog.error(e.getLocalizedMessage());
+          if (debugLog.isLoggable(Level.FINEST))
+           debugLog.log(Level.SEVERE, e.getLocalizedMessage());
           exception = e;
         }
 
@@ -335,8 +335,8 @@ public class GetCallInfoImpl extends ActionStepImpl implements GetCallInfo {
           Object result = request.getType();
           setVariableValue(type, result, context);
         } catch (Exception e) {
-          if (debugLog.isDebugEnabled())
-            debugLog.error(e.getLocalizedMessage());
+          if (debugLog.isLoggable(Level.FINEST))
+           debugLog.log(Level.SEVERE, e.getLocalizedMessage());
           exception = e;
         }
 

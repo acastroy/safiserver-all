@@ -6,6 +6,7 @@
  */
 package com.safi.asterisk.actionstep.impl;
 
+import java.util.logging.Level;
 import org.apache.commons.lang.StringUtils;
 import org.asteriskjava.fastagi.AgiChannel;
 import org.eclipse.emf.common.notify.Notification;
@@ -13,7 +14,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
 import com.safi.asterisk.CallConsumer1;
@@ -255,7 +255,7 @@ public class ExtensionSpyImpl extends ActionStepImpl implements ExtensionSpy {
           chanStr = (String) VariableTranslator.translateValue(VariableType.TEXT, dynValue);
         }
         if (StringUtils.isNotBlank(chanStr)) {
-          if (debugLog.isDebugEnabled()) debug("ExtenSpy trying to spy on " + chanStr);
+          if (debugLog.isLoggable(Level.FINEST)) debug("ExtenSpy trying to spy on " + chanStr);
         }
 
         Object dynValue = resolveDynamicValue(extension, context);
@@ -288,10 +288,10 @@ public class ExtensionSpyImpl extends ActionStepImpl implements ExtensionSpy {
           if (whisperEnabled) args.append('w');
           if (privateWhisperEnabled) args.append('W');
 
-          if (debugLog.isDebugEnabled()) debug("Executing ExtenSpy app with args "+args);
+          if (debugLog.isLoggable(Level.FINEST)) debug("Executing ExtenSpy app with args "+args);
 
           int result = channel.exec("ExtenSpy", args.toString());
-          if (debugLog.isDebugEnabled())
+          if (debugLog.isLoggable(Level.FINEST))
             debug("ExtenSpy return value was " + translateAppReturnValue(result));
           if (result == -1) {
             exception = new ActionStepException("Channel was hung up");

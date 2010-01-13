@@ -6,6 +6,7 @@
  */
 package com.safi.asterisk.actionstep.impl;
 
+import java.util.logging.Level;
 import org.apache.commons.lang.StringUtils;
 import org.asteriskjava.fastagi.AgiChannel;
 import org.eclipse.emf.common.notify.Notification;
@@ -13,7 +14,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
 import com.safi.asterisk.CallConsumer1;
@@ -114,7 +114,7 @@ public class GetFullVariableImpl extends ActionStepImpl implements GetFullVariab
       String value = channel.getFullVariable(astVar);
       
       Variable v = resolveVariableFromName(assignToVar, context);
-      if (debugLog.isDebugEnabled()) {
+      if (debugLog.isLoggable(Level.FINEST)) {
         debug("Got value "+value +" of variable "+astVar+". Assigning to "+(v == null ? "null": v.getName()));
       }
       
