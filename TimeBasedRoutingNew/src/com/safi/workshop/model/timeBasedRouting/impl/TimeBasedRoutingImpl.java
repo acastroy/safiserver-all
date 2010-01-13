@@ -8,7 +8,7 @@ package com.safi.workshop.model.timeBasedRouting.impl;
 
 import java.util.Collection;
 import java.util.Date;
-
+import java.util.logging.Level;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.impl.ActionStepImpl;
@@ -81,7 +80,7 @@ public class TimeBasedRoutingImpl extends ActionStepImpl implements TimeBasedRou
     if (times != null && !times.isEmpty()) {
       try {
         Object criteria = resolveDynamicValue(value, context);
-        if (debugLog.isDebugEnabled())
+        if (debugLog.isLoggable(Level.FINEST))
           debug("Criterion value is "+criteria);
         
         Date date = null;
@@ -98,7 +97,7 @@ public class TimeBasedRoutingImpl extends ActionStepImpl implements TimeBasedRou
           if (payload != null && payload instanceof TimeRange){
             if (((TimeRange)payload).isMatch(date)){
               item = caseItem;
-              if (debugLog.isDebugEnabled())
+              if (debugLog.isLoggable(Level.FINEST))
                 debug("Taking time item "+item.getLabelText());
               break;
             }

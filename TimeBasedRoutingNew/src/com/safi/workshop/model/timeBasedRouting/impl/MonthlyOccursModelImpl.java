@@ -8,11 +8,10 @@ package com.safi.workshop.model.timeBasedRouting.impl;
 
 import java.util.Calendar;
 import java.util.Date;
-
+import java.util.logging.Level;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import com.safi.core.saflet.impl.SafletImpl;
 import com.safi.workshop.model.timeBasedRouting.Day;
 import com.safi.workshop.model.timeBasedRouting.DayOccurrence;
@@ -178,8 +177,8 @@ public class MonthlyOccursModelImpl extends OccursModelImpl implements MonthlyOc
     DateUtils.zeroOutTime(start);
     
     if (start.after(now)) {
-      if (SafletImpl.debugLog.isDebugEnabled())
-        SafletImpl.debugLog.debug("Start date " + DateUtils.DATE_INSTANCE.format(start.getTime())
+      if (SafletImpl.debugLog.isLoggable(Level.FINEST))
+        SafletImpl.debugLog.log(Level.FINEST, "Start date " + DateUtils.DATE_INSTANCE.format(start.getTime())
             + " is after " + DateUtils.DATE_INSTANCE.format(now.getTime()));
       return false;
     }

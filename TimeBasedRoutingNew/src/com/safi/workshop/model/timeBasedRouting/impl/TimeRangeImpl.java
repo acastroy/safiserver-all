@@ -9,7 +9,7 @@ package com.safi.workshop.model.timeBasedRouting.impl;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-
+import java.util.logging.Level;
 import org.apache.commons.lang.time.FastDateFormat;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import com.safi.core.saflet.impl.SafletImpl;
 import com.safi.workshop.model.timeBasedRouting.OccursModel;
 import com.safi.workshop.model.timeBasedRouting.TimeBasedRoutingPackage;
@@ -254,12 +253,12 @@ public class TimeRangeImpl extends EObjectImpl implements TimeRange {
       long now = cal.getTimeInMillis();
 
       if (now <  start.getTime() || now > end.getTime()) {
-        if (SafletImpl.debugLog.isDebugEnabled())
-          SafletImpl.debugLog.debug(TIME_INSTANCE.format(cal.getTime())+ " is not in range from " + TIME_INSTANCE.format(start) + " to "
+        if (SafletImpl.debugLog.isLoggable(Level.FINEST))
+          SafletImpl.debugLog.log(Level.FINEST, TIME_INSTANCE.format(cal.getTime())+ " is not in range from " + TIME_INSTANCE.format(start) + " to "
               + TIME_INSTANCE.format(end));
         return false;
-      } else if (SafletImpl.debugLog.isDebugEnabled())
-        SafletImpl.debugLog.debug(TIME_INSTANCE.format(cal.getTime())+ " is in time range from " + TIME_INSTANCE.format(start) + " to "
+      } else if (SafletImpl.debugLog.isLoggable(Level.FINEST))
+        SafletImpl.debugLog.log(Level.FINEST, TIME_INSTANCE.format(cal.getTime())+ " is in time range from " + TIME_INSTANCE.format(start) + " to "
             + TIME_INSTANCE.format(end));
 
     }

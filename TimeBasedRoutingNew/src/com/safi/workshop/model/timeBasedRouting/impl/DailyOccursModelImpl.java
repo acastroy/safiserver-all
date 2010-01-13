@@ -8,11 +8,10 @@ package com.safi.workshop.model.timeBasedRouting.impl;
 
 import java.util.Calendar;
 import java.util.Date;
-
+import java.util.logging.Level;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import com.safi.core.saflet.impl.SafletImpl;
 import com.safi.workshop.model.timeBasedRouting.DailyOccursModel;
 import com.safi.workshop.model.timeBasedRouting.TimeBasedRoutingPackage;
@@ -92,15 +91,15 @@ public class DailyOccursModelImpl extends OccursModelImpl implements DailyOccurs
     
 
     if (start.after(now)) {
-      if (SafletImpl.debugLog.isDebugEnabled())
-        SafletImpl.debugLog.debug("Start date " + DateUtils.DATE_INSTANCE.format(start.getTime())
+      if (SafletImpl.debugLog.isLoggable(Level.FINEST))
+        SafletImpl.debugLog.log(Level.FINEST, "Start date " + DateUtils.DATE_INSTANCE.format(start.getTime())
             + " is after " + DateUtils.DATE_INSTANCE.format(now.getTime()));
       return false;
     }
 
     long days = DateUtils.daysBetween(start, now);
-    if (SafletImpl.debugLog.isDebugEnabled())
-      SafletImpl.debugLog.debug("days between is "+days+" and skipDays is "+skipDays);
+    if (SafletImpl.debugLog.isLoggable(Level.FINEST))
+      SafletImpl.debugLog.log(Level.FINEST, "days between is "+days+" and skipDays is "+skipDays);
     
     return days % getSkipDays() == 0;
   }
