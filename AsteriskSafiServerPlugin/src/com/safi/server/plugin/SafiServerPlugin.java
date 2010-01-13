@@ -8,28 +8,30 @@ import java.net.InetSocketAddress;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Formatter;
+import java.util.logging.Handler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.StreamHandler;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.log4j.Appender;
-import org.apache.log4j.Layout;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.PatternLayout;
-import org.apache.log4j.WriterAppender;
+//import org.apache.log4j.Appender;
+//import org.apache.log4j.Layout;
+//import org.apache.log4j.Level;
+//import org.apache.log4j.Logger;
+//import org.apache.log4j.PatternLayout;
+//import org.apache.log4j.WriterAppender;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.common.notify.Adapter;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.preference.IPreferenceStore;
@@ -50,11 +52,7 @@ import com.jcraft.jsch.HostKey;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.UserInfo;
-import com.safi.asterisk.handler.GlobalVariableManager;
-import com.safi.asterisk.handler.mbean.SysInfo;
 import com.safi.asterisk.util.AsteriskSafletConstants;
-import com.safi.core.actionstep.ActionStep;
-import com.safi.core.saflet.impl.SafletImpl;
 import com.safi.db.SafiDriverManager;
 import com.safi.db.Variable;
 import com.safi.db.manager.DBManager;
@@ -64,11 +62,14 @@ import com.safi.db.server.config.Entitlement;
 import com.safi.db.server.config.Role;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.User;
+import com.safi.logging.CustomFormatter;
 import com.safi.server.manager.DebugEventListener;
 import com.safi.server.manager.SafiServerManagementException;
 import com.safi.server.manager.SafiServerRemoteManager;
 import com.safi.server.preferences.PreferenceConstants;
 import com.safi.server.preferences.SafiServerStatusListener;
+import com.safi.server.saflet.GlobalVariableManager;
+import com.safi.server.saflet.mbean.SysInfo;
 import com.safi.server.util.Utils;
 
 /**
@@ -115,7 +116,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 	// };
 	private static MessageConsole serverConsole;
 	// private static MessageConsole debugConsole;
-	private static Appender debugConsoleAppender;
+	private static Handler debugConsoleAppender;
 	public final static Logger debuggerLog = Logger.getLogger(WORKBENCH_DEBUGLOG);
 	private ProdServerPrefListener prefListener;
 
@@ -513,15 +514,19 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 
 	private void initLogging() {
 		debuggerLog.setLevel(Level.OFF);
-		debuggerLog.setAdditivity(false);
+		debuggerLog.setUseParentHandlers(false);
 	}
 
 	public void setDebugStream(OutputStream os) {
 		if (debugConsoleAppender == null) {
-			Layout layout = new PatternLayout(AsteriskSafletConstants.DEBUG_PATTERN_LAYOUT);
-			debugConsoleAppender = new WriterAppender(layout, os);
-			debuggerLog.addAppender(debugConsoleAppender);
-			debuggerLog.setLevel(Level.DEBUG);
+			Formatter formatter = new CustomFormatter(AsteriskSafletConstants.DEBUG_PATTERN_LAYOUT);
+			debugConsoleAppender = new StreamHandler(os, formatter);
+			debuggerLog.addHandler(debugConsoleAppender);
+			debuggerLog.setLevel(Level.FINEST);
+//			Layout layout = new PatternLayout(AsteriskSafletConstants.DEBUG_PATTERN_LAYOUT);
+//			debugConsoleAppender = new WriterAppender(layout, os);
+//			debuggerLog.addAppender(debugConsoleAppender);
+//			debuggerLog.setLevel(Level.DEBUG);
 		}
 	}
 
