@@ -1,6 +1,7 @@
 package com.safi.server.manager;
 
-import com.safi.asterisk.handler.mbean.ENotificationWrapper;
+import com.safi.server.saflet.mbean.ENotificationWrapper;
+
 
 public interface DebugEventListener {
 
