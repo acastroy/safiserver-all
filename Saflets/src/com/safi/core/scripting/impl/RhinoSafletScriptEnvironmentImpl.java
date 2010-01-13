@@ -8,7 +8,8 @@ package com.safi.core.scripting.impl;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import org.apache.log4j.Logger;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.eclipse.emf.ecore.EClass;
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.ContextFactory;
@@ -34,7 +35,7 @@ public class RhinoSafletScriptEnvironmentImpl extends SafletScriptEnvironmentImp
   /**
    * @generated NOT
    */
-  private final static Logger log = Logger.getLogger(RhinoSafletScriptEnvironmentImpl.class);
+  private final static Logger log = Logger.getLogger(RhinoSafletScriptEnvironmentImpl.class.getName());
   /**
    * @generated NOT
    */
@@ -54,7 +55,7 @@ public class RhinoSafletScriptEnvironmentImpl extends SafletScriptEnvironmentImp
 
   static {
   	if (ContextFactory.hasExplicitGlobal()){
-  		log.error("ContextFactory already has explicit global factory set!: "+ContextFactory.getGlobal());
+  		log.severe("ContextFactory already has explicit global factory set!: "+ContextFactory.getGlobal());
   	}
   	else
   		ContextFactory.initGlobal(new ScriptContextFactory());
@@ -85,8 +86,8 @@ public class RhinoSafletScriptEnvironmentImpl extends SafletScriptEnvironmentImp
       InputStream scriptStream = ClassLoader.getSystemResourceAsStream(SHARED_JS_FILE);
 
       if (scriptStream == null) {
-        if (log.isDebugEnabled())
-          log.debug("Couldn't load " + SHARED_JS_FILE
+        if (log.isLoggable(Level.FINEST))
+          log.log(Level.FINEST, "Couldn't load " + SHARED_JS_FILE
               + " as system resource so loading from current thread classloader");
         scriptStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(
             SHARED_JS_FILE);
@@ -100,8 +101,8 @@ public class RhinoSafletScriptEnvironmentImpl extends SafletScriptEnvironmentImp
 //        Bundle bundle = Platform.getBundle("Saflets");
 //        if (BundleUtility.isReady(bundle)) {
 //          URL location = BundleUtility.find(bundle, "resources/"+SHARED_JS_FILE);
-//          if (log.isDebugEnabled())
-//            log.debug("Found "+SHARED_JS_FILE+" at "+location);
+//          if (log.isLoggable(Level.FINEST))
+//            log.log(Level.FINEST, "Found "+SHARED_JS_FILE+" at "+location);
 //          scriptStream = location.openStream();
 //        }
       }
@@ -117,8 +118,8 @@ public class RhinoSafletScriptEnvironmentImpl extends SafletScriptEnvironmentImp
       ((RhinoSafletScript) sharedSafletScript).setRhinoScript(sharedScript);
       // sharedScope.sealObject();
       
-      if (log.isDebugEnabled())
-        log.debug("Scripting context successfully initialized");
+      if (log.isLoggable(Level.FINEST))
+        log.log(Level.FINEST, "Scripting context successfully initialized");
     } catch (Exception exe) {
       if (exe instanceof SafletScriptException)
         throw (SafletScriptException) exe;

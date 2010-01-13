@@ -8,14 +8,13 @@ package com.safi.core.actionstep.impl;
 
 import java.sql.ResultSet;
 import java.util.Date;
-
+import java.util.logging.Level;
 import org.apache.commons.lang.NotImplementedException;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.actionstep.DBResultSetId;
@@ -126,7 +125,7 @@ public class SetColValueImpl extends ActionStepImpl implements SetColValue {
       Object val = resolveDynamicValue(value, context);
 
       Object cv = resolveDynamicValue(column, context);
-      if (debugLog.isDebugEnabled())
+      if (debugLog.isLoggable(Level.FINEST))
         debug("getting value for column " + cv);
       Integer colNum = null;
       String colName = null;
@@ -144,7 +143,7 @@ public class SetColValueImpl extends ActionStepImpl implements SetColValue {
         }
       }
 
-      if (debugLog.isDebugEnabled())
+      if (debugLog.isLoggable(Level.FINEST))
         debug("trying to update value for column by column "
             + (colNum == null ? "number" : "name")
             + " as "

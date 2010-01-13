@@ -6,6 +6,7 @@
  */
 package com.safi.core.saflet;
 
+import java.util.logging.Level;
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.ActionStepException;
 
@@ -16,7 +17,6 @@ import com.safi.core.scripting.SafletScriptEnvironment;
 import com.safi.core.scripting.ScriptScope;
 import com.safi.db.manager.DBManagerException;
 
-import org.apache.log4j.Level;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;

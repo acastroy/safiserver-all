@@ -7,9 +7,9 @@
 package com.safi.core.actionstep.impl;
 
 import java.util.Collection;
-
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.Logger;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.mozilla.javascript.Wrapper;
-
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.ActionStepFactory;
@@ -522,12 +521,12 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
     if (context.isDebugging())
       context.touchVariables();
     // if (e != null) e.fillInStackTrace();
-    if (debugLog.isDebugEnabled()) {
+    if (debugLog.isLoggable(Level.FINEST)) {
       String msg = e.getLocalizedMessage();
       if (e.getCause() != null) {
         msg += " caused by: " + e.getCause().getLocalizedMessage();
       }
-      debugLog.error(getSaflet().getName() + "->" + name + ": " + msg);
+      debugLog.severe(getSaflet().getName() + "->" + name + ": " + msg);
 
     }
     next = getErrorActionStep();
@@ -740,26 +739,26 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
 
   @Override
   public void debug(String message) {
-    if (debugLog.isDebugEnabled())
-      debugLog.debug(name + ":" + message);
+    if (debugLog.isLoggable(Level.FINEST))
+      debugLog.finest(name + ":" + message);
   }
 
   @Override
   public void error(String message) {
-    if (debugLog.isDebugEnabled())
-      debugLog.error(name + ":" + message);
+    if (debugLog.isLoggable(Level.FINEST))
+      debugLog.severe(name + ":" + message);
   }
 
   @Override
   public void info(String message) {
-    if (debugLog.isDebugEnabled())
+    if (debugLog.isLoggable(Level.FINEST))
       debugLog.info(name + ":" + message);
   }
 
   @Override
   public void warn(String message) {
-    if (debugLog.isDebugEnabled())
-      debugLog.warn(name + ":" + message);
+    if (debugLog.isLoggable(Level.FINEST))
+      debugLog.warning(name + ":" + message);
   }
 
   @Override

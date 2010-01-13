@@ -7,6 +7,7 @@
 package com.safi.core.actionstep.impl;
 
 import java.util.Collection;
+import java.util.logging.Level;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -76,13 +77,13 @@ public class ChoiceImpl extends ActionStepImpl implements Choice {
     if (choices != null && !choices.isEmpty()) {
       try {
         Object criteria = resolveDynamicValue(value, context);
-        if (debugLog.isDebugEnabled())
+        if (debugLog.isLoggable(Level.FINEST))
           debug("Criterion value is "+criteria);
         for (CaseItem caseItem : choices) {
           Object result = resolveDynamicValue(caseItem.getDynamicValue(), context);
           if (isEquals(criteria, result)) {
             item = caseItem;
-            if (debugLog.isDebugEnabled())
+            if (debugLog.isLoggable(Level.FINEST))
               debug("Taking choice "+item.getLabelText());
             break;
           }
@@ -115,7 +116,7 @@ public class ChoiceImpl extends ActionStepImpl implements Choice {
     } catch (Exception e) {
       e.printStackTrace();
     }
-    if (debugLog.isDebugEnabled())
+    if (debugLog.isLoggable(Level.FINEST))
       debug("Translated value was "+translated);
     if (translated == null)
       return false;

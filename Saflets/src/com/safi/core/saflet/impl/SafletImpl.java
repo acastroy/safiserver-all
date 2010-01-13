@@ -12,14 +12,18 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.WeakHashMap;
+import java.util.logging.FileHandler;
+import java.util.logging.Handler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.apache.commons.collections.ReferenceMap;
 import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.Appender;
-import org.apache.log4j.FileAppender;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.PatternLayout;
+//import org.apache.log4j.Appender;
+//import org.apache.log4j.FileAppender;
+//import org.apache.log4j.Level;
+//import org.apache.log4j.Logger;
+//import org.apache.log4j.PatternLayout;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -45,6 +49,7 @@ import com.safi.core.scripting.SafletScriptEnvironment;
 import com.safi.core.scripting.ScriptScope;
 import com.safi.db.Variable;
 import com.safi.db.manager.DBManagerException;
+import com.safi.logging.SafiFileHandler;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>Saflet</b></em>'.
@@ -78,7 +83,7 @@ public abstract class SafletImpl extends EObjectImpl implements Saflet {
 
   private final static int DEFAULT_MAX_INVOCATIONS = 500;
   private final static int MAX_INVOCATIONS = DEFAULT_MAX_INVOCATIONS;
-  private final static Logger log = Logger.getLogger(SafletImpl.class);
+  private final static Logger log = Logger.getLogger(SafletImpl.class.getName());
 
   protected transient final static Map scriptRegistry = Collections
       .synchronizedMap(new ReferenceMap());
@@ -273,31 +278,29 @@ public abstract class SafletImpl extends EObjectImpl implements Saflet {
 
   @Override
   public void debug(String message) {
-    if (debugLog.isDebugEnabled())
-      debugLog.debug(message);
+  	if (debugLog.isLoggable(Level.FINEST)) debugLog.finest(message);
+      
   }
 
   @Override
   public void error(String message) {
     // if (debugLog.isDebugEnabled())
-    debugLog.error(message);
+    debugLog.severe(message);
   }
 
   @Override
   public void info(String message) {
-    if (debugLog.isInfoEnabled())
-      debugLog.info(message);
+  	if (debugLog.isLoggable(Level.INFO)) debugLog.info(message);
   }
 
   @Override
   public void warn(String message) {
-    if (debugLog.isEnabledFor(Level.WARN))
-      debugLog.warn(message);
+  	if (debugLog.isLoggable(Level.WARNING)) debugLog.warning(message);
   }
 
   @Override
   public void debug(String message, String filename) {
-    log(Level.DEBUG, message, filename);
+    log(Level.FINEST, message, filename);
   }
 
   @Override
@@ -307,60 +310,66 @@ public abstract class SafletImpl extends EObjectImpl implements Saflet {
 
   @Override
   public void warn(String message, String filename) {
-    log(Level.WARN, message, filename);
+    log(Level.WARNING, message, filename);
   }
 
   @Override
   public void error(String message, String filename) {
-    log(Level.ERROR, message, filename);
+    log(Level.SEVERE, message, filename);
   }
 
   @Override
   public void log(Level level, String message, String filename) {
     Level currLevel = null;
 
-    if (!debugLog.isEnabledFor(level)) {
-      currLevel = debugLog.getEffectiveLevel();
+    if (!debugLog.isLoggable(level)) {
+      currLevel = debugLog.getLevel();
       debugLog.setLevel(level);
     }
-    Appender app = null;
+    Handler app = null;
     if (StringUtils.isNotBlank(filename)) {
       app = getAppender(filename);
     }
     if (app != null)
-      debugLog.addAppender(app);
+      debugLog.addHandler(app);
     debugLog.log(level, message);
     if (app != null)
-      debugLog.removeAppender(app);
+      debugLog.removeHandler(app);
     if (currLevel != null)
       debugLog.setLevel(currLevel);
   }
 
   @Override
   public void error(String message, Throwable e) {
-    stdLog.error(message, e);
+    stdLog.log(Level.SEVERE, message, e);
   }
 
   @Override
   public void warn(String message, Throwable e) {
-    stdLog.warn(message, e);
+    stdLog.log(Level.WARNING, message, e);
   }
 
-  private Appender getAppender(String filename) {
-    Appender app = debugLog.getAppender(filename);
-    if (app == null) {
+  private Handler getAppender(String filename) {
+  	SafiFileHandler handler =null;
+  	for (Handler h : debugLog.getHandlers()){
+  		if (h instanceof SafiFileHandler && filename.equals(((SafiFileHandler)h).getBaseFileName())){
+  			handler = (SafiFileHandler)h;
+  			break;
+  		}
+  	}
+  	
+    if (handler == null) {
       try {
-        app = new FileAppender(new PatternLayout(SafletConstants.DEBUG_PATTERN_LAYOUT), filename,
-            true);
+      	handler = new SafiFileHandler(filename, true);
       } catch (IOException e) {
         // TODO Auto-generated catch block
-        log.error("Couldn't create logfile " + filename, e);
-        debugLog.error("Couldn't create log file with name " + filename + ": "
+        log.log(Level.SEVERE, "Couldn't create logfile " + filename, e);
+        debugLog.severe("Couldn't create log file with name " + filename + ": "
             + e.getLocalizedMessage());
         return null;
       }
     }
-    return app;
+    return handler;
   }
 
   /**

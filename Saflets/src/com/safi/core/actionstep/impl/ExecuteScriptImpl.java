@@ -6,6 +6,7 @@
  */
 package com.safi.core.actionstep.impl;
 
+import java.util.logging.Level;
 import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.actionstep.DynamicValue;
@@ -60,7 +61,7 @@ public class ExecuteScriptImpl extends ActionStepImpl implements ExecuteScript {
       
       if (scriptText != null)
         resolveDynamicValue(scriptText, context);
-      if (debugLog.isDebugEnabled())
+      if (debugLog.isLoggable(Level.FINEST))
         debug("Script "+name+" executed successfully");
     } catch (Exception e) {
     	e.printStackTrace();

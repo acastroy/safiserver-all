@@ -9,13 +9,12 @@ package com.safi.core.actionstep.impl;
 import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
-
+import java.util.logging.Level;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.actionstep.DBQueryId;
@@ -94,7 +93,7 @@ public class ExecuteUpdateImpl extends ActionStepImpl implements ExecuteUpdate {
       if (queryStatement == null)
         throw new ActionStepException("Query " + qry.getName() + " is not open.");
       int updated = -1;
-      if (debugLog.isDebugEnabled())
+      if (debugLog.isLoggable(Level.FINEST))
         debug("About to execute query " + qry.getName());
       long start = System.currentTimeMillis();
       if (queryStatement instanceof CallableStatement) {
@@ -109,7 +108,7 @@ public class ExecuteUpdateImpl extends ActionStepImpl implements ExecuteUpdate {
         idx = 2;
       } else
         idx = 1;
-      if (debugLog.isDebugEnabled()) {
+      if (debugLog.isLoggable(Level.FINEST)) {
         debug("Rows updated by query " + query.getId() + ": " + updated);
       }
       Variable v = resolveVariableFromName(rowsUpdatedVar, context);

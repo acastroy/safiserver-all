@@ -9,7 +9,7 @@ package com.safi.core.actionstep.impl;
 import java.sql.ResultSet;
 import java.util.Collection;
 import java.util.Date;
-
+import java.util.logging.Level;
 import org.apache.commons.lang.NotImplementedException;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.actionstep.DBResultSetId;
@@ -106,7 +105,7 @@ public class SetColValuesImpl extends ActionStepImpl implements SetColValues {
         Object val = resolveDynamicValue(value, context);
 
         Object cv = resolveDynamicValue(columnDV, context);
-        if (debugLog.isDebugEnabled())
+        if (debugLog.isLoggable(Level.FINEST))
           debug("getting value for column " + cv);
         Integer colNum = null;
         String colName = null;
@@ -124,7 +123,7 @@ public class SetColValuesImpl extends ActionStepImpl implements SetColValues {
         }
         SQLDataType setAsDatatype = mapping.getSetAsDatatype();
 
-        if (debugLog.isDebugEnabled())
+        if (debugLog.isLoggable(Level.FINEST))
           debug("trying to update value for column by column "
               + (colNum == null ? "number" : "name") + " as " + setAsDatatype + " with value "
               + VariableTranslator.translateValue(VariableType.TEXT, val));

@@ -9,13 +9,12 @@ package com.safi.core.actionstep.impl;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-
+import java.util.logging.Level;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.actionstep.DBConnectionId;
@@ -222,7 +221,7 @@ public class OpenQueryImpl extends ActionStepImpl implements OpenQuery {
 //                String id = query.getId()+"_"+qry.hashCode();
                 Statement jdbcStatement = null;
                 String querySql = qry.getQuerySql().replaceAll(":[a-zA-Z_][a-zA-z_0-9]+", "?");
-                if (debugLog.isDebugEnabled())
+                if (debugLog.isLoggable(Level.FINEST))
                   debug("Query SQL is "+querySql);
                 switch (qry.getQueryType()) {
                   case UPDATE:
@@ -277,7 +276,7 @@ public class OpenQueryImpl extends ActionStepImpl implements OpenQuery {
                 if (jdbcStatement == null)
                   exception = new ActionStepException("Couldn't generate statement from " + query.getId());
                 else{
-                  if (debugLog.isDebugEnabled()){
+                  if (debugLog.isLoggable(Level.FINEST)){
                     debug("Opened query with holdabilityMode="+holdabilityMode+", query="+query.getId()+", readOntly="+
                         readOnly+", scrollable="+scrollable+", scrollMode="+scrollMode);
                   }

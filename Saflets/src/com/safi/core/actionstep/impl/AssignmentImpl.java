@@ -6,6 +6,7 @@
  */
 package com.safi.core.actionstep.impl;
 
+import java.util.logging.Level;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -76,11 +77,11 @@ public class AssignmentImpl extends ActionStepImpl implements Assignment {
       if (v == null) {
         exception = new ActionStepException("Variable " + variableName + " could not be found");
       } else {
-        if (debugLog.isDebugEnabled())
+        if (debugLog.isLoggable(Level.FINEST))
           debug("Got variable "+v.getName()+" of type "+v.getType());
         Object result = resolveDynamicValue(value, context);
 
-        if (debugLog.isDebugEnabled())
+        if (debugLog.isLoggable(Level.FINEST))
           debug("Assigning value "+result+ " to variable");
         if (v.getScope() != VariableScope.GLOBAL)
           context.setVariableRawValue(v.getName(), VariableTranslator.translateValue(v.getType(),

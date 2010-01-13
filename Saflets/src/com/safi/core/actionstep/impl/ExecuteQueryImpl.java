@@ -10,6 +10,7 @@ import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.logging.Level;
 
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.emf.common.notify.Notification;
@@ -116,7 +117,7 @@ public class ExecuteQueryImpl extends ActionStepImpl implements ExecuteQuery {
       if (queryStatement == null)
         throw new ActionStepException("Query " + qry.getName() + " is not open.");
       ResultSet rs = null;
-      if (debugLog.isDebugEnabled())
+      if (debugLog.isLoggable(Level.FINEST))
         debug("About to execute query " + qry.getName());
       long start = System.currentTimeMillis();
       if (queryStatement instanceof CallableStatement) {
@@ -129,7 +130,7 @@ public class ExecuteQueryImpl extends ActionStepImpl implements ExecuteQuery {
         error("QueryObject " + queryStatement + " not recognized");
       if (rs == null)
         throw new ActionStepException("ResultSet was null");
-      if (debugLog.isDebugEnabled())
+      if (debugLog.isLoggable(Level.FINEST))
         debug("Query " + qry.getName() + " executed successfully in "
             + (System.currentTimeMillis() - start) + " milliseconds");
 

@@ -6,7 +6,7 @@
  */
 package com.safi.core.actionstep.impl;
 
-import org.apache.log4j.Level;
+import java.util.logging.Level;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -94,13 +94,13 @@ public class DebugLogImpl extends ActionStepImpl implements DebugLog {
       Object result = resolveDynamicValue(message, context);
       if (result == null) result = "";
       String msg = (String)VariableTranslator.translateValue(VariableType.TEXT, result);
-      Level lvl = Level.DEBUG;
+      Level lvl = Level.FINEST;
       switch (debugLevel){
         case WARN:
-          lvl = Level.WARN;
+          lvl = Level.WARNING;
           break;
         case ERROR:
-          lvl = Level.ERROR;
+          lvl = Level.SEVERE;
           break;
         case INFO:
           lvl = Level.INFO;

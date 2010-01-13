@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
 import org.apache.commons.lang.NotImplementedException;
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.emf.common.notify.Notification;
@@ -264,7 +265,7 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 				throw new ActionStepException("Couldn't find query with path " + query.getId());
 			// Uncomment the following for Production release
 			if (StringUtils.isNotBlank(qry.getCatalog())) {
-				if (debugLog.isDebugEnabled())
+				if (debugLog.isLoggable(Level.FINEST))
 					debug("Setting default catalog of connection " + conn.getName() + " to "
 					    + qry.getCatalog());
 				jdbcConnection.setCatalog(qry.getCatalog());
@@ -275,7 +276,7 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 				    + " is not owned by connection with path " + connection.getId());
 			Statement jdbcStatement = null;
 			String querySql = qry.getQuerySql().replaceAll(":[a-zA-Z_][a-zA-z_0-9]+", "?");
-			if (debugLog.isDebugEnabled())
+			if (debugLog.isLoggable(Level.FINEST))
 				debug("Query SQL is " + querySql);
 			switch (qry.getQueryType()) {
 			case UPDATE:
@@ -309,7 +310,7 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 			}
 			if (jdbcStatement == null)
 				throw new ActionStepException("Couldn't generate statement from " + query.getId());
-			if (debugLog.isDebugEnabled()) {
+			if (debugLog.isLoggable(Level.FINEST)) {
 				debug("Opened query with query=" + query.getId() + ", readOntly=" + readOnly
 				    + ", scrollable=" + scrollable);
 			}
@@ -383,7 +384,7 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 					} else if (queryStatement instanceof PreparedStatement) {
 						PreparedStatement ps = (PreparedStatement) queryStatement;
 						Object result = resolveDynamicValue(value, context);
-						if (debugLog.isDebugEnabled()) {
+						if (debugLog.isLoggable(Level.FINEST)) {
 							debug("setting param " + parameter.getIndex() + " to " + result);
 						}
 
@@ -432,7 +433,7 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 			if ((qry.getQueryType() == QueryType.SELECT)
 			    || qry.getQueryType() == QueryType.SP_SELECT) {
 				ResultSet rs = null;
-				if (debugLog.isDebugEnabled())
+				if (debugLog.isLoggable(Level.FINEST))
 					debug("About to execute query " + qry.getName());
 
 				if (queryStatement instanceof CallableStatement) {
@@ -456,7 +457,7 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 				// throw new ActionStepException("No rows returned");
 			} else { // update query
 				int updated = -1;
-				if (debugLog.isDebugEnabled())
+				if (debugLog.isLoggable(Level.FINEST))
 					debug("About to execute query " + qry.getName());
 				if (queryStatement instanceof CallableStatement) {
 					CallableStatement ps = (CallableStatement) queryStatement;
@@ -467,7 +468,7 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 				} else
 					error("QueryObject " + queryStatement + " not recognized");
 
-				if (debugLog.isDebugEnabled()) {
+				if (debugLog.isLoggable(Level.FINEST)) {
 					debug("Rows updated by query " + query.getId() + ": " + updated);
 				}
 				Variable v = resolveVariableFromName(rowsUpdatedVar, context);
@@ -482,7 +483,7 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 					}
 				}
 			}
-			if (debugLog.isDebugEnabled())
+			if (debugLog.isLoggable(Level.FINEST))
 				debug("Query " + qry.getName() + " executed successfully in "
 				    + (System.currentTimeMillis() - start) + " milliseconds");
 

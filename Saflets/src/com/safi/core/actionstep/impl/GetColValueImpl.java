@@ -10,13 +10,12 @@ import java.sql.Array;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Arrays;
-
+import java.util.logging.Level;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.actionstep.DBResultSetId;
@@ -135,7 +134,7 @@ public class GetColValueImpl extends ActionStepImpl implements GetColValue {
           exception = new ActionStepException("Couldn't find variable named " + varName);
         else {
           Object cv = resolveDynamicValue(column, context);
-          if (debugLog.isDebugEnabled())
+          if (debugLog.isLoggable(Level.FINEST))
             debug("getting value for column "+cv);
           Integer colNum = null;
           String colName = null;
@@ -151,7 +150,7 @@ public class GetColValueImpl extends ActionStepImpl implements GetColValue {
             }
           }
           
-          if (debugLog.isDebugEnabled())
+          if (debugLog.isLoggable(Level.FINEST))
             debug("getting value for column by column "+(colNum==null?"number":"name"));
           Object rawVal = null;
           ResultSet rs = resultSet.getJDBCResultSet();

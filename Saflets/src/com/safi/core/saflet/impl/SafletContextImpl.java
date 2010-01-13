@@ -8,10 +8,9 @@ package com.safi.core.saflet.impl;
 
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
-
-import org.apache.log4j.Logger;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
@@ -23,7 +22,6 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletContext;
 import com.safi.core.saflet.SafletException;
@@ -52,7 +50,7 @@ import com.safi.db.VariableScope;
  */
 public abstract class SafletContextImpl extends EObjectImpl implements SafletContext {
 
-  private final static Logger log = Logger.getLogger(SafletContextImpl.class);
+  private final static Logger log = Logger.getLogger(SafletContextImpl.class.getName());
   /**
    * The cached value of the '{@link #getExceptions() <em>Exceptions</em>}' attribute
    * list. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -256,7 +254,7 @@ public abstract class SafletContextImpl extends EObjectImpl implements SafletCon
       } catch (SafletException e) {
         // TODO Auto-generated catch block
         e.printStackTrace();
-        log.error("Couldn't get variable raw value with name " + name, e);
+        log.log(Level.SEVERE, "Couldn't get variable raw value with name " + name, e);
       }
     }
     Variable v = getVariable(name);
@@ -300,8 +298,8 @@ public abstract class SafletContextImpl extends EObjectImpl implements SafletCon
 
     Variable v2 = getVariable(v.getName());
     if (v2 != v) {
-      if (log.isDebugEnabled())
-        log.debug("Saflet context setting var " + v);
+      if (log.isLoggable(Level.FINEST))
+        log.finest("Saflet context setting var " + v);
       removeVariable(v.getName());
       getVariables().add(v);
     }

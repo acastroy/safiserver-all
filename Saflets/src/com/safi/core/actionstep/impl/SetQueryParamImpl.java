@@ -9,14 +9,13 @@ package com.safi.core.actionstep.impl;
 import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
 import java.util.Date;
-
+import java.util.logging.Level;
 import org.apache.commons.lang.NotImplementedException;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.actionstep.DBQueryId;
@@ -186,7 +185,7 @@ public class SetQueryParamImpl extends ActionStepImpl implements SetQueryParam {
       } else if (queryStatement instanceof PreparedStatement) {
         PreparedStatement ps = (PreparedStatement) queryStatement;
         Object result = resolveDynamicValue(value, context);
-        if (debugLog.isDebugEnabled()) {
+        if (debugLog.isLoggable(Level.FINEST)) {
           debug("setting param " + parameter.getIndex() + " to " + result);
         }
 

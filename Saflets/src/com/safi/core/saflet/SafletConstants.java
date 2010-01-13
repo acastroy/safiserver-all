@@ -9,7 +9,7 @@ public interface SafletConstants {
   
   public static final String WORKBENCH_DEBUGLOG      = "WORKBENCH_DEBUGLOG";
   public static final String STANDARD_LOG            = "STANDARD_LOG";
-  public static final String DEBUG_PATTERN_LAYOUT    = "%d{MM/dd/yy HH:mm:ss,SSS} %-5p %m%n";
+  public static final String DEBUG_PATTERN_LAYOUT    = "%L: %t %m [%C.%M]";
   public static final String DYNVALKEY_DISPLAY_TYPE = "displayType";
   public static final String DYNVALKEY_ACTUAL_TYPE = "actualType";
 }
