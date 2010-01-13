@@ -1,6 +1,6 @@
 package com.safi.server.preferences;
 
-import com.safi.asterisk.handler.mbean.SysInfo;
+import com.safi.server.saflet.mbean.SysInfo;
 
 public interface SafiServerStatusListener {
 

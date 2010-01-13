@@ -1,6 +1,6 @@
 package com.safi.server.preferences;
 
-import org.apache.log4j.Level;
+import java.util.logging.Level;
 
 /**
  * Constant definitions for plug-in preferences
@@ -71,10 +71,10 @@ public class PreferenceConstants {
 
   public static final String PREF_SERVER_TRACELOG_LEVEL  =  "PREF_SERVER_TRACELOG_LEVEL";
   public static final String PREF_LOG_LEVEL_OFF   = Level.OFF.toString();
-  public static final String PREF_LOG_LEVEL_DEBUG = Level.DEBUG.toString();
+  public static final String PREF_LOG_LEVEL_DEBUG = Level.FINEST.toString();
   public static final String PREF_LOG_LEVEL_INFO  = Level.INFO.toString();
-  public static final String PREF_LOG_LEVEL_WARN  = Level.WARN.toString();
-  public static final String PREF_LOG_LEVEL_ERROR = Level.ERROR.toString();
+  public static final String PREF_LOG_LEVEL_WARN  = Level.WARNING.toString();
+  public static final String PREF_LOG_LEVEL_ERROR = Level.SEVERE.toString();
   
   public static final String PREF_SERVER_INFO_UPDATE_PERIOD = "PREF_SERVER_INFO_UPDATE_PERIOD";
 	// public static final String P_BOOLEAN = "booleanPreference";
