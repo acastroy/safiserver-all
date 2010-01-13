@@ -29,7 +29,7 @@ Require-Bundle: AsteriskSafletDesigner.diagram;bundle-version="1.1.2",
  CoreActionPak1Model.edit;bundle-version="1.0.0",
  Saflets.edit;bundle-version="1.0.0",
  AsteriskCore.edit;bundle-version="1.0.0",
- SafiCommons;bundle-version="1.0.1"
+ SafiCommons;bundle-version="1.2.5"
 Bundle-Activator: com.safi.workshop.actionpak1.ActionPak1Plugin
 Bundle-ClassPath: icons/,
  .
