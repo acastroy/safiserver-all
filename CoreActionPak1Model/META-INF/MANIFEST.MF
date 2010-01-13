@@ -10,7 +10,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: com.safi.workshop.model.actionpak1,
  com.safi.workshop.model.actionpak1.impl,
  com.safi.workshop.model.actionpak1.util
-Require-Bundle: SafiCommons;bundle-version="1.0.0",
+Require-Bundle: SafiCommons;bundle-version="1.2.5",
  org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  SafiDB;visibility:=reexport,
