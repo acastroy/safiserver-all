@@ -2,7 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="lib" path="commons-beanutils.jar" sourcepath="D:/javalib/commons-beanutils-1.8.1/commons-beanutils-1.8.1-sources.jar"/>
-	<classpathentry exported="true" kind="lib" path="log4j-1.2.15.jar" sourcepath="D:/javalib/apache-log4j-1.2.15/src/main/java"/>
 	<classpathentry exported="true" kind="lib" path="bin/"/>
 	<classpathentry exported="true" kind="lib" path=".settings/"/>
 	<classpathentry exported="true" kind="lib" path="default_drivers/DB2/db2jcc4.jar"/>
