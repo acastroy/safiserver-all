@@ -11,7 +11,6 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
-import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.ChangeBoundsRequest;
@@ -35,6 +34,7 @@ import com.safi.workshop.edit.parts.ActionstepWithOutputParameters;
 import com.safi.workshop.edit.parts.ItemPanelEditPart;
 import com.safi.workshop.edit.parts.OutputEditPart;
 import com.safi.workshop.edit.policies.ActionstepCanonicalEditPolicy;
+import com.safi.workshop.edit.policies.ActionstepItemSemanticEditPolicy;
 import com.safi.workshop.model.actionpak1.ManagerAction;
 import com.safi.workshop.part.AsteriskVisualIDRegistry;
 
@@ -78,12 +78,15 @@ public class ManagerActionEditPart extends com.safi.workshop.edit.parts.Toolstep
                 .getViewAndElementDescriptor().getCreateElementRequestAdapter();
             IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
             if (type == ElementTypes.elementType_InputItem_50001) {
-              ManagerAction is = getManagerActionModel();
-                return UnexecutableCommand.INSTANCE;
-//              EditPart compartmentEditPart = getChildBySemanticHint(AsteriskVisualIDRegistry
-//                  .getType(InputItemPanelEditPart.VISUAL_ID));
-//              return compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
-            } 
+                EditPart compartmentEditPart = getChildBySemanticHint(AsteriskVisualIDRegistry
+                    .getType(InputItemPanelEditPart.VISUAL_ID));
+                return compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
+              }else
+                if (type == ElementTypes.elementType_OutputItem_50002) {
+                  EditPart compartmentEditPart = getChildBySemanticHint(AsteriskVisualIDRegistry
+                      .getType(OutputItemPanelEditPart.VISUAL_ID));
+                  return compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
+                }
 //            else if (type == ElementTypes.elementType_PropertyMappingItem_50003) {
 //              EditPart compartmentEditPart = getChildBySemanticHint(AsteriskVisualIDRegistry
 //                  .getType(PropertyMappingItemPanelEditPart.VISUAL_ID));
@@ -100,8 +103,7 @@ public class ManagerActionEditPart extends com.safi.workshop.edit.parts.Toolstep
     installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ManagerActionItemSemanticEditPolicy());
     // installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new
     // InitiatorItemSemanticEditPolicy());
-    // installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new
-    // ActionstepItemSemanticEditPolicy());
+    installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ActionstepItemSemanticEditPolicy());
     installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
     installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ActionstepCanonicalEditPolicy());
     installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());

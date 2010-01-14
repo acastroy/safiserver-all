@@ -67,27 +67,24 @@ public class ManagerActionItemSemanticEditPolicy extends AsteriskBaseItemSemanti
       return;
     }
     for (Iterator it = view.getChildren().iterator(); it.hasNext();) {
-      Node node = (Node) it.next();
-      switch (AsteriskVisualIDRegistry.getVisualID(node)) {
-        case OutputEditPart.VISUAL_ID:
-          cmd.add(getDestroyElementCommand(node));
-          break;
-        case InputItemPanelEditPart.VISUAL_ID:
-//        case PropertyMappingItemPanelEditPart.VISUAL_ID:
-//          for (Iterator cit = node.getChildren().iterator(); cit.hasNext();) {
-//            Node cnode = (Node) cit.next();
-//            switch (AsteriskVisualIDRegistry.getVisualID(cnode)) {
-//              case InputItemEditPart.VISUAL_ID:
-//                cmd.add(getDestroyElementCommand(cnode));
-//                break;
-//              case PropertyMappingItemEditPart.VISUAL_ID:
-//                cmd.add(getDestroyElementCommand(cnode));
-//                break;
-//            }
-//          }
-          break;
+        Node node = (Node) it.next();
+        switch (AsteriskVisualIDRegistry.getVisualID(node)) {
+          case OutputEditPart.VISUAL_ID:
+            cmd.add(getDestroyElementCommand(node));
+            break;
+          case InputItemPanelEditPart.VISUAL_ID:
+          case OutputItemPanelEditPart.VISUAL_ID:
+            for (Iterator cit = node.getChildren().iterator(); cit.hasNext();) {
+              Node cnode = (Node) cit.next();
+              switch (AsteriskVisualIDRegistry.getVisualID(cnode)) {
+                case InputItemEditPart.VISUAL_ID:
+                  cmd.add(getDestroyElementCommand(cnode));
+                  break;
+              }
+            }
+            break;
+        }
       }
-    }
   }
 
   /**

@@ -2,7 +2,6 @@ package com.safi.workshop.actionpak1.editpart;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -81,6 +80,7 @@ import org.eclipse.core.databinding.Binding;
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.observable.list.WritableList;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
+import org.eclipse.emf.edit.command.AddCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.databinding.swt.ISWTObservableValue;
 import org.eclipse.jface.databinding.swt.SWTObservables;
@@ -101,6 +101,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
 import com.safi.core.actionstep.ActionStepFactory;
+import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.InputItem;
 import com.safi.core.actionstep.Item;
 import com.safi.workshop.model.actionpak1.ManagerAction;
@@ -273,6 +274,7 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
         
 		inputItemEditorWidget = new ManagerActionInputParamEditorWidget(this,
 				SWT.NONE);
+		
 		inputItemEditorWidget.setEditingDomain(parent.getEditPart()
 				.getEditingDomain());
 		inputItemEditorWidget.setLayoutData(new GridData(SWT.FILL, SWT.CENTER,
@@ -284,7 +286,9 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 
 		IObservableList uiList = new WritableList((
 				managerAction.getInputs()), InputItem.class);
-		bindingContext.bindList(uiList, modelList, new ManagerActionTargetToModelUpdateStrategy(), new ManagerActionModelToTargetUpdateStrategy());
+		bindingContext.bindList(uiList, modelList,null , null);
+	   
+		//bindingContext.bindList(uiList, modelList, new ManagerActionTargetToModelUpdateStrategy(), null);
         inputItemEditorWidget.setTypeMap(this.getTypeInfo(this.getClassInfo(managerAction.getManagerActionType())));
 		inputItemEditorWidget.setItemList(uiList);
 		inputItemEditorWidget.setActionstepEditorDialog(parent);
@@ -315,13 +319,13 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 	        			  System.out.println(paraclasses[i]);
 	        		  }
 	        		    InputItem item = ActionStepFactory.eINSTANCE.createInputItem();
-	                    
+	        		    DynamicValue dynamicValue = ActionStepFactory.eINSTANCE.createDynamicValue();
 						item.setParentActionStep(managerAction); 
 						String typeName=paraclasses[0].getSimpleName();
 						//String typeName=typeNames[typeNames.length-1];
 						//item.setLabelText(method.getName().replace("set", ""));
 						item.setLabelText(typeName);
-				
+				        item.setDynamicValue(dynamicValue);
                         item.setParameterName(method.getName().replace("set", ""));
 					    
 					    
@@ -332,8 +336,15 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 	          }
 	         // managerAction.getInputs().clear();
 	         // managerAction.getInputs().addAll(list);
+	          
+	          if (!list.isEmpty()) {
+	        	  TransactionalEditingDomain editingDomain = this.getEditorDialog().getEditPart().getEditingDomain();
+					AddCommand cmd = new AddCommand(editingDomain, managerAction.getInputs(),
+					    list);
+					editingDomain.getCommandStack().execute(cmd);
+				}
 	          inputItemEditorWidget.setTypeMap(this.getTypeInfo(this.getClassInfo(managerAction.getManagerActionType())));
-	          managerAction.getInputs().addAll((Collection<? extends InputItem>) list);
+	        //  managerAction.getInputs().addAll((Collection<? extends InputItem>) list);
 	          this.inputItemEditorWidget.setItemList(list);
 	          
 	    	}catch(Exception ex){
@@ -571,7 +582,7 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 		//List<Item> inputItemlists=this.inputItemEditorWidget.getItemList();
 		//managerAction.getInputs().addAll((Collection<? extends InputItem>) inputItemlists);
 		
-		//new CaseItemReorderCommand(editPart.getEditingDomain(), editPart).execute();
+		new CaseItemReorderCommand(editPart.getEditingDomain(), editPart).execute();
 	}
 
 	@Override
