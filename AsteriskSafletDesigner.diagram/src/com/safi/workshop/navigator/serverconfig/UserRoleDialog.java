@@ -38,12 +38,12 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
-import com.safi.db.manager.DBManager;
-import com.safi.db.manager.DBManagerException;
-import com.safi.db.manager.EntitlementUtils;
 import com.safi.db.server.config.Entitlement;
 import com.safi.db.server.config.Role;
 import com.safi.server.plugin.SafiServerPlugin;
+import com.safi.server.saflet.manager.DBManager;
+import com.safi.server.saflet.manager.DBManagerException;
+import com.safi.server.saflet.manager.EntitlementUtils;
 import com.safi.workshop.part.AsteriskDiagramEditorUtil;
 
 public class UserRoleDialog extends TitleAreaDialog {

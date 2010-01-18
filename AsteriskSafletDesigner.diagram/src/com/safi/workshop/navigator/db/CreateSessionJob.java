@@ -25,7 +25,7 @@ import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.ui.IWorkbenchSite;
 import org.eclipse.ui.progress.IWorkbenchSiteProgressService;
 import org.hibernate.Session;
-import com.safi.db.manager.DBManager;
+import com.safi.server.saflet.manager.DBManager;
 import com.safi.workshop.part.AsteriskDiagramEditorUtil;
 import com.safi.workshop.sqlexplorer.Messages;
 

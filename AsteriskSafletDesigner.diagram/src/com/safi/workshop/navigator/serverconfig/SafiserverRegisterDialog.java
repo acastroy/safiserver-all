@@ -22,10 +22,10 @@ import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.internal.progress.ProgressMonitorJobsDialog;
-import com.safi.db.manager.DBManager;
 import com.safi.db.server.config.SafiServer;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.preferences.PreferenceConstants;
+import com.safi.server.saflet.manager.DBManager;
 import com.safi.workshop.part.AsteriskDiagramEditorUtil;
 import com.safi.workshop.util.SafletPersistenceManager;
 

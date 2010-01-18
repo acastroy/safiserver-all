@@ -5,12 +5,12 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IViewPart;
-import com.safi.db.manager.EntitlementUtils;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.User;
 import com.safi.server.manager.SafiServerManagementException;
 import com.safi.server.manager.SafiServerRemoteManager;
 import com.safi.server.plugin.SafiServerPlugin;
+import com.safi.server.saflet.manager.EntitlementUtils;
 import com.safi.workshop.part.AsteriskDiagramEditorUtil;
 
 public class RestartSafiServerAction implements org.eclipse.ui.IViewActionDelegate {

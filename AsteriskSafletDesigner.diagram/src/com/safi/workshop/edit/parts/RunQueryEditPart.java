@@ -42,7 +42,7 @@ import com.safi.core.actionstep.DBQueryId;
 import com.safi.core.actionstep.RunQuery;
 import com.safi.db.Query;
 import com.safi.db.SafiDriverManager;
-import com.safi.db.manager.DBManager;
+import com.safi.server.saflet.manager.DBManager;
 import com.safi.workshop.edit.policies.RunQueryCanonicalEditPolicy;
 import com.safi.workshop.edit.policies.RunQueryItemSemanticEditPolicy;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;

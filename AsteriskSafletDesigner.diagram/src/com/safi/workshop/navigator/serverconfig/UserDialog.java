@@ -49,12 +49,12 @@ import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.impl.SessionImpl;
 import org.hsqldb.Trace;
-import com.safi.db.manager.DBManager;
 import com.safi.db.server.config.Role;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.User;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.preferences.PreferenceConstants;
+import com.safi.server.saflet.manager.DBManager;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.safi.workshop.part.AsteriskDiagramEditorUtil;
 

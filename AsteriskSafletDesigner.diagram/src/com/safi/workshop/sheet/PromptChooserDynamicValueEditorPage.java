@@ -5,7 +5,7 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Composite;
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.DynamicValueType;
-import com.safi.db.manager.DBManagerException;
+import com.safi.server.saflet.manager.DBManagerException;
 import com.safi.workshop.audio.PromptChooser;
 
 public class PromptChooserDynamicValueEditorPage extends AbstractDynamicValueEditorPage {

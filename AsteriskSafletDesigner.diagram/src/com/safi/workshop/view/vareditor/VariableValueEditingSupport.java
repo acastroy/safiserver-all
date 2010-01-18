@@ -14,7 +14,7 @@ import com.safi.core.actionstep.util.VariableTranslator;
 import com.safi.db.DbPackage;
 import com.safi.db.Variable;
 import com.safi.db.VariableScope;
-import com.safi.db.manager.DBManager;
+import com.safi.server.saflet.manager.DBManager;
 import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 

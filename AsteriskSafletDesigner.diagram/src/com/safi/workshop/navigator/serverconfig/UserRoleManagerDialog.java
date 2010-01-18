@@ -32,12 +32,12 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import com.safi.db.manager.DBManager;
-import com.safi.db.manager.DBManagerException;
-import com.safi.db.manager.EntitlementUtils;
 import com.safi.db.server.config.ConfigFactory;
 import com.safi.db.server.config.Role;
 import com.safi.server.plugin.SafiServerPlugin;
+import com.safi.server.saflet.manager.DBManager;
+import com.safi.server.saflet.manager.DBManagerException;
+import com.safi.server.saflet.manager.EntitlementUtils;
 import com.safi.workshop.part.AsteriskDiagramEditorUtil;
 
 public class UserRoleManagerDialog extends TitleAreaDialog {

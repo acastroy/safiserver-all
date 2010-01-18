@@ -7,11 +7,11 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.window.Window;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
-import com.safi.db.manager.EntitlementUtils;
 import com.safi.db.server.config.AsteriskServer;
 import com.safi.db.server.config.User;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.preferences.AsteriskConfigurationDialog;
+import com.safi.server.saflet.manager.EntitlementUtils;
 import com.safi.workshop.part.AsteriskDiagramEditorUtil;
 
 public class ModifyAsteriskServerAction implements IWorkbenchWindowActionDelegate {

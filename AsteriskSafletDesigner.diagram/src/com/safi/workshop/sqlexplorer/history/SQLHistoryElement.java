@@ -5,7 +5,7 @@ import java.util.Date;
 import org.dom4j.Element;
 import org.dom4j.tree.DefaultElement;
 import com.safi.db.Query;
-import com.safi.db.manager.DBManager;
+import com.safi.server.saflet.manager.DBManager;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.safi.workshop.sqlexplorer.IConstants;
 import com.safi.workshop.sqlexplorer.dbproduct.Alias;

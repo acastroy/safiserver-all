@@ -12,12 +12,12 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
-import com.safi.db.manager.EntitlementUtils;
 import com.safi.db.server.config.AsteriskServer;
 import com.safi.db.server.config.ConfigFactory;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.User;
 import com.safi.server.plugin.SafiServerPlugin;
+import com.safi.server.saflet.manager.EntitlementUtils;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 
 public class ServerResourcesContentProvider implements ITreeContentProvider, Adapter {

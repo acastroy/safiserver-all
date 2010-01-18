@@ -6,8 +6,8 @@ import org.eclipse.ui.IElementFactory;
 import org.eclipse.ui.IMemento;
 import com.safi.db.Query;
 import com.safi.db.SafiDriverManager;
-import com.safi.db.manager.DBManager;
 import com.safi.server.plugin.SafiServerPlugin;
+import com.safi.server.saflet.manager.DBManager;
 
 public class SQLEditorInputFactory implements IElementFactory {
 

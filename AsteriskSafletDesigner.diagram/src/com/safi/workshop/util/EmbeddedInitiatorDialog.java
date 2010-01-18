@@ -292,7 +292,7 @@ public class EmbeddedInitiatorDialog extends Dialog {
       client.setAstIp(asteriskServerIPText.getText());
       client.setHost((String) safiServerIPText.getData());
       try {
-        client.setPort(SafiServerPlugin.getDefault().getActualManagementPort());
+        client.setPort(SafiServerPlugin.getDefault().getLocalTunneledManagementPort());
       } catch (NumberFormatException e) {
         // TODO Auto-generated catch block
         e.printStackTrace();

@@ -40,9 +40,9 @@ import com.safi.db.DBDriver;
 import com.safi.db.Query;
 import com.safi.db.QueryParameter;
 import com.safi.db.SafiDriverManager;
-import com.safi.db.manager.DBManager;
-import com.safi.db.manager.DBManagerException;
 import com.safi.server.plugin.SafiServerPlugin;
+import com.safi.server.saflet.manager.DBManager;
+import com.safi.server.saflet.manager.DBManagerException;
 
 public class DBResourceChooser extends TitleAreaDialog {
 

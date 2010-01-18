@@ -6,9 +6,9 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import com.safi.core.saflet.SafletContext;
 import com.safi.db.Variable;
 import com.safi.db.VariableScope;
-import com.safi.db.manager.DBManager;
-import com.safi.db.manager.DBManagerException;
 import com.safi.server.plugin.SafiServerPlugin;
+import com.safi.server.saflet.manager.DBManager;
+import com.safi.server.saflet.manager.DBManagerException;
 import com.safi.workshop.part.AsteriskDiagramEditorUtil;
 
 public class VariableRemoveCommand extends AbstractOverrideableCommand {

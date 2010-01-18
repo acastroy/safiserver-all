@@ -39,12 +39,12 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.hibernate.Session;
 import org.hibernate.impl.SessionImpl;
-import com.safi.db.manager.DBManager;
-import com.safi.db.manager.DBManagerException;
 import com.safi.db.server.config.ConfigFactory;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.User;
 import com.safi.server.plugin.SafiServerPlugin;
+import com.safi.server.saflet.manager.DBManager;
+import com.safi.server.saflet.manager.DBManagerException;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 
 public class UserManagerDialog extends TitleAreaDialog {

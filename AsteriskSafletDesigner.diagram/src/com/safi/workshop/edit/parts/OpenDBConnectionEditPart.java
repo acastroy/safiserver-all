@@ -28,7 +28,7 @@ import com.safi.core.actionstep.OpenDBConnection;
 import com.safi.db.DBConnection;
 import com.safi.db.DBDriver;
 import com.safi.db.SafiDriverManager;
-import com.safi.db.manager.DBManager;
+import com.safi.server.saflet.manager.DBManager;
 import com.safi.workshop.edit.policies.OpenDBConnectionCanonicalEditPolicy;
 import com.safi.workshop.edit.policies.OpenDBConnectionItemSemanticEditPolicy;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;

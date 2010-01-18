@@ -34,9 +34,9 @@ import org.eclipse.ui.views.properties.TextPropertyDescriptor;
 import com.safi.db.DBConnection;
 import com.safi.db.DbFactory;
 import com.safi.db.Query;
-import com.safi.db.manager.DBManagerException;
-import com.safi.db.manager.DBResourceException;
-import com.safi.db.manager.ResourceModifiedException;
+import com.safi.server.saflet.manager.DBManagerException;
+import com.safi.server.saflet.manager.DBResourceException;
+import com.safi.server.saflet.manager.ResourceModifiedException;
 import com.safi.workshop.sqlexplorer.ExplorerException;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
 

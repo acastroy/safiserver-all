@@ -4,8 +4,8 @@ import org.apache.commons.lang.StringUtils;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.wizard.Wizard;
 import com.safi.db.SafiDriverManager;
-import com.safi.db.manager.DBManager;
 import com.safi.server.plugin.SafiServerPlugin;
+import com.safi.server.saflet.manager.DBManager;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
 
 public class ImportDBResourcesWizard extends Wizard {

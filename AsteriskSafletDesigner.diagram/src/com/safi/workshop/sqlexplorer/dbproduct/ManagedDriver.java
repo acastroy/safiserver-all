@@ -1,14 +1,18 @@
 package com.safi.workshop.sqlexplorer.dbproduct;
 
 import java.beans.PropertyChangeListener;
+import java.net.InetAddress;
 import java.sql.Connection;
 import java.sql.Driver;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import net.sourceforge.squirrel_sql.fw.id.IIdentifier;
@@ -25,6 +29,7 @@ import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.PropertyDescriptor;
 import org.eclipse.ui.views.properties.TextPropertyDescriptor;
 import com.safi.db.DBDriver;
+import com.safi.server.manager.SafiServerRemoteManager;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.util.Utils;
 import com.safi.workshop.sqlexplorer.ExplorerException;
@@ -36,6 +41,9 @@ import com.safi.workshop.sqlexplorer.SQLCannotConnectException;
  * @author John Spackman
  */
 public class ManagedDriver implements Comparable<ManagedDriver>, IAdaptable {
+	
+	
+	
 
   // public final static String REGEX_PATT_JDBC_URL =
   // "^[a-zA-Z0-9\\-_]+(?:\\:[a-zA-Z0-9\\-_]+){0,6}:\\W*(?:([a-zA-Z0-9\\-\\.]+)|(?:(?:\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])\\.(?:\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])\\.(?:\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])\\.(?:\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])))(?:\\:([0-9]+))?(?:\\W[a-zA-Z0-9\\-\\._\\?\\,\\'/\\\\\\+&amp;%\\$#\\=~]*)?$";
@@ -125,6 +133,7 @@ public class ManagedDriver implements Comparable<ManagedDriver>, IAdaptable {
     }
   }
 
+  private final static Logger log = Logger.getLogger(ManagedDriver.class.getName());
   private String id;
   private String driverClassName;
   private String url;
@@ -136,6 +145,14 @@ public class ManagedDriver implements Comparable<ManagedDriver>, IAdaptable {
   private String urlRegexPattern;
   private Map<Integer, Integer> tunnelledPortMap = new HashMap<Integer, Integer>();
 
+  static {
+		try {
+	    Class.forName("org.objectweb.rmijdbc.Driver");
+    } catch (ClassNotFoundException e) {
+	    e.printStackTrace();
+	    log.log(Level.SEVERE, "Couldn't find proxy driver", e);
+    }
+	}
   public ManagedDriver(String id) {
     this.id = id;
   }
@@ -159,10 +176,10 @@ public class ManagedDriver implements Comparable<ManagedDriver>, IAdaptable {
    */
   public ManagedDriver(Element root) {
     super();
-    id = root.attributeValue(DriverManager.ID);
-    driverClassName = root.elementText(DriverManager.DRIVER_CLASS);
-    url = root.elementText(DriverManager.URL);
-    Element jarsElem = root.element(DriverManager.JARS);
+    id = root.attributeValue(com.safi.workshop.sqlexplorer.dbproduct.DriverManager.ID);
+    driverClassName = root.elementText(com.safi.workshop.sqlexplorer.dbproduct.DriverManager.DRIVER_CLASS);
+    url = root.elementText(com.safi.workshop.sqlexplorer.dbproduct.DriverManager.URL);
+    Element jarsElem = root.element(com.safi.workshop.sqlexplorer.dbproduct.DriverManager.JARS);
     List<Element> list = jarsElem.elements();
     if (list != null)
       for (Element jarElem : list) {
@@ -243,83 +260,169 @@ public class ManagedDriver implements Comparable<ManagedDriver>, IAdaptable {
         .describeConnection(jdbcConn));
   }
 
+//  public Connection getJDBCConnection(String url, Properties props) throws Exception {
+//    Connection jdbcConn = null;
+//    if (!isDriverClassLoaded())
+//      try {
+//        registerSQLDriver();
+//      } catch (ClassNotFoundException e) {
+//        throw new SQLException(
+//            "Cannot load JDBC driver "
+//                + driverClassName
+//                + " because the class cannot be found; please check the classpath in Preferences -> SQL Explorer -> JDBC Drivers ");
+//      }
+//    if (!isDriverClassLoaded())
+//      throw new SQLException("Cannot load JDBC driver " + driverClassName);
+//
+//    if (SafiServerPlugin.getDefault().isUseTunnel()) {
+//
+//      java.util.regex.Pattern p = Pattern.compile(getDriver().getUrlRegexPattern());
+//      System.err.println("URL is " + url);
+//      Matcher m = p.matcher(url);
+//      int port = defaultPort;
+//
+//      if (m.matches() && m.groupCount() >= 2) {
+//        String portString = m.group(2);
+//        String addr = m.group(1);
+//
+//        // InetAddress iaddr = InetAddress.getByName(addr);
+//        // if (iaddr.isReachable(5000)){
+//        // port = -1;
+//        // }
+//        // if (iaddr.isSiteLocalAddress() || iaddr.isAnyLocalAddress() ||
+//        // iaddr.isLinkLocalAddress() || iaddr.isLoopbackAddress()){
+//        // port = -1;
+//        // }
+//        // else
+//        if (StringUtils.isNotBlank(portString)) {
+//          try {
+//            port = Integer.parseInt(portString.trim());
+//
+//          } catch (NumberFormatException e) {
+//            e.printStackTrace();
+//            port = defaultPort;
+//          }
+//        }
+//
+//      }
+//
+//      if (m.matches()) {
+//        Integer tunnelledPort = this.tunnelledPortMap.get(port);
+//
+//        if (tunnelledPort == null && m.matches()) {
+//          tunnelledPort = Utils.findFreePort();
+//          this.tunnelledPortMap.put(port, tunnelledPort);
+//        }
+//        else {
+//        	int oldPort = tunnelledPort;
+//        	tunnelledPort = SafiServerPlugin.getDefault().updateForwardedPortIfNecessary(tunnelledPort);
+//        	if (oldPort != tunnelledPort)
+//        	{
+//        		tunnelledPortMap.put(port, tunnelledPort);
+//        	}
+//        }
+//
+//        String dbhost = url.substring(m.start(1), m.end(1));
+//        if (tunnelledPort != -1) {
+//          url = constructNewURL(url, m, tunnelledPort);
+//          System.err.println("tunnelled URL is " + url);
+//        }
+//        if (tunnelledPort > 0 && !SafiServerPlugin.getDefault().isLocalPortForwarded(tunnelledPort)) {
+//          SafiServerPlugin.getDefault().addTunnel(tunnelledPort, port, dbhost);
+//        }
+//      }
+//    }
+//
+//    jdbcConn = jdbcDriver.connect(url, props);
+//    return jdbcConn;
+//  }
+
   public Connection getJDBCConnection(String url, Properties props) throws Exception {
-    Connection jdbcConn = null;
-    if (!isDriverClassLoaded())
-      try {
-        registerSQLDriver();
-      } catch (ClassNotFoundException e) {
-        throw new SQLException(
-            "Cannot load JDBC driver "
-                + driverClassName
-                + " because the class cannot be found; please check the classpath in Preferences -> SQL Explorer -> JDBC Drivers ");
-      }
-    if (!isDriverClassLoaded())
-      throw new SQLException("Cannot load JDBC driver " + driverClassName);
+  	
+  	if (!SafiServerPlugin.getDefault().isConnected())
+  		throw new IllegalStateException("No SafiServer connection found. You must be connected to a SafiServer to create database connections");
+//    Connection jdbcConn = null;
+//    if (!isDriverClassLoaded())
+//      try {
+//        registerSQLDriver();
+//      } catch (ClassNotFoundException e) {
+//        throw new SQLException(
+//            "Cannot load JDBC driver "
+//                + driverClassName
+//                + " because the class cannot be found; please check the classpath in Preferences -> SQL Explorer -> JDBC Drivers ");
+//      }
+//    if (!isDriverClassLoaded())
+//      throw new SQLException("Cannot load JDBC driver " + driverClassName);
 
-    if (SafiServerPlugin.getDefault().isUseTunnel()) {
+//    if (SafiServerPlugin.getDefault().isUseTunnel()) {
+    	String jurl = "jdbc:rmi://127.0.0.1:"+SafiServerPlugin.getDefault().getSafiServer(true).getManagementPort()+"/"+url;
 
-      java.util.regex.Pattern p = Pattern.compile(getDriver().getUrlRegexPattern());
-      System.err.println("URL is " + url);
-      Matcher m = p.matcher(url);
-      int port = defaultPort;
+    	 if (SafiServerPlugin.getDefault().isUseTunnel()) {
+    		 int proxyServicePort = SafiServerRemoteManager.getInstance().getDBProxyServicePort();
+    		 
+//    		 int tunnelledPort = SafiServerPlugin.getDefault().updateForwardedPortIfNecessary(proxyServicePort);
+    		 if (!SafiServerPlugin.getDefault().isLocalPortForwarded(proxyServicePort)){
+    			 SafiServerPlugin.getDefault().addTunnel(proxyServicePort, proxyServicePort, "127.0.0.1");
+    		 }
+    	 }
+         // RmiJdbc URL is of the form:
+         // jdbc:rmi://<rmiHostName[:port]>/<jdbc-url>
 
-      if (m.matches() && m.groupCount() >= 2) {
-        String portString = m.group(2);
-        String addr = m.group(1);
+       Connection c = DriverManager.getConnection(jurl, props);
+       System.err.println("Got connect "+c);
+       return c;
+//      java.util.regex.Pattern p = Pattern.compile(getDriver().getUrlRegexPattern());
+//      System.err.println("URL is " + url);
+//      Matcher m = p.matcher(url);
+//      int port = defaultPort;
+//
+//      if (m.matches() && m.groupCount() >= 2) {
+//      	
+//        String portString = m.group(2);
+//        String addr = m.group(1);
+//
+//        if (StringUtils.isNotBlank(portString)) {
+//          try {
+//            port = Integer.parseInt(portString.trim());
+//
+//          } catch (NumberFormatException e) {
+//            e.printStackTrace();
+//            port = defaultPort;
+//          }
+//        }
+//
+//      }
+//
+//      if (m.matches()) {
+//        Integer tunnelledPort = this.tunnelledPortMap.get(port);
+//
+//        if (tunnelledPort == null && m.matches()) {
+//          tunnelledPort = Utils.findFreePort();
+//          this.tunnelledPortMap.put(port, tunnelledPort);
+//        }
+//        else {
+//        	int oldPort = tunnelledPort;
+//        	tunnelledPort = SafiServerPlugin.getDefault().updateForwardedPortIfNecessary(tunnelledPort);
+//        	if (oldPort != tunnelledPort)
+//        	{
+//        		tunnelledPortMap.put(port, tunnelledPort);
+//        	}
+//        }
+//
+//        String dbhost = url.substring(m.start(1), m.end(1));
+//        if (tunnelledPort != -1) {
+//          url = constructNewURL(url, m, tunnelledPort);
+//          System.err.println("tunnelled URL is " + url);
+//        }
+//        if (tunnelledPort > 0 && !SafiServerPlugin.getDefault().isLocalPortForwarded(tunnelledPort)) {
+//          SafiServerPlugin.getDefault().addTunnel(tunnelledPort, port, dbhost);
+//        }
+//      }
+//    }
 
-        // InetAddress iaddr = InetAddress.getByName(addr);
-        // if (iaddr.isReachable(5000)){
-        // port = -1;
-        // }
-        // if (iaddr.isSiteLocalAddress() || iaddr.isAnyLocalAddress() ||
-        // iaddr.isLinkLocalAddress() || iaddr.isLoopbackAddress()){
-        // port = -1;
-        // }
-        // else
-        if (StringUtils.isNotBlank(portString)) {
-          try {
-            port = Integer.parseInt(portString.trim());
-
-          } catch (NumberFormatException e) {
-            e.printStackTrace();
-            port = defaultPort;
-          }
-        }
-
-      }
-
-      if (m.matches()) {
-        Integer tunnelledPort = this.tunnelledPortMap.get(port);
-
-        if (tunnelledPort == null && m.matches()) {
-          tunnelledPort = Utils.findFreePort();
-          this.tunnelledPortMap.put(port, tunnelledPort);
-        }
-        else {
-        	int oldPort = tunnelledPort;
-        	tunnelledPort = SafiServerPlugin.getDefault().updateForwardedPortIfNecessary(tunnelledPort);
-        	if (oldPort != tunnelledPort)
-        	{
-        		tunnelledPortMap.put(port, tunnelledPort);
-        	}
-        }
-
-        String dbhost = url.substring(m.start(1), m.end(1));
-        if (tunnelledPort != -1) {
-          url = constructNewURL(url, m, tunnelledPort);
-          System.err.println("tunnelled URL is " + url);
-        }
-        if (tunnelledPort > 0 && !SafiServerPlugin.getDefault().isLocalPortForwarded(tunnelledPort)) {
-          SafiServerPlugin.getDefault().addTunnel(tunnelledPort, port, dbhost);
-        }
-      }
-    }
-
-    jdbcConn = jdbcDriver.connect(url, props);
-    return jdbcConn;
+//    jdbcConn = jdbcDriver.connect(url, props);
+//    return jdbcConn;
   }
-
   private String constructNewURL(String url, Matcher m, int tunnelledPort2) {
     StringBuffer buf = new StringBuffer(url);
     String portString;
