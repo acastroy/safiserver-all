@@ -83,8 +83,10 @@ import org.asteriskjava.manager.response.ManagerError;
 import org.asteriskjava.manager.response.ManagerResponse;
 import org.asteriskjava.util.ReflectionUtil;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import com.safi.asterisk.util.AsteriskSafletConstants;
@@ -93,8 +95,12 @@ import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.InputItem;
 import com.safi.core.actionstep.OutputParameter;
 import com.safi.core.actionstep.impl.ParameterizedActionstepImpl;
+import com.safi.core.actionstep.util.VariableTranslator;
 import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletContext;
+import com.safi.core.saflet.SafletEnvironment;
+import com.safi.db.Variable;
+import com.safi.db.VariableScope;
 import com.safi.workshop.model.actionpak1.Actionpak1Package;
 import com.safi.workshop.model.actionpak1.ManagerAction;
 import com.safi.workshop.model.actionpak1.ManagerActionType;
@@ -107,6 +113,7 @@ import com.safi.workshop.model.actionpak1.ManagerActionType;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.safi.workshop.model.actionpak1.impl.ManagerActionImpl#getManagerActionType <em>Manager Action Type</em>}</li>
+ *   <li>{@link com.safi.workshop.model.actionpak1.impl.ManagerActionImpl#getManagerResponse <em>Manager Response</em>}</li>
  * </ul>
  * </p>
  *
@@ -132,6 +139,16 @@ public class ManagerActionImpl extends ParameterizedActionstepImpl implements Ma
 	 * @ordered
 	 */
 	protected ManagerActionType managerActionType = MANAGER_ACTION_TYPE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getManagerResponse() <em>Manager Response</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getManagerResponse()
+	 * @generated
+	 * @ordered
+	 */
+	protected DynamicValue managerResponse;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,11 +195,70 @@ public class ManagerActionImpl extends ParameterizedActionstepImpl implements Ma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public DynamicValue getManagerResponse() {
+		return managerResponse;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetManagerResponse(DynamicValue newManagerResponse, NotificationChain msgs) {
+		DynamicValue oldManagerResponse = managerResponse;
+		managerResponse = newManagerResponse;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Actionpak1Package.MANAGER_ACTION__MANAGER_RESPONSE, oldManagerResponse, newManagerResponse);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setManagerResponse(DynamicValue newManagerResponse) {
+		if (newManagerResponse != managerResponse) {
+			NotificationChain msgs = null;
+			if (managerResponse != null)
+				msgs = ((InternalEObject)managerResponse).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Actionpak1Package.MANAGER_ACTION__MANAGER_RESPONSE, null, msgs);
+			if (newManagerResponse != null)
+				msgs = ((InternalEObject)newManagerResponse).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Actionpak1Package.MANAGER_ACTION__MANAGER_RESPONSE, null, msgs);
+			msgs = basicSetManagerResponse(newManagerResponse, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Actionpak1Package.MANAGER_ACTION__MANAGER_RESPONSE, newManagerResponse, newManagerResponse));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Actionpak1Package.MANAGER_ACTION__MANAGER_RESPONSE:
+				return basicSetManagerResponse(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Actionpak1Package.MANAGER_ACTION__MANAGER_ACTION_TYPE:
 				return getManagerActionType();
+			case Actionpak1Package.MANAGER_ACTION__MANAGER_RESPONSE:
+				return getManagerResponse();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -197,6 +273,9 @@ public class ManagerActionImpl extends ParameterizedActionstepImpl implements Ma
 		switch (featureID) {
 			case Actionpak1Package.MANAGER_ACTION__MANAGER_ACTION_TYPE:
 				setManagerActionType((ManagerActionType)newValue);
+				return;
+			case Actionpak1Package.MANAGER_ACTION__MANAGER_RESPONSE:
+				setManagerResponse((DynamicValue)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -213,6 +292,9 @@ public class ManagerActionImpl extends ParameterizedActionstepImpl implements Ma
 			case Actionpak1Package.MANAGER_ACTION__MANAGER_ACTION_TYPE:
 				setManagerActionType(MANAGER_ACTION_TYPE_EDEFAULT);
 				return;
+			case Actionpak1Package.MANAGER_ACTION__MANAGER_RESPONSE:
+				setManagerResponse((DynamicValue)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -227,6 +309,8 @@ public class ManagerActionImpl extends ParameterizedActionstepImpl implements Ma
 		switch (featureID) {
 			case Actionpak1Package.MANAGER_ACTION__MANAGER_ACTION_TYPE:
 				return managerActionType != MANAGER_ACTION_TYPE_EDEFAULT;
+			case Actionpak1Package.MANAGER_ACTION__MANAGER_RESPONSE:
+				return managerResponse != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -289,9 +373,16 @@ public class ManagerActionImpl extends ParameterizedActionstepImpl implements Ma
 				  }
 			  }
 		  }
-		  EList<OutputParameter> outputs=this.getOutputParameters();
-		  OutputParameter outputVal=(OutputParameter)outputs.get(0);
 		  
+		  Variable v = null;
+
+	        try {
+	          v = resolveVariableFromName(this.managerResponse, context);
+	        } catch (Exception e) {
+	          e.printStackTrace();
+	        }
+		  
+		 
 		  ManagerResponse managerResponse=null;
 		  ManagerResponse response = connection.sendAction(managerActionObject,
 		          Saflet.DEFAULT_MANAGER_ACTION_TIMEOUT);
@@ -300,11 +391,17 @@ public class ManagerActionImpl extends ParameterizedActionstepImpl implements Ma
 		      if (response instanceof ManagerError)
 		        exception = new ActionStepException("Couldn't monitor channel: " + response.getMessage());
 
-		  if(outputVal!=null){
-		   DynamicValue val=outputVal.getDynamicValue();
-		   val.setText(managerResponse.getMessage());
-		   //outputVal.setDynamicValue(val);
-		  }
+		      if (v != null) {
+		          if (v.getScope() != VariableScope.GLOBAL)
+		            context.setVariableRawValue(v.getName(), VariableTranslator.translateValue(v.getType(),
+		                response));
+		          else {
+		            SafletEnvironment env = getSaflet().getSafletEnvironment();
+		            env.setGlobalVariableValue(v.getName(), VariableTranslator.translateValue(v.getType(),
+		                response));
+		          }
+		        } 
+
 		}catch(Exception ex){
 		  exception = ex;
 		}

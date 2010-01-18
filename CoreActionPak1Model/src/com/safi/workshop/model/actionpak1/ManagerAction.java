@@ -6,6 +6,7 @@
  */
 package com.safi.workshop.model.actionpak1;
 
+import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.ParameterizedActionstep;
 
 /**
@@ -17,6 +18,7 @@ import com.safi.core.actionstep.ParameterizedActionstep;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.safi.workshop.model.actionpak1.ManagerAction#getManagerActionType <em>Manager Action Type</em>}</li>
+ *   <li>{@link com.safi.workshop.model.actionpak1.ManagerAction#getManagerResponse <em>Manager Response</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,5 +55,34 @@ public interface ManagerAction extends ParameterizedActionstep {
 	 * @generated
 	 */
 	void setManagerActionType(ManagerActionType value);
+
+	/**
+	 * Returns the value of the '<em><b>Manager Response</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Manager Response</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Manager Response</em>' containment reference.
+	 * @see #setManagerResponse(DynamicValue)
+	 * @see com.safi.workshop.model.actionpak1.Actionpak1Package#getManagerAction_ManagerResponse()
+	 * @model containment="true" ordered="false"
+	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The assignee variable' expectedReturnType='Object' helperClass=''"
+	 *        annotation="Directionality output='true'"
+	 *        annotation="MetaProperty displayText='Variable'"
+	 * @generated
+	 */
+	DynamicValue getManagerResponse();
+
+	/**
+	 * Sets the value of the '{@link com.safi.workshop.model.actionpak1.ManagerAction#getManagerResponse <em>Manager Response</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Manager Response</em>' containment reference.
+	 * @see #getManagerResponse()
+	 * @generated
+	 */
+	void setManagerResponse(DynamicValue value);
 
 } // ManagerAction
