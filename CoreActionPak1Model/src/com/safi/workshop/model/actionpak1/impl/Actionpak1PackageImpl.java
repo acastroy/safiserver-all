@@ -231,6 +231,15 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getManagerAction_ManagerResponse() {
+		return (EReference)managerActionEClass.getEStructuralFeatures().get(1);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getManagerActionType() {
 		return managerActionTypeEEnum;
 	}
@@ -277,6 +286,7 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 
 		managerActionEClass = createEClass(MANAGER_ACTION);
 		createEAttribute(managerActionEClass, MANAGER_ACTION__MANAGER_ACTION_TYPE);
+		createEReference(managerActionEClass, MANAGER_ACTION__MANAGER_RESPONSE);
 
 		// Create enums
 		managerActionTypeEEnum = createEEnum(MANAGER_ACTION_TYPE);
@@ -336,6 +346,7 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 
 		initEClass(managerActionEClass, ManagerAction.class, "ManagerAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getManagerAction_ManagerActionType(), this.getManagerActionType(), "managerActionType", null, 0, 1, ManagerAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getManagerAction_ManagerResponse(), theActionStepPackage.getDynamicValue(), null, "managerResponse", null, 0, 1, ManagerAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(managerActionTypeEEnum, ManagerActionType.class, "ManagerActionType");
@@ -418,6 +429,10 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 		createDynamicValueAnnotationAnnotations();
 		// Required
 		createRequiredAnnotations();
+		// Directionality
+		createDirectionalityAnnotations();
+		// MetaProperty
+		createMetaPropertyAnnotations();
 	}
 
   /**
@@ -447,7 +462,17 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 			 "description", "The path of the handler to which control will be transferred",
 			 "expectedReturnType", "Saflet Path",
 			 "helperClass", "com.safi.workshop.sheet.SelectSafletDynamicValueEditorPage"
-		   });	
+		   });			
+		addAnnotation
+		  (getManagerAction_ManagerResponse(), 
+		   source, 
+		   new String[] {
+			 "type", "VariableName",
+			 "isTypeLocked", "false",
+			 "description", "The assignee variable",
+			 "expectedReturnType", "Object",
+			 "helperClass", ""
+		   });		
 	}
 
   /**
@@ -469,6 +494,38 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 		   source, 
 		   new String[] {
 			 "criteria", "non-null"
+		   });			
+	}
+
+		/**
+	 * Initializes the annotations for <b>Directionality</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createDirectionalityAnnotations() {
+		String source = "Directionality";							
+		addAnnotation
+		  (getManagerAction_ManagerResponse(), 
+		   source, 
+		   new String[] {
+			 "output", "true"
+		   });	
+	}
+
+		/**
+	 * Initializes the annotations for <b>MetaProperty</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createMetaPropertyAnnotations() {
+		String source = "MetaProperty";								
+		addAnnotation
+		  (getManagerAction_ManagerResponse(), 
+		   source, 
+		   new String[] {
+			 "displayText", "Variable"
 		   });
 	}
 

@@ -8,6 +8,7 @@ package com.safi.workshop.model.actionpak1.impl;
 
 import java.lang.reflect.Method;
 import java.util.Map;
+import java.util.logging.Level;
 
 import org.asteriskjava.manager.ManagerConnection;
 import org.asteriskjava.manager.action.AbsoluteTimeoutAction;
@@ -386,7 +387,7 @@ public class ManagerActionImpl extends ParameterizedActionstepImpl implements Ma
 		  ManagerResponse managerResponse=null;
 		  ManagerResponse response = connection.sendAction(managerActionObject,
 		          Saflet.DEFAULT_MANAGER_ACTION_TIMEOUT);
-		      if (debugLog.isDebugEnabled())
+		      if (debugLog.isLoggable(Level.FINEST))
 		        debug("Monitor returned " + response.getMessage() + " of type " + response.getResponse());
 		      if (response instanceof ManagerError)
 		        exception = new ActionStepException("Couldn't monitor channel: " + response.getMessage());

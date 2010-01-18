@@ -6,6 +6,7 @@
  */
 package com.safi.workshop.model.actionpak1.impl;
 
+import com.safi.workshop.model.actionpak1.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
