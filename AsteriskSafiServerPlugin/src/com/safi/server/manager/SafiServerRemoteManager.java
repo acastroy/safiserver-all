@@ -85,14 +85,14 @@ public class SafiServerRemoteManager implements NotificationListener {
     	@Override
     	public Socket createSocket(String host, int port) throws IOException {
     	  // TODO Auto-generated method stub
-//    		System.err.println("Actually connecting too "+host+":"+actualRMIPort);
+    		System.err.println("Asked for "+port+" but actually connecting too "+host+":"+currentActualRMIPort);
 //    		return super.createSocket(host, port);
     	  return super.createSocket(host, currentActualRMIPort);
     	}
     	
     	@Override
     	public ServerSocket createServerSocket(int port) throws IOException {
-//    		System.err.println("Actually serving up too "+actualRMIPort);
+    		System.err.println("Asked for "+port+" but actually serving up too "+currentActualRMIPort);
     	  return super.createServerSocket(currentActualRMIPort);
     	}
     	
@@ -553,6 +553,8 @@ public class SafiServerRemoteManager implements NotificationListener {
       throw new IllegalStateException("No manager connection to SafiServer found");
     return serverMonitor.getServerLogFile();
   }
+  
+  
   class ServerInfoNotificationFilter implements NotificationFilter {
     /**
      * 
@@ -667,6 +669,18 @@ public class SafiServerRemoteManager implements NotificationListener {
       return;
     debugEventListeners.remove(debugEventListener);
 
+  }
+  
+  public int getDBProxyServicePort() throws SafiServerManagementException {
+  	if (serverMonitor == null)
+      throw new IllegalStateException("No manager connection to SafiServer found");
+    try {
+	    return serverMonitor.getDBProxyServicePort();
+    } catch (Exception e) {
+      e.printStackTrace();
+      throw new SafiServerManagementException(e);
+    }
+    
   }
 
 }

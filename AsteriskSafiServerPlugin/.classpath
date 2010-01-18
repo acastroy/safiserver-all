@@ -6,7 +6,7 @@
 	<classpathentry exported="true" kind="lib" path="lib/org.eclipse.nebula.jface.gridviewer_1.0.0.jar" sourcepath="D:/javalib/NebulaGridViewer/src"/>
 	<classpathentry exported="true" kind="lib" path="lib/org.eclipse.nebula.widgets.grid_1.0.0.jar" sourcepath="D:/javalib/NebulaGrid/src"/>
 	<classpathentry exported="true" kind="lib" path="resources/"/>
-	<classpathentry exported="true" kind="lib" path="lib/safiServer.jar" sourcepath="/SafiServerCore"/>
+	<classpathentry exported="true" kind="lib" path="lib/safiServer.jar" sourcepath="/SafiServerOSGI"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="output" path="bin"/>

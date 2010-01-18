@@ -27,7 +27,11 @@ Require-Bundle: Saflets.edit;bundle-version="1.0.0",
  org.eclipse.jface.databinding,
  AsteriskCore;bundle-version="1.1.0",
  AsteriskCore.edit;bundle-version="1.0.0",
- SafiLogging;bundle-version="1.0.0"
+ SafiLogging;bundle-version="1.0.0",
+ SafiDBManager;bundle-version="1.0.0",
+ org.eclipse.emf.teneo;bundle-version="1.1.1",
+ org.eclipse.emf.teneo.annotations;bundle-version="1.1.0",
+ org.eclipse.emf.teneo.hibernate;bundle-version="1.1.1"
 Eclipse-LazyStart: true
 Bundle-ClassPath: .,
  lib/safiServer.jar,
@@ -51,7 +55,6 @@ Export-Package: com.jcraft.jsch,
  com.safi.server.util
 Import-Package: com.safi.db,
  com.safi.db.impl,
- com.safi.db.manager,
  com.safi.db.server.config,
  com.safi.db.server.config.impl,
  com.safi.db.server.config.util,

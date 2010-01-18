@@ -19,12 +19,6 @@ import java.util.logging.StreamHandler;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-//import org.apache.log4j.Appender;
-//import org.apache.log4j.Layout;
-//import org.apache.log4j.Level;
-//import org.apache.log4j.Logger;
-//import org.apache.log4j.PatternLayout;
-//import org.apache.log4j.WriterAppender;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -55,8 +49,6 @@ import com.jcraft.jsch.UserInfo;
 import com.safi.asterisk.util.AsteriskSafletConstants;
 import com.safi.db.SafiDriverManager;
 import com.safi.db.Variable;
-import com.safi.db.manager.DBManager;
-import com.safi.db.manager.DBManagerException;
 import com.safi.db.server.config.AsteriskServer;
 import com.safi.db.server.config.Entitlement;
 import com.safi.db.server.config.Role;
@@ -69,6 +61,8 @@ import com.safi.server.manager.SafiServerRemoteManager;
 import com.safi.server.preferences.PreferenceConstants;
 import com.safi.server.preferences.SafiServerStatusListener;
 import com.safi.server.saflet.GlobalVariableManager;
+import com.safi.server.saflet.manager.DBManager;
+import com.safi.server.saflet.manager.DBManagerException;
 import com.safi.server.saflet.mbean.SysInfo;
 import com.safi.server.util.Utils;
 
@@ -1813,12 +1807,12 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 		}
 
 		public boolean promptPassphrase(String message) {
-			// System.err.println("gimme passfrase " + message);
+			 System.err.println("gimme passfrase " + message);
 			return true;
 		}
 
 		public boolean promptPassword(String message) {
-			// System.err.println("gimme message " + message);
+			 System.err.println("gimme password " + message);
 			return true;
 		}
 
@@ -1847,7 +1841,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 		return currentSSHMgmtNum;
 	}
 
-	public int getActualManagementPort() {
+	public int getLocalTunneledManagementPort() {
 		if (isUseTunnel()) {
 			return currentSSHMgmtNum;
 		} else {
