@@ -92,6 +92,7 @@
     </genClasses>
     <genClasses ecoreClass="actionpak1.ecore#//ManagerAction">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionpak1.ecore#//ManagerAction/managerActionType"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EAttribute actionpak1.ecore#//ManagerAction/managerResponse"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

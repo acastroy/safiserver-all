@@ -115,7 +115,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ManagerAction" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ParameterizedActionstep">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="managerActionType" eType="#//ManagerActionType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variableName" ordered="false"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="managerResponse" ordered="false"
         eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
         containment="true" resolveProxies="false">
       <eAnnotations source="DynamicValueAnnotation">
