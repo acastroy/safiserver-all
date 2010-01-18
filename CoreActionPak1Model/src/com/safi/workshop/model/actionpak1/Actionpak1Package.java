@@ -637,13 +637,22 @@ public interface Actionpak1Package extends EPackage {
 	int MANAGER_ACTION__MANAGER_ACTION_TYPE = ActionStepPackage.PARAMETERIZED_ACTIONSTEP_FEATURE_COUNT + 0;
 
 		/**
+	 * The feature id for the '<em><b>Manager Response</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANAGER_ACTION__MANAGER_RESPONSE = ActionStepPackage.PARAMETERIZED_ACTIONSTEP_FEATURE_COUNT + 1;
+
+		/**
 	 * The number of structural features of the '<em>Manager Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER_ACTION_FEATURE_COUNT = ActionStepPackage.PARAMETERIZED_ACTIONSTEP_FEATURE_COUNT + 1;
+	int MANAGER_ACTION_FEATURE_COUNT = ActionStepPackage.PARAMETERIZED_ACTIONSTEP_FEATURE_COUNT + 2;
 
 		/**
 	 * The meta object id for the '{@link com.safi.workshop.model.actionpak1.ManagerActionType <em>Manager Action Type</em>}' enum.
@@ -760,6 +769,17 @@ public interface Actionpak1Package extends EPackage {
 	 * @generated
 	 */
 	EAttribute getManagerAction_ManagerActionType();
+
+		/**
+	 * Returns the meta object for the containment reference '{@link com.safi.workshop.model.actionpak1.ManagerAction#getManagerResponse <em>Manager Response</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Manager Response</em>'.
+	 * @see com.safi.workshop.model.actionpak1.ManagerAction#getManagerResponse()
+	 * @see #getManagerAction()
+	 * @generated
+	 */
+	EReference getManagerAction_ManagerResponse();
 
 		/**
 	 * Returns the meta object for enum '{@link com.safi.workshop.model.actionpak1.ManagerActionType <em>Manager Action Type</em>}'.
@@ -882,6 +902,14 @@ public interface Actionpak1Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute MANAGER_ACTION__MANAGER_ACTION_TYPE = eINSTANCE.getManagerAction_ManagerActionType();
+
+				/**
+		 * The meta object literal for the '<em><b>Manager Response</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MANAGER_ACTION__MANAGER_RESPONSE = eINSTANCE.getManagerAction_ManagerResponse();
 
 				/**
 		 * The meta object literal for the '{@link com.safi.workshop.model.actionpak1.ManagerActionType <em>Manager Action Type</em>}' enum.
