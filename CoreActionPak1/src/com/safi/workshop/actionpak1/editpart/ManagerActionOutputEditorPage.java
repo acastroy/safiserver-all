@@ -6,6 +6,8 @@ import java.util.List;
 import org.eclipse.core.databinding.Binding;
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.observable.list.WritableList;
+import org.eclipse.core.databinding.observable.value.IObservableValue;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
@@ -26,10 +28,13 @@ import com.safi.workshop.sheet.actionstep.AbstractActionstepEditorPage;
 import com.safi.workshop.sheet.actionstep.ActionstepEditObservables;
 import com.safi.workshop.sheet.actionstep.ActionstepEditorDialog;
 import com.safi.workshop.sheet.actionstep.CaseItemReorderCommand;
+import com.safi.workshop.sheet.actionstep.DynamicValueEditorWidget;
+import com.safi.workshop.sheet.actionstep.DynamicValueWidgetObservableValue;
 
 public class ManagerActionOutputEditorPage extends AbstractActionstepEditorPage {
 
-   private OutputItemEditorWidget outputItemEditorWidget;
+   private DynamicValueEditorWidget outputItemEditorWidget;
+   //private OutputItemEditorWidget outputItemEditorWidget;
    private Label outputsLabel;
 
   //private PropertyMappingItemEditorWidget outputItemEditorWidget;
@@ -47,22 +52,20 @@ public class ManagerActionOutputEditorPage extends AbstractActionstepEditorPage 
 
     outputsLabel = new Label(this, SWT.NONE);
     outputsLabel.setLayoutData(new GridData(SWT.LEFT, SWT.TOP, false, false));
-    outputsLabel.setText("Output Params: ");
-
-    outputItemEditorWidget = new OutputItemEditorWidget(this, SWT.NONE);
+    outputsLabel.setText("Output to Variable: ");
+    
+    outputItemEditorWidget = new DynamicValueEditorWidget(this, SWT.NONE);
     outputItemEditorWidget.setEditingDomain(parent.getEditPart().getEditingDomain());
     outputItemEditorWidget.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
-    IObservableList modelList = ActionstepEditObservables.observeList(editingDomain, managerAction, managerAction
-        .eClass().getEStructuralFeature("outputParameters"));
-    if(managerAction.getOutputParameters().isEmpty()){
-    	createDefaultOutputParameters();
-    }
-    IObservableList uiList = new WritableList(new ArrayList<CaseItem>(managerAction.getOutputParameters()),
-        OutputParameter.class);
-    bindingContext.bindList(uiList, modelList, null, null);
+    DynamicValueWidgetObservableValue outputVal = new DynamicValueWidgetObservableValue(
+    		outputItemEditorWidget, SWT.Modify);
+    outputItemEditorWidget.setObject(managerAction);
+    EStructuralFeature returnVarFeat = managerAction.eClass().getEStructuralFeature("managerResponse");
+    outputItemEditorWidget.setFeature(returnVarFeat);
+    IObservableValue ob = ActionstepEditObservables.observeValue(editingDomain, managerAction, returnVarFeat);
+    bindingContext.bindValue(outputVal, ob, null, null);
     
-    outputItemEditorWidget.setItemList(uiList);
-    outputItemEditorWidget.setActionstepEditorDialog(parent);
+    
 
   }
 
