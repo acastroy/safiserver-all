@@ -7,6 +7,7 @@
 package com.safi.workshop.model.actionpak1.provider;
 
 
+import com.safi.core.actionstep.ActionStepFactory;
 import com.safi.core.actionstep.ActionStepPackage;
 
 import com.safi.core.actionstep.provider.ParameterizedActionstepItemProvider;
@@ -22,6 +23,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -68,6 +70,7 @@ public class ManagerActionItemProvider
 			super.getPropertyDescriptors(object);
 
 			addManagerActionTypePropertyDescriptor(object);
+			addManagerResponsePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -92,6 +95,58 @@ public class ManagerActionItemProvider
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Manager Response feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addManagerResponsePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ManagerAction_managerResponse_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ManagerAction_managerResponse_feature", "_UI_ManagerAction_type"),
+				 Actionpak1Package.Literals.MANAGER_ACTION__MANAGER_RESPONSE,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(Actionpak1Package.Literals.MANAGER_ACTION__MANAGER_RESPONSE);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -134,6 +189,9 @@ public class ManagerActionItemProvider
 			case Actionpak1Package.MANAGER_ACTION__MANAGER_ACTION_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case Actionpak1Package.MANAGER_ACTION__MANAGER_RESPONSE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -148,6 +206,11 @@ public class ManagerActionItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Actionpak1Package.Literals.MANAGER_ACTION__MANAGER_RESPONSE,
+				 ActionStepFactory.eINSTANCE.createDynamicValue()));
 	}
 
 	/**
