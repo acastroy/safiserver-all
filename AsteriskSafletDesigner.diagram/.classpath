@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry exported="true" kind="lib" path="lib/RmiJdbc.jar" sourcepath="/RmiJdbc"/>
 	<classpathentry exported="true" kind="lib" path="lib/log4j-1.2.15.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
@@ -7,7 +8,7 @@
 	<classpathentry exported="true" kind="lib" path="lib/safiRouting.jar" sourcepath="/RectilinearRouting"/>
 	<classpathentry exported="true" kind="lib" path="lib/nanoxml.jar" sourcepath="AsteriskSafletDesigner.diagramsrc.zip"/>
 	<classpathentry exported="true" kind="lib" path="lib/rowset.jar" sourcepath="AsteriskSafletDesigner.diagramsrc.zip"/>
-	<classpathentry exported="true" kind="lib" path="lib/squirrel.jar" sourcepath="AsteriskSafletDesigner.diagramsrc.zip"/>
+	<classpathentry exported="true" kind="lib" path="lib/squirrel.jar" sourcepath="D:/javalib/squirrel-sql-3.0.2-standard/sql12"/>
 	<classpathentry exported="true" kind="lib" path="lib/dom4j-1.6.1.jar" sourcepath="AsteriskSafletDesigner.diagramsrc.zip"/>
 	<classpathentry exported="true" kind="lib" path="lib/jmf.jar" sourcepath="AsteriskSafletDesigner.diagramsrc.zip"/>
 	<classpathentry exported="true" kind="lib" path="lib/com.richclientgui.toolbox.0.4.jar" sourcepath="/RCPToolbox"/>
