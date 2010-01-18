@@ -6,10 +6,9 @@
  */
 package com.safi.core.actionstep.impl;
 
+import org.eclipse.emf.ecore.EClass;
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.actionstep.AudioFileItem;
-
-import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->

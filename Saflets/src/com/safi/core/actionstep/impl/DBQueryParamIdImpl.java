@@ -6,15 +6,12 @@
  */
 package com.safi.core.actionstep.impl;
 
-import com.safi.core.actionstep.ActionStepPackage;
-import com.safi.core.actionstep.DBQueryParamId;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import com.safi.core.actionstep.ActionStepPackage;
+import com.safi.core.actionstep.DBQueryParamId;
 
 /**
  * <!-- begin-user-doc -->

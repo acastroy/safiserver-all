@@ -7,19 +7,14 @@
 package com.safi.core.saflet;
 
 import java.util.logging.Level;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.ActionStepException;
-
 import com.safi.core.initiator.Initiator;
-
 import com.safi.core.scripting.SafletScript;
 import com.safi.core.scripting.SafletScriptEnvironment;
 import com.safi.core.scripting.ScriptScope;
-import com.safi.db.manager.DBManagerException;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -407,7 +402,7 @@ public final static int DEFAULT_MANAGER_ACTION_TIMEOUT = 120000;
   
   int getNextNameSeq(String callName);
   
-  String getPromptPathByName(String name) throws DBManagerException;
+  String getPromptPathByName(String name) throws ActionStepException;
   int getMaxIterations();
   int getMaxInvocations();
   String getUniqueActionStepName(String prefix);

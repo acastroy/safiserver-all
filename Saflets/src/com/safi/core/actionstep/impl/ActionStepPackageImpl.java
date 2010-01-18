@@ -6,8 +6,17 @@
  */
 package com.safi.core.actionstep.impl;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.BasicEMap;
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
 import com.safi.core.CorePackage;
-
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.ActionStepFactory;
 import com.safi.core.actionstep.ActionStepPackage;
@@ -57,36 +66,14 @@ import com.safi.core.actionstep.SetColValue;
 import com.safi.core.actionstep.SetColValues;
 import com.safi.core.actionstep.SetQueryParam;
 import com.safi.core.actionstep.UpdatetRow;
-
 import com.safi.core.impl.CorePackageImpl;
-
 import com.safi.core.initiator.InitiatorPackage;
-
 import com.safi.core.initiator.impl.InitiatorPackageImpl;
-
 import com.safi.core.saflet.SafletPackage;
-
 import com.safi.core.saflet.impl.SafletPackageImpl;
-
 import com.safi.core.scripting.ScriptingPackage;
-
 import com.safi.core.scripting.impl.ScriptingPackageImpl;
-
 import com.safi.db.DbPackage;
-
-import java.util.Map;
-
-import org.eclipse.emf.common.util.BasicEMap;
-
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
-import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EOperation;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-
-import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
  * <!-- begin-user-doc -->

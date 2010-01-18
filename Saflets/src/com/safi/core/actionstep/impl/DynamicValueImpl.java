@@ -6,27 +6,22 @@
  */
 package com.safi.core.actionstep.impl;
 
-import com.safi.core.actionstep.ActionStepPackage;
-import com.safi.core.actionstep.DynamicValue;
-import com.safi.core.actionstep.DynamicValueType;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EMap;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.impl.EStringToStringMapEntryImpl;
-
 import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.InternalEList;
+import com.safi.core.actionstep.ActionStepPackage;
+import com.safi.core.actionstep.DynamicValue;
+import com.safi.core.actionstep.DynamicValueType;
 
 /**
  * <!-- begin-user-doc -->

@@ -28,9 +28,7 @@ Export-Package: com.safi.core,
  com.safi.core.util,
  org.mozilla.classfile,
  org.mozilla.javascript,
- org.mozilla.javascript.continuations,
  org.mozilla.javascript.debug,
- org.mozilla.javascript.jdk11,
  org.mozilla.javascript.jdk13,
  org.mozilla.javascript.jdk15,
  org.mozilla.javascript.optimizer,
@@ -52,5 +50,6 @@ Require-Bundle: org.eclipse.core.runtime,
  SafiDB,
  Hibernate30;bundle-version="1.0.0",
  SafiCommons;bundle-version="1.2.5",
- SafiLogging;bundle-version="1.0.0"
+ SafiLogging;bundle-version="1.0.0",
+ SafiDBManager;bundle-version="1.0.0"
 Eclipse-LazyStart: true

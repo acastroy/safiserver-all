@@ -6,20 +6,59 @@
  */
 package com.safi.core.actionstep.impl;
 
-import com.safi.core.actionstep.*;
-
 import java.util.Map;
-
 import org.eclipse.emf.common.util.BasicEMap;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import com.safi.core.actionstep.ActionStepFactory;
+import com.safi.core.actionstep.ActionStepPackage;
+import com.safi.core.actionstep.Assignment;
+import com.safi.core.actionstep.AudioFileItem;
+import com.safi.core.actionstep.CaseItem;
+import com.safi.core.actionstep.Choice;
+import com.safi.core.actionstep.CloseDBConnection;
+import com.safi.core.actionstep.DBConnectionId;
+import com.safi.core.actionstep.DBQueryId;
+import com.safi.core.actionstep.DBQueryParamId;
+import com.safi.core.actionstep.DBResultSetId;
+import com.safi.core.actionstep.DebugLevel;
+import com.safi.core.actionstep.DebugLog;
+import com.safi.core.actionstep.DeleteRow;
+import com.safi.core.actionstep.DynamicValue;
+import com.safi.core.actionstep.DynamicValueType;
+import com.safi.core.actionstep.ExecuteQuery;
+import com.safi.core.actionstep.ExecuteScript;
+import com.safi.core.actionstep.ExecuteUpdate;
+import com.safi.core.actionstep.GetColMapping;
+import com.safi.core.actionstep.GetColValue;
+import com.safi.core.actionstep.GetColValues;
+import com.safi.core.actionstep.IfThen;
+import com.safi.core.actionstep.InputItem;
+import com.safi.core.actionstep.InsertRow;
+import com.safi.core.actionstep.InvokeSaflet;
+import com.safi.core.actionstep.Item;
+import com.safi.core.actionstep.MoveToFirstRow;
+import com.safi.core.actionstep.MoveToInsertRow;
+import com.safi.core.actionstep.MoveToLastRow;
+import com.safi.core.actionstep.MoveToRow;
+import com.safi.core.actionstep.NextRow;
+import com.safi.core.actionstep.OpenDBConnection;
+import com.safi.core.actionstep.OpenQuery;
+import com.safi.core.actionstep.Output;
+import com.safi.core.actionstep.OutputParameter;
+import com.safi.core.actionstep.OutputType;
+import com.safi.core.actionstep.PreviousRow;
+import com.safi.core.actionstep.QueryParamMapping;
+import com.safi.core.actionstep.RunQuery;
+import com.safi.core.actionstep.SetColMapping;
+import com.safi.core.actionstep.SetColValue;
+import com.safi.core.actionstep.SetColValues;
+import com.safi.core.actionstep.SetQueryParam;
+import com.safi.core.actionstep.UpdatetRow;
 
 /**
  * <!-- begin-user-doc -->

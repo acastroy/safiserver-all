@@ -6,26 +6,19 @@
  */
 package com.safi.core.actionstep.impl;
 
+import java.util.Collection;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.actionstep.InputItem;
 import com.safi.core.actionstep.OutputParameter;
 import com.safi.core.actionstep.ParameterizedActionstep;
 import com.safi.core.actionstep.ParameterizedInitiator;
-
 import com.safi.core.initiator.impl.InitiatorImpl;
-
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->

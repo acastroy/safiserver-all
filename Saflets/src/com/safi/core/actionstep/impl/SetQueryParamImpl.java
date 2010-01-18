@@ -29,7 +29,7 @@ import com.safi.db.QueryParameter;
 import com.safi.db.SQLDataType;
 import com.safi.db.SafiDriverManager;
 import com.safi.db.VariableType;
-import com.safi.db.manager.DBManager;
+import com.safi.server.saflet.manager.DBManager;
 
 /**
  * <!-- begin-user-doc -->

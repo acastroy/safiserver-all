@@ -7,13 +7,11 @@
 package com.safi.core.actionstep.impl;
 
 import java.sql.Connection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.actionstep.DBConnectionId;
@@ -22,8 +20,8 @@ import com.safi.core.saflet.SafletContext;
 import com.safi.db.DBConnection;
 import com.safi.db.DBDriver;
 import com.safi.db.SafiDriverManager;
-import com.safi.db.manager.DBManager;
-import com.safi.db.manager.PooledDataSourceManager;
+import com.safi.server.saflet.manager.DBManager;
+import com.safi.server.saflet.manager.PooledDataSourceManager;
 
 /**
  * <!-- begin-user-doc -->

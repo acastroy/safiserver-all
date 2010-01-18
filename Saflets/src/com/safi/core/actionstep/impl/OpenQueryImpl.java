@@ -26,7 +26,7 @@ import com.safi.db.Query;
 import com.safi.db.RSHoldabilityMode;
 import com.safi.db.RSScrollMode;
 import com.safi.db.SafiDriverManager;
-import com.safi.db.manager.DBManager;
+import com.safi.server.saflet.manager.DBManager;
 
 /**
  * <!-- begin-user-doc -->

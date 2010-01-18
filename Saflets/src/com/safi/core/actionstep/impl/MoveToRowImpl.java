@@ -7,13 +7,11 @@
 package com.safi.core.actionstep.impl;
 
 import java.sql.ResultSet;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.ActionStepFactory;
 import com.safi.core.actionstep.ActionStepPackage;
@@ -26,7 +24,7 @@ import com.safi.core.actionstep.util.VariableTranslator;
 import com.safi.core.saflet.SafletContext;
 import com.safi.db.SafiDriverManager;
 import com.safi.db.VariableType;
-import com.safi.db.manager.DBManager;
+import com.safi.server.saflet.manager.DBManager;
 
 /**
  * <!-- begin-user-doc -->

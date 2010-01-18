@@ -11,19 +11,11 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.WeakHashMap;
-import java.util.logging.FileHandler;
 import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import org.apache.commons.collections.ReferenceMap;
 import org.apache.commons.lang.StringUtils;
-//import org.apache.log4j.Appender;
-//import org.apache.log4j.FileAppender;
-//import org.apache.log4j.Level;
-//import org.apache.log4j.Logger;
-//import org.apache.log4j.PatternLayout;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -33,7 +25,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.ActionStepPackage;
@@ -48,7 +39,6 @@ import com.safi.core.scripting.SafletScript;
 import com.safi.core.scripting.SafletScriptEnvironment;
 import com.safi.core.scripting.ScriptScope;
 import com.safi.db.Variable;
-import com.safi.db.manager.DBManagerException;
 import com.safi.logging.SafiFileHandler;
 
 /**
@@ -810,7 +800,7 @@ public abstract class SafletImpl extends EObjectImpl implements Saflet {
   }
   
   @Override
-  public String getPromptPathByName(String name) throws DBManagerException {
+  public String getPromptPathByName(String name) throws ActionStepException {
     return name;
   }
 
