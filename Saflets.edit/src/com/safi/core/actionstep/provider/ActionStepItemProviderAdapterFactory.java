@@ -38,1102 +38,1102 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  */
 public class ActionStepItemProviderAdapterFactory extends ActionStepAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
   /**
-   * This keeps track of the root adapter factory that delegates to this adapter factory.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the root adapter factory that delegates to this adapter factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ComposedAdapterFactory parentAdapterFactory;
 
   /**
-   * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
-   * <!-- begin-user-doc -->
+	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected IChangeNotifier changeNotifier = new ChangeNotifier();
 
   /**
-   * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
-   * <!-- begin-user-doc -->
+	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
   /**
-   * This constructs an instance.
-   * <!-- begin-user-doc -->
+	 * This constructs an instance.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ActionStepItemProviderAdapterFactory() {
-    supportedTypes.add(IEditingDomainItemProvider.class);
-    supportedTypes.add(IStructuredItemContentProvider.class);
-    supportedTypes.add(ITreeItemContentProvider.class);
-    supportedTypes.add(IItemLabelProvider.class);
-    supportedTypes.add(IItemPropertySource.class);
-  }
+		supportedTypes.add(IEditingDomainItemProvider.class);
+		supportedTypes.add(IStructuredItemContentProvider.class);
+		supportedTypes.add(ITreeItemContentProvider.class);
+		supportedTypes.add(IItemLabelProvider.class);
+		supportedTypes.add(IItemPropertySource.class);
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.Assignment} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.Assignment} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected AssignmentItemProvider assignmentItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.Assignment}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.Assignment}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createAssignmentAdapter() {
-    if (assignmentItemProvider == null) {
-      assignmentItemProvider = new AssignmentItemProvider(this);
-    }
+		if (assignmentItemProvider == null) {
+			assignmentItemProvider = new AssignmentItemProvider(this);
+		}
 
-    return assignmentItemProvider;
-  }
+		return assignmentItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.CaseItem} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.CaseItem} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected CaseItemItemProvider caseItemItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.CaseItem}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.CaseItem}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createCaseItemAdapter() {
-    if (caseItemItemProvider == null) {
-      caseItemItemProvider = new CaseItemItemProvider(this);
-    }
+		if (caseItemItemProvider == null) {
+			caseItemItemProvider = new CaseItemItemProvider(this);
+		}
 
-    return caseItemItemProvider;
-  }
+		return caseItemItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.InputItem} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.InputItem} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected InputItemItemProvider inputItemItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.InputItem}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.InputItem}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createInputItemAdapter() {
-    if (inputItemItemProvider == null) {
-      inputItemItemProvider = new InputItemItemProvider(this);
-    }
+		if (inputItemItemProvider == null) {
+			inputItemItemProvider = new InputItemItemProvider(this);
+		}
 
-    return inputItemItemProvider;
-  }
+		return inputItemItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.AudioFileItem} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.AudioFileItem} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected AudioFileItemItemProvider audioFileItemItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.AudioFileItem}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.AudioFileItem}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createAudioFileItemAdapter() {
-    if (audioFileItemItemProvider == null) {
-      audioFileItemItemProvider = new AudioFileItemItemProvider(this);
-    }
+		if (audioFileItemItemProvider == null) {
+			audioFileItemItemProvider = new AudioFileItemItemProvider(this);
+		}
 
-    return audioFileItemItemProvider;
-  }
+		return audioFileItemItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.Choice} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.Choice} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ChoiceItemProvider choiceItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.Choice}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.Choice}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createChoiceAdapter() {
-    if (choiceItemProvider == null) {
-      choiceItemProvider = new ChoiceItemProvider(this);
-    }
+		if (choiceItemProvider == null) {
+			choiceItemProvider = new ChoiceItemProvider(this);
+		}
 
-    return choiceItemProvider;
-  }
+		return choiceItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.DynamicValue} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.DynamicValue} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected DynamicValueItemProvider dynamicValueItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.DynamicValue}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.DynamicValue}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createDynamicValueAdapter() {
-    if (dynamicValueItemProvider == null) {
-      dynamicValueItemProvider = new DynamicValueItemProvider(this);
-    }
+		if (dynamicValueItemProvider == null) {
+			dynamicValueItemProvider = new DynamicValueItemProvider(this);
+		}
 
-    return dynamicValueItemProvider;
-  }
+		return dynamicValueItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.IfThen} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.IfThen} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected IfThenItemProvider ifThenItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.IfThen}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.IfThen}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createIfThenAdapter() {
-    if (ifThenItemProvider == null) {
-      ifThenItemProvider = new IfThenItemProvider(this);
-    }
+		if (ifThenItemProvider == null) {
+			ifThenItemProvider = new IfThenItemProvider(this);
+		}
 
-    return ifThenItemProvider;
-  }
+		return ifThenItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.Output} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.Output} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected OutputItemProvider outputItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.Output}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.Output}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createOutputAdapter() {
-    if (outputItemProvider == null) {
-      outputItemProvider = new OutputItemProvider(this);
-    }
+		if (outputItemProvider == null) {
+			outputItemProvider = new OutputItemProvider(this);
+		}
 
-    return outputItemProvider;
-  }
+		return outputItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.ExecuteScript} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.ExecuteScript} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ExecuteScriptItemProvider executeScriptItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.ExecuteScript}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.ExecuteScript}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createExecuteScriptAdapter() {
-    if (executeScriptItemProvider == null) {
-      executeScriptItemProvider = new ExecuteScriptItemProvider(this);
-    }
+		if (executeScriptItemProvider == null) {
+			executeScriptItemProvider = new ExecuteScriptItemProvider(this);
+		}
 
-    return executeScriptItemProvider;
-  }
+		return executeScriptItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.InvokeSaflet} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.InvokeSaflet} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected InvokeSafletItemProvider invokeSafletItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.InvokeSaflet}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.InvokeSaflet}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createInvokeSafletAdapter() {
-    if (invokeSafletItemProvider == null) {
-      invokeSafletItemProvider = new InvokeSafletItemProvider(this);
-    }
+		if (invokeSafletItemProvider == null) {
+			invokeSafletItemProvider = new InvokeSafletItemProvider(this);
+		}
 
-    return invokeSafletItemProvider;
-  }
+		return invokeSafletItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.DebugLog} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.DebugLog} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected DebugLogItemProvider debugLogItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.DebugLog}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.DebugLog}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createDebugLogAdapter() {
-    if (debugLogItemProvider == null) {
-      debugLogItemProvider = new DebugLogItemProvider(this);
-    }
+		if (debugLogItemProvider == null) {
+			debugLogItemProvider = new DebugLogItemProvider(this);
+		}
 
-    return debugLogItemProvider;
-  }
+		return debugLogItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.OpenDBConnection} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.OpenDBConnection} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected OpenDBConnectionItemProvider openDBConnectionItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.OpenDBConnection}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.OpenDBConnection}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createOpenDBConnectionAdapter() {
-    if (openDBConnectionItemProvider == null) {
-      openDBConnectionItemProvider = new OpenDBConnectionItemProvider(this);
-    }
+		if (openDBConnectionItemProvider == null) {
+			openDBConnectionItemProvider = new OpenDBConnectionItemProvider(this);
+		}
 
-    return openDBConnectionItemProvider;
-  }
+		return openDBConnectionItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.CloseDBConnection} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.CloseDBConnection} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected CloseDBConnectionItemProvider closeDBConnectionItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.CloseDBConnection}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.CloseDBConnection}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createCloseDBConnectionAdapter() {
-    if (closeDBConnectionItemProvider == null) {
-      closeDBConnectionItemProvider = new CloseDBConnectionItemProvider(this);
-    }
+		if (closeDBConnectionItemProvider == null) {
+			closeDBConnectionItemProvider = new CloseDBConnectionItemProvider(this);
+		}
 
-    return closeDBConnectionItemProvider;
-  }
+		return closeDBConnectionItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.OpenQuery} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.OpenQuery} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected OpenQueryItemProvider openQueryItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.OpenQuery}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.OpenQuery}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createOpenQueryAdapter() {
-    if (openQueryItemProvider == null) {
-      openQueryItemProvider = new OpenQueryItemProvider(this);
-    }
+		if (openQueryItemProvider == null) {
+			openQueryItemProvider = new OpenQueryItemProvider(this);
+		}
 
-    return openQueryItemProvider;
-  }
+		return openQueryItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.SetQueryParam} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.SetQueryParam} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected SetQueryParamItemProvider setQueryParamItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.SetQueryParam}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.SetQueryParam}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createSetQueryParamAdapter() {
-    if (setQueryParamItemProvider == null) {
-      setQueryParamItemProvider = new SetQueryParamItemProvider(this);
-    }
+		if (setQueryParamItemProvider == null) {
+			setQueryParamItemProvider = new SetQueryParamItemProvider(this);
+		}
 
-    return setQueryParamItemProvider;
-  }
+		return setQueryParamItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.ExecuteUpdate} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.ExecuteUpdate} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ExecuteUpdateItemProvider executeUpdateItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.ExecuteUpdate}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.ExecuteUpdate}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createExecuteUpdateAdapter() {
-    if (executeUpdateItemProvider == null) {
-      executeUpdateItemProvider = new ExecuteUpdateItemProvider(this);
-    }
+		if (executeUpdateItemProvider == null) {
+			executeUpdateItemProvider = new ExecuteUpdateItemProvider(this);
+		}
 
-    return executeUpdateItemProvider;
-  }
+		return executeUpdateItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.ExecuteQuery} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.ExecuteQuery} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ExecuteQueryItemProvider executeQueryItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.ExecuteQuery}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.ExecuteQuery}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createExecuteQueryAdapter() {
-    if (executeQueryItemProvider == null) {
-      executeQueryItemProvider = new ExecuteQueryItemProvider(this);
-    }
+		if (executeQueryItemProvider == null) {
+			executeQueryItemProvider = new ExecuteQueryItemProvider(this);
+		}
 
-    return executeQueryItemProvider;
-  }
+		return executeQueryItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.NextRow} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.NextRow} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected NextRowItemProvider nextRowItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.NextRow}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.NextRow}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createNextRowAdapter() {
-    if (nextRowItemProvider == null) {
-      nextRowItemProvider = new NextRowItemProvider(this);
-    }
+		if (nextRowItemProvider == null) {
+			nextRowItemProvider = new NextRowItemProvider(this);
+		}
 
-    return nextRowItemProvider;
-  }
+		return nextRowItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.GetColValue} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.GetColValue} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected GetColValueItemProvider getColValueItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.GetColValue}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.GetColValue}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createGetColValueAdapter() {
-    if (getColValueItemProvider == null) {
-      getColValueItemProvider = new GetColValueItemProvider(this);
-    }
+		if (getColValueItemProvider == null) {
+			getColValueItemProvider = new GetColValueItemProvider(this);
+		}
 
-    return getColValueItemProvider;
-  }
+		return getColValueItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.GetColValues} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.GetColValues} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected GetColValuesItemProvider getColValuesItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.GetColValues}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.GetColValues}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createGetColValuesAdapter() {
-    if (getColValuesItemProvider == null) {
-      getColValuesItemProvider = new GetColValuesItemProvider(this);
-    }
+		if (getColValuesItemProvider == null) {
+			getColValuesItemProvider = new GetColValuesItemProvider(this);
+		}
 
-    return getColValuesItemProvider;
-  }
+		return getColValuesItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.SetColValue} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.SetColValue} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected SetColValueItemProvider setColValueItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.SetColValue}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.SetColValue}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createSetColValueAdapter() {
-    if (setColValueItemProvider == null) {
-      setColValueItemProvider = new SetColValueItemProvider(this);
-    }
+		if (setColValueItemProvider == null) {
+			setColValueItemProvider = new SetColValueItemProvider(this);
+		}
 
-    return setColValueItemProvider;
-  }
+		return setColValueItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.SetColValues} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.SetColValues} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected SetColValuesItemProvider setColValuesItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.SetColValues}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.SetColValues}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createSetColValuesAdapter() {
-    if (setColValuesItemProvider == null) {
-      setColValuesItemProvider = new SetColValuesItemProvider(this);
-    }
+		if (setColValuesItemProvider == null) {
+			setColValuesItemProvider = new SetColValuesItemProvider(this);
+		}
 
-    return setColValuesItemProvider;
-  }
+		return setColValuesItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.UpdatetRow} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.UpdatetRow} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected UpdatetRowItemProvider updatetRowItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.UpdatetRow}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.UpdatetRow}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createUpdatetRowAdapter() {
-    if (updatetRowItemProvider == null) {
-      updatetRowItemProvider = new UpdatetRowItemProvider(this);
-    }
+		if (updatetRowItemProvider == null) {
+			updatetRowItemProvider = new UpdatetRowItemProvider(this);
+		}
 
-    return updatetRowItemProvider;
-  }
+		return updatetRowItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.MoveToRow} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.MoveToRow} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected MoveToRowItemProvider moveToRowItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.MoveToRow}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.MoveToRow}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createMoveToRowAdapter() {
-    if (moveToRowItemProvider == null) {
-      moveToRowItemProvider = new MoveToRowItemProvider(this);
-    }
+		if (moveToRowItemProvider == null) {
+			moveToRowItemProvider = new MoveToRowItemProvider(this);
+		}
 
-    return moveToRowItemProvider;
-  }
+		return moveToRowItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.MoveToLastRow} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.MoveToLastRow} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected MoveToLastRowItemProvider moveToLastRowItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.MoveToLastRow}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.MoveToLastRow}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createMoveToLastRowAdapter() {
-    if (moveToLastRowItemProvider == null) {
-      moveToLastRowItemProvider = new MoveToLastRowItemProvider(this);
-    }
+		if (moveToLastRowItemProvider == null) {
+			moveToLastRowItemProvider = new MoveToLastRowItemProvider(this);
+		}
 
-    return moveToLastRowItemProvider;
-  }
+		return moveToLastRowItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.DeleteRow} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.DeleteRow} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected DeleteRowItemProvider deleteRowItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.DeleteRow}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.DeleteRow}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createDeleteRowAdapter() {
-    if (deleteRowItemProvider == null) {
-      deleteRowItemProvider = new DeleteRowItemProvider(this);
-    }
+		if (deleteRowItemProvider == null) {
+			deleteRowItemProvider = new DeleteRowItemProvider(this);
+		}
 
-    return deleteRowItemProvider;
-  }
+		return deleteRowItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.MoveToInsertRow} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.MoveToInsertRow} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected MoveToInsertRowItemProvider moveToInsertRowItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.MoveToInsertRow}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.MoveToInsertRow}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createMoveToInsertRowAdapter() {
-    if (moveToInsertRowItemProvider == null) {
-      moveToInsertRowItemProvider = new MoveToInsertRowItemProvider(this);
-    }
+		if (moveToInsertRowItemProvider == null) {
+			moveToInsertRowItemProvider = new MoveToInsertRowItemProvider(this);
+		}
 
-    return moveToInsertRowItemProvider;
-  }
+		return moveToInsertRowItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.InsertRow} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.InsertRow} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected InsertRowItemProvider insertRowItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.InsertRow}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.InsertRow}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createInsertRowAdapter() {
-    if (insertRowItemProvider == null) {
-      insertRowItemProvider = new InsertRowItemProvider(this);
-    }
+		if (insertRowItemProvider == null) {
+			insertRowItemProvider = new InsertRowItemProvider(this);
+		}
 
-    return insertRowItemProvider;
-  }
+		return insertRowItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.MoveToFirstRow} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.MoveToFirstRow} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected MoveToFirstRowItemProvider moveToFirstRowItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.MoveToFirstRow}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.MoveToFirstRow}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createMoveToFirstRowAdapter() {
-    if (moveToFirstRowItemProvider == null) {
-      moveToFirstRowItemProvider = new MoveToFirstRowItemProvider(this);
-    }
+		if (moveToFirstRowItemProvider == null) {
+			moveToFirstRowItemProvider = new MoveToFirstRowItemProvider(this);
+		}
 
-    return moveToFirstRowItemProvider;
-  }
+		return moveToFirstRowItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.PreviousRow} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.PreviousRow} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected PreviousRowItemProvider previousRowItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.PreviousRow}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.PreviousRow}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createPreviousRowAdapter() {
-    if (previousRowItemProvider == null) {
-      previousRowItemProvider = new PreviousRowItemProvider(this);
-    }
+		if (previousRowItemProvider == null) {
+			previousRowItemProvider = new PreviousRowItemProvider(this);
+		}
 
-    return previousRowItemProvider;
-  }
+		return previousRowItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.DBConnectionId} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.DBConnectionId} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected DBConnectionIdItemProvider dbConnectionIdItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.DBConnectionId}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.DBConnectionId}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createDBConnectionIdAdapter() {
-    if (dbConnectionIdItemProvider == null) {
-      dbConnectionIdItemProvider = new DBConnectionIdItemProvider(this);
-    }
+		if (dbConnectionIdItemProvider == null) {
+			dbConnectionIdItemProvider = new DBConnectionIdItemProvider(this);
+		}
 
-    return dbConnectionIdItemProvider;
-  }
+		return dbConnectionIdItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.DBQueryId} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.DBQueryId} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected DBQueryIdItemProvider dbQueryIdItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.DBQueryId}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.DBQueryId}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createDBQueryIdAdapter() {
-    if (dbQueryIdItemProvider == null) {
-      dbQueryIdItemProvider = new DBQueryIdItemProvider(this);
-    }
+		if (dbQueryIdItemProvider == null) {
+			dbQueryIdItemProvider = new DBQueryIdItemProvider(this);
+		}
 
-    return dbQueryIdItemProvider;
-  }
+		return dbQueryIdItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.DBQueryParamId} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.DBQueryParamId} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected DBQueryParamIdItemProvider dbQueryParamIdItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.DBQueryParamId}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.DBQueryParamId}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createDBQueryParamIdAdapter() {
-    if (dbQueryParamIdItemProvider == null) {
-      dbQueryParamIdItemProvider = new DBQueryParamIdItemProvider(this);
-    }
+		if (dbQueryParamIdItemProvider == null) {
+			dbQueryParamIdItemProvider = new DBQueryParamIdItemProvider(this);
+		}
 
-    return dbQueryParamIdItemProvider;
-  }
+		return dbQueryParamIdItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.DBResultSetId} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.DBResultSetId} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected DBResultSetIdItemProvider dbResultSetIdItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.DBResultSetId}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.DBResultSetId}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createDBResultSetIdAdapter() {
-    if (dbResultSetIdItemProvider == null) {
-      dbResultSetIdItemProvider = new DBResultSetIdItemProvider(this);
-    }
+		if (dbResultSetIdItemProvider == null) {
+			dbResultSetIdItemProvider = new DBResultSetIdItemProvider(this);
+		}
 
-    return dbResultSetIdItemProvider;
-  }
+		return dbResultSetIdItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.GetColMapping} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.GetColMapping} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected GetColMappingItemProvider getColMappingItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.GetColMapping}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.GetColMapping}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createGetColMappingAdapter() {
-    if (getColMappingItemProvider == null) {
-      getColMappingItemProvider = new GetColMappingItemProvider(this);
-    }
+		if (getColMappingItemProvider == null) {
+			getColMappingItemProvider = new GetColMappingItemProvider(this);
+		}
 
-    return getColMappingItemProvider;
-  }
+		return getColMappingItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.SetColMapping} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.SetColMapping} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected SetColMappingItemProvider setColMappingItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.SetColMapping}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.SetColMapping}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createSetColMappingAdapter() {
-    if (setColMappingItemProvider == null) {
-      setColMappingItemProvider = new SetColMappingItemProvider(this);
-    }
+		if (setColMappingItemProvider == null) {
+			setColMappingItemProvider = new SetColMappingItemProvider(this);
+		}
 
-    return setColMappingItemProvider;
-  }
+		return setColMappingItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.RunQuery} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.RunQuery} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected RunQueryItemProvider runQueryItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.RunQuery}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.RunQuery}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createRunQueryAdapter() {
-    if (runQueryItemProvider == null) {
-      runQueryItemProvider = new RunQueryItemProvider(this);
-    }
+		if (runQueryItemProvider == null) {
+			runQueryItemProvider = new RunQueryItemProvider(this);
+		}
 
-    return runQueryItemProvider;
-  }
+		return runQueryItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.QueryParamMapping} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.QueryParamMapping} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected QueryParamMappingItemProvider queryParamMappingItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.QueryParamMapping}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.QueryParamMapping}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createQueryParamMappingAdapter() {
-    if (queryParamMappingItemProvider == null) {
-      queryParamMappingItemProvider = new QueryParamMappingItemProvider(this);
-    }
+		if (queryParamMappingItemProvider == null) {
+			queryParamMappingItemProvider = new QueryParamMappingItemProvider(this);
+		}
 
-    return queryParamMappingItemProvider;
-  }
+		return queryParamMappingItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.Item} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.Item} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ItemItemProvider itemItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.Item}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.Item}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createItemAdapter() {
-    if (itemItemProvider == null) {
-      itemItemProvider = new ItemItemProvider(this);
-    }
+		if (itemItemProvider == null) {
+			itemItemProvider = new ItemItemProvider(this);
+		}
 
-    return itemItemProvider;
-  }
+		return itemItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.OutputParameter} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.OutputParameter} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected OutputParameterItemProvider outputParameterItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.safi.core.actionstep.OutputParameter}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link com.safi.core.actionstep.OutputParameter}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createOutputParameterAdapter() {
-    if (outputParameterItemProvider == null) {
-      outputParameterItemProvider = new OutputParameterItemProvider(this);
-    }
+		if (outputParameterItemProvider == null) {
+			outputParameterItemProvider = new OutputParameterItemProvider(this);
+		}
 
-    return outputParameterItemProvider;
-  }
+		return outputParameterItemProvider;
+	}
 
   /**
-   * This returns the root adapter factory that contains this factory.
-   * <!-- begin-user-doc -->
+	 * This returns the root adapter factory that contains this factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ComposeableAdapterFactory getRootAdapterFactory() {
-    return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
-  }
+		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+	}
 
   /**
-   * This sets the composed adapter factory that contains this factory.
-   * <!-- begin-user-doc -->
+	 * This sets the composed adapter factory that contains this factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
-    this.parentAdapterFactory = parentAdapterFactory;
-  }
+		this.parentAdapterFactory = parentAdapterFactory;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean isFactoryForType(Object type) {
-    return supportedTypes.contains(type) || super.isFactoryForType(type);
-  }
+		return supportedTypes.contains(type) || super.isFactoryForType(type);
+	}
 
   /**
-   * This implementation substitutes the factory itself as the key for the adapter.
-   * <!-- begin-user-doc -->
+	 * This implementation substitutes the factory itself as the key for the adapter.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter adapt(Notifier notifier, Object type) {
-    return super.adapt(notifier, this);
-  }
+		return super.adapt(notifier, this);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object adapt(Object object, Object type) {
-    if (isFactoryForType(type)) {
-      Object adapter = super.adapt(object, type);
-      if (!(type instanceof Class) || (((Class<?>)type).isInstance(adapter))) {
-        return adapter;
-      }
-    }
+		if (isFactoryForType(type)) {
+			Object adapter = super.adapt(object, type);
+			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+				return adapter;
+			}
+		}
 
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * This adds a listener.
-   * <!-- begin-user-doc -->
+	 * This adds a listener.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void addListener(INotifyChangedListener notifyChangedListener) {
-    changeNotifier.addListener(notifyChangedListener);
-  }
+		changeNotifier.addListener(notifyChangedListener);
+	}
 
   /**
-   * This removes a listener.
-   * <!-- begin-user-doc -->
+	 * This removes a listener.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void removeListener(INotifyChangedListener notifyChangedListener) {
-    changeNotifier.removeListener(notifyChangedListener);
-  }
+		changeNotifier.removeListener(notifyChangedListener);
+	}
 
   /**
-   * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
-   * <!-- begin-user-doc -->
+	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void fireNotifyChanged(Notification notification) {
-    changeNotifier.fireNotifyChanged(notification);
+		changeNotifier.fireNotifyChanged(notification);
 
-    if (parentAdapterFactory != null) {
-      parentAdapterFactory.fireNotifyChanged(notification);
-    }
-  }
+		if (parentAdapterFactory != null) {
+			parentAdapterFactory.fireNotifyChanged(notification);
+		}
+	}
 
   /**
-   * This disposes all of the item providers created by this factory. 
-   * <!-- begin-user-doc -->
+	 * This disposes all of the item providers created by this factory. 
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void dispose() {
-    if (assignmentItemProvider != null) assignmentItemProvider.dispose();
-    if (caseItemItemProvider != null) caseItemItemProvider.dispose();
-    if (inputItemItemProvider != null) inputItemItemProvider.dispose();
-    if (audioFileItemItemProvider != null) audioFileItemItemProvider.dispose();
-    if (choiceItemProvider != null) choiceItemProvider.dispose();
-    if (dynamicValueItemProvider != null) dynamicValueItemProvider.dispose();
-    if (ifThenItemProvider != null) ifThenItemProvider.dispose();
-    if (outputItemProvider != null) outputItemProvider.dispose();
-    if (executeScriptItemProvider != null) executeScriptItemProvider.dispose();
-    if (invokeSafletItemProvider != null) invokeSafletItemProvider.dispose();
-    if (debugLogItemProvider != null) debugLogItemProvider.dispose();
-    if (openDBConnectionItemProvider != null) openDBConnectionItemProvider.dispose();
-    if (closeDBConnectionItemProvider != null) closeDBConnectionItemProvider.dispose();
-    if (openQueryItemProvider != null) openQueryItemProvider.dispose();
-    if (setQueryParamItemProvider != null) setQueryParamItemProvider.dispose();
-    if (executeUpdateItemProvider != null) executeUpdateItemProvider.dispose();
-    if (executeQueryItemProvider != null) executeQueryItemProvider.dispose();
-    if (nextRowItemProvider != null) nextRowItemProvider.dispose();
-    if (getColValueItemProvider != null) getColValueItemProvider.dispose();
-    if (getColValuesItemProvider != null) getColValuesItemProvider.dispose();
-    if (setColValueItemProvider != null) setColValueItemProvider.dispose();
-    if (setColValuesItemProvider != null) setColValuesItemProvider.dispose();
-    if (updatetRowItemProvider != null) updatetRowItemProvider.dispose();
-    if (moveToRowItemProvider != null) moveToRowItemProvider.dispose();
-    if (moveToLastRowItemProvider != null) moveToLastRowItemProvider.dispose();
-    if (deleteRowItemProvider != null) deleteRowItemProvider.dispose();
-    if (moveToInsertRowItemProvider != null) moveToInsertRowItemProvider.dispose();
-    if (insertRowItemProvider != null) insertRowItemProvider.dispose();
-    if (moveToFirstRowItemProvider != null) moveToFirstRowItemProvider.dispose();
-    if (previousRowItemProvider != null) previousRowItemProvider.dispose();
-    if (dbConnectionIdItemProvider != null) dbConnectionIdItemProvider.dispose();
-    if (dbQueryIdItemProvider != null) dbQueryIdItemProvider.dispose();
-    if (dbQueryParamIdItemProvider != null) dbQueryParamIdItemProvider.dispose();
-    if (dbResultSetIdItemProvider != null) dbResultSetIdItemProvider.dispose();
-    if (getColMappingItemProvider != null) getColMappingItemProvider.dispose();
-    if (setColMappingItemProvider != null) setColMappingItemProvider.dispose();
-    if (runQueryItemProvider != null) runQueryItemProvider.dispose();
-    if (queryParamMappingItemProvider != null) queryParamMappingItemProvider.dispose();
-    if (itemItemProvider != null) itemItemProvider.dispose();
-    if (outputParameterItemProvider != null) outputParameterItemProvider.dispose();
-  }
+		if (assignmentItemProvider != null) assignmentItemProvider.dispose();
+		if (caseItemItemProvider != null) caseItemItemProvider.dispose();
+		if (inputItemItemProvider != null) inputItemItemProvider.dispose();
+		if (audioFileItemItemProvider != null) audioFileItemItemProvider.dispose();
+		if (choiceItemProvider != null) choiceItemProvider.dispose();
+		if (dynamicValueItemProvider != null) dynamicValueItemProvider.dispose();
+		if (ifThenItemProvider != null) ifThenItemProvider.dispose();
+		if (outputItemProvider != null) outputItemProvider.dispose();
+		if (executeScriptItemProvider != null) executeScriptItemProvider.dispose();
+		if (invokeSafletItemProvider != null) invokeSafletItemProvider.dispose();
+		if (debugLogItemProvider != null) debugLogItemProvider.dispose();
+		if (openDBConnectionItemProvider != null) openDBConnectionItemProvider.dispose();
+		if (closeDBConnectionItemProvider != null) closeDBConnectionItemProvider.dispose();
+		if (openQueryItemProvider != null) openQueryItemProvider.dispose();
+		if (setQueryParamItemProvider != null) setQueryParamItemProvider.dispose();
+		if (executeUpdateItemProvider != null) executeUpdateItemProvider.dispose();
+		if (executeQueryItemProvider != null) executeQueryItemProvider.dispose();
+		if (nextRowItemProvider != null) nextRowItemProvider.dispose();
+		if (getColValueItemProvider != null) getColValueItemProvider.dispose();
+		if (getColValuesItemProvider != null) getColValuesItemProvider.dispose();
+		if (setColValueItemProvider != null) setColValueItemProvider.dispose();
+		if (setColValuesItemProvider != null) setColValuesItemProvider.dispose();
+		if (updatetRowItemProvider != null) updatetRowItemProvider.dispose();
+		if (moveToRowItemProvider != null) moveToRowItemProvider.dispose();
+		if (moveToLastRowItemProvider != null) moveToLastRowItemProvider.dispose();
+		if (deleteRowItemProvider != null) deleteRowItemProvider.dispose();
+		if (moveToInsertRowItemProvider != null) moveToInsertRowItemProvider.dispose();
+		if (insertRowItemProvider != null) insertRowItemProvider.dispose();
+		if (moveToFirstRowItemProvider != null) moveToFirstRowItemProvider.dispose();
+		if (previousRowItemProvider != null) previousRowItemProvider.dispose();
+		if (dbConnectionIdItemProvider != null) dbConnectionIdItemProvider.dispose();
+		if (dbQueryIdItemProvider != null) dbQueryIdItemProvider.dispose();
+		if (dbQueryParamIdItemProvider != null) dbQueryParamIdItemProvider.dispose();
+		if (dbResultSetIdItemProvider != null) dbResultSetIdItemProvider.dispose();
+		if (getColMappingItemProvider != null) getColMappingItemProvider.dispose();
+		if (setColMappingItemProvider != null) setColMappingItemProvider.dispose();
+		if (runQueryItemProvider != null) runQueryItemProvider.dispose();
+		if (queryParamMappingItemProvider != null) queryParamMappingItemProvider.dispose();
+		if (itemItemProvider != null) itemItemProvider.dispose();
+		if (outputParameterItemProvider != null) outputParameterItemProvider.dispose();
+	}
 
 }
