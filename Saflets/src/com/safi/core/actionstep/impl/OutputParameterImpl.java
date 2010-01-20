@@ -21,22 +21,22 @@ import com.safi.core.actionstep.OutputParameter;
  */
 public class OutputParameterImpl extends InputItemImpl implements OutputParameter {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected OutputParameterImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionStepPackage.eINSTANCE.getOutputParameter();
-  }
+		return ActionStepPackage.eINSTANCE.getOutputParameter();
+	}
 
 } //OutputParameterImpl

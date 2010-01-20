@@ -24,65 +24,65 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
  */
 public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
   /**
-   * Creates the default factory implementation.
-   * <!-- begin-user-doc -->
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static CoreFactory init() {
-    try {
-      CoreFactory theCoreFactory = (CoreFactory)EPackage.Registry.INSTANCE.getEFactory("http:///com/safi/core.ecore"); 
-      if (theCoreFactory != null) {
-        return theCoreFactory;
-      }
-    }
-    catch (Exception exception) {
-      EcorePlugin.INSTANCE.log(exception);
-    }
-    return new CoreFactoryImpl();
-  }
+		try {
+			CoreFactory theCoreFactory = (CoreFactory)EPackage.Registry.INSTANCE.getEFactory("http:///com/safi/core.ecore"); 
+			if (theCoreFactory != null) {
+				return theCoreFactory;
+			}
+		}
+		catch (Exception exception) {
+			EcorePlugin.INSTANCE.log(exception);
+		}
+		return new CoreFactoryImpl();
+	}
 
   /**
-   * Creates an instance of the factory.
-   * <!-- begin-user-doc -->
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public CoreFactoryImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public EObject create(EClass eClass) {
-    switch (eClass.getClassifierID()) {
-      default:
-        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eClass.getClassifierID()) {
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public CorePackage getCorePackage() {
-    return (CorePackage)getEPackage();
-  }
+		return (CorePackage)getEPackage();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @deprecated
-   * @generated
-   */
+	 * @deprecated
+	 * @generated
+	 */
   @Deprecated
   public static CorePackage getPackage() {
-    return CorePackage.eINSTANCE;
-  }
+		return CorePackage.eINSTANCE;
+	}
 
 } //CoreFactoryImpl

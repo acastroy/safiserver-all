@@ -45,43 +45,43 @@ import com.safi.server.saflet.manager.DBManager;
  */
 public class ExecuteQueryImpl extends ActionStepImpl implements ExecuteQuery {
   /**
-   * The cached value of the '{@link #getQuery() <em>Query</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getQuery() <em>Query</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getQuery()
-   * @generated
-   * @ordered
-   */
+	 * @see #getQuery()
+	 * @generated
+	 * @ordered
+	 */
   protected DBQueryId query;
 
   /**
-   * The cached value of the '{@link #getResultSet() <em>Result Set</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getResultSet() <em>Result Set</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getResultSet()
-   * @generated
-   * @ordered
-   */
+	 * @see #getResultSet()
+	 * @generated
+	 * @ordered
+	 */
   protected DBResultSetId resultSet;
 
   /**
-   * The default value of the '{@link #getResultSetName() <em>Result Set Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getResultSetName() <em>Result Set Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getResultSetName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getResultSetName()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String RESULT_SET_NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getResultSetName() <em>Result Set Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getResultSetName() <em>Result Set Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getResultSetName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getResultSetName()
+	 * @generated
+	 * @ordered
+	 */
   protected String resultSetName = RESULT_SET_NAME_EDEFAULT;
 
   /**
@@ -149,87 +149,87 @@ public class ExecuteQueryImpl extends ActionStepImpl implements ExecuteQuery {
 
   }
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionStepPackage.eINSTANCE.getExecuteQuery();
-  }
+		return ActionStepPackage.eINSTANCE.getExecuteQuery();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DBQueryId getQuery() {
-    return query;
-  }
+		return query;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setQuery(DBQueryId newQuery) {
-    DBQueryId oldQuery = query;
-    query = newQuery;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.EXECUTE_QUERY__QUERY, oldQuery, query));
-  }
+		DBQueryId oldQuery = query;
+		query = newQuery;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.EXECUTE_QUERY__QUERY, oldQuery, query));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DBResultSetId getResultSet() {
-    return resultSet;
-  }
+		return resultSet;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetResultSet(DBResultSetId newResultSet, NotificationChain msgs) {
-    DBResultSetId oldResultSet = resultSet;
-    resultSet = newResultSet;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionStepPackage.EXECUTE_QUERY__RESULT_SET, oldResultSet, newResultSet);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DBResultSetId oldResultSet = resultSet;
+		resultSet = newResultSet;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionStepPackage.EXECUTE_QUERY__RESULT_SET, oldResultSet, newResultSet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setResultSet(DBResultSetId newResultSet) {
-    if (newResultSet != resultSet) {
-      NotificationChain msgs = null;
-      if (resultSet != null)
-        msgs = ((InternalEObject)resultSet).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.EXECUTE_QUERY__RESULT_SET, null, msgs);
-      if (newResultSet != null)
-        msgs = ((InternalEObject)newResultSet).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.EXECUTE_QUERY__RESULT_SET, null, msgs);
-      msgs = basicSetResultSet(newResultSet, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.EXECUTE_QUERY__RESULT_SET, newResultSet, newResultSet));
-  }
+		if (newResultSet != resultSet) {
+			NotificationChain msgs = null;
+			if (resultSet != null)
+				msgs = ((InternalEObject)resultSet).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.EXECUTE_QUERY__RESULT_SET, null, msgs);
+			if (newResultSet != null)
+				msgs = ((InternalEObject)newResultSet).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.EXECUTE_QUERY__RESULT_SET, null, msgs);
+			msgs = basicSetResultSet(newResultSet, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.EXECUTE_QUERY__RESULT_SET, newResultSet, newResultSet));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getResultSetName() {
-    return resultSetName;
-  }
+		return resultSetName;
+	}
 
   /**
    * <!-- begin-user-doc -->
@@ -254,111 +254,111 @@ public class ExecuteQueryImpl extends ActionStepImpl implements ExecuteQuery {
   }
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionStepPackage.EXECUTE_QUERY__RESULT_SET:
-        return basicSetResultSet(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionStepPackage.EXECUTE_QUERY__RESULT_SET:
+				return basicSetResultSet(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionStepPackage.EXECUTE_QUERY__QUERY:
-        return getQuery();
-      case ActionStepPackage.EXECUTE_QUERY__RESULT_SET:
-        return getResultSet();
-      case ActionStepPackage.EXECUTE_QUERY__RESULT_SET_NAME:
-        return getResultSetName();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionStepPackage.EXECUTE_QUERY__QUERY:
+				return getQuery();
+			case ActionStepPackage.EXECUTE_QUERY__RESULT_SET:
+				return getResultSet();
+			case ActionStepPackage.EXECUTE_QUERY__RESULT_SET_NAME:
+				return getResultSetName();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionStepPackage.EXECUTE_QUERY__QUERY:
-        setQuery((DBQueryId)newValue);
-        return;
-      case ActionStepPackage.EXECUTE_QUERY__RESULT_SET:
-        setResultSet((DBResultSetId)newValue);
-        return;
-      case ActionStepPackage.EXECUTE_QUERY__RESULT_SET_NAME:
-        setResultSetName((String)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionStepPackage.EXECUTE_QUERY__QUERY:
+				setQuery((DBQueryId)newValue);
+				return;
+			case ActionStepPackage.EXECUTE_QUERY__RESULT_SET:
+				setResultSet((DBResultSetId)newValue);
+				return;
+			case ActionStepPackage.EXECUTE_QUERY__RESULT_SET_NAME:
+				setResultSetName((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.EXECUTE_QUERY__QUERY:
-        setQuery((DBQueryId)null);
-        return;
-      case ActionStepPackage.EXECUTE_QUERY__RESULT_SET:
-        setResultSet((DBResultSetId)null);
-        return;
-      case ActionStepPackage.EXECUTE_QUERY__RESULT_SET_NAME:
-        setResultSetName(RESULT_SET_NAME_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.EXECUTE_QUERY__QUERY:
+				setQuery((DBQueryId)null);
+				return;
+			case ActionStepPackage.EXECUTE_QUERY__RESULT_SET:
+				setResultSet((DBResultSetId)null);
+				return;
+			case ActionStepPackage.EXECUTE_QUERY__RESULT_SET_NAME:
+				setResultSetName(RESULT_SET_NAME_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.EXECUTE_QUERY__QUERY:
-        return query != null;
-      case ActionStepPackage.EXECUTE_QUERY__RESULT_SET:
-        return resultSet != null;
-      case ActionStepPackage.EXECUTE_QUERY__RESULT_SET_NAME:
-        return RESULT_SET_NAME_EDEFAULT == null ? resultSetName != null : !RESULT_SET_NAME_EDEFAULT.equals(resultSetName);
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.EXECUTE_QUERY__QUERY:
+				return query != null;
+			case ActionStepPackage.EXECUTE_QUERY__RESULT_SET:
+				return resultSet != null;
+			case ActionStepPackage.EXECUTE_QUERY__RESULT_SET_NAME:
+				return RESULT_SET_NAME_EDEFAULT == null ? resultSetName != null : !RESULT_SET_NAME_EDEFAULT.equals(resultSetName);
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (resultSetName: ");
-    result.append(resultSetName);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (resultSetName: ");
+		result.append(resultSetName);
+		result.append(')');
+		return result.toString();
+	}
 
 } //ExecuteQueryImpl

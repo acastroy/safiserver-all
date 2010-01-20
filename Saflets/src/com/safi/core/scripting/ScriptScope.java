@@ -28,53 +28,53 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface ScriptScope extends EObject {
   /**
-   * Returns the value of the '<em><b>Scope Object</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Scope Object</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Scope Object</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Scope Object</em>' attribute.
-   * @see #setScopeObject(Object)
-   * @see com.safi.core.scripting.ScriptingPackage#getScriptScope_ScopeObject()
-   * @model ordered="false"
-   * @generated
-   */
+	 * @return the value of the '<em>Scope Object</em>' attribute.
+	 * @see #setScopeObject(Object)
+	 * @see com.safi.core.scripting.ScriptingPackage#getScriptScope_ScopeObject()
+	 * @model ordered="false"
+	 * @generated
+	 */
   Object getScopeObject();
 
   /**
-   * Sets the value of the '{@link com.safi.core.scripting.ScriptScope#getScopeObject <em>Scope Object</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.core.scripting.ScriptScope#getScopeObject <em>Scope Object</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Scope Object</em>' attribute.
-   * @see #getScopeObject()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Scope Object</em>' attribute.
+	 * @see #getScopeObject()
+	 * @generated
+	 */
   void setScopeObject(Object value);
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @model exceptions="com.safi.core.scripting.SafletScriptException"
-   * @generated
-   */
+	 * @model exceptions="com.safi.core.scripting.SafletScriptException"
+	 * @generated
+	 */
   void exposeObjectToScript(String name, Object value) throws SafletScriptException;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @model exceptions="com.safi.core.scripting.SafletScriptException"
-   * @generated
-   */
+	 * @model exceptions="com.safi.core.scripting.SafletScriptException"
+	 * @generated
+	 */
   void removeObjectFromScope(String name) throws SafletScriptException;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @model exceptions="com.safi.core.saflet.SafletException"
-   * @generated
-   */
+	 * @model exceptions="com.safi.core.saflet.SafletException"
+	 * @generated
+	 */
   Object getScopedObject(String name) throws SafletException;
 
 } // ScriptScope

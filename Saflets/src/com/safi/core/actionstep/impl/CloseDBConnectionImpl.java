@@ -34,13 +34,13 @@ import com.safi.server.saflet.manager.DBManager;
  */
 public class CloseDBConnectionImpl extends ActionStepImpl implements CloseDBConnection {
   /**
-   * The cached value of the '{@link #getConnection() <em>Connection</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getConnection() <em>Connection</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getConnection()
-   * @generated
-   * @ordered
-   */
+	 * @see #getConnection()
+	 * @generated
+	 * @ordered
+	 */
   protected DBConnectionId connection;
 
   /**
@@ -54,14 +54,14 @@ public class CloseDBConnectionImpl extends ActionStepImpl implements CloseDBConn
   }
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionStepPackage.eINSTANCE.getCloseDBConnection();
-  }
+		return ActionStepPackage.eINSTANCE.getCloseDBConnection();
+	}
 
   @Override
   public void beginProcessing(SafletContext context) throws ActionStepException {
@@ -90,100 +90,100 @@ public class CloseDBConnectionImpl extends ActionStepImpl implements CloseDBConn
 
   }
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DBConnectionId getConnection() {
-    if (connection != null && connection.eIsProxy()) {
-      InternalEObject oldConnection = (InternalEObject)connection;
-      connection = (DBConnectionId)eResolveProxy(oldConnection);
-      if (connection != oldConnection) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionStepPackage.CLOSE_DB_CONNECTION__CONNECTION, oldConnection, connection));
-      }
-    }
-    return connection;
-  }
+		if (connection != null && connection.eIsProxy()) {
+			InternalEObject oldConnection = (InternalEObject)connection;
+			connection = (DBConnectionId)eResolveProxy(oldConnection);
+			if (connection != oldConnection) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionStepPackage.CLOSE_DB_CONNECTION__CONNECTION, oldConnection, connection));
+			}
+		}
+		return connection;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DBConnectionId basicGetConnection() {
-    return connection;
-  }
+		return connection;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setConnection(DBConnectionId newConnection) {
-    DBConnectionId oldConnection = connection;
-    connection = newConnection;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.CLOSE_DB_CONNECTION__CONNECTION, oldConnection, connection));
-  }
+		DBConnectionId oldConnection = connection;
+		connection = newConnection;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.CLOSE_DB_CONNECTION__CONNECTION, oldConnection, connection));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionStepPackage.CLOSE_DB_CONNECTION__CONNECTION:
-        if (resolve) return getConnection();
-        return basicGetConnection();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionStepPackage.CLOSE_DB_CONNECTION__CONNECTION:
+				if (resolve) return getConnection();
+				return basicGetConnection();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionStepPackage.CLOSE_DB_CONNECTION__CONNECTION:
-        setConnection((DBConnectionId)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionStepPackage.CLOSE_DB_CONNECTION__CONNECTION:
+				setConnection((DBConnectionId)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.CLOSE_DB_CONNECTION__CONNECTION:
-        setConnection((DBConnectionId)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.CLOSE_DB_CONNECTION__CONNECTION:
+				setConnection((DBConnectionId)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.CLOSE_DB_CONNECTION__CONNECTION:
-        return connection != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.CLOSE_DB_CONNECTION__CONNECTION:
+				return connection != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //CloseDBConnectionImpl

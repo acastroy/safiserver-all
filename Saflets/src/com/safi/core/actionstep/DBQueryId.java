@@ -29,55 +29,55 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface DBQueryId extends EObject {
   /**
-   * Returns the value of the '<em><b>Id</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Id</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Id</em>' attribute.
-   * @see #setId(String)
-   * @see com.safi.core.actionstep.ActionStepPackage#getDBQueryId_Id()
-   * @model ordered="false"
-   * @generated
-   */
+	 * @return the value of the '<em>Id</em>' attribute.
+	 * @see #setId(String)
+	 * @see com.safi.core.actionstep.ActionStepPackage#getDBQueryId_Id()
+	 * @model ordered="false"
+	 * @generated
+	 */
   String getId();
 
   /**
-   * Sets the value of the '{@link com.safi.core.actionstep.DBQueryId#getId <em>Id</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.core.actionstep.DBQueryId#getId <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Id</em>' attribute.
-   * @see #getId()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Id</em>' attribute.
+	 * @see #getId()
+	 * @generated
+	 */
   void setId(String value);
 
   /**
-   * Returns the value of the '<em><b>Jdbc Statement</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Jdbc Statement</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Jdbc Statement</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Jdbc Statement</em>' attribute.
-   * @see #setJdbcStatement(Statement)
-   * @see com.safi.core.actionstep.ActionStepPackage#getDBQueryId_JdbcStatement()
-   * @model dataType="com.safi.db.Statement" ordered="false"
-   * @generated
-   */
+	 * @return the value of the '<em>Jdbc Statement</em>' attribute.
+	 * @see #setJdbcStatement(Statement)
+	 * @see com.safi.core.actionstep.ActionStepPackage#getDBQueryId_JdbcStatement()
+	 * @model dataType="com.safi.db.Statement" ordered="false"
+	 * @generated
+	 */
   Statement getJdbcStatement();
 
   /**
-   * Sets the value of the '{@link com.safi.core.actionstep.DBQueryId#getJdbcStatement <em>Jdbc Statement</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.core.actionstep.DBQueryId#getJdbcStatement <em>Jdbc Statement</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Jdbc Statement</em>' attribute.
-   * @see #getJdbcStatement()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Jdbc Statement</em>' attribute.
+	 * @see #getJdbcStatement()
+	 * @generated
+	 */
   void setJdbcStatement(Statement value);
 
 } // DBQueryId

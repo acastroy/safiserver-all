@@ -27,190 +27,190 @@ import org.mozilla.javascript.Script;
  */
 public class ScriptingFactoryImpl extends EFactoryImpl implements ScriptingFactory {
   /**
-   * Creates the default factory implementation.
-   * <!-- begin-user-doc -->
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static ScriptingFactory init() {
-    try {
-      ScriptingFactory theScriptingFactory = (ScriptingFactory)EPackage.Registry.INSTANCE.getEFactory("http:///com/safi/core.ecore#scripting"); 
-      if (theScriptingFactory != null) {
-        return theScriptingFactory;
-      }
-    }
-    catch (Exception exception) {
-      EcorePlugin.INSTANCE.log(exception);
-    }
-    return new ScriptingFactoryImpl();
-  }
+		try {
+			ScriptingFactory theScriptingFactory = (ScriptingFactory)EPackage.Registry.INSTANCE.getEFactory("http:///com/safi/core.ecore#scripting"); 
+			if (theScriptingFactory != null) {
+				return theScriptingFactory;
+			}
+		}
+		catch (Exception exception) {
+			EcorePlugin.INSTANCE.log(exception);
+		}
+		return new ScriptingFactoryImpl();
+	}
 
   /**
-   * Creates an instance of the factory.
-   * <!-- begin-user-doc -->
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ScriptingFactoryImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public EObject create(EClass eClass) {
-    switch (eClass.getClassifierID()) {
-      case ScriptingPackage.RHINO_SAFLET_SCRIPT: return createRhinoSafletScript();
-      case ScriptingPackage.RHINO_SAFLET_SCRIPT_ENVIRONMENT: return createRhinoSafletScriptEnvironment();
-      case ScriptingPackage.RHINO_SAFLET_SCRIPT_FACTORY: return createRhinoSafletScriptFactory();
-      case ScriptingPackage.RHINO_SCRIPT_SCOPE: return createRhinoScriptScope();
-      case ScriptingPackage.RHINO_SCRIPT_SCOPE_FACTORY: return createRhinoScriptScopeFactory();
-      default:
-        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eClass.getClassifierID()) {
+			case ScriptingPackage.RHINO_SAFLET_SCRIPT: return createRhinoSafletScript();
+			case ScriptingPackage.RHINO_SAFLET_SCRIPT_ENVIRONMENT: return createRhinoSafletScriptEnvironment();
+			case ScriptingPackage.RHINO_SAFLET_SCRIPT_FACTORY: return createRhinoSafletScriptFactory();
+			case ScriptingPackage.RHINO_SCRIPT_SCOPE: return createRhinoScriptScope();
+			case ScriptingPackage.RHINO_SCRIPT_SCOPE_FACTORY: return createRhinoScriptScopeFactory();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object createFromString(EDataType eDataType, String initialValue) {
-    switch (eDataType.getClassifierID()) {
-      case ScriptingPackage.SAFLET_SCRIPT_EXCEPTION:
-        return createSafletScriptExceptionFromString(eDataType, initialValue);
-      case ScriptingPackage.SCRIPT:
-        return createScriptFromString(eDataType, initialValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eDataType.getClassifierID()) {
+			case ScriptingPackage.SAFLET_SCRIPT_EXCEPTION:
+				return createSafletScriptExceptionFromString(eDataType, initialValue);
+			case ScriptingPackage.SCRIPT:
+				return createScriptFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String convertToString(EDataType eDataType, Object instanceValue) {
-    switch (eDataType.getClassifierID()) {
-      case ScriptingPackage.SAFLET_SCRIPT_EXCEPTION:
-        return convertSafletScriptExceptionToString(eDataType, instanceValue);
-      case ScriptingPackage.SCRIPT:
-        return convertScriptToString(eDataType, instanceValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eDataType.getClassifierID()) {
+			case ScriptingPackage.SAFLET_SCRIPT_EXCEPTION:
+				return convertSafletScriptExceptionToString(eDataType, instanceValue);
+			case ScriptingPackage.SCRIPT:
+				return convertScriptToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public RhinoSafletScript createRhinoSafletScript() {
-    RhinoSafletScriptImpl rhinoSafletScript = new RhinoSafletScriptImpl();
-    return rhinoSafletScript;
-  }
+		RhinoSafletScriptImpl rhinoSafletScript = new RhinoSafletScriptImpl();
+		return rhinoSafletScript;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public RhinoSafletScriptEnvironment createRhinoSafletScriptEnvironment() {
-    RhinoSafletScriptEnvironmentImpl rhinoSafletScriptEnvironment = new RhinoSafletScriptEnvironmentImpl();
-    return rhinoSafletScriptEnvironment;
-  }
+		RhinoSafletScriptEnvironmentImpl rhinoSafletScriptEnvironment = new RhinoSafletScriptEnvironmentImpl();
+		return rhinoSafletScriptEnvironment;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public RhinoSafletScriptFactory createRhinoSafletScriptFactory() {
-    RhinoSafletScriptFactoryImpl rhinoSafletScriptFactory = new RhinoSafletScriptFactoryImpl();
-    return rhinoSafletScriptFactory;
-  }
+		RhinoSafletScriptFactoryImpl rhinoSafletScriptFactory = new RhinoSafletScriptFactoryImpl();
+		return rhinoSafletScriptFactory;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public RhinoScriptScope createRhinoScriptScope() {
-    RhinoScriptScopeImpl rhinoScriptScope = new RhinoScriptScopeImpl();
-    return rhinoScriptScope;
-  }
+		RhinoScriptScopeImpl rhinoScriptScope = new RhinoScriptScopeImpl();
+		return rhinoScriptScope;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public RhinoScriptScopeFactory createRhinoScriptScopeFactory() {
-    RhinoScriptScopeFactoryImpl rhinoScriptScopeFactory = new RhinoScriptScopeFactoryImpl();
-    return rhinoScriptScopeFactory;
-  }
+		RhinoScriptScopeFactoryImpl rhinoScriptScopeFactory = new RhinoScriptScopeFactoryImpl();
+		return rhinoScriptScopeFactory;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public SafletScriptException createSafletScriptExceptionFromString(EDataType eDataType, String initialValue) {
-    return (SafletScriptException)super.createFromString(eDataType, initialValue);
-  }
+		return (SafletScriptException)super.createFromString(eDataType, initialValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String convertSafletScriptExceptionToString(EDataType eDataType, Object instanceValue) {
-    return super.convertToString(eDataType, instanceValue);
-  }
+		return super.convertToString(eDataType, instanceValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Script createScriptFromString(EDataType eDataType, String initialValue) {
-    return (Script)super.createFromString(eDataType, initialValue);
-  }
+		return (Script)super.createFromString(eDataType, initialValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String convertScriptToString(EDataType eDataType, Object instanceValue) {
-    return super.convertToString(eDataType, instanceValue);
-  }
+		return super.convertToString(eDataType, instanceValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ScriptingPackage getScriptingPackage() {
-    return (ScriptingPackage)getEPackage();
-  }
+		return (ScriptingPackage)getEPackage();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @deprecated
-   * @generated
-   */
+	 * @deprecated
+	 * @generated
+	 */
   @Deprecated
   public static ScriptingPackage getPackage() {
-    return ScriptingPackage.eINSTANCE;
-  }
+		return ScriptingPackage.eINSTANCE;
+	}
 
 } //ScriptingFactoryImpl

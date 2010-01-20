@@ -52,23 +52,23 @@ import com.safi.server.saflet.manager.DBManager;
  */
 public class GetColValuesImpl extends ActionStepImpl implements GetColValues {
   /**
-   * The cached value of the '{@link #getResultSet() <em>Result Set</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getResultSet() <em>Result Set</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getResultSet()
-   * @generated
-   * @ordered
-   */
+	 * @see #getResultSet()
+	 * @generated
+	 * @ordered
+	 */
   protected DBResultSetId resultSet;
 
   /**
-   * The cached value of the '{@link #getColumnMappings() <em>Column Mappings</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getColumnMappings() <em>Column Mappings</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getColumnMappings()
-   * @generated
-   * @ordered
-   */
+	 * @see #getColumnMappings()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<GetColMapping> columnMappings;
 
   /**
@@ -224,130 +224,130 @@ public class GetColValuesImpl extends ActionStepImpl implements GetColValues {
 
   }
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionStepPackage.eINSTANCE.getGetColValues();
-  }
+		return ActionStepPackage.eINSTANCE.getGetColValues();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DBResultSetId getResultSet() {
-    return resultSet;
-  }
+		return resultSet;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setResultSet(DBResultSetId newResultSet) {
-    DBResultSetId oldResultSet = resultSet;
-    resultSet = newResultSet;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.GET_COL_VALUES__RESULT_SET, oldResultSet, resultSet));
-  }
+		DBResultSetId oldResultSet = resultSet;
+		resultSet = newResultSet;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.GET_COL_VALUES__RESULT_SET, oldResultSet, resultSet));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<GetColMapping> getColumnMappings() {
-    if (columnMappings == null) {
-      columnMappings = new EObjectContainmentEList<GetColMapping>(GetColMapping.class, this, ActionStepPackage.GET_COL_VALUES__COLUMN_MAPPINGS);
-    }
-    return columnMappings;
-  }
+		if (columnMappings == null) {
+			columnMappings = new EObjectContainmentEList<GetColMapping>(GetColMapping.class, this, ActionStepPackage.GET_COL_VALUES__COLUMN_MAPPINGS);
+		}
+		return columnMappings;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionStepPackage.GET_COL_VALUES__COLUMN_MAPPINGS:
-        return ((InternalEList<?>)getColumnMappings()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionStepPackage.GET_COL_VALUES__COLUMN_MAPPINGS:
+				return ((InternalEList<?>)getColumnMappings()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionStepPackage.GET_COL_VALUES__RESULT_SET:
-        return getResultSet();
-      case ActionStepPackage.GET_COL_VALUES__COLUMN_MAPPINGS:
-        return getColumnMappings();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionStepPackage.GET_COL_VALUES__RESULT_SET:
+				return getResultSet();
+			case ActionStepPackage.GET_COL_VALUES__COLUMN_MAPPINGS:
+				return getColumnMappings();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionStepPackage.GET_COL_VALUES__RESULT_SET:
-        setResultSet((DBResultSetId)newValue);
-        return;
-      case ActionStepPackage.GET_COL_VALUES__COLUMN_MAPPINGS:
-        getColumnMappings().clear();
-        getColumnMappings().addAll((Collection<? extends GetColMapping>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionStepPackage.GET_COL_VALUES__RESULT_SET:
+				setResultSet((DBResultSetId)newValue);
+				return;
+			case ActionStepPackage.GET_COL_VALUES__COLUMN_MAPPINGS:
+				getColumnMappings().clear();
+				getColumnMappings().addAll((Collection<? extends GetColMapping>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.GET_COL_VALUES__RESULT_SET:
-        setResultSet((DBResultSetId)null);
-        return;
-      case ActionStepPackage.GET_COL_VALUES__COLUMN_MAPPINGS:
-        getColumnMappings().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.GET_COL_VALUES__RESULT_SET:
+				setResultSet((DBResultSetId)null);
+				return;
+			case ActionStepPackage.GET_COL_VALUES__COLUMN_MAPPINGS:
+				getColumnMappings().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.GET_COL_VALUES__RESULT_SET:
-        return resultSet != null;
-      case ActionStepPackage.GET_COL_VALUES__COLUMN_MAPPINGS:
-        return columnMappings != null && !columnMappings.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.GET_COL_VALUES__RESULT_SET:
+				return resultSet != null;
+			case ActionStepPackage.GET_COL_VALUES__COLUMN_MAPPINGS:
+				return columnMappings != null && !columnMappings.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //GetColValuesImpl

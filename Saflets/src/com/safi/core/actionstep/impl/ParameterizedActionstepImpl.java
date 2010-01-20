@@ -34,153 +34,153 @@ import com.safi.core.actionstep.ParameterizedActionstep;
  */
 public abstract class ParameterizedActionstepImpl extends ActionStepImpl implements ParameterizedActionstep {
   /**
-   * The cached value of the '{@link #getInputs() <em>Inputs</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getInputs() <em>Inputs</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getInputs()
-   * @generated
-   * @ordered
-   */
+	 * @see #getInputs()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<InputItem> inputs;
 
   /**
-   * The cached value of the '{@link #getOutputParameters() <em>Output Parameters</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getOutputParameters() <em>Output Parameters</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOutputParameters()
-   * @generated
-   * @ordered
-   */
+	 * @see #getOutputParameters()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<OutputParameter> outputParameters;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ParameterizedActionstepImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionStepPackage.eINSTANCE.getParameterizedActionstep();
-  }
+		return ActionStepPackage.eINSTANCE.getParameterizedActionstep();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<InputItem> getInputs() {
-    if (inputs == null) {
-      inputs = new EObjectContainmentEList<InputItem>(InputItem.class, this, ActionStepPackage.PARAMETERIZED_ACTIONSTEP__INPUTS);
-    }
-    return inputs;
-  }
+		if (inputs == null) {
+			inputs = new EObjectContainmentEList<InputItem>(InputItem.class, this, ActionStepPackage.PARAMETERIZED_ACTIONSTEP__INPUTS);
+		}
+		return inputs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<OutputParameter> getOutputParameters() {
-    if (outputParameters == null) {
-      outputParameters = new EObjectContainmentEList<OutputParameter>(OutputParameter.class, this, ActionStepPackage.PARAMETERIZED_ACTIONSTEP__OUTPUT_PARAMETERS);
-    }
-    return outputParameters;
-  }
+		if (outputParameters == null) {
+			outputParameters = new EObjectContainmentEList<OutputParameter>(OutputParameter.class, this, ActionStepPackage.PARAMETERIZED_ACTIONSTEP__OUTPUT_PARAMETERS);
+		}
+		return outputParameters;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionStepPackage.PARAMETERIZED_ACTIONSTEP__INPUTS:
-        return ((InternalEList<?>)getInputs()).basicRemove(otherEnd, msgs);
-      case ActionStepPackage.PARAMETERIZED_ACTIONSTEP__OUTPUT_PARAMETERS:
-        return ((InternalEList<?>)getOutputParameters()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionStepPackage.PARAMETERIZED_ACTIONSTEP__INPUTS:
+				return ((InternalEList<?>)getInputs()).basicRemove(otherEnd, msgs);
+			case ActionStepPackage.PARAMETERIZED_ACTIONSTEP__OUTPUT_PARAMETERS:
+				return ((InternalEList<?>)getOutputParameters()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionStepPackage.PARAMETERIZED_ACTIONSTEP__INPUTS:
-        return getInputs();
-      case ActionStepPackage.PARAMETERIZED_ACTIONSTEP__OUTPUT_PARAMETERS:
-        return getOutputParameters();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionStepPackage.PARAMETERIZED_ACTIONSTEP__INPUTS:
+				return getInputs();
+			case ActionStepPackage.PARAMETERIZED_ACTIONSTEP__OUTPUT_PARAMETERS:
+				return getOutputParameters();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionStepPackage.PARAMETERIZED_ACTIONSTEP__INPUTS:
-        getInputs().clear();
-        getInputs().addAll((Collection<? extends InputItem>)newValue);
-        return;
-      case ActionStepPackage.PARAMETERIZED_ACTIONSTEP__OUTPUT_PARAMETERS:
-        getOutputParameters().clear();
-        getOutputParameters().addAll((Collection<? extends OutputParameter>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionStepPackage.PARAMETERIZED_ACTIONSTEP__INPUTS:
+				getInputs().clear();
+				getInputs().addAll((Collection<? extends InputItem>)newValue);
+				return;
+			case ActionStepPackage.PARAMETERIZED_ACTIONSTEP__OUTPUT_PARAMETERS:
+				getOutputParameters().clear();
+				getOutputParameters().addAll((Collection<? extends OutputParameter>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.PARAMETERIZED_ACTIONSTEP__INPUTS:
-        getInputs().clear();
-        return;
-      case ActionStepPackage.PARAMETERIZED_ACTIONSTEP__OUTPUT_PARAMETERS:
-        getOutputParameters().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.PARAMETERIZED_ACTIONSTEP__INPUTS:
+				getInputs().clear();
+				return;
+			case ActionStepPackage.PARAMETERIZED_ACTIONSTEP__OUTPUT_PARAMETERS:
+				getOutputParameters().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.PARAMETERIZED_ACTIONSTEP__INPUTS:
-        return inputs != null && !inputs.isEmpty();
-      case ActionStepPackage.PARAMETERIZED_ACTIONSTEP__OUTPUT_PARAMETERS:
-        return outputParameters != null && !outputParameters.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.PARAMETERIZED_ACTIONSTEP__INPUTS:
+				return inputs != null && !inputs.isEmpty();
+			case ActionStepPackage.PARAMETERIZED_ACTIONSTEP__OUTPUT_PARAMETERS:
+				return outputParameters != null && !outputParameters.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //ParameterizedActionstepImpl

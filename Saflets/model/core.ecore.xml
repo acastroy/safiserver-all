@@ -888,7 +888,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="safletContext" ordered="false"
           eType="#//saflet/SafletContext" containment="true" resolveProxies="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="safletScope" ordered="false"
-          eType="#//scripting/ScriptScope"/>
+          eType="#//scripting/ScriptScope" volatile="true" transient="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="actionsteps" ordered="false"
           upperBound="-1" eType="#//actionstep/ActionStep" containment="true" resolveProxies="false"
           eOpposite="#//actionstep/ActionStep/saflet"/>

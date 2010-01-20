@@ -36,344 +36,344 @@ import com.safi.core.actionstep.OutputType;
  */
 public class OutputImpl extends EObjectImpl implements Output {
   /**
-   * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTarget()
-   * @generated
-   * @ordered
-   */
+	 * @see #getTarget()
+	 * @generated
+	 * @ordered
+	 */
   protected ActionStep target;
 
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getOutputType() <em>Output Type</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getOutputType() <em>Output Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOutputType()
-   * @generated
-   * @ordered
-   */
+	 * @see #getOutputType()
+	 * @generated
+	 * @ordered
+	 */
   protected static final OutputType OUTPUT_TYPE_EDEFAULT = OutputType.DEFAULT;
 
   /**
-   * The cached value of the '{@link #getOutputType() <em>Output Type</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getOutputType() <em>Output Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOutputType()
-   * @generated
-   * @ordered
-   */
+	 * @see #getOutputType()
+	 * @generated
+	 * @ordered
+	 */
   protected OutputType outputType = OUTPUT_TYPE_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected OutputImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionStepPackage.eINSTANCE.getOutput();
-  }
+		return ActionStepPackage.eINSTANCE.getOutput();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ActionStep getTarget() {
-    if (target != null && target.eIsProxy()) {
-      InternalEObject oldTarget = (InternalEObject)target;
-      target = (ActionStep)eResolveProxy(oldTarget);
-      if (target != oldTarget) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionStepPackage.OUTPUT__TARGET, oldTarget, target));
-      }
-    }
-    return target;
-  }
+		if (target != null && target.eIsProxy()) {
+			InternalEObject oldTarget = (InternalEObject)target;
+			target = (ActionStep)eResolveProxy(oldTarget);
+			if (target != oldTarget) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionStepPackage.OUTPUT__TARGET, oldTarget, target));
+			}
+		}
+		return target;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ActionStep basicGetTarget() {
-    return target;
-  }
+		return target;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setTarget(ActionStep newTarget) {
-    ActionStep oldTarget = target;
-    target = newTarget;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.OUTPUT__TARGET, oldTarget, target));
-  }
+		ActionStep oldTarget = target;
+		target = newTarget;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.OUTPUT__TARGET, oldTarget, target));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ActionStep getParent() {
-    if (eContainerFeatureID != ActionStepPackage.OUTPUT__PARENT) return null;
-    return (ActionStep)eContainer();
-  }
+		if (eContainerFeatureID() != ActionStepPackage.OUTPUT__PARENT) return null;
+		return (ActionStep)eContainer();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetParent(ActionStep newParent, NotificationChain msgs) {
-    msgs = eBasicSetContainer((InternalEObject)newParent, ActionStepPackage.OUTPUT__PARENT, msgs);
-    return msgs;
-  }
+		msgs = eBasicSetContainer((InternalEObject)newParent, ActionStepPackage.OUTPUT__PARENT, msgs);
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setParent(ActionStep newParent) {
-    if (newParent != eInternalContainer() || (eContainerFeatureID != ActionStepPackage.OUTPUT__PARENT && newParent != null)) {
-      if (EcoreUtil.isAncestor(this, newParent))
-        throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-      NotificationChain msgs = null;
-      if (eInternalContainer() != null)
-        msgs = eBasicRemoveFromContainer(msgs);
-      if (newParent != null)
-        msgs = ((InternalEObject)newParent).eInverseAdd(this, ActionStepPackage.ACTION_STEP__OUTPUTS, ActionStep.class, msgs);
-      msgs = basicSetParent(newParent, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.OUTPUT__PARENT, newParent, newParent));
-  }
+		if (newParent != eInternalContainer() || (eContainerFeatureID() != ActionStepPackage.OUTPUT__PARENT && newParent != null)) {
+			if (EcoreUtil.isAncestor(this, newParent))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newParent != null)
+				msgs = ((InternalEObject)newParent).eInverseAdd(this, ActionStepPackage.ACTION_STEP__OUTPUTS, ActionStep.class, msgs);
+			msgs = basicSetParent(newParent, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.OUTPUT__PARENT, newParent, newParent));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getName() {
-    return name;
-  }
+		return name;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setName(String newName) {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.OUTPUT__NAME, oldName, name));
-  }
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.OUTPUT__NAME, oldName, name));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public OutputType getOutputType() {
-    return outputType;
-  }
+		return outputType;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setOutputType(OutputType newOutputType) {
-    OutputType oldOutputType = outputType;
-    outputType = newOutputType == null ? OUTPUT_TYPE_EDEFAULT : newOutputType;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.OUTPUT__OUTPUT_TYPE, oldOutputType, outputType));
-  }
+		OutputType oldOutputType = outputType;
+		outputType = newOutputType == null ? OUTPUT_TYPE_EDEFAULT : newOutputType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.OUTPUT__OUTPUT_TYPE, oldOutputType, outputType));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionStepPackage.OUTPUT__PARENT:
-        if (eInternalContainer() != null)
-          msgs = eBasicRemoveFromContainer(msgs);
-        return basicSetParent((ActionStep)otherEnd, msgs);
-    }
-    return super.eInverseAdd(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionStepPackage.OUTPUT__PARENT:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetParent((ActionStep)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionStepPackage.OUTPUT__PARENT:
-        return basicSetParent(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionStepPackage.OUTPUT__PARENT:
+				return basicSetParent(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-    switch (eContainerFeatureID) {
-      case ActionStepPackage.OUTPUT__PARENT:
-        return eInternalContainer().eInverseRemove(this, ActionStepPackage.ACTION_STEP__OUTPUTS, ActionStep.class, msgs);
-    }
-    return super.eBasicRemoveFromContainerFeature(msgs);
-  }
+		switch (eContainerFeatureID()) {
+			case ActionStepPackage.OUTPUT__PARENT:
+				return eInternalContainer().eInverseRemove(this, ActionStepPackage.ACTION_STEP__OUTPUTS, ActionStep.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionStepPackage.OUTPUT__TARGET:
-        if (resolve) return getTarget();
-        return basicGetTarget();
-      case ActionStepPackage.OUTPUT__PARENT:
-        return getParent();
-      case ActionStepPackage.OUTPUT__NAME:
-        return getName();
-      case ActionStepPackage.OUTPUT__OUTPUT_TYPE:
-        return getOutputType();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionStepPackage.OUTPUT__TARGET:
+				if (resolve) return getTarget();
+				return basicGetTarget();
+			case ActionStepPackage.OUTPUT__PARENT:
+				return getParent();
+			case ActionStepPackage.OUTPUT__NAME:
+				return getName();
+			case ActionStepPackage.OUTPUT__OUTPUT_TYPE:
+				return getOutputType();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionStepPackage.OUTPUT__TARGET:
-        setTarget((ActionStep)newValue);
-        return;
-      case ActionStepPackage.OUTPUT__PARENT:
-        setParent((ActionStep)newValue);
-        return;
-      case ActionStepPackage.OUTPUT__NAME:
-        setName((String)newValue);
-        return;
-      case ActionStepPackage.OUTPUT__OUTPUT_TYPE:
-        setOutputType((OutputType)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionStepPackage.OUTPUT__TARGET:
+				setTarget((ActionStep)newValue);
+				return;
+			case ActionStepPackage.OUTPUT__PARENT:
+				setParent((ActionStep)newValue);
+				return;
+			case ActionStepPackage.OUTPUT__NAME:
+				setName((String)newValue);
+				return;
+			case ActionStepPackage.OUTPUT__OUTPUT_TYPE:
+				setOutputType((OutputType)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.OUTPUT__TARGET:
-        setTarget((ActionStep)null);
-        return;
-      case ActionStepPackage.OUTPUT__PARENT:
-        setParent((ActionStep)null);
-        return;
-      case ActionStepPackage.OUTPUT__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case ActionStepPackage.OUTPUT__OUTPUT_TYPE:
-        setOutputType(OUTPUT_TYPE_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.OUTPUT__TARGET:
+				setTarget((ActionStep)null);
+				return;
+			case ActionStepPackage.OUTPUT__PARENT:
+				setParent((ActionStep)null);
+				return;
+			case ActionStepPackage.OUTPUT__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case ActionStepPackage.OUTPUT__OUTPUT_TYPE:
+				setOutputType(OUTPUT_TYPE_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.OUTPUT__TARGET:
-        return target != null;
-      case ActionStepPackage.OUTPUT__PARENT:
-        return getParent() != null;
-      case ActionStepPackage.OUTPUT__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case ActionStepPackage.OUTPUT__OUTPUT_TYPE:
-        return outputType != OUTPUT_TYPE_EDEFAULT;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.OUTPUT__TARGET:
+				return target != null;
+			case ActionStepPackage.OUTPUT__PARENT:
+				return getParent() != null;
+			case ActionStepPackage.OUTPUT__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ActionStepPackage.OUTPUT__OUTPUT_TYPE:
+				return outputType != OUTPUT_TYPE_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", outputType: ");
-    result.append(outputType);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", outputType: ");
+		result.append(outputType);
+		result.append(')');
+		return result.toString();
+	}
 
 } //OutputImpl

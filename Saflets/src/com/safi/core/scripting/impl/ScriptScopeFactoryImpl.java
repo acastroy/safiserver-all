@@ -34,188 +34,188 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  */
 public abstract class ScriptScopeFactoryImpl extends EObjectImpl implements ScriptScopeFactory {
   /**
-   * The cached value of the '{@link #getScriptScope() <em>Script Scope</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getScriptScope() <em>Script Scope</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getScriptScope()
-   * @generated
-   * @ordered
-   */
+	 * @see #getScriptScope()
+	 * @generated
+	 * @ordered
+	 */
   protected ScriptScope scriptScope;
 
   /**
-   * The cached value of the '{@link #getGlobalScriptScope() <em>Global Script Scope</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getGlobalScriptScope() <em>Global Script Scope</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getGlobalScriptScope()
-   * @generated
-   * @ordered
-   */
+	 * @see #getGlobalScriptScope()
+	 * @generated
+	 * @ordered
+	 */
   protected ScriptScope globalScriptScope;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ScriptScopeFactoryImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ScriptingPackage.Literals.SCRIPT_SCOPE_FACTORY;
-  }
+		return ScriptingPackage.Literals.SCRIPT_SCOPE_FACTORY;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ScriptScope getScriptScope() {
-    if (scriptScope != null && scriptScope.eIsProxy()) {
-      InternalEObject oldScriptScope = (InternalEObject)scriptScope;
-      scriptScope = (ScriptScope)eResolveProxy(oldScriptScope);
-      if (scriptScope != oldScriptScope) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScriptingPackage.SCRIPT_SCOPE_FACTORY__SCRIPT_SCOPE, oldScriptScope, scriptScope));
-      }
-    }
-    return scriptScope;
-  }
+		if (scriptScope != null && scriptScope.eIsProxy()) {
+			InternalEObject oldScriptScope = (InternalEObject)scriptScope;
+			scriptScope = (ScriptScope)eResolveProxy(oldScriptScope);
+			if (scriptScope != oldScriptScope) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScriptingPackage.SCRIPT_SCOPE_FACTORY__SCRIPT_SCOPE, oldScriptScope, scriptScope));
+			}
+		}
+		return scriptScope;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ScriptScope basicGetScriptScope() {
-    return scriptScope;
-  }
+		return scriptScope;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setScriptScope(ScriptScope newScriptScope) {
-    ScriptScope oldScriptScope = scriptScope;
-    scriptScope = newScriptScope;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ScriptingPackage.SCRIPT_SCOPE_FACTORY__SCRIPT_SCOPE, oldScriptScope, scriptScope));
-  }
+		ScriptScope oldScriptScope = scriptScope;
+		scriptScope = newScriptScope;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ScriptingPackage.SCRIPT_SCOPE_FACTORY__SCRIPT_SCOPE, oldScriptScope, scriptScope));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ScriptScope getGlobalScriptScope() {
-    if (globalScriptScope != null && globalScriptScope.eIsProxy()) {
-      InternalEObject oldGlobalScriptScope = (InternalEObject)globalScriptScope;
-      globalScriptScope = (ScriptScope)eResolveProxy(oldGlobalScriptScope);
-      if (globalScriptScope != oldGlobalScriptScope) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScriptingPackage.SCRIPT_SCOPE_FACTORY__GLOBAL_SCRIPT_SCOPE, oldGlobalScriptScope, globalScriptScope));
-      }
-    }
-    return globalScriptScope;
-  }
+		if (globalScriptScope != null && globalScriptScope.eIsProxy()) {
+			InternalEObject oldGlobalScriptScope = (InternalEObject)globalScriptScope;
+			globalScriptScope = (ScriptScope)eResolveProxy(oldGlobalScriptScope);
+			if (globalScriptScope != oldGlobalScriptScope) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScriptingPackage.SCRIPT_SCOPE_FACTORY__GLOBAL_SCRIPT_SCOPE, oldGlobalScriptScope, globalScriptScope));
+			}
+		}
+		return globalScriptScope;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ScriptScope basicGetGlobalScriptScope() {
-    return globalScriptScope;
-  }
+		return globalScriptScope;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setGlobalScriptScope(ScriptScope newGlobalScriptScope) {
-    ScriptScope oldGlobalScriptScope = globalScriptScope;
-    globalScriptScope = newGlobalScriptScope;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ScriptingPackage.SCRIPT_SCOPE_FACTORY__GLOBAL_SCRIPT_SCOPE, oldGlobalScriptScope, globalScriptScope));
-  }
+		ScriptScope oldGlobalScriptScope = globalScriptScope;
+		globalScriptScope = newGlobalScriptScope;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ScriptingPackage.SCRIPT_SCOPE_FACTORY__GLOBAL_SCRIPT_SCOPE, oldGlobalScriptScope, globalScriptScope));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ScriptingPackage.SCRIPT_SCOPE_FACTORY__SCRIPT_SCOPE:
-        if (resolve) return getScriptScope();
-        return basicGetScriptScope();
-      case ScriptingPackage.SCRIPT_SCOPE_FACTORY__GLOBAL_SCRIPT_SCOPE:
-        if (resolve) return getGlobalScriptScope();
-        return basicGetGlobalScriptScope();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ScriptingPackage.SCRIPT_SCOPE_FACTORY__SCRIPT_SCOPE:
+				if (resolve) return getScriptScope();
+				return basicGetScriptScope();
+			case ScriptingPackage.SCRIPT_SCOPE_FACTORY__GLOBAL_SCRIPT_SCOPE:
+				if (resolve) return getGlobalScriptScope();
+				return basicGetGlobalScriptScope();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ScriptingPackage.SCRIPT_SCOPE_FACTORY__SCRIPT_SCOPE:
-        setScriptScope((ScriptScope)newValue);
-        return;
-      case ScriptingPackage.SCRIPT_SCOPE_FACTORY__GLOBAL_SCRIPT_SCOPE:
-        setGlobalScriptScope((ScriptScope)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ScriptingPackage.SCRIPT_SCOPE_FACTORY__SCRIPT_SCOPE:
+				setScriptScope((ScriptScope)newValue);
+				return;
+			case ScriptingPackage.SCRIPT_SCOPE_FACTORY__GLOBAL_SCRIPT_SCOPE:
+				setGlobalScriptScope((ScriptScope)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ScriptingPackage.SCRIPT_SCOPE_FACTORY__SCRIPT_SCOPE:
-        setScriptScope((ScriptScope)null);
-        return;
-      case ScriptingPackage.SCRIPT_SCOPE_FACTORY__GLOBAL_SCRIPT_SCOPE:
-        setGlobalScriptScope((ScriptScope)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ScriptingPackage.SCRIPT_SCOPE_FACTORY__SCRIPT_SCOPE:
+				setScriptScope((ScriptScope)null);
+				return;
+			case ScriptingPackage.SCRIPT_SCOPE_FACTORY__GLOBAL_SCRIPT_SCOPE:
+				setGlobalScriptScope((ScriptScope)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ScriptingPackage.SCRIPT_SCOPE_FACTORY__SCRIPT_SCOPE:
-        return scriptScope != null;
-      case ScriptingPackage.SCRIPT_SCOPE_FACTORY__GLOBAL_SCRIPT_SCOPE:
-        return globalScriptScope != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ScriptingPackage.SCRIPT_SCOPE_FACTORY__SCRIPT_SCOPE:
+				return scriptScope != null;
+			case ScriptingPackage.SCRIPT_SCOPE_FACTORY__GLOBAL_SCRIPT_SCOPE:
+				return globalScriptScope != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //ScriptScopeFactoryImpl

@@ -41,302 +41,302 @@ import com.safi.core.actionstep.DynamicValueType;
  */
 public class DynamicValueImpl extends EObjectImpl implements DynamicValue {
   /**
-   * The default value of the '{@link #getText() <em>Text</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getText()
-   * @generated
-   * @ordered
-   */
+	 * @see #getText()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String TEXT_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getText()
-   * @generated
-   * @ordered
-   */
+	 * @see #getText()
+	 * @generated
+	 * @ordered
+	 */
   protected String text = TEXT_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
   protected static final DynamicValueType TYPE_EDEFAULT = DynamicValueType.LITERAL_TEXT;
 
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
   protected DynamicValueType type = TYPE_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getPayload() <em>Payload</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getPayload() <em>Payload</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPayload()
-   * @generated
-   * @ordered
-   */
+	 * @see #getPayload()
+	 * @generated
+	 * @ordered
+	 */
   protected EObject payload;
 
   /**
-   * The cached value of the '{@link #getData() <em>Data</em>}' map.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getData() <em>Data</em>}' map.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getData()
-   * @generated
-   * @ordered
-   */
+	 * @see #getData()
+	 * @generated
+	 * @ordered
+	 */
   protected EMap<String, String> data;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected DynamicValueImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionStepPackage.eINSTANCE.getDynamicValue();
-  }
+		return ActionStepPackage.eINSTANCE.getDynamicValue();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getText() {
-    return text;
-  }
+		return text;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setText(String newText) {
-    String oldText = text;
-    text = newText;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.DYNAMIC_VALUE__TEXT, oldText, text));
-  }
+		String oldText = text;
+		text = newText;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.DYNAMIC_VALUE__TEXT, oldText, text));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DynamicValueType getType() {
-    return type;
-  }
+		return type;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setType(DynamicValueType newType) {
-    DynamicValueType oldType = type;
-    type = newType == null ? TYPE_EDEFAULT : newType;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.DYNAMIC_VALUE__TYPE, oldType, type));
-  }
+		DynamicValueType oldType = type;
+		type = newType == null ? TYPE_EDEFAULT : newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.DYNAMIC_VALUE__TYPE, oldType, type));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EObject getPayload() {
-    return payload;
-  }
+		return payload;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetPayload(EObject newPayload, NotificationChain msgs) {
-    EObject oldPayload = payload;
-    payload = newPayload;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionStepPackage.DYNAMIC_VALUE__PAYLOAD, oldPayload, newPayload);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		EObject oldPayload = payload;
+		payload = newPayload;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionStepPackage.DYNAMIC_VALUE__PAYLOAD, oldPayload, newPayload);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setPayload(EObject newPayload) {
-    if (newPayload != payload) {
-      NotificationChain msgs = null;
-      if (payload != null)
-        msgs = ((InternalEObject)payload).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.DYNAMIC_VALUE__PAYLOAD, null, msgs);
-      if (newPayload != null)
-        msgs = ((InternalEObject)newPayload).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.DYNAMIC_VALUE__PAYLOAD, null, msgs);
-      msgs = basicSetPayload(newPayload, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.DYNAMIC_VALUE__PAYLOAD, newPayload, newPayload));
-  }
+		if (newPayload != payload) {
+			NotificationChain msgs = null;
+			if (payload != null)
+				msgs = ((InternalEObject)payload).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.DYNAMIC_VALUE__PAYLOAD, null, msgs);
+			if (newPayload != null)
+				msgs = ((InternalEObject)newPayload).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.DYNAMIC_VALUE__PAYLOAD, null, msgs);
+			msgs = basicSetPayload(newPayload, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.DYNAMIC_VALUE__PAYLOAD, newPayload, newPayload));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EMap<String, String> getData() {
-    if (data == null) {
-      data = new EcoreEMap<String,String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, ActionStepPackage.DYNAMIC_VALUE__DATA);
-    }
-    return data;
-  }
+		if (data == null) {
+			data = new EcoreEMap<String,String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, ActionStepPackage.DYNAMIC_VALUE__DATA);
+		}
+		return data;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionStepPackage.DYNAMIC_VALUE__PAYLOAD:
-        return basicSetPayload(null, msgs);
-      case ActionStepPackage.DYNAMIC_VALUE__DATA:
-        return ((InternalEList<?>)getData()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionStepPackage.DYNAMIC_VALUE__PAYLOAD:
+				return basicSetPayload(null, msgs);
+			case ActionStepPackage.DYNAMIC_VALUE__DATA:
+				return ((InternalEList<?>)getData()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionStepPackage.DYNAMIC_VALUE__TEXT:
-        return getText();
-      case ActionStepPackage.DYNAMIC_VALUE__TYPE:
-        return getType();
-      case ActionStepPackage.DYNAMIC_VALUE__PAYLOAD:
-        return getPayload();
-      case ActionStepPackage.DYNAMIC_VALUE__DATA:
-        if (coreType) return getData();
-        else return getData().map();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionStepPackage.DYNAMIC_VALUE__TEXT:
+				return getText();
+			case ActionStepPackage.DYNAMIC_VALUE__TYPE:
+				return getType();
+			case ActionStepPackage.DYNAMIC_VALUE__PAYLOAD:
+				return getPayload();
+			case ActionStepPackage.DYNAMIC_VALUE__DATA:
+				if (coreType) return getData();
+				else return getData().map();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionStepPackage.DYNAMIC_VALUE__TEXT:
-        setText((String)newValue);
-        return;
-      case ActionStepPackage.DYNAMIC_VALUE__TYPE:
-        setType((DynamicValueType)newValue);
-        return;
-      case ActionStepPackage.DYNAMIC_VALUE__PAYLOAD:
-        setPayload((EObject)newValue);
-        return;
-      case ActionStepPackage.DYNAMIC_VALUE__DATA:
-        ((EStructuralFeature.Setting)getData()).set(newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionStepPackage.DYNAMIC_VALUE__TEXT:
+				setText((String)newValue);
+				return;
+			case ActionStepPackage.DYNAMIC_VALUE__TYPE:
+				setType((DynamicValueType)newValue);
+				return;
+			case ActionStepPackage.DYNAMIC_VALUE__PAYLOAD:
+				setPayload((EObject)newValue);
+				return;
+			case ActionStepPackage.DYNAMIC_VALUE__DATA:
+				((EStructuralFeature.Setting)getData()).set(newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.DYNAMIC_VALUE__TEXT:
-        setText(TEXT_EDEFAULT);
-        return;
-      case ActionStepPackage.DYNAMIC_VALUE__TYPE:
-        setType(TYPE_EDEFAULT);
-        return;
-      case ActionStepPackage.DYNAMIC_VALUE__PAYLOAD:
-        setPayload((EObject)null);
-        return;
-      case ActionStepPackage.DYNAMIC_VALUE__DATA:
-        getData().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.DYNAMIC_VALUE__TEXT:
+				setText(TEXT_EDEFAULT);
+				return;
+			case ActionStepPackage.DYNAMIC_VALUE__TYPE:
+				setType(TYPE_EDEFAULT);
+				return;
+			case ActionStepPackage.DYNAMIC_VALUE__PAYLOAD:
+				setPayload((EObject)null);
+				return;
+			case ActionStepPackage.DYNAMIC_VALUE__DATA:
+				getData().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.DYNAMIC_VALUE__TEXT:
-        return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
-      case ActionStepPackage.DYNAMIC_VALUE__TYPE:
-        return type != TYPE_EDEFAULT;
-      case ActionStepPackage.DYNAMIC_VALUE__PAYLOAD:
-        return payload != null;
-      case ActionStepPackage.DYNAMIC_VALUE__DATA:
-        return data != null && !data.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.DYNAMIC_VALUE__TEXT:
+				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
+			case ActionStepPackage.DYNAMIC_VALUE__TYPE:
+				return type != TYPE_EDEFAULT;
+			case ActionStepPackage.DYNAMIC_VALUE__PAYLOAD:
+				return payload != null;
+			case ActionStepPackage.DYNAMIC_VALUE__DATA:
+				return data != null && !data.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (text: ");
-    result.append(text);
-    result.append(", type: ");
-    result.append(type);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (text: ");
+		result.append(text);
+		result.append(", type: ");
+		result.append(type);
+		result.append(')');
+		return result.toString();
+	}
 
 } //DynamicValueImpl

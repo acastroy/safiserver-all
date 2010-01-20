@@ -40,33 +40,33 @@ import com.safi.core.saflet.SafletContext;
  */
 public class ChoiceImpl extends ActionStepImpl implements Choice {
   /**
-   * The cached value of the '{@link #getChoices() <em>Choices</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getChoices() <em>Choices</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getChoices()
-   * @generated
-   * @ordered
-   */
+	 * @see #getChoices()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<CaseItem> choices;
 
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
-   * @generated
-   * @ordered
-   */
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
   protected DynamicValue value;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ChoiceImpl() {
-    super();
-  }
+		super();
+	}
 
   @Override
   public void beginProcessing(SafletContext context) throws ActionStepException {
@@ -132,154 +132,154 @@ public class ChoiceImpl extends ActionStepImpl implements Choice {
 //    return varValue.equals(scriptValue);
   }
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionStepPackage.eINSTANCE.getChoice();
-  }
+		return ActionStepPackage.eINSTANCE.getChoice();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<CaseItem> getChoices() {
-    if (choices == null) {
-      choices = new EObjectContainmentEList<CaseItem>(CaseItem.class, this, ActionStepPackage.CHOICE__CHOICES);
-    }
-    return choices;
-  }
+		if (choices == null) {
+			choices = new EObjectContainmentEList<CaseItem>(CaseItem.class, this, ActionStepPackage.CHOICE__CHOICES);
+		}
+		return choices;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DynamicValue getValue() {
-    return value;
-  }
+		return value;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetValue(DynamicValue newValue, NotificationChain msgs) {
-    DynamicValue oldValue = value;
-    value = newValue;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionStepPackage.CHOICE__VALUE, oldValue, newValue);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DynamicValue oldValue = value;
+		value = newValue;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionStepPackage.CHOICE__VALUE, oldValue, newValue);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setValue(DynamicValue newValue) {
-    if (newValue != value) {
-      NotificationChain msgs = null;
-      if (value != null)
-        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.CHOICE__VALUE, null, msgs);
-      if (newValue != null)
-        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.CHOICE__VALUE, null, msgs);
-      msgs = basicSetValue(newValue, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.CHOICE__VALUE, newValue, newValue));
-  }
+		if (newValue != value) {
+			NotificationChain msgs = null;
+			if (value != null)
+				msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.CHOICE__VALUE, null, msgs);
+			if (newValue != null)
+				msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.CHOICE__VALUE, null, msgs);
+			msgs = basicSetValue(newValue, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.CHOICE__VALUE, newValue, newValue));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionStepPackage.CHOICE__CHOICES:
-        return ((InternalEList<?>)getChoices()).basicRemove(otherEnd, msgs);
-      case ActionStepPackage.CHOICE__VALUE:
-        return basicSetValue(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionStepPackage.CHOICE__CHOICES:
+				return ((InternalEList<?>)getChoices()).basicRemove(otherEnd, msgs);
+			case ActionStepPackage.CHOICE__VALUE:
+				return basicSetValue(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionStepPackage.CHOICE__CHOICES:
-        return getChoices();
-      case ActionStepPackage.CHOICE__VALUE:
-        return getValue();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionStepPackage.CHOICE__CHOICES:
+				return getChoices();
+			case ActionStepPackage.CHOICE__VALUE:
+				return getValue();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionStepPackage.CHOICE__CHOICES:
-        getChoices().clear();
-        getChoices().addAll((Collection<? extends CaseItem>)newValue);
-        return;
-      case ActionStepPackage.CHOICE__VALUE:
-        setValue((DynamicValue)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionStepPackage.CHOICE__CHOICES:
+				getChoices().clear();
+				getChoices().addAll((Collection<? extends CaseItem>)newValue);
+				return;
+			case ActionStepPackage.CHOICE__VALUE:
+				setValue((DynamicValue)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.CHOICE__CHOICES:
-        getChoices().clear();
-        return;
-      case ActionStepPackage.CHOICE__VALUE:
-        setValue((DynamicValue)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.CHOICE__CHOICES:
+				getChoices().clear();
+				return;
+			case ActionStepPackage.CHOICE__VALUE:
+				setValue((DynamicValue)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.CHOICE__CHOICES:
-        return choices != null && !choices.isEmpty();
-      case ActionStepPackage.CHOICE__VALUE:
-        return value != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.CHOICE__CHOICES:
+				return choices != null && !choices.isEmpty();
+			case ActionStepPackage.CHOICE__VALUE:
+				return value != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //ChoiceImpl

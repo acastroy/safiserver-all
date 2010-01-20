@@ -33,98 +33,98 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  */
 public abstract class SafletScriptFactoryImpl extends EObjectImpl implements SafletScriptFactory {
   /**
-   * The cached value of the '{@link #getSafletScript() <em>Saflet Script</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSafletScript() <em>Saflet Script</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSafletScript()
-   * @generated
-   * @ordered
-   */
+	 * @see #getSafletScript()
+	 * @generated
+	 * @ordered
+	 */
   protected SafletScript safletScript;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected SafletScriptFactoryImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ScriptingPackage.Literals.SAFLET_SCRIPT_FACTORY;
-  }
+		return ScriptingPackage.Literals.SAFLET_SCRIPT_FACTORY;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public SafletScript getSafletScript() {
-    if (safletScript != null && safletScript.eIsProxy()) {
-      InternalEObject oldSafletScript = (InternalEObject)safletScript;
-      safletScript = (SafletScript)eResolveProxy(oldSafletScript);
-      if (safletScript != oldSafletScript) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScriptingPackage.SAFLET_SCRIPT_FACTORY__SAFLET_SCRIPT, oldSafletScript, safletScript));
-      }
-    }
-    return safletScript;
-  }
+		if (safletScript != null && safletScript.eIsProxy()) {
+			InternalEObject oldSafletScript = (InternalEObject)safletScript;
+			safletScript = (SafletScript)eResolveProxy(oldSafletScript);
+			if (safletScript != oldSafletScript) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScriptingPackage.SAFLET_SCRIPT_FACTORY__SAFLET_SCRIPT, oldSafletScript, safletScript));
+			}
+		}
+		return safletScript;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public SafletScript basicGetSafletScript() {
-    return safletScript;
-  }
+		return safletScript;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public SafletScript getSafletScript(String name, String scriptText) {
-    // TODO: implement this method
-    // Ensure that you remove @generated or mark it @generated NOT
-    throw new UnsupportedOperationException();
-  }
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ScriptingPackage.SAFLET_SCRIPT_FACTORY__SAFLET_SCRIPT:
-        if (resolve) return getSafletScript();
-        return basicGetSafletScript();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ScriptingPackage.SAFLET_SCRIPT_FACTORY__SAFLET_SCRIPT:
+				if (resolve) return getSafletScript();
+				return basicGetSafletScript();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ScriptingPackage.SAFLET_SCRIPT_FACTORY__SAFLET_SCRIPT:
-        return safletScript != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ScriptingPackage.SAFLET_SCRIPT_FACTORY__SAFLET_SCRIPT:
+				return safletScript != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //SafletScriptFactoryImpl

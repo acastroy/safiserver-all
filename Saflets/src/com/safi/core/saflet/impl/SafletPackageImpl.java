@@ -51,508 +51,501 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  */
 public class SafletPackageImpl extends EPackageImpl implements SafletPackage {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EClass safletEClass = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EClass safletContextEClass = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EClass safletEnvironmentEClass = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EDataType safletExceptionEDataType = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EDataType exceptionEDataType = null;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private EDataType executorEDataType = null;
 
   /**
-   * Creates an instance of the model <b>Package</b>, registered with
-   * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
-   * package URI value.
-   * <p>Note: the correct way to create the package is via the static
-   * factory method {@link #init init()}, which also performs
-   * initialization of the package, or returns the registered package,
-   * if one already exists.
-   * <!-- begin-user-doc -->
+	 * Creates an instance of the model <b>Package</b>, registered with
+	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * package URI value.
+	 * <p>Note: the correct way to create the package is via the static
+	 * factory method {@link #init init()}, which also performs
+	 * initialization of the package, or returns the registered package,
+	 * if one already exists.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.eclipse.emf.ecore.EPackage.Registry
-   * @see com.safi.core.saflet.SafletPackage#eNS_URI
-   * @see #init()
-   * @generated
-   */
+	 * @see org.eclipse.emf.ecore.EPackage.Registry
+	 * @see com.safi.core.saflet.SafletPackage#eNS_URI
+	 * @see #init()
+	 * @generated
+	 */
   private SafletPackageImpl() {
-    super(eNS_URI, SafletFactory.eINSTANCE);
-  }
+		super(eNS_URI, SafletFactory.eINSTANCE);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private static boolean isInited = false;
 
   /**
-   * Creates, registers, and initializes the <b>Package</b> for this
-   * model, and for any others upon which it depends.  Simple
-   * dependencies are satisfied by calling this method on all
-   * dependent packages before doing anything else.  This method drives
-   * initialization for interdependent packages directly, in parallel
-   * with this package, itself.
-   * <p>Of this package and its interdependencies, all packages which
-   * have not yet been registered by their URI values are first created
-   * and registered.  The packages are then initialized in two steps:
-   * meta-model objects for all of the packages are created before any
-   * are initialized, since one package's meta-model objects may refer to
-   * those of another.
-   * <p>Invocation of this method will not affect any packages that have
-   * already been initialized.
-   * <!-- begin-user-doc -->
+	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+	 * 
+	 * <p>This method is used to initialize {@link SafletPackage#eINSTANCE} when that field is accessed.
+	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #eNS_URI
-   * @see #createPackageContents()
-   * @see #initializePackageContents()
-   * @generated
-   */
+	 * @see #eNS_URI
+	 * @see #createPackageContents()
+	 * @see #initializePackageContents()
+	 * @generated
+	 */
   public static SafletPackage init() {
-    if (isInited) return (SafletPackage)EPackage.Registry.INSTANCE.getEPackage(SafletPackage.eNS_URI);
+		if (isInited) return (SafletPackage)EPackage.Registry.INSTANCE.getEPackage(SafletPackage.eNS_URI);
 
-    // Obtain or create and register package
-    SafletPackageImpl theSafletPackage = (SafletPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(eNS_URI) instanceof SafletPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(eNS_URI) : new SafletPackageImpl());
+		// Obtain or create and register package
+		SafletPackageImpl theSafletPackage = (SafletPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof SafletPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new SafletPackageImpl());
 
-    isInited = true;
+		isInited = true;
 
-    // Initialize simple dependencies
-    DbPackage.eINSTANCE.eClass();
+		// Initialize simple dependencies
+		DbPackage.eINSTANCE.eClass();
 
-    // Obtain or create and register interdependencies
-    CorePackageImpl theCorePackage = (CorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) : CorePackage.eINSTANCE);
-    ActionStepPackageImpl theActionStepPackage = (ActionStepPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ActionStepPackage.eNS_URI) instanceof ActionStepPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ActionStepPackage.eNS_URI) : ActionStepPackage.eINSTANCE);
-    ScriptingPackageImpl theScriptingPackage = (ScriptingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ScriptingPackage.eNS_URI) instanceof ScriptingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ScriptingPackage.eNS_URI) : ScriptingPackage.eINSTANCE);
-    InitiatorPackageImpl theInitiatorPackage = (InitiatorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InitiatorPackage.eNS_URI) instanceof InitiatorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InitiatorPackage.eNS_URI) : InitiatorPackage.eINSTANCE);
+		// Obtain or create and register interdependencies
+		CorePackageImpl theCorePackage = (CorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) : CorePackage.eINSTANCE);
+		ActionStepPackageImpl theActionStepPackage = (ActionStepPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ActionStepPackage.eNS_URI) instanceof ActionStepPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ActionStepPackage.eNS_URI) : ActionStepPackage.eINSTANCE);
+		ScriptingPackageImpl theScriptingPackage = (ScriptingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ScriptingPackage.eNS_URI) instanceof ScriptingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ScriptingPackage.eNS_URI) : ScriptingPackage.eINSTANCE);
+		InitiatorPackageImpl theInitiatorPackage = (InitiatorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InitiatorPackage.eNS_URI) instanceof InitiatorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InitiatorPackage.eNS_URI) : InitiatorPackage.eINSTANCE);
 
-    // Create package meta-data objects
-    theSafletPackage.createPackageContents();
-    theCorePackage.createPackageContents();
-    theActionStepPackage.createPackageContents();
-    theScriptingPackage.createPackageContents();
-    theInitiatorPackage.createPackageContents();
+		// Create package meta-data objects
+		theSafletPackage.createPackageContents();
+		theCorePackage.createPackageContents();
+		theActionStepPackage.createPackageContents();
+		theScriptingPackage.createPackageContents();
+		theInitiatorPackage.createPackageContents();
 
-    // Initialize created meta-data
-    theSafletPackage.initializePackageContents();
-    theCorePackage.initializePackageContents();
-    theActionStepPackage.initializePackageContents();
-    theScriptingPackage.initializePackageContents();
-    theInitiatorPackage.initializePackageContents();
+		// Initialize created meta-data
+		theSafletPackage.initializePackageContents();
+		theCorePackage.initializePackageContents();
+		theActionStepPackage.initializePackageContents();
+		theScriptingPackage.initializePackageContents();
+		theInitiatorPackage.initializePackageContents();
 
-    // Mark meta-data to indicate it can't be changed
-    theSafletPackage.freeze();
+		// Mark meta-data to indicate it can't be changed
+		theSafletPackage.freeze();
 
-    return theSafletPackage;
-  }
+  
+		// Update the registry and return the package
+		EPackage.Registry.INSTANCE.put(SafletPackage.eNS_URI, theSafletPackage);
+		return theSafletPackage;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EClass getSaflet() {
-    return safletEClass;
-  }
+		return safletEClass;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EReference getSaflet_Initiator() {
-    return (EReference)safletEClass.getEStructuralFeatures().get(0);
-  }
+		return (EReference)safletEClass.getEStructuralFeatures().get(0);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getSaflet_Active() {
-    return (EAttribute)safletEClass.getEStructuralFeatures().get(1);
-  }
+		return (EAttribute)safletEClass.getEStructuralFeatures().get(1);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getSaflet_Name() {
-    return (EAttribute)safletEClass.getEStructuralFeatures().get(2);
-  }
+		return (EAttribute)safletEClass.getEStructuralFeatures().get(2);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EReference getSaflet_SafletContext() {
-    return (EReference)safletEClass.getEStructuralFeatures().get(3);
-  }
+		return (EReference)safletEClass.getEStructuralFeatures().get(3);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EReference getSaflet_SafletScope() {
-    return (EReference)safletEClass.getEStructuralFeatures().get(4);
-  }
+		return (EReference)safletEClass.getEStructuralFeatures().get(4);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EReference getSaflet_Actionsteps() {
-    return (EReference)safletEClass.getEStructuralFeatures().get(5);
-  }
+		return (EReference)safletEClass.getEStructuralFeatures().get(5);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EReference getSaflet_ScriptingEnvironment() {
-    return (EReference)safletEClass.getEStructuralFeatures().get(6);
-  }
+		return (EReference)safletEClass.getEStructuralFeatures().get(6);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EReference getSaflet_SafletEnvironment() {
-    return (EReference)safletEClass.getEStructuralFeatures().get(7);
-  }
+		return (EReference)safletEClass.getEStructuralFeatures().get(7);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getSaflet_Version() {
-    return (EAttribute)safletEClass.getEStructuralFeatures().get(8);
-  }
+		return (EAttribute)safletEClass.getEStructuralFeatures().get(8);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getSaflet_Description() {
-    return (EAttribute)safletEClass.getEStructuralFeatures().get(9);
-  }
+		return (EAttribute)safletEClass.getEStructuralFeatures().get(9);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getSaflet_Id() {
-    return (EAttribute)safletEClass.getEStructuralFeatures().get(10);
-  }
+		return (EAttribute)safletEClass.getEStructuralFeatures().get(10);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EClass getSafletContext() {
-    return safletContextEClass;
-  }
+		return safletContextEClass;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getSafletContext_Exceptions() {
-    return (EAttribute)safletContextEClass.getEStructuralFeatures().get(0);
-  }
+		return (EAttribute)safletContextEClass.getEStructuralFeatures().get(0);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EReference getSafletContext_ParentSaflet() {
-    return (EReference)safletContextEClass.getEStructuralFeatures().get(1);
-  }
+		return (EReference)safletContextEClass.getEStructuralFeatures().get(1);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EReference getSafletContext_Variables() {
-    return (EReference)safletContextEClass.getEStructuralFeatures().get(2);
-  }
+		return (EReference)safletContextEClass.getEStructuralFeatures().get(2);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EAttribute getSafletContext_SessionVariables() {
-    return (EAttribute)safletContextEClass.getEStructuralFeatures().get(3);
-  }
+		return (EAttribute)safletContextEClass.getEStructuralFeatures().get(3);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EClass getSafletEnvironment() {
-    return safletEnvironmentEClass;
-  }
+		return safletEnvironmentEClass;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EDataType getSafletException() {
-    return safletExceptionEDataType;
-  }
+		return safletExceptionEDataType;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EDataType getException() {
-    return exceptionEDataType;
-  }
+		return exceptionEDataType;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EDataType getExecutor() {
-    return executorEDataType;
-  }
+		return executorEDataType;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public SafletFactory getSafletFactory() {
-    return (SafletFactory)getEFactoryInstance();
-  }
+		return (SafletFactory)getEFactoryInstance();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private boolean isCreated = false;
 
   /**
-   * Creates the meta-model objects for the package.  This method is
-   * guarded to have no affect on any invocation but its first.
-   * <!-- begin-user-doc -->
+	 * Creates the meta-model objects for the package.  This method is
+	 * guarded to have no affect on any invocation but its first.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void createPackageContents() {
-    if (isCreated) return;
-    isCreated = true;
+		if (isCreated) return;
+		isCreated = true;
 
-    // Create classes and their features
-    safletEClass = createEClass(SAFLET);
-    createEReference(safletEClass, SAFLET__INITIATOR);
-    createEAttribute(safletEClass, SAFLET__ACTIVE);
-    createEAttribute(safletEClass, SAFLET__NAME);
-    createEReference(safletEClass, SAFLET__SAFLET_CONTEXT);
-    createEReference(safletEClass, SAFLET__SAFLET_SCOPE);
-    createEReference(safletEClass, SAFLET__ACTIONSTEPS);
-    createEReference(safletEClass, SAFLET__SCRIPTING_ENVIRONMENT);
-    createEReference(safletEClass, SAFLET__SAFLET_ENVIRONMENT);
-    createEAttribute(safletEClass, SAFLET__VERSION);
-    createEAttribute(safletEClass, SAFLET__DESCRIPTION);
-    createEAttribute(safletEClass, SAFLET__ID);
+		// Create classes and their features
+		safletEClass = createEClass(SAFLET);
+		createEReference(safletEClass, SAFLET__INITIATOR);
+		createEAttribute(safletEClass, SAFLET__ACTIVE);
+		createEAttribute(safletEClass, SAFLET__NAME);
+		createEReference(safletEClass, SAFLET__SAFLET_CONTEXT);
+		createEReference(safletEClass, SAFLET__SAFLET_SCOPE);
+		createEReference(safletEClass, SAFLET__ACTIONSTEPS);
+		createEReference(safletEClass, SAFLET__SCRIPTING_ENVIRONMENT);
+		createEReference(safletEClass, SAFLET__SAFLET_ENVIRONMENT);
+		createEAttribute(safletEClass, SAFLET__VERSION);
+		createEAttribute(safletEClass, SAFLET__DESCRIPTION);
+		createEAttribute(safletEClass, SAFLET__ID);
 
-    safletContextEClass = createEClass(SAFLET_CONTEXT);
-    createEAttribute(safletContextEClass, SAFLET_CONTEXT__EXCEPTIONS);
-    createEReference(safletContextEClass, SAFLET_CONTEXT__PARENT_SAFLET);
-    createEReference(safletContextEClass, SAFLET_CONTEXT__VARIABLES);
-    createEAttribute(safletContextEClass, SAFLET_CONTEXT__SESSION_VARIABLES);
+		safletContextEClass = createEClass(SAFLET_CONTEXT);
+		createEAttribute(safletContextEClass, SAFLET_CONTEXT__EXCEPTIONS);
+		createEReference(safletContextEClass, SAFLET_CONTEXT__PARENT_SAFLET);
+		createEReference(safletContextEClass, SAFLET_CONTEXT__VARIABLES);
+		createEAttribute(safletContextEClass, SAFLET_CONTEXT__SESSION_VARIABLES);
 
-    safletEnvironmentEClass = createEClass(SAFLET_ENVIRONMENT);
+		safletEnvironmentEClass = createEClass(SAFLET_ENVIRONMENT);
 
-    // Create data types
-    safletExceptionEDataType = createEDataType(SAFLET_EXCEPTION);
-    exceptionEDataType = createEDataType(EXCEPTION);
-    executorEDataType = createEDataType(EXECUTOR);
-  }
+		// Create data types
+		safletExceptionEDataType = createEDataType(SAFLET_EXCEPTION);
+		exceptionEDataType = createEDataType(EXCEPTION);
+		executorEDataType = createEDataType(EXECUTOR);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private boolean isInitialized = false;
 
   /**
-   * Complete the initialization of the package and its meta-model.  This
-   * method is guarded to have no affect on any invocation but its first.
-   * <!-- begin-user-doc -->
+	 * Complete the initialization of the package and its meta-model.  This
+	 * method is guarded to have no affect on any invocation but its first.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void initializePackageContents() {
-    if (isInitialized) return;
-    isInitialized = true;
+		if (isInitialized) return;
+		isInitialized = true;
 
-    // Initialize package
-    setName(eNAME);
-    setNsPrefix(eNS_PREFIX);
-    setNsURI(eNS_URI);
+		// Initialize package
+		setName(eNAME);
+		setNsPrefix(eNS_PREFIX);
+		setNsURI(eNS_URI);
 
-    // Obtain other dependent packages
-    InitiatorPackage theInitiatorPackage = (InitiatorPackage)EPackage.Registry.INSTANCE.getEPackage(InitiatorPackage.eNS_URI);
-    ScriptingPackage theScriptingPackage = (ScriptingPackage)EPackage.Registry.INSTANCE.getEPackage(ScriptingPackage.eNS_URI);
-    ActionStepPackage theActionStepPackage = (ActionStepPackage)EPackage.Registry.INSTANCE.getEPackage(ActionStepPackage.eNS_URI);
-    DbPackage theDbPackage = (DbPackage)EPackage.Registry.INSTANCE.getEPackage(DbPackage.eNS_URI);
+		// Obtain other dependent packages
+		InitiatorPackage theInitiatorPackage = (InitiatorPackage)EPackage.Registry.INSTANCE.getEPackage(InitiatorPackage.eNS_URI);
+		ScriptingPackage theScriptingPackage = (ScriptingPackage)EPackage.Registry.INSTANCE.getEPackage(ScriptingPackage.eNS_URI);
+		ActionStepPackage theActionStepPackage = (ActionStepPackage)EPackage.Registry.INSTANCE.getEPackage(ActionStepPackage.eNS_URI);
+		DbPackage theDbPackage = (DbPackage)EPackage.Registry.INSTANCE.getEPackage(DbPackage.eNS_URI);
 
-    // Create type parameters
+		// Create type parameters
 
-    // Set bounds for type parameters
+		// Set bounds for type parameters
 
-    // Add supertypes to classes
+		// Add supertypes to classes
 
-    // Initialize classes and features; add operations and parameters
-    initEClass(safletEClass, Saflet.class, "Saflet", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSaflet_Initiator(), theInitiatorPackage.getInitiator(), null, "initiator", null, 0, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-    initEAttribute(getSaflet_Active(), ecorePackage.getEBoolean(), "active", null, 0, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-    initEAttribute(getSaflet_Name(), ecorePackage.getEString(), "name", "New Saflet", 1, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-    initEReference(getSaflet_SafletContext(), this.getSafletContext(), null, "safletContext", null, 0, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-    initEReference(getSaflet_SafletScope(), theScriptingPackage.getScriptScope(), null, "safletScope", null, 0, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-    initEReference(getSaflet_Actionsteps(), theActionStepPackage.getActionStep(), theActionStepPackage.getActionStep_Saflet(), "actionsteps", null, 0, -1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-    initEReference(getSaflet_ScriptingEnvironment(), theScriptingPackage.getSafletScriptEnvironment(), null, "scriptingEnvironment", null, 0, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-    initEReference(getSaflet_SafletEnvironment(), this.getSafletEnvironment(), null, "safletEnvironment", null, 0, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-    initEAttribute(getSaflet_Version(), ecorePackage.getEString(), "version", "", 1, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-    initEAttribute(getSaflet_Description(), ecorePackage.getEString(), "description", "", 0, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-    initEAttribute(getSaflet_Id(), ecorePackage.getEInt(), "id", "-1", 0, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		// Initialize classes and features; add operations and parameters
+		initEClass(safletEClass, Saflet.class, "Saflet", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSaflet_Initiator(), theInitiatorPackage.getInitiator(), null, "initiator", null, 0, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getSaflet_Active(), ecorePackage.getEBoolean(), "active", null, 0, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getSaflet_Name(), ecorePackage.getEString(), "name", "New Saflet", 1, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getSaflet_SafletContext(), this.getSafletContext(), null, "safletContext", null, 0, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getSaflet_SafletScope(), theScriptingPackage.getScriptScope(), null, "safletScope", null, 0, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getSaflet_Actionsteps(), theActionStepPackage.getActionStep(), theActionStepPackage.getActionStep_Saflet(), "actionsteps", null, 0, -1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getSaflet_ScriptingEnvironment(), theScriptingPackage.getSafletScriptEnvironment(), null, "scriptingEnvironment", null, 0, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getSaflet_SafletEnvironment(), this.getSafletEnvironment(), null, "safletEnvironment", null, 0, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getSaflet_Version(), ecorePackage.getEString(), "version", "", 1, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getSaflet_Description(), ecorePackage.getEString(), "description", "", 0, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getSaflet_Id(), ecorePackage.getEInt(), "id", "-1", 0, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    EOperation op = addEOperation(safletEClass, theActionStepPackage.getActionStep(), "getActionStep", 0, 1, IS_UNIQUE, IS_ORDERED);
-    addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = addEOperation(safletEClass, theActionStepPackage.getActionStep(), "getActionStep", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-    op = addEOperation(safletEClass, null, "addActionStep", 0, 1, IS_UNIQUE, IS_ORDERED);
-    addEParameter(op, theActionStepPackage.getActionStep(), "actionstep", 0, 1, IS_UNIQUE, IS_ORDERED);
-    addEException(op, this.getSafletException());
+		op = addEOperation(safletEClass, null, "addActionStep", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theActionStepPackage.getActionStep(), "actionstep", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getSafletException());
 
-    op = addEOperation(safletEClass, theScriptingPackage.getSafletScript(), "getScript", 0, 1, IS_UNIQUE, IS_ORDERED);
-    addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(safletEClass, theScriptingPackage.getSafletScript(), "getScript", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-    op = addEOperation(safletEClass, theScriptingPackage.getSafletScript(), "addScript", 0, 1, IS_UNIQUE, IS_ORDERED);
-    addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
-    addEParameter(op, ecorePackage.getEString(), "scriptText", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(safletEClass, theScriptingPackage.getSafletScript(), "addScript", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "scriptText", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-    addEOperation(safletEClass, null, "initializeScriptableObjects", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(safletEClass, null, "initializeScriptableObjects", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-    op = addEOperation(safletEClass, null, "init", 0, 1, IS_UNIQUE, IS_ORDERED);
-    addEException(op, theInitiatorPackage.getActionStepException());
+		op = addEOperation(safletEClass, null, "init", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, theInitiatorPackage.getActionStepException());
 
-    initEClass(safletContextEClass, SafletContext.class, "SafletContext", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSafletContext_Exceptions(), this.getException(), "exceptions", null, 0, -1, SafletContext.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-    initEReference(getSafletContext_ParentSaflet(), this.getSaflet(), null, "parentSaflet", null, 0, 1, SafletContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-    initEReference(getSafletContext_Variables(), theDbPackage.getVariable(), null, "variables", null, 0, -1, SafletContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-    EGenericType g1 = createEGenericType(ecorePackage.getEMap());
-    EGenericType g2 = createEGenericType(ecorePackage.getEString());
-    g1.getETypeArguments().add(g2);
-    g2 = createEGenericType(ecorePackage.getEJavaObject());
-    g1.getETypeArguments().add(g2);
-    initEAttribute(getSafletContext_SessionVariables(), g1, "sessionVariables", null, 0, 1, SafletContext.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(safletContextEClass, SafletContext.class, "SafletContext", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSafletContext_Exceptions(), this.getException(), "exceptions", null, 0, -1, SafletContext.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getSafletContext_ParentSaflet(), this.getSaflet(), null, "parentSaflet", null, 0, 1, SafletContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getSafletContext_Variables(), theDbPackage.getVariable(), null, "variables", null, 0, -1, SafletContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
+		EGenericType g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		initEAttribute(getSafletContext_SessionVariables(), g1, "sessionVariables", null, 0, 1, SafletContext.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    addEOperation(safletContextEClass, null, "init", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(safletContextEClass, null, "init", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-    op = addEOperation(safletContextEClass, theDbPackage.getVariable(), "getVariable", 0, 1, IS_UNIQUE, IS_ORDERED);
-    addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(safletContextEClass, theDbPackage.getVariable(), "getVariable", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-    op = addEOperation(safletContextEClass, ecorePackage.getEJavaObject(), "getVariableRawValue", 0, 1, IS_UNIQUE, IS_ORDERED);
-    addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(safletContextEClass, ecorePackage.getEJavaObject(), "getVariableRawValue", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-    op = addEOperation(safletContextEClass, null, "setVariableRawValue", 0, 1, IS_UNIQUE, IS_ORDERED);
-    addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
-    addEParameter(op, ecorePackage.getEJavaObject(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(safletContextEClass, null, "setVariableRawValue", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEJavaObject(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-    op = addEOperation(safletContextEClass, null, "addOrUpdateVariable", 0, 1, IS_UNIQUE, IS_ORDERED);
-    addEParameter(op, theDbPackage.getVariable(), "v", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(safletContextEClass, null, "addOrUpdateVariable", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theDbPackage.getVariable(), "v", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-    op = addEOperation(safletContextEClass, theDbPackage.getVariable(), "removeVariable", 0, 1, IS_UNIQUE, IS_ORDERED);
-    addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(safletContextEClass, theDbPackage.getVariable(), "removeVariable", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-    op = addEOperation(safletContextEClass, null, "addException", 0, 1, IS_UNIQUE, IS_ORDERED);
-    addEParameter(op, this.getException(), "e", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(safletContextEClass, null, "addException", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getException(), "e", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-    op = addEOperation(safletContextEClass, null, "merge", 0, 1, IS_UNIQUE, IS_ORDERED);
-    addEParameter(op, this.getSafletContext(), "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(safletContextEClass, null, "merge", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getSafletContext(), "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-    op = addEOperation(safletContextEClass, ecorePackage.getEJavaObject(), "getSessionVar", 0, 1, IS_UNIQUE, IS_ORDERED);
-    addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(safletContextEClass, ecorePackage.getEJavaObject(), "getSessionVar", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-    op = addEOperation(safletContextEClass, null, "setSessionVar", 0, 1, IS_UNIQUE, IS_ORDERED);
-    addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
-    addEParameter(op, ecorePackage.getEJavaObject(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(safletContextEClass, null, "setSessionVar", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEJavaObject(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-    initEClass(safletEnvironmentEClass, SafletEnvironment.class, "SafletEnvironment", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(safletEnvironmentEClass, SafletEnvironment.class, "SafletEnvironment", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    op = addEOperation(safletEnvironmentEClass, this.getSaflet(), "getSaflet", 0, 1, IS_UNIQUE, IS_ORDERED);
-    addEParameter(op, ecorePackage.getEString(), "path", 0, 1, IS_UNIQUE, IS_ORDERED);
-    addEParameter(op, ecorePackage.getEInt(), "coreServerId", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(safletEnvironmentEClass, this.getSaflet(), "getSaflet", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "path", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "coreServerId", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-    addEOperation(safletEnvironmentEClass, this.getExecutor(), "getGlobalExecutor", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(safletEnvironmentEClass, this.getExecutor(), "getGlobalExecutor", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-    op = addEOperation(safletEnvironmentEClass, ecorePackage.getEJavaObject(), "getGlobalVariableValue", 0, 1, IS_UNIQUE, IS_ORDERED);
-    addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(safletEnvironmentEClass, ecorePackage.getEJavaObject(), "getGlobalVariableValue", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-    op = addEOperation(safletEnvironmentEClass, null, "setGlobalVariableValue", 0, 1, IS_UNIQUE, IS_ORDERED);
-    addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
-    addEParameter(op, ecorePackage.getEJavaObject(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(safletEnvironmentEClass, null, "setGlobalVariableValue", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEJavaObject(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-    op = addEOperation(safletEnvironmentEClass, theDbPackage.getVariable(), "getGlobalVariable", 0, 1, IS_UNIQUE, IS_ORDERED);
-    addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(safletEnvironmentEClass, theDbPackage.getVariable(), "getGlobalVariable", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-    // Initialize data types
-    initEDataType(safletExceptionEDataType, SafletException.class, "SafletException", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-    initEDataType(exceptionEDataType, Exception.class, "Exception", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-    initEDataType(executorEDataType, Executor.class, "Executor", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-  }
+		// Initialize data types
+		initEDataType(safletExceptionEDataType, SafletException.class, "SafletException", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(exceptionEDataType, Exception.class, "Exception", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(executorEDataType, Executor.class, "Executor", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+	}
 
 } //SafletPackageImpl

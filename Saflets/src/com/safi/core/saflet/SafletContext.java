@@ -34,19 +34,19 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface SafletContext extends EObject {
   /**
-   * Returns the value of the '<em><b>Exceptions</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.Exception}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Exceptions</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.Exception}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Exceptions</em>' attribute list isn't clear, there really
    * should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Exceptions</em>' attribute list.
-   * @see com.safi.core.saflet.SafletPackage#getSafletContext_Exceptions()
-   * @model dataType="com.safi.core.saflet.Exception" changeable="false" ordered="false"
-   * @generated
-   */
+	 * @return the value of the '<em>Exceptions</em>' attribute list.
+	 * @see com.safi.core.saflet.SafletPackage#getSafletContext_Exceptions()
+	 * @model dataType="com.safi.core.saflet.Exception" changeable="false" ordered="false"
+	 * @generated
+	 */
   EList<Exception> getExceptions();
 
   /**
@@ -67,28 +67,28 @@ public interface SafletContext extends EObject {
   Saflet getParentSaflet();
 
   /**
-   * Sets the value of the '{@link com.safi.core.saflet.SafletContext#getParentSaflet <em>Parent Saflet</em>}' reference.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @param value the new value of the '<em>Parent Saflet</em>' reference.
-   * @see #getParentSaflet()
-   * @generated
-   */
+	 * Sets the value of the '{@link com.safi.core.saflet.SafletContext#getParentSaflet <em>Parent Saflet</em>}' reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Parent Saflet</em>' reference.
+	 * @see #getParentSaflet()
+	 * @generated
+	 */
   void setParentSaflet(Saflet value);
 
   /**
-   * Returns the value of the '<em><b>Variables</b></em>' containment reference list.
-   * The list contents are of type {@link com.safi.db.Variable}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Variables</b></em>' containment reference list.
+	 * The list contents are of type {@link com.safi.db.Variable}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Variables</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Variables</em>' containment reference list.
-   * @see com.safi.core.saflet.SafletPackage#getSafletContext_Variables()
-   * @model containment="true" ordered="false"
-   * @generated
-   */
+	 * @return the value of the '<em>Variables</em>' containment reference list.
+	 * @see com.safi.core.saflet.SafletPackage#getSafletContext_Variables()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
   EList<Variable> getVariables();
 
   /**
@@ -109,82 +109,82 @@ public interface SafletContext extends EObject {
   Map<String, Object> getSessionVariables();
 
   /**
-   * Sets the value of the '{@link com.safi.core.saflet.SafletContext#getSessionVariables <em>Session Variables</em>}' attribute.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @param value the new value of the '<em>Session Variables</em>' attribute.
-   * @see #getSessionVariables()
-   * @generated
-   */
+	 * Sets the value of the '{@link com.safi.core.saflet.SafletContext#getSessionVariables <em>Session Variables</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Session Variables</em>' attribute.
+	 * @see #getSessionVariables()
+	 * @generated
+	 */
   void setSessionVariables(Map<String, Object> value);
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @model
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
   void init();
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @model
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
   Variable getVariable(String name);
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @model
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
   Object getVariableRawValue(String name);
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @model
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
   void setVariableRawValue(String name, Object value);
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @model
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
   void addOrUpdateVariable(Variable v);
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @model
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
   Variable removeVariable(String name);
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @model eDataType="com.safi.core.saflet.Exception"
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @model eDataType="com.safi.core.saflet.Exception"
+	 * @generated
+	 */
   void addException(Exception e);
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @model
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
   void merge(SafletContext context);
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @model
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
   Object getSessionVar(String name);
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @model
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
   void setSessionVar(String name, Object value);
 
   /**

@@ -25,31 +25,31 @@ package com.safi.core.actionstep;
  */
 public interface MoveToFirstRow extends ActionStep {
   /**
-   * Returns the value of the '<em><b>Result Set</b></em>' reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Result Set</b></em>' reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Result Set</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Result Set</em>' reference.
-   * @see #setResultSet(DBResultSetId)
-   * @see com.safi.core.actionstep.ActionStepPackage#getMoveToFirstRow_ResultSet()
-   * @model resolveProxies="false" ordered="false"
-   *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The variable that will receive the number of rows updated' expectedReturnType='Text' helperClass=''"
-   *        annotation="Required criteria='non-null'"
-   * @generated
-   */
+	 * @return the value of the '<em>Result Set</em>' reference.
+	 * @see #setResultSet(DBResultSetId)
+	 * @see com.safi.core.actionstep.ActionStepPackage#getMoveToFirstRow_ResultSet()
+	 * @model resolveProxies="false" ordered="false"
+	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The variable that will receive the number of rows updated' expectedReturnType='Text' helperClass=''"
+	 *        annotation="Required criteria='non-null'"
+	 * @generated
+	 */
   DBResultSetId getResultSet();
 
   /**
-   * Sets the value of the '{@link com.safi.core.actionstep.MoveToFirstRow#getResultSet <em>Result Set</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.core.actionstep.MoveToFirstRow#getResultSet <em>Result Set</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Result Set</em>' reference.
-   * @see #getResultSet()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Result Set</em>' reference.
+	 * @see #getResultSet()
+	 * @generated
+	 */
   void setResultSet(DBResultSetId value);
 
 } // MoveToFirstRow

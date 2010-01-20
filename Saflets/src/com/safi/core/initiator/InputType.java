@@ -23,190 +23,190 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum InputType implements Enumerator {
   /**
-   * The '<em><b>Value</b></em>' literal object.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>Value</b></em>' literal object.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #VALUE_VALUE
-   * @generated
-   * @ordered
-   */
+	 * @see #VALUE_VALUE
+	 * @generated
+	 * @ordered
+	 */
   VALUE(0, "Value", "Value"),
 
   /**
-   * The '<em><b>Variable</b></em>' literal object.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>Variable</b></em>' literal object.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #VARIABLE_VALUE
-   * @generated
-   * @ordered
-   */
+	 * @see #VARIABLE_VALUE
+	 * @generated
+	 * @ordered
+	 */
   VARIABLE(1, "Variable", "Variable");
 
   /**
-   * The '<em><b>Value</b></em>' literal value.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>Value</b></em>' literal value.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of '<em><b>Value</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @see #VALUE
-   * @model name="Value"
-   * @generated
-   * @ordered
-   */
+	 * @see #VALUE
+	 * @model name="Value"
+	 * @generated
+	 * @ordered
+	 */
   public static final int VALUE_VALUE = 0;
 
   /**
-   * The '<em><b>Variable</b></em>' literal value.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>Variable</b></em>' literal value.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of '<em><b>Variable</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @see #VARIABLE
-   * @model name="Variable"
-   * @generated
-   * @ordered
-   */
+	 * @see #VARIABLE
+	 * @model name="Variable"
+	 * @generated
+	 * @ordered
+	 */
   public static final int VARIABLE_VALUE = 1;
 
   /**
-   * An array of all the '<em><b>Input Type</b></em>' enumerators.
-   * <!-- begin-user-doc -->
+	 * An array of all the '<em><b>Input Type</b></em>' enumerators.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private static final InputType[] VALUES_ARRAY =
     new InputType[] {
-      VALUE,
-      VARIABLE,
-    };
+			VALUE,
+			VARIABLE,
+		};
 
   /**
-   * A public read-only list of all the '<em><b>Input Type</b></em>' enumerators.
-   * <!-- begin-user-doc -->
+	 * A public read-only list of all the '<em><b>Input Type</b></em>' enumerators.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static final List<InputType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
   /**
-   * Returns the '<em><b>Input Type</b></em>' literal with the specified literal value.
-   * <!-- begin-user-doc -->
+	 * Returns the '<em><b>Input Type</b></em>' literal with the specified literal value.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static InputType get(String literal) {
-    for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-      InputType result = VALUES_ARRAY[i];
-      if (result.toString().equals(literal)) {
-        return result;
-      }
-    }
-    return null;
-  }
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+			InputType result = VALUES_ARRAY[i];
+			if (result.toString().equals(literal)) {
+				return result;
+			}
+		}
+		return null;
+	}
 
   /**
-   * Returns the '<em><b>Input Type</b></em>' literal with the specified name.
-   * <!-- begin-user-doc -->
+	 * Returns the '<em><b>Input Type</b></em>' literal with the specified name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static InputType getByName(String name) {
-    for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-      InputType result = VALUES_ARRAY[i];
-      if (result.getName().equals(name)) {
-        return result;
-      }
-    }
-    return null;
-  }
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+			InputType result = VALUES_ARRAY[i];
+			if (result.getName().equals(name)) {
+				return result;
+			}
+		}
+		return null;
+	}
 
   /**
-   * Returns the '<em><b>Input Type</b></em>' literal with the specified integer value.
-   * <!-- begin-user-doc -->
+	 * Returns the '<em><b>Input Type</b></em>' literal with the specified integer value.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static InputType get(int value) {
-    switch (value) {
-      case VALUE_VALUE: return VALUE;
-      case VARIABLE_VALUE: return VARIABLE;
-    }
-    return null;
-  }
+		switch (value) {
+			case VALUE_VALUE: return VALUE;
+			case VARIABLE_VALUE: return VARIABLE;
+		}
+		return null;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private final int value;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private final String name;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private final String literal;
 
   /**
-   * Only this class can construct instances.
-   * <!-- begin-user-doc -->
+	 * Only this class can construct instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private InputType(int value, String name, String literal) {
-    this.value = value;
-    this.name = name;
-    this.literal = literal;
-  }
+		this.value = value;
+		this.name = name;
+		this.literal = literal;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public int getValue() {
-    return value;
-  }
+	  return value;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getName() {
-    return name;
-  }
+	  return name;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getLiteral() {
-    return literal;
-  }
+	  return literal;
+	}
 
   /**
-   * Returns the literal value of the enumerator, which is its string representation.
-   * <!-- begin-user-doc -->
+	 * Returns the literal value of the enumerator, which is its string representation.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    return literal;
-  }
+		return literal;
+	}
   
 } //InputType

@@ -47,20 +47,17 @@ import com.safi.db.VariableType;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link com.safi.core.actionstep.impl.ActionStepImpl#getProductId <em>Product Id
- * </em>}</li>
- * <li>{@link com.safi.core.actionstep.impl.ActionStepImpl#isPaused <em>Paused</em>}</li>
- * <li>{@link com.safi.core.actionstep.impl.ActionStepImpl#isActive <em>Active</em>}</li>
- * <li>{@link com.safi.core.actionstep.impl.ActionStepImpl#getOutputs <em>Outputs</em>}</li>
- * <li>{@link com.safi.core.actionstep.impl.ActionStepImpl#getName <em>Name</em>}</li>
- * <li>{@link com.safi.core.actionstep.impl.ActionStepImpl#getSaflet <em>Saflet</em>}</li>
- * <li>{@link com.safi.core.actionstep.impl.ActionStepImpl#getDefaultOutput <em>Default
- * Output</em>}</li>
- * <li>{@link com.safi.core.actionstep.impl.ActionStepImpl#getErrorOutput <em>Error Output
- * </em>}</li>
+ *   <li>{@link com.safi.core.actionstep.impl.ActionStepImpl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link com.safi.core.actionstep.impl.ActionStepImpl#isPaused <em>Paused</em>}</li>
+ *   <li>{@link com.safi.core.actionstep.impl.ActionStepImpl#isActive <em>Active</em>}</li>
+ *   <li>{@link com.safi.core.actionstep.impl.ActionStepImpl#getOutputs <em>Outputs</em>}</li>
+ *   <li>{@link com.safi.core.actionstep.impl.ActionStepImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.safi.core.actionstep.impl.ActionStepImpl#getSaflet <em>Saflet</em>}</li>
+ *   <li>{@link com.safi.core.actionstep.impl.ActionStepImpl#getDefaultOutput <em>Default Output</em>}</li>
+ *   <li>{@link com.safi.core.actionstep.impl.ActionStepImpl#getErrorOutput <em>Error Output</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
@@ -125,13 +122,12 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
   protected boolean active = ACTIVE_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getOutputs() <em>Outputs</em>}' containment
-   * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @see #getOutputs()
-   * @generated
-   * @ordered
-   */
+	 * The cached value of the '{@link #getOutputs() <em>Outputs</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see #getOutputs()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<Output> outputs;
 
   /**
@@ -155,23 +151,21 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getDefaultOutput() <em>Default Output</em>}'
-   * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @see #getDefaultOutput()
-   * @generated
-   * @ordered
-   */
+	 * The cached value of the '{@link #getDefaultOutput() <em>Default Output</em>}' reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see #getDefaultOutput()
+	 * @generated
+	 * @ordered
+	 */
   protected Output defaultOutput;
 
   /**
-   * The cached value of the '{@link #getErrorOutput() <em>Error Output</em>}' reference.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @see #getErrorOutput()
-   * @generated
-   * @ordered
-   */
+	 * The cached value of the '{@link #getErrorOutput() <em>Error Output</em>}' reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see #getErrorOutput()
+	 * @generated
+	 * @ordered
+	 */
   protected Output errorOutput;
   public final static String SCRIPT_TEXT_REPLACE = "((^\\\")|(\\\"(\\s*)(\\;)?$))";
   protected transient volatile boolean breakpoint;
@@ -181,13 +175,12 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
   protected final static Logger stdLog = SafletImpl.stdLog;
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   protected ActionStepImpl() {
-    super();
-  }
+		super();
+	}
 
   @Override
   public int incrementVisits() {
@@ -199,67 +192,59 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
   }
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionStepPackage.eINSTANCE.getActionStep();
-  }
+		return ActionStepPackage.eINSTANCE.getActionStep();
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public String getProductId() {
-    return productId;
-  }
+		return productId;
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public void setProductId(String newProductId) {
-    String oldProductId = productId;
-    productId = newProductId;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET,
-          ActionStepPackage.ACTION_STEP__PRODUCT_ID, oldProductId, productId));
-  }
+		String oldProductId = productId;
+		productId = newProductId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.ACTION_STEP__PRODUCT_ID, oldProductId, productId));
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public boolean isPaused() {
-    return paused;
-  }
+		return paused;
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public void setPaused(boolean newPaused) {
-    boolean oldPaused = paused;
-    paused = newPaused;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.ACTION_STEP__PAUSED,
-          oldPaused, paused));
-  }
+		boolean oldPaused = paused;
+		paused = newPaused;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.ACTION_STEP__PAUSED, oldPaused, paused));
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public boolean isActive() {
-    return active;
-  }
+		return active;
+	}
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -293,85 +278,72 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
   }
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public EList<Output> getOutputs() {
-    if (outputs == null) {
-      outputs = new EObjectContainmentWithInverseEList<Output>(Output.class, this,
-          ActionStepPackage.ACTION_STEP__OUTPUTS, ActionStepPackage.OUTPUT__PARENT);
-    }
-    return outputs;
-  }
+		if (outputs == null) {
+			outputs = new EObjectContainmentWithInverseEList<Output>(Output.class, this, ActionStepPackage.ACTION_STEP__OUTPUTS, ActionStepPackage.OUTPUT__PARENT);
+		}
+		return outputs;
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public String getName() {
-    return name;
-  }
+		return name;
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public void setName(String newName) {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.ACTION_STEP__NAME,
-          oldName, name));
-  }
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.ACTION_STEP__NAME, oldName, name));
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public Saflet getSaflet() {
-    if (eContainerFeatureID != ActionStepPackage.ACTION_STEP__SAFLET)
-      return null;
-    return (Saflet) eContainer();
-  }
+		if (eContainerFeatureID() != ActionStepPackage.ACTION_STEP__SAFLET) return null;
+		return (Saflet)eContainer();
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public NotificationChain basicSetSaflet(Saflet newSaflet, NotificationChain msgs) {
-    msgs = eBasicSetContainer((InternalEObject) newSaflet, ActionStepPackage.ACTION_STEP__SAFLET,
-        msgs);
-    return msgs;
-  }
+		msgs = eBasicSetContainer((InternalEObject)newSaflet, ActionStepPackage.ACTION_STEP__SAFLET, msgs);
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public void setSaflet(Saflet newSaflet) {
-    if (newSaflet != eInternalContainer()
-        || (eContainerFeatureID != ActionStepPackage.ACTION_STEP__SAFLET && newSaflet != null)) {
-      if (EcoreUtil.isAncestor(this, newSaflet))
-        throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-      NotificationChain msgs = null;
-      if (eInternalContainer() != null)
-        msgs = eBasicRemoveFromContainer(msgs);
-      if (newSaflet != null)
-        msgs = ((InternalEObject) newSaflet).eInverseAdd(this, SafletPackage.SAFLET__ACTIONSTEPS,
-            Saflet.class, msgs);
-      msgs = basicSetSaflet(newSaflet, msgs);
-      if (msgs != null)
-        msgs.dispatch();
-    } else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.ACTION_STEP__SAFLET,
-          newSaflet, newSaflet));
-  }
+		if (newSaflet != eInternalContainer() || (eContainerFeatureID() != ActionStepPackage.ACTION_STEP__SAFLET && newSaflet != null)) {
+			if (EcoreUtil.isAncestor(this, newSaflet))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newSaflet != null)
+				msgs = ((InternalEObject)newSaflet).eInverseAdd(this, SafletPackage.SAFLET__ACTIONSTEPS, Saflet.class, msgs);
+			msgs = basicSetSaflet(newSaflet, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.ACTION_STEP__SAFLET, newSaflet, newSaflet));
+	}
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -400,26 +372,23 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
   }
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public Output basicGetDefaultOutput() {
-    return defaultOutput;
-  }
+		return defaultOutput;
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public void setDefaultOutput(Output newDefaultOutput) {
-    Output oldDefaultOutput = defaultOutput;
-    defaultOutput = newDefaultOutput;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET,
-          ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT, oldDefaultOutput, defaultOutput));
-  }
+		Output oldDefaultOutput = defaultOutput;
+		defaultOutput = newDefaultOutput;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT, oldDefaultOutput, defaultOutput));
+	}
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -447,26 +416,23 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
   }
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public Output basicGetErrorOutput() {
-    return errorOutput;
-  }
+		return errorOutput;
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public void setErrorOutput(Output newErrorOutput) {
-    Output oldErrorOutput = errorOutput;
-    errorOutput = newErrorOutput;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET,
-          ActionStepPackage.ACTION_STEP__ERROR_OUTPUT, oldErrorOutput, errorOutput));
-  }
+		Output oldErrorOutput = errorOutput;
+		errorOutput = newErrorOutput;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.ACTION_STEP__ERROR_OUTPUT, oldErrorOutput, errorOutput));
+	}
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -779,214 +745,200 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
   }
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID,
       NotificationChain msgs) {
-    switch (featureID) {
-      case ActionStepPackage.ACTION_STEP__OUTPUTS:
-        return ((InternalEList<InternalEObject>) (InternalEList<?>) getOutputs()).basicAdd(
-            otherEnd, msgs);
-      case ActionStepPackage.ACTION_STEP__SAFLET:
-        if (eInternalContainer() != null)
-          msgs = eBasicRemoveFromContainer(msgs);
-        return basicSetSaflet((Saflet) otherEnd, msgs);
-    }
-    return super.eInverseAdd(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionStepPackage.ACTION_STEP__OUTPUTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutputs()).basicAdd(otherEnd, msgs);
+			case ActionStepPackage.ACTION_STEP__SAFLET:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetSaflet((Saflet)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID,
       NotificationChain msgs) {
-    switch (featureID) {
-      case ActionStepPackage.ACTION_STEP__OUTPUTS:
-        return ((InternalEList<?>) getOutputs()).basicRemove(otherEnd, msgs);
-      case ActionStepPackage.ACTION_STEP__SAFLET:
-        return basicSetSaflet(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionStepPackage.ACTION_STEP__OUTPUTS:
+				return ((InternalEList<?>)getOutputs()).basicRemove(otherEnd, msgs);
+			case ActionStepPackage.ACTION_STEP__SAFLET:
+				return basicSetSaflet(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-    switch (eContainerFeatureID) {
-      case ActionStepPackage.ACTION_STEP__SAFLET:
-        return eInternalContainer().eInverseRemove(this, SafletPackage.SAFLET__ACTIONSTEPS,
-            Saflet.class, msgs);
-    }
-    return super.eBasicRemoveFromContainerFeature(msgs);
-  }
+		switch (eContainerFeatureID()) {
+			case ActionStepPackage.ACTION_STEP__SAFLET:
+				return eInternalContainer().eInverseRemove(this, SafletPackage.SAFLET__ACTIONSTEPS, Saflet.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionStepPackage.ACTION_STEP__PRODUCT_ID:
-        return getProductId();
-      case ActionStepPackage.ACTION_STEP__PAUSED:
-        return isPaused() ? Boolean.TRUE : Boolean.FALSE;
-      case ActionStepPackage.ACTION_STEP__ACTIVE:
-        return isActive() ? Boolean.TRUE : Boolean.FALSE;
-      case ActionStepPackage.ACTION_STEP__OUTPUTS:
-        return getOutputs();
-      case ActionStepPackage.ACTION_STEP__NAME:
-        return getName();
-      case ActionStepPackage.ACTION_STEP__SAFLET:
-        return getSaflet();
-      case ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT:
-        if (resolve)
-          return getDefaultOutput();
-        return basicGetDefaultOutput();
-      case ActionStepPackage.ACTION_STEP__ERROR_OUTPUT:
-        if (resolve)
-          return getErrorOutput();
-        return basicGetErrorOutput();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionStepPackage.ACTION_STEP__PRODUCT_ID:
+				return getProductId();
+			case ActionStepPackage.ACTION_STEP__PAUSED:
+				return isPaused();
+			case ActionStepPackage.ACTION_STEP__ACTIVE:
+				return isActive();
+			case ActionStepPackage.ACTION_STEP__OUTPUTS:
+				return getOutputs();
+			case ActionStepPackage.ACTION_STEP__NAME:
+				return getName();
+			case ActionStepPackage.ACTION_STEP__SAFLET:
+				return getSaflet();
+			case ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT:
+				if (resolve) return getDefaultOutput();
+				return basicGetDefaultOutput();
+			case ActionStepPackage.ACTION_STEP__ERROR_OUTPUT:
+				if (resolve) return getErrorOutput();
+				return basicGetErrorOutput();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionStepPackage.ACTION_STEP__PRODUCT_ID:
-        setProductId((String) newValue);
-        return;
-      case ActionStepPackage.ACTION_STEP__PAUSED:
-        setPaused(((Boolean) newValue).booleanValue());
-        return;
-      case ActionStepPackage.ACTION_STEP__ACTIVE:
-        setActive(((Boolean) newValue).booleanValue());
-        return;
-      case ActionStepPackage.ACTION_STEP__OUTPUTS:
-        getOutputs().clear();
-        getOutputs().addAll((Collection<? extends Output>) newValue);
-        return;
-      case ActionStepPackage.ACTION_STEP__NAME:
-        setName((String) newValue);
-        return;
-      case ActionStepPackage.ACTION_STEP__SAFLET:
-        setSaflet((Saflet) newValue);
-        return;
-      case ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT:
-        setDefaultOutput((Output) newValue);
-        return;
-      case ActionStepPackage.ACTION_STEP__ERROR_OUTPUT:
-        setErrorOutput((Output) newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionStepPackage.ACTION_STEP__PRODUCT_ID:
+				setProductId((String)newValue);
+				return;
+			case ActionStepPackage.ACTION_STEP__PAUSED:
+				setPaused((Boolean)newValue);
+				return;
+			case ActionStepPackage.ACTION_STEP__ACTIVE:
+				setActive((Boolean)newValue);
+				return;
+			case ActionStepPackage.ACTION_STEP__OUTPUTS:
+				getOutputs().clear();
+				getOutputs().addAll((Collection<? extends Output>)newValue);
+				return;
+			case ActionStepPackage.ACTION_STEP__NAME:
+				setName((String)newValue);
+				return;
+			case ActionStepPackage.ACTION_STEP__SAFLET:
+				setSaflet((Saflet)newValue);
+				return;
+			case ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT:
+				setDefaultOutput((Output)newValue);
+				return;
+			case ActionStepPackage.ACTION_STEP__ERROR_OUTPUT:
+				setErrorOutput((Output)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.ACTION_STEP__PRODUCT_ID:
-        setProductId(PRODUCT_ID_EDEFAULT);
-        return;
-      case ActionStepPackage.ACTION_STEP__PAUSED:
-        setPaused(PAUSED_EDEFAULT);
-        return;
-      case ActionStepPackage.ACTION_STEP__ACTIVE:
-        setActive(ACTIVE_EDEFAULT);
-        return;
-      case ActionStepPackage.ACTION_STEP__OUTPUTS:
-        getOutputs().clear();
-        return;
-      case ActionStepPackage.ACTION_STEP__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case ActionStepPackage.ACTION_STEP__SAFLET:
-        setSaflet((Saflet) null);
-        return;
-      case ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT:
-        setDefaultOutput((Output) null);
-        return;
-      case ActionStepPackage.ACTION_STEP__ERROR_OUTPUT:
-        setErrorOutput((Output) null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.ACTION_STEP__PRODUCT_ID:
+				setProductId(PRODUCT_ID_EDEFAULT);
+				return;
+			case ActionStepPackage.ACTION_STEP__PAUSED:
+				setPaused(PAUSED_EDEFAULT);
+				return;
+			case ActionStepPackage.ACTION_STEP__ACTIVE:
+				setActive(ACTIVE_EDEFAULT);
+				return;
+			case ActionStepPackage.ACTION_STEP__OUTPUTS:
+				getOutputs().clear();
+				return;
+			case ActionStepPackage.ACTION_STEP__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case ActionStepPackage.ACTION_STEP__SAFLET:
+				setSaflet((Saflet)null);
+				return;
+			case ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT:
+				setDefaultOutput((Output)null);
+				return;
+			case ActionStepPackage.ACTION_STEP__ERROR_OUTPUT:
+				setErrorOutput((Output)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.ACTION_STEP__PRODUCT_ID:
-        return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT
-            .equals(productId);
-      case ActionStepPackage.ACTION_STEP__PAUSED:
-        return paused != PAUSED_EDEFAULT;
-      case ActionStepPackage.ACTION_STEP__ACTIVE:
-        return active != ACTIVE_EDEFAULT;
-      case ActionStepPackage.ACTION_STEP__OUTPUTS:
-        return outputs != null && !outputs.isEmpty();
-      case ActionStepPackage.ACTION_STEP__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case ActionStepPackage.ACTION_STEP__SAFLET:
-        return getSaflet() != null;
-      case ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT:
-        return defaultOutput != null;
-      case ActionStepPackage.ACTION_STEP__ERROR_OUTPUT:
-        return errorOutput != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.ACTION_STEP__PRODUCT_ID:
+				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
+			case ActionStepPackage.ACTION_STEP__PAUSED:
+				return paused != PAUSED_EDEFAULT;
+			case ActionStepPackage.ACTION_STEP__ACTIVE:
+				return active != ACTIVE_EDEFAULT;
+			case ActionStepPackage.ACTION_STEP__OUTPUTS:
+				return outputs != null && !outputs.isEmpty();
+			case ActionStepPackage.ACTION_STEP__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ActionStepPackage.ACTION_STEP__SAFLET:
+				return getSaflet() != null;
+			case ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT:
+				return defaultOutput != null;
+			case ActionStepPackage.ACTION_STEP__ERROR_OUTPUT:
+				return errorOutput != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * 
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy())
-      return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (productId: ");
-    result.append(productId);
-    result.append(", paused: ");
-    result.append(paused);
-    result.append(", active: ");
-    result.append(active);
-    result.append(", name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (productId: ");
+		result.append(productId);
+		result.append(", paused: ");
+		result.append(paused);
+		result.append(", active: ");
+		result.append(active);
+		result.append(", name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
+	}
 
 } // ActionStepImpl

@@ -18,20 +18,20 @@ import org.eclipse.emf.ecore.EFactory;
  */
 public interface SafletFactory extends EFactory {
   /**
-   * The singleton instance of the factory.
-   * <!-- begin-user-doc -->
+	 * The singleton instance of the factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   SafletFactory eINSTANCE = com.safi.core.saflet.impl.SafletFactoryImpl.init();
 
   /**
-   * Returns the package supported by this factory.
-   * <!-- begin-user-doc -->
+	 * Returns the package supported by this factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the package supported by this factory.
-   * @generated
-   */
+	 * @return the package supported by this factory.
+	 * @generated
+	 */
   SafletPackage getSafletPackage();
 
 } //SafletFactory

@@ -25,43 +25,43 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface SafletEnvironment extends EObject {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @model coreServerIdRequired="true"
-   * @generated
-   */
+	 * @model coreServerIdRequired="true"
+	 * @generated
+	 */
   Saflet getSaflet(String path, int coreServerId);
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @model kind="operation" dataType="com.safi.core.saflet.Executor"
-   * @generated
-   */
+	 * @model kind="operation" dataType="com.safi.core.saflet.Executor"
+	 * @generated
+	 */
   Executor getGlobalExecutor();
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @model
-   * @generated
-   */
+	 * @model
+	 * @generated
+	 */
   Object getGlobalVariableValue(String name);
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @model
-   * @generated
-   */
+	 * @model
+	 * @generated
+	 */
   void setGlobalVariableValue(String name, Object value);
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @model
-   * @generated
-   */
+	 * @model
+	 * @generated
+	 */
   Variable getGlobalVariable(String name);
 
   public abstract List<Variable> getGlobalVariables();

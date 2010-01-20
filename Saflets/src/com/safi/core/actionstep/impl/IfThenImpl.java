@@ -37,23 +37,23 @@ import com.safi.db.VariableType;
  */
 public class IfThenImpl extends ActionStepImpl implements IfThen {
   /**
-   * The cached value of the '{@link #getBooleanExpression() <em>Boolean Expression</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getBooleanExpression() <em>Boolean Expression</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBooleanExpression()
-   * @generated
-   * @ordered
-   */
+	 * @see #getBooleanExpression()
+	 * @generated
+	 * @ordered
+	 */
   protected DynamicValue booleanExpression;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected IfThenImpl() {
-    super();
-  }
+		super();
+	}
 
   @Override
   public void beginProcessing(SafletContext context) throws ActionStepException {
@@ -102,128 +102,128 @@ public class IfThenImpl extends ActionStepImpl implements IfThen {
     
   }
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionStepPackage.eINSTANCE.getIfThen();
-  }
+		return ActionStepPackage.eINSTANCE.getIfThen();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DynamicValue getBooleanExpression() {
-    return booleanExpression;
-  }
+		return booleanExpression;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetBooleanExpression(DynamicValue newBooleanExpression, NotificationChain msgs) {
-    DynamicValue oldBooleanExpression = booleanExpression;
-    booleanExpression = newBooleanExpression;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionStepPackage.IF_THEN__BOOLEAN_EXPRESSION, oldBooleanExpression, newBooleanExpression);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DynamicValue oldBooleanExpression = booleanExpression;
+		booleanExpression = newBooleanExpression;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionStepPackage.IF_THEN__BOOLEAN_EXPRESSION, oldBooleanExpression, newBooleanExpression);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setBooleanExpression(DynamicValue newBooleanExpression) {
-    if (newBooleanExpression != booleanExpression) {
-      NotificationChain msgs = null;
-      if (booleanExpression != null)
-        msgs = ((InternalEObject)booleanExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.IF_THEN__BOOLEAN_EXPRESSION, null, msgs);
-      if (newBooleanExpression != null)
-        msgs = ((InternalEObject)newBooleanExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.IF_THEN__BOOLEAN_EXPRESSION, null, msgs);
-      msgs = basicSetBooleanExpression(newBooleanExpression, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.IF_THEN__BOOLEAN_EXPRESSION, newBooleanExpression, newBooleanExpression));
-  }
+		if (newBooleanExpression != booleanExpression) {
+			NotificationChain msgs = null;
+			if (booleanExpression != null)
+				msgs = ((InternalEObject)booleanExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.IF_THEN__BOOLEAN_EXPRESSION, null, msgs);
+			if (newBooleanExpression != null)
+				msgs = ((InternalEObject)newBooleanExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.IF_THEN__BOOLEAN_EXPRESSION, null, msgs);
+			msgs = basicSetBooleanExpression(newBooleanExpression, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.IF_THEN__BOOLEAN_EXPRESSION, newBooleanExpression, newBooleanExpression));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionStepPackage.IF_THEN__BOOLEAN_EXPRESSION:
-        return basicSetBooleanExpression(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionStepPackage.IF_THEN__BOOLEAN_EXPRESSION:
+				return basicSetBooleanExpression(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionStepPackage.IF_THEN__BOOLEAN_EXPRESSION:
-        return getBooleanExpression();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionStepPackage.IF_THEN__BOOLEAN_EXPRESSION:
+				return getBooleanExpression();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionStepPackage.IF_THEN__BOOLEAN_EXPRESSION:
-        setBooleanExpression((DynamicValue)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionStepPackage.IF_THEN__BOOLEAN_EXPRESSION:
+				setBooleanExpression((DynamicValue)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.IF_THEN__BOOLEAN_EXPRESSION:
-        setBooleanExpression((DynamicValue)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.IF_THEN__BOOLEAN_EXPRESSION:
+				setBooleanExpression((DynamicValue)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.IF_THEN__BOOLEAN_EXPRESSION:
-        return booleanExpression != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.IF_THEN__BOOLEAN_EXPRESSION:
+				return booleanExpression != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //IfThenImpl

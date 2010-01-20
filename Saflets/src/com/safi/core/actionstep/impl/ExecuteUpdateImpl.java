@@ -45,23 +45,23 @@ import com.safi.server.saflet.manager.DBManager;
  */
 public class ExecuteUpdateImpl extends ActionStepImpl implements ExecuteUpdate {
   /**
-   * The cached value of the '{@link #getQuery() <em>Query</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getQuery() <em>Query</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getQuery()
-   * @generated
-   * @ordered
-   */
+	 * @see #getQuery()
+	 * @generated
+	 * @ordered
+	 */
   protected DBQueryId query;
 
   /**
-   * The cached value of the '{@link #getRowsUpdatedVar() <em>Rows Updated Var</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRowsUpdatedVar() <em>Rows Updated Var</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRowsUpdatedVar()
-   * @generated
-   * @ordered
-   */
+	 * @see #getRowsUpdatedVar()
+	 * @generated
+	 * @ordered
+	 */
   protected DynamicValue rowsUpdatedVar;
 
   /**
@@ -133,159 +133,159 @@ public class ExecuteUpdateImpl extends ActionStepImpl implements ExecuteUpdate {
 
   }
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionStepPackage.eINSTANCE.getExecuteUpdate();
-  }
+		return ActionStepPackage.eINSTANCE.getExecuteUpdate();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DBQueryId getQuery() {
-    return query;
-  }
+		return query;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setQuery(DBQueryId newQuery) {
-    DBQueryId oldQuery = query;
-    query = newQuery;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.EXECUTE_UPDATE__QUERY, oldQuery, query));
-  }
+		DBQueryId oldQuery = query;
+		query = newQuery;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.EXECUTE_UPDATE__QUERY, oldQuery, query));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DynamicValue getRowsUpdatedVar() {
-    return rowsUpdatedVar;
-  }
+		return rowsUpdatedVar;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetRowsUpdatedVar(DynamicValue newRowsUpdatedVar, NotificationChain msgs) {
-    DynamicValue oldRowsUpdatedVar = rowsUpdatedVar;
-    rowsUpdatedVar = newRowsUpdatedVar;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionStepPackage.EXECUTE_UPDATE__ROWS_UPDATED_VAR, oldRowsUpdatedVar, newRowsUpdatedVar);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DynamicValue oldRowsUpdatedVar = rowsUpdatedVar;
+		rowsUpdatedVar = newRowsUpdatedVar;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionStepPackage.EXECUTE_UPDATE__ROWS_UPDATED_VAR, oldRowsUpdatedVar, newRowsUpdatedVar);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setRowsUpdatedVar(DynamicValue newRowsUpdatedVar) {
-    if (newRowsUpdatedVar != rowsUpdatedVar) {
-      NotificationChain msgs = null;
-      if (rowsUpdatedVar != null)
-        msgs = ((InternalEObject)rowsUpdatedVar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.EXECUTE_UPDATE__ROWS_UPDATED_VAR, null, msgs);
-      if (newRowsUpdatedVar != null)
-        msgs = ((InternalEObject)newRowsUpdatedVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.EXECUTE_UPDATE__ROWS_UPDATED_VAR, null, msgs);
-      msgs = basicSetRowsUpdatedVar(newRowsUpdatedVar, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.EXECUTE_UPDATE__ROWS_UPDATED_VAR, newRowsUpdatedVar, newRowsUpdatedVar));
-  }
+		if (newRowsUpdatedVar != rowsUpdatedVar) {
+			NotificationChain msgs = null;
+			if (rowsUpdatedVar != null)
+				msgs = ((InternalEObject)rowsUpdatedVar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.EXECUTE_UPDATE__ROWS_UPDATED_VAR, null, msgs);
+			if (newRowsUpdatedVar != null)
+				msgs = ((InternalEObject)newRowsUpdatedVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.EXECUTE_UPDATE__ROWS_UPDATED_VAR, null, msgs);
+			msgs = basicSetRowsUpdatedVar(newRowsUpdatedVar, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.EXECUTE_UPDATE__ROWS_UPDATED_VAR, newRowsUpdatedVar, newRowsUpdatedVar));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionStepPackage.EXECUTE_UPDATE__ROWS_UPDATED_VAR:
-        return basicSetRowsUpdatedVar(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionStepPackage.EXECUTE_UPDATE__ROWS_UPDATED_VAR:
+				return basicSetRowsUpdatedVar(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionStepPackage.EXECUTE_UPDATE__QUERY:
-        return getQuery();
-      case ActionStepPackage.EXECUTE_UPDATE__ROWS_UPDATED_VAR:
-        return getRowsUpdatedVar();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionStepPackage.EXECUTE_UPDATE__QUERY:
+				return getQuery();
+			case ActionStepPackage.EXECUTE_UPDATE__ROWS_UPDATED_VAR:
+				return getRowsUpdatedVar();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionStepPackage.EXECUTE_UPDATE__QUERY:
-        setQuery((DBQueryId)newValue);
-        return;
-      case ActionStepPackage.EXECUTE_UPDATE__ROWS_UPDATED_VAR:
-        setRowsUpdatedVar((DynamicValue)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionStepPackage.EXECUTE_UPDATE__QUERY:
+				setQuery((DBQueryId)newValue);
+				return;
+			case ActionStepPackage.EXECUTE_UPDATE__ROWS_UPDATED_VAR:
+				setRowsUpdatedVar((DynamicValue)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.EXECUTE_UPDATE__QUERY:
-        setQuery((DBQueryId)null);
-        return;
-      case ActionStepPackage.EXECUTE_UPDATE__ROWS_UPDATED_VAR:
-        setRowsUpdatedVar((DynamicValue)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.EXECUTE_UPDATE__QUERY:
+				setQuery((DBQueryId)null);
+				return;
+			case ActionStepPackage.EXECUTE_UPDATE__ROWS_UPDATED_VAR:
+				setRowsUpdatedVar((DynamicValue)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.EXECUTE_UPDATE__QUERY:
-        return query != null;
-      case ActionStepPackage.EXECUTE_UPDATE__ROWS_UPDATED_VAR:
-        return rowsUpdatedVar != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.EXECUTE_UPDATE__QUERY:
+				return query != null;
+			case ActionStepPackage.EXECUTE_UPDATE__ROWS_UPDATED_VAR:
+				return rowsUpdatedVar != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //ExecuteUpdateImpl

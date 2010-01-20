@@ -63,33 +63,24 @@ import com.safi.server.saflet.manager.DBManager;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link com.safi.core.actionstep.impl.RunQueryImpl#getConnection <em>
- * Connection</em>}</li>
- * <li>{@link com.safi.core.actionstep.impl.RunQueryImpl#getQuery <em>Query
- * </em>}</li>
- * <li>{@link com.safi.core.actionstep.impl.RunQueryImpl#getParamMappings <em>
- * Param Mappings</em>}</li>
- * <li>{@link com.safi.core.actionstep.impl.RunQueryImpl#getResultSetName <em>
- * Result Set Name</em>}</li>
- * <li>{@link com.safi.core.actionstep.impl.RunQueryImpl#isScrollable <em>
- * Scrollable</em>}</li>
- * <li>{@link com.safi.core.actionstep.impl.RunQueryImpl#isReadOnly <em>Read
- * Only</em>}</li>
- * <li>{@link com.safi.core.actionstep.impl.RunQueryImpl#getResultSet <em>Result
- * Set</em>}</li>
- * <li>{@link com.safi.core.actionstep.impl.RunQueryImpl#getRowsUpdatedVar <em>
- * Rows Updated Var</em>}</li>
- * <li>{@link com.safi.core.actionstep.impl.RunQueryImpl#getSql <em>Sql</em>}</li>
+ *   <li>{@link com.safi.core.actionstep.impl.RunQueryImpl#getConnection <em>Connection</em>}</li>
+ *   <li>{@link com.safi.core.actionstep.impl.RunQueryImpl#getQuery <em>Query</em>}</li>
+ *   <li>{@link com.safi.core.actionstep.impl.RunQueryImpl#getParamMappings <em>Param Mappings</em>}</li>
+ *   <li>{@link com.safi.core.actionstep.impl.RunQueryImpl#getResultSetName <em>Result Set Name</em>}</li>
+ *   <li>{@link com.safi.core.actionstep.impl.RunQueryImpl#isScrollable <em>Scrollable</em>}</li>
+ *   <li>{@link com.safi.core.actionstep.impl.RunQueryImpl#isReadOnly <em>Read Only</em>}</li>
+ *   <li>{@link com.safi.core.actionstep.impl.RunQueryImpl#getResultSet <em>Result Set</em>}</li>
+ *   <li>{@link com.safi.core.actionstep.impl.RunQueryImpl#getRowsUpdatedVar <em>Rows Updated Var</em>}</li>
+ *   <li>{@link com.safi.core.actionstep.impl.RunQueryImpl#getSql <em>Sql</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 	/**
-	 * The cached value of the '{@link #getConnection() <em>Connection</em>}'
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getConnection() <em>Connection</em>}' reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getConnection()
 	 * @generated
 	 * @ordered
@@ -97,9 +88,8 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 	protected DBConnectionId connection;
 
 	/**
-	 * The cached value of the '{@link #getQuery() <em>Query</em>}' containment
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getQuery() <em>Query</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getQuery()
 	 * @generated
 	 * @ordered
@@ -107,10 +97,9 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 	protected DBQueryId query;
 
 	/**
-	 * The cached value of the '{@link #getParamMappings()
-	 * <em>Param Mappings</em>}' containment reference list. <!-- begin-user-doc
+	 * The cached value of the '{@link #getParamMappings() <em>Param Mappings</em>}' containment reference list.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @see #getParamMappings()
 	 * @generated
 	 * @ordered
@@ -118,10 +107,9 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 	protected EList<QueryParamMapping> paramMappings;
 
 	/**
-	 * The default value of the '{@link #getResultSetName()
-	 * <em>Result Set Name</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The default value of the '{@link #getResultSetName() <em>Result Set Name</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #getResultSetName()
 	 * @generated
 	 * @ordered
@@ -129,10 +117,9 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 	protected static final String RESULT_SET_NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getResultSetName()
-	 * <em>Result Set Name</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getResultSetName() <em>Result Set Name</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #getResultSetName()
 	 * @generated
 	 * @ordered
@@ -140,9 +127,8 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 	protected String resultSetName = RESULT_SET_NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isScrollable() <em>Scrollable</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #isScrollable() <em>Scrollable</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isScrollable()
 	 * @generated
 	 * @ordered
@@ -150,9 +136,8 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 	protected static final boolean SCROLLABLE_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isScrollable() <em>Scrollable</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #isScrollable() <em>Scrollable</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isScrollable()
 	 * @generated
 	 * @ordered
@@ -160,9 +145,8 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 	protected boolean scrollable = SCROLLABLE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isReadOnly() <em>Read Only</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #isReadOnly() <em>Read Only</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isReadOnly()
 	 * @generated
 	 * @ordered
@@ -170,9 +154,8 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 	protected static final boolean READ_ONLY_EDEFAULT = true;
 
 	/**
-	 * The cached value of the '{@link #isReadOnly() <em>Read Only</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #isReadOnly() <em>Read Only</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isReadOnly()
 	 * @generated
 	 * @ordered
@@ -180,9 +163,8 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 	protected boolean readOnly = READ_ONLY_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getResultSet() <em>Result Set</em>}'
-	 * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getResultSet() <em>Result Set</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getResultSet()
 	 * @generated
 	 * @ordered
@@ -190,10 +172,9 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 	protected DBResultSetId resultSet;
 
 	/**
-	 * The cached value of the '{@link #getRowsUpdatedVar()
-	 * <em>Rows Updated Var</em>}' containment reference. <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRowsUpdatedVar() <em>Rows Updated Var</em>}' containment reference.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getRowsUpdatedVar()
 	 * @generated
 	 * @ordered
@@ -201,9 +182,8 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 	protected DynamicValue rowsUpdatedVar;
 
 	/**
-	 * The cached value of the '{@link #getSql() <em>Sql</em>}' containment
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getSql() <em>Sql</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getSql()
 	 * @generated
 	 * @ordered
@@ -509,7 +489,6 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -519,7 +498,6 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public DBConnectionId getConnection() {
@@ -562,7 +540,6 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public DBQueryId getQuery() {
@@ -571,19 +548,14 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetQuery(DBQueryId newQuery, NotificationChain msgs) {
 		DBQueryId oldQuery = query;
 		query = newQuery;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-			    ActionStepPackage.RUN_QUERY__QUERY, oldQuery, newQuery);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionStepPackage.RUN_QUERY__QUERY, oldQuery, newQuery);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -657,20 +629,17 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EList<QueryParamMapping> getParamMappings() {
 		if (paramMappings == null) {
-			paramMappings = new EObjectContainmentEList<QueryParamMapping>(
-			    QueryParamMapping.class, this, ActionStepPackage.RUN_QUERY__PARAM_MAPPINGS);
+			paramMappings = new EObjectContainmentEList<QueryParamMapping>(QueryParamMapping.class, this, ActionStepPackage.RUN_QUERY__PARAM_MAPPINGS);
 		}
 		return paramMappings;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getResultSetName() {
@@ -707,7 +676,6 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean isScrollable() {
@@ -716,20 +684,17 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setScrollable(boolean newScrollable) {
 		boolean oldScrollable = scrollable;
 		scrollable = newScrollable;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-			    ActionStepPackage.RUN_QUERY__SCROLLABLE, oldScrollable, scrollable));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.RUN_QUERY__SCROLLABLE, oldScrollable, scrollable));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public boolean isReadOnly() {
@@ -738,20 +703,17 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setReadOnly(boolean newReadOnly) {
 		boolean oldReadOnly = readOnly;
 		readOnly = newReadOnly;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-			    ActionStepPackage.RUN_QUERY__READ_ONLY, oldReadOnly, readOnly));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.RUN_QUERY__READ_ONLY, oldReadOnly, readOnly));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public DBResultSetId getResultSet() {
@@ -760,7 +722,6 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetResultSet(DBResultSetId newResultSet,
@@ -768,12 +729,8 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 		DBResultSetId oldResultSet = resultSet;
 		resultSet = newResultSet;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-			    ActionStepPackage.RUN_QUERY__RESULT_SET, oldResultSet, newResultSet);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionStepPackage.RUN_QUERY__RESULT_SET, oldResultSet, newResultSet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -810,7 +767,6 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public DynamicValue getRowsUpdatedVar() {
@@ -819,7 +775,6 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetRowsUpdatedVar(DynamicValue newRowsUpdatedVar,
@@ -827,45 +782,32 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 		DynamicValue oldRowsUpdatedVar = rowsUpdatedVar;
 		rowsUpdatedVar = newRowsUpdatedVar;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-			    ActionStepPackage.RUN_QUERY__ROWS_UPDATED_VAR, oldRowsUpdatedVar,
-			    newRowsUpdatedVar);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionStepPackage.RUN_QUERY__ROWS_UPDATED_VAR, oldRowsUpdatedVar, newRowsUpdatedVar);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setRowsUpdatedVar(DynamicValue newRowsUpdatedVar) {
 		if (newRowsUpdatedVar != rowsUpdatedVar) {
 			NotificationChain msgs = null;
 			if (rowsUpdatedVar != null)
-				msgs = ((InternalEObject) rowsUpdatedVar).eInverseRemove(this,
-				    EOPPOSITE_FEATURE_BASE - ActionStepPackage.RUN_QUERY__ROWS_UPDATED_VAR, null,
-				    msgs);
+				msgs = ((InternalEObject)rowsUpdatedVar).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.RUN_QUERY__ROWS_UPDATED_VAR, null, msgs);
 			if (newRowsUpdatedVar != null)
-				msgs = ((InternalEObject) newRowsUpdatedVar).eInverseAdd(this,
-				    EOPPOSITE_FEATURE_BASE - ActionStepPackage.RUN_QUERY__ROWS_UPDATED_VAR, null,
-				    msgs);
+				msgs = ((InternalEObject)newRowsUpdatedVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.RUN_QUERY__ROWS_UPDATED_VAR, null, msgs);
 			msgs = basicSetRowsUpdatedVar(newRowsUpdatedVar, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-			    ActionStepPackage.RUN_QUERY__ROWS_UPDATED_VAR, newRowsUpdatedVar,
-			    newRowsUpdatedVar));
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.RUN_QUERY__ROWS_UPDATED_VAR, newRowsUpdatedVar, newRowsUpdatedVar));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public DynamicValue getSql() {
@@ -874,43 +816,34 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetSql(DynamicValue newSql, NotificationChain msgs) {
 		DynamicValue oldSql = sql;
 		sql = newSql;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-			    ActionStepPackage.RUN_QUERY__SQL, oldSql, newSql);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionStepPackage.RUN_QUERY__SQL, oldSql, newSql);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setSql(DynamicValue newSql) {
 		if (newSql != sql) {
 			NotificationChain msgs = null;
 			if (sql != null)
-				msgs = ((InternalEObject) sql).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-				    - ActionStepPackage.RUN_QUERY__SQL, null, msgs);
+				msgs = ((InternalEObject)sql).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.RUN_QUERY__SQL, null, msgs);
 			if (newSql != null)
-				msgs = ((InternalEObject) newSql).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-				    - ActionStepPackage.RUN_QUERY__SQL, null, msgs);
+				msgs = ((InternalEObject)newSql).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.RUN_QUERY__SQL, null, msgs);
 			msgs = basicSetSql(newSql, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-			    ActionStepPackage.RUN_QUERY__SQL, newSql, newSql));
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.RUN_QUERY__SQL, newSql, newSql));
 	}
 
 	/**
@@ -972,177 +905,169 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID,
 	    NotificationChain msgs) {
 		switch (featureID) {
-		case ActionStepPackage.RUN_QUERY__QUERY:
-			return basicSetQuery(null, msgs);
-		case ActionStepPackage.RUN_QUERY__PARAM_MAPPINGS:
-			return ((InternalEList<?>) getParamMappings()).basicRemove(otherEnd, msgs);
-		case ActionStepPackage.RUN_QUERY__RESULT_SET:
-			return basicSetResultSet(null, msgs);
-		case ActionStepPackage.RUN_QUERY__ROWS_UPDATED_VAR:
-			return basicSetRowsUpdatedVar(null, msgs);
-		case ActionStepPackage.RUN_QUERY__SQL:
-			return basicSetSql(null, msgs);
+			case ActionStepPackage.RUN_QUERY__QUERY:
+				return basicSetQuery(null, msgs);
+			case ActionStepPackage.RUN_QUERY__PARAM_MAPPINGS:
+				return ((InternalEList<?>)getParamMappings()).basicRemove(otherEnd, msgs);
+			case ActionStepPackage.RUN_QUERY__RESULT_SET:
+				return basicSetResultSet(null, msgs);
+			case ActionStepPackage.RUN_QUERY__ROWS_UPDATED_VAR:
+				return basicSetRowsUpdatedVar(null, msgs);
+			case ActionStepPackage.RUN_QUERY__SQL:
+				return basicSetSql(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ActionStepPackage.RUN_QUERY__CONNECTION:
-			return getConnection();
-		case ActionStepPackage.RUN_QUERY__QUERY:
-			return getQuery();
-		case ActionStepPackage.RUN_QUERY__PARAM_MAPPINGS:
-			return getParamMappings();
-		case ActionStepPackage.RUN_QUERY__RESULT_SET_NAME:
-			return getResultSetName();
-		case ActionStepPackage.RUN_QUERY__SCROLLABLE:
-			return isScrollable() ? Boolean.TRUE : Boolean.FALSE;
-		case ActionStepPackage.RUN_QUERY__READ_ONLY:
-			return isReadOnly() ? Boolean.TRUE : Boolean.FALSE;
-		case ActionStepPackage.RUN_QUERY__RESULT_SET:
-			return getResultSet();
-		case ActionStepPackage.RUN_QUERY__ROWS_UPDATED_VAR:
-			return getRowsUpdatedVar();
-		case ActionStepPackage.RUN_QUERY__SQL:
-			return getSql();
+			case ActionStepPackage.RUN_QUERY__CONNECTION:
+				return getConnection();
+			case ActionStepPackage.RUN_QUERY__QUERY:
+				return getQuery();
+			case ActionStepPackage.RUN_QUERY__PARAM_MAPPINGS:
+				return getParamMappings();
+			case ActionStepPackage.RUN_QUERY__RESULT_SET_NAME:
+				return getResultSetName();
+			case ActionStepPackage.RUN_QUERY__SCROLLABLE:
+				return isScrollable();
+			case ActionStepPackage.RUN_QUERY__READ_ONLY:
+				return isReadOnly();
+			case ActionStepPackage.RUN_QUERY__RESULT_SET:
+				return getResultSet();
+			case ActionStepPackage.RUN_QUERY__ROWS_UPDATED_VAR:
+				return getRowsUpdatedVar();
+			case ActionStepPackage.RUN_QUERY__SQL:
+				return getSql();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ActionStepPackage.RUN_QUERY__CONNECTION:
-			setConnection((DBConnectionId) newValue);
-			return;
-		case ActionStepPackage.RUN_QUERY__QUERY:
-			setQuery((DBQueryId) newValue);
-			return;
-		case ActionStepPackage.RUN_QUERY__PARAM_MAPPINGS:
-			getParamMappings().clear();
-			getParamMappings().addAll((Collection<? extends QueryParamMapping>) newValue);
-			return;
-		case ActionStepPackage.RUN_QUERY__RESULT_SET_NAME:
-			setResultSetName((String) newValue);
-			return;
-		case ActionStepPackage.RUN_QUERY__SCROLLABLE:
-			setScrollable(((Boolean) newValue).booleanValue());
-			return;
-		case ActionStepPackage.RUN_QUERY__READ_ONLY:
-			setReadOnly(((Boolean) newValue).booleanValue());
-			return;
-		case ActionStepPackage.RUN_QUERY__RESULT_SET:
-			setResultSet((DBResultSetId) newValue);
-			return;
-		case ActionStepPackage.RUN_QUERY__ROWS_UPDATED_VAR:
-			setRowsUpdatedVar((DynamicValue) newValue);
-			return;
-		case ActionStepPackage.RUN_QUERY__SQL:
-			setSql((DynamicValue) newValue);
-			return;
+			case ActionStepPackage.RUN_QUERY__CONNECTION:
+				setConnection((DBConnectionId)newValue);
+				return;
+			case ActionStepPackage.RUN_QUERY__QUERY:
+				setQuery((DBQueryId)newValue);
+				return;
+			case ActionStepPackage.RUN_QUERY__PARAM_MAPPINGS:
+				getParamMappings().clear();
+				getParamMappings().addAll((Collection<? extends QueryParamMapping>)newValue);
+				return;
+			case ActionStepPackage.RUN_QUERY__RESULT_SET_NAME:
+				setResultSetName((String)newValue);
+				return;
+			case ActionStepPackage.RUN_QUERY__SCROLLABLE:
+				setScrollable((Boolean)newValue);
+				return;
+			case ActionStepPackage.RUN_QUERY__READ_ONLY:
+				setReadOnly((Boolean)newValue);
+				return;
+			case ActionStepPackage.RUN_QUERY__RESULT_SET:
+				setResultSet((DBResultSetId)newValue);
+				return;
+			case ActionStepPackage.RUN_QUERY__ROWS_UPDATED_VAR:
+				setRowsUpdatedVar((DynamicValue)newValue);
+				return;
+			case ActionStepPackage.RUN_QUERY__SQL:
+				setSql((DynamicValue)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ActionStepPackage.RUN_QUERY__CONNECTION:
-			setConnection((DBConnectionId) null);
-			return;
-		case ActionStepPackage.RUN_QUERY__QUERY:
-			setQuery((DBQueryId) null);
-			return;
-		case ActionStepPackage.RUN_QUERY__PARAM_MAPPINGS:
-			getParamMappings().clear();
-			return;
-		case ActionStepPackage.RUN_QUERY__RESULT_SET_NAME:
-			setResultSetName(RESULT_SET_NAME_EDEFAULT);
-			return;
-		case ActionStepPackage.RUN_QUERY__SCROLLABLE:
-			setScrollable(SCROLLABLE_EDEFAULT);
-			return;
-		case ActionStepPackage.RUN_QUERY__READ_ONLY:
-			setReadOnly(READ_ONLY_EDEFAULT);
-			return;
-		case ActionStepPackage.RUN_QUERY__RESULT_SET:
-			setResultSet((DBResultSetId) null);
-			return;
-		case ActionStepPackage.RUN_QUERY__ROWS_UPDATED_VAR:
-			setRowsUpdatedVar((DynamicValue) null);
-			return;
-		case ActionStepPackage.RUN_QUERY__SQL:
-			setSql((DynamicValue) null);
-			return;
+			case ActionStepPackage.RUN_QUERY__CONNECTION:
+				setConnection((DBConnectionId)null);
+				return;
+			case ActionStepPackage.RUN_QUERY__QUERY:
+				setQuery((DBQueryId)null);
+				return;
+			case ActionStepPackage.RUN_QUERY__PARAM_MAPPINGS:
+				getParamMappings().clear();
+				return;
+			case ActionStepPackage.RUN_QUERY__RESULT_SET_NAME:
+				setResultSetName(RESULT_SET_NAME_EDEFAULT);
+				return;
+			case ActionStepPackage.RUN_QUERY__SCROLLABLE:
+				setScrollable(SCROLLABLE_EDEFAULT);
+				return;
+			case ActionStepPackage.RUN_QUERY__READ_ONLY:
+				setReadOnly(READ_ONLY_EDEFAULT);
+				return;
+			case ActionStepPackage.RUN_QUERY__RESULT_SET:
+				setResultSet((DBResultSetId)null);
+				return;
+			case ActionStepPackage.RUN_QUERY__ROWS_UPDATED_VAR:
+				setRowsUpdatedVar((DynamicValue)null);
+				return;
+			case ActionStepPackage.RUN_QUERY__SQL:
+				setSql((DynamicValue)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ActionStepPackage.RUN_QUERY__CONNECTION:
-			return connection != null;
-		case ActionStepPackage.RUN_QUERY__QUERY:
-			return query != null;
-		case ActionStepPackage.RUN_QUERY__PARAM_MAPPINGS:
-			return paramMappings != null && !paramMappings.isEmpty();
-		case ActionStepPackage.RUN_QUERY__RESULT_SET_NAME:
-			return RESULT_SET_NAME_EDEFAULT == null ? resultSetName != null
-			    : !RESULT_SET_NAME_EDEFAULT.equals(resultSetName);
-		case ActionStepPackage.RUN_QUERY__SCROLLABLE:
-			return scrollable != SCROLLABLE_EDEFAULT;
-		case ActionStepPackage.RUN_QUERY__READ_ONLY:
-			return readOnly != READ_ONLY_EDEFAULT;
-		case ActionStepPackage.RUN_QUERY__RESULT_SET:
-			return resultSet != null;
-		case ActionStepPackage.RUN_QUERY__ROWS_UPDATED_VAR:
-			return rowsUpdatedVar != null;
-		case ActionStepPackage.RUN_QUERY__SQL:
-			return sql != null;
+			case ActionStepPackage.RUN_QUERY__CONNECTION:
+				return connection != null;
+			case ActionStepPackage.RUN_QUERY__QUERY:
+				return query != null;
+			case ActionStepPackage.RUN_QUERY__PARAM_MAPPINGS:
+				return paramMappings != null && !paramMappings.isEmpty();
+			case ActionStepPackage.RUN_QUERY__RESULT_SET_NAME:
+				return RESULT_SET_NAME_EDEFAULT == null ? resultSetName != null : !RESULT_SET_NAME_EDEFAULT.equals(resultSetName);
+			case ActionStepPackage.RUN_QUERY__SCROLLABLE:
+				return scrollable != SCROLLABLE_EDEFAULT;
+			case ActionStepPackage.RUN_QUERY__READ_ONLY:
+				return readOnly != READ_ONLY_EDEFAULT;
+			case ActionStepPackage.RUN_QUERY__RESULT_SET:
+				return resultSet != null;
+			case ActionStepPackage.RUN_QUERY__ROWS_UPDATED_VAR:
+				return rowsUpdatedVar != null;
+			case ActionStepPackage.RUN_QUERY__SQL:
+				return sql != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (resultSetName: ");

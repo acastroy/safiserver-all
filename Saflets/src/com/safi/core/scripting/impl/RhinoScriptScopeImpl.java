@@ -28,23 +28,23 @@ import com.safi.core.scripting.ScriptingPackage;
  */
 public class RhinoScriptScopeImpl extends ScriptScopeImpl implements RhinoScriptScope {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected RhinoScriptScopeImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ScriptingPackage.Literals.RHINO_SCRIPT_SCOPE;
-  }
+		return ScriptingPackage.Literals.RHINO_SCRIPT_SCOPE;
+	}
 
   @Override
   public void exposeObjectToScript(String name, Object value) throws SafletScriptException {

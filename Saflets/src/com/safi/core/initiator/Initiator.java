@@ -23,27 +23,27 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Initiator extends ActionStep {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @model
-   * @generated
-   */
+	 * @model
+	 * @generated
+	 */
   boolean acceptsRequest(InitiatorInfo context);
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @model exceptions="com.safi.core.initiator.ActionStepException"
-   * @generated
-   */
+	 * @model exceptions="com.safi.core.initiator.ActionStepException"
+	 * @generated
+	 */
   void initialize(InitiatorInfo context) throws ActionStepException;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @model exceptions="com.safi.core.initiator.ActionStepException"
-   * @generated
-   */
+	 * @model exceptions="com.safi.core.initiator.ActionStepException"
+	 * @generated
+	 */
   void beginProcessing() throws ActionStepException;
 
 } // Initiator

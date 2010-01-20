@@ -21,22 +21,22 @@ import com.safi.core.actionstep.AudioFileItem;
  */
 public class AudioFileItemImpl extends CaseItemImpl implements AudioFileItem {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected AudioFileItemImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionStepPackage.eINSTANCE.getAudioFileItem();
-  }
+		return ActionStepPackage.eINSTANCE.getAudioFileItem();
+	}
 
 } //AudioFileItemImpl

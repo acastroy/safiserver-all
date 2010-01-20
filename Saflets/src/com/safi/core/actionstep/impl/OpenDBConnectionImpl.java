@@ -38,13 +38,13 @@ import com.safi.server.saflet.manager.PooledDataSourceManager;
  */
 public class OpenDBConnectionImpl extends ActionStepImpl implements OpenDBConnection {
   /**
-   * The cached value of the '{@link #getConnection() <em>Connection</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getConnection() <em>Connection</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getConnection()
-   * @generated
-   * @ordered
-   */
+	 * @see #getConnection()
+	 * @generated
+	 * @ordered
+	 */
   protected DBConnectionId connection;
 
   /**
@@ -94,128 +94,128 @@ public class OpenDBConnectionImpl extends ActionStepImpl implements OpenDBConnec
 
   }
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionStepPackage.eINSTANCE.getOpenDBConnection();
-  }
+		return ActionStepPackage.eINSTANCE.getOpenDBConnection();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DBConnectionId getConnection() {
-    return connection;
-  }
+		return connection;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetConnection(DBConnectionId newConnection, NotificationChain msgs) {
-    DBConnectionId oldConnection = connection;
-    connection = newConnection;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionStepPackage.OPEN_DB_CONNECTION__CONNECTION, oldConnection, newConnection);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DBConnectionId oldConnection = connection;
+		connection = newConnection;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionStepPackage.OPEN_DB_CONNECTION__CONNECTION, oldConnection, newConnection);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setConnection(DBConnectionId newConnection) {
-    if (newConnection != connection) {
-      NotificationChain msgs = null;
-      if (connection != null)
-        msgs = ((InternalEObject)connection).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.OPEN_DB_CONNECTION__CONNECTION, null, msgs);
-      if (newConnection != null)
-        msgs = ((InternalEObject)newConnection).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.OPEN_DB_CONNECTION__CONNECTION, null, msgs);
-      msgs = basicSetConnection(newConnection, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.OPEN_DB_CONNECTION__CONNECTION, newConnection, newConnection));
-  }
+		if (newConnection != connection) {
+			NotificationChain msgs = null;
+			if (connection != null)
+				msgs = ((InternalEObject)connection).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.OPEN_DB_CONNECTION__CONNECTION, null, msgs);
+			if (newConnection != null)
+				msgs = ((InternalEObject)newConnection).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.OPEN_DB_CONNECTION__CONNECTION, null, msgs);
+			msgs = basicSetConnection(newConnection, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.OPEN_DB_CONNECTION__CONNECTION, newConnection, newConnection));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionStepPackage.OPEN_DB_CONNECTION__CONNECTION:
-        return basicSetConnection(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionStepPackage.OPEN_DB_CONNECTION__CONNECTION:
+				return basicSetConnection(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionStepPackage.OPEN_DB_CONNECTION__CONNECTION:
-        return getConnection();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionStepPackage.OPEN_DB_CONNECTION__CONNECTION:
+				return getConnection();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionStepPackage.OPEN_DB_CONNECTION__CONNECTION:
-        setConnection((DBConnectionId)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionStepPackage.OPEN_DB_CONNECTION__CONNECTION:
+				setConnection((DBConnectionId)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.OPEN_DB_CONNECTION__CONNECTION:
-        setConnection((DBConnectionId)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.OPEN_DB_CONNECTION__CONNECTION:
+				setConnection((DBConnectionId)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.OPEN_DB_CONNECTION__CONNECTION:
-        return connection != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.OPEN_DB_CONNECTION__CONNECTION:
+				return connection != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //OpenDBConnectionImpl

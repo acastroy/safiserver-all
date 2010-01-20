@@ -31,214 +31,214 @@ import com.safi.core.actionstep.InvokeSaflet;
  */
 public class InvokeSafletImpl extends ActionStepImpl implements InvokeSaflet {
   /**
-   * The cached value of the '{@link #getTargetSafletPath() <em>Target Saflet Path</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTargetSafletPath() <em>Target Saflet Path</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTargetSafletPath()
-   * @generated
-   * @ordered
-   */
+	 * @see #getTargetSafletPath()
+	 * @generated
+	 * @ordered
+	 */
   protected DynamicValue targetSafletPath;
 
   /**
-   * The default value of the '{@link #getLabelText() <em>Label Text</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getLabelText() <em>Label Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLabelText()
-   * @generated
-   * @ordered
-   */
+	 * @see #getLabelText()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String LABEL_TEXT_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getLabelText() <em>Label Text</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLabelText() <em>Label Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLabelText()
-   * @generated
-   * @ordered
-   */
+	 * @see #getLabelText()
+	 * @generated
+	 * @ordered
+	 */
   protected String labelText = LABEL_TEXT_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected InvokeSafletImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionStepPackage.eINSTANCE.getInvokeSaflet();
-  }
+		return ActionStepPackage.eINSTANCE.getInvokeSaflet();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DynamicValue getTargetSafletPath() {
-    return targetSafletPath;
-  }
+		return targetSafletPath;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetTargetSafletPath(DynamicValue newTargetSafletPath, NotificationChain msgs) {
-    DynamicValue oldTargetSafletPath = targetSafletPath;
-    targetSafletPath = newTargetSafletPath;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionStepPackage.INVOKE_SAFLET__TARGET_SAFLET_PATH, oldTargetSafletPath, newTargetSafletPath);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DynamicValue oldTargetSafletPath = targetSafletPath;
+		targetSafletPath = newTargetSafletPath;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionStepPackage.INVOKE_SAFLET__TARGET_SAFLET_PATH, oldTargetSafletPath, newTargetSafletPath);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setTargetSafletPath(DynamicValue newTargetSafletPath) {
-    if (newTargetSafletPath != targetSafletPath) {
-      NotificationChain msgs = null;
-      if (targetSafletPath != null)
-        msgs = ((InternalEObject)targetSafletPath).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.INVOKE_SAFLET__TARGET_SAFLET_PATH, null, msgs);
-      if (newTargetSafletPath != null)
-        msgs = ((InternalEObject)newTargetSafletPath).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.INVOKE_SAFLET__TARGET_SAFLET_PATH, null, msgs);
-      msgs = basicSetTargetSafletPath(newTargetSafletPath, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.INVOKE_SAFLET__TARGET_SAFLET_PATH, newTargetSafletPath, newTargetSafletPath));
-  }
+		if (newTargetSafletPath != targetSafletPath) {
+			NotificationChain msgs = null;
+			if (targetSafletPath != null)
+				msgs = ((InternalEObject)targetSafletPath).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.INVOKE_SAFLET__TARGET_SAFLET_PATH, null, msgs);
+			if (newTargetSafletPath != null)
+				msgs = ((InternalEObject)newTargetSafletPath).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.INVOKE_SAFLET__TARGET_SAFLET_PATH, null, msgs);
+			msgs = basicSetTargetSafletPath(newTargetSafletPath, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.INVOKE_SAFLET__TARGET_SAFLET_PATH, newTargetSafletPath, newTargetSafletPath));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getLabelText() {
-    return labelText;
-  }
+		return labelText;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setLabelText(String newLabelText) {
-    String oldLabelText = labelText;
-    labelText = newLabelText;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.INVOKE_SAFLET__LABEL_TEXT, oldLabelText, labelText));
-  }
+		String oldLabelText = labelText;
+		labelText = newLabelText;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.INVOKE_SAFLET__LABEL_TEXT, oldLabelText, labelText));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionStepPackage.INVOKE_SAFLET__TARGET_SAFLET_PATH:
-        return basicSetTargetSafletPath(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionStepPackage.INVOKE_SAFLET__TARGET_SAFLET_PATH:
+				return basicSetTargetSafletPath(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionStepPackage.INVOKE_SAFLET__TARGET_SAFLET_PATH:
-        return getTargetSafletPath();
-      case ActionStepPackage.INVOKE_SAFLET__LABEL_TEXT:
-        return getLabelText();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionStepPackage.INVOKE_SAFLET__TARGET_SAFLET_PATH:
+				return getTargetSafletPath();
+			case ActionStepPackage.INVOKE_SAFLET__LABEL_TEXT:
+				return getLabelText();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionStepPackage.INVOKE_SAFLET__TARGET_SAFLET_PATH:
-        setTargetSafletPath((DynamicValue)newValue);
-        return;
-      case ActionStepPackage.INVOKE_SAFLET__LABEL_TEXT:
-        setLabelText((String)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionStepPackage.INVOKE_SAFLET__TARGET_SAFLET_PATH:
+				setTargetSafletPath((DynamicValue)newValue);
+				return;
+			case ActionStepPackage.INVOKE_SAFLET__LABEL_TEXT:
+				setLabelText((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.INVOKE_SAFLET__TARGET_SAFLET_PATH:
-        setTargetSafletPath((DynamicValue)null);
-        return;
-      case ActionStepPackage.INVOKE_SAFLET__LABEL_TEXT:
-        setLabelText(LABEL_TEXT_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.INVOKE_SAFLET__TARGET_SAFLET_PATH:
+				setTargetSafletPath((DynamicValue)null);
+				return;
+			case ActionStepPackage.INVOKE_SAFLET__LABEL_TEXT:
+				setLabelText(LABEL_TEXT_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.INVOKE_SAFLET__TARGET_SAFLET_PATH:
-        return targetSafletPath != null;
-      case ActionStepPackage.INVOKE_SAFLET__LABEL_TEXT:
-        return LABEL_TEXT_EDEFAULT == null ? labelText != null : !LABEL_TEXT_EDEFAULT.equals(labelText);
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.INVOKE_SAFLET__TARGET_SAFLET_PATH:
+				return targetSafletPath != null;
+			case ActionStepPackage.INVOKE_SAFLET__LABEL_TEXT:
+				return LABEL_TEXT_EDEFAULT == null ? labelText != null : !LABEL_TEXT_EDEFAULT.equals(labelText);
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (labelText: ");
-    result.append(labelText);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (labelText: ");
+		result.append(labelText);
+		result.append(')');
+		return result.toString();
+	}
 
 } //InvokeSafletImpl

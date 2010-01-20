@@ -32,31 +32,31 @@ import com.safi.core.saflet.SafletContext;
  */
 public abstract class InitiatorImpl extends ActionStepImpl implements Initiator {
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   protected InitiatorImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return InitiatorPackage.Literals.INITIATOR;
-  }
+		return InitiatorPackage.Literals.INITIATOR;
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public boolean acceptsRequest(InitiatorInfo context) {
-    // TODO: implement this method
-    // Ensure that you remove @generated or mark it @generated NOT
-    throw new UnsupportedOperationException();
-  }
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -64,20 +64,20 @@ public abstract class InitiatorImpl extends ActionStepImpl implements Initiator 
    * @generated NOT
    */
   public void initialize(InitiatorInfo ictx) throws ActionStepException {
-    Saflet handler = getSaflet();
-    if (handler == null)
+    Saflet saflet = getSaflet();
+    if (saflet == null)
       return;
-    handler.initializeScriptableObjects();
-    SafletContext context = handler.getSafletContext();
+    saflet.initializeScriptableObjects();
+    SafletContext context = saflet.getSafletContext();
 
-    handler.getScriptingEnvironment().getSharedScriptScope().exposeObjectToScript(
+    saflet.getScriptingEnvironment().getSharedScriptScope().exposeObjectToScript(
         SafletConstants.VAR_KEY_HANDLER_CONTEXT, context);
 
-    handler.getScriptingEnvironment().getSharedScriptScope().exposeObjectToScript(
-        SafletConstants.VAR_KEY_HANDLER, handler);
+    saflet.getScriptingEnvironment().getSharedScriptScope().exposeObjectToScript(
+        SafletConstants.VAR_KEY_HANDLER, saflet);
 
-    handler.getScriptingEnvironment().getSharedScriptScope().exposeObjectToScript(
-        SafletConstants.VAR_KEY_HANDLER_ENVIRONMENT, handler.getSafletEnvironment());
+    saflet.getScriptingEnvironment().getSharedScriptScope().exposeObjectToScript(
+        SafletConstants.VAR_KEY_HANDLER_ENVIRONMENT, saflet.getSafletEnvironment());
     
     
     

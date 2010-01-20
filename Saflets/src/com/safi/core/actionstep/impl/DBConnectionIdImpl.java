@@ -30,190 +30,190 @@ import com.safi.core.actionstep.DBConnectionId;
  */
 public class DBConnectionIdImpl extends EObjectImpl implements DBConnectionId {
   /**
-   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
-   * @generated
-   * @ordered
-   */
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String ID_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
-   * @generated
-   * @ordered
-   */
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
   protected String id = ID_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getJdbcConnection() <em>Jdbc Connection</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getJdbcConnection() <em>Jdbc Connection</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getJdbcConnection()
-   * @generated
-   * @ordered
-   */
+	 * @see #getJdbcConnection()
+	 * @generated
+	 * @ordered
+	 */
   protected static final Connection JDBC_CONNECTION_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getJdbcConnection() <em>Jdbc Connection</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getJdbcConnection() <em>Jdbc Connection</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getJdbcConnection()
-   * @generated
-   * @ordered
-   */
+	 * @see #getJdbcConnection()
+	 * @generated
+	 * @ordered
+	 */
   protected Connection jdbcConnection = JDBC_CONNECTION_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected DBConnectionIdImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionStepPackage.eINSTANCE.getDBConnectionId();
-  }
+		return ActionStepPackage.eINSTANCE.getDBConnectionId();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getId() {
-    return id;
-  }
+		return id;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setId(String newId) {
-    String oldId = id;
-    id = newId;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.DB_CONNECTION_ID__ID, oldId, id));
-  }
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.DB_CONNECTION_ID__ID, oldId, id));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Connection getJdbcConnection() {
-    return jdbcConnection;
-  }
+		return jdbcConnection;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setJdbcConnection(Connection newJdbcConnection) {
-    Connection oldJdbcConnection = jdbcConnection;
-    jdbcConnection = newJdbcConnection;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.DB_CONNECTION_ID__JDBC_CONNECTION, oldJdbcConnection, jdbcConnection));
-  }
+		Connection oldJdbcConnection = jdbcConnection;
+		jdbcConnection = newJdbcConnection;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.DB_CONNECTION_ID__JDBC_CONNECTION, oldJdbcConnection, jdbcConnection));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionStepPackage.DB_CONNECTION_ID__ID:
-        return getId();
-      case ActionStepPackage.DB_CONNECTION_ID__JDBC_CONNECTION:
-        return getJdbcConnection();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionStepPackage.DB_CONNECTION_ID__ID:
+				return getId();
+			case ActionStepPackage.DB_CONNECTION_ID__JDBC_CONNECTION:
+				return getJdbcConnection();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionStepPackage.DB_CONNECTION_ID__ID:
-        setId((String)newValue);
-        return;
-      case ActionStepPackage.DB_CONNECTION_ID__JDBC_CONNECTION:
-        setJdbcConnection((Connection)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionStepPackage.DB_CONNECTION_ID__ID:
+				setId((String)newValue);
+				return;
+			case ActionStepPackage.DB_CONNECTION_ID__JDBC_CONNECTION:
+				setJdbcConnection((Connection)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.DB_CONNECTION_ID__ID:
-        setId(ID_EDEFAULT);
-        return;
-      case ActionStepPackage.DB_CONNECTION_ID__JDBC_CONNECTION:
-        setJdbcConnection(JDBC_CONNECTION_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.DB_CONNECTION_ID__ID:
+				setId(ID_EDEFAULT);
+				return;
+			case ActionStepPackage.DB_CONNECTION_ID__JDBC_CONNECTION:
+				setJdbcConnection(JDBC_CONNECTION_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.DB_CONNECTION_ID__ID:
-        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-      case ActionStepPackage.DB_CONNECTION_ID__JDBC_CONNECTION:
-        return JDBC_CONNECTION_EDEFAULT == null ? jdbcConnection != null : !JDBC_CONNECTION_EDEFAULT.equals(jdbcConnection);
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.DB_CONNECTION_ID__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case ActionStepPackage.DB_CONNECTION_ID__JDBC_CONNECTION:
+				return JDBC_CONNECTION_EDEFAULT == null ? jdbcConnection != null : !JDBC_CONNECTION_EDEFAULT.equals(jdbcConnection);
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (id: ");
-    result.append(id);
-    result.append(", jdbcConnection: ");
-    result.append(jdbcConnection);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (id: ");
+		result.append(id);
+		result.append(", jdbcConnection: ");
+		result.append(jdbcConnection);
+		result.append(')');
+		return result.toString();
+	}
 
 } //DBConnectionIdImpl

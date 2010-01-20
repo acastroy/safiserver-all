@@ -131,14 +131,14 @@ public class RhinoSafletScriptEnvironmentImpl extends SafletScriptEnvironmentImp
   }
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ScriptingPackage.Literals.RHINO_SAFLET_SCRIPT_ENVIRONMENT;
-  }
+		return ScriptingPackage.Literals.RHINO_SAFLET_SCRIPT_ENVIRONMENT;
+	}
 
   @Override
   public void setScriptScopeFactory(ScriptScopeFactory scriptScopeFactory) {

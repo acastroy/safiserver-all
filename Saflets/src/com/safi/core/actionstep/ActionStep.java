@@ -39,220 +39,220 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface ActionStep extends ProductIdentifiable {
   /**
-   * Returns the value of the '<em><b>Paused</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Paused</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Paused</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Paused</em>' attribute.
-   * @see #setPaused(boolean)
-   * @see com.safi.core.actionstep.ActionStepPackage#getActionStep_Paused()
-   * @model ordered="false"
-   * @generated
-   */
+	 * @return the value of the '<em>Paused</em>' attribute.
+	 * @see #setPaused(boolean)
+	 * @see com.safi.core.actionstep.ActionStepPackage#getActionStep_Paused()
+	 * @model ordered="false"
+	 * @generated
+	 */
   boolean isPaused();
 
   /**
-   * Sets the value of the '{@link com.safi.core.actionstep.ActionStep#isPaused <em>Paused</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.core.actionstep.ActionStep#isPaused <em>Paused</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Paused</em>' attribute.
-   * @see #isPaused()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Paused</em>' attribute.
+	 * @see #isPaused()
+	 * @generated
+	 */
   void setPaused(boolean value);
 
   /**
-   * Returns the value of the '<em><b>Active</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Active</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Active</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Active</em>' attribute.
-   * @see #setActive(boolean)
-   * @see com.safi.core.actionstep.ActionStepPackage#getActionStep_Active()
-   * @model ordered="false"
-   * @generated
-   */
+	 * @return the value of the '<em>Active</em>' attribute.
+	 * @see #setActive(boolean)
+	 * @see com.safi.core.actionstep.ActionStepPackage#getActionStep_Active()
+	 * @model ordered="false"
+	 * @generated
+	 */
   boolean isActive();
 
   /**
-   * Sets the value of the '{@link com.safi.core.actionstep.ActionStep#isActive <em>Active</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.core.actionstep.ActionStep#isActive <em>Active</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Active</em>' attribute.
-   * @see #isActive()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Active</em>' attribute.
+	 * @see #isActive()
+	 * @generated
+	 */
   void setActive(boolean value);
 
   /**
-   * Returns the value of the '<em><b>Outputs</b></em>' containment reference list.
-   * The list contents are of type {@link com.safi.core.actionstep.Output}.
-   * It is bidirectional and its opposite is '{@link com.safi.core.actionstep.Output#getParent <em>Parent</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Outputs</b></em>' containment reference list.
+	 * The list contents are of type {@link com.safi.core.actionstep.Output}.
+	 * It is bidirectional and its opposite is '{@link com.safi.core.actionstep.Output#getParent <em>Parent</em>}'.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Outputs</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Outputs</em>' containment reference list.
-   * @see com.safi.core.actionstep.ActionStepPackage#getActionStep_Outputs()
-   * @see com.safi.core.actionstep.Output#getParent
-   * @model opposite="parent" containment="true" ordered="false"
-   * @generated
-   */
+	 * @return the value of the '<em>Outputs</em>' containment reference list.
+	 * @see com.safi.core.actionstep.ActionStepPackage#getActionStep_Outputs()
+	 * @see com.safi.core.actionstep.Output#getParent
+	 * @model opposite="parent" containment="true" ordered="false"
+	 * @generated
+	 */
   EList<Output> getOutputs();
 
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see com.safi.core.actionstep.ActionStepPackage#getActionStep_Name()
-   * @model unique="false" required="true" ordered="false"
-   *        annotation="Required criteria='non-blank'"
-   * @generated
-   */
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see com.safi.core.actionstep.ActionStepPackage#getActionStep_Name()
+	 * @model unique="false" required="true" ordered="false"
+	 *        annotation="Required criteria='non-blank'"
+	 * @generated
+	 */
   String getName();
 
   /**
-   * Sets the value of the '{@link com.safi.core.actionstep.ActionStep#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.core.actionstep.ActionStep#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Saflet</b></em>' container reference.
-   * It is bidirectional and its opposite is '{@link com.safi.core.saflet.Saflet#getActionsteps <em>Actionsteps</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Saflet</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link com.safi.core.saflet.Saflet#getActionsteps <em>Actionsteps</em>}'.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Saflet</em>' container reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Saflet</em>' container reference.
-   * @see #setSaflet(Saflet)
-   * @see com.safi.core.actionstep.ActionStepPackage#getActionStep_Saflet()
-   * @see com.safi.core.saflet.Saflet#getActionsteps
-   * @model opposite="actionsteps" transient="false"
-   * @generated
-   */
+	 * @return the value of the '<em>Saflet</em>' container reference.
+	 * @see #setSaflet(Saflet)
+	 * @see com.safi.core.actionstep.ActionStepPackage#getActionStep_Saflet()
+	 * @see com.safi.core.saflet.Saflet#getActionsteps
+	 * @model opposite="actionsteps" transient="false"
+	 * @generated
+	 */
   Saflet getSaflet();
 
   /**
-   * Sets the value of the '{@link com.safi.core.actionstep.ActionStep#getSaflet <em>Saflet</em>}' container reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.core.actionstep.ActionStep#getSaflet <em>Saflet</em>}' container reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Saflet</em>' container reference.
-   * @see #getSaflet()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Saflet</em>' container reference.
+	 * @see #getSaflet()
+	 * @generated
+	 */
   void setSaflet(Saflet value);
 
   /**
-   * Returns the value of the '<em><b>Default Output</b></em>' reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Default Output</b></em>' reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Default Output</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Default Output</em>' reference.
-   * @see #setDefaultOutput(Output)
-   * @see com.safi.core.actionstep.ActionStepPackage#getActionStep_DefaultOutput()
-   * @model ordered="false"
-   * @generated
-   */
+	 * @return the value of the '<em>Default Output</em>' reference.
+	 * @see #setDefaultOutput(Output)
+	 * @see com.safi.core.actionstep.ActionStepPackage#getActionStep_DefaultOutput()
+	 * @model ordered="false"
+	 * @generated
+	 */
   Output getDefaultOutput();
 
   /**
-   * Sets the value of the '{@link com.safi.core.actionstep.ActionStep#getDefaultOutput <em>Default Output</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.core.actionstep.ActionStep#getDefaultOutput <em>Default Output</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Default Output</em>' reference.
-   * @see #getDefaultOutput()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Default Output</em>' reference.
+	 * @see #getDefaultOutput()
+	 * @generated
+	 */
   void setDefaultOutput(Output value);
 
   /**
-   * Returns the value of the '<em><b>Error Output</b></em>' reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Error Output</b></em>' reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Error Output</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Error Output</em>' reference.
-   * @see #setErrorOutput(Output)
-   * @see com.safi.core.actionstep.ActionStepPackage#getActionStep_ErrorOutput()
-   * @model ordered="false"
-   * @generated
-   */
+	 * @return the value of the '<em>Error Output</em>' reference.
+	 * @see #setErrorOutput(Output)
+	 * @see com.safi.core.actionstep.ActionStepPackage#getActionStep_ErrorOutput()
+	 * @model ordered="false"
+	 * @generated
+	 */
   Output getErrorOutput();
 
   /**
-   * Sets the value of the '{@link com.safi.core.actionstep.ActionStep#getErrorOutput <em>Error Output</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.core.actionstep.ActionStep#getErrorOutput <em>Error Output</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Error Output</em>' reference.
-   * @see #getErrorOutput()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Error Output</em>' reference.
+	 * @see #getErrorOutput()
+	 * @generated
+	 */
   void setErrorOutput(Output value);
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @model exceptions="com.safi.core.initiator.ActionStepException" contextOrdered="false"
-   * @generated
-   */
+	 * @model exceptions="com.safi.core.initiator.ActionStepException" contextOrdered="false"
+	 * @generated
+	 */
   void beginProcessing(SafletContext context) throws ActionStepException;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @model exceptions="com.safi.core.scripting.SafletScriptException"
-   * @generated
-   */
+	 * @model exceptions="com.safi.core.scripting.SafletScriptException"
+	 * @generated
+	 */
   Object executeScript(String scriptName, String scriptText) throws SafletScriptException;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @model exceptions="com.safi.core.initiator.ActionStepException" eDataType="com.safi.core.saflet.Exception"
-   * @generated
-   */
+	 * @model exceptions="com.safi.core.initiator.ActionStepException" eDataType="com.safi.core.saflet.Exception"
+	 * @generated
+	 */
   void handleException(SafletContext context, Exception e) throws ActionStepException;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @model exceptions="com.safi.core.initiator.ActionStepException"
-   * @generated
-   */
+	 * @model exceptions="com.safi.core.initiator.ActionStepException"
+	 * @generated
+	 */
   Object resolveDynamicValue(DynamicValue dynamicValue, SafletContext context) throws ActionStepException;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @model
-   * @generated
-   */
+	 * @model
+	 * @generated
+	 */
   void createDefaultOutputs();
 
   int incrementVisits();

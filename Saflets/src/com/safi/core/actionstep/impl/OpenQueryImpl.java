@@ -49,123 +49,123 @@ import com.safi.server.saflet.manager.DBManager;
  */
 public class OpenQueryImpl extends ActionStepImpl implements OpenQuery {
   /**
-   * The cached value of the '{@link #getQuery() <em>Query</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getQuery() <em>Query</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getQuery()
-   * @generated
-   * @ordered
-   */
+	 * @see #getQuery()
+	 * @generated
+	 * @ordered
+	 */
   protected DBQueryId query;
 
   /**
-   * The cached value of the '{@link #getConnection() <em>Connection</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getConnection() <em>Connection</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getConnection()
-   * @generated
-   * @ordered
-   */
+	 * @see #getConnection()
+	 * @generated
+	 * @ordered
+	 */
   protected DBConnectionId connection;
 
   /**
-   * The default value of the '{@link #isUseCache() <em>Use Cache</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #isUseCache() <em>Use Cache</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isUseCache()
-   * @generated
-   * @ordered
-   */
+	 * @see #isUseCache()
+	 * @generated
+	 * @ordered
+	 */
   protected static final boolean USE_CACHE_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isUseCache() <em>Use Cache</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #isUseCache() <em>Use Cache</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isUseCache()
-   * @generated
-   * @ordered
-   */
+	 * @see #isUseCache()
+	 * @generated
+	 * @ordered
+	 */
   protected boolean useCache = USE_CACHE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #isScrollable() <em>Scrollable</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #isScrollable() <em>Scrollable</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isScrollable()
-   * @generated
-   * @ordered
-   */
+	 * @see #isScrollable()
+	 * @generated
+	 * @ordered
+	 */
   protected static final boolean SCROLLABLE_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isScrollable() <em>Scrollable</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #isScrollable() <em>Scrollable</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isScrollable()
-   * @generated
-   * @ordered
-   */
+	 * @see #isScrollable()
+	 * @generated
+	 * @ordered
+	 */
   protected boolean scrollable = SCROLLABLE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #isReadOnly() <em>Read Only</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #isReadOnly() <em>Read Only</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isReadOnly()
-   * @generated
-   * @ordered
-   */
+	 * @see #isReadOnly()
+	 * @generated
+	 * @ordered
+	 */
   protected static final boolean READ_ONLY_EDEFAULT = true;
 
   /**
-   * The cached value of the '{@link #isReadOnly() <em>Read Only</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #isReadOnly() <em>Read Only</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isReadOnly()
-   * @generated
-   * @ordered
-   */
+	 * @see #isReadOnly()
+	 * @generated
+	 * @ordered
+	 */
   protected boolean readOnly = READ_ONLY_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getScrollMode() <em>Scroll Mode</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getScrollMode() <em>Scroll Mode</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getScrollMode()
-   * @generated
-   * @ordered
-   */
+	 * @see #getScrollMode()
+	 * @generated
+	 * @ordered
+	 */
   protected static final RSScrollMode SCROLL_MODE_EDEFAULT = RSScrollMode.FORWARD_ONLY;
 
   /**
-   * The cached value of the '{@link #getScrollMode() <em>Scroll Mode</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getScrollMode() <em>Scroll Mode</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getScrollMode()
-   * @generated
-   * @ordered
-   */
+	 * @see #getScrollMode()
+	 * @generated
+	 * @ordered
+	 */
   protected RSScrollMode scrollMode = SCROLL_MODE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getHoldabilityMode() <em>Holdability Mode</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getHoldabilityMode() <em>Holdability Mode</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getHoldabilityMode()
-   * @generated
-   * @ordered
-   */
+	 * @see #getHoldabilityMode()
+	 * @generated
+	 * @ordered
+	 */
   protected static final RSHoldabilityMode HOLDABILITY_MODE_EDEFAULT = RSHoldabilityMode.CLOSE_CURSORS_OVER_COMMIT;
 
   /**
-   * The cached value of the '{@link #getHoldabilityMode() <em>Holdability Mode</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getHoldabilityMode() <em>Holdability Mode</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getHoldabilityMode()
-   * @generated
-   * @ordered
-   */
+	 * @see #getHoldabilityMode()
+	 * @generated
+	 * @ordered
+	 */
   protected RSHoldabilityMode holdabilityMode = HOLDABILITY_MODE_EDEFAULT;
 
   /**
@@ -302,66 +302,66 @@ public class OpenQueryImpl extends ActionStepImpl implements OpenQuery {
 
   }
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionStepPackage.eINSTANCE.getOpenQuery();
-  }
+		return ActionStepPackage.eINSTANCE.getOpenQuery();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DBQueryId getQuery() {
-    return query;
-  }
+		return query;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetQuery(DBQueryId newQuery, NotificationChain msgs) {
-    DBQueryId oldQuery = query;
-    query = newQuery;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionStepPackage.OPEN_QUERY__QUERY, oldQuery, newQuery);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DBQueryId oldQuery = query;
+		query = newQuery;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionStepPackage.OPEN_QUERY__QUERY, oldQuery, newQuery);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setQuery(DBQueryId newQuery) {
-    if (newQuery != query) {
-      NotificationChain msgs = null;
-      if (query != null)
-        msgs = ((InternalEObject)query).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.OPEN_QUERY__QUERY, null, msgs);
-      if (newQuery != null)
-        msgs = ((InternalEObject)newQuery).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.OPEN_QUERY__QUERY, null, msgs);
-      msgs = basicSetQuery(newQuery, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.OPEN_QUERY__QUERY, newQuery, newQuery));
-  }
+		if (newQuery != query) {
+			NotificationChain msgs = null;
+			if (query != null)
+				msgs = ((InternalEObject)query).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.OPEN_QUERY__QUERY, null, msgs);
+			if (newQuery != null)
+				msgs = ((InternalEObject)newQuery).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.OPEN_QUERY__QUERY, null, msgs);
+			msgs = basicSetQuery(newQuery, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.OPEN_QUERY__QUERY, newQuery, newQuery));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DBConnectionId getConnection() {
-    return connection;
-  }
+		return connection;
+	}
 
   /**
    * <!-- begin-user-doc -->
@@ -392,264 +392,264 @@ public class OpenQueryImpl extends ActionStepImpl implements OpenQuery {
   }
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public boolean isUseCache() {
-    return useCache;
-  }
+		return useCache;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setUseCache(boolean newUseCache) {
-    boolean oldUseCache = useCache;
-    useCache = newUseCache;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.OPEN_QUERY__USE_CACHE, oldUseCache, useCache));
-  }
+		boolean oldUseCache = useCache;
+		useCache = newUseCache;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.OPEN_QUERY__USE_CACHE, oldUseCache, useCache));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public boolean isScrollable() {
-    return scrollable;
-  }
+		return scrollable;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setScrollable(boolean newScrollable) {
-    boolean oldScrollable = scrollable;
-    scrollable = newScrollable;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.OPEN_QUERY__SCROLLABLE, oldScrollable, scrollable));
-  }
+		boolean oldScrollable = scrollable;
+		scrollable = newScrollable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.OPEN_QUERY__SCROLLABLE, oldScrollable, scrollable));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public boolean isReadOnly() {
-    return readOnly;
-  }
+		return readOnly;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setReadOnly(boolean newReadOnly) {
-    boolean oldReadOnly = readOnly;
-    readOnly = newReadOnly;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.OPEN_QUERY__READ_ONLY, oldReadOnly, readOnly));
-  }
+		boolean oldReadOnly = readOnly;
+		readOnly = newReadOnly;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.OPEN_QUERY__READ_ONLY, oldReadOnly, readOnly));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public RSScrollMode getScrollMode() {
-    return scrollMode;
-  }
+		return scrollMode;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setScrollMode(RSScrollMode newScrollMode) {
-    RSScrollMode oldScrollMode = scrollMode;
-    scrollMode = newScrollMode == null ? SCROLL_MODE_EDEFAULT : newScrollMode;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.OPEN_QUERY__SCROLL_MODE, oldScrollMode, scrollMode));
-  }
+		RSScrollMode oldScrollMode = scrollMode;
+		scrollMode = newScrollMode == null ? SCROLL_MODE_EDEFAULT : newScrollMode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.OPEN_QUERY__SCROLL_MODE, oldScrollMode, scrollMode));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public RSHoldabilityMode getHoldabilityMode() {
-    return holdabilityMode;
-  }
+		return holdabilityMode;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setHoldabilityMode(RSHoldabilityMode newHoldabilityMode) {
-    RSHoldabilityMode oldHoldabilityMode = holdabilityMode;
-    holdabilityMode = newHoldabilityMode == null ? HOLDABILITY_MODE_EDEFAULT : newHoldabilityMode;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.OPEN_QUERY__HOLDABILITY_MODE, oldHoldabilityMode, holdabilityMode));
-  }
+		RSHoldabilityMode oldHoldabilityMode = holdabilityMode;
+		holdabilityMode = newHoldabilityMode == null ? HOLDABILITY_MODE_EDEFAULT : newHoldabilityMode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.OPEN_QUERY__HOLDABILITY_MODE, oldHoldabilityMode, holdabilityMode));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionStepPackage.OPEN_QUERY__QUERY:
-        return basicSetQuery(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionStepPackage.OPEN_QUERY__QUERY:
+				return basicSetQuery(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionStepPackage.OPEN_QUERY__QUERY:
-        return getQuery();
-      case ActionStepPackage.OPEN_QUERY__CONNECTION:
-        return getConnection();
-      case ActionStepPackage.OPEN_QUERY__USE_CACHE:
-        return isUseCache() ? Boolean.TRUE : Boolean.FALSE;
-      case ActionStepPackage.OPEN_QUERY__SCROLLABLE:
-        return isScrollable() ? Boolean.TRUE : Boolean.FALSE;
-      case ActionStepPackage.OPEN_QUERY__READ_ONLY:
-        return isReadOnly() ? Boolean.TRUE : Boolean.FALSE;
-      case ActionStepPackage.OPEN_QUERY__SCROLL_MODE:
-        return getScrollMode();
-      case ActionStepPackage.OPEN_QUERY__HOLDABILITY_MODE:
-        return getHoldabilityMode();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionStepPackage.OPEN_QUERY__QUERY:
+				return getQuery();
+			case ActionStepPackage.OPEN_QUERY__CONNECTION:
+				return getConnection();
+			case ActionStepPackage.OPEN_QUERY__USE_CACHE:
+				return isUseCache();
+			case ActionStepPackage.OPEN_QUERY__SCROLLABLE:
+				return isScrollable();
+			case ActionStepPackage.OPEN_QUERY__READ_ONLY:
+				return isReadOnly();
+			case ActionStepPackage.OPEN_QUERY__SCROLL_MODE:
+				return getScrollMode();
+			case ActionStepPackage.OPEN_QUERY__HOLDABILITY_MODE:
+				return getHoldabilityMode();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionStepPackage.OPEN_QUERY__QUERY:
-        setQuery((DBQueryId)newValue);
-        return;
-      case ActionStepPackage.OPEN_QUERY__CONNECTION:
-        setConnection((DBConnectionId)newValue);
-        return;
-      case ActionStepPackage.OPEN_QUERY__USE_CACHE:
-        setUseCache(((Boolean)newValue).booleanValue());
-        return;
-      case ActionStepPackage.OPEN_QUERY__SCROLLABLE:
-        setScrollable(((Boolean)newValue).booleanValue());
-        return;
-      case ActionStepPackage.OPEN_QUERY__READ_ONLY:
-        setReadOnly(((Boolean)newValue).booleanValue());
-        return;
-      case ActionStepPackage.OPEN_QUERY__SCROLL_MODE:
-        setScrollMode((RSScrollMode)newValue);
-        return;
-      case ActionStepPackage.OPEN_QUERY__HOLDABILITY_MODE:
-        setHoldabilityMode((RSHoldabilityMode)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionStepPackage.OPEN_QUERY__QUERY:
+				setQuery((DBQueryId)newValue);
+				return;
+			case ActionStepPackage.OPEN_QUERY__CONNECTION:
+				setConnection((DBConnectionId)newValue);
+				return;
+			case ActionStepPackage.OPEN_QUERY__USE_CACHE:
+				setUseCache((Boolean)newValue);
+				return;
+			case ActionStepPackage.OPEN_QUERY__SCROLLABLE:
+				setScrollable((Boolean)newValue);
+				return;
+			case ActionStepPackage.OPEN_QUERY__READ_ONLY:
+				setReadOnly((Boolean)newValue);
+				return;
+			case ActionStepPackage.OPEN_QUERY__SCROLL_MODE:
+				setScrollMode((RSScrollMode)newValue);
+				return;
+			case ActionStepPackage.OPEN_QUERY__HOLDABILITY_MODE:
+				setHoldabilityMode((RSHoldabilityMode)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.OPEN_QUERY__QUERY:
-        setQuery((DBQueryId)null);
-        return;
-      case ActionStepPackage.OPEN_QUERY__CONNECTION:
-        setConnection((DBConnectionId)null);
-        return;
-      case ActionStepPackage.OPEN_QUERY__USE_CACHE:
-        setUseCache(USE_CACHE_EDEFAULT);
-        return;
-      case ActionStepPackage.OPEN_QUERY__SCROLLABLE:
-        setScrollable(SCROLLABLE_EDEFAULT);
-        return;
-      case ActionStepPackage.OPEN_QUERY__READ_ONLY:
-        setReadOnly(READ_ONLY_EDEFAULT);
-        return;
-      case ActionStepPackage.OPEN_QUERY__SCROLL_MODE:
-        setScrollMode(SCROLL_MODE_EDEFAULT);
-        return;
-      case ActionStepPackage.OPEN_QUERY__HOLDABILITY_MODE:
-        setHoldabilityMode(HOLDABILITY_MODE_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.OPEN_QUERY__QUERY:
+				setQuery((DBQueryId)null);
+				return;
+			case ActionStepPackage.OPEN_QUERY__CONNECTION:
+				setConnection((DBConnectionId)null);
+				return;
+			case ActionStepPackage.OPEN_QUERY__USE_CACHE:
+				setUseCache(USE_CACHE_EDEFAULT);
+				return;
+			case ActionStepPackage.OPEN_QUERY__SCROLLABLE:
+				setScrollable(SCROLLABLE_EDEFAULT);
+				return;
+			case ActionStepPackage.OPEN_QUERY__READ_ONLY:
+				setReadOnly(READ_ONLY_EDEFAULT);
+				return;
+			case ActionStepPackage.OPEN_QUERY__SCROLL_MODE:
+				setScrollMode(SCROLL_MODE_EDEFAULT);
+				return;
+			case ActionStepPackage.OPEN_QUERY__HOLDABILITY_MODE:
+				setHoldabilityMode(HOLDABILITY_MODE_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.OPEN_QUERY__QUERY:
-        return query != null;
-      case ActionStepPackage.OPEN_QUERY__CONNECTION:
-        return connection != null;
-      case ActionStepPackage.OPEN_QUERY__USE_CACHE:
-        return useCache != USE_CACHE_EDEFAULT;
-      case ActionStepPackage.OPEN_QUERY__SCROLLABLE:
-        return scrollable != SCROLLABLE_EDEFAULT;
-      case ActionStepPackage.OPEN_QUERY__READ_ONLY:
-        return readOnly != READ_ONLY_EDEFAULT;
-      case ActionStepPackage.OPEN_QUERY__SCROLL_MODE:
-        return scrollMode != SCROLL_MODE_EDEFAULT;
-      case ActionStepPackage.OPEN_QUERY__HOLDABILITY_MODE:
-        return holdabilityMode != HOLDABILITY_MODE_EDEFAULT;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.OPEN_QUERY__QUERY:
+				return query != null;
+			case ActionStepPackage.OPEN_QUERY__CONNECTION:
+				return connection != null;
+			case ActionStepPackage.OPEN_QUERY__USE_CACHE:
+				return useCache != USE_CACHE_EDEFAULT;
+			case ActionStepPackage.OPEN_QUERY__SCROLLABLE:
+				return scrollable != SCROLLABLE_EDEFAULT;
+			case ActionStepPackage.OPEN_QUERY__READ_ONLY:
+				return readOnly != READ_ONLY_EDEFAULT;
+			case ActionStepPackage.OPEN_QUERY__SCROLL_MODE:
+				return scrollMode != SCROLL_MODE_EDEFAULT;
+			case ActionStepPackage.OPEN_QUERY__HOLDABILITY_MODE:
+				return holdabilityMode != HOLDABILITY_MODE_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (useCache: ");
-    result.append(useCache);
-    result.append(", scrollable: ");
-    result.append(scrollable);
-    result.append(", readOnly: ");
-    result.append(readOnly);
-    result.append(", scrollMode: ");
-    result.append(scrollMode);
-    result.append(", holdabilityMode: ");
-    result.append(holdabilityMode);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (useCache: ");
+		result.append(useCache);
+		result.append(", scrollable: ");
+		result.append(scrollable);
+		result.append(", readOnly: ");
+		result.append(readOnly);
+		result.append(", scrollMode: ");
+		result.append(scrollMode);
+		result.append(", holdabilityMode: ");
+		result.append(holdabilityMode);
+		result.append(')');
+		return result.toString();
+	}
 
 } //OpenQueryImpl

@@ -45,53 +45,53 @@ import com.safi.server.saflet.manager.DBManager;
  */
 public class SetColValueImpl extends ActionStepImpl implements SetColValue {
   /**
-   * The cached value of the '{@link #getResultSet() <em>Result Set</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getResultSet() <em>Result Set</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getResultSet()
-   * @generated
-   * @ordered
-   */
+	 * @see #getResultSet()
+	 * @generated
+	 * @ordered
+	 */
   protected DBResultSetId resultSet;
 
   /**
-   * The cached value of the '{@link #getColumn() <em>Column</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getColumn() <em>Column</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getColumn()
-   * @generated
-   * @ordered
-   */
+	 * @see #getColumn()
+	 * @generated
+	 * @ordered
+	 */
   protected DynamicValue column;
 
   /**
-   * The default value of the '{@link #getSetAsDatatype() <em>Set As Datatype</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getSetAsDatatype() <em>Set As Datatype</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSetAsDatatype()
-   * @generated
-   * @ordered
-   */
+	 * @see #getSetAsDatatype()
+	 * @generated
+	 * @ordered
+	 */
   protected static final SQLDataType SET_AS_DATATYPE_EDEFAULT = SQLDataType.TEXT;
 
   /**
-   * The cached value of the '{@link #getSetAsDatatype() <em>Set As Datatype</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSetAsDatatype() <em>Set As Datatype</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSetAsDatatype()
-   * @generated
-   * @ordered
-   */
+	 * @see #getSetAsDatatype()
+	 * @generated
+	 * @ordered
+	 */
   protected SQLDataType setAsDatatype = SET_AS_DATATYPE_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
-   * @generated
-   * @ordered
-   */
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
   protected DynamicValue value;
 
   /**
@@ -263,261 +263,261 @@ public class SetColValueImpl extends ActionStepImpl implements SetColValue {
 
   }
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionStepPackage.eINSTANCE.getSetColValue();
-  }
+		return ActionStepPackage.eINSTANCE.getSetColValue();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DBResultSetId getResultSet() {
-    return resultSet;
-  }
+		return resultSet;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setResultSet(DBResultSetId newResultSet) {
-    DBResultSetId oldResultSet = resultSet;
-    resultSet = newResultSet;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.SET_COL_VALUE__RESULT_SET, oldResultSet, resultSet));
-  }
+		DBResultSetId oldResultSet = resultSet;
+		resultSet = newResultSet;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.SET_COL_VALUE__RESULT_SET, oldResultSet, resultSet));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DynamicValue getColumn() {
-    return column;
-  }
+		return column;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetColumn(DynamicValue newColumn, NotificationChain msgs) {
-    DynamicValue oldColumn = column;
-    column = newColumn;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionStepPackage.SET_COL_VALUE__COLUMN, oldColumn, newColumn);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DynamicValue oldColumn = column;
+		column = newColumn;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionStepPackage.SET_COL_VALUE__COLUMN, oldColumn, newColumn);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setColumn(DynamicValue newColumn) {
-    if (newColumn != column) {
-      NotificationChain msgs = null;
-      if (column != null)
-        msgs = ((InternalEObject)column).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.SET_COL_VALUE__COLUMN, null, msgs);
-      if (newColumn != null)
-        msgs = ((InternalEObject)newColumn).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.SET_COL_VALUE__COLUMN, null, msgs);
-      msgs = basicSetColumn(newColumn, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.SET_COL_VALUE__COLUMN, newColumn, newColumn));
-  }
+		if (newColumn != column) {
+			NotificationChain msgs = null;
+			if (column != null)
+				msgs = ((InternalEObject)column).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.SET_COL_VALUE__COLUMN, null, msgs);
+			if (newColumn != null)
+				msgs = ((InternalEObject)newColumn).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.SET_COL_VALUE__COLUMN, null, msgs);
+			msgs = basicSetColumn(newColumn, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.SET_COL_VALUE__COLUMN, newColumn, newColumn));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public SQLDataType getSetAsDatatype() {
-    return setAsDatatype;
-  }
+		return setAsDatatype;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setSetAsDatatype(SQLDataType newSetAsDatatype) {
-    SQLDataType oldSetAsDatatype = setAsDatatype;
-    setAsDatatype = newSetAsDatatype == null ? SET_AS_DATATYPE_EDEFAULT : newSetAsDatatype;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.SET_COL_VALUE__SET_AS_DATATYPE, oldSetAsDatatype, setAsDatatype));
-  }
+		SQLDataType oldSetAsDatatype = setAsDatatype;
+		setAsDatatype = newSetAsDatatype == null ? SET_AS_DATATYPE_EDEFAULT : newSetAsDatatype;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.SET_COL_VALUE__SET_AS_DATATYPE, oldSetAsDatatype, setAsDatatype));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DynamicValue getValue() {
-    return value;
-  }
+		return value;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetValue(DynamicValue newValue, NotificationChain msgs) {
-    DynamicValue oldValue = value;
-    value = newValue;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionStepPackage.SET_COL_VALUE__VALUE, oldValue, newValue);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DynamicValue oldValue = value;
+		value = newValue;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionStepPackage.SET_COL_VALUE__VALUE, oldValue, newValue);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setValue(DynamicValue newValue) {
-    if (newValue != value) {
-      NotificationChain msgs = null;
-      if (value != null)
-        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.SET_COL_VALUE__VALUE, null, msgs);
-      if (newValue != null)
-        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.SET_COL_VALUE__VALUE, null, msgs);
-      msgs = basicSetValue(newValue, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.SET_COL_VALUE__VALUE, newValue, newValue));
-  }
+		if (newValue != value) {
+			NotificationChain msgs = null;
+			if (value != null)
+				msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.SET_COL_VALUE__VALUE, null, msgs);
+			if (newValue != null)
+				msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionStepPackage.SET_COL_VALUE__VALUE, null, msgs);
+			msgs = basicSetValue(newValue, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.SET_COL_VALUE__VALUE, newValue, newValue));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case ActionStepPackage.SET_COL_VALUE__COLUMN:
-        return basicSetColumn(null, msgs);
-      case ActionStepPackage.SET_COL_VALUE__VALUE:
-        return basicSetValue(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionStepPackage.SET_COL_VALUE__COLUMN:
+				return basicSetColumn(null, msgs);
+			case ActionStepPackage.SET_COL_VALUE__VALUE:
+				return basicSetValue(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionStepPackage.SET_COL_VALUE__RESULT_SET:
-        return getResultSet();
-      case ActionStepPackage.SET_COL_VALUE__COLUMN:
-        return getColumn();
-      case ActionStepPackage.SET_COL_VALUE__SET_AS_DATATYPE:
-        return getSetAsDatatype();
-      case ActionStepPackage.SET_COL_VALUE__VALUE:
-        return getValue();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionStepPackage.SET_COL_VALUE__RESULT_SET:
+				return getResultSet();
+			case ActionStepPackage.SET_COL_VALUE__COLUMN:
+				return getColumn();
+			case ActionStepPackage.SET_COL_VALUE__SET_AS_DATATYPE:
+				return getSetAsDatatype();
+			case ActionStepPackage.SET_COL_VALUE__VALUE:
+				return getValue();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionStepPackage.SET_COL_VALUE__RESULT_SET:
-        setResultSet((DBResultSetId)newValue);
-        return;
-      case ActionStepPackage.SET_COL_VALUE__COLUMN:
-        setColumn((DynamicValue)newValue);
-        return;
-      case ActionStepPackage.SET_COL_VALUE__SET_AS_DATATYPE:
-        setSetAsDatatype((SQLDataType)newValue);
-        return;
-      case ActionStepPackage.SET_COL_VALUE__VALUE:
-        setValue((DynamicValue)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionStepPackage.SET_COL_VALUE__RESULT_SET:
+				setResultSet((DBResultSetId)newValue);
+				return;
+			case ActionStepPackage.SET_COL_VALUE__COLUMN:
+				setColumn((DynamicValue)newValue);
+				return;
+			case ActionStepPackage.SET_COL_VALUE__SET_AS_DATATYPE:
+				setSetAsDatatype((SQLDataType)newValue);
+				return;
+			case ActionStepPackage.SET_COL_VALUE__VALUE:
+				setValue((DynamicValue)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.SET_COL_VALUE__RESULT_SET:
-        setResultSet((DBResultSetId)null);
-        return;
-      case ActionStepPackage.SET_COL_VALUE__COLUMN:
-        setColumn((DynamicValue)null);
-        return;
-      case ActionStepPackage.SET_COL_VALUE__SET_AS_DATATYPE:
-        setSetAsDatatype(SET_AS_DATATYPE_EDEFAULT);
-        return;
-      case ActionStepPackage.SET_COL_VALUE__VALUE:
-        setValue((DynamicValue)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.SET_COL_VALUE__RESULT_SET:
+				setResultSet((DBResultSetId)null);
+				return;
+			case ActionStepPackage.SET_COL_VALUE__COLUMN:
+				setColumn((DynamicValue)null);
+				return;
+			case ActionStepPackage.SET_COL_VALUE__SET_AS_DATATYPE:
+				setSetAsDatatype(SET_AS_DATATYPE_EDEFAULT);
+				return;
+			case ActionStepPackage.SET_COL_VALUE__VALUE:
+				setValue((DynamicValue)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.SET_COL_VALUE__RESULT_SET:
-        return resultSet != null;
-      case ActionStepPackage.SET_COL_VALUE__COLUMN:
-        return column != null;
-      case ActionStepPackage.SET_COL_VALUE__SET_AS_DATATYPE:
-        return setAsDatatype != SET_AS_DATATYPE_EDEFAULT;
-      case ActionStepPackage.SET_COL_VALUE__VALUE:
-        return value != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.SET_COL_VALUE__RESULT_SET:
+				return resultSet != null;
+			case ActionStepPackage.SET_COL_VALUE__COLUMN:
+				return column != null;
+			case ActionStepPackage.SET_COL_VALUE__SET_AS_DATATYPE:
+				return setAsDatatype != SET_AS_DATATYPE_EDEFAULT;
+			case ActionStepPackage.SET_COL_VALUE__VALUE:
+				return value != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (setAsDatatype: ");
-    result.append(setAsDatatype);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (setAsDatatype: ");
+		result.append(setAsDatatype);
+		result.append(')');
+		return result.toString();
+	}
 
 } //SetColValueImpl

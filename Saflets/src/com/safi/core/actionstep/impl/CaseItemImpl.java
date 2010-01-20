@@ -31,54 +31,54 @@ import com.safi.core.actionstep.DynamicValue;
  */
 public class CaseItemImpl extends ItemImpl implements CaseItem {
   /**
-   * The cached value of the '{@link #getDynamicValue() <em>Dynamic Value</em>}' containment reference.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @see #getDynamicValue()
-   * @generated
-   * @ordered
-   */
+	 * The cached value of the '{@link #getDynamicValue() <em>Dynamic Value</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see #getDynamicValue()
+	 * @generated
+	 * @ordered
+	 */
   protected DynamicValue dynamicValue;
 
   private Adapter adapter = new CaseAdapter();
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   protected CaseItemImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionStepPackage.eINSTANCE.getCaseItem();
-  }
+		return ActionStepPackage.eINSTANCE.getCaseItem();
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public DynamicValue getDynamicValue() {
-    return dynamicValue;
-  }
+		return dynamicValue;
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public NotificationChain basicSetDynamicValue(DynamicValue newDynamicValue, NotificationChain msgs) {
-    DynamicValue oldDynamicValue = dynamicValue;
-    dynamicValue = newDynamicValue;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionStepPackage.CASE_ITEM__DYNAMIC_VALUE, oldDynamicValue, newDynamicValue);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DynamicValue oldDynamicValue = dynamicValue;
+		dynamicValue = newDynamicValue;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionStepPackage.CASE_ITEM__DYNAMIC_VALUE, oldDynamicValue, newDynamicValue);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -125,72 +125,72 @@ public class CaseItemImpl extends ItemImpl implements CaseItem {
   }
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID,
       NotificationChain msgs) {
-    switch (featureID) {
-      case ActionStepPackage.CASE_ITEM__DYNAMIC_VALUE:
-        return basicSetDynamicValue(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case ActionStepPackage.CASE_ITEM__DYNAMIC_VALUE:
+				return basicSetDynamicValue(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionStepPackage.CASE_ITEM__DYNAMIC_VALUE:
-        return getDynamicValue();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionStepPackage.CASE_ITEM__DYNAMIC_VALUE:
+				return getDynamicValue();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionStepPackage.CASE_ITEM__DYNAMIC_VALUE:
-        setDynamicValue((DynamicValue)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionStepPackage.CASE_ITEM__DYNAMIC_VALUE:
+				setDynamicValue((DynamicValue)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.CASE_ITEM__DYNAMIC_VALUE:
-        setDynamicValue((DynamicValue)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.CASE_ITEM__DYNAMIC_VALUE:
+				setDynamicValue((DynamicValue)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.CASE_ITEM__DYNAMIC_VALUE:
-        return dynamicValue != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.CASE_ITEM__DYNAMIC_VALUE:
+				return dynamicValue != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
   private class CaseAdapter implements  Adapter {
 

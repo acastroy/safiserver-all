@@ -29,23 +29,23 @@ import com.safi.core.scripting.ScriptingPackage;
  */
 public class RhinoScriptScopeFactoryImpl extends ScriptScopeFactoryImpl implements RhinoScriptScopeFactory {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected RhinoScriptScopeFactoryImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ScriptingPackage.Literals.RHINO_SCRIPT_SCOPE_FACTORY;
-  }
+		return ScriptingPackage.Literals.RHINO_SCRIPT_SCOPE_FACTORY;
+	}
   
   @Override
   public ScriptScope getScriptScope() {

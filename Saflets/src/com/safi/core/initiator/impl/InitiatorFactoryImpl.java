@@ -27,137 +27,137 @@ import com.safi.core.initiator.InputType;
  */
 public class InitiatorFactoryImpl extends EFactoryImpl implements InitiatorFactory {
   /**
-   * Creates the default factory implementation.
-   * <!-- begin-user-doc -->
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static InitiatorFactory init() {
-    try {
-      InitiatorFactory theInitiatorFactory = (InitiatorFactory)EPackage.Registry.INSTANCE.getEFactory("http:///com/safi/core.ecore#initiator"); 
-      if (theInitiatorFactory != null) {
-        return theInitiatorFactory;
-      }
-    }
-    catch (Exception exception) {
-      EcorePlugin.INSTANCE.log(exception);
-    }
-    return new InitiatorFactoryImpl();
-  }
+		try {
+			InitiatorFactory theInitiatorFactory = (InitiatorFactory)EPackage.Registry.INSTANCE.getEFactory("http:///com/safi/core.ecore#initiator"); 
+			if (theInitiatorFactory != null) {
+				return theInitiatorFactory;
+			}
+		}
+		catch (Exception exception) {
+			EcorePlugin.INSTANCE.log(exception);
+		}
+		return new InitiatorFactoryImpl();
+	}
 
   /**
-   * Creates an instance of the factory.
-   * <!-- begin-user-doc -->
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public InitiatorFactoryImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public EObject create(EClass eClass) {
-    switch (eClass.getClassifierID()) {
-      default:
-        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eClass.getClassifierID()) {
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object createFromString(EDataType eDataType, String initialValue) {
-    switch (eDataType.getClassifierID()) {
-      case InitiatorPackage.INPUT_TYPE:
-        return createInputTypeFromString(eDataType, initialValue);
-      case InitiatorPackage.ACTION_STEP_EXCEPTION:
-        return createActionStepExceptionFromString(eDataType, initialValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eDataType.getClassifierID()) {
+			case InitiatorPackage.INPUT_TYPE:
+				return createInputTypeFromString(eDataType, initialValue);
+			case InitiatorPackage.ACTION_STEP_EXCEPTION:
+				return createActionStepExceptionFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String convertToString(EDataType eDataType, Object instanceValue) {
-    switch (eDataType.getClassifierID()) {
-      case InitiatorPackage.INPUT_TYPE:
-        return convertInputTypeToString(eDataType, instanceValue);
-      case InitiatorPackage.ACTION_STEP_EXCEPTION:
-        return convertActionStepExceptionToString(eDataType, instanceValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
-  }
+		switch (eDataType.getClassifierID()) {
+			case InitiatorPackage.INPUT_TYPE:
+				return convertInputTypeToString(eDataType, instanceValue);
+			case InitiatorPackage.ACTION_STEP_EXCEPTION:
+				return convertActionStepExceptionToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public InputType createInputTypeFromString(EDataType eDataType, String initialValue) {
-    InputType result = InputType.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
+		InputType result = InputType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String convertInputTypeToString(EDataType eDataType, Object instanceValue) {
-    return instanceValue == null ? null : instanceValue.toString();
-  }
+		return instanceValue == null ? null : instanceValue.toString();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ActionStepException createActionStepExceptionFromString(EDataType eDataType, String initialValue) {
-    return (ActionStepException)super.createFromString(eDataType, initialValue);
-  }
+		return (ActionStepException)super.createFromString(eDataType, initialValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String convertActionStepExceptionToString(EDataType eDataType, Object instanceValue) {
-    return super.convertToString(eDataType, instanceValue);
-  }
+		return super.convertToString(eDataType, instanceValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public InitiatorPackage getInitiatorPackage() {
-    return (InitiatorPackage)getEPackage();
-  }
+		return (InitiatorPackage)getEPackage();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @deprecated
-   * @generated
-   */
+	 * @deprecated
+	 * @generated
+	 */
   @Deprecated
   public static InitiatorPackage getPackage() {
-    return InitiatorPackage.eINSTANCE;
-  }
+		return InitiatorPackage.eINSTANCE;
+	}
 
 } //InitiatorFactoryImpl

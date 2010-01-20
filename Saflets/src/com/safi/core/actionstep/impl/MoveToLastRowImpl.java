@@ -33,13 +33,13 @@ import com.safi.server.saflet.manager.DBManager;
  */
 public class MoveToLastRowImpl extends ActionStepImpl implements MoveToLastRow {
   /**
-   * The cached value of the '{@link #getResultSet() <em>Result Set</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getResultSet() <em>Result Set</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getResultSet()
-   * @generated
-   * @ordered
-   */
+	 * @see #getResultSet()
+	 * @generated
+	 * @ordered
+	 */
   protected DBResultSetId resultSet;
 
   /**
@@ -88,92 +88,92 @@ public class MoveToLastRowImpl extends ActionStepImpl implements MoveToLastRow {
 
   }
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionStepPackage.eINSTANCE.getMoveToLastRow();
-  }
+		return ActionStepPackage.eINSTANCE.getMoveToLastRow();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DBResultSetId getResultSet() {
-    return resultSet;
-  }
+		return resultSet;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setResultSet(DBResultSetId newResultSet) {
-    DBResultSetId oldResultSet = resultSet;
-    resultSet = newResultSet;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.MOVE_TO_LAST_ROW__RESULT_SET, oldResultSet, resultSet));
-  }
+		DBResultSetId oldResultSet = resultSet;
+		resultSet = newResultSet;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.MOVE_TO_LAST_ROW__RESULT_SET, oldResultSet, resultSet));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionStepPackage.MOVE_TO_LAST_ROW__RESULT_SET:
-        return getResultSet();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionStepPackage.MOVE_TO_LAST_ROW__RESULT_SET:
+				return getResultSet();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionStepPackage.MOVE_TO_LAST_ROW__RESULT_SET:
-        setResultSet((DBResultSetId)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionStepPackage.MOVE_TO_LAST_ROW__RESULT_SET:
+				setResultSet((DBResultSetId)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.MOVE_TO_LAST_ROW__RESULT_SET:
-        setResultSet((DBResultSetId)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.MOVE_TO_LAST_ROW__RESULT_SET:
+				setResultSet((DBResultSetId)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.MOVE_TO_LAST_ROW__RESULT_SET:
-        return resultSet != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.MOVE_TO_LAST_ROW__RESULT_SET:
+				return resultSet != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //MoveToLastRowImpl

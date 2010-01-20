@@ -23,23 +23,23 @@ import com.safi.core.scripting.ScriptingPackage;
  */
 public class RhinoSafletScriptFactoryImpl extends SafletScriptFactoryImpl implements RhinoSafletScriptFactory {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected RhinoSafletScriptFactoryImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ScriptingPackage.Literals.RHINO_SAFLET_SCRIPT_FACTORY;
-  }
+		return ScriptingPackage.Literals.RHINO_SAFLET_SCRIPT_FACTORY;
+	}
 
   @Override
   public SafletScript getSafletScript(String name, String scriptText) {

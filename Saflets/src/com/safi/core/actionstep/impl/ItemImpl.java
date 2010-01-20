@@ -32,84 +32,84 @@ import com.safi.core.actionstep.Item;
  */
 public class ItemImpl extends EObjectImpl implements Item {
   /**
-   * The default value of the '{@link #getLabelText() <em>Label Text</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getLabelText() <em>Label Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLabelText()
-   * @generated
-   * @ordered
-   */
+	 * @see #getLabelText()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String LABEL_TEXT_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getLabelText() <em>Label Text</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLabelText() <em>Label Text</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLabelText()
-   * @generated
-   * @ordered
-   */
+	 * @see #getLabelText()
+	 * @generated
+	 * @ordered
+	 */
   protected String labelText = LABEL_TEXT_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getParentActionStep() <em>Parent Action Step</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getParentActionStep() <em>Parent Action Step</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParentActionStep()
-   * @generated
-   * @ordered
-   */
+	 * @see #getParentActionStep()
+	 * @generated
+	 * @ordered
+	 */
   protected ActionStep parentActionStep;
 
   /**
-   * The cached value of the '{@link #getTargetActionStep() <em>Target Action Step</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTargetActionStep() <em>Target Action Step</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTargetActionStep()
-   * @generated
-   * @ordered
-   */
+	 * @see #getTargetActionStep()
+	 * @generated
+	 * @ordered
+	 */
   protected ActionStep targetActionStep;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ItemImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return ActionStepPackage.eINSTANCE.getItem();
-  }
+		return ActionStepPackage.eINSTANCE.getItem();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getLabelText() {
-    return labelText;
-  }
+		return labelText;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setLabelText(String newLabelText) {
-    String oldLabelText = labelText;
-    labelText = newLabelText;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.ITEM__LABEL_TEXT, oldLabelText, labelText));
-  }
+		String oldLabelText = labelText;
+		labelText = newLabelText;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.ITEM__LABEL_TEXT, oldLabelText, labelText));
+	}
 
   /**
    * <!-- begin-user-doc -->
@@ -131,158 +131,158 @@ public class ItemImpl extends EObjectImpl implements Item {
   }
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ActionStep basicGetParentActionStep() {
-    return parentActionStep;
-  }
+		return parentActionStep;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setParentActionStep(ActionStep newParentActionStep) {
-    ActionStep oldParentActionStep = parentActionStep;
-    parentActionStep = newParentActionStep;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.ITEM__PARENT_ACTION_STEP, oldParentActionStep, parentActionStep));
-  }
+		ActionStep oldParentActionStep = parentActionStep;
+		parentActionStep = newParentActionStep;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.ITEM__PARENT_ACTION_STEP, oldParentActionStep, parentActionStep));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ActionStep getTargetActionStep() {
-    if (targetActionStep != null && targetActionStep.eIsProxy()) {
-      InternalEObject oldTargetActionStep = (InternalEObject)targetActionStep;
-      targetActionStep = (ActionStep)eResolveProxy(oldTargetActionStep);
-      if (targetActionStep != oldTargetActionStep) {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionStepPackage.ITEM__TARGET_ACTION_STEP, oldTargetActionStep, targetActionStep));
-      }
-    }
-    return targetActionStep;
-  }
+		if (targetActionStep != null && targetActionStep.eIsProxy()) {
+			InternalEObject oldTargetActionStep = (InternalEObject)targetActionStep;
+			targetActionStep = (ActionStep)eResolveProxy(oldTargetActionStep);
+			if (targetActionStep != oldTargetActionStep) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionStepPackage.ITEM__TARGET_ACTION_STEP, oldTargetActionStep, targetActionStep));
+			}
+		}
+		return targetActionStep;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ActionStep basicGetTargetActionStep() {
-    return targetActionStep;
-  }
+		return targetActionStep;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setTargetActionStep(ActionStep newTargetActionStep) {
-    ActionStep oldTargetActionStep = targetActionStep;
-    targetActionStep = newTargetActionStep;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.ITEM__TARGET_ACTION_STEP, oldTargetActionStep, targetActionStep));
-  }
+		ActionStep oldTargetActionStep = targetActionStep;
+		targetActionStep = newTargetActionStep;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.ITEM__TARGET_ACTION_STEP, oldTargetActionStep, targetActionStep));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case ActionStepPackage.ITEM__LABEL_TEXT:
-        return getLabelText();
-      case ActionStepPackage.ITEM__PARENT_ACTION_STEP:
-        if (resolve) return getParentActionStep();
-        return basicGetParentActionStep();
-      case ActionStepPackage.ITEM__TARGET_ACTION_STEP:
-        if (resolve) return getTargetActionStep();
-        return basicGetTargetActionStep();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case ActionStepPackage.ITEM__LABEL_TEXT:
+				return getLabelText();
+			case ActionStepPackage.ITEM__PARENT_ACTION_STEP:
+				if (resolve) return getParentActionStep();
+				return basicGetParentActionStep();
+			case ActionStepPackage.ITEM__TARGET_ACTION_STEP:
+				if (resolve) return getTargetActionStep();
+				return basicGetTargetActionStep();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case ActionStepPackage.ITEM__LABEL_TEXT:
-        setLabelText((String)newValue);
-        return;
-      case ActionStepPackage.ITEM__PARENT_ACTION_STEP:
-        setParentActionStep((ActionStep)newValue);
-        return;
-      case ActionStepPackage.ITEM__TARGET_ACTION_STEP:
-        setTargetActionStep((ActionStep)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case ActionStepPackage.ITEM__LABEL_TEXT:
+				setLabelText((String)newValue);
+				return;
+			case ActionStepPackage.ITEM__PARENT_ACTION_STEP:
+				setParentActionStep((ActionStep)newValue);
+				return;
+			case ActionStepPackage.ITEM__TARGET_ACTION_STEP:
+				setTargetActionStep((ActionStep)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.ITEM__LABEL_TEXT:
-        setLabelText(LABEL_TEXT_EDEFAULT);
-        return;
-      case ActionStepPackage.ITEM__PARENT_ACTION_STEP:
-        setParentActionStep((ActionStep)null);
-        return;
-      case ActionStepPackage.ITEM__TARGET_ACTION_STEP:
-        setTargetActionStep((ActionStep)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.ITEM__LABEL_TEXT:
+				setLabelText(LABEL_TEXT_EDEFAULT);
+				return;
+			case ActionStepPackage.ITEM__PARENT_ACTION_STEP:
+				setParentActionStep((ActionStep)null);
+				return;
+			case ActionStepPackage.ITEM__TARGET_ACTION_STEP:
+				setTargetActionStep((ActionStep)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case ActionStepPackage.ITEM__LABEL_TEXT:
-        return LABEL_TEXT_EDEFAULT == null ? labelText != null : !LABEL_TEXT_EDEFAULT.equals(labelText);
-      case ActionStepPackage.ITEM__PARENT_ACTION_STEP:
-        return parentActionStep != null;
-      case ActionStepPackage.ITEM__TARGET_ACTION_STEP:
-        return targetActionStep != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case ActionStepPackage.ITEM__LABEL_TEXT:
+				return LABEL_TEXT_EDEFAULT == null ? labelText != null : !LABEL_TEXT_EDEFAULT.equals(labelText);
+			case ActionStepPackage.ITEM__PARENT_ACTION_STEP:
+				return parentActionStep != null;
+			case ActionStepPackage.ITEM__TARGET_ACTION_STEP:
+				return targetActionStep != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (labelText: ");
-    result.append(labelText);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (labelText: ");
+		result.append(labelText);
+		result.append(')');
+		return result.toString();
+	}
 
 } //ItemImpl
