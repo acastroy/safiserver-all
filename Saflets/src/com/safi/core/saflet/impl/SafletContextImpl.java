@@ -6,8 +6,10 @@
  */
 package com.safi.core.saflet.impl;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -82,6 +84,12 @@ public abstract class SafletContextImpl extends EObjectImpl implements SafletCon
 	 * @ordered
 	 */
   protected Map<String, Object> sessionVariables;
+  
+  protected static ThreadLocal<List<Variable>> runtimeVariables = new ThreadLocal<List<Variable>>(){
+  	protected List<Variable> initialValue() {
+  		return new ArrayList<Variable>();
+  	}
+  };
 
   protected Object debugLock;
   private Object suspendedLock;
@@ -214,6 +222,12 @@ public abstract class SafletContextImpl extends EObjectImpl implements SafletCon
       if (name.equals(v.getName()))
         return v;
     }
+    List<Variable> runtimes = runtimeVariables.get();
+    if (runtimes != null)
+	    for (Variable v : runtimes) {
+	      if (name.equals(v.getName()))
+	        return v;
+	    }
     if (getParentSaflet() != null && getParentSaflet().getSafletEnvironment() != null)
     	return getParentSaflet().getSafletEnvironment().getGlobalVariable(name);
     
@@ -279,7 +293,11 @@ public abstract class SafletContextImpl extends EObjectImpl implements SafletCon
       if (log.isLoggable(Level.FINEST))
         log.finest("Saflet context setting var " + v);
       removeVariable(v.getName());
-      getVariables().add(v);
+      if (v.getScope() == VariableScope.RUNTIME)
+      	runtimeVariables.get().add(v);
+      else
+      	getVariables().add(v);
+      
     }
     if (parentSaflet != null && parentSaflet.getSafletScope() != null) {// && newVar){
       parentSaflet.getSafletScope().exposeObjectToScript(v.getName(), v.getDefaultValue());
@@ -299,8 +317,12 @@ public abstract class SafletContextImpl extends EObjectImpl implements SafletCon
     if (variables == null)
       return null;
     Variable removed = getVariable(name);
-    if (removed != null)
-    	variables.remove(removed);
+    if (removed != null){
+    	boolean b = variables.remove(removed);
+    	if (!b){
+    		runtimeVariables.get().remove(removed);
+    	}
+    }
     
 //    for (Iterator<Variable> iter = variables.iterator(); iter.hasNext();) {
 //      Variable v = iter.next();
@@ -340,12 +362,7 @@ public abstract class SafletContextImpl extends EObjectImpl implements SafletCon
 
   @Override
   public EList<Variable> getRuntimeVariables() {
-    EList<Variable> result = new BasicEList<Variable>();
-    for (Variable v : getVariables()) {
-      if (v.getScope() == VariableScope.RUNTIME)
-        result.add(v);
-    }
-    return result;
+    return new BasicEList<Variable>(runtimeVariables.get());
   }
 
   /**
