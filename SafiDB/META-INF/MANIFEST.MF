@@ -10,7 +10,6 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: com.safi.db,
  com.safi.db.impl,
- com.safi.db.manager,
  com.safi.db.server.config,
  com.safi.db.server.config.impl,
  com.safi.db.server.config.util,
@@ -18,8 +17,6 @@ Export-Package: com.safi.db,
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi,
- org.eclipse.emf.teneo.hibernate;visibility:=reexport,
  org.apache.commons.lang;bundle-version="2.3.0",
- Hibernate30;bundle-version="1.0.0",
  SafiCommons;bundle-version="1.2.5"
 Eclipse-LazyStart: false

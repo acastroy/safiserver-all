@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="SafiDB">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../galileo/eclipse"/>
+    <property name="SafiServerCore.location" value="../SafiServerCore"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+    <path id="Plug-in Dependencies.libraryclasspath">
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime_3.5.0.v20090525.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi_3.5.0.v20090520.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/javax.transaction_1.1.1.v200909161740.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.persistence.jpa.equinox.weaving_1.1.2.v20090612-r4475.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.common_3.5.0.v20090520-1800.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.jobs_3.4.100.v20090429-1800.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime.compatibility.registry_3.2.200.v20090429-1800/runtime_registry_compatibility.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.registry_3.4.100.v20090520-1800.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.preferences_3.2.300.v20090520-1800.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.contenttype_3.4.0.v20090429-1800.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.app_1.2.0.v20090520-1800.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore_2.5.0.v200906151043.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.common_2.5.0.v200906151043.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore.xmi_2.5.0.v200906151043.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.teneo.hibernate_1.1.1.v200909151729"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.teneo.hibernate_1.1.1.v200909151729/org.eclipse.emf.teneo.hibernate.extra.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.teneo_1.1.1.v200909151729.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.teneo.annotations_1.1.0.v200909151729.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.teneo.hibernate.mapper_1.1.1.v200909151729.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.apache.commons.lang_2.3.0.v200803061910.jar"/>
+        <pathelement location="../../Hibernate30"/>
+        <pathelement location="../../SafiCommons"/>
+    </path>
+    <path id="SafiDB.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="resources/"/>
+        <path refid="Plug-in Dependencies.libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="SafiDB.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects">
+        <ant antfile="${SafiServerCore.location}/build_osgi.xml" dir="${SafiServerCore.location}" inheritAll="false" target="clean"/>
+        <ant antfile="${SafiServerCore.location}/build_osgi.xml" dir="${SafiServerCore.location}" inheritAll="false" target="build">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+    </target>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+	
+	<target name="build_osgi_jar" depends="build">
+		<delete file="SafiDB_1.1.8.jar" />
+	        <jar destfile="SafiDB_1.1.8.jar" manifest="osgi-manifest\META-INF\MANIFEST.MF" update="false">
+	            <fileset dir="bin" includes="**/*" />
+	            <fileset dir=".">
+	                <include name="resources/**/*" />
+	            </fileset>
+
+	        </jar>
+	    </target>
+</project>
