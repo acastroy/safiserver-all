@@ -150,5 +150,6 @@ Require-Bundle: org.eclipse.ui.ide,
  org.eclipse.equinox.concurrent;bundle-version="1.0.0",
  org.eclipse.ecf.filetransfer;bundle-version="3.0.0",
  SafiLogging;bundle-version="1.0.0",
- SafiDBManager;bundle-version="1.0.0"
+ SafiDBManager;bundle-version="1.0.0",
+ org.eclipse.dltk.javascript.parser;bundle-version="2.0.0"
 Eclipse-LazyStart: true
