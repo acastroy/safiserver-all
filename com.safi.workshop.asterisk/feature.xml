@@ -343,6 +343,7 @@ support@safisystems.com
       <import plugin="org.eclipse.ecf.filetransfer" version="3.0.0" match="greaterOrEqual"/>
       <import plugin="SafiDB" version="1.1.8" match="greaterOrEqual"/>
       <import plugin="org.antlr.runtime"/>
+      <import plugin="SafiDBManager"/>
    </requires>
 
    <plugin
@@ -1900,5 +1901,18 @@ support@safisystems.com
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
+   <plugin
+         id="org.eclipse.dltk.javascript.parser"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="SafiDBManager"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
 
 </feature>
