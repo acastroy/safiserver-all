@@ -64,10 +64,11 @@ public class DBQueryIdImpl extends EObjectImpl implements DBQueryId {
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @see #getJdbcStatement()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-  protected Statement jdbcStatement = JDBC_STATEMENT_EDEFAULT;
+  protected static ThreadLocal<Statement> jdbcStatementHolder = new ThreadLocal<Statement>();
+//  protected Statement jdbcStatement = JDBC_STATEMENT_EDEFAULT;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -112,22 +113,22 @@ public class DBQueryIdImpl extends EObjectImpl implements DBQueryId {
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
   public Statement getJdbcStatement() {
-		return jdbcStatement;
+		return jdbcStatementHolder.get();
 	}
 
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
   public void setJdbcStatement(Statement newJdbcStatement) {
-		Statement oldJdbcStatement = jdbcStatement;
-		jdbcStatement = newJdbcStatement;
+		Statement oldJdbcStatement = jdbcStatementHolder.get();
+		jdbcStatementHolder.set(newJdbcStatement);
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.DB_QUERY_ID__JDBC_STATEMENT, oldJdbcStatement, jdbcStatement));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.DB_QUERY_ID__JDBC_STATEMENT, oldJdbcStatement, jdbcStatementHolder.get()));
 	}
 
   /**
@@ -185,7 +186,7 @@ public class DBQueryIdImpl extends EObjectImpl implements DBQueryId {
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
   @Override
   public boolean eIsSet(int featureID) {
@@ -193,7 +194,7 @@ public class DBQueryIdImpl extends EObjectImpl implements DBQueryId {
 			case ActionStepPackage.DB_QUERY_ID__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case ActionStepPackage.DB_QUERY_ID__JDBC_STATEMENT:
-				return JDBC_STATEMENT_EDEFAULT == null ? jdbcStatement != null : !JDBC_STATEMENT_EDEFAULT.equals(jdbcStatement);
+				return JDBC_STATEMENT_EDEFAULT == null ? jdbcStatementHolder.get() != null : !JDBC_STATEMENT_EDEFAULT.equals(jdbcStatementHolder.get());
 		}
 		return super.eIsSet(featureID);
 	}
@@ -201,7 +202,7 @@ public class DBQueryIdImpl extends EObjectImpl implements DBQueryId {
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
   @Override
   public String toString() {
@@ -211,7 +212,7 @@ public class DBQueryIdImpl extends EObjectImpl implements DBQueryId {
 		result.append(" (id: ");
 		result.append(id);
 		result.append(", jdbcStatement: ");
-		result.append(jdbcStatement);
+		result.append(jdbcStatementHolder.get());
 		result.append(')');
 		return result.toString();
 	}

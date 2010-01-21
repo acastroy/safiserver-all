@@ -64,10 +64,12 @@ public class DBConnectionIdImpl extends EObjectImpl implements DBConnectionId {
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @see #getJdbcConnection()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-  protected Connection jdbcConnection = JDBC_CONNECTION_EDEFAULT;
+  
+  protected static ThreadLocal<Connection> jdbcConnectionHolder = new ThreadLocal<Connection>();
+//  protected Connection jdbcConnection = JDBC_CONNECTION_EDEFAULT;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -112,22 +114,22 @@ public class DBConnectionIdImpl extends EObjectImpl implements DBConnectionId {
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
   public Connection getJdbcConnection() {
-		return jdbcConnection;
+		return jdbcConnectionHolder.get();
 	}
 
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
   public void setJdbcConnection(Connection newJdbcConnection) {
-		Connection oldJdbcConnection = jdbcConnection;
-		jdbcConnection = newJdbcConnection;
+		Connection oldJdbcConnection = jdbcConnectionHolder.get();
+		jdbcConnectionHolder.set(newJdbcConnection);
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.DB_CONNECTION_ID__JDBC_CONNECTION, oldJdbcConnection, jdbcConnection));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.DB_CONNECTION_ID__JDBC_CONNECTION, oldJdbcConnection, jdbcConnectionHolder.get()));
 	}
 
   /**
@@ -185,7 +187,7 @@ public class DBConnectionIdImpl extends EObjectImpl implements DBConnectionId {
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
   @Override
   public boolean eIsSet(int featureID) {
@@ -193,7 +195,7 @@ public class DBConnectionIdImpl extends EObjectImpl implements DBConnectionId {
 			case ActionStepPackage.DB_CONNECTION_ID__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case ActionStepPackage.DB_CONNECTION_ID__JDBC_CONNECTION:
-				return JDBC_CONNECTION_EDEFAULT == null ? jdbcConnection != null : !JDBC_CONNECTION_EDEFAULT.equals(jdbcConnection);
+				return JDBC_CONNECTION_EDEFAULT == null ? jdbcConnectionHolder.get() != null : !JDBC_CONNECTION_EDEFAULT.equals(jdbcConnectionHolder.get());
 		}
 		return super.eIsSet(featureID);
 	}
@@ -201,7 +203,7 @@ public class DBConnectionIdImpl extends EObjectImpl implements DBConnectionId {
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
   @Override
   public String toString() {
@@ -211,7 +213,7 @@ public class DBConnectionIdImpl extends EObjectImpl implements DBConnectionId {
 		result.append(" (id: ");
 		result.append(id);
 		result.append(", jdbcConnection: ");
-		result.append(jdbcConnection);
+		result.append(jdbcConnectionHolder.get());
 		result.append(')');
 		return result.toString();
 	}

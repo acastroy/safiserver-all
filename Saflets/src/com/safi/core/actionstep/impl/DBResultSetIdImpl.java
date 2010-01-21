@@ -85,10 +85,12 @@ public class DBResultSetIdImpl extends EObjectImpl implements DBResultSetId {
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @see #getJDBCResultSet()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-  protected ResultSet jDBCResultSet = JDBC_RESULT_SET_EDEFAULT;
+  
+  protected static ThreadLocal<ResultSet> jDBCResultSetHolder = new ThreadLocal<ResultSet>();
+//  protected ResultSet jDBCResultSet = JDBC_RESULT_SET_EDEFAULT;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -154,22 +156,22 @@ public class DBResultSetIdImpl extends EObjectImpl implements DBResultSetId {
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
   public ResultSet getJDBCResultSet() {
-		return jDBCResultSet;
+		return jDBCResultSetHolder.get();
 	}
 
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
   public void setJDBCResultSet(ResultSet newJDBCResultSet) {
-		ResultSet oldJDBCResultSet = jDBCResultSet;
-		jDBCResultSet = newJDBCResultSet;
+		ResultSet oldJDBCResultSet = jDBCResultSetHolder.get();
+		jDBCResultSetHolder.set(newJDBCResultSet);
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.DB_RESULT_SET_ID__JDBC_RESULT_SET, oldJDBCResultSet, jDBCResultSet));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.DB_RESULT_SET_ID__JDBC_RESULT_SET, oldJDBCResultSet, jDBCResultSetHolder.get()));
 	}
 
   /**
@@ -235,7 +237,7 @@ public class DBResultSetIdImpl extends EObjectImpl implements DBResultSetId {
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
   @Override
   public boolean eIsSet(int featureID) {
@@ -245,7 +247,7 @@ public class DBResultSetIdImpl extends EObjectImpl implements DBResultSetId {
 			case ActionStepPackage.DB_RESULT_SET_ID__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case ActionStepPackage.DB_RESULT_SET_ID__JDBC_RESULT_SET:
-				return JDBC_RESULT_SET_EDEFAULT == null ? jDBCResultSet != null : !JDBC_RESULT_SET_EDEFAULT.equals(jDBCResultSet);
+				return JDBC_RESULT_SET_EDEFAULT == null ? jDBCResultSetHolder.get() != null : !JDBC_RESULT_SET_EDEFAULT.equals(jDBCResultSetHolder.get());
 		}
 		return super.eIsSet(featureID);
 	}
@@ -253,7 +255,7 @@ public class DBResultSetIdImpl extends EObjectImpl implements DBResultSetId {
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
   @Override
   public String toString() {
@@ -265,7 +267,7 @@ public class DBResultSetIdImpl extends EObjectImpl implements DBResultSetId {
 		result.append(", id: ");
 		result.append(id);
 		result.append(", jDBCResultSet: ");
-		result.append(jDBCResultSet);
+		result.append(jDBCResultSetHolder.get());
 		result.append(')');
 		return result.toString();
 	}

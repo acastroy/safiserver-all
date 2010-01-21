@@ -95,10 +95,12 @@ public class DynamicValueImpl extends EObjectImpl implements DynamicValue {
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @see #getData()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-  protected EMap<String, String> data;
+  protected static ThreadLocal<EMap<String, String>> dataHolder = new ThreadLocal<EMap<String,String>>();
+  
+//  protected EMap<String, String> data;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -207,11 +209,13 @@ public class DynamicValueImpl extends EObjectImpl implements DynamicValue {
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
   public EMap<String, String> getData() {
+  	EMap<String, String> data = dataHolder.get();
 		if (data == null) {
 			data = new EcoreEMap<String,String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, ActionStepPackage.DYNAMIC_VALUE__DATA);
+			dataHolder.set(data);
 		}
 		return data;
 	}
@@ -304,7 +308,7 @@ public class DynamicValueImpl extends EObjectImpl implements DynamicValue {
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
   @Override
   public boolean eIsSet(int featureID) {
@@ -316,7 +320,7 @@ public class DynamicValueImpl extends EObjectImpl implements DynamicValue {
 			case ActionStepPackage.DYNAMIC_VALUE__PAYLOAD:
 				return payload != null;
 			case ActionStepPackage.DYNAMIC_VALUE__DATA:
-				return data != null && !data.isEmpty();
+				return dataHolder.get() != null && !dataHolder.get().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
