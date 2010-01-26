@@ -7,18 +7,25 @@
 package com.safi.core.actionstep.impl;
 
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.logging.Level;
+import org.apache.commons.lang.StringUtils;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.ActionStepPackage;
+import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.InputItem;
 import com.safi.core.actionstep.OutputParameter;
 import com.safi.core.actionstep.ParameterizedActionstep;
 import com.safi.core.actionstep.ParameterizedInitiator;
 import com.safi.core.initiator.impl.InitiatorImpl;
+import com.safi.core.saflet.Saflet;
 
 /**
  * <!-- begin-user-doc -->
@@ -99,6 +106,38 @@ public abstract class ParameterizedInitiatorImpl extends InitiatorImpl implement
 	}
 
   /**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public Map<String, Object> getOutputMap() {
+		final Saflet saflet = getSaflet();
+		if (saflet == null)
+			return null;
+		Map<String, Object> result = new HashMap<String, Object>();
+		for (OutputParameter p : getOutputParameters()){
+			String name = p.getParameterName();
+			if (StringUtils.isBlank(name)){
+				saflet.warn("Initiator "+getName()+" has unnamed output parameter");
+				continue;
+			}
+			DynamicValue dv = p.getDynamicValue();
+			
+			Object val = null;
+			if (dv != null)
+				try {
+					val = resolveDynamicValue(dv, saflet.getSafletContext());
+	      } catch (ActionStepException e) {
+		      e.printStackTrace();
+		      saflet.error("Couldn't resolve DynamicValue", e);
+	      }
+      
+      result.put(name, val);
+		}
+		return result;
+	}
+
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated

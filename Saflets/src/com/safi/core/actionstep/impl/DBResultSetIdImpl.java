@@ -83,6 +83,16 @@ public class DBResultSetIdImpl extends EObjectImpl implements DBResultSetId {
   /**
 	 * The cached value of the '{@link #getJDBCResultSet() <em>JDBC Result Set</em>}' attribute.
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getJDBCResultSet()
+	 * @generated
+	 * @ordered
+	 */
+	protected ResultSet jDBCResultSet = JDBC_RESULT_SET_EDEFAULT;
+
+		/**
+	 * The cached value of the '{@link #getJDBCResultSet() <em>JDBC Result Set</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @see #getJDBCResultSet()
 	 * @generated NOT

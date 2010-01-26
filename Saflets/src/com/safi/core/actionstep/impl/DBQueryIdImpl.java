@@ -62,6 +62,16 @@ public class DBQueryIdImpl extends EObjectImpl implements DBQueryId {
   /**
 	 * The cached value of the '{@link #getJdbcStatement() <em>Jdbc Statement</em>}' attribute.
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getJdbcStatement()
+	 * @generated
+	 * @ordered
+	 */
+	protected Statement jdbcStatement = JDBC_STATEMENT_EDEFAULT;
+
+		/**
+	 * The cached value of the '{@link #getJdbcStatement() <em>Jdbc Statement</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @see #getJdbcStatement()
 	 * @generated NOT

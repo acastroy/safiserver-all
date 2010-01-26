@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -2179,6 +2180,14 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 
 		initEClass(parameterizedInitiatorEClass, ParameterizedInitiator.class, "ParameterizedInitiator", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		EOperation op = addEOperation(parameterizedInitiatorEClass, null, "getOutputMap", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EGenericType g1 = createEGenericType(this.getMap());
+		EGenericType g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
+
 		initEClass(audioFileItemEClass, AudioFileItem.class, "AudioFileItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(choiceEClass, Choice.class, "Choice", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2209,7 +2218,7 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		initEReference(getActionStep_DefaultOutput(), this.getOutput(), null, "defaultOutput", null, 0, 1, ActionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getActionStep_ErrorOutput(), this.getOutput(), null, "errorOutput", null, 0, 1, ActionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		EOperation op = addEOperation(actionStepEClass, null, "beginProcessing", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(actionStepEClass, null, "beginProcessing", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theSafletPackage.getSafletContext(), "context", 0, 1, IS_UNIQUE, !IS_ORDERED);
 		addEException(op, theInitiatorPackage.getActionStepException());
 

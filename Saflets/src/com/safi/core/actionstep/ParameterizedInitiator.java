@@ -7,6 +7,7 @@
 package com.safi.core.actionstep;
 
 import com.safi.core.initiator.Initiator;
+import java.util.Map;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,4 +20,12 @@ import com.safi.core.initiator.Initiator;
  * @generated
  */
 public interface ParameterizedInitiator extends Initiator, ParameterizedActionstep {
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" dataType="com.safi.core.actionstep.Map<org.eclipse.emf.ecore.EString, org.eclipse.emf.ecore.EJavaObject>"
+	 * @generated
+	 */
+	Map<String, Object> getOutputMap();
 } // ParameterizedInitiator
