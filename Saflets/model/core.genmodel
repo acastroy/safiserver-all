@@ -51,7 +51,9 @@
         <genFeatures property="None" children="true" createChild="true" 
             ecoreFeature="ecore:EReference core.ecore#//actionstep/ParameterizedActionstep/outputParameters"/>
       </genClasses>
-      <genClasses image="false" ecoreClass="core.ecore#//actionstep/ParameterizedInitiator"/>
+      <genClasses image="false" ecoreClass="core.ecore#//actionstep/ParameterizedInitiator">
+        <genOperations ecoreOperation="core.ecore#//actionstep/ParameterizedInitiator/getOutputMap"/>
+      </genClasses>
       <genClasses ecoreClass="core.ecore#//actionstep/AudioFileItem"/>
       <genClasses ecoreClass="core.ecore#//actionstep/Choice">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/Choice/choices"/>
