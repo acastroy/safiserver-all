@@ -15,5 +15,7 @@ Require-Bundle: SafiCommons;bundle-version="1.2.5",
  org.eclipse.emf.ecore;visibility:=reexport,
  SafiDB;visibility:=reexport,
  org.apache.commons.lang;bundle-version="2.3.0",
- Saflets;bundle-version="1.1.0"
+ Saflets;bundle-version="1.1.0",
+ ActionPak;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
+Bundle-Activator: com.safi.workshop.model.timeBasedRouting.TimeBasedRoutingPlugin
