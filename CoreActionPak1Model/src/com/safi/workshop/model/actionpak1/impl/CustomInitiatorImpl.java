@@ -72,13 +72,15 @@ public class CustomInitiatorImpl extends ParameterizedInitiatorImpl implements C
               if (v.getScope() != VariableScope.GLOBAL)
                 handlerContext.setVariableRawValue(v.getName(), translated);
               else {
-                if (handlerContext.getDebugLock() != null) {
+                if (handlerContext.getDebugLock() != null) { //don't update global if debugging (?)
                   handlerContext.setVariableRawValue(v.getName(), translated);
                   v.setDefaultValue(v.getDefaultValue()); // trigger update
                 } else {
-                  SafletEnvironment env = getSaflet().getSafletEnvironment();
-                  env.setGlobalVariableValue(v.getName(), translated);
+//                  SafletEnvironment env = getSaflet().getSafletEnvironment();
+//                  env.setGlobalVariableValue(v.getName(), translated);
                 }
+                SafletEnvironment env = getSaflet().getSafletEnvironment();
+                env.setGlobalVariableValue(v.getName(), translated);
               }
 
             }
