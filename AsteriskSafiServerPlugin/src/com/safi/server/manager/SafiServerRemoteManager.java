@@ -427,9 +427,9 @@ public class SafiServerRemoteManager implements NotificationListener {
     }
   }
 
-  public boolean needsUpdate(String filename) {
+  public boolean needsUpdate(String version, String symbolicName) {
     if (fileTransfer != null)
-      return fileTransfer.needsUpdateActionPak(filename);
+      return fileTransfer.needsUpdateBundle(version, symbolicName);
     throw new IllegalStateException("No manager connection to SafiServer found");
   }
 
@@ -439,9 +439,10 @@ public class SafiServerRemoteManager implements NotificationListener {
     throw new IllegalStateException("No manager connection to SafiServer found");
   }
 
-  public synchronized void transfer(String filename, byte[] data) throws Exception {
+  public synchronized void transfer(String filename, String symbolicName, byte[] data) throws Exception {
     if (fileTransfer != null) {
-      fileTransfer.transferJar(filename, data);
+    	fileTransfer.deployOrUpdateBundle(filename, symbolicName, data);
+//      fileTransfer.transferJar(filename, data);
       return;
     }
     throw new IllegalStateException("No manager connection to SafiServer found");
@@ -606,20 +607,20 @@ public class SafiServerRemoteManager implements NotificationListener {
   }
 
 
-  public boolean serverJarNeedsUpdate(String name) {
-    if (fileTransfer != null)
-      return fileTransfer.needsUpdateServerJar(name);
-    throw new IllegalStateException("No manager connection to SafiServer found");
-  }
-
-  public void transferServerJar(String filename, byte[] data) throws Exception {
-    if (fileTransfer != null) {
-      fileTransfer.transferServerJar(filename, data);
-      return;
-    }
-    throw new IllegalStateException("No manager connection to SafiServer found");
-
-  }
+//  public boolean serverJarNeedsUpdate(String name) {
+//    if (fileTransfer != null)
+//      return fileTransfer.needsUpdateServerJar(name);
+//    throw new IllegalStateException("No manager connection to SafiServer found");
+//  }
+//
+//  public void transferServerJar(String filename, byte[] data) throws Exception {
+//    if (fileTransfer != null) {
+//      fileTransfer.transferServerJar(filename, data);
+//      return;
+//    }
+//    throw new IllegalStateException("No manager connection to SafiServer found");
+//
+//  }
 
   public DebugRemoteControl startRemoteDebugSession(String projectName, String safletName)
       throws Exception {
