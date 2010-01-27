@@ -6,6 +6,7 @@
  */
 package com.safi.db.server.config.impl;
 
+import com.safi.db.server.config.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
