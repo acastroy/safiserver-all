@@ -17,6 +17,8 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.apache.commons.lang.NotImplementedException;
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.emf.common.notify.Notification;
@@ -78,6 +80,8 @@ import com.safi.server.saflet.manager.DBManager;
  * @generated
  */
 public class RunQueryImpl extends ActionStepImpl implements RunQuery {
+	private static final String PATT_QRY_PARAM = ":([a-zA-Z_][a-zA-z_0-9]+)";
+
 	/**
 	 * The cached value of the '{@link #getConnection() <em>Connection</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -255,7 +259,16 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 				throw new ActionStepException("Query with path " + query.getId()
 				    + " is not owned by connection with path " + connection.getId());
 			Statement jdbcStatement = null;
-			String querySql = qry.getQuerySql().replaceAll(":[a-zA-Z_][a-zA-z_0-9]+", "?");
+			final String originalQry = qry.getQuerySql();
+			
+			Pattern p = Pattern.compile(PATT_QRY_PARAM);
+			Matcher m = p.matcher(originalQry);
+			List<String> params = new ArrayList<String>();
+			while (m.find())
+				params.add(m.group(1));
+			
+			String querySql = originalQry.replaceAll(PATT_QRY_PARAM, "?");
+			
 			if (debugLog.isLoggable(Level.FINEST))
 				debug("Query SQL is " + querySql);
 			switch (qry.getQueryType()) {
@@ -316,7 +329,13 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 					if (param.getQuery() != qry)
 						throw new ActionStepException("Query Parameter with path "
 						    + parameter.getId() + " is not owned by query with path " + query.getId());
-					int idx = qry.getParameters().indexOf(param) + 1;
+					
+					String pname = param.getName().startsWith(":") ? StringUtils.substring(param.getName(), 1): param.getName();
+					int idx = params.indexOf(pname);
+					if (debugLog.isLoggable(Level.FINEST)) {
+						debug("The parameter "+pname+" has been mapped to index "+idx);
+					}
+//					int idx = qry.getParameters().indexOf(param) + 1;
 					if (queryStatement instanceof CallableStatement) {
 						CallableStatement ps = (CallableStatement) queryStatement;
 						Object result = resolveDynamicValue(value, context);
