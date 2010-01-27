@@ -545,22 +545,23 @@ public class ServerViewPanel extends Composite {
     }
     for (Object obj : checked) {
       if (obj instanceof SafiServerJar) {
-        try {
-          SafletPersistenceManager.getInstance().transferServerJar(((SafiServerJar) obj).url);
+        final SafiServerJar sj = (SafiServerJar) obj;
+				try {
+          SafletPersistenceManager.getInstance().transferServerJar(sj.bundleSymbolicName, sj.url);
           serverJarsTransported = true;
         } catch (Exception e) {
           e.printStackTrace();
           AsteriskDiagramEditorPlugin.getInstance().logError(
-              "Couldn't update SafiServer core file " + ((SafiServerJar) obj).url, e);
+              "Couldn't update SafiServer core file " + sj.url, e);
           MessageDialog.openError(getShell(), "SafiServer Core Update Failure",
-              "Couldn't update SafiServer core file " + ((SafiServerJar) obj).url + ". "
+              "Couldn't update SafiServer core file " + sj.url + ". "
                   + e.getLocalizedMessage());
 
         }
       } else if (obj instanceof ActionPak && ((ActionPak) obj).actionPakJars != null) {
         for (ActionPakJar jar : ((ActionPak) obj).actionPakJars) {
           try {
-            SafletPersistenceManager.getInstance().transferActionPakJar(jar.url);
+            SafletPersistenceManager.getInstance().transferActionPakJar(jar.bundleSymbolicName,  jar.url);
             actionpaksTransported++;
           } catch (Exception e) {
             e.printStackTrace();

@@ -2,9 +2,9 @@
 <!-- Schema file written by PDE -->
 <schema targetNamespace="AsteriskSafletDesigner.diagram" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
-      <appinfo>
+      <appInfo>
          <meta.schema plugin="AsteriskSafletDesigner.diagram" id="actionPak" name="Additional ActionSteps"/>
-      </appinfo>
+      </appInfo>
       <documentation>
          [Enter description of this extension point.]
       </documentation>
@@ -12,9 +12,9 @@
 
    <element name="extension">
       <annotation>
-         <appinfo>
+         <appInfo>
             <meta.element />
-         </appinfo>
+         </appInfo>
          <documentation>
             Extension that allows plugins to contribute action steps and other functionality to the SafiWorkshop
          </documentation>
@@ -23,7 +23,7 @@
          <sequence>
             <element ref="actionStep" minOccurs="1" maxOccurs="unbounded"/>
             <element ref="itemProviderAdapterFactory" minOccurs="0" maxOccurs="unbounded"/>
-            <element ref="pakjar" minOccurs="1" maxOccurs="unbounded"/>
+            <element ref="pakjar"/>
             <element ref="dynamicValueEditorPage" minOccurs="0" maxOccurs="unbounded"/>
             <element ref="serverjar" minOccurs="0" maxOccurs="unbounded"/>
             <element ref="description" minOccurs="0" maxOccurs="1"/>
@@ -48,9 +48,9 @@
                <documentation>
                   
                </documentation>
-               <appinfo>
+               <appInfo>
                   <meta.attribute translatable="true"/>
-               </appinfo>
+               </appInfo>
             </annotation>
          </attribute>
       </complexType>
@@ -66,9 +66,9 @@
                <documentation>
                   
                </documentation>
-               <appinfo>
+               <appInfo>
                   <meta.attribute kind="java" basedOn=":com.safi.workshop.edit.policies.ActionstepCreateCommandFactory"/>
-               </appinfo>
+               </appInfo>
             </annotation>
          </attribute>
          <attribute name="elementFactory" type="string" use="required">
@@ -76,9 +76,9 @@
                <documentation>
                   
                </documentation>
-               <appinfo>
+               <appInfo>
                   <meta.attribute kind="java" basedOn=":com.safi.workshop.view.factories.ActionstepElementFactory"/>
-               </appinfo>
+               </appInfo>
             </annotation>
          </attribute>
          <attribute name="editPartFactory" type="string" use="required">
@@ -86,9 +86,9 @@
                <documentation>
                   
                </documentation>
-               <appinfo>
+               <appInfo>
                   <meta.attribute kind="java" basedOn=":com.safi.workshop.view.factories.ActionstepEditPartFactory"/>
-               </appinfo>
+               </appInfo>
             </annotation>
          </attribute>
          <attribute name="modelFactory" type="string" use="required">
@@ -96,9 +96,9 @@
                <documentation>
                   
                </documentation>
-               <appinfo>
+               <appInfo>
                   <meta.attribute kind="java" basedOn=":com.safi.workshop.view.factories.ActionstepModelFactory"/>
-               </appinfo>
+               </appInfo>
             </annotation>
          </attribute>
          <attribute name="viewFactory" type="string" use="required">
@@ -106,9 +106,9 @@
                <documentation>
                   
                </documentation>
-               <appinfo>
+               <appInfo>
                   <meta.attribute kind="java" basedOn=":com.safi.workshop.view.factories.ActionPakViewFactory"/>
-               </appinfo>
+               </appInfo>
             </annotation>
          </attribute>
          <attribute name="semanticHint" type="string" use="required">
@@ -217,9 +217,9 @@
                <documentation>
                   
                </documentation>
-               <appinfo>
+               <appInfo>
                   <meta.attribute kind="java" basedOn=":org.eclipse.emf.edit.provider.ComposeableAdapterFactory"/>
-               </appinfo>
+               </appInfo>
             </annotation>
          </attribute>
       </complexType>
@@ -235,9 +235,23 @@
                <documentation>
                   
                </documentation>
-               <appinfo>
+               <appInfo>
                   <meta.attribute kind="resource"/>
-               </appinfo>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="version" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="bundleSymbolicName" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
             </annotation>
          </attribute>
       </complexType>
@@ -250,12 +264,26 @@
                <documentation>
                   
                </documentation>
-               <appinfo>
+               <appInfo>
                   <meta.attribute kind="resource"/>
-               </appinfo>
+               </appInfo>
             </annotation>
          </attribute>
          <attribute name="description" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="bundleSymbolicName" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="version" type="string" use="required">
             <annotation>
                <documentation>
                   
@@ -272,9 +300,9 @@
                <documentation>
                   
                </documentation>
-               <appinfo>
+               <appInfo>
                   <meta.attribute kind="java" basedOn=":com.safi.workshop.sheet.DynamicValueEditorPage"/>
-               </appinfo>
+               </appInfo>
             </annotation>
          </attribute>
       </complexType>
@@ -299,9 +327,9 @@
                <documentation>
                   
                </documentation>
-               <appinfo>
+               <appInfo>
                   <meta.attribute kind="java" basedOn=":com.safi.workshop.sheet.ActionstepEditorDialogFactory"/>
-               </appinfo>
+               </appInfo>
             </annotation>
          </attribute>
          <attribute name="actionstepClass" type="string" use="required">
@@ -315,36 +343,36 @@
    </element>
 
    <annotation>
-      <appinfo>
+      <appInfo>
          <meta.section type="since"/>
-      </appinfo>
+      </appInfo>
       <documentation>
          [Enter the first release in which this extension point appears.]
       </documentation>
    </annotation>
 
    <annotation>
-      <appinfo>
+      <appInfo>
          <meta.section type="examples"/>
-      </appinfo>
+      </appInfo>
       <documentation>
          [Enter extension point usage example here.]
       </documentation>
    </annotation>
 
    <annotation>
-      <appinfo>
+      <appInfo>
          <meta.section type="apiInfo"/>
-      </appinfo>
+      </appInfo>
       <documentation>
          [Enter API information here.]
       </documentation>
    </annotation>
 
    <annotation>
-      <appinfo>
+      <appInfo>
          <meta.section type="implementation"/>
-      </appinfo>
+      </appInfo>
       <documentation>
          [Enter information about supplied implementation of this extension point.]
       </documentation>

@@ -75,6 +75,7 @@ import org.eclipse.ui.statushandlers.StatusManager;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
+import org.osgi.framework.Version;
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.actionstep.ActionstepPackage;
 import com.safi.asterisk.initiator.InitiatorPackage;
@@ -124,8 +125,8 @@ public class SafletPersistenceManager {
   public final static QualifiedName SAFLET_NAME_KEY = new QualifiedName(
       AsteriskDiagramEditorPlugin.ID, PersistenceProperties.SAFLET_NAME);
 
-  private List<URL> actionpakJars = new ArrayList<URL>();
-  private List<URL> serverJars = new ArrayList<URL>();
+//  private List<URL> actionpakJars = new ArrayList<URL>();
+//  private List<URL> serverJars = new ArrayList<URL>();
 
   private static SafletPersistenceManager instance = new SafletPersistenceManager();
 
@@ -1640,7 +1641,8 @@ public class SafletPersistenceManager {
           File f = new File(apj.url.getFile());
           boolean needsUpdate = false;
           try {
-            needsUpdate = SafiServerRemoteManager.getInstance().needsUpdate(f.getName());
+          	needsUpdate = SafiServerRemoteManager.getInstance().needsUpdate(apj.version, apj.bundleSymbolicName);
+//            needsUpdate = SafiServerRemoteManager.getInstance().needsUpdate(f.getName());
           } catch (Exception e) {
             e.printStackTrace();
             continue;
@@ -1649,6 +1651,8 @@ public class SafletPersistenceManager {
           if (needsUpdate) {
             ActionPakJar newjar = new ActionPakJar();
             newjar.url = apj.url;
+            newjar.bundleSymbolicName = apj.bundleSymbolicName;
+            newjar.version = apj.version;
             copy.addActionPakJar(newjar);
             paks.add(copy);
           }
@@ -1694,42 +1698,36 @@ public class SafletPersistenceManager {
     if (jars.isEmpty())
       return Collections.emptyList();
 
-    Map<String, List<SafiServerJar>> map = new HashMap<String, List<SafiServerJar>>();
+    Map<String, SafiServerJar> map = new HashMap<String, SafiServerJar>();
     for (SafiServerJar pak : jars) {
       URL url = pak.url;
       if (url == null)
         continue;
       File f = new File(url.getFile());
-      String[] names = FileUtils.getJarBaseNameAndSuffix(f.getName());
-      List<SafiServerJar> jl = map.get(names[0]);
-      if (jl == null) {
-        jl = new ArrayList<SafiServerJar>();
-        map.put(names[0], jl);
+      if (!f.exists())
+      	continue;
+      
+      SafiServerJar jl = map.get(pak.bundleSymbolicName);
+      if (jl != null){
+      	if (Version.parseVersion(jl.version).compareTo(Version.parseVersion(pak.version)) > 0)
+      		continue;
       }
-      jl.add(pak);
+      map.put(pak.bundleSymbolicName, pak);
     }
 
     List<SafiServerJar> result = new ArrayList<SafiServerJar>();
-    final Comparator<SafiServerJar> comparator = new Comparator<SafiServerJar>() {
-      @Override
-      public int compare(SafiServerJar o1, SafiServerJar o2) {
-        return new File(o1.url.getFile()).getName().compareTo(new File(o2.url.getFile()).getName());
-      }
-    };
+   
 
-    for (Map.Entry<String, List<SafiServerJar>> entry : map.entrySet()) {
-      Collections.sort(entry.getValue(), comparator);
-      SafiServerJar jar = entry.getValue().get(0);
+    for (SafiServerJar jar : map.values()) {
       URL url = jar.url;
-      File f = new File(url.getFile());
-      if (SafiServerRemoteManager.getInstance().serverJarNeedsUpdate(f.getName()))
+      if (SafiServerRemoteManager.getInstance().needsUpdate(jar.version, jar.bundleSymbolicName))
         result.add(jar);
     }
 
     return result;
   }
 
-  public boolean transferActionPakJar(URL url) throws Exception {
+  public boolean transferActionPakJar(String symbolicName, URL url) throws Exception {
     File f = new File(url.getFile());
     if (!f.exists())
       return false;
@@ -1739,7 +1737,8 @@ public class SafletPersistenceManager {
     try {
       bis = new BufferedInputStream(url.openStream());
       bis.read(data);
-      SafiServerRemoteManager.getInstance().transfer(f.getName(), data);
+      SafiServerRemoteManager.getInstance().transfer(f.getName(), symbolicName, data);
+//      SafiServerRemoteManager.getInstance().transfer(f.getName(), data);
       return true;
     } finally {
       if (bis != null)
@@ -1750,7 +1749,7 @@ public class SafletPersistenceManager {
     }
   }
 
-  public boolean transferServerJar(URL url) throws Exception {
+  public boolean transferServerJar(String symbolicName, URL url) throws Exception {
     File f = new File(url.getFile());
     if (!f.exists())
       return false;
@@ -1760,7 +1759,8 @@ public class SafletPersistenceManager {
     try {
       bis = new BufferedInputStream(url.openStream());
       bis.read(data);
-      SafiServerRemoteManager.getInstance().transferServerJar(f.getName(), data);
+      SafiServerRemoteManager.getInstance().transfer(f.getName(), symbolicName, data);
+//      SafiServerRemoteManager.getInstance().transferServerJar(f.getName(), data);
       return true;
     } finally {
       if (bis != null)

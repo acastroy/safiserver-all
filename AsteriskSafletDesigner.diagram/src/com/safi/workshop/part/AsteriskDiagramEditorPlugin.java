@@ -232,6 +232,7 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 		monitor.subTask("Processing ActionPaks");
 		// load factories first
 		for (IExtension extension : extensions) {
+			
 			IConfigurationElement[] elements = extension.getConfigurationElements();
 
 			for (IConfigurationElement element : elements) {
@@ -274,7 +275,10 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 							url = FileLocator.resolve(url);
 							ActionPakJar apj = new ActionPakJar();
 							apj.url = url;
+							apj.version = element.getAttribute("version");
+							apj.bundleSymbolicName = element.getAttribute("bundleSymbolicName");
 							pak.addActionPakJar(apj);
+							
 						} catch (Exception e) {
 							e.printStackTrace();
 							logError("Couldn't load ActionPak jar " + jar, e);
@@ -293,6 +297,8 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 							SafiServerJar ssj = new SafiServerJar();
 							ssj.url = url;
 							ssj.description = element.getAttribute("description");
+							ssj.version = element.getAttribute("version");
+							ssj.bundleSymbolicName = element.getAttribute("bundleSymbolicName");
 							pak.addSafiServerJar(ssj);
 						} catch (Exception e) {
 							e.printStackTrace();
@@ -1122,10 +1128,13 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 	public static class Jar {
 		public ActionPak actionPak;
 		public URL url;
+		public String version;
+		public String bundleSymbolicName;
 	}
 
 	public static class SafiServerJar extends Jar {
 		public String description;
+		
 	}
 
 	public static class ActionPakJar extends Jar {
