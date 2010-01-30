@@ -438,6 +438,7 @@ public class SafletPackageImpl extends EPackageImpl implements SafletPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		InitiatorPackage theInitiatorPackage = (InitiatorPackage)EPackage.Registry.INSTANCE.getEPackage(InitiatorPackage.eNS_URI);
 		ScriptingPackage theScriptingPackage = (ScriptingPackage)EPackage.Registry.INSTANCE.getEPackage(ScriptingPackage.eNS_URI);
 		ActionStepPackage theActionStepPackage = (ActionStepPackage)EPackage.Registry.INSTANCE.getEPackage(ActionStepPackage.eNS_URI);
@@ -448,6 +449,9 @@ public class SafletPackageImpl extends EPackageImpl implements SafletPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		safletEClass.getESuperTypes().add(theCorePackage.getThreadSensitive());
+		safletContextEClass.getESuperTypes().add(theCorePackage.getThreadSensitive());
+		safletEnvironmentEClass.getESuperTypes().add(theCorePackage.getThreadSensitive());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(safletEClass, Saflet.class, "Saflet", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

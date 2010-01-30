@@ -2128,8 +2128,10 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		parameterizedInitiatorEClass.getESuperTypes().add(this.getParameterizedActionstep());
 		audioFileItemEClass.getESuperTypes().add(this.getCaseItem());
 		choiceEClass.getESuperTypes().add(this.getActionStep());
+		dynamicValueEClass.getESuperTypes().add(theCorePackage.getThreadSensitive());
 		ifThenEClass.getESuperTypes().add(this.getActionStep());
 		actionStepEClass.getESuperTypes().add(theCorePackage.getProductIdentifiable());
+		actionStepEClass.getESuperTypes().add(theCorePackage.getThreadSensitive());
 		executeScriptEClass.getESuperTypes().add(this.getActionStep());
 		invokeSafletEClass.getESuperTypes().add(this.getActionStep());
 		debugLogEClass.getESuperTypes().add(this.getActionStep());
@@ -2155,6 +2157,9 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		insertRowEClass.getESuperTypes().add(this.getActionStep());
 		moveToFirstRowEClass.getESuperTypes().add(this.getActionStep());
 		previousRowEClass.getESuperTypes().add(this.getActionStep());
+		dbConnectionIdEClass.getESuperTypes().add(theCorePackage.getThreadSensitive());
+		dbQueryIdEClass.getESuperTypes().add(theCorePackage.getThreadSensitive());
+		dbResultSetIdEClass.getESuperTypes().add(theCorePackage.getThreadSensitive());
 		getColMappingEClass.getESuperTypes().add(this.getItem());
 		setColMappingEClass.getESuperTypes().add(this.getItem());
 		runQueryEClass.getESuperTypes().add(this.getActionStep());

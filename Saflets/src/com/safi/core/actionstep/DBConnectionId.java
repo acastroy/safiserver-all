@@ -6,6 +6,7 @@
  */
 package com.safi.core.actionstep;
 
+import com.safi.core.ThreadSensitive;
 import java.sql.Connection;
 
 import org.eclipse.emf.ecore.EObject;
@@ -27,7 +28,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface DBConnectionId extends EObject {
+public interface DBConnectionId extends ThreadSensitive {
   /**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->

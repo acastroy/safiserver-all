@@ -331,7 +331,7 @@ public class RunQueryImpl extends ActionStepImpl implements RunQuery {
 						    + parameter.getId() + " is not owned by query with path " + query.getId());
 					
 					String pname = param.getName().startsWith(":") ? StringUtils.substring(param.getName(), 1): param.getName();
-					int idx = params.indexOf(pname);
+					int idx = params.indexOf(pname)+1;
 					if (debugLog.isLoggable(Level.FINEST)) {
 						debug("The parameter "+pname+" has been mapped to index "+idx);
 					}

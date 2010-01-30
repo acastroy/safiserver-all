@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.actionstep.DBConnectionId;
+import com.safi.core.impl.ThreadSensitiveImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +29,7 @@ import com.safi.core.actionstep.DBConnectionId;
  *
  * @generated
  */
-public class DBConnectionIdImpl extends EObjectImpl implements DBConnectionId {
+public class DBConnectionIdImpl extends ThreadSensitiveImpl implements DBConnectionId {
   /**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -64,10 +65,10 @@ public class DBConnectionIdImpl extends EObjectImpl implements DBConnectionId {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getJdbcConnection()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected Connection jdbcConnection = JDBC_CONNECTION_EDEFAULT;
+//	protected Connection jdbcConnection = JDBC_CONNECTION_EDEFAULT;
 
 		/**
 	 * The cached value of the '{@link #getJdbcConnection() <em>Jdbc Connection</em>}' attribute.
@@ -90,6 +91,10 @@ public class DBConnectionIdImpl extends EObjectImpl implements DBConnectionId {
 		super();
 	}
 
+  @Override
+  public void cleanup() {
+    jdbcConnectionHolder.remove();
+  }
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -8,6 +8,7 @@ package com.safi.core.actionstep;
 
 import com.safi.core.ProductIdentifiable;
 
+import com.safi.core.ThreadSensitive;
 import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletContext;
 
@@ -37,7 +38,7 @@ import org.eclipse.emf.common.util.EList;
  * @model abstract="true"
  * @generated
  */
-public interface ActionStep extends ProductIdentifiable {
+public interface ActionStep extends ProductIdentifiable, ThreadSensitive {
   /**
 	 * Returns the value of the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->

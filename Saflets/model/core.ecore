@@ -7,6 +7,9 @@
       interface="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="productId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ThreadSensitive">
+    <eOperations name="cleanup"/>
+  </eClassifiers>
   <eSubpackages name="actionstep" nsURI="http:///com/safi/core.ecore#actionstep" nsPrefix="com.safi.core.actionstep">
     <eClassifiers xsi:type="ecore:EClass" name="Assignment" eSuperTypes="#//actionstep/ActionStep">
       <eStructuralFeatures xsi:type="ecore:EReference" name="value" ordered="false"
@@ -112,7 +115,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="DynamicValue">
+    <eClassifiers xsi:type="ecore:EClass" name="DynamicValue" eSuperTypes="#//ThreadSensitive">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//actionstep/DynamicValueType"
           defaultValueLiteral="LiteralText"/>
@@ -155,7 +158,7 @@
       <eLiterals name="Error" value="1"/>
       <eLiterals name="Choice" value="3"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ActionStep" abstract="true" eSuperTypes="#//ProductIdentifiable">
+    <eClassifiers xsi:type="ecore:EClass" name="ActionStep" abstract="true" eSuperTypes="#//ProductIdentifiable #//ThreadSensitive">
       <eOperations name="beginProcessing" eExceptions="#//initiator/ActionStepException">
         <eParameters name="context" ordered="false" eType="#//saflet/SafletContext"/>
       </eOperations>
@@ -641,12 +644,12 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="DBConnectionId">
+    <eClassifiers xsi:type="ecore:EClass" name="DBConnectionId" eSuperTypes="#//ThreadSensitive">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="jdbcConnection" ordered="false"
           eType="ecore:EDataType ../../SafiDB/model/db.ecore#//Connection"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="DBQueryId">
+    <eClassifiers xsi:type="ecore:EClass" name="DBQueryId" eSuperTypes="#//ThreadSensitive">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="jdbcStatement" ordered="false"
           eType="ecore:EDataType ../../SafiDB/model/db.ecore#//Statement"/>
@@ -656,7 +659,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="0"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="DBResultSetId">
+    <eClassifiers xsi:type="ecore:EClass" name="DBResultSetId" eSuperTypes="#//ThreadSensitive">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -869,7 +872,7 @@
     <eClassifiers xsi:type="ecore:EDataType" name="Script" instanceClassName="org.mozilla.javascript.Script"/>
   </eSubpackages>
   <eSubpackages name="saflet" nsURI="http:///com/safi/core.ecore#saflet" nsPrefix="com.safi.core.saflet">
-    <eClassifiers xsi:type="ecore:EClass" name="Saflet" abstract="true">
+    <eClassifiers xsi:type="ecore:EClass" name="Saflet" abstract="true" eSuperTypes="#//ThreadSensitive">
       <eOperations name="getActionStep" eType="#//actionstep/ActionStep">
         <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
@@ -912,7 +915,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
           defaultValueLiteral="-1"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SafletContext" abstract="true">
+    <eClassifiers xsi:type="ecore:EClass" name="SafletContext" abstract="true" eSuperTypes="#//ThreadSensitive">
       <eOperations name="init"/>
       <eOperations name="getVariable" eType="ecore:EClass ../../SafiDB/model/db.ecore#//Variable">
         <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -958,7 +961,7 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="SafletEnvironment" abstract="true"
-        interface="true">
+        interface="true" eSuperTypes="#//ThreadSensitive">
       <eOperations name="getSaflet" eType="#//saflet/Saflet">
         <eParameters name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="coreServerId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>

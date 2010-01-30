@@ -19,9 +19,11 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.impl.EStringToStringMapEntryImpl;
 import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.InternalEList;
+import com.safi.core.ThreadSensitive;
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.DynamicValueType;
+import com.safi.core.impl.ThreadSensitiveImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,7 +41,7 @@ import com.safi.core.actionstep.DynamicValueType;
  *
  * @generated
  */
-public class DynamicValueImpl extends EObjectImpl implements DynamicValue {
+public class DynamicValueImpl extends ThreadSensitiveImpl implements DynamicValue {
   /**
 	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -93,6 +95,15 @@ public class DynamicValueImpl extends EObjectImpl implements DynamicValue {
   /**
 	 * The cached value of the '{@link #getData() <em>Data</em>}' map.
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getData()
+	 * @generated
+	 * @ordered
+	 */
+
+		/**
+	 * The cached value of the '{@link #getData() <em>Data</em>}' map.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @see #getData()
 	 * @generated NOT
@@ -111,6 +122,13 @@ public class DynamicValueImpl extends EObjectImpl implements DynamicValue {
 		super();
 	}
 
+  @Override
+  public void cleanup() {
+  	dataHolder.remove();
+  	if (payload != null && payload instanceof ThreadSensitive){
+  		((ThreadSensitive)payload).cleanup();
+  	}
+  }
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

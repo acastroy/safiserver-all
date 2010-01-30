@@ -76,6 +76,10 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 				return createProductIdentifiableAdapter();
 			}
 			@Override
+			public Adapter caseThreadSensitive(ThreadSensitive object) {
+				return createThreadSensitiveAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -110,6 +114,20 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 	}
 
   /**
+	 * Creates a new adapter for an object of class '{@link com.safi.core.ThreadSensitive <em>Thread Sensitive</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.safi.core.ThreadSensitive
+	 * @generated
+	 */
+	public Adapter createThreadSensitiveAdapter() {
+		return null;
+	}
+
+		/**
 	 * Creates a new adapter for the default case.
 	 * <!-- begin-user-doc -->
    * This default implementation returns null.

@@ -6,6 +6,7 @@
  */
 package com.safi.core.actionstep;
 
+import com.safi.core.ThreadSensitive;
 import org.eclipse.emf.common.util.EMap;
 
 import org.eclipse.emf.ecore.EObject;
@@ -29,7 +30,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface DynamicValue extends EObject {
+public interface DynamicValue extends ThreadSensitive {
   /**
 	 * Returns the value of the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->

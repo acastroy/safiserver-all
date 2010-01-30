@@ -88,6 +88,26 @@ public interface CorePackage extends EPackage {
 
 
   /**
+	 * The meta object id for the '{@link com.safi.core.impl.ThreadSensitiveImpl <em>Thread Sensitive</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.safi.core.impl.ThreadSensitiveImpl
+	 * @see com.safi.core.impl.CorePackageImpl#getThreadSensitive()
+	 * @generated
+	 */
+	int THREAD_SENSITIVE = 1;
+
+		/**
+	 * The number of structural features of the '<em>Thread Sensitive</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THREAD_SENSITIVE_FEATURE_COUNT = 0;
+
+
+		/**
 	 * Returns the meta object for class '{@link com.safi.core.ProductIdentifiable <em>Product Identifiable</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -109,6 +129,16 @@ public interface CorePackage extends EPackage {
   EAttribute getProductIdentifiable_ProductId();
 
   /**
+	 * Returns the meta object for class '{@link com.safi.core.ThreadSensitive <em>Thread Sensitive</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Thread Sensitive</em>'.
+	 * @see com.safi.core.ThreadSensitive
+	 * @generated
+	 */
+	EClass getThreadSensitive();
+
+		/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -147,6 +177,16 @@ public interface CorePackage extends EPackage {
 		 * @generated
 		 */
     EAttribute PRODUCT_IDENTIFIABLE__PRODUCT_ID = eINSTANCE.getProductIdentifiable_ProductId();
+
+				/**
+		 * The meta object literal for the '{@link com.safi.core.impl.ThreadSensitiveImpl <em>Thread Sensitive</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.safi.core.impl.ThreadSensitiveImpl
+		 * @see com.safi.core.impl.CorePackageImpl#getThreadSensitive()
+		 * @generated
+		 */
+		EClass THREAD_SENSITIVE = eINSTANCE.getThreadSensitive();
 
   }
 

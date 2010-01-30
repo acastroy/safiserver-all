@@ -11,6 +11,9 @@
     <genClasses image="false" ecoreClass="core.ecore#//ProductIdentifiable">
       <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//ProductIdentifiable/productId"/>
     </genClasses>
+    <genClasses ecoreClass="core.ecore#//ThreadSensitive">
+      <genOperations ecoreOperation="core.ecore#//ThreadSensitive/cleanup"/>
+    </genClasses>
     <nestedGenPackages prefix="ActionStep" disposableProviderFactory="true" literalsInterface="false"
         ecorePackage="core.ecore#//actionstep">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="core.ecore#//actionstep/DynamicValueType">

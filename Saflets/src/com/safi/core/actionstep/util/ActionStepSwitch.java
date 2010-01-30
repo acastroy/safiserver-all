@@ -8,6 +8,7 @@ package com.safi.core.actionstep.util;
 
 import com.safi.core.ProductIdentifiable;
 
+import com.safi.core.ThreadSensitive;
 import com.safi.core.actionstep.*;
 
 import com.safi.core.initiator.Initiator;
@@ -96,6 +97,7 @@ public class ActionStepSwitch<T> {
 				T result = caseAssignment(assignment);
 				if (result == null) result = caseActionStep(assignment);
 				if (result == null) result = caseProductIdentifiable(assignment);
+				if (result == null) result = caseThreadSensitive(assignment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -119,6 +121,7 @@ public class ActionStepSwitch<T> {
 				T result = caseParameterizedActionstep(parameterizedActionstep);
 				if (result == null) result = caseActionStep(parameterizedActionstep);
 				if (result == null) result = caseProductIdentifiable(parameterizedActionstep);
+				if (result == null) result = caseThreadSensitive(parameterizedActionstep);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -129,6 +132,7 @@ public class ActionStepSwitch<T> {
 				if (result == null) result = caseParameterizedActionstep(parameterizedInitiator);
 				if (result == null) result = caseActionStep(parameterizedInitiator);
 				if (result == null) result = caseProductIdentifiable(parameterizedInitiator);
+				if (result == null) result = caseThreadSensitive(parameterizedInitiator);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -145,12 +149,14 @@ public class ActionStepSwitch<T> {
 				T result = caseChoice(choice);
 				if (result == null) result = caseActionStep(choice);
 				if (result == null) result = caseProductIdentifiable(choice);
+				if (result == null) result = caseThreadSensitive(choice);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ActionStepPackage.DYNAMIC_VALUE: {
 				DynamicValue dynamicValue = (DynamicValue)theEObject;
 				T result = caseDynamicValue(dynamicValue);
+				if (result == null) result = caseThreadSensitive(dynamicValue);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -159,6 +165,7 @@ public class ActionStepSwitch<T> {
 				T result = caseIfThen(ifThen);
 				if (result == null) result = caseActionStep(ifThen);
 				if (result == null) result = caseProductIdentifiable(ifThen);
+				if (result == null) result = caseThreadSensitive(ifThen);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -172,6 +179,7 @@ public class ActionStepSwitch<T> {
 				ActionStep actionStep = (ActionStep)theEObject;
 				T result = caseActionStep(actionStep);
 				if (result == null) result = caseProductIdentifiable(actionStep);
+				if (result == null) result = caseThreadSensitive(actionStep);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -180,6 +188,7 @@ public class ActionStepSwitch<T> {
 				T result = caseExecuteScript(executeScript);
 				if (result == null) result = caseActionStep(executeScript);
 				if (result == null) result = caseProductIdentifiable(executeScript);
+				if (result == null) result = caseThreadSensitive(executeScript);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -188,6 +197,7 @@ public class ActionStepSwitch<T> {
 				T result = caseInvokeSaflet(invokeSaflet);
 				if (result == null) result = caseActionStep(invokeSaflet);
 				if (result == null) result = caseProductIdentifiable(invokeSaflet);
+				if (result == null) result = caseThreadSensitive(invokeSaflet);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -196,6 +206,7 @@ public class ActionStepSwitch<T> {
 				T result = caseDebugLog(debugLog);
 				if (result == null) result = caseActionStep(debugLog);
 				if (result == null) result = caseProductIdentifiable(debugLog);
+				if (result == null) result = caseThreadSensitive(debugLog);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -205,6 +216,7 @@ public class ActionStepSwitch<T> {
 				if (result == null) result = caseActionStep(openDBConnection);
 				if (result == null) result = caseHeavyweight(openDBConnection);
 				if (result == null) result = caseProductIdentifiable(openDBConnection);
+				if (result == null) result = caseThreadSensitive(openDBConnection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -213,6 +225,7 @@ public class ActionStepSwitch<T> {
 				T result = caseCloseDBConnection(closeDBConnection);
 				if (result == null) result = caseActionStep(closeDBConnection);
 				if (result == null) result = caseProductIdentifiable(closeDBConnection);
+				if (result == null) result = caseThreadSensitive(closeDBConnection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -221,6 +234,7 @@ public class ActionStepSwitch<T> {
 				T result = caseOpenQuery(openQuery);
 				if (result == null) result = caseActionStep(openQuery);
 				if (result == null) result = caseProductIdentifiable(openQuery);
+				if (result == null) result = caseThreadSensitive(openQuery);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -229,6 +243,7 @@ public class ActionStepSwitch<T> {
 				T result = caseSetQueryParam(setQueryParam);
 				if (result == null) result = caseActionStep(setQueryParam);
 				if (result == null) result = caseProductIdentifiable(setQueryParam);
+				if (result == null) result = caseThreadSensitive(setQueryParam);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -237,6 +252,7 @@ public class ActionStepSwitch<T> {
 				T result = caseExecuteUpdate(executeUpdate);
 				if (result == null) result = caseActionStep(executeUpdate);
 				if (result == null) result = caseProductIdentifiable(executeUpdate);
+				if (result == null) result = caseThreadSensitive(executeUpdate);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -246,6 +262,7 @@ public class ActionStepSwitch<T> {
 				if (result == null) result = caseActionStep(executeQuery);
 				if (result == null) result = caseHeavyweight(executeQuery);
 				if (result == null) result = caseProductIdentifiable(executeQuery);
+				if (result == null) result = caseThreadSensitive(executeQuery);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -254,6 +271,7 @@ public class ActionStepSwitch<T> {
 				T result = caseNextRow(nextRow);
 				if (result == null) result = caseActionStep(nextRow);
 				if (result == null) result = caseProductIdentifiable(nextRow);
+				if (result == null) result = caseThreadSensitive(nextRow);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -262,6 +280,7 @@ public class ActionStepSwitch<T> {
 				T result = caseGetColValue(getColValue);
 				if (result == null) result = caseActionStep(getColValue);
 				if (result == null) result = caseProductIdentifiable(getColValue);
+				if (result == null) result = caseThreadSensitive(getColValue);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -270,6 +289,7 @@ public class ActionStepSwitch<T> {
 				T result = caseGetColValues(getColValues);
 				if (result == null) result = caseActionStep(getColValues);
 				if (result == null) result = caseProductIdentifiable(getColValues);
+				if (result == null) result = caseThreadSensitive(getColValues);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -278,6 +298,7 @@ public class ActionStepSwitch<T> {
 				T result = caseSetColValue(setColValue);
 				if (result == null) result = caseActionStep(setColValue);
 				if (result == null) result = caseProductIdentifiable(setColValue);
+				if (result == null) result = caseThreadSensitive(setColValue);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -286,6 +307,7 @@ public class ActionStepSwitch<T> {
 				T result = caseSetColValues(setColValues);
 				if (result == null) result = caseActionStep(setColValues);
 				if (result == null) result = caseProductIdentifiable(setColValues);
+				if (result == null) result = caseThreadSensitive(setColValues);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -295,6 +317,7 @@ public class ActionStepSwitch<T> {
 				if (result == null) result = caseActionStep(updatetRow);
 				if (result == null) result = caseHeavyweight(updatetRow);
 				if (result == null) result = caseProductIdentifiable(updatetRow);
+				if (result == null) result = caseThreadSensitive(updatetRow);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -303,6 +326,7 @@ public class ActionStepSwitch<T> {
 				T result = caseMoveToRow(moveToRow);
 				if (result == null) result = caseActionStep(moveToRow);
 				if (result == null) result = caseProductIdentifiable(moveToRow);
+				if (result == null) result = caseThreadSensitive(moveToRow);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -311,6 +335,7 @@ public class ActionStepSwitch<T> {
 				T result = caseMoveToLastRow(moveToLastRow);
 				if (result == null) result = caseActionStep(moveToLastRow);
 				if (result == null) result = caseProductIdentifiable(moveToLastRow);
+				if (result == null) result = caseThreadSensitive(moveToLastRow);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -319,6 +344,7 @@ public class ActionStepSwitch<T> {
 				T result = caseDeleteRow(deleteRow);
 				if (result == null) result = caseActionStep(deleteRow);
 				if (result == null) result = caseProductIdentifiable(deleteRow);
+				if (result == null) result = caseThreadSensitive(deleteRow);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -327,6 +353,7 @@ public class ActionStepSwitch<T> {
 				T result = caseMoveToInsertRow(moveToInsertRow);
 				if (result == null) result = caseActionStep(moveToInsertRow);
 				if (result == null) result = caseProductIdentifiable(moveToInsertRow);
+				if (result == null) result = caseThreadSensitive(moveToInsertRow);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -335,6 +362,7 @@ public class ActionStepSwitch<T> {
 				T result = caseInsertRow(insertRow);
 				if (result == null) result = caseActionStep(insertRow);
 				if (result == null) result = caseProductIdentifiable(insertRow);
+				if (result == null) result = caseThreadSensitive(insertRow);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -343,6 +371,7 @@ public class ActionStepSwitch<T> {
 				T result = caseMoveToFirstRow(moveToFirstRow);
 				if (result == null) result = caseActionStep(moveToFirstRow);
 				if (result == null) result = caseProductIdentifiable(moveToFirstRow);
+				if (result == null) result = caseThreadSensitive(moveToFirstRow);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -351,18 +380,21 @@ public class ActionStepSwitch<T> {
 				T result = casePreviousRow(previousRow);
 				if (result == null) result = caseActionStep(previousRow);
 				if (result == null) result = caseProductIdentifiable(previousRow);
+				if (result == null) result = caseThreadSensitive(previousRow);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ActionStepPackage.DB_CONNECTION_ID: {
 				DBConnectionId dbConnectionId = (DBConnectionId)theEObject;
 				T result = caseDBConnectionId(dbConnectionId);
+				if (result == null) result = caseThreadSensitive(dbConnectionId);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ActionStepPackage.DB_QUERY_ID: {
 				DBQueryId dbQueryId = (DBQueryId)theEObject;
 				T result = caseDBQueryId(dbQueryId);
+				if (result == null) result = caseThreadSensitive(dbQueryId);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -375,6 +407,7 @@ public class ActionStepSwitch<T> {
 			case ActionStepPackage.DB_RESULT_SET_ID: {
 				DBResultSetId dbResultSetId = (DBResultSetId)theEObject;
 				T result = caseDBResultSetId(dbResultSetId);
+				if (result == null) result = caseThreadSensitive(dbResultSetId);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -398,6 +431,7 @@ public class ActionStepSwitch<T> {
 				if (result == null) result = caseActionStep(runQuery);
 				if (result == null) result = caseHeavyweight(runQuery);
 				if (result == null) result = caseProductIdentifiable(runQuery);
+				if (result == null) result = caseThreadSensitive(runQuery);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1109,6 +1143,21 @@ public class ActionStepSwitch<T> {
 	}
 
   /**
+	 * Returns the result of interpreting the object as an instance of '<em>Thread Sensitive</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Thread Sensitive</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseThreadSensitive(ThreadSensitive object) {
+		return null;
+	}
+
+		/**
 	 * Returns the result of interpreting the object as an instance of '<em>Initiator</em>'.
 	 * <!-- begin-user-doc -->
    * This implementation returns null;

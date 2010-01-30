@@ -6,6 +6,7 @@
  */
 package com.safi.core.saflet;
 
+import com.safi.core.ThreadSensitive;
 import com.safi.db.Variable;
 
 import java.util.List;
@@ -23,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface SafletEnvironment extends EObject {
+public interface SafletEnvironment extends ThreadSensitive {
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

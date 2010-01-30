@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.actionstep.DBResultSetId;
+import com.safi.core.impl.ThreadSensitiveImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +30,7 @@ import com.safi.core.actionstep.DBResultSetId;
  *
  * @generated
  */
-public class DBResultSetIdImpl extends EObjectImpl implements DBResultSetId {
+public class DBResultSetIdImpl extends ThreadSensitiveImpl implements DBResultSetId {
   /**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -88,7 +89,6 @@ public class DBResultSetIdImpl extends EObjectImpl implements DBResultSetId {
 	 * @generated
 	 * @ordered
 	 */
-	protected ResultSet jDBCResultSet = JDBC_RESULT_SET_EDEFAULT;
 
 		/**
 	 * The cached value of the '{@link #getJDBCResultSet() <em>JDBC Result Set</em>}' attribute.
@@ -102,6 +102,7 @@ public class DBResultSetIdImpl extends EObjectImpl implements DBResultSetId {
   protected static ThreadLocal<ResultSet> jDBCResultSetHolder = new ThreadLocal<ResultSet>();
 //  protected ResultSet jDBCResultSet = JDBC_RESULT_SET_EDEFAULT;
 
+  
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -111,6 +112,10 @@ public class DBResultSetIdImpl extends EObjectImpl implements DBResultSetId {
 		super();
 	}
 
+  @Override
+  public void cleanup() {
+  	jDBCResultSetHolder.remove();
+  }
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

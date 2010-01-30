@@ -6,6 +6,7 @@
  */
 package com.safi.core.actionstep;
 
+import com.safi.core.ThreadSensitive;
 import java.sql.ResultSet;
 
 import org.eclipse.emf.ecore.EObject;
@@ -28,7 +29,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface DBResultSetId extends EObject {
+public interface DBResultSetId extends ThreadSensitive {
   /**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

@@ -26,6 +26,15 @@ public interface CoreFactory extends EFactory {
   CoreFactory eINSTANCE = com.safi.core.impl.CoreFactoryImpl.init();
 
   /**
+	 * Returns a new object of class '<em>Thread Sensitive</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Thread Sensitive</em>'.
+	 * @generated
+	 */
+	ThreadSensitive createThreadSensitive();
+
+		/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

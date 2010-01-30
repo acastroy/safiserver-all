@@ -20,14 +20,17 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import com.safi.core.ThreadSensitive;
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.ActionStepPackage;
+import com.safi.core.impl.ThreadSensitiveImpl;
 import com.safi.core.initiator.Initiator;
 import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletConstants;
@@ -63,7 +66,7 @@ import com.safi.logging.SafiFileHandler;
  *
  * @generated
  */
-public abstract class SafletImpl extends EObjectImpl implements Saflet {
+public abstract class SafletImpl extends ThreadSensitiveImpl implements Saflet {
 
 	private final static int DEFAULT_MAX_ITERATIONS = 10000;
 	private final static int MAX_ITERATIONS = DEFAULT_MAX_ITERATIONS;
@@ -252,6 +255,40 @@ public abstract class SafletImpl extends EObjectImpl implements Saflet {
 		super();
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void cleanup() {
+		safletScopeHolder.remove();
+		for (EStructuralFeature feat : this.eClass().getEAllStructuralFeatures()){
+			Object obj = eGet(feat);
+			if (obj instanceof ThreadSensitive){
+				((ThreadSensitive)obj).cleanup();
+			}
+			else if (obj instanceof Collection){
+				for (Object o : (Collection)obj){
+					if (o instanceof ThreadSensitive){
+						((ThreadSensitive)o).cleanup();
+					}
+				}
+			}
+		}
+		
+//		SafletContext context = getSafletContext();
+//		if (context != null)
+//			context.cleanup();
+//		
+//		for (ActionStep step : getActionsteps()){
+//			step.cleanup();
+//		}
+//		Initiator initator = getInitiator();
+//		if (initator != null)
+//			initator.cleanup();
+	}
+	
+	
 	@Override
 	public void debug(String message) {
 		if (debugLog.isLoggable(Level.FINEST))
@@ -765,6 +802,8 @@ public abstract class SafletImpl extends EObjectImpl implements Saflet {
 	 */
 	public void init() throws ActionStepException {
 	}
+
+	
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

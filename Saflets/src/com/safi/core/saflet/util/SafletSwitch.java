@@ -6,6 +6,7 @@
  */
 package com.safi.core.saflet.util;
 
+import com.safi.core.ThreadSensitive;
 import com.safi.core.saflet.*;
 
 import java.util.List;
@@ -90,18 +91,21 @@ public class SafletSwitch<T> {
 			case SafletPackage.SAFLET: {
 				Saflet saflet = (Saflet)theEObject;
 				T result = caseSaflet(saflet);
+				if (result == null) result = caseThreadSensitive(saflet);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SafletPackage.SAFLET_CONTEXT: {
 				SafletContext safletContext = (SafletContext)theEObject;
 				T result = caseSafletContext(safletContext);
+				if (result == null) result = caseThreadSensitive(safletContext);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case SafletPackage.SAFLET_ENVIRONMENT: {
 				SafletEnvironment safletEnvironment = (SafletEnvironment)theEObject;
 				T result = caseSafletEnvironment(safletEnvironment);
+				if (result == null) result = caseThreadSensitive(safletEnvironment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -155,6 +159,21 @@ public class SafletSwitch<T> {
 	}
 
   /**
+	 * Returns the result of interpreting the object as an instance of '<em>Thread Sensitive</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Thread Sensitive</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseThreadSensitive(ThreadSensitive object) {
+		return null;
+	}
+
+		/**
 	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * <!-- begin-user-doc -->
    * This implementation returns null;

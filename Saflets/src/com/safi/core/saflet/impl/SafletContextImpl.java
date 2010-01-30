@@ -6,6 +6,7 @@
  */
 package com.safi.core.saflet.impl;
 
+import com.safi.core.impl.ThreadSensitiveImpl;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -46,7 +47,7 @@ import com.safi.db.VariableScope;
  *
  * @generated
  */
-public abstract class SafletContextImpl extends EObjectImpl implements SafletContext {
+public abstract class SafletContextImpl extends ThreadSensitiveImpl implements SafletContext {
 
   private final static Logger log = Logger.getLogger(SafletContextImpl.class.getName());
   /**
@@ -102,6 +103,14 @@ public abstract class SafletContextImpl extends EObjectImpl implements SafletCon
 		super();
 	}
 
+  /**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void cleanup() {
+		runtimeVariables.remove();
+	}
   /**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
@@ -414,7 +423,9 @@ public abstract class SafletContextImpl extends EObjectImpl implements SafletCon
     map.put(name, value);
   }
 
-  public Object getDebugLock() {
+  
+
+		public Object getDebugLock() {
     return debugLock;
   }
 

@@ -10,6 +10,7 @@ import com.safi.core.CoreFactory;
 import com.safi.core.CorePackage;
 import com.safi.core.ProductIdentifiable;
 
+import com.safi.core.ThreadSensitive;
 import com.safi.core.actionstep.ActionStepPackage;
 
 import com.safi.core.actionstep.impl.ActionStepPackageImpl;
@@ -49,6 +50,13 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
   private EClass productIdentifiableEClass = null;
 
   /**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass threadSensitiveEClass = null;
+
+		/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -146,6 +154,15 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
   /**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getThreadSensitive() {
+		return threadSensitiveEClass;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -174,6 +191,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		// Create classes and their features
 		productIdentifiableEClass = createEClass(PRODUCT_IDENTIFIABLE);
 		createEAttribute(productIdentifiableEClass, PRODUCT_IDENTIFIABLE__PRODUCT_ID);
+
+		threadSensitiveEClass = createEClass(THREAD_SENSITIVE);
 	}
 
   /**
@@ -220,6 +239,10 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(productIdentifiableEClass, ProductIdentifiable.class, "ProductIdentifiable", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProductIdentifiable_ProductId(), ecorePackage.getEString(), "productId", null, 0, 1, ProductIdentifiable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(threadSensitiveEClass, ThreadSensitive.class, "ThreadSensitive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(threadSensitiveEClass, null, "cleanup", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -6,6 +6,7 @@
  */
 package com.safi.core.saflet;
 
+import com.safi.core.ThreadSensitive;
 import com.safi.db.Variable;
 
 import java.util.Map;
@@ -32,7 +33,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface SafletContext extends EObject {
+public interface SafletContext extends ThreadSensitive {
   /**
 	 * Returns the value of the '<em><b>Exceptions</b></em>' attribute list.
 	 * The list contents are of type {@link java.lang.Exception}.

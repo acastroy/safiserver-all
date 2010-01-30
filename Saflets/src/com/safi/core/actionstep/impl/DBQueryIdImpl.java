@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.actionstep.DBQueryId;
+import com.safi.core.impl.ThreadSensitiveImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +29,7 @@ import com.safi.core.actionstep.DBQueryId;
  *
  * @generated
  */
-public class DBQueryIdImpl extends EObjectImpl implements DBQueryId {
+public class DBQueryIdImpl extends ThreadSensitiveImpl implements DBQueryId {
   /**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -64,10 +65,10 @@ public class DBQueryIdImpl extends EObjectImpl implements DBQueryId {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getJdbcStatement()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected Statement jdbcStatement = JDBC_STATEMENT_EDEFAULT;
+//	protected Statement jdbcStatement = JDBC_STATEMENT_EDEFAULT;
 
 		/**
 	 * The cached value of the '{@link #getJdbcStatement() <em>Jdbc Statement</em>}' attribute.
@@ -89,6 +90,10 @@ public class DBQueryIdImpl extends EObjectImpl implements DBQueryId {
 		super();
 	}
 
+  @Override
+  public void cleanup() {
+  	jdbcStatementHolder.remove();
+  }
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

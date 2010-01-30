@@ -838,7 +838,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int DYNAMIC_VALUE__TEXT = 0;
+  int DYNAMIC_VALUE__TEXT = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 0;
 
   /**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -847,7 +847,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int DYNAMIC_VALUE__TYPE = 1;
+  int DYNAMIC_VALUE__TYPE = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 1;
 
   /**
 	 * The feature id for the '<em><b>Payload</b></em>' containment reference.
@@ -856,7 +856,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int DYNAMIC_VALUE__PAYLOAD = 2;
+  int DYNAMIC_VALUE__PAYLOAD = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 2;
 
   /**
 	 * The feature id for the '<em><b>Data</b></em>' map.
@@ -865,7 +865,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int DYNAMIC_VALUE__DATA = 3;
+  int DYNAMIC_VALUE__DATA = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 3;
 
   /**
 	 * The number of structural features of the '<em>Dynamic Value</em>' class.
@@ -874,7 +874,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int DYNAMIC_VALUE_FEATURE_COUNT = 4;
+  int DYNAMIC_VALUE_FEATURE_COUNT = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 4;
 
   /**
 	 * The meta object id for the '{@link com.safi.core.actionstep.impl.IfThenImpl <em>If Then</em>}' class.
@@ -3464,7 +3464,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int DB_CONNECTION_ID__ID = 0;
+  int DB_CONNECTION_ID__ID = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 0;
 
   /**
 	 * The feature id for the '<em><b>Jdbc Connection</b></em>' attribute.
@@ -3473,7 +3473,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int DB_CONNECTION_ID__JDBC_CONNECTION = 1;
+  int DB_CONNECTION_ID__JDBC_CONNECTION = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 1;
 
   /**
 	 * The number of structural features of the '<em>DB Connection Id</em>' class.
@@ -3482,7 +3482,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int DB_CONNECTION_ID_FEATURE_COUNT = 2;
+  int DB_CONNECTION_ID_FEATURE_COUNT = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 2;
 
   /**
 	 * The meta object id for the '{@link com.safi.core.actionstep.impl.DBQueryIdImpl <em>DB Query Id</em>}' class.
@@ -3501,7 +3501,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int DB_QUERY_ID__ID = 0;
+  int DB_QUERY_ID__ID = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 0;
 
   /**
 	 * The feature id for the '<em><b>Jdbc Statement</b></em>' attribute.
@@ -3510,7 +3510,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int DB_QUERY_ID__JDBC_STATEMENT = 1;
+  int DB_QUERY_ID__JDBC_STATEMENT = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 1;
 
   /**
 	 * The number of structural features of the '<em>DB Query Id</em>' class.
@@ -3519,7 +3519,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int DB_QUERY_ID_FEATURE_COUNT = 2;
+  int DB_QUERY_ID_FEATURE_COUNT = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 2;
 
   /**
 	 * The meta object id for the '{@link com.safi.core.actionstep.impl.DBQueryParamIdImpl <em>DB Query Param Id</em>}' class.
@@ -3575,7 +3575,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int DB_RESULT_SET_ID__NAME = 0;
+  int DB_RESULT_SET_ID__NAME = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 0;
 
   /**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -3584,7 +3584,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int DB_RESULT_SET_ID__ID = 1;
+  int DB_RESULT_SET_ID__ID = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 1;
 
   /**
 	 * The feature id for the '<em><b>JDBC Result Set</b></em>' attribute.
@@ -3593,7 +3593,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int DB_RESULT_SET_ID__JDBC_RESULT_SET = 2;
+  int DB_RESULT_SET_ID__JDBC_RESULT_SET = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 2;
 
   /**
 	 * The number of structural features of the '<em>DB Result Set Id</em>' class.
@@ -3602,7 +3602,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int DB_RESULT_SET_ID_FEATURE_COUNT = 3;
+  int DB_RESULT_SET_ID_FEATURE_COUNT = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 3;
 
   /**
 	 * The meta object id for the '{@link com.safi.core.actionstep.impl.GetColMappingImpl <em>Get Col Mapping</em>}' class.

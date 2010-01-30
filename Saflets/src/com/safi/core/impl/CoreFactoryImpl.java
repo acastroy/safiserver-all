@@ -60,12 +60,23 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
   @Override
   public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case CorePackage.THREAD_SENSITIVE: return createThreadSensitive();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
   /**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ThreadSensitive createThreadSensitive() {
+		ThreadSensitiveImpl threadSensitive = new ThreadSensitiveImpl();
+		return threadSensitive;
+	}
+
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated

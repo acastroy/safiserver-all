@@ -8,6 +8,7 @@ package com.safi.core.actionstep.util;
 
 import com.safi.core.ProductIdentifiable;
 
+import com.safi.core.ThreadSensitive;
 import com.safi.core.actionstep.*;
 
 import com.safi.core.initiator.Initiator;
@@ -254,6 +255,10 @@ public class ActionStepAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseProductIdentifiable(ProductIdentifiable object) {
 				return createProductIdentifiableAdapter();
+			}
+			@Override
+			public Adapter caseThreadSensitive(ThreadSensitive object) {
+				return createThreadSensitiveAdapter();
 			}
 			@Override
 			public Adapter caseInitiator(Initiator object) {
@@ -910,6 +915,20 @@ public class ActionStepAdapterFactory extends AdapterFactoryImpl {
 	}
 
   /**
+	 * Creates a new adapter for an object of class '{@link com.safi.core.ThreadSensitive <em>Thread Sensitive</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.safi.core.ThreadSensitive
+	 * @generated
+	 */
+	public Adapter createThreadSensitiveAdapter() {
+		return null;
+	}
+
+		/**
 	 * Creates a new adapter for an object of class '{@link com.safi.core.initiator.Initiator <em>Initiator</em>}'.
 	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
