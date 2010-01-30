@@ -7,6 +7,7 @@
 package com.safi.core.actionstep.provider;
 
 
+import com.safi.core.CoreFactory;
 import com.safi.core.actionstep.ActionStepFactory;
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.actionstep.DynamicValue;
@@ -15,6 +16,7 @@ import com.safi.core.initiator.InitiatorFactory;
 
 import com.safi.core.provider.CoreEditPluginProv;
 
+import com.safi.core.provider.ThreadSensitiveItemProvider;
 import com.safi.core.saflet.SafletFactory;
 
 import com.safi.core.scripting.ScriptingFactory;
@@ -51,7 +53,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class DynamicValueItemProvider
-  extends ItemProviderAdapter
+  extends ThreadSensitiveItemProvider
   implements
     IEditingDomainItemProvider,
     IStructuredItemContentProvider,
@@ -419,6 +421,11 @@ public class DynamicValueItemProvider
 			(createChildParameter
 				(ActionStepPackage.eINSTANCE.getDynamicValue_Payload(),
 				 ActionStepFactory.eINSTANCE.createOutputParameter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionStepPackage.eINSTANCE.getDynamicValue_Payload(),
+				 CoreFactory.eINSTANCE.createThreadSensitive()));
 
 		newChildDescriptors.add
 			(createChildParameter

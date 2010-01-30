@@ -76,6 +76,29 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	}
 
   /**
+	 * This keeps track of the one adapter used for all {@link com.safi.core.ThreadSensitive} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ThreadSensitiveItemProvider threadSensitiveItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link com.safi.core.ThreadSensitive}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createThreadSensitiveAdapter() {
+		if (threadSensitiveItemProvider == null) {
+			threadSensitiveItemProvider = new ThreadSensitiveItemProvider(this);
+		}
+
+		return threadSensitiveItemProvider;
+	}
+
+		/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -174,6 +197,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * @generated
 	 */
   public void dispose() {
+		if (threadSensitiveItemProvider != null) threadSensitiveItemProvider.dispose();
 	}
 
 }

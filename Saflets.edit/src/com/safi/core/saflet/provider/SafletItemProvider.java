@@ -13,6 +13,7 @@ import com.safi.core.initiator.InitiatorFactory;
 
 import com.safi.core.provider.CoreEditPluginProv;
 
+import com.safi.core.provider.ThreadSensitiveItemProvider;
 import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletFactory;
 import com.safi.core.saflet.SafletPackage;
@@ -45,7 +46,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class SafletItemProvider
-  extends ItemProviderAdapter
+  extends ThreadSensitiveItemProvider
   implements
     IEditingDomainItemProvider,
     IStructuredItemContentProvider,

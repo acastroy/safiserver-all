@@ -12,6 +12,7 @@ import com.safi.core.actionstep.DBConnectionId;
 
 import com.safi.core.provider.CoreEditPluginProv;
 
+import com.safi.core.provider.ThreadSensitiveItemProvider;
 import java.util.Collection;
 import java.util.List;
 
@@ -38,7 +39,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class DBConnectionIdItemProvider
-  extends ItemProviderAdapter
+  extends ThreadSensitiveItemProvider
   implements
     IEditingDomainItemProvider,
     IStructuredItemContentProvider,
