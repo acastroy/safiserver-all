@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
 import com.safi.asterisk.CallState;
+import com.safi.core.impl.ThreadSensitiveImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,7 +39,7 @@ import com.safi.asterisk.CallState;
  *
  * @generated
  */
-public class CallImpl extends EObjectImpl implements Call {
+public class CallImpl extends ThreadSensitiveImpl implements Call {
   /**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -217,6 +218,16 @@ public class CallImpl extends EObjectImpl implements Call {
 		super();
 	}
 
+  @Override
+  public void cleanup() {
+  	
+    callerIdNameHolder.remove();
+    callStateHolder.remove();
+    channelHolder.remove();
+    channelNameHolder.remove();
+    dataMapHolder.remove();
+    uniqueIdHolder.remove();
+  }
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -303,7 +314,7 @@ public class CallImpl extends EObjectImpl implements Call {
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
   public String getCallerIdNum() {
 		return callerIdNumHolder.get();
@@ -324,7 +335,7 @@ public class CallImpl extends EObjectImpl implements Call {
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
   public String getUniqueId() {
 		return uniqueIdHolder.get();
@@ -346,7 +357,7 @@ public class CallImpl extends EObjectImpl implements Call {
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
   public String getChannelName() {
 		return channelNameHolder.get();
@@ -384,7 +395,7 @@ public class CallImpl extends EObjectImpl implements Call {
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
   public void setCallState(CallState newCallState) {
 		CallState oldCallState = callStateHolder.get();

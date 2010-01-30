@@ -444,6 +444,7 @@ public class AsteriskPackageImpl extends EPackageImpl implements AsteriskPackage
 		ActionstepPackage theActionstepPackage = (ActionstepPackage)EPackage.Registry.INSTANCE.getEPackage(ActionstepPackage.eNS_URI);
 		InitiatorPackage theInitiatorPackage = (InitiatorPackage)EPackage.Registry.INSTANCE.getEPackage(InitiatorPackage.eNS_URI);
 		SafletPackage theSafletPackage = (SafletPackage)EPackage.Registry.INSTANCE.getEPackage(SafletPackage.eNS_URI);
+		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theActionstepPackage);
@@ -455,6 +456,7 @@ public class AsteriskPackageImpl extends EPackageImpl implements AsteriskPackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		callEClass.getESuperTypes().add(theCorePackage.getThreadSensitive());
 		callSource2EClass.getESuperTypes().add(this.getCallSource1());
 		callConsumer2EClass.getESuperTypes().add(this.getCallConsumer1());
 

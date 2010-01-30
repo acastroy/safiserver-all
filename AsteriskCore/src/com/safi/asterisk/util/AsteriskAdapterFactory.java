@@ -7,6 +7,7 @@
 package com.safi.asterisk.util;
 
 import com.safi.asterisk.*;
+import com.safi.core.ThreadSensitive;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -94,6 +95,10 @@ public class AsteriskAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCallConsumer2(CallConsumer2 object) {
 				return createCallConsumer2Adapter();
+			}
+			@Override
+			public Adapter caseThreadSensitive(ThreadSensitive object) {
+				return createThreadSensitiveAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -186,6 +191,20 @@ public class AsteriskAdapterFactory extends AdapterFactoryImpl {
 	}
 
   /**
+	 * Creates a new adapter for an object of class '{@link com.safi.core.ThreadSensitive <em>Thread Sensitive</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.safi.core.ThreadSensitive
+	 * @generated
+	 */
+	public Adapter createThreadSensitiveAdapter() {
+		return null;
+	}
+
+		/**
 	 * Creates a new adapter for the default case.
 	 * <!-- begin-user-doc -->
    * This default implementation returns null.

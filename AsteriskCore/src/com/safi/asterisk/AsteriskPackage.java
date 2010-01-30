@@ -6,6 +6,7 @@
  */
 package com.safi.asterisk;
 
+import com.safi.core.CorePackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -78,7 +79,7 @@ public interface AsteriskPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int CALL__NAME = 0;
+  int CALL__NAME = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 0;
 
   /**
 	 * The feature id for the '<em><b>Channel</b></em>' attribute.
@@ -87,7 +88,7 @@ public interface AsteriskPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int CALL__CHANNEL = 1;
+  int CALL__CHANNEL = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 1;
 
   /**
 	 * The feature id for the '<em><b>Caller Id Name</b></em>' attribute.
@@ -96,7 +97,7 @@ public interface AsteriskPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int CALL__CALLER_ID_NAME = 2;
+  int CALL__CALLER_ID_NAME = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 2;
 
   /**
 	 * The feature id for the '<em><b>Caller Id Num</b></em>' attribute.
@@ -105,7 +106,7 @@ public interface AsteriskPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int CALL__CALLER_ID_NUM = 3;
+  int CALL__CALLER_ID_NUM = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 3;
 
   /**
 	 * The feature id for the '<em><b>Unique Id</b></em>' attribute.
@@ -114,7 +115,7 @@ public interface AsteriskPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int CALL__UNIQUE_ID = 4;
+  int CALL__UNIQUE_ID = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 4;
 
   /**
 	 * The feature id for the '<em><b>Channel Name</b></em>' attribute.
@@ -123,7 +124,7 @@ public interface AsteriskPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int CALL__CHANNEL_NAME = 5;
+  int CALL__CHANNEL_NAME = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 5;
 
   /**
 	 * The feature id for the '<em><b>Call State</b></em>' attribute.
@@ -132,7 +133,7 @@ public interface AsteriskPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int CALL__CALL_STATE = 6;
+  int CALL__CALL_STATE = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 6;
 
   /**
 	 * The number of structural features of the '<em>Call</em>' class.
@@ -141,7 +142,7 @@ public interface AsteriskPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int CALL_FEATURE_COUNT = 7;
+  int CALL_FEATURE_COUNT = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 7;
 
   /**
 	 * The meta object id for the '{@link com.safi.asterisk.CallSource1 <em>Call Source1</em>}' class.

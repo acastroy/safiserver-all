@@ -7,6 +7,7 @@
 package com.safi.asterisk.util;
 
 import com.safi.asterisk.*;
+import com.safi.core.ThreadSensitive;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
@@ -96,6 +97,7 @@ public class AsteriskSwitch<T> {
 			case AsteriskPackage.CALL: {
 				Call call = (Call)theEObject;
 				T result = caseCall(call);
+				if (result == null) result = caseThreadSensitive(call);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -205,6 +207,21 @@ public class AsteriskSwitch<T> {
 	}
 
   /**
+	 * Returns the result of interpreting the object as an instance of '<em>Thread Sensitive</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Thread Sensitive</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseThreadSensitive(ThreadSensitive object) {
+		return null;
+	}
+
+		/**
 	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * <!-- begin-user-doc -->
    * This implementation returns null;

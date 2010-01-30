@@ -7,6 +7,7 @@
 package com.safi.asterisk.saflet.util;
 
 import com.safi.asterisk.saflet.*;
+import com.safi.core.ThreadSensitive;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -89,6 +90,10 @@ public class SafletAdapterFactory extends AdapterFactoryImpl {
 				return createAsteriskSafletEnvironmentAdapter();
 			}
 			@Override
+			public Adapter caseThreadSensitive(ThreadSensitive object) {
+				return createThreadSensitiveAdapter();
+			}
+			@Override
 			public Adapter caseSaflet(Saflet object) {
 				return createSafletAdapter();
 			}
@@ -163,6 +168,20 @@ public class SafletAdapterFactory extends AdapterFactoryImpl {
 	}
 
   /**
+	 * Creates a new adapter for an object of class '{@link com.safi.core.ThreadSensitive <em>Thread Sensitive</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.safi.core.ThreadSensitive
+	 * @generated
+	 */
+	public Adapter createThreadSensitiveAdapter() {
+		return null;
+	}
+
+		/**
 	 * Creates a new adapter for an object of class '{@link com.safi.core.saflet.Saflet <em>Saflet</em>}'.
 	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;

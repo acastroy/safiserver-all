@@ -86,6 +86,7 @@ import com.safi.asterisk.actionstep.WaitForDigit;
 import com.safi.asterisk.actionstep.WaitForRing;
 import com.safi.asterisk.actionstep.WaitMusicOnHold;
 import com.safi.core.ProductIdentifiable;
+import com.safi.core.ThreadSensitive;
 import com.safi.core.actionstep.ActionStep;
 
 /**
@@ -168,6 +169,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(answer);
 				if (result == null) result = caseCallConsumer1(answer);
 				if (result == null) result = caseProductIdentifiable(answer);
+				if (result == null) result = caseThreadSensitive(answer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -177,6 +179,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(getDigits);
 				if (result == null) result = caseCallConsumer1(getDigits);
 				if (result == null) result = caseProductIdentifiable(getDigits);
+				if (result == null) result = caseThreadSensitive(getDigits);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -186,6 +189,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(getFullVariable);
 				if (result == null) result = caseCallConsumer1(getFullVariable);
 				if (result == null) result = caseProductIdentifiable(getFullVariable);
+				if (result == null) result = caseThreadSensitive(getFullVariable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -195,6 +199,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(multiStreamAudio);
 				if (result == null) result = caseCallConsumer1(multiStreamAudio);
 				if (result == null) result = caseProductIdentifiable(multiStreamAudio);
+				if (result == null) result = caseThreadSensitive(multiStreamAudio);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -204,6 +209,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(hangup);
 				if (result == null) result = caseCallConsumer1(hangup);
 				if (result == null) result = caseProductIdentifiable(hangup);
+				if (result == null) result = caseThreadSensitive(hangup);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -213,6 +219,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(recordFile);
 				if (result == null) result = caseCallConsumer1(recordFile);
 				if (result == null) result = caseProductIdentifiable(recordFile);
+				if (result == null) result = caseThreadSensitive(recordFile);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -222,6 +229,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(sayAlpha);
 				if (result == null) result = caseCallConsumer1(sayAlpha);
 				if (result == null) result = caseProductIdentifiable(sayAlpha);
+				if (result == null) result = caseThreadSensitive(sayAlpha);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -231,6 +239,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(sayDateTime);
 				if (result == null) result = caseCallConsumer1(sayDateTime);
 				if (result == null) result = caseProductIdentifiable(sayDateTime);
+				if (result == null) result = caseThreadSensitive(sayDateTime);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -240,6 +249,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(sayDigits);
 				if (result == null) result = caseCallConsumer1(sayDigits);
 				if (result == null) result = caseProductIdentifiable(sayDigits);
+				if (result == null) result = caseThreadSensitive(sayDigits);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -249,6 +259,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(sayNumber);
 				if (result == null) result = caseCallConsumer1(sayNumber);
 				if (result == null) result = caseProductIdentifiable(sayNumber);
+				if (result == null) result = caseThreadSensitive(sayNumber);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -258,6 +269,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(sayPhonetic);
 				if (result == null) result = caseCallConsumer1(sayPhonetic);
 				if (result == null) result = caseProductIdentifiable(sayPhonetic);
+				if (result == null) result = caseThreadSensitive(sayPhonetic);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -267,6 +279,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(sayTime);
 				if (result == null) result = caseCallConsumer1(sayTime);
 				if (result == null) result = caseProductIdentifiable(sayTime);
+				if (result == null) result = caseThreadSensitive(sayTime);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -276,6 +289,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(setAutoHangup);
 				if (result == null) result = caseCallConsumer1(setAutoHangup);
 				if (result == null) result = caseProductIdentifiable(setAutoHangup);
+				if (result == null) result = caseThreadSensitive(setAutoHangup);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -285,6 +299,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(setCallerId);
 				if (result == null) result = caseCallConsumer1(setCallerId);
 				if (result == null) result = caseProductIdentifiable(setCallerId);
+				if (result == null) result = caseThreadSensitive(setCallerId);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -294,6 +309,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(setChannelVariable);
 				if (result == null) result = caseCallConsumer1(setChannelVariable);
 				if (result == null) result = caseProductIdentifiable(setChannelVariable);
+				if (result == null) result = caseThreadSensitive(setChannelVariable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -303,6 +319,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(setContext);
 				if (result == null) result = caseCallConsumer1(setContext);
 				if (result == null) result = caseProductIdentifiable(setContext);
+				if (result == null) result = caseThreadSensitive(setContext);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -312,6 +329,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(setExtension);
 				if (result == null) result = caseCallConsumer1(setExtension);
 				if (result == null) result = caseProductIdentifiable(setExtension);
+				if (result == null) result = caseThreadSensitive(setExtension);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -321,6 +339,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(stopMusicOnHold);
 				if (result == null) result = caseCallConsumer1(stopMusicOnHold);
 				if (result == null) result = caseProductIdentifiable(stopMusicOnHold);
+				if (result == null) result = caseThreadSensitive(stopMusicOnHold);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -330,6 +349,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(setMusicOn);
 				if (result == null) result = caseCallConsumer1(setMusicOn);
 				if (result == null) result = caseProductIdentifiable(setMusicOn);
+				if (result == null) result = caseThreadSensitive(setMusicOn);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -339,6 +359,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(setPriority);
 				if (result == null) result = caseCallConsumer1(setPriority);
 				if (result == null) result = caseProductIdentifiable(setPriority);
+				if (result == null) result = caseThreadSensitive(setPriority);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -348,6 +369,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(streamAudio);
 				if (result == null) result = caseCallConsumer1(streamAudio);
 				if (result == null) result = caseProductIdentifiable(streamAudio);
+				if (result == null) result = caseThreadSensitive(streamAudio);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -357,6 +379,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(waitForDigit);
 				if (result == null) result = caseCallConsumer1(waitForDigit);
 				if (result == null) result = caseProductIdentifiable(waitForDigit);
+				if (result == null) result = caseThreadSensitive(waitForDigit);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -366,6 +389,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(originateCall);
 				if (result == null) result = caseCallSource1(originateCall);
 				if (result == null) result = caseProductIdentifiable(originateCall);
+				if (result == null) result = caseThreadSensitive(originateCall);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -375,6 +399,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(playDTMF);
 				if (result == null) result = caseCallConsumer1(playDTMF);
 				if (result == null) result = caseProductIdentifiable(playDTMF);
+				if (result == null) result = caseThreadSensitive(playDTMF);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -384,6 +409,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(recordCall);
 				if (result == null) result = caseCallConsumer1(recordCall);
 				if (result == null) result = caseProductIdentifiable(recordCall);
+				if (result == null) result = caseThreadSensitive(recordCall);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -393,6 +419,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(transfer);
 				if (result == null) result = caseCallConsumer2(transfer);
 				if (result == null) result = caseProductIdentifiable(transfer);
+				if (result == null) result = caseThreadSensitive(transfer);
 				if (result == null) result = caseCallConsumer1(transfer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -403,6 +430,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(executeApplication);
 				if (result == null) result = caseCallConsumer1(executeApplication);
 				if (result == null) result = caseProductIdentifiable(executeApplication);
+				if (result == null) result = caseThreadSensitive(executeApplication);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -412,6 +440,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(getCallInfo);
 				if (result == null) result = caseCallConsumer1(getCallInfo);
 				if (result == null) result = caseProductIdentifiable(getCallInfo);
+				if (result == null) result = caseThreadSensitive(getCallInfo);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -421,6 +450,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(playMusicOnHold);
 				if (result == null) result = caseCallConsumer1(playMusicOnHold);
 				if (result == null) result = caseProductIdentifiable(playMusicOnHold);
+				if (result == null) result = caseThreadSensitive(playMusicOnHold);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -430,6 +460,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(promptGetDigits);
 				if (result == null) result = caseCallConsumer1(promptGetDigits);
 				if (result == null) result = caseProductIdentifiable(promptGetDigits);
+				if (result == null) result = caseThreadSensitive(promptGetDigits);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -439,6 +470,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(sleep);
 				if (result == null) result = caseCallConsumer1(sleep);
 				if (result == null) result = caseProductIdentifiable(sleep);
+				if (result == null) result = caseThreadSensitive(sleep);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -448,6 +480,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(streamAudioExtended);
 				if (result == null) result = caseCallConsumer1(streamAudioExtended);
 				if (result == null) result = caseProductIdentifiable(streamAudioExtended);
+				if (result == null) result = caseThreadSensitive(streamAudioExtended);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -457,6 +490,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(dial);
 				if (result == null) result = caseCallConsumer1(dial);
 				if (result == null) result = caseProductIdentifiable(dial);
+				if (result == null) result = caseThreadSensitive(dial);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -466,6 +500,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(pickup);
 				if (result == null) result = caseCallConsumer1(pickup);
 				if (result == null) result = caseProductIdentifiable(pickup);
+				if (result == null) result = caseThreadSensitive(pickup);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -475,6 +510,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(background);
 				if (result == null) result = caseCallConsumer1(background);
 				if (result == null) result = caseProductIdentifiable(background);
+				if (result == null) result = caseThreadSensitive(background);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -484,6 +520,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(backgroundDetect);
 				if (result == null) result = caseCallConsumer1(backgroundDetect);
 				if (result == null) result = caseProductIdentifiable(backgroundDetect);
+				if (result == null) result = caseThreadSensitive(backgroundDetect);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -493,6 +530,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(waitExten);
 				if (result == null) result = caseCallConsumer1(waitExten);
 				if (result == null) result = caseProductIdentifiable(waitExten);
+				if (result == null) result = caseThreadSensitive(waitExten);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -502,6 +540,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(softHangup);
 				if (result == null) result = caseCallConsumer1(softHangup);
 				if (result == null) result = caseProductIdentifiable(softHangup);
+				if (result == null) result = caseThreadSensitive(softHangup);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -511,6 +550,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(pickupChan);
 				if (result == null) result = caseCallConsumer1(pickupChan);
 				if (result == null) result = caseProductIdentifiable(pickupChan);
+				if (result == null) result = caseThreadSensitive(pickupChan);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -520,6 +560,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(pickdown);
 				if (result == null) result = caseCallConsumer1(pickdown);
 				if (result == null) result = caseProductIdentifiable(pickdown);
+				if (result == null) result = caseThreadSensitive(pickdown);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -529,6 +570,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(progress);
 				if (result == null) result = caseCallConsumer1(progress);
 				if (result == null) result = caseProductIdentifiable(progress);
+				if (result == null) result = caseThreadSensitive(progress);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -538,6 +580,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(bridge);
 				if (result == null) result = caseCallConsumer2(bridge);
 				if (result == null) result = caseProductIdentifiable(bridge);
+				if (result == null) result = caseThreadSensitive(bridge);
 				if (result == null) result = caseCallConsumer1(bridge);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -548,6 +591,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(placeCall);
 				if (result == null) result = caseCallSource1(placeCall);
 				if (result == null) result = caseProductIdentifiable(placeCall);
+				if (result == null) result = caseThreadSensitive(placeCall);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -557,6 +601,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(voicemail);
 				if (result == null) result = caseCallConsumer1(voicemail);
 				if (result == null) result = caseProductIdentifiable(voicemail);
+				if (result == null) result = caseThreadSensitive(voicemail);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -566,6 +611,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(voicemailMain);
 				if (result == null) result = caseCallConsumer1(voicemailMain);
 				if (result == null) result = caseProductIdentifiable(voicemailMain);
+				if (result == null) result = caseThreadSensitive(voicemailMain);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -575,6 +621,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(vmAuthenticate);
 				if (result == null) result = caseCallConsumer1(vmAuthenticate);
 				if (result == null) result = caseProductIdentifiable(vmAuthenticate);
+				if (result == null) result = caseThreadSensitive(vmAuthenticate);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -584,6 +631,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(meetMe);
 				if (result == null) result = caseCallConsumer1(meetMe);
 				if (result == null) result = caseProductIdentifiable(meetMe);
+				if (result == null) result = caseThreadSensitive(meetMe);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -593,6 +641,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(meetMeAdmin);
 				if (result == null) result = caseCallConsumer1(meetMeAdmin);
 				if (result == null) result = caseProductIdentifiable(meetMeAdmin);
+				if (result == null) result = caseThreadSensitive(meetMeAdmin);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -602,6 +651,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(meetMeCount);
 				if (result == null) result = caseCallConsumer1(meetMeCount);
 				if (result == null) result = caseProductIdentifiable(meetMeCount);
+				if (result == null) result = caseThreadSensitive(meetMeCount);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -611,6 +661,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(waitForRing);
 				if (result == null) result = caseCallConsumer1(waitForRing);
 				if (result == null) result = caseProductIdentifiable(waitForRing);
+				if (result == null) result = caseThreadSensitive(waitForRing);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -620,6 +671,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(waitMusicOnHold);
 				if (result == null) result = caseCallConsumer1(waitMusicOnHold);
 				if (result == null) result = caseProductIdentifiable(waitMusicOnHold);
+				if (result == null) result = caseThreadSensitive(waitMusicOnHold);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -629,6 +681,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(getAvailableChannel);
 				if (result == null) result = caseCallConsumer1(getAvailableChannel);
 				if (result == null) result = caseProductIdentifiable(getAvailableChannel);
+				if (result == null) result = caseThreadSensitive(getAvailableChannel);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -638,6 +691,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(congestion);
 				if (result == null) result = caseCallConsumer1(congestion);
 				if (result == null) result = caseProductIdentifiable(congestion);
+				if (result == null) result = caseThreadSensitive(congestion);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -647,6 +701,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(ringing);
 				if (result == null) result = caseCallConsumer1(ringing);
 				if (result == null) result = caseProductIdentifiable(ringing);
+				if (result == null) result = caseThreadSensitive(ringing);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -656,6 +711,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(setCallerPresentation);
 				if (result == null) result = caseCallConsumer1(setCallerPresentation);
 				if (result == null) result = caseProductIdentifiable(setCallerPresentation);
+				if (result == null) result = caseThreadSensitive(setCallerPresentation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -665,6 +721,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(setGlobalVariable);
 				if (result == null) result = caseCallConsumer1(setGlobalVariable);
 				if (result == null) result = caseProductIdentifiable(setGlobalVariable);
+				if (result == null) result = caseThreadSensitive(setGlobalVariable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -674,6 +731,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(echo);
 				if (result == null) result = caseCallConsumer1(echo);
 				if (result == null) result = caseProductIdentifiable(echo);
+				if (result == null) result = caseThreadSensitive(echo);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -683,6 +741,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(festival);
 				if (result == null) result = caseCallConsumer1(festival);
 				if (result == null) result = caseProductIdentifiable(festival);
+				if (result == null) result = caseThreadSensitive(festival);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -692,6 +751,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(playtones);
 				if (result == null) result = caseCallConsumer1(playtones);
 				if (result == null) result = caseProductIdentifiable(playtones);
+				if (result == null) result = caseThreadSensitive(playtones);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -701,6 +761,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(stopPlaytones);
 				if (result == null) result = caseCallConsumer1(stopPlaytones);
 				if (result == null) result = caseProductIdentifiable(stopPlaytones);
+				if (result == null) result = caseThreadSensitive(stopPlaytones);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -710,6 +771,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(chanSpy);
 				if (result == null) result = caseCallConsumer1(chanSpy);
 				if (result == null) result = caseProductIdentifiable(chanSpy);
+				if (result == null) result = caseThreadSensitive(chanSpy);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -719,6 +781,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(dictate);
 				if (result == null) result = caseCallConsumer1(dictate);
 				if (result == null) result = caseProductIdentifiable(dictate);
+				if (result == null) result = caseThreadSensitive(dictate);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -728,6 +791,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(extensionSpy);
 				if (result == null) result = caseCallConsumer1(extensionSpy);
 				if (result == null) result = caseProductIdentifiable(extensionSpy);
+				if (result == null) result = caseThreadSensitive(extensionSpy);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -737,6 +801,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(mixMonitor);
 				if (result == null) result = caseCallConsumer1(mixMonitor);
 				if (result == null) result = caseProductIdentifiable(mixMonitor);
+				if (result == null) result = caseThreadSensitive(mixMonitor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -746,6 +811,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(stopMixmonitor);
 				if (result == null) result = caseCallConsumer1(stopMixmonitor);
 				if (result == null) result = caseProductIdentifiable(stopMixmonitor);
+				if (result == null) result = caseThreadSensitive(stopMixmonitor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -755,6 +821,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(stopMonitor);
 				if (result == null) result = caseCallConsumer1(stopMonitor);
 				if (result == null) result = caseProductIdentifiable(stopMonitor);
+				if (result == null) result = caseThreadSensitive(stopMonitor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -764,6 +831,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(monitor);
 				if (result == null) result = caseCallConsumer1(monitor);
 				if (result == null) result = caseProductIdentifiable(monitor);
+				if (result == null) result = caseThreadSensitive(monitor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -773,6 +841,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(directory);
 				if (result == null) result = caseCallConsumer1(directory);
 				if (result == null) result = caseProductIdentifiable(directory);
+				if (result == null) result = caseThreadSensitive(directory);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -782,6 +851,7 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseActionStep(extensionTransfer);
 				if (result == null) result = caseCallConsumer2(extensionTransfer);
 				if (result == null) result = caseProductIdentifiable(extensionTransfer);
+				if (result == null) result = caseThreadSensitive(extensionTransfer);
 				if (result == null) result = caseCallConsumer1(extensionTransfer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -1856,6 +1926,21 @@ public class ActionstepSwitch<T> {
 	}
 
   /**
+	 * Returns the result of interpreting the object as an instance of '<em>Thread Sensitive</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Thread Sensitive</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseThreadSensitive(ThreadSensitive object) {
+		return null;
+	}
+
+		/**
 	 * Returns the result of interpreting the object as an instance of '<em>Action Step</em>'.
 	 * <!-- begin-user-doc -->
    * This implementation returns null;
