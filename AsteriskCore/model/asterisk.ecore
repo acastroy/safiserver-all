@@ -5,7 +5,7 @@
     nsURI="http:///com/safi/asterisk.ecore" nsPrefix="com.safi.asterisk">
   <eClassifiers xsi:type="ecore:EDataType" name="AgiRequest" instanceClassName="org.asteriskjava.fastagi.AgiRequest"/>
   <eClassifiers xsi:type="ecore:EDataType" name="AgiChannel" instanceClassName="org.asteriskjava.fastagi.AgiChannel"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Call">
+  <eClassifiers xsi:type="ecore:EClass" name="Call" eSuperTypes="../../Saflets/model/core.ecore#//ThreadSensitive">
     <eOperations name="setData">
       <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
