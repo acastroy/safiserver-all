@@ -227,6 +227,7 @@ public class CallImpl extends ThreadSensitiveImpl implements Call {
     channelNameHolder.remove();
     dataMapHolder.remove();
     uniqueIdHolder.remove();
+    super.cleanup();
   }
   /**
 	 * <!-- begin-user-doc -->
