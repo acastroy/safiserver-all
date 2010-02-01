@@ -217,6 +217,10 @@ public abstract class ScriptEnabledEditorPage extends AbstractDynamicValueEditor
 
   class ScriptHandlerEnvironment extends EObjectImpl implements AsteriskSafletEnvironment {
 
+  	@Override
+    public void cleanup(){
+    }
+  	
     @Override
     public Executor getGlobalExecutor() {
       // TODO Auto-generated method stub

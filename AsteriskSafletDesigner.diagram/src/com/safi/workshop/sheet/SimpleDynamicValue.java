@@ -13,6 +13,10 @@ public class SimpleDynamicValue extends EObjectImpl implements DynamicValue {
   protected BasicEMap<String, String> data;
 
   @Override
+  public void cleanup(){
+  }
+  
+  @Override
   public String getText() {
     return text;
   }
