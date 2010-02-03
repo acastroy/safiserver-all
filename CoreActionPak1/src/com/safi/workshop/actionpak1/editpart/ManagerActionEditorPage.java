@@ -156,7 +156,7 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 		// targetLabel.setText("WSDL Location:");
 		final ManagerAction managerAction = (ManagerAction) parent.getEditPart()
 		    .getActionStep();
-
+		
 		TransactionalEditingDomain editingDomain = parent.getEditPart().getEditingDomain();
 		IObservableValue ob = ActionstepEditObservables.observeValue(editingDomain,
 		    managerAction, managerAction.eClass().getEStructuralFeature("name"));
@@ -262,10 +262,39 @@ public class ManagerActionEditorPage extends AbstractActionstepEditorPage {
 
 		inputItemEditorWidget.setEditingDomain(parent.getEditPart().getEditingDomain());
 		inputItemEditorWidget.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
-
-		final IObservableList modelList = ActionstepEditObservables.observeList(editingDomain,
+      
+		HashMap<String,String> methodMap=this.getTypeInfo(this.getClassInfo(managerAction.getManagerActionType()));
+		IObservableList modelList = ActionstepEditObservables.observeList(editingDomain,
 		    managerAction, managerAction.eClass().getEStructuralFeature("inputs"));
-
+		boolean isNotMatch=false;
+		for(Object inputItemObject : modelList){
+			InputItem inputItem=(InputItem)inputItemObject;
+			String paraName=inputItem.getParameterName();
+			if(!methodMap.containsKey(paraName)){
+				isNotMatch=true;
+				break;
+			}
+		}
+		
+		if (isNotMatch) {
+		    modelList.clear();
+			updateSelectedManagerAction(managerAction.getManagerActionType());
+			modelList = ActionstepEditObservables.observeList(editingDomain,
+				    managerAction, managerAction.eClass().getEStructuralFeature("inputs"));
+		}
+		
+		/*
+		if(!modelList.isEmpty()){
+			InputItem input=(InputItem)modelList.get(0);
+			ManagerAction mAction=(ManagerAction)input.getParentActionStep();
+			if(mAction.getManagerActionType()!=managerAction.getManagerActionType()){
+				updateSelectedManagerAction(managerAction.getManagerActionType());
+			}
+			modelList = ActionstepEditObservables.observeList(editingDomain,
+				    managerAction, managerAction.eClass().getEStructuralFeature("inputs"));
+		}
+		*/
+      
 		final IObservableList uiList = new WritableList(new ArrayList<InputItem>(managerAction.getInputs()),
 		    InputItem.class);
 		bindingContext.bindList(uiList, modelList, null, null);
