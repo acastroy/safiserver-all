@@ -94,7 +94,6 @@ import com.safi.asterisk.util.AsteriskSafletConstants;
 import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.InputItem;
-import com.safi.core.actionstep.OutputParameter;
 import com.safi.core.actionstep.impl.ParameterizedActionstepImpl;
 import com.safi.core.actionstep.util.VariableTranslator;
 import com.safi.core.saflet.Saflet;
@@ -185,8 +184,10 @@ public class ManagerActionImpl extends ParameterizedActionstepImpl implements Ma
 	 * @generated
 	 */
 	public void setManagerActionType(ManagerActionType newManagerActionType) {
+	
 		ManagerActionType oldManagerActionType = managerActionType;
-		managerActionType = newManagerActionType == null ? MANAGER_ACTION_TYPE_EDEFAULT : newManagerActionType;
+		managerActionType = newManagerActionType == null ? MANAGER_ACTION_TYPE_EDEFAULT : newManagerActionType;	
+		
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Actionpak1Package.MANAGER_ACTION__MANAGER_ACTION_TYPE, oldManagerActionType, managerActionType));
 	}
@@ -366,11 +367,13 @@ public class ManagerActionImpl extends ParameterizedActionstepImpl implements Ma
 			  if(dynamicValue!=null){
 				  String paraName=inputItem.getParameterName();
 				  if(paraName!=null){
-				    String setMethod="set".concat(paraName);
+				    String setMethod=paraName.toLowerCase();
 				    Method method=reflectMap.get(setMethod);
 				    Object dynaObject=this.resolveDynamicValue(dynamicValue, context);
-				    Object []args={dynaObject};
-				    method.invoke(managerActionObject, args);
+				    if(method!=null&&dynaObject!=null){
+				      Object []args={dynaObject};
+				      method.invoke(managerActionObject, args);
+				    }
 				  }
 			  }
 		  }
@@ -387,7 +390,7 @@ public class ManagerActionImpl extends ParameterizedActionstepImpl implements Ma
 		  ManagerResponse managerResponse=null;
 		  ManagerResponse response = connection.sendAction(managerActionObject,
 		          Saflet.DEFAULT_MANAGER_ACTION_TIMEOUT);
-		      if (debugLog.isLoggable(Level.FINEST))
+	      if (debugLog.isLoggable(Level.FINEST))
 		        debug("Monitor returned " + response.getMessage() + " of type " + response.getResponse());
 		      if (response instanceof ManagerError)
 		        exception = new ActionStepException("Couldn't monitor channel: " + response.getMessage());
