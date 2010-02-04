@@ -13,8 +13,8 @@ Export-Package: com.safi.workshop.model.actionpak1,
 Require-Bundle: SafiCommons;bundle-version="1.2.5",
  org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
+ Saflets;bundle-version="1.1.0",
  SafiDB;visibility:=reexport,
  org.apache.commons.lang;bundle-version="2.3.0",
- Saflets;bundle-version="1.1.0",
  AsteriskCore;bundle-version="1.1.0"
 Eclipse-LazyStart: true
