@@ -174,7 +174,7 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
   protected Output errorOutput;
   public final static String SCRIPT_TEXT_REPLACE = "((^\\\")|(\\\"(\\s*)(\\;)?$))";
   protected transient volatile boolean breakpoint;
-  protected transient volatile ActionStep next;
+  protected static ThreadLocal<ActionStep> nextHolder = new ThreadLocal<ActionStep>();
 //  protected transient volatile int visits = 0;
   protected static ThreadLocal<Integer> visitsHolder = new ThreadLocal<Integer>(){
   	protected Integer initialValue() { return 0;};
@@ -506,8 +506,9 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
       debugLog.severe(getSaflet().getName() + "->" + name + ": " + msg);
 
     }
-    next = getErrorActionStep();
-    if (next != null) {
+    final ActionStep errorActionStep = getErrorActionStep();
+		nextHolder.set(errorActionStep);
+    if (errorActionStep != null) {
       context.addException(e);
       // errorToolstep.beginProcessing(context);
       return;
@@ -651,7 +652,7 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
   @Override
   public ActionStep getNext() {
     // TODO Auto-generated method stub
-    return next;
+    return nextHolder.get();
   }
 
   @Override
@@ -664,7 +665,7 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
     setActive(false);
     if (context.isDebugging())
       context.touchVariables();
-    next = o.getTarget();
+    nextHolder.set(o.getTarget());
     // if (nextToolstep != null) nextToolstep.beginProcessing(context);
   }
 
@@ -691,7 +692,7 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
   /**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void cleanup() {
 		activeHolder.remove();
@@ -956,7 +957,7 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
 
   /**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
   @Override
   public String toString() {

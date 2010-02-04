@@ -2165,6 +2165,7 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		runQueryEClass.getESuperTypes().add(this.getActionStep());
 		runQueryEClass.getESuperTypes().add(this.getHeavyweight());
 		queryParamMappingEClass.getESuperTypes().add(this.getItem());
+		itemEClass.getESuperTypes().add(theCorePackage.getThreadSensitive());
 		outputParameterEClass.getESuperTypes().add(this.getInputItem());
 
 		// Initialize classes and features; add operations and parameters

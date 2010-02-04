@@ -105,6 +105,7 @@ public class ActionStepSwitch<T> {
 				CaseItem caseItem = (CaseItem)theEObject;
 				T result = caseCaseItem(caseItem);
 				if (result == null) result = caseItem(caseItem);
+				if (result == null) result = caseThreadSensitive(caseItem);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -113,6 +114,7 @@ public class ActionStepSwitch<T> {
 				T result = caseInputItem(inputItem);
 				if (result == null) result = caseCaseItem(inputItem);
 				if (result == null) result = caseItem(inputItem);
+				if (result == null) result = caseThreadSensitive(inputItem);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -141,6 +143,7 @@ public class ActionStepSwitch<T> {
 				T result = caseAudioFileItem(audioFileItem);
 				if (result == null) result = caseCaseItem(audioFileItem);
 				if (result == null) result = caseItem(audioFileItem);
+				if (result == null) result = caseThreadSensitive(audioFileItem);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -415,6 +418,7 @@ public class ActionStepSwitch<T> {
 				GetColMapping getColMapping = (GetColMapping)theEObject;
 				T result = caseGetColMapping(getColMapping);
 				if (result == null) result = caseItem(getColMapping);
+				if (result == null) result = caseThreadSensitive(getColMapping);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -422,6 +426,7 @@ public class ActionStepSwitch<T> {
 				SetColMapping setColMapping = (SetColMapping)theEObject;
 				T result = caseSetColMapping(setColMapping);
 				if (result == null) result = caseItem(setColMapping);
+				if (result == null) result = caseThreadSensitive(setColMapping);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -439,12 +444,14 @@ public class ActionStepSwitch<T> {
 				QueryParamMapping queryParamMapping = (QueryParamMapping)theEObject;
 				T result = caseQueryParamMapping(queryParamMapping);
 				if (result == null) result = caseItem(queryParamMapping);
+				if (result == null) result = caseThreadSensitive(queryParamMapping);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ActionStepPackage.ITEM: {
 				Item item = (Item)theEObject;
 				T result = caseItem(item);
+				if (result == null) result = caseThreadSensitive(item);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -460,6 +467,7 @@ public class ActionStepSwitch<T> {
 				if (result == null) result = caseInputItem(outputParameter);
 				if (result == null) result = caseCaseItem(outputParameter);
 				if (result == null) result = caseItem(outputParameter);
+				if (result == null) result = caseThreadSensitive(outputParameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

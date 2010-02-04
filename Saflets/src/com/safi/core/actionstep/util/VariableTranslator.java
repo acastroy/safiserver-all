@@ -88,10 +88,10 @@ public class VariableTranslator {
     if (prototype instanceof Date) {
       return translateValue(VariableType.DATE, value);
     }
-    if (prototype instanceof Long) {
+    if (prototype instanceof Long || prototype instanceof Integer) {
       return translateValue(VariableType.INTEGER, value);
     }
-    if (prototype instanceof Double) {
+    if (prototype instanceof Double || prototype instanceof Float) {
       return translateValue(VariableType.DECIMAL, value);
     }
     if (prototype instanceof Number) {

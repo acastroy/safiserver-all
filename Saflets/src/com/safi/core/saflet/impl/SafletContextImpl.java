@@ -110,6 +110,7 @@ public abstract class SafletContextImpl extends ThreadSensitiveImpl implements S
 	 */
 	public void cleanup() {
 		runtimeVariables.remove();
+		super.cleanup();
 	}
   /**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

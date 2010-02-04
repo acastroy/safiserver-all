@@ -13,7 +13,13 @@ function printCurrentRequest() {
     println(request);
 }
 
-function getGlobalVariable(name) { return _handler_environment_.getGlobalVariableValue(name); }
+function getGlobalVariable(name) { 
+	 
+	var val = _handler_environment_.getGlobalVariableValue(name);
+	if (typeof(val) == 'java.lang.Long')
+		return val.intValue();
+	return val;
+}
 
 function setGlobalVariable(name, value) { _handler_environment_.setGlobalVariableValue(name, value); }
 

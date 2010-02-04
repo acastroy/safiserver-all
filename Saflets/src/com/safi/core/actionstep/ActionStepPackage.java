@@ -302,7 +302,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int ITEM__LABEL_TEXT = 0;
+  int ITEM__LABEL_TEXT = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 0;
 
   /**
 	 * The feature id for the '<em><b>Parent Action Step</b></em>' reference.
@@ -311,7 +311,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int ITEM__PARENT_ACTION_STEP = 1;
+  int ITEM__PARENT_ACTION_STEP = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 1;
 
   /**
 	 * The feature id for the '<em><b>Target Action Step</b></em>' reference.
@@ -320,7 +320,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int ITEM__TARGET_ACTION_STEP = 2;
+  int ITEM__TARGET_ACTION_STEP = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 2;
 
   /**
 	 * The number of structural features of the '<em>Item</em>' class.
@@ -329,7 +329,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int ITEM_FEATURE_COUNT = 3;
+  int ITEM_FEATURE_COUNT = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 3;
 
   /**
 	 * The feature id for the '<em><b>Label Text</b></em>' attribute.

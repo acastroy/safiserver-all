@@ -6,6 +6,8 @@
  */
 package com.safi.core.scripting.impl;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.eclipse.emf.ecore.EClass;
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.ContextFactory;
@@ -27,6 +29,8 @@ import com.safi.core.scripting.ScriptingPackage;
  * @generated
  */
 public class RhinoScriptScopeImpl extends ScriptScopeImpl implements RhinoScriptScope {
+	
+	private final static Logger log = Logger.getLogger(RhinoScriptScopeImpl.class.getName());
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -59,6 +63,12 @@ public class RhinoScriptScopeImpl extends ScriptScopeImpl implements RhinoScript
         newContext = true;
       }
       Scriptable scriptable = ((Scriptable) scopeObject);
+      if (value instanceof Long){
+      	if (log.isLoggable(Level.WARNING))
+      		log.warning("Input of type java.lang.Long "+name+" with value "+value+" is being converted to an integer.  Possible loss of precision");
+      	
+      	value = ((Long)value).intValue();
+      }
       Object wrappedOut = Context.javaToJS(value, scriptable);
 
       scriptable.put(name, scriptable, wrappedOut);

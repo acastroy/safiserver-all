@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.actionstep.Item;
+import com.safi.core.impl.ThreadSensitiveImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +31,7 @@ import com.safi.core.actionstep.Item;
  *
  * @generated
  */
-public class ItemImpl extends EObjectImpl implements Item {
+public class ItemImpl extends ThreadSensitiveImpl implements Item {
   /**
 	 * The default value of the '{@link #getLabelText() <em>Label Text</em>}' attribute.
 	 * <!-- begin-user-doc -->

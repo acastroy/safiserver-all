@@ -65,6 +65,16 @@ public class DBConnectionIdImpl extends ThreadSensitiveImpl implements DBConnect
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getJdbcConnection()
+	 * @generated
+	 * @ordered
+	 */
+	protected Connection jdbcConnection = JDBC_CONNECTION_EDEFAULT;
+
+		/**
+	 * The cached value of the '{@link #getJdbcConnection() <em>Jdbc Connection</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getJdbcConnection()
 	 * @generated NOT
 	 * @ordered
 	 */
@@ -94,6 +104,7 @@ public class DBConnectionIdImpl extends ThreadSensitiveImpl implements DBConnect
   @Override
   public void cleanup() {
     jdbcConnectionHolder.remove();
+    super.cleanup();
   }
   /**
 	 * <!-- begin-user-doc -->

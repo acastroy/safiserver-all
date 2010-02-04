@@ -6,10 +6,12 @@
  */
 package com.safi.core.impl;
 
+import java.util.Collection;
 import com.safi.core.CorePackage;
 import com.safi.core.ThreadSensitive;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
@@ -45,12 +47,22 @@ public class ThreadSensitiveImpl extends EObjectImpl implements ThreadSensitive 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void cleanup() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for (EStructuralFeature feat : this.eClass().getEStructuralFeatures()){
+			Object obj = eGet(feat);
+			if (obj instanceof ThreadSensitive){
+				((ThreadSensitive)obj).cleanup();
+			}
+			else if (obj instanceof Collection){
+				for (Object o : (Collection)obj){
+					if (o instanceof ThreadSensitive){
+						((ThreadSensitive)o).cleanup();
+					}
+				}
+			}
+		}
 	}
 
 } //ThreadSensitiveImpl

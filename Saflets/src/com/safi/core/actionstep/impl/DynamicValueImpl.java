@@ -100,6 +100,16 @@ public class DynamicValueImpl extends ThreadSensitiveImpl implements DynamicValu
 	 * @generated
 	 * @ordered
 	 */
+	protected EMap<String, String> data;
+
+		/**
+	 * The cached value of the '{@link #getData() <em>Data</em>}' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getData()
+	 * @generated
+	 * @ordered
+	 */
 
 		/**
 	 * The cached value of the '{@link #getData() <em>Data</em>}' map.
@@ -128,6 +138,8 @@ public class DynamicValueImpl extends ThreadSensitiveImpl implements DynamicValu
   	if (payload != null && payload instanceof ThreadSensitive){
   		((ThreadSensitive)payload).cleanup();
   	}
+  	
+  	super.cleanup();
   }
   /**
 	 * <!-- begin-user-doc -->

@@ -89,6 +89,16 @@ public class DBResultSetIdImpl extends ThreadSensitiveImpl implements DBResultSe
 	 * @generated
 	 * @ordered
 	 */
+	protected ResultSet jDBCResultSet = JDBC_RESULT_SET_EDEFAULT;
+
+		/**
+	 * The cached value of the '{@link #getJDBCResultSet() <em>JDBC Result Set</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getJDBCResultSet()
+	 * @generated
+	 * @ordered
+	 */
 
 		/**
 	 * The cached value of the '{@link #getJDBCResultSet() <em>JDBC Result Set</em>}' attribute.
@@ -115,6 +125,7 @@ public class DBResultSetIdImpl extends ThreadSensitiveImpl implements DBResultSe
   @Override
   public void cleanup() {
   	jDBCResultSetHolder.remove();
+  	super.cleanup();
   }
   /**
 	 * <!-- begin-user-doc -->

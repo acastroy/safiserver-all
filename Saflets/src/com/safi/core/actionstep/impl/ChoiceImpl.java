@@ -93,7 +93,7 @@ public class ChoiceImpl extends ActionStepImpl implements Choice {
     }
     if (item != null && item.getTargetActionStep() != null){
       setActive(false);
-      this.next = item.getTargetActionStep();
+      this.nextHolder.set(item.getTargetActionStep());
     }
     else
       handleSuccess(context); //take default
