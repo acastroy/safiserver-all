@@ -111,8 +111,8 @@ public class TimeBasedRoutingImpl extends ActionStepImpl implements TimeBasedRou
     }
     if (item != null && item.getTargetActionStep() != null){
       setActive(false);
-      this.next = item.getTargetActionStep();
-    }
+      nextHolder.set(item.getTargetActionStep());
+    }	
     else
       handleSuccess(context); //take default
   }
