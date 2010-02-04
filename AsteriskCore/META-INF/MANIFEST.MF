@@ -4,9 +4,7 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: AsteriskCore;singleton:=true
 Bundle-Version: 1.2.5.78
 Bundle-ClassPath: .,
- lib/js.jar,
- resources/,
- lib/SafiFastAgi-1.7.3.jar
+ resources/
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
@@ -21,43 +19,7 @@ Export-Package: com.safi.asterisk,
  com.safi.asterisk.saflet,
  com.safi.asterisk.saflet.impl,
  com.safi.asterisk.saflet.util,
- com.safi.asterisk.util,
- com.safi.fastagi,
- org.asteriskjava,
- org.asteriskjava.config,
- org.asteriskjava.config.dialplan,
- org.asteriskjava.fastagi,
- org.asteriskjava.fastagi.command,
- org.asteriskjava.fastagi.internal,
- org.asteriskjava.fastagi.reply,
- org.asteriskjava.live,
- org.asteriskjava.live.internal,
- org.asteriskjava.manager,
- org.asteriskjava.manager.action,
- org.asteriskjava.manager.event,
- org.asteriskjava.manager.internal,
- org.asteriskjava.manager.response,
- org.asteriskjava.mbean,
- org.asteriskjava.tools,
- org.asteriskjava.util,
- org.asteriskjava.util.internal,
- org.mozilla.classfile,
- org.mozilla.javascript,
- org.mozilla.javascript.continuations,
- org.mozilla.javascript.debug,
- org.mozilla.javascript.jdk11,
- org.mozilla.javascript.jdk13,
- org.mozilla.javascript.optimizer,
- org.mozilla.javascript.regexp,
- org.mozilla.javascript.resources,
- org.mozilla.javascript.serialize,
- org.mozilla.javascript.tools,
- org.mozilla.javascript.tools.idswitch,
- org.mozilla.javascript.tools.jsc,
- org.mozilla.javascript.tools.resources,
- org.mozilla.javascript.tools.shell,
- org.mozilla.javascript.xml,
- org.mozilla.javascript.xmlimpl
+ com.safi.asterisk.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi,
@@ -65,5 +27,6 @@ Require-Bundle: org.eclipse.core.runtime,
  Saflets;bundle-version="1.1.0",
  SafiDB,
  Hibernate30;bundle-version="1.0.0",
- SafiCommons;bundle-version="1.2.5"
+ SafiCommons;bundle-version="1.2.5",
+ AsteriskJavaLib;bundle-version="1.0.0"
 Eclipse-LazyStart: true
