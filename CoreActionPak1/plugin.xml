@@ -189,6 +189,25 @@
             tooltip="Invoke another Saflet with specified parameters">
       </paletteEntry>
    </actionStep>
+   <actionStep
+         createCommandFactory="com.safi.workshop.actionpak1.factory.ManagerActionCreateCommandFactory"
+         editPartFactory="com.safi.workshop.actionpak1.factory.ManagerActionEditPartFactory"
+         elementFactory="com.safi.workshop.actionpak1.factory.ManagerActionElementFactory"
+         enabled="true"
+         inputItemLabelSemanticHint="40004"
+         inputItemPanelSemanticHint="60001"
+         inputItemSemanticHint="50001"
+         isInitiator="false"
+         labelSemanticHint="40009"
+         modelFactory="com.safi.workshop.actionpak1.factory.ManagerActionModelFactory"
+         semanticHint="10005"
+         viewFactory="com.safi.workshop.actionpak1.factory.ManagerActionPakViewFactory">
+      <paletteEntry
+            displayName="Manager Action"
+            path="Advanced Call Handling"
+            tooltip="Manager Action">
+      </paletteEntry>
+   </actionStep>
    <itemProviderAdapterFactory
          factory="com.safi.workshop.model.actionpak1.provider.Actionpak1ItemProviderAdapterFactory">
    </itemProviderAdapterFactory>
@@ -212,22 +231,6 @@
          actionstepClass="com.safi.workshop.actionpak1.editpart.IncomingCall2EditPart"
          factory="com.safi.workshop.actionpak1.factory.IncomingCall2EditorDialogFactory">
    </actionstepEditorDialogFactory>
-   <actionStep
-         createCommandFactory="com.safi.workshop.actionpak1.factory.ManagerActionCreateCommandFactory"
-         editPartFactory="com.safi.workshop.actionpak1.factory.ManagerActionEditPartFactory"
-         elementFactory="com.safi.workshop.actionpak1.factory.ManagerActionElementFactory"
-         enabled="true"
-         isInitiator="false"
-         labelSemanticHint="40009"
-         modelFactory="com.safi.workshop.actionpak1.factory.ManagerActionModelFactory"
-         semanticHint="10005"
-         viewFactory="com.safi.workshop.actionpak1.factory.ManagerActionPakViewFactory">
-      <paletteEntry
-            displayName="Manager Action"
-            path="Advanced Call Handling"
-            tooltip="Manager Action">
-      </paletteEntry>
-   </actionStep>
    <actionstepEditorDialogFactory
          actionstepClass="com.safi.workshop.actionpak1.editpart.ManagerActionEditPart"
          factory="com.safi.workshop.actionpak1.factory.ManagerActionEditorDialogFactory">
