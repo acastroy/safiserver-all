@@ -22,7 +22,7 @@ import com.safi.core.actionstep.DBQueryId;
 import com.safi.core.actionstep.DBQueryParamId;
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.SetQueryParam;
-import com.safi.core.actionstep.util.VariableTranslator;
+import com.safi.db.util.VariableTranslator;
 import com.safi.core.saflet.SafletContext;
 import com.safi.db.Query;
 import com.safi.db.QueryParameter;

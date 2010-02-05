@@ -20,7 +20,7 @@ import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.actionstep.DBQueryId;
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.ExecuteUpdate;
-import com.safi.core.actionstep.util.VariableTranslator;
+import com.safi.db.util.VariableTranslator;
 import com.safi.core.saflet.SafletContext;
 import com.safi.core.saflet.SafletEnvironment;
 import com.safi.db.Query;

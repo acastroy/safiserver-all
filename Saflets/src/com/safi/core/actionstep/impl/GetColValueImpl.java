@@ -21,7 +21,7 @@ import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.actionstep.DBResultSetId;
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.GetColValue;
-import com.safi.core.actionstep.util.VariableTranslator;
+import com.safi.db.util.VariableTranslator;
 import com.safi.core.saflet.SafletContext;
 import com.safi.core.saflet.SafletEnvironment;
 import com.safi.db.SQLDataType;

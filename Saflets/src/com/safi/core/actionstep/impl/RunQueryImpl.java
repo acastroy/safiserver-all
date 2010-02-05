@@ -44,7 +44,7 @@ import com.safi.core.actionstep.Output;
 import com.safi.core.actionstep.OutputType;
 import com.safi.core.actionstep.QueryParamMapping;
 import com.safi.core.actionstep.RunQuery;
-import com.safi.core.actionstep.util.VariableTranslator;
+import com.safi.db.util.VariableTranslator;
 import com.safi.core.saflet.SafletContext;
 import com.safi.core.saflet.SafletEnvironment;
 import com.safi.db.DBConnection;

@@ -18,7 +18,7 @@ import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.IfThen;
 import com.safi.core.actionstep.Output;
 import com.safi.core.actionstep.OutputType;
-import com.safi.core.actionstep.util.VariableTranslator;
+import com.safi.db.util.VariableTranslator;
 import com.safi.core.saflet.SafletContext;
 import com.safi.db.VariableType;
 

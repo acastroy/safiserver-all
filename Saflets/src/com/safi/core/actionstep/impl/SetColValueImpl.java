@@ -20,7 +20,7 @@ import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.actionstep.DBResultSetId;
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.SetColValue;
-import com.safi.core.actionstep.util.VariableTranslator;
+import com.safi.db.util.VariableTranslator;
 import com.safi.core.saflet.SafletContext;
 import com.safi.db.SQLDataType;
 import com.safi.db.SafiDriverManager;

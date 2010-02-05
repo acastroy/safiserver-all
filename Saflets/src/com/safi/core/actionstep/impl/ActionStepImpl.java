@@ -42,6 +42,7 @@ import com.safi.core.scripting.SafletScriptException;
 import com.safi.db.Variable;
 import com.safi.db.VariableScope;
 import com.safi.db.VariableType;
+import com.safi.db.util.VariableTranslator;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -632,7 +633,7 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
       Object vobj = resolveDynamicValue(dynamicValue, context);
 
       if (vobj != null) {
-        return (String) com.safi.core.actionstep.util.VariableTranslator.translateValue(
+        return (String)VariableTranslator.translateValue(
             VariableType.TEXT, vobj);
       } else
         return null;
