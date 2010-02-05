@@ -23,7 +23,7 @@ import com.safi.asterisk.util.AsteriskSafletConstants;
 import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.impl.ActionStepImpl;
-import com.safi.core.actionstep.util.VariableTranslator;
+import com.safi.db.util.VariableTranslator;
 import com.safi.core.saflet.SafletContext;
 import com.safi.core.saflet.SafletEnvironment;
 import com.safi.core.saflet.SafletException;

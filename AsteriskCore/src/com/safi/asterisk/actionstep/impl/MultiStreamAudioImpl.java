@@ -32,7 +32,7 @@ import com.safi.core.actionstep.CaseItem;
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.DynamicValueType;
 import com.safi.core.actionstep.impl.ActionStepImpl;
-import com.safi.core.actionstep.util.VariableTranslator;
+import com.safi.db.util.VariableTranslator;
 import com.safi.core.saflet.SafletContext;
 import com.safi.db.VariableType;
 
