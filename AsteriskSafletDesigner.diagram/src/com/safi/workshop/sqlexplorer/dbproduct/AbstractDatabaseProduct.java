@@ -16,7 +16,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PlatformUI;
-import com.safi.core.actionstep.util.VariableTranslator;
+import com.safi.db.util.VariableTranslator;
 import com.safi.db.SQLDataType;
 import com.safi.db.VariableType;
 import com.safi.workshop.sqlexplorer.parsers.NamedParameter;

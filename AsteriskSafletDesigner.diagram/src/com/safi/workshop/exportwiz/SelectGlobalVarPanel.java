@@ -15,7 +15,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Tree;
-import com.safi.core.actionstep.util.VariableTranslator;
+import com.safi.db.util.VariableTranslator;
 import com.safi.db.Variable;
 import com.safi.db.VariableType;
 import com.safi.server.plugin.SafiServerPlugin;

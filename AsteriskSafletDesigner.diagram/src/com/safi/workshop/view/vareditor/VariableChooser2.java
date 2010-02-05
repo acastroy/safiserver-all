@@ -42,7 +42,7 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.IWorkbenchActionConstants;
 import org.eclipse.ui.PlatformUI;
-import com.safi.core.actionstep.util.VariableTranslator;
+import com.safi.db.util.VariableTranslator;
 import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletContext;
 import com.safi.db.Variable;

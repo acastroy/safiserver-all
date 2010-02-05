@@ -14,7 +14,7 @@ import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.ActionStepFactory;
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.DynamicValueType;
-import com.safi.core.actionstep.util.VariableTranslator;
+import com.safi.db.util.VariableTranslator;
 import com.safi.core.initiator.Initiator;
 import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletPackage;
