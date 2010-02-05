@@ -27,8 +27,10 @@ function getGlobalVariable(name) {
 
 	var val = _handler_environment_.getGlobalVariableValue(name);
 	if (val != '' && typeof (val) == 'object'
-			&& val.getClass().getName() == 'java.lang.Long')
+			&& val.getClass().getName() == 'java.lang.Long'){
+		print("fucker was Long!!");
 		return val.intValue()
+	}
 
 	return val;
 }

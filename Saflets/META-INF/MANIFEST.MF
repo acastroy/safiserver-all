@@ -4,9 +4,7 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: Saflets; singleton:=true
 Bundle-Version: 1.2.5.83
 Bundle-ClassPath: .,
- lib/javacsv.jar,
- lib/Zql.jar,
- resources/
+ lib/Zql.jar
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
