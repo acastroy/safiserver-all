@@ -30,7 +30,7 @@ import com.safi.core.actionstep.InputItem;
 import com.safi.core.actionstep.Output;
 import com.safi.core.actionstep.OutputType;
 import com.safi.core.actionstep.impl.ParameterizedInitiatorImpl;
-import com.safi.core.actionstep.util.VariableTranslator;
+import com.safi.db.util.VariableTranslator;
 import com.safi.core.initiator.InitiatorInfo;
 import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletConstants;

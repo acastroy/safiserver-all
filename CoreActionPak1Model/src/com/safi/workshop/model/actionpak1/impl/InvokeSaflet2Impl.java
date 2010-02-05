@@ -25,7 +25,7 @@ import com.safi.core.actionstep.InputItem;
 import com.safi.core.actionstep.OutputParameter;
 import com.safi.core.actionstep.ParameterizedInitiator;
 import com.safi.core.actionstep.impl.ParameterizedActionstepImpl;
-import com.safi.core.actionstep.util.VariableTranslator;
+import com.safi.db.util.VariableTranslator;
 import com.safi.core.initiator.Initiator;
 import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletContext;
