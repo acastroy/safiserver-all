@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.impl.ActionStepImpl;
-import com.safi.core.actionstep.util.VariableTranslator;
+import com.safi.db.util.VariableTranslator;
 import com.safi.core.saflet.SafletContext;
 import com.safi.db.VariableType;
 import com.safi.workshop.model.timeBasedRouting.TimeBasedRouting;
