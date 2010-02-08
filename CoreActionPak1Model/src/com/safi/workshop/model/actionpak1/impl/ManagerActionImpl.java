@@ -10,7 +10,10 @@ import java.lang.reflect.Method;
 import java.util.Map;
 import java.util.logging.Level;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang.builder.ToStringStyle;
 import org.asteriskjava.manager.ManagerConnection;
+import org.asteriskjava.manager.ResponseEvents;
 import org.asteriskjava.manager.action.AbsoluteTimeoutAction;
 import org.asteriskjava.manager.action.AgentCallbackLoginAction;
 import org.asteriskjava.manager.action.AgentLogoffAction;
@@ -28,6 +31,7 @@ import org.asteriskjava.manager.action.DbDelAction;
 import org.asteriskjava.manager.action.DbDelTreeAction;
 import org.asteriskjava.manager.action.DbGetAction;
 import org.asteriskjava.manager.action.DbPutAction;
+import org.asteriskjava.manager.action.EventGeneratingAction;
 import org.asteriskjava.manager.action.EventsAction;
 import org.asteriskjava.manager.action.ExtensionStateAction;
 import org.asteriskjava.manager.action.GetConfigAction;
@@ -95,12 +99,12 @@ import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.InputItem;
 import com.safi.core.actionstep.impl.ParameterizedActionstepImpl;
-import com.safi.db.util.VariableTranslator;
 import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletContext;
 import com.safi.core.saflet.SafletEnvironment;
 import com.safi.db.Variable;
 import com.safi.db.VariableScope;
+import com.safi.db.util.VariableTranslator;
 import com.safi.workshop.model.actionpak1.Actionpak1Package;
 import com.safi.workshop.model.actionpak1.ManagerAction;
 import com.safi.workshop.model.actionpak1.ManagerActionType;
@@ -340,8 +344,10 @@ public class ManagerActionImpl extends ParameterizedActionstepImpl implements Ma
 	@Override
 	public void beginProcessing(SafletContext context) throws ActionStepException {
 		super.beginProcessing(context);
-		if (managerActionType == null)
+		if (managerActionType == null){
 			handleException(context, new ActionStepException("ManagerActionType is not specified"));
+			return;
+		}
 		 Object variableRawValue = context
 	        .getVariableRawValue(AsteriskSafletConstants.VAR_KEY_MANAGER_CONNECTION);
 	    if (variableRawValue == null || !(variableRawValue instanceof ManagerConnection)) {
@@ -387,11 +393,22 @@ public class ManagerActionImpl extends ParameterizedActionstepImpl implements Ma
 	        }
 		  
 		 
-		  ManagerResponse managerResponse=null;
-		  ManagerResponse response = connection.sendAction(managerActionObject,
-		          Saflet.DEFAULT_MANAGER_ACTION_TIMEOUT);
-	      if (debugLog.isLoggable(Level.FINEST))
+		  ResponseEvents responseEvents=null;
+		  ManagerResponse response=null;
+		  if(managerActionObject instanceof EventGeneratingAction){
+			   responseEvents = connection.sendEventGeneratingAction((EventGeneratingAction)managerActionObject);
+		   }else
+		   {
+			   response = connection.sendAction(managerActionObject,
+				          Saflet.DEFAULT_MANAGER_ACTION_TIMEOUT);
+		   }
+	      if (debugLog.isLoggable(Level.FINEST)){
 		        debug("Monitor returned " + response.getMessage() + " of type " + response.getResponse());
+	            debug("Event is:"+ToStringBuilder.reflectionToString(response, ToStringStyle.MULTI_LINE_STYLE));
+	      }
+	      System.out.println("Event is:"+ToStringBuilder.reflectionToString(responseEvents, ToStringStyle.MULTI_LINE_STYLE));
+	       System.out.println("Response is:"+ToStringBuilder.reflectionToString(response, ToStringStyle.MULTI_LINE_STYLE));
+             if(response!=null){
 		      if (response instanceof ManagerError)
 		        exception = new ActionStepException("Couldn't monitor channel: " + response.getMessage());
 
@@ -405,6 +422,29 @@ public class ManagerActionImpl extends ParameterizedActionstepImpl implements Ma
 		                response));
 		          }
 		        } 
+             }else
+             {
+            	 if(responseEvents!=null){
+       		      if (responseEvents.getResponse() instanceof ManagerError)
+       		        exception = new ActionStepException("Couldn't monitor channel: " + responseEvents.getResponse());
+
+       		      if (v != null) {
+       		          if (v.getScope() != VariableScope.GLOBAL)
+       		            context.setVariableRawValue(v.getName(), VariableTranslator.translateValue(v.getType(),
+       		                responseEvents));
+       		          else {
+       		            SafletEnvironment env = getSaflet().getSafletEnvironment();
+       		            env.setGlobalVariableValue(v.getName(), VariableTranslator.translateValue(v.getType(),
+       		                responseEvents));
+       		          }
+       		        }  
+            	 
+            	 
+            	 }
+             }
+             
+             
+             
 
 		}catch(Exception ex){
 		  exception = ex;
