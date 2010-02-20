@@ -6,15 +6,12 @@
  */
 package com.safi.asterisk.impl;
 
-import java.util.Hashtable;
+import java.util.HashMap;
 import java.util.Map;
-
 import org.asteriskjava.fastagi.AgiChannel;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
 import com.safi.asterisk.CallState;
@@ -205,7 +202,7 @@ public class CallImpl extends ThreadSensitiveImpl implements Call {
   
   protected static ThreadLocal<Map<String,Object>> dataMapHolder = new ThreadLocal<Map<String,Object>>(){
   	protected java.util.Map<String,Object> initialValue() {
-  		return new Hashtable<String, Object>();
+  		return new HashMap<String, Object>();
   	}
   };
 //  private Map<String,Object> dataMap;
