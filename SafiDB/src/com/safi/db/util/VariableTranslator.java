@@ -495,8 +495,6 @@ public class VariableTranslator {
   }
 
   public static void main(String[] args) throws Exception {
-    // String arrayLiteral = "[asshole,[\"sinter\", agrop\\,opper,], fucker,
-    // \"dickhead\"]";
     String arrayLiteral = "[a,[b],c,[\"a\",\"b\",\"ccc\"c\"]]";
     List array = parseArray(arrayLiteral);
     for (Object o : array) {
