@@ -1826,7 +1826,6 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 
 				}
 			});
-			// System.err.println("shotfuckingmessg " + message);
 		}
 
 		// public String[] promptKeyboardInteractive(String destination, String
