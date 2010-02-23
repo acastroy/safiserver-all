@@ -10,6 +10,7 @@
   <property name="debuglevel" value="source,lines,vars"/>
   <property name="target" value="1.6"/>
   <property name="source" value="1.6"/>
+  <property name="safi_install_dir" value="c:/safi_install" />
   <path id="Plug-in Dependencies.libraryclasspath">
       <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.ide_3.5.0.I20090525-2000.jar"/>
       <pathelement location="../../Saflets"/>
@@ -333,9 +334,9 @@
 	<target name="linuxDeploy">
 		<delete file="../SafiServerInstaller/safiServerLinux32.zip" quiet="true" />
 
-		<delete dir="D:/safi_install/serverLinux32" includeemptydirs="false" quiet="false" />
+		<delete dir="${safi_install_dir}/serverLinux32" includeemptydirs="false" quiet="false" />
 
-		<copy todir="D:/safi_install/serverLinux32/SafiServer" includeemptydirs="true" overwrite="true">
+		<copy todir="${safi_install_dir}/serverLinux32/SafiServer" includeemptydirs="true" overwrite="true">
 			<fileset dir="../SafiServerCore/" defaultexcludes="true">
 				<include name="default_drivers/**" />
 				<include name="lib/**" />
@@ -352,10 +353,10 @@
 				<exclude name="**/*.keepme" />
 			</fileset>
 		</copy>
-		<mkdir dir="D:/safi_install/serverLinux32/SafiServer/deploy/actionpaks" />
-		<mkdir dir="D:/safi_install/serverLinux32/SafiServer/imports/received" />
+		<mkdir dir="${safi_install_dir}/serverLinux32/SafiServer/deploy/actionpaks" />
+		<mkdir dir="${safi_install_dir}/serverLinux32/SafiServer/imports/received" />
 
-		<move file="D:/safi_install/serverLinux32/SafiServer/deploy/linux32/installserver.sh" todir="D:/safi_install/serverLinux32/SafiServer">
+		<move file="${safi_install_dir}/serverLinux32/SafiServer/deploy/linux32/installserver.sh" todir="${safi_install_dir}/serverLinux32/SafiServer">
 		</move>
 		<tar compression="gzip" basedir="D:\safi_install\serverLinux32" destfile="../SafiServerInstaller/safiServerLinux32.tar.gz" />
 

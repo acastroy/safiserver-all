@@ -12,6 +12,7 @@
   <property name="debuglevel" value="source,lines,vars"/>
   <property name="target" value="1.6"/>
   <property name="source" value="1.6"/>
+  	<property name="safi_install_dir" value="c:/safi_install" />
   <path id="Plug-in Dependencies.libraryclasspath">
   	<pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.ide_3.5.1.M20090826-0800.jar"/>
   	        <pathelement location="../../../Saflets"/>
@@ -224,7 +225,7 @@
 		<ant dir="../SafiDB" antfile="../SafiDB/build_enhanced.xml" target="instrument" />
 
 	    <delete includeEmptyDirs="true">
-	      <fileset dir="D:/safi_install/safiStaging/non_obfuscated" includes="**/*" />
+	      <fileset dir="${safi_install_dir}/safiStaging/non_obfuscated" includes="**/*" />
 	    </delete>
 	</target>
 	
@@ -232,16 +233,16 @@
 
 		<echo message="Cleaning staging dir" />
 		<delete verbose="true" quiet="true" includeemptydirs="true">
-			<fileset file="D:/safi_install/SafiWorkshop/SafiWorkshop.*" />
-			<fileset file="D:/safi_install/SafiWorkshop/.eclipseproduct" />
-			<fileset dir="D:/safi_install/SafiWorkshop/plugins" />
-			<fileset dir="D:/safi_install/SafiWorkshop/features" />
-			<fileset dir="D:/safi_install/SafiWorkshop/configuration" />
+			<fileset file="${safi_install_dir}/SafiWorkshop/SafiWorkshop.*" />
+			<fileset file="${safi_install_dir}/SafiWorkshop/.eclipseproduct" />
+			<fileset dir="${safi_install_dir}/SafiWorkshop/plugins" />
+			<fileset dir="${safi_install_dir}/SafiWorkshop/features" />
+			<fileset dir="${safi_install_dir}/SafiWorkshop/configuration" />
 		</delete>
 
 		<echo message="copying to staging dir" />
-		<copy todir="D:/safi_install/SafiWorkshop" overwrite="true">
-			<fileset dir="D:/safi_install/safiStaging/non_obfuscated/eclipse">
+		<copy todir="${safi_install_dir}/SafiWorkshop" overwrite="true">
+			<fileset dir="${safi_install_dir}/safiStaging/non_obfuscated/eclipse">
 				<include name="**/*" />
 			</fileset>
 			<fileset dir="../SAFIInstaller/">
@@ -251,7 +252,7 @@
 			</fileset>
 		</copy>
 
-		<unzip dest="D:/safi_install/SafiWorkshop" >
+		<unzip dest="${safi_install_dir}/SafiWorkshop" >
 			<fileset file="../SAFIInstaller/jre.zip">
 			</fileset>
 		</unzip>
@@ -301,9 +302,9 @@
         <echo message="Current version number: ${version.startcurrent}" />
 		
         <delete file="../SafiServerInstaller/safiServer*.zip" quiet="true" />
-        <delete dir="D:/safi_install/serverLinux32" includeemptydirs="false" quiet="false" />
+        <delete dir="${safi_install_dir}/serverLinux32" includeemptydirs="false" quiet="false" />
 
-        <copy todir="D:/safi_install/serverLinux32/SafiServer" includeemptydirs="true" overwrite="true">
+        <copy todir="${safi_install_dir}/serverLinux32/SafiServer" includeemptydirs="true" overwrite="true">
             <fileset dir="../SafiServerCore/" defaultexcludes="true">
                 <include name="default_drivers/**" />
                 <include name="lib/**" />
@@ -321,12 +322,12 @@
             </fileset>
         </copy>
 		
-        <mkdir dir="D:/safi_install/serverLinux32/SafiServer/deploy/actionpaks" />
-        <mkdir dir="D:/safi_install/serverLinux32/SafiServer/imports/received" />
+        <mkdir dir="${safi_install_dir}/serverLinux32/SafiServer/deploy/actionpaks" />
+        <mkdir dir="${safi_install_dir}/serverLinux32/SafiServer/imports/received" />
 
-        <!-- <move file="D:/safi_install/serverLinux32/SafiServer/deploy/linux32/installserver.sh" todir="D:/safi_install/serverLinux32/SafiServer"></move> -->
+        <!-- <move file="${safi_install_dir}/serverLinux32/SafiServer/deploy/linux32/installserver.sh" todir="${safi_install_dir}/serverLinux32/SafiServer"></move> -->
         
-		<tar compression="gzip" basedir="D:/safi_install/serverLinux32" destfile="../SafiServerInstaller/safiServer-${version.filesuffix}.tar.gz" />
+		<tar compression="gzip" basedir="${safi_install_dir}/serverLinux32" destfile="../SafiServerInstaller/safiServer-${version.filesuffix}.tar.gz" />
 	</target>
 
     

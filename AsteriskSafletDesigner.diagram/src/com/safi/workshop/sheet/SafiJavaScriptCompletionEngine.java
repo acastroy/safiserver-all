@@ -14,7 +14,7 @@ import java.util.Set;
 import org.eclipse.dltk.codeassist.IAssistParser;
 import org.eclipse.dltk.codeassist.RelevanceConstants;
 import org.eclipse.dltk.compiler.CharOperation;
-import org.eclipse.dltk.compiler.env.ISourceModule;
+import org.eclipse.dltk.compiler.env.IModuleSource;
 import org.eclipse.dltk.core.CompletionContext;
 import org.eclipse.dltk.core.CompletionProposal;
 import org.eclipse.dltk.core.DLTKCore;
@@ -22,6 +22,7 @@ import org.eclipse.dltk.core.IAccessRule;
 import org.eclipse.dltk.core.IField;
 import org.eclipse.dltk.core.IMethod;
 import org.eclipse.dltk.core.IModelElement;
+import org.eclipse.dltk.core.ISourceModule;
 import org.eclipse.dltk.core.IType;
 import org.eclipse.dltk.core.ModelException;
 import org.eclipse.dltk.core.mixin.IMixinElement;
@@ -33,7 +34,10 @@ import org.eclipse.dltk.internal.javascript.typeinference.HostCollection;
 import org.eclipse.dltk.internal.javascript.typeinference.IClassReference;
 import org.eclipse.dltk.internal.javascript.typeinference.IReference;
 import org.eclipse.dltk.internal.javascript.typeinference.StandardSelfCompletingReference;
+import org.eclipse.dltk.internal.javascript.typeinference.TypeInferencer;
 import org.eclipse.dltk.javascript.core.JavaScriptKeywords;
+import org.eclipse.dltk.javascript.internal.core.codeassist.AssitUtils;
+import org.eclipse.dltk.javascript.internal.core.codeassist.AssitUtils.PositionCalculator;
 import org.eclipse.dltk.javascript.internal.core.codeassist.completion.JavaScriptCompletionEngine;
 import org.eclipse.dltk.javascript.internal.core.mixin.JavaScriptMixinModel;
 import org.eclipse.gmf.runtime.notation.Diagram;
@@ -50,10 +54,10 @@ public class SafiJavaScriptCompletionEngine extends JavaScriptCompletionEngine {
     super();
     System.err.println("i'm being made into a man");
   }
-
   private boolean useEngine = true;
-  SafiJavascriptAssistUtils.PositionCalculator calculator;
-
+  
+//  SafiJavascriptAssistUtils.PositionCalculator calculator;
+  AssitUtils.PositionCalculator calculator;
   @Override
   public boolean isUseEngine() {
     return useEngine;
@@ -93,7 +97,7 @@ public class SafiJavaScriptCompletionEngine extends JavaScriptCompletionEngine {
   }
 
   @Override
-  public void complete(ISourceModule cu, int position, int i) {
+  public void complete(IModuleSource cu, int position, int i) {
     // System.out.println("Completion position:" + position);
     String staticText = SafiJSTextTools.getScriptText();
 
@@ -116,9 +120,13 @@ public class SafiJavaScriptCompletionEngine extends JavaScriptCompletionEngine {
           content = content.substring(0, position) + " \n\r e" + content.substring(position);
         }
     }
-    calculator = new SafiJavascriptAssistUtils.PositionCalculator(content, position, false);
-    char[] fileName2 = cu.getFileName();
-    
+    calculator = new AssitUtils.PositionCalculator(content, position, false);
+    final org.eclipse.dltk.core.ISourceModule module;
+	if (cu instanceof org.eclipse.dltk.core.ISourceModule) {
+		module = (org.eclipse.dltk.core.ISourceModule) cu;
+	} else {
+		module = null;
+	}
     
     AsteriskDiagramEditor currentEditor  = AsteriskDiagramEditorUtil.getCurrentAsteriskEditor();
 //    IEditorPart editor = AsteriskDiagramEditorPlugin.getInstance().getWorkbench()
@@ -132,7 +140,7 @@ public class SafiJavaScriptCompletionEngine extends JavaScriptCompletionEngine {
     }
 
     ReferenceResolverContext buildContext = SafiJavascriptAssistUtils.buildContext(
-        (org.eclipse.dltk.core.ISourceModule) cu, position, content, fileName2, context);
+        module, position, content, cu.getFileName(), context);
     HostCollection collection = buildContext.getHostCollection();
 
     String startPart = calculator.getCompletion();
@@ -140,256 +148,233 @@ public class SafiJavaScriptCompletionEngine extends JavaScriptCompletionEngine {
     this.setSourceRange(position - (startPart.length()), position);
     // System.out.println(startPart);
     if (calculator.isMember()) {
-      doCompletionOnMember(buildContext, cu, position, content, position, collection);
+    	doCompletionOnMember(calculator, buildContext, cu, position, content, position, collection);
     } else {
-      doGlobalCompletion(buildContext, cu, position, position, collection, startPart);
+    	doGlobalCompletion(buildContext, cu, position, position,
+				collection, startPart);
     }
     this.requestor.endReporting();
   }
 
-  private void doGlobalCompletion(ReferenceResolverContext buildContext, ISourceModule cu,
-      int position, int pos, HostCollection collection, String startPart) {
-    HashSet completedNames = new HashSet();
+	private void doGlobalCompletion(ReferenceResolverContext buildContext,
+			IModuleSource cu, int position, int pos, HostCollection collection,
+			String completion) {
+		Set<String> completedNames = new HashSet<String>();
 
-    String completion = startPart;
-    char[] token = completion.toCharArray();
+		char[] token = completion.toCharArray();
 
-    HashMap names = new HashMap();
-    Set resolveGlobals = buildContext.resolveGlobals(completion);
-    Iterator it = resolveGlobals.iterator();
-    HashSet classes = new HashSet();
-    while (it.hasNext()) {
-      Object o = it.next();
-      if (o instanceof IReference) {
-        IReference r = (IReference) o;
-        if (r instanceof IClassReference)
-          classes.add(r);
-        else {
-          putAndCheckDuplicateReference(names, r);
-        }
-      }
-    }
-    names.remove("!!!returnValue");
-    completeFromMap(position, completion, names);
-    if (names.size() > 0) {
-      char[][] choices = new char[names.size()][];
-      int ia = 0;
-      for (Iterator iterator = names.keySet().iterator(); iterator.hasNext();) {
-        String name = (String) iterator.next();
-        choices[ia] = name.toCharArray();
-        ia++;
-      }
-      findLocalVariables(token, choices, true, false);
-    }
-    if (classes.size() > 0) {
-      char[][] choices = new char[classes.size()][];
-      int ia = 0;
-      for (Iterator iterator = classes.iterator(); iterator.hasNext();) {
-        IReference name = (IReference) iterator.next();
-        choices[ia] = name.getName().toCharArray();
-        ia++;
-      }
-      findElements(token, choices, true, false, CompletionProposal.TYPE_REF);
-    }
+		HashMap names = new HashMap();
+		Set resolveGlobals = buildContext.resolveGlobals(completion);
+		Iterator it = resolveGlobals.iterator();
+		HashSet classes = new HashSet();
+		while (it.hasNext()) {
+			Object o = it.next();
+			if (o instanceof IReference) {
+				IReference r = (IReference) o;
+				if (r instanceof IClassReference)
+					classes.add(r);
+				else {
+					putAndCheckDuplicateReference(names, r);
+				}
+			}
+		}
+		names.remove(TypeInferencer.RETURN_VALUE);
+		completeFromMap(position, completion, names);
+		if (names.size() > 0) {
+			char[][] choices = new char[names.size()][];
+			int ia = 0;
+			for (Iterator iterator = names.keySet().iterator(); iterator
+					.hasNext();) {
+				String name = (String) iterator.next();
+				choices[ia] = name.toCharArray();
+				ia++;
+			}
+			findLocalVariables(token, choices, true, false);
+		}
+		if (classes.size() > 0) {
+			char[][] choices = new char[classes.size()][];
+			int ia = 0;
+			for (Iterator iterator = classes.iterator(); iterator.hasNext();) {
+				IReference name = (IReference) iterator.next();
+				choices[ia] = name.getName().toCharArray();
+				ia++;
+			}
+			findElements(token, choices, true, false,
+					CompletionProposal.TYPE_REF);
+		}
 
-    if (useEngine) {
-      doCompletionOnKeyword(position, pos, completion);
-      JavaScriptMixinModel instance = JavaScriptMixinModel.getInstance();
-      String[] findElements = instance.findElements(MixinModel.SEPARATOR + completion);
+		if (useEngine) {
+			doCompletionOnKeyword(position, pos, completion);
+			JavaScriptMixinModel instance = JavaScriptMixinModel.getInstance();
+			String[] findElements = instance.findElements(MixinModel.SEPARATOR
+					+ completion);
 
-      ArrayList methods = new ArrayList();
-      ArrayList fields = new ArrayList();
+			List<IMethod> methods = new ArrayList<IMethod>();
+			Set<String> fields = new HashSet<String>();
 
-      for (String string : findElements) {
-        if (string.lastIndexOf(MixinModel.SEPARATOR) > 0)
-          continue;
-        IMixinElement mixinElement = instance.getRawModel().get(string);
-        if (mixinElement == null)
-          continue;
-        Object[] allObjects = mixinElement.getObjects(buildContext.getModule());
-        // Object[] allObjects = mixinElement.getAllObjects();
-        if (allObjects.length > 0) {
-          for (Object object : allObjects) {
-            if (object instanceof IModelElement) {
-              IModelElement el = (IModelElement) object;
-              int elementType = el.getElementType();
-              if (elementType == IModelElement.METHOD) {
-                methods.add(el);
-              } else if (elementType == IModelElement.FIELD) {
-                String elementName = el.getElementName();
-                if (!completedNames.contains(elementName)) {
-                  fields.add(elementName.toCharArray());
-                  completedNames.add(elementName);
-                }
-              }
-            } else if (object == null) {
-              String lastKeySegment = mixinElement.getLastKeySegment();
-              if (!completedNames.contains(lastKeySegment)) {
-                fields.add(lastKeySegment.toCharArray());
-                completedNames.add(lastKeySegment);
-              }
-            }
-          }
-        }
-      }
-      findMethods(token, true, methods);
-      char[][] choices = new char[fields.size()][];
-      for (int a = 0; a < fields.size(); a++) {
-        choices[a] = (char[]) fields.get(a);
-      }
-      findLocalVariables(token, choices, true, false);
-      // doCompletionOnFunction(position, pos, completion);
-      // doCompletionOnGlobalVariable(position, pos, completion,
-      // completedNames);
-    }
-    // report parameters and local variables
-    Map rfs = collection.getReferences();
-    while (collection.getParent() != null) {
-      collection = collection.getParent();
-      Map m1 = collection.getReferences();
-      it = m1.keySet().iterator();
-      while (it.hasNext()) {
-        Object next = it.next();
-        if (next instanceof String){
-	        String key = (String) next;
-	        if (!rfs.containsKey(key))
-	          rfs.put(key, m1.get(key));
-        }
-        else
-        if (next instanceof StandardSelfCompletingReference){
-        	String key = ((StandardSelfCompletingReference)next).toString();
-        	if (!rfs.containsKey(key))
-	          rfs.put(key, m1.get(key));
-        }
-      }
+			for (int a = 0; a < findElements.length; a++) {
+				String string = findElements[a];
+				if (string.lastIndexOf(MixinModel.SEPARATOR) > 0)
+					continue;
+				IMixinElement mixinElement = instance.getRawModel().get(string);
+				if (mixinElement == null)
+					continue;
+				Object[] allObjects = mixinElement.getObjects(buildContext
+						.getModule());
+				// Object[] allObjects = mixinElement.getAllObjects();
+				if (allObjects.length > 0) {
+					for (int i = 0; i < allObjects.length; i++) {
+						Object object = allObjects[i];
+						if (object instanceof IModelElement) {
+							IModelElement el = (IModelElement) object;
+							int elementType = el.getElementType();
+							if (elementType == IModelElement.METHOD) {
+								methods.add((IMethod) el);
+							} else if (elementType == IModelElement.FIELD) {
+								fields.add(el.getElementName());
+							}
+						} else if (object == null) {
+							fields.add(mixinElement.getLastKeySegment());
+						}
+					}
+				}
+			}
+			for (IMethod method : methods) {
+				completedNames.add(method.getElementName());
+			}
+			findMethods(token, true, methods);
+			if (!fields.isEmpty()) {
+				completedNames.addAll(fields);
+				char[][] choices = new char[fields.size()][];
+				int ia = 0;
+				for (String field : fields) {
+					choices[ia++] = field.toCharArray();
+				}
+				findLocalVariables(token, choices, true, false);
+			}
+			// doCompletionOnFunction(position, pos, completion);
+			// doCompletionOnGlobalVariable(position, pos, completion,
+			// completedNames);
+		}
+		// report parameters and local variables
+		Map rfs = collection.getReferences();
+		while (collection.getParent() != null) {
+			collection = collection.getParent();
+			Map m1 = collection.getReferences();
+			it = m1.keySet().iterator();
+			while (it.hasNext()) {
+				Object next = it.next();
+				if (!(next instanceof String))
+					continue;
+				String key = (String) next;
+				if (!rfs.containsKey(key))
+					rfs.put(key, m1.get(key));
+			}
 
-    }
-    it = rfs.keySet().iterator();
-    while (it.hasNext()) {
-      Object next = it.next();
-      if (!(next instanceof String))
-        continue;
-      String name = (String) next;
-      if (completedNames.contains(name))
-        continue;
-      Object value = rfs.get(name);
-//      if (value instanceof StandardSelfCompletingReference){
-//      	value = ((StandardSelfCompletingReference)value).toString();
-//      }
-			names.put(name, value);
+		}
+		it = rfs.keySet().iterator();
+		while (it.hasNext()) {
+			Object next = it.next();
+			if (!(next instanceof String))
+				continue;
+			String name = (String) next;
+			if (completedNames.contains(name))
+				continue;
+			names.put(name, rfs.get(name));
+		}
+		names.remove(TypeInferencer.RETURN_VALUE);
+		if (names.size() > 0) {
+			completeFromMap(position, completion, names);
+		}
+	}
 
-    }
+	private void doCompletionOnMember(PositionCalculator calculator,
+			ReferenceResolverContext buildContext, IModuleSource cu,
+			int position, String content, int pos, HostCollection collection) {
 
-    names.remove("!!!returnValue");
+		String completionPart = calculator.getCompletionPart();
+		String corePart = calculator.getCorePart();
+		final Map<String, Object> dubR = new HashMap<String, Object>();
+		Set resolveGlobals = buildContext.resolveGlobals(corePart + '.');
+		Iterator<?> it = resolveGlobals.iterator();
+		while (it.hasNext()) {
+			Object o = it.next();
+			if (o instanceof IReference) {
+				IReference r = (IReference) o;
+				// if (r instanceof IClassReference)
+				// classes.add(r);
+				// else {
+				putAndCheckDuplicateReference(dubR, r);
+				// }
+			}
+		}
+		completeFromMap(position, completionPart, dubR);
 
-    it = rfs.keySet().iterator();
-    while (it.hasNext()) {
-      Object next = it.next();
-      if (!(next instanceof StringNode))
-        continue;
-      StringNode name = (StringNode) next;
-      if (completedNames.contains(name.getString()))
-        continue;
-      IReference ref = null;
-      final Object value = rfs.get(name);
-      if (value instanceof HostCollection) {
-        // ref = ((HostCollection)value).getReference(name.getString());
-        // System.err.println("The ref is "+ref);
-        names.put(name.getString(), value);
-      }
-    }
-    // for (String name : ScriptDynamicValueEditorPage.getSafiFunctions()){
-    // if (name.startsWith(completion))
-    // names.put(name, name);
-    // }
-    if (names.size() > 0) {
-      completeFromMap(position, completion, names);
-    }
-  }
+		Set<IReference> references = collection.queryElements(corePart, true);
 
-  private void doCompletionOnMember(ReferenceResolverContext buildContext, ISourceModule cu,
-      int position, String content, int pos, HostCollection collection) {
+		if (!references.isEmpty()) {
+			Set<IReference> fields = new HashSet<IReference>();
+			for (IReference mnext : references) {
+				IReference proto = mnext.getPrototype(true);
+				if (proto != null) {
+					Collection<IReference> protos = new LinkedHashSet<IReference>();
+					while (proto != null && !protos.contains(proto)) {
+						protos.add(proto);
+						proto = proto.getPrototype(false);
+					}
+					protos = new LinkedList<IReference>(protos);
+					Collections.reverse((List<IReference>) protos);
+					for (IReference proto1 : protos) {
+						fields.addAll(proto1.getChilds(true));
+					}
+				}
+				if (mnext.isFunctionRef()) {
+					// get function return value
+					final IReference result = mnext.getChild(
+							TypeInferencer.RETURN_VALUE, true);
+					if (result != null) {
+						// expand result
+						fields.addAll(result.getChilds(true));
+					} else {
+						// expand all children (it should be type)
+						fields.addAll(mnext.getChilds(true));
+					}
+				} else {
+					fields.addAll(mnext.getChilds(true));
+				}
+			}
 
-    String completionPart = calculator.getCompletionPart();
-    String corePart = calculator.getCorePart();
-    final HashMap dubR = new HashMap();
-    Set resolveGlobals = buildContext.resolveGlobals(corePart + '.');
-    Iterator it = resolveGlobals.iterator();
-    while (it.hasNext()) {
-      Object o = it.next();
-      if (o instanceof IReference) {
-        IReference r = (IReference) o;
-        // if (r instanceof IClassReference)
-        // classes.add(r);
-        // else {
-        putAndCheckDuplicateReference(dubR, r);
-        // }
-      }
-    }
-    completeFromMap(position, completionPart, dubR);
+			for (IReference name : fields) {
+				String refa = name.getName();
+				dubR.put(refa, name);
+			}
+			completeFromMap(position, completionPart, dubR);
+		}
+	}
 
-    Set references = collection.queryElements(corePart, true);
-    Iterator iterator;
-    if (!references.isEmpty()) {
-      iterator = references.iterator();
-      HashSet fields = new HashSet();
-      while (iterator.hasNext()) {
-        Object next = iterator.next();
-        if (!(next instanceof IReference))
-          continue;
-        IReference mnext = (IReference) next;
-        IReference proto = mnext.getPrototype(true);
-        if (proto != null) {
-          Collection protos = new LinkedHashSet();
-          while (proto != null && !protos.contains(proto)) {
-            protos.add(proto);
-            proto = proto.getPrototype(false);
-          }
-          protos = new LinkedList(protos);
-          Collections.reverse((List) protos);
-          Iterator iterator2 = protos.iterator();
-          while (iterator2.hasNext()) {
-            IReference proto1 = (IReference) iterator2.next();
-            fields.addAll(proto1.getChilds(true));
-          }
-        }
-        fields.addAll(mnext.getChilds(true));
-      }
+	/**
+	 * @param dubR
+	 * @param r
+	 */
+	private void putAndCheckDuplicateReference(final Map<String, Object> dubR,
+			IReference r) {
+		Object put = dubR.put(r.getName(), r);
+		if (put instanceof IReference) {
+			if (r instanceof CombinedOrReference) {
+				((CombinedOrReference) r).addReference((IReference) put);
+			} else if (put instanceof CombinedOrReference) {
+				((CombinedOrReference) put).addReference(r);
+				dubR.put(r.getName(), put);
+			} else {
+				CombinedOrReference or = new CombinedOrReference();
+				or.addReference(r);
+				or.addReference((IReference) put);
+				dubR.put(r.getName(), or);
+			}
+		}
+	}
 
-      for (iterator = fields.iterator(); iterator.hasNext();) {
-        Object next = iterator.next();
-        if (next instanceof IReference) {
-          IReference name = (IReference) next;
-          String refa = name.getName();
-          dubR.put(refa, name);
-        }
-      }
-      completeFromMap(position, completionPart, dubR);
-    }
-  }
-
-  /**
-   * @param dubR
-   * @param r
-   */
-  private void putAndCheckDuplicateReference(final HashMap dubR, IReference r) {
-    Object put = dubR.put(r.getName(), r);
-    if (put instanceof IReference) {
-      if (r instanceof CombinedOrReference) {
-        ((CombinedOrReference) r).addReference((IReference) put);
-      } else if (put instanceof CombinedOrReference) {
-        ((CombinedOrReference) put).addReference(r);
-        dubR.put(r.getName(), put);
-      } else {
-        CombinedOrReference or = new CombinedOrReference();
-        or.addReference(r);
-        or.addReference((IReference) put);
-        dubR.put(r.getName(), or);
-      }
-    }
-  }
-
-  private void completeFromMap(int position, String completionPart, final HashMap dubR) {
+  private void completeFromMap(int position, String completionPart, final Map<String, Object>  dubR) {
     position = position - SafiJSTextTools.getScriptText().length();
     Iterator iterator;
     this.requestor.acceptContext(new CompletionContext());
@@ -419,24 +404,51 @@ public class SafiJavaScriptCompletionEngine extends JavaScriptCompletionEngine {
         }
         iterator.remove();
       } else if (next instanceof IReference) {
-        IReference ref = (IReference) next;
-        int knd = ref.isFunctionRef() ? CompletionProposal.METHOD_REF
-            : CompletionProposal.LOCAL_VARIABLE_REF;
-        char[] name = ref.getName().toCharArray();
-        if (length <= name.length && CharOperation.prefixEquals(token, name, false)) {
-          CompletionProposal createProposal = this.createProposal(knd,
-              this.actualCompletionPosition);
-          createProposal.setName(name);
-          createProposal.setCompletion(name);
-          // createProposal.setSignature(name);
-          // createProposal.setDeclarationSignature(cm.getDeclarationSignature());
-          // createProposal.setSignature(cm.getSignature());
-          createProposal.setReplaceRange(this.startPosition - this.offset, this.endPosition
-              - this.offset);
-          this.requestor.accept(createProposal);
-        }
-        iterator.remove();
-      } else if (next instanceof HostCollection) {
+			IReference ref = (IReference) next;
+			if (startsWith(ref, completionPart)) {
+				CompletionProposal createProposal = this.createProposal(ref
+						.isFunctionRef() ? CompletionProposal.METHOD_REF
+						: CompletionProposal.LOCAL_VARIABLE_REF,
+						this.actualCompletionPosition);
+				char[] name = ref.getName().toCharArray();
+				createProposal.setName(name);
+				createProposal.setCompletion(name);
+
+				if (ref.isFunctionRef()) {
+					Iterator<?> childs = ref.getChilds(true).iterator();
+					List<char[]> al = new ArrayList<char[]>();
+					while (childs.hasNext()) {
+						Object o = childs.next();
+						if (o instanceof StandardSelfCompletingReference
+								&& ((StandardSelfCompletingReference) o)
+										.getParameterIndex() != -1) {
+							int index = ((StandardSelfCompletingReference) o)
+									.getParameterIndex();
+							while (index >= al.size()) {
+								al.add(null);
+							}
+							al.set(index,
+									((StandardSelfCompletingReference) o)
+											.getName().toCharArray());
+						}
+					}
+					if (al.size() > 0) {
+						char[][] parameterNames = new char[al.size()][];
+						for (int i = 0; i < al.size(); i++) {
+							parameterNames[i] = al.get(i);
+						}
+						createProposal.setParameterNames(parameterNames);
+					}
+				}
+				// createProposal.setSignature(name);
+				// createProposal.setDeclarationSignature(cm.getDeclarationSignature());
+				// createProposal.setSignature(cm.getSignature());
+				createProposal.setReplaceRange(this.startPosition
+						- this.offset, this.endPosition - this.offset);
+				this.requestor.accept(createProposal);
+			}
+			iterator.remove();
+		} else if (next instanceof HostCollection) {
         char[] name = ((HostCollection) next).getName().toCharArray();
         if (length <= name.length && CharOperation.prefixEquals(token, name, false)) {
           CompletionProposal createProposal = this.createProposal(CompletionProposal.METHOD_REF,
@@ -455,14 +467,12 @@ public class SafiJavaScriptCompletionEngine extends JavaScriptCompletionEngine {
     }
   }
 
-  int computeBaseRelevance() {
-    return RelevanceConstants.R_DEFAULT;
-  }
+  
 
-  private int computeRelevanceForInterestingProposal() {
-    return RelevanceConstants.R_INTERESTING;
-  }
-
+  private static boolean startsWith(IReference reference, String prefix) {
+		return reference.getName().toLowerCase().startsWith(
+				prefix.toLowerCase());
+	}
   @Override
   protected int computeRelevanceForRestrictions(int accessRuleKind) {
     if (accessRuleKind == IAccessRule.K_ACCESSIBLE) {
@@ -471,77 +481,77 @@ public class SafiJavaScriptCompletionEngine extends JavaScriptCompletionEngine {
     return 0;
   }
 
-  @Override
-  protected void findMethods(char[] token, boolean canCompleteEmptyToken, List methods, int kind) {
-    if (methods == null || methods.size() == 0)
-      return;
-
-    int length = token.length;
-    String tok = new String(token);
-    if (canCompleteEmptyToken || length > 0) {
-      for (int i = 0; i < methods.size(); i++) {
-        IMethod method = (IMethod) methods.get(i);
-        String qname = processMethodName(method, tok);
-        char[] name = qname.toCharArray();
-        if (DLTKCore.DEBUG_COMPLETION) {
-          System.out.println("Completion:" + qname);
-        }
-        if (length <= name.length && CharOperation.prefixEquals(token, name, false)) {
-          int relevance = computeBaseRelevance();
-          relevance += computeRelevanceForInterestingProposal();
-          relevance += computeRelevanceForCaseMatching(token, name);
-          relevance += computeRelevanceForRestrictions(IAccessRule.K_ACCESSIBLE); // no
-
-          // accept result
-          noProposal = false;
-          if (!requestor.isIgnored(kind)) {
-            CompletionProposal proposal = createProposal(kind, actualCompletionPosition);
-            // proposal.setSignature(getSignature(typeBinding));
-            // proposal.setPackageName(q);
-            // proposal.setTypeName(displayName);
-            String[] arguments = null;
-
-            try {
-              arguments = method.getParameters();
-            } catch (ModelException e) {
-
-            }
-            if (arguments != null && arguments.length > 0) {
-              char[][] args = new char[arguments.length][];
-              for (int j = 0; j < arguments.length; ++j) {
-                args[j] = arguments[j].toCharArray();
-              }
-              proposal.setParameterNames(args);
-            }
-            if (kind == CompletionProposal.METHOD_REF) {
-              StringBuffer sig = new StringBuffer();
-              sig.append(method.getElementName());
-              sig.append('(');
-              if (arguments != null)
-                for (String argument : arguments) {
-                  sig.append('L');
-                  sig.append("Object");
-                  sig.append(';');
-                }
-              sig.append(')');
-              // proposal.setSignature(sig.toString().toCharArray());
-            }
-            proposal.setName(name);
-            proposal.setCompletion(name);
-            // proposal.setFlags(Flags.AccDefault);
-            proposal.setReplaceRange(this.startPosition - this.offset, this.endPosition
-                - this.offset);
-            proposal.extraInfo = method;
-            proposal.setRelevance(relevance);
-            this.requestor.accept(proposal);
-            if (DEBUG) {
-              this.printDebug(proposal);
-            }
-          }
-        }
-      }
-    }
-  }
+//  @Override
+//  protected void findMethods(char[] token, boolean canCompleteEmptyToken, List methods, int kind) {
+//    if (methods == null || methods.size() == 0)
+//      return;
+//
+//    int length = token.length;
+//    String tok = new String(token);
+//    if (canCompleteEmptyToken || length > 0) {
+//      for (int i = 0; i < methods.size(); i++) {
+//        IMethod method = (IMethod) methods.get(i);
+//        String qname = processMethodName(method, tok);
+//        char[] name = qname.toCharArray();
+//        if (DLTKCore.DEBUG_COMPLETION) {
+//          System.out.println("Completion:" + qname);
+//        }
+//        if (length <= name.length && CharOperation.prefixEquals(token, name, false)) {
+//          int relevance = computeBaseRelevance();
+//          relevance += computeRelevanceForInterestingProposal();
+//          relevance += computeRelevanceForCaseMatching(token, name);
+//          relevance += computeRelevanceForRestrictions(IAccessRule.K_ACCESSIBLE); // no
+//
+//          // accept result
+//          noProposal = false;
+//          if (!requestor.isIgnored(kind)) {
+//            CompletionProposal proposal = createProposal(kind, actualCompletionPosition);
+//            // proposal.setSignature(getSignature(typeBinding));
+//            // proposal.setPackageName(q);
+//            // proposal.setTypeName(displayName);
+//            String[] arguments = null;
+//
+//            try {
+//              arguments = method.getParameters();
+//            } catch (ModelException e) {
+//
+//            }
+//            if (arguments != null && arguments.length > 0) {
+//              char[][] args = new char[arguments.length][];
+//              for (int j = 0; j < arguments.length; ++j) {
+//                args[j] = arguments[j].toCharArray();
+//              }
+//              proposal.setParameterNames(args);
+//            }
+//            if (kind == CompletionProposal.METHOD_REF) {
+//              StringBuffer sig = new StringBuffer();
+//              sig.append(method.getElementName());
+//              sig.append('(');
+//              if (arguments != null)
+//                for (String argument : arguments) {
+//                  sig.append('L');
+//                  sig.append("Object");
+//                  sig.append(';');
+//                }
+//              sig.append(')');
+//              // proposal.setSignature(sig.toString().toCharArray());
+//            }
+//            proposal.setName(name);
+//            proposal.setCompletion(name);
+//            // proposal.setFlags(Flags.AccDefault);
+//            proposal.setReplaceRange(this.startPosition - this.offset, this.endPosition
+//                - this.offset);
+//            proposal.extraInfo = method;
+//            proposal.setRelevance(relevance);
+//            this.requestor.accept(proposal);
+//            if (DEBUG) {
+//              this.printDebug(proposal);
+//            }
+//          }
+//        }
+//      }
+//    }
+//  }
 
   private void doCompletionOnKeyword(int position, int pos, String startPart) {
     String[] keywords = JavaScriptKeywords.getJavaScriptKeywords();
