@@ -1506,8 +1506,8 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EAttribute getExecuteApplication_Application() {
-		return (EAttribute)executeApplicationEClass.getEStructuralFeatures().get(0);
+  public EReference getExecuteApplication_Application() {
+		return (EReference)executeApplicationEClass.getEStructuralFeatures().get(1);
 	}
 
   /**
@@ -1516,7 +1516,7 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 	 * @generated
 	 */
   public EReference getExecuteApplication_Arguments() {
-		return (EReference)executeApplicationEClass.getEStructuralFeatures().get(1);
+		return (EReference)executeApplicationEClass.getEStructuralFeatures().get(0);
 	}
 
   /**
@@ -3733,8 +3733,8 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		createEAttribute(transferEClass, TRANSFER__PRIORITY);
 
 		executeApplicationEClass = createEClass(EXECUTE_APPLICATION);
-		createEAttribute(executeApplicationEClass, EXECUTE_APPLICATION__APPLICATION);
 		createEReference(executeApplicationEClass, EXECUTE_APPLICATION__ARGUMENTS);
+		createEReference(executeApplicationEClass, EXECUTE_APPLICATION__APPLICATION);
 
 		getCallInfoEClass = createEClass(GET_CALL_INFO);
 		createEReference(getCallInfoEClass, GET_CALL_INFO__ACCOUNT_CODE_VAR);
@@ -4309,8 +4309,8 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		initEAttribute(getTransfer_Priority(), ecorePackage.getEInt(), "priority", "1", 0, 1, Transfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(executeApplicationEClass, ExecuteApplication.class, "ExecuteApplication", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getExecuteApplication_Application(), ecorePackage.getEString(), "application", null, 0, 1, ExecuteApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getExecuteApplication_Arguments(), theActionStepPackage.getDynamicValue(), null, "arguments", null, 0, 1, ExecuteApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getExecuteApplication_Application(), theActionStepPackage.getDynamicValue(), null, "application", null, 0, 1, ExecuteApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(getCallInfoEClass, GetCallInfo.class, "GetCallInfo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGetCallInfo_AccountCodeVar(), theActionStepPackage.getDynamicValue(), null, "accountCodeVar", null, 0, 1, GetCallInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -5069,7 +5069,7 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 			 "description", "The context of the current call will be set to this text value.",
 			 "expectedReturnType", "Text",
 			 "helperClass", ""
-		   });				
+		   });			
 		addAnnotation
 		  (getExecuteApplication_Arguments(), 
 		   source, 
@@ -5077,6 +5077,16 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 			 "type", "VariableName",
 			 "isTypeLocked", "false",
 			 "description", "the parameters to pass to the application.  May be single text entry (ex. \"SIP/123\") or array or text. (ex. [\"Sip/123\",\"300\"...])",
+			 "expectedReturnType", "Text",
+			 "helperClass", ""
+		   });		
+		addAnnotation
+		  (getExecuteApplication_Application(), 
+		   source, 
+		   new String[] {
+			 "type", "ScriptText",
+			 "isTypeLocked", "false",
+			 "description", "The name of the application",
 			 "expectedReturnType", "Text",
 			 "helperClass", ""
 		   });		
@@ -5918,13 +5928,7 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		   source, 
 		   new String[] {
 			 "criteria", "non-null"
-		   });		
-		addAnnotation
-		  (getExecuteApplication_Application(), 
-		   source, 
-		   new String[] {
-			 "criteria", "non-blank"
-		   });																																				
+		   });																																					
 		addAnnotation
 		  (getSleep_Duration(), 
 		   source, 

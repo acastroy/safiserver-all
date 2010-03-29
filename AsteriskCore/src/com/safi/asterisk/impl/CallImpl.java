@@ -80,12 +80,22 @@ public class CallImpl extends ThreadSensitiveImpl implements Call {
   /**
 	 * The cached value of the '{@link #getCallerIdName() <em>Caller Id Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCallerIdName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String callerIdName = CALLER_ID_NAME_EDEFAULT;
+
+		/**
+	 * The cached value of the '{@link #getCallerIdName() <em>Caller Id Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @see #getCallerIdName()
 	 * @generated NOT
 	 * @ordered
 	 */
-  protected static ThreadLocal<String> callerIdNameHolder = new ThreadLocal<String>(){
+  protected ThreadLocal<String> callerIdNameHolder = new ThreadLocal<String>(){
   	protected String initialValue() {
   		return CALLER_ID_NAME_EDEFAULT;
   	}
@@ -105,13 +115,23 @@ public class CallImpl extends ThreadSensitiveImpl implements Call {
   /**
 	 * The cached value of the '{@link #getCallerIdNum() <em>Caller Id Num</em>}' attribute.
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCallerIdNum()
+	 * @generated
+	 * @ordered
+	 */
+	protected String callerIdNum = CALLER_ID_NUM_EDEFAULT;
+
+		/**
+	 * The cached value of the '{@link #getCallerIdNum() <em>Caller Id Num</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @see #getCallerIdNum()
 	 * @generated NOT
 	 * @ordered
 	 */
   
-  protected static ThreadLocal<String> callerIdNumHolder = new ThreadLocal<String>(){
+  protected ThreadLocal<String> callerIdNumHolder = new ThreadLocal<String>(){
   	protected String initialValue() {
   		return CALLER_ID_NUM_EDEFAULT;
   	}
@@ -131,12 +151,22 @@ public class CallImpl extends ThreadSensitiveImpl implements Call {
   /**
 	 * The cached value of the '{@link #getUniqueId() <em>Unique Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUniqueId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String uniqueId = UNIQUE_ID_EDEFAULT;
+
+		/**
+	 * The cached value of the '{@link #getUniqueId() <em>Unique Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @see #getUniqueId()
 	 * @generated NOT
 	 * @ordered
 	 */
-  protected static ThreadLocal<String> uniqueIdHolder = new ThreadLocal<String>(){
+  protected ThreadLocal<String> uniqueIdHolder = new ThreadLocal<String>(){
   	protected String initialValue() {
   		return UNIQUE_ID_EDEFAULT;
   	}
@@ -158,13 +188,23 @@ public class CallImpl extends ThreadSensitiveImpl implements Call {
   /**
 	 * The cached value of the '{@link #getChannelName() <em>Channel Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChannelName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String channelName = CHANNEL_NAME_EDEFAULT;
+
+		/**
+	 * The cached value of the '{@link #getChannelName() <em>Channel Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @see #getChannelName()
 	 * @generated NOT
 	 * @ordered
 	 */
   
-  protected static ThreadLocal<String> channelNameHolder = new ThreadLocal<String>(){
+  protected ThreadLocal<String> channelNameHolder = new ThreadLocal<String>(){
   	protected String initialValue() {
   		return CHANNEL_NAME_EDEFAULT;
   	}
@@ -184,23 +224,33 @@ public class CallImpl extends ThreadSensitiveImpl implements Call {
   /**
 	 * The cached value of the '{@link #getCallState() <em>Call State</em>}' attribute.
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCallState()
+	 * @generated
+	 * @ordered
+	 */
+	protected CallState callState = CALL_STATE_EDEFAULT;
+
+		/**
+	 * The cached value of the '{@link #getCallState() <em>Call State</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @see #getCallState()
 	 * @generated NOT
 	 * @ordered
 	 */
   
-  protected static ThreadLocal<CallState> callStateHolder = new ThreadLocal<CallState>(){
+  protected ThreadLocal<CallState> callStateHolder = new ThreadLocal<CallState>(){
   	protected CallState initialValue() {
   		return CALL_STATE_EDEFAULT;
   	}
   };
 //  protected CallState callState = CALL_STATE_EDEFAULT;
 
-  protected static ThreadLocal<AgiChannel> channelHolder = new ThreadLocal<AgiChannel>();
+  protected ThreadLocal<AgiChannel> channelHolder = new ThreadLocal<AgiChannel>();
 //private AgiChannel channel;
   
-  protected static ThreadLocal<Map<String,Object>> dataMapHolder = new ThreadLocal<Map<String,Object>>(){
+  protected ThreadLocal<Map<String,Object>> dataMapHolder = new ThreadLocal<Map<String,Object>>(){
   	protected java.util.Map<String,Object> initialValue() {
   		return new HashMap<String, Object>();
   	}
@@ -367,10 +417,10 @@ public class CallImpl extends ThreadSensitiveImpl implements Call {
 	 * @generated
 	 */
   public void setChannelName(String newChannelName) {
-		String oldChannelName = channelNameHolder.get();
-		channelNameHolder.set(newChannelName);
+		String oldChannelName = channelName;
+		channelName = newChannelName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AsteriskPackage.CALL__CHANNEL_NAME, oldChannelName, channelNameHolder.get()));
+			eNotify(new ENotificationImpl(this, Notification.SET, AsteriskPackage.CALL__CHANNEL_NAME, oldChannelName, channelName));
 	}
 
   /**

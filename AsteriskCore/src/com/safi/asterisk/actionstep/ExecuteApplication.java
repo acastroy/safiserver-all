@@ -18,8 +18,8 @@ import com.safi.core.actionstep.DynamicValue;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.safi.asterisk.actionstep.ExecuteApplication#getApplication <em>Application</em>}</li>
  *   <li>{@link com.safi.asterisk.actionstep.ExecuteApplication#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.ExecuteApplication#getApplication <em>Application</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,33 +29,32 @@ import com.safi.core.actionstep.DynamicValue;
  */
 public interface ExecuteApplication extends ActionStep, CallConsumer1 {
   /**
-	 * Returns the value of the '<em><b>Application</b></em>' attribute.
+	 * Returns the value of the '<em><b>Application</b></em>' reference.
 	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Application</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @return the value of the '<em>Application</em>' attribute.
-	 * @see #setApplication(String)
+	 * @return the value of the '<em>Application</em>' reference.
+	 * @see #setApplication(DynamicValue)
 	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getExecuteApplication_Application()
-	 * @model ordered="false"
-	 *        annotation="Required criteria='non-blank'"
+	 * @model annotation="DynamicValueAnnotation type='ScriptText' isTypeLocked='false' description='The name of the application' expectedReturnType='Text' helperClass=''"
 	 * @generated
 	 */
-  String getApplication();
+  DynamicValue getApplication();
 
   /**
-	 * Sets the value of the '{@link com.safi.asterisk.actionstep.ExecuteApplication#getApplication <em>Application</em>}' attribute.
+	 * Sets the value of the '{@link com.safi.asterisk.actionstep.ExecuteApplication#getApplication <em>Application</em>}' reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Application</em>' attribute.
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Application</em>' reference.
 	 * @see #getApplication()
 	 * @generated
 	 */
-  void setApplication(String value);
+	void setApplication(DynamicValue value);
 
-  /**
+		/**
 	 * Returns the value of the '<em><b>Arguments</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
    * <p>

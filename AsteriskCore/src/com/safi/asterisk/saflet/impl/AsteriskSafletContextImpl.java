@@ -42,13 +42,22 @@ public class AsteriskSafletContextImpl extends SafletContextImpl implements Aste
 
   /**
 	 * The cached value of the '{@link #getBufferedDigits() <em>Buffered Digits</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBufferedDigits()
+	 * @generated
+	 * @ordered
+	 */
+	protected String bufferedDigits = BUFFERED_DIGITS_EDEFAULT;
+		/**
+	 * The cached value of the '{@link #getBufferedDigits() <em>Buffered Digits</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getBufferedDigits()
 	 * @generated NOT
 	 * @ordered
 	 */
 //  protected String bufferedDigits = BUFFERED_DIGITS_EDEFAULT;
-  protected static ThreadLocal<StringBuffer> bufferedDigitsHolder = new ThreadLocal<StringBuffer>(){
+  protected ThreadLocal<StringBuffer> bufferedDigitsHolder = new ThreadLocal<StringBuffer>(){
   	protected StringBuffer initialValue() {
   		return new StringBuffer();
   	}

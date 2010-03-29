@@ -34,8 +34,8 @@ import com.safi.db.VariableType;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.safi.asterisk.actionstep.impl.ExecuteApplicationImpl#getCall1 <em>Call1</em>}</li>
- *   <li>{@link com.safi.asterisk.actionstep.impl.ExecuteApplicationImpl#getApplication <em>Application</em>}</li>
  *   <li>{@link com.safi.asterisk.actionstep.impl.ExecuteApplicationImpl#getArguments <em>Arguments</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.impl.ExecuteApplicationImpl#getApplication <em>Application</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,26 +53,6 @@ public class ExecuteApplicationImpl extends ActionStepImpl implements ExecuteApp
   protected Call call1;
 
   /**
-	 * The default value of the '{@link #getApplication() <em>Application</em>}' attribute.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see #getApplication()
-	 * @generated
-	 * @ordered
-	 */
-  protected static final String APPLICATION_EDEFAULT = null;
-
-  /**
-	 * The cached value of the '{@link #getApplication() <em>Application</em>}' attribute.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see #getApplication()
-	 * @generated
-	 * @ordered
-	 */
-  protected String application = APPLICATION_EDEFAULT;
-
-  /**
 	 * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -81,6 +61,16 @@ public class ExecuteApplicationImpl extends ActionStepImpl implements ExecuteApp
 	 * @ordered
 	 */
   protected DynamicValue arguments;
+
+		/**
+	 * The cached value of the '{@link #getApplication() <em>Application</em>}' reference.
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @see #getApplication()
+	 * @generated
+	 * @ordered
+	 */
+  protected DynamicValue application;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -106,10 +96,12 @@ public class ExecuteApplicationImpl extends ActionStepImpl implements ExecuteApp
         String args = (String) VariableTranslator.translateValue(VariableType.TEXT, dynValue);
         if (debugLog.isLoggable(Level.FINEST))
           debug("Asterisk application is "+ application+" with args "+args);
-        if (StringUtils.isBlank(application)) {
+        Object appDynValue = resolveDynamicValue(application, context);
+        String appname = (String) VariableTranslator.translateValue(VariableType.TEXT, appDynValue);
+        if (StringUtils.isBlank(appname)) {
           exception = new ActionStepException("Asterisk Application was not specified!");
         } else {
-          int result = channel.exec(application, args);
+          int result = channel.exec(appname, args);
           if (debugLog.isLoggable(Level.FINEST))
             debug(application+" returned "+result);
           if (result == -2)
@@ -179,23 +171,40 @@ public class ExecuteApplicationImpl extends ActionStepImpl implements ExecuteApp
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public String getApplication() {
+  public DynamicValue getApplication() {
+		if (application != null && application.eIsProxy()) {
+			InternalEObject oldApplication = (InternalEObject)application;
+			application = (DynamicValue)eResolveProxy(oldApplication);
+			if (application != oldApplication) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.EXECUTE_APPLICATION__APPLICATION, oldApplication, application));
+			}
+		}
 		return application;
 	}
 
   /**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setApplication(String newApplication) {
-		String oldApplication = application;
+	public DynamicValue basicGetApplication() {
+		return application;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setApplication(DynamicValue newApplication) {
+		DynamicValue oldApplication = application;
 		application = newApplication;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.EXECUTE_APPLICATION__APPLICATION, oldApplication, application));
 	}
 
-  /**
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
@@ -263,10 +272,11 @@ public class ExecuteApplicationImpl extends ActionStepImpl implements ExecuteApp
 			case ActionstepPackage.EXECUTE_APPLICATION__CALL1:
 				if (resolve) return getCall1();
 				return basicGetCall1();
-			case ActionstepPackage.EXECUTE_APPLICATION__APPLICATION:
-				return getApplication();
 			case ActionstepPackage.EXECUTE_APPLICATION__ARGUMENTS:
 				return getArguments();
+			case ActionstepPackage.EXECUTE_APPLICATION__APPLICATION:
+				if (resolve) return getApplication();
+				return basicGetApplication();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -283,11 +293,11 @@ public class ExecuteApplicationImpl extends ActionStepImpl implements ExecuteApp
 			case ActionstepPackage.EXECUTE_APPLICATION__CALL1:
 				setCall1((Call)newValue);
 				return;
-			case ActionstepPackage.EXECUTE_APPLICATION__APPLICATION:
-				setApplication((String)newValue);
-				return;
 			case ActionstepPackage.EXECUTE_APPLICATION__ARGUMENTS:
 				setArguments((DynamicValue)newValue);
+				return;
+			case ActionstepPackage.EXECUTE_APPLICATION__APPLICATION:
+				setApplication((DynamicValue)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -304,11 +314,11 @@ public class ExecuteApplicationImpl extends ActionStepImpl implements ExecuteApp
 			case ActionstepPackage.EXECUTE_APPLICATION__CALL1:
 				setCall1((Call)null);
 				return;
-			case ActionstepPackage.EXECUTE_APPLICATION__APPLICATION:
-				setApplication(APPLICATION_EDEFAULT);
-				return;
 			case ActionstepPackage.EXECUTE_APPLICATION__ARGUMENTS:
 				setArguments((DynamicValue)null);
+				return;
+			case ActionstepPackage.EXECUTE_APPLICATION__APPLICATION:
+				setApplication((DynamicValue)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -324,10 +334,10 @@ public class ExecuteApplicationImpl extends ActionStepImpl implements ExecuteApp
 		switch (featureID) {
 			case ActionstepPackage.EXECUTE_APPLICATION__CALL1:
 				return call1 != null;
-			case ActionstepPackage.EXECUTE_APPLICATION__APPLICATION:
-				return APPLICATION_EDEFAULT == null ? application != null : !APPLICATION_EDEFAULT.equals(application);
 			case ActionstepPackage.EXECUTE_APPLICATION__ARGUMENTS:
 				return arguments != null;
+			case ActionstepPackage.EXECUTE_APPLICATION__APPLICATION:
+				return application != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -362,22 +372,6 @@ public class ExecuteApplicationImpl extends ActionStepImpl implements ExecuteApp
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  @Override
-  public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (application: ");
-		result.append(application);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ExecuteApplicationImpl

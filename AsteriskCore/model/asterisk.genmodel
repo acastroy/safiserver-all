@@ -207,7 +207,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/Transfer/priority"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/ExecuteApplication">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/ExecuteApplication/application"/>
+         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/ExecuteApplication/application"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/ExecuteApplication/arguments"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//actionstep/GetCallInfo">

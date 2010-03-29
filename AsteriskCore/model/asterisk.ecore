@@ -623,12 +623,6 @@
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="1"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ExecuteApplication" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep #//CallConsumer1">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="application" ordered="false"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="Required">
-          <details key="criteria" value="non-blank"/>
-        </eAnnotations>
-      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" ordered="false"
           eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
           containment="true">
@@ -636,6 +630,15 @@
           <details key="type" value="VariableName"/>
           <details key="isTypeLocked" value="false"/>
           <details key="description" value="the parameters to pass to the application.  May be single text entry (ex. &quot;SIP/123&quot;) or array or text. (ex. [&quot;Sip/123&quot;,&quot;300&quot;...])"/>
+          <details key="expectedReturnType" value="Text"/>
+          <details key="helperClass" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="application" eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue">
+        <eAnnotations source="DynamicValueAnnotation">
+          <details key="type" value="ScriptText"/>
+          <details key="isTypeLocked" value="false"/>
+          <details key="description" value="The name of the application"/>
           <details key="expectedReturnType" value="Text"/>
           <details key="helperClass" value=""/>
         </eAnnotations>
