@@ -85,14 +85,14 @@ public class SafiServerRemoteManager implements NotificationListener {
     	@Override
     	public Socket createSocket(String host, int port) throws IOException {
     	  // TODO Auto-generated method stub
-    		System.err.println("Asked for "+port+" but actually connecting too "+host+":"+currentActualRMIPort);
+//    		System.err.println("Asked for "+port+" but actually connecting too "+host+":"+currentActualRMIPort);
 //    		return super.createSocket(host, port);
     	  return super.createSocket(host, currentActualRMIPort);
     	}
     	
     	@Override
     	public ServerSocket createServerSocket(int port) throws IOException {
-    		System.err.println("Asked for "+port+" but actually serving up too "+currentActualRMIPort);
+//    		System.err.println("Asked for "+port+" but actually serving up too "+currentActualRMIPort);
     	  return super.createServerSocket(currentActualRMIPort);
     	}
     	
