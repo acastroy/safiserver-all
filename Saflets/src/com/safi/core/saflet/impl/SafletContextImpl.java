@@ -86,7 +86,7 @@ public abstract class SafletContextImpl extends ThreadSensitiveImpl implements S
 	 */
   protected Map<String, Object> sessionVariables;
   
-  protected static ThreadLocal<List<Variable>> runtimeVariables = new ThreadLocal<List<Variable>>(){
+  protected ThreadLocal<List<Variable>> runtimeVariables = new ThreadLocal<List<Variable>>(){
   	protected List<Variable> initialValue() {
   		return new ArrayList<Variable>();
   	}

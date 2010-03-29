@@ -124,7 +124,7 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
    */
 //  protected boolean active = ACTIVE_EDEFAULT;
 
-  protected static ThreadLocal<Boolean> activeHolder = new ThreadLocal<Boolean>(){
+  protected ThreadLocal<Boolean> activeHolder = new ThreadLocal<Boolean>(){
   	protected Boolean initialValue() {return ACTIVE_EDEFAULT; }
   };
   /**
@@ -175,9 +175,9 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
   protected Output errorOutput;
   public final static String SCRIPT_TEXT_REPLACE = "((^\\\")|(\\\"(\\s*)(\\;)?$))";
   protected transient volatile boolean breakpoint;
-  protected static ThreadLocal<ActionStep> nextHolder = new ThreadLocal<ActionStep>();
+  protected ThreadLocal<ActionStep> nextHolder = new ThreadLocal<ActionStep>();
 //  protected transient volatile int visits = 0;
-  protected static ThreadLocal<Integer> visitsHolder = new ThreadLocal<Integer>(){
+  protected ThreadLocal<Integer> visitsHolder = new ThreadLocal<Integer>(){
   	protected Integer initialValue() { return 0;};
   };
   protected final static Logger debugLog = SafletImpl.debugLog;

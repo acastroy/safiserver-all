@@ -109,7 +109,7 @@ public class DBResultSetIdImpl extends ThreadSensitiveImpl implements DBResultSe
 	 * @ordered
 	 */
   
-  protected static ThreadLocal<ResultSet> jDBCResultSetHolder = new ThreadLocal<ResultSet>();
+  protected ThreadLocal<ResultSet> jDBCResultSetHolder = new ThreadLocal<ResultSet>();
 //  protected ResultSet jDBCResultSet = JDBC_RESULT_SET_EDEFAULT;
 
   

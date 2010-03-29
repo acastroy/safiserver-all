@@ -88,7 +88,7 @@ public class DBQueryIdImpl extends ThreadSensitiveImpl implements DBQueryId {
 	 * @generated NOT
 	 * @ordered
 	 */
-  protected static ThreadLocal<Statement> jdbcStatementHolder = new ThreadLocal<Statement>();
+  protected ThreadLocal<Statement> jdbcStatementHolder = new ThreadLocal<Statement>();
 //  protected Statement jdbcStatement = JDBC_STATEMENT_EDEFAULT;
 
   /**

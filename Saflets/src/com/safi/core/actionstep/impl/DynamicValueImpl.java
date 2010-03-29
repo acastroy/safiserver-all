@@ -119,7 +119,7 @@ public class DynamicValueImpl extends ThreadSensitiveImpl implements DynamicValu
 	 * @generated NOT
 	 * @ordered
 	 */
-  protected static ThreadLocal<EMap<String, String>> dataHolder = new ThreadLocal<EMap<String,String>>();
+  protected ThreadLocal<EMap<String, String>> dataHolder = new ThreadLocal<EMap<String,String>>();
   
 //  protected EMap<String, String> data;
 

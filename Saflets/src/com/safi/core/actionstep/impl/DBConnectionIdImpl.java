@@ -89,7 +89,7 @@ public class DBConnectionIdImpl extends ThreadSensitiveImpl implements DBConnect
 	 * @ordered
 	 */
   
-  protected static ThreadLocal<Connection> jdbcConnectionHolder = new ThreadLocal<Connection>();
+  protected ThreadLocal<Connection> jdbcConnectionHolder = new ThreadLocal<Connection>();
 //  protected Connection jdbcConnection = JDBC_CONNECTION_EDEFAULT;
 
   /**

@@ -246,7 +246,7 @@ public abstract class SafletImpl extends ThreadSensitiveImpl implements Saflet {
 		debugLog = Logger.getLogger(SafletConstants.WORKBENCH_DEBUGLOG);
 	}
 
-	protected static ThreadLocal<ScriptScope> safletScopeHolder = new ThreadLocal<ScriptScope>();
+	protected ThreadLocal<ScriptScope> safletScopeHolder = new ThreadLocal<ScriptScope>();
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
