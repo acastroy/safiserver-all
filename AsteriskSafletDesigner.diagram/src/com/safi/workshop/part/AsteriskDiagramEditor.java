@@ -844,7 +844,7 @@ public class AsteriskDiagramEditor extends DiagramDocumentEditor {
     // if (success) setInput(newInput);
     // }
 
-    close(false);
+//    close(false);
     if (newInput instanceof URIEditorInput) {
       try {
 
@@ -863,8 +863,12 @@ public class AsteriskDiagramEditor extends DiagramDocumentEditor {
         }
       } finally {
         provider.changed(newInput);
-        if (success)
-          setInput(newInput);
+//        close(false);
+        if (success){
+        	close(false);
+//        	close(false);
+//          setInput(newInput);
+        }
       }
 
     }
@@ -1245,7 +1249,11 @@ public class AsteriskDiagramEditor extends DiagramDocumentEditor {
   public void close(final boolean save) {
 
     super.close(save);
-    this.dispose();
+//    try {
+//    	this.dispose();
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
   }
 
   public void setDebugControl(DebugRemoteControl control) {

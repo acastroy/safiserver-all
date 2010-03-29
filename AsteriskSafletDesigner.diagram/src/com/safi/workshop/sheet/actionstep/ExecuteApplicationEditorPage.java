@@ -29,7 +29,7 @@ import com.safi.workshop.sheet.DynamicValueEditorUtils;
 
 public class ExecuteApplicationEditorPage extends AbstractActionstepEditorPage {
 
-  private Text applicationText;
+  private DynamicValueEditorWidget applicationText;
   private Combo combo;
   private ComboViewer comboViewer;
   private Label call1Label;
@@ -146,18 +146,23 @@ public class ExecuteApplicationEditorPage extends AbstractActionstepEditorPage {
     applicationLabel.setLayoutData(new GridData());
     applicationLabel.setText("Application:");
 
-    applicationText = new Text(this, SWT.BORDER);
+    applicationText = new DynamicValueEditorWidget(this, SWT.BORDER);
     final GridData gd_ApplicationText = new GridData(SWT.FILL, SWT.CENTER, true, false);
     applicationText.setLayoutData(gd_ApplicationText);
+    applicationText.setDynamicValue(DynamicValueEditorUtils.copyDynamicValue(executeapplication
+        .getApplication()));
+    applicationText.setEditingDomain(editingDomain);
+    applicationText.setObject(executeapplication);
 
-    IObservableValue escdigOb = ActionstepEditObservables.observeValue(parent.getEditPart()
-        .getEditingDomain(), parent.getEditPart().getActionStep(), parent.getEditPart()
-        .getActionStep().eClass().getEStructuralFeature("application"));
-    ISWTObservableValue uiElement3 = SWTObservables.observeText(
-        applicationText, SWT.FocusOut);
-    SWTObservables.observeDelayedValue(400, uiElement3);
-    bindingContext.bindValue(uiElement3, escdigOb, null, null);
+    EStructuralFeature appFeature = executeapplication.eClass().getEStructuralFeature("arguments");
+    argsDVEWidget.setFeature(appFeature);
 
+    ob = ActionstepEditObservables.observeValue(editingDomain, executeapplication, appFeature);
+    DynamicValueWidgetObservableValue appVal = new DynamicValueWidgetObservableValue(
+    		applicationText, SWT.Modify);
+
+    bindingContext.bindValue(appVal, ob, null, null);
+    
     // ----------- arguments Field
     final Label argsLabel = new Label(this, SWT.NONE);
     argsLabel.setText("Arguments:");

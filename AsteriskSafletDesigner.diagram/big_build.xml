@@ -102,7 +102,6 @@
       <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.cheatsheets_3.3.200.v20090526.jar"/>
       <pathelement location="${ECLIPSE_HOME}/plugins/org.apache.commons.lang_2.4.0.v20081016-1030.jar"/>
       <pathelement location="../../Hibernate30"/>
-      <pathelement location="${ECLIPSE_HOME}/plugins/org.apache.commons.logging_1.0.4.v200904062259.jar"/>
       <pathelement location="../../org.jdom"/>
       <pathelement location="../../org.eclipse.dltk.console"/>
       <pathelement location="../../org.eclipse.dltk.console.ui"/>

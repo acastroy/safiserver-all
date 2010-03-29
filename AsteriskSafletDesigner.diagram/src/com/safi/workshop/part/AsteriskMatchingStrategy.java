@@ -22,6 +22,8 @@ public class AsteriskMatchingStrategy implements IEditorMatchingStrategy {
       return false;
     }
 
+    if (editorInput == null)
+    	return false;
     if (editorInput.equals(input)) {
       return true;
     }

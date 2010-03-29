@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="SafiWorkshopAsterisk" uid="SafiWorkshopAsterisk" id="AsteriskSafletDesigner.diagram.SafiWorkshop" application="AsteriskSafletDesigner.diagram.AsteriskApplication" version="1.3.0" useFeatures="true" includeLaunchers="false">
+<product name="SafiWorkshopAsterisk" uid="SafiWorkshopAsterisk" id="AsteriskSafletDesigner.diagram.SafiWorkshop" application="AsteriskSafletDesigner.diagram.AsteriskApplication" version="1.3.0" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <text>
@@ -38,6 +38,7 @@
 
    <vm>
    </vm>
+
 
    <plugins>
       <plugin id="AnswerEditPolicy" fragment=""/>
@@ -160,7 +161,7 @@
    </plugins>
 
    <features>
-      <feature id="com.safi.workshop.asterisk" version="1.5.2"/>
+      <feature id="com.safi.workshop.asterisk" version="1.5.3"/>
    </features>
 
 

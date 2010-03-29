@@ -224,7 +224,7 @@
 	
 		<ant dir="../SafiDB" antfile="../SafiDB/build_enhanced.xml" target="instrument" />
 
-	    <delete includeEmptyDirs="true">
+	    <delete includeEmptyDirs="true" quiet="true">
 	      <fileset dir="${safi_install_dir}/safiStaging/non_obfuscated" includes="**/*" />
 	    </delete>
 	</target>
@@ -259,7 +259,7 @@
 		<taskdef name="nsis" classname="net.sf.nsisant.Task">
 			<classpath location="proguard/nsisant-1.2.jar" />
 		</taskdef>
-		<nsis script="../SAFIInstaller/build_workshop.nsi" path="C:/Program Files/NSIS"/>
+		<nsis script="../SAFIInstaller/build_workshop.nsi" path="C:/Program Files (x86)/NSIS"/>
 
 	</target>
 
