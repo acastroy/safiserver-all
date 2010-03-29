@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Hibernate30 Plug-in
 Bundle-SymbolicName: Hibernate30
-Bundle-Version: 1.0.0
+Bundle-Version: 1.0.1
 Bundle-ClassPath: antlr-2.7.6.jar,
  asm-attrs.jar,
  asm.jar,
