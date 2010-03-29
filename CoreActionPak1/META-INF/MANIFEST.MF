@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: CoreActionPak1 Plug-in
 Bundle-SymbolicName: CoreActionPak1;singleton:=true
-Bundle-Version: 1.2.5.79
+Bundle-Version: 1.2.6
 Bundle-Vendor: Safi Systems LLC
 Require-Bundle: AsteriskSafletDesigner.diagram;bundle-version="1.1.2",
  com.safi.server.asterisk;bundle-version="1.0.3",

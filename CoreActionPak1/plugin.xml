@@ -211,11 +211,6 @@
    <itemProviderAdapterFactory
          factory="com.safi.workshop.model.actionpak1.provider.Actionpak1ItemProviderAdapterFactory">
    </itemProviderAdapterFactory>
-   <pakjar
-         bundleSymbolicName="com.safi.CoreActionPakModel1Osgi"
-         jar="pakjars/CoreActionPakModel1Osgi-1.1.0.jar"
-         version="1.1.0">
-   </pakjar>
    <description
          descriptionText="Required Core ActionPak ">
    </description>
