@@ -67,6 +67,8 @@ import com.safi.core.actionstep.SetColValue;
 import com.safi.core.actionstep.SetColValues;
 import com.safi.core.actionstep.SetQueryParam;
 import com.safi.core.actionstep.UpdatetRow;
+import com.safi.core.call.CallPackage;
+import com.safi.core.call.impl.CallPackageImpl;
 import com.safi.core.impl.CorePackageImpl;
 import com.safi.core.initiator.InitiatorPackage;
 import com.safi.core.initiator.impl.InitiatorPackageImpl;
@@ -480,6 +482,7 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		ScriptingPackageImpl theScriptingPackage = (ScriptingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ScriptingPackage.eNS_URI) instanceof ScriptingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ScriptingPackage.eNS_URI) : ScriptingPackage.eINSTANCE);
 		SafletPackageImpl theSafletPackage = (SafletPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SafletPackage.eNS_URI) instanceof SafletPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SafletPackage.eNS_URI) : SafletPackage.eINSTANCE);
 		InitiatorPackageImpl theInitiatorPackage = (InitiatorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InitiatorPackage.eNS_URI) instanceof InitiatorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InitiatorPackage.eNS_URI) : InitiatorPackage.eINSTANCE);
+		CallPackageImpl theCallPackage = (CallPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CallPackage.eNS_URI) instanceof CallPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CallPackage.eNS_URI) : CallPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theActionStepPackage.createPackageContents();
@@ -487,6 +490,7 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		theScriptingPackage.createPackageContents();
 		theSafletPackage.createPackageContents();
 		theInitiatorPackage.createPackageContents();
+		theCallPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theActionStepPackage.initializePackageContents();
@@ -494,6 +498,7 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		theScriptingPackage.initializePackageContents();
 		theSafletPackage.initializePackageContents();
 		theInitiatorPackage.initializePackageContents();
+		theCallPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theActionStepPackage.freeze();

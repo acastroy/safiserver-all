@@ -15,6 +15,8 @@ import com.safi.core.actionstep.ActionStepPackage;
 
 import com.safi.core.actionstep.impl.ActionStepPackageImpl;
 
+import com.safi.core.call.CallPackage;
+import com.safi.core.call.impl.CallPackageImpl;
 import com.safi.core.initiator.InitiatorPackage;
 
 import com.safi.core.initiator.impl.InitiatorPackageImpl;
@@ -110,6 +112,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		ScriptingPackageImpl theScriptingPackage = (ScriptingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ScriptingPackage.eNS_URI) instanceof ScriptingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ScriptingPackage.eNS_URI) : ScriptingPackage.eINSTANCE);
 		SafletPackageImpl theSafletPackage = (SafletPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SafletPackage.eNS_URI) instanceof SafletPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SafletPackage.eNS_URI) : SafletPackage.eINSTANCE);
 		InitiatorPackageImpl theInitiatorPackage = (InitiatorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InitiatorPackage.eNS_URI) instanceof InitiatorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InitiatorPackage.eNS_URI) : InitiatorPackage.eINSTANCE);
+		CallPackageImpl theCallPackage = (CallPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CallPackage.eNS_URI) instanceof CallPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CallPackage.eNS_URI) : CallPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theCorePackage.createPackageContents();
@@ -117,6 +120,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		theScriptingPackage.createPackageContents();
 		theSafletPackage.createPackageContents();
 		theInitiatorPackage.createPackageContents();
+		theCallPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theCorePackage.initializePackageContents();
@@ -124,6 +128,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		theScriptingPackage.initializePackageContents();
 		theSafletPackage.initializePackageContents();
 		theInitiatorPackage.initializePackageContents();
+		theCallPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theCorePackage.freeze();
@@ -223,12 +228,14 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		ScriptingPackage theScriptingPackage = (ScriptingPackage)EPackage.Registry.INSTANCE.getEPackage(ScriptingPackage.eNS_URI);
 		SafletPackage theSafletPackage = (SafletPackage)EPackage.Registry.INSTANCE.getEPackage(SafletPackage.eNS_URI);
 		InitiatorPackage theInitiatorPackage = (InitiatorPackage)EPackage.Registry.INSTANCE.getEPackage(InitiatorPackage.eNS_URI);
+		CallPackage theCallPackage = (CallPackage)EPackage.Registry.INSTANCE.getEPackage(CallPackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theActionStepPackage);
 		getESubpackages().add(theScriptingPackage);
 		getESubpackages().add(theSafletPackage);
 		getESubpackages().add(theInitiatorPackage);
+		getESubpackages().add(theCallPackage);
 
 		// Create type parameters
 

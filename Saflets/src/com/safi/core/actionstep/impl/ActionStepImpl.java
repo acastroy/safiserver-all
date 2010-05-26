@@ -115,6 +115,16 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
   protected static final boolean ACTIVE_EDEFAULT = false;
 
   /**
+	 * The cached value of the '{@link #isActive() <em>Active</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isActive()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean active = ACTIVE_EDEFAULT;
+
+		/**
    * The cached value of the '{@link #isActive() <em>Active</em>}' attribute. <!--
    * begin-user-doc --> <!-- end-user-doc -->
    * 

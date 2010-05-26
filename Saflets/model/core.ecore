@@ -999,4 +999,37 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="InitiatorInfo" abstract="true" interface="true"/>
   </eSubpackages>
+  <eSubpackages name="call" nsURI="http:///com/safi/core.ecore#call" nsPrefix="com.safi.core.call">
+    <eClassifiers xsi:type="ecore:EClass" name="SafiCall" abstract="true" eSuperTypes="#//ThreadSensitive">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CallSource1" abstract="true" interface="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="newCall1" eType="#//call/SafiCall"
+          containment="true">
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CallSource2" abstract="true" interface="true"
+        eSuperTypes="#//call/CallSource1">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="newCall2" eType="#//call/SafiCall"
+          containment="true">
+        <eAnnotations source="Directionality">
+          <details key="output" value="true"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CallConsumer1" abstract="true" interface="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="call1" eType="#//call/SafiCall">
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-null"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CallConsumer2" abstract="true" interface="true"
+        eSuperTypes="#//call/CallConsumer1">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="call2" eType="#//call/SafiCall"/>
+    </eClassifiers>
+  </eSubpackages>
 </ecore:EPackage>

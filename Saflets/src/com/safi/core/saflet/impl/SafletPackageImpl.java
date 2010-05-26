@@ -12,6 +12,8 @@ import com.safi.core.actionstep.ActionStepPackage;
 
 import com.safi.core.actionstep.impl.ActionStepPackageImpl;
 
+import com.safi.core.call.CallPackage;
+import com.safi.core.call.impl.CallPackageImpl;
 import com.safi.core.impl.CorePackageImpl;
 
 import com.safi.core.initiator.InitiatorPackage;
@@ -146,6 +148,7 @@ public class SafletPackageImpl extends EPackageImpl implements SafletPackage {
 		ActionStepPackageImpl theActionStepPackage = (ActionStepPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ActionStepPackage.eNS_URI) instanceof ActionStepPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ActionStepPackage.eNS_URI) : ActionStepPackage.eINSTANCE);
 		ScriptingPackageImpl theScriptingPackage = (ScriptingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ScriptingPackage.eNS_URI) instanceof ScriptingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ScriptingPackage.eNS_URI) : ScriptingPackage.eINSTANCE);
 		InitiatorPackageImpl theInitiatorPackage = (InitiatorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InitiatorPackage.eNS_URI) instanceof InitiatorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InitiatorPackage.eNS_URI) : InitiatorPackage.eINSTANCE);
+		CallPackageImpl theCallPackage = (CallPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CallPackage.eNS_URI) instanceof CallPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CallPackage.eNS_URI) : CallPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theSafletPackage.createPackageContents();
@@ -153,6 +156,7 @@ public class SafletPackageImpl extends EPackageImpl implements SafletPackage {
 		theActionStepPackage.createPackageContents();
 		theScriptingPackage.createPackageContents();
 		theInitiatorPackage.createPackageContents();
+		theCallPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theSafletPackage.initializePackageContents();
@@ -160,6 +164,7 @@ public class SafletPackageImpl extends EPackageImpl implements SafletPackage {
 		theActionStepPackage.initializePackageContents();
 		theScriptingPackage.initializePackageContents();
 		theInitiatorPackage.initializePackageContents();
+		theCallPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theSafletPackage.freeze();
