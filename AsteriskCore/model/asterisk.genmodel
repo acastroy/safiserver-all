@@ -21,6 +21,7 @@
     </genEnums>
     <genDataTypes ecoreDataType="asterisk.ecore#//AgiRequest"/>
     <genDataTypes ecoreDataType="asterisk.ecore#//AgiChannel"/>
+    <genDataTypes ecoreDataType="asterisk.ecore#//ManagerConnection"/>
     <genClasses ecoreClass="asterisk.ecore#//Call">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//Call/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//Call/channel"/>
@@ -36,18 +37,6 @@
       <genOperations ecoreOperation="asterisk.ecore#//Call/getData">
         <genParameters ecoreParameter="asterisk.ecore#//Call/getData/name"/>
       </genOperations>
-    </genClasses>
-    <genClasses image="false" ecoreClass="asterisk.ecore#//CallSource1">
-      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//CallSource1/newCall1"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="asterisk.ecore#//CallSource2">
-      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//CallSource2/newCall2"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="asterisk.ecore#//CallConsumer1">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference asterisk.ecore#//CallConsumer1/call1"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="asterisk.ecore#//CallConsumer2">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference asterisk.ecore#//CallConsumer2/call2"/>
     </genClasses>
     <nestedGenPackages prefix="Actionstep" disposableProviderFactory="true" ecorePackage="asterisk.ecore#//actionstep">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="asterisk.ecore#//actionstep/MeetMeAdminCommand">
