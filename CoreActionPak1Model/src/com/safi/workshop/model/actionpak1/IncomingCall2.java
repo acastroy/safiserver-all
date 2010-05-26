@@ -6,8 +6,8 @@
  */
 package com.safi.workshop.model.actionpak1;
 
-import com.safi.asterisk.CallSource1;
 import com.safi.core.actionstep.ParameterizedInitiator;
+import com.safi.core.call.CallSource1;
 
 
 /**

@@ -6,6 +6,7 @@
  */
 package com.safi.workshop.model.actionpak1.impl;
 
+import com.safi.core.CorePackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -14,6 +15,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.core.actionstep.ActionStepPackage;
+import com.safi.core.call.CallPackage;
 import com.safi.workshop.model.actionpak1.Actionpak1Factory;
 import com.safi.workshop.model.actionpak1.Actionpak1Package;
 import com.safi.workshop.model.actionpak1.ActionstepTest;
@@ -119,7 +121,7 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 		isInited = true;
 
 		// Initialize simple dependencies
-		AsteriskPackage.eINSTANCE.eClass();
+		CorePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theActionpak1Package.createPackageContents();
@@ -317,7 +319,7 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 
 		// Obtain other dependent packages
 		ActionStepPackage theActionStepPackage = (ActionStepPackage)EPackage.Registry.INSTANCE.getEPackage(ActionStepPackage.eNS_URI);
-		AsteriskPackage theAsteriskPackage = (AsteriskPackage)EPackage.Registry.INSTANCE.getEPackage(AsteriskPackage.eNS_URI);
+		CallPackage theCallPackage = (CallPackage)EPackage.Registry.INSTANCE.getEPackage(CallPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -327,7 +329,7 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 		actionstepTestEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
 		customInitiatorEClass.getESuperTypes().add(theActionStepPackage.getParameterizedInitiator());
 		incomingCall2EClass.getESuperTypes().add(theActionStepPackage.getParameterizedInitiator());
-		incomingCall2EClass.getESuperTypes().add(theAsteriskPackage.getCallSource1());
+		incomingCall2EClass.getESuperTypes().add(theCallPackage.getCallSource1());
 		invokeSaflet2EClass.getESuperTypes().add(theActionStepPackage.getParameterizedActionstep());
 		managerActionEClass.getESuperTypes().add(theActionStepPackage.getParameterizedActionstep());
 

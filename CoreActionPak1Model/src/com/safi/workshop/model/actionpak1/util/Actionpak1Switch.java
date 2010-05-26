@@ -11,11 +11,12 @@ import java.util.List;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
-import com.safi.asterisk.CallSource1;
 import com.safi.core.ProductIdentifiable;
+import com.safi.core.ThreadSensitive;
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.ParameterizedActionstep;
 import com.safi.core.actionstep.ParameterizedInitiator;
+import com.safi.core.call.CallSource1;
 import com.safi.core.initiator.Initiator;
 import com.safi.workshop.model.actionpak1.*;
 import com.safi.workshop.model.actionpak1.Actionpak1Package;
@@ -103,6 +104,7 @@ public class Actionpak1Switch<T> {
 				T result = caseActionstepTest(actionstepTest);
 				if (result == null) result = caseActionStep(actionstepTest);
 				if (result == null) result = caseProductIdentifiable(actionstepTest);
+				if (result == null) result = caseThreadSensitive(actionstepTest);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -114,6 +116,7 @@ public class Actionpak1Switch<T> {
 				if (result == null) result = caseParameterizedActionstep(customInitiator);
 				if (result == null) result = caseActionStep(customInitiator);
 				if (result == null) result = caseProductIdentifiable(customInitiator);
+				if (result == null) result = caseThreadSensitive(customInitiator);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -126,6 +129,7 @@ public class Actionpak1Switch<T> {
 				if (result == null) result = caseParameterizedActionstep(incomingCall2);
 				if (result == null) result = caseActionStep(incomingCall2);
 				if (result == null) result = caseProductIdentifiable(incomingCall2);
+				if (result == null) result = caseThreadSensitive(incomingCall2);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -135,6 +139,7 @@ public class Actionpak1Switch<T> {
 				if (result == null) result = caseParameterizedActionstep(invokeSaflet2);
 				if (result == null) result = caseActionStep(invokeSaflet2);
 				if (result == null) result = caseProductIdentifiable(invokeSaflet2);
+				if (result == null) result = caseThreadSensitive(invokeSaflet2);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -144,6 +149,7 @@ public class Actionpak1Switch<T> {
 				if (result == null) result = caseParameterizedActionstep(managerAction);
 				if (result == null) result = caseActionStep(managerAction);
 				if (result == null) result = caseProductIdentifiable(managerAction);
+				if (result == null) result = caseThreadSensitive(managerAction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -242,6 +248,21 @@ public class Actionpak1Switch<T> {
 	}
 
   /**
+	 * Returns the result of interpreting the object as an instance of '<em>Thread Sensitive</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Thread Sensitive</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseThreadSensitive(ThreadSensitive object) {
+		return null;
+	}
+
+		/**
 	 * Returns the result of interpreting the object as an instance of '<em>Action Step</em>'.
 	 * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -302,13 +323,13 @@ public class Actionpak1Switch<T> {
 	}
 
   /**
-	 * Returns the result of interpreting the object as an instance of '<em>Call Source1</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Source1</em>'.
 	 * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Call Source1</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Source1</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */

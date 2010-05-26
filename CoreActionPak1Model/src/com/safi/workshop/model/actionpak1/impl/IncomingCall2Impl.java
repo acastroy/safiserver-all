@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
-import com.safi.asterisk.CallSource1;
 import com.safi.asterisk.initiator.AsteriskInitiatorInfo;
 import com.safi.asterisk.util.AsteriskSafletConstants;
 import com.safi.core.actionstep.ActionStepException;
@@ -30,6 +29,9 @@ import com.safi.core.actionstep.InputItem;
 import com.safi.core.actionstep.Output;
 import com.safi.core.actionstep.OutputType;
 import com.safi.core.actionstep.impl.ParameterizedInitiatorImpl;
+import com.safi.core.call.CallPackage;
+import com.safi.core.call.CallSource1;
+import com.safi.core.call.SafiCall;
 import com.safi.db.util.VariableTranslator;
 import com.safi.core.initiator.InitiatorInfo;
 import com.safi.core.saflet.Saflet;
@@ -67,7 +69,7 @@ public class IncomingCall2Impl extends ParameterizedInitiatorImpl implements Inc
 	 * @generated
 	 * @ordered
 	 */
-  protected Call newCall1;
+  protected SafiCall newCall1;
 
   /**
 	 * The default value of the '{@link #getCallName() <em>Call Name</em>}' attribute.
@@ -177,6 +179,15 @@ public class IncomingCall2Impl extends ParameterizedInitiatorImpl implements Inc
     super.initialize(info);
     if (newCall1 == null)
       throw new ActionStepException("No call found for IncomingCall initiator "+getName());
+    
+    if (!(newCall1 instanceof Call)) {
+			throw new ActionStepException("Call isn't isn't an Asterisk call: "
+					+ newCall1.getClass().getName());
+		}
+		if (((Call) newCall1).getChannel() == null) {
+			new ActionStepException("No channel found in current context");
+		}
+
     AgiRequest request = ((AsteriskInitiatorInfo)info).getRequest();
     AgiChannel channel = ((AsteriskInitiatorInfo)info).getChannel();
     AsteriskServer server = ((AsteriskInitiatorInfo)info).getAsteriskServer();
@@ -226,11 +237,11 @@ public class IncomingCall2Impl extends ParameterizedInitiatorImpl implements Inc
     }
     
     
-    newCall1.setCallerIdName(request.getCallerIdName());
-    newCall1.setCallerIdNum(request.getCallerIdNumber());
-    newCall1.setChannel(channel);
-    newCall1.setChannelName(channel.getName());
-    newCall1.setUniqueId(channel.getUniqueId());
+    ((Call)newCall1).setCallerIdName(request.getCallerIdName());
+    ((Call)newCall1).setCallerIdNum(request.getCallerIdNumber());
+    ((Call)newCall1).setChannel(channel);
+    ((Call)newCall1).setChannelName(channel.getName());
+    ((Call)newCall1).setUniqueId(channel.getUniqueId());
     super.initialize(info);
   }
   /**
@@ -248,17 +259,17 @@ public class IncomingCall2Impl extends ParameterizedInitiatorImpl implements Inc
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Call getNewCall1() {
+  public SafiCall getNewCall1() {
 		return newCall1;
 	}
 
   /**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetNewCall1(Call newNewCall1, NotificationChain msgs) {
-		Call oldNewCall1 = newCall1;
+	public NotificationChain basicSetNewCall1(SafiCall newNewCall1, NotificationChain msgs) {
+		SafiCall oldNewCall1 = newCall1;
 		newCall1 = newNewCall1;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Actionpak1Package.INCOMING_CALL2__NEW_CALL1, oldNewCall1, newNewCall1);
@@ -267,12 +278,12 @@ public class IncomingCall2Impl extends ParameterizedInitiatorImpl implements Inc
 		return msgs;
 	}
 
-  /**
+		/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setNewCall1(Call newNewCall1) {
+	public void setNewCall1(SafiCall newNewCall1) {
 		if (newNewCall1 != newCall1) {
 			NotificationChain msgs = null;
 			if (newCall1 != null)
@@ -286,7 +297,7 @@ public class IncomingCall2Impl extends ParameterizedInitiatorImpl implements Inc
 			eNotify(new ENotificationImpl(this, Notification.SET, Actionpak1Package.INCOMING_CALL2__NEW_CALL1, newNewCall1, newNewCall1));
 	}
 
-  /**
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
@@ -308,7 +319,7 @@ public class IncomingCall2Impl extends ParameterizedInitiatorImpl implements Inc
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, Actionpak1Package.INCOMING_CALL2__CALL_NAME, oldCallName, callName));
     if (!StringUtils.equals(oldCallName, callName) && getNewCall1() != null){
-      Call call = getNewCall1();
+      Call call = (Call)getNewCall1();
       call.setName(callName);
     }
   }
@@ -352,7 +363,7 @@ public class IncomingCall2Impl extends ParameterizedInitiatorImpl implements Inc
   public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Actionpak1Package.INCOMING_CALL2__NEW_CALL1:
-				setNewCall1((Call)newValue);
+				setNewCall1((SafiCall)newValue);
 				return;
 			case Actionpak1Package.INCOMING_CALL2__CALL_NAME:
 				setCallName((String)newValue);
@@ -370,7 +381,7 @@ public class IncomingCall2Impl extends ParameterizedInitiatorImpl implements Inc
   public void eUnset(int featureID) {
 		switch (featureID) {
 			case Actionpak1Package.INCOMING_CALL2__NEW_CALL1:
-				setNewCall1((Call)null);
+				setNewCall1((SafiCall)null);
 				return;
 			case Actionpak1Package.INCOMING_CALL2__CALL_NAME:
 				setCallName(CALL_NAME_EDEFAULT);
@@ -404,7 +415,7 @@ public class IncomingCall2Impl extends ParameterizedInitiatorImpl implements Inc
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == CallSource1.class) {
 			switch (derivedFeatureID) {
-				case Actionpak1Package.INCOMING_CALL2__NEW_CALL1: return AsteriskPackage.CALL_SOURCE1__NEW_CALL1;
+				case Actionpak1Package.INCOMING_CALL2__NEW_CALL1: return CallPackage.CALL_SOURCE1__NEW_CALL1;
 				default: return -1;
 			}
 		}
@@ -420,7 +431,7 @@ public class IncomingCall2Impl extends ParameterizedInitiatorImpl implements Inc
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == CallSource1.class) {
 			switch (baseFeatureID) {
-				case AsteriskPackage.CALL_SOURCE1__NEW_CALL1: return Actionpak1Package.INCOMING_CALL2__NEW_CALL1;
+				case CallPackage.CALL_SOURCE1__NEW_CALL1: return Actionpak1Package.INCOMING_CALL2__NEW_CALL1;
 				default: return -1;
 			}
 		}

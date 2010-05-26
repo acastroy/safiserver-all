@@ -188,10 +188,8 @@ public class ManagerActionImpl extends ParameterizedActionstepImpl implements Ma
 	 * @generated
 	 */
 	public void setManagerActionType(ManagerActionType newManagerActionType) {
-	
 		ManagerActionType oldManagerActionType = managerActionType;
-		managerActionType = newManagerActionType == null ? MANAGER_ACTION_TYPE_EDEFAULT : newManagerActionType;	
-		
+		managerActionType = newManagerActionType == null ? MANAGER_ACTION_TYPE_EDEFAULT : newManagerActionType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Actionpak1Package.MANAGER_ACTION__MANAGER_ACTION_TYPE, oldManagerActionType, managerActionType));
 	}
