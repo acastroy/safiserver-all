@@ -11,13 +11,14 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import com.safi.asterisk.AsteriskPackage;
-import com.safi.asterisk.Call;
-import com.safi.asterisk.CallConsumer1;
+
 import com.safi.asterisk.actionstep.ActionstepPackage;
 import com.safi.asterisk.actionstep.Dial;
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.impl.ActionStepImpl;
+import com.safi.core.call.CallConsumer1;
+import com.safi.core.call.CallPackage;
+import com.safi.core.call.SafiCall;
 
 /**
  * <!-- begin-user-doc -->
@@ -78,7 +79,7 @@ public class DialImpl extends ActionStepImpl implements Dial {
 	 * @generated
 	 * @ordered
 	 */
-  protected Call call1;
+  protected SafiCall call1;
 
   /**
 	 * The cached value of the '{@link #getOutgoingChannels() <em>Outgoing Channels</em>}' containment reference.
@@ -834,10 +835,10 @@ public class DialImpl extends ActionStepImpl implements Dial {
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Call getCall1() {
+  public SafiCall getCall1() {
 		if (call1 != null && call1.eIsProxy()) {
 			InternalEObject oldCall1 = (InternalEObject)call1;
-			call1 = (Call)eResolveProxy(oldCall1);
+			call1 = (SafiCall)eResolveProxy(oldCall1);
 			if (call1 != oldCall1) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.DIAL__CALL1, oldCall1, call1));
@@ -851,23 +852,23 @@ public class DialImpl extends ActionStepImpl implements Dial {
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Call basicGetCall1() {
+  public SafiCall basicGetCall1() {
 		return call1;
 	}
 
   /**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setCall1(Call newCall1) {
-		Call oldCall1 = call1;
+	public void setCall1(SafiCall newCall1) {
+		SafiCall oldCall1 = call1;
 		call1 = newCall1;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.DIAL__CALL1, oldCall1, call1));
 	}
 
-  /**
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
@@ -1779,7 +1780,7 @@ public class DialImpl extends ActionStepImpl implements Dial {
   public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ActionstepPackage.DIAL__CALL1:
-				setCall1((Call)newValue);
+				setCall1((SafiCall)newValue);
 				return;
 			case ActionstepPackage.DIAL__OUTGOING_CHANNELS:
 				setOutgoingChannels((DynamicValue)newValue);
@@ -1905,7 +1906,7 @@ public class DialImpl extends ActionStepImpl implements Dial {
   public void eUnset(int featureID) {
 		switch (featureID) {
 			case ActionstepPackage.DIAL__CALL1:
-				setCall1((Call)null);
+				setCall1((SafiCall)null);
 				return;
 			case ActionstepPackage.DIAL__OUTGOING_CHANNELS:
 				setOutgoingChannels((DynamicValue)null);
@@ -2119,7 +2120,7 @@ public class DialImpl extends ActionStepImpl implements Dial {
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == CallConsumer1.class) {
 			switch (derivedFeatureID) {
-				case ActionstepPackage.DIAL__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
+				case ActionstepPackage.DIAL__CALL1: return CallPackage.CALL_CONSUMER1__CALL1;
 				default: return -1;
 			}
 		}
@@ -2135,7 +2136,7 @@ public class DialImpl extends ActionStepImpl implements Dial {
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == CallConsumer1.class) {
 			switch (baseFeatureID) {
-				case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.DIAL__CALL1;
+				case CallPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.DIAL__CALL1;
 				default: return -1;
 			}
 		}

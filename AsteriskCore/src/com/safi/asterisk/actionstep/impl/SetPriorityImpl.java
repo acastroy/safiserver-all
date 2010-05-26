@@ -12,17 +12,19 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import com.safi.asterisk.AsteriskPackage;
+
 import com.safi.asterisk.Call;
-import com.safi.asterisk.CallConsumer1;
 import com.safi.asterisk.actionstep.ActionstepPackage;
 import com.safi.asterisk.actionstep.SetPriority;
 import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.impl.ActionStepImpl;
-import com.safi.db.util.VariableTranslator;
+import com.safi.core.call.CallConsumer1;
+import com.safi.core.call.CallPackage;
+import com.safi.core.call.SafiCall;
 import com.safi.core.saflet.SafletContext;
 import com.safi.db.VariableType;
+import com.safi.db.util.VariableTranslator;
 
 /**
  * <!-- begin-user-doc -->
@@ -47,7 +49,7 @@ public class SetPriorityImpl extends ActionStepImpl implements SetPriority {
 	 * @generated
 	 * @ordered
 	 */
-  protected Call call1;
+  protected SafiCall call1;
 
   /**
 	 * The cached value of the '{@link #getPriority() <em>Priority</em>}' containment reference.
@@ -71,11 +73,21 @@ public class SetPriorityImpl extends ActionStepImpl implements SetPriority {
   @Override
   public void beginProcessing(SafletContext context) throws ActionStepException {
     super.beginProcessing(context);
-    if (call1 == null || call1.getChannel() == null) {
-      handleException(context, new ActionStepException(call1 == null ? "No current call found" : "No channel found in current context"));
+    if (call1 == null){
+   	 handleException(context, new ActionStepException("No current call found"));
       return;
-    }
-    AgiChannel channel = call1.getChannel();
+   }
+   else
+   if (!(call1 instanceof Call)){
+   	handleException(context, new ActionStepException("Call isn't isn't an Asterisk call: "+call1.getClass().getName()));
+   	return;
+   }
+   if (((Call)call1).getChannel() == null) {
+     handleException(context, new ActionStepException("No channel found in current context"));
+     return;
+   }
+   
+   AgiChannel channel = ((Call)call1).getChannel();
     try {
       String priorityStr = (String)VariableTranslator.translateValue(VariableType.TEXT, resolveDynamicValue(priority, context));
       channel.setPriority(priorityStr);
@@ -101,10 +113,10 @@ public class SetPriorityImpl extends ActionStepImpl implements SetPriority {
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Call getCall1() {
+  public SafiCall getCall1() {
 		if (call1 != null && call1.eIsProxy()) {
 			InternalEObject oldCall1 = (InternalEObject)call1;
-			call1 = (Call)eResolveProxy(oldCall1);
+			call1 = (SafiCall)eResolveProxy(oldCall1);
 			if (call1 != oldCall1) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.SET_PRIORITY__CALL1, oldCall1, call1));
@@ -118,23 +130,23 @@ public class SetPriorityImpl extends ActionStepImpl implements SetPriority {
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Call basicGetCall1() {
+  public SafiCall basicGetCall1() {
 		return call1;
 	}
 
   /**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setCall1(Call newCall1) {
-		Call oldCall1 = call1;
+	public void setCall1(SafiCall newCall1) {
+		SafiCall oldCall1 = call1;
 		call1 = newCall1;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.SET_PRIORITY__CALL1, oldCall1, call1));
 	}
 
-  /**
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
@@ -218,7 +230,7 @@ public class SetPriorityImpl extends ActionStepImpl implements SetPriority {
   public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ActionstepPackage.SET_PRIORITY__CALL1:
-				setCall1((Call)newValue);
+				setCall1((SafiCall)newValue);
 				return;
 			case ActionstepPackage.SET_PRIORITY__PRIORITY:
 				setPriority((DynamicValue)newValue);
@@ -236,7 +248,7 @@ public class SetPriorityImpl extends ActionStepImpl implements SetPriority {
   public void eUnset(int featureID) {
 		switch (featureID) {
 			case ActionstepPackage.SET_PRIORITY__CALL1:
-				setCall1((Call)null);
+				setCall1((SafiCall)null);
 				return;
 			case ActionstepPackage.SET_PRIORITY__PRIORITY:
 				setPriority((DynamicValue)null);
@@ -270,7 +282,7 @@ public class SetPriorityImpl extends ActionStepImpl implements SetPriority {
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == CallConsumer1.class) {
 			switch (derivedFeatureID) {
-				case ActionstepPackage.SET_PRIORITY__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
+				case ActionstepPackage.SET_PRIORITY__CALL1: return CallPackage.CALL_CONSUMER1__CALL1;
 				default: return -1;
 			}
 		}
@@ -286,7 +298,7 @@ public class SetPriorityImpl extends ActionStepImpl implements SetPriority {
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == CallConsumer1.class) {
 			switch (baseFeatureID) {
-				case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.SET_PRIORITY__CALL1;
+				case CallPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.SET_PRIORITY__CALL1;
 				default: return -1;
 			}
 		}

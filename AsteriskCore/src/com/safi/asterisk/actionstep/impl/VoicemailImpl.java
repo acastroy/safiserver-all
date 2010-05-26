@@ -7,6 +7,7 @@
 package com.safi.asterisk.actionstep.impl;
 
 import java.util.logging.Level;
+
 import org.apache.commons.lang.StringUtils;
 import org.asteriskjava.fastagi.AgiChannel;
 import org.eclipse.emf.common.notify.Notification;
@@ -14,9 +15,8 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import com.safi.asterisk.AsteriskPackage;
+
 import com.safi.asterisk.Call;
-import com.safi.asterisk.CallConsumer1;
 import com.safi.asterisk.actionstep.ActionstepPackage;
 import com.safi.asterisk.actionstep.Voicemail;
 import com.safi.core.actionstep.ActionStepException;
@@ -25,9 +25,12 @@ import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.Output;
 import com.safi.core.actionstep.OutputType;
 import com.safi.core.actionstep.impl.ActionStepImpl;
-import com.safi.db.util.VariableTranslator;
+import com.safi.core.call.CallConsumer1;
+import com.safi.core.call.CallPackage;
+import com.safi.core.call.SafiCall;
 import com.safi.core.saflet.SafletContext;
 import com.safi.db.VariableType;
+import com.safi.db.util.VariableTranslator;
 
 /**
  * <!-- begin-user-doc -->
@@ -56,7 +59,7 @@ public class VoicemailImpl extends ActionStepImpl implements Voicemail {
 	 * @generated
 	 * @ordered
 	 */
-  protected Call call1;
+  protected SafiCall call1;
 
   /**
 	 * The cached value of the '{@link #getMailbox() <em>Mailbox</em>}' containment reference.
@@ -162,11 +165,21 @@ public class VoicemailImpl extends ActionStepImpl implements Voicemail {
     super.beginProcessing(context);
     Exception exception = null;
     int idx = 0;
-    if (call1 == null || call1.getChannel() == null) {
-      exception = new ActionStepException(call1 == null ? "No current call found"
-          : "No channel found in current context");
-    } else {
-      AgiChannel channel = call1.getChannel();
+    if (call1 == null){
+   	 handleException(context, new ActionStepException("No current call found"));
+      return;
+   }
+   else
+   if (!(call1 instanceof Call)){
+   	handleException(context, new ActionStepException("Call isn't isn't an Asterisk call: "+call1.getClass().getName()));
+   	return;
+   }
+   if (((Call)call1).getChannel() == null) {
+     handleException(context, new ActionStepException("No channel found in current context"));
+     return;
+   }
+   
+   AgiChannel channel = ((Call)call1).getChannel();
       try {
 
         String mb = (String) VariableTranslator.translateValue(VariableType.TEXT,
@@ -229,7 +242,6 @@ public class VoicemailImpl extends ActionStepImpl implements Voicemail {
       } catch (Exception e) {
         exception = e;
       }
-    }
 
     if (exception != null) {
       handleException(context, exception);
@@ -265,10 +277,10 @@ public class VoicemailImpl extends ActionStepImpl implements Voicemail {
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Call getCall1() {
+  public SafiCall getCall1() {
 		if (call1 != null && call1.eIsProxy()) {
 			InternalEObject oldCall1 = (InternalEObject)call1;
-			call1 = (Call)eResolveProxy(oldCall1);
+			call1 = (SafiCall)eResolveProxy(oldCall1);
 			if (call1 != oldCall1) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.VOICEMAIL__CALL1, oldCall1, call1));
@@ -282,23 +294,23 @@ public class VoicemailImpl extends ActionStepImpl implements Voicemail {
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Call basicGetCall1() {
+  public SafiCall basicGetCall1() {
 		return call1;
 	}
 
   /**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setCall1(Call newCall1) {
-		Call oldCall1 = call1;
+	public void setCall1(SafiCall newCall1) {
+		SafiCall oldCall1 = call1;
 		call1 = newCall1;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.VOICEMAIL__CALL1, oldCall1, call1));
 	}
 
-  /**
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
@@ -474,7 +486,7 @@ public class VoicemailImpl extends ActionStepImpl implements Voicemail {
   public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ActionstepPackage.VOICEMAIL__CALL1:
-				setCall1((Call)newValue);
+				setCall1((SafiCall)newValue);
 				return;
 			case ActionstepPackage.VOICEMAIL__MAILBOX:
 				setMailbox((DynamicValue)newValue);
@@ -504,7 +516,7 @@ public class VoicemailImpl extends ActionStepImpl implements Voicemail {
   public void eUnset(int featureID) {
 		switch (featureID) {
 			case ActionstepPackage.VOICEMAIL__CALL1:
-				setCall1((Call)null);
+				setCall1((SafiCall)null);
 				return;
 			case ActionstepPackage.VOICEMAIL__MAILBOX:
 				setMailbox((DynamicValue)null);
@@ -558,7 +570,7 @@ public class VoicemailImpl extends ActionStepImpl implements Voicemail {
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == CallConsumer1.class) {
 			switch (derivedFeatureID) {
-				case ActionstepPackage.VOICEMAIL__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
+				case ActionstepPackage.VOICEMAIL__CALL1: return CallPackage.CALL_CONSUMER1__CALL1;
 				default: return -1;
 			}
 		}
@@ -574,7 +586,7 @@ public class VoicemailImpl extends ActionStepImpl implements Voicemail {
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == CallConsumer1.class) {
 			switch (baseFeatureID) {
-				case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.VOICEMAIL__CALL1;
+				case CallPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.VOICEMAIL__CALL1;
 				default: return -1;
 			}
 		}

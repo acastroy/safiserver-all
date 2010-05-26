@@ -7,14 +7,14 @@
 package com.safi.asterisk.actionstep.impl;
 
 import java.util.logging.Level;
+
 import org.asteriskjava.fastagi.AgiChannel;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import com.safi.asterisk.AsteriskPackage;
+
 import com.safi.asterisk.Call;
-import com.safi.asterisk.CallConsumer1;
 import com.safi.asterisk.actionstep.ActionstepPackage;
 import com.safi.asterisk.actionstep.WaitForDigit;
 import com.safi.asterisk.saflet.AsteriskSafletContext;
@@ -23,6 +23,9 @@ import com.safi.core.actionstep.ActionStepFactory;
 import com.safi.core.actionstep.Output;
 import com.safi.core.actionstep.OutputType;
 import com.safi.core.actionstep.impl.ActionStepImpl;
+import com.safi.core.call.CallConsumer1;
+import com.safi.core.call.CallPackage;
+import com.safi.core.call.SafiCall;
 import com.safi.core.saflet.SafletContext;
 
 /**
@@ -49,7 +52,7 @@ public class WaitForDigitImpl extends ActionStepImpl implements WaitForDigit {
 	 * @generated
 	 * @ordered
 	 */
-  protected Call call1;
+  protected SafiCall call1;
 
   /**
 	 * The default value of the '{@link #getTimeout() <em>Timeout</em>}' attribute.
@@ -103,12 +106,21 @@ public class WaitForDigitImpl extends ActionStepImpl implements WaitForDigit {
   @Override
   public void beginProcessing(SafletContext context) throws ActionStepException {
     super.beginProcessing(context);
-    if (call1 == null || call1.getChannel() == null) {
-      handleException(context, new ActionStepException(call1 == null ? "No current call found"
-          : "No channel found in current context"));
+    if (call1 == null){
+   	 handleException(context, new ActionStepException("No current call found"));
       return;
-    }
-    AgiChannel channel = call1.getChannel();
+   }
+   else
+   if (!(call1 instanceof Call)){
+   	handleException(context, new ActionStepException("Call isn't isn't an Asterisk call: "+call1.getClass().getName()));
+   	return;
+   }
+   if (((Call)call1).getChannel() == null) {
+     handleException(context, new ActionStepException("No channel found in current context"));
+     return;
+   }
+   
+   AgiChannel channel = ((Call)call1).getChannel();
     boolean success = false;
     try {
       char c = Character.MAX_VALUE;
@@ -162,10 +174,10 @@ public class WaitForDigitImpl extends ActionStepImpl implements WaitForDigit {
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Call getCall1() {
+  public SafiCall getCall1() {
 		if (call1 != null && call1.eIsProxy()) {
 			InternalEObject oldCall1 = (InternalEObject)call1;
-			call1 = (Call)eResolveProxy(oldCall1);
+			call1 = (SafiCall)eResolveProxy(oldCall1);
 			if (call1 != oldCall1) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.WAIT_FOR_DIGIT__CALL1, oldCall1, call1));
@@ -179,23 +191,23 @@ public class WaitForDigitImpl extends ActionStepImpl implements WaitForDigit {
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Call basicGetCall1() {
+  public SafiCall basicGetCall1() {
 		return call1;
 	}
 
   /**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setCall1(Call newCall1) {
-		Call oldCall1 = call1;
+	public void setCall1(SafiCall newCall1) {
+		SafiCall oldCall1 = call1;
 		call1 = newCall1;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.WAIT_FOR_DIGIT__CALL1, oldCall1, call1));
 	}
 
-  /**
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
@@ -266,7 +278,7 @@ public class WaitForDigitImpl extends ActionStepImpl implements WaitForDigit {
   public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ActionstepPackage.WAIT_FOR_DIGIT__CALL1:
-				setCall1((Call)newValue);
+				setCall1((SafiCall)newValue);
 				return;
 			case ActionstepPackage.WAIT_FOR_DIGIT__TIMEOUT:
 				setTimeout((Long)newValue);
@@ -287,7 +299,7 @@ public class WaitForDigitImpl extends ActionStepImpl implements WaitForDigit {
   public void eUnset(int featureID) {
 		switch (featureID) {
 			case ActionstepPackage.WAIT_FOR_DIGIT__CALL1:
-				setCall1((Call)null);
+				setCall1((SafiCall)null);
 				return;
 			case ActionstepPackage.WAIT_FOR_DIGIT__TIMEOUT:
 				setTimeout(TIMEOUT_EDEFAULT);
@@ -326,7 +338,7 @@ public class WaitForDigitImpl extends ActionStepImpl implements WaitForDigit {
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == CallConsumer1.class) {
 			switch (derivedFeatureID) {
-				case ActionstepPackage.WAIT_FOR_DIGIT__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
+				case ActionstepPackage.WAIT_FOR_DIGIT__CALL1: return CallPackage.CALL_CONSUMER1__CALL1;
 				default: return -1;
 			}
 		}
@@ -342,7 +354,7 @@ public class WaitForDigitImpl extends ActionStepImpl implements WaitForDigit {
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == CallConsumer1.class) {
 			switch (baseFeatureID) {
-				case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.WAIT_FOR_DIGIT__CALL1;
+				case CallPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.WAIT_FOR_DIGIT__CALL1;
 				default: return -1;
 			}
 		}

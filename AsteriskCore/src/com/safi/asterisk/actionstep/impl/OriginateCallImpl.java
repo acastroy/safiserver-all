@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.logging.Level;
+
 import org.apache.commons.lang.StringUtils;
 import org.asteriskjava.fastagi.AgiChannel;
 import org.asteriskjava.fastagi.AgiException;
@@ -25,10 +26,9 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import com.safi.asterisk.AsteriskFactory;
-import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
-import com.safi.asterisk.CallSource1;
 import com.safi.asterisk.actionstep.ActionstepPackage;
 import com.safi.asterisk.actionstep.OriginateCall;
 import com.safi.asterisk.impl.AsteriskFactoryImpl;
@@ -40,11 +40,14 @@ import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.Output;
 import com.safi.core.actionstep.OutputType;
 import com.safi.core.actionstep.impl.ActionStepImpl;
-import com.safi.db.util.VariableTranslator;
+import com.safi.core.call.CallPackage;
+import com.safi.core.call.CallSource1;
+import com.safi.core.call.SafiCall;
 import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletContext;
 import com.safi.db.VariableType;
 import com.safi.db.server.config.AsteriskServer;
+import com.safi.db.util.VariableTranslator;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -79,7 +82,7 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 	 * @generated
 	 * @ordered
 	 */
-  protected Call newCall1;
+  protected SafiCall newCall1;
 
   /**
    * The default value of the '{@link #isAsync() <em>Async</em>}' attribute. <!--
@@ -458,8 +461,8 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
       Object[] pair = (Object[]) returned;
       if (newCall1 == null)
         setNewCall1(AsteriskFactoryImpl.eINSTANCE.createCall());
-      newCall1.setChannel((AgiChannel) pair[0]);
-      newCall1.setData("AgiRequest", pair[1]);
+      ((Call)newCall1).setChannel((AgiChannel) pair[0]);
+      ((Call)newCall1).setData("AgiRequest", pair[1]);
 
     } else {
       return new ActionStepException("Loopback for call failed!");
@@ -476,7 +479,7 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 
     dynValue = resolveDynamicValue(this.context, context);
     String ctx = (String) VariableTranslator.translateValue(VariableType.TEXT, dynValue);
-    newCall1.getChannel().setContext(ctx);
+    ((Call)newCall1).getChannel().setContext(ctx);
 
     // dynValue = resolveDynamicValue(data, context);
     // String dat = (String) VariableTranslator.translateValue(VariableType.TEXT,
@@ -485,8 +488,8 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 
     dynValue = resolveDynamicValue(extension, context);
     String ext = (String) VariableTranslator.translateValue(VariableType.TEXT, dynValue);
-    newCall1.getChannel().setExtension(ext);
-    newCall1.getChannel().setPriority(String.valueOf(priority));
+    ((Call)newCall1).getChannel().setExtension(ext);
+    ((Call)newCall1).getChannel().setPriority(String.valueOf(priority));
 
     // if (variables != null) action.setVariables(variables);
 
@@ -506,16 +509,17 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Call getNewCall1() {
+  public SafiCall getNewCall1() {
 		return newCall1;
 	}
 
   /**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetNewCall1(Call newNewCall1, NotificationChain msgs) {
-		Call oldNewCall1 = newCall1;
+	public NotificationChain basicSetNewCall1(SafiCall newNewCall1, NotificationChain msgs) {
+		SafiCall oldNewCall1 = newCall1;
 		newCall1 = newNewCall1;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionstepPackage.ORIGINATE_CALL__NEW_CALL1, oldNewCall1, newNewCall1);
@@ -524,11 +528,12 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 		return msgs;
 	}
 
-  /**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setNewCall1(Call newNewCall1) {
+	public void setNewCall1(SafiCall newNewCall1) {
 		if (newNewCall1 != newCall1) {
 			NotificationChain msgs = null;
 			if (newCall1 != null)
@@ -542,7 +547,7 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
 			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.ORIGINATE_CALL__NEW_CALL1, newNewCall1, newNewCall1));
 	}
 
-  /**
+		/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1047,7 +1052,7 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
   public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ActionstepPackage.ORIGINATE_CALL__NEW_CALL1:
-				setNewCall1((Call)newValue);
+				setNewCall1((SafiCall)newValue);
 				return;
 			case ActionstepPackage.ORIGINATE_CALL__ASYNC:
 				setAsync((Boolean)newValue);
@@ -1100,7 +1105,7 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
   public void eUnset(int featureID) {
 		switch (featureID) {
 			case ActionstepPackage.ORIGINATE_CALL__NEW_CALL1:
-				setNewCall1((Call)null);
+				setNewCall1((SafiCall)null);
 				return;
 			case ActionstepPackage.ORIGINATE_CALL__ASYNC:
 				setAsync(ASYNC_EDEFAULT);
@@ -1192,7 +1197,7 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == CallSource1.class) {
 			switch (derivedFeatureID) {
-				case ActionstepPackage.ORIGINATE_CALL__NEW_CALL1: return AsteriskPackage.CALL_SOURCE1__NEW_CALL1;
+				case ActionstepPackage.ORIGINATE_CALL__NEW_CALL1: return CallPackage.CALL_SOURCE1__NEW_CALL1;
 				default: return -1;
 			}
 		}
@@ -1207,7 +1212,7 @@ public class OriginateCallImpl extends ActionStepImpl implements OriginateCall {
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == CallSource1.class) {
 			switch (baseFeatureID) {
-				case AsteriskPackage.CALL_SOURCE1__NEW_CALL1: return ActionstepPackage.ORIGINATE_CALL__NEW_CALL1;
+				case CallPackage.CALL_SOURCE1__NEW_CALL1: return ActionstepPackage.ORIGINATE_CALL__NEW_CALL1;
 				default: return -1;
 			}
 		}

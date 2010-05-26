@@ -11,8 +11,6 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
-import com.safi.asterisk.CallSource1;
-import com.safi.asterisk.initiator.*;
 import com.safi.asterisk.initiator.AsteriskInitiatorInfo;
 import com.safi.asterisk.initiator.DIDMatcher;
 import com.safi.asterisk.initiator.IncomingCall;
@@ -20,6 +18,7 @@ import com.safi.asterisk.initiator.InitiatorPackage;
 import com.safi.core.ProductIdentifiable;
 import com.safi.core.ThreadSensitive;
 import com.safi.core.actionstep.ActionStep;
+import com.safi.core.call.CallSource1;
 import com.safi.core.initiator.Initiator;
 import com.safi.core.initiator.InitiatorInfo;
 
@@ -234,13 +233,13 @@ public class InitiatorAdapterFactory extends AdapterFactoryImpl {
 	}
 
   /**
-	 * Creates a new adapter for an object of class '{@link com.safi.asterisk.CallSource1 <em>Call Source1</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.safi.core.call.CallSource1 <em>Source1</em>}'.
 	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.safi.asterisk.CallSource1
+	 * @see com.safi.core.call.CallSource1
 	 * @generated
 	 */
   public Adapter createCallSource1Adapter() {

@@ -7,6 +7,7 @@
 package com.safi.asterisk.saflet.impl;
 
 import java.util.logging.Logger;
+
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;

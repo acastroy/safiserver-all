@@ -6,8 +6,6 @@
  */
 package com.safi.asterisk.util;
 
-import com.safi.asterisk.*;
-import com.safi.core.ThreadSensitive;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -15,10 +13,8 @@ import org.eclipse.emf.ecore.EObject;
 
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
-import com.safi.asterisk.CallConsumer1;
-import com.safi.asterisk.CallConsumer2;
-import com.safi.asterisk.CallSource1;
-import com.safi.asterisk.CallSource2;
+import com.safi.core.ThreadSensitive;
+import com.safi.core.call.SafiCall;
 
 /**
  * <!-- begin-user-doc -->
@@ -81,24 +77,12 @@ public class AsteriskAdapterFactory extends AdapterFactoryImpl {
 				return createCallAdapter();
 			}
 			@Override
-			public Adapter caseCallSource1(CallSource1 object) {
-				return createCallSource1Adapter();
-			}
-			@Override
-			public Adapter caseCallSource2(CallSource2 object) {
-				return createCallSource2Adapter();
-			}
-			@Override
-			public Adapter caseCallConsumer1(CallConsumer1 object) {
-				return createCallConsumer1Adapter();
-			}
-			@Override
-			public Adapter caseCallConsumer2(CallConsumer2 object) {
-				return createCallConsumer2Adapter();
-			}
-			@Override
 			public Adapter caseThreadSensitive(ThreadSensitive object) {
 				return createThreadSensitiveAdapter();
+			}
+			@Override
+			public Adapter caseSafiCall(SafiCall object) {
+				return createSafiCallAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -135,62 +119,6 @@ public class AsteriskAdapterFactory extends AdapterFactoryImpl {
 	}
 
   /**
-	 * Creates a new adapter for an object of class '{@link com.safi.asterisk.CallSource1 <em>Call Source1</em>}'.
-	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see com.safi.asterisk.CallSource1
-	 * @generated
-	 */
-  public Adapter createCallSource1Adapter() {
-		return null;
-	}
-
-  /**
-	 * Creates a new adapter for an object of class '{@link com.safi.asterisk.CallSource2 <em>Call Source2</em>}'.
-	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see com.safi.asterisk.CallSource2
-	 * @generated
-	 */
-  public Adapter createCallSource2Adapter() {
-		return null;
-	}
-
-  /**
-	 * Creates a new adapter for an object of class '{@link com.safi.asterisk.CallConsumer1 <em>Call Consumer1</em>}'.
-	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see com.safi.asterisk.CallConsumer1
-	 * @generated
-	 */
-  public Adapter createCallConsumer1Adapter() {
-		return null;
-	}
-
-  /**
-	 * Creates a new adapter for an object of class '{@link com.safi.asterisk.CallConsumer2 <em>Call Consumer2</em>}'.
-	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see com.safi.asterisk.CallConsumer2
-	 * @generated
-	 */
-  public Adapter createCallConsumer2Adapter() {
-		return null;
-	}
-
-  /**
 	 * Creates a new adapter for an object of class '{@link com.safi.core.ThreadSensitive <em>Thread Sensitive</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -201,6 +129,20 @@ public class AsteriskAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createThreadSensitiveAdapter() {
+		return null;
+	}
+
+		/**
+	 * Creates a new adapter for an object of class '{@link com.safi.core.call.SafiCall <em>Safi Call</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.safi.core.call.SafiCall
+	 * @generated
+	 */
+	public Adapter createSafiCallAdapter() {
 		return null;
 	}
 

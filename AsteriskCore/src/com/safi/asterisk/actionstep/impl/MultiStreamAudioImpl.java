@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.logging.Level;
+
 import org.apache.commons.lang.StringUtils;
 import org.asteriskjava.fastagi.AgiChannel;
 import org.eclipse.emf.common.notify.Notification;
@@ -20,9 +21,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import com.safi.asterisk.AsteriskPackage;
+
 import com.safi.asterisk.Call;
-import com.safi.asterisk.CallConsumer1;
 import com.safi.asterisk.actionstep.ActionstepPackage;
 import com.safi.asterisk.actionstep.MultiStreamAudio;
 import com.safi.asterisk.saflet.AsteriskSafletContext;
@@ -32,9 +32,12 @@ import com.safi.core.actionstep.CaseItem;
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.DynamicValueType;
 import com.safi.core.actionstep.impl.ActionStepImpl;
-import com.safi.db.util.VariableTranslator;
+import com.safi.core.call.CallConsumer1;
+import com.safi.core.call.CallPackage;
+import com.safi.core.call.SafiCall;
 import com.safi.core.saflet.SafletContext;
 import com.safi.db.VariableType;
+import com.safi.db.util.VariableTranslator;
 
 /**
  * <!-- begin-user-doc -->
@@ -60,7 +63,7 @@ public class MultiStreamAudioImpl extends ActionStepImpl implements MultiStreamA
 	 * @generated
 	 * @ordered
 	 */
-  protected Call call1;
+  protected SafiCall call1;
 
   /**
 	 * The cached value of the '{@link #getEscapeDigits() <em>Escape Digits</em>}' containment reference.
@@ -100,11 +103,21 @@ public class MultiStreamAudioImpl extends ActionStepImpl implements MultiStreamA
   public void beginProcessing(SafletContext context) throws ActionStepException {
     super.beginProcessing(context);
     Exception exception = null;
-    if (call1 == null || call1.getChannel() == null) {
-      exception = new ActionStepException(call1 == null ? "No current call found"
-          : "No channel found in current context");
-    } else {
-      AgiChannel channel = call1.getChannel();
+    if (call1 == null){
+   	 handleException(context, new ActionStepException("No current call found"));
+      return;
+   }
+   else
+   if (!(call1 instanceof Call)){
+   	handleException(context, new ActionStepException("Call isn't isn't an Asterisk call: "+call1.getClass().getName()));
+   	return;
+   }
+   if (((Call)call1).getChannel() == null) {
+     handleException(context, new ActionStepException("No channel found in current context"));
+     return;
+   }
+   
+   AgiChannel channel = ((Call)call1).getChannel();
       try {
         List<String> files = new ArrayList<String>();
         if (audioFilenames != null && !audioFilenames.isEmpty()) {
@@ -152,7 +165,6 @@ public class MultiStreamAudioImpl extends ActionStepImpl implements MultiStreamA
         exception = e;
       }
 
-    }
     if (exception != null) {
       handleException(context, exception);
       return;
@@ -175,10 +187,10 @@ public class MultiStreamAudioImpl extends ActionStepImpl implements MultiStreamA
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Call getCall1() {
+  public SafiCall getCall1() {
 		if (call1 != null && call1.eIsProxy()) {
 			InternalEObject oldCall1 = (InternalEObject)call1;
-			call1 = (Call)eResolveProxy(oldCall1);
+			call1 = (SafiCall)eResolveProxy(oldCall1);
 			if (call1 != oldCall1) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.MULTI_STREAM_AUDIO__CALL1, oldCall1, call1));
@@ -192,23 +204,23 @@ public class MultiStreamAudioImpl extends ActionStepImpl implements MultiStreamA
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Call basicGetCall1() {
+  public SafiCall basicGetCall1() {
 		return call1;
 	}
 
   /**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setCall1(Call newCall1) {
-		Call oldCall1 = call1;
+	public void setCall1(SafiCall newCall1) {
+		SafiCall oldCall1 = call1;
 		call1 = newCall1;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.MULTI_STREAM_AUDIO__CALL1, oldCall1, call1));
 	}
 
-  /**
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
@@ -308,7 +320,7 @@ public class MultiStreamAudioImpl extends ActionStepImpl implements MultiStreamA
   public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ActionstepPackage.MULTI_STREAM_AUDIO__CALL1:
-				setCall1((Call)newValue);
+				setCall1((SafiCall)newValue);
 				return;
 			case ActionstepPackage.MULTI_STREAM_AUDIO__ESCAPE_DIGITS:
 				setEscapeDigits((DynamicValue)newValue);
@@ -330,7 +342,7 @@ public class MultiStreamAudioImpl extends ActionStepImpl implements MultiStreamA
   public void eUnset(int featureID) {
 		switch (featureID) {
 			case ActionstepPackage.MULTI_STREAM_AUDIO__CALL1:
-				setCall1((Call)null);
+				setCall1((SafiCall)null);
 				return;
 			case ActionstepPackage.MULTI_STREAM_AUDIO__ESCAPE_DIGITS:
 				setEscapeDigits((DynamicValue)null);
@@ -369,7 +381,7 @@ public class MultiStreamAudioImpl extends ActionStepImpl implements MultiStreamA
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == CallConsumer1.class) {
 			switch (derivedFeatureID) {
-				case ActionstepPackage.MULTI_STREAM_AUDIO__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
+				case ActionstepPackage.MULTI_STREAM_AUDIO__CALL1: return CallPackage.CALL_CONSUMER1__CALL1;
 				default: return -1;
 			}
 		}
@@ -385,7 +397,7 @@ public class MultiStreamAudioImpl extends ActionStepImpl implements MultiStreamA
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == CallConsumer1.class) {
 			switch (baseFeatureID) {
-				case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.MULTI_STREAM_AUDIO__CALL1;
+				case CallPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.MULTI_STREAM_AUDIO__CALL1;
 				default: return -1;
 			}
 		}

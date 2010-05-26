@@ -7,18 +7,21 @@
 package com.safi.asterisk.actionstep.impl;
 
 import java.util.logging.Level;
+
 import org.asteriskjava.fastagi.AgiChannel;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import com.safi.asterisk.AsteriskPackage;
+
 import com.safi.asterisk.Call;
-import com.safi.asterisk.CallConsumer1;
 import com.safi.asterisk.actionstep.ActionstepPackage;
 import com.safi.asterisk.actionstep.Sleep;
 import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.impl.ActionStepImpl;
+import com.safi.core.call.CallConsumer1;
+import com.safi.core.call.CallPackage;
+import com.safi.core.call.SafiCall;
 import com.safi.core.saflet.SafletContext;
 
 /**
@@ -45,7 +48,7 @@ public class SleepImpl extends ActionStepImpl implements Sleep {
 	 * @generated
 	 * @ordered
 	 */
-  protected Call call1;
+  protected SafiCall call1;
 
   /**
 	 * The default value of the '{@link #getDuration() <em>Duration</em>}' attribute.
@@ -101,11 +104,21 @@ public class SleepImpl extends ActionStepImpl implements Sleep {
     super.beginProcessing(context);
     Exception exception = null;
     if (native_) {
-      if (call1 == null || call1.getChannel() == null) {
-        exception = new ActionStepException(call1 == null ? "No current call found"
-            : "No channel found in current context");
-      } else {
-        AgiChannel channel = call1.getChannel();
+    	if (call1 == null){
+     	 handleException(context, new ActionStepException("No current call found"));
+        return;
+     }
+     else
+     if (!(call1 instanceof Call)){
+     	handleException(context, new ActionStepException("Call isn't isn't an Asterisk call: "+call1.getClass().getName()));
+     	return;
+     }
+     if (((Call)call1).getChannel() == null) {
+       handleException(context, new ActionStepException("No channel found in current context"));
+       return;
+     }
+     
+     AgiChannel channel = ((Call)call1).getChannel();
         try {
 
 
@@ -120,7 +133,6 @@ public class SleepImpl extends ActionStepImpl implements Sleep {
         } catch (Exception e) {
           exception = e;
         }
-      }
     } else {
       try {
         Thread.sleep(duration);
@@ -150,10 +162,10 @@ public class SleepImpl extends ActionStepImpl implements Sleep {
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Call getCall1() {
+  public SafiCall getCall1() {
 		if (call1 != null && call1.eIsProxy()) {
 			InternalEObject oldCall1 = (InternalEObject)call1;
-			call1 = (Call)eResolveProxy(oldCall1);
+			call1 = (SafiCall)eResolveProxy(oldCall1);
 			if (call1 != oldCall1) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.SLEEP__CALL1, oldCall1, call1));
@@ -167,23 +179,23 @@ public class SleepImpl extends ActionStepImpl implements Sleep {
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Call basicGetCall1() {
+  public SafiCall basicGetCall1() {
 		return call1;
 	}
 
   /**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setCall1(Call newCall1) {
-		Call oldCall1 = call1;
+	public void setCall1(SafiCall newCall1) {
+		SafiCall oldCall1 = call1;
 		call1 = newCall1;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.SLEEP__CALL1, oldCall1, call1));
 	}
 
-  /**
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
@@ -254,7 +266,7 @@ public class SleepImpl extends ActionStepImpl implements Sleep {
   public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ActionstepPackage.SLEEP__CALL1:
-				setCall1((Call)newValue);
+				setCall1((SafiCall)newValue);
 				return;
 			case ActionstepPackage.SLEEP__DURATION:
 				setDuration((Long)newValue);
@@ -275,7 +287,7 @@ public class SleepImpl extends ActionStepImpl implements Sleep {
   public void eUnset(int featureID) {
 		switch (featureID) {
 			case ActionstepPackage.SLEEP__CALL1:
-				setCall1((Call)null);
+				setCall1((SafiCall)null);
 				return;
 			case ActionstepPackage.SLEEP__DURATION:
 				setDuration(DURATION_EDEFAULT);
@@ -314,7 +326,7 @@ public class SleepImpl extends ActionStepImpl implements Sleep {
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == CallConsumer1.class) {
 			switch (derivedFeatureID) {
-				case ActionstepPackage.SLEEP__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
+				case ActionstepPackage.SLEEP__CALL1: return CallPackage.CALL_CONSUMER1__CALL1;
 				default: return -1;
 			}
 		}
@@ -330,7 +342,7 @@ public class SleepImpl extends ActionStepImpl implements Sleep {
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == CallConsumer1.class) {
 			switch (baseFeatureID) {
-				case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.SLEEP__CALL1;
+				case CallPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.SLEEP__CALL1;
 				default: return -1;
 			}
 		}

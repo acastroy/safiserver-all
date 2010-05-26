@@ -3340,7 +3340,7 @@ public interface ActionstepPackage extends EPackage {
   int EXECUTE_APPLICATION__ARGUMENTS = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
 		/**
-	 * The feature id for the '<em><b>Application</b></em>' reference.
+	 * The feature id for the '<em><b>Application</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
@@ -10236,10 +10236,10 @@ public interface ActionstepPackage extends EPackage {
   EClass getExecuteApplication();
 
   /**
-	 * Returns the meta object for the reference '{@link com.safi.asterisk.actionstep.ExecuteApplication#getApplication <em>Application</em>}'.
+	 * Returns the meta object for the containment reference '{@link com.safi.asterisk.actionstep.ExecuteApplication#getApplication <em>Application</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Application</em>'.
+	 * @return the meta object for the containment reference '<em>Application</em>'.
 	 * @see com.safi.asterisk.actionstep.ExecuteApplication#getApplication()
 	 * @see #getExecuteApplication()
 	 * @generated
@@ -13540,7 +13540,7 @@ public interface ActionstepPackage extends EPackage {
     EClass EXECUTE_APPLICATION = eINSTANCE.getExecuteApplication();
 
     /**
-		 * The meta object literal for the '<em><b>Application</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Application</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
 		 * @generated

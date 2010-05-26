@@ -7,7 +7,6 @@
 package com.safi.asterisk.initiator.impl;
 
 
-import com.safi.asterisk.initiator.*;
 import org.asteriskjava.manager.event.ManagerEvent;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;

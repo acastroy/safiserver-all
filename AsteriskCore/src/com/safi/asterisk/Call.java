@@ -6,9 +6,9 @@
  */
 package com.safi.asterisk;
 
-import com.safi.core.ThreadSensitive;
 import org.asteriskjava.fastagi.AgiChannel;
-import org.eclipse.emf.ecore.EObject;
+
+import com.safi.core.call.SafiCall;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Call extends ThreadSensitive {
+public interface Call extends SafiCall {
   /**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

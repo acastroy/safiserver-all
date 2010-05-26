@@ -13,9 +13,8 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import com.safi.asterisk.AsteriskPackage;
+
 import com.safi.asterisk.Call;
-import com.safi.asterisk.CallConsumer1;
 import com.safi.asterisk.actionstep.ActionstepPackage;
 import com.safi.asterisk.actionstep.GetDigits;
 import com.safi.asterisk.saflet.AsteriskSafletContext;
@@ -25,11 +24,14 @@ import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.Output;
 import com.safi.core.actionstep.OutputType;
 import com.safi.core.actionstep.impl.ActionStepImpl;
-import com.safi.db.util.VariableTranslator;
+import com.safi.core.call.CallConsumer1;
+import com.safi.core.call.CallPackage;
+import com.safi.core.call.SafiCall;
 import com.safi.core.saflet.SafletContext;
 import com.safi.core.saflet.SafletEnvironment;
 import com.safi.db.Variable;
 import com.safi.db.VariableScope;
+import com.safi.db.util.VariableTranslator;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,7 +61,7 @@ public class GetDigitsImpl extends ActionStepImpl implements GetDigits {
 	 * @generated
 	 * @ordered
 	 */
-  protected Call call1;
+  protected SafiCall call1;
 
   /**
 	 * The default value of the '{@link #getInputTimeout() <em>Input Timeout</em>}' attribute.
@@ -185,11 +187,21 @@ public class GetDigitsImpl extends ActionStepImpl implements GetDigits {
     super.beginProcessing(context);
     Exception exception = null;
     int idx = 0;
-    if (call1 == null || call1.getChannel() == null) {
-      exception = new ActionStepException(call1 == null ? "No current call found"
-          : "No channel found in current context");
-    } else {
-      AgiChannel channel = call1.getChannel();
+    if (call1 == null){
+    	 handleException(context, new ActionStepException("No current call found"));
+       return;
+    }
+    else
+    if (!(call1 instanceof Call)){
+    	handleException(context, new ActionStepException("Call isn't isn't an Asterisk call: "+call1.getClass().getName()));
+    	return;
+    }
+    if (((Call)call1).getChannel() == null) {
+      handleException(context, new ActionStepException("No channel found in current context"));
+      return;
+    }
+    
+    AgiChannel channel = ((Call)call1).getChannel();
       try {
 
         Variable v = null;
@@ -257,7 +269,6 @@ public class GetDigitsImpl extends ActionStepImpl implements GetDigits {
       } catch (Exception e) {
         exception = e;
       }
-    }
 
     if (exception != null) {
       handleException(context, exception);
@@ -292,10 +303,10 @@ public class GetDigitsImpl extends ActionStepImpl implements GetDigits {
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Call getCall1() {
+  public SafiCall getCall1() {
 		if (call1 != null && call1.eIsProxy()) {
 			InternalEObject oldCall1 = (InternalEObject)call1;
-			call1 = (Call)eResolveProxy(oldCall1);
+			call1 = (SafiCall)eResolveProxy(oldCall1);
 			if (call1 != oldCall1) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.GET_DIGITS__CALL1, oldCall1, call1));
@@ -309,23 +320,23 @@ public class GetDigitsImpl extends ActionStepImpl implements GetDigits {
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Call basicGetCall1() {
+  public SafiCall basicGetCall1() {
 		return call1;
 	}
 
   /**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setCall1(Call newCall1) {
-		Call oldCall1 = call1;
+	public void setCall1(SafiCall newCall1) {
+		SafiCall oldCall1 = call1;
 		call1 = newCall1;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_DIGITS__CALL1, oldCall1, call1));
 	}
 
-  /**
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
@@ -524,7 +535,7 @@ public class GetDigitsImpl extends ActionStepImpl implements GetDigits {
   public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ActionstepPackage.GET_DIGITS__CALL1:
-				setCall1((Call)newValue);
+				setCall1((SafiCall)newValue);
 				return;
 			case ActionstepPackage.GET_DIGITS__INPUT_TIMEOUT:
 				setInputTimeout((Long)newValue);
@@ -557,7 +568,7 @@ public class GetDigitsImpl extends ActionStepImpl implements GetDigits {
   public void eUnset(int featureID) {
 		switch (featureID) {
 			case ActionstepPackage.GET_DIGITS__CALL1:
-				setCall1((Call)null);
+				setCall1((SafiCall)null);
 				return;
 			case ActionstepPackage.GET_DIGITS__INPUT_TIMEOUT:
 				setInputTimeout(INPUT_TIMEOUT_EDEFAULT);
@@ -616,7 +627,7 @@ public class GetDigitsImpl extends ActionStepImpl implements GetDigits {
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == CallConsumer1.class) {
 			switch (derivedFeatureID) {
-				case ActionstepPackage.GET_DIGITS__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
+				case ActionstepPackage.GET_DIGITS__CALL1: return CallPackage.CALL_CONSUMER1__CALL1;
 				default: return -1;
 			}
 		}
@@ -632,7 +643,7 @@ public class GetDigitsImpl extends ActionStepImpl implements GetDigits {
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == CallConsumer1.class) {
 			switch (baseFeatureID) {
-				case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.GET_DIGITS__CALL1;
+				case CallPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.GET_DIGITS__CALL1;
 				default: return -1;
 			}
 		}

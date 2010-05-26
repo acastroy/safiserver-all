@@ -6,13 +6,13 @@
  */
 package com.safi.asterisk;
 
-import com.safi.core.CorePackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
+
+import com.safi.core.call.CallPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -73,13 +73,22 @@ public interface AsteriskPackage extends EPackage {
   int CALL = 0;
 
   /**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALL__UUID = CallPackage.SAFI_CALL__UUID;
+
+		/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int CALL__NAME = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 0;
+  int CALL__NAME = CallPackage.SAFI_CALL_FEATURE_COUNT + 0;
 
   /**
 	 * The feature id for the '<em><b>Channel</b></em>' attribute.
@@ -88,7 +97,7 @@ public interface AsteriskPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int CALL__CHANNEL = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 1;
+  int CALL__CHANNEL = CallPackage.SAFI_CALL_FEATURE_COUNT + 1;
 
   /**
 	 * The feature id for the '<em><b>Caller Id Name</b></em>' attribute.
@@ -97,7 +106,7 @@ public interface AsteriskPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int CALL__CALLER_ID_NAME = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 2;
+  int CALL__CALLER_ID_NAME = CallPackage.SAFI_CALL_FEATURE_COUNT + 2;
 
   /**
 	 * The feature id for the '<em><b>Caller Id Num</b></em>' attribute.
@@ -106,7 +115,7 @@ public interface AsteriskPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int CALL__CALLER_ID_NUM = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 3;
+  int CALL__CALLER_ID_NUM = CallPackage.SAFI_CALL_FEATURE_COUNT + 3;
 
   /**
 	 * The feature id for the '<em><b>Unique Id</b></em>' attribute.
@@ -115,7 +124,7 @@ public interface AsteriskPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int CALL__UNIQUE_ID = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 4;
+  int CALL__UNIQUE_ID = CallPackage.SAFI_CALL_FEATURE_COUNT + 4;
 
   /**
 	 * The feature id for the '<em><b>Channel Name</b></em>' attribute.
@@ -124,7 +133,7 @@ public interface AsteriskPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int CALL__CHANNEL_NAME = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 5;
+  int CALL__CHANNEL_NAME = CallPackage.SAFI_CALL_FEATURE_COUNT + 5;
 
   /**
 	 * The feature id for the '<em><b>Call State</b></em>' attribute.
@@ -133,7 +142,7 @@ public interface AsteriskPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int CALL__CALL_STATE = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 6;
+  int CALL__CALL_STATE = CallPackage.SAFI_CALL_FEATURE_COUNT + 6;
 
   /**
 	 * The number of structural features of the '<em>Call</em>' class.
@@ -142,137 +151,7 @@ public interface AsteriskPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int CALL_FEATURE_COUNT = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 7;
-
-  /**
-	 * The meta object id for the '{@link com.safi.asterisk.CallSource1 <em>Call Source1</em>}' class.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see com.safi.asterisk.CallSource1
-	 * @see com.safi.asterisk.impl.AsteriskPackageImpl#getCallSource1()
-	 * @generated
-	 */
-  int CALL_SOURCE1 = 1;
-
-  /**
-	 * The feature id for the '<em><b>New Call1</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int CALL_SOURCE1__NEW_CALL1 = 0;
-
-  /**
-	 * The number of structural features of the '<em>Call Source1</em>' class.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int CALL_SOURCE1_FEATURE_COUNT = 1;
-
-  /**
-	 * The meta object id for the '{@link com.safi.asterisk.CallSource2 <em>Call Source2</em>}' class.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see com.safi.asterisk.CallSource2
-	 * @see com.safi.asterisk.impl.AsteriskPackageImpl#getCallSource2()
-	 * @generated
-	 */
-  int CALL_SOURCE2 = 2;
-
-  /**
-	 * The feature id for the '<em><b>New Call1</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int CALL_SOURCE2__NEW_CALL1 = CALL_SOURCE1__NEW_CALL1;
-
-  /**
-	 * The feature id for the '<em><b>New Call2</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int CALL_SOURCE2__NEW_CALL2 = CALL_SOURCE1_FEATURE_COUNT + 0;
-
-  /**
-	 * The number of structural features of the '<em>Call Source2</em>' class.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int CALL_SOURCE2_FEATURE_COUNT = CALL_SOURCE1_FEATURE_COUNT + 1;
-
-  /**
-	 * The meta object id for the '{@link com.safi.asterisk.CallConsumer1 <em>Call Consumer1</em>}' class.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see com.safi.asterisk.CallConsumer1
-	 * @see com.safi.asterisk.impl.AsteriskPackageImpl#getCallConsumer1()
-	 * @generated
-	 */
-  int CALL_CONSUMER1 = 3;
-
-  /**
-	 * The feature id for the '<em><b>Call1</b></em>' reference.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int CALL_CONSUMER1__CALL1 = 0;
-
-  /**
-	 * The number of structural features of the '<em>Call Consumer1</em>' class.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int CALL_CONSUMER1_FEATURE_COUNT = 1;
-
-  /**
-	 * The meta object id for the '{@link com.safi.asterisk.CallConsumer2 <em>Call Consumer2</em>}' class.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see com.safi.asterisk.CallConsumer2
-	 * @see com.safi.asterisk.impl.AsteriskPackageImpl#getCallConsumer2()
-	 * @generated
-	 */
-  int CALL_CONSUMER2 = 4;
-
-  /**
-	 * The feature id for the '<em><b>Call1</b></em>' reference.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int CALL_CONSUMER2__CALL1 = CALL_CONSUMER1__CALL1;
-
-  /**
-	 * The feature id for the '<em><b>Call2</b></em>' reference.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int CALL_CONSUMER2__CALL2 = CALL_CONSUMER1_FEATURE_COUNT + 0;
-
-  /**
-	 * The number of structural features of the '<em>Call Consumer2</em>' class.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int CALL_CONSUMER2_FEATURE_COUNT = CALL_CONSUMER1_FEATURE_COUNT + 1;
+  int CALL_FEATURE_COUNT = CallPackage.SAFI_CALL_FEATURE_COUNT + 7;
 
   /**
 	 * The meta object id for the '{@link com.safi.asterisk.CallState <em>Call State</em>}' enum.
@@ -282,7 +161,7 @@ public interface AsteriskPackage extends EPackage {
 	 * @see com.safi.asterisk.impl.AsteriskPackageImpl#getCallState()
 	 * @generated
 	 */
-  int CALL_STATE = 5;
+  int CALL_STATE = 1;
 
   /**
 	 * The meta object id for the '<em>Agi Request</em>' data type.
@@ -292,7 +171,7 @@ public interface AsteriskPackage extends EPackage {
 	 * @see com.safi.asterisk.impl.AsteriskPackageImpl#getAgiRequest()
 	 * @generated
 	 */
-  int AGI_REQUEST = 6;
+  int AGI_REQUEST = 2;
 
   /**
 	 * The meta object id for the '<em>Agi Channel</em>' data type.
@@ -302,7 +181,7 @@ public interface AsteriskPackage extends EPackage {
 	 * @see com.safi.asterisk.impl.AsteriskPackageImpl#getAgiChannel()
 	 * @generated
 	 */
-  int AGI_CHANNEL = 7;
+  int AGI_CHANNEL = 3;
 
 
   /**
@@ -313,7 +192,7 @@ public interface AsteriskPackage extends EPackage {
 	 * @see com.safi.asterisk.impl.AsteriskPackageImpl#getManagerConnection()
 	 * @generated
 	 */
-  int MANAGER_CONNECTION = 8;
+  int MANAGER_CONNECTION = 4;
 
 
   /**
@@ -402,90 +281,6 @@ public interface AsteriskPackage extends EPackage {
 	 * @generated
 	 */
   EAttribute getCall_CallState();
-
-  /**
-	 * Returns the meta object for class '{@link com.safi.asterisk.CallSource1 <em>Call Source1</em>}'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Call Source1</em>'.
-	 * @see com.safi.asterisk.CallSource1
-	 * @generated
-	 */
-  EClass getCallSource1();
-
-  /**
-	 * Returns the meta object for the containment reference '{@link com.safi.asterisk.CallSource1#getNewCall1 <em>New Call1</em>}'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>New Call1</em>'.
-	 * @see com.safi.asterisk.CallSource1#getNewCall1()
-	 * @see #getCallSource1()
-	 * @generated
-	 */
-  EReference getCallSource1_NewCall1();
-
-  /**
-	 * Returns the meta object for class '{@link com.safi.asterisk.CallSource2 <em>Call Source2</em>}'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Call Source2</em>'.
-	 * @see com.safi.asterisk.CallSource2
-	 * @generated
-	 */
-  EClass getCallSource2();
-
-  /**
-	 * Returns the meta object for the containment reference '{@link com.safi.asterisk.CallSource2#getNewCall2 <em>New Call2</em>}'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>New Call2</em>'.
-	 * @see com.safi.asterisk.CallSource2#getNewCall2()
-	 * @see #getCallSource2()
-	 * @generated
-	 */
-  EReference getCallSource2_NewCall2();
-
-  /**
-	 * Returns the meta object for class '{@link com.safi.asterisk.CallConsumer1 <em>Call Consumer1</em>}'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Call Consumer1</em>'.
-	 * @see com.safi.asterisk.CallConsumer1
-	 * @generated
-	 */
-  EClass getCallConsumer1();
-
-  /**
-	 * Returns the meta object for the reference '{@link com.safi.asterisk.CallConsumer1#getCall1 <em>Call1</em>}'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Call1</em>'.
-	 * @see com.safi.asterisk.CallConsumer1#getCall1()
-	 * @see #getCallConsumer1()
-	 * @generated
-	 */
-  EReference getCallConsumer1_Call1();
-
-  /**
-	 * Returns the meta object for class '{@link com.safi.asterisk.CallConsumer2 <em>Call Consumer2</em>}'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Call Consumer2</em>'.
-	 * @see com.safi.asterisk.CallConsumer2
-	 * @generated
-	 */
-  EClass getCallConsumer2();
-
-  /**
-	 * Returns the meta object for the reference '{@link com.safi.asterisk.CallConsumer2#getCall2 <em>Call2</em>}'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Call2</em>'.
-	 * @see com.safi.asterisk.CallConsumer2#getCall2()
-	 * @see #getCallConsumer2()
-	 * @generated
-	 */
-  EReference getCallConsumer2_Call2();
 
   /**
 	 * Returns the meta object for enum '{@link com.safi.asterisk.CallState <em>Call State</em>}'.
@@ -617,78 +412,6 @@ public interface AsteriskPackage extends EPackage {
 		 * @generated
 		 */
     EAttribute CALL__CALL_STATE = eINSTANCE.getCall_CallState();
-
-    /**
-		 * The meta object literal for the '{@link com.safi.asterisk.CallSource1 <em>Call Source1</em>}' class.
-		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-		 * @see com.safi.asterisk.CallSource1
-		 * @see com.safi.asterisk.impl.AsteriskPackageImpl#getCallSource1()
-		 * @generated
-		 */
-    EClass CALL_SOURCE1 = eINSTANCE.getCallSource1();
-
-    /**
-		 * The meta object literal for the '<em><b>New Call1</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-		 * @generated
-		 */
-    EReference CALL_SOURCE1__NEW_CALL1 = eINSTANCE.getCallSource1_NewCall1();
-
-    /**
-		 * The meta object literal for the '{@link com.safi.asterisk.CallSource2 <em>Call Source2</em>}' class.
-		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-		 * @see com.safi.asterisk.CallSource2
-		 * @see com.safi.asterisk.impl.AsteriskPackageImpl#getCallSource2()
-		 * @generated
-		 */
-    EClass CALL_SOURCE2 = eINSTANCE.getCallSource2();
-
-    /**
-		 * The meta object literal for the '<em><b>New Call2</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-		 * @generated
-		 */
-    EReference CALL_SOURCE2__NEW_CALL2 = eINSTANCE.getCallSource2_NewCall2();
-
-    /**
-		 * The meta object literal for the '{@link com.safi.asterisk.CallConsumer1 <em>Call Consumer1</em>}' class.
-		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-		 * @see com.safi.asterisk.CallConsumer1
-		 * @see com.safi.asterisk.impl.AsteriskPackageImpl#getCallConsumer1()
-		 * @generated
-		 */
-    EClass CALL_CONSUMER1 = eINSTANCE.getCallConsumer1();
-
-    /**
-		 * The meta object literal for the '<em><b>Call1</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-		 * @generated
-		 */
-    EReference CALL_CONSUMER1__CALL1 = eINSTANCE.getCallConsumer1_Call1();
-
-    /**
-		 * The meta object literal for the '{@link com.safi.asterisk.CallConsumer2 <em>Call Consumer2</em>}' class.
-		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-		 * @see com.safi.asterisk.CallConsumer2
-		 * @see com.safi.asterisk.impl.AsteriskPackageImpl#getCallConsumer2()
-		 * @generated
-		 */
-    EClass CALL_CONSUMER2 = eINSTANCE.getCallConsumer2();
-
-    /**
-		 * The meta object literal for the '<em><b>Call2</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-		 * @generated
-		 */
-    EReference CALL_CONSUMER2__CALL2 = eINSTANCE.getCallConsumer2_Call2();
 
     /**
 		 * The meta object literal for the '{@link com.safi.asterisk.CallState <em>Call State</em>}' enum.

@@ -26,6 +26,7 @@ import com.safi.asterisk.initiator.InitiatorPackage;
 import com.safi.asterisk.saflet.SafletPackage;
 import com.safi.asterisk.saflet.impl.SafletPackageImpl;
 import com.safi.core.CorePackage;
+import com.safi.core.call.CallPackage;
 import com.safi.db.server.config.ConfigPackage;
 
 /**
@@ -317,6 +318,7 @@ public class InitiatorPackageImpl extends EPackageImpl implements InitiatorPacka
 
 		// Obtain other dependent packages
 		com.safi.core.initiator.InitiatorPackage theInitiatorPackage_1 = (com.safi.core.initiator.InitiatorPackage)EPackage.Registry.INSTANCE.getEPackage(com.safi.core.initiator.InitiatorPackage.eNS_URI);
+		CallPackage theCallPackage = (CallPackage)EPackage.Registry.INSTANCE.getEPackage(CallPackage.eNS_URI);
 		AsteriskPackage theAsteriskPackage = (AsteriskPackage)EPackage.Registry.INSTANCE.getEPackage(AsteriskPackage.eNS_URI);
 		ConfigPackage theConfigPackage = (ConfigPackage)EPackage.Registry.INSTANCE.getEPackage(ConfigPackage.eNS_URI);
 
@@ -326,9 +328,9 @@ public class InitiatorPackageImpl extends EPackageImpl implements InitiatorPacka
 
 		// Add supertypes to classes
 		didMatcherEClass.getESuperTypes().add(theInitiatorPackage_1.getInitiator());
-		didMatcherEClass.getESuperTypes().add(theAsteriskPackage.getCallSource1());
+		didMatcherEClass.getESuperTypes().add(theCallPackage.getCallSource1());
 		incomingCallEClass.getESuperTypes().add(theInitiatorPackage_1.getInitiator());
-		incomingCallEClass.getESuperTypes().add(theAsteriskPackage.getCallSource1());
+		incomingCallEClass.getESuperTypes().add(theCallPackage.getCallSource1());
 		asteriskInitiatorInfoEClass.getESuperTypes().add(theInitiatorPackage_1.getInitiatorInfo());
 
 		// Initialize classes and features; add operations and parameters

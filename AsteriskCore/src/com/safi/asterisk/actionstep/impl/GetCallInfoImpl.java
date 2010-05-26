@@ -7,6 +7,7 @@
 package com.safi.asterisk.actionstep.impl;
 
 import java.util.logging.Level;
+
 import org.asteriskjava.fastagi.AgiChannel;
 import org.asteriskjava.fastagi.AgiRequest;
 import org.eclipse.emf.common.notify.Notification;
@@ -14,21 +15,23 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import com.safi.asterisk.AsteriskPackage;
+
 import com.safi.asterisk.Call;
-import com.safi.asterisk.CallConsumer1;
 import com.safi.asterisk.actionstep.ActionstepPackage;
 import com.safi.asterisk.actionstep.GetCallInfo;
 import com.safi.asterisk.util.AsteriskSafletConstants;
 import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.impl.ActionStepImpl;
-import com.safi.db.util.VariableTranslator;
+import com.safi.core.call.CallConsumer1;
+import com.safi.core.call.CallPackage;
+import com.safi.core.call.SafiCall;
 import com.safi.core.saflet.SafletContext;
 import com.safi.core.saflet.SafletEnvironment;
 import com.safi.core.saflet.SafletException;
 import com.safi.db.Variable;
 import com.safi.db.VariableScope;
+import com.safi.db.util.VariableTranslator;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -64,7 +67,7 @@ public class GetCallInfoImpl extends ActionStepImpl implements GetCallInfo {
    * @generated
    * @ordered
    */
-  protected Call call1;
+  protected SafiCall call1;
 
   /**
 	 * The cached value of the '{@link #getAccountCodeVar() <em>Account Code Var</em>}' containment reference.
@@ -195,12 +198,21 @@ public class GetCallInfoImpl extends ActionStepImpl implements GetCallInfo {
   public void beginProcessing(SafletContext context) throws ActionStepException {
     super.beginProcessing(context);
 
-    if (call1 == null || call1.getChannel() == null) {
-      handleException(context, new ActionStepException(call1 == null ? "No current call found"
-          : "No channel found in current context"));
+    if (call1 == null){
+   	 handleException(context, new ActionStepException("No current call found"));
       return;
-    }
-    AgiChannel channel = call1.getChannel();
+   }
+   else
+   if (!(call1 instanceof Call)){
+   	handleException(context, new ActionStepException("Call isn't isn't an Asterisk call: "+call1.getClass().getName()));
+   	return;
+   }
+   if (((Call)call1).getChannel() == null) {
+     handleException(context, new ActionStepException("No channel found in current context"));
+     return;
+   }
+   
+   AgiChannel channel = ((Call)call1).getChannel();
     Exception exception = null;
     try {
       AgiRequest request = null;
@@ -232,7 +244,7 @@ public class GetCallInfoImpl extends ActionStepImpl implements GetCallInfo {
       if (callerIdNameVar != null)
         try {
 
-          Object result = call1.getCallerIdName();
+          Object result = ((Call)call1).getCallerIdName();
           setVariableValue(callerIdNameVar, result, context);
 
         } catch (Exception e) {
@@ -244,7 +256,7 @@ public class GetCallInfoImpl extends ActionStepImpl implements GetCallInfo {
       if (callerIdNumVar != null)
         try {
 
-          Object result = call1.getCallerIdNum();
+          Object result = ((Call)call1).getCallerIdNum();
           setVariableValue(callerIdNumVar, result, context);
         } catch (Exception e) {
           if (debugLog.isLoggable(Level.FINEST))
@@ -254,7 +266,7 @@ public class GetCallInfoImpl extends ActionStepImpl implements GetCallInfo {
 
       if (channelNameVar != null)
         try {
-          Object result = call1.getChannelName();
+          Object result = ((Call)call1).getChannelName();
           setVariableValue(channelNameVar, result, context);
         } catch (Exception e) {
           if (debugLog.isLoggable(Level.FINEST))
@@ -316,7 +328,7 @@ public class GetCallInfoImpl extends ActionStepImpl implements GetCallInfo {
       }
       if (stateVar != null)
         try {
-          Object result = call1.getChannel().getChannelStatus();
+          Object result = ((Call)call1).getChannel().getChannelStatus();
           setVariableValue(stateVar, result, context);
         } catch (Exception e) {
           if (debugLog.isLoggable(Level.FINEST))
@@ -326,7 +338,7 @@ public class GetCallInfoImpl extends ActionStepImpl implements GetCallInfo {
 
       if (uniqueIdVar != null)
         try {
-          Object result = call1.getUniqueId();
+          Object result = ((Call)call1).getUniqueId();
           setVariableValue(uniqueIdVar, result, context);
         } catch (Exception e) {
           if (debugLog.isLoggable(Level.FINEST))
@@ -408,10 +420,10 @@ public class GetCallInfoImpl extends ActionStepImpl implements GetCallInfo {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Call getCall1() {
+  public SafiCall getCall1() {
 		if (call1 != null && call1.eIsProxy()) {
 			InternalEObject oldCall1 = (InternalEObject)call1;
-			call1 = (Call)eResolveProxy(oldCall1);
+			call1 = (SafiCall)eResolveProxy(oldCall1);
 			if (call1 != oldCall1) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.GET_CALL_INFO__CALL1, oldCall1, call1));
@@ -424,22 +436,23 @@ public class GetCallInfoImpl extends ActionStepImpl implements GetCallInfo {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Call basicGetCall1() {
+  public SafiCall basicGetCall1() {
 		return call1;
 	}
 
   /**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setCall1(Call newCall1) {
-		Call oldCall1 = call1;
+	public void setCall1(SafiCall newCall1) {
+		SafiCall oldCall1 = call1;
 		call1 = newCall1;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.GET_CALL_INFO__CALL1, oldCall1, call1));
 	}
 
-  /**
+		/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1050,7 +1063,7 @@ public class GetCallInfoImpl extends ActionStepImpl implements GetCallInfo {
   public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ActionstepPackage.GET_CALL_INFO__CALL1:
-				setCall1((Call)newValue);
+				setCall1((SafiCall)newValue);
 				return;
 			case ActionstepPackage.GET_CALL_INFO__ACCOUNT_CODE_VAR:
 				setAccountCodeVar((DynamicValue)newValue);
@@ -1103,7 +1116,7 @@ public class GetCallInfoImpl extends ActionStepImpl implements GetCallInfo {
   public void eUnset(int featureID) {
 		switch (featureID) {
 			case ActionstepPackage.GET_CALL_INFO__CALL1:
-				setCall1((Call)null);
+				setCall1((SafiCall)null);
 				return;
 			case ActionstepPackage.GET_CALL_INFO__ACCOUNT_CODE_VAR:
 				setAccountCodeVar((DynamicValue)null);
@@ -1195,7 +1208,7 @@ public class GetCallInfoImpl extends ActionStepImpl implements GetCallInfo {
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == CallConsumer1.class) {
 			switch (derivedFeatureID) {
-				case ActionstepPackage.GET_CALL_INFO__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
+				case ActionstepPackage.GET_CALL_INFO__CALL1: return CallPackage.CALL_CONSUMER1__CALL1;
 				default: return -1;
 			}
 		}
@@ -1210,7 +1223,7 @@ public class GetCallInfoImpl extends ActionStepImpl implements GetCallInfo {
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == CallConsumer1.class) {
 			switch (baseFeatureID) {
-				case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.GET_CALL_INFO__CALL1;
+				case CallPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.GET_CALL_INFO__CALL1;
 				default: return -1;
 			}
 		}

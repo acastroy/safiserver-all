@@ -8,14 +8,16 @@ package com.safi.asterisk.impl;
 
 import java.util.HashMap;
 import java.util.Map;
+
 import org.asteriskjava.fastagi.AgiChannel;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
 import com.safi.asterisk.CallState;
-import com.safi.core.impl.ThreadSensitiveImpl;
+import com.safi.core.call.impl.SafiCallImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,7 +38,7 @@ import com.safi.core.impl.ThreadSensitiveImpl;
  *
  * @generated
  */
-public class CallImpl extends ThreadSensitiveImpl implements Call {
+public class CallImpl extends SafiCallImpl implements Call {
   /**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

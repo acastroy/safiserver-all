@@ -7,13 +7,15 @@
 package com.safi.asterisk.saflet.impl;
 
 import java.util.logging.Logger;
+
 import org.eclipse.emf.ecore.EClass;
+
 import com.safi.asterisk.Call;
-import com.safi.asterisk.CallSource1;
-import com.safi.asterisk.CallSource2;
 import com.safi.asterisk.saflet.AsteriskSaflet;
 import com.safi.asterisk.saflet.SafletPackage;
 import com.safi.core.actionstep.ActionStep;
+import com.safi.core.call.CallSource1;
+import com.safi.core.call.CallSource2;
 import com.safi.core.saflet.impl.SafletImpl;
 
 /**
@@ -52,15 +54,16 @@ public class AsteriskSafletImpl extends SafletImpl implements AsteriskSaflet {
   public String getUniqueCallName(String prefix) {
     int max = 1;
     com.safi.core.initiator.Initiator init = getInitiator();
+    
     if (init instanceof CallSource1) {
-      Call call = ((CallSource1) init).getNewCall1();
+      Call call = (Call)((CallSource1) init).getNewCall1();
       if (call != null) {
         String sn = call.getName();
         max = Math.max(max, getNextNameSeq(sn));
       }
 
       if (init instanceof CallSource2) {
-        Call call2 = ((CallSource2) init).getNewCall2();
+        Call call2 = (Call)((CallSource2) init).getNewCall2();
         if (call2 != null) {
           String sn = call2.getName();
           max = Math.max(max, getNextNameSeq(sn));
@@ -70,14 +73,14 @@ public class AsteriskSafletImpl extends SafletImpl implements AsteriskSaflet {
 
     for (ActionStep ts : getActionsteps()) {
       if (ts instanceof CallSource1) {
-        Call call = ((CallSource1) ts).getNewCall1();
+        Call call = (Call)((CallSource1) ts).getNewCall1();
         if (call != null) {
           String sn = call.getName();
           max = Math.max(max, getNextNameSeq(sn));
         }
 
         if (ts instanceof CallSource2) {
-          Call call2 = ((CallSource2) ts).getNewCall2();
+          Call call2 = (Call)((CallSource2) ts).getNewCall2();
           if (call2 != null) {
             String sn = call2.getName();
             max = Math.max(max, getNextNameSeq(sn));

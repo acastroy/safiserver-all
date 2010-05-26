@@ -6,8 +6,6 @@
  */
 package com.safi.asterisk.util;
 
-import com.safi.asterisk.*;
-import com.safi.core.ThreadSensitive;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
@@ -15,10 +13,8 @@ import org.eclipse.emf.ecore.EObject;
 
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
-import com.safi.asterisk.CallConsumer1;
-import com.safi.asterisk.CallConsumer2;
-import com.safi.asterisk.CallSource1;
-import com.safi.asterisk.CallSource2;
+import com.safi.core.ThreadSensitive;
+import com.safi.core.call.SafiCall;
 
 /**
  * <!-- begin-user-doc -->
@@ -97,33 +93,8 @@ public class AsteriskSwitch<T> {
 			case AsteriskPackage.CALL: {
 				Call call = (Call)theEObject;
 				T result = caseCall(call);
+				if (result == null) result = caseSafiCall(call);
 				if (result == null) result = caseThreadSensitive(call);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case AsteriskPackage.CALL_SOURCE1: {
-				CallSource1 callSource1 = (CallSource1)theEObject;
-				T result = caseCallSource1(callSource1);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case AsteriskPackage.CALL_SOURCE2: {
-				CallSource2 callSource2 = (CallSource2)theEObject;
-				T result = caseCallSource2(callSource2);
-				if (result == null) result = caseCallSource1(callSource2);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case AsteriskPackage.CALL_CONSUMER1: {
-				CallConsumer1 callConsumer1 = (CallConsumer1)theEObject;
-				T result = caseCallConsumer1(callConsumer1);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case AsteriskPackage.CALL_CONSUMER2: {
-				CallConsumer2 callConsumer2 = (CallConsumer2)theEObject;
-				T result = caseCallConsumer2(callConsumer2);
-				if (result == null) result = caseCallConsumer1(callConsumer2);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -147,66 +118,6 @@ public class AsteriskSwitch<T> {
 	}
 
   /**
-	 * Returns the result of interpreting the object as an instance of '<em>Call Source1</em>'.
-	 * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Call Source1</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-  public T caseCallSource1(CallSource1 object) {
-		return null;
-	}
-
-  /**
-	 * Returns the result of interpreting the object as an instance of '<em>Call Source2</em>'.
-	 * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Call Source2</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-  public T caseCallSource2(CallSource2 object) {
-		return null;
-	}
-
-  /**
-	 * Returns the result of interpreting the object as an instance of '<em>Call Consumer1</em>'.
-	 * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Call Consumer1</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-  public T caseCallConsumer1(CallConsumer1 object) {
-		return null;
-	}
-
-  /**
-	 * Returns the result of interpreting the object as an instance of '<em>Call Consumer2</em>'.
-	 * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Call Consumer2</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-  public T caseCallConsumer2(CallConsumer2 object) {
-		return null;
-	}
-
-  /**
 	 * Returns the result of interpreting the object as an instance of '<em>Thread Sensitive</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -218,6 +129,21 @@ public class AsteriskSwitch<T> {
 	 * @generated
 	 */
 	public T caseThreadSensitive(ThreadSensitive object) {
+		return null;
+	}
+
+		/**
+	 * Returns the result of interpreting the object as an instance of '<em>Safi Call</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Safi Call</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSafiCall(SafiCall object) {
 		return null;
 	}
 

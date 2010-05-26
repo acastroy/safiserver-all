@@ -11,10 +11,6 @@ import java.util.List;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
-import com.safi.asterisk.CallConsumer1;
-import com.safi.asterisk.CallConsumer2;
-import com.safi.asterisk.CallSource1;
-import com.safi.asterisk.actionstep.*;
 import com.safi.asterisk.actionstep.ActionstepPackage;
 import com.safi.asterisk.actionstep.Answer;
 import com.safi.asterisk.actionstep.Background;
@@ -88,6 +84,9 @@ import com.safi.asterisk.actionstep.WaitMusicOnHold;
 import com.safi.core.ProductIdentifiable;
 import com.safi.core.ThreadSensitive;
 import com.safi.core.actionstep.ActionStep;
+import com.safi.core.call.CallConsumer1;
+import com.safi.core.call.CallConsumer2;
+import com.safi.core.call.CallSource1;
 
 /**
  * <!-- begin-user-doc -->
@@ -1896,13 +1895,13 @@ public class ActionstepSwitch<T> {
 	}
 
   /**
-	 * Returns the result of interpreting the object as an instance of '<em>Call Consumer1</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Consumer1</em>'.
 	 * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Call Consumer1</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Consumer1</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -1956,13 +1955,13 @@ public class ActionstepSwitch<T> {
 	}
 
   /**
-	 * Returns the result of interpreting the object as an instance of '<em>Call Source1</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Source1</em>'.
 	 * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Call Source1</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Source1</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -1971,13 +1970,13 @@ public class ActionstepSwitch<T> {
 	}
 
   /**
-	 * Returns the result of interpreting the object as an instance of '<em>Call Consumer2</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Consumer2</em>'.
 	 * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Call Consumer2</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Consumer2</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */

@@ -8,10 +8,10 @@ package com.safi.asterisk.actionstep;
 
 import org.eclipse.emf.common.util.EList;
 
-import com.safi.asterisk.CallConsumer1;
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.AudioFileItem;
 import com.safi.core.actionstep.DynamicValue;
+import com.safi.core.call.CallConsumer1;
 
 /**
  * <!-- begin-user-doc -->

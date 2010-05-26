@@ -11,10 +11,6 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
-import com.safi.asterisk.CallConsumer1;
-import com.safi.asterisk.CallConsumer2;
-import com.safi.asterisk.CallSource1;
-import com.safi.asterisk.actionstep.*;
 import com.safi.asterisk.actionstep.ActionstepPackage;
 import com.safi.asterisk.actionstep.Answer;
 import com.safi.asterisk.actionstep.Background;
@@ -88,6 +84,9 @@ import com.safi.asterisk.actionstep.WaitMusicOnHold;
 import com.safi.core.ProductIdentifiable;
 import com.safi.core.ThreadSensitive;
 import com.safi.core.actionstep.ActionStep;
+import com.safi.core.call.CallConsumer1;
+import com.safi.core.call.CallConsumer2;
+import com.safi.core.call.CallSource1;
 
 /**
  * <!-- begin-user-doc -->
@@ -1432,13 +1431,13 @@ public class ActionstepAdapterFactory extends AdapterFactoryImpl {
 	}
 
   /**
-	 * Creates a new adapter for an object of class '{@link com.safi.asterisk.CallConsumer1 <em>Call Consumer1</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.safi.core.call.CallConsumer1 <em>Consumer1</em>}'.
 	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.safi.asterisk.CallConsumer1
+	 * @see com.safi.core.call.CallConsumer1
 	 * @generated
 	 */
   public Adapter createCallConsumer1Adapter() {
@@ -1488,13 +1487,13 @@ public class ActionstepAdapterFactory extends AdapterFactoryImpl {
 	}
 
   /**
-	 * Creates a new adapter for an object of class '{@link com.safi.asterisk.CallSource1 <em>Call Source1</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.safi.core.call.CallSource1 <em>Source1</em>}'.
 	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.safi.asterisk.CallSource1
+	 * @see com.safi.core.call.CallSource1
 	 * @generated
 	 */
   public Adapter createCallSource1Adapter() {
@@ -1502,13 +1501,13 @@ public class ActionstepAdapterFactory extends AdapterFactoryImpl {
 	}
 
   /**
-	 * Creates a new adapter for an object of class '{@link com.safi.asterisk.CallConsumer2 <em>Call Consumer2</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.safi.core.call.CallConsumer2 <em>Consumer2</em>}'.
 	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.safi.asterisk.CallConsumer2
+	 * @see com.safi.core.call.CallConsumer2
 	 * @generated
 	 */
   public Adapter createCallConsumer2Adapter() {

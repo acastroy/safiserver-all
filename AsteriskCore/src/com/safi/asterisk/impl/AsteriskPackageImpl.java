@@ -15,16 +15,11 @@ import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import com.safi.asterisk.AsteriskFactory;
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
-import com.safi.asterisk.CallConsumer1;
-import com.safi.asterisk.CallConsumer2;
-import com.safi.asterisk.CallSource1;
-import com.safi.asterisk.CallSource2;
 import com.safi.asterisk.CallState;
 import com.safi.asterisk.actionstep.ActionstepPackage;
 import com.safi.asterisk.actionstep.impl.ActionstepPackageImpl;
@@ -33,6 +28,7 @@ import com.safi.asterisk.initiator.impl.InitiatorPackageImpl;
 import com.safi.asterisk.saflet.SafletPackage;
 import com.safi.asterisk.saflet.impl.SafletPackageImpl;
 import com.safi.core.CorePackage;
+import com.safi.core.call.CallPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -47,34 +43,6 @@ public class AsteriskPackageImpl extends EPackageImpl implements AsteriskPackage
 	 * @generated
 	 */
   private EClass callEClass = null;
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  private EClass callSource1EClass = null;
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  private EClass callSource2EClass = null;
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  private EClass callConsumer1EClass = null;
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  private EClass callConsumer2EClass = null;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -256,78 +224,6 @@ public class AsteriskPackageImpl extends EPackageImpl implements AsteriskPackage
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EClass getCallSource1() {
-		return callSource1EClass;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getCallSource1_NewCall1() {
-		return (EReference)callSource1EClass.getEStructuralFeatures().get(0);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EClass getCallSource2() {
-		return callSource2EClass;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getCallSource2_NewCall2() {
-		return (EReference)callSource2EClass.getEStructuralFeatures().get(0);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EClass getCallConsumer1() {
-		return callConsumer1EClass;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getCallConsumer1_Call1() {
-		return (EReference)callConsumer1EClass.getEStructuralFeatures().get(0);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EClass getCallConsumer2() {
-		return callConsumer2EClass;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getCallConsumer2_Call2() {
-		return (EReference)callConsumer2EClass.getEStructuralFeatures().get(0);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
   public EEnum getCallState() {
 		return callStateEEnum;
 	}
@@ -396,18 +292,6 @@ public class AsteriskPackageImpl extends EPackageImpl implements AsteriskPackage
 		createEAttribute(callEClass, CALL__CHANNEL_NAME);
 		createEAttribute(callEClass, CALL__CALL_STATE);
 
-		callSource1EClass = createEClass(CALL_SOURCE1);
-		createEReference(callSource1EClass, CALL_SOURCE1__NEW_CALL1);
-
-		callSource2EClass = createEClass(CALL_SOURCE2);
-		createEReference(callSource2EClass, CALL_SOURCE2__NEW_CALL2);
-
-		callConsumer1EClass = createEClass(CALL_CONSUMER1);
-		createEReference(callConsumer1EClass, CALL_CONSUMER1__CALL1);
-
-		callConsumer2EClass = createEClass(CALL_CONSUMER2);
-		createEReference(callConsumer2EClass, CALL_CONSUMER2__CALL2);
-
 		// Create enums
 		callStateEEnum = createEEnum(CALL_STATE);
 
@@ -444,7 +328,7 @@ public class AsteriskPackageImpl extends EPackageImpl implements AsteriskPackage
 		ActionstepPackage theActionstepPackage = (ActionstepPackage)EPackage.Registry.INSTANCE.getEPackage(ActionstepPackage.eNS_URI);
 		InitiatorPackage theInitiatorPackage = (InitiatorPackage)EPackage.Registry.INSTANCE.getEPackage(InitiatorPackage.eNS_URI);
 		SafletPackage theSafletPackage = (SafletPackage)EPackage.Registry.INSTANCE.getEPackage(SafletPackage.eNS_URI);
-		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		CallPackage theCallPackage = (CallPackage)EPackage.Registry.INSTANCE.getEPackage(CallPackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theActionstepPackage);
@@ -456,9 +340,7 @@ public class AsteriskPackageImpl extends EPackageImpl implements AsteriskPackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		callEClass.getESuperTypes().add(theCorePackage.getThreadSensitive());
-		callSource2EClass.getESuperTypes().add(this.getCallSource1());
-		callConsumer2EClass.getESuperTypes().add(this.getCallConsumer1());
+		callEClass.getESuperTypes().add(theCallPackage.getSafiCall());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(callEClass, Call.class, "Call", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -476,18 +358,6 @@ public class AsteriskPackageImpl extends EPackageImpl implements AsteriskPackage
 
 		op = addEOperation(callEClass, ecorePackage.getEJavaObject(), "getData", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(callSource1EClass, CallSource1.class, "CallSource1", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCallSource1_NewCall1(), this.getCall(), null, "newCall1", null, 0, 1, CallSource1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(callSource2EClass, CallSource2.class, "CallSource2", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCallSource2_NewCall2(), this.getCall(), null, "newCall2", null, 0, 1, CallSource2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(callConsumer1EClass, CallConsumer1.class, "CallConsumer1", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCallConsumer1_Call1(), this.getCall(), null, "call1", null, 0, 1, CallConsumer1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(callConsumer2EClass, CallConsumer2.class, "CallConsumer2", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCallConsumer2_Call2(), this.getCall(), null, "call2", null, 0, 1, CallConsumer2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(callStateEEnum, CallState.class, "CallState");
@@ -508,50 +378,6 @@ public class AsteriskPackageImpl extends EPackageImpl implements AsteriskPackage
 
 		// Create resource
 		createResource(eNS_URI);
-
-		// Create annotations
-		// Directionality
-		createDirectionalityAnnotations();
-		// Required
-		createRequiredAnnotations();
-	}
-
-  /**
-	 * Initializes the annotations for <b>Directionality</b>.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  protected void createDirectionalityAnnotations() {
-		String source = "Directionality";		
-		addAnnotation
-		  (getCallSource1_NewCall1(), 
-		   source, 
-		   new String[] {
-			 "output", "true"
-		   });		
-		addAnnotation
-		  (getCallSource2_NewCall2(), 
-		   source, 
-		   new String[] {
-			 "output", "true"
-		   });	
-	}
-
-  /**
-	 * Initializes the annotations for <b>Required</b>.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  protected void createRequiredAnnotations() {
-		String source = "Required";				
-		addAnnotation
-		  (getCallConsumer1_Call1(), 
-		   source, 
-		   new String[] {
-			 "criteria", "non-null"
-		   });
 	}
 
 } //AsteriskPackageImpl

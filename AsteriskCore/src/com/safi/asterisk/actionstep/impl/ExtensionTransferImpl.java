@@ -7,6 +7,7 @@
 package com.safi.asterisk.actionstep.impl;
 
 import java.util.logging.Level;
+
 import org.apache.commons.lang.StringUtils;
 import org.asteriskjava.fastagi.AgiChannel;
 import org.asteriskjava.manager.ManagerConnection;
@@ -18,10 +19,8 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import com.safi.asterisk.AsteriskPackage;
+
 import com.safi.asterisk.Call;
-import com.safi.asterisk.CallConsumer1;
-import com.safi.asterisk.CallConsumer2;
 import com.safi.asterisk.actionstep.ActionstepPackage;
 import com.safi.asterisk.actionstep.ExtensionTransfer;
 import com.safi.asterisk.util.AsteriskSafletConstants;
@@ -31,10 +30,14 @@ import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.Output;
 import com.safi.core.actionstep.OutputType;
 import com.safi.core.actionstep.impl.ActionStepImpl;
-import com.safi.db.util.VariableTranslator;
+import com.safi.core.call.CallConsumer1;
+import com.safi.core.call.CallConsumer2;
+import com.safi.core.call.CallPackage;
+import com.safi.core.call.SafiCall;
 import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletContext;
 import com.safi.db.VariableType;
+import com.safi.db.util.VariableTranslator;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -64,7 +67,7 @@ public class ExtensionTransferImpl extends ActionStepImpl implements ExtensionTr
 	 * @generated
 	 * @ordered
 	 */
-	protected Call call1;
+	protected SafiCall call1;
 
 	/**
 	 * The cached value of the '{@link #getCall2() <em>Call2</em>}' reference.
@@ -73,7 +76,7 @@ public class ExtensionTransferImpl extends ActionStepImpl implements ExtensionTr
 	 * @generated
 	 * @ordered
 	 */
-	protected Call call2;
+	protected SafiCall call2;
 
 	/**
 	 * The cached value of the '{@link #getContext() <em>Context</em>}' containment reference.
@@ -179,21 +182,21 @@ public class ExtensionTransferImpl extends ActionStepImpl implements ExtensionTr
 	@Override
 	public void beginProcessing(SafletContext context) throws ActionStepException {
 		super.beginProcessing(context);
-		// Object variableRawValue = context
-		// .getVariableRawValue(com.safi.asterisk.util.AsteriskSafletConstants.VAR_KEY_MANAGER_CONNECTION);
-		// if (variableRawValue == null || !(variableRawValue instanceof
-		// ManagerConnection)) {
-		// handleException(context, new ActionStepException(
-		// "No manager connection found in current context"));
-		// return;
-		// }
-		if (call1 == null || call1.getChannel() == null) {
-			handleException(context,
-			    new ActionStepException(call1 == null ? "No current call found"
-			        : "No channel found in current context"));
-			return;
-		}
-		AgiChannel channel = call1.getChannel();
+		if (call1 == null){
+   	 handleException(context, new ActionStepException("No current call found"));
+      return;
+   }
+   else
+   if (!(call1 instanceof Call)){
+   	handleException(context, new ActionStepException("Call isn't isn't an Asterisk call: "+call1.getClass().getName()));
+   	return;
+   }
+   if (((Call)call1).getChannel() == null) {
+     handleException(context, new ActionStepException("No channel found in current context"));
+     return;
+   }
+   
+   AgiChannel channel = ((Call)call1).getChannel();
 		Exception exception = null;
 		int idx = 0;
 		try {
@@ -378,10 +381,10 @@ public class ExtensionTransferImpl extends ActionStepImpl implements ExtensionTr
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Call getCall1() {
+	public SafiCall getCall1() {
 		if (call1 != null && call1.eIsProxy()) {
 			InternalEObject oldCall1 = (InternalEObject)call1;
-			call1 = (Call)eResolveProxy(oldCall1);
+			call1 = (SafiCall)eResolveProxy(oldCall1);
 			if (call1 != oldCall1) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.EXTENSION_TRANSFER__CALL1, oldCall1, call1));
@@ -394,16 +397,17 @@ public class ExtensionTransferImpl extends ActionStepImpl implements ExtensionTr
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Call basicGetCall1() {
+	public SafiCall basicGetCall1() {
 		return call1;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCall1(Call newCall1) {
-		Call oldCall1 = call1;
+	public void setCall1(SafiCall newCall1) {
+		SafiCall oldCall1 = call1;
 		call1 = newCall1;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.EXTENSION_TRANSFER__CALL1, oldCall1, call1));
@@ -413,10 +417,10 @@ public class ExtensionTransferImpl extends ActionStepImpl implements ExtensionTr
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Call getCall2() {
+	public SafiCall getCall2() {
 		if (call2 != null && call2.eIsProxy()) {
 			InternalEObject oldCall2 = (InternalEObject)call2;
-			call2 = (Call)eResolveProxy(oldCall2);
+			call2 = (SafiCall)eResolveProxy(oldCall2);
 			if (call2 != oldCall2) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.EXTENSION_TRANSFER__CALL2, oldCall2, call2));
@@ -429,16 +433,17 @@ public class ExtensionTransferImpl extends ActionStepImpl implements ExtensionTr
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Call basicGetCall2() {
+	public SafiCall basicGetCall2() {
 		return call2;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCall2(Call newCall2) {
-		Call oldCall2 = call2;
+	public void setCall2(SafiCall newCall2) {
+		SafiCall oldCall2 = call2;
 		call2 = newCall2;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.EXTENSION_TRANSFER__CALL2, oldCall2, call2));
@@ -726,10 +731,10 @@ public class ExtensionTransferImpl extends ActionStepImpl implements ExtensionTr
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ActionstepPackage.EXTENSION_TRANSFER__CALL1:
-				setCall1((Call)newValue);
+				setCall1((SafiCall)newValue);
 				return;
 			case ActionstepPackage.EXTENSION_TRANSFER__CALL2:
-				setCall2((Call)newValue);
+				setCall2((SafiCall)newValue);
 				return;
 			case ActionstepPackage.EXTENSION_TRANSFER__CONTEXT:
 				setContext((DynamicValue)newValue);
@@ -764,10 +769,10 @@ public class ExtensionTransferImpl extends ActionStepImpl implements ExtensionTr
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ActionstepPackage.EXTENSION_TRANSFER__CALL1:
-				setCall1((Call)null);
+				setCall1((SafiCall)null);
 				return;
 			case ActionstepPackage.EXTENSION_TRANSFER__CALL2:
-				setCall2((Call)null);
+				setCall2((SafiCall)null);
 				return;
 			case ActionstepPackage.EXTENSION_TRANSFER__CONTEXT:
 				setContext((DynamicValue)null);
@@ -831,13 +836,13 @@ public class ExtensionTransferImpl extends ActionStepImpl implements ExtensionTr
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == CallConsumer1.class) {
 			switch (derivedFeatureID) {
-				case ActionstepPackage.EXTENSION_TRANSFER__CALL1: return AsteriskPackage.CALL_CONSUMER1__CALL1;
+				case ActionstepPackage.EXTENSION_TRANSFER__CALL1: return CallPackage.CALL_CONSUMER1__CALL1;
 				default: return -1;
 			}
 		}
 		if (baseClass == CallConsumer2.class) {
 			switch (derivedFeatureID) {
-				case ActionstepPackage.EXTENSION_TRANSFER__CALL2: return AsteriskPackage.CALL_CONSUMER2__CALL2;
+				case ActionstepPackage.EXTENSION_TRANSFER__CALL2: return CallPackage.CALL_CONSUMER2__CALL2;
 				default: return -1;
 			}
 		}
@@ -852,13 +857,13 @@ public class ExtensionTransferImpl extends ActionStepImpl implements ExtensionTr
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == CallConsumer1.class) {
 			switch (baseFeatureID) {
-				case AsteriskPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.EXTENSION_TRANSFER__CALL1;
+				case CallPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.EXTENSION_TRANSFER__CALL1;
 				default: return -1;
 			}
 		}
 		if (baseClass == CallConsumer2.class) {
 			switch (baseFeatureID) {
-				case AsteriskPackage.CALL_CONSUMER2__CALL2: return ActionstepPackage.EXTENSION_TRANSFER__CALL2;
+				case CallPackage.CALL_CONSUMER2__CALL2: return ActionstepPackage.EXTENSION_TRANSFER__CALL2;
 				default: return -1;
 			}
 		}

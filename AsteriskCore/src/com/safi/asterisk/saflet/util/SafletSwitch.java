@@ -6,8 +6,6 @@
  */
 package com.safi.asterisk.saflet.util;
 
-import com.safi.asterisk.saflet.*;
-import com.safi.core.ThreadSensitive;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
@@ -17,6 +15,7 @@ import com.safi.asterisk.saflet.AsteriskSaflet;
 import com.safi.asterisk.saflet.AsteriskSafletContext;
 import com.safi.asterisk.saflet.AsteriskSafletEnvironment;
 import com.safi.asterisk.saflet.SafletPackage;
+import com.safi.core.ThreadSensitive;
 import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletContext;
 import com.safi.core.saflet.SafletEnvironment;

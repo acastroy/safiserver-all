@@ -12,11 +12,12 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
-import com.safi.asterisk.CallSource1;
 import com.safi.asterisk.initiator.DIDMatcher;
 import com.safi.asterisk.initiator.InitiatorPackage;
+import com.safi.core.call.CallPackage;
+import com.safi.core.call.CallSource1;
+import com.safi.core.call.SafiCall;
 import com.safi.core.initiator.impl.InitiatorImpl;
 
 /**
@@ -44,7 +45,7 @@ public class DIDMatcherImpl extends InitiatorImpl implements DIDMatcher {
 	 * @generated
 	 * @ordered
 	 */
-  protected Call newCall1;
+  protected SafiCall newCall1;
 
   /**
 	 * The default value of the '{@link #getDNISPattern() <em>DNIS Pattern</em>}' attribute.
@@ -120,17 +121,17 @@ public class DIDMatcherImpl extends InitiatorImpl implements DIDMatcher {
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Call getNewCall1() {
+  public SafiCall getNewCall1() {
 		return newCall1;
 	}
 
   /**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetNewCall1(Call newNewCall1, NotificationChain msgs) {
-		Call oldNewCall1 = newCall1;
+	public NotificationChain basicSetNewCall1(SafiCall newNewCall1, NotificationChain msgs) {
+		SafiCall oldNewCall1 = newCall1;
 		newCall1 = newNewCall1;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InitiatorPackage.DID_MATCHER__NEW_CALL1, oldNewCall1, newNewCall1);
@@ -139,12 +140,12 @@ public class DIDMatcherImpl extends InitiatorImpl implements DIDMatcher {
 		return msgs;
 	}
 
-  /**
+		/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setNewCall1(Call newNewCall1) {
+	public void setNewCall1(SafiCall newNewCall1) {
 		if (newNewCall1 != newCall1) {
 			NotificationChain msgs = null;
 			if (newCall1 != null)
@@ -158,7 +159,7 @@ public class DIDMatcherImpl extends InitiatorImpl implements DIDMatcher {
 			eNotify(new ENotificationImpl(this, Notification.SET, InitiatorPackage.DID_MATCHER__NEW_CALL1, newNewCall1, newNewCall1));
 	}
 
-  /**
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
@@ -288,7 +289,7 @@ public class DIDMatcherImpl extends InitiatorImpl implements DIDMatcher {
   public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case InitiatorPackage.DID_MATCHER__NEW_CALL1:
-				setNewCall1((Call)newValue);
+				setNewCall1((SafiCall)newValue);
 				return;
 			case InitiatorPackage.DID_MATCHER__DNIS_PATTERN:
 				setDNISPattern((String)newValue);
@@ -312,7 +313,7 @@ public class DIDMatcherImpl extends InitiatorImpl implements DIDMatcher {
   public void eUnset(int featureID) {
 		switch (featureID) {
 			case InitiatorPackage.DID_MATCHER__NEW_CALL1:
-				setNewCall1((Call)null);
+				setNewCall1((SafiCall)null);
 				return;
 			case InitiatorPackage.DID_MATCHER__DNIS_PATTERN:
 				setDNISPattern(DNIS_PATTERN_EDEFAULT);
@@ -356,7 +357,7 @@ public class DIDMatcherImpl extends InitiatorImpl implements DIDMatcher {
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == CallSource1.class) {
 			switch (derivedFeatureID) {
-				case InitiatorPackage.DID_MATCHER__NEW_CALL1: return AsteriskPackage.CALL_SOURCE1__NEW_CALL1;
+				case InitiatorPackage.DID_MATCHER__NEW_CALL1: return CallPackage.CALL_SOURCE1__NEW_CALL1;
 				default: return -1;
 			}
 		}
@@ -372,7 +373,7 @@ public class DIDMatcherImpl extends InitiatorImpl implements DIDMatcher {
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == CallSource1.class) {
 			switch (baseFeatureID) {
-				case AsteriskPackage.CALL_SOURCE1__NEW_CALL1: return InitiatorPackage.DID_MATCHER__NEW_CALL1;
+				case CallPackage.CALL_SOURCE1__NEW_CALL1: return InitiatorPackage.DID_MATCHER__NEW_CALL1;
 				default: return -1;
 			}
 		}
