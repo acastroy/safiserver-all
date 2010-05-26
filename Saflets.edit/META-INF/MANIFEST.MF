@@ -9,6 +9,7 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: com.safi.core.actionstep.provider,
+ com.safi.core.call.provider,
  com.safi.core.initiator.provider,
  com.safi.core.provider,
  com.safi.core.saflet.provider,
