@@ -48,7 +48,6 @@ public final class Actionpak1EditPlugin extends EMFPlugin {
   public Actionpak1EditPlugin() {
 		super
 		  (new ResourceLocator [] {
-		     AsteriskEditPlugin.INSTANCE,
 		     CoreEditPluginProv.INSTANCE,
 		     DbEditPlugin.INSTANCE,
 		   });

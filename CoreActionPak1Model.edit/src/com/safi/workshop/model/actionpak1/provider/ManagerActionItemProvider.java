@@ -70,7 +70,6 @@ public class ManagerActionItemProvider
 			super.getPropertyDescriptors(object);
 
 			addManagerActionTypePropertyDescriptor(object);
-			addManagerResponsePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -93,28 +92,6 @@ public class ManagerActionItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Manager Response feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addManagerResponsePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ManagerAction_managerResponse_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ManagerAction_managerResponse_feature", "_UI_ManagerAction_type"),
-				 Actionpak1Package.Literals.MANAGER_ACTION__MANAGER_RESPONSE,
-				 true,
-				 false,
-				 false,
-				 null,
 				 null,
 				 null));
 	}

@@ -13,6 +13,7 @@ import com.safi.asterisk.AsteriskPackage;
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.actionstep.provider.ParameterizedInitiatorItemProvider;
 
+import com.safi.core.call.CallPackage;
 import com.safi.workshop.model.actionpak1.Actionpak1Package;
 import com.safi.workshop.model.actionpak1.IncomingCall2;
 
@@ -71,32 +72,9 @@ public class IncomingCall2ItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNewCall1PropertyDescriptor(object);
 			addCallNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-  /**
-	 * This adds a property descriptor for the New Call1 feature.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  protected void addNewCall1PropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CallSource1_newCall1_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CallSource1_newCall1_feature", "_UI_CallSource1_type"),
-				 AsteriskPackage.Literals.CALL_SOURCE1__NEW_CALL1,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
 	}
 
   /**
@@ -133,7 +111,7 @@ public class IncomingCall2ItemProvider
   public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(AsteriskPackage.Literals.CALL_SOURCE1__NEW_CALL1);
+			childrenFeatures.add(CallPackage.Literals.CALL_SOURCE1__NEW_CALL1);
 		}
 		return childrenFeatures;
 	}
@@ -208,11 +186,6 @@ public class IncomingCall2ItemProvider
   @Override
   protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(AsteriskPackage.Literals.CALL_SOURCE1__NEW_CALL1,
-				 AsteriskFactory.eINSTANCE.createCall()));
 	}
 
   /**
