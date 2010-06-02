@@ -3,6 +3,7 @@ package com.safi.workshop.sheet.actionstep;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.core.databinding.Binding;
 import org.eclipse.core.databinding.observable.list.IListChangeListener;
@@ -38,6 +39,7 @@ import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
+
 import com.safi.core.actionstep.DBConnectionId;
 import com.safi.core.actionstep.DBQueryId;
 import com.safi.core.actionstep.QueryParamMapping;

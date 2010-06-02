@@ -2,6 +2,7 @@ package com.safi.workshop.edit.parts;
 
 import java.util.ArrayList;
 import java.util.Collections;
+
 import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.ConnectionRouter;
 import org.eclipse.draw2d.FreeformLayer;
@@ -23,6 +24,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.internal.routers.BorderItemRectilinearR
 import org.eclipse.gmf.runtime.notation.MeasurementUnit;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.ImageData;
+
 import com.safi.asterisk.figures.OutputFigure;
 
 public class AsteriskRootEditPart extends RenderedDiagramRootEditPart {

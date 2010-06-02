@@ -19,9 +19,11 @@
 package com.safi.workshop.sqlexplorer.connections.actions;
 
 import java.sql.SQLException;
+
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IViewActionDelegate;
+
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.sqlexplorer.dbproduct.SQLConnection;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;

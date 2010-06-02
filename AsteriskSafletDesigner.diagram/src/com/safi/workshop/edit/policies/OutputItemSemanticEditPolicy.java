@@ -6,6 +6,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
+
 import com.safi.workshop.edit.commands.OutputTargetCreateCommand;
 import com.safi.workshop.edit.commands.OutputTargetReorientCommand;
 import com.safi.workshop.edit.parts.OutputTargetEditPart;

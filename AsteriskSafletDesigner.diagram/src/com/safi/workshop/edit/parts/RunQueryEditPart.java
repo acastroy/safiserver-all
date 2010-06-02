@@ -37,6 +37,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.ui.PlatformUI;
+
 import com.safi.asterisk.figures.RunQueryFigure;
 import com.safi.core.actionstep.DBQueryId;
 import com.safi.core.actionstep.RunQuery;

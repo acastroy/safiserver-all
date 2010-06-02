@@ -11,6 +11,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
+
 import com.safi.core.actionstep.DBConnectionId;
 import com.safi.workshop.sheet.DBResourceChooser;
 

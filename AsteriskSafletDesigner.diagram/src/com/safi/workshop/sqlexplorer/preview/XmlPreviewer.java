@@ -20,6 +20,7 @@ package com.safi.workshop.sqlexplorer.preview;
 
 import java.io.StringReader;
 import java.util.List;
+
 import org.dom4j.Attribute;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
@@ -30,6 +31,7 @@ import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
+
 import com.safi.workshop.sqlexplorer.ExplorerException;
 import com.safi.workshop.sqlexplorer.dataset.XmlDataType;
 

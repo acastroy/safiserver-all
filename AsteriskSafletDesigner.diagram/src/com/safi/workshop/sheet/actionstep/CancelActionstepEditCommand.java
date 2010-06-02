@@ -2,8 +2,10 @@ package com.safi.workshop.sheet.actionstep;
 
 import java.util.Collections;
 import java.util.List;
+
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+
 import com.safi.workshop.edit.parts.ToolstepEditPart;
 
 public class CancelActionstepEditCommand extends AbstractActionstepEditCommand {

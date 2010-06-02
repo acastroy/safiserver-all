@@ -1,6 +1,7 @@
 package com.safi.workshop.view.vareditor;
 
 import java.util.List;
+
 import com.safi.db.Variable;
 
 public class VariableCategory {

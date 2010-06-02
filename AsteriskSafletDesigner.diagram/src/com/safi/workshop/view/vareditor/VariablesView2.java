@@ -3,6 +3,7 @@ package com.safi.workshop.view.vareditor;
 import java.lang.ref.SoftReference;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
@@ -48,12 +49,13 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
-import com.safi.db.util.VariableTranslator;
+
 import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletContext;
 import com.safi.db.Variable;
 import com.safi.db.VariableScope;
 import com.safi.db.VariableType;
+import com.safi.db.util.VariableTranslator;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.preferences.SafiServerStatusListener;
 import com.safi.server.saflet.mbean.SysInfo;

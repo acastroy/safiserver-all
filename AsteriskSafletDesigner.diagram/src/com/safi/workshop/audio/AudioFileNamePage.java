@@ -1,6 +1,7 @@
 package com.safi.workshop.audio;
 
 import java.io.File;
+
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.jface.wizard.WizardPage;
@@ -12,6 +13,7 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
+
 import com.safi.db.server.config.Prompt;
 import com.safi.workshop.audio.ImportAudioFileWizard.Mode;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;

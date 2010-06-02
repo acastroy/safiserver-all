@@ -2,6 +2,7 @@ package com.safi.workshop.sqlexplorer.sqleditor.actions;
 
 import java.sql.SQLException;
 import java.util.LinkedList;
+
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtension;
 import org.eclipse.core.runtime.IExtensionPoint;
@@ -16,6 +17,7 @@ import org.eclipse.swt.events.ControlListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.CoolBar;
+
 import com.safi.workshop.sqlexplorer.dbproduct.MetaDataSession;
 import com.safi.workshop.sqlexplorer.dbproduct.Session;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;

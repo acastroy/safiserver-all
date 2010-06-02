@@ -3,6 +3,7 @@ package com.safi.workshop.navigator.db;
 import java.lang.ref.WeakReference;
 import java.util.LinkedList;
 import java.util.List;
+
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceVisitor;
@@ -29,6 +30,7 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchPartReference;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
+
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.actionstep.ActionstepPackage;
 import com.safi.asterisk.initiator.InitiatorPackage;

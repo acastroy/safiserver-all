@@ -3,6 +3,7 @@ package com.safi.workshop.view.vareditor;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import org.apache.commons.lang.ObjectUtils;
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.emf.common.command.Command;
@@ -45,13 +46,14 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
-import com.safi.db.util.VariableTranslator;
+
 import com.safi.core.saflet.SafletContext;
 import com.safi.db.DbFactory;
 import com.safi.db.DbPackage;
 import com.safi.db.Variable;
 import com.safi.db.VariableScope;
 import com.safi.db.VariableType;
+import com.safi.db.util.VariableTranslator;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.saflet.GlobalVariableManager;
 import com.safi.server.saflet.manager.DBManager;

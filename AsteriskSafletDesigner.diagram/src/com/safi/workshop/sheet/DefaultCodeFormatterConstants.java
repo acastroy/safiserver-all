@@ -10,6 +10,7 @@
 package com.safi.workshop.sheet;
 
 import java.util.Map;
+
 import org.eclipse.dltk.javascript.internal.ui.JavaScriptUI;
 
 public class DefaultCodeFormatterConstants {

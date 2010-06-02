@@ -1,6 +1,7 @@
 package com.safi.workshop.sheet.actionstep;
 
 import java.util.List;
+
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
@@ -21,6 +22,7 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Table;
+
 import com.safi.core.actionstep.Item;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.swtdesigner.ResourceManager;

@@ -2,6 +2,7 @@ package com.safi.workshop.part;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.gef.Tool;
 import org.eclipse.gef.palette.PaletteContainer;
@@ -10,6 +11,7 @@ import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gmf.runtime.diagram.ui.internal.services.palette.PaletteToolEntry;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
+
 import com.safi.workshop.providers.AsteriskElementTypes;
 
 /**

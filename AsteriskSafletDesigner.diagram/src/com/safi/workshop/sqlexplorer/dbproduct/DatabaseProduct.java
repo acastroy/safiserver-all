@@ -22,6 +22,7 @@ import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.SQLException;
 import java.util.Collection;
+
 import com.safi.workshop.sqlexplorer.dataset.DataSet;
 import com.safi.workshop.sqlexplorer.parsers.Query;
 import com.safi.workshop.sqlexplorer.parsers.QueryParser;

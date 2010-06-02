@@ -2,6 +2,7 @@ package com.safi.workshop.providers;
 
 import java.util.List;
 import java.util.Map;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -13,6 +14,7 @@ import org.eclipse.gmf.runtime.emf.clipboard.core.PasteChildOperation;
 import org.eclipse.gmf.runtime.emf.clipboard.core.PasteTarget;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Node;
+
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletException;

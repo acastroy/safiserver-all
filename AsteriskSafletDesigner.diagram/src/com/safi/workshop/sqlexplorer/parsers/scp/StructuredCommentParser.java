@@ -21,6 +21,7 @@ package com.safi.workshop.sqlexplorer.parsers.scp;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.ListIterator;
+
 import com.safi.workshop.sqlexplorer.parsers.ExecutionContext;
 import com.safi.workshop.sqlexplorer.parsers.ParserException;
 import com.safi.workshop.sqlexplorer.parsers.QueryParser;

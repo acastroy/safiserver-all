@@ -6,6 +6,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.core.internal.resources.File;
 import org.eclipse.core.resources.IFile;
@@ -83,6 +84,7 @@ import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
 import org.eclipse.ui.views.properties.PropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
+
 import com.safi.db.DBConnection;
 import com.safi.db.Query;
 import com.safi.db.server.config.AsteriskServer;

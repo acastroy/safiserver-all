@@ -2,6 +2,7 @@ package com.safi.workshop.navigator.serverconfig;
 
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Image;
+
 import com.safi.db.server.config.AsteriskServer;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.User;

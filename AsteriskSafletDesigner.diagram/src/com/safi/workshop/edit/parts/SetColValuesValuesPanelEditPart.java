@@ -7,6 +7,7 @@ import org.eclipse.gef.EditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
+
 import com.safi.workshop.edit.policies.SetColValuesValuesPanelCanonicalEditPolicy;
 import com.safi.workshop.edit.policies.SetColValuesValuesPanelItemSemanticEditPolicy;
 import com.safi.workshop.part.Messages;

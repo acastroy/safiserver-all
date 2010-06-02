@@ -26,6 +26,7 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.TreeSet;
+
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.ITextViewer;
@@ -36,6 +37,7 @@ import org.eclipse.jface.text.contentassist.IContextInformation;
 import org.eclipse.jface.text.contentassist.IContextInformationValidator;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
+
 import com.safi.workshop.sqlexplorer.dbstructure.nodes.INode;
 import com.safi.workshop.sqlexplorer.dbstructure.nodes.TableFolderNode;
 import com.safi.workshop.sqlexplorer.dbstructure.nodes.TableNode;

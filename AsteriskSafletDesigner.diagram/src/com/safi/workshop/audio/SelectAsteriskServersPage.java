@@ -2,6 +2,7 @@ package com.safi.workshop.audio;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.eclipse.jface.viewers.CheckboxTableViewer;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.ITableLabelProvider;
@@ -16,6 +17,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
+
 import com.safi.db.server.config.AsteriskServer;
 
 public class SelectAsteriskServersPage extends WizardPage {

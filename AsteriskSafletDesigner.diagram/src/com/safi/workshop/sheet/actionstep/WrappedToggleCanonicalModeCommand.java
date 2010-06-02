@@ -4,6 +4,7 @@
 package com.safi.workshop.sheet.actionstep;
 
 import org.eclipse.emf.edit.command.AbstractOverrideableCommand;
+
 import com.safi.workshop.edit.parts.ToolstepEditPart;
 
 public class WrappedToggleCanonicalModeCommand extends AbstractOverrideableCommand {

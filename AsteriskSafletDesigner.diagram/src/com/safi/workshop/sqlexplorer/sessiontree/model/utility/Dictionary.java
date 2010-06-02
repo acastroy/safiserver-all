@@ -25,7 +25,9 @@ import java.util.List;
 import java.util.TreeSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import org.eclipse.core.runtime.IProgressMonitor;
+
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.dbstructure.nodes.CatalogNode;
 import com.safi.workshop.sqlexplorer.dbstructure.nodes.DatabaseNode;

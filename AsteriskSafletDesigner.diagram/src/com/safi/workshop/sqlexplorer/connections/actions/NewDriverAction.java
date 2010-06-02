@@ -20,6 +20,7 @@ package com.safi.workshop.sqlexplorer.connections.actions;
 
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Display;
+
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.part.AsteriskDiagramEditorUtil;
 import com.safi.workshop.sqlexplorer.preferences.DriverMaintenanceDialog;

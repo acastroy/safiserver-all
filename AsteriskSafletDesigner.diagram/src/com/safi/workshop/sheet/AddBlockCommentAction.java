@@ -12,6 +12,7 @@ package com.safi.workshop.sheet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ResourceBundle;
+
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.dltk.javascript.ui.text.IJavaScriptPartitions;
 import org.eclipse.jface.text.BadLocationException;

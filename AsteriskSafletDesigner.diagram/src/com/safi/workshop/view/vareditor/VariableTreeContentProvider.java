@@ -1,6 +1,7 @@
 package com.safi.workshop.view.vareditor;
 
 import org.eclipse.jface.viewers.Viewer;
+
 import com.safi.db.Variable;
 
 public class VariableTreeContentProvider implements org.eclipse.jface.viewers.ITreeContentProvider {

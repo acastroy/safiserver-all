@@ -1,6 +1,7 @@
 package com.safi.workshop.actions;
 
 import java.lang.ref.WeakReference;
+
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
@@ -8,6 +9,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
+
 import com.safi.core.actionstep.ActionStep;
 import com.safi.server.saflet.mbean.DebugRemoteControl;
 import com.safi.workshop.edit.parts.ToolstepEditPart;

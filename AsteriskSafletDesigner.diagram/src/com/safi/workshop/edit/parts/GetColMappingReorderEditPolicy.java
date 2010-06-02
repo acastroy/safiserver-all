@@ -3,6 +3,7 @@ package com.safi.workshop.edit.parts;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -27,6 +28,7 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCo
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.graphics.Color;
+
 import com.safi.core.actionstep.GetColMapping;
 import com.safi.core.actionstep.GetColValues;
 

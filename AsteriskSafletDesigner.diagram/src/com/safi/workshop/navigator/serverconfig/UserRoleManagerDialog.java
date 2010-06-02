@@ -32,6 +32,7 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
+
 import com.safi.db.server.config.ConfigFactory;
 import com.safi.db.server.config.Role;
 import com.safi.server.plugin.SafiServerPlugin;

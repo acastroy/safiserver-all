@@ -20,7 +20,9 @@ package com.safi.workshop.sqlexplorer.util;
  */
 
 import java.net.URL;
+
 import org.eclipse.core.runtime.Platform;
+
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 
 public class URLUtil {

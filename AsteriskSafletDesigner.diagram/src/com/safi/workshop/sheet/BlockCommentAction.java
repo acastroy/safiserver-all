@@ -12,6 +12,7 @@ package com.safi.workshop.sheet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ResourceBundle;
+
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.jface.text.BadLocationException;
 import org.eclipse.jface.text.BadPartitioningException;

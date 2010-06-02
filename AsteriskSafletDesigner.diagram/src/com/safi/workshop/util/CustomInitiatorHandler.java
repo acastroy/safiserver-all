@@ -7,6 +7,7 @@ import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.swt.SWT;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
+
 import com.safi.util.CustomInitiatorClient;
 
 /**

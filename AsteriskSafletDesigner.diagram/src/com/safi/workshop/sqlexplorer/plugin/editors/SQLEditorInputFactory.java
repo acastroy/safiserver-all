@@ -4,6 +4,7 @@ import org.apache.commons.lang.StringUtils;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.ui.IElementFactory;
 import org.eclipse.ui.IMemento;
+
 import com.safi.db.Query;
 import com.safi.db.SafiDriverManager;
 import com.safi.server.plugin.SafiServerPlugin;

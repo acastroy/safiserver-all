@@ -2,6 +2,7 @@ package com.safi.workshop.edit.policies;
 
 import java.util.Collections;
 import java.util.Iterator;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
@@ -37,6 +38,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
+
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.CaseItem;
 import com.safi.core.actionstep.Output;

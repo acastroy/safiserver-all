@@ -20,8 +20,10 @@ package com.safi.workshop.navigator.db;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Image;
+
 import com.safi.db.Query;
 import com.safi.db.QueryParameter;
 import com.safi.workshop.sqlexplorer.Messages;

@@ -18,6 +18,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+
 import com.safi.asterisk.figures.WaitForDigitFigure;
 import com.safi.workshop.edit.policies.WaitForDigitCanonicalEditPolicy;
 import com.safi.workshop.edit.policies.WaitForDigitItemSemanticEditPolicy;

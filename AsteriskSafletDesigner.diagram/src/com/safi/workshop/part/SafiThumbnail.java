@@ -12,6 +12,7 @@ package com.safi.workshop.part;
  *******************************************************************************/
 import java.util.Iterator;
 import java.util.Map;
+
 import org.eclipse.draw2d.Figure;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;

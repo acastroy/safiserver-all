@@ -8,6 +8,7 @@ import org.eclipse.emf.edit.command.AddCommand;
 import org.eclipse.emf.edit.command.RemoveCommand;
 import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.swt.widgets.Display;
+
 import com.safi.core.actionstep.ActionStep;
 import com.safi.db.Variable;
 import com.safi.server.manager.DebugEventListener;

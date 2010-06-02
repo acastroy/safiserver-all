@@ -2,6 +2,7 @@ package com.safi.workshop.exportwiz;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.eclipse.jface.viewers.CheckStateChangedEvent;
 import org.eclipse.jface.viewers.CheckboxTreeViewer;
 import org.eclipse.jface.viewers.ColumnLabelProvider;
@@ -15,9 +16,10 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Tree;
-import com.safi.db.util.VariableTranslator;
+
 import com.safi.db.Variable;
 import com.safi.db.VariableType;
+import com.safi.db.util.VariableTranslator;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.view.vareditor.VariableNameColumnProvider;
 import com.safi.workshop.view.vareditor.VariableTypeColumnLabelProvider;

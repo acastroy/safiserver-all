@@ -1,6 +1,7 @@
 package com.safi.workshop.sqlexplorer.parsers;
 
 import java.util.Calendar;
+
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -27,6 +28,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
+
 import com.safi.db.SQLDataType;
 import com.safi.workshop.util.TextDecorator;
 

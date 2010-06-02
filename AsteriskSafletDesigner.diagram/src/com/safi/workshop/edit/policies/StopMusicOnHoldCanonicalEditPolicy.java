@@ -6,8 +6,10 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
+
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.notation.View;
+
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.workshop.edit.parts.OutputEditPart;
 import com.safi.workshop.part.AsteriskDiagramUpdater;

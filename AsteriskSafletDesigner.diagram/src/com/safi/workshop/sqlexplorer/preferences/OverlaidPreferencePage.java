@@ -22,6 +22,7 @@ import org.eclipse.jface.preference.FieldEditor;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
+
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
 
 /**

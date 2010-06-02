@@ -22,6 +22,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.sql.Driver;
 import java.util.HashMap;
+
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
 
 /**

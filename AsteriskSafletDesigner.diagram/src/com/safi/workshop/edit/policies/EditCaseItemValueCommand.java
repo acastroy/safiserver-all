@@ -1,6 +1,7 @@
 package com.safi.workshop.edit.policies;
 
 import java.lang.reflect.InvocationTargetException;
+
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -11,6 +12,7 @@ import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Display;
+
 import com.safi.core.actionstep.CaseItem;
 import com.safi.core.actionstep.Choice;
 import com.safi.core.actionstep.DynamicValue;

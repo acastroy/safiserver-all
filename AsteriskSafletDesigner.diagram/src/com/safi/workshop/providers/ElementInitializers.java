@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import com.safi.workshop.expressions.AsteriskAbstractExpression;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 

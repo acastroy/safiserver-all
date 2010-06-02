@@ -1,6 +1,7 @@
 package com.safi.workshop.part;
 
 import java.lang.ref.WeakReference;
+
 import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramWorkbenchPart;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;

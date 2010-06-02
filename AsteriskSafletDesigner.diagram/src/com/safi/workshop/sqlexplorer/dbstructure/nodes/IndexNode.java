@@ -20,8 +20,10 @@ package com.safi.workshop.sqlexplorer.dbstructure.nodes;
 
 import java.util.Comparator;
 import java.util.List;
+
 import net.sourceforge.squirrel_sql.fw.sql.IndexInfo;
 import net.sourceforge.squirrel_sql.fw.sql.IndexInfo.SortOrder;
+
 import com.safi.workshop.sqlexplorer.dbproduct.MetaDataSession;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
 

@@ -1,6 +1,7 @@
 package com.safi.workshop.application;
 
 import java.io.File;
+
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.TitleAreaDialog;
@@ -28,6 +29,7 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
+
 import com.safi.server.saflet.util.FileUtils;
 import com.safi.workshop.application.ChooseSafiServerWorkspaceData.SafiWorkspaceProfile;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;

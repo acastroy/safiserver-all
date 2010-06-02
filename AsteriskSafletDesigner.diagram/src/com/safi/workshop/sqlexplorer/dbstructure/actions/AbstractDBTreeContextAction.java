@@ -20,6 +20,7 @@ package com.safi.workshop.sqlexplorer.dbstructure.actions;
 
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.viewers.TreeViewer;
+
 import com.safi.workshop.sqlexplorer.dbstructure.nodes.INode;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
 import com.safi.workshop.sqlexplorer.plugin.views.DatabaseStructureView;

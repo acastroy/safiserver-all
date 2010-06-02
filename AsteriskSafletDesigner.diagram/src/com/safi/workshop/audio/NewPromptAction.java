@@ -6,6 +6,7 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
+
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.navigator.serverconfig.RegisterSafiServerAction;
 import com.safi.workshop.part.AsteriskDiagramEditorUtil;

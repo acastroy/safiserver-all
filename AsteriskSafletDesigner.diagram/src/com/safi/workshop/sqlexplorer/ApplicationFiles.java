@@ -19,7 +19,9 @@
 package com.safi.workshop.sqlexplorer;
 
 import java.io.File;
+
 import net.sourceforge.squirrel_sql.fw.util.IJavaPropertyNames;
+
 import org.eclipse.core.resources.ResourcesPlugin;
 
 public class ApplicationFiles {

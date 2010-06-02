@@ -2,6 +2,7 @@ package com.safi.workshop.edit.commands;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+
 import com.safi.core.initiator.Initiator;
 import com.safi.core.saflet.Saflet;
 

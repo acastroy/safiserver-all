@@ -2,6 +2,7 @@ package com.safi.workshop;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;

@@ -4,6 +4,7 @@ import org.apache.commons.lang.StringUtils;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.edit.command.AbstractOverrideableCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+
 import com.safi.db.Variable;
 import com.safi.server.plugin.SafiServerPlugin;
 

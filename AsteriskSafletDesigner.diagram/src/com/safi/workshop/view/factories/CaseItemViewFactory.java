@@ -2,6 +2,7 @@ package com.safi.workshop.view.factories;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.emf.ecore.EObject;
@@ -14,6 +15,7 @@ import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.ShapeStyle;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.runtime.notation.impl.NodeImpl;
+
 import com.safi.workshop.edit.parts.CaseItemEditPart;
 import com.safi.workshop.edit.parts.CaseItemLabelTextEditPart;
 import com.safi.workshop.part.AsteriskVisualIDRegistry;

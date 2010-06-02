@@ -4,6 +4,7 @@ import org.eclipse.core.databinding.conversion.Converter;
 import org.eclipse.core.databinding.conversion.IConverter;
 import org.eclipse.emf.databinding.EMFUpdateValueStrategy;
 import org.eclipse.swt.widgets.Text;
+
 import com.safi.core.actionstep.impl.DBQueryIdImpl;
 import com.safi.db.DBConnection;
 import com.safi.db.DBDriver;

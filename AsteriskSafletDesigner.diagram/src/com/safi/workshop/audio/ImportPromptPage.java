@@ -2,10 +2,12 @@ package com.safi.workshop.audio;
 
 import java.io.File;
 import java.nio.ByteOrder;
+
 import javax.sound.sampled.AudioFileFormat;
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
+
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.window.Window;
@@ -22,6 +24,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
+
 import com.safi.workshop.audio.utils.AudioCommon;
 import com.safi.workshop.audio.utils.AudioConverter;
 import com.safi.workshop.audio.utils.AudioUtils;

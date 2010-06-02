@@ -2,6 +2,7 @@ package com.safi.workshop.view.vareditor;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.safi.core.saflet.SafletContext;
 import com.safi.db.Variable;
 import com.safi.server.plugin.SafiServerPlugin;

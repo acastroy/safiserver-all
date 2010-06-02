@@ -19,6 +19,7 @@
 package com.safi.workshop.sqlexplorer.dataset;
 
 import java.util.Comparator;
+
 import org.eclipse.swt.SWT;
 
 /**

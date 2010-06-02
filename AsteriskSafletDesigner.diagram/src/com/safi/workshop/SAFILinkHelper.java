@@ -11,6 +11,7 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.ide.ResourceUtil;
 import org.eclipse.ui.internal.navigator.resources.workbench.ResourceLinkHelper;
+
 import com.safi.workshop.sqlexplorer.plugin.editors.SQLEditorInput;
 
 public class SAFILinkHelper extends ResourceLinkHelper {

@@ -3,6 +3,7 @@ package com.safi.workshop.part;
 import java.io.File;
 import java.lang.ref.WeakReference;
 import java.text.MessageFormat;
+
 import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.core.filesystem.EFS;
 import org.eclipse.core.filesystem.IFileInfo;
@@ -97,6 +98,7 @@ import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.IPageSite;
 import org.eclipse.ui.part.PageBook;
 import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
+
 import com.safi.core.saflet.Saflet;
 import com.safi.server.saflet.mbean.DebugRemoteControl;
 import com.safi.workshop.SafiNavigator;

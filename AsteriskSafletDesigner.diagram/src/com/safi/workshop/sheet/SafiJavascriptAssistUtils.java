@@ -12,6 +12,7 @@ package com.safi.workshop.sheet;
 
 import java.util.Date;
 import java.util.HashMap;
+
 import org.eclipse.dltk.core.ISourceModule;
 import org.eclipse.dltk.internal.core.ModelElement;
 import org.eclipse.dltk.internal.javascript.reference.resolvers.ReferenceResolverContext;
@@ -24,6 +25,7 @@ import org.eclipse.dltk.internal.javascript.typeinference.NativeObjectReference;
 import org.eclipse.dltk.internal.javascript.typeinference.NativeStringReference;
 import org.eclipse.dltk.internal.javascript.typeinference.PositionReachedException;
 import org.eclipse.dltk.internal.javascript.typeinference.TypeInferencer;
+
 import com.safi.core.saflet.SafletContext;
 import com.safi.db.Variable;
 import com.xored.org.mozilla.javascript.CompilerEnvirons;

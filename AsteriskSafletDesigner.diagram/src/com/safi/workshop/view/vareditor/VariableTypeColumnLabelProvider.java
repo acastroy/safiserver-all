@@ -2,10 +2,12 @@ package com.safi.workshop.view.vareditor;
 
 import java.util.HashMap;
 import java.util.Map;
+
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.ColumnLabelProvider;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.ImageData;
+
 import com.safi.db.Variable;
 import com.safi.db.VariableType;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;

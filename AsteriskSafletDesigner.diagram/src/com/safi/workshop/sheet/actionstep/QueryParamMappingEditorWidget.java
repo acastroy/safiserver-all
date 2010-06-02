@@ -6,6 +6,7 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
+
 import com.safi.core.actionstep.DBQueryParamId;
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.Item;

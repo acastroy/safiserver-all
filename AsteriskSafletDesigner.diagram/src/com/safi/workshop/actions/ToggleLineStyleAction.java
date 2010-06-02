@@ -1,6 +1,7 @@
 package com.safi.workshop.actions;
 
 import java.lang.ref.WeakReference;
+
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -21,6 +22,7 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
+
 import com.safi.workshop.part.AsteriskDiagramEditor;
 
 public class ToggleLineStyleAction implements IObjectActionDelegate {

@@ -22,6 +22,7 @@ package com.safi.workshop.sqlexplorer.plugin.perspectives;
 import org.eclipse.jface.action.Action;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PlatformUI;
+
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
 
 public class OpenPerspectiveAction extends Action {

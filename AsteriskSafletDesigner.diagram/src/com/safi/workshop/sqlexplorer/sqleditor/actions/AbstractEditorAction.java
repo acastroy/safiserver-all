@@ -20,6 +20,7 @@ package com.safi.workshop.sqlexplorer.sqleditor.actions;
 
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.dialogs.MessageDialog;
+
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.dbproduct.Session;
 import com.safi.workshop.sqlexplorer.plugin.editors.SQLEditor;

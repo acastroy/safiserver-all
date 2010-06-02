@@ -4,6 +4,7 @@
 package com.safi.workshop.edit.parts;
 
 import java.util.List;
+
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.draw2d.geometry.Dimension;
@@ -13,6 +14,7 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.diagram.ui.internal.figures.NestedResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.notation.View;
+
 import com.safi.workshop.edit.policies.RunQueryRunQueryValuesPanelCanonicalEditPolicy;
 import com.safi.workshop.edit.policies.RunQueryRunQueryValuesPanelItemSemanticEditPolicy;
 import com.safi.workshop.part.Messages;

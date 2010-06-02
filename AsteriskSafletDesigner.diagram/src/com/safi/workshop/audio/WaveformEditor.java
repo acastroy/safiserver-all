@@ -5,9 +5,11 @@ import java.io.IOException;
 import java.nio.ByteOrder;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.DataLine;
 import javax.sound.sampled.AudioFileFormat.Type;
+
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.SWT;
@@ -51,6 +53,7 @@ import org.eclipse.swt.widgets.ScrollBar;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.swt.widgets.ToolItem;
+
 import com.safi.workshop.audio.AudioRecorder.PlayState;
 import com.safi.workshop.audio.utils.AudioCommon;
 import com.safi.workshop.audio.utils.AudioException;

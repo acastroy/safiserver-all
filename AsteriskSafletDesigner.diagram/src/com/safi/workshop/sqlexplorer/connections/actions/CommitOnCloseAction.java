@@ -1,8 +1,10 @@
 package com.safi.workshop.sqlexplorer.connections.actions;
 
 import java.util.Collection;
+
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Display;
+
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.sqlexplorer.dbproduct.Session;
 import com.safi.workshop.sqlexplorer.dbproduct.User;

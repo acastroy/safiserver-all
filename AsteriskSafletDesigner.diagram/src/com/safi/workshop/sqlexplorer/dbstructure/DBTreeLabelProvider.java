@@ -20,6 +20,7 @@ package com.safi.workshop.sqlexplorer.dbstructure;
 
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Image;
+
 import com.safi.workshop.sqlexplorer.dbstructure.nodes.INode;
 import com.safi.workshop.sqlexplorer.util.ImageUtil;
 

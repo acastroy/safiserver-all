@@ -20,8 +20,10 @@ package com.safi.workshop.sqlexplorer.util;
 
 import java.net.URL;
 import java.util.HashMap;
+
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
+
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
 

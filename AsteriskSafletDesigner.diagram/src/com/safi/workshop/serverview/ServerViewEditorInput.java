@@ -3,6 +3,7 @@ package com.safi.workshop.serverview;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IPersistableElement;
+
 import com.safi.db.server.config.SafiServer;
 
 public class ServerViewEditorInput implements IEditorInput {

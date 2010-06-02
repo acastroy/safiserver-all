@@ -3,6 +3,7 @@ package com.safi.workshop.navigator;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URI;
 import java.util.Date;
+
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.filesystem.URIUtil;
 import org.eclipse.core.resources.IFile;
@@ -29,6 +30,7 @@ import org.eclipse.ui.ide.IDE;
 import org.eclipse.ui.ide.undo.WorkspaceUndoUtil;
 import org.eclipse.ui.internal.ide.IDEWorkbenchMessages;
 import org.eclipse.ui.internal.progress.ProgressMonitorJobsDialog;
+
 import com.safi.workshop.part.AsteriskDiagramEditorUtil;
 import com.safi.workshop.util.SafletPersistenceManager;
 

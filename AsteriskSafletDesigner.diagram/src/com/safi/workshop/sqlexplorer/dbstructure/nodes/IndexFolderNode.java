@@ -21,8 +21,10 @@ package com.safi.workshop.sqlexplorer.dbstructure.nodes;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
 import net.sourceforge.squirrel_sql.fw.sql.ITableInfo;
 import net.sourceforge.squirrel_sql.fw.sql.IndexInfo;
+
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
 

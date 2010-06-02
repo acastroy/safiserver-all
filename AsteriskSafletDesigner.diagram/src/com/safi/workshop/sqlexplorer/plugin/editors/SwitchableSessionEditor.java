@@ -19,6 +19,7 @@
 package com.safi.workshop.sqlexplorer.plugin.editors;
 
 import org.eclipse.ui.IWorkbenchSite;
+
 import com.safi.workshop.sqlexplorer.dbproduct.Session;
 
 /**

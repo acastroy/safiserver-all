@@ -1,6 +1,7 @@
 package com.safi.workshop.providers;
 
 import java.lang.ref.WeakReference;
+
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPartFactory;
 import org.eclipse.gef.RootEditPart;
@@ -12,6 +13,7 @@ import org.eclipse.gmf.runtime.diagram.ui.services.editpart.CreateRootEditPartOp
 import org.eclipse.gmf.runtime.diagram.ui.services.editpart.IEditPartOperation;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
+
 import com.safi.workshop.edit.parts.AsteriskEditPartFactory;
 import com.safi.workshop.edit.parts.AsteriskRootEditPart;
 import com.safi.workshop.edit.parts.HandlerEditPart;

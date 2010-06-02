@@ -3,6 +3,7 @@ package com.safi.workshop.sheet.actionstep;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
 import org.eclipse.core.databinding.Binding;
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
@@ -23,6 +24,7 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
+
 import com.safi.asterisk.Call;
 import com.safi.asterisk.actionstep.ExecuteApplication;
 import com.safi.workshop.sheet.DynamicValueEditorUtils;
@@ -154,8 +156,8 @@ public class ExecuteApplicationEditorPage extends AbstractActionstepEditorPage {
     applicationText.setEditingDomain(editingDomain);
     applicationText.setObject(executeapplication);
 
-    EStructuralFeature appFeature = executeapplication.eClass().getEStructuralFeature("arguments");
-    argsDVEWidget.setFeature(appFeature);
+    EStructuralFeature appFeature = executeapplication.eClass().getEStructuralFeature("application");
+    applicationText.setFeature(appFeature);
 
     ob = ActionstepEditObservables.observeValue(editingDomain, executeapplication, appFeature);
     DynamicValueWidgetObservableValue appVal = new DynamicValueWidgetObservableValue(

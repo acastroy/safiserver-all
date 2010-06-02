@@ -2,6 +2,7 @@ package com.safi.workshop.view.factories;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.eclipse.gmf.runtime.diagram.ui.view.factories.DiagramViewFactory;
 import org.eclipse.gmf.runtime.notation.MeasurementUnit;
 import org.eclipse.gmf.runtime.notation.NotationFactory;

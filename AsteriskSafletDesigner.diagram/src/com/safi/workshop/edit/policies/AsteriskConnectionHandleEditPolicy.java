@@ -3,6 +3,7 @@ package com.safi.workshop.edit.policies;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
 import org.eclipse.draw2d.ConnectionAnchor;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
@@ -17,6 +18,7 @@ import org.eclipse.gmf.runtime.diagram.ui.handles.ConnectionHandleLocator;
 import org.eclipse.gmf.runtime.diagram.ui.handles.ConnectionHandle.HandleDirection;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+
 import com.safi.asterisk.figures.FixedConnectionAnchor;
 import com.safi.asterisk.figures.OutputFigure;
 import com.safi.core.actionstep.ActionStep;

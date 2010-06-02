@@ -16,6 +16,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.Text;
+
 import com.safi.workshop.sqlexplorer.Messages;
 
 public class ColumnLocatorPopup extends Shell {

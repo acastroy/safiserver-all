@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.emf.edit.ui.dnd.LocalTransfer;
 import org.eclipse.emf.edit.ui.dnd.ViewerDragAdapter;
@@ -53,12 +54,14 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.Widget;
+
 import com.safi.asterisk.saflet.SafletFactory;
 import com.safi.core.saflet.SafletContext;
 import com.safi.core.saflet.SafletEnvironment;
 import com.safi.core.scripting.RhinoSafletScriptEnvironment;
 import com.safi.db.DbFactory;
 import com.safi.db.Variable;
+import com.safi.db.VariableScope;
 import com.safi.db.VariableType;
 import com.safi.expr.bool.ASTBooleanExpression;
 import com.safi.expr.bool.ASTIdentifier;
@@ -1441,12 +1444,12 @@ public class BooleanExpressionEditorPanel extends Composite {
 		@Override
 		public String getScriptText() {
 			// TODO Auto-generated method stub
-//			return var == null ? VAR_NOT_FOUND_STR
-//			    : (var.getScope() == VariableScope.GLOBAL ? "getGlobalVariable(\""
-//			        + var.getName() + "\")" : var.getName());
-			
 			return var == null ? VAR_NOT_FOUND_STR
-			    :var.getName();
+			    : (var.getScope() == VariableScope.GLOBAL ? "getGlobalVariable(\""
+			        + var.getName() + "\")" : var.getName());
+			
+//			return var == null ? VAR_NOT_FOUND_STR
+//			    :var.getName();
 		}
 
 		@Override

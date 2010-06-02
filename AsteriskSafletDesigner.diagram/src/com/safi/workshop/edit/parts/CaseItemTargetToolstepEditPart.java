@@ -10,6 +10,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
+
 import com.safi.asterisk.figures.OutputTargetFigure;
 import com.safi.workshop.edit.parts.AsteriskRootEditPart.AsteriskConnectionLayerEx;
 import com.safi.workshop.edit.policies.CaseItemTargetToolstepItemSemanticEditPolicy;

@@ -23,6 +23,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.SortedSet;
 import java.util.TreeSet;
+
 import com.safi.workshop.sqlexplorer.IConstants;
 import com.safi.workshop.sqlexplorer.parsers.Tokenizer.Token;
 import com.safi.workshop.sqlexplorer.parsers.scp.StructuredCommentParser;

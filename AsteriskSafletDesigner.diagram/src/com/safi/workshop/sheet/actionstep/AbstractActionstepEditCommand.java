@@ -4,6 +4,7 @@ import java.lang.ref.SoftReference;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+
 import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -13,6 +14,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.EMFCommandOperation;
 import org.eclipse.emf.workspace.ResourceUndoContext;
 import org.eclipse.emf.workspace.impl.WorkspaceCommandStackImpl;
+
 import com.safi.workshop.edit.parts.ToolstepEditPart;
 
 public abstract class AbstractActionstepEditCommand extends AbstractOverrideableCommand {

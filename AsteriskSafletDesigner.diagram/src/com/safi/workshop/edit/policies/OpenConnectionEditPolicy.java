@@ -13,6 +13,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.OpenEditPolicy;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Display;
+
 import com.safi.core.actionstep.DBConnectionId;
 import com.safi.core.actionstep.OpenDBConnection;
 import com.safi.workshop.edit.parts.OpenDBConnectionEditPart;

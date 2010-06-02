@@ -21,6 +21,7 @@ package com.safi.workshop.sqlexplorer.connections.actions;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
@@ -30,6 +31,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
 import org.hibernate.Session;
+
 import com.safi.db.DBConnection;
 import com.safi.db.DBResource;
 import com.safi.db.Query;

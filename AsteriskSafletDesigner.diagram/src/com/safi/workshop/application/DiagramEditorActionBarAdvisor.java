@@ -2,6 +2,7 @@ package com.safi.workshop.application;
 
 import java.util.HashSet;
 import java.util.Set;
+
 import org.eclipse.core.runtime.IExtension;
 import org.eclipse.emf.common.ui.URIEditorInput;
 import org.eclipse.emf.common.ui.action.WorkbenchWindowActionDelegate;
@@ -44,6 +45,7 @@ import org.eclipse.ui.application.IActionBarConfigurer;
 import org.eclipse.ui.internal.WorkbenchPlugin;
 import org.eclipse.ui.internal.registry.ActionSetRegistry;
 import org.eclipse.ui.internal.registry.IActionSetDescriptor;
+
 import com.safi.workshop.NewSafiProjectAction;
 import com.safi.workshop.SafletCreationWizard;
 import com.safi.workshop.UpdateAction;

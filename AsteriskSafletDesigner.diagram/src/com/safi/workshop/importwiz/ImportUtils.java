@@ -3,9 +3,11 @@ package com.safi.workshop.importwiz;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Shell;
+
 import com.safi.db.DBConnection;
 import com.safi.db.DBDriver;
 import com.safi.db.Query;

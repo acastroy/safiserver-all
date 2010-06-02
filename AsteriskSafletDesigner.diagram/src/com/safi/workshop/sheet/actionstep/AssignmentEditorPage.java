@@ -1,6 +1,7 @@
 package com.safi.workshop.sheet.actionstep;
 
 import java.util.List;
+
 import org.eclipse.core.databinding.Binding;
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
@@ -14,6 +15,7 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
+
 import com.safi.core.actionstep.Assignment;
 import com.safi.workshop.sheet.DynamicValueEditorUtils;
 

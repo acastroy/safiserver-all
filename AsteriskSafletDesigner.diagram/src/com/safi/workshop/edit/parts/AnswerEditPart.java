@@ -21,6 +21,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.ui.views.properties.IPropertySource;
+
 import com.safi.asterisk.figures.AnswerFigure;
 import com.safi.workshop.edit.policies.AnswerCanonicalEditPolicy;
 import com.safi.workshop.edit.policies.AnswerItemSemanticEditPolicy;

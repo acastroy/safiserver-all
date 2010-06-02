@@ -20,6 +20,7 @@ package com.safi.workshop.sqlexplorer.sqleditor;
  */
 
 import java.util.List;
+
 import org.eclipse.jface.preference.IPreferenceStore;
 
 /**

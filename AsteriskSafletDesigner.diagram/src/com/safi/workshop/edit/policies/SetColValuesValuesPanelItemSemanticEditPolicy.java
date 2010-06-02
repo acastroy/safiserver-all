@@ -5,6 +5,7 @@ package com.safi.workshop.edit.policies;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.workshop.edit.commands.SetColMappingCreateCommand;
 import com.safi.workshop.providers.AsteriskElementTypes;

@@ -1,7 +1,6 @@
 package com.safi.workshop.sqlexplorer.dbproduct;
 
 import java.beans.PropertyChangeListener;
-import java.net.InetAddress;
 import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
@@ -14,11 +13,12 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
 import net.sourceforge.squirrel_sql.fw.id.IIdentifier;
 import net.sourceforge.squirrel_sql.fw.persist.ValidationException;
 import net.sourceforge.squirrel_sql.fw.sql.ISQLDriver;
 import net.sourceforge.squirrel_sql.fw.util.beanwrapper.StringWrapper;
+
 import org.apache.commons.lang.StringUtils;
 import org.dom4j.Element;
 import org.eclipse.core.runtime.IAdaptable;
@@ -28,10 +28,10 @@ import org.eclipse.ui.views.properties.IPropertyDescriptor;
 import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.PropertyDescriptor;
 import org.eclipse.ui.views.properties.TextPropertyDescriptor;
+
 import com.safi.db.DBDriver;
 import com.safi.server.manager.SafiServerRemoteManager;
 import com.safi.server.plugin.SafiServerPlugin;
-import com.safi.server.util.Utils;
 import com.safi.workshop.sqlexplorer.ExplorerException;
 import com.safi.workshop.sqlexplorer.SQLCannotConnectException;
 

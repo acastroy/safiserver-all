@@ -19,8 +19,10 @@
 package com.safi.workshop.sqlexplorer.connections.actions;
 
 import java.util.Set;
+
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Display;
+
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.sqlexplorer.dbproduct.User;
 import com.safi.workshop.sqlexplorer.plugin.actions.OpenPasswordConnectDialogAction;

@@ -5,6 +5,7 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.ui.IWorkbenchPage;
+
 import com.safi.db.DbFactory;
 import com.safi.db.Query;
 import com.safi.workshop.sqlexplorer.Messages;

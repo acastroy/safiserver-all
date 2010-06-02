@@ -1,6 +1,7 @@
 package com.safi.workshop.sqlexplorer.preferences;
 
 import org.eclipse.jface.preference.RadioGroupFieldEditor;
+
 import com.safi.workshop.sqlexplorer.IConstants;
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.IConstants.Confirm;

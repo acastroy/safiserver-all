@@ -19,6 +19,7 @@
 package com.safi.workshop.sqlexplorer.parsers.scp;
 
 import java.util.ListIterator;
+
 import com.safi.workshop.sqlexplorer.parsers.ParserException;
 import com.safi.workshop.sqlexplorer.parsers.Tokenizer;
 import com.safi.workshop.sqlexplorer.parsers.Tokenizer.Token;

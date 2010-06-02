@@ -3,6 +3,7 @@ package com.safi.workshop.edit.parts;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.draw2d.geometry.Dimension;
@@ -19,6 +20,7 @@ import org.eclipse.gmf.runtime.diagram.ui.internal.figures.BorderItemContainerFi
 import org.eclipse.gmf.runtime.diagram.ui.internal.figures.NestedResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.notation.View;
+
 import com.safi.asterisk.figures.OutputFigure;
 import com.safi.asterisk.figures.OutputFigure.TerminalLocator;
 import com.safi.core.actionstep.Item;

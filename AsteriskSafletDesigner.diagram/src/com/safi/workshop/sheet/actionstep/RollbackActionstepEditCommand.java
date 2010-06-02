@@ -3,9 +3,11 @@ package com.safi.workshop.sheet.actionstep;
 import java.lang.ref.SoftReference;
 import java.util.Collections;
 import java.util.List;
+
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+
 import com.safi.workshop.edit.parts.ToolstepEditPart;
 
 public class RollbackActionstepEditCommand extends AbstractActionstepEditCommand {

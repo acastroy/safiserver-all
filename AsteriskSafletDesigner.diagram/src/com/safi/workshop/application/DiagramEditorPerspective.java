@@ -6,6 +6,7 @@ import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;
 import org.eclipse.ui.IViewLayout;
 import org.eclipse.ui.console.IConsoleConstants;
+
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 
 /**

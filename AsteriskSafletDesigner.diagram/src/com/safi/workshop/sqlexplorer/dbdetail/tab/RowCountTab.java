@@ -19,6 +19,7 @@
 package com.safi.workshop.sqlexplorer.dbdetail.tab;
 
 import java.sql.SQLException;
+
 import com.safi.workshop.sqlexplorer.ExplorerException;
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.dataset.DataSet;

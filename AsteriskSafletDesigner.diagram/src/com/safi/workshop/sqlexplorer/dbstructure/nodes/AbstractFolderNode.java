@@ -1,6 +1,7 @@
 package com.safi.workshop.sqlexplorer.dbstructure.nodes;
 
 import org.eclipse.swt.graphics.Image;
+
 import com.safi.workshop.sqlexplorer.dbproduct.MetaDataSession;
 import com.safi.workshop.sqlexplorer.util.ImageUtil;
 import com.safi.workshop.sqlexplorer.util.TextUtil;

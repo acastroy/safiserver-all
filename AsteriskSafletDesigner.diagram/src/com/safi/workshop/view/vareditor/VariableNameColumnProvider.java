@@ -4,6 +4,7 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.ColumnLabelProvider;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.ImageData;
+
 import com.safi.db.Variable;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 

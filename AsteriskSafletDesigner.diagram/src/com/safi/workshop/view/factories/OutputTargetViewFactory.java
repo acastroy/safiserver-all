@@ -2,6 +2,7 @@ package com.safi.workshop.view.factories;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.ui.view.factories.ConnectionViewFactory;
 import org.eclipse.gmf.runtime.notation.JumpLinkStatus;
@@ -11,6 +12,7 @@ import org.eclipse.gmf.runtime.notation.Routing;
 import org.eclipse.gmf.runtime.notation.RoutingStyle;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.preference.IPreferenceStore;
+
 import com.safi.workshop.edit.parts.OutputTargetEditPart;
 import com.safi.workshop.part.AsteriskVisualIDRegistry;
 

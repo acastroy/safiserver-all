@@ -16,6 +16,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
+
 import com.safi.workshop.sheet.BooleanExpressionEditorPanel.ParentOperator;
 
 public class ChangeOperatorDialog extends Dialog {

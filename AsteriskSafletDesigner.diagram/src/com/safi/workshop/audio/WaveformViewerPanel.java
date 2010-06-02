@@ -1,6 +1,7 @@
 package com.safi.workshop.audio;
 
 import javax.sound.sampled.DataLine;
+
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.MouseListener;
 import org.eclipse.swt.events.PaintEvent;
@@ -11,6 +12,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Canvas;
 import org.eclipse.swt.widgets.Composite;
+
 import com.safi.workshop.audio.utils.RecordableClip;
 import com.safi.workshop.audio.utils.RecordableClip.ClipListener;
 

@@ -2,16 +2,17 @@ package com.safi.workshop.edit.commands;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+
 import com.safi.asterisk.actionstep.GetFullVariable;
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.ActionStepFactory;
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.DynamicValueType;
-import com.safi.db.util.VariableTranslator;
 import com.safi.core.saflet.Saflet;
 import com.safi.db.DbFactory;
 import com.safi.db.Variable;
 import com.safi.db.VariableType;
+import com.safi.db.util.VariableTranslator;
 import com.safi.workshop.view.vareditor.VarUtils;
 
 /**

@@ -1,6 +1,7 @@
 package com.safi.workshop.sqlexplorer.sqleditor.actions;
 
 import java.sql.SQLException;
+
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.jface.action.ControlContribution;
 import org.eclipse.swt.SWT;
@@ -10,6 +11,7 @@ import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.IEditorInput;
+
 import com.safi.db.Query;
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.dbproduct.MetaDataSession;

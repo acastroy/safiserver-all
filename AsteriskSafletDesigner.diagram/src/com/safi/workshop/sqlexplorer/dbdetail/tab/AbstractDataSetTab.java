@@ -2,11 +2,13 @@ package com.safi.workshop.sqlexplorer.dbdetail.tab;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
+
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.dataset.DataSet;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;

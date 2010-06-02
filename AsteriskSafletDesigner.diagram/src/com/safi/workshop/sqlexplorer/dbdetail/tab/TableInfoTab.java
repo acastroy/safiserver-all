@@ -19,6 +19,7 @@
 package com.safi.workshop.sqlexplorer.dbdetail.tab;
 
 import net.sourceforge.squirrel_sql.fw.sql.ITableInfo;
+
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.dataset.DataSet;
 import com.safi.workshop.sqlexplorer.dbstructure.nodes.INode;

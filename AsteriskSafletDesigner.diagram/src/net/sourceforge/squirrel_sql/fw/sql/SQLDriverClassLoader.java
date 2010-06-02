@@ -23,8 +23,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.Driver;
 import java.util.List;
+
 import net.sourceforge.squirrel_sql.fw.util.MyURLClassLoader;
 import net.sourceforge.squirrel_sql.fw.util.log.ILogger;
+
 import com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver;
 
 public class SQLDriverClassLoader extends MyURLClassLoader {

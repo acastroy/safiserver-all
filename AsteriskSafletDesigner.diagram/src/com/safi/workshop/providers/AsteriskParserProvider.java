@@ -2,6 +2,7 @@ package com.safi.workshop.providers;
 
 import java.util.HashMap;
 import java.util.Map;
+
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
@@ -13,6 +14,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParserProvider;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
+
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.workshop.edit.parts.*;
 import com.safi.workshop.parsers.MessageFormatParser;

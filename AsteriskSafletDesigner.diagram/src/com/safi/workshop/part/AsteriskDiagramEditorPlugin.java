@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.locks.ReentrantLock;
+
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
@@ -42,6 +43,7 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
+
 import com.safi.db.provider.DbItemProviderAdapterFactory;
 import com.safi.db.server.config.SafiServer;
 import com.safi.server.manager.DebugEventListener;
@@ -68,6 +70,7 @@ import com.safi.workshop.view.factories.ActionPakEditPartFactory;
 import com.safi.workshop.view.factories.ActionPakViewFactory;
 import com.safi.workshop.view.factories.ActionstepElementFactory;
 import com.safi.workshop.view.factories.ActionstepModelFactory;
+
 import de.schlichtherle.io.ArchiveDetector;
 import de.schlichtherle.io.DefaultArchiveDetector;
 

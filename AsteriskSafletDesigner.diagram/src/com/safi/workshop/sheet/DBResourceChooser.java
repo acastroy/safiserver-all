@@ -2,6 +2,7 @@ package com.safi.workshop.sheet;
 
 import java.net.URL;
 import java.util.Collections;
+
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.TitleAreaDialog;
@@ -31,6 +32,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Tree;
+
 import com.safi.core.actionstep.ActionStepFactory;
 import com.safi.core.actionstep.DBConnectionId;
 import com.safi.core.actionstep.DBQueryId;
