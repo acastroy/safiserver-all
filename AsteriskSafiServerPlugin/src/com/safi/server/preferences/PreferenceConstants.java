@@ -7,13 +7,10 @@ import java.util.logging.Level;
  */
 public class PreferenceConstants {
 
-	public static final String PREF_FASTAGI_PORT = "fastAgiPort";
+//	public static final String PREF_FASTAGI_PORT = "fastAgiPort";
 
 //	public static final String PREF_SAFISERVER_MGR_PORT = "managerAgiPort";
 
-	public static final String PREF_MGR_USER = "asteriskManagerUser";
-
-	public static final String PREF_MGR_PWD = "asteriskManagerPassword";
 
 //	public static final String PREF_AST_HOSTNAME = "asteriskHostname";
 
@@ -25,7 +22,7 @@ public class PreferenceConstants {
 
 	public static final String PREF_SAFISERVER_PASS_PROD = "safiServerPassword";
 
-	public static final String PREF_AUTO_SYNC_ON_CONNECT = "autosyncOnConnect";
+//	public static final String PREF_AUTO_SYNC_ON_CONNECT = "autosyncOnConnect";
 
 //	public static final String PREF_SAFISERVER_PORT_PROD = "safiServerPort";
 
@@ -46,10 +43,10 @@ public class PreferenceConstants {
 
 //	public static final String PREF_SAFISERVER_PASS_DEBUG = "PREF_SAFISERVER_PASS_DEBUG";
 
-	public static final String PREF_AUTO_SYNC_ON_CONNECT_DEBUG = "PREF_AUTO_SYNC_ON_CONNECT_DEBUG";
+//	public static final String PREF_AUTO_SYNC_ON_CONNECT_DEBUG = "PREF_AUTO_SYNC_ON_CONNECT_DEBUG";
 
 	public static final String PREF_DB_PORT_PROD = "PREF_DB_PORT";
-	public static final String PREF_MANAGER_PORT_PROD = "PREF_MANAGER_PORT_PROD";
+//	public static final String PREF_MANAGER_PORT_PROD = "PREF_MANAGER_PORT_PROD";
 
 //	public static final String AST_DEBUG_DEBUG = "AST_DEBUG_DEBUG";
 //	public static final String AST_ACTIVE_DEBUG = "AST_ACTIVE_DEBUG";

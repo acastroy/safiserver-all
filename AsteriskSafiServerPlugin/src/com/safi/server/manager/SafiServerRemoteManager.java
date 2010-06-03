@@ -39,6 +39,7 @@ import com.safi.server.saflet.mbean.FileTransfer;
 import com.safi.server.saflet.mbean.SafiServerMonitor;
 import com.safi.server.saflet.mbean.SysInfo;
 import com.safi.db.server.config.AsteriskServer;
+import com.safi.db.server.config.FreeSwitchServer;
 import com.safi.db.server.config.SafiServer;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.preferences.PreferenceConstants;
@@ -533,7 +534,13 @@ public class SafiServerRemoteManager implements NotificationListener {
   public void synchAudioFiles(AsteriskServer server) throws Exception {
     if (serverMonitor == null)
       throw new IllegalStateException("No manager connection to SafiServer found");
-    serverMonitor.synchAudioFiles(server.getId());
+    serverMonitor.synchAsteriskAudioFiles(server.getId());
+  }
+  
+  public void synchAudioFiles(FreeSwitchServer server) throws Exception {
+    if (serverMonitor == null)
+      throw new IllegalStateException("No manager connection to SafiServer found");
+    serverMonitor.synchFSAudioFiles(server.getId());
   }
 
   public boolean notificationPreferencesChanged() {

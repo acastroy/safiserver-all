@@ -51,6 +51,7 @@ import com.safi.db.SafiDriverManager;
 import com.safi.db.Variable;
 import com.safi.db.server.config.AsteriskServer;
 import com.safi.db.server.config.Entitlement;
+import com.safi.db.server.config.FreeSwitchServer;
 import com.safi.db.server.config.Role;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.User;
@@ -1633,6 +1634,22 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 		try {
 			for (AsteriskServer server : getSafiServer(true).getAsteriskServers()) {
 				if (server.isActive()
+				    && (!server.isPrivate() || (server.isPrivate()
+				        && server.getCreatedBy() != null && server.getCreatedBy().getId() == getCurrentUser()
+				        .getId())))
+					servers.add(server);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return servers;
+	}
+	
+	public List<FreeSwitchServer> getAvailableFreeSwitchServers() {
+		List<FreeSwitchServer> servers = new ArrayList<FreeSwitchServer>();
+		try {
+			for (FreeSwitchServer server : getSafiServer(true).getFreeSwitchServers()) {
+				if (server.isEnabled()
 				    && (!server.isPrivate() || (server.isPrivate()
 				        && server.getCreatedBy() != null && server.getCreatedBy().getId() == getCurrentUser()
 				        .getId())))
