@@ -122,6 +122,29 @@ public class ConfigItemProviderAdapterFactory extends ConfigAdapterFactory imple
 	}
 
   /**
+	 * This keeps track of the one adapter used for all {@link com.safi.db.server.config.FreeSwitchServer} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FreeSwitchServerItemProvider freeSwitchServerItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link com.safi.db.server.config.FreeSwitchServer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFreeSwitchServerAdapter() {
+		if (freeSwitchServerItemProvider == null) {
+			freeSwitchServerItemProvider = new FreeSwitchServerItemProvider(this);
+		}
+
+		return freeSwitchServerItemProvider;
+	}
+
+		/**
 	 * This keeps track of the one adapter used for all {@link com.safi.db.server.config.SafiServer} instances.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -383,6 +406,7 @@ public class ConfigItemProviderAdapterFactory extends ConfigAdapterFactory imple
   public void dispose() {
 		if (serverResourceItemProvider != null) serverResourceItemProvider.dispose();
 		if (asteriskServerItemProvider != null) asteriskServerItemProvider.dispose();
+		if (freeSwitchServerItemProvider != null) freeSwitchServerItemProvider.dispose();
 		if (safiServerItemProvider != null) safiServerItemProvider.dispose();
 		if (roleItemProvider != null) roleItemProvider.dispose();
 		if (entitlementItemProvider != null) entitlementItemProvider.dispose();

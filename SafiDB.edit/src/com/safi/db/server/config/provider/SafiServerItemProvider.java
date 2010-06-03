@@ -223,6 +223,7 @@ public class SafiServerItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ConfigPackage.Literals.SAFI_SERVER__ASTERISK_SERVERS);
+			childrenFeatures.add(ConfigPackage.Literals.SAFI_SERVER__FREE_SWITCH_SERVERS);
 			childrenFeatures.add(ConfigPackage.Literals.SAFI_SERVER__USER);
 			childrenFeatures.add(ConfigPackage.Literals.SAFI_SERVER__USERS);
 		}
@@ -288,6 +289,7 @@ public class SafiServerItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ConfigPackage.SAFI_SERVER__ASTERISK_SERVERS:
+			case ConfigPackage.SAFI_SERVER__FREE_SWITCH_SERVERS:
 			case ConfigPackage.SAFI_SERVER__USER:
 			case ConfigPackage.SAFI_SERVER__USERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -311,6 +313,11 @@ public class SafiServerItemProvider
 			(createChildParameter
 				(ConfigPackage.Literals.SAFI_SERVER__ASTERISK_SERVERS,
 				 ConfigFactory.eINSTANCE.createAsteriskServer()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ConfigPackage.Literals.SAFI_SERVER__FREE_SWITCH_SERVERS,
+				 ConfigFactory.eINSTANCE.createFreeSwitchServer()));
 
 		newChildDescriptors.add
 			(createChildParameter
