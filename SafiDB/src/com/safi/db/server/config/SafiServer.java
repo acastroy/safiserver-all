@@ -20,6 +20,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.safi.db.server.config.SafiServer#getPort <em>Port</em>}</li>
  *   <li>{@link com.safi.db.server.config.SafiServer#getManagementPort <em>Management Port</em>}</li>
  *   <li>{@link com.safi.db.server.config.SafiServer#getAsteriskServers <em>Asterisk Servers</em>}</li>
+ *   <li>{@link com.safi.db.server.config.SafiServer#getFreeSwitchServers <em>Free Switch Servers</em>}</li>
  *   <li>{@link com.safi.db.server.config.SafiServer#getUser <em>User</em>}</li>
  *   <li>{@link com.safi.db.server.config.SafiServer#getUsers <em>Users</em>}</li>
  *   <li>{@link com.safi.db.server.config.SafiServer#isRunning <em>Running</em>}</li>
@@ -133,6 +134,23 @@ public interface SafiServer extends ServerResource {
   EList<AsteriskServer> getAsteriskServers();
 
   /**
+	 * Returns the value of the '<em><b>Free Switch Servers</b></em>' containment reference list.
+	 * The list contents are of type {@link com.safi.db.server.config.FreeSwitchServer}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Free Switch Servers</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Free Switch Servers</em>' containment reference list.
+	 * @see com.safi.db.server.config.ConfigPackage#getSafiServer_FreeSwitchServers()
+	 * @model containment="true"
+	 *        annotation="teneo.jpa appinfo='@OneToMany(fetch=\"EAGER\" indexed=\"false\" cascade=\"ALL\")'"
+	 * @generated
+	 */
+	EList<FreeSwitchServer> getFreeSwitchServers();
+
+		/**
 	 * Returns the value of the '<em><b>User</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
    * <p>

@@ -44,6 +44,15 @@ public interface ConfigFactory extends EFactory {
   AsteriskServer createAsteriskServer();
 
   /**
+	 * Returns a new object of class '<em>Free Switch Server</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Free Switch Server</em>'.
+	 * @generated
+	 */
+	FreeSwitchServer createFreeSwitchServer();
+
+		/**
 	 * Returns a new object of class '<em>Safi Server</em>'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

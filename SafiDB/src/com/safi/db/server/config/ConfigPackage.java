@@ -351,6 +351,205 @@ public interface ConfigPackage extends EPackage {
   int ASTERISK_SERVER_FEATURE_COUNT = SERVER_RESOURCE_FEATURE_COUNT + 14;
 
   /**
+	 * The meta object id for the '{@link com.safi.db.server.config.impl.FreeSwitchServerImpl <em>Free Switch Server</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.safi.db.server.config.impl.FreeSwitchServerImpl
+	 * @see com.safi.db.server.config.impl.ConfigPackageImpl#getFreeSwitchServer()
+	 * @generated
+	 */
+	int FREE_SWITCH_SERVER = 2;
+
+		/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREE_SWITCH_SERVER__NAME = SERVER_RESOURCE__NAME;
+
+		/**
+	 * The feature id for the '<em><b>Last Modified</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREE_SWITCH_SERVER__LAST_MODIFIED = SERVER_RESOURCE__LAST_MODIFIED;
+
+		/**
+	 * The feature id for the '<em><b>Last Updated</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREE_SWITCH_SERVER__LAST_UPDATED = SERVER_RESOURCE__LAST_UPDATED;
+
+		/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREE_SWITCH_SERVER__ID = SERVER_RESOURCE__ID;
+
+		/**
+	 * The feature id for the '<em><b>Created By</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREE_SWITCH_SERVER__CREATED_BY = SERVER_RESOURCE__CREATED_BY;
+
+		/**
+	 * The feature id for the '<em><b>Modified By</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREE_SWITCH_SERVER__MODIFIED_BY = SERVER_RESOURCE__MODIFIED_BY;
+
+		/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREE_SWITCH_SERVER__DESCRIPTION = SERVER_RESOURCE__DESCRIPTION;
+
+		/**
+	 * The feature id for the '<em><b>Hostname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREE_SWITCH_SERVER__HOSTNAME = SERVER_RESOURCE_FEATURE_COUNT + 0;
+
+		/**
+	 * The feature id for the '<em><b>Manager Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREE_SWITCH_SERVER__MANAGER_NAME = SERVER_RESOURCE_FEATURE_COUNT + 1;
+
+		/**
+	 * The feature id for the '<em><b>Manager Password</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREE_SWITCH_SERVER__MANAGER_PASSWORD = SERVER_RESOURCE_FEATURE_COUNT + 2;
+
+		/**
+	 * The feature id for the '<em><b>Manager Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREE_SWITCH_SERVER__MANAGER_PORT = SERVER_RESOURCE_FEATURE_COUNT + 3;
+
+		/**
+	 * The feature id for the '<em><b>Sftp User</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREE_SWITCH_SERVER__SFTP_USER = SERVER_RESOURCE_FEATURE_COUNT + 4;
+
+		/**
+	 * The feature id for the '<em><b>Sftp Password</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREE_SWITCH_SERVER__SFTP_PASSWORD = SERVER_RESOURCE_FEATURE_COUNT + 5;
+
+		/**
+	 * The feature id for the '<em><b>Sftp Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREE_SWITCH_SERVER__SFTP_PORT = SERVER_RESOURCE_FEATURE_COUNT + 6;
+
+		/**
+	 * The feature id for the '<em><b>Safi Server</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREE_SWITCH_SERVER__SAFI_SERVER = SERVER_RESOURCE_FEATURE_COUNT + 7;
+
+		/**
+	 * The feature id for the '<em><b>Running</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREE_SWITCH_SERVER__RUNNING = SERVER_RESOURCE_FEATURE_COUNT + 8;
+
+		/**
+	 * The feature id for the '<em><b>Enabled</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREE_SWITCH_SERVER__ENABLED = SERVER_RESOURCE_FEATURE_COUNT + 9;
+
+		/**
+	 * The feature id for the '<em><b>Private</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREE_SWITCH_SERVER__PRIVATE = SERVER_RESOURCE_FEATURE_COUNT + 10;
+
+		/**
+	 * The feature id for the '<em><b>Prompt Directory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREE_SWITCH_SERVER__PROMPT_DIRECTORY = SERVER_RESOURCE_FEATURE_COUNT + 11;
+
+		/**
+	 * The feature id for the '<em><b>Free Switch Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREE_SWITCH_SERVER__FREE_SWITCH_VERSION = SERVER_RESOURCE_FEATURE_COUNT + 12;
+
+		/**
+	 * The number of structural features of the '<em>Free Switch Server</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREE_SWITCH_SERVER_FEATURE_COUNT = SERVER_RESOURCE_FEATURE_COUNT + 13;
+
+		/**
 	 * The meta object id for the '{@link com.safi.db.server.config.impl.SafiServerImpl <em>Safi Server</em>}' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -358,7 +557,7 @@ public interface ConfigPackage extends EPackage {
 	 * @see com.safi.db.server.config.impl.ConfigPackageImpl#getSafiServer()
 	 * @generated
 	 */
-  int SAFI_SERVER = 2;
+  int SAFI_SERVER = 3;
 
   /**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -460,13 +659,22 @@ public interface ConfigPackage extends EPackage {
   int SAFI_SERVER__ASTERISK_SERVERS = SERVER_RESOURCE_FEATURE_COUNT + 3;
 
   /**
+	 * The feature id for the '<em><b>Free Switch Servers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SAFI_SERVER__FREE_SWITCH_SERVERS = SERVER_RESOURCE_FEATURE_COUNT + 4;
+
+		/**
 	 * The feature id for the '<em><b>User</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int SAFI_SERVER__USER = SERVER_RESOURCE_FEATURE_COUNT + 4;
+  int SAFI_SERVER__USER = SERVER_RESOURCE_FEATURE_COUNT + 5;
 
   /**
 	 * The feature id for the '<em><b>Users</b></em>' containment reference list.
@@ -475,7 +683,7 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int SAFI_SERVER__USERS = SERVER_RESOURCE_FEATURE_COUNT + 5;
+  int SAFI_SERVER__USERS = SERVER_RESOURCE_FEATURE_COUNT + 6;
 
   /**
 	 * The feature id for the '<em><b>Running</b></em>' attribute.
@@ -484,7 +692,7 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int SAFI_SERVER__RUNNING = SERVER_RESOURCE_FEATURE_COUNT + 6;
+  int SAFI_SERVER__RUNNING = SERVER_RESOURCE_FEATURE_COUNT + 7;
 
   /**
 	 * The feature id for the '<em><b>Debug</b></em>' attribute.
@@ -493,7 +701,7 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int SAFI_SERVER__DEBUG = SERVER_RESOURCE_FEATURE_COUNT + 7;
+  int SAFI_SERVER__DEBUG = SERVER_RESOURCE_FEATURE_COUNT + 8;
 
   /**
 	 * The feature id for the '<em><b>Db Port</b></em>' attribute.
@@ -502,7 +710,7 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int SAFI_SERVER__DB_PORT = SERVER_RESOURCE_FEATURE_COUNT + 8;
+  int SAFI_SERVER__DB_PORT = SERVER_RESOURCE_FEATURE_COUNT + 9;
 
   /**
 	 * The number of structural features of the '<em>Safi Server</em>' class.
@@ -511,7 +719,7 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int SAFI_SERVER_FEATURE_COUNT = SERVER_RESOURCE_FEATURE_COUNT + 9;
+  int SAFI_SERVER_FEATURE_COUNT = SERVER_RESOURCE_FEATURE_COUNT + 10;
 
 
   /**
@@ -522,7 +730,7 @@ public interface ConfigPackage extends EPackage {
 	 * @see com.safi.db.server.config.impl.ConfigPackageImpl#getRole()
 	 * @generated
 	 */
-  int ROLE = 3;
+  int ROLE = 4;
 
   /**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -613,7 +821,7 @@ public interface ConfigPackage extends EPackage {
 	 * @see com.safi.db.server.config.impl.ConfigPackageImpl#getEntitlement()
 	 * @generated
 	 */
-  int ENTITLEMENT = 4;
+  int ENTITLEMENT = 5;
 
   /**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -695,7 +903,7 @@ public interface ConfigPackage extends EPackage {
 	 * @see com.safi.db.server.config.impl.ConfigPackageImpl#getUser()
 	 * @generated
 	 */
-  int USER = 5;
+  int USER = 6;
 
   /**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -814,7 +1022,7 @@ public interface ConfigPackage extends EPackage {
 	 * @see com.safi.db.server.config.impl.ConfigPackageImpl#getSaflet()
 	 * @generated
 	 */
-  int SAFLET = 6;
+  int SAFLET = 7;
 
   /**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -914,7 +1122,7 @@ public interface ConfigPackage extends EPackage {
 	 * @see com.safi.db.server.config.impl.ConfigPackageImpl#getSafletProject()
 	 * @generated
 	 */
-  int SAFLET_PROJECT = 7;
+  int SAFLET_PROJECT = 8;
 
   /**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1024,7 +1232,7 @@ public interface ConfigPackage extends EPackage {
 	 * @see com.safi.db.server.config.impl.ConfigPackageImpl#getPrompt()
 	 * @generated
 	 */
-  int PROMPT = 8;
+  int PROMPT = 9;
 
   /**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1134,7 +1342,7 @@ public interface ConfigPackage extends EPackage {
 	 * @see com.safi.db.server.config.impl.ConfigPackageImpl#getSynchMode()
 	 * @generated
 	 */
-  int SYNCH_MODE = 9;
+  int SYNCH_MODE = 10;
 
 
   /**
@@ -1389,6 +1597,159 @@ public interface ConfigPackage extends EPackage {
 	EAttribute getAsteriskServer_VisibleSafiServerIP();
 
 		/**
+	 * Returns the meta object for class '{@link com.safi.db.server.config.FreeSwitchServer <em>Free Switch Server</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Free Switch Server</em>'.
+	 * @see com.safi.db.server.config.FreeSwitchServer
+	 * @generated
+	 */
+	EClass getFreeSwitchServer();
+
+		/**
+	 * Returns the meta object for the attribute '{@link com.safi.db.server.config.FreeSwitchServer#getHostname <em>Hostname</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Hostname</em>'.
+	 * @see com.safi.db.server.config.FreeSwitchServer#getHostname()
+	 * @see #getFreeSwitchServer()
+	 * @generated
+	 */
+	EAttribute getFreeSwitchServer_Hostname();
+
+		/**
+	 * Returns the meta object for the attribute '{@link com.safi.db.server.config.FreeSwitchServer#getManagerName <em>Manager Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Manager Name</em>'.
+	 * @see com.safi.db.server.config.FreeSwitchServer#getManagerName()
+	 * @see #getFreeSwitchServer()
+	 * @generated
+	 */
+	EAttribute getFreeSwitchServer_ManagerName();
+
+		/**
+	 * Returns the meta object for the attribute '{@link com.safi.db.server.config.FreeSwitchServer#getManagerPassword <em>Manager Password</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Manager Password</em>'.
+	 * @see com.safi.db.server.config.FreeSwitchServer#getManagerPassword()
+	 * @see #getFreeSwitchServer()
+	 * @generated
+	 */
+	EAttribute getFreeSwitchServer_ManagerPassword();
+
+		/**
+	 * Returns the meta object for the attribute '{@link com.safi.db.server.config.FreeSwitchServer#getManagerPort <em>Manager Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Manager Port</em>'.
+	 * @see com.safi.db.server.config.FreeSwitchServer#getManagerPort()
+	 * @see #getFreeSwitchServer()
+	 * @generated
+	 */
+	EAttribute getFreeSwitchServer_ManagerPort();
+
+		/**
+	 * Returns the meta object for the attribute '{@link com.safi.db.server.config.FreeSwitchServer#getSftpUser <em>Sftp User</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Sftp User</em>'.
+	 * @see com.safi.db.server.config.FreeSwitchServer#getSftpUser()
+	 * @see #getFreeSwitchServer()
+	 * @generated
+	 */
+	EAttribute getFreeSwitchServer_SftpUser();
+
+		/**
+	 * Returns the meta object for the attribute '{@link com.safi.db.server.config.FreeSwitchServer#getSftpPassword <em>Sftp Password</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Sftp Password</em>'.
+	 * @see com.safi.db.server.config.FreeSwitchServer#getSftpPassword()
+	 * @see #getFreeSwitchServer()
+	 * @generated
+	 */
+	EAttribute getFreeSwitchServer_SftpPassword();
+
+		/**
+	 * Returns the meta object for the attribute '{@link com.safi.db.server.config.FreeSwitchServer#getSftpPort <em>Sftp Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Sftp Port</em>'.
+	 * @see com.safi.db.server.config.FreeSwitchServer#getSftpPort()
+	 * @see #getFreeSwitchServer()
+	 * @generated
+	 */
+	EAttribute getFreeSwitchServer_SftpPort();
+
+		/**
+	 * Returns the meta object for the reference '{@link com.safi.db.server.config.FreeSwitchServer#getSafiServer <em>Safi Server</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Safi Server</em>'.
+	 * @see com.safi.db.server.config.FreeSwitchServer#getSafiServer()
+	 * @see #getFreeSwitchServer()
+	 * @generated
+	 */
+	EReference getFreeSwitchServer_SafiServer();
+
+		/**
+	 * Returns the meta object for the attribute '{@link com.safi.db.server.config.FreeSwitchServer#isRunning <em>Running</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Running</em>'.
+	 * @see com.safi.db.server.config.FreeSwitchServer#isRunning()
+	 * @see #getFreeSwitchServer()
+	 * @generated
+	 */
+	EAttribute getFreeSwitchServer_Running();
+
+		/**
+	 * Returns the meta object for the attribute '{@link com.safi.db.server.config.FreeSwitchServer#isEnabled <em>Enabled</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Enabled</em>'.
+	 * @see com.safi.db.server.config.FreeSwitchServer#isEnabled()
+	 * @see #getFreeSwitchServer()
+	 * @generated
+	 */
+	EAttribute getFreeSwitchServer_Enabled();
+
+		/**
+	 * Returns the meta object for the attribute '{@link com.safi.db.server.config.FreeSwitchServer#isPrivate <em>Private</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Private</em>'.
+	 * @see com.safi.db.server.config.FreeSwitchServer#isPrivate()
+	 * @see #getFreeSwitchServer()
+	 * @generated
+	 */
+	EAttribute getFreeSwitchServer_Private();
+
+		/**
+	 * Returns the meta object for the attribute '{@link com.safi.db.server.config.FreeSwitchServer#getPromptDirectory <em>Prompt Directory</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Prompt Directory</em>'.
+	 * @see com.safi.db.server.config.FreeSwitchServer#getPromptDirectory()
+	 * @see #getFreeSwitchServer()
+	 * @generated
+	 */
+	EAttribute getFreeSwitchServer_PromptDirectory();
+
+		/**
+	 * Returns the meta object for the attribute '{@link com.safi.db.server.config.FreeSwitchServer#getFreeSwitchVersion <em>Free Switch Version</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Free Switch Version</em>'.
+	 * @see com.safi.db.server.config.FreeSwitchServer#getFreeSwitchVersion()
+	 * @see #getFreeSwitchServer()
+	 * @generated
+	 */
+	EAttribute getFreeSwitchServer_FreeSwitchVersion();
+
+		/**
 	 * Returns the meta object for class '{@link com.safi.db.server.config.SafiServer <em>Safi Server</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1443,6 +1804,17 @@ public interface ConfigPackage extends EPackage {
   EReference getSafiServer_AsteriskServers();
 
   /**
+	 * Returns the meta object for the containment reference list '{@link com.safi.db.server.config.SafiServer#getFreeSwitchServers <em>Free Switch Servers</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Free Switch Servers</em>'.
+	 * @see com.safi.db.server.config.SafiServer#getFreeSwitchServers()
+	 * @see #getSafiServer()
+	 * @generated
+	 */
+	EReference getSafiServer_FreeSwitchServers();
+
+		/**
 	 * Returns the meta object for the containment reference '{@link com.safi.db.server.config.SafiServer#getUser <em>User</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1921,6 +2293,120 @@ public interface ConfigPackage extends EPackage {
 		EAttribute ASTERISK_SERVER__VISIBLE_SAFI_SERVER_IP = eINSTANCE.getAsteriskServer_VisibleSafiServerIP();
 
 				/**
+		 * The meta object literal for the '{@link com.safi.db.server.config.impl.FreeSwitchServerImpl <em>Free Switch Server</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.safi.db.server.config.impl.FreeSwitchServerImpl
+		 * @see com.safi.db.server.config.impl.ConfigPackageImpl#getFreeSwitchServer()
+		 * @generated
+		 */
+		EClass FREE_SWITCH_SERVER = eINSTANCE.getFreeSwitchServer();
+
+				/**
+		 * The meta object literal for the '<em><b>Hostname</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FREE_SWITCH_SERVER__HOSTNAME = eINSTANCE.getFreeSwitchServer_Hostname();
+
+				/**
+		 * The meta object literal for the '<em><b>Manager Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FREE_SWITCH_SERVER__MANAGER_NAME = eINSTANCE.getFreeSwitchServer_ManagerName();
+
+				/**
+		 * The meta object literal for the '<em><b>Manager Password</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FREE_SWITCH_SERVER__MANAGER_PASSWORD = eINSTANCE.getFreeSwitchServer_ManagerPassword();
+
+				/**
+		 * The meta object literal for the '<em><b>Manager Port</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FREE_SWITCH_SERVER__MANAGER_PORT = eINSTANCE.getFreeSwitchServer_ManagerPort();
+
+				/**
+		 * The meta object literal for the '<em><b>Sftp User</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FREE_SWITCH_SERVER__SFTP_USER = eINSTANCE.getFreeSwitchServer_SftpUser();
+
+				/**
+		 * The meta object literal for the '<em><b>Sftp Password</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FREE_SWITCH_SERVER__SFTP_PASSWORD = eINSTANCE.getFreeSwitchServer_SftpPassword();
+
+				/**
+		 * The meta object literal for the '<em><b>Sftp Port</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FREE_SWITCH_SERVER__SFTP_PORT = eINSTANCE.getFreeSwitchServer_SftpPort();
+
+				/**
+		 * The meta object literal for the '<em><b>Safi Server</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FREE_SWITCH_SERVER__SAFI_SERVER = eINSTANCE.getFreeSwitchServer_SafiServer();
+
+				/**
+		 * The meta object literal for the '<em><b>Running</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FREE_SWITCH_SERVER__RUNNING = eINSTANCE.getFreeSwitchServer_Running();
+
+				/**
+		 * The meta object literal for the '<em><b>Enabled</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FREE_SWITCH_SERVER__ENABLED = eINSTANCE.getFreeSwitchServer_Enabled();
+
+				/**
+		 * The meta object literal for the '<em><b>Private</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FREE_SWITCH_SERVER__PRIVATE = eINSTANCE.getFreeSwitchServer_Private();
+
+				/**
+		 * The meta object literal for the '<em><b>Prompt Directory</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FREE_SWITCH_SERVER__PROMPT_DIRECTORY = eINSTANCE.getFreeSwitchServer_PromptDirectory();
+
+				/**
+		 * The meta object literal for the '<em><b>Free Switch Version</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FREE_SWITCH_SERVER__FREE_SWITCH_VERSION = eINSTANCE.getFreeSwitchServer_FreeSwitchVersion();
+
+				/**
 		 * The meta object literal for the '{@link com.safi.db.server.config.impl.SafiServerImpl <em>Safi Server</em>}' class.
 		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1963,6 +2449,14 @@ public interface ConfigPackage extends EPackage {
     EReference SAFI_SERVER__ASTERISK_SERVERS = eINSTANCE.getSafiServer_AsteriskServers();
 
     /**
+		 * The meta object literal for the '<em><b>Free Switch Servers</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SAFI_SERVER__FREE_SWITCH_SERVERS = eINSTANCE.getSafiServer_FreeSwitchServers();
+
+				/**
 		 * The meta object literal for the '<em><b>User</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

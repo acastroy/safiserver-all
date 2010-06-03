@@ -108,6 +108,13 @@ public class ConfigSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ConfigPackage.FREE_SWITCH_SERVER: {
+				FreeSwitchServer freeSwitchServer = (FreeSwitchServer)theEObject;
+				T result = caseFreeSwitchServer(freeSwitchServer);
+				if (result == null) result = caseServerResource(freeSwitchServer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case ConfigPackage.SAFI_SERVER: {
 				SafiServer safiServer = (SafiServer)theEObject;
 				T result = caseSafiServer(safiServer);
@@ -192,6 +199,21 @@ public class ConfigSwitch<T> {
 	}
 
   /**
+	 * Returns the result of interpreting the object as an instance of '<em>Free Switch Server</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Free Switch Server</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFreeSwitchServer(FreeSwitchServer object) {
+		return null;
+	}
+
+		/**
 	 * Returns the result of interpreting the object as an instance of '<em>Safi Server</em>'.
 	 * <!-- begin-user-doc -->
    * This implementation returns null;

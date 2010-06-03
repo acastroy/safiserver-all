@@ -72,6 +72,7 @@ public class ConfigFactoryImpl extends EFactoryImpl implements ConfigFactory {
 		switch (eClass.getClassifierID()) {
 			case ConfigPackage.SERVER_RESOURCE: return createServerResource();
 			case ConfigPackage.ASTERISK_SERVER: return createAsteriskServer();
+			case ConfigPackage.FREE_SWITCH_SERVER: return createFreeSwitchServer();
 			case ConfigPackage.SAFI_SERVER: return createSafiServer();
 			case ConfigPackage.ROLE: return createRole();
 			case ConfigPackage.ENTITLEMENT: return createEntitlement();
@@ -135,6 +136,16 @@ public class ConfigFactoryImpl extends EFactoryImpl implements ConfigFactory {
 	}
 
   /**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FreeSwitchServer createFreeSwitchServer() {
+		FreeSwitchServerImpl freeSwitchServer = new FreeSwitchServerImpl();
+		return freeSwitchServer;
+	}
+
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated

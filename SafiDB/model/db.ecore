@@ -256,6 +256,39 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibleSafiServerIP"
             eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="FreeSwitchServer" eSuperTypes="#//server/config/ServerResource">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostname" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="managerName" lowerBound="1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="managerPassword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="managerPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+            defaultValueLiteral="5038"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="sftpUser" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="sftpPassword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="sftpPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="safiServer" eType="#//server/config/SafiServer"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="running" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            transient="true">
+          <eAnnotations source="teneo.jpa">
+            <details key="appinfo" value="@Transient"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="enabled" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eAnnotations source="teneo.jpa">
+            <details key="appinfo" value="@Type(type=&quot;boolean&quot;)"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="private" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eAnnotations source="teneo.jpa">
+            <details key="appinfo" value="@Type(type=&quot;boolean&quot;)"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="promptDirectory" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            defaultValueLiteral="/var/lib/asterisk/sounds/"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="freeSwitchVersion"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SafiServer" eSuperTypes="#//server/config/ServerResource">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindIP" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
@@ -264,6 +297,12 @@
             defaultValueLiteral="7020"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="asteriskServers" upperBound="-1"
             eType="#//server/config/AsteriskServer" containment="true" eOpposite="#//server/config/AsteriskServer/safiServer">
+          <eAnnotations source="teneo.jpa">
+            <details key="appinfo" value="@OneToMany(fetch=&quot;EAGER&quot; indexed=&quot;false&quot; cascade=&quot;ALL&quot;)"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="freeSwitchServers"
+            upperBound="-1" eType="#//server/config/FreeSwitchServer" containment="true">
           <eAnnotations source="teneo.jpa">
             <details key="appinfo" value="@OneToMany(fetch=&quot;EAGER&quot; indexed=&quot;false&quot; cascade=&quot;ALL&quot;)"/>
           </eAnnotations>

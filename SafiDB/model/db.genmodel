@@ -91,8 +91,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBDriver/default"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBDriver/guideUrl"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBDriver/websiteUrl"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBDriver/loginTimeout"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBDriver/urlRegexPattern "/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBDriver/defaultPort"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//DBDriver/urlRegexPattern"/>
       <genOperations ecoreOperation="db.ecore#//DBDriver/getConnection">
         <genParameters ecoreParameter="db.ecore#//DBDriver/getConnection/name"/>
       </genOperations>
@@ -175,12 +175,30 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/private"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/promptDirectory"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/asteriskVersion"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/visibleSafiServerIP"/>
+        </genClasses>
+        <genClasses ecoreClass="db.ecore#//server/config/FreeSwitchServer">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/FreeSwitchServer/hostname"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/FreeSwitchServer/managerName"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/FreeSwitchServer/managerPassword"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/FreeSwitchServer/managerPort"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/FreeSwitchServer/sftpUser"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/FreeSwitchServer/sftpPassword"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/FreeSwitchServer/sftpPort"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference db.ecore#//server/config/FreeSwitchServer/safiServer"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/FreeSwitchServer/running"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/FreeSwitchServer/enabled"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/FreeSwitchServer/private"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/FreeSwitchServer/promptDirectory"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/FreeSwitchServer/freeSwitchVersion"/>
         </genClasses>
         <genClasses ecoreClass="db.ecore#//server/config/SafiServer">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/SafiServer/bindIP"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/SafiServer/port"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/SafiServer/managementPort"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference db.ecore#//server/config/SafiServer/asteriskServers"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference db.ecore#//server/config/SafiServer/freeSwitchServers"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference db.ecore#//server/config/SafiServer/user"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference db.ecore#//server/config/SafiServer/users"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/SafiServer/running"/>
@@ -210,7 +228,6 @@
         </genClasses>
         <genClasses ecoreClass="db.ecore#//server/config/Prompt">
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference db.ecore#//server/config/Prompt/project"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/Prompt/system"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/Prompt/extension"/>
         </genClasses>

@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import com.safi.db.server.config.AsteriskServer;
 import com.safi.db.server.config.ConfigPackage;
+import com.safi.db.server.config.FreeSwitchServer;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.User;
 
@@ -32,6 +33,7 @@ import com.safi.db.server.config.User;
  *   <li>{@link com.safi.db.server.config.impl.SafiServerImpl#getPort <em>Port</em>}</li>
  *   <li>{@link com.safi.db.server.config.impl.SafiServerImpl#getManagementPort <em>Management Port</em>}</li>
  *   <li>{@link com.safi.db.server.config.impl.SafiServerImpl#getAsteriskServers <em>Asterisk Servers</em>}</li>
+ *   <li>{@link com.safi.db.server.config.impl.SafiServerImpl#getFreeSwitchServers <em>Free Switch Servers</em>}</li>
  *   <li>{@link com.safi.db.server.config.impl.SafiServerImpl#getUser <em>User</em>}</li>
  *   <li>{@link com.safi.db.server.config.impl.SafiServerImpl#getUsers <em>Users</em>}</li>
  *   <li>{@link com.safi.db.server.config.impl.SafiServerImpl#isRunning <em>Running</em>}</li>
@@ -114,6 +116,16 @@ public class SafiServerImpl extends ServerResourceImpl implements SafiServer {
   protected EList<AsteriskServer> asteriskServers;
 
   /**
+	 * The cached value of the '{@link #getFreeSwitchServers() <em>Free Switch Servers</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFreeSwitchServers()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<FreeSwitchServer> freeSwitchServers;
+
+		/**
 	 * The cached value of the '{@link #getUser() <em>User</em>}' containment reference.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -289,6 +301,18 @@ public class SafiServerImpl extends ServerResourceImpl implements SafiServer {
 
   /**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<FreeSwitchServer> getFreeSwitchServers() {
+		if (freeSwitchServers == null) {
+			freeSwitchServers = new EObjectContainmentEList<FreeSwitchServer>(FreeSwitchServer.class, this, ConfigPackage.SAFI_SERVER__FREE_SWITCH_SERVERS);
+		}
+		return freeSwitchServers;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -430,6 +454,8 @@ public class SafiServerImpl extends ServerResourceImpl implements SafiServer {
 		switch (featureID) {
 			case ConfigPackage.SAFI_SERVER__ASTERISK_SERVERS:
 				return ((InternalEList<?>)getAsteriskServers()).basicRemove(otherEnd, msgs);
+			case ConfigPackage.SAFI_SERVER__FREE_SWITCH_SERVERS:
+				return ((InternalEList<?>)getFreeSwitchServers()).basicRemove(otherEnd, msgs);
 			case ConfigPackage.SAFI_SERVER__USER:
 				return basicSetUser(null, msgs);
 			case ConfigPackage.SAFI_SERVER__USERS:
@@ -454,6 +480,8 @@ public class SafiServerImpl extends ServerResourceImpl implements SafiServer {
 				return getManagementPort();
 			case ConfigPackage.SAFI_SERVER__ASTERISK_SERVERS:
 				return getAsteriskServers();
+			case ConfigPackage.SAFI_SERVER__FREE_SWITCH_SERVERS:
+				return getFreeSwitchServers();
 			case ConfigPackage.SAFI_SERVER__USER:
 				return getUser();
 			case ConfigPackage.SAFI_SERVER__USERS:
@@ -489,6 +517,10 @@ public class SafiServerImpl extends ServerResourceImpl implements SafiServer {
 			case ConfigPackage.SAFI_SERVER__ASTERISK_SERVERS:
 				getAsteriskServers().clear();
 				getAsteriskServers().addAll((Collection<? extends AsteriskServer>)newValue);
+				return;
+			case ConfigPackage.SAFI_SERVER__FREE_SWITCH_SERVERS:
+				getFreeSwitchServers().clear();
+				getFreeSwitchServers().addAll((Collection<? extends FreeSwitchServer>)newValue);
 				return;
 			case ConfigPackage.SAFI_SERVER__USER:
 				setUser((User)newValue);
@@ -530,6 +562,9 @@ public class SafiServerImpl extends ServerResourceImpl implements SafiServer {
 			case ConfigPackage.SAFI_SERVER__ASTERISK_SERVERS:
 				getAsteriskServers().clear();
 				return;
+			case ConfigPackage.SAFI_SERVER__FREE_SWITCH_SERVERS:
+				getFreeSwitchServers().clear();
+				return;
 			case ConfigPackage.SAFI_SERVER__USER:
 				setUser((User)null);
 				return;
@@ -565,6 +600,8 @@ public class SafiServerImpl extends ServerResourceImpl implements SafiServer {
 				return managementPort != MANAGEMENT_PORT_EDEFAULT;
 			case ConfigPackage.SAFI_SERVER__ASTERISK_SERVERS:
 				return asteriskServers != null && !asteriskServers.isEmpty();
+			case ConfigPackage.SAFI_SERVER__FREE_SWITCH_SERVERS:
+				return freeSwitchServers != null && !freeSwitchServers.isEmpty();
 			case ConfigPackage.SAFI_SERVER__USER:
 				return user != null;
 			case ConfigPackage.SAFI_SERVER__USERS:

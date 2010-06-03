@@ -87,6 +87,10 @@ public class ConfigAdapterFactory extends AdapterFactoryImpl {
 				return createAsteriskServerAdapter();
 			}
 			@Override
+			public Adapter caseFreeSwitchServer(FreeSwitchServer object) {
+				return createFreeSwitchServerAdapter();
+			}
+			@Override
 			public Adapter caseSafiServer(SafiServer object) {
 				return createSafiServerAdapter();
 			}
@@ -163,6 +167,20 @@ public class ConfigAdapterFactory extends AdapterFactoryImpl {
 	}
 
   /**
+	 * Creates a new adapter for an object of class '{@link com.safi.db.server.config.FreeSwitchServer <em>Free Switch Server</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.safi.db.server.config.FreeSwitchServer
+	 * @generated
+	 */
+	public Adapter createFreeSwitchServerAdapter() {
+		return null;
+	}
+
+		/**
 	 * Creates a new adapter for an object of class '{@link com.safi.db.server.config.SafiServer <em>Safi Server</em>}'.
 	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
