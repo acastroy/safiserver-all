@@ -17,7 +17,7 @@ import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.InputItem;
 import com.safi.core.actionstep.ParameterizedActionstep;
 import com.safi.core.saflet.SafletContext;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.sheet.DynamicValueEditor2;
 import com.safi.workshop.sheet.ScriptDynamicValueEditorPage;
 import com.safi.workshop.sheet.VariableDynamicValueEditorPage;
@@ -128,7 +128,7 @@ public class EditInputItemValueCommand extends
       String expectedReturnType, String description, boolean isTypeLocked, String dynValueTypeStr,
       DynamicValue dynamicValue, final SafletContext handlerContext, EditingDomain domain) {
 
-    final DynamicValueEditor2 dve2 = new DynamicValueEditor2(AsteriskDiagramEditorUtil
+    final DynamicValueEditor2 dve2 = new DynamicValueEditor2(SafiWorkshopEditorUtil
         .getActiveShell());
     dve2.setAttributeName(attributeName);
     dve2.setExpectedReturnType(expectedReturnType);
@@ -145,7 +145,7 @@ public class EditInputItemValueCommand extends
     // LiteralDynamicValueEditorPage literalPage = new LiteralDynamicValueEditorPage();
     // dve2.addPage(literalPage);
 
-    ProgressMonitorDialog pmd = new ProgressMonitorDialog(AsteriskDiagramEditorUtil
+    ProgressMonitorDialog pmd = new ProgressMonitorDialog(SafiWorkshopEditorUtil
         .getActiveShell());
     try {
       pmd.run(true, false, new IRunnableWithProgress() {

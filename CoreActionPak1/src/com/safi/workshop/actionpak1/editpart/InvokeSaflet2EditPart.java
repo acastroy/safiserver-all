@@ -69,7 +69,7 @@ import com.safi.workshop.edit.policies.ActionstepCanonicalEditPolicy;
 import com.safi.workshop.model.actionpak1.InvokeSaflet2;
 import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.part.AsteriskVisualIDRegistry;
 import com.safi.workshop.part.ValidateAction;
 import com.safi.workshop.util.SafletPersistenceManager;
@@ -292,7 +292,7 @@ public class InvokeSaflet2EditPart extends com.safi.workshop.edit.parts.Toolstep
       String absolutePath = ifile.getWorkspace().getRoot().getLocation().toString()
           + ifile.getFullPath();
       String saname = SafletPersistenceManager.getInstance().getSafletName(ifile);
-      AsteriskDiagramEditor currentEditor = AsteriskDiagramEditorUtil.openDebugEditor(saname,
+      AsteriskDiagramEditor currentEditor = SafiWorkshopEditorUtil.openDebugEditor(saname,
           "saflet", absolutePath, false);
       HandlerEditPart handlerEditPart = (HandlerEditPart) currentEditor.getDiagramEditPart();
 
@@ -532,7 +532,7 @@ public class InvokeSaflet2EditPart extends com.safi.workshop.edit.parts.Toolstep
         if (file != null) {
           Saflet handler = SafletPersistenceManager.getInstance().getHandler(file);
           if (handler == null) {
-            MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(),
+            MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(),
                 "Find Saflet Failed", "Couldn't find saflet " + file.getName());
             return;
           }

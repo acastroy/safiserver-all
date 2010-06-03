@@ -27,7 +27,7 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCo
 
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.workshop.model.actionpak1.InvokeSaflet2;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.util.SafletPersistenceManager;
 
 public class OpenTargetHandlerPolicy2 extends OpenEditPolicy {
@@ -104,7 +104,7 @@ public class OpenTargetHandlerPolicy2 extends OpenEditPolicy {
               // URI uri = URI.createFileURI(((IFile)resa[0]).getFullPath().toOSString());
               URI uri = URI.createFileURI(new File(new File(ws.getRoot().getLocationURI()),
                   ((IFile) resa[0]).getFullPath().toOSString()).getAbsolutePath());
-              AsteriskDiagramEditorUtil.openDiagram(uri, false, true);
+              SafiWorkshopEditorUtil.openDiagram(uri, false, true);
               return CommandResult.newOKCommandResult();
             }
           }
