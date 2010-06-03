@@ -16,7 +16,7 @@ import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 import com.safi.server.saflet.mbean.DebugRemoteControl;
 import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 
 public class DebugStepAction implements IWorkbenchWindowActionDelegate, IPartListener2 {
 
@@ -84,7 +84,7 @@ public class DebugStepAction implements IWorkbenchWindowActionDelegate, IPartLis
       control.next();
     } catch (Exception e) {
       e.printStackTrace();
-      MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Debug Error",
+      MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Debug Error",
           "Couldn't resume debugging: " + e.getLocalizedMessage());
     }
     // HandlerEditPart handlerPart = (HandlerEditPart) thisEditor.getDiagramEditPart();
@@ -130,7 +130,7 @@ public class DebugStepAction implements IWorkbenchWindowActionDelegate, IPartLis
       // return;
       // }
       ResourceSet set = asteriskDiagramEditor.getEditingDomain().getResourceSet();
-      boolean hasDebug = AsteriskDiagramEditorUtil.hasDebugFile(set);
+      boolean hasDebug = SafiWorkshopEditorUtil.hasDebugFile(set);
       if (!hasDebug) {
         disable();
         return;

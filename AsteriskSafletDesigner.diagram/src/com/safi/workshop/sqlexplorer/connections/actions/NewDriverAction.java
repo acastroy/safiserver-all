@@ -22,7 +22,7 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Display;
 
 import com.safi.server.plugin.SafiServerPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.sqlexplorer.preferences.DriverMaintenanceDialog;
 
 /**
@@ -43,7 +43,7 @@ public class NewDriverAction extends AbstractConnectionTreeAction {
           "You must be connected to a SafiServer instance to access this feature");
       return;
     }
-    DriverMaintenanceDialog dlg = new DriverMaintenanceDialog(AsteriskDiagramEditorUtil
+    DriverMaintenanceDialog dlg = new DriverMaintenanceDialog(SafiWorkshopEditorUtil
         .getActiveShell());
     dlg.open();
     // PreferenceDialog dlg =

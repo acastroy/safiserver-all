@@ -105,7 +105,7 @@ import com.safi.workshop.navigator.db.PublishSafletDialog;
 import com.safi.workshop.navigator.db.SelectSafletPanel;
 import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin.ActionPak;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin.ActionPakJar;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin.SafiServerJar;
@@ -149,7 +149,7 @@ public class SafletPersistenceManager {
     }
 
     if (handler != null) {
-      final PublishSafletDialog dlg = new PublishSafletDialog(AsteriskDiagramEditorUtil
+      final PublishSafletDialog dlg = new PublishSafletDialog(SafiWorkshopEditorUtil
           .getActiveShell(), handler.getName(), handler.getDescription());
       if (Window.OK == dlg.open()) {
         String name = dlg.getName();
@@ -197,7 +197,7 @@ public class SafletPersistenceManager {
           }
         } catch (Exception e) {
           e.printStackTrace();
-          MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Write Error",
+          MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Write Error",
               "Couldn't save Saflet editor contents to disk: " + e.getLocalizedMessage());
           success = IStatus.ERROR;
         }
@@ -206,7 +206,7 @@ public class SafletPersistenceManager {
             emfRez.save(null);
           } catch (IOException e) {
             e.printStackTrace();
-            MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Write Error",
+            MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Write Error",
                 "Couldn't save Saflet to disk: " + e.getLocalizedMessage());
             success = IStatus.ERROR;
           }
@@ -251,7 +251,7 @@ public class SafletPersistenceManager {
           e.printStackTrace();
 
           MessageDialog
-              .openError(AsteriskDiagramEditorUtil.getActiveShell(), "Publish Error", "Saflet "
+              .openError(SafiWorkshopEditorUtil.getActiveShell(), "Publish Error", "Saflet "
                   + handler.getName() + " could not be published: " + e.getLocalizedMessage());
           success = IStatus.ERROR;
         }
@@ -299,7 +299,7 @@ public class SafletPersistenceManager {
         if (sameNameProj != null) {
           boolean ok = MessageDialog
               .openQuestion(
-                  AsteriskDiagramEditorUtil.getActiveShell(),
+                  SafiWorkshopEditorUtil.getActiveShell(),
                   "Project Exists",
                   "A SafiProject named "
                       + project.getName()
@@ -312,7 +312,7 @@ public class SafletPersistenceManager {
       } else if (sameNameProj != null && sameNameProj != parentProject) {
         boolean ok = MessageDialog
             .openQuestion(
-                AsteriskDiagramEditorUtil.getActiveShell(),
+                SafiWorkshopEditorUtil.getActiveShell(),
                 "Project Was Renamed",
                 "The local project was renamed from  "
                     + parentProject.getName()
@@ -372,7 +372,7 @@ public class SafletPersistenceManager {
               Restrictions.eq("name", handler.getName())).list();
           if (!results.isEmpty()) {
             Saflet s = (Saflet) results.get(0);
-            boolean ok = MessageDialog.openQuestion(AsteriskDiagramEditorUtil.getActiveShell(),
+            boolean ok = MessageDialog.openQuestion(SafiWorkshopEditorUtil.getActiveShell(),
                 "Saflet Exists", "A Saflet named " + handler.getName()
                     + " exists on the server under project " + s.getProject().getName()
                     + ".  Do you want to overwrite?");
@@ -388,7 +388,7 @@ public class SafletPersistenceManager {
         if (sameId != null && sameId == sameName) {
           saflet = sameId;
         } else if (sameName != null) {
-          boolean ok = MessageDialog.openQuestion(AsteriskDiagramEditorUtil.getActiveShell(),
+          boolean ok = MessageDialog.openQuestion(SafiWorkshopEditorUtil.getActiveShell(),
               "Saflet Exists", "A Saflet named " + handler.getName()
                   + " exists on the server.  Do you want to overwrite?");
           if (!ok) {
@@ -491,7 +491,7 @@ public class SafletPersistenceManager {
       if (editor != null) {
         AsteriskDiagramEditorPlugin.getDefault().getWorkbench().getActiveWorkbenchWindow()
             .getActivePage().closeEditor(editor, false);
-        editor = (AsteriskDiagramEditor) AsteriskDiagramEditorUtil.openDiagram(URI
+        editor = (AsteriskDiagramEditor) SafiWorkshopEditorUtil.openDiagram(URI
             .createFileURI(fullPath.toPortableString()), false, true);
       }
       // File file = new File(resource.getFullPath().toOSString());
@@ -708,7 +708,7 @@ public class SafletPersistenceManager {
 
       if (sameName != null) {
         if (sameId != null && sameId != sameName) {
-          MessageDialog.openWarning(AsteriskDiagramEditorUtil.getActiveShell(), "Project Renamed",
+          MessageDialog.openWarning(SafiWorkshopEditorUtil.getActiveShell(), "Project Renamed",
               "A Project named " + project.getName()
                   + " already exists on the server. Publishing cannot continue.");
           return;
@@ -940,14 +940,14 @@ public class SafletPersistenceManager {
         try {
           PlatformUI.getWorkbench().getOperationSupport().getOperationHistory().execute(op,
               monitor,
-              WorkspaceUndoUtil.getUIInfoAdapter(AsteriskDiagramEditorUtil.getActiveShell()));
+              WorkspaceUndoUtil.getUIInfoAdapter(SafiWorkshopEditorUtil.getActiveShell()));
         } catch (ExecutionException e) {
           throw new InvocationTargetException(e);
         }
       }
     };
 
-    ProgressMonitorDialog pd = new ProgressMonitorDialog(AsteriskDiagramEditorUtil.getActiveShell());
+    ProgressMonitorDialog pd = new ProgressMonitorDialog(SafiWorkshopEditorUtil.getActiveShell());
     // run the new project creation operation
     try {
       pd.run(false, true, op);
@@ -1011,7 +1011,7 @@ public class SafletPersistenceManager {
                     dialogMessage = "Saflet (" + saflet.getName()
                         + ") exists with the same ID a different name in the workspace ("
                         + existingName + "). Do you wish to skip or overwrite? ";
-                  MessageDialog dlg = new MessageDialog(AsteriskDiagramEditorUtil.getActiveShell(),
+                  MessageDialog dlg = new MessageDialog(SafiWorkshopEditorUtil.getActiveShell(),
                       "Overwrite Existing Saflet?", null, dialogMessage, MessageDialog.QUESTION,
                       new String[] { "Skip", "Skip all", "Overwrite", "Overwrite All" }, 4);
                   int result = dlg.open();
@@ -1037,13 +1037,13 @@ public class SafletPersistenceManager {
                 if (editor != null) {
                   AsteriskDiagramEditorPlugin.getDefault().getWorkbench()
                       .getActiveWorkbenchWindow().getActivePage().closeEditor(editor, false);
-                  editor = (AsteriskDiagramEditor) AsteriskDiagramEditorUtil.openDiagram(URI
+                  editor = (AsteriskDiagramEditor) SafiWorkshopEditorUtil.openDiagram(URI
                       .createFileURI(fullPath.toPortableString()), false, true);
                 }
               } catch (Exception e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
-                MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Update Error",
+                MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Update Error",
                     "Couldn't update Saflet: " + e.getLocalizedMessage());
                 AsteriskDiagramEditorPlugin.getInstance().logError("Couldn't update Saflet", e);
                 break;
@@ -1056,7 +1056,7 @@ public class SafletPersistenceManager {
       }
     });
     for (Saflet saflet : safletsCopy) {
-      String filename = AsteriskDiagramEditorUtil.getUniqueFileName(project, saflet.getName(),
+      String filename = SafiWorkshopEditorUtil.getUniqueFileName(project, saflet.getName(),
           "saflet");
       IFile file = project.getFile(filename);
       try {
@@ -1614,7 +1614,7 @@ public class SafletPersistenceManager {
           SafletPersistenceManager.getInstance().addOrUpdateSaflets(entry.getKey(),
               entry.getValue(), false, false);
         } catch (CoreException e) {
-          MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Retrieve Error",
+          MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Retrieve Error",
               "Couldn't retrieve Saflet: " + e.getLocalizedMessage());
           AsteriskDiagramEditorPlugin.getInstance().logError("Couldn't retrieve Saflet", e);
         }

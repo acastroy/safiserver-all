@@ -519,7 +519,7 @@ public class AsteriskDiagramEditor extends DiagramDocumentEditor {
     }
     super.setInput(defaultInput);
     if (getEditingDomain() != null)
-      setDebug(AsteriskDiagramEditorUtil.hasDebugFile(getEditingDomain().getResourceSet()));
+      setDebug(SafiWorkshopEditorUtil.hasDebugFile(getEditingDomain().getResourceSet()));
 
     File file = new File(input.getName());
     this.setPartName(file.getName());
@@ -581,7 +581,7 @@ public class AsteriskDiagramEditor extends DiagramDocumentEditor {
             file.setPersistentProperty(SafletPersistenceManager.MODIFIED_KEY, String.valueOf(System
                 .currentTimeMillis()));
             file.setPersistentProperty(SafletPersistenceManager.SAFLET_NAME_KEY, handler.getName());
-            SafiNavigator safiNavigator = AsteriskDiagramEditorUtil.getSafiNavigator();
+            SafiNavigator safiNavigator = SafiWorkshopEditorUtil.getSafiNavigator();
             if (safiNavigator != null)
               safiNavigator.refresh();
           }
@@ -852,7 +852,7 @@ public class AsteriskDiagramEditor extends DiagramDocumentEditor {
 
         provider.aboutToChange(newInput);
         provider.connect(newInput);
-        AsteriskDiagramEditorUtil.openDiagram(((URIEditorInput) newInput).getURI(), false, true);
+        SafiWorkshopEditorUtil.openDiagram(((URIEditorInput) newInput).getURI(), false, true);
         success = true;
 
       } catch (CoreException x) {

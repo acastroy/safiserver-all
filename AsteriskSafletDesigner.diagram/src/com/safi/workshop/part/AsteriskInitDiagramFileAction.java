@@ -57,7 +57,7 @@ public class AsteriskInitDiagramFileAction implements IWorkbenchWindowActionDele
   public void run(IAction action) {
     TransactionalEditingDomain editingDomain = WorkspaceEditingDomainFactory.INSTANCE
         .createEditingDomain();
-    Resource resource = AsteriskDiagramEditorUtil.openModel(getShell(),
+    Resource resource = SafiWorkshopEditorUtil.openModel(getShell(),
         Messages.AsteriskInitDiagramFileAction_OpenModelFileDialogTitle, editingDomain);
     if (resource == null || resource.getContents().isEmpty()) {
       return;
@@ -67,6 +67,6 @@ public class AsteriskInitDiagramFileAction implements IWorkbenchWindowActionDele
     wizard.setWindowTitle(NLS
         .bind(Messages.AsteriskInitDiagramFileAction_InitDiagramFileWizardTitle,
             HandlerEditPart.MODEL_ID));
-    AsteriskDiagramEditorUtil.runWizard(getShell(), wizard, "InitDiagramFile"); //$NON-NLS-1$
+    SafiWorkshopEditorUtil.runWizard(getShell(), wizard, "InitDiagramFile"); //$NON-NLS-1$
   }
 }

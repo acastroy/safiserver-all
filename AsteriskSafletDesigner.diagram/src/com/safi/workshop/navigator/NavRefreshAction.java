@@ -9,7 +9,7 @@ import org.eclipse.swt.events.HelpListener;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.ui.actions.ActionFactory.IWorkbenchAction;
 
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 
 public class NavRefreshAction implements IWorkbenchAction {
 
@@ -134,7 +134,7 @@ public class NavRefreshAction implements IWorkbenchAction {
     try {
       refresh.run();
       ResourcesPlugin.getWorkspace().getRoot().refreshLocal(IResource.DEPTH_INFINITE, null);
-      AsteriskDiagramEditorUtil.getSafiNavigator().refresh();
+      SafiWorkshopEditorUtil.getSafiNavigator().refresh();
     } catch (Exception ex) {
     }
   }
@@ -145,7 +145,7 @@ public class NavRefreshAction implements IWorkbenchAction {
     try {
       refresh.runWithEvent(event);
       ResourcesPlugin.getWorkspace().getRoot().refreshLocal(IResource.DEPTH_INFINITE, null);
-      AsteriskDiagramEditorUtil.getSafiNavigator().refresh();
+      SafiWorkshopEditorUtil.getSafiNavigator().refresh();
     } catch (Exception ex) {
     }
   }

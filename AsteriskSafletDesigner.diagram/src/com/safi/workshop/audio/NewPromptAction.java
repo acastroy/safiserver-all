@@ -9,7 +9,7 @@ import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.navigator.serverconfig.RegisterSafiServerAction;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 
 public class NewPromptAction implements IWorkbenchWindowActionDelegate {
 
@@ -36,7 +36,7 @@ public class NewPromptAction implements IWorkbenchWindowActionDelegate {
     if (!SafiServerPlugin.getDefault().isConnected()) {
       if (!MessageDialog
           .openQuestion(
-              AsteriskDiagramEditorUtil.getActiveShell(),
+              SafiWorkshopEditorUtil.getActiveShell(),
               "Not Connected",
               "In order to access audio prompt management functionality you must be connected to a production SafiServer instance.\nWould you like to configure production SafiServer settings now?"))
         return;
@@ -47,7 +47,7 @@ public class NewPromptAction implements IWorkbenchWindowActionDelegate {
     }
     // TODO Auto-generated method stub
     ImportAudioFileWizard ipt = new ImportAudioFileWizard(ImportAudioFileWizard.Mode.NEW, true);
-    WizardDialog dlg = new WizardDialog(AsteriskDiagramEditorUtil.getActiveShell(), ipt);
+    WizardDialog dlg = new WizardDialog(SafiWorkshopEditorUtil.getActiveShell(), ipt);
     dlg.open();
   }
 

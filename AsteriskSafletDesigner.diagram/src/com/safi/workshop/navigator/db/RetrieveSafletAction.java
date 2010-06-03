@@ -22,7 +22,7 @@ import com.safi.db.server.config.User;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.saflet.manager.EntitlementUtils;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.util.SafletPersistenceManager;
 
 public class RetrieveSafletAction extends ServerResourceAction {
@@ -39,18 +39,18 @@ public class RetrieveSafletAction extends ServerResourceAction {
     if (!SafiServerPlugin.getDefault().isConnected()) {
       MessageDialog
           .openError(
-              AsteriskDiagramEditorUtil.getActiveShell(),
+              SafiWorkshopEditorUtil.getActiveShell(),
               "Not Connected",
               "You must be connected to a production SafiServer to complete this operation.  Please connection to a SafiServer instance first");
       return;
     }
     User user = SafiServerPlugin.getDefault().getCurrentUser();
     if (!EntitlementUtils.isUserEntitled(user, EntitlementUtils.ENTIT_RETRIEVE_SAFLETS)) {
-      MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Not Entitled",
+      MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
           "You do not have sufficient privileges to carry out this operation.");
       return;
     }
-    Shell shell = AsteriskDiagramEditorUtil.getActiveShell();
+    Shell shell = SafiWorkshopEditorUtil.getActiveShell();
     try {
 
       // SelectSafletDialog dialog = new SelectSafletDialog(shell,
@@ -104,7 +104,7 @@ public class RetrieveSafletAction extends ServerResourceAction {
           + e.getLocalizedMessage());
       AsteriskDiagramEditorPlugin.getInstance().logError("Retriev Saflet Error", e);
     }
-    AsteriskDiagramEditorUtil.getSafiNavigator().refresh();
+    SafiWorkshopEditorUtil.getSafiNavigator().refresh();
   }
 
   @Override

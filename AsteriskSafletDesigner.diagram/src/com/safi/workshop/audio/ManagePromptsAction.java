@@ -5,7 +5,7 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 
 public class ManagePromptsAction implements IWorkbenchWindowActionDelegate {
 
@@ -22,7 +22,7 @@ public class ManagePromptsAction implements IWorkbenchWindowActionDelegate {
 
   @Override
   public void run(IAction action) {
-    new ManagePromptsDialog(AsteriskDiagramEditorUtil.getActiveShell()).open();
+    new ManagePromptsDialog(SafiWorkshopEditorUtil.getActiveShell()).open();
   }
 
   @Override

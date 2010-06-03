@@ -7,7 +7,7 @@ import org.eclipse.swt.dnd.TextTransfer;
 import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.swt.widgets.Display;
 
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.sqlexplorer.IConstants;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
 import com.safi.workshop.sqlexplorer.sqleditor.results.CellRange;
@@ -39,7 +39,7 @@ public abstract class AbstractCopyAction extends ResultsTableAction {
   public void run() {
     BusyIndicator.showWhile(Display.getCurrent(), new Runnable() {
       public void run() {
-        Clipboard clipBoard = AsteriskDiagramEditorUtil.getSafiNavigator().getClipboard();
+        Clipboard clipBoard = SafiWorkshopEditorUtil.getSafiNavigator().getClipboard();
         TextTransfer textTransfer = TextTransfer.getInstance();
 
         CellRange cells = getResultsTable().getSelection(getSelectionType());

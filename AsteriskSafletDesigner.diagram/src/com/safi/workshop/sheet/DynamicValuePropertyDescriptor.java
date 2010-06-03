@@ -35,7 +35,7 @@ import com.safi.core.actionstep.DynamicValueType;
 import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletContext;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 
 public class DynamicValuePropertyDescriptor extends PropertyDescriptor {
 
@@ -174,7 +174,7 @@ public class DynamicValuePropertyDescriptor extends PropertyDescriptor {
         // LiteralDynamicValueEditorPage literalPage = new
         // LiteralDynamicValueEditorPage();
         // dve.addPage(literalPage);
-        ProgressMonitorDialog pmd = new ProgressMonitorDialog(AsteriskDiagramEditorUtil
+        ProgressMonitorDialog pmd = new ProgressMonitorDialog(SafiWorkshopEditorUtil
             .getActiveShell());
         try {
           pmd.run(true, false, new IRunnableWithProgress() {

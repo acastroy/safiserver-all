@@ -18,7 +18,7 @@ import com.safi.workshop.audio.utils.AudioConverter;
 import com.safi.workshop.audio.utils.AudioException;
 import com.safi.workshop.audio.utils.AudioUtils;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.swtdesigner.ResourceManager;
 
 public class RecordPromptPage extends WizardPage {
@@ -58,7 +58,7 @@ public class RecordPromptPage extends WizardPage {
       Prompt prompt = wizard.getPrompt();
       if (prompt != null) {
         try {
-          File f = AsteriskDiagramEditorUtil.getPromptFile(prompt);
+          File f = SafiWorkshopEditorUtil.getPromptFile(prompt);
           if (f != null) {
             AudioConverter converter = new AudioConverter();
             converter.setDesiredChannels(1);

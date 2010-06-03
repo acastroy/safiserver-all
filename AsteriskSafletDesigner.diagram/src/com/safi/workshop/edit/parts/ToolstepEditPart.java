@@ -55,7 +55,7 @@ import com.safi.server.preferences.PreferenceConstants;
 import com.safi.workshop.edit.policies.OpenEditorEditPolicy;
 import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.part.ValidateAction;
 
 /**
@@ -119,7 +119,7 @@ public abstract class ToolstepEditPart extends AbstractBorderedShapeEditPart {
           CreateConnectionViewAndElementRequest request) {
         GraphicalViewer graphicalViewer = ((GraphicalViewer) (getHandlerEditPart()).getViewer());
         if (graphicalViewer.getEditDomain().getPaletteViewer() == null) {
-          AsteriskDiagramEditorUtil.initializePalette();
+          SafiWorkshopEditorUtil.initializePalette();
         }
         return super.getConnectionAndRelationshipCompleteCommand(request);
       }
@@ -205,7 +205,7 @@ public abstract class ToolstepEditPart extends AbstractBorderedShapeEditPart {
     feedbackLayer.add(activeFeedback);
     ((DiagramRootEditPart) getRoot()).getZoomManager().addZoomListener(zoomListener);
     updateActiveFeedbackBounds();
-    AsteriskDiagramEditorUtil.activateWorkbenchShell();
+    SafiWorkshopEditorUtil.activateWorkbenchShell();
   }
 
   private void updateActiveFeedbackBounds() {

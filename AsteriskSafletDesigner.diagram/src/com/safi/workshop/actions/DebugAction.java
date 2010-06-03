@@ -31,7 +31,7 @@ import com.safi.server.saflet.mbean.DebugRemoteControl;
 import com.safi.workshop.edit.parts.HandlerEditPart;
 import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.util.SafletPersistenceManager;
 
 /**
@@ -82,7 +82,7 @@ public class DebugAction implements IWorkbenchWindowActionDelegate, IPartListene
       }
 
       if (!SafiServerPlugin.getDefault().isConnected()) {
-        MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Not Connected",
+        MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Connected",
             "You must be connected to a SafiServer in order to debug.  "
                 + "Please connect to a SafiServer instance first.");
         return;
@@ -104,7 +104,7 @@ public class DebugAction implements IWorkbenchWindowActionDelegate, IPartListene
         if (id == -1) {
           commit = MessageDialog
               .openQuestion(
-                  AsteriskDiagramEditorUtil.getActiveShell(),
+                  SafiWorkshopEditorUtil.getActiveShell(),
                   "Saflet Not Published",
                   "The Saflet has not been published to the production SafiServer.  Do you wish publish the Saflet now?");
           if (!commit)
@@ -115,7 +115,7 @@ public class DebugAction implements IWorkbenchWindowActionDelegate, IPartListene
           if (!(lastModified != null && lastModified.getTime() <= lastUpdated.getTime())) {
             commit = MessageDialog
                 .openQuestion(
-                    AsteriskDiagramEditorUtil.getActiveShell(),
+                    SafiWorkshopEditorUtil.getActiveShell(),
                     "Saflet Not Up To Date",
                     "The Saflet has been changed locally and must be published before live debugging can occur.  Do you wish publish the Saflet now?");
             if (!commit)
@@ -160,7 +160,7 @@ public class DebugAction implements IWorkbenchWindowActionDelegate, IPartListene
             // currentPath = workspacePath.toFile().getAbsolutePath() + pstr;
           }
 
-          AsteriskDiagramEditorUtil.openDebugEditor(debuggedEditor.getDiagram().getName(), uri
+          SafiWorkshopEditorUtil.openDebugEditor(debuggedEditor.getDiagram().getName(), uri
               .fileExtension(), currentPath, true);
 
           // AsteriskDiagramEditorUtil.copy(currentPath, tempFile.getAbsolutePath());
@@ -256,7 +256,7 @@ public class DebugAction implements IWorkbenchWindowActionDelegate, IPartListene
     if (editor != null && editor instanceof AsteriskDiagramEditor) {
       currentEditor = new WeakReference<AsteriskDiagramEditor>(editor);
       ResourceSet set = (editor).getEditingDomain().getResourceSet();
-      boolean hasDebug = AsteriskDiagramEditorUtil.hasDebugFile(set);
+      boolean hasDebug = SafiWorkshopEditorUtil.hasDebugFile(set);
       if (hasDebug) {
         // this is a Debug window
         return;

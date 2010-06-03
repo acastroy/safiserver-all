@@ -11,13 +11,13 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 
 import com.safi.server.plugin.SafiServerPlugin;
-import com.safi.server.preferences.AsteriskConfigurationDialog;
+import com.safi.server.preferences.FreeSwitchConfigurationDialog;
 import com.safi.server.saflet.manager.EntitlementUtils;
 import com.safi.workshop.part.SafiWorkshopEditorUtil;
 
-public class AddAsteriskServerAction implements IWorkbenchWindowActionDelegate, IViewActionDelegate {
+public class AddFreeSwitchServerAction implements IWorkbenchWindowActionDelegate, IViewActionDelegate {
 
-  public AddAsteriskServerAction() {
+  public AddFreeSwitchServerAction() {
     // super("ConnectionsView.Actions.AddAsteriskServer",
     // "ConnectionsView.Actions.AddAsteriskServerToolTip", "Images.AliasWizard");
   }
@@ -30,7 +30,7 @@ public class AddAsteriskServerAction implements IWorkbenchWindowActionDelegate, 
           "You do not have sufficient privileges to carry out this operation.");
       return;
     }
-    AsteriskConfigurationDialog dlg = new AsteriskConfigurationDialog(shell);
+    FreeSwitchConfigurationDialog dlg = new FreeSwitchConfigurationDialog(shell);
     int result = dlg.open();
     if (result == Window.OK) {
       // AsteriskServer server = dlg.getAsteriskServer();

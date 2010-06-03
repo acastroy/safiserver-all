@@ -350,7 +350,6 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
             objectClass="org.eclipse.core.resources.IProject">
          <action
                class="com.safi.workshop.audio.NewPromptAction"
-               definitionId="com.safi.workshop.eclipse.objectContribution1"
                id="com.safi.workshop.audio.ImportAudioAction"
                label="Import Audio File"
                menubarPath="group.new">
@@ -361,7 +360,6 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
          </filter>
          <action
                class="com.safi.workshop.SafiDiagramActionDelegate"
-               definitionId="com.safi.workshop.eclipse.objectContribution14"
                icon="icons/obj16/HandlerDiagramFile.gif"
                id="com.safi.workshop.part.AsteriskCreationWizardDelegate"
                label="%newDiagramActionLabel"
@@ -458,7 +456,7 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
          </action>
       </objectContribution>
       <objectContribution
-            id="AsteriskSafletDesigner.diagram.objectContribution9"
+            id="AsteriskSafletDesigner.diagram.astServerList"
             objectClass="com.safi.workshop.navigator.serverconfig.AsteriskServerList">
          <action
                class="com.safi.workshop.navigator.serverconfig.AddAsteriskServerAction"
@@ -475,6 +473,34 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
                label="Synchronize prompts with Asterisk servers"
                menubarPath="com.safi.db.Menu"
                tooltip="Synchronize audio prompts with Asterisk server">
+            <enablement>
+               <not>
+                  <objectState
+                        name="id"
+                        value="-1">
+                  </objectState>
+               </not>
+            </enablement>
+         </action>
+      </objectContribution>
+      <objectContribution
+            id="AsteriskSafletDesigner.diagram.fsServerList"
+            objectClass="com.safi.workshop.navigator.serverconfig.FreeSwitchServerList">
+         <action
+               class="com.safi.workshop.navigator.serverconfig.AddFreeSwitchServerAction"
+               icon="icons/server/action/FreeSwitchServerManager.gif"
+               id="AsteriskSafletDesigner.diagram.action.serverconfig.AddFreeSwitchServerAction"
+               label="Add FreeSWITCH Server"
+               menubarPath="com.safi.db.Menu"
+               tooltip="Add FreeSWITCH Server">
+         </action>
+         <action
+               class="com.safi.workshop.audio.MultiSynchronizePromptsAction"
+               icon="icons/audio/synch.gif"
+               id="com.safi.workshop.audio.MultiSynchronizePromptsAction"
+               label="Synchronize prompts with FreeSWITCH servers"
+               menubarPath="com.safi.db.Menu"
+               tooltip="Synchronize audio prompts with FreeSWITCH server">
             <enablement>
                <not>
                   <objectState
@@ -638,7 +664,6 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
             objectClass="com.safi.workshop.sqlexplorer.dbproduct.Alias">
          <action
                class="com.safi.workshop.sqlexplorer.connections.actions.DeleteAction"
-               definitionId="org.eclipse.ui.edit.delete2"
                icon="icons/old_delete_edit.gif"
                id="com.safi.workshop.navigator.DeleteAction"
                label="Delete"
@@ -646,32 +671,9 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
                overrideActionId="org.eclipse.ui.edit.delete"
                tooltip="Delete Resource">
             <enablement>
-               <or>
-                  <objectClass
+              <objectClass
                         name="com.safi.workshop.sqlexplorer.dbproduct.Alias">
                   </objectClass>
-                  <objectClass
-                        name="com.safi.workshop.sqlexplorer.dbproduct.User">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.workshop.sqlexplorer.dbproduct.SQLConnection">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.db.Query">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.db.QueryParameter">
-                  </objectClass>
-                  <objectClass
-                        name="org.eclipse.core.resources.IResource">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.db.server.config.User">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.db.server.config.AsteriskServer">
-                  </objectClass>
-               </or>
             </enablement>
          </action>
       </objectContribution>
@@ -680,7 +682,6 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
             objectClass="com.safi.db.Query">
          <action
                class="com.safi.workshop.sqlexplorer.connections.actions.DeleteAction"
-               definitionId="org.eclipse.ui.edit.delete3"
                icon="icons/old_delete_edit.gif"
                id="com.safi.workshop.navigator.DeleteAction"
                label="Delete"
@@ -689,30 +690,14 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
                tooltip="Delete Resource">
             <enablement>
                <or>
-                  <objectClass
-                        name="com.safi.workshop.sqlexplorer.dbproduct.Alias">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.workshop.sqlexplorer.dbproduct.User">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.workshop.sqlexplorer.dbproduct.SQLConnection">
-                  </objectClass>
+                  
                   <objectClass
                         name="com.safi.db.Query">
                   </objectClass>
                   <objectClass
                         name="com.safi.db.QueryParameter">
                   </objectClass>
-                  <objectClass
-                        name="org.eclipse.core.resources.IResource">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.db.server.config.User">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.db.server.config.AsteriskServer">
-                  </objectClass>
+                 
                </or>
             </enablement>
          </action>
@@ -722,7 +707,6 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
             objectClass="com.safi.db.server.config.AsteriskServer">
          <action
                class="com.safi.workshop.sqlexplorer.connections.actions.DeleteAction"
-               definitionId="org.eclipse.ui.edit.delete4"
                icon="icons/old_delete_edit.gif"
                id="com.safi.workshop.navigator.DeleteAction"
                label="Delete"
@@ -730,32 +714,9 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
                overrideActionId="org.eclipse.ui.edit.delete"
                tooltip="Delete Resource">
             <enablement>
-               <or>
-                  <objectClass
-                        name="com.safi.workshop.sqlexplorer.dbproduct.Alias">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.workshop.sqlexplorer.dbproduct.User">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.workshop.sqlexplorer.dbproduct.SQLConnection">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.db.Query">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.db.QueryParameter">
-                  </objectClass>
-                  <objectClass
-                        name="org.eclipse.core.resources.IResource">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.db.server.config.User">
-                  </objectClass>
-                  <objectClass
+                <objectClass
                         name="com.safi.db.server.config.AsteriskServer">
                   </objectClass>
-               </or>
             </enablement>
          </action>
          <!--
@@ -783,12 +744,11 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
                tooltip="Modify Asterisk Server">
          </action>
       </objectContribution>
-      <objectContribution
-            id="AsteriskSafletDesigner.diagram.objectContribution4"
-            objectClass="org.eclipse.core.resources.IResource">
+       <objectContribution
+            id="AsteriskSafletDesigner.diagram.fsServer"
+            objectClass="com.safi.db.server.config.FreeSwitchServer">
          <action
                class="com.safi.workshop.sqlexplorer.connections.actions.DeleteAction"
-               definitionId="org.eclipse.ui.edit.delete5"
                icon="icons/old_delete_edit.gif"
                id="com.safi.workshop.navigator.DeleteAction"
                label="Delete"
@@ -796,32 +756,52 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
                overrideActionId="org.eclipse.ui.edit.delete"
                tooltip="Delete Resource">
             <enablement>
-               <or>
-                  <objectClass
-                        name="com.safi.workshop.sqlexplorer.dbproduct.Alias">
+              <objectClass
+                        name="com.safi.db.server.config.FreeSwitchServer">
                   </objectClass>
-                  <objectClass
-                        name="com.safi.workshop.sqlexplorer.dbproduct.User">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.workshop.sqlexplorer.dbproduct.SQLConnection">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.db.Query">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.db.QueryParameter">
-                  </objectClass>
-                  <objectClass
+            </enablement>
+         </action>
+         <!--
+         <action
+               class="com.safi.workshop.audio.SynchronizePromptsAction"
+               id="com.safi.workshop.audio.SynchronizePromptsAction"
+               label="Synchronize Prompts"
+               menubarPath="com.safi.db.Menu"
+               tooltip="Synchronize audio prompts with Asterisk server">
+            <enablement>
+               <not>
+                  <objectState
+                        name="id"
+                        value="-1">
+                  </objectState>
+               </not>
+            </enablement>
+         </action>
+         -->
+         <action
+               class="com.safi.workshop.navigator.ModifyFreeSwitchServerAction"
+               id="com.safi.workshop.navigator.ModifyFreeSwitchServerAction"
+               label="Modify FreeSWITCH Server"
+               menubarPath="com.safi.db.Menu"
+               tooltip="Modify FreeSWITCH Server">
+         </action>
+      </objectContribution>
+      
+      <objectContribution
+            id="AsteriskSafletDesigner.diagram.objectContribution4"
+            objectClass="org.eclipse.core.resources.IResource">
+         <action
+               class="com.safi.workshop.sqlexplorer.connections.actions.DeleteAction"
+               icon="icons/old_delete_edit.gif"
+               id="com.safi.workshop.navigator.DeleteAction"
+               label="Delete"
+               menubarPath="com.safi.db.Menu"
+               overrideActionId="org.eclipse.ui.edit.delete"
+               tooltip="Delete Resource">
+            <enablement>
+                <objectClass
                         name="org.eclipse.core.resources.IResource">
                   </objectClass>
-                  <objectClass
-                        name="com.safi.db.server.config.User">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.db.server.config.AsteriskServer">
-                  </objectClass>
-               </or>
             </enablement>
          </action>
          <action
@@ -830,7 +810,6 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
                id="com.safi.workshop.navigator.db.DeleteSafletAction"
                label="Delete Saflets on SafiServer"
                menubarPath="com.safi.db.Menu"
-               toolbarPath="prodServerBar"
                tooltip="Delete Saflet(s) from production SafiServer">
             <enablement>
                <or>
@@ -857,6 +836,9 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
                   </objectClass>
                   <objectClass
                         name="com.safi.db.server.config.AsteriskServer">
+                  </objectClass>
+                  <objectClass
+                        name="com.safi.db.server.config.FreeSwitchServer">
                   </objectClass>
                </or>
             </enablement>
@@ -2766,7 +2748,7 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
       <perspectiveExtension
             targetID="com.safi.workshop.AsteriskPerspective">
          <view
-               id="com.safi.handlers.diagram.views.VariableView"
+               id="com.safi.workshop.view.VariablesView"
                ratio="0.5"
                relationship="right"
                relative="org.eclipse.ui.views.TaskList">
@@ -2912,7 +2894,7 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
                   pattern="com.safi.workshop.navigator.SafiEditActionProvider">
             </actionExtension>
             <actionExtension
-                  pattern="com.safi.workshop.navigator.serverconfig.ServerResourcesActionProvier">
+                  pattern="com.safi.workshop.navigator.serverconfig.ServerResourcesActionProvider">
             </actionExtension>
          </includes>
       </viewerActionBinding>
@@ -2975,7 +2957,7 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
          </possibleChildren>
       </navigatorContent>
       <actionProvider
-            appearsBefore="com.safi.workshop.navigator.serverconfig.ServerResourcesActionProvier"
+            appearsBefore="com.safi.workshop.navigator.serverconfig.ServerResourcesActionProvider"
             class="com.safi.workshop.navigator.db.DBActionProvider"
             id="com.safi.workshop.navigator.db.DBActionProvider"
             priority="lowest">
@@ -3001,7 +2983,7 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
       </actionProvider>
       <actionProvider
             class="com.safi.workshop.navigator.serverconfig.ServerResourcesActionProvider"
-            id="com.safi.workshop.navigator.serverconfig.ServerResourcesActionProvier"
+            id="com.safi.workshop.navigator.serverconfig.ServerResourcesActionProvider"
             priority="lowest">
          <enablement>
             <or>
@@ -3012,11 +2994,19 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
                      value="com.safi.db.server.config.AsteriskServer">
                </instanceof>
                <instanceof
-                     value="com.safi.workshop.navigator.serverconfig.SafiServerList">
+                        value="com.safi.db.server.config.FreeSwitchServer">
+               </instanceof>
+                <instanceof
+                     value="com.safi.workshop.navigator.serverconfig.UserList">
                </instanceof>
                <instanceof
                      value="com.safi.workshop.navigator.serverconfig.AsteriskServerList">
                </instanceof>
+               <instanceof
+                     value="com.safi.workshop.navigator.serverconfig.FreeSwitchServerList">
+               </instanceof>
+               
+               
             </or>
          </enablement>
       </actionProvider>
@@ -3030,10 +3020,13 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
          <possibleChildren>
             <or>
                <instanceof
-                     value="com.safi.workshop.navigator.serverconfig.SafiServerList">
+                     value="com.safi.db.server.config.ServerResource">
                </instanceof>
                <instanceof
-                     value="com.safi.db.server.config.ServerResource">
+                     value="com.safi.workshop.navigator.serverconfig.AsteriskServerList">
+               </instanceof>
+               <instanceof
+                     value="com.safi.workshop.navigator.serverconfig.FreeSwitchServerList">
                </instanceof>
             </or>
          </possibleChildren>
@@ -3303,7 +3296,6 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
             targetID="com.safi.eclipse.NavigatorView">
          <action
                class="com.safi.workshop.SafiProjectActionDelegate"
-               definitionId="com.safi.workshop.eclipse.objectContribution1"
                icon="icons/obj16/HandlerDiagramFile.gif"
                id="com.safi.workshop.part.AsteriskCreationWizardDelegate"
                label="Saflet (CallFlow Diagram)"
@@ -3594,12 +3586,9 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
          lightweight="false"
          state="true">
       <enablement>
-         <or>
-            <objectClass
-                  name="com.safi.db.server.config.ServerResource">
-            </objectClass>
-           
-         </or>
+         <objectClass
+               name="com.safi.db.server.config.ServerResource">
+         </objectClass>
       </enablement>
    </decorator>
    <decorator

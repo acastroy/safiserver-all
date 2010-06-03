@@ -27,7 +27,7 @@ import org.eclipse.ui.IViewActionDelegate;
 import org.eclipse.ui.IViewPart;
 
 import com.safi.workshop.SafiNavigator;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.dbproduct.AliasManager;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
@@ -113,6 +113,6 @@ public abstract class AbstractConnectionTreeAction extends Action implements IVi
   // return SQLExplorerPlugin.getDefault().getConnectionsView();
   // }
   protected SafiNavigator getView() {
-    return AsteriskDiagramEditorUtil.getSafiNavigator(false);
+    return SafiWorkshopEditorUtil.getSafiNavigator(false);
   }
 }

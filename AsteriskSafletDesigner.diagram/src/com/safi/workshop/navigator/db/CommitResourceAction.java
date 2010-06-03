@@ -45,7 +45,7 @@ import com.safi.server.saflet.manager.EntitlementUtils;
 import com.safi.workshop.SafiNavigator;
 import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.sqlexplorer.dbproduct.Alias;
 import com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
@@ -101,17 +101,17 @@ public class CommitResourceAction implements IWorkbenchWindowActionDelegate,IPar
     if (!SafiServerPlugin.getDefault().isConnected()) {
       MessageDialog
           .openError(
-              AsteriskDiagramEditorUtil.getActiveShell(),
+              SafiWorkshopEditorUtil.getActiveShell(),
               "Not Connected",
               "You must be connected to a production SafiServer to complete this operation.  Please connection to a SafiServer instance first");
       return;
     }
 
-    SafiNavigator nav = AsteriskDiagramEditorUtil.getSafiNavigator(false);
+    SafiNavigator nav = SafiWorkshopEditorUtil.getSafiNavigator(false);
     if (nav == null)
       return;
 
-    if (!MessageDialog.openConfirm(AsteriskDiagramEditorUtil.getActiveShell(), "Confirm Publish",
+    if (!MessageDialog.openConfirm(SafiWorkshopEditorUtil.getActiveShell(), "Confirm Publish",
         "Are you sure you want to proceed? Publishing will overwrite existing server resource.")) {
       return;
     }
@@ -129,7 +129,7 @@ public class CommitResourceAction implements IWorkbenchWindowActionDelegate,IPar
         } else if (o instanceof ManagedDriver) {
           User user = SafiServerPlugin.getDefault().getCurrentUser();
           if (!EntitlementUtils.isUserEntitled(user, EntitlementUtils.ENTIT_RETRIEVE_DB_RESOURCES)) {
-            MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Not Entitled",
+            MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
                 "You do not have sufficient privileges to carry out this operation.");
             return;
           }
@@ -142,7 +142,7 @@ public class CommitResourceAction implements IWorkbenchWindowActionDelegate,IPar
         } else if (o instanceof Query) {
           User user = SafiServerPlugin.getDefault().getCurrentUser();
           if (!EntitlementUtils.isUserEntitled(user, EntitlementUtils.ENTIT_RETRIEVE_DB_RESOURCES)) {
-            MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Not Entitled",
+            MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
                 "You do not have sufficient privileges to carry out this operation.");
             return;
           }
@@ -154,7 +154,7 @@ public class CommitResourceAction implements IWorkbenchWindowActionDelegate,IPar
         } else if (o instanceof com.safi.workshop.sqlexplorer.dbproduct.DriverManager) {
           User user = SafiServerPlugin.getDefault().getCurrentUser();
           if (!EntitlementUtils.isUserEntitled(user, EntitlementUtils.ENTIT_RETRIEVE_DB_RESOURCES)) {
-            MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Not Entitled",
+            MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
                 "You do not have sufficient privileges to carry out this operation.");
             return;
           }
@@ -167,7 +167,7 @@ public class CommitResourceAction implements IWorkbenchWindowActionDelegate,IPar
             && "saflet".equals(((IResource) o).getFileExtension())) {
           User user = SafiServerPlugin.getDefault().getCurrentUser();
           if (!EntitlementUtils.isUserEntitled(user, EntitlementUtils.ENTIT_RETRIEVE_SAFLETS)) {
-            MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Not Entitled",
+            MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
                 "You do not have sufficient privileges to carry out this operation.");
             return;
           }
@@ -192,7 +192,7 @@ public class CommitResourceAction implements IWorkbenchWindowActionDelegate,IPar
             });
           } catch (CoreException e) {
             e.printStackTrace();
-            MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Publish Error",
+            MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Publish Error",
                 "Couldn't publish all project resources: " + e.getLocalizedMessage());
             AsteriskDiagramEditorPlugin.getInstance().logError("Publish Project Error", e);
             errors.add(Result.ERROR);
@@ -203,7 +203,7 @@ public class CommitResourceAction implements IWorkbenchWindowActionDelegate,IPar
               SafletPersistenceManager.getInstance().saveEmptyProject(project);
             } catch (Exception e) {
               e.printStackTrace();
-              MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Publish Error",
+              MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Publish Error",
                   "Couldn't publish project " + project.getName() + ": " + e.getLocalizedMessage());
               AsteriskDiagramEditorPlugin.getInstance().logError(
                   "Couldn't publish project " + project.getName(), e);
@@ -241,14 +241,14 @@ public class CommitResourceAction implements IWorkbenchWindowActionDelegate,IPar
       }
 
       if (errors.contains(Result.ERROR) && errors.size() > 1)
-        MessageDialog.openWarning(AsteriskDiagramEditorUtil.getActiveShell(),
+        MessageDialog.openWarning(SafiWorkshopEditorUtil.getActiveShell(),
             "Errors Publishing Resources", "There were problems encountered during the operation. "
                 + "Not all resources were successfully published to SafiServer");
       else if (!(errors.contains(Result.CANCEL) || errors.contains(Result.ERROR)))
-        MessageDialog.openInformation(AsteriskDiagramEditorUtil.getActiveShell(),
+        MessageDialog.openInformation(SafiWorkshopEditorUtil.getActiveShell(),
             "Resources Published", "All resources were successfully published to SafiServer");
 
-      AsteriskDiagramEditorUtil.getSafiNavigator().modelChanged(true);
+      SafiWorkshopEditorUtil.getSafiNavigator().modelChanged(true);
     }
 
   }
@@ -455,7 +455,7 @@ public class CommitResourceAction implements IWorkbenchWindowActionDelegate,IPar
 		
 		if (action != null){
 			if (currentEditor.get() == null)
-				selectionChanged(action, AsteriskDiagramEditorUtil.getSafiNavigator().getCommonViewer().getSelection());
+				selectionChanged(action, SafiWorkshopEditorUtil.getSafiNavigator().getCommonViewer().getSelection());
 			else
 				action.setEnabled(true);
 		}

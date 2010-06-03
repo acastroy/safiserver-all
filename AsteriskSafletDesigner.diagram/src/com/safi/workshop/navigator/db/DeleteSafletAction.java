@@ -37,7 +37,7 @@ import com.safi.workshop.SafiProjectNature;
 import com.safi.workshop.navigator.PersistenceProperties;
 import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.util.SafletPersistenceManager;
 
 public class DeleteSafletAction extends ServerResourceAction {
@@ -48,19 +48,19 @@ public class DeleteSafletAction extends ServerResourceAction {
 
 	@Override
 	public void run(IAction action) {
-		Shell shell = AsteriskDiagramEditorUtil.getActiveShell();
+		Shell shell = SafiWorkshopEditorUtil.getActiveShell();
 		try {
 			if (!SafiServerPlugin.getDefault().isConnected()) {
 				MessageDialog
 				    .openError(
-				        AsteriskDiagramEditorUtil.getActiveShell(),
+				        SafiWorkshopEditorUtil.getActiveShell(),
 				        "Not Connected",
 				        "You must be connected to a production SafiServer to complete this operation.  Please connection to a SafiServer instance first");
 				return;
 			}
 			User user = SafiServerPlugin.getDefault().getCurrentUser();
 			if (!EntitlementUtils.isUserEntitled(user, EntitlementUtils.ENTIT_PUBLISH_SAFLETS)) {
-				MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(),
+				MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(),
 				    "Not Entitled",
 				    "You do not have sufficient privileges to carry out this operation.");
 				return;
@@ -126,7 +126,7 @@ public class DeleteSafletAction extends ServerResourceAction {
 
 				BooleanMessageDialogWithToggle toggle = BooleanMessageDialogWithToggle
 				    .getQuestionDialog(
-				        AsteriskDiagramEditorUtil.getActiveShell(),
+				        SafiWorkshopEditorUtil.getActiveShell(),
 				        "Delete Resources",
 				        "Are you sure you wish to delete the selected resources on the SafiServer? (this operation cannot be undone)",
 				        "Also delete local copies of any resources as well? (leave unchecked to delete manually later)",
@@ -233,7 +233,7 @@ public class DeleteSafletAction extends ServerResourceAction {
 			    + e.getLocalizedMessage());
 			AsteriskDiagramEditorPlugin.getInstance().logError("Retriev Saflet Error", e);
 		}
-		AsteriskDiagramEditorUtil.getSafiNavigator().refresh();
+		SafiWorkshopEditorUtil.getSafiNavigator().refresh();
 	}
 
 	private void addOrUpdateSaflets(IProject project, final List<Saflet> saflets)
@@ -261,13 +261,13 @@ public class DeleteSafletAction extends ServerResourceAction {
 									AsteriskDiagramEditorPlugin.getDefault().getWorkbench()
 									    .getActiveWorkbenchWindow().getActivePage().closeEditor(editor,
 									        false);
-									editor = (AsteriskDiagramEditor) AsteriskDiagramEditorUtil.openDiagram(
+									editor = (AsteriskDiagramEditor) SafiWorkshopEditorUtil.openDiagram(
 									    URI.createFileURI(fullPath.toPortableString()), false, true);
 								}
 							} catch (Exception e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
-								MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(),
+								MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(),
 								    "Update Error", "Couldn't update Saflet: " + e.getLocalizedMessage());
 								AsteriskDiagramEditorPlugin.getInstance().logError(
 								    "Couldn't update Saflet", e);
@@ -281,7 +281,7 @@ public class DeleteSafletAction extends ServerResourceAction {
 			}
 		});
 		for (Saflet saflet : safletsCopy) {
-			String filename = AsteriskDiagramEditorUtil.getUniqueFileName(project, saflet
+			String filename = SafiWorkshopEditorUtil.getUniqueFileName(project, saflet
 			    .getName(), "saflet");
 			IFile file = project.getFile(filename);
 			file.create(new ByteArrayInputStream(saflet.getCode()), true, null);

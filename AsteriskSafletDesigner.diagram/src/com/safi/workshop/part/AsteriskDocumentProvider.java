@@ -398,7 +398,7 @@ public class AsteriskDocumentProvider extends AbstractDocumentProvider implement
       }
       fireElementStateChanging(element);
       List resources = info.getResourceSet().getResources();
-      if (AsteriskDiagramEditorUtil.hasDebugFile(info.getResourceSet())) {
+      if (SafiWorkshopEditorUtil.hasDebugFile(info.getResourceSet())) {
         Display.getDefault().asyncExec(new Runnable() {
           @Override
           public void run() {
@@ -418,7 +418,7 @@ public class AsteriskDocumentProvider extends AbstractDocumentProvider implement
               nextResource.getURI()));
           if (nextResource.isLoaded() && !info.getEditingDomain().isReadOnly(nextResource)) {
             try {
-              nextResource.save(AsteriskDiagramEditorUtil.getSaveOptions());
+              nextResource.save(SafiWorkshopEditorUtil.getSaveOptions());
             } catch (IOException e) {
               fireElementStateChangeFailed(element);
               throw new CoreException(new Status(IStatus.ERROR, AsteriskDiagramEditorPlugin.ID,
@@ -469,7 +469,7 @@ public class AsteriskDocumentProvider extends AbstractDocumentProvider implement
             return CommandResult.newOKCommandResult();
           }
         }.execute(monitor, null);
-        newResource.save(AsteriskDiagramEditorUtil.getSaveOptions());
+        newResource.save(SafiWorkshopEditorUtil.getSaveOptions());
       } catch (ExecutionException e) {
         fireElementStateChangeFailed(element);
         throw new CoreException(new Status(IStatus.ERROR, AsteriskDiagramEditorPlugin.ID, 0, e

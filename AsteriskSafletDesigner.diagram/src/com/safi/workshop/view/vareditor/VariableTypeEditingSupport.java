@@ -19,7 +19,7 @@ import com.safi.db.VariableType;
 import com.safi.db.util.VariableTranslator;
 import com.safi.server.saflet.manager.DBManager;
 import com.safi.workshop.part.AsteriskDiagramEditor;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 
 public class VariableTypeEditingSupport extends org.eclipse.jface.viewers.EditingSupport {
   private CellEditor cellEditor;
@@ -110,7 +110,7 @@ public class VariableTypeEditingSupport extends org.eclipse.jface.viewers.Editin
     } catch (Exception e) {
       e.printStackTrace();
       MessageDialog
-          .openError(AsteriskDiagramEditorUtil.getActiveShell(), "Update Variable Type Error",
+          .openError(SafiWorkshopEditorUtil.getActiveShell(), "Update Variable Type Error",
               "Couldn't set variable type to: " + e.getLocalizedMessage());
     }
 

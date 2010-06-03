@@ -8,18 +8,18 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 
-import com.safi.db.server.config.AsteriskServer;
+import com.safi.db.server.config.FreeSwitchServer;
 import com.safi.db.server.config.User;
 import com.safi.server.plugin.SafiServerPlugin;
-import com.safi.server.preferences.AsteriskConfigurationDialog;
+import com.safi.server.preferences.FreeSwitchConfigurationDialog;
 import com.safi.server.saflet.manager.EntitlementUtils;
 import com.safi.workshop.part.SafiWorkshopEditorUtil;
 
-public class ModifyAsteriskServerAction implements IWorkbenchWindowActionDelegate {
+public class ModifyFreeSwitchServerAction implements IWorkbenchWindowActionDelegate {
 
   private ISelection cachedSelection;
 
-  public ModifyAsteriskServerAction() {
+  public ModifyFreeSwitchServerAction() {
     // TODO Auto-generated constructor stub
   }
 
@@ -43,7 +43,7 @@ public class ModifyAsteriskServerAction implements IWorkbenchWindowActionDelegat
       StructuredSelection selection = (StructuredSelection) cachedSelection;
       if (selection.size() > 1)
         return;
-      final AsteriskServer asteriskSelected = (AsteriskServer) selection.getFirstElement();
+      final FreeSwitchServer fsServer = (FreeSwitchServer) selection.getFirstElement();
       {
         if (!SafiServerPlugin.getDefault().isConnected()) {
           MessageDialog
@@ -59,12 +59,12 @@ public class ModifyAsteriskServerAction implements IWorkbenchWindowActionDelegat
               "You do not have sufficient privileges to carry out this operation.");
           return;
         }
-        AsteriskConfigurationDialog astercfg = new AsteriskConfigurationDialog(
-            SafiWorkshopEditorUtil.getActiveShell(), asteriskSelected);
+        FreeSwitchConfigurationDialog astercfg = new FreeSwitchConfigurationDialog(
+            SafiWorkshopEditorUtil.getActiveShell(), fsServer);
         int result = astercfg.open();
         if (result == Window.OK) {
           astercfg.commit();
-          SafiWorkshopEditorUtil.getSafiNavigator().refresh(asteriskSelected);
+          SafiWorkshopEditorUtil.getSafiNavigator().refresh(fsServer);
         }
       }
     }

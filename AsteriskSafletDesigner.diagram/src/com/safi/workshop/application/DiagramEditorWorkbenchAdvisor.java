@@ -17,7 +17,7 @@ import org.eclipse.ui.application.WorkbenchWindowAdvisor;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.navigator.ServerResourcesDecorator;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
 
 /**
@@ -75,7 +75,7 @@ public class DiagramEditorWorkbenchAdvisor extends WorkbenchAdvisorHack {
 
   @Override
   public boolean preShutdown() {
-    AsteriskDiagramEditorUtil.getSafiNavigator().switchToSafletPerspective();
+    SafiWorkshopEditorUtil.getSafiNavigator().switchToSafletPerspective();
     return super.preShutdown();
   }
 
@@ -101,7 +101,7 @@ public class DiagramEditorWorkbenchAdvisor extends WorkbenchAdvisorHack {
               new SQLExplorerPlugin();
             SQLExplorerPlugin.getDefault().initResources(monitor);
             SQLExplorerPlugin.getDefault().getAliasManager().addListener(
-                AsteriskDiagramEditorUtil.getSafiNavigator(true));
+                SafiWorkshopEditorUtil.getSafiNavigator(true));
 
             if (!isError) {
               AsteriskDiagramEditorPlugin.getInstance().doInit(monitor);
@@ -123,7 +123,7 @@ public class DiagramEditorWorkbenchAdvisor extends WorkbenchAdvisorHack {
 
     } catch (Exception e) {
       e.printStackTrace();
-      MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Initialization Error",
+      MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Initialization Error",
           "SafiWorkshop couldn't initialize properly: " + e.getLocalizedMessage());
     }
 

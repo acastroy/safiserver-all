@@ -38,7 +38,7 @@ import com.safi.db.server.config.SafletProject;
 import com.safi.db.server.config.ServerResource;
 import com.safi.db.server.config.User;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.util.SafletPersistenceManager;
 
 import de.schlichtherle.io.File;
@@ -320,7 +320,7 @@ public class SafiWorkspaceExportWizard extends org.eclipse.jface.wizard.Wizard {
         List<Prompt> prompts = selectPromptsPage.getSelectedPrompts();
         Map<Prompt, java.io.File> map = new HashMap<Prompt, java.io.File>();
         for (Prompt p : prompts) {
-          map.put(p, AsteriskDiagramEditorUtil.getPromptFile(p));
+          map.put(p, SafiWorkshopEditorUtil.getPromptFile(p));
         }
 
         for (Map.Entry<Prompt, java.io.File> entry : map.entrySet()) {

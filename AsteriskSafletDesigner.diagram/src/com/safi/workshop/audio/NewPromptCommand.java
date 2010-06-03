@@ -5,14 +5,14 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.jface.window.Window;
 import org.eclipse.jface.wizard.WizardDialog;
 
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 
 public class NewPromptCommand extends org.eclipse.core.commands.AbstractHandler {
 
   @Override
   public Object execute(ExecutionEvent event) throws ExecutionException {
     ImportAudioFileWizard ipt = new ImportAudioFileWizard(ImportAudioFileWizard.Mode.NEW, true);
-    WizardDialog dlg = new WizardDialog(AsteriskDiagramEditorUtil.getActiveShell(), ipt);
+    WizardDialog dlg = new WizardDialog(SafiWorkshopEditorUtil.getActiveShell(), ipt);
     int result = dlg.open();
     if (result == Window.OK) {
       return ipt.getPrompt();

@@ -21,7 +21,7 @@ import com.safi.server.manager.SafiServerRemoteManager;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.saflet.manager.EntitlementUtils;
 import com.safi.workshop.audio.utils.AudioUtils;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 
 public class SynchronizePromptsAction implements IWorkbenchWindowActionDelegate {
 
@@ -47,7 +47,7 @@ public class SynchronizePromptsAction implements IWorkbenchWindowActionDelegate 
     if (!SafiServerPlugin.getDefault().isConnected()) {
       MessageDialog
           .openError(
-              AsteriskDiagramEditorUtil.getActiveShell(),
+              SafiWorkshopEditorUtil.getActiveShell(),
               "Not Connected",
               "You must be connected to a production SafiServer to complete this operation.  Please connection to a SafiServer instance first");
       return;
@@ -55,7 +55,7 @@ public class SynchronizePromptsAction implements IWorkbenchWindowActionDelegate 
 
     User user = SafiServerPlugin.getDefault().getCurrentUser();
     if (!EntitlementUtils.isUserEntitled(user, EntitlementUtils.ENTIT_MANAGE_PROMPTS)) {
-      MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Not Entitled",
+      MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
           "You do not have sufficient privileges to carry out this operation.");
       return;
     }
@@ -70,7 +70,7 @@ public class SynchronizePromptsAction implements IWorkbenchWindowActionDelegate 
       if (StringUtils.isBlank(server.getSftpUser())) {
         MessageDialog
             .openError(
-                AsteriskDiagramEditorUtil.getActiveShell(),
+                SafiWorkshopEditorUtil.getActiveShell(),
                 "SFTP Error",
                 "No SFTP user name was specified for Asterisk server "
                     + server.getName()
@@ -79,19 +79,19 @@ public class SynchronizePromptsAction implements IWorkbenchWindowActionDelegate 
       if (StringUtils.isBlank(server.getPromptDirectory())) {
         MessageDialog
             .openError(
-                AsteriskDiagramEditorUtil.getActiveShell(),
+                SafiWorkshopEditorUtil.getActiveShell(),
                 "SFTP Error",
                 "No prompt directory was specified for Asterisk server "
                     + server.getName()
                     + ".  Please enter SFTP username and password from Asterisk server configuration dialog and try again");
       }
-      AudioUtils.synchronizePrompts(Collections.singletonList(server));
+      AudioUtils.synchronizeAsteriskPrompts(Collections.singletonList(server));
 
     }
   }
 
   public void synchronizePrompts(final AsteriskServer server) {
-    ProgressMonitorDialog pm = new ProgressMonitorDialog(AsteriskDiagramEditorUtil.getActiveShell());
+    ProgressMonitorDialog pm = new ProgressMonitorDialog(SafiWorkshopEditorUtil.getActiveShell());
     try {
       pm.run(true, true, new IRunnableWithProgress() {
         @Override

@@ -44,7 +44,7 @@ import com.safi.workshop.edit.policies.InvokeSafletCanonicalEditPolicy;
 import com.safi.workshop.edit.policies.InvokeSafletItemSemanticEditPolicy;
 import com.safi.workshop.edit.policies.OpenTargetHandlerPolicy;
 import com.safi.workshop.part.AsteriskDiagramEditor;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.part.AsteriskVisualIDRegistry;
 
 /**
@@ -149,7 +149,7 @@ public class InvokeSafletEditPart extends ToolstepEditPart {
 
             String absolutePath = ifile.getWorkspace().getRoot().getLocation().toString()
                 + ifile.getFullPath();
-            AsteriskDiagramEditor currentEditor = AsteriskDiagramEditorUtil.openDebugEditor(sa[1],
+            AsteriskDiagramEditor currentEditor = SafiWorkshopEditorUtil.openDebugEditor(sa[1],
                 "saflet", absolutePath, false);
             HandlerEditPart handlerEditPart = (HandlerEditPart) currentEditor.getDiagramEditPart();
 

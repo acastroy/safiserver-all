@@ -12,6 +12,7 @@ import org.eclipse.ui.IDecoratorManager;
 import org.eclipse.ui.PlatformUI;
 
 import com.safi.db.server.config.AsteriskServer;
+import com.safi.db.server.config.FreeSwitchServer;
 import com.safi.db.server.config.SafiServer;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
@@ -44,8 +45,10 @@ public class ServerResourcesDecorator2 extends LabelProvider implements ILabelDe
 
   @Override
   public Image decorateImage(Image image, Object element) {
-    if (element instanceof AsteriskServer) {
+  	if (element instanceof AsteriskServer) {
       return decorateAsteriskServer((AsteriskServer) element, image);
+    } else if (element instanceof FreeSwitchServer) {
+      return decorateFreeSwitchServer((FreeSwitchServer) element, image);
     } else if (element instanceof SafiServer) {
       return decorateSafiServer((SafiServer) element, image);
     }
@@ -83,6 +86,21 @@ public class ServerResourcesDecorator2 extends LabelProvider implements ILabelDe
     }
   }
 
+  private Image decorateFreeSwitchServer(FreeSwitchServer server, Image baseImage) {
+    {
+      if (server.isEnabled())
+        return doDecorate(baseImage, getImageDescriptor(AST_SERVER_ACTIVE_ICON), BOTTOM_LEFT);
+      else
+        return doDecorate(baseImage, getImageDescriptor(AST_SERVER_INACTIVE_ICON), BOTTOM_LEFT);
+      //
+      // if (server.isPrivate())
+      // return doDecorate(baseImage, getImageDescriptor(AST_SERVER_PRIVATE_ICON),
+      // BOTTOM_LEFT);
+      // else
+      // return doDecorate(baseImage, getImageDescriptor(AST_SERVER_PUBLIC_ICON),
+      // BOTTOM_LEFT);
+    }
+  }
   public void refresh() {
 
     // Fire a label provider changed event to decorate the

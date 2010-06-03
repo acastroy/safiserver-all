@@ -62,7 +62,7 @@ public class AsteriskCreationWizardPage extends
   @Override
   public void createControl(Composite parent) {
     super.createControl(parent);
-    setFileName(AsteriskDiagramEditorUtil.getUniqueFileName(getContainerFullPath(), getFileName(),
+    setFileName(SafiWorkshopEditorUtil.getUniqueFileName(getContainerFullPath(), getFileName(),
         getExtension()));
     setPageComplete(validatePage());
   }

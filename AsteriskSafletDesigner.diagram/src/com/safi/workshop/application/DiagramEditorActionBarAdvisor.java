@@ -295,6 +295,7 @@ public class DiagramEditorActionBarAdvisor extends ActionBarAdvisor implements
         continue;
       }
       IExtension ext = actionSets[i].getConfigurationElement().getDeclaringExtension();
+      System.err.println("I'm removing ext "+ext);
       reg.removeExtension(ext, new Object[] { actionSets[i] });
     }
   }

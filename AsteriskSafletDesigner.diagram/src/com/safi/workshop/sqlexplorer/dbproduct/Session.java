@@ -22,7 +22,7 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.concurrent.locks.ReentrantLock;
 
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.sqlexplorer.ExplorerException;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
 
@@ -158,8 +158,8 @@ public class Session {
         // } else {
         // return getUser().createSession().grabConnection();
         // }
-        if (AsteriskDiagramEditorUtil.getSafiNavigator(false) != null)
-          AsteriskDiagramEditorUtil.getSafiNavigator(false).refresh();
+        if (SafiWorkshopEditorUtil.getSafiNavigator(false) != null)
+          SafiWorkshopEditorUtil.getSafiNavigator(false).refresh();
         // AsteriskDiagramEditorUtil.getSafiNavigator().modelChanged();
         // if (SQLExplorerPlugin.getDefault().getConnectionsView() != null)
         // SQLExplorerPlugin.getDefault().getConnectionsView().refresh();
@@ -222,8 +222,8 @@ public class Session {
           SQLExplorerPlugin.error("Cannot release connection", e);
         }
         // SQLExplorerPlugin.getDefault().getConnectionsView().refresh();
-        if (AsteriskDiagramEditorUtil.getSafiNavigator(false) != null)
-          AsteriskDiagramEditorUtil.getSafiNavigator(false).refresh();
+        if (SafiWorkshopEditorUtil.getSafiNavigator(false) != null)
+          SafiWorkshopEditorUtil.getSafiNavigator(false).refresh();
       } finally {
         grabLock.unlock();
       }
@@ -260,8 +260,8 @@ public class Session {
           user.releaseConnection(connection);
           internalSetConnection(null);
           // SQLExplorerPlugin.getDefault().getConnectionsView().refresh();
-          if (AsteriskDiagramEditorUtil.getSafiNavigator(false) != null)
-            AsteriskDiagramEditorUtil.getSafiNavigator(false).refresh();
+          if (SafiWorkshopEditorUtil.getSafiNavigator(false) != null)
+            SafiWorkshopEditorUtil.getSafiNavigator(false).refresh();
         } catch (SQLException e) {
           SQLExplorerPlugin.error("Cannot release connection", e);
         }

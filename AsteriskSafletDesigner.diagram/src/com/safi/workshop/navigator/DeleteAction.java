@@ -24,7 +24,7 @@ import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.saflet.manager.EntitlementUtils;
 import com.safi.workshop.SafiNavigator;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.sqlexplorer.dbproduct.Alias;
 import com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver;
 import com.safi.workshop.sqlexplorer.dbproduct.User;
@@ -38,7 +38,7 @@ public class DeleteAction extends Action implements IViewActionDelegate {
 
   @Override
   public void run(IAction a) {
-    SafiNavigator nav = AsteriskDiagramEditorUtil.getSafiNavigator();
+    SafiNavigator nav = SafiWorkshopEditorUtil.getSafiNavigator();
     IStructuredSelection viewerSelection = nav.getViewerSelection();
     if (viewerSelection.isEmpty())
       return;
@@ -78,14 +78,14 @@ public class DeleteAction extends Action implements IViewActionDelegate {
       if (!SafiServerPlugin.getDefault().isConnected()) {
         MessageDialog
             .openError(
-                AsteriskDiagramEditorUtil.getActiveShell(),
+                SafiWorkshopEditorUtil.getActiveShell(),
                 "Not Connected",
                 "You must be connected to a production SafiServer to complete this operation.  Please connection to a SafiServer instance first");
         return;
       }
       com.safi.db.server.config.User user = SafiServerPlugin.getDefault().getCurrentUser();
       if (!EntitlementUtils.isUserEntitled(user, EntitlementUtils.ENTIT_PUBLISH_DB_RESOURCES)) {
-        MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Not Entitled",
+        MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
             "You do not have sufficient privileges to carry out this operation.");
         return;
       }
@@ -103,7 +103,7 @@ public class DeleteAction extends Action implements IViewActionDelegate {
           alias.getConnection().setLastModified(new Date());
           if (deletePref != 2 && deletePref != 3 && isConnected
               && alias.getConnection().getId() != -1) {
-            MessageDialog dialog = new MessageDialog(AsteriskDiagramEditorUtil.getActiveShell(),
+            MessageDialog dialog = new MessageDialog(SafiWorkshopEditorUtil.getActiveShell(),
                 "Delete From Server?", null, "Do you want to delete database connection "
                     + alias.getName() + " from the production SafiServer?", SWT.ICON_QUESTION,
                 new String[] { "YES", "NO", "YES TO ALL", "NO TO ALL", "CANCEL" }, 1);
@@ -114,14 +114,14 @@ public class DeleteAction extends Action implements IViewActionDelegate {
           try {
             alias.remove(deletePref == 0 || deletePref == 1, true);
           } catch (Exception e) {
-            MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Delete Failed",
+            MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Delete Failed",
                 "Couldn't delete alias " + alias.getName() + ": " + e.getLocalizedMessage());
             AsteriskDiagramEditorPlugin.getInstance().logError("Couldn't delete alias", e);
           }
         } else if (o instanceof Query) {
           Query query = (Query) o;
           if (deletePref != 2 && deletePref != 3 && isConnected && query.getId() != -1) {
-            MessageDialog dialog = new MessageDialog(AsteriskDiagramEditorUtil.getActiveShell(),
+            MessageDialog dialog = new MessageDialog(SafiWorkshopEditorUtil.getActiveShell(),
                 "Delete From Server?", null, "Do you want to delete database query "
                     + query.getName() + " from the production SafiServer?", SWT.ICON_QUESTION,
                 new String[] { "YES", "NO", "YES TO ALL", "NO TO ALL", "CANCEL" }, 1);
@@ -134,7 +134,7 @@ public class DeleteAction extends Action implements IViewActionDelegate {
             try {
               SQLExplorerPlugin.getDefault().deleteDBResource(query);
             } catch (Exception e) {
-              MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Delete Failed",
+              MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Delete Failed",
                   "Couldn't delete query " + query.getName() + ": " + e.getLocalizedMessage());
               AsteriskDiagramEditorPlugin.getInstance().logError(
                   "Couldn't delete query " + query.getName(), e);
@@ -147,7 +147,7 @@ public class DeleteAction extends Action implements IViewActionDelegate {
           if (driver.getDriver() != null && !driver.getDriver().isDefault()) {
             if (deletePref != 2 && deletePref != 3 && isConnected
                 && driver.getDriver().getId() != -1) {
-              MessageDialog dialog = new MessageDialog(AsteriskDiagramEditorUtil.getActiveShell(),
+              MessageDialog dialog = new MessageDialog(SafiWorkshopEditorUtil.getActiveShell(),
                   "Delete From Server?", null, "Do you want to delete database driver "
                       + driver.getDriver().getName() + " from the production SafiServer?",
                   SWT.ICON_QUESTION, new String[] { "YES", "NO", "YES TO ALL", "NO TO ALL",
@@ -160,7 +160,7 @@ public class DeleteAction extends Action implements IViewActionDelegate {
               try {
                 SQLExplorerPlugin.getDefault().deleteDBResource(driver.getDriver());
               } catch (Exception e) {
-                MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(),
+                MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(),
                     "Delete Failed", "Couldn't delete query " + driver.getDriver().getName() + ": "
                         + e.getLocalizedMessage());
                 AsteriskDiagramEditorPlugin.getInstance().logError(

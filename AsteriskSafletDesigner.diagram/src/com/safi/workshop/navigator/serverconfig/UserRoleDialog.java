@@ -46,7 +46,7 @@ import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.saflet.manager.DBManager;
 import com.safi.server.saflet.manager.DBManagerException;
 import com.safi.server.saflet.manager.EntitlementUtils;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 
 public class UserRoleDialog extends TitleAreaDialog {
 
@@ -261,7 +261,7 @@ public class UserRoleDialog extends TitleAreaDialog {
   private void init() {
     com.safi.db.server.config.User user = SafiServerPlugin.getDefault().getCurrentUser();
     if (!EntitlementUtils.isUserEntitled(user, EntitlementUtils.ENTIT_MANAGE_USERS)) {
-      MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Not Entitled",
+      MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
           "You do not have sufficient privileges to carry out this operation.");
       disableAll();
     }

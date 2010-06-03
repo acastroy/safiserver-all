@@ -18,7 +18,7 @@ import org.eclipse.jface.dialogs.TitleAreaDialog;
 import org.eclipse.swt.widgets.Display;
 
 import com.safi.workshop.edit.parts.ToolstepEditPart;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.sheet.actionstep.ActionstepEditorDialog;
 
 public class OpenEditorEditPolicy extends OpenEditPolicy {
@@ -32,7 +32,7 @@ public class OpenEditorEditPolicy extends OpenEditPolicy {
 			if (editPart.getHandlerEditPart().isDebug())
 				return null;
 			final ActionstepEditorDialog dlg = new ActionstepEditorDialog(
-			    AsteriskDiagramEditorUtil.getActiveShell(), editPart);
+			    SafiWorkshopEditorUtil.getActiveShell(), editPart);
 
 			ActionStepDialogOperation op = new ActionStepDialogOperation(editPart
 			    .getEditingDomain(), dlg, editPart.getNotationView());

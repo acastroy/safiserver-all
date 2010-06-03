@@ -12,7 +12,7 @@ import com.safi.server.manager.SafiServerManagementException;
 import com.safi.server.manager.SafiServerRemoteManager;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.saflet.manager.EntitlementUtils;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 
 public class RestartSafiServerAction implements org.eclipse.ui.IViewActionDelegate {
 
@@ -31,20 +31,20 @@ public class RestartSafiServerAction implements org.eclipse.ui.IViewActionDelega
     if (!SafiServerPlugin.getDefault().isConnected()) {
       MessageDialog
           .openError(
-              AsteriskDiagramEditorUtil.getActiveShell(),
+              SafiWorkshopEditorUtil.getActiveShell(),
               "Not Connected",
               "You must be connected to a production SafiServer to complete this operation.  Please connection to a SafiServer instance first");
       return;
     }
     User user = SafiServerPlugin.getDefault().getCurrentUser();
     if (!EntitlementUtils.isUserEntitled(user, EntitlementUtils.ENTIT_UPDATE_SERVER)) {
-      MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Not Entitled",
+      MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
           "You do not have sufficient privileges to carry out this operation.");
       return;
     }
     boolean result = MessageDialog
         .openQuestion(
-            AsteriskDiagramEditorUtil.getActiveShell(),
+            SafiWorkshopEditorUtil.getActiveShell(),
             "Restart Confirm",
             "Restarting the server will cause the server to stop responding for some time. Are you sure want to restart?");
     if (result) {
@@ -53,7 +53,7 @@ public class RestartSafiServerAction implements org.eclipse.ui.IViewActionDelega
       } catch (SafiServerManagementException e) {
         // TODO Auto-generated catch block
         e.printStackTrace();
-        MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Restart Failed",
+        MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Restart Failed",
             "The remote SafiServer could not be restarted: " + e.getLocalizedMessage());
         return;
       }

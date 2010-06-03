@@ -23,7 +23,7 @@ import com.safi.server.saflet.manager.EntitlementUtils;
 import com.safi.server.saflet.manager.ResourceModifiedException;
 import com.safi.workshop.SafiNavigator;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.sqlexplorer.ExplorerException;
 import com.safi.workshop.sqlexplorer.dbproduct.Alias;
 import com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver;
@@ -36,18 +36,18 @@ public class DeleteDBResourceAction extends ServerResourceAction {
     if (!SafiServerPlugin.getDefault().isConnected()) {
       MessageDialog
           .openError(
-              AsteriskDiagramEditorUtil.getActiveShell(),
+              SafiWorkshopEditorUtil.getActiveShell(),
               "Not Connected",
               "You must be connected to a production SafiServer to complete this operation.  Please connection to a SafiServer instance first");
       return;
     }
     User user = SafiServerPlugin.getDefault().getCurrentUser();
     if (!EntitlementUtils.isUserEntitled(user, EntitlementUtils.ENTIT_PUBLISH_DB_RESOURCES)) {
-      MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Not Entitled",
+      MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
           "You do not have sufficient privileges to carry out this operation.");
       return;
     }
-    SafiNavigator nav = AsteriskDiagramEditorUtil.getSafiNavigator(false);
+    SafiNavigator nav = SafiWorkshopEditorUtil.getSafiNavigator(false);
     if (nav == null)
       return;
     try {
@@ -59,17 +59,17 @@ public class DeleteDBResourceAction extends ServerResourceAction {
       // if (result == Dialog.CANCEL)
       // return;
       // List<DBResource> items = dlg.getCheckedItems();
-      List<DBResource> items = SelectDBResourcesPanel.openSelectDialog(AsteriskDiagramEditorUtil
+      List<DBResource> items = SelectDBResourcesPanel.openSelectDialog(SafiWorkshopEditorUtil
           .getActiveShell(), manager, SelectDBResourcesPanel.Mode.DELETE);
       if (items == null)
         return;
       deleteDBResources(items);
     } catch (Exception e) {
       e.printStackTrace();
-      MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Retrieve Error",
+      MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Retrieve Error",
           "Couldn't retrieve database resources: " + e.getLocalizedMessage());
     }
-    AsteriskDiagramEditorUtil.getSafiNavigator().modelChanged(SafiServerPlugin.getDefault().isConnected());
+    SafiWorkshopEditorUtil.getSafiNavigator().modelChanged(SafiServerPlugin.getDefault().isConnected());
   }
 
   public void deleteDBResources(List<DBResource> resources) throws ResourceModifiedException,
@@ -88,7 +88,7 @@ public class DeleteDBResourceAction extends ServerResourceAction {
             try {
               DBManager.getInstance().deleteDBResource(res);
             } catch (Exception e) {
-              MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Delete Failed",
+              MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Delete Failed",
                   "Couldn't delete alias " + alias.getName() + ": " + e.getLocalizedMessage());
               AsteriskDiagramEditorPlugin.getInstance().logError("Couldn't delete alias", e);
             }
@@ -97,13 +97,13 @@ public class DeleteDBResourceAction extends ServerResourceAction {
             try {
               alias.remove(true, true);
             } catch (Exception e) {
-              MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Delete Failed",
+              MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Delete Failed",
                   "Couldn't delete alias " + alias.getName() + ": " + e.getLocalizedMessage());
               AsteriskDiagramEditorPlugin.getInstance().logError("Couldn't delete alias", e);
             }
           }
           for (Query query : queries) {
-            AsteriskDiagramEditorUtil.closeSQLEditors(query);
+            SafiWorkshopEditorUtil.closeSQLEditors(query);
           }
         } else if (res instanceof Query) {
 
@@ -115,12 +115,12 @@ public class DeleteDBResourceAction extends ServerResourceAction {
           try {
             SQLExplorerPlugin.getDefault().deleteDBResource(query);
           } catch (Exception e) {
-            MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Delete Failed",
+            MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Delete Failed",
                 "Couldn't delete query " + query.getName() + ": " + e.getLocalizedMessage());
             AsteriskDiagramEditorPlugin.getInstance().logError(
                 "Couldn't delete query " + query.getName(), e);
           }
-          AsteriskDiagramEditorUtil.closeSQLEditors(query);
+          SafiWorkshopEditorUtil.closeSQLEditors(query);
           if (alias != null) {
             alias.removeQuery(query);
           }
@@ -137,14 +137,14 @@ public class DeleteDBResourceAction extends ServerResourceAction {
             try {
               SQLExplorerPlugin.getDefault().deleteDBResource(driver.getDriver());
             } catch (Exception e) {
-              MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Delete Failed",
+              MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Delete Failed",
                   "Couldn't delete query " + driver.getDriver().getName() + ": "
                       + e.getLocalizedMessage());
               AsteriskDiagramEditorPlugin.getInstance().logError(
                   "Couldn't delete query " + driver.getDriver().getName(), e);
             }
           } else {
-            MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Delete Failed",
+            MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Delete Failed",
                 "Default database drivers may not be deleted: " + res.getName());
           }
         }

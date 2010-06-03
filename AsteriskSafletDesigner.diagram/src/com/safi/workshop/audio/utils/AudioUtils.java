@@ -29,12 +29,13 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 
 import com.safi.db.server.config.AsteriskServer;
+import com.safi.db.server.config.FreeSwitchServer;
 import com.safi.server.manager.SafiServerRemoteManager;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.saflet.util.FileUtils;
 import com.safi.workshop.audio.PCMToGSMConverter;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.preferences.AudioDevicesPrefPage;
 
 public class AudioUtils {
@@ -317,8 +318,44 @@ public class AudioUtils {
     return outputFile;
   }
 
-  public static void synchronizePrompts(final List<AsteriskServer> servers) {
-    ProgressMonitorDialog pm = new ProgressMonitorDialog(AsteriskDiagramEditorUtil.getActiveShell());
+  public static void synchronizeFreeSwitchPrompts(final List<FreeSwitchServer> servers) {
+    ProgressMonitorDialog pm = new ProgressMonitorDialog(SafiWorkshopEditorUtil.getActiveShell());
+    try {
+      pm.run(true, true, new IRunnableWithProgress() {
+        @Override
+        public void run(IProgressMonitor monitor) throws InvocationTargetException,
+            InterruptedException {
+          try {
+            monitor.beginTask("Synchronizing prompts with FreeSWITCH server(s)", servers.size());
+            for (FreeSwitchServer server : servers) {
+              monitor.subTask("Synchronizing with " + server.getName());
+              SafiServerRemoteManager.getInstance().synchAudioFiles(server);
+              monitor.worked(1);
+            }
+            PromptCache.clear();
+          } catch (final Exception e) {
+            e.printStackTrace();
+            final Display d = Display.getDefault();
+            d.asyncExec(new Runnable() {
+              public void run() {
+                MessageDialog.openError(d.getActiveShell(), "Save Error",
+                    "Error caught while synchronizing audio prompts: " + e.getLocalizedMessage());
+              }
+            });
+          }
+
+        }
+      });
+    } catch (Exception e) {
+      e.printStackTrace();
+      MessageDialog.openError(SafiServerPlugin.getDefault().getWorkbench().getDisplay()
+          .getActiveShell(), "Save Error", "Error caught while synchronizing prompts: "
+          + e.getLocalizedMessage());
+    }
+  }
+  
+  public static void synchronizeAsteriskPrompts(final List<AsteriskServer> servers) {
+    ProgressMonitorDialog pm = new ProgressMonitorDialog(SafiWorkshopEditorUtil.getActiveShell());
     try {
       pm.run(true, true, new IRunnableWithProgress() {
         @Override

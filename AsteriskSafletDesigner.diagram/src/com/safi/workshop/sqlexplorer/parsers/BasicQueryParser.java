@@ -30,7 +30,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.jface.dialogs.MessageDialog;
 
 import com.safi.db.DbFactory;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.sqlexplorer.IConstants;
 import com.safi.workshop.sqlexplorer.parsers.Tokenizer.Token;
 import com.safi.workshop.sqlexplorer.parsers.scp.StructuredCommentException;
@@ -272,7 +272,7 @@ public class BasicQueryParser extends AbstractQueryParser {
           parms = parseArgs(qry.toString());
         } catch (ParserException e) {
           e.printStackTrace();
-          MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Parse Param Error",
+          MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Parse Param Error",
               "Error caught while parsing parameters: " + e.getLocalizedMessage());
           return null;
         }
@@ -306,7 +306,7 @@ public class BasicQueryParser extends AbstractQueryParser {
             parms = parseArgs(qry.toString());
           } catch (ParserException e) {
             e.printStackTrace();
-            MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(),
+            MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(),
                 "Parse Param Error", "Error caught while parsing parameters: "
                     + e.getLocalizedMessage());
             return null;
@@ -343,7 +343,7 @@ public class BasicQueryParser extends AbstractQueryParser {
               parms = parseArgs(qry.toString());
             } catch (ParserException e) {
               e.printStackTrace();
-              MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(),
+              MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(),
                   "Parse Param Error", "Error caught while parsing parameters: "
                       + e.getLocalizedMessage());
               return null;
@@ -380,7 +380,7 @@ public class BasicQueryParser extends AbstractQueryParser {
             parms = parseArgs(qry.toString());
           } catch (ParserException e) {
             e.printStackTrace();
-            MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(),
+            MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(),
                 "Parse Param Error", "Error caught while parsing parameters: "
                     + e.getLocalizedMessage());
             return null;
@@ -412,7 +412,7 @@ public class BasicQueryParser extends AbstractQueryParser {
             parms = parseArgs(qry.toString());
           } catch (ParserException e) {
             e.printStackTrace();
-            MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(),
+            MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(),
                 "Parse Param Error", "Error caught while parsing parameters: "
                     + e.getLocalizedMessage());
             return null;
@@ -446,7 +446,7 @@ public class BasicQueryParser extends AbstractQueryParser {
           parms = parseArgs(qry.toString());
         } catch (ParserException e) {
           e.printStackTrace();
-          MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Parse Param Error",
+          MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Parse Param Error",
               "Error caught while parsing parameters: " + e.getLocalizedMessage());
           return null;
         }
@@ -464,7 +464,7 @@ public class BasicQueryParser extends AbstractQueryParser {
         parms = parseArgs(qry.toString());
       } catch (ParserException e) {
         e.printStackTrace();
-        MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Parse Param Error",
+        MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Parse Param Error",
             "Error caught while parsing parameters: " + e.getLocalizedMessage());
         return null;
       }

@@ -43,7 +43,7 @@ import com.safi.server.saflet.manager.EntitlementUtils;
 import com.safi.server.saflet.mbean.SysInfo;
 import com.safi.server.saflet.util.FileUtils;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin.ActionPak;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin.ActionPakJar;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin.SafiServerJar;
@@ -541,7 +541,7 @@ public class ServerViewPanel extends Composite {
 
     User user = SafiServerPlugin.getDefault().getCurrentUser();
     if (!EntitlementUtils.isUserEntitled(user, EntitlementUtils.ENTIT_UPDATE_SERVER)) {
-      MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Not Entitled",
+      MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
           "You do not have sufficient privileges to carry out this operation.");
       return;
     }

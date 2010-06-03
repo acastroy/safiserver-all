@@ -139,7 +139,7 @@ public class DBResourcesContentProvider implements ITreeContentProvider, Adapter
         return new Object[] { driverModel };
     }
 
-    return null;
+    return EMPTY_ARRAY;
   }
 
   @Override

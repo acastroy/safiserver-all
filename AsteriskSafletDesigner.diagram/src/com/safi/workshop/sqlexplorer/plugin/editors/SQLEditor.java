@@ -67,7 +67,7 @@ import org.eclipse.ui.part.EditorPart;
 
 import com.safi.workshop.SafiNavigator;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.sqlexplorer.IConstants;
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.connections.SessionEstablishedAdapter;
@@ -185,7 +185,7 @@ public class SQLEditor extends EditorPart implements SwitchableSessionEditor {
 
     // If we havn't got a view, then try for the current session in the ConnectionsView
     if (getSession() == null) {
-      SafiNavigator nav = AsteriskDiagramEditorUtil.getSafiNavigator();
+      SafiNavigator nav = SafiWorkshopEditorUtil.getSafiNavigator();
       if (nav != null) {
         User user = nav.getDefaultUser();
 

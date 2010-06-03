@@ -208,7 +208,7 @@ public class AsteriskDiagramEditingDomainFactory extends GMFEditingDomainFactory
     // }
 
     public void updateDebugStatus() {
-      debugFile = AsteriskDiagramEditorUtil.hasDebugFile(getResourceSet());
+      debugFile = SafiWorkshopEditorUtil.hasDebugFile(getResourceSet());
     }
 
     @Override

@@ -22,7 +22,7 @@ import com.safi.workshop.SafiNavigator;
 import com.safi.workshop.edit.parts.HandlerEditPart;
 import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.sqlexplorer.dbproduct.Alias;
 import com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
@@ -35,18 +35,18 @@ public class UpdateResourceAction extends ServerResourceAction {
     if (!SafiServerPlugin.getDefault().isConnected()) {
       MessageDialog
           .openError(
-              AsteriskDiagramEditorUtil.getActiveShell(),
+              SafiWorkshopEditorUtil.getActiveShell(),
               "Not Connected",
               "You must be connected to a production SafiServer to complete this operation.  Please connection to a SafiServer instance first");
       return;
     }
     User user = SafiServerPlugin.getDefault().getCurrentUser();
 
-    SafiNavigator nav = AsteriskDiagramEditorUtil.getSafiNavigator(false);
+    SafiNavigator nav = SafiWorkshopEditorUtil.getSafiNavigator(false);
     if (nav == null)
       return;
 
-    if (!MessageDialog.openConfirm(AsteriskDiagramEditorUtil.getActiveShell(), "Confirm Update",
+    if (!MessageDialog.openConfirm(SafiWorkshopEditorUtil.getActiveShell(), "Confirm Update",
         "Are you sure you want to proceed with update? Update will overwrite existing resource.")) {
       return;
     }
@@ -58,7 +58,7 @@ public class UpdateResourceAction extends ServerResourceAction {
         // Object o = selection.getFirstElement();
         if (o instanceof Alias) {
           if (!EntitlementUtils.isUserEntitled(user, EntitlementUtils.ENTIT_RETRIEVE_DB_RESOURCES)) {
-            MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Not Entitled",
+            MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
                 "You do not have sufficient privileges to carry out this operation.");
             return;
           }
@@ -76,14 +76,14 @@ public class UpdateResourceAction extends ServerResourceAction {
             dbResourceUpdated = true;
           } catch (DBManagerException e) {
             e.printStackTrace();
-            MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Update Error",
+            MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Update Error",
                 "Couldn't update DBConnection: " + e.getLocalizedMessage());
             AsteriskDiagramEditorPlugin.getInstance().logError("Couldn't update DBConnection", e);
             return;
           }
         } else if (o instanceof ManagedDriver) {
           if (!EntitlementUtils.isUserEntitled(user, EntitlementUtils.ENTIT_RETRIEVE_DB_RESOURCES)) {
-            MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Not Entitled",
+            MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
                 "You do not have sufficient privileges to carry out this operation.");
             return;
           }
@@ -95,7 +95,7 @@ public class UpdateResourceAction extends ServerResourceAction {
           dbResourceUpdated = true;
         } else if (o instanceof Query) {
           if (!EntitlementUtils.isUserEntitled(user, EntitlementUtils.ENTIT_RETRIEVE_DB_RESOURCES)) {
-            MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Not Entitled",
+            MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
                 "You do not have sufficient privileges to carry out this operation.");
             return;
           }
@@ -106,7 +106,7 @@ public class UpdateResourceAction extends ServerResourceAction {
           dbResourceUpdated = true;
         } else if (o instanceof com.safi.workshop.sqlexplorer.dbproduct.DriverManager) {
           if (!EntitlementUtils.isUserEntitled(user, EntitlementUtils.ENTIT_RETRIEVE_DB_RESOURCES)) {
-            MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Not Entitled",
+            MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
                 "You do not have sufficient privileges to carry out this operation.");
             return;
           }
@@ -116,7 +116,7 @@ public class UpdateResourceAction extends ServerResourceAction {
         } else if ((o instanceof IResource) && (((IResource) o).getType() == IResource.FILE)
             && "saflet".equals(((IResource) o).getFileExtension())) {
           if (!EntitlementUtils.isUserEntitled(user, EntitlementUtils.ENTIT_RETRIEVE_SAFLETS)) {
-            MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Not Entitled",
+            MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
                 "You do not have sufficient privileges to carry out this operation.");
             return;
           }
@@ -125,7 +125,7 @@ public class UpdateResourceAction extends ServerResourceAction {
 
         } else if (o instanceof HandlerEditPart) {
           if (!EntitlementUtils.isUserEntitled(user, EntitlementUtils.ENTIT_RETRIEVE_SAFLETS)) {
-            MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Not Entitled",
+            MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
                 "You do not have sufficient privileges to carry out this operation.");
             return;
           }
@@ -140,13 +140,13 @@ public class UpdateResourceAction extends ServerResourceAction {
           } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Update Error",
+            MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Update Error",
                 "Couldn't update Saflet: " + e.getLocalizedMessage());
             AsteriskDiagramEditorPlugin.getInstance().logError("Couldn't update Saflet", e);
           }
         } else if (o instanceof IProject) {
           if (!EntitlementUtils.isUserEntitled(user, EntitlementUtils.ENTIT_RETRIEVE_SAFLETS)) {
-            MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Not Entitled",
+            MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
                 "You do not have sufficient privileges to carry out this operation.");
             return;
           }
@@ -166,7 +166,7 @@ public class UpdateResourceAction extends ServerResourceAction {
             SafletPersistenceManager.getInstance().updateProject(project);
           } catch (Exception e) {
             e.printStackTrace();
-            MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Update Error",
+            MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Update Error",
                 "Couldn't update all project resources: " + e.getLocalizedMessage());
             AsteriskDiagramEditorPlugin.getInstance().logError("Update Project Error", e);
             return;
@@ -175,9 +175,9 @@ public class UpdateResourceAction extends ServerResourceAction {
         }
       }
       if (dbResourceUpdated)
-        AsteriskDiagramEditorUtil.getSafiNavigator().modelChanged(true);
+        SafiWorkshopEditorUtil.getSafiNavigator().modelChanged(true);
       else
-        AsteriskDiagramEditorUtil.getSafiNavigator().refresh();
+        SafiWorkshopEditorUtil.getSafiNavigator().refresh();
     }
 
   }

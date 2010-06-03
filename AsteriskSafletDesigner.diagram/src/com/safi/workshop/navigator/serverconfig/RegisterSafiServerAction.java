@@ -13,7 +13,7 @@ import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 import com.safi.db.server.config.SafiServer;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 
 public class RegisterSafiServerAction implements IWorkbenchWindowActionDelegate,
     IViewActionDelegate {
@@ -43,7 +43,7 @@ public class RegisterSafiServerAction implements IWorkbenchWindowActionDelegate,
     {
       SafiserverRegisterDialog safi = new SafiserverRegisterDialog(shell);
       safi.open();
-      AsteriskDiagramEditorUtil.getSafiNavigator().refresh();
+      SafiWorkshopEditorUtil.getSafiNavigator().refresh();
     }
 
   }

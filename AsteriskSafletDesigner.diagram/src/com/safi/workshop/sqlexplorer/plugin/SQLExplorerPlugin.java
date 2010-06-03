@@ -50,7 +50,7 @@ import com.safi.server.saflet.manager.DBManagerException;
 import com.safi.server.saflet.manager.DBResourceException;
 import com.safi.server.saflet.manager.ResourceModifiedException;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.sqlexplorer.ExplorerException;
 import com.safi.workshop.sqlexplorer.IConstants;
 import com.safi.workshop.sqlexplorer.SQLCannotConnectException;
@@ -165,7 +165,7 @@ public class SQLExplorerPlugin extends AbstractUIPlugin {
     driverManager = null;
     aliasManager = null;
     buildDBNavModel();
-    AsteriskDiagramEditorUtil.getSafiNavigator().modelChanged(SafiServerPlugin.getDefault().isConnected());
+    SafiWorkshopEditorUtil.getSafiNavigator().modelChanged(SafiServerPlugin.getDefault().isConnected());
   }
 
   public void buildDBNavModel() throws ExplorerException {
@@ -476,7 +476,7 @@ public class SQLExplorerPlugin extends AbstractUIPlugin {
       DBManager.touchChildren(oldConnection, now);
 
     }
-    AsteriskDiagramEditorUtil.getSafiNavigator().modelChanged(SafiServerPlugin.getDefault().isConnected());
+    SafiWorkshopEditorUtil.getSafiNavigator().modelChanged(SafiServerPlugin.getDefault().isConnected());
 
   }
 
@@ -489,7 +489,7 @@ public class SQLExplorerPlugin extends AbstractUIPlugin {
       rez = DBManager.getInstance().updateDBResource(safiDriverManager, query);
     } catch (DBManagerException e) {
       e.printStackTrace();
-      MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Update Error",
+      MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Update Error",
           "Couldn't update Query: " + e.getLocalizedMessage());
       AsteriskDiagramEditorPlugin.getInstance().logError("Couldn't update Query", e);
       return;
@@ -509,7 +509,7 @@ public class SQLExplorerPlugin extends AbstractUIPlugin {
       DBManager.touchChildren(rez, now);
     }
 
-    AsteriskDiagramEditorUtil.getSafiNavigator().modelChanged(SafiServerPlugin.getDefault().isConnected());
+    SafiWorkshopEditorUtil.getSafiNavigator().modelChanged(SafiServerPlugin.getDefault().isConnected());
 
   }
 
@@ -523,7 +523,7 @@ public class SQLExplorerPlugin extends AbstractUIPlugin {
       newVersion = DBManager.getInstance().updateDBResource(safiDriverManager, oldDriver);
     } catch (DBManagerException e) {
       e.printStackTrace();
-      MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Update Error",
+      MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Update Error",
           "Couldn't update DB Driver: " + e.getLocalizedMessage());
       AsteriskDiagramEditorPlugin.getInstance().logError("Couldn't update Driver", e);
       return;
@@ -647,7 +647,7 @@ public class SQLExplorerPlugin extends AbstractUIPlugin {
       // EcoreUtil.replace(oldDriver, newVersion);
     }
 
-    AsteriskDiagramEditorUtil.getSafiNavigator().modelChanged(SafiServerPlugin.getDefault().isConnected());
+    SafiWorkshopEditorUtil.getSafiNavigator().modelChanged(SafiServerPlugin.getDefault().isConnected());
 
   }
 
@@ -724,7 +724,7 @@ public class SQLExplorerPlugin extends AbstractUIPlugin {
 
         saveDBResourceHelper(alias.getConnection());
         SQLExplorerPlugin.getDefault().saveDBResources(false);
-        AsteriskDiagramEditorUtil.getSafiNavigator().modelChanged(SafiServerPlugin.getDefault().isConnected());
+        SafiWorkshopEditorUtil.getSafiNavigator().modelChanged(SafiServerPlugin.getDefault().isConnected());
       } catch (Exception e) {
         // TODO Auto-generated catch block
         e.printStackTrace();
@@ -744,7 +744,7 @@ public class SQLExplorerPlugin extends AbstractUIPlugin {
       try {
         saveDBResourceHelper(safiDriverManager);
         SQLExplorerPlugin.getDefault().saveDBResources(false);
-        AsteriskDiagramEditorUtil.getSafiNavigator().modelChanged(SafiServerPlugin.getDefault().isConnected());
+        SafiWorkshopEditorUtil.getSafiNavigator().modelChanged(SafiServerPlugin.getDefault().isConnected());
       } catch (Exception e) {
         // TODO Auto-generated catch block
         e.printStackTrace();
@@ -764,7 +764,7 @@ public class SQLExplorerPlugin extends AbstractUIPlugin {
 
         saveDBResourceHelper(driver.getDriver());
         SQLExplorerPlugin.getDefault().saveDBResources(false);
-        AsteriskDiagramEditorUtil.getSafiNavigator().modelChanged(SafiServerPlugin.getDefault().isConnected());
+        SafiWorkshopEditorUtil.getSafiNavigator().modelChanged(SafiServerPlugin.getDefault().isConnected());
       } catch (Exception e) {
         // TODO Auto-generated catch block
         e.printStackTrace();
@@ -782,7 +782,7 @@ public class SQLExplorerPlugin extends AbstractUIPlugin {
       try {
         saveDBResourceHelper(query);
         SQLExplorerPlugin.getDefault().saveDBResources(false);
-        AsteriskDiagramEditorUtil.getSafiNavigator().modelChanged(SafiServerPlugin.getDefault().isConnected());
+        SafiWorkshopEditorUtil.getSafiNavigator().modelChanged(SafiServerPlugin.getDefault().isConnected());
       } catch (Exception e) {
         // TODO Auto-generated catch block
         e.printStackTrace();

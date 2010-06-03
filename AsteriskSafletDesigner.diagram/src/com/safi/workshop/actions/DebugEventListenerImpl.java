@@ -17,7 +17,7 @@ import com.safi.server.saflet.mbean.ENotificationWrapper;
 import com.safi.server.saflet.mbean.EObjectReference;
 import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 
 public class DebugEventListenerImpl implements DebugEventListener {
 
@@ -56,7 +56,7 @@ public class DebugEventListenerImpl implements DebugEventListener {
               // }
             }
           } else {
-            Object[] a = AsteriskDiagramEditorUtil.getEObjectByID(uid);
+            Object[] a = SafiWorkshopEditorUtil.getEObjectByID(uid);
             if (a != null && a[0] != null) {
               EObject object = (EObject) a[0];
               EStructuralFeature feature = object.eClass().getEStructuralFeature(

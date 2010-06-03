@@ -88,10 +88,12 @@ import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributo
 import com.safi.db.DBConnection;
 import com.safi.db.Query;
 import com.safi.db.server.config.AsteriskServer;
+import com.safi.db.server.config.FreeSwitchServer;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.impl.SafiServerImpl;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.preferences.AsteriskConfigurationDialog;
+import com.safi.server.preferences.FreeSwitchConfigurationDialog;
 import com.safi.server.saflet.manager.DBManager;
 import com.safi.server.saflet.manager.EntitlementUtils;
 import com.safi.server.saflet.manager.PooledDataSourceManager;
@@ -99,14 +101,16 @@ import com.safi.workshop.application.DiagramEditorActionBarAdvisor;
 import com.safi.workshop.application.DiagramEditorWorkbenchAdvisor;
 import com.safi.workshop.navigator.ServerResourcesDecorator;
 import com.safi.workshop.navigator.serverconfig.AddAsteriskServerAction;
+import com.safi.workshop.navigator.serverconfig.AddFreeSwitchServerAction;
 import com.safi.workshop.navigator.serverconfig.AsteriskServerList;
+import com.safi.workshop.navigator.serverconfig.FreeSwitchServerList;
 import com.safi.workshop.navigator.serverconfig.SafiserverRegisterDialog;
 import com.safi.workshop.navigator.serverconfig.UserDialog;
 import com.safi.workshop.navigator.serverconfig.UserList;
 import com.safi.workshop.navigator.serverconfig.UserManagerAction;
 import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.sqlexplorer.SQLCannotConnectException;
 import com.safi.workshop.sqlexplorer.connections.actions.AbstractConnectionTreeAction;
 import com.safi.workshop.sqlexplorer.connections.actions.ChangeAliasAction;
@@ -309,12 +313,21 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
           else if (selected instanceof AsteriskServerList) {
             com.safi.db.server.config.User user = SafiServerPlugin.getDefault().getCurrentUser();
             if (!EntitlementUtils.isUserEntitled(user,
-                EntitlementUtils.ENTIT_MANAGE_ASTERISK_SERVERS)) {
-              MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Not Entitled",
+                EntitlementUtils.ENTIT_MANAGE_TELEPHONY_SERVERS)) {
+              MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
                   "You do not have sufficient privileges to carry out this operation.");
               return;
             }
             new AddAsteriskServerAction().run();
+          } else if (selected instanceof FreeSwitchServerList) {
+            com.safi.db.server.config.User user = SafiServerPlugin.getDefault().getCurrentUser();
+            if (!EntitlementUtils.isUserEntitled(user,
+                EntitlementUtils.ENTIT_MANAGE_TELEPHONY_SERVERS)) {
+              MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
+                  "You do not have sufficient privileges to carry out this operation.");
+              return;
+            }
+            new AddFreeSwitchServerAction().run();
           } else if (selected instanceof UserList) {
 
             new UserManagerAction().run();
@@ -344,8 +357,8 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
             {
               com.safi.db.server.config.User user = SafiServerPlugin.getDefault().getCurrentUser();
               if (!EntitlementUtils.isUserEntitled(user,
-                  EntitlementUtils.ENTIT_MANAGE_ASTERISK_SERVERS)) {
-                MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Not Entitled",
+                  EntitlementUtils.ENTIT_MANAGE_TELEPHONY_SERVERS)) {
+                MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
                     "You do not have sufficient privileges to carry out this operation.");
                 return;
               }
@@ -357,10 +370,28 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
                 refresh();
               }
             }
+          } else if (selected instanceof FreeSwitchServer) {
+          	FreeSwitchServer asteriskSelected = (FreeSwitchServer) selected;
+            {
+              com.safi.db.server.config.User user = SafiServerPlugin.getDefault().getCurrentUser();
+              if (!EntitlementUtils.isUserEntitled(user,
+                  EntitlementUtils.ENTIT_MANAGE_TELEPHONY_SERVERS)) {
+                MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
+                    "You do not have sufficient privileges to carry out this operation.");
+                return;
+              }
+              FreeSwitchConfigurationDialog astercfg = new FreeSwitchConfigurationDialog(_treeViewer
+                  .getTree().getShell(), asteriskSelected);
+              int result = astercfg.open();
+              if (result == Window.OK) {
+                astercfg.commit();
+                refresh();
+              }
+            }
           } else if (selected instanceof com.safi.db.server.config.User) {
             com.safi.db.server.config.User user = SafiServerPlugin.getDefault().getCurrentUser();
             if (!EntitlementUtils.isUserEntitled(user, EntitlementUtils.ENTIT_MANAGE_USERS)) {
-              MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Not Entitled",
+              MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
                   "You do not have sufficient privileges to carry out this operation.");
               return;
             }
@@ -1324,7 +1355,7 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
   public void init(IViewSite site, IMemento memento) throws PartInitException {
     // TODO Auto-generated method stub
     super.init(site, memento);
-    AsteriskDiagramEditorUtil.setSafiNavigator(this);
+    SafiWorkshopEditorUtil.setSafiNavigator(this);
   }
 
   public void resetPerspective() {
@@ -1402,10 +1433,10 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
   	if (part instanceof com.safi.workshop.part.AsteriskDiagramEditor) {
       AsteriskDiagramEditor ade = (AsteriskDiagramEditor) part;
       
-      AsteriskDiagramEditorUtil.setCurrentAsteriskEditor(ade);
+      SafiWorkshopEditorUtil.setCurrentAsteriskEditor(ade);
   	}
   	else 
-  		AsteriskDiagramEditorUtil.setCurrentAsteriskEditor(null);
+  		SafiWorkshopEditorUtil.setCurrentAsteriskEditor(null);
   	
     if (!this.isLinkingEnabled())
       return;

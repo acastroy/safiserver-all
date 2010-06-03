@@ -27,7 +27,7 @@ import org.eclipse.ui.progress.IWorkbenchSiteProgressService;
 import org.hibernate.Session;
 
 import com.safi.server.saflet.manager.DBManager;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.sqlexplorer.Messages;
 
 /**
@@ -142,7 +142,7 @@ public class CreateSessionJob extends Job {
    */
   public static void createSession(SessionEstablishedListener listener) {
     final CreateSessionJob bgJob = new CreateSessionJob(listener);
-    final IWorkbenchSite site = AsteriskDiagramEditorUtil.getSafiNavigator().getSite();
+    final IWorkbenchSite site = SafiWorkshopEditorUtil.getSafiNavigator().getSite();
 
     site.getShell().getDisplay().syncExec(new Runnable() {
       public void run() {

@@ -58,7 +58,7 @@ import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.preferences.PreferenceConstants;
 import com.safi.server.saflet.manager.DBManager;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 
 public class UserDialog extends TitleAreaDialog {
 
@@ -670,7 +670,7 @@ public class UserDialog extends TitleAreaDialog {
         SafiServerPlugin.getDefault().updateServerResources(new NullProgressMonitor());
       } else {
 
-        AsteriskDiagramEditorUtil.getSafiNavigator().refresh();
+        SafiWorkshopEditorUtil.getSafiNavigator().refresh();
       }
     } catch (final Exception e) {
       if (e instanceof HibernateException)

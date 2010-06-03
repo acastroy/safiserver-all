@@ -69,7 +69,7 @@ import com.safi.server.saflet.manager.DBManagerException;
 import com.safi.workshop.audio.utils.AudioUtils;
 import com.safi.workshop.audio.utils.PromptCache;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 
 public class PromptChooser extends Composite implements ISelectionChangedListener,
     PromptChangeListener {
@@ -282,7 +282,7 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
 				    ImportAudioFileWizard.Mode.EDIT, false);
 				Prompt prompt = (Prompt) selectedNode.serverResource;
 				ipt.setPrompt(prompt);
-				WizardDialog dlg = new WizardDialog(AsteriskDiagramEditorUtil.getActiveShell(),
+				WizardDialog dlg = new WizardDialog(SafiWorkshopEditorUtil.getActiveShell(),
 				    ipt);
 				int result = dlg.open();
 				if (result == Window.OK) {
@@ -367,7 +367,7 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
 			public void widgetSelected(final SelectionEvent e) {
 				ImportAudioFileWizard ipt = new ImportAudioFileWizard(
 				    ImportAudioFileWizard.Mode.NEW, false);
-				WizardDialog dlg = new WizardDialog(AsteriskDiagramEditorUtil.getActiveShell(),
+				WizardDialog dlg = new WizardDialog(SafiWorkshopEditorUtil.getActiveShell(),
 				    ipt);
 				int result = dlg.open();
 				if (result == WizardDialog.OK) {
@@ -656,12 +656,12 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
 		if (needsSynch && SafiServerPlugin.getDefault().hasAsteriskServers()) {
 			boolean b = MessageDialog
 			    .openQuestion(
-			        AsteriskDiagramEditorUtil.getActiveShell(),
+			        SafiWorkshopEditorUtil.getActiveShell(),
 			        "Synchronize Now?",
 			        "One or more prompts were changed and may need to be synchronized "
 			            + "with the Asterisk servers. Do you wish to synchronize audio prompts now?");
 			if (b) {
-				AudioUtils.synchronizePrompts(SafiServerPlugin.getDefault()
+				AudioUtils.synchronizeAsteriskPrompts(SafiServerPlugin.getDefault()
 				    .getAvailableAsteriskServers());
 			}
 		}
@@ -714,7 +714,7 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
 			    InterruptedException {
 				try {
 					monitor.beginTask("Retrieving Audio", IProgressMonitor.UNKNOWN);
-					final File f = AsteriskDiagramEditorUtil.getPromptFile(p);
+					final File f = SafiWorkshopEditorUtil.getPromptFile(p);
 					Display d = Display.getDefault();
 					d.asyncExec(new Runnable() {
 						@Override

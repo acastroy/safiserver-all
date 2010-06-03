@@ -26,7 +26,7 @@ import com.safi.db.DbPackage;
 import com.safi.workshop.navigator.PersistenceProperties;
 import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.util.SafletPersistenceManager;
 import com.safi.workshop.util.UpdateSafletException;
 
@@ -63,7 +63,7 @@ public abstract class ServerResourceAction implements IWorkbenchWindowActionDele
     } catch (Exception e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
-      MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Update Error",
+      MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Update Error",
           "Couldn't update Saflet: " + e.getLocalizedMessage());
       AsteriskDiagramEditorPlugin.getInstance().logError("Couldn't update Saflet", e);
     }

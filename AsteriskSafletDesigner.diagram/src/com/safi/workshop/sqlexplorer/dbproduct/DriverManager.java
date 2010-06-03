@@ -37,7 +37,7 @@ import com.safi.db.DBDriver;
 import com.safi.db.DbFactory;
 import com.safi.db.SafiDriverManager;
 import com.safi.server.plugin.SafiServerPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.sqlexplorer.ExplorerException;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
 import com.safi.workshop.sqlexplorer.util.URLUtil;
@@ -240,8 +240,8 @@ public class DriverManager {
     // if (SQLExplorerPlugin.getDefault().getConnectionsView(false) != null)
     // SQLExplorerPlugin.getDefault().getConnectionsView().refresh();
     // AsteriskDiagramEditorUtil.getSafiNavigator().getCommonViewer().refresh();
-    if (AsteriskDiagramEditorUtil.getSafiNavigator(false) != null)
-      AsteriskDiagramEditorUtil.getSafiNavigator(false).modelChanged(SafiServerPlugin.getDefault().isConnected());
+    if (SafiWorkshopEditorUtil.getSafiNavigator(false) != null)
+      SafiWorkshopEditorUtil.getSafiNavigator(false).modelChanged(SafiServerPlugin.getDefault().isConnected());
   }
 
   /**

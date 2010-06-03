@@ -36,7 +36,7 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.part.Messages;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin.ActionStepProfile;
 import com.safi.workshop.util.SafletPersistenceManager;
@@ -289,10 +289,10 @@ private IWorkbench workbench;
           //          
           // }
         }
-        diagram = AsteriskDiagramEditorUtil.createDiagram(newURI, asp, monitor);
+        diagram = SafiWorkshopEditorUtil.createDiagram(newURI, asp, monitor);
         if (openFileCheckbox.getSelection() && diagram != null) {
           try {
-            AsteriskDiagramEditorUtil.openDiagram(diagram);
+            SafiWorkshopEditorUtil.openDiagram(diagram);
           } catch (PartInitException e) {
             ErrorDialog.openError(getContainer().getShell(),
                 Messages.AsteriskCreationWizardOpenEditorError, null, e.getStatus());

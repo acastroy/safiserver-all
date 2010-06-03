@@ -16,7 +16,7 @@ import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.saflet.SafletContext;
 import com.safi.workshop.edit.parts.AudioFileItemEditPart;
 import com.safi.workshop.edit.parts.AudioFileItemLabelTextEditPart;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.sheet.DynamicValueEditor2;
 import com.safi.workshop.sheet.PromptChooserDynamicValueEditorPage;
 
@@ -44,7 +44,7 @@ public class EditAudioFilePolicy extends OpenEditPolicy {
       String expectedReturnType, String description, boolean isTypeLocked, String dynValueTypeStr,
       DynamicValue dynamicValue, SafletContext handlerContext, AudioFileItemEditPart part) {
 
-    DynamicValueEditor2 dve2 = new DynamicValueEditor2(AsteriskDiagramEditorUtil.getActiveShell());
+    DynamicValueEditor2 dve2 = new DynamicValueEditor2(SafiWorkshopEditorUtil.getActiveShell());
 
     dve2.setAttributeName(attributeName);
     dve2.setExpectedReturnType(expectedReturnType);

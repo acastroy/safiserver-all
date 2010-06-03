@@ -20,7 +20,7 @@ import com.safi.db.server.config.SafletProject;
 import com.safi.db.server.config.ServerResource;
 import com.safi.workshop.navigator.db.SelectSafletPanel;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.util.SafletPersistenceManager;
 
 public class SelectSafletDynamicValueEditorPage extends AbstractDynamicValueEditorPage {
@@ -89,7 +89,7 @@ public class SelectSafletDynamicValueEditorPage extends AbstractDynamicValueEdit
           SafletPersistenceManager.getInstance().addOrUpdateSaflets(entry.getKey(),
               entry.getValue(), false, false);
         } catch (Exception e) {
-          MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Retrieve Error",
+          MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Retrieve Error",
               "Couldn't retrieve Saflet: " + e.getLocalizedMessage());
           AsteriskDiagramEditorPlugin.getInstance().logError("Couldn't retrieve Saflet", e);
         }

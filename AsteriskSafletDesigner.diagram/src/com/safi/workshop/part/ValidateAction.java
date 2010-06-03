@@ -94,7 +94,7 @@ public class ValidateAction extends Action {
    */
   public static void runValidation(View view) {
     try {
-      if (AsteriskDiagramEditorUtil.openDiagram(view.eResource())) {
+      if (SafiWorkshopEditorUtil.openDiagram(view.eResource())) {
         IEditorPart editorPart = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
             .getActivePage().getActiveEditor();
         if (editorPart instanceof IDiagramWorkbenchPart) {
@@ -181,12 +181,12 @@ public class ValidateAction extends Action {
     }
     final IStatus rootStatus = validationStatus;
     List allStatuses = new ArrayList();
-    AsteriskDiagramEditorUtil.LazyElement2ViewMap element2ViewMap = new AsteriskDiagramEditorUtil.LazyElement2ViewMap(
+    SafiWorkshopEditorUtil.LazyElement2ViewMap element2ViewMap = new SafiWorkshopEditorUtil.LazyElement2ViewMap(
         diagramEditPart.getDiagramView(), collectTargetElements(rootStatus, new HashSet(),
             allStatuses));
     for (Iterator it = allStatuses.iterator(); it.hasNext();) {
       IConstraintStatus nextStatus = (IConstraintStatus) it.next();
-      View view = AsteriskDiagramEditorUtil.findView(diagramEditPart, nextStatus.getTarget(),
+      View view = SafiWorkshopEditorUtil.findView(diagramEditPart, nextStatus.getTarget(),
           element2ViewMap);
       addMarker(diagramEditPart.getViewer(), target, view.eResource().getURIFragment(view),
           EMFCoreUtil.getQualifiedName(nextStatus.getTarget(), true), nextStatus.getMessage(),
@@ -204,7 +204,7 @@ public class ValidateAction extends Action {
     }
     final Diagnostic rootStatus = emfValidationStatus;
     List allDiagnostics = new ArrayList();
-    AsteriskDiagramEditorUtil.LazyElement2ViewMap element2ViewMap = new AsteriskDiagramEditorUtil.LazyElement2ViewMap(
+    SafiWorkshopEditorUtil.LazyElement2ViewMap element2ViewMap = new SafiWorkshopEditorUtil.LazyElement2ViewMap(
         diagramEditPart.getDiagramView(), collectTargetElements(rootStatus, new HashSet(),
             allDiagnostics));
     for (Object element2 : emfValidationStatus.getChildren()) {
@@ -212,7 +212,7 @@ public class ValidateAction extends Action {
       List data = nextDiagnostic.getData();
       if (data != null && !data.isEmpty() && data.get(0) instanceof EObject) {
         EObject element = (EObject) data.get(0);
-        View view = AsteriskDiagramEditorUtil.findView(diagramEditPart, element, element2ViewMap);
+        View view = SafiWorkshopEditorUtil.findView(diagramEditPart, element, element2ViewMap);
         addMarker(diagramEditPart.getViewer(), target, view.eResource().getURIFragment(view),
             EMFCoreUtil.getQualifiedName(element, true), nextDiagnostic.getMessage(),
             diagnosticToStatusSeverity(nextDiagnostic.getSeverity()));

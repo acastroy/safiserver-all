@@ -33,7 +33,7 @@ import org.eclipse.ui.internal.ide.StatusUtil;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.application.ChooseSafiServerWorkspaceData.SafiWorkspaceProfile;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.preferences.AudioControlsPrefPage;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
 
@@ -551,7 +551,7 @@ public class AsteriskApplication implements IApplication {
               } catch (Exception e) {
                 AsteriskDiagramEditorPlugin.getInstance().logError("Error in pre-startup", e);
               }
-              AsteriskDiagramEditorUtil.initializePalette();
+              SafiWorkshopEditorUtil.initializePalette();
               // AsteriskDiagramEditorUtil.getSafiNavigator().switchToSafletPerspective();
               // AsteriskDiagramEditorUtil.getSafiNavigator().switchToSafletPerspective();
             }
@@ -572,9 +572,9 @@ public class AsteriskApplication implements IApplication {
 
               AsteriskDiagramEditorPlugin.getInstance().setDebugListener(
                   new com.safi.workshop.actions.DebugEventListenerImpl());
-              AsteriskDiagramEditorUtil.initializePalette();
+              SafiWorkshopEditorUtil.initializePalette();
               // AsteriskDiagramEditorUtil.getSafiNavigator().switchToSafletPerspective();
-              AsteriskDiagramEditorUtil.getSafiNavigator().refresh();
+              SafiWorkshopEditorUtil.getSafiNavigator().refresh();
 
               // SafiJavaScriptEditor jeditor = new SafiJavaScriptEditor();
 

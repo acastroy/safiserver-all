@@ -6,7 +6,7 @@ import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 
 public class ExportWorkspaceAction implements IWorkbenchWindowActionDelegate {
 
@@ -25,7 +25,7 @@ public class ExportWorkspaceAction implements IWorkbenchWindowActionDelegate {
   @Override
   public void run(IAction action) {
     SafiWorkspaceExportWizard wizard = new SafiWorkspaceExportWizard();
-    WizardDialog dlg = new WizardDialog(AsteriskDiagramEditorUtil.getActiveShell(), wizard);
+    WizardDialog dlg = new WizardDialog(SafiWorkshopEditorUtil.getActiveShell(), wizard);
     dlg.open();
 
   }

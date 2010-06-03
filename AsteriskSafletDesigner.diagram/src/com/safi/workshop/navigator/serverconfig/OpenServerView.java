@@ -10,7 +10,7 @@ import com.safi.db.server.config.SafiServer;
 import com.safi.server.manager.SafiServerRemoteManager;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 
 public class OpenServerView implements org.eclipse.ui.IViewActionDelegate {
 
@@ -27,7 +27,7 @@ public class OpenServerView implements org.eclipse.ui.IViewActionDelegate {
   @Override
   public void run(IAction action) {
     if (!SafiServerRemoteManager.getInstance().isConnected()) {
-      MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Not Connected",
+      MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Connected",
           "You are not currently connected to a production SafiServer");
       return;
     }
@@ -38,7 +38,7 @@ public class OpenServerView implements org.eclipse.ui.IViewActionDelegate {
     } catch (Exception e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
-      MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(),
+      MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(),
           "Couldn't Open SafiServer View", "The SafiServer View could not be opened: "
               + e.getLocalizedMessage());
       return;

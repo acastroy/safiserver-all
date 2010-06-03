@@ -7,7 +7,7 @@ import org.eclipse.ui.IWorkbenchPage;
 
 import com.safi.workshop.SafiNavigator;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.sqlexplorer.IConstants;
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.dbproduct.Alias;
@@ -79,7 +79,7 @@ public class OpenInEditorAction extends AbstractHistoryContextAction {
         if (alias != null)
           user = alias.getDefaultUser();
         if (user == null) {
-          SafiNavigator nav = AsteriskDiagramEditorUtil.getSafiNavigator();
+          SafiNavigator nav = SafiWorkshopEditorUtil.getSafiNavigator();
           if (nav != null)
             user = nav.getDefaultUser();
 

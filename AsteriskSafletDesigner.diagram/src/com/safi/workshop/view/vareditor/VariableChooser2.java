@@ -54,7 +54,7 @@ import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.edit.parts.HandlerEditPart;
 import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 
 public class VariableChooser2 extends Composite implements org.eclipse.emf.common.notify.Adapter {
 
@@ -654,7 +654,7 @@ public class VariableChooser2 extends Composite implements org.eclipse.emf.commo
           SafiServerPlugin.getDefault().deleteGlobalVariable(var);
         } catch (Exception e) {
           e.printStackTrace();
-          MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(),
+          MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(),
               "Delete Global Var Error", "Couldn't delete global variable "
                   + e.getLocalizedMessage());
         }

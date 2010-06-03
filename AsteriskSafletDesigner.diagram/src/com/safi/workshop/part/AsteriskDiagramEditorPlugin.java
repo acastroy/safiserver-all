@@ -152,7 +152,7 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 			@Override
 			public void resourcesChanged() {
 				updateWindowTitle();
-				AsteriskDiagramEditorUtil.getSafiNavigator().refresh();
+				SafiWorkshopEditorUtil.getSafiNavigator().refresh();
 			}
 
 			@Override
@@ -164,7 +164,7 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 				// }
 				updateServerView(connected, false);
 				// if (connected)
-				AsteriskDiagramEditorUtil.getSafiNavigator().modelChanged(connected);
+				SafiWorkshopEditorUtil.getSafiNavigator().modelChanged(connected);
 				// if (connected){
 				// }
 				// else

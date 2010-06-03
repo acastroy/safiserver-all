@@ -86,7 +86,7 @@ import com.safi.workshop.edit.policies.HandlerCanonicalEditPolicy;
 import com.safi.workshop.edit.policies.HandlerItemSemanticEditPolicy;
 import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.routing.Anchor;
 import com.safi.workshop.routing.Grid;
 import com.safi.workshop.routing.Line;
@@ -580,7 +580,7 @@ public class HandlerEditPart extends DiagramEditPart {
                     + " of this Saflet, the editor must be closed. Do you want to continue?")) {
               Resource resource = getHandlerModel().eResource();
               IFile file = WorkspaceSynchronizer.getUnderlyingFile(resource);
-              AsteriskDiagramEditor editor = AsteriskDiagramEditorUtil.getEditorForResource(file);
+              AsteriskDiagramEditor editor = SafiWorkshopEditorUtil.getEditorForResource(file);
               editor.doSave(new NullProgressMonitor());
               try {
                 IPath newPath = file.getParent().getFullPath().append(
@@ -607,7 +607,7 @@ public class HandlerEditPart extends DiagramEditPart {
   }
 
   private void showActiveFeedback() {
-    AsteriskDiagramEditorUtil.activateWorkbenchShell();
+    SafiWorkshopEditorUtil.activateWorkbenchShell();
   }
 
   public Saflet getHandlerModel() {

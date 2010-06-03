@@ -36,7 +36,7 @@ import com.safi.db.DbFactory;
 import com.safi.db.Query;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.SafiNavigator;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.sqlexplorer.SQLCannotConnectException;
 import com.safi.workshop.sqlexplorer.connections.SessionEstablishedAdapter;
 import com.safi.workshop.sqlexplorer.connections.SessionEstablishedListener;
@@ -88,7 +88,7 @@ public class NewQueryAction extends AbstractConnectionTreeAction {
 
       connection = alias.getConnection();
       final DBConnection fconn = connection;
-      InputDialog dlg = new InputDialog(AsteriskDiagramEditorUtil.getActiveShell(), "New Query",
+      InputDialog dlg = new InputDialog(SafiWorkshopEditorUtil.getActiveShell(), "New Query",
           "Enter a new query name", connection.getUniqueQueryName(queryName),
           new IInputValidator() {
             @Override

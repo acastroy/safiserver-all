@@ -14,7 +14,7 @@ import com.safi.core.actionstep.ActionStep;
 import com.safi.server.saflet.mbean.DebugRemoteControl;
 import com.safi.workshop.edit.parts.ToolstepEditPart;
 import com.safi.workshop.part.AsteriskDiagramEditor;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 
 public class ToggleBreakpointAction implements IObjectActionDelegate {
 
@@ -52,7 +52,7 @@ public class ToggleBreakpointAction implements IObjectActionDelegate {
           ctrl.setBreakPoint(uid, b);
         } catch (Exception e) {
           e.printStackTrace();
-          MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(),
+          MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(),
               "Set Breakpoint Error", "Couldn't set breakpoint on ActionStep " + step.getName()
                   + ": " + e.getLocalizedMessage());
         }

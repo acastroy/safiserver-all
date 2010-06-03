@@ -36,6 +36,7 @@ import com.safi.db.DBConnection;
 import com.safi.db.DBResource;
 import com.safi.db.Query;
 import com.safi.db.server.config.AsteriskServer;
+import com.safi.db.server.config.FreeSwitchServer;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.ServerResource;
 import com.safi.server.plugin.SafiServerPlugin;
@@ -43,7 +44,7 @@ import com.safi.server.saflet.manager.DBManager;
 import com.safi.server.saflet.manager.EntitlementUtils;
 import com.safi.workshop.SafiNavigator;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.sqlexplorer.dbproduct.Alias;
 import com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver;
 import com.safi.workshop.sqlexplorer.dbproduct.User;
@@ -65,7 +66,7 @@ public class DeleteAction extends AbstractConnectionTreeAction {
 
   @Override
   public void run() {
-    SafiNavigator nav = AsteriskDiagramEditorUtil.getSafiNavigator();
+    SafiNavigator nav = SafiWorkshopEditorUtil.getSafiNavigator();
     IStructuredSelection viewerSelection = nav.getViewerSelection();
     if (viewerSelection.isEmpty())
       return;
@@ -130,7 +131,7 @@ public class DeleteAction extends AbstractConnectionTreeAction {
       boolean isConnected = SafiServerPlugin.getDefault().isConnected();
       
       if (isConnected && !EntitlementUtils.isUserEntitled(user, EntitlementUtils.ENTIT_PUBLISH_DB_RESOURCES)) {
-        MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Not Entitled",
+        MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
             "You do not have sufficient privileges to carry out this operation.");
         return;
       }
@@ -150,7 +151,7 @@ public class DeleteAction extends AbstractConnectionTreeAction {
           alias.getConnection().setLastModified(new Date());
           if (deletePref != 2 && deletePref != 3 && isConnected
               && alias.getConnection().getId() != -1) {
-            MessageDialog dialog = new MessageDialog(AsteriskDiagramEditorUtil.getActiveShell(),
+            MessageDialog dialog = new MessageDialog(SafiWorkshopEditorUtil.getActiveShell(),
                 "Delete From Server?", null, "Do you want to delete database connection "
                     + alias.getName() + " from the production SafiServer?", SWT.ICON_QUESTION,
                 new String[] { "YES", "NO", "YES TO ALL", "NO TO ALL", "CANCEL" }, 1);
@@ -161,17 +162,17 @@ public class DeleteAction extends AbstractConnectionTreeAction {
           try {
             alias.remove(deletePref == 0 || deletePref == 2, true);
           } catch (Exception e) {
-            MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Delete Failed",
+            MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Delete Failed",
                 "Couldn't delete alias " + alias.getName() + ": " + e.getLocalizedMessage());
             AsteriskDiagramEditorPlugin.getInstance().logError("Couldn't delete alias", e);
           }
           for (Query query : queries) {
-            AsteriskDiagramEditorUtil.closeSQLEditors(query);
+            SafiWorkshopEditorUtil.closeSQLEditors(query);
           }
         } else if (o instanceof Query) {
           Query query = (Query) o;
           if (deletePref != 2 && deletePref != 3 && isConnected && query.getId() != -1) {
-            MessageDialog dialog = new MessageDialog(AsteriskDiagramEditorUtil.getActiveShell(),
+            MessageDialog dialog = new MessageDialog(SafiWorkshopEditorUtil.getActiveShell(),
                 "Delete From Server?", null, "Do you want to delete database query "
                     + query.getName() + " from the production SafiServer?", SWT.ICON_QUESTION,
                 new String[] { "YES", "NO", "YES TO ALL", "NO TO ALL", "CANCEL" }, 1);
@@ -184,7 +185,7 @@ public class DeleteAction extends AbstractConnectionTreeAction {
             try {
               SQLExplorerPlugin.getDefault().deleteDBResource(query);
             } catch (Exception e) {
-              MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Delete Failed",
+              MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Delete Failed",
                   "Couldn't delete query " + query.getName() + ": " + e.getLocalizedMessage());
               AsteriskDiagramEditorPlugin.getInstance().logError(
                   "Couldn't delete query " + query.getName(), e);
@@ -192,13 +193,13 @@ public class DeleteAction extends AbstractConnectionTreeAction {
           }
           query.getConnection().setLastModified(new Date()); 
           query.getConnection().getQueries().remove(query);
-          AsteriskDiagramEditorUtil.closeSQLEditors(query);
+          SafiWorkshopEditorUtil.closeSQLEditors(query);
         } else if (o instanceof ManagedDriver) {
           ManagedDriver driver = (ManagedDriver) o;
           if (driver.getDriver() != null && !driver.getDriver().isDefault()) {
             if (deletePref != 2 && deletePref != 3 && isConnected
                 && driver.getDriver().getId() != -1) {
-              MessageDialog dialog = new MessageDialog(AsteriskDiagramEditorUtil.getActiveShell(),
+              MessageDialog dialog = new MessageDialog(SafiWorkshopEditorUtil.getActiveShell(),
                   "Delete From Server?", null, "Do you want to delete database driver "
                       + driver.getDriver().getName() + " from the production SafiServer?",
                   SWT.ICON_QUESTION, new String[] { "YES", "NO", "YES TO ALL", "NO TO ALL",
@@ -211,7 +212,7 @@ public class DeleteAction extends AbstractConnectionTreeAction {
               try {
                 SQLExplorerPlugin.getDefault().deleteDBResource(driver.getDriver());
               } catch (Exception e) {
-                MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(),
+                MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(),
                     "Delete Failed", "Couldn't delete query " + driver.getDriver().getName() + ": "
                         + e.getLocalizedMessage());
                 AsteriskDiagramEditorPlugin.getInstance().logError(
@@ -238,18 +239,18 @@ public class DeleteAction extends AbstractConnectionTreeAction {
       }
       if (production != null) {
         removeChildren(serverResources);
-        boolean checkedAsterisk = false;
+        boolean checkedTelEntit = false;
         boolean checkedUsers = false;
         for (ServerResource r : serverResources) {
-          if (r instanceof AsteriskServer) {
-            if (!checkedAsterisk) {
+        	if (r instanceof AsteriskServer) {
+            if (!checkedTelEntit) {
               if (!EntitlementUtils.isUserEntitled(user,
-                  EntitlementUtils.ENTIT_MANAGE_ASTERISK_SERVERS)) {
-                MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Not Entitled",
+                  EntitlementUtils.ENTIT_MANAGE_TELEPHONY_SERVERS)) {
+                MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
                     "You do not have sufficient privileges to carry out this operation.");
                 return;
               } else
-                checkedAsterisk = true;
+                checkedTelEntit = true;
             }
             if (!production.getAsteriskServers().remove(r)) {
               MessageDialog.openInformation(Display.getCurrent().getActiveShell(), "Can't Delete",
@@ -257,10 +258,26 @@ public class DeleteAction extends AbstractConnectionTreeAction {
               continue;
             } else
               deleted.add(r);
+          } else if (r instanceof FreeSwitchServer) {
+            if (!checkedTelEntit) {
+              if (!EntitlementUtils.isUserEntitled(user,
+                  EntitlementUtils.ENTIT_MANAGE_TELEPHONY_SERVERS)) {
+                MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
+                    "You do not have sufficient privileges to carry out this operation.");
+                return;
+              } else
+                checkedTelEntit = true;
+            }
+            if (!production.getFreeSwitchServers().remove(r)) {
+              MessageDialog.openInformation(Display.getCurrent().getActiveShell(), "Can't Delete",
+                  "An error has occurred. The FreeSWITCH server instance could not be deleted");
+              continue;
+            } else
+              deleted.add(r);
           } else if (r instanceof com.safi.db.server.config.User) {
             if (!checkedUsers) {
               if (!EntitlementUtils.isUserEntitled(user, EntitlementUtils.ENTIT_MANAGE_USERS)) {
-                MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Not Entitled",
+                MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
                     "You do not have sufficient privileges to carry out this operation.");
                 return;
               } else
@@ -294,7 +311,7 @@ public class DeleteAction extends AbstractConnectionTreeAction {
   			SafiServerPlugin.getDefault().updateServerResources(new NullProgressMonitor());
   		} catch (Exception e) {
   			e.printStackTrace();
-  			MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Database Error",
+  			MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Database Error",
   			    "Couldn't refresh from production SafiServer: " + e.getLocalizedMessage());
   			return;
   		}
@@ -430,7 +447,7 @@ public class DeleteAction extends AbstractConnectionTreeAction {
    */
   @Override
   public boolean isAvailable() {
-    SafiNavigator nav = AsteriskDiagramEditorUtil.getSafiNavigator();
+    SafiNavigator nav = SafiWorkshopEditorUtil.getSafiNavigator();
     IStructuredSelection viewerSelection = nav.getViewerSelection();
     if (viewerSelection == null || viewerSelection.isEmpty())
       return false;

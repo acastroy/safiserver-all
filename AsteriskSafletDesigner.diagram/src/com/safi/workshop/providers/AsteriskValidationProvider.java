@@ -42,7 +42,7 @@ import com.safi.workshop.edit.parts.ToolstepEditPart;
 import com.safi.workshop.expressions.AsteriskAbstractExpression;
 import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.part.AsteriskVisualIDRegistry;
 import com.safi.workshop.part.ValidateAction;
 
@@ -386,11 +386,11 @@ public class AsteriskValidationProvider extends AbstractContributionItemProvider
         @Override
         protected Object doEvaluate(Object context, Map env) {
           ActionStep self = (ActionStep) context;
-          IResource resource = AsteriskDiagramEditorUtil.getCoreResourceForEMFResource(self
+          IResource resource = SafiWorkshopEditorUtil.getCoreResourceForEMFResource(self
               .eResource());
           if (resource == null)
             return Boolean.TRUE;
-          AsteriskDiagramEditor editor = AsteriskDiagramEditorUtil.getEditorForResource(resource);
+          AsteriskDiagramEditor editor = SafiWorkshopEditorUtil.getEditorForResource(resource);
           if (editor != null && !editor.getHandlerEditPart().isDebug()) {
             ToolstepEditPart part = editor.getHandlerEditPart().getToolstepEditPart(self);
             if (part != null) {
@@ -453,7 +453,7 @@ public class AsteriskValidationProvider extends AbstractContributionItemProvider
         protected Object doEvaluate(Object context, Map env) {
           CaseItem self = (CaseItem) context;
 
-          IResource resource = AsteriskDiagramEditorUtil.getCoreResourceForEMFResource(self
+          IResource resource = SafiWorkshopEditorUtil.getCoreResourceForEMFResource(self
               .eResource());
           if (resource == null)
             return Boolean.TRUE;

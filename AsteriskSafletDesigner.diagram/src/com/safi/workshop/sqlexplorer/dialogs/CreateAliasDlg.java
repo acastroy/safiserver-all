@@ -51,7 +51,7 @@ import org.eclipse.swt.widgets.Text;
 
 import com.safi.db.DBConnection;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.sqlexplorer.ExplorerException;
 import com.safi.workshop.sqlexplorer.IConstants;
 import com.safi.workshop.sqlexplorer.Messages;
@@ -269,12 +269,12 @@ public class CreateAliasDlg extends TitleAreaDialog {
 
       @Override
       public void widgetSelected(SelectionEvent event) {
-        DriverMaintenanceDialog dlg = new DriverMaintenanceDialog(AsteriskDiagramEditorUtil
+        DriverMaintenanceDialog dlg = new DriverMaintenanceDialog(SafiWorkshopEditorUtil
             .getActiveShell());
         int result = dlg.open();
         if (result == Window.OK) {
           populateCombo();
-          AsteriskDiagramEditorUtil.getSafiNavigator().refresh();
+          SafiWorkshopEditorUtil.getSafiNavigator().refresh();
         }
       }
     });

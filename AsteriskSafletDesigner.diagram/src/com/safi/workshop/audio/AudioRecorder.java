@@ -45,7 +45,7 @@ import com.safi.workshop.audio.utils.AudioException;
 import com.safi.workshop.audio.utils.AudioUtils;
 import com.safi.workshop.audio.utils.RecordableClip;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.preferences.AudioControlsPrefPage;
 import com.safi.workshop.preferences.AudioDevicesPrefPage;
 import com.safi.workshop.preferences.AudioControlsPrefPage.ControlItem;
@@ -443,7 +443,7 @@ public class AudioRecorder extends Composite {
       if (clip == null)
         initClip();
       else {
-        MessageDialog dlg = new MessageDialog(AsteriskDiagramEditorUtil.getActiveShell(),
+        MessageDialog dlg = new MessageDialog(SafiWorkshopEditorUtil.getActiveShell(),
             "Recording Exists", null, "An existing recording exists", MessageDialog.QUESTION,
             new String[] { "Overwrite", "Append", "Cancel" }, 1);
         int result = dlg.open();

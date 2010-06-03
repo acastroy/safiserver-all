@@ -44,7 +44,7 @@ import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletContext;
 import com.safi.workshop.edit.parts.HandlerEditPart;
 import com.safi.workshop.part.AsteriskDiagramEditor;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 
 public class SafiJavaScriptCompletionEngine extends JavaScriptCompletionEngine {
 
@@ -126,7 +126,7 @@ public class SafiJavaScriptCompletionEngine extends JavaScriptCompletionEngine {
 		module = null;
 	}
     
-    AsteriskDiagramEditor currentEditor  = AsteriskDiagramEditorUtil.getCurrentAsteriskEditor();
+    AsteriskDiagramEditor currentEditor  = SafiWorkshopEditorUtil.getCurrentAsteriskEditor();
 //    IEditorPart editor = AsteriskDiagramEditorPlugin.getInstance().getWorkbench()
 //        .getActiveWorkbenchWindow().getActivePage().getActiveEditor();
     SafletContext context = null;

@@ -35,7 +35,7 @@ import com.safi.server.saflet.manager.DBManagerException;
 import com.safi.workshop.audio.ImportPromptStartPage.ImportMode;
 import com.safi.workshop.audio.utils.AudioUtils;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 
 public class ImportAudioFileWizard extends Wizard implements IImportWizard {
   public enum Mode {
@@ -175,7 +175,7 @@ public class ImportAudioFileWizard extends Wizard implements IImportWizard {
     }
     if (promptFile != null) {
       try {
-        AsteriskDiagramEditorUtil.uploadPromptFile(prompt, promptFile);
+        SafiWorkshopEditorUtil.uploadPromptFile(prompt, promptFile);
       } catch (Exception e1) {
         e1.printStackTrace();
         MessageDialog.openError(getShell(), "Save Error", "Couldn't upload file "
@@ -185,12 +185,12 @@ public class ImportAudioFileWizard extends Wizard implements IImportWizard {
     }
 
     if (promptForSynch && SafiServerPlugin.getDefault().hasAsteriskServers()) {
-      shell = AsteriskDiagramEditorUtil.getActiveShell();
+      shell = SafiWorkshopEditorUtil.getActiveShell();
       boolean b = MessageDialog.openQuestion(shell, "Synchronize Now?",
           "One or more prompts were changed and may need to be synchronized "
               + "with the Asterisk servers. Do you wish to synchronize audio prompts now?");
       if (b) {
-        AudioUtils.synchronizePrompts(SafiServerPlugin.getDefault().getAvailableAsteriskServers());
+        AudioUtils.synchronizeAsteriskPrompts(SafiServerPlugin.getDefault().getAvailableAsteriskServers());
       }
     }
     return true;

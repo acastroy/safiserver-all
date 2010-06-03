@@ -112,10 +112,10 @@ public class AsteriskCreationWizard extends Wizard implements INewWizard {
 
       public void run(IProgressMonitor monitor) throws InvocationTargetException,
           InterruptedException {
-        diagram = AsteriskDiagramEditorUtil.createDiagram(diagramModelFilePage.getURI(), monitor);
+        diagram = SafiWorkshopEditorUtil.createDiagram(diagramModelFilePage.getURI(), monitor);
         if (isOpenNewlyCreatedDiagramEditor() && diagram != null) {
           try {
-            AsteriskDiagramEditorUtil.openDiagram(diagram);
+            SafiWorkshopEditorUtil.openDiagram(diagram);
           } catch (PartInitException e) {
             ErrorDialog.openError(getContainer().getShell(),
                 Messages.AsteriskCreationWizardOpenEditorError, null, e.getStatus());

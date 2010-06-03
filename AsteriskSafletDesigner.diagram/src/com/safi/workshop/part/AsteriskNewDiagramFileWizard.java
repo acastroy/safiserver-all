@@ -75,7 +75,7 @@ public class AsteriskNewDiagramFileWizard extends Wizard {
       throw new IllegalArgumentException("Unsupported URI: " + domainModelURI); //$NON-NLS-1$
     }
     myFileCreationPage.setContainerFullPath(filePath);
-    myFileCreationPage.setFileName(AsteriskDiagramEditorUtil.getUniqueFileName(filePath, fileName,
+    myFileCreationPage.setFileName(SafiWorkshopEditorUtil.getUniqueFileName(filePath, fileName,
         "saflet")); //$NON-NLS-1$
 
     diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(
@@ -132,8 +132,8 @@ public class AsteriskNewDiagramFileWizard extends Wizard {
     try {
       OperationHistoryFactory.getOperationHistory().execute(command, new NullProgressMonitor(),
           null);
-      diagramResource.save(AsteriskDiagramEditorUtil.getSaveOptions());
-      AsteriskDiagramEditorUtil.openDiagram(diagramResource);
+      diagramResource.save(SafiWorkshopEditorUtil.getSaveOptions());
+      SafiWorkshopEditorUtil.openDiagram(diagramResource);
     } catch (ExecutionException e) {
       AsteriskDiagramEditorPlugin.getInstance().logError("Unable to create model and diagram", e); //$NON-NLS-1$
     } catch (IOException ex) {

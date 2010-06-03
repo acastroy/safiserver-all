@@ -19,7 +19,7 @@ import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.TreeColumn;
 import org.eclipse.swt.widgets.TreeItem;
 
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.sqlexplorer.Messages;
 
 public class TreeResultsTable extends AbstractResultsTable {
@@ -290,7 +290,7 @@ public class TreeResultsTable extends AbstractResultsTable {
   @Override
   public void copyToClipboard() {
 
-    Clipboard clipBoard = AsteriskDiagramEditorUtil.getSafiNavigator().getClipboard();
+    Clipboard clipBoard = SafiWorkshopEditorUtil.getSafiNavigator().getClipboard();
     TextTransfer textTransfer = TextTransfer.getInstance();
 
     Tree tree = treeViewer.getTree();

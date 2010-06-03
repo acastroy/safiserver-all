@@ -10,7 +10,7 @@ import com.safi.db.VariableScope;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.saflet.manager.DBManager;
 import com.safi.server.saflet.manager.DBManagerException;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 
 public class VariableRemoveCommand extends AbstractOverrideableCommand {
   private Variable newVariable;
@@ -31,7 +31,7 @@ public class VariableRemoveCommand extends AbstractOverrideableCommand {
       } catch (Exception e) {
         // TODO Auto-generated catch block
         e.printStackTrace();
-        MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(),
+        MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(),
             "Couldn't Delete Global Var", "Couldn't delete global variable "
                 + newVariable.getName() + ": " + e.getLocalizedMessage());
       }
@@ -52,7 +52,7 @@ public class VariableRemoveCommand extends AbstractOverrideableCommand {
       } catch (DBManagerException e) {
         // TODO Auto-generated catch block
         e.printStackTrace();
-        MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(),
+        MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(),
             "Couldn't Add Global Var", "Couldn't add global variable " + newVariable.getName()
                 + ": " + e.getLocalizedMessage());
       }

@@ -96,7 +96,7 @@ import com.safi.workshop.util.SafletPersistenceManager;
 /**
  * @generated
  */
-public class AsteriskDiagramEditorUtil {
+public class SafiWorkshopEditorUtil {
 
   private static Map<Integer, File> promptCache = new HashMap<Integer, File>();
   
@@ -107,7 +107,7 @@ public class AsteriskDiagramEditorUtil {
   }
 
 	public synchronized static void setCurrentAsteriskEditor(AsteriskDiagramEditor currentAsteriskEditor) {
-  	AsteriskDiagramEditorUtil.currentAsteriskEditor = currentAsteriskEditor;
+  	SafiWorkshopEditorUtil.currentAsteriskEditor = currentAsteriskEditor;
   }
 
 	/**
@@ -191,7 +191,7 @@ public class AsteriskDiagramEditorUtil {
           workbenchPage.showView(viewId, null, IWorkbenchPage.VIEW_CREATE);
         } catch (PartInitException pie) {
           Trace.catching(CommonUIPlugin.getDefault(), CommonUIDebugOptions.EXCEPTIONS_CATCHING,
-              AsteriskDiagramEditorUtil.class, pie.getMessage(), pie);
+              SafiWorkshopEditorUtil.class, pie.getMessage(), pie);
           Log.warning(CommonUIPlugin.getDefault(), CommonUIStatusCodes.GENERAL_UI_FAILURE, pie
               .getMessage(), pie);
           String message = MessageFormat.format(
@@ -366,7 +366,7 @@ public class AsteriskDiagramEditorUtil {
 
         try {
 
-          diagramResource.save(com.safi.workshop.part.AsteriskDiagramEditorUtil.getSaveOptions());
+          diagramResource.save(com.safi.workshop.part.SafiWorkshopEditorUtil.getSaveOptions());
           try {
             WorkspaceSynchronizer.getFile(diagramResource).setPersistentProperty(
                 SafletPersistenceManager.SAFLET_NAME_KEY, safletName);
@@ -676,7 +676,7 @@ public class AsteriskDiagramEditorUtil {
     FileUtils.copyFile(currentPath, tempFile.getAbsolutePath());
     // AsteriskDiagramEditorUtil.copy(currentPath, tempFile.getAbsolutePath());
 
-    AsteriskDiagramEditorUtil.openDiagram(URI.createFileURI(tempFile.getAbsolutePath()), true,
+    SafiWorkshopEditorUtil.openDiagram(URI.createFileURI(tempFile.getAbsolutePath()), true,
         activate);
 
     // current editor should now be the newly opened debug editor
@@ -908,7 +908,7 @@ public class AsteriskDiagramEditorUtil {
 
         try {
 
-          diagramResource.save(com.safi.workshop.part.AsteriskDiagramEditorUtil.getSaveOptions());
+          diagramResource.save(com.safi.workshop.part.SafiWorkshopEditorUtil.getSaveOptions());
           try {
             WorkspaceSynchronizer.getFile(diagramResource).setPersistentProperty(
                 SafletPersistenceManager.SAFLET_NAME_KEY, safletName);

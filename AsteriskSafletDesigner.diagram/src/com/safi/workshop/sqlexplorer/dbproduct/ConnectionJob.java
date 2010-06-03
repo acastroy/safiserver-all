@@ -32,7 +32,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbenchSite;
 import org.eclipse.ui.progress.IWorkbenchSiteProgressService;
 
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.sqlexplorer.Messages;
 import com.safi.workshop.sqlexplorer.connections.SessionEstablishedListener;
 import com.safi.workshop.sqlexplorer.dialogs.PasswordConnDlg;
@@ -195,7 +195,7 @@ public class ConnectionJob extends Job {
    * @param message
    */
   private void promptForPassword(final String message) {
-    final Shell shell = AsteriskDiagramEditorUtil.getSafiNavigator().getSite().getShell();
+    final Shell shell = SafiWorkshopEditorUtil.getSafiNavigator().getSite().getShell();
 
     // Switch to the UI thread to run the password dialog, but run it synchronously so we
     // wait for it to complete
@@ -289,7 +289,7 @@ public class ConnectionJob extends Job {
   public static void createSession(Alias alias, User user, SessionEstablishedListener listener,
       boolean requirePassword) {
     final ConnectionJob bgJob = new ConnectionJob(alias, user, listener, requirePassword);
-    final IWorkbenchSite site = AsteriskDiagramEditorUtil.getSafiNavigator().getSite();
+    final IWorkbenchSite site = SafiWorkshopEditorUtil.getSafiNavigator().getSite();
 
     site.getShell().getDisplay().asyncExec(new Runnable() {
       public void run() {

@@ -21,7 +21,7 @@ import com.safi.server.saflet.manager.DBResourceException;
 import com.safi.server.saflet.manager.EntitlementUtils;
 import com.safi.server.saflet.manager.ResourceModifiedException;
 import com.safi.workshop.SafiNavigator;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.sqlexplorer.ExplorerException;
 import com.safi.workshop.sqlexplorer.dbproduct.Alias;
 import com.safi.workshop.sqlexplorer.dbproduct.ManagedDriver;
@@ -36,18 +36,18 @@ public class RetrieveDBResourceAction extends ServerResourceAction {
     if (!SafiServerPlugin.getDefault().isConnected()) {
       MessageDialog
           .openError(
-              AsteriskDiagramEditorUtil.getActiveShell(),
+              SafiWorkshopEditorUtil.getActiveShell(),
               "Not Connected",
               "You must be connected to a production SafiServer to complete this operation.  Please connection to a SafiServer instance first");
       return;
     }
     User user = SafiServerPlugin.getDefault().getCurrentUser();
     if (!EntitlementUtils.isUserEntitled(user, EntitlementUtils.ENTIT_RETRIEVE_DB_RESOURCES)) {
-      MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Not Entitled",
+      MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
           "You do not have sufficient privileges to carry out this operation.");
       return;
     }
-    SafiNavigator nav = AsteriskDiagramEditorUtil.getSafiNavigator(false);
+    SafiNavigator nav = SafiWorkshopEditorUtil.getSafiNavigator(false);
     if (nav == null)
       return;
     try {
@@ -61,17 +61,17 @@ public class RetrieveDBResourceAction extends ServerResourceAction {
       // List<DBResource> items = dlg.getCheckedItems();
 
       if (dbResources == null)
-        dbResources = SelectDBResourcesPanel.openSelectDialog(AsteriskDiagramEditorUtil
+        dbResources = SelectDBResourcesPanel.openSelectDialog(SafiWorkshopEditorUtil
             .getActiveShell(), manager, SelectDBResourcesPanel.Mode.RETRIEVE);
       if (dbResources == null)
         return;
       importDBResources(dbResources);
     } catch (Exception e) {
       e.printStackTrace();
-      MessageDialog.openError(AsteriskDiagramEditorUtil.getActiveShell(), "Retrieve Error",
+      MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Retrieve Error",
           "Couldn't retrieve database resources: " + e.getLocalizedMessage());
     }
-    AsteriskDiagramEditorUtil.getSafiNavigator().modelChanged(SafiServerPlugin.getDefault().isConnected());
+    SafiWorkshopEditorUtil.getSafiNavigator().modelChanged(SafiServerPlugin.getDefault().isConnected());
   }
 
   public void importDBResources(List<DBResource> resources) throws ResourceModifiedException,
@@ -97,7 +97,7 @@ public class RetrieveDBResourceAction extends ServerResourceAction {
               existingRez.getLastUpdated())))) {
 
             if (!yesToAll) {
-              MessageDialog dlg = new MessageDialog(AsteriskDiagramEditorUtil.getActiveShell(),
+              MessageDialog dlg = new MessageDialog(SafiWorkshopEditorUtil.getActiveShell(),
                   "Resource Modified", null, "The database resource " + existingRez.getName()
                       + " was modified.  Do you want to overwrite?", MessageDialog.QUESTION,
                   new String[] { "Yes", "No", "Yes to all" }, 1);

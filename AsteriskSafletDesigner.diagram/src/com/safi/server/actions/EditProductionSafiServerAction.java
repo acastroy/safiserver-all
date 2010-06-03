@@ -8,7 +8,7 @@ import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 import com.safi.db.server.config.SafiServer;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.navigator.serverconfig.SafiServerAdminDialog;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 
 public class EditProductionSafiServerAction implements IWorkbenchWindowActionDelegate {
 
@@ -37,10 +37,10 @@ public class EditProductionSafiServerAction implements IWorkbenchWindowActionDel
       e.printStackTrace();
       return;
     }
-    SafiServerAdminDialog safi = new SafiServerAdminDialog(AsteriskDiagramEditorUtil
+    SafiServerAdminDialog safi = new SafiServerAdminDialog(SafiWorkshopEditorUtil
         .getActiveShell(), server);
     safi.open();
-    AsteriskDiagramEditorUtil.getSafiNavigator().refresh();
+    SafiWorkshopEditorUtil.getSafiNavigator().refresh();
 
   }
 

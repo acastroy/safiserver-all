@@ -31,7 +31,7 @@ import org.eclipse.ui.ide.undo.WorkspaceUndoUtil;
 import org.eclipse.ui.internal.ide.IDEWorkbenchMessages;
 import org.eclipse.ui.internal.progress.ProgressMonitorJobsDialog;
 
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.util.SafletPersistenceManager;
 
 /**
@@ -210,7 +210,7 @@ public class CopySafiProjectOperation {
       // TODO Auto-generated catch block
       e.printStackTrace();
     }
-    AsteriskDiagramEditorUtil.getSafiNavigator().refresh();
+    SafiWorkshopEditorUtil.getSafiNavigator().refresh();
   }
 
   /**

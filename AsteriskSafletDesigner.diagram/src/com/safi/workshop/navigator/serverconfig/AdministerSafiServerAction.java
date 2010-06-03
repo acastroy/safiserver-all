@@ -12,7 +12,7 @@ import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 
 import com.safi.db.server.config.SafiServer;
 import com.safi.server.plugin.SafiServerPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 
 public class AdministerSafiServerAction implements IWorkbenchWindowActionDelegate,
     IViewActionDelegate {
@@ -24,10 +24,10 @@ public class AdministerSafiServerAction implements IWorkbenchWindowActionDelegat
 
   public void run() {
     SafiServer aSafiServer = null;
-    IStructuredSelection selection = AsteriskDiagramEditorUtil.getSafiNavigator()
+    IStructuredSelection selection = SafiWorkshopEditorUtil.getSafiNavigator()
         .getViewerSelection();
     if (selection.isEmpty()) {
-      MessageDialog.openInformation(AsteriskDiagramEditorUtil.getActiveShell(),
+      MessageDialog.openInformation(SafiWorkshopEditorUtil.getActiveShell(),
           "No Server Selected",
           "No SafiServer instance has been selected.  Select the SafiServer instance you wish to administer"
               + " from the Navigator tree.");
@@ -44,7 +44,7 @@ public class AdministerSafiServerAction implements IWorkbenchWindowActionDelegat
       }
     }
     if (aSafiServer == null) {
-      MessageDialog.openInformation(AsteriskDiagramEditorUtil.getActiveShell(),
+      MessageDialog.openInformation(SafiWorkshopEditorUtil.getActiveShell(),
           "No Server Selected",
           "No SafiServer instance has been selected.  Select the SafiServer instance you wish to administer"
               + " from the Navigator tree.");
@@ -56,12 +56,12 @@ public class AdministerSafiServerAction implements IWorkbenchWindowActionDelegat
      * }else { SafiServer prod=ConfigFactory.eINSTANCE.createSafiServer();
      * prod.setHostname("Not Configured"); aSafiServer=prod; }
      */
-    SafiServerAdminDialog safi = new SafiServerAdminDialog(AsteriskDiagramEditorUtil
+    SafiServerAdminDialog safi = new SafiServerAdminDialog(SafiWorkshopEditorUtil
         .getActiveShell(), aSafiServer);
     int result = safi.open();
 
     if (result == Window.OK)
-      AsteriskDiagramEditorUtil.getSafiNavigator().refresh();
+      SafiWorkshopEditorUtil.getSafiNavigator().refresh();
 
   }
 

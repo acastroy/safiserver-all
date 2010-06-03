@@ -28,7 +28,7 @@ import com.safi.db.server.config.SafiServer;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.preferences.PreferenceConstants;
 import com.safi.server.saflet.manager.DBManager;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.util.SafletPersistenceManager;
 
 public class SafiserverRegisterDialog extends Dialog {
@@ -452,7 +452,7 @@ public class SafiserverRegisterDialog extends Dialog {
           SafiServerPlugin.getDefault().disconnectSSHTunnel();
           
           SafiServerPlugin.getDefault().updateServerResources(monitor);
-
+//          SafiWorkshopEditorUtil.getSafiNavigator().modelChanged(true);
           // return new Status(IStatus.OK, getClass().getName(), IStatus.OK,
           // "Server Resources Initialized", null);
         } catch (final Exception e) {
@@ -466,7 +466,7 @@ public class SafiserverRegisterDialog extends Dialog {
                   "Couldn't update SafiServer settings: "
                       + (e.getCause() != null ? e.getCause().getLocalizedMessage() : e
                           .getLocalizedMessage()));
-              AsteriskDiagramEditorUtil.getSafiNavigator().modelChanged();
+              SafiWorkshopEditorUtil.getSafiNavigator().modelChanged();
 
             }
           });

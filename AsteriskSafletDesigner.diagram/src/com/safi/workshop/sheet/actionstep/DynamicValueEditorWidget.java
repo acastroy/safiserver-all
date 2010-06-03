@@ -60,7 +60,7 @@ import com.safi.db.VariableType;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.sheet.DynamicValueEditor2;
 import com.safi.workshop.sheet.DynamicValueEditorUtils;
 import com.safi.workshop.sheet.DynamicValueEditorUtils.DynamicValueAnnotationInfo;
@@ -661,7 +661,7 @@ public class DynamicValueEditorWidget extends Composite {
 
 	private boolean openNewVariableEditor(String varName) {
 		boolean changed = false;
-		AsteriskDiagramEditor currentEditor = AsteriskDiagramEditorUtil
+		AsteriskDiagramEditor currentEditor = SafiWorkshopEditorUtil
 		    .getCurrentAsteriskEditor();
 
 		try {
