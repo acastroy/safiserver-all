@@ -12,7 +12,7 @@ import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.saflet.SafletContext;
 import com.safi.workshop.model.timeBasedRouting.TimeBasedRouting;
 import com.safi.workshop.model.timeBasedRouting.TimeItem;
-import com.safi.workshop.part.AsteriskDiagramEditorUtil;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.sheet.DynamicValueEditor2;
 
 public class EditTimeItemValueCommand extends
@@ -121,7 +121,7 @@ public class EditTimeItemValueCommand extends
       String expectedReturnType, String description, boolean isTypeLocked, String dynValueTypeStr,
       DynamicValue dynamicValue, SafletContext handlerContext, EditingDomain domain) {
 
-    DynamicValueEditor2 dve2 = new DynamicValueEditor2(AsteriskDiagramEditorUtil.getActiveShell());
+    DynamicValueEditor2 dve2 = new DynamicValueEditor2(SafiWorkshopEditorUtil.getActiveShell());
     dve2.setAttributeName(attributeName);
     dve2.setExpectedReturnType(expectedReturnType);
     dve2.setDescription(null);
