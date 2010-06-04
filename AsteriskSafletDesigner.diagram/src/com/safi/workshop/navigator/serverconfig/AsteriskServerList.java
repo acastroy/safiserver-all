@@ -11,7 +11,6 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 
 import com.safi.db.server.config.AsteriskServer;
 import com.safi.db.server.config.SafiServer;
-import com.safi.db.server.config.User;
 
 public class AsteriskServerList extends ArrayList<AsteriskServer> {
   /**
