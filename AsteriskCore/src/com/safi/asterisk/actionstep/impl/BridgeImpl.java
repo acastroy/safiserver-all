@@ -38,7 +38,7 @@ import com.safi.core.call.SafiCall;
  *
  * @generated
  */
-public class BridgeImpl extends ActionStepImpl implements Bridge {
+public class BridgeImpl extends AsteriskActionStepImpl implements Bridge {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

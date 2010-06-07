@@ -29,6 +29,7 @@ import com.safi.asterisk.saflet.SafletPackage;
 import com.safi.asterisk.saflet.impl.SafletPackageImpl;
 import com.safi.core.CorePackage;
 import com.safi.core.call.CallPackage;
+import com.safi.db.astdb.AstdbPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -119,6 +120,7 @@ public class AsteriskPackageImpl extends EPackageImpl implements AsteriskPackage
 		isInited = true;
 
 		// Initialize simple dependencies
+		AstdbPackage.eINSTANCE.eClass();
 		CorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies

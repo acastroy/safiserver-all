@@ -46,7 +46,7 @@ import com.safi.db.util.VariableTranslator;
  *
  * @generated
  */
-public class GetFullVariableImpl extends ActionStepImpl implements GetFullVariable {
+public class GetFullVariableImpl extends AsteriskActionStepImpl implements GetFullVariable {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

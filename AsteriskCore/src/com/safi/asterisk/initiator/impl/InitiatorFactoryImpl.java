@@ -7,6 +7,7 @@
 package com.safi.asterisk.initiator.impl;
 
 
+import com.safi.asterisk.initiator.*;
 import org.asteriskjava.manager.event.ManagerEvent;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -66,6 +67,7 @@ public class InitiatorFactoryImpl extends EFactoryImpl implements InitiatorFacto
 		switch (eClass.getClassifierID()) {
 			case InitiatorPackage.DID_MATCHER: return createDIDMatcher();
 			case InitiatorPackage.INCOMING_CALL: return createIncomingCall();
+			case InitiatorPackage.ASTERISK_INITIATOR: return createAsteriskInitiator();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -122,6 +124,16 @@ public class InitiatorFactoryImpl extends EFactoryImpl implements InitiatorFacto
 	}
 
   /**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AsteriskInitiator createAsteriskInitiator() {
+		AsteriskInitiatorImpl asteriskInitiator = new AsteriskInitiatorImpl();
+		return asteriskInitiator;
+	}
+
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated

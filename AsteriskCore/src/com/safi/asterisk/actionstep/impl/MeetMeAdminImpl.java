@@ -46,7 +46,7 @@ import com.safi.db.util.VariableTranslator;
  *
  * @generated
  */
-public class MeetMeAdminImpl extends ActionStepImpl implements MeetMeAdmin {
+public class MeetMeAdminImpl extends AsteriskActionStepImpl implements MeetMeAdmin {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

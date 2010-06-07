@@ -70,7 +70,7 @@ import com.safi.core.call.SafiCall;
  *
  * @generated
  */
-public class DialImpl extends ActionStepImpl implements Dial {
+public class DialImpl extends AsteriskActionStepImpl implements Dial {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

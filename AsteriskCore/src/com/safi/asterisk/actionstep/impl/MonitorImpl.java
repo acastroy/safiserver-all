@@ -50,7 +50,7 @@ import com.safi.db.util.VariableTranslator;
  *
  * @generated
  */
-public class MonitorImpl extends ActionStepImpl implements Monitor {
+public class MonitorImpl extends AsteriskActionStepImpl implements Monitor {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

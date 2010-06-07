@@ -38,7 +38,7 @@ import com.safi.core.call.SafiCall;
  *
  * @generated
  */
-public class BackgroundImpl extends ActionStepImpl implements Background {
+public class BackgroundImpl extends AsteriskActionStepImpl implements Background {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

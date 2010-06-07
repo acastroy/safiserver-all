@@ -33,7 +33,7 @@ import com.safi.core.call.SafiCall;
  *
  * @generated
  */
-public class WaitExtenImpl extends ActionStepImpl implements WaitExten {
+public class WaitExtenImpl extends AsteriskActionStepImpl implements WaitExten {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

@@ -27,7 +27,7 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface SayTime extends ActionStep, CallConsumer1 {
+public interface SayTime extends AsteriskActionStep, CallConsumer1 {
   /**
 	 * Returns the value of the '<em><b>Escape Digits</b></em>' attribute.
 	 * The default value is <code>"#"</code>.

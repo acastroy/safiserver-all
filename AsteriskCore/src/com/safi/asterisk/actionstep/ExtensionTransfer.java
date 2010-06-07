@@ -32,7 +32,7 @@ import com.safi.core.call.CallConsumer2;
  * @model
  * @generated
  */
-public interface ExtensionTransfer extends ActionStep, CallConsumer2 {
+public interface ExtensionTransfer extends AsteriskActionStep, CallConsumer2 {
   /**
 	 * Returns the value of the '<em><b>Context</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

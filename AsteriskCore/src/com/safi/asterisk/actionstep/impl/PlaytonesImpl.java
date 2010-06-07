@@ -34,7 +34,7 @@ import com.safi.core.call.SafiCall;
  *
  * @generated
  */
-public class PlaytonesImpl extends ActionStepImpl implements Playtones {
+public class PlaytonesImpl extends AsteriskActionStepImpl implements Playtones {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

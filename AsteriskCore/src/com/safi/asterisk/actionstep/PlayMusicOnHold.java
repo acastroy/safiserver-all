@@ -26,7 +26,7 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface PlayMusicOnHold extends ActionStep, CallConsumer1 {
+public interface PlayMusicOnHold extends AsteriskActionStep, CallConsumer1 {
   /**
 	 * Returns the value of the '<em><b>Hold Class</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

@@ -37,7 +37,7 @@ import com.safi.core.saflet.SafletContext;
  *
  * @generated
  */
-public class HangupImpl extends ActionStepImpl implements Hangup {
+public class HangupImpl extends AsteriskActionStepImpl implements Hangup {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

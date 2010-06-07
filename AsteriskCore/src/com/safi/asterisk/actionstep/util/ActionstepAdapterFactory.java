@@ -6,6 +6,8 @@
  */
 package com.safi.asterisk.actionstep.util;
 
+import com.safi.asterisk.actionstep.*;
+import com.safi.core.PlatformDisposition;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -421,12 +423,20 @@ public class ActionstepAdapterFactory extends AdapterFactoryImpl {
 				return createExtensionTransferAdapter();
 			}
 			@Override
+			public Adapter caseAsteriskActionStep(AsteriskActionStep object) {
+				return createAsteriskActionStepAdapter();
+			}
+			@Override
 			public Adapter caseProductIdentifiable(ProductIdentifiable object) {
 				return createProductIdentifiableAdapter();
 			}
 			@Override
 			public Adapter caseThreadSensitive(ThreadSensitive object) {
 				return createThreadSensitiveAdapter();
+			}
+			@Override
+			public Adapter casePlatformDisposition(PlatformDisposition object) {
+				return createPlatformDispositionAdapter();
 			}
 			@Override
 			public Adapter caseActionStep(ActionStep object) {
@@ -1431,6 +1441,20 @@ public class ActionstepAdapterFactory extends AdapterFactoryImpl {
 	}
 
   /**
+	 * Creates a new adapter for an object of class '{@link com.safi.asterisk.actionstep.AsteriskActionStep <em>Asterisk Action Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.safi.asterisk.actionstep.AsteriskActionStep
+	 * @generated
+	 */
+	public Adapter createAsteriskActionStepAdapter() {
+		return null;
+	}
+
+		/**
 	 * Creates a new adapter for an object of class '{@link com.safi.core.call.CallConsumer1 <em>Consumer1</em>}'.
 	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1469,6 +1493,20 @@ public class ActionstepAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createThreadSensitiveAdapter() {
+		return null;
+	}
+
+		/**
+	 * Creates a new adapter for an object of class '{@link com.safi.core.PlatformDisposition <em>Platform Disposition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.safi.core.PlatformDisposition
+	 * @generated
+	 */
+	public Adapter createPlatformDispositionAdapter() {
 		return null;
 	}
 

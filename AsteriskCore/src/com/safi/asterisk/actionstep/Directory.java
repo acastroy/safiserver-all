@@ -30,7 +30,7 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface Directory extends ActionStep, CallConsumer1 {
+public interface Directory extends AsteriskActionStep, CallConsumer1 {
   /**
 	 * Returns the value of the '<em><b>VM Context</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

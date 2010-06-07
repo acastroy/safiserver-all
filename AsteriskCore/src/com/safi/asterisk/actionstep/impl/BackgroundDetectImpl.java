@@ -34,27 +34,20 @@ import com.safi.core.saflet.SafletContext;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link com.safi.asterisk.actionstep.impl.BackgroundDetectImpl#getCall1
- * <em>Call1</em>}</li>
- * <li>
- * {@link com.safi.asterisk.actionstep.impl.BackgroundDetectImpl#getFilename
- * <em>Filename</em>}</li>
- * <li>{@link com.safi.asterisk.actionstep.impl.BackgroundDetectImpl#getSilence
- * <em>Silence</em>}</li>
- * <li>{@link com.safi.asterisk.actionstep.impl.BackgroundDetectImpl#getMinTime
- * <em>Min Time</em>}</li>
- * <li>{@link com.safi.asterisk.actionstep.impl.BackgroundDetectImpl#getMaxTime
- * <em>Max Time</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.impl.BackgroundDetectImpl#getCall1 <em>Call1</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.impl.BackgroundDetectImpl#getFilename <em>Filename</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.impl.BackgroundDetectImpl#getSilence <em>Silence</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.impl.BackgroundDetectImpl#getMinTime <em>Min Time</em>}</li>
+ *   <li>{@link com.safi.asterisk.actionstep.impl.BackgroundDetectImpl#getMaxTime <em>Max Time</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
-public class BackgroundDetectImpl extends ActionStepImpl implements BackgroundDetect {
+public class BackgroundDetectImpl extends AsteriskActionStepImpl implements BackgroundDetect {
 	/**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #getCall1()
 	 * @generated
 	 * @ordered
@@ -62,9 +55,8 @@ public class BackgroundDetectImpl extends ActionStepImpl implements BackgroundDe
 	protected SafiCall call1;
 
 	/**
-	 * The default value of the '{@link #getFilename() <em>Filename</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #getFilename() <em>Filename</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getFilename()
 	 * @generated
 	 * @ordered
@@ -72,9 +64,8 @@ public class BackgroundDetectImpl extends ActionStepImpl implements BackgroundDe
 	protected static final String FILENAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getFilename() <em>Filename</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getFilename() <em>Filename</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getFilename()
 	 * @generated
 	 * @ordered
@@ -82,9 +73,8 @@ public class BackgroundDetectImpl extends ActionStepImpl implements BackgroundDe
 	protected String filename = FILENAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getSilence() <em>Silence</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #getSilence() <em>Silence</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getSilence()
 	 * @generated
 	 * @ordered
@@ -94,7 +84,6 @@ public class BackgroundDetectImpl extends ActionStepImpl implements BackgroundDe
 	/**
 	 * The cached value of the '{@link #getSilence() <em>Silence</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #getSilence()
 	 * @generated
 	 * @ordered
@@ -102,9 +91,8 @@ public class BackgroundDetectImpl extends ActionStepImpl implements BackgroundDe
 	protected int silence = SILENCE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getMinTime() <em>Min Time</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #getMinTime() <em>Min Time</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getMinTime()
 	 * @generated
 	 * @ordered
@@ -112,9 +100,8 @@ public class BackgroundDetectImpl extends ActionStepImpl implements BackgroundDe
 	protected static final int MIN_TIME_EDEFAULT = 100;
 
 	/**
-	 * The cached value of the '{@link #getMinTime() <em>Min Time</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getMinTime() <em>Min Time</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getMinTime()
 	 * @generated
 	 * @ordered
@@ -122,9 +109,8 @@ public class BackgroundDetectImpl extends ActionStepImpl implements BackgroundDe
 	protected int minTime = MIN_TIME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getMaxTime() <em>Max Time</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #getMaxTime() <em>Max Time</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getMaxTime()
 	 * @generated
 	 * @ordered
@@ -132,9 +118,8 @@ public class BackgroundDetectImpl extends ActionStepImpl implements BackgroundDe
 	protected static final int MAX_TIME_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getMaxTime() <em>Max Time</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getMaxTime() <em>Max Time</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getMaxTime()
 	 * @generated
 	 * @ordered
@@ -143,7 +128,6 @@ public class BackgroundDetectImpl extends ActionStepImpl implements BackgroundDe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected BackgroundDetectImpl() {
@@ -230,7 +214,6 @@ public class BackgroundDetectImpl extends ActionStepImpl implements BackgroundDe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -240,17 +223,15 @@ public class BackgroundDetectImpl extends ActionStepImpl implements BackgroundDe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public SafiCall getCall1() {
 		if (call1 != null && call1.eIsProxy()) {
-			InternalEObject oldCall1 = (InternalEObject) call1;
-			call1 = (SafiCall) eResolveProxy(oldCall1);
+			InternalEObject oldCall1 = (InternalEObject)call1;
+			call1 = (SafiCall)eResolveProxy(oldCall1);
 			if (call1 != oldCall1) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ActionstepPackage.BACKGROUND_DETECT__CALL1, oldCall1, call1));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionstepPackage.BACKGROUND_DETECT__CALL1, oldCall1, call1));
 			}
 		}
 		return call1;
@@ -258,7 +239,6 @@ public class BackgroundDetectImpl extends ActionStepImpl implements BackgroundDe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public SafiCall basicGetCall1() {
@@ -267,20 +247,17 @@ public class BackgroundDetectImpl extends ActionStepImpl implements BackgroundDe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setCall1(SafiCall newCall1) {
 		SafiCall oldCall1 = call1;
 		call1 = newCall1;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ActionstepPackage.BACKGROUND_DETECT__CALL1, oldCall1, call1));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND_DETECT__CALL1, oldCall1, call1));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getFilename() {
@@ -289,20 +266,17 @@ public class BackgroundDetectImpl extends ActionStepImpl implements BackgroundDe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setFilename(String newFilename) {
 		String oldFilename = filename;
 		filename = newFilename;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ActionstepPackage.BACKGROUND_DETECT__FILENAME, oldFilename, filename));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND_DETECT__FILENAME, oldFilename, filename));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public int getSilence() {
@@ -311,20 +285,17 @@ public class BackgroundDetectImpl extends ActionStepImpl implements BackgroundDe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setSilence(int newSilence) {
 		int oldSilence = silence;
 		silence = newSilence;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ActionstepPackage.BACKGROUND_DETECT__SILENCE, oldSilence, silence));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND_DETECT__SILENCE, oldSilence, silence));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public int getMinTime() {
@@ -333,20 +304,17 @@ public class BackgroundDetectImpl extends ActionStepImpl implements BackgroundDe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setMinTime(int newMinTime) {
 		int oldMinTime = minTime;
 		minTime = newMinTime;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ActionstepPackage.BACKGROUND_DETECT__MIN_TIME, oldMinTime, minTime));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND_DETECT__MIN_TIME, oldMinTime, minTime));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public int getMaxTime() {
@@ -355,28 +323,24 @@ public class BackgroundDetectImpl extends ActionStepImpl implements BackgroundDe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setMaxTime(int newMaxTime) {
 		int oldMaxTime = maxTime;
 		maxTime = newMaxTime;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ActionstepPackage.BACKGROUND_DETECT__MAX_TIME, oldMaxTime, maxTime));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionstepPackage.BACKGROUND_DETECT__MAX_TIME, oldMaxTime, maxTime));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ActionstepPackage.BACKGROUND_DETECT__CALL1:
-				if (resolve)
-					return getCall1();
+				if (resolve) return getCall1();
 				return basicGetCall1();
 			case ActionstepPackage.BACKGROUND_DETECT__FILENAME:
 				return getFilename();
@@ -392,7 +356,6 @@ public class BackgroundDetectImpl extends ActionStepImpl implements BackgroundDe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -400,19 +363,19 @@ public class BackgroundDetectImpl extends ActionStepImpl implements BackgroundDe
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ActionstepPackage.BACKGROUND_DETECT__CALL1:
-				setCall1((SafiCall) newValue);
+				setCall1((SafiCall)newValue);
 				return;
 			case ActionstepPackage.BACKGROUND_DETECT__FILENAME:
-				setFilename((String) newValue);
+				setFilename((String)newValue);
 				return;
 			case ActionstepPackage.BACKGROUND_DETECT__SILENCE:
-				setSilence((Integer) newValue);
+				setSilence((Integer)newValue);
 				return;
 			case ActionstepPackage.BACKGROUND_DETECT__MIN_TIME:
-				setMinTime((Integer) newValue);
+				setMinTime((Integer)newValue);
 				return;
 			case ActionstepPackage.BACKGROUND_DETECT__MAX_TIME:
-				setMaxTime((Integer) newValue);
+				setMaxTime((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -420,14 +383,13 @@ public class BackgroundDetectImpl extends ActionStepImpl implements BackgroundDe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ActionstepPackage.BACKGROUND_DETECT__CALL1:
-				setCall1((SafiCall) null);
+				setCall1((SafiCall)null);
 				return;
 			case ActionstepPackage.BACKGROUND_DETECT__FILENAME:
 				setFilename(FILENAME_EDEFAULT);
@@ -447,7 +409,6 @@ public class BackgroundDetectImpl extends ActionStepImpl implements BackgroundDe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -469,17 +430,14 @@ public class BackgroundDetectImpl extends ActionStepImpl implements BackgroundDe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == CallConsumer1.class) {
 			switch (derivedFeatureID) {
-				case ActionstepPackage.BACKGROUND_DETECT__CALL1:
-					return CallPackage.CALL_CONSUMER1__CALL1;
-				default:
-					return -1;
+				case ActionstepPackage.BACKGROUND_DETECT__CALL1: return CallPackage.CALL_CONSUMER1__CALL1;
+				default: return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -487,17 +445,14 @@ public class BackgroundDetectImpl extends ActionStepImpl implements BackgroundDe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == CallConsumer1.class) {
 			switch (baseFeatureID) {
-				case CallPackage.CALL_CONSUMER1__CALL1:
-					return ActionstepPackage.BACKGROUND_DETECT__CALL1;
-				default:
-					return -1;
+				case CallPackage.CALL_CONSUMER1__CALL1: return ActionstepPackage.BACKGROUND_DETECT__CALL1;
+				default: return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
@@ -505,13 +460,11 @@ public class BackgroundDetectImpl extends ActionStepImpl implements BackgroundDe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (filename: ");

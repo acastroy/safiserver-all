@@ -40,7 +40,7 @@ import com.safi.db.util.VariableTranslator;
  *
  * @generated
  */
-public class SetPriorityImpl extends ActionStepImpl implements SetPriority {
+public class SetPriorityImpl extends AsteriskActionStepImpl implements SetPriority {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

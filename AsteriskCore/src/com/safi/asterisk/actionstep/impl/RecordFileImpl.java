@@ -46,7 +46,7 @@ import com.safi.db.util.VariableTranslator;
  *
  * @generated
  */
-public class RecordFileImpl extends ActionStepImpl implements RecordFile {
+public class RecordFileImpl extends AsteriskActionStepImpl implements RecordFile {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

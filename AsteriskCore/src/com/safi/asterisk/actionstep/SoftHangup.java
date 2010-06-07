@@ -27,7 +27,7 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface SoftHangup extends ActionStep, CallConsumer1 {
+public interface SoftHangup extends AsteriskActionStep, CallConsumer1 {
   /**
 	 * Returns the value of the '<em><b>Hangup All Device Calls</b></em>' attribute.
 	 * <!-- begin-user-doc -->

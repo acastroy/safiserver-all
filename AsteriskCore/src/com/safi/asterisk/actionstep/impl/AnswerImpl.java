@@ -10,19 +10,38 @@ import java.util.logging.Level;
 
 import org.asteriskjava.fastagi.AgiChannel;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
 import com.safi.asterisk.Call;
 import com.safi.asterisk.actionstep.ActionstepPackage;
 import com.safi.asterisk.actionstep.Answer;
+import com.safi.asterisk.actionstep.AsteriskActionStep;
+import com.safi.core.CorePackage;
+import com.safi.core.PlatformDisposition;
+import com.safi.core.ProductIdentifiable;
+import com.safi.core.ThreadSensitive;
+import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.ActionStepException;
+import com.safi.core.actionstep.ActionStepPackage;
+import com.safi.core.actionstep.DynamicValue;
+import com.safi.core.actionstep.Output;
 import com.safi.core.actionstep.impl.ActionStepImpl;
 import com.safi.core.call.CallConsumer1;
 import com.safi.core.call.CallPackage;
 import com.safi.core.call.SafiCall;
+import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletContext;
+import com.safi.core.saflet.SafletPackage;
+import com.safi.core.scripting.SafletScriptException;
+import java.util.Collection;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,7 +56,7 @@ import com.safi.core.saflet.SafletContext;
  *
  * @generated
  */
-public class AnswerImpl extends ActionStepImpl implements Answer {
+public class AnswerImpl extends AsteriskActionStepImpl implements Answer {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

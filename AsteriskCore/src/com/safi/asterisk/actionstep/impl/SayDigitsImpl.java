@@ -41,7 +41,7 @@ import com.safi.core.saflet.SafletContext;
  *
  * @generated
  */
-public class SayDigitsImpl extends ActionStepImpl implements SayDigits {
+public class SayDigitsImpl extends AsteriskActionStepImpl implements SayDigits {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

@@ -24,6 +24,7 @@ import com.safi.asterisk.saflet.AsteriskSafletEnvironment;
 import com.safi.asterisk.saflet.SafletFactory;
 import com.safi.asterisk.saflet.SafletPackage;
 import com.safi.core.CorePackage;
+import com.safi.db.astdb.AstdbPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -100,6 +101,7 @@ public class SafletPackageImpl extends EPackageImpl implements SafletPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
+		AstdbPackage.eINSTANCE.eClass();
 		CorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies

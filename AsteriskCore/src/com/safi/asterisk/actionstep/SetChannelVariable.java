@@ -27,7 +27,7 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface SetChannelVariable extends ActionStep, CallConsumer1 {
+public interface SetChannelVariable extends AsteriskActionStep, CallConsumer1 {
   /**
 	 * Returns the value of the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

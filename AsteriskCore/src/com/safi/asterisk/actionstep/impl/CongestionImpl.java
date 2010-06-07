@@ -37,7 +37,7 @@ import com.safi.core.saflet.SafletContext;
  *
  * @generated
  */
-public class CongestionImpl extends ActionStepImpl implements Congestion {
+public class CongestionImpl extends AsteriskActionStepImpl implements Congestion {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

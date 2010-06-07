@@ -47,7 +47,7 @@ import com.safi.db.util.VariableTranslator;
  *
  * @generated
  */
-public class VoicemailMainImpl extends ActionStepImpl implements VoicemailMain {
+public class VoicemailMainImpl extends AsteriskActionStepImpl implements VoicemailMain {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

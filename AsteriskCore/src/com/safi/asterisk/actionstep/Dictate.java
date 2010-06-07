@@ -27,7 +27,7 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface Dictate extends ActionStep, CallConsumer1 {
+public interface Dictate extends AsteriskActionStep, CallConsumer1 {
   /**
 	 * Returns the value of the '<em><b>Directory</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

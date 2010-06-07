@@ -27,7 +27,7 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface GetFullVariable extends ActionStep, CallConsumer1 {
+public interface GetFullVariable extends AsteriskActionStep, CallConsumer1 {
   /**
 	 * Returns the value of the '<em><b>Variable</b></em>' attribute.
 	 * <!-- begin-user-doc -->

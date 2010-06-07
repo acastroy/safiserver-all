@@ -26,7 +26,7 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface PickupChan extends ActionStep, CallConsumer1 {
+public interface PickupChan extends AsteriskActionStep, CallConsumer1 {
   /**
 	 * Returns the value of the '<em><b>Channels</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

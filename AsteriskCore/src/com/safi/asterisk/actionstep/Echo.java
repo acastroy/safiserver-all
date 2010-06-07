@@ -19,5 +19,5 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface Echo extends ActionStep, CallConsumer1 {
+public interface Echo extends AsteriskActionStep, CallConsumer1 {
 } // Echo

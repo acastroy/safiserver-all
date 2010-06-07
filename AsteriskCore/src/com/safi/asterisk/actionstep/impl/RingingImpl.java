@@ -38,7 +38,7 @@ import com.safi.core.saflet.SafletContext;
  *
  * @generated
  */
-public class RingingImpl extends ActionStepImpl implements Ringing {
+public class RingingImpl extends AsteriskActionStepImpl implements Ringing {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

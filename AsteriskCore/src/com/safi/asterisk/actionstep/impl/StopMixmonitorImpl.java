@@ -31,7 +31,7 @@ import com.safi.core.call.SafiCall;
  *
  * @generated
  */
-public class StopMixmonitorImpl extends ActionStepImpl implements StopMixmonitor {
+public class StopMixmonitorImpl extends AsteriskActionStepImpl implements StopMixmonitor {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

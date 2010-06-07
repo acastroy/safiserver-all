@@ -43,7 +43,7 @@ import com.safi.core.saflet.SafletContext;
  *
  * @generated
  */
-public class WaitForDigitImpl extends ActionStepImpl implements WaitForDigit {
+public class WaitForDigitImpl extends AsteriskActionStepImpl implements WaitForDigit {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

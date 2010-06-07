@@ -44,6 +44,15 @@ public interface InitiatorFactory extends EFactory {
   IncomingCall createIncomingCall();
 
   /**
+	 * Returns a new object of class '<em>Asterisk Initiator</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Asterisk Initiator</em>'.
+	 * @generated
+	 */
+	AsteriskInitiator createAsteriskInitiator();
+
+		/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

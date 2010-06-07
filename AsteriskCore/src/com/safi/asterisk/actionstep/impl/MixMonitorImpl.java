@@ -36,7 +36,7 @@ import com.safi.core.call.SafiCall;
  *
  * @generated
  */
-public class MixMonitorImpl extends ActionStepImpl implements MixMonitor {
+public class MixMonitorImpl extends AsteriskActionStepImpl implements MixMonitor {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

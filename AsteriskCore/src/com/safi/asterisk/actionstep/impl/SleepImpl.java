@@ -39,7 +39,7 @@ import com.safi.core.saflet.SafletContext;
  *
  * @generated
  */
-public class SleepImpl extends ActionStepImpl implements Sleep {
+public class SleepImpl extends AsteriskActionStepImpl implements Sleep {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

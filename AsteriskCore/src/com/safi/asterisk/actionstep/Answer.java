@@ -19,5 +19,5 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface Answer extends ActionStep, CallConsumer1 {
+public interface Answer extends AsteriskActionStep, CallConsumer1 {
 } // Answer

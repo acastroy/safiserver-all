@@ -58,7 +58,7 @@ import com.safi.db.util.VariableTranslator;
  *
  * @generated
  */
-public class TransferImpl extends ActionStepImpl implements Transfer {
+public class TransferImpl extends AsteriskActionStepImpl implements Transfer {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

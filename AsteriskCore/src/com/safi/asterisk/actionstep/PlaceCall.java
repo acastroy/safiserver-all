@@ -29,7 +29,7 @@ import com.safi.core.call.CallSource1;
  * @model
  * @generated
  */
-public interface PlaceCall extends ActionStep, CallSource1 {
+public interface PlaceCall extends AsteriskActionStep, CallSource1 {
   /**
 	 * Returns the value of the '<em><b>Extension</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

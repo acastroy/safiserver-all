@@ -53,7 +53,7 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface MeetMe extends ActionStep, CallConsumer1 {
+public interface MeetMe extends AsteriskActionStep, CallConsumer1 {
   /**
 	 * Returns the value of the '<em><b>Conference Number</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

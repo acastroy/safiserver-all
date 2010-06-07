@@ -48,7 +48,7 @@ import com.safi.db.util.VariableTranslator;
  *
  * @generated
  */
-public class StreamAudioExtendedImpl extends ActionStepImpl implements StreamAudioExtended {
+public class StreamAudioExtendedImpl extends AsteriskActionStepImpl implements StreamAudioExtended {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

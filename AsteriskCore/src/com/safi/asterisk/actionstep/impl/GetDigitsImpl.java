@@ -52,7 +52,7 @@ import com.safi.db.util.VariableTranslator;
  *
  * @generated
  */
-public class GetDigitsImpl extends ActionStepImpl implements GetDigits {
+public class GetDigitsImpl extends AsteriskActionStepImpl implements GetDigits {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

@@ -35,7 +35,7 @@ import com.safi.core.call.SafiCall;
  *
  * @generated
  */
-public class SoftHangupImpl extends ActionStepImpl implements SoftHangup {
+public class SoftHangupImpl extends AsteriskActionStepImpl implements SoftHangup {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

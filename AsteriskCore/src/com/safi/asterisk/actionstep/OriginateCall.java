@@ -38,7 +38,7 @@ import com.safi.core.call.CallSource1;
  * @model
  * @generated
  */
-public interface OriginateCall extends ActionStep, CallSource1 {
+public interface OriginateCall extends AsteriskActionStep, CallSource1 {
   /**
 	 * Returns the value of the '<em><b>Async</b></em>' attribute.
 	 * The default value is <code>"false"</code>.

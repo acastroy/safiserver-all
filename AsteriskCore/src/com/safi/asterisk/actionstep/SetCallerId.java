@@ -26,7 +26,7 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface SetCallerId extends ActionStep, CallConsumer1 {
+public interface SetCallerId extends AsteriskActionStep, CallConsumer1 {
   /**
 	 * Returns the value of the '<em><b>Caller Id</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

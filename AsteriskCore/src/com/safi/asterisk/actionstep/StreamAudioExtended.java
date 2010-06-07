@@ -31,7 +31,7 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface StreamAudioExtended extends ActionStep, CallConsumer1 {
+public interface StreamAudioExtended extends AsteriskActionStep, CallConsumer1 {
   /**
 	 * Returns the value of the '<em><b>Filename</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

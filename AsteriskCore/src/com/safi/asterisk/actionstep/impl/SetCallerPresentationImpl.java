@@ -39,7 +39,7 @@ import com.safi.core.saflet.SafletContext;
  *
  * @generated
  */
-public class SetCallerPresentationImpl extends ActionStepImpl implements SetCallerPresentation {
+public class SetCallerPresentationImpl extends AsteriskActionStepImpl implements SetCallerPresentation {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

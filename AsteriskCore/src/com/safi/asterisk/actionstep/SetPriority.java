@@ -26,7 +26,7 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface SetPriority extends ActionStep, CallConsumer1 {
+public interface SetPriority extends AsteriskActionStep, CallConsumer1 {
   /**
 	 * Returns the value of the '<em><b>Priority</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

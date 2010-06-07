@@ -41,7 +41,7 @@ import com.safi.db.util.VariableTranslator;
  *
  * @generated
  */
-public class SetGlobalVariableImpl extends ActionStepImpl implements SetGlobalVariable {
+public class SetGlobalVariableImpl extends AsteriskActionStepImpl implements SetGlobalVariable {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

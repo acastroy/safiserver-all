@@ -28,7 +28,7 @@ import com.safi.core.call.CallConsumer2;
  * @model
  * @generated
  */
-public interface Bridge extends ActionStep, CallConsumer2 {
+public interface Bridge extends AsteriskActionStep, CallConsumer2 {
   /**
 	 * Returns the value of the '<em><b>Channel1</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

@@ -38,7 +38,7 @@ import com.safi.core.call.SafiCall;
  *
  * @generated
  */
-public class DirectoryImpl extends ActionStepImpl implements Directory {
+public class DirectoryImpl extends AsteriskActionStepImpl implements Directory {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

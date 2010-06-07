@@ -19,5 +19,5 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface StopMixmonitor extends ActionStep, CallConsumer1 {
+public interface StopMixmonitor extends AsteriskActionStep, CallConsumer1 {
 } // StopMixmonitor

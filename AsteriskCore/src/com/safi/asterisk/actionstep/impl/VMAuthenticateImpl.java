@@ -36,7 +36,7 @@ import com.safi.core.call.SafiCall;
  *
  * @generated
  */
-public class VMAuthenticateImpl extends ActionStepImpl implements VMAuthenticate {
+public class VMAuthenticateImpl extends AsteriskActionStepImpl implements VMAuthenticate {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

@@ -62,7 +62,7 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface Dial extends ActionStep, CallConsumer1 {
+public interface Dial extends AsteriskActionStep, CallConsumer1 {
   /**
 	 * Returns the value of the '<em><b>Outgoing Channels</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

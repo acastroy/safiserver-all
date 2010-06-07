@@ -32,7 +32,7 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface RecordFile extends ActionStep, CallConsumer1 {
+public interface RecordFile extends AsteriskActionStep, CallConsumer1 {
   /**
 	 * Returns the value of the '<em><b>Beep</b></em>' attribute.
 	 * The default value is <code>"true"</code>.

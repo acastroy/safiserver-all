@@ -26,7 +26,7 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface Sleep extends ActionStep, CallConsumer1 {
+public interface Sleep extends AsteriskActionStep, CallConsumer1 {
   /**
 	 * Returns the value of the '<em><b>Duration</b></em>' attribute.
 	 * <!-- begin-user-doc -->

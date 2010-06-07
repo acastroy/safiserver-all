@@ -31,7 +31,7 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface GetDigits extends ActionStep, CallConsumer1 {
+public interface GetDigits extends AsteriskActionStep, CallConsumer1 {
   /**
 	 * Returns the value of the '<em><b>Input Timeout</b></em>' attribute.
 	 * The default value is <code>"-1"</code>.

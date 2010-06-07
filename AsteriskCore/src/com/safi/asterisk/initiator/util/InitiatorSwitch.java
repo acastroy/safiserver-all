@@ -6,6 +6,8 @@
  */
 package com.safi.asterisk.initiator.util;
 
+import com.safi.asterisk.initiator.*;
+import com.safi.core.PlatformDisposition;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
@@ -99,22 +101,26 @@ public class InitiatorSwitch<T> {
 			case InitiatorPackage.DID_MATCHER: {
 				DIDMatcher didMatcher = (DIDMatcher)theEObject;
 				T result = caseDIDMatcher(didMatcher);
-				if (result == null) result = caseInitiator(didMatcher);
+				if (result == null) result = caseAsteriskInitiator(didMatcher);
 				if (result == null) result = caseCallSource1(didMatcher);
+				if (result == null) result = caseInitiator(didMatcher);
 				if (result == null) result = caseActionStep(didMatcher);
 				if (result == null) result = caseProductIdentifiable(didMatcher);
 				if (result == null) result = caseThreadSensitive(didMatcher);
+				if (result == null) result = casePlatformDisposition(didMatcher);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case InitiatorPackage.INCOMING_CALL: {
 				IncomingCall incomingCall = (IncomingCall)theEObject;
 				T result = caseIncomingCall(incomingCall);
-				if (result == null) result = caseInitiator(incomingCall);
+				if (result == null) result = caseAsteriskInitiator(incomingCall);
 				if (result == null) result = caseCallSource1(incomingCall);
+				if (result == null) result = caseInitiator(incomingCall);
 				if (result == null) result = caseActionStep(incomingCall);
 				if (result == null) result = caseProductIdentifiable(incomingCall);
 				if (result == null) result = caseThreadSensitive(incomingCall);
+				if (result == null) result = casePlatformDisposition(incomingCall);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -122,6 +128,17 @@ public class InitiatorSwitch<T> {
 				AsteriskInitiatorInfo asteriskInitiatorInfo = (AsteriskInitiatorInfo)theEObject;
 				T result = caseAsteriskInitiatorInfo(asteriskInitiatorInfo);
 				if (result == null) result = caseInitiatorInfo(asteriskInitiatorInfo);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case InitiatorPackage.ASTERISK_INITIATOR: {
+				AsteriskInitiator asteriskInitiator = (AsteriskInitiator)theEObject;
+				T result = caseAsteriskInitiator(asteriskInitiator);
+				if (result == null) result = caseInitiator(asteriskInitiator);
+				if (result == null) result = caseActionStep(asteriskInitiator);
+				if (result == null) result = caseProductIdentifiable(asteriskInitiator);
+				if (result == null) result = caseThreadSensitive(asteriskInitiator);
+				if (result == null) result = casePlatformDisposition(asteriskInitiator);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -175,6 +192,21 @@ public class InitiatorSwitch<T> {
 	}
 
   /**
+	 * Returns the result of interpreting the object as an instance of '<em>Asterisk Initiator</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Asterisk Initiator</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAsteriskInitiator(AsteriskInitiator object) {
+		return null;
+	}
+
+		/**
 	 * Returns the result of interpreting the object as an instance of '<em>Product Identifiable</em>'.
 	 * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -201,6 +233,21 @@ public class InitiatorSwitch<T> {
 	 * @generated
 	 */
 	public T caseThreadSensitive(ThreadSensitive object) {
+		return null;
+	}
+
+		/**
+	 * Returns the result of interpreting the object as an instance of '<em>Platform Disposition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Platform Disposition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePlatformDisposition(PlatformDisposition object) {
 		return null;
 	}
 

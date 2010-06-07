@@ -70,7 +70,7 @@ import com.safi.db.util.VariableTranslator;
  *
  * @generated
  */
-public class MeetMeImpl extends ActionStepImpl implements MeetMe {
+public class MeetMeImpl extends AsteriskActionStepImpl implements MeetMe {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

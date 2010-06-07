@@ -37,7 +37,7 @@ import com.safi.core.saflet.SafletContext;
  *
  * @generated
  */
-public class ProgressImpl extends ActionStepImpl implements Progress {
+public class ProgressImpl extends AsteriskActionStepImpl implements Progress {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

@@ -35,7 +35,7 @@ import com.safi.core.saflet.SafletContext;
  *
  * @generated
  */
-public class StopMusicOnHoldImpl extends ActionStepImpl implements StopMusicOnHold {
+public class StopMusicOnHoldImpl extends AsteriskActionStepImpl implements StopMusicOnHold {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

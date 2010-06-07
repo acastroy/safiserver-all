@@ -30,7 +30,7 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface Voicemail extends ActionStep, CallConsumer1 {
+public interface Voicemail extends AsteriskActionStep, CallConsumer1 {
   /**
 	 * Returns the value of the '<em><b>Mailbox</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

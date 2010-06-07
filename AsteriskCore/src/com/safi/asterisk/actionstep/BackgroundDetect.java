@@ -28,7 +28,7 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface BackgroundDetect extends ActionStep, CallConsumer1 {
+public interface BackgroundDetect extends AsteriskActionStep, CallConsumer1 {
   /**
 	 * Returns the value of the '<em><b>Filename</b></em>' attribute.
 	 * <!-- begin-user-doc -->

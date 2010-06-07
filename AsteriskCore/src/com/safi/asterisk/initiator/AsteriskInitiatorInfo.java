@@ -11,7 +11,7 @@ import org.asteriskjava.fastagi.AgiRequest;
 import org.asteriskjava.manager.ManagerConnection;
 
 import com.safi.core.initiator.InitiatorInfo;
-import com.safi.db.server.config.AsteriskServer;
+import com.safi.db.astdb.AsteriskServer;
 
 /**
  * <!-- begin-user-doc -->

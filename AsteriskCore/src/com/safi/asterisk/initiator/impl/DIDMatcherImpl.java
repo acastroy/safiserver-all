@@ -36,7 +36,7 @@ import com.safi.core.initiator.impl.InitiatorImpl;
  *
  * @generated
  */
-public class DIDMatcherImpl extends InitiatorImpl implements DIDMatcher {
+public class DIDMatcherImpl extends AsteriskInitiatorImpl implements DIDMatcher {
   /**
 	 * The cached value of the '{@link #getNewCall1() <em>New Call1</em>}' containment reference.
 	 * <!-- begin-user-doc -->

@@ -40,7 +40,7 @@ import com.safi.db.util.VariableTranslator;
  *
  * @generated
  */
-public class SetExtensionImpl extends ActionStepImpl implements SetExtension {
+public class SetExtensionImpl extends AsteriskActionStepImpl implements SetExtension {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

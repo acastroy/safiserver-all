@@ -25,7 +25,7 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface Pickup extends ActionStep, CallConsumer1 {
+public interface Pickup extends AsteriskActionStep, CallConsumer1 {
   /**
 	 * Returns the value of the '<em><b>Group</b></em>' attribute.
 	 * <!-- begin-user-doc -->

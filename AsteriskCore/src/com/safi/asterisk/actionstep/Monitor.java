@@ -28,7 +28,7 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface Monitor extends ActionStep, CallConsumer1 {
+public interface Monitor extends AsteriskActionStep, CallConsumer1 {
   /**
 	 * Returns the value of the '<em><b>Filename Prefix</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

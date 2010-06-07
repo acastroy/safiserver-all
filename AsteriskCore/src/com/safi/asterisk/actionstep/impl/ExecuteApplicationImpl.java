@@ -44,7 +44,7 @@ import com.safi.db.util.VariableTranslator;
  *
  * @generated
  */
-public class ExecuteApplicationImpl extends ActionStepImpl implements ExecuteApplication {
+public class ExecuteApplicationImpl extends AsteriskActionStepImpl implements ExecuteApplication {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

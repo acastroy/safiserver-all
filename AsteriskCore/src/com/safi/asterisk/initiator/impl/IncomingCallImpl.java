@@ -33,7 +33,7 @@ import com.safi.core.initiator.impl.InitiatorImpl;
  *
  * @generated
  */
-public class IncomingCallImpl extends InitiatorImpl implements IncomingCall {
+public class IncomingCallImpl extends AsteriskInitiatorImpl implements IncomingCall {
   /**
 	 * The cached value of the '{@link #getNewCall1() <em>New Call1</em>}' containment reference.
 	 * <!-- begin-user-doc -->

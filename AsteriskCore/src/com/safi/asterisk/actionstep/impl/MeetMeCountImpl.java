@@ -47,7 +47,7 @@ import com.safi.db.util.VariableTranslator;
  *
  * @generated
  */
-public class MeetMeCountImpl extends ActionStepImpl implements MeetMeCount {
+public class MeetMeCountImpl extends AsteriskActionStepImpl implements MeetMeCount {
   
   private static final String MEETME_COUNT_VARNAME = "MEETME_COUNT";
   /**

@@ -25,7 +25,7 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface SetCallerPresentation extends ActionStep, CallConsumer1 {
+public interface SetCallerPresentation extends AsteriskActionStep, CallConsumer1 {
   /**
 	 * Returns the value of the '<em><b>Presentation</b></em>' attribute.
 	 * The default value is <code>"allowed"</code>.

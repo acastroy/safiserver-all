@@ -32,7 +32,7 @@ import com.safi.core.call.SafiCall;
  *
  * @generated
  */
-public class PickdownImpl extends ActionStepImpl implements Pickdown {
+public class PickdownImpl extends AsteriskActionStepImpl implements Pickdown {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

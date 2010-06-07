@@ -25,7 +25,7 @@ import com.safi.core.initiator.Initiator;
  * @model
  * @generated
  */
-public interface IncomingCall extends Initiator, CallSource1 {
+public interface IncomingCall extends AsteriskInitiator, CallSource1 {
   /**
 	 * Returns the value of the '<em><b>Call Name</b></em>' attribute.
 	 * The default value is <code>"Call1"</code>.

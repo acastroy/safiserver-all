@@ -26,7 +26,7 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface PlayDTMF extends ActionStep, CallConsumer1 {
+public interface PlayDTMF extends AsteriskActionStep, CallConsumer1 {
   /**
 	 * Returns the value of the '<em><b>Digits</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

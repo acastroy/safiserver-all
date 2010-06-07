@@ -40,7 +40,7 @@ import com.safi.core.saflet.SafletContext;
  *
  * @generated
  */
-public class SayPhoneticImpl extends ActionStepImpl implements SayPhonetic {
+public class SayPhoneticImpl extends AsteriskActionStepImpl implements SayPhonetic {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

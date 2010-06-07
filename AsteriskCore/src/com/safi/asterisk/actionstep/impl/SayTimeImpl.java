@@ -45,7 +45,7 @@ import com.safi.db.util.VariableTranslator;
  *
  * @generated
  */
-public class SayTimeImpl extends ActionStepImpl implements SayTime {
+public class SayTimeImpl extends AsteriskActionStepImpl implements SayTime {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

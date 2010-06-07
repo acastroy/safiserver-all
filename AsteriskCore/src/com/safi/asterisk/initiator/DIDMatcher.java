@@ -28,7 +28,7 @@ import com.safi.core.initiator.Initiator;
  * @model
  * @generated
  */
-public interface DIDMatcher extends Initiator, CallSource1 {
+public interface DIDMatcher extends AsteriskInitiator, CallSource1 {
   /**
 	 * Returns the value of the '<em><b>DNIS Pattern</b></em>' attribute.
 	 * <!-- begin-user-doc -->

@@ -35,14 +35,13 @@ import com.safi.core.actionstep.ActionStepFactory;
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.Output;
 import com.safi.core.actionstep.OutputType;
-import com.safi.core.actionstep.impl.ActionStepImpl;
 import com.safi.core.call.CallPackage;
 import com.safi.core.call.CallSource1;
 import com.safi.core.call.SafiCall;
 import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletContext;
 import com.safi.db.VariableType;
-import com.safi.db.server.config.AsteriskServer;
+import com.safi.db.astdb.AsteriskServer;
 import com.safi.db.util.VariableTranslator;
 
 /**
@@ -61,7 +60,7 @@ import com.safi.db.util.VariableTranslator;
  *
  * @generated
  */
-public class PlaceCallImpl extends ActionStepImpl implements PlaceCall {
+public class PlaceCallImpl extends AsteriskActionStepImpl implements PlaceCall {
   /**
 	 * The cached value of the '{@link #getNewCall1() <em>New Call1</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

@@ -19,5 +19,5 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface Hangup extends ActionStep, CallConsumer1 {
+public interface Hangup extends AsteriskActionStep, CallConsumer1 {
 } // Hangup

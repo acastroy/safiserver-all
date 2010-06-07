@@ -22,6 +22,7 @@ import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.actionstep.ActionstepFactory;
 import com.safi.asterisk.actionstep.ActionstepPackage;
 import com.safi.asterisk.actionstep.Answer;
+import com.safi.asterisk.actionstep.AsteriskActionStep;
 import com.safi.asterisk.actionstep.Background;
 import com.safi.asterisk.actionstep.BackgroundDetect;
 import com.safi.asterisk.actionstep.Bridge;
@@ -100,6 +101,7 @@ import com.safi.asterisk.saflet.impl.SafletPackageImpl;
 import com.safi.core.CorePackage;
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.call.CallPackage;
+import com.safi.db.astdb.AstdbPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -593,6 +595,13 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 
   /**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass asteriskActionStepEClass = null;
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -666,6 +675,7 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		isInited = true;
 
 		// Initialize simple dependencies
+		AstdbPackage.eINSTANCE.eClass();
 		CorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
@@ -3558,6 +3568,15 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 
 		/**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAsteriskActionStep() {
+		return asteriskActionStepEClass;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -4007,6 +4026,8 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		createEAttribute(extensionTransferEClass, EXTENSION_TRANSFER__DO_PRE_EXTEN_STATUS_CHECK);
 		createEReference(extensionTransferEClass, EXTENSION_TRANSFER__CHANNEL_TYPE);
 
+		asteriskActionStepEClass = createEClass(ASTERISK_ACTION_STEP);
+
 		// Create enums
 		meetMeAdminCommandEEnum = createEEnum(MEET_ME_ADMIN_COMMAND);
 		presentationTypeEEnum = createEEnum(PRESENTATION_TYPE);
@@ -4040,8 +4061,8 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ActionStepPackage theActionStepPackage = (ActionStepPackage)EPackage.Registry.INSTANCE.getEPackage(ActionStepPackage.eNS_URI);
 		CallPackage theCallPackage = (CallPackage)EPackage.Registry.INSTANCE.getEPackage(CallPackage.eNS_URI);
+		ActionStepPackage theActionStepPackage = (ActionStepPackage)EPackage.Registry.INSTANCE.getEPackage(ActionStepPackage.eNS_URI);
 
 		// Create type parameters
 		addETypeParameter(mapEDataType, "T");
@@ -4052,144 +4073,145 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		answerEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		answerEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		answerEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		getDigitsEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		getDigitsEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		getDigitsEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		getFullVariableEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		getFullVariableEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		getFullVariableEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		multiStreamAudioEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		multiStreamAudioEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		multiStreamAudioEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		hangupEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		hangupEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		hangupEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		recordFileEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		recordFileEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		recordFileEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		sayAlphaEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		sayAlphaEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		sayAlphaEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		sayDateTimeEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		sayDateTimeEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		sayDateTimeEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		sayDigitsEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		sayDigitsEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		sayDigitsEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		sayNumberEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		sayNumberEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		sayNumberEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		sayPhoneticEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		sayPhoneticEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		sayPhoneticEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		sayTimeEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		sayTimeEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		sayTimeEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		setAutoHangupEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		setAutoHangupEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		setAutoHangupEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		setCallerIdEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		setCallerIdEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		setCallerIdEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		setChannelVariableEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		setChannelVariableEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		setChannelVariableEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		setContextEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		setContextEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		setContextEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		setExtensionEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		setExtensionEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		setExtensionEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		stopMusicOnHoldEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		stopMusicOnHoldEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		stopMusicOnHoldEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		setMusicOnEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		setMusicOnEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		setMusicOnEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		setPriorityEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		setPriorityEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		setPriorityEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		streamAudioEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		streamAudioEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		streamAudioEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		waitForDigitEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		waitForDigitEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		waitForDigitEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		originateCallEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		originateCallEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		originateCallEClass.getESuperTypes().add(theCallPackage.getCallSource1());
-		playDTMFEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		playDTMFEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		playDTMFEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		recordCallEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		recordCallEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		recordCallEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		transferEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		transferEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		transferEClass.getESuperTypes().add(theCallPackage.getCallConsumer2());
-		executeApplicationEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		executeApplicationEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		executeApplicationEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		getCallInfoEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		getCallInfoEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		getCallInfoEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		playMusicOnHoldEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		playMusicOnHoldEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		playMusicOnHoldEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		promptGetDigitsEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		promptGetDigitsEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		promptGetDigitsEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		sleepEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		sleepEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		sleepEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		streamAudioExtendedEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		streamAudioExtendedEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		streamAudioExtendedEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		dialEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		dialEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		dialEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		pickupEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		pickupEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		pickupEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		backgroundEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		backgroundEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		backgroundEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		backgroundDetectEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		backgroundDetectEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		backgroundDetectEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		waitExtenEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		waitExtenEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		waitExtenEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		softHangupEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		softHangupEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		softHangupEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		pickupChanEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		pickupChanEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		pickupChanEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		pickdownEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		pickdownEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		pickdownEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		progressEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		progressEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		progressEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		bridgeEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		bridgeEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		bridgeEClass.getESuperTypes().add(theCallPackage.getCallConsumer2());
-		placeCallEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		placeCallEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		placeCallEClass.getESuperTypes().add(theCallPackage.getCallSource1());
-		voicemailEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		voicemailEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		voicemailEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		voicemailMainEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		voicemailMainEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		voicemailMainEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		vmAuthenticateEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		vmAuthenticateEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		vmAuthenticateEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		meetMeEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		meetMeEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		meetMeEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		meetMeAdminEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		meetMeAdminEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		meetMeAdminEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		meetMeCountEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		meetMeCountEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		meetMeCountEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		waitForRingEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		waitForRingEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		waitForRingEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		waitMusicOnHoldEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		waitMusicOnHoldEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		waitMusicOnHoldEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		getAvailableChannelEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		getAvailableChannelEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		getAvailableChannelEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		congestionEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		congestionEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		congestionEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		ringingEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		ringingEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		ringingEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		setCallerPresentationEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		setCallerPresentationEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		setCallerPresentationEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		setGlobalVariableEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		setGlobalVariableEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		setGlobalVariableEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		echoEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		echoEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		echoEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		festivalEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		festivalEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		festivalEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		playtonesEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		playtonesEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		playtonesEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		stopPlaytonesEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		stopPlaytonesEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		stopPlaytonesEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		chanSpyEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		chanSpyEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		chanSpyEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		dictateEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		dictateEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		dictateEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		extensionSpyEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		extensionSpyEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		extensionSpyEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		mixMonitorEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		mixMonitorEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		mixMonitorEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		stopMixmonitorEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		stopMixmonitorEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		stopMixmonitorEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		stopMonitorEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		stopMonitorEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		stopMonitorEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		monitorEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		monitorEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		monitorEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		directoryEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		directoryEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		directoryEClass.getESuperTypes().add(theCallPackage.getCallConsumer1());
-		extensionTransferEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		extensionTransferEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		extensionTransferEClass.getESuperTypes().add(theCallPackage.getCallConsumer2());
+		asteriskActionStepEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(answerEClass, Answer.class, "Answer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -4582,6 +4604,8 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		initEReference(getExtensionTransfer_Options(), theActionStepPackage.getDynamicValue(), null, "options", null, 0, 1, ExtensionTransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getExtensionTransfer_DoPreExtenStatusCheck(), ecorePackage.getEBoolean(), "doPreExtenStatusCheck", null, 0, 1, ExtensionTransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getExtensionTransfer_ChannelType(), theActionStepPackage.getDynamicValue(), null, "channelType", null, 0, 1, ExtensionTransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(asteriskActionStepEClass, AsteriskActionStep.class, "AsteriskActionStep", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(meetMeAdminCommandEEnum, MeetMeAdminCommand.class, "MeetMeAdminCommand");

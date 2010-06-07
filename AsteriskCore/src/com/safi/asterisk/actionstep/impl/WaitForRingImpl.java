@@ -32,7 +32,7 @@ import com.safi.core.call.SafiCall;
  *
  * @generated
  */
-public class WaitForRingImpl extends ActionStepImpl implements WaitForRing {
+public class WaitForRingImpl extends AsteriskActionStepImpl implements WaitForRing {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

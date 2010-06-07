@@ -19,5 +19,5 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface Congestion extends ActionStep, CallConsumer1 {
+public interface Congestion extends AsteriskActionStep, CallConsumer1 {
 } // Congestion

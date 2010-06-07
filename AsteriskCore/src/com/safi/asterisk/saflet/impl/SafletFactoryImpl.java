@@ -6,6 +6,7 @@
  */
 package com.safi.asterisk.saflet.impl;
 
+import com.safi.asterisk.saflet.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;

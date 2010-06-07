@@ -37,7 +37,7 @@ import com.safi.core.call.SafiCall;
  *
  * @generated
  */
-public class GetAvailableChannelImpl extends ActionStepImpl implements GetAvailableChannel {
+public class GetAvailableChannelImpl extends AsteriskActionStepImpl implements GetAvailableChannel {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

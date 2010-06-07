@@ -26,7 +26,7 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface SetExtension extends ActionStep, CallConsumer1 {
+public interface SetExtension extends AsteriskActionStep, CallConsumer1 {
   /**
 	 * Returns the value of the '<em><b>Extension</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

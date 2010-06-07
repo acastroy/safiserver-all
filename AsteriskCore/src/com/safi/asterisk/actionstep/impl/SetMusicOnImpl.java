@@ -43,7 +43,7 @@ import com.safi.db.util.VariableTranslator;
  *
  * @generated
  */
-public class SetMusicOnImpl extends ActionStepImpl implements SetMusicOn {
+public class SetMusicOnImpl extends AsteriskActionStepImpl implements SetMusicOn {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->

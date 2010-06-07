@@ -25,7 +25,7 @@ import com.safi.core.call.CallConsumer1;
  * @model
  * @generated
  */
-public interface WaitMusicOnHold extends ActionStep, CallConsumer1 {
+public interface WaitMusicOnHold extends AsteriskActionStep, CallConsumer1 {
   /**
 	 * Returns the value of the '<em><b>Duration</b></em>' attribute.
 	 * <!-- begin-user-doc -->

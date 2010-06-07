@@ -44,7 +44,7 @@ import com.safi.db.util.VariableTranslator;
  *
  * @generated
  */
-public class FestivalImpl extends ActionStepImpl implements Festival {
+public class FestivalImpl extends AsteriskActionStepImpl implements Festival {
   /**
 	 * The cached value of the '{@link #getCall1() <em>Call1</em>}' reference.
 	 * <!-- begin-user-doc -->
