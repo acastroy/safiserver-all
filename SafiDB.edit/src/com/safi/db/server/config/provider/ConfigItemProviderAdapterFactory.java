@@ -6,15 +6,12 @@
  */
 package com.safi.db.server.config.provider;
 
-import com.safi.db.server.config.util.ConfigAdapterFactory;
-
 import java.util.ArrayList;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -26,6 +23,8 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+
+import com.safi.db.server.config.util.ConfigAdapterFactory;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -99,52 +98,6 @@ public class ConfigItemProviderAdapterFactory extends ConfigAdapterFactory imple
 	}
 
   /**
-	 * This keeps track of the one adapter used for all {@link com.safi.db.server.config.AsteriskServer} instances.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  protected AsteriskServerItemProvider asteriskServerItemProvider;
-
-  /**
-	 * This creates an adapter for a {@link com.safi.db.server.config.AsteriskServer}.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  @Override
-  public Adapter createAsteriskServerAdapter() {
-		if (asteriskServerItemProvider == null) {
-			asteriskServerItemProvider = new AsteriskServerItemProvider(this);
-		}
-
-		return asteriskServerItemProvider;
-	}
-
-  /**
-	 * This keeps track of the one adapter used for all {@link com.safi.db.server.config.FreeSwitchServer} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FreeSwitchServerItemProvider freeSwitchServerItemProvider;
-
-		/**
-	 * This creates an adapter for a {@link com.safi.db.server.config.FreeSwitchServer}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFreeSwitchServerAdapter() {
-		if (freeSwitchServerItemProvider == null) {
-			freeSwitchServerItemProvider = new FreeSwitchServerItemProvider(this);
-		}
-
-		return freeSwitchServerItemProvider;
-	}
-
-		/**
 	 * This keeps track of the one adapter used for all {@link com.safi.db.server.config.SafiServer} instances.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -306,6 +259,29 @@ public class ConfigItemProviderAdapterFactory extends ConfigAdapterFactory imple
 	}
 
   /**
+	 * This keeps track of the one adapter used for all {@link com.safi.db.server.config.TelephonySubsystem} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TelephonySubsystemItemProvider telephonySubsystemItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link com.safi.db.server.config.TelephonySubsystem}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTelephonySubsystemAdapter() {
+		if (telephonySubsystemItemProvider == null) {
+			telephonySubsystemItemProvider = new TelephonySubsystemItemProvider(this);
+		}
+
+		return telephonySubsystemItemProvider;
+	}
+
+		/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -405,8 +381,6 @@ public class ConfigItemProviderAdapterFactory extends ConfigAdapterFactory imple
 	 */
   public void dispose() {
 		if (serverResourceItemProvider != null) serverResourceItemProvider.dispose();
-		if (asteriskServerItemProvider != null) asteriskServerItemProvider.dispose();
-		if (freeSwitchServerItemProvider != null) freeSwitchServerItemProvider.dispose();
 		if (safiServerItemProvider != null) safiServerItemProvider.dispose();
 		if (roleItemProvider != null) roleItemProvider.dispose();
 		if (entitlementItemProvider != null) entitlementItemProvider.dispose();
@@ -414,6 +388,7 @@ public class ConfigItemProviderAdapterFactory extends ConfigAdapterFactory imple
 		if (safletItemProvider != null) safletItemProvider.dispose();
 		if (safletProjectItemProvider != null) safletProjectItemProvider.dispose();
 		if (promptItemProvider != null) promptItemProvider.dispose();
+		if (telephonySubsystemItemProvider != null) telephonySubsystemItemProvider.dispose();
 	}
 
 }

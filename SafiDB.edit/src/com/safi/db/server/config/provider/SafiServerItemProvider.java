@@ -7,20 +7,11 @@
 package com.safi.db.server.config.provider;
 
 
-import com.safi.db.provider.DbEditPlugin;
-
-import com.safi.db.server.config.ConfigFactory;
-import com.safi.db.server.config.ConfigPackage;
-import com.safi.db.server.config.SafiServer;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -30,8 +21,11 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import com.safi.db.server.config.ConfigFactory;
+import com.safi.db.server.config.ConfigPackage;
+import com.safi.db.server.config.SafiServer;
 
 /**
  * This is the item provider adapter for a {@link com.safi.db.server.config.SafiServer} object.
@@ -69,7 +63,6 @@ public class SafiServerItemProvider
 			super.getPropertyDescriptors(object);
 
 			addBindIPPropertyDescriptor(object);
-			addPortPropertyDescriptor(object);
 			addManagementPortPropertyDescriptor(object);
 			addRunningPropertyDescriptor(object);
 			addDebugPropertyDescriptor(object);
@@ -96,28 +89,6 @@ public class SafiServerItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-  /**
-	 * This adds a property descriptor for the Port feature.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  protected void addPortPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SafiServer_port_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SafiServer_port_feature", "_UI_SafiServer_type"),
-				 ConfigPackage.Literals.SAFI_SERVER__PORT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -222,8 +193,7 @@ public class SafiServerItemProvider
   public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ConfigPackage.Literals.SAFI_SERVER__ASTERISK_SERVERS);
-			childrenFeatures.add(ConfigPackage.Literals.SAFI_SERVER__FREE_SWITCH_SERVERS);
+			childrenFeatures.add(ConfigPackage.Literals.SAFI_SERVER__TELEPHONY_SUBSYSTEMS);
 			childrenFeatures.add(ConfigPackage.Literals.SAFI_SERVER__USER);
 			childrenFeatures.add(ConfigPackage.Literals.SAFI_SERVER__USERS);
 		}
@@ -281,15 +251,13 @@ public class SafiServerItemProvider
 
 		switch (notification.getFeatureID(SafiServer.class)) {
 			case ConfigPackage.SAFI_SERVER__BIND_IP:
-			case ConfigPackage.SAFI_SERVER__PORT:
 			case ConfigPackage.SAFI_SERVER__MANAGEMENT_PORT:
 			case ConfigPackage.SAFI_SERVER__RUNNING:
 			case ConfigPackage.SAFI_SERVER__DEBUG:
 			case ConfigPackage.SAFI_SERVER__DB_PORT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ConfigPackage.SAFI_SERVER__ASTERISK_SERVERS:
-			case ConfigPackage.SAFI_SERVER__FREE_SWITCH_SERVERS:
+			case ConfigPackage.SAFI_SERVER__TELEPHONY_SUBSYSTEMS:
 			case ConfigPackage.SAFI_SERVER__USER:
 			case ConfigPackage.SAFI_SERVER__USERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -311,13 +279,8 @@ public class SafiServerItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ConfigPackage.Literals.SAFI_SERVER__ASTERISK_SERVERS,
-				 ConfigFactory.eINSTANCE.createAsteriskServer()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ConfigPackage.Literals.SAFI_SERVER__FREE_SWITCH_SERVERS,
-				 ConfigFactory.eINSTANCE.createFreeSwitchServer()));
+				(ConfigPackage.Literals.SAFI_SERVER__TELEPHONY_SUBSYSTEMS,
+				 ConfigFactory.eINSTANCE.createTelephonySubsystem()));
 
 		newChildDescriptors.add
 			(createChildParameter

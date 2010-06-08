@@ -7,19 +7,11 @@
 package com.safi.db.server.config.provider;
 
 
-import com.safi.db.provider.DbEditPlugin;
-
-import com.safi.db.server.config.ConfigPackage;
-import com.safi.db.server.config.Saflet;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -29,6 +21,9 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import com.safi.db.server.config.ConfigPackage;
+import com.safi.db.server.config.Saflet;
 
 /**
  * This is the item provider adapter for a {@link com.safi.db.server.config.Saflet} object.
@@ -66,6 +61,7 @@ public class SafletItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCodePropertyDescriptor(object);
+			addSubsystemIdPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -93,6 +89,28 @@ public class SafletItemProvider
 	}
 
   /**
+	 * This adds a property descriptor for the Subsystem Id feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSubsystemIdPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Saflet_subsystemId_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Saflet_subsystemId_feature", "_UI_Saflet_type"),
+				 ConfigPackage.Literals.SAFLET__SUBSYSTEM_ID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+		/**
 	 * This returns Saflet.gif.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -130,6 +148,7 @@ public class SafletItemProvider
 
 		switch (notification.getFeatureID(Saflet.class)) {
 			case ConfigPackage.SAFLET__CODE:
+			case ConfigPackage.SAFLET__SUBSYSTEM_ID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
