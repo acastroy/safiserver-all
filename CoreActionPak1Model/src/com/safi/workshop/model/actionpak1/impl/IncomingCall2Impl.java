@@ -9,6 +9,7 @@ package com.safi.workshop.model.actionpak1.impl;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
+
 import org.apache.commons.lang.StringUtils;
 import org.asteriskjava.fastagi.AgiChannel;
 import org.asteriskjava.fastagi.AgiRequest;
@@ -18,7 +19,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import com.safi.asterisk.AsteriskPackage;
+
 import com.safi.asterisk.Call;
 import com.safi.asterisk.initiator.AsteriskInitiatorInfo;
 import com.safi.asterisk.util.AsteriskSafletConstants;
@@ -32,7 +33,6 @@ import com.safi.core.actionstep.impl.ParameterizedInitiatorImpl;
 import com.safi.core.call.CallPackage;
 import com.safi.core.call.CallSource1;
 import com.safi.core.call.SafiCall;
-import com.safi.db.util.VariableTranslator;
 import com.safi.core.initiator.InitiatorInfo;
 import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletConstants;
@@ -42,7 +42,8 @@ import com.safi.db.DbFactory;
 import com.safi.db.Variable;
 import com.safi.db.VariableScope;
 import com.safi.db.VariableType;
-import com.safi.db.server.config.AsteriskServer;
+import com.safi.db.astdb.AsteriskServer;
+import com.safi.db.util.VariableTranslator;
 import com.safi.workshop.model.actionpak1.Actionpak1Package;
 import com.safi.workshop.model.actionpak1.IncomingCall2;
 
