@@ -495,11 +495,6 @@ public class DynamicValueItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionStepPackage.eINSTANCE.getDynamicValue_Payload(),
-				 ConfigFactory.eINSTANCE.createAsteriskServer()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionStepPackage.eINSTANCE.getDynamicValue_Payload(),
 				 ConfigFactory.eINSTANCE.createSafiServer()));
 
 		newChildDescriptors.add
@@ -531,6 +526,11 @@ public class DynamicValueItemProvider
 			(createChildParameter
 				(ActionStepPackage.eINSTANCE.getDynamicValue_Payload(),
 				 ConfigFactory.eINSTANCE.createPrompt()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionStepPackage.eINSTANCE.getDynamicValue_Payload(),
+				 ConfigFactory.eINSTANCE.createTelephonySubsystem()));
 	}
 
   /**

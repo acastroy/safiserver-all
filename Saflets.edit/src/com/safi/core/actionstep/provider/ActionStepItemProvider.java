@@ -7,6 +7,7 @@
 package com.safi.core.actionstep.provider;
 
 
+import com.safi.core.CorePackage;
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.ActionStepFactory;
 import com.safi.core.actionstep.ActionStepPackage;
@@ -74,12 +75,58 @@ public class ActionStepItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addPlatformIDPropertyDescriptor(object);
+			addPlatformDependantPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
   /**
+	 * This adds a property descriptor for the Platform ID feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPlatformIDPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PlatformDisposition_platformID_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PlatformDisposition_platformID_feature", "_UI_PlatformDisposition_type"),
+				 CorePackage.Literals.PLATFORM_DISPOSITION__PLATFORM_ID,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+		/**
+	 * This adds a property descriptor for the Platform Dependant feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPlatformDependantPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PlatformDisposition_platformDependant_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PlatformDisposition_platformDependant_feature", "_UI_PlatformDisposition_type"),
+				 CorePackage.Literals.PLATFORM_DISPOSITION__PLATFORM_DEPENDANT,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+		/**
 	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -158,6 +205,8 @@ public class ActionStepItemProvider
 
 		switch (notification.getFeatureID(ActionStep.class)) {
 			case ActionStepPackage.ACTION_STEP__PRODUCT_ID:
+			case ActionStepPackage.ACTION_STEP__PLATFORM_ID:
+			case ActionStepPackage.ACTION_STEP__PLATFORM_DEPENDANT:
 			case ActionStepPackage.ACTION_STEP__PAUSED:
 			case ActionStepPackage.ACTION_STEP__ACTIVE:
 			case ActionStepPackage.ACTION_STEP__NAME:
