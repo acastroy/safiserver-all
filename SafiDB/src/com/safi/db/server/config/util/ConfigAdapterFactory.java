@@ -11,15 +11,17 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
-import com.safi.db.server.config.AsteriskServer;
+
 import com.safi.db.server.config.ConfigPackage;
 import com.safi.db.server.config.Entitlement;
 import com.safi.db.server.config.Prompt;
 import com.safi.db.server.config.Role;
+import com.safi.db.server.config.SFTPInfo;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.Saflet;
 import com.safi.db.server.config.SafletProject;
 import com.safi.db.server.config.ServerResource;
+import com.safi.db.server.config.TelephonySubsystem;
 import com.safi.db.server.config.User;
 
 /**
@@ -83,14 +85,6 @@ public class ConfigAdapterFactory extends AdapterFactoryImpl {
 				return createServerResourceAdapter();
 			}
 			@Override
-			public Adapter caseAsteriskServer(AsteriskServer object) {
-				return createAsteriskServerAdapter();
-			}
-			@Override
-			public Adapter caseFreeSwitchServer(FreeSwitchServer object) {
-				return createFreeSwitchServerAdapter();
-			}
-			@Override
 			public Adapter caseSafiServer(SafiServer object) {
 				return createSafiServerAdapter();
 			}
@@ -117,6 +111,14 @@ public class ConfigAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casePrompt(Prompt object) {
 				return createPromptAdapter();
+			}
+			@Override
+			public Adapter caseSFTPInfo(SFTPInfo object) {
+				return createSFTPInfoAdapter();
+			}
+			@Override
+			public Adapter caseTelephonySubsystem(TelephonySubsystem object) {
+				return createTelephonySubsystemAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -153,34 +155,6 @@ public class ConfigAdapterFactory extends AdapterFactoryImpl {
 	}
 
   /**
-	 * Creates a new adapter for an object of class '{@link com.safi.db.server.config.AsteriskServer <em>Asterisk Server</em>}'.
-	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see com.safi.db.server.config.AsteriskServer
-	 * @generated
-	 */
-  public Adapter createAsteriskServerAdapter() {
-		return null;
-	}
-
-  /**
-	 * Creates a new adapter for an object of class '{@link com.safi.db.server.config.FreeSwitchServer <em>Free Switch Server</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see com.safi.db.server.config.FreeSwitchServer
-	 * @generated
-	 */
-	public Adapter createFreeSwitchServerAdapter() {
-		return null;
-	}
-
-		/**
 	 * Creates a new adapter for an object of class '{@link com.safi.db.server.config.SafiServer <em>Safi Server</em>}'.
 	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -279,6 +253,34 @@ public class ConfigAdapterFactory extends AdapterFactoryImpl {
 	}
 
   /**
+	 * Creates a new adapter for an object of class '{@link com.safi.db.server.config.SFTPInfo <em>SFTP Info</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.safi.db.server.config.SFTPInfo
+	 * @generated
+	 */
+	public Adapter createSFTPInfoAdapter() {
+		return null;
+	}
+
+		/**
+	 * Creates a new adapter for an object of class '{@link com.safi.db.server.config.TelephonySubsystem <em>Telephony Subsystem</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.safi.db.server.config.TelephonySubsystem
+	 * @generated
+	 */
+	public Adapter createTelephonySubsystemAdapter() {
+		return null;
+	}
+
+		/**
 	 * Creates a new adapter for the default case.
 	 * <!-- begin-user-doc -->
    * This default implementation returns null.

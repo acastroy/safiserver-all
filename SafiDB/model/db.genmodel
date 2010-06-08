@@ -161,44 +161,10 @@
               ecoreFeature="ecore:EReference db.ecore#//server/config/ServerResource/modifiedBy"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/ServerResource/description"/>
         </genClasses>
-        <genClasses ecoreClass="db.ecore#//server/config/AsteriskServer">
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/hostname"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/managerName"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/managerPassword"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/managerPort"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/sftpUser"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/sftpPassword"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/sftpPort"/>
-          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference db.ecore#//server/config/AsteriskServer/safiServer"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/running"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/active"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/private"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/promptDirectory"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/asteriskVersion"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/AsteriskServer/visibleSafiServerIP"/>
-        </genClasses>
-        <genClasses ecoreClass="db.ecore#//server/config/FreeSwitchServer">
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/FreeSwitchServer/hostname"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/FreeSwitchServer/managerName"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/FreeSwitchServer/managerPassword"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/FreeSwitchServer/managerPort"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/FreeSwitchServer/sftpUser"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/FreeSwitchServer/sftpPassword"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/FreeSwitchServer/sftpPort"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference db.ecore#//server/config/FreeSwitchServer/safiServer"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/FreeSwitchServer/running"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/FreeSwitchServer/enabled"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/FreeSwitchServer/private"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/FreeSwitchServer/promptDirectory"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/FreeSwitchServer/freeSwitchVersion"/>
-        </genClasses>
         <genClasses ecoreClass="db.ecore#//server/config/SafiServer">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/SafiServer/bindIP"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/SafiServer/port"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/SafiServer/managementPort"/>
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference db.ecore#//server/config/SafiServer/asteriskServers"/>
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference db.ecore#//server/config/SafiServer/freeSwitchServers"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference db.ecore#//server/config/SafiServer/telephonySubsystems"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference db.ecore#//server/config/SafiServer/user"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference db.ecore#//server/config/SafiServer/users"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/SafiServer/running"/>
@@ -220,6 +186,7 @@
         <genClasses ecoreClass="db.ecore#//server/config/Saflet">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/Saflet/code"/>
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference db.ecore#//server/config/Saflet/project"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/Saflet/subsystemId"/>
         </genClasses>
         <genClasses ecoreClass="db.ecore#//server/config/SafletProject">
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference db.ecore#//server/config/SafletProject/saflets"/>
@@ -230,6 +197,25 @@
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference db.ecore#//server/config/Prompt/project"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/Prompt/system"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/Prompt/extension"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="db.ecore#//server/config/SFTPInfo">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/SFTPInfo/sftpUser"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/SFTPInfo/sftpPassword"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/SFTPInfo/sftpPort"/>
+        </genClasses>
+        <genClasses ecoreClass="db.ecore#//server/config/TelephonySubsystem">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/TelephonySubsystem/hostname"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/TelephonySubsystem/running"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference db.ecore#//server/config/TelephonySubsystem/safiServer"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/TelephonySubsystem/private"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/TelephonySubsystem/visibleSafiServerIP"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/TelephonySubsystem/enabled"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/TelephonySubsystem/managerName"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/TelephonySubsystem/managerPassword"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/TelephonySubsystem/managerPort"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/TelephonySubsystem/versionId"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/TelephonySubsystem/promptDirectory"/>
         </genClasses>
       </nestedGenPackages>
     </nestedGenPackages>

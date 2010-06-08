@@ -35,24 +35,6 @@ public interface ConfigFactory extends EFactory {
   ServerResource createServerResource();
 
   /**
-	 * Returns a new object of class '<em>Asterisk Server</em>'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Asterisk Server</em>'.
-	 * @generated
-	 */
-  AsteriskServer createAsteriskServer();
-
-  /**
-	 * Returns a new object of class '<em>Free Switch Server</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Free Switch Server</em>'.
-	 * @generated
-	 */
-	FreeSwitchServer createFreeSwitchServer();
-
-		/**
 	 * Returns a new object of class '<em>Safi Server</em>'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -116,6 +98,15 @@ public interface ConfigFactory extends EFactory {
   Prompt createPrompt();
 
   /**
+	 * Returns a new object of class '<em>Telephony Subsystem</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Telephony Subsystem</em>'.
+	 * @generated
+	 */
+	TelephonySubsystem createTelephonySubsystem();
+
+		/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

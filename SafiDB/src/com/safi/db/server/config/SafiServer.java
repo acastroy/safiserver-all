@@ -17,10 +17,8 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.safi.db.server.config.SafiServer#getBindIP <em>Bind IP</em>}</li>
- *   <li>{@link com.safi.db.server.config.SafiServer#getPort <em>Port</em>}</li>
  *   <li>{@link com.safi.db.server.config.SafiServer#getManagementPort <em>Management Port</em>}</li>
- *   <li>{@link com.safi.db.server.config.SafiServer#getAsteriskServers <em>Asterisk Servers</em>}</li>
- *   <li>{@link com.safi.db.server.config.SafiServer#getFreeSwitchServers <em>Free Switch Servers</em>}</li>
+ *   <li>{@link com.safi.db.server.config.SafiServer#getTelephonySubsystems <em>Telephony Subsystems</em>}</li>
  *   <li>{@link com.safi.db.server.config.SafiServer#getUser <em>User</em>}</li>
  *   <li>{@link com.safi.db.server.config.SafiServer#getUsers <em>Users</em>}</li>
  *   <li>{@link com.safi.db.server.config.SafiServer#isRunning <em>Running</em>}</li>
@@ -61,33 +59,6 @@ public interface SafiServer extends ServerResource {
   void setBindIP(String value);
 
   /**
-	 * Returns the value of the '<em><b>Port</b></em>' attribute.
-	 * The default value is <code>"4573"</code>.
-	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Port</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-	 * @return the value of the '<em>Port</em>' attribute.
-	 * @see #setPort(int)
-	 * @see com.safi.db.server.config.ConfigPackage#getSafiServer_Port()
-	 * @model default="4573"
-	 * @generated
-	 */
-  int getPort();
-
-  /**
-	 * Sets the value of the '{@link com.safi.db.server.config.SafiServer#getPort <em>Port</em>}' attribute.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Port</em>' attribute.
-	 * @see #getPort()
-	 * @generated
-	 */
-  void setPort(int value);
-
-  /**
 	 * Returns the value of the '<em><b>Management Port</b></em>' attribute.
 	 * The default value is <code>"7020"</code>.
 	 * <!-- begin-user-doc -->
@@ -115,40 +86,21 @@ public interface SafiServer extends ServerResource {
   void setManagementPort(int value);
 
   /**
-	 * Returns the value of the '<em><b>Asterisk Servers</b></em>' containment reference list.
-	 * The list contents are of type {@link com.safi.db.server.config.AsteriskServer}.
-	 * It is bidirectional and its opposite is '{@link com.safi.db.server.config.AsteriskServer#getSafiServer <em>Safi Server</em>}'.
-	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Asterisk Servers</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-	 * @return the value of the '<em>Asterisk Servers</em>' containment reference list.
-	 * @see com.safi.db.server.config.ConfigPackage#getSafiServer_AsteriskServers()
-	 * @see com.safi.db.server.config.AsteriskServer#getSafiServer
-	 * @model opposite="safiServer" containment="true"
-	 *        annotation="teneo.jpa appinfo='@OneToMany(fetch=\"EAGER\" indexed=\"false\" cascade=\"ALL\")'"
-	 * @generated
-	 */
-  EList<AsteriskServer> getAsteriskServers();
-
-  /**
-	 * Returns the value of the '<em><b>Free Switch Servers</b></em>' containment reference list.
-	 * The list contents are of type {@link com.safi.db.server.config.FreeSwitchServer}.
+	 * Returns the value of the '<em><b>Telephony Subsystems</b></em>' containment reference list.
+	 * The list contents are of type {@link com.safi.db.server.config.TelephonySubsystem}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Free Switch Servers</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Telephony Subsystems</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Free Switch Servers</em>' containment reference list.
-	 * @see com.safi.db.server.config.ConfigPackage#getSafiServer_FreeSwitchServers()
+	 * @return the value of the '<em>Telephony Subsystems</em>' containment reference list.
+	 * @see com.safi.db.server.config.ConfigPackage#getSafiServer_TelephonySubsystems()
 	 * @model containment="true"
 	 *        annotation="teneo.jpa appinfo='@OneToMany(fetch=\"EAGER\" indexed=\"false\" cascade=\"ALL\")'"
 	 * @generated
 	 */
-	EList<FreeSwitchServer> getFreeSwitchServers();
+	EList<TelephonySubsystem> getTelephonySubsystems();
 
 		/**
 	 * Returns the value of the '<em><b>User</b></em>' containment reference.

@@ -25,6 +25,7 @@ import com.safi.db.server.config.SafletProject;
  * <ul>
  *   <li>{@link com.safi.db.server.config.impl.SafletImpl#getCode <em>Code</em>}</li>
  *   <li>{@link com.safi.db.server.config.impl.SafletImpl#getProject <em>Project</em>}</li>
+ *   <li>{@link com.safi.db.server.config.impl.SafletImpl#getSubsystemId <em>Subsystem Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,6 +53,26 @@ public class SafletImpl extends ServerResourceImpl implements Saflet {
   protected byte[] code = CODE_EDEFAULT;
 
   /**
+	 * The default value of the '{@link #getSubsystemId() <em>Subsystem Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSubsystemId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SUBSYSTEM_ID_EDEFAULT = "Asterisk";
+
+		/**
+	 * The cached value of the '{@link #getSubsystemId() <em>Subsystem Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSubsystemId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String subsystemId = SUBSYSTEM_ID_EDEFAULT;
+
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
@@ -134,6 +155,27 @@ public class SafletImpl extends ServerResourceImpl implements Saflet {
 
   /**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getSubsystemId() {
+		return subsystemId;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSubsystemId(String newSubsystemId) {
+		String oldSubsystemId = subsystemId;
+		subsystemId = newSubsystemId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConfigPackage.SAFLET__SUBSYSTEM_ID, oldSubsystemId, subsystemId));
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -188,6 +230,8 @@ public class SafletImpl extends ServerResourceImpl implements Saflet {
 				return getCode();
 			case ConfigPackage.SAFLET__PROJECT:
 				return getProject();
+			case ConfigPackage.SAFLET__SUBSYSTEM_ID:
+				return getSubsystemId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -205,6 +249,9 @@ public class SafletImpl extends ServerResourceImpl implements Saflet {
 				return;
 			case ConfigPackage.SAFLET__PROJECT:
 				setProject((SafletProject)newValue);
+				return;
+			case ConfigPackage.SAFLET__SUBSYSTEM_ID:
+				setSubsystemId((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -224,6 +271,9 @@ public class SafletImpl extends ServerResourceImpl implements Saflet {
 			case ConfigPackage.SAFLET__PROJECT:
 				setProject((SafletProject)null);
 				return;
+			case ConfigPackage.SAFLET__SUBSYSTEM_ID:
+				setSubsystemId(SUBSYSTEM_ID_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -240,6 +290,8 @@ public class SafletImpl extends ServerResourceImpl implements Saflet {
 				return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
 			case ConfigPackage.SAFLET__PROJECT:
 				return getProject() != null;
+			case ConfigPackage.SAFLET__SUBSYSTEM_ID:
+				return SUBSYSTEM_ID_EDEFAULT == null ? subsystemId != null : !SUBSYSTEM_ID_EDEFAULT.equals(subsystemId);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -256,6 +308,8 @@ public class SafletImpl extends ServerResourceImpl implements Saflet {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (code: ");
 		result.append(code);
+		result.append(", subsystemId: ");
+		result.append(subsystemId);
 		result.append(')');
 		return result.toString();
 	}

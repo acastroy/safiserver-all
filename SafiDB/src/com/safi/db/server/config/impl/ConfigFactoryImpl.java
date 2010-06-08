@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import com.safi.db.server.config.AsteriskServer;
+
 import com.safi.db.server.config.ConfigFactory;
 import com.safi.db.server.config.ConfigPackage;
 import com.safi.db.server.config.Entitlement;
@@ -24,6 +24,7 @@ import com.safi.db.server.config.Saflet;
 import com.safi.db.server.config.SafletProject;
 import com.safi.db.server.config.ServerResource;
 import com.safi.db.server.config.SynchMode;
+import com.safi.db.server.config.TelephonySubsystem;
 import com.safi.db.server.config.User;
 
 /**
@@ -71,8 +72,6 @@ public class ConfigFactoryImpl extends EFactoryImpl implements ConfigFactory {
   public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ConfigPackage.SERVER_RESOURCE: return createServerResource();
-			case ConfigPackage.ASTERISK_SERVER: return createAsteriskServer();
-			case ConfigPackage.FREE_SWITCH_SERVER: return createFreeSwitchServer();
 			case ConfigPackage.SAFI_SERVER: return createSafiServer();
 			case ConfigPackage.ROLE: return createRole();
 			case ConfigPackage.ENTITLEMENT: return createEntitlement();
@@ -80,6 +79,7 @@ public class ConfigFactoryImpl extends EFactoryImpl implements ConfigFactory {
 			case ConfigPackage.SAFLET: return createSaflet();
 			case ConfigPackage.SAFLET_PROJECT: return createSafletProject();
 			case ConfigPackage.PROMPT: return createPrompt();
+			case ConfigPackage.TELEPHONY_SUBSYSTEM: return createTelephonySubsystem();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -126,26 +126,6 @@ public class ConfigFactoryImpl extends EFactoryImpl implements ConfigFactory {
 	}
 
   /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public AsteriskServer createAsteriskServer() {
-		AsteriskServerImpl asteriskServer = new AsteriskServerImpl();
-		return asteriskServer;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FreeSwitchServer createFreeSwitchServer() {
-		FreeSwitchServerImpl freeSwitchServer = new FreeSwitchServerImpl();
-		return freeSwitchServer;
-	}
-
-		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
@@ -216,6 +196,16 @@ public class ConfigFactoryImpl extends EFactoryImpl implements ConfigFactory {
 	}
 
   /**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TelephonySubsystem createTelephonySubsystem() {
+		TelephonySubsystemImpl telephonySubsystem = new TelephonySubsystemImpl();
+		return telephonySubsystem;
+	}
+
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated

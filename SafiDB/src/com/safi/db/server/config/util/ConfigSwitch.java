@@ -8,17 +8,20 @@ package com.safi.db.server.config.util;
 
 import com.safi.db.server.config.*;
 import java.util.List;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import com.safi.db.server.config.AsteriskServer;
+
 import com.safi.db.server.config.ConfigPackage;
 import com.safi.db.server.config.Entitlement;
 import com.safi.db.server.config.Prompt;
 import com.safi.db.server.config.Role;
+import com.safi.db.server.config.SFTPInfo;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.Saflet;
 import com.safi.db.server.config.SafletProject;
 import com.safi.db.server.config.ServerResource;
+import com.safi.db.server.config.TelephonySubsystem;
 import com.safi.db.server.config.User;
 
 /**
@@ -101,20 +104,6 @@ public class ConfigSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ConfigPackage.ASTERISK_SERVER: {
-				AsteriskServer asteriskServer = (AsteriskServer)theEObject;
-				T result = caseAsteriskServer(asteriskServer);
-				if (result == null) result = caseServerResource(asteriskServer);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ConfigPackage.FREE_SWITCH_SERVER: {
-				FreeSwitchServer freeSwitchServer = (FreeSwitchServer)theEObject;
-				T result = caseFreeSwitchServer(freeSwitchServer);
-				if (result == null) result = caseServerResource(freeSwitchServer);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ConfigPackage.SAFI_SERVER: {
 				SafiServer safiServer = (SafiServer)theEObject;
 				T result = caseSafiServer(safiServer);
@@ -164,6 +153,19 @@ public class ConfigSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ConfigPackage.SFTP_INFO: {
+				SFTPInfo sftpInfo = (SFTPInfo)theEObject;
+				T result = caseSFTPInfo(sftpInfo);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ConfigPackage.TELEPHONY_SUBSYSTEM: {
+				TelephonySubsystem telephonySubsystem = (TelephonySubsystem)theEObject;
+				T result = caseTelephonySubsystem(telephonySubsystem);
+				if (result == null) result = caseServerResource(telephonySubsystem);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -184,36 +186,6 @@ public class ConfigSwitch<T> {
 	}
 
   /**
-	 * Returns the result of interpreting the object as an instance of '<em>Asterisk Server</em>'.
-	 * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Asterisk Server</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-  public T caseAsteriskServer(AsteriskServer object) {
-		return null;
-	}
-
-  /**
-	 * Returns the result of interpreting the object as an instance of '<em>Free Switch Server</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Free Switch Server</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFreeSwitchServer(FreeSwitchServer object) {
-		return null;
-	}
-
-		/**
 	 * Returns the result of interpreting the object as an instance of '<em>Safi Server</em>'.
 	 * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -319,6 +291,36 @@ public class ConfigSwitch<T> {
 	}
 
   /**
+	 * Returns the result of interpreting the object as an instance of '<em>SFTP Info</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>SFTP Info</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSFTPInfo(SFTPInfo object) {
+		return null;
+	}
+
+		/**
+	 * Returns the result of interpreting the object as an instance of '<em>Telephony Subsystem</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Telephony Subsystem</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTelephonySubsystem(TelephonySubsystem object) {
+		return null;
+	}
+
+		/**
 	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * <!-- begin-user-doc -->
    * This implementation returns null;

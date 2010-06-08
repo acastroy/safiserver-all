@@ -16,6 +16,7 @@ package com.safi.db.server.config;
  * <ul>
  *   <li>{@link com.safi.db.server.config.Saflet#getCode <em>Code</em>}</li>
  *   <li>{@link com.safi.db.server.config.Saflet#getProject <em>Project</em>}</li>
+ *   <li>{@link com.safi.db.server.config.Saflet#getSubsystemId <em>Subsystem Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,5 +78,32 @@ public interface Saflet extends ServerResource {
 	 * @generated
 	 */
   void setProject(SafletProject value);
+
+		/**
+	 * Returns the value of the '<em><b>Subsystem Id</b></em>' attribute.
+	 * The default value is <code>"Asterisk"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Subsystem Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Subsystem Id</em>' attribute.
+	 * @see #setSubsystemId(String)
+	 * @see com.safi.db.server.config.ConfigPackage#getSaflet_SubsystemId()
+	 * @model default="Asterisk"
+	 * @generated
+	 */
+	String getSubsystemId();
+
+		/**
+	 * Sets the value of the '{@link com.safi.db.server.config.Saflet#getSubsystemId <em>Subsystem Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Subsystem Id</em>' attribute.
+	 * @see #getSubsystemId()
+	 * @generated
+	 */
+	void setSubsystemId(String value);
 
 } // Saflet

@@ -12,20 +12,21 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import com.safi.db.DbPackage;
 import com.safi.db.impl.DbPackageImpl;
-import com.safi.db.server.config.AsteriskServer;
 import com.safi.db.server.config.ConfigFactory;
 import com.safi.db.server.config.ConfigPackage;
 import com.safi.db.server.config.Entitlement;
-import com.safi.db.server.config.FreeSwitchServer;
 import com.safi.db.server.config.Prompt;
 import com.safi.db.server.config.Role;
+import com.safi.db.server.config.SFTPInfo;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.Saflet;
 import com.safi.db.server.config.SafletProject;
 import com.safi.db.server.config.ServerResource;
 import com.safi.db.server.config.SynchMode;
+import com.safi.db.server.config.TelephonySubsystem;
 import com.safi.db.server.config.User;
 
 /**
@@ -43,20 +44,6 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
   private EClass serverResourceEClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  private EClass asteriskServerEClass = null;
-
-  /**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass freeSwitchServerEClass = null;
-
-		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
@@ -106,6 +93,20 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
   private EClass promptEClass = null;
 
   /**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sftpInfoEClass = null;
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass telephonySubsystemEClass = null;
+
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
@@ -255,267 +256,6 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EClass getAsteriskServer() {
-		return asteriskServerEClass;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getAsteriskServer_Hostname() {
-		return (EAttribute)asteriskServerEClass.getEStructuralFeatures().get(0);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getAsteriskServer_ManagerName() {
-		return (EAttribute)asteriskServerEClass.getEStructuralFeatures().get(1);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getAsteriskServer_ManagerPassword() {
-		return (EAttribute)asteriskServerEClass.getEStructuralFeatures().get(2);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getAsteriskServer_ManagerPort() {
-		return (EAttribute)asteriskServerEClass.getEStructuralFeatures().get(3);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getAsteriskServer_SftpUser() {
-		return (EAttribute)asteriskServerEClass.getEStructuralFeatures().get(4);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getAsteriskServer_SftpPassword() {
-		return (EAttribute)asteriskServerEClass.getEStructuralFeatures().get(5);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getAsteriskServer_SftpPort() {
-		return (EAttribute)asteriskServerEClass.getEStructuralFeatures().get(6);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getAsteriskServer_SafiServer() {
-		return (EReference)asteriskServerEClass.getEStructuralFeatures().get(7);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getAsteriskServer_Running() {
-		return (EAttribute)asteriskServerEClass.getEStructuralFeatures().get(8);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getAsteriskServer_Active() {
-		return (EAttribute)asteriskServerEClass.getEStructuralFeatures().get(9);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getAsteriskServer_Private() {
-		return (EAttribute)asteriskServerEClass.getEStructuralFeatures().get(10);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getAsteriskServer_PromptDirectory() {
-		return (EAttribute)asteriskServerEClass.getEStructuralFeatures().get(11);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EAttribute getAsteriskServer_AsteriskVersion() {
-		return (EAttribute)asteriskServerEClass.getEStructuralFeatures().get(12);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAsteriskServer_VisibleSafiServerIP() {
-		return (EAttribute)asteriskServerEClass.getEStructuralFeatures().get(13);
-	}
-
-		/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getFreeSwitchServer() {
-		return freeSwitchServerEClass;
-	}
-
-		/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFreeSwitchServer_Hostname() {
-		return (EAttribute)freeSwitchServerEClass.getEStructuralFeatures().get(0);
-	}
-
-		/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFreeSwitchServer_ManagerName() {
-		return (EAttribute)freeSwitchServerEClass.getEStructuralFeatures().get(1);
-	}
-
-		/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFreeSwitchServer_ManagerPassword() {
-		return (EAttribute)freeSwitchServerEClass.getEStructuralFeatures().get(2);
-	}
-
-		/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFreeSwitchServer_ManagerPort() {
-		return (EAttribute)freeSwitchServerEClass.getEStructuralFeatures().get(3);
-	}
-
-		/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFreeSwitchServer_SftpUser() {
-		return (EAttribute)freeSwitchServerEClass.getEStructuralFeatures().get(4);
-	}
-
-		/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFreeSwitchServer_SftpPassword() {
-		return (EAttribute)freeSwitchServerEClass.getEStructuralFeatures().get(5);
-	}
-
-		/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFreeSwitchServer_SftpPort() {
-		return (EAttribute)freeSwitchServerEClass.getEStructuralFeatures().get(6);
-	}
-
-		/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFreeSwitchServer_SafiServer() {
-		return (EReference)freeSwitchServerEClass.getEStructuralFeatures().get(7);
-	}
-
-		/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFreeSwitchServer_Running() {
-		return (EAttribute)freeSwitchServerEClass.getEStructuralFeatures().get(8);
-	}
-
-		/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFreeSwitchServer_Enabled() {
-		return (EAttribute)freeSwitchServerEClass.getEStructuralFeatures().get(9);
-	}
-
-		/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFreeSwitchServer_Private() {
-		return (EAttribute)freeSwitchServerEClass.getEStructuralFeatures().get(10);
-	}
-
-		/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFreeSwitchServer_PromptDirectory() {
-		return (EAttribute)freeSwitchServerEClass.getEStructuralFeatures().get(11);
-	}
-
-		/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFreeSwitchServer_FreeSwitchVersion() {
-		return (EAttribute)freeSwitchServerEClass.getEStructuralFeatures().get(12);
-	}
-
-		/**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
   public EClass getSafiServer() {
 		return safiServerEClass;
 	}
@@ -534,26 +274,8 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EAttribute getSafiServer_Port() {
-		return (EAttribute)safiServerEClass.getEStructuralFeatures().get(1);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
   public EAttribute getSafiServer_ManagementPort() {
-		return (EAttribute)safiServerEClass.getEStructuralFeatures().get(2);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EReference getSafiServer_AsteriskServers() {
-		return (EReference)safiServerEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)safiServerEClass.getEStructuralFeatures().get(1);
 	}
 
   /**
@@ -561,8 +283,8 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSafiServer_FreeSwitchServers() {
-		return (EReference)safiServerEClass.getEStructuralFeatures().get(4);
+	public EReference getSafiServer_TelephonySubsystems() {
+		return (EReference)safiServerEClass.getEStructuralFeatures().get(2);
 	}
 
 		/**
@@ -571,7 +293,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 	 * @generated
 	 */
   public EReference getSafiServer_User() {
-		return (EReference)safiServerEClass.getEStructuralFeatures().get(5);
+		return (EReference)safiServerEClass.getEStructuralFeatures().get(3);
 	}
 
   /**
@@ -580,7 +302,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 	 * @generated
 	 */
   public EReference getSafiServer_Users() {
-		return (EReference)safiServerEClass.getEStructuralFeatures().get(6);
+		return (EReference)safiServerEClass.getEStructuralFeatures().get(4);
 	}
 
   /**
@@ -589,7 +311,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 	 * @generated
 	 */
   public EAttribute getSafiServer_Running() {
-		return (EAttribute)safiServerEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)safiServerEClass.getEStructuralFeatures().get(5);
 	}
 
   /**
@@ -598,7 +320,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 	 * @generated
 	 */
   public EAttribute getSafiServer_Debug() {
-		return (EAttribute)safiServerEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)safiServerEClass.getEStructuralFeatures().get(6);
 	}
 
   /**
@@ -607,7 +329,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 	 * @generated
 	 */
   public EAttribute getSafiServer_DbPort() {
-		return (EAttribute)safiServerEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)safiServerEClass.getEStructuralFeatures().get(7);
 	}
 
   /**
@@ -711,6 +433,15 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 
   /**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSaflet_SubsystemId() {
+		return (EAttribute)safletEClass.getEStructuralFeatures().get(2);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -783,6 +514,150 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 
   /**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSFTPInfo() {
+		return sftpInfoEClass;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSFTPInfo_SftpUser() {
+		return (EAttribute)sftpInfoEClass.getEStructuralFeatures().get(0);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSFTPInfo_SftpPassword() {
+		return (EAttribute)sftpInfoEClass.getEStructuralFeatures().get(1);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSFTPInfo_SftpPort() {
+		return (EAttribute)sftpInfoEClass.getEStructuralFeatures().get(2);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTelephonySubsystem() {
+		return telephonySubsystemEClass;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTelephonySubsystem_Hostname() {
+		return (EAttribute)telephonySubsystemEClass.getEStructuralFeatures().get(0);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTelephonySubsystem_Running() {
+		return (EAttribute)telephonySubsystemEClass.getEStructuralFeatures().get(1);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTelephonySubsystem_SafiServer() {
+		return (EReference)telephonySubsystemEClass.getEStructuralFeatures().get(2);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTelephonySubsystem_Private() {
+		return (EAttribute)telephonySubsystemEClass.getEStructuralFeatures().get(3);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTelephonySubsystem_VisibleSafiServerIP() {
+		return (EAttribute)telephonySubsystemEClass.getEStructuralFeatures().get(4);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTelephonySubsystem_Enabled() {
+		return (EAttribute)telephonySubsystemEClass.getEStructuralFeatures().get(5);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTelephonySubsystem_ManagerName() {
+		return (EAttribute)telephonySubsystemEClass.getEStructuralFeatures().get(6);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTelephonySubsystem_ManagerPassword() {
+		return (EAttribute)telephonySubsystemEClass.getEStructuralFeatures().get(7);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTelephonySubsystem_ManagerPort() {
+		return (EAttribute)telephonySubsystemEClass.getEStructuralFeatures().get(8);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTelephonySubsystem_VersionId() {
+		return (EAttribute)telephonySubsystemEClass.getEStructuralFeatures().get(9);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTelephonySubsystem_PromptDirectory() {
+		return (EAttribute)telephonySubsystemEClass.getEStructuralFeatures().get(10);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -827,43 +702,10 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		createEReference(serverResourceEClass, SERVER_RESOURCE__MODIFIED_BY);
 		createEAttribute(serverResourceEClass, SERVER_RESOURCE__DESCRIPTION);
 
-		asteriskServerEClass = createEClass(ASTERISK_SERVER);
-		createEAttribute(asteriskServerEClass, ASTERISK_SERVER__HOSTNAME);
-		createEAttribute(asteriskServerEClass, ASTERISK_SERVER__MANAGER_NAME);
-		createEAttribute(asteriskServerEClass, ASTERISK_SERVER__MANAGER_PASSWORD);
-		createEAttribute(asteriskServerEClass, ASTERISK_SERVER__MANAGER_PORT);
-		createEAttribute(asteriskServerEClass, ASTERISK_SERVER__SFTP_USER);
-		createEAttribute(asteriskServerEClass, ASTERISK_SERVER__SFTP_PASSWORD);
-		createEAttribute(asteriskServerEClass, ASTERISK_SERVER__SFTP_PORT);
-		createEReference(asteriskServerEClass, ASTERISK_SERVER__SAFI_SERVER);
-		createEAttribute(asteriskServerEClass, ASTERISK_SERVER__RUNNING);
-		createEAttribute(asteriskServerEClass, ASTERISK_SERVER__ACTIVE);
-		createEAttribute(asteriskServerEClass, ASTERISK_SERVER__PRIVATE);
-		createEAttribute(asteriskServerEClass, ASTERISK_SERVER__PROMPT_DIRECTORY);
-		createEAttribute(asteriskServerEClass, ASTERISK_SERVER__ASTERISK_VERSION);
-		createEAttribute(asteriskServerEClass, ASTERISK_SERVER__VISIBLE_SAFI_SERVER_IP);
-
-		freeSwitchServerEClass = createEClass(FREE_SWITCH_SERVER);
-		createEAttribute(freeSwitchServerEClass, FREE_SWITCH_SERVER__HOSTNAME);
-		createEAttribute(freeSwitchServerEClass, FREE_SWITCH_SERVER__MANAGER_NAME);
-		createEAttribute(freeSwitchServerEClass, FREE_SWITCH_SERVER__MANAGER_PASSWORD);
-		createEAttribute(freeSwitchServerEClass, FREE_SWITCH_SERVER__MANAGER_PORT);
-		createEAttribute(freeSwitchServerEClass, FREE_SWITCH_SERVER__SFTP_USER);
-		createEAttribute(freeSwitchServerEClass, FREE_SWITCH_SERVER__SFTP_PASSWORD);
-		createEAttribute(freeSwitchServerEClass, FREE_SWITCH_SERVER__SFTP_PORT);
-		createEReference(freeSwitchServerEClass, FREE_SWITCH_SERVER__SAFI_SERVER);
-		createEAttribute(freeSwitchServerEClass, FREE_SWITCH_SERVER__RUNNING);
-		createEAttribute(freeSwitchServerEClass, FREE_SWITCH_SERVER__ENABLED);
-		createEAttribute(freeSwitchServerEClass, FREE_SWITCH_SERVER__PRIVATE);
-		createEAttribute(freeSwitchServerEClass, FREE_SWITCH_SERVER__PROMPT_DIRECTORY);
-		createEAttribute(freeSwitchServerEClass, FREE_SWITCH_SERVER__FREE_SWITCH_VERSION);
-
 		safiServerEClass = createEClass(SAFI_SERVER);
 		createEAttribute(safiServerEClass, SAFI_SERVER__BIND_IP);
-		createEAttribute(safiServerEClass, SAFI_SERVER__PORT);
 		createEAttribute(safiServerEClass, SAFI_SERVER__MANAGEMENT_PORT);
-		createEReference(safiServerEClass, SAFI_SERVER__ASTERISK_SERVERS);
-		createEReference(safiServerEClass, SAFI_SERVER__FREE_SWITCH_SERVERS);
+		createEReference(safiServerEClass, SAFI_SERVER__TELEPHONY_SUBSYSTEMS);
 		createEReference(safiServerEClass, SAFI_SERVER__USER);
 		createEReference(safiServerEClass, SAFI_SERVER__USERS);
 		createEAttribute(safiServerEClass, SAFI_SERVER__RUNNING);
@@ -884,6 +726,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		safletEClass = createEClass(SAFLET);
 		createEAttribute(safletEClass, SAFLET__CODE);
 		createEReference(safletEClass, SAFLET__PROJECT);
+		createEAttribute(safletEClass, SAFLET__SUBSYSTEM_ID);
 
 		safletProjectEClass = createEClass(SAFLET_PROJECT);
 		createEReference(safletProjectEClass, SAFLET_PROJECT__SAFLETS);
@@ -894,6 +737,24 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		createEReference(promptEClass, PROMPT__PROJECT);
 		createEAttribute(promptEClass, PROMPT__SYSTEM);
 		createEAttribute(promptEClass, PROMPT__EXTENSION);
+
+		sftpInfoEClass = createEClass(SFTP_INFO);
+		createEAttribute(sftpInfoEClass, SFTP_INFO__SFTP_USER);
+		createEAttribute(sftpInfoEClass, SFTP_INFO__SFTP_PASSWORD);
+		createEAttribute(sftpInfoEClass, SFTP_INFO__SFTP_PORT);
+
+		telephonySubsystemEClass = createEClass(TELEPHONY_SUBSYSTEM);
+		createEAttribute(telephonySubsystemEClass, TELEPHONY_SUBSYSTEM__HOSTNAME);
+		createEAttribute(telephonySubsystemEClass, TELEPHONY_SUBSYSTEM__RUNNING);
+		createEReference(telephonySubsystemEClass, TELEPHONY_SUBSYSTEM__SAFI_SERVER);
+		createEAttribute(telephonySubsystemEClass, TELEPHONY_SUBSYSTEM__PRIVATE);
+		createEAttribute(telephonySubsystemEClass, TELEPHONY_SUBSYSTEM__VISIBLE_SAFI_SERVER_IP);
+		createEAttribute(telephonySubsystemEClass, TELEPHONY_SUBSYSTEM__ENABLED);
+		createEAttribute(telephonySubsystemEClass, TELEPHONY_SUBSYSTEM__MANAGER_NAME);
+		createEAttribute(telephonySubsystemEClass, TELEPHONY_SUBSYSTEM__MANAGER_PASSWORD);
+		createEAttribute(telephonySubsystemEClass, TELEPHONY_SUBSYSTEM__MANAGER_PORT);
+		createEAttribute(telephonySubsystemEClass, TELEPHONY_SUBSYSTEM__VERSION_ID);
+		createEAttribute(telephonySubsystemEClass, TELEPHONY_SUBSYSTEM__PROMPT_DIRECTORY);
 
 		// Create enums
 		synchModeEEnum = createEEnum(SYNCH_MODE);
@@ -927,8 +788,6 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		asteriskServerEClass.getESuperTypes().add(this.getServerResource());
-		freeSwitchServerEClass.getESuperTypes().add(this.getServerResource());
 		safiServerEClass.getESuperTypes().add(this.getServerResource());
 		roleEClass.getESuperTypes().add(this.getServerResource());
 		entitlementEClass.getESuperTypes().add(this.getServerResource());
@@ -936,6 +795,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		safletEClass.getESuperTypes().add(this.getServerResource());
 		safletProjectEClass.getESuperTypes().add(this.getServerResource());
 		promptEClass.getESuperTypes().add(this.getServerResource());
+		telephonySubsystemEClass.getESuperTypes().add(this.getServerResource());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(serverResourceEClass, ServerResource.class, "ServerResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -947,43 +807,10 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		initEReference(getServerResource_ModifiedBy(), this.getUser(), null, "modifiedBy", null, 0, 1, ServerResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServerResource_Description(), ecorePackage.getEString(), "description", null, 0, 1, ServerResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(asteriskServerEClass, AsteriskServer.class, "AsteriskServer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAsteriskServer_Hostname(), ecorePackage.getEString(), "hostname", null, 1, 1, AsteriskServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAsteriskServer_ManagerName(), ecorePackage.getEString(), "managerName", null, 1, 1, AsteriskServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAsteriskServer_ManagerPassword(), ecorePackage.getEString(), "managerPassword", null, 0, 1, AsteriskServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAsteriskServer_ManagerPort(), ecorePackage.getEInt(), "managerPort", "5038", 0, 1, AsteriskServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAsteriskServer_SftpUser(), ecorePackage.getEString(), "sftpUser", null, 0, 1, AsteriskServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAsteriskServer_SftpPassword(), ecorePackage.getEString(), "sftpPassword", null, 0, 1, AsteriskServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAsteriskServer_SftpPort(), ecorePackage.getEInt(), "sftpPort", null, 0, 1, AsteriskServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAsteriskServer_SafiServer(), this.getSafiServer(), this.getSafiServer_AsteriskServers(), "safiServer", null, 0, 1, AsteriskServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAsteriskServer_Running(), ecorePackage.getEBoolean(), "running", null, 0, 1, AsteriskServer.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAsteriskServer_Active(), ecorePackage.getEBoolean(), "active", null, 0, 1, AsteriskServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAsteriskServer_Private(), ecorePackage.getEBoolean(), "private", null, 0, 1, AsteriskServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAsteriskServer_PromptDirectory(), ecorePackage.getEString(), "promptDirectory", "/var/lib/asterisk/sounds/", 0, 1, AsteriskServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAsteriskServer_AsteriskVersion(), ecorePackage.getEString(), "asteriskVersion", null, 0, 1, AsteriskServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAsteriskServer_VisibleSafiServerIP(), ecorePackage.getEString(), "visibleSafiServerIP", null, 0, 1, AsteriskServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(freeSwitchServerEClass, FreeSwitchServer.class, "FreeSwitchServer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFreeSwitchServer_Hostname(), ecorePackage.getEString(), "hostname", null, 1, 1, FreeSwitchServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFreeSwitchServer_ManagerName(), ecorePackage.getEString(), "managerName", null, 1, 1, FreeSwitchServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFreeSwitchServer_ManagerPassword(), ecorePackage.getEString(), "managerPassword", null, 0, 1, FreeSwitchServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFreeSwitchServer_ManagerPort(), ecorePackage.getEInt(), "managerPort", "5038", 0, 1, FreeSwitchServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFreeSwitchServer_SftpUser(), ecorePackage.getEString(), "sftpUser", null, 0, 1, FreeSwitchServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFreeSwitchServer_SftpPassword(), ecorePackage.getEString(), "sftpPassword", null, 0, 1, FreeSwitchServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFreeSwitchServer_SftpPort(), ecorePackage.getEInt(), "sftpPort", null, 0, 1, FreeSwitchServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFreeSwitchServer_SafiServer(), this.getSafiServer(), null, "safiServer", null, 0, 1, FreeSwitchServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFreeSwitchServer_Running(), ecorePackage.getEBoolean(), "running", null, 0, 1, FreeSwitchServer.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFreeSwitchServer_Enabled(), ecorePackage.getEBoolean(), "enabled", null, 0, 1, FreeSwitchServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFreeSwitchServer_Private(), ecorePackage.getEBoolean(), "private", null, 0, 1, FreeSwitchServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFreeSwitchServer_PromptDirectory(), ecorePackage.getEString(), "promptDirectory", "/var/lib/asterisk/sounds/", 0, 1, FreeSwitchServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFreeSwitchServer_FreeSwitchVersion(), ecorePackage.getEString(), "freeSwitchVersion", null, 0, 1, FreeSwitchServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(safiServerEClass, SafiServer.class, "SafiServer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSafiServer_BindIP(), ecorePackage.getEString(), "bindIP", null, 0, 1, SafiServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSafiServer_Port(), ecorePackage.getEInt(), "port", "4573", 0, 1, SafiServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSafiServer_ManagementPort(), ecorePackage.getEInt(), "managementPort", "7020", 0, 1, SafiServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSafiServer_AsteriskServers(), this.getAsteriskServer(), this.getAsteriskServer_SafiServer(), "asteriskServers", null, 0, -1, SafiServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSafiServer_FreeSwitchServers(), this.getFreeSwitchServer(), null, "freeSwitchServers", null, 0, -1, SafiServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSafiServer_TelephonySubsystems(), this.getTelephonySubsystem(), null, "telephonySubsystems", null, 0, -1, SafiServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSafiServer_User(), this.getUser(), null, "user", null, 0, 1, SafiServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSafiServer_Users(), this.getUser(), null, "users", null, 0, -1, SafiServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSafiServer_Running(), ecorePackage.getEBoolean(), "running", null, 0, 1, SafiServer.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1004,6 +831,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		initEClass(safletEClass, Saflet.class, "Saflet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSaflet_Code(), ecorePackage.getEByteArray(), "code", null, 0, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSaflet_Project(), this.getSafletProject(), this.getSafletProject_Saflets(), "project", null, 0, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSaflet_SubsystemId(), ecorePackage.getEString(), "subsystemId", "Asterisk", 0, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(safletProjectEClass, SafletProject.class, "SafletProject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSafletProject_Saflets(), this.getSaflet(), this.getSaflet_Project(), "saflets", null, 0, -1, SafletProject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1014,6 +842,24 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		initEReference(getPrompt_Project(), this.getSafletProject(), this.getSafletProject_Prompts(), "project", null, 0, 1, Prompt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPrompt_System(), ecorePackage.getEBoolean(), "system", null, 0, 1, Prompt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPrompt_Extension(), ecorePackage.getEString(), "extension", null, 0, 1, Prompt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(sftpInfoEClass, SFTPInfo.class, "SFTPInfo", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSFTPInfo_SftpUser(), ecorePackage.getEString(), "sftpUser", null, 0, 1, SFTPInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSFTPInfo_SftpPassword(), ecorePackage.getEString(), "sftpPassword", null, 0, 1, SFTPInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSFTPInfo_SftpPort(), ecorePackage.getEInt(), "sftpPort", null, 0, 1, SFTPInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(telephonySubsystemEClass, TelephonySubsystem.class, "TelephonySubsystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTelephonySubsystem_Hostname(), ecorePackage.getEString(), "hostname", null, 1, 1, TelephonySubsystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTelephonySubsystem_Running(), ecorePackage.getEBoolean(), "running", null, 0, 1, TelephonySubsystem.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTelephonySubsystem_SafiServer(), this.getSafiServer(), null, "safiServer", null, 0, 1, TelephonySubsystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTelephonySubsystem_Private(), ecorePackage.getEBoolean(), "private", null, 0, 1, TelephonySubsystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTelephonySubsystem_VisibleSafiServerIP(), ecorePackage.getEString(), "visibleSafiServerIP", null, 0, 1, TelephonySubsystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTelephonySubsystem_Enabled(), ecorePackage.getEBoolean(), "enabled", "true", 0, 1, TelephonySubsystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTelephonySubsystem_ManagerName(), ecorePackage.getEString(), "managerName", null, 1, 1, TelephonySubsystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTelephonySubsystem_ManagerPassword(), ecorePackage.getEString(), "managerPassword", null, 0, 1, TelephonySubsystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTelephonySubsystem_ManagerPort(), ecorePackage.getEInt(), "managerPort", "5038", 0, 1, TelephonySubsystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTelephonySubsystem_VersionId(), ecorePackage.getEString(), "versionId", null, 0, 1, TelephonySubsystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTelephonySubsystem_PromptDirectory(), ecorePackage.getEString(), "promptDirectory", "/var/lib/asterisk/sounds/", 0, 1, TelephonySubsystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(synchModeEEnum, SynchMode.class, "SynchMode");
@@ -1040,49 +886,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 			 "appinfo", "@GeneratedValue(strategy=\"TABLE\")"
 		   });		
 		addAnnotation
-		  (getAsteriskServer_Running(), 
-		   source, 
-		   new String[] {
-			 "appinfo", "@Transient"
-		   });		
-		addAnnotation
-		  (getAsteriskServer_Active(), 
-		   source, 
-		   new String[] {
-			 "appinfo", "@Type(type=\"boolean\")"
-		   });		
-		addAnnotation
-		  (getAsteriskServer_Private(), 
-		   source, 
-		   new String[] {
-			 "appinfo", "@Type(type=\"boolean\")"
-		   });		
-		addAnnotation
-		  (getFreeSwitchServer_Running(), 
-		   source, 
-		   new String[] {
-			 "appinfo", "@Transient"
-		   });		
-		addAnnotation
-		  (getFreeSwitchServer_Enabled(), 
-		   source, 
-		   new String[] {
-			 "appinfo", "@Type(type=\"boolean\")"
-		   });		
-		addAnnotation
-		  (getFreeSwitchServer_Private(), 
-		   source, 
-		   new String[] {
-			 "appinfo", "@Type(type=\"boolean\")"
-		   });		
-		addAnnotation
-		  (getSafiServer_AsteriskServers(), 
-		   source, 
-		   new String[] {
-			 "appinfo", "@OneToMany(fetch=\"EAGER\" indexed=\"false\" cascade=\"ALL\")"
-		   });		
-		addAnnotation
-		  (getSafiServer_FreeSwitchServers(), 
+		  (getSafiServer_TelephonySubsystems(), 
 		   source, 
 		   new String[] {
 			 "appinfo", "@OneToMany(fetch=\"EAGER\" indexed=\"false\" cascade=\"ALL\")"
@@ -1143,6 +947,24 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		   });		
 		addAnnotation
 		  (getPrompt_System(), 
+		   source, 
+		   new String[] {
+			 "appinfo", "@Type(type=\"boolean\")"
+		   });		
+		addAnnotation
+		  (getTelephonySubsystem_Running(), 
+		   source, 
+		   new String[] {
+			 "appinfo", "@Transient"
+		   });		
+		addAnnotation
+		  (getTelephonySubsystem_Private(), 
+		   source, 
+		   new String[] {
+			 "appinfo", "@Type(type=\"boolean\")"
+		   });		
+		addAnnotation
+		  (getTelephonySubsystem_Enabled(), 
 		   source, 
 		   new String[] {
 			 "appinfo", "@Type(type=\"boolean\")"
