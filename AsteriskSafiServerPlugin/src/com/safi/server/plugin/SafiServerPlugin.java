@@ -16,6 +16,7 @@ import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.StreamHandler;
+
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -42,6 +43,7 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 import org.osgi.framework.BundleContext;
+
 import com.jcraft.jsch.HostKey;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
@@ -49,9 +51,9 @@ import com.jcraft.jsch.UserInfo;
 import com.safi.asterisk.util.AsteriskSafletConstants;
 import com.safi.db.SafiDriverManager;
 import com.safi.db.Variable;
-import com.safi.db.server.config.AsteriskServer;
+import com.safi.db.astdb.AsteriskServer;
+import com.safi.db.fsdb.FreeSwitchServer;
 import com.safi.db.server.config.Entitlement;
-import com.safi.db.server.config.FreeSwitchServer;
 import com.safi.db.server.config.Role;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.User;

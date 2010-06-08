@@ -1,6 +1,7 @@
 package com.safi.server.preferences;
 
 import java.lang.reflect.InvocationTargetException;
+
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jface.dialogs.Dialog;
@@ -26,7 +27,9 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.hibernate.Session;
-import com.safi.db.server.config.AsteriskServer;
+
+import com.safi.db.astdb.AstdbFactory;
+import com.safi.db.astdb.AsteriskServer;
 import com.safi.db.server.config.ConfigFactory;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.User;
@@ -75,7 +78,7 @@ public class AsteriskConfigurationDialog extends Dialog {
 					titleFont.dispose();
 			}
 		});
-		asteriskServer = ConfigFactory.eINSTANCE.createAsteriskServer();
+		asteriskServer = AstdbFactory.eINSTANCE.createAsteriskServer();
 		isNew = true;
 		active = true;
 	}
@@ -86,7 +89,7 @@ public class AsteriskConfigurationDialog extends Dialog {
 		this.asteriskServer = asterServer;
 		if (asterServer != null) {
 			setPrivateServer(asterServer.isPrivate());
-			setActive(asterServer.isActive());
+			setActive(asterServer.isEnabled());
 		}
 	}
 
@@ -461,7 +464,7 @@ public class AsteriskConfigurationDialog extends Dialog {
 		asteriskServer.setSftpPassword(sftp_pass);
 		asteriskServer.setSftpPort(sftp_portNumber);
 		asteriskServer.setDescription(desc);
-		asteriskServer.setActive(active);
+		asteriskServer.setEnabled(active);
 		asteriskServer.setName(this.nameField.getText());
 		User u = SafiServerPlugin.getDefault().getCurrentUser();
 		if (u != null) {
@@ -557,9 +560,10 @@ public class AsteriskConfigurationDialog extends Dialog {
 						session = DBManager.getInstance().createSession();
 						session.beginTransaction();
 						if (isNew) {
-							SafiServer production = SafiServerPlugin.getDefault().getSafiServer(true);
-							production.getAsteriskServers().add(asteriskServer);
-							session.saveOrUpdate(production);
+//							SafiServer production = SafiServerPlugin.getDefault().getSafiServer(true);
+							DBManager.getInstance().saveOrUpdateServerResource(session, asteriskServer);
+//							production.getTelephonySubsystems().add(asteriskServer);
+//							session.saveOrUpdate(production);
 						} else
 							session.saveOrUpdate(asteriskServer);
 						session.getTransaction().commit();

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+
 import javax.management.AttributeChangeNotification;
 import javax.management.MBeanServerConnection;
 import javax.management.MBeanServerInvocationHandler;
@@ -22,8 +23,7 @@ import javax.management.remote.JMXConnector;
 import javax.management.remote.JMXConnectorFactory;
 import javax.management.remote.JMXServiceURL;
 import javax.management.remote.rmi.RMIConnectorServer;
-import javax.rmi.ssl.SslRMIClientSocketFactory;
-import javax.rmi.ssl.SslRMIServerSocketFactory;
+
 import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.preference.IPreferenceStore;
@@ -31,18 +31,20 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.console.MessageConsole;
 import org.tanukisoftware.wrapper.jmx.WrapperManagerMBean;
+
 import sun.rmi.transport.proxy.RMIMasterSocketFactory;
+
+import com.safi.db.astdb.AsteriskServer;
+import com.safi.db.fsdb.FreeSwitchServer;
+import com.safi.db.server.config.SafiServer;
+import com.safi.server.plugin.SafiServerPlugin;
+import com.safi.server.preferences.PreferenceConstants;
 import com.safi.server.saflet.importing.OverwriteMode;
 import com.safi.server.saflet.mbean.DebugRemoteControl;
 import com.safi.server.saflet.mbean.ENotificationWrapper;
 import com.safi.server.saflet.mbean.FileTransfer;
 import com.safi.server.saflet.mbean.SafiServerMonitor;
 import com.safi.server.saflet.mbean.SysInfo;
-import com.safi.db.server.config.AsteriskServer;
-import com.safi.db.server.config.FreeSwitchServer;
-import com.safi.db.server.config.SafiServer;
-import com.safi.server.plugin.SafiServerPlugin;
-import com.safi.server.preferences.PreferenceConstants;
 
 public class SafiServerRemoteManager implements NotificationListener {
   private MBeanServerConnection serverConnection;

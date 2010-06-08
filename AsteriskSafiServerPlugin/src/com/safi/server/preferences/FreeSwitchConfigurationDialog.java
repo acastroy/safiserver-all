@@ -1,6 +1,7 @@
 package com.safi.server.preferences;
 
 import java.lang.reflect.InvocationTargetException;
+
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jface.dialogs.Dialog;
@@ -26,14 +27,15 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.hibernate.Session;
+
+import com.safi.db.fsdb.FreeSwitchServer;
+import com.safi.db.fsdb.FsdbFactory;
 import com.safi.db.server.config.ConfigFactory;
-import com.safi.db.server.config.FreeSwitchServer;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.User;
 import com.safi.server.manager.SafiServerRemoteManager;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.saflet.manager.DBManager;
-import com.safi.server.util.Utils;
 
 public class FreeSwitchConfigurationDialog extends Dialog {
 
@@ -75,7 +77,7 @@ public class FreeSwitchConfigurationDialog extends Dialog {
 					titleFont.dispose();
 			}
 		});
-		fsServer = ConfigFactory.eINSTANCE.createFreeSwitchServer();
+		fsServer = FsdbFactory.eINSTANCE.createFreeSwitchServer();
 		isNew = true;
 		active = true;
 	}
@@ -538,9 +540,11 @@ public class FreeSwitchConfigurationDialog extends Dialog {
 						session = DBManager.getInstance().createSession();
 						session.beginTransaction();
 						if (isNew) {
-							SafiServer production = SafiServerPlugin.getDefault().getSafiServer(true);
-							production.getFreeSwitchServers().add(fsServer);
-							session.saveOrUpdate(production);
+//							SafiServer production = SafiServerPlugin.getDefault().getSafiServer(true);
+//							production.getTelephonySubsystems().add(fsServer);
+							
+//							session.saveOrUpdate(production);
+							DBManager.getInstance().saveOrUpdateServerResource(session, fsServer);
 						} else
 							session.saveOrUpdate(fsServer);
 						session.getTransaction().commit();
