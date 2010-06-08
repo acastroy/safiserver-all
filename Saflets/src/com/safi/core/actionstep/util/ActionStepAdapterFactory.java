@@ -6,6 +6,7 @@
  */
 package com.safi.core.actionstep.util;
 
+import com.safi.core.PlatformDisposition;
 import com.safi.core.ProductIdentifiable;
 
 import com.safi.core.ThreadSensitive;
@@ -77,6 +78,10 @@ public class ActionStepAdapterFactory extends AdapterFactoryImpl {
   protected ActionStepSwitch<Adapter> modelSwitch =
     new ActionStepSwitch<Adapter>() {
 			@Override
+			public Adapter caseActionStep(ActionStep object) {
+				return createActionStepAdapter();
+			}
+			@Override
 			public Adapter caseAssignment(Assignment object) {
 				return createAssignmentAdapter();
 			}
@@ -115,10 +120,6 @@ public class ActionStepAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseOutput(Output object) {
 				return createOutputAdapter();
-			}
-			@Override
-			public Adapter caseActionStep(ActionStep object) {
-				return createActionStepAdapter();
 			}
 			@Override
 			public Adapter caseExecuteScript(ExecuteScript object) {
@@ -259,6 +260,10 @@ public class ActionStepAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseThreadSensitive(ThreadSensitive object) {
 				return createThreadSensitiveAdapter();
+			}
+			@Override
+			public Adapter casePlatformDisposition(PlatformDisposition object) {
+				return createPlatformDispositionAdapter();
 			}
 			@Override
 			public Adapter caseInitiator(Initiator object) {
@@ -925,6 +930,20 @@ public class ActionStepAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createThreadSensitiveAdapter() {
+		return null;
+	}
+
+		/**
+	 * Creates a new adapter for an object of class '{@link com.safi.core.PlatformDisposition <em>Platform Disposition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.safi.core.PlatformDisposition
+	 * @generated
+	 */
+	public Adapter createPlatformDispositionAdapter() {
 		return null;
 	}
 

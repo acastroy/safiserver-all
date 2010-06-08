@@ -6,6 +6,7 @@
  */
 package com.safi.core.actionstep;
 
+import com.safi.core.PlatformDisposition;
 import com.safi.core.ProductIdentifiable;
 
 import com.safi.core.ThreadSensitive;
@@ -38,7 +39,7 @@ import org.eclipse.emf.common.util.EList;
  * @model abstract="true"
  * @generated
  */
-public interface ActionStep extends ProductIdentifiable, ThreadSensitive {
+public interface ActionStep extends ProductIdentifiable, ThreadSensitive, PlatformDisposition {
   /**
 	 * Returns the value of the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->

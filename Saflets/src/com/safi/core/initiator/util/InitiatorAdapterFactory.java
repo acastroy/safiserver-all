@@ -6,6 +6,7 @@
  */
 package com.safi.core.initiator.util;
 
+import com.safi.core.PlatformDisposition;
 import com.safi.core.ProductIdentifiable;
 
 import com.safi.core.ThreadSensitive;
@@ -93,6 +94,10 @@ public class InitiatorAdapterFactory extends AdapterFactoryImpl {
 				return createThreadSensitiveAdapter();
 			}
 			@Override
+			public Adapter casePlatformDisposition(PlatformDisposition object) {
+				return createPlatformDispositionAdapter();
+			}
+			@Override
 			public Adapter caseActionStep(ActionStep object) {
 				return createActionStepAdapter();
 			}
@@ -169,6 +174,20 @@ public class InitiatorAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createThreadSensitiveAdapter() {
+		return null;
+	}
+
+		/**
+	 * Creates a new adapter for an object of class '{@link com.safi.core.PlatformDisposition <em>Platform Disposition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.safi.core.PlatformDisposition
+	 * @generated
+	 */
+	public Adapter createPlatformDispositionAdapter() {
 		return null;
 	}
 

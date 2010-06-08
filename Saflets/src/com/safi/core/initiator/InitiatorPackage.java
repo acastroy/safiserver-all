@@ -82,6 +82,24 @@ public interface InitiatorPackage extends EPackage {
   int INITIATOR__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIATOR__PLATFORM_ID = ActionStepPackage.ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIATOR__PLATFORM_DEPENDANT = ActionStepPackage.ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

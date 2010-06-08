@@ -8,6 +8,8 @@ package com.safi.core.impl;
 
 import com.safi.core.CoreFactory;
 import com.safi.core.CorePackage;
+import com.safi.core.PlatformDisposition;
+import com.safi.core.PlatformDependant;
 import com.safi.core.ProductIdentifiable;
 
 import com.safi.core.ThreadSensitive;
@@ -57,6 +59,13 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * @generated
 	 */
 	private EClass threadSensitiveEClass = null;
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass platformDispositionEClass = null;
 
 		/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -168,6 +177,33 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
 		/**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPlatformDisposition() {
+		return platformDispositionEClass;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPlatformDisposition_PlatformID() {
+		return (EAttribute)platformDispositionEClass.getEStructuralFeatures().get(0);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPlatformDisposition_PlatformDependant() {
+		return (EAttribute)platformDispositionEClass.getEStructuralFeatures().get(1);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -198,6 +234,10 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		createEAttribute(productIdentifiableEClass, PRODUCT_IDENTIFIABLE__PRODUCT_ID);
 
 		threadSensitiveEClass = createEClass(THREAD_SENSITIVE);
+
+		platformDispositionEClass = createEClass(PLATFORM_DISPOSITION);
+		createEAttribute(platformDispositionEClass, PLATFORM_DISPOSITION__PLATFORM_ID);
+		createEAttribute(platformDispositionEClass, PLATFORM_DISPOSITION__PLATFORM_DEPENDANT);
 	}
 
   /**
@@ -250,6 +290,10 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		initEClass(threadSensitiveEClass, ThreadSensitive.class, "ThreadSensitive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		addEOperation(threadSensitiveEClass, null, "cleanup", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(platformDispositionEClass, PlatformDisposition.class, "PlatformDisposition", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPlatformDisposition_PlatformID(), ecorePackage.getEString(), "platformID", "", 0, 1, PlatformDisposition.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPlatformDisposition_PlatformDependant(), ecorePackage.getEBoolean(), "platformDependant", "false", 0, 1, PlatformDisposition.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

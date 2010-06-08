@@ -6,6 +6,8 @@
  */
 package com.safi.core.actionstep.impl;
 
+import com.safi.core.CorePackage;
+import com.safi.core.PlatformDisposition;
 import java.util.Collection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -51,6 +53,8 @@ import com.safi.db.util.VariableTranslator;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.safi.core.actionstep.impl.ActionStepImpl#getProductId <em>Product Id</em>}</li>
+ *   <li>{@link com.safi.core.actionstep.impl.ActionStepImpl#getPlatformID <em>Platform ID</em>}</li>
+ *   <li>{@link com.safi.core.actionstep.impl.ActionStepImpl#isPlatformDependant <em>Platform Dependant</em>}</li>
  *   <li>{@link com.safi.core.actionstep.impl.ActionStepImpl#isPaused <em>Paused</em>}</li>
  *   <li>{@link com.safi.core.actionstep.impl.ActionStepImpl#isActive <em>Active</em>}</li>
  *   <li>{@link com.safi.core.actionstep.impl.ActionStepImpl#getOutputs <em>Outputs</em>}</li>
@@ -85,6 +89,64 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
   protected String productId = PRODUCT_ID_EDEFAULT;
 
   /**
+	 * The default value of the '{@link #getPlatformID() <em>Platform ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlatformID()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PLATFORM_ID_EDEFAULT = "";
+
+		/**
+	 * The cached value of the '{@link #getPlatformID() <em>Platform ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlatformID()
+	 * @generated
+	 * @ordered
+	 */
+	protected String platformID = PLATFORM_ID_EDEFAULT;
+
+		/**
+	 * This is true if the Platform ID attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean platformIDESet;
+
+		/**
+	 * The default value of the '{@link #isPlatformDependant() <em>Platform Dependant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isPlatformDependant()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean PLATFORM_DEPENDANT_EDEFAULT = false;
+
+		/**
+	 * The cached value of the '{@link #isPlatformDependant() <em>Platform Dependant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isPlatformDependant()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean platformDependant = PLATFORM_DEPENDANT_EDEFAULT;
+
+		/**
+	 * This is true if the Platform Dependant attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean platformDependantESet;
+
+		/**
    * The default value of the '{@link #isPaused() <em>Paused</em>}' attribute. <!--
    * begin-user-doc --> <!-- end-user-doc -->
    * 
@@ -242,6 +304,46 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
 	}
 
   /**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPlatformID() {
+		return platformID;
+	}
+
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetPlatformID() {
+		return platformIDESet;
+	}
+
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isPlatformDependant() {
+		return platformDependant;
+	}
+
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetPlatformDependant() {
+		return platformDependantESet;
+	}
+
+
+		/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -847,6 +949,10 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
 		switch (featureID) {
 			case ActionStepPackage.ACTION_STEP__PRODUCT_ID:
 				return getProductId();
+			case ActionStepPackage.ACTION_STEP__PLATFORM_ID:
+				return getPlatformID();
+			case ActionStepPackage.ACTION_STEP__PLATFORM_DEPENDANT:
+				return isPlatformDependant();
 			case ActionStepPackage.ACTION_STEP__PAUSED:
 				return isPaused();
 			case ActionStepPackage.ACTION_STEP__ACTIVE:
@@ -967,6 +1073,52 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
 	}
 
   /**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == ThreadSensitive.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == PlatformDisposition.class) {
+			switch (derivedFeatureID) {
+				case ActionStepPackage.ACTION_STEP__PLATFORM_ID: return CorePackage.PLATFORM_DISPOSITION__PLATFORM_ID;
+				case ActionStepPackage.ACTION_STEP__PLATFORM_DEPENDANT: return CorePackage.PLATFORM_DISPOSITION__PLATFORM_DEPENDANT;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == ThreadSensitive.class) {
+			switch (baseFeatureID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == PlatformDisposition.class) {
+			switch (baseFeatureID) {
+				case CorePackage.PLATFORM_DISPOSITION__PLATFORM_ID: return ActionStepPackage.ACTION_STEP__PLATFORM_ID;
+				case CorePackage.PLATFORM_DISPOSITION__PLATFORM_DEPENDANT: return ActionStepPackage.ACTION_STEP__PLATFORM_DEPENDANT;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+
+		/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated NOT
 	 */

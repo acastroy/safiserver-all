@@ -1887,6 +1887,15 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		isCreated = true;
 
 		// Create classes and their features
+		actionStepEClass = createEClass(ACTION_STEP);
+		createEAttribute(actionStepEClass, ACTION_STEP__PAUSED);
+		createEAttribute(actionStepEClass, ACTION_STEP__ACTIVE);
+		createEReference(actionStepEClass, ACTION_STEP__OUTPUTS);
+		createEAttribute(actionStepEClass, ACTION_STEP__NAME);
+		createEReference(actionStepEClass, ACTION_STEP__SAFLET);
+		createEReference(actionStepEClass, ACTION_STEP__DEFAULT_OUTPUT);
+		createEReference(actionStepEClass, ACTION_STEP__ERROR_OUTPUT);
+
 		assignmentEClass = createEClass(ASSIGNMENT);
 		createEReference(assignmentEClass, ASSIGNMENT__VALUE);
 		createEReference(assignmentEClass, ASSIGNMENT__VARIABLE_NAME);
@@ -1924,15 +1933,6 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		createEReference(outputEClass, OUTPUT__PARENT);
 		createEAttribute(outputEClass, OUTPUT__NAME);
 		createEAttribute(outputEClass, OUTPUT__OUTPUT_TYPE);
-
-		actionStepEClass = createEClass(ACTION_STEP);
-		createEAttribute(actionStepEClass, ACTION_STEP__PAUSED);
-		createEAttribute(actionStepEClass, ACTION_STEP__ACTIVE);
-		createEReference(actionStepEClass, ACTION_STEP__OUTPUTS);
-		createEAttribute(actionStepEClass, ACTION_STEP__NAME);
-		createEReference(actionStepEClass, ACTION_STEP__SAFLET);
-		createEReference(actionStepEClass, ACTION_STEP__DEFAULT_OUTPUT);
-		createEReference(actionStepEClass, ACTION_STEP__ERROR_OUTPUT);
 
 		executeScriptEClass = createEClass(EXECUTE_SCRIPT);
 		createEReference(executeScriptEClass, EXECUTE_SCRIPT__SCRIPT_TEXT);
@@ -2110,9 +2110,9 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		InitiatorPackage theInitiatorPackage = (InitiatorPackage)EPackage.Registry.INSTANCE.getEPackage(InitiatorPackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		SafletPackage theSafletPackage = (SafletPackage)EPackage.Registry.INSTANCE.getEPackage(SafletPackage.eNS_URI);
+		InitiatorPackage theInitiatorPackage = (InitiatorPackage)EPackage.Registry.INSTANCE.getEPackage(InitiatorPackage.eNS_URI);
 		ScriptingPackage theScriptingPackage = (ScriptingPackage)EPackage.Registry.INSTANCE.getEPackage(ScriptingPackage.eNS_URI);
 		DbPackage theDbPackage = (DbPackage)EPackage.Registry.INSTANCE.getEPackage(DbPackage.eNS_URI);
 
@@ -2125,6 +2125,9 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		actionStepEClass.getESuperTypes().add(theCorePackage.getProductIdentifiable());
+		actionStepEClass.getESuperTypes().add(theCorePackage.getThreadSensitive());
+		actionStepEClass.getESuperTypes().add(theCorePackage.getPlatformDisposition());
 		assignmentEClass.getESuperTypes().add(this.getActionStep());
 		caseItemEClass.getESuperTypes().add(this.getItem());
 		inputItemEClass.getESuperTypes().add(this.getCaseItem());
@@ -2135,8 +2138,6 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		choiceEClass.getESuperTypes().add(this.getActionStep());
 		dynamicValueEClass.getESuperTypes().add(theCorePackage.getThreadSensitive());
 		ifThenEClass.getESuperTypes().add(this.getActionStep());
-		actionStepEClass.getESuperTypes().add(theCorePackage.getProductIdentifiable());
-		actionStepEClass.getESuperTypes().add(theCorePackage.getThreadSensitive());
 		executeScriptEClass.getESuperTypes().add(this.getActionStep());
 		invokeSafletEClass.getESuperTypes().add(this.getActionStep());
 		debugLogEClass.getESuperTypes().add(this.getActionStep());
@@ -2174,6 +2175,36 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		outputParameterEClass.getESuperTypes().add(this.getInputItem());
 
 		// Initialize classes and features; add operations and parameters
+		initEClass(actionStepEClass, ActionStep.class, "ActionStep", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getActionStep_Paused(), ecorePackage.getEBoolean(), "paused", null, 0, 1, ActionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getActionStep_Active(), ecorePackage.getEBoolean(), "active", null, 0, 1, ActionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getActionStep_Outputs(), this.getOutput(), this.getOutput_Parent(), "outputs", null, 0, -1, ActionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getActionStep_Name(), ecorePackage.getEString(), "name", null, 1, 1, ActionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getActionStep_Saflet(), theSafletPackage.getSaflet(), theSafletPackage.getSaflet_Actionsteps(), "saflet", null, 0, 1, ActionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActionStep_DefaultOutput(), this.getOutput(), null, "defaultOutput", null, 0, 1, ActionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getActionStep_ErrorOutput(), this.getOutput(), null, "errorOutput", null, 0, 1, ActionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		EOperation op = addEOperation(actionStepEClass, null, "beginProcessing", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theSafletPackage.getSafletContext(), "context", 0, 1, IS_UNIQUE, !IS_ORDERED);
+		addEException(op, theInitiatorPackage.getActionStepException());
+
+		op = addEOperation(actionStepEClass, ecorePackage.getEJavaObject(), "executeScript", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "scriptName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "scriptText", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, theScriptingPackage.getSafletScriptException());
+
+		op = addEOperation(actionStepEClass, null, "handleException", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theSafletPackage.getSafletContext(), "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theSafletPackage.getException(), "e", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, theInitiatorPackage.getActionStepException());
+
+		op = addEOperation(actionStepEClass, ecorePackage.getEJavaObject(), "resolveDynamicValue", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDynamicValue(), "dynamicValue", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theSafletPackage.getSafletContext(), "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, theInitiatorPackage.getActionStepException());
+
+		addEOperation(actionStepEClass, null, "createDefaultOutputs", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(assignmentEClass, Assignment.class, "Assignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAssignment_Value(), this.getDynamicValue(), null, "value", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getAssignment_VariableName(), this.getDynamicValue(), null, "variableName", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2191,7 +2222,7 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 
 		initEClass(parameterizedInitiatorEClass, ParameterizedInitiator.class, "ParameterizedInitiator", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = addEOperation(parameterizedInitiatorEClass, null, "getOutputMap", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(parameterizedInitiatorEClass, null, "getOutputMap", 0, 1, IS_UNIQUE, IS_ORDERED);
 		EGenericType g1 = createEGenericType(this.getMap());
 		EGenericType g2 = createEGenericType(ecorePackage.getEString());
 		g1.getETypeArguments().add(g2);
@@ -2219,36 +2250,6 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		initEReference(getOutput_Parent(), this.getActionStep(), this.getActionStep_Outputs(), "parent", null, 0, 1, Output.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOutput_Name(), ecorePackage.getEString(), "name", null, 0, 1, Output.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOutput_OutputType(), this.getOutputType(), "outputType", null, 0, 1, Output.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(actionStepEClass, ActionStep.class, "ActionStep", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getActionStep_Paused(), ecorePackage.getEBoolean(), "paused", null, 0, 1, ActionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getActionStep_Active(), ecorePackage.getEBoolean(), "active", null, 0, 1, ActionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getActionStep_Outputs(), this.getOutput(), this.getOutput_Parent(), "outputs", null, 0, -1, ActionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getActionStep_Name(), ecorePackage.getEString(), "name", null, 1, 1, ActionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getActionStep_Saflet(), theSafletPackage.getSaflet(), theSafletPackage.getSaflet_Actionsteps(), "saflet", null, 0, 1, ActionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActionStep_DefaultOutput(), this.getOutput(), null, "defaultOutput", null, 0, 1, ActionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getActionStep_ErrorOutput(), this.getOutput(), null, "errorOutput", null, 0, 1, ActionStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		op = addEOperation(actionStepEClass, null, "beginProcessing", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theSafletPackage.getSafletContext(), "context", 0, 1, IS_UNIQUE, !IS_ORDERED);
-		addEException(op, theInitiatorPackage.getActionStepException());
-
-		op = addEOperation(actionStepEClass, ecorePackage.getEJavaObject(), "executeScript", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "scriptName", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "scriptText", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, theScriptingPackage.getSafletScriptException());
-
-		op = addEOperation(actionStepEClass, null, "handleException", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theSafletPackage.getSafletContext(), "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theSafletPackage.getException(), "e", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, theInitiatorPackage.getActionStepException());
-
-		op = addEOperation(actionStepEClass, ecorePackage.getEJavaObject(), "resolveDynamicValue", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getDynamicValue(), "dynamicValue", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theSafletPackage.getSafletContext(), "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, theInitiatorPackage.getActionStepException());
-
-		addEOperation(actionStepEClass, null, "createDefaultOutputs", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(executeScriptEClass, ExecuteScript.class, "ExecuteScript", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExecuteScript_ScriptText(), this.getDynamicValue(), null, "scriptText", null, 0, 1, ExecuteScript.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2418,10 +2419,10 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		initEDataType(basicEMapEDataType, BasicEMap.class, "BasicEMap", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create annotations
-		// DynamicValueAnnotation
-		createDynamicValueAnnotationAnnotations();
 		// Required
 		createRequiredAnnotations();
+		// DynamicValueAnnotation
+		createDynamicValueAnnotationAnnotations();
 		// Directionality
 		createDirectionalityAnnotations();
 		// MetaProperty
@@ -2435,7 +2436,7 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 	 * @generated
 	 */
   protected void createDynamicValueAnnotationAnnotations() {
-		String source = "DynamicValueAnnotation";		
+		String source = "DynamicValueAnnotation";			
 		addAnnotation
 		  (getAssignment_Value(), 
 		   source, 
@@ -2496,7 +2497,7 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 			 "description", "The boolean value that determines which output will be activated (true = green, false = red)",
 			 "expectedReturnType", "Boolean",
 			 "helperClass", "com.safi.workshop.sheet.BooleanBuilderDynamicValueEditorPage"
-		   });				
+		   });			
 		addAnnotation
 		  (getExecuteScript_ScriptText(), 
 		   source, 
@@ -2776,7 +2777,13 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 	 * @generated
 	 */
   protected void createRequiredAnnotations() {
-		String source = "Required";			
+		String source = "Required";		
+		addAnnotation
+		  (getActionStep_Name(), 
+		   source, 
+		   new String[] {
+			 "criteria", "non-blank"
+		   });			
 		addAnnotation
 		  (getAssignment_Value(), 
 		   source, 
@@ -2818,12 +2825,6 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		   source, 
 		   new String[] {
 			 "criteria", "non-null"
-		   });		
-		addAnnotation
-		  (getActionStep_Name(), 
-		   source, 
-		   new String[] {
-			 "criteria", "non-blank"
 		   });			
 		addAnnotation
 		  (getExecuteScript_ScriptText(), 
@@ -3044,13 +3045,13 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 	 * @generated
 	 */
   protected void createDirectionalityAnnotations() {
-		String source = "Directionality";					
+		String source = "Directionality";						
 		addAnnotation
 		  (getAssignment_VariableName(), 
 		   source, 
 		   new String[] {
 			 "output", "true"
-		   });																					
+		   });																				
 		addAnnotation
 		  (getOpenDBConnection_Connection(), 
 		   source, 
@@ -3132,13 +3133,13 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 	 * @generated
 	 */
   protected void createMetaPropertyAnnotations() {
-		String source = "MetaProperty";							
+		String source = "MetaProperty";								
 		addAnnotation
 		  (getAssignment_VariableName(), 
 		   source, 
 		   new String[] {
 			 "displayText", "Variable"
-		   });																																	
+		   });																																
 		addAnnotation
 		  (getExecuteUpdate_RowsUpdatedVar(), 
 		   source, 

@@ -83,7 +83,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getCaseItem()
 	 * @generated
 	 */
-  int CASE_ITEM = 1;
+  int CASE_ITEM = 2;
 
   /**
 	 * The meta object id for the '{@link com.safi.core.actionstep.impl.InputItemImpl <em>Input Item</em>}' class.
@@ -93,7 +93,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getInputItem()
 	 * @generated
 	 */
-  int INPUT_ITEM = 2;
+  int INPUT_ITEM = 3;
 
   /**
 	 * The meta object id for the '{@link com.safi.core.actionstep.impl.ActionStepImpl <em>Action Step</em>}' class.
@@ -103,7 +103,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getActionStep()
 	 * @generated
 	 */
-  int ACTION_STEP = 10;
+  int ACTION_STEP = 0;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -115,13 +115,31 @@ public interface ActionStepPackage extends EPackage {
   int ACTION_STEP__PRODUCT_ID = CorePackage.PRODUCT_IDENTIFIABLE__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_STEP__PLATFORM_ID = CorePackage.PRODUCT_IDENTIFIABLE_FEATURE_COUNT + 0;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_STEP__PLATFORM_DEPENDANT = CorePackage.PRODUCT_IDENTIFIABLE_FEATURE_COUNT + 1;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int ACTION_STEP__PAUSED = CorePackage.PRODUCT_IDENTIFIABLE_FEATURE_COUNT + 0;
+  int ACTION_STEP__PAUSED = CorePackage.PRODUCT_IDENTIFIABLE_FEATURE_COUNT + 2;
 
   /**
 	 * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -130,7 +148,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int ACTION_STEP__ACTIVE = CorePackage.PRODUCT_IDENTIFIABLE_FEATURE_COUNT + 1;
+  int ACTION_STEP__ACTIVE = CorePackage.PRODUCT_IDENTIFIABLE_FEATURE_COUNT + 3;
 
   /**
 	 * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
@@ -139,7 +157,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int ACTION_STEP__OUTPUTS = CorePackage.PRODUCT_IDENTIFIABLE_FEATURE_COUNT + 2;
+  int ACTION_STEP__OUTPUTS = CorePackage.PRODUCT_IDENTIFIABLE_FEATURE_COUNT + 4;
 
   /**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -148,7 +166,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int ACTION_STEP__NAME = CorePackage.PRODUCT_IDENTIFIABLE_FEATURE_COUNT + 3;
+  int ACTION_STEP__NAME = CorePackage.PRODUCT_IDENTIFIABLE_FEATURE_COUNT + 5;
 
   /**
 	 * The feature id for the '<em><b>Saflet</b></em>' container reference.
@@ -157,7 +175,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int ACTION_STEP__SAFLET = CorePackage.PRODUCT_IDENTIFIABLE_FEATURE_COUNT + 4;
+  int ACTION_STEP__SAFLET = CorePackage.PRODUCT_IDENTIFIABLE_FEATURE_COUNT + 6;
 
   /**
 	 * The feature id for the '<em><b>Default Output</b></em>' reference.
@@ -166,7 +184,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int ACTION_STEP__DEFAULT_OUTPUT = CorePackage.PRODUCT_IDENTIFIABLE_FEATURE_COUNT + 5;
+  int ACTION_STEP__DEFAULT_OUTPUT = CorePackage.PRODUCT_IDENTIFIABLE_FEATURE_COUNT + 7;
 
   /**
 	 * The feature id for the '<em><b>Error Output</b></em>' reference.
@@ -175,7 +193,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int ACTION_STEP__ERROR_OUTPUT = CorePackage.PRODUCT_IDENTIFIABLE_FEATURE_COUNT + 6;
+  int ACTION_STEP__ERROR_OUTPUT = CorePackage.PRODUCT_IDENTIFIABLE_FEATURE_COUNT + 8;
 
   /**
 	 * The number of structural features of the '<em>Action Step</em>' class.
@@ -184,7 +202,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int ACTION_STEP_FEATURE_COUNT = CorePackage.PRODUCT_IDENTIFIABLE_FEATURE_COUNT + 7;
+  int ACTION_STEP_FEATURE_COUNT = CorePackage.PRODUCT_IDENTIFIABLE_FEATURE_COUNT + 9;
 
   /**
 	 * The meta object id for the '{@link com.safi.core.actionstep.impl.AssignmentImpl <em>Assignment</em>}' class.
@@ -194,7 +212,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getAssignment()
 	 * @generated
 	 */
-  int ASSIGNMENT = 0;
+  int ASSIGNMENT = 1;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -206,6 +224,24 @@ public interface ActionStepPackage extends EPackage {
   int ASSIGNMENT__PRODUCT_ID = ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSIGNMENT__PLATFORM_ID = ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSIGNMENT__PLATFORM_DEPENDANT = ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -447,7 +483,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getParameterizedActionstep()
 	 * @generated
 	 */
-  int PARAMETERIZED_ACTIONSTEP = 3;
+  int PARAMETERIZED_ACTIONSTEP = 4;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -459,6 +495,24 @@ public interface ActionStepPackage extends EPackage {
   int PARAMETERIZED_ACTIONSTEP__PRODUCT_ID = ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERIZED_ACTIONSTEP__PLATFORM_ID = ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERIZED_ACTIONSTEP__PLATFORM_DEPENDANT = ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -556,7 +610,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getParameterizedInitiator()
 	 * @generated
 	 */
-  int PARAMETERIZED_INITIATOR = 4;
+  int PARAMETERIZED_INITIATOR = 5;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -568,6 +622,24 @@ public interface ActionStepPackage extends EPackage {
   int PARAMETERIZED_INITIATOR__PRODUCT_ID = InitiatorPackage.INITIATOR__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERIZED_INITIATOR__PLATFORM_ID = InitiatorPackage.INITIATOR__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERIZED_INITIATOR__PLATFORM_DEPENDANT = InitiatorPackage.INITIATOR__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -665,7 +737,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getAudioFileItem()
 	 * @generated
 	 */
-  int AUDIO_FILE_ITEM = 5;
+  int AUDIO_FILE_ITEM = 6;
 
   /**
 	 * The feature id for the '<em><b>Label Text</b></em>' attribute.
@@ -720,7 +792,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getChoice()
 	 * @generated
 	 */
-  int CHOICE = 6;
+  int CHOICE = 7;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -732,6 +804,24 @@ public interface ActionStepPackage extends EPackage {
   int CHOICE__PRODUCT_ID = ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHOICE__PLATFORM_ID = ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHOICE__PLATFORM_DEPENDANT = ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -829,7 +919,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getDynamicValue()
 	 * @generated
 	 */
-  int DYNAMIC_VALUE = 7;
+  int DYNAMIC_VALUE = 8;
 
   /**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -884,7 +974,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getIfThen()
 	 * @generated
 	 */
-  int IF_THEN = 8;
+  int IF_THEN = 9;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -896,6 +986,24 @@ public interface ActionStepPackage extends EPackage {
   int IF_THEN__PRODUCT_ID = ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_THEN__PLATFORM_ID = ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_THEN__PLATFORM_DEPENDANT = ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -984,7 +1092,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getOutput()
 	 * @generated
 	 */
-  int OUTPUT = 9;
+  int OUTPUT = 10;
 
   /**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -1051,6 +1159,24 @@ public interface ActionStepPackage extends EPackage {
   int EXECUTE_SCRIPT__PRODUCT_ID = ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTE_SCRIPT__PLATFORM_ID = ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTE_SCRIPT__PLATFORM_DEPENDANT = ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1151,6 +1277,24 @@ public interface ActionStepPackage extends EPackage {
   int INVOKE_SAFLET__PRODUCT_ID = ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVOKE_SAFLET__PLATFORM_ID = ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVOKE_SAFLET__PLATFORM_DEPENDANT = ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1260,6 +1404,24 @@ public interface ActionStepPackage extends EPackage {
   int DEBUG_LOG__PRODUCT_ID = ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEBUG_LOG__PLATFORM_ID = ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEBUG_LOG__PLATFORM_DEPENDANT = ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1378,6 +1540,24 @@ public interface ActionStepPackage extends EPackage {
   int OPEN_DB_CONNECTION__PRODUCT_ID = ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPEN_DB_CONNECTION__PLATFORM_ID = ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPEN_DB_CONNECTION__PLATFORM_DEPENDANT = ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1478,6 +1658,24 @@ public interface ActionStepPackage extends EPackage {
   int CLOSE_DB_CONNECTION__PRODUCT_ID = ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOSE_DB_CONNECTION__PLATFORM_ID = ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOSE_DB_CONNECTION__PLATFORM_DEPENDANT = ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1578,6 +1776,24 @@ public interface ActionStepPackage extends EPackage {
   int OPEN_QUERY__PRODUCT_ID = ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPEN_QUERY__PLATFORM_ID = ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPEN_QUERY__PLATFORM_DEPENDANT = ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1732,6 +1948,24 @@ public interface ActionStepPackage extends EPackage {
   int SET_QUERY_PARAM__PRODUCT_ID = ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SET_QUERY_PARAM__PLATFORM_ID = ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SET_QUERY_PARAM__PLATFORM_DEPENDANT = ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1859,6 +2093,24 @@ public interface ActionStepPackage extends EPackage {
   int EXECUTE_UPDATE__PRODUCT_ID = ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTE_UPDATE__PLATFORM_ID = ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTE_UPDATE__PLATFORM_DEPENDANT = ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1968,6 +2220,24 @@ public interface ActionStepPackage extends EPackage {
   int EXECUTE_QUERY__PRODUCT_ID = ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTE_QUERY__PLATFORM_ID = ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTE_QUERY__PLATFORM_DEPENDANT = ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2086,6 +2356,24 @@ public interface ActionStepPackage extends EPackage {
   int NEXT_ROW__PRODUCT_ID = ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NEXT_ROW__PLATFORM_ID = ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NEXT_ROW__PLATFORM_DEPENDANT = ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2186,6 +2474,24 @@ public interface ActionStepPackage extends EPackage {
   int GET_COL_VALUE__PRODUCT_ID = ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_COL_VALUE__PLATFORM_ID = ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_COL_VALUE__PLATFORM_DEPENDANT = ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2313,6 +2619,24 @@ public interface ActionStepPackage extends EPackage {
   int GET_COL_VALUES__PRODUCT_ID = ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_COL_VALUES__PLATFORM_ID = ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_COL_VALUES__PLATFORM_DEPENDANT = ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2422,6 +2746,24 @@ public interface ActionStepPackage extends EPackage {
   int SET_COL_VALUE__PRODUCT_ID = ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SET_COL_VALUE__PLATFORM_ID = ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SET_COL_VALUE__PLATFORM_DEPENDANT = ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2549,6 +2891,24 @@ public interface ActionStepPackage extends EPackage {
   int SET_COL_VALUES__PRODUCT_ID = ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SET_COL_VALUES__PLATFORM_ID = ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SET_COL_VALUES__PLATFORM_DEPENDANT = ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2658,6 +3018,24 @@ public interface ActionStepPackage extends EPackage {
   int UPDATET_ROW__PRODUCT_ID = ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATET_ROW__PLATFORM_ID = ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATET_ROW__PLATFORM_DEPENDANT = ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2758,6 +3136,24 @@ public interface ActionStepPackage extends EPackage {
   int MOVE_TO_ROW__PRODUCT_ID = ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MOVE_TO_ROW__PLATFORM_ID = ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MOVE_TO_ROW__PLATFORM_DEPENDANT = ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2867,6 +3263,24 @@ public interface ActionStepPackage extends EPackage {
   int MOVE_TO_LAST_ROW__PRODUCT_ID = ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MOVE_TO_LAST_ROW__PLATFORM_ID = ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MOVE_TO_LAST_ROW__PLATFORM_DEPENDANT = ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2967,6 +3381,24 @@ public interface ActionStepPackage extends EPackage {
   int DELETE_ROW__PRODUCT_ID = ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELETE_ROW__PLATFORM_ID = ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELETE_ROW__PLATFORM_DEPENDANT = ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3067,6 +3499,24 @@ public interface ActionStepPackage extends EPackage {
   int MOVE_TO_INSERT_ROW__PRODUCT_ID = ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MOVE_TO_INSERT_ROW__PLATFORM_ID = ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MOVE_TO_INSERT_ROW__PLATFORM_DEPENDANT = ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3167,6 +3617,24 @@ public interface ActionStepPackage extends EPackage {
   int INSERT_ROW__PRODUCT_ID = ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSERT_ROW__PLATFORM_ID = ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSERT_ROW__PLATFORM_DEPENDANT = ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3267,6 +3735,24 @@ public interface ActionStepPackage extends EPackage {
   int MOVE_TO_FIRST_ROW__PRODUCT_ID = ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MOVE_TO_FIRST_ROW__PLATFORM_ID = ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MOVE_TO_FIRST_ROW__PLATFORM_DEPENDANT = ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3367,6 +3853,24 @@ public interface ActionStepPackage extends EPackage {
   int PREVIOUS_ROW__PRODUCT_ID = ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREVIOUS_ROW__PLATFORM_ID = ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREVIOUS_ROW__PLATFORM_DEPENDANT = ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3770,6 +4274,24 @@ public interface ActionStepPackage extends EPackage {
   int RUN_QUERY__PRODUCT_ID = ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUN_QUERY__PLATFORM_ID = ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUN_QUERY__PLATFORM_DEPENDANT = ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

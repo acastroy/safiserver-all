@@ -10,7 +10,53 @@
   <eClassifiers xsi:type="ecore:EClass" name="ThreadSensitive">
     <eOperations name="cleanup"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PlatformDisposition" abstract="true"
+      interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="platformID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" transient="true" defaultValueLiteral="" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="platformDependant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        changeable="false" transient="true" defaultValueLiteral="false" unsettable="true"/>
+  </eClassifiers>
   <eSubpackages name="actionstep" nsURI="http:///com/safi/core.ecore#actionstep" nsPrefix="com.safi.core.actionstep">
+    <eClassifiers xsi:type="ecore:EClass" name="ActionStep" abstract="true" eSuperTypes="#//ProductIdentifiable #//ThreadSensitive #//PlatformDisposition">
+      <eOperations name="beginProcessing" eExceptions="#//initiator/ActionStepException">
+        <eParameters name="context" ordered="false" eType="#//saflet/SafletContext"/>
+      </eOperations>
+      <eOperations name="executeScript" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"
+          eExceptions="#//scripting/SafletScriptException">
+        <eParameters name="scriptName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="scriptText" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="handleException" eExceptions="#//initiator/ActionStepException">
+        <eParameters name="context" eType="#//saflet/SafletContext"/>
+        <eParameters name="e" eType="#//saflet/Exception"/>
+      </eOperations>
+      <eOperations name="resolveDynamicValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"
+          eExceptions="#//initiator/ActionStepException">
+        <eParameters name="dynamicValue" eType="#//actionstep/DynamicValue"/>
+        <eParameters name="context" eType="#//saflet/SafletContext"/>
+      </eOperations>
+      <eOperations name="createDefaultOutputs"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="paused" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="active" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="outputs" ordered="false"
+          upperBound="-1" eType="#//actionstep/Output" containment="true" resolveProxies="false"
+          eOpposite="#//actionstep/Output/parent"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+          unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="Required">
+          <details key="criteria" value="non-blank"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="saflet" eType="#//saflet/Saflet"
+          eOpposite="#//saflet/Saflet/actionsteps"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="defaultOutput" ordered="false"
+          eType="#//actionstep/Output"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="errorOutput" ordered="false"
+          eType="#//actionstep/Output"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Assignment" eSuperTypes="#//actionstep/ActionStep">
       <eStructuralFeatures xsi:type="ecore:EReference" name="value" ordered="false"
           eType="#//actionstep/DynamicValue" containment="true" resolveProxies="false">
@@ -157,45 +203,6 @@
       <eLiterals name="Default"/>
       <eLiterals name="Error" value="1"/>
       <eLiterals name="Choice" value="3"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ActionStep" abstract="true" eSuperTypes="#//ProductIdentifiable #//ThreadSensitive">
-      <eOperations name="beginProcessing" eExceptions="#//initiator/ActionStepException">
-        <eParameters name="context" ordered="false" eType="#//saflet/SafletContext"/>
-      </eOperations>
-      <eOperations name="executeScript" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"
-          eExceptions="#//scripting/SafletScriptException">
-        <eParameters name="scriptName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eParameters name="scriptText" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eOperations name="handleException" eExceptions="#//initiator/ActionStepException">
-        <eParameters name="context" eType="#//saflet/SafletContext"/>
-        <eParameters name="e" eType="#//saflet/Exception"/>
-      </eOperations>
-      <eOperations name="resolveDynamicValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"
-          eExceptions="#//initiator/ActionStepException">
-        <eParameters name="dynamicValue" eType="#//actionstep/DynamicValue"/>
-        <eParameters name="context" eType="#//saflet/SafletContext"/>
-      </eOperations>
-      <eOperations name="createDefaultOutputs"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="paused" ordered="false"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="active" ordered="false"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="outputs" ordered="false"
-          upperBound="-1" eType="#//actionstep/Output" containment="true" resolveProxies="false"
-          eOpposite="#//actionstep/Output/parent"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
-          unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="Required">
-          <details key="criteria" value="non-blank"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="saflet" eType="#//saflet/Saflet"
-          eOpposite="#//saflet/Saflet/actionsteps"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="defaultOutput" ordered="false"
-          eType="#//actionstep/Output"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="errorOutput" ordered="false"
-          eType="#//actionstep/Output"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="Map" instanceClassName="java.util.Map">
       <eTypeParameters name="T"/>

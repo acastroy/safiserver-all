@@ -14,6 +14,10 @@
     <genClasses ecoreClass="core.ecore#//ThreadSensitive">
       <genOperations ecoreOperation="core.ecore#//ThreadSensitive/cleanup"/>
     </genClasses>
+     <genClasses image="false" ecoreClass="core.ecore#//PlatformDisposition">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//PlatformDisposition/platformID"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//PlatformDisposition/platformDependant"/>
+    </genClasses>
     <nestedGenPackages prefix="ActionStep" disposableProviderFactory="true" literalsInterface="false"
         ecorePackage="core.ecore#//actionstep">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="core.ecore#//actionstep/DynamicValueType">
@@ -41,6 +45,34 @@
         <genTypeParameters ecoreTypeParameter="core.ecore#//actionstep/BasicEMap/T"/>
         <genTypeParameters ecoreTypeParameter="core.ecore#//actionstep/BasicEMap/T1"/>
       </genDataTypes>
+       <genClasses image="false" ecoreClass="core.ecore#//actionstep/ActionStep">
+        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/ActionStep/paused"/>
+        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/ActionStep/active"/>
+        <genFeatures property="None" children="true" createChild="true" propertyDescription="Dataflow Output"
+            ecoreFeature="ecore:EReference core.ecore#//actionstep/ActionStep/outputs"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/ActionStep/name"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference core.ecore#//actionstep/ActionStep/saflet"/>
+        <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference core.ecore#//actionstep/ActionStep/defaultOutput"/>
+        <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference core.ecore#//actionstep/ActionStep/errorOutput"/>
+        <genOperations ecoreOperation="core.ecore#//actionstep/ActionStep/beginProcessing">
+          <genParameters ecoreParameter="core.ecore#//actionstep/ActionStep/beginProcessing/context"/>
+        </genOperations>
+        <genOperations ecoreOperation="core.ecore#//actionstep/ActionStep/executeScript">
+          <genParameters ecoreParameter="core.ecore#//actionstep/ActionStep/executeScript/scriptName"/>
+          <genParameters ecoreParameter="core.ecore#//actionstep/ActionStep/executeScript/scriptText"/>
+        </genOperations>
+        <genOperations ecoreOperation="core.ecore#//actionstep/ActionStep/handleException">
+          <genParameters ecoreParameter="core.ecore#//actionstep/ActionStep/handleException/context"/>
+          <genParameters ecoreParameter="core.ecore#//actionstep/ActionStep/handleException/e"/>
+        </genOperations>
+        <genOperations ecoreOperation="core.ecore#//actionstep/ActionStep/resolveDynamicValue">
+          <genParameters ecoreParameter="core.ecore#//actionstep/ActionStep/resolveDynamicValue/dynamicValue"/>
+          <genParameters ecoreParameter="core.ecore#//actionstep/ActionStep/resolveDynamicValue/context"/>
+        </genOperations>
+        <genOperations ecoreOperation="core.ecore#//actionstep/ActionStep/createDefaultOutputs"/>
+      </genClasses>
       <genClasses ecoreClass="core.ecore#//actionstep/Assignment">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/Assignment/value"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/Assignment/variableName"/>
@@ -81,34 +113,6 @@
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference core.ecore#//actionstep/Output/parent"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/Output/name"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/Output/outputType"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="core.ecore#//actionstep/ActionStep">
-        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/ActionStep/paused"/>
-        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/ActionStep/active"/>
-        <genFeatures property="None" children="true" createChild="true" propertyDescription="Dataflow Output"
-            ecoreFeature="ecore:EReference core.ecore#//actionstep/ActionStep/outputs"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/ActionStep/name"/>
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference core.ecore#//actionstep/ActionStep/saflet"/>
-        <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference core.ecore#//actionstep/ActionStep/defaultOutput"/>
-        <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference core.ecore#//actionstep/ActionStep/errorOutput"/>
-        <genOperations ecoreOperation="core.ecore#//actionstep/ActionStep/beginProcessing">
-          <genParameters ecoreParameter="core.ecore#//actionstep/ActionStep/beginProcessing/context"/>
-        </genOperations>
-        <genOperations ecoreOperation="core.ecore#//actionstep/ActionStep/executeScript">
-          <genParameters ecoreParameter="core.ecore#//actionstep/ActionStep/executeScript/scriptName"/>
-          <genParameters ecoreParameter="core.ecore#//actionstep/ActionStep/executeScript/scriptText"/>
-        </genOperations>
-        <genOperations ecoreOperation="core.ecore#//actionstep/ActionStep/handleException">
-          <genParameters ecoreParameter="core.ecore#//actionstep/ActionStep/handleException/context"/>
-          <genParameters ecoreParameter="core.ecore#//actionstep/ActionStep/handleException/e"/>
-        </genOperations>
-        <genOperations ecoreOperation="core.ecore#//actionstep/ActionStep/resolveDynamicValue">
-          <genParameters ecoreParameter="core.ecore#//actionstep/ActionStep/resolveDynamicValue/dynamicValue"/>
-          <genParameters ecoreParameter="core.ecore#//actionstep/ActionStep/resolveDynamicValue/context"/>
-        </genOperations>
-        <genOperations ecoreOperation="core.ecore#//actionstep/ActionStep/createDefaultOutputs"/>
       </genClasses>
       <genClasses ecoreClass="core.ecore#//actionstep/ExecuteScript">
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/ExecuteScript/scriptText"/>

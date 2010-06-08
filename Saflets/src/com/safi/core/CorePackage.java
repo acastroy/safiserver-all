@@ -108,6 +108,43 @@ public interface CorePackage extends EPackage {
 
 
 		/**
+	 * The meta object id for the '{@link com.safi.core.PlatformDisposition <em>Platform Disposition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.safi.core.PlatformDisposition
+	 * @see com.safi.core.impl.CorePackageImpl#getPlatformDisposition()
+	 * @generated
+	 */
+	int PLATFORM_DISPOSITION = 2;
+
+		/**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLATFORM_DISPOSITION__PLATFORM_ID = 0;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLATFORM_DISPOSITION__PLATFORM_DEPENDANT = 1;
+
+		/**
+	 * The number of structural features of the '<em>Platform Disposition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLATFORM_DISPOSITION_FEATURE_COUNT = 2;
+
+		/**
 	 * Returns the meta object for class '{@link com.safi.core.ProductIdentifiable <em>Product Identifiable</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -137,6 +174,38 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getThreadSensitive();
+
+		/**
+	 * Returns the meta object for class '{@link com.safi.core.PlatformDisposition <em>Platform Disposition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Platform Disposition</em>'.
+	 * @see com.safi.core.PlatformDisposition
+	 * @generated
+	 */
+	EClass getPlatformDisposition();
+
+		/**
+	 * Returns the meta object for the attribute '{@link com.safi.core.PlatformDisposition#getPlatformID <em>Platform ID</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Platform ID</em>'.
+	 * @see com.safi.core.PlatformDisposition#getPlatformID()
+	 * @see #getPlatformDisposition()
+	 * @generated
+	 */
+	EAttribute getPlatformDisposition_PlatformID();
+
+		/**
+	 * Returns the meta object for the attribute '{@link com.safi.core.PlatformDisposition#isPlatformDependant <em>Platform Dependant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Platform Dependant</em>'.
+	 * @see com.safi.core.PlatformDisposition#isPlatformDependant()
+	 * @see #getPlatformDisposition()
+	 * @generated
+	 */
+	EAttribute getPlatformDisposition_PlatformDependant();
 
 		/**
 	 * Returns the factory that creates the instances of the model.
@@ -187,6 +256,32 @@ public interface CorePackage extends EPackage {
 		 * @generated
 		 */
 		EClass THREAD_SENSITIVE = eINSTANCE.getThreadSensitive();
+
+				/**
+		 * The meta object literal for the '{@link com.safi.core.PlatformDisposition <em>Platform Disposition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.safi.core.PlatformDisposition
+		 * @see com.safi.core.impl.CorePackageImpl#getPlatformDisposition()
+		 * @generated
+		 */
+		EClass PLATFORM_DISPOSITION = eINSTANCE.getPlatformDisposition();
+
+				/**
+		 * The meta object literal for the '<em><b>Platform ID</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PLATFORM_DISPOSITION__PLATFORM_ID = eINSTANCE.getPlatformDisposition_PlatformID();
+
+				/**
+		 * The meta object literal for the '<em><b>Platform Dependant</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PLATFORM_DISPOSITION__PLATFORM_DEPENDANT = eINSTANCE.getPlatformDisposition_PlatformDependant();
 
   }
 

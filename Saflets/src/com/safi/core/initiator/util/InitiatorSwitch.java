@@ -6,6 +6,7 @@
  */
 package com.safi.core.initiator.util;
 
+import com.safi.core.PlatformDisposition;
 import com.safi.core.ProductIdentifiable;
 
 import com.safi.core.ThreadSensitive;
@@ -98,6 +99,7 @@ public class InitiatorSwitch<T> {
 				if (result == null) result = caseActionStep(initiator);
 				if (result == null) result = caseProductIdentifiable(initiator);
 				if (result == null) result = caseThreadSensitive(initiator);
+				if (result == null) result = casePlatformDisposition(initiator);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -168,6 +170,21 @@ public class InitiatorSwitch<T> {
 	 * @generated
 	 */
 	public T caseThreadSensitive(ThreadSensitive object) {
+		return null;
+	}
+
+		/**
+	 * Returns the result of interpreting the object as an instance of '<em>Platform Disposition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Platform Disposition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePlatformDisposition(PlatformDisposition object) {
 		return null;
 	}
 
