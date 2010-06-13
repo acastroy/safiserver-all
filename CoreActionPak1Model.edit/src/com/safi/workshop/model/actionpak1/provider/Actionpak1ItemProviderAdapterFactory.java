@@ -99,52 +99,6 @@ public class Actionpak1ItemProviderAdapterFactory extends Actionpak1AdapterFacto
 	}
 
   /**
-	 * This keeps track of the one adapter used for all {@link com.safi.workshop.model.actionpak1.CustomInitiator} instances.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  protected CustomInitiatorItemProvider customInitiatorItemProvider;
-
-  /**
-	 * This creates an adapter for a {@link com.safi.workshop.model.actionpak1.CustomInitiator}.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  @Override
-  public Adapter createCustomInitiatorAdapter() {
-		if (customInitiatorItemProvider == null) {
-			customInitiatorItemProvider = new CustomInitiatorItemProvider(this);
-		}
-
-		return customInitiatorItemProvider;
-	}
-
-  /**
-	 * This keeps track of the one adapter used for all {@link com.safi.workshop.model.actionpak1.IncomingCall2} instances.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  protected IncomingCall2ItemProvider incomingCall2ItemProvider;
-
-  /**
-	 * This creates an adapter for a {@link com.safi.workshop.model.actionpak1.IncomingCall2}.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  @Override
-  public Adapter createIncomingCall2Adapter() {
-		if (incomingCall2ItemProvider == null) {
-			incomingCall2ItemProvider = new IncomingCall2ItemProvider(this);
-		}
-
-		return incomingCall2ItemProvider;
-	}
-
-  /**
 	 * This keeps track of the one adapter used for all {@link com.safi.workshop.model.actionpak1.InvokeSaflet2} instances.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -168,29 +122,6 @@ public class Actionpak1ItemProviderAdapterFactory extends Actionpak1AdapterFacto
 	}
 
   /**
-	 * This keeps track of the one adapter used for all {@link com.safi.workshop.model.actionpak1.ManagerAction} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ManagerActionItemProvider managerActionItemProvider;
-
-		/**
-	 * This creates an adapter for a {@link com.safi.workshop.model.actionpak1.ManagerAction}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createManagerActionAdapter() {
-		if (managerActionItemProvider == null) {
-			managerActionItemProvider = new ManagerActionItemProvider(this);
-		}
-
-		return managerActionItemProvider;
-	}
-
-		/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -290,10 +221,7 @@ public class Actionpak1ItemProviderAdapterFactory extends Actionpak1AdapterFacto
 	 */
   public void dispose() {
 		if (actionstepTestItemProvider != null) actionstepTestItemProvider.dispose();
-		if (customInitiatorItemProvider != null) customInitiatorItemProvider.dispose();
-		if (incomingCall2ItemProvider != null) incomingCall2ItemProvider.dispose();
 		if (invokeSaflet2ItemProvider != null) invokeSaflet2ItemProvider.dispose();
-		if (managerActionItemProvider != null) managerActionItemProvider.dispose();
 	}
 
 }

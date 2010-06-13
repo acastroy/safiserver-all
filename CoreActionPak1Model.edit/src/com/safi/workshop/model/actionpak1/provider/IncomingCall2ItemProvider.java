@@ -7,26 +7,13 @@
 package com.safi.workshop.model.actionpak1.provider;
 
 
-import com.safi.asterisk.AsteriskFactory;
-import com.safi.asterisk.AsteriskPackage;
-
-import com.safi.core.actionstep.ActionStepPackage;
-import com.safi.core.actionstep.provider.ParameterizedInitiatorItemProvider;
-
-import com.safi.core.call.CallPackage;
-import com.safi.workshop.model.actionpak1.Actionpak1Package;
-import com.safi.workshop.model.actionpak1.IncomingCall2;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -36,6 +23,12 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import com.safi.core.actionstep.ActionStepPackage;
+import com.safi.core.actionstep.provider.ParameterizedInitiatorItemProvider;
+import com.safi.core.call.CallPackage;
+import com.safi.workshop.model.actionpak1.Actionpak1Package;
+import com.safi.workshop.model.actionpak1.IncomingCall2;
 
 /**
  * This is the item provider adapter for a {@link com.safi.workshop.model.actionpak1.IncomingCall2} object.

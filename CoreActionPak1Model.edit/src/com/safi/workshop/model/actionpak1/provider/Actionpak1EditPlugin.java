@@ -6,8 +6,6 @@
  */
 package com.safi.workshop.model.actionpak1.provider;
 
-import com.safi.asterisk.provider.AsteriskEditPlugin;
-
 import com.safi.core.provider.CoreEditPluginProv;
 
 import com.safi.db.provider.DbEditPlugin;
