@@ -6,7 +6,6 @@
  */
 package com.safi.asterisk.actionstep;
 
-import com.safi.core.actionstep.ActionStep;
 import com.safi.core.call.CallConsumer1;
 
 /**
@@ -27,40 +26,40 @@ import com.safi.core.call.CallConsumer1;
  * @generated
  */
 public interface WaitExten extends AsteriskActionStep, CallConsumer1 {
-  /**
+	/**
 	 * Returns the value of the '<em><b>Music On Hold Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Music On Hold Class</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Music On Hold Class</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Music On Hold Class</em>' attribute.
 	 * @see #setMusicOnHoldClass(String)
 	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getWaitExten_MusicOnHoldClass()
 	 * @model ordered="false"
 	 * @generated
 	 */
-  String getMusicOnHoldClass();
+	String getMusicOnHoldClass();
 
-  /**
+	/**
 	 * Sets the value of the '{@link com.safi.asterisk.actionstep.WaitExten#getMusicOnHoldClass <em>Music On Hold Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Music On Hold Class</em>' attribute.
 	 * @see #getMusicOnHoldClass()
 	 * @generated
 	 */
-  void setMusicOnHoldClass(String value);
+	void setMusicOnHoldClass(String value);
 
-  /**
+	/**
 	 * Returns the value of the '<em><b>Timeout</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Timeout</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Timeout</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Timeout</em>' attribute.
 	 * @see #setTimeout(int)
 	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getWaitExten_Timeout()
@@ -68,16 +67,16 @@ public interface WaitExten extends AsteriskActionStep, CallConsumer1 {
 	 *        annotation="unitsTime seconds='true'"
 	 * @generated
 	 */
-  int getTimeout();
+	int getTimeout();
 
-  /**
+	/**
 	 * Sets the value of the '{@link com.safi.asterisk.actionstep.WaitExten#getTimeout <em>Timeout</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Timeout</em>' attribute.
 	 * @see #getTimeout()
 	 * @generated
 	 */
-  void setTimeout(int value);
+	void setTimeout(int value);
 
 } // WaitExten

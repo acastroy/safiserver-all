@@ -6,8 +6,8 @@
  */
 package com.safi.asterisk.actionstep;
 
-import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.DynamicValue;
+
 import com.safi.core.call.CallConsumer1;
 
 /**
@@ -28,14 +28,14 @@ import com.safi.core.call.CallConsumer1;
  * @generated
  */
 public interface MeetMeCount extends AsteriskActionStep, CallConsumer1 {
-  /**
+	/**
 	 * Returns the value of the '<em><b>Conference Number</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Conference Number</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Conference Number</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Conference Number</em>' containment reference.
 	 * @see #setConferenceNumber(DynamicValue)
 	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getMeetMeCount_ConferenceNumber()
@@ -44,26 +44,26 @@ public interface MeetMeCount extends AsteriskActionStep, CallConsumer1 {
 	 *        annotation="Required criteria='non-null'"
 	 * @generated
 	 */
-  DynamicValue getConferenceNumber();
+	DynamicValue getConferenceNumber();
 
-  /**
+	/**
 	 * Sets the value of the '{@link com.safi.asterisk.actionstep.MeetMeCount#getConferenceNumber <em>Conference Number</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Conference Number</em>' containment reference.
 	 * @see #getConferenceNumber()
 	 * @generated
 	 */
-  void setConferenceNumber(DynamicValue value);
+	void setConferenceNumber(DynamicValue value);
 
-  /**
+	/**
 	 * Returns the value of the '<em><b>Variable Name</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Variable Name</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Variable Name</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Variable Name</em>' containment reference.
 	 * @see #setVariableName(DynamicValue)
 	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getMeetMeCount_VariableName()
@@ -74,16 +74,16 @@ public interface MeetMeCount extends AsteriskActionStep, CallConsumer1 {
 	 *        annotation="MetaProperty displayText='Variable'"
 	 * @generated
 	 */
-  DynamicValue getVariableName();
+	DynamicValue getVariableName();
 
-  /**
+	/**
 	 * Sets the value of the '{@link com.safi.asterisk.actionstep.MeetMeCount#getVariableName <em>Variable Name</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Variable Name</em>' containment reference.
 	 * @see #getVariableName()
 	 * @generated
 	 */
-  void setVariableName(DynamicValue value);
+	void setVariableName(DynamicValue value);
 
 } // MeetMeCount

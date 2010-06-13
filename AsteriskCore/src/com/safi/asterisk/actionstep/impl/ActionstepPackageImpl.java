@@ -41,6 +41,8 @@ import com.safi.asterisk.actionstep.GetCallInfo;
 import com.safi.asterisk.actionstep.GetDigits;
 import com.safi.asterisk.actionstep.GetFullVariable;
 import com.safi.asterisk.actionstep.Hangup;
+import com.safi.asterisk.actionstep.ManagerAction;
+import com.safi.asterisk.actionstep.ManagerActionType;
 import com.safi.asterisk.actionstep.MeetMe;
 import com.safi.asterisk.actionstep.MeetMeAdmin;
 import com.safi.asterisk.actionstep.MeetMeAdminCommand;
@@ -98,10 +100,10 @@ import com.safi.asterisk.initiator.InitiatorPackage;
 import com.safi.asterisk.initiator.impl.InitiatorPackageImpl;
 import com.safi.asterisk.saflet.SafletPackage;
 import com.safi.asterisk.saflet.impl.SafletPackageImpl;
-import com.safi.core.CorePackage;
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.call.CallPackage;
 import com.safi.db.astdb.AstdbPackage;
+import com.safi.workshop.model.actionpak1.Actionpak1Package;
 
 /**
  * <!-- begin-user-doc -->
@@ -602,6 +604,13 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 
 		/**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass managerActionEClass = null;
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -615,6 +624,13 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
   private EEnum presentationTypeEEnum = null;
 
   /**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum managerActionTypeEEnum = null;
+
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
@@ -675,8 +691,8 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		isInited = true;
 
 		// Initialize simple dependencies
+		Actionpak1Package.eINSTANCE.eClass();
 		AstdbPackage.eINSTANCE.eClass();
-		CorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		AsteriskPackageImpl theAsteriskPackage = (AsteriskPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AsteriskPackage.eNS_URI) instanceof AsteriskPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AsteriskPackage.eNS_URI) : AsteriskPackage.eINSTANCE);
@@ -3577,6 +3593,33 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 
 		/**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getManagerAction() {
+		return managerActionEClass;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getManagerAction_ManagerActionType() {
+		return (EAttribute)managerActionEClass.getEStructuralFeatures().get(0);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getManagerAction_ManagerResponse() {
+		return (EReference)managerActionEClass.getEStructuralFeatures().get(1);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -3594,6 +3637,15 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 	}
 
   /**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getManagerActionType() {
+		return managerActionTypeEEnum;
+	}
+
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
@@ -4028,9 +4080,14 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 
 		asteriskActionStepEClass = createEClass(ASTERISK_ACTION_STEP);
 
+		managerActionEClass = createEClass(MANAGER_ACTION);
+		createEAttribute(managerActionEClass, MANAGER_ACTION__MANAGER_ACTION_TYPE);
+		createEReference(managerActionEClass, MANAGER_ACTION__MANAGER_RESPONSE);
+
 		// Create enums
 		meetMeAdminCommandEEnum = createEEnum(MEET_ME_ADMIN_COMMAND);
 		presentationTypeEEnum = createEEnum(PRESENTATION_TYPE);
+		managerActionTypeEEnum = createEEnum(MANAGER_ACTION_TYPE);
 
 		// Create data types
 		mapEDataType = createEDataType(MAP);
@@ -4212,6 +4269,7 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		extensionTransferEClass.getESuperTypes().add(this.getAsteriskActionStep());
 		extensionTransferEClass.getESuperTypes().add(theCallPackage.getCallConsumer2());
 		asteriskActionStepEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
+		managerActionEClass.getESuperTypes().add(theActionStepPackage.getParameterizedActionstep());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(answerEClass, Answer.class, "Answer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -4607,6 +4665,10 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 
 		initEClass(asteriskActionStepEClass, AsteriskActionStep.class, "AsteriskActionStep", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(managerActionEClass, ManagerAction.class, "ManagerAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getManagerAction_ManagerActionType(), this.getManagerActionType(), "managerActionType", null, 0, 1, ManagerAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getManagerAction_ManagerResponse(), theActionStepPackage.getDynamicValue(), null, "managerResponse", null, 0, 1, ManagerAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(meetMeAdminCommandEEnum, MeetMeAdminCommand.class, "MeetMeAdminCommand");
 		addEEnumLiteral(meetMeAdminCommandEEnum, MeetMeAdminCommand.EJECT_LAST_USER);
@@ -4639,6 +4701,78 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		addEEnumLiteral(presentationTypeEEnum, PresentationType.PROHIB_FAILED_SCREEN);
 		addEEnumLiteral(presentationTypeEEnum, PresentationType.PROHIB);
 		addEEnumLiteral(presentationTypeEEnum, PresentationType.UNAVAILABLE);
+
+		initEEnum(managerActionTypeEEnum, ManagerActionType.class, "ManagerActionType");
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.ABSOLUTE_TIMEOUT_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.AGENT_CALLBACK_LOGIN_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.AGENT_LOGOFF_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.AGENTS_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.AGI_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.ATXFER_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.BRIDGE_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.CHALLENGE_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.CHANGE_MONITOR_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.COMMAND_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.CORE_SETTINGS_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.CORE_SHOW_CHANNELS_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.CORE_STATUS_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.DB_DEL_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.DB_DEL_TREE_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.DB_GET_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.DB_PUT_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.EVENTS_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.EXTENSION_STATE_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.GET_CONFIG_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.GET_VAR_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.HANGUP_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.IAX_PEER_LIST_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.JABBER_SEND_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.LIST_COMMANDS_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.LOGIN_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.LOGOFF_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.MAILBOX_COUNT_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.MAILBOX_STATUS_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.MEET_ME_MUTE_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.MEET_ME_UNMUTE_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.MODULE_CHECK_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.MODULE_LOAD_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.MONITOR_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.ORIGINATE_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.PARK_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.PARKED_CALLS_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.PAUSE_MONITOR_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.PING_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.PLAY_DTMF_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.QUEUE_ADD_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.QUEUE_LOG_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.QUEUE_PAUSE_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.QUEUE_PENALTY_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.QUEUE_REMOVE_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.QUEUE_RESET_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.QUEUE_STATUS_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.QUEUE_SUMMARY_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.REDIRECT_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.SEND_TEXT_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.SET_CDR_USER_FIELD_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.SET_VAR_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.SHOW_DIALPLAN_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.SIP_NOTIFY_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.SIP_PEERS_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.SIP_SHOW_PEER_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.SIP_SHOW_REGISTRY_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.STATUS_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.STOP_MONITOR_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.UNPAUSE_MONITOR_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.UPDATE_CONFIG_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.USER_EVENT_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.VOICEMAIL_USERS_LIST_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.ZAP_DIAL_OFFHOOK_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.ZAP_DND_OFF_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.ZAP_DND_ON_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.ZAP_HANGUP_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.ZAP_RESTART_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.ZAP_SHOW_CHANNELS_ACTION);
+		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.ZAP_TRANSFER_ACTION);
 
 		// Initialize data types
 		initEDataType(mapEDataType, Map.class, "Map", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
@@ -4796,7 +4930,7 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		   source, 
 		   new String[] {
 			 "seconds", "true"
-		   });		
+		   });					
 	}
 
   /**
@@ -5667,7 +5801,17 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 			 "expectedReturnType", "Channel Type",
 			 "helperClass", "com.safi.workshop.sheet.ChannelTypeDVEP",
 			 "enumeratedValues", "Local, SIP, Zap, IAX2, MGCP, H.323, Modem, Phone, CAPI, ALSA, Skinny"
-		   });
+		   });		
+		addAnnotation
+		  (getManagerAction_ManagerResponse(), 
+		   source, 
+		   new String[] {
+			 "type", "VariableName",
+			 "isTypeLocked", "false",
+			 "description", "The assignee variable",
+			 "expectedReturnType", "Object",
+			 "helperClass", ""
+		   });		
 	}
 
   /**
@@ -5785,7 +5929,13 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		   source, 
 		   new String[] {
 			 "output", "true"
-		   });																											
+		   });																														
+		addAnnotation
+		  (getManagerAction_ManagerResponse(), 
+		   source, 
+		   new String[] {
+			 "output", "true"
+		   });	
 	}
 
   /**
@@ -5819,7 +5969,13 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		   source, 
 		   new String[] {
 			 "displayText", "Variable"
-		   });																									
+		   });																													
+		addAnnotation
+		  (getManagerAction_ManagerResponse(), 
+		   source, 
+		   new String[] {
+			 "displayText", "Variable"
+		   });
 	}
 
   /**
@@ -6099,7 +6255,7 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		   source, 
 		   new String[] {
 			 "criteria", "non-null"
-		   });							
+		   });										
 	}
 
 } //ActionstepPackageImpl

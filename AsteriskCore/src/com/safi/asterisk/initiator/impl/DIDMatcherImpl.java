@@ -18,7 +18,6 @@ import com.safi.asterisk.initiator.InitiatorPackage;
 import com.safi.core.call.CallPackage;
 import com.safi.core.call.CallSource1;
 import com.safi.core.call.SafiCall;
-import com.safi.core.initiator.impl.InitiatorImpl;
 
 /**
  * <!-- begin-user-doc -->

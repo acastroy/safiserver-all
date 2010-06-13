@@ -204,6 +204,7 @@ public class ActionstepFactoryImpl extends EFactoryImpl implements ActionstepFac
 			case ActionstepPackage.MONITOR: return createMonitor();
 			case ActionstepPackage.DIRECTORY: return createDirectory();
 			case ActionstepPackage.EXTENSION_TRANSFER: return createExtensionTransfer();
+			case ActionstepPackage.MANAGER_ACTION: return createManagerAction();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -221,6 +222,8 @@ public class ActionstepFactoryImpl extends EFactoryImpl implements ActionstepFac
 				return createMeetMeAdminCommandFromString(eDataType, initialValue);
 			case ActionstepPackage.PRESENTATION_TYPE:
 				return createPresentationTypeFromString(eDataType, initialValue);
+			case ActionstepPackage.MANAGER_ACTION_TYPE:
+				return createManagerActionTypeFromString(eDataType, initialValue);
 			case ActionstepPackage.MAP:
 				return createMapFromString(eDataType, initialValue);
 			case ActionstepPackage.BASIC_EMAP:
@@ -242,6 +245,8 @@ public class ActionstepFactoryImpl extends EFactoryImpl implements ActionstepFac
 				return convertMeetMeAdminCommandToString(eDataType, instanceValue);
 			case ActionstepPackage.PRESENTATION_TYPE:
 				return convertPresentationTypeToString(eDataType, instanceValue);
+			case ActionstepPackage.MANAGER_ACTION_TYPE:
+				return convertManagerActionTypeToString(eDataType, instanceValue);
 			case ActionstepPackage.MAP:
 				return convertMapToString(eDataType, instanceValue);
 			case ActionstepPackage.BASIC_EMAP:
@@ -943,6 +948,16 @@ public class ActionstepFactoryImpl extends EFactoryImpl implements ActionstepFac
 
   /**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ManagerAction createManagerAction() {
+		ManagerActionImpl managerAction = new ManagerActionImpl();
+		return managerAction;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -982,6 +997,26 @@ public class ActionstepFactoryImpl extends EFactoryImpl implements ActionstepFac
 	}
 
   /**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ManagerActionType createManagerActionTypeFromString(EDataType eDataType, String initialValue) {
+		ManagerActionType result = ManagerActionType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertManagerActionTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated

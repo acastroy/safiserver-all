@@ -6,8 +6,8 @@
  */
 package com.safi.asterisk.actionstep;
 
-import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.DynamicValue;
+
 import com.safi.core.call.CallSource1;
 
 /**
@@ -30,14 +30,14 @@ import com.safi.core.call.CallSource1;
  * @generated
  */
 public interface PlaceCall extends AsteriskActionStep, CallSource1 {
-  /**
+	/**
 	 * Returns the value of the '<em><b>Extension</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Extension</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Extension</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Extension</em>' containment reference.
 	 * @see #setExtension(DynamicValue)
 	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getPlaceCall_Extension()
@@ -46,26 +46,26 @@ public interface PlaceCall extends AsteriskActionStep, CallSource1 {
 	 *        annotation="Required criteria='non-null'"
 	 * @generated
 	 */
-  DynamicValue getExtension();
+	DynamicValue getExtension();
 
-  /**
+	/**
 	 * Sets the value of the '{@link com.safi.asterisk.actionstep.PlaceCall#getExtension <em>Extension</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Extension</em>' containment reference.
 	 * @see #getExtension()
 	 * @generated
 	 */
-  void setExtension(DynamicValue value);
+	void setExtension(DynamicValue value);
 
-  /**
+	/**
 	 * Returns the value of the '<em><b>Context</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Context</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Context</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Context</em>' containment reference.
 	 * @see #setContext(DynamicValue)
 	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getPlaceCall_Context()
@@ -73,26 +73,26 @@ public interface PlaceCall extends AsteriskActionStep, CallSource1 {
 	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='Destination context ' expectedReturnType='Text' helperClass=''"
 	 * @generated
 	 */
-  DynamicValue getContext();
+	DynamicValue getContext();
 
-  /**
+	/**
 	 * Sets the value of the '{@link com.safi.asterisk.actionstep.PlaceCall#getContext <em>Context</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Context</em>' containment reference.
 	 * @see #getContext()
 	 * @generated
 	 */
-  void setContext(DynamicValue value);
+	void setContext(DynamicValue value);
 
-  /**
+	/**
 	 * Returns the value of the '<em><b>Timeout</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Timeout</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Timeout</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Timeout</em>' attribute.
 	 * @see #setTimeout(long)
 	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getPlaceCall_Timeout()
@@ -100,26 +100,26 @@ public interface PlaceCall extends AsteriskActionStep, CallSource1 {
 	 *        annotation="unitsTime milliseconds='true'"
 	 * @generated
 	 */
-  long getTimeout();
+	long getTimeout();
 
-  /**
+	/**
 	 * Sets the value of the '{@link com.safi.asterisk.actionstep.PlaceCall#getTimeout <em>Timeout</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Timeout</em>' attribute.
 	 * @see #getTimeout()
 	 * @generated
 	 */
-  void setTimeout(long value);
+	void setTimeout(long value);
 
-  /**
+	/**
 	 * Returns the value of the '<em><b>Caller Id</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Caller Id</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Caller Id</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Caller Id</em>' containment reference.
 	 * @see #setCallerId(DynamicValue)
 	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getPlaceCall_CallerId()
@@ -127,16 +127,16 @@ public interface PlaceCall extends AsteriskActionStep, CallSource1 {
 	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='CallerID to use for the call' expectedReturnType='Text' helperClass=''"
 	 * @generated
 	 */
-  DynamicValue getCallerId();
+	DynamicValue getCallerId();
 
-  /**
+	/**
 	 * Sets the value of the '{@link com.safi.asterisk.actionstep.PlaceCall#getCallerId <em>Caller Id</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Caller Id</em>' containment reference.
 	 * @see #getCallerId()
 	 * @generated
 	 */
-  void setCallerId(DynamicValue value);
+	void setCallerId(DynamicValue value);
 
 } // PlaceCall

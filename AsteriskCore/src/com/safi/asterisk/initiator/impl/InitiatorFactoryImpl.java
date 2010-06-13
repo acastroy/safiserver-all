@@ -7,7 +7,6 @@
 package com.safi.asterisk.initiator.impl;
 
 
-import com.safi.asterisk.initiator.*;
 import org.asteriskjava.manager.event.ManagerEvent;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -16,7 +15,10 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import com.safi.asterisk.initiator.AsteriskInitiator;
+import com.safi.asterisk.initiator.CustomInitiatorAsterisk;
 import com.safi.asterisk.initiator.DIDMatcher;
+import com.safi.asterisk.initiator.IncomingAsteriskCall;
 import com.safi.asterisk.initiator.IncomingCall;
 import com.safi.asterisk.initiator.InitiatorFactory;
 import com.safi.asterisk.initiator.InitiatorPackage;
@@ -68,6 +70,8 @@ public class InitiatorFactoryImpl extends EFactoryImpl implements InitiatorFacto
 			case InitiatorPackage.DID_MATCHER: return createDIDMatcher();
 			case InitiatorPackage.INCOMING_CALL: return createIncomingCall();
 			case InitiatorPackage.ASTERISK_INITIATOR: return createAsteriskInitiator();
+			case InitiatorPackage.INCOMING_ASTERISK_CALL: return createIncomingAsteriskCall();
+			case InitiatorPackage.CUSTOM_INITIATOR_ASTERISK: return createCustomInitiatorAsterisk();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -131,6 +135,26 @@ public class InitiatorFactoryImpl extends EFactoryImpl implements InitiatorFacto
 	public AsteriskInitiator createAsteriskInitiator() {
 		AsteriskInitiatorImpl asteriskInitiator = new AsteriskInitiatorImpl();
 		return asteriskInitiator;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IncomingAsteriskCall createIncomingAsteriskCall() {
+		IncomingAsteriskCallImpl incomingAsteriskCall = new IncomingAsteriskCallImpl();
+		return incomingAsteriskCall;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustomInitiatorAsterisk createCustomInitiatorAsterisk() {
+		CustomInitiatorAsteriskImpl customInitiatorAsterisk = new CustomInitiatorAsteriskImpl();
+		return customInitiatorAsterisk;
 	}
 
 		/**

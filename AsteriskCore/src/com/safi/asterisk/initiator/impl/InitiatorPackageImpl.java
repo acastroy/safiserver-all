@@ -20,15 +20,17 @@ import com.safi.asterisk.actionstep.impl.ActionstepPackageImpl;
 import com.safi.asterisk.impl.AsteriskPackageImpl;
 import com.safi.asterisk.initiator.AsteriskInitiator;
 import com.safi.asterisk.initiator.AsteriskInitiatorInfo;
+import com.safi.asterisk.initiator.CustomInitiatorAsterisk;
 import com.safi.asterisk.initiator.DIDMatcher;
+import com.safi.asterisk.initiator.IncomingAsteriskCall;
 import com.safi.asterisk.initiator.IncomingCall;
 import com.safi.asterisk.initiator.InitiatorFactory;
 import com.safi.asterisk.initiator.InitiatorPackage;
 import com.safi.asterisk.saflet.SafletPackage;
 import com.safi.asterisk.saflet.impl.SafletPackageImpl;
-import com.safi.core.CorePackage;
 import com.safi.core.call.CallPackage;
 import com.safi.db.astdb.AstdbPackage;
+import com.safi.workshop.model.actionpak1.Actionpak1Package;
 
 /**
  * <!-- begin-user-doc -->
@@ -64,6 +66,20 @@ public class InitiatorPackageImpl extends EPackageImpl implements InitiatorPacka
 	 * @generated
 	 */
 	private EClass asteriskInitiatorEClass = null;
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass incomingAsteriskCallEClass = null;
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass customInitiatorAsteriskEClass = null;
 
 		/**
 	 * <!-- begin-user-doc -->
@@ -119,8 +135,8 @@ public class InitiatorPackageImpl extends EPackageImpl implements InitiatorPacka
 		isInited = true;
 
 		// Initialize simple dependencies
+		Actionpak1Package.eINSTANCE.eClass();
 		AstdbPackage.eINSTANCE.eClass();
-		CorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		AsteriskPackageImpl theAsteriskPackage = (AsteriskPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AsteriskPackage.eNS_URI) instanceof AsteriskPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AsteriskPackage.eNS_URI) : AsteriskPackage.eINSTANCE);
@@ -258,6 +274,24 @@ public class InitiatorPackageImpl extends EPackageImpl implements InitiatorPacka
 
 		/**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getIncomingAsteriskCall() {
+		return incomingAsteriskCallEClass;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCustomInitiatorAsterisk() {
+		return customInitiatorAsteriskEClass;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -309,6 +343,10 @@ public class InitiatorPackageImpl extends EPackageImpl implements InitiatorPacka
 
 		asteriskInitiatorEClass = createEClass(ASTERISK_INITIATOR);
 
+		incomingAsteriskCallEClass = createEClass(INCOMING_ASTERISK_CALL);
+
+		customInitiatorAsteriskEClass = createEClass(CUSTOM_INITIATOR_ASTERISK);
+
 		// Create data types
 		managerEventEDataType = createEDataType(MANAGER_EVENT);
 	}
@@ -341,6 +379,7 @@ public class InitiatorPackageImpl extends EPackageImpl implements InitiatorPacka
 		AsteriskPackage theAsteriskPackage = (AsteriskPackage)EPackage.Registry.INSTANCE.getEPackage(AsteriskPackage.eNS_URI);
 		com.safi.core.initiator.InitiatorPackage theInitiatorPackage_1 = (com.safi.core.initiator.InitiatorPackage)EPackage.Registry.INSTANCE.getEPackage(com.safi.core.initiator.InitiatorPackage.eNS_URI);
 		AstdbPackage theAstdbPackage = (AstdbPackage)EPackage.Registry.INSTANCE.getEPackage(AstdbPackage.eNS_URI);
+		Actionpak1Package theActionpak1Package = (Actionpak1Package)EPackage.Registry.INSTANCE.getEPackage(Actionpak1Package.eNS_URI);
 
 		// Create type parameters
 
@@ -353,6 +392,8 @@ public class InitiatorPackageImpl extends EPackageImpl implements InitiatorPacka
 		incomingCallEClass.getESuperTypes().add(theCallPackage.getCallSource1());
 		asteriskInitiatorInfoEClass.getESuperTypes().add(theInitiatorPackage_1.getInitiatorInfo());
 		asteriskInitiatorEClass.getESuperTypes().add(theInitiatorPackage_1.getInitiator());
+		incomingAsteriskCallEClass.getESuperTypes().add(theActionpak1Package.getIncomingCall2());
+		customInitiatorAsteriskEClass.getESuperTypes().add(theActionpak1Package.getCustomInitiator());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(didMatcherEClass, DIDMatcher.class, "DIDMatcher", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -370,6 +411,10 @@ public class InitiatorPackageImpl extends EPackageImpl implements InitiatorPacka
 		initEReference(getAsteriskInitiatorInfo_AsteriskServer(), theAstdbPackage.getAsteriskServer(), null, "asteriskServer", null, 0, 1, AsteriskInitiatorInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(asteriskInitiatorEClass, AsteriskInitiator.class, "AsteriskInitiator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(incomingAsteriskCallEClass, IncomingAsteriskCall.class, "IncomingAsteriskCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(customInitiatorAsteriskEClass, CustomInitiatorAsterisk.class, "CustomInitiatorAsterisk", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize data types
 		initEDataType(managerEventEDataType, ManagerEvent.class, "ManagerEvent", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

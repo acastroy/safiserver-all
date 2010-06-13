@@ -12,6 +12,8 @@ import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import com.safi.workshop.model.actionpak1.Actionpak1Package;
+
 /**
  * <!-- begin-user-doc -->
  * The <b>Package</b> for the model.
@@ -497,6 +499,278 @@ public interface InitiatorPackage extends EPackage {
   int ASTERISK_INITIATOR_INFO_FEATURE_COUNT = com.safi.core.initiator.InitiatorPackage.INITIATOR_INFO_FEATURE_COUNT + 4;
 
   /**
+	 * The meta object id for the '{@link com.safi.asterisk.initiator.impl.IncomingAsteriskCallImpl <em>Incoming Asterisk Call</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.safi.asterisk.initiator.impl.IncomingAsteriskCallImpl
+	 * @see com.safi.asterisk.initiator.impl.InitiatorPackageImpl#getIncomingAsteriskCall()
+	 * @generated
+	 */
+	int INCOMING_ASTERISK_CALL = 4;
+
+		/**
+	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_ASTERISK_CALL__PRODUCT_ID = Actionpak1Package.INCOMING_CALL2__PRODUCT_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_ASTERISK_CALL__PLATFORM_ID = Actionpak1Package.INCOMING_CALL2__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_ASTERISK_CALL__PLATFORM_DEPENDANT = Actionpak1Package.INCOMING_CALL2__PLATFORM_DEPENDANT;
+
+		/**
+	 * The feature id for the '<em><b>Paused</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_ASTERISK_CALL__PAUSED = Actionpak1Package.INCOMING_CALL2__PAUSED;
+
+		/**
+	 * The feature id for the '<em><b>Active</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_ASTERISK_CALL__ACTIVE = Actionpak1Package.INCOMING_CALL2__ACTIVE;
+
+		/**
+	 * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_ASTERISK_CALL__OUTPUTS = Actionpak1Package.INCOMING_CALL2__OUTPUTS;
+
+		/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_ASTERISK_CALL__NAME = Actionpak1Package.INCOMING_CALL2__NAME;
+
+		/**
+	 * The feature id for the '<em><b>Saflet</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_ASTERISK_CALL__SAFLET = Actionpak1Package.INCOMING_CALL2__SAFLET;
+
+		/**
+	 * The feature id for the '<em><b>Default Output</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_ASTERISK_CALL__DEFAULT_OUTPUT = Actionpak1Package.INCOMING_CALL2__DEFAULT_OUTPUT;
+
+		/**
+	 * The feature id for the '<em><b>Error Output</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_ASTERISK_CALL__ERROR_OUTPUT = Actionpak1Package.INCOMING_CALL2__ERROR_OUTPUT;
+
+		/**
+	 * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_ASTERISK_CALL__INPUTS = Actionpak1Package.INCOMING_CALL2__INPUTS;
+
+		/**
+	 * The feature id for the '<em><b>Output Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_ASTERISK_CALL__OUTPUT_PARAMETERS = Actionpak1Package.INCOMING_CALL2__OUTPUT_PARAMETERS;
+
+		/**
+	 * The feature id for the '<em><b>New Call1</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_ASTERISK_CALL__NEW_CALL1 = Actionpak1Package.INCOMING_CALL2__NEW_CALL1;
+
+		/**
+	 * The feature id for the '<em><b>Call Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_ASTERISK_CALL__CALL_NAME = Actionpak1Package.INCOMING_CALL2__CALL_NAME;
+
+		/**
+	 * The number of structural features of the '<em>Incoming Asterisk Call</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_ASTERISK_CALL_FEATURE_COUNT = Actionpak1Package.INCOMING_CALL2_FEATURE_COUNT + 0;
+
+		/**
+	 * The meta object id for the '{@link com.safi.asterisk.initiator.impl.CustomInitiatorAsteriskImpl <em>Custom Initiator Asterisk</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.safi.asterisk.initiator.impl.CustomInitiatorAsteriskImpl
+	 * @see com.safi.asterisk.initiator.impl.InitiatorPackageImpl#getCustomInitiatorAsterisk()
+	 * @generated
+	 */
+	int CUSTOM_INITIATOR_ASTERISK = 5;
+
+		/**
+	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_INITIATOR_ASTERISK__PRODUCT_ID = Actionpak1Package.CUSTOM_INITIATOR__PRODUCT_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_INITIATOR_ASTERISK__PLATFORM_ID = Actionpak1Package.CUSTOM_INITIATOR__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_INITIATOR_ASTERISK__PLATFORM_DEPENDANT = Actionpak1Package.CUSTOM_INITIATOR__PLATFORM_DEPENDANT;
+
+		/**
+	 * The feature id for the '<em><b>Paused</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_INITIATOR_ASTERISK__PAUSED = Actionpak1Package.CUSTOM_INITIATOR__PAUSED;
+
+		/**
+	 * The feature id for the '<em><b>Active</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_INITIATOR_ASTERISK__ACTIVE = Actionpak1Package.CUSTOM_INITIATOR__ACTIVE;
+
+		/**
+	 * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_INITIATOR_ASTERISK__OUTPUTS = Actionpak1Package.CUSTOM_INITIATOR__OUTPUTS;
+
+		/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_INITIATOR_ASTERISK__NAME = Actionpak1Package.CUSTOM_INITIATOR__NAME;
+
+		/**
+	 * The feature id for the '<em><b>Saflet</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_INITIATOR_ASTERISK__SAFLET = Actionpak1Package.CUSTOM_INITIATOR__SAFLET;
+
+		/**
+	 * The feature id for the '<em><b>Default Output</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_INITIATOR_ASTERISK__DEFAULT_OUTPUT = Actionpak1Package.CUSTOM_INITIATOR__DEFAULT_OUTPUT;
+
+		/**
+	 * The feature id for the '<em><b>Error Output</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_INITIATOR_ASTERISK__ERROR_OUTPUT = Actionpak1Package.CUSTOM_INITIATOR__ERROR_OUTPUT;
+
+		/**
+	 * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_INITIATOR_ASTERISK__INPUTS = Actionpak1Package.CUSTOM_INITIATOR__INPUTS;
+
+		/**
+	 * The feature id for the '<em><b>Output Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_INITIATOR_ASTERISK__OUTPUT_PARAMETERS = Actionpak1Package.CUSTOM_INITIATOR__OUTPUT_PARAMETERS;
+
+		/**
+	 * The number of structural features of the '<em>Custom Initiator Asterisk</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_INITIATOR_ASTERISK_FEATURE_COUNT = Actionpak1Package.CUSTOM_INITIATOR_FEATURE_COUNT + 0;
+
+		/**
 	 * The meta object id for the '<em>Manager Event</em>' data type.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -504,7 +778,7 @@ public interface InitiatorPackage extends EPackage {
 	 * @see com.safi.asterisk.initiator.impl.InitiatorPackageImpl#getManagerEvent()
 	 * @generated
 	 */
-  int MANAGER_EVENT = 4;
+  int MANAGER_EVENT = 6;
 
 
   /**
@@ -634,6 +908,26 @@ public interface InitiatorPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAsteriskInitiator();
+
+		/**
+	 * Returns the meta object for class '{@link com.safi.asterisk.initiator.IncomingAsteriskCall <em>Incoming Asterisk Call</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Incoming Asterisk Call</em>'.
+	 * @see com.safi.asterisk.initiator.IncomingAsteriskCall
+	 * @generated
+	 */
+	EClass getIncomingAsteriskCall();
+
+		/**
+	 * Returns the meta object for class '{@link com.safi.asterisk.initiator.CustomInitiatorAsterisk <em>Custom Initiator Asterisk</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Custom Initiator Asterisk</em>'.
+	 * @see com.safi.asterisk.initiator.CustomInitiatorAsterisk
+	 * @generated
+	 */
+	EClass getCustomInitiatorAsterisk();
 
 		/**
 	 * Returns the meta object for data type '{@link org.asteriskjava.manager.event.ManagerEvent <em>Manager Event</em>}'.
@@ -771,6 +1065,26 @@ public interface InitiatorPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ASTERISK_INITIATOR = eINSTANCE.getAsteriskInitiator();
+
+				/**
+		 * The meta object literal for the '{@link com.safi.asterisk.initiator.impl.IncomingAsteriskCallImpl <em>Incoming Asterisk Call</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.safi.asterisk.initiator.impl.IncomingAsteriskCallImpl
+		 * @see com.safi.asterisk.initiator.impl.InitiatorPackageImpl#getIncomingAsteriskCall()
+		 * @generated
+		 */
+		EClass INCOMING_ASTERISK_CALL = eINSTANCE.getIncomingAsteriskCall();
+
+				/**
+		 * The meta object literal for the '{@link com.safi.asterisk.initiator.impl.CustomInitiatorAsteriskImpl <em>Custom Initiator Asterisk</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.safi.asterisk.initiator.impl.CustomInitiatorAsteriskImpl
+		 * @see com.safi.asterisk.initiator.impl.InitiatorPackageImpl#getCustomInitiatorAsterisk()
+		 * @generated
+		 */
+		EClass CUSTOM_INITIATOR_ASTERISK = eINSTANCE.getCustomInitiatorAsterisk();
 
 				/**
 		 * The meta object literal for the '<em>Manager Event</em>' data type.

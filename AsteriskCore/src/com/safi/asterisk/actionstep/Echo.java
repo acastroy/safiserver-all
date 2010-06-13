@@ -6,7 +6,6 @@
  */
 package com.safi.asterisk.actionstep;
 
-import com.safi.core.actionstep.ActionStep;
 import com.safi.core.call.CallConsumer1;
 
 /**

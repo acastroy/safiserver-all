@@ -6,23 +6,29 @@
  */
 package com.safi.asterisk.initiator.util;
 
-import com.safi.asterisk.initiator.*;
-import com.safi.core.PlatformDisposition;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
+import com.safi.asterisk.initiator.AsteriskInitiator;
 import com.safi.asterisk.initiator.AsteriskInitiatorInfo;
+import com.safi.asterisk.initiator.CustomInitiatorAsterisk;
 import com.safi.asterisk.initiator.DIDMatcher;
+import com.safi.asterisk.initiator.IncomingAsteriskCall;
 import com.safi.asterisk.initiator.IncomingCall;
 import com.safi.asterisk.initiator.InitiatorPackage;
+import com.safi.core.PlatformDisposition;
 import com.safi.core.ProductIdentifiable;
 import com.safi.core.ThreadSensitive;
 import com.safi.core.actionstep.ActionStep;
+import com.safi.core.actionstep.ParameterizedActionstep;
+import com.safi.core.actionstep.ParameterizedInitiator;
 import com.safi.core.call.CallSource1;
 import com.safi.core.initiator.Initiator;
 import com.safi.core.initiator.InitiatorInfo;
+import com.safi.workshop.model.actionpak1.CustomInitiator;
+import com.safi.workshop.model.actionpak1.IncomingCall2;
 
 /**
  * <!-- begin-user-doc -->
@@ -97,6 +103,14 @@ public class InitiatorAdapterFactory extends AdapterFactoryImpl {
 				return createAsteriskInitiatorAdapter();
 			}
 			@Override
+			public Adapter caseIncomingAsteriskCall(IncomingAsteriskCall object) {
+				return createIncomingAsteriskCallAdapter();
+			}
+			@Override
+			public Adapter caseCustomInitiatorAsterisk(CustomInitiatorAsterisk object) {
+				return createCustomInitiatorAsteriskAdapter();
+			}
+			@Override
 			public Adapter caseProductIdentifiable(ProductIdentifiable object) {
 				return createProductIdentifiableAdapter();
 			}
@@ -123,6 +137,22 @@ public class InitiatorAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseInitiatorInfo(InitiatorInfo object) {
 				return createInitiatorInfoAdapter();
+			}
+			@Override
+			public Adapter caseParameterizedActionstep(ParameterizedActionstep object) {
+				return createParameterizedActionstepAdapter();
+			}
+			@Override
+			public Adapter caseParameterizedInitiator(ParameterizedInitiator object) {
+				return createParameterizedInitiatorAdapter();
+			}
+			@Override
+			public Adapter caseIncomingCall2(IncomingCall2 object) {
+				return createIncomingCall2Adapter();
+			}
+			@Override
+			public Adapter caseCustomInitiator(CustomInitiator object) {
+				return createCustomInitiatorAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -197,6 +227,34 @@ public class InitiatorAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAsteriskInitiatorAdapter() {
+		return null;
+	}
+
+		/**
+	 * Creates a new adapter for an object of class '{@link com.safi.asterisk.initiator.IncomingAsteriskCall <em>Incoming Asterisk Call</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.safi.asterisk.initiator.IncomingAsteriskCall
+	 * @generated
+	 */
+	public Adapter createIncomingAsteriskCallAdapter() {
+		return null;
+	}
+
+		/**
+	 * Creates a new adapter for an object of class '{@link com.safi.asterisk.initiator.CustomInitiatorAsterisk <em>Custom Initiator Asterisk</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.safi.asterisk.initiator.CustomInitiatorAsterisk
+	 * @generated
+	 */
+	public Adapter createCustomInitiatorAsteriskAdapter() {
 		return null;
 	}
 
@@ -299,6 +357,62 @@ public class InitiatorAdapterFactory extends AdapterFactoryImpl {
 	}
 
   /**
+	 * Creates a new adapter for an object of class '{@link com.safi.core.actionstep.ParameterizedActionstep <em>Parameterized Actionstep</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.safi.core.actionstep.ParameterizedActionstep
+	 * @generated
+	 */
+	public Adapter createParameterizedActionstepAdapter() {
+		return null;
+	}
+
+		/**
+	 * Creates a new adapter for an object of class '{@link com.safi.core.actionstep.ParameterizedInitiator <em>Parameterized Initiator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.safi.core.actionstep.ParameterizedInitiator
+	 * @generated
+	 */
+	public Adapter createParameterizedInitiatorAdapter() {
+		return null;
+	}
+
+		/**
+	 * Creates a new adapter for an object of class '{@link com.safi.workshop.model.actionpak1.IncomingCall2 <em>Incoming Call2</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.safi.workshop.model.actionpak1.IncomingCall2
+	 * @generated
+	 */
+	public Adapter createIncomingCall2Adapter() {
+		return null;
+	}
+
+		/**
+	 * Creates a new adapter for an object of class '{@link com.safi.workshop.model.actionpak1.CustomInitiator <em>Custom Initiator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.safi.workshop.model.actionpak1.CustomInitiator
+	 * @generated
+	 */
+	public Adapter createCustomInitiatorAdapter() {
+		return null;
+	}
+
+		/**
 	 * Creates a new adapter for the default case.
 	 * <!-- begin-user-doc -->
    * This default implementation returns null.

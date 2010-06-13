@@ -6,8 +6,8 @@
  */
 package com.safi.asterisk.actionstep;
 
-import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.DynamicValue;
+
 import com.safi.core.call.CallConsumer1;
 
 /**
@@ -27,14 +27,14 @@ import com.safi.core.call.CallConsumer1;
  * @generated
  */
 public interface SetPriority extends AsteriskActionStep, CallConsumer1 {
-  /**
+	/**
 	 * Returns the value of the '<em><b>Priority</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Priority</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Priority</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Priority</em>' containment reference.
 	 * @see #setPriority(DynamicValue)
 	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getSetPriority_Priority()
@@ -43,16 +43,16 @@ public interface SetPriority extends AsteriskActionStep, CallConsumer1 {
 	 *        annotation="Required criteria='non-null'"
 	 * @generated
 	 */
-  DynamicValue getPriority();
+	DynamicValue getPriority();
 
-  /**
+	/**
 	 * Sets the value of the '{@link com.safi.asterisk.actionstep.SetPriority#getPriority <em>Priority</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Priority</em>' containment reference.
 	 * @see #getPriority()
 	 * @generated
 	 */
-  void setPriority(DynamicValue value);
+	void setPriority(DynamicValue value);
 
 } // SetPriority

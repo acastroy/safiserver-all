@@ -27,9 +27,9 @@ import com.safi.asterisk.initiator.InitiatorPackage;
 import com.safi.asterisk.initiator.impl.InitiatorPackageImpl;
 import com.safi.asterisk.saflet.SafletPackage;
 import com.safi.asterisk.saflet.impl.SafletPackageImpl;
-import com.safi.core.CorePackage;
 import com.safi.core.call.CallPackage;
 import com.safi.db.astdb.AstdbPackage;
+import com.safi.workshop.model.actionpak1.Actionpak1Package;
 
 /**
  * <!-- begin-user-doc -->
@@ -120,8 +120,8 @@ public class AsteriskPackageImpl extends EPackageImpl implements AsteriskPackage
 		isInited = true;
 
 		// Initialize simple dependencies
+		Actionpak1Package.eINSTANCE.eClass();
 		AstdbPackage.eINSTANCE.eClass();
-		CorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		ActionstepPackageImpl theActionstepPackage = (ActionstepPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ActionstepPackage.eNS_URI) instanceof ActionstepPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ActionstepPackage.eNS_URI) : ActionstepPackage.eINSTANCE);

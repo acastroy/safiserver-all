@@ -6,8 +6,8 @@
  */
 package com.safi.asterisk.actionstep;
 
-import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.DynamicValue;
+
 import com.safi.core.call.CallConsumer1;
 
 /**
@@ -27,14 +27,14 @@ import com.safi.core.call.CallConsumer1;
  * @generated
  */
 public interface SetMusicOn extends AsteriskActionStep, CallConsumer1 {
-  /**
+	/**
 	 * Returns the value of the '<em><b>Hold Class</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Hold Class</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Hold Class</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Hold Class</em>' containment reference.
 	 * @see #setHoldClass(DynamicValue)
 	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getSetMusicOn_HoldClass()
@@ -43,16 +43,16 @@ public interface SetMusicOn extends AsteriskActionStep, CallConsumer1 {
 	 *        annotation="Required criteria='non-null'"
 	 * @generated
 	 */
-  DynamicValue getHoldClass();
+	DynamicValue getHoldClass();
 
-  /**
+	/**
 	 * Sets the value of the '{@link com.safi.asterisk.actionstep.SetMusicOn#getHoldClass <em>Hold Class</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Hold Class</em>' containment reference.
 	 * @see #getHoldClass()
 	 * @generated
 	 */
-  void setHoldClass(DynamicValue value);
+	void setHoldClass(DynamicValue value);
 
 } // SetMusicOn

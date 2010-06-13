@@ -4,7 +4,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/AsteriskCore/src"
     modelPluginID="AsteriskCore" modelName="Asterisk" runtimeCompatibility="true"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    usedGenPackages="../../ASTDB/model/astdb.genmodel#//astdb ../../Saflets/model/core.genmodel#//core ../../SafiDB/model/db.genmodel#//db">
+    usedGenPackages="../../CoreActionPak1Model/model/actionpak1.genmodel#//actionpak1 ../../ASTDB/model/astdb.genmodel#//astdb ../../Saflets/model/core.genmodel#//core ../../SafiDB/model/db.genmodel#//db">
   <foreignModel>asterisk.ecore</foreignModel>
   <genPackages prefix="Asterisk" basePackage="com.safi" disposableProviderFactory="true"
       ecorePackage="asterisk.ecore#/">
@@ -70,6 +70,78 @@
         <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/PresentationType/prohib_failed_screen"/>
         <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/PresentationType/prohib"/>
         <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/PresentationType/unavailable"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="asterisk.ecore#//actionstep/ManagerActionType">
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/AbsoluteTimeoutAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/AgentCallbackLoginAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/AgentLogoffAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/AgentsAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/AgiAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/AtxferAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/BridgeAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/ChallengeAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/ChangeMonitorAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/CommandAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/CoreSettingsAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/CoreShowChannelsAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/CoreStatusAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/DbDelAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/DbDelTreeAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/DbGetAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/DbPutAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/EventsAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/ExtensionStateAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/GetConfigAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/GetVarAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/HangupAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/IaxPeerListAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/JabberSendAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/ListCommandsAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/LoginAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/LogoffAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/MailboxCountAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/MailboxStatusAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/MeetMeMuteAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/MeetMeUnmuteAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/ModuleCheckAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/ModuleLoadAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/MonitorAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/OriginateAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/ParkAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/ParkedCallsAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/PauseMonitorAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/PingAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/PlayDtmfAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/QueueAddAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/QueueLogAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/QueuePauseAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/QueuePenaltyAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/QueueRemoveAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/QueueResetAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/QueueStatusAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/QueueSummaryAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/RedirectAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/SendTextAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/SetCdrUserFieldAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/SetVarAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/ShowDialplanAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/SipNotifyAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/SipPeersAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/SipShowPeerAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/SipShowRegistryAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/StatusAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/StopMonitorAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/UnpauseMonitorAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/UpdateConfigAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/UserEventAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/VoicemailUsersListAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/ZapDialOffhookAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/ZapDndOffAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/ZapDndOnAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/ZapHangupAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/ZapRestartAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/ZapShowChannelsAction"/>
+        <genEnumLiterals ecoreEnumLiteral="asterisk.ecore#//actionstep/ManagerActionType/ZapTransferAction"/>
       </genEnums>
       <genDataTypes ecoreDataType="asterisk.ecore#//actionstep/Map">
         <genTypeParameters ecoreTypeParameter="asterisk.ecore#//actionstep/Map/T"/>
@@ -464,6 +536,10 @@
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/ExtensionTransfer/channelType"/>
       </genClasses>
       <genClasses image="false" ecoreClass="asterisk.ecore#//actionstep/AsteriskActionStep"/>
+      <genClasses ecoreClass="asterisk.ecore#//actionstep/ManagerAction">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/ManagerAction/managerActionType"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/ManagerAction/managerResponse"/>
+      </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Initiator" disposableProviderFactory="true" ecorePackage="asterisk.ecore#//initiator">
       <genDataTypes ecoreDataType="asterisk.ecore#//initiator/ManagerEvent"/>
@@ -483,6 +559,8 @@
             ecoreFeature="ecore:EReference asterisk.ecore#//initiator/AsteriskInitiatorInfo/asteriskServer"/>
       </genClasses>
       <genClasses ecoreClass="asterisk.ecore#//initiator/AsteriskInitiator"/>
+      <genClasses ecoreClass="asterisk.ecore#//initiator/IncomingAsteriskCall"/>
+      <genClasses ecoreClass="asterisk.ecore#//initiator/CustomInitiatorAsterisk"/>
     </nestedGenPackages>
     <nestedGenPackages prefix="Saflet" disposableProviderFactory="true" ecorePackage="asterisk.ecore#//saflet">
       <genClasses ecoreClass="asterisk.ecore#//saflet/AsteriskSaflet"/>

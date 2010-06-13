@@ -86,6 +86,7 @@ import com.safi.asterisk.actionstep.WaitMusicOnHold;
 import com.safi.core.ProductIdentifiable;
 import com.safi.core.ThreadSensitive;
 import com.safi.core.actionstep.ActionStep;
+import com.safi.core.actionstep.ParameterizedActionstep;
 import com.safi.core.call.CallConsumer1;
 import com.safi.core.call.CallConsumer2;
 import com.safi.core.call.CallSource1;
@@ -1002,6 +1003,17 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseProductIdentifiable(asteriskActionStep);
 				if (result == null) result = caseThreadSensitive(asteriskActionStep);
 				if (result == null) result = casePlatformDisposition(asteriskActionStep);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ActionstepPackage.MANAGER_ACTION: {
+				ManagerAction managerAction = (ManagerAction)theEObject;
+				T result = caseManagerAction(managerAction);
+				if (result == null) result = caseParameterizedActionstep(managerAction);
+				if (result == null) result = caseActionStep(managerAction);
+				if (result == null) result = caseProductIdentifiable(managerAction);
+				if (result == null) result = caseThreadSensitive(managerAction);
+				if (result == null) result = casePlatformDisposition(managerAction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -2060,6 +2072,21 @@ public class ActionstepSwitch<T> {
 	}
 
 		/**
+	 * Returns the result of interpreting the object as an instance of '<em>Manager Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Manager Action</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseManagerAction(ManagerAction object) {
+		return null;
+	}
+
+		/**
 	 * Returns the result of interpreting the object as an instance of '<em>Consumer1</em>'.
 	 * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -2165,6 +2192,21 @@ public class ActionstepSwitch<T> {
 	}
 
   /**
+	 * Returns the result of interpreting the object as an instance of '<em>Parameterized Actionstep</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Parameterized Actionstep</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseParameterizedActionstep(ParameterizedActionstep object) {
+		return null;
+	}
+
+		/**
 	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * <!-- begin-user-doc -->
    * This implementation returns null;

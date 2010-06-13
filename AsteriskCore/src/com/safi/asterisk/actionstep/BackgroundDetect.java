@@ -6,7 +6,6 @@
  */
 package com.safi.asterisk.actionstep;
 
-import com.safi.core.actionstep.ActionStep;
 import com.safi.core.call.CallConsumer1;
 
 /**
@@ -29,41 +28,41 @@ import com.safi.core.call.CallConsumer1;
  * @generated
  */
 public interface BackgroundDetect extends AsteriskActionStep, CallConsumer1 {
-  /**
+	/**
 	 * Returns the value of the '<em><b>Filename</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Filename</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Filename</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Filename</em>' attribute.
 	 * @see #setFilename(String)
 	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getBackgroundDetect_Filename()
 	 * @model ordered="false"
 	 * @generated
 	 */
-  String getFilename();
+	String getFilename();
 
-  /**
+	/**
 	 * Sets the value of the '{@link com.safi.asterisk.actionstep.BackgroundDetect#getFilename <em>Filename</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Filename</em>' attribute.
 	 * @see #getFilename()
 	 * @generated
 	 */
-  void setFilename(String value);
+	void setFilename(String value);
 
-  /**
+	/**
 	 * Returns the value of the '<em><b>Silence</b></em>' attribute.
 	 * The default value is <code>"1000"</code>.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Silence</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Silence</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Silence</em>' attribute.
 	 * @see #setSilence(int)
 	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getBackgroundDetect_Silence()
@@ -71,27 +70,27 @@ public interface BackgroundDetect extends AsteriskActionStep, CallConsumer1 {
 	 *        annotation="unitsTime milliseconds='true'"
 	 * @generated
 	 */
-  int getSilence();
+	int getSilence();
 
-  /**
+	/**
 	 * Sets the value of the '{@link com.safi.asterisk.actionstep.BackgroundDetect#getSilence <em>Silence</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Silence</em>' attribute.
 	 * @see #getSilence()
 	 * @generated
 	 */
-  void setSilence(int value);
+	void setSilence(int value);
 
-  /**
+	/**
 	 * Returns the value of the '<em><b>Min Time</b></em>' attribute.
 	 * The default value is <code>"100"</code>.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Min Time</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Time</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Min Time</em>' attribute.
 	 * @see #setMinTime(int)
 	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getBackgroundDetect_MinTime()
@@ -99,26 +98,26 @@ public interface BackgroundDetect extends AsteriskActionStep, CallConsumer1 {
 	 *        annotation="unitsTime milliseconds='true'"
 	 * @generated
 	 */
-  int getMinTime();
+	int getMinTime();
 
-  /**
+	/**
 	 * Sets the value of the '{@link com.safi.asterisk.actionstep.BackgroundDetect#getMinTime <em>Min Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Min Time</em>' attribute.
 	 * @see #getMinTime()
 	 * @generated
 	 */
-  void setMinTime(int value);
+	void setMinTime(int value);
 
-  /**
+	/**
 	 * Returns the value of the '<em><b>Max Time</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Max Time</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Time</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Max Time</em>' attribute.
 	 * @see #setMaxTime(int)
 	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getBackgroundDetect_MaxTime()
@@ -126,16 +125,16 @@ public interface BackgroundDetect extends AsteriskActionStep, CallConsumer1 {
 	 *        annotation="unitsTime milliseconds='true'"
 	 * @generated
 	 */
-  int getMaxTime();
+	int getMaxTime();
 
-  /**
+	/**
 	 * Sets the value of the '{@link com.safi.asterisk.actionstep.BackgroundDetect#getMaxTime <em>Max Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Max Time</em>' attribute.
 	 * @see #getMaxTime()
 	 * @generated
 	 */
-  void setMaxTime(int value);
+	void setMaxTime(int value);
 
 } // BackgroundDetect

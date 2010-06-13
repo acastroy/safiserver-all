@@ -43,6 +43,7 @@ import com.safi.core.call.CallPackage;
 import com.safi.core.call.CallSource1;
 import com.safi.core.call.SafiCall;
 import com.safi.core.saflet.Saflet;
+import com.safi.core.saflet.SafletConstants;
 import com.safi.core.saflet.SafletContext;
 import com.safi.db.VariableType;
 import com.safi.db.astdb.AsteriskServer;
@@ -424,7 +425,7 @@ public class OriginateCallImpl extends AsteriskActionStepImpl implements Origina
     // TODO: get looback address from handler environment
 //    String serverAddr = ((AsteriskSafletEnvironment)getSaflet().getSafletEnvironment()).getServerIpAddr();
     AsteriskServer server = (AsteriskServer)context
-    .getVariableRawValue(AsteriskSafletConstants.VAR_KEY_ASTERISK_SERVER);
+    .getVariableRawValue(SafletConstants.VAR_KEY_TELEPHONY_SUBSYSTEM);
     String serverAddr = server == null ? null : server.getVisibleSafiServerIP();
     if (StringUtils.isBlank(serverAddr))
     	serverAddr = connection.getLocalAddress().getCanonicalHostName();

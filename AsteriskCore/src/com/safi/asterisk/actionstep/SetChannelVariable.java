@@ -6,8 +6,8 @@
  */
 package com.safi.asterisk.actionstep;
 
-import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.DynamicValue;
+
 import com.safi.core.call.CallConsumer1;
 
 /**
@@ -28,14 +28,14 @@ import com.safi.core.call.CallConsumer1;
  * @generated
  */
 public interface SetChannelVariable extends AsteriskActionStep, CallConsumer1 {
-  /**
+	/**
 	 * Returns the value of the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Value</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Value</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' containment reference.
 	 * @see #setValue(DynamicValue)
 	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getSetChannelVariable_Value()
@@ -44,26 +44,26 @@ public interface SetChannelVariable extends AsteriskActionStep, CallConsumer1 {
 	 *        annotation="Required criteria='non-null'"
 	 * @generated
 	 */
-  DynamicValue getValue();
+	DynamicValue getValue();
 
-  /**
+	/**
 	 * Sets the value of the '{@link com.safi.asterisk.actionstep.SetChannelVariable#getValue <em>Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Value</em>' containment reference.
 	 * @see #getValue()
 	 * @generated
 	 */
-  void setValue(DynamicValue value);
+	void setValue(DynamicValue value);
 
-  /**
+	/**
 	 * Returns the value of the '<em><b>Variable</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Variable</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Variable</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Variable</em>' attribute.
 	 * @see #setVariable(String)
 	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getSetChannelVariable_Variable()
@@ -71,16 +71,16 @@ public interface SetChannelVariable extends AsteriskActionStep, CallConsumer1 {
 	 *        annotation="Required criteria='non-blank'"
 	 * @generated
 	 */
-  String getVariable();
+	String getVariable();
 
-  /**
+	/**
 	 * Sets the value of the '{@link com.safi.asterisk.actionstep.SetChannelVariable#getVariable <em>Variable</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Variable</em>' attribute.
 	 * @see #getVariable()
 	 * @generated
 	 */
-  void setVariable(String value);
+	void setVariable(String value);
 
 } // SetChannelVariable

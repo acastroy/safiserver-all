@@ -28,5 +28,6 @@ Require-Bundle: org.eclipse.core.runtime,
  Hibernate30;bundle-version="1.0.0",
  SafiCommons;bundle-version="1.2.5",
  AsteriskJavaLib;bundle-version="1.0.0",
- ASTDB;bundle-version="1.0.0"
+ ASTDB;bundle-version="1.0.0",
+ CoreActionPak1Model;bundle-version="1.2.6"
 Eclipse-LazyStart: true

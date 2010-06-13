@@ -6,8 +6,8 @@
  */
 package com.safi.asterisk.actionstep;
 
-import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.DynamicValue;
+
 import com.safi.core.call.CallConsumer1;
 
 /**
@@ -29,14 +29,14 @@ import com.safi.core.call.CallConsumer1;
  * @generated
  */
 public interface MeetMeAdmin extends AsteriskActionStep, CallConsumer1 {
-  /**
+	/**
 	 * Returns the value of the '<em><b>Conference Number</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Conference Number</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Conference Number</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Conference Number</em>' containment reference.
 	 * @see #setConferenceNumber(DynamicValue)
 	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getMeetMeAdmin_ConferenceNumber()
@@ -45,27 +45,27 @@ public interface MeetMeAdmin extends AsteriskActionStep, CallConsumer1 {
 	 *        annotation="Required criteria='non-null'"
 	 * @generated
 	 */
-  DynamicValue getConferenceNumber();
+	DynamicValue getConferenceNumber();
 
-  /**
+	/**
 	 * Sets the value of the '{@link com.safi.asterisk.actionstep.MeetMeAdmin#getConferenceNumber <em>Conference Number</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Conference Number</em>' containment reference.
 	 * @see #getConferenceNumber()
 	 * @generated
 	 */
-  void setConferenceNumber(DynamicValue value);
+	void setConferenceNumber(DynamicValue value);
 
-  /**
+	/**
 	 * Returns the value of the '<em><b>Command</b></em>' attribute.
 	 * The literals are from the enumeration {@link com.safi.asterisk.actionstep.MeetMeAdminCommand}.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Command</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Command</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Command</em>' attribute.
 	 * @see com.safi.asterisk.actionstep.MeetMeAdminCommand
 	 * @see #setCommand(MeetMeAdminCommand)
@@ -73,27 +73,27 @@ public interface MeetMeAdmin extends AsteriskActionStep, CallConsumer1 {
 	 * @model ordered="false"
 	 * @generated
 	 */
-  MeetMeAdminCommand getCommand();
+	MeetMeAdminCommand getCommand();
 
-  /**
+	/**
 	 * Sets the value of the '{@link com.safi.asterisk.actionstep.MeetMeAdmin#getCommand <em>Command</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Command</em>' attribute.
 	 * @see com.safi.asterisk.actionstep.MeetMeAdminCommand
 	 * @see #getCommand()
 	 * @generated
 	 */
-  void setCommand(MeetMeAdminCommand value);
+	void setCommand(MeetMeAdminCommand value);
 
-  /**
+	/**
 	 * Returns the value of the '<em><b>User</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>User</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>User</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>User</em>' containment reference.
 	 * @see #setUser(DynamicValue)
 	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getMeetMeAdmin_User()
@@ -102,16 +102,16 @@ public interface MeetMeAdmin extends AsteriskActionStep, CallConsumer1 {
 	 *        annotation="Required criteria='non-null'"
 	 * @generated
 	 */
-  DynamicValue getUser();
+	DynamicValue getUser();
 
-  /**
+	/**
 	 * Sets the value of the '{@link com.safi.asterisk.actionstep.MeetMeAdmin#getUser <em>User</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>User</em>' containment reference.
 	 * @see #getUser()
 	 * @generated
 	 */
-  void setUser(DynamicValue value);
+	void setUser(DynamicValue value);
 
 } // MeetMeAdmin

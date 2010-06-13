@@ -6,8 +6,8 @@
  */
 package com.safi.asterisk.actionstep;
 
-import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.DynamicValue;
+
 import com.safi.core.call.CallConsumer1;
 
 /**
@@ -29,14 +29,14 @@ import com.safi.core.call.CallConsumer1;
  * @generated
  */
 public interface VMAuthenticate extends AsteriskActionStep, CallConsumer1 {
-  /**
+	/**
 	 * Returns the value of the '<em><b>Mailbox</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Mailbox</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Mailbox</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Mailbox</em>' containment reference.
 	 * @see #setMailbox(DynamicValue)
 	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getVMAuthenticate_Mailbox()
@@ -45,68 +45,68 @@ public interface VMAuthenticate extends AsteriskActionStep, CallConsumer1 {
 	 *        annotation="Required criteria='non-null'"
 	 * @generated
 	 */
-  DynamicValue getMailbox();
+	DynamicValue getMailbox();
 
-  /**
+	/**
 	 * Sets the value of the '{@link com.safi.asterisk.actionstep.VMAuthenticate#getMailbox <em>Mailbox</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Mailbox</em>' containment reference.
 	 * @see #getMailbox()
 	 * @generated
 	 */
-  void setMailbox(DynamicValue value);
+	void setMailbox(DynamicValue value);
 
-  /**
+	/**
 	 * Returns the value of the '<em><b>Skip Instructions</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Skip Instructions</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Skip Instructions</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Skip Instructions</em>' attribute.
 	 * @see #setSkipInstructions(boolean)
 	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getVMAuthenticate_SkipInstructions()
 	 * @model ordered="false"
 	 * @generated
 	 */
-  boolean isSkipInstructions();
+	boolean isSkipInstructions();
 
-  /**
+	/**
 	 * Sets the value of the '{@link com.safi.asterisk.actionstep.VMAuthenticate#isSkipInstructions <em>Skip Instructions</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Skip Instructions</em>' attribute.
 	 * @see #isSkipInstructions()
 	 * @generated
 	 */
-  void setSkipInstructions(boolean value);
+	void setSkipInstructions(boolean value);
 
-  /**
+	/**
 	 * Returns the value of the '<em><b>Set Account Code</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Set Account Code</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Set Account Code</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Set Account Code</em>' attribute.
 	 * @see #setSetAccountCode(boolean)
 	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getVMAuthenticate_SetAccountCode()
 	 * @model ordered="false"
 	 * @generated
 	 */
-  boolean isSetAccountCode();
+	boolean isSetAccountCode();
 
-  /**
+	/**
 	 * Sets the value of the '{@link com.safi.asterisk.actionstep.VMAuthenticate#isSetAccountCode <em>Set Account Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Set Account Code</em>' attribute.
 	 * @see #isSetAccountCode()
 	 * @generated
 	 */
-  void setSetAccountCode(boolean value);
+	void setSetAccountCode(boolean value);
 
 } // VMAuthenticate

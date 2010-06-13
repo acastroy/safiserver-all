@@ -6,7 +6,6 @@
  */
 package com.safi.asterisk.actionstep;
 
-import com.safi.core.actionstep.ActionStep;
 import com.safi.core.call.CallConsumer1;
 
 /**
@@ -27,14 +26,14 @@ import com.safi.core.call.CallConsumer1;
  * @generated
  */
 public interface Sleep extends AsteriskActionStep, CallConsumer1 {
-  /**
+	/**
 	 * Returns the value of the '<em><b>Duration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Duration</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Duration</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Duration</em>' attribute.
 	 * @see #setDuration(long)
 	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getSleep_Duration()
@@ -43,42 +42,42 @@ public interface Sleep extends AsteriskActionStep, CallConsumer1 {
 	 *        annotation="Required non-zero='true'"
 	 * @generated
 	 */
-  long getDuration();
+	long getDuration();
 
-  /**
+	/**
 	 * Sets the value of the '{@link com.safi.asterisk.actionstep.Sleep#getDuration <em>Duration</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Duration</em>' attribute.
 	 * @see #getDuration()
 	 * @generated
 	 */
-  void setDuration(long value);
+	void setDuration(long value);
 
-  /**
+	/**
 	 * Returns the value of the '<em><b>Native</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Native</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Native</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Native</em>' attribute.
 	 * @see #setNative(boolean)
 	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getSleep_Native()
 	 * @model ordered="false"
 	 * @generated
 	 */
-  boolean isNative();
+	boolean isNative();
 
-  /**
+	/**
 	 * Sets the value of the '{@link com.safi.asterisk.actionstep.Sleep#isNative <em>Native</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Native</em>' attribute.
 	 * @see #isNative()
 	 * @generated
 	 */
-  void setNative(boolean value);
+	void setNative(boolean value);
 
 } // Sleep

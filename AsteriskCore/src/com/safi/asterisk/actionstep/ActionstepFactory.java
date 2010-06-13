@@ -17,642 +17,651 @@ import org.eclipse.emf.ecore.EFactory;
  * @generated
  */
 public interface ActionstepFactory extends EFactory {
-  /**
+	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  ActionstepFactory eINSTANCE = com.safi.asterisk.actionstep.impl.ActionstepFactoryImpl.init();
+	ActionstepFactory eINSTANCE = com.safi.asterisk.actionstep.impl.ActionstepFactoryImpl.init();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Answer</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Answer</em>'.
 	 * @generated
 	 */
-  Answer createAnswer();
+	Answer createAnswer();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Get Digits</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Get Digits</em>'.
 	 * @generated
 	 */
-  GetDigits createGetDigits();
+	GetDigits createGetDigits();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Get Full Variable</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Get Full Variable</em>'.
 	 * @generated
 	 */
-  GetFullVariable createGetFullVariable();
+	GetFullVariable createGetFullVariable();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Multi Stream Audio</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Multi Stream Audio</em>'.
 	 * @generated
 	 */
-  MultiStreamAudio createMultiStreamAudio();
+	MultiStreamAudio createMultiStreamAudio();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Hangup</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Hangup</em>'.
 	 * @generated
 	 */
-  Hangup createHangup();
+	Hangup createHangup();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Record File</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Record File</em>'.
 	 * @generated
 	 */
-  RecordFile createRecordFile();
+	RecordFile createRecordFile();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Say Alpha</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Say Alpha</em>'.
 	 * @generated
 	 */
-  SayAlpha createSayAlpha();
+	SayAlpha createSayAlpha();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Say Date Time</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Say Date Time</em>'.
 	 * @generated
 	 */
-  SayDateTime createSayDateTime();
+	SayDateTime createSayDateTime();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Say Digits</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Say Digits</em>'.
 	 * @generated
 	 */
-  SayDigits createSayDigits();
+	SayDigits createSayDigits();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Say Number</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Say Number</em>'.
 	 * @generated
 	 */
-  SayNumber createSayNumber();
+	SayNumber createSayNumber();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Say Phonetic</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Say Phonetic</em>'.
 	 * @generated
 	 */
-  SayPhonetic createSayPhonetic();
+	SayPhonetic createSayPhonetic();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Say Time</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Say Time</em>'.
 	 * @generated
 	 */
-  SayTime createSayTime();
+	SayTime createSayTime();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Set Auto Hangup</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Set Auto Hangup</em>'.
 	 * @generated
 	 */
-  SetAutoHangup createSetAutoHangup();
+	SetAutoHangup createSetAutoHangup();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Set Caller Id</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Set Caller Id</em>'.
 	 * @generated
 	 */
-  SetCallerId createSetCallerId();
+	SetCallerId createSetCallerId();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Set Channel Variable</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Set Channel Variable</em>'.
 	 * @generated
 	 */
-  SetChannelVariable createSetChannelVariable();
+	SetChannelVariable createSetChannelVariable();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Set Context</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Set Context</em>'.
 	 * @generated
 	 */
-  SetContext createSetContext();
+	SetContext createSetContext();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Set Extension</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Set Extension</em>'.
 	 * @generated
 	 */
-  SetExtension createSetExtension();
+	SetExtension createSetExtension();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Stop Music On Hold</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Stop Music On Hold</em>'.
 	 * @generated
 	 */
-  StopMusicOnHold createStopMusicOnHold();
+	StopMusicOnHold createStopMusicOnHold();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Set Music On</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Set Music On</em>'.
 	 * @generated
 	 */
-  SetMusicOn createSetMusicOn();
+	SetMusicOn createSetMusicOn();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Set Priority</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Set Priority</em>'.
 	 * @generated
 	 */
-  SetPriority createSetPriority();
+	SetPriority createSetPriority();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Stream Audio</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Stream Audio</em>'.
 	 * @generated
 	 */
-  StreamAudio createStreamAudio();
+	StreamAudio createStreamAudio();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Wait For Digit</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Wait For Digit</em>'.
 	 * @generated
 	 */
-  WaitForDigit createWaitForDigit();
+	WaitForDigit createWaitForDigit();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Originate Call</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Originate Call</em>'.
 	 * @generated
 	 */
-  OriginateCall createOriginateCall();
+	OriginateCall createOriginateCall();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Play DTMF</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Play DTMF</em>'.
 	 * @generated
 	 */
-  PlayDTMF createPlayDTMF();
+	PlayDTMF createPlayDTMF();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Record Call</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Record Call</em>'.
 	 * @generated
 	 */
-  RecordCall createRecordCall();
+	RecordCall createRecordCall();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Transfer</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Transfer</em>'.
 	 * @generated
 	 */
-  Transfer createTransfer();
+	Transfer createTransfer();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Execute Application</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Execute Application</em>'.
 	 * @generated
 	 */
-  ExecuteApplication createExecuteApplication();
+	ExecuteApplication createExecuteApplication();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Get Call Info</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Get Call Info</em>'.
 	 * @generated
 	 */
-  GetCallInfo createGetCallInfo();
+	GetCallInfo createGetCallInfo();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Play Music On Hold</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Play Music On Hold</em>'.
 	 * @generated
 	 */
-  PlayMusicOnHold createPlayMusicOnHold();
+	PlayMusicOnHold createPlayMusicOnHold();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Prompt Get Digits</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Prompt Get Digits</em>'.
 	 * @generated
 	 */
-  PromptGetDigits createPromptGetDigits();
+	PromptGetDigits createPromptGetDigits();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Sleep</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Sleep</em>'.
 	 * @generated
 	 */
-  Sleep createSleep();
+	Sleep createSleep();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Stream Audio Extended</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Stream Audio Extended</em>'.
 	 * @generated
 	 */
-  StreamAudioExtended createStreamAudioExtended();
+	StreamAudioExtended createStreamAudioExtended();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Dial</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Dial</em>'.
 	 * @generated
 	 */
-  Dial createDial();
+	Dial createDial();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Pickup</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Pickup</em>'.
 	 * @generated
 	 */
-  Pickup createPickup();
+	Pickup createPickup();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Background</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Background</em>'.
 	 * @generated
 	 */
-  Background createBackground();
+	Background createBackground();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Background Detect</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Background Detect</em>'.
 	 * @generated
 	 */
-  BackgroundDetect createBackgroundDetect();
+	BackgroundDetect createBackgroundDetect();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Wait Exten</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Wait Exten</em>'.
 	 * @generated
 	 */
-  WaitExten createWaitExten();
+	WaitExten createWaitExten();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Soft Hangup</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Soft Hangup</em>'.
 	 * @generated
 	 */
-  SoftHangup createSoftHangup();
+	SoftHangup createSoftHangup();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Pickup Chan</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Pickup Chan</em>'.
 	 * @generated
 	 */
-  PickupChan createPickupChan();
+	PickupChan createPickupChan();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Pickdown</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Pickdown</em>'.
 	 * @generated
 	 */
-  Pickdown createPickdown();
+	Pickdown createPickdown();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Progress</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Progress</em>'.
 	 * @generated
 	 */
-  Progress createProgress();
+	Progress createProgress();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Bridge</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Bridge</em>'.
 	 * @generated
 	 */
-  Bridge createBridge();
+	Bridge createBridge();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Place Call</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Place Call</em>'.
 	 * @generated
 	 */
-  PlaceCall createPlaceCall();
+	PlaceCall createPlaceCall();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Voicemail</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Voicemail</em>'.
 	 * @generated
 	 */
-  Voicemail createVoicemail();
+	Voicemail createVoicemail();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Voicemail Main</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Voicemail Main</em>'.
 	 * @generated
 	 */
-  VoicemailMain createVoicemailMain();
+	VoicemailMain createVoicemailMain();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>VM Authenticate</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>VM Authenticate</em>'.
 	 * @generated
 	 */
-  VMAuthenticate createVMAuthenticate();
+	VMAuthenticate createVMAuthenticate();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Meet Me</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Meet Me</em>'.
 	 * @generated
 	 */
-  MeetMe createMeetMe();
+	MeetMe createMeetMe();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Meet Me Admin</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Meet Me Admin</em>'.
 	 * @generated
 	 */
-  MeetMeAdmin createMeetMeAdmin();
+	MeetMeAdmin createMeetMeAdmin();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Meet Me Count</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Meet Me Count</em>'.
 	 * @generated
 	 */
-  MeetMeCount createMeetMeCount();
+	MeetMeCount createMeetMeCount();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Wait For Ring</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Wait For Ring</em>'.
 	 * @generated
 	 */
-  WaitForRing createWaitForRing();
+	WaitForRing createWaitForRing();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Wait Music On Hold</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Wait Music On Hold</em>'.
 	 * @generated
 	 */
-  WaitMusicOnHold createWaitMusicOnHold();
+	WaitMusicOnHold createWaitMusicOnHold();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Get Available Channel</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Get Available Channel</em>'.
 	 * @generated
 	 */
-  GetAvailableChannel createGetAvailableChannel();
+	GetAvailableChannel createGetAvailableChannel();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Congestion</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Congestion</em>'.
 	 * @generated
 	 */
-  Congestion createCongestion();
+	Congestion createCongestion();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Ringing</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Ringing</em>'.
 	 * @generated
 	 */
-  Ringing createRinging();
+	Ringing createRinging();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Set Caller Presentation</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Set Caller Presentation</em>'.
 	 * @generated
 	 */
-  SetCallerPresentation createSetCallerPresentation();
+	SetCallerPresentation createSetCallerPresentation();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Set Global Variable</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Set Global Variable</em>'.
 	 * @generated
 	 */
-  SetGlobalVariable createSetGlobalVariable();
+	SetGlobalVariable createSetGlobalVariable();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Echo</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Echo</em>'.
 	 * @generated
 	 */
-  Echo createEcho();
+	Echo createEcho();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Festival</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Festival</em>'.
 	 * @generated
 	 */
-  Festival createFestival();
+	Festival createFestival();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Playtones</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Playtones</em>'.
 	 * @generated
 	 */
-  Playtones createPlaytones();
+	Playtones createPlaytones();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Stop Playtones</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Stop Playtones</em>'.
 	 * @generated
 	 */
-  StopPlaytones createStopPlaytones();
+	StopPlaytones createStopPlaytones();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Chan Spy</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Chan Spy</em>'.
 	 * @generated
 	 */
-  ChanSpy createChanSpy();
+	ChanSpy createChanSpy();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Dictate</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Dictate</em>'.
 	 * @generated
 	 */
-  Dictate createDictate();
+	Dictate createDictate();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Extension Spy</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Extension Spy</em>'.
 	 * @generated
 	 */
-  ExtensionSpy createExtensionSpy();
+	ExtensionSpy createExtensionSpy();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Mix Monitor</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Mix Monitor</em>'.
 	 * @generated
 	 */
-  MixMonitor createMixMonitor();
+	MixMonitor createMixMonitor();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Stop Mixmonitor</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Stop Mixmonitor</em>'.
 	 * @generated
 	 */
-  StopMixmonitor createStopMixmonitor();
+	StopMixmonitor createStopMixmonitor();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Stop Monitor</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Stop Monitor</em>'.
 	 * @generated
 	 */
-  StopMonitor createStopMonitor();
+	StopMonitor createStopMonitor();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Monitor</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Monitor</em>'.
 	 * @generated
 	 */
-  Monitor createMonitor();
+	Monitor createMonitor();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Directory</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Directory</em>'.
 	 * @generated
 	 */
-  Directory createDirectory();
+	Directory createDirectory();
 
-  /**
+	/**
 	 * Returns a new object of class '<em>Extension Transfer</em>'.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Extension Transfer</em>'.
 	 * @generated
 	 */
-  ExtensionTransfer createExtensionTransfer();
+	ExtensionTransfer createExtensionTransfer();
 
-  /**
+	/**
+	 * Returns a new object of class '<em>Manager Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Manager Action</em>'.
+	 * @generated
+	 */
+	ManagerAction createManagerAction();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @return the package supported by this factory.
 	 * @generated
 	 */
-  ActionstepPackage getActionstepPackage();
+	ActionstepPackage getActionstepPackage();
 
 } //ActionstepFactory

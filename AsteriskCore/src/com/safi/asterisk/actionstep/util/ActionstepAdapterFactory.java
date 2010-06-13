@@ -86,6 +86,7 @@ import com.safi.asterisk.actionstep.WaitMusicOnHold;
 import com.safi.core.ProductIdentifiable;
 import com.safi.core.ThreadSensitive;
 import com.safi.core.actionstep.ActionStep;
+import com.safi.core.actionstep.ParameterizedActionstep;
 import com.safi.core.call.CallConsumer1;
 import com.safi.core.call.CallConsumer2;
 import com.safi.core.call.CallSource1;
@@ -427,6 +428,10 @@ public class ActionstepAdapterFactory extends AdapterFactoryImpl {
 				return createAsteriskActionStepAdapter();
 			}
 			@Override
+			public Adapter caseManagerAction(ManagerAction object) {
+				return createManagerActionAdapter();
+			}
+			@Override
 			public Adapter caseProductIdentifiable(ProductIdentifiable object) {
 				return createProductIdentifiableAdapter();
 			}
@@ -453,6 +458,10 @@ public class ActionstepAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCallConsumer2(CallConsumer2 object) {
 				return createCallConsumer2Adapter();
+			}
+			@Override
+			public Adapter caseParameterizedActionstep(ParameterizedActionstep object) {
+				return createParameterizedActionstepAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -1455,6 +1464,20 @@ public class ActionstepAdapterFactory extends AdapterFactoryImpl {
 	}
 
 		/**
+	 * Creates a new adapter for an object of class '{@link com.safi.asterisk.actionstep.ManagerAction <em>Manager Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.safi.asterisk.actionstep.ManagerAction
+	 * @generated
+	 */
+	public Adapter createManagerActionAdapter() {
+		return null;
+	}
+
+		/**
 	 * Creates a new adapter for an object of class '{@link com.safi.core.call.CallConsumer1 <em>Consumer1</em>}'.
 	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1553,6 +1576,20 @@ public class ActionstepAdapterFactory extends AdapterFactoryImpl {
 	}
 
   /**
+	 * Creates a new adapter for an object of class '{@link com.safi.core.actionstep.ParameterizedActionstep <em>Parameterized Actionstep</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.safi.core.actionstep.ParameterizedActionstep
+	 * @generated
+	 */
+	public Adapter createParameterizedActionstepAdapter() {
+		return null;
+	}
+
+		/**
 	 * Creates a new adapter for the default case.
 	 * <!-- begin-user-doc -->
    * This default implementation returns null.

@@ -6,7 +6,6 @@
  */
 package com.safi.asterisk.actionstep;
 
-import com.safi.core.actionstep.ActionStep;
 import com.safi.core.call.CallConsumer1;
 
 /**
@@ -27,15 +26,15 @@ import com.safi.core.call.CallConsumer1;
  * @generated
  */
 public interface WaitForDigit extends AsteriskActionStep, CallConsumer1 {
-  /**
+	/**
 	 * Returns the value of the '<em><b>Timeout</b></em>' attribute.
 	 * The default value is <code>"-1"</code>.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Timeout</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Timeout</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Timeout</em>' attribute.
 	 * @see #setTimeout(long)
 	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getWaitForDigit_Timeout()
@@ -43,43 +42,43 @@ public interface WaitForDigit extends AsteriskActionStep, CallConsumer1 {
 	 *        annotation="unitsTime milliseconds='true'"
 	 * @generated
 	 */
-  long getTimeout();
+	long getTimeout();
 
-  /**
+	/**
 	 * Sets the value of the '{@link com.safi.asterisk.actionstep.WaitForDigit#getTimeout <em>Timeout</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Timeout</em>' attribute.
 	 * @see #getTimeout()
 	 * @generated
 	 */
-  void setTimeout(long value);
+	void setTimeout(long value);
 
-  /**
+	/**
 	 * Returns the value of the '<em><b>Accepted Digits</b></em>' attribute.
 	 * The default value is <code>"0123456789#"</code>.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Accepted Digits</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Accepted Digits</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Accepted Digits</em>' attribute.
 	 * @see #setAcceptedDigits(String)
 	 * @see com.safi.asterisk.actionstep.ActionstepPackage#getWaitForDigit_AcceptedDigits()
 	 * @model default="0123456789#" ordered="false"
 	 * @generated
 	 */
-  String getAcceptedDigits();
+	String getAcceptedDigits();
 
-  /**
+	/**
 	 * Sets the value of the '{@link com.safi.asterisk.actionstep.WaitForDigit#getAcceptedDigits <em>Accepted Digits</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Accepted Digits</em>' attribute.
 	 * @see #getAcceptedDigits()
 	 * @generated
 	 */
-  void setAcceptedDigits(String value);
+	void setAcceptedDigits(String value);
 
 } // WaitForDigit

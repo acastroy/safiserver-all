@@ -7,7 +7,6 @@
 package com.safi.asterisk.initiator;
 
 import com.safi.core.call.CallSource1;
-import com.safi.core.initiator.Initiator;
 
 /**
  * <!-- begin-user-doc -->
