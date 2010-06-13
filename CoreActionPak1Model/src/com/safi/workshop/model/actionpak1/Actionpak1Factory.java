@@ -35,24 +35,6 @@ public interface Actionpak1Factory extends EFactory {
   ActionstepTest createActionstepTest();
 
   /**
-	 * Returns a new object of class '<em>Custom Initiator</em>'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Custom Initiator</em>'.
-	 * @generated
-	 */
-  CustomInitiator createCustomInitiator();
-
-  /**
-	 * Returns a new object of class '<em>Incoming Call2</em>'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Incoming Call2</em>'.
-	 * @generated
-	 */
-  IncomingCall2 createIncomingCall2();
-
-  /**
 	 * Returns a new object of class '<em>Invoke Saflet2</em>'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -62,15 +44,6 @@ public interface Actionpak1Factory extends EFactory {
   InvokeSaflet2 createInvokeSaflet2();
 
   /**
-	 * Returns a new object of class '<em>Manager Action</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Manager Action</em>'.
-	 * @generated
-	 */
-	ManagerAction createManagerAction();
-
-		/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -11,18 +11,12 @@ import java.util.Map;
 import java.util.logging.Level;
 
 import org.apache.commons.lang.StringUtils;
-import org.asteriskjava.fastagi.AgiChannel;
-import org.asteriskjava.fastagi.AgiRequest;
-import org.asteriskjava.manager.ManagerConnection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import com.safi.asterisk.Call;
-import com.safi.asterisk.initiator.AsteriskInitiatorInfo;
-import com.safi.asterisk.util.AsteriskSafletConstants;
 import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.ActionStepFactory;
 import com.safi.core.actionstep.DynamicValue;
@@ -33,16 +27,11 @@ import com.safi.core.actionstep.impl.ParameterizedInitiatorImpl;
 import com.safi.core.call.CallPackage;
 import com.safi.core.call.CallSource1;
 import com.safi.core.call.SafiCall;
-import com.safi.core.initiator.InitiatorInfo;
-import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletConstants;
 import com.safi.core.saflet.SafletContext;
 import com.safi.core.saflet.SafletEnvironment;
-import com.safi.db.DbFactory;
 import com.safi.db.Variable;
 import com.safi.db.VariableScope;
-import com.safi.db.VariableType;
-import com.safi.db.astdb.AsteriskServer;
 import com.safi.db.util.VariableTranslator;
 import com.safi.workshop.model.actionpak1.Actionpak1Package;
 import com.safi.workshop.model.actionpak1.IncomingCall2;
@@ -61,7 +50,7 @@ import com.safi.workshop.model.actionpak1.IncomingCall2;
  *
  * @generated
  */
-public class IncomingCall2Impl extends ParameterizedInitiatorImpl implements IncomingCall2 {
+public abstract class IncomingCall2Impl extends ParameterizedInitiatorImpl implements IncomingCall2 {
   /**
 	 * The cached value of the '{@link #getNewCall1() <em>New Call1</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -142,15 +131,6 @@ public class IncomingCall2Impl extends ParameterizedInitiatorImpl implements Inc
   }
   
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated NOT
-   */
-  @Override
-  public boolean acceptsRequest(InitiatorInfo context) {
-    return context instanceof AsteriskInitiatorInfo;
-  }
   
   
   @Override
@@ -175,76 +155,7 @@ public class IncomingCall2Impl extends ParameterizedInitiatorImpl implements Inc
 //    return false;
 //  }
   
-  @Override
-  public void initialize(InitiatorInfo info) throws ActionStepException {
-    super.initialize(info);
-    if (newCall1 == null)
-      throw new ActionStepException("No call found for IncomingCall initiator "+getName());
-    
-    if (!(newCall1 instanceof Call)) {
-			throw new ActionStepException("Call isn't isn't an Asterisk call: "
-					+ newCall1.getClass().getName());
-		}
-		if (((Call) newCall1).getChannel() == null) {
-			new ActionStepException("No channel found in current context");
-		}
-
-    AgiRequest request = ((AsteriskInitiatorInfo)info).getRequest();
-    AgiChannel channel = ((AsteriskInitiatorInfo)info).getChannel();
-    AsteriskServer server = ((AsteriskInitiatorInfo)info).getAsteriskServer();
-    ManagerConnection connection = ((AsteriskInitiatorInfo)info).getManagerConnection();
-    Saflet handler = getSaflet();
-    SafletContext context = handler.getSafletContext();
-    
-    if (request != null) {
-      Variable requestVar = context.getVariable(AsteriskSafletConstants.VAR_KEY_REQUEST);
-      if (requestVar == null) {
-        requestVar = DbFactory.eINSTANCE.createVariable();
-        requestVar.setName(AsteriskSafletConstants.VAR_KEY_REQUEST);
-      }
-
-      requestVar.setName(AsteriskSafletConstants.VAR_KEY_REQUEST);
-      requestVar.setType(VariableType.OBJECT);
-      requestVar.setScope(VariableScope.RUNTIME);
-      requestVar.setDefaultValue(request);
-      context.addOrUpdateVariable(requestVar);
-    }
-
-    if (channel != null) {
-      Variable channelVar = DbFactory.eINSTANCE.createVariable();
-      channelVar.setName(AsteriskSafletConstants.VAR_KEY_CHANNEL);
-      channelVar.setType(VariableType.OBJECT);
-      channelVar.setScope(VariableScope.RUNTIME);
-      channelVar.setDefaultValue(channel);
-      context.addOrUpdateVariable(channelVar);
-    }
-
-    if (connection != null) {
-      Variable connectionVar = DbFactory.eINSTANCE.createVariable();
-      connectionVar.setName(AsteriskSafletConstants.VAR_KEY_MANAGER_CONNECTION);
-      connectionVar.setType(VariableType.OBJECT);
-      connectionVar.setScope(VariableScope.RUNTIME);
-      connectionVar.setDefaultValue(connection);
-      context.addOrUpdateVariable(connectionVar);
-    }
-    
-    if (server != null) {
-      Variable serverVar = DbFactory.eINSTANCE.createVariable();
-      serverVar.setName(AsteriskSafletConstants.VAR_KEY_ASTERISK_SERVER);
-      serverVar.setType(VariableType.OBJECT);
-      serverVar.setScope(VariableScope.RUNTIME);
-      serverVar.setDefaultValue(server);
-      context.addOrUpdateVariable(serverVar);
-    }
-    
-    
-    ((Call)newCall1).setCallerIdName(request.getCallerIdName());
-    ((Call)newCall1).setCallerIdNum(request.getCallerIdNumber());
-    ((Call)newCall1).setChannel(channel);
-    ((Call)newCall1).setChannelName(channel.getName());
-    ((Call)newCall1).setUniqueId(channel.getUniqueId());
-    super.initialize(info);
-  }
+  
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -320,7 +231,7 @@ public class IncomingCall2Impl extends ParameterizedInitiatorImpl implements Inc
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, Actionpak1Package.INCOMING_CALL2__CALL_NAME, oldCallName, callName));
     if (!StringUtils.equals(oldCallName, callName) && getNewCall1() != null){
-      Call call = (Call)getNewCall1();
+      SafiCall call = (SafiCall)getNewCall1();
       call.setName(callName);
     }
   }

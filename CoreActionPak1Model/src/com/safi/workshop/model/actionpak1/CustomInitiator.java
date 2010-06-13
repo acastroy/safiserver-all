@@ -15,7 +15,7 @@ import com.safi.core.actionstep.ParameterizedInitiator;
  *
  *
  * @see com.safi.workshop.model.actionpak1.Actionpak1Package#getCustomInitiator()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface CustomInitiator extends ParameterizedInitiator {

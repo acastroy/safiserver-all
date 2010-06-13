@@ -6,6 +6,7 @@
  */
 package com.safi.workshop.model.actionpak1.util;
 
+import com.safi.core.PlatformDisposition;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
@@ -105,6 +106,7 @@ public class Actionpak1Switch<T> {
 				if (result == null) result = caseActionStep(actionstepTest);
 				if (result == null) result = caseProductIdentifiable(actionstepTest);
 				if (result == null) result = caseThreadSensitive(actionstepTest);
+				if (result == null) result = casePlatformDisposition(actionstepTest);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -117,6 +119,7 @@ public class Actionpak1Switch<T> {
 				if (result == null) result = caseActionStep(customInitiator);
 				if (result == null) result = caseProductIdentifiable(customInitiator);
 				if (result == null) result = caseThreadSensitive(customInitiator);
+				if (result == null) result = casePlatformDisposition(customInitiator);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -130,6 +133,7 @@ public class Actionpak1Switch<T> {
 				if (result == null) result = caseActionStep(incomingCall2);
 				if (result == null) result = caseProductIdentifiable(incomingCall2);
 				if (result == null) result = caseThreadSensitive(incomingCall2);
+				if (result == null) result = casePlatformDisposition(incomingCall2);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -140,16 +144,7 @@ public class Actionpak1Switch<T> {
 				if (result == null) result = caseActionStep(invokeSaflet2);
 				if (result == null) result = caseProductIdentifiable(invokeSaflet2);
 				if (result == null) result = caseThreadSensitive(invokeSaflet2);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case Actionpak1Package.MANAGER_ACTION: {
-				ManagerAction managerAction = (ManagerAction)theEObject;
-				T result = caseManagerAction(managerAction);
-				if (result == null) result = caseParameterizedActionstep(managerAction);
-				if (result == null) result = caseActionStep(managerAction);
-				if (result == null) result = caseProductIdentifiable(managerAction);
-				if (result == null) result = caseThreadSensitive(managerAction);
+				if (result == null) result = casePlatformDisposition(invokeSaflet2);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -218,21 +213,6 @@ public class Actionpak1Switch<T> {
 	}
 
   /**
-	 * Returns the result of interpreting the object as an instance of '<em>Manager Action</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Manager Action</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseManagerAction(ManagerAction object) {
-		return null;
-	}
-
-		/**
 	 * Returns the result of interpreting the object as an instance of '<em>Product Identifiable</em>'.
 	 * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -259,6 +239,21 @@ public class Actionpak1Switch<T> {
 	 * @generated
 	 */
 	public T caseThreadSensitive(ThreadSensitive object) {
+		return null;
+	}
+
+		/**
+	 * Returns the result of interpreting the object as an instance of '<em>Platform Disposition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Platform Disposition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePlatformDisposition(PlatformDisposition object) {
 		return null;
 	}
 

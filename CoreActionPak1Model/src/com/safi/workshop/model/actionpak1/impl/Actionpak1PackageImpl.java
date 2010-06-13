@@ -6,14 +6,13 @@
  */
 package com.safi.workshop.model.actionpak1.impl;
 
-import com.safi.core.CorePackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import com.safi.asterisk.AsteriskPackage;
+
+import com.safi.core.CorePackage;
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.call.CallPackage;
 import com.safi.workshop.model.actionpak1.Actionpak1Factory;
@@ -22,8 +21,6 @@ import com.safi.workshop.model.actionpak1.ActionstepTest;
 import com.safi.workshop.model.actionpak1.CustomInitiator;
 import com.safi.workshop.model.actionpak1.IncomingCall2;
 import com.safi.workshop.model.actionpak1.InvokeSaflet2;
-import com.safi.workshop.model.actionpak1.ManagerAction;
-import com.safi.workshop.model.actionpak1.ManagerActionType;
 
 /**
  * <!-- begin-user-doc -->
@@ -61,20 +58,6 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
   private EClass invokeSaflet2EClass = null;
 
   /**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass managerActionEClass = null;
-
-		/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum managerActionTypeEEnum = null;
-
-		/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -212,42 +195,6 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 
   /**
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getManagerAction() {
-		return managerActionEClass;
-	}
-
-		/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getManagerAction_ManagerActionType() {
-		return (EAttribute)managerActionEClass.getEStructuralFeatures().get(0);
-	}
-
-		/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getManagerAction_ManagerResponse() {
-		return (EReference)managerActionEClass.getEStructuralFeatures().get(1);
-	}
-
-		/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EEnum getManagerActionType() {
-		return managerActionTypeEEnum;
-	}
-
-		/**
-	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -285,13 +232,6 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 		invokeSaflet2EClass = createEClass(INVOKE_SAFLET2);
 		createEReference(invokeSaflet2EClass, INVOKE_SAFLET2__TARGET_SAFLET_PATH);
 		createEAttribute(invokeSaflet2EClass, INVOKE_SAFLET2__LABEL_TEXT);
-
-		managerActionEClass = createEClass(MANAGER_ACTION);
-		createEAttribute(managerActionEClass, MANAGER_ACTION__MANAGER_ACTION_TYPE);
-		createEReference(managerActionEClass, MANAGER_ACTION__MANAGER_RESPONSE);
-
-		// Create enums
-		managerActionTypeEEnum = createEEnum(MANAGER_ACTION_TYPE);
 	}
 
   /**
@@ -331,97 +271,19 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 		incomingCall2EClass.getESuperTypes().add(theActionStepPackage.getParameterizedInitiator());
 		incomingCall2EClass.getESuperTypes().add(theCallPackage.getCallSource1());
 		invokeSaflet2EClass.getESuperTypes().add(theActionStepPackage.getParameterizedActionstep());
-		managerActionEClass.getESuperTypes().add(theActionStepPackage.getParameterizedActionstep());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(actionstepTestEClass, ActionstepTest.class, "ActionstepTest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getActionstepTest_Message(), theActionStepPackage.getDynamicValue(), null, "message", null, 0, 1, ActionstepTest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(customInitiatorEClass, CustomInitiator.class, "CustomInitiator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(customInitiatorEClass, CustomInitiator.class, "CustomInitiator", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(incomingCall2EClass, IncomingCall2.class, "IncomingCall2", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(incomingCall2EClass, IncomingCall2.class, "IncomingCall2", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIncomingCall2_CallName(), ecorePackage.getEString(), "callName", null, 0, 1, IncomingCall2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(invokeSaflet2EClass, InvokeSaflet2.class, "InvokeSaflet2", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInvokeSaflet2_TargetSafletPath(), theActionStepPackage.getDynamicValue(), null, "targetSafletPath", null, 0, 1, InvokeSaflet2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getInvokeSaflet2_LabelText(), ecorePackage.getEString(), "labelText", null, 0, 1, InvokeSaflet2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(managerActionEClass, ManagerAction.class, "ManagerAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getManagerAction_ManagerActionType(), this.getManagerActionType(), "managerActionType", null, 0, 1, ManagerAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getManagerAction_ManagerResponse(), theActionStepPackage.getDynamicValue(), null, "managerResponse", null, 0, 1, ManagerAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		// Initialize enums and add enum literals
-		initEEnum(managerActionTypeEEnum, ManagerActionType.class, "ManagerActionType");
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.ABSOLUTE_TIMEOUT_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.AGENT_CALLBACK_LOGIN_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.AGENT_LOGOFF_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.AGENTS_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.AGI_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.ATXFER_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.BRIDGE_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.CHALLENGE_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.CHANGE_MONITOR_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.COMMAND_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.CORE_SETTINGS_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.CORE_SHOW_CHANNELS_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.CORE_STATUS_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.DB_DEL_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.DB_DEL_TREE_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.DB_GET_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.DB_PUT_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.EVENTS_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.EXTENSION_STATE_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.GET_CONFIG_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.GET_VAR_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.HANGUP_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.IAX_PEER_LIST_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.JABBER_SEND_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.LIST_COMMANDS_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.LOGIN_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.LOGOFF_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.MAILBOX_COUNT_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.MAILBOX_STATUS_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.MEET_ME_MUTE_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.MEET_ME_UNMUTE_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.MODULE_CHECK_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.MODULE_LOAD_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.MONITOR_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.ORIGINATE_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.PARK_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.PARKED_CALLS_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.PAUSE_MONITOR_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.PING_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.PLAY_DTMF_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.QUEUE_ADD_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.QUEUE_LOG_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.QUEUE_PAUSE_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.QUEUE_PENALTY_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.QUEUE_REMOVE_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.QUEUE_RESET_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.QUEUE_STATUS_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.QUEUE_SUMMARY_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.REDIRECT_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.SEND_TEXT_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.SET_CDR_USER_FIELD_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.SET_VAR_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.SHOW_DIALPLAN_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.SIP_NOTIFY_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.SIP_PEERS_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.SIP_SHOW_PEER_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.SIP_SHOW_REGISTRY_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.STATUS_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.STOP_MONITOR_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.UNPAUSE_MONITOR_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.UPDATE_CONFIG_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.USER_EVENT_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.VOICEMAIL_USERS_LIST_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.ZAP_DIAL_OFFHOOK_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.ZAP_DND_OFF_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.ZAP_DND_ON_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.ZAP_HANGUP_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.ZAP_RESTART_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.ZAP_SHOW_CHANNELS_ACTION);
-		addEEnumLiteral(managerActionTypeEEnum, ManagerActionType.ZAP_TRANSFER_ACTION);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -431,10 +293,6 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 		createDynamicValueAnnotationAnnotations();
 		// Required
 		createRequiredAnnotations();
-		// Directionality
-		createDirectionalityAnnotations();
-		// MetaProperty
-		createMetaPropertyAnnotations();
 	}
 
   /**
@@ -464,17 +322,7 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 			 "description", "The path of the handler to which control will be transferred",
 			 "expectedReturnType", "Saflet Path",
 			 "helperClass", "com.safi.workshop.sheet.SelectSafletDynamicValueEditorPage"
-		   });			
-		addAnnotation
-		  (getManagerAction_ManagerResponse(), 
-		   source, 
-		   new String[] {
-			 "type", "VariableName",
-			 "isTypeLocked", "false",
-			 "description", "The assignee variable",
-			 "expectedReturnType", "Object",
-			 "helperClass", ""
-		   });		
+		   });	
 	}
 
   /**
@@ -496,38 +344,6 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 		   source, 
 		   new String[] {
 			 "criteria", "non-null"
-		   });			
-	}
-
-		/**
-	 * Initializes the annotations for <b>Directionality</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createDirectionalityAnnotations() {
-		String source = "Directionality";							
-		addAnnotation
-		  (getManagerAction_ManagerResponse(), 
-		   source, 
-		   new String[] {
-			 "output", "true"
-		   });	
-	}
-
-		/**
-	 * Initializes the annotations for <b>MetaProperty</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createMetaPropertyAnnotations() {
-		String source = "MetaProperty";								
-		addAnnotation
-		  (getManagerAction_ManagerResponse(), 
-		   source, 
-		   new String[] {
-			 "displayText", "Variable"
 		   });
 	}
 

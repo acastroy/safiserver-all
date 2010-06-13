@@ -83,6 +83,24 @@ public interface Actionpak1Package extends EPackage {
   int ACTIONSTEP_TEST__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIONSTEP_TEST__PLATFORM_ID = ActionStepPackage.ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIONSTEP_TEST__PLATFORM_DEPENDANT = ActionStepPackage.ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -183,6 +201,24 @@ public interface Actionpak1Package extends EPackage {
   int CUSTOM_INITIATOR__PRODUCT_ID = ActionStepPackage.PARAMETERIZED_INITIATOR__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_INITIATOR__PLATFORM_ID = ActionStepPackage.PARAMETERIZED_INITIATOR__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_INITIATOR__PLATFORM_DEPENDANT = ActionStepPackage.PARAMETERIZED_INITIATOR__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -292,6 +328,24 @@ public interface Actionpak1Package extends EPackage {
   int INCOMING_CALL2__PRODUCT_ID = ActionStepPackage.PARAMETERIZED_INITIATOR__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_CALL2__PLATFORM_ID = ActionStepPackage.PARAMETERIZED_INITIATOR__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_CALL2__PLATFORM_DEPENDANT = ActionStepPackage.PARAMETERIZED_INITIATOR__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -419,6 +473,24 @@ public interface Actionpak1Package extends EPackage {
   int INVOKE_SAFLET2__PRODUCT_ID = ActionStepPackage.PARAMETERIZED_ACTIONSTEP__PRODUCT_ID;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVOKE_SAFLET2__PLATFORM_ID = ActionStepPackage.PARAMETERIZED_ACTIONSTEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVOKE_SAFLET2__PLATFORM_DEPENDANT = ActionStepPackage.PARAMETERIZED_ACTIONSTEP__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Paused</b></em>' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -528,144 +600,6 @@ public interface Actionpak1Package extends EPackage {
 
 
   /**
-	 * The meta object id for the '{@link com.safi.workshop.model.actionpak1.impl.ManagerActionImpl <em>Manager Action</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see com.safi.workshop.model.actionpak1.impl.ManagerActionImpl
-	 * @see com.safi.workshop.model.actionpak1.impl.Actionpak1PackageImpl#getManagerAction()
-	 * @generated
-	 */
-	int MANAGER_ACTION = 4;
-
-		/**
-	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANAGER_ACTION__PRODUCT_ID = ActionStepPackage.PARAMETERIZED_ACTIONSTEP__PRODUCT_ID;
-
-		/**
-	 * The feature id for the '<em><b>Paused</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANAGER_ACTION__PAUSED = ActionStepPackage.PARAMETERIZED_ACTIONSTEP__PAUSED;
-
-		/**
-	 * The feature id for the '<em><b>Active</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANAGER_ACTION__ACTIVE = ActionStepPackage.PARAMETERIZED_ACTIONSTEP__ACTIVE;
-
-		/**
-	 * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANAGER_ACTION__OUTPUTS = ActionStepPackage.PARAMETERIZED_ACTIONSTEP__OUTPUTS;
-
-		/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANAGER_ACTION__NAME = ActionStepPackage.PARAMETERIZED_ACTIONSTEP__NAME;
-
-		/**
-	 * The feature id for the '<em><b>Saflet</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANAGER_ACTION__SAFLET = ActionStepPackage.PARAMETERIZED_ACTIONSTEP__SAFLET;
-
-		/**
-	 * The feature id for the '<em><b>Default Output</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANAGER_ACTION__DEFAULT_OUTPUT = ActionStepPackage.PARAMETERIZED_ACTIONSTEP__DEFAULT_OUTPUT;
-
-		/**
-	 * The feature id for the '<em><b>Error Output</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANAGER_ACTION__ERROR_OUTPUT = ActionStepPackage.PARAMETERIZED_ACTIONSTEP__ERROR_OUTPUT;
-
-		/**
-	 * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANAGER_ACTION__INPUTS = ActionStepPackage.PARAMETERIZED_ACTIONSTEP__INPUTS;
-
-		/**
-	 * The feature id for the '<em><b>Output Parameters</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANAGER_ACTION__OUTPUT_PARAMETERS = ActionStepPackage.PARAMETERIZED_ACTIONSTEP__OUTPUT_PARAMETERS;
-
-		/**
-	 * The feature id for the '<em><b>Manager Action Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANAGER_ACTION__MANAGER_ACTION_TYPE = ActionStepPackage.PARAMETERIZED_ACTIONSTEP_FEATURE_COUNT + 0;
-
-		/**
-	 * The feature id for the '<em><b>Manager Response</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANAGER_ACTION__MANAGER_RESPONSE = ActionStepPackage.PARAMETERIZED_ACTIONSTEP_FEATURE_COUNT + 1;
-
-		/**
-	 * The number of structural features of the '<em>Manager Action</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANAGER_ACTION_FEATURE_COUNT = ActionStepPackage.PARAMETERIZED_ACTIONSTEP_FEATURE_COUNT + 2;
-
-		/**
-	 * The meta object id for the '{@link com.safi.workshop.model.actionpak1.ManagerActionType <em>Manager Action Type</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see com.safi.workshop.model.actionpak1.ManagerActionType
-	 * @see com.safi.workshop.model.actionpak1.impl.Actionpak1PackageImpl#getManagerActionType()
-	 * @generated
-	 */
-	int MANAGER_ACTION_TYPE = 5;
-
-
-		/**
 	 * Returns the meta object for class '{@link com.safi.workshop.model.actionpak1.ActionstepTest <em>Actionstep Test</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -750,48 +684,6 @@ public interface Actionpak1Package extends EPackage {
   EAttribute getInvokeSaflet2_LabelText();
 
   /**
-	 * Returns the meta object for class '{@link com.safi.workshop.model.actionpak1.ManagerAction <em>Manager Action</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Manager Action</em>'.
-	 * @see com.safi.workshop.model.actionpak1.ManagerAction
-	 * @generated
-	 */
-	EClass getManagerAction();
-
-		/**
-	 * Returns the meta object for the attribute '{@link com.safi.workshop.model.actionpak1.ManagerAction#getManagerActionType <em>Manager Action Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Manager Action Type</em>'.
-	 * @see com.safi.workshop.model.actionpak1.ManagerAction#getManagerActionType()
-	 * @see #getManagerAction()
-	 * @generated
-	 */
-	EAttribute getManagerAction_ManagerActionType();
-
-		/**
-	 * Returns the meta object for the containment reference '{@link com.safi.workshop.model.actionpak1.ManagerAction#getManagerResponse <em>Manager Response</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Manager Response</em>'.
-	 * @see com.safi.workshop.model.actionpak1.ManagerAction#getManagerResponse()
-	 * @see #getManagerAction()
-	 * @generated
-	 */
-	EReference getManagerAction_ManagerResponse();
-
-		/**
-	 * Returns the meta object for enum '{@link com.safi.workshop.model.actionpak1.ManagerActionType <em>Manager Action Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Manager Action Type</em>'.
-	 * @see com.safi.workshop.model.actionpak1.ManagerActionType
-	 * @generated
-	 */
-	EEnum getManagerActionType();
-
-		/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -884,42 +776,6 @@ public interface Actionpak1Package extends EPackage {
 		 * @generated
 		 */
     EAttribute INVOKE_SAFLET2__LABEL_TEXT = eINSTANCE.getInvokeSaflet2_LabelText();
-
-				/**
-		 * The meta object literal for the '{@link com.safi.workshop.model.actionpak1.impl.ManagerActionImpl <em>Manager Action</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see com.safi.workshop.model.actionpak1.impl.ManagerActionImpl
-		 * @see com.safi.workshop.model.actionpak1.impl.Actionpak1PackageImpl#getManagerAction()
-		 * @generated
-		 */
-		EClass MANAGER_ACTION = eINSTANCE.getManagerAction();
-
-				/**
-		 * The meta object literal for the '<em><b>Manager Action Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MANAGER_ACTION__MANAGER_ACTION_TYPE = eINSTANCE.getManagerAction_ManagerActionType();
-
-				/**
-		 * The meta object literal for the '<em><b>Manager Response</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MANAGER_ACTION__MANAGER_RESPONSE = eINSTANCE.getManagerAction_ManagerResponse();
-
-				/**
-		 * The meta object literal for the '{@link com.safi.workshop.model.actionpak1.ManagerActionType <em>Manager Action Type</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see com.safi.workshop.model.actionpak1.ManagerActionType
-		 * @see com.safi.workshop.model.actionpak1.impl.Actionpak1PackageImpl#getManagerActionType()
-		 * @generated
-		 */
-		EEnum MANAGER_ACTION_TYPE = eINSTANCE.getManagerActionType();
 
   }
 

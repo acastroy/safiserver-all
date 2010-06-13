@@ -23,7 +23,7 @@ import com.safi.core.call.CallSource1;
  * </p>
  *
  * @see com.safi.workshop.model.actionpak1.Actionpak1Package#getIncomingCall2()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface IncomingCall2 extends ParameterizedInitiator, CallSource1 {

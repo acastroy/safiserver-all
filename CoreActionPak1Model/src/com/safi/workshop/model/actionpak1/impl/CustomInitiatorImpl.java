@@ -9,9 +9,9 @@ package com.safi.workshop.model.actionpak1.impl;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
+
 import org.eclipse.emf.ecore.EClass;
-import com.safi.asterisk.initiator.AsteriskInitiatorInfo;
-import com.safi.asterisk.util.AsteriskSafletConstants;
+
 import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.ActionStepFactory;
 import com.safi.core.actionstep.DynamicValue;
@@ -19,7 +19,6 @@ import com.safi.core.actionstep.InputItem;
 import com.safi.core.actionstep.Output;
 import com.safi.core.actionstep.OutputType;
 import com.safi.core.actionstep.impl.ParameterizedInitiatorImpl;
-import com.safi.db.util.VariableTranslator;
 import com.safi.core.initiator.InitiatorInfo;
 import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletConstants;
@@ -27,6 +26,7 @@ import com.safi.core.saflet.SafletContext;
 import com.safi.core.saflet.SafletEnvironment;
 import com.safi.db.Variable;
 import com.safi.db.VariableScope;
+import com.safi.db.util.VariableTranslator;
 import com.safi.workshop.model.actionpak1.Actionpak1Package;
 import com.safi.workshop.model.actionpak1.CustomInitiator;
 
@@ -38,7 +38,7 @@ import com.safi.workshop.model.actionpak1.CustomInitiator;
  *
  * @generated
  */
-public class CustomInitiatorImpl extends ParameterizedInitiatorImpl implements CustomInitiator {
+public abstract class CustomInitiatorImpl extends ParameterizedInitiatorImpl implements CustomInitiator {
   /**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
@@ -102,22 +102,22 @@ public class CustomInitiatorImpl extends ParameterizedInitiatorImpl implements C
 
   }
 
-  @Override
-  public void initialize(InitiatorInfo ictx) throws ActionStepException {
-    // TODO Auto-generated method stub
-    super.initialize(ictx);
-    if (ictx instanceof AsteriskInitiatorInfo) {
-      Saflet handler = getSaflet();
-      if (handler == null)
-        return;
-      SafletContext context = handler.getSafletContext();
-      context.setVariableRawValue(AsteriskSafletConstants.VAR_KEY_MANAGER_CONNECTION,
-          ((AsteriskInitiatorInfo) ictx).getManagerConnection());
-      
-      context.setVariableRawValue(AsteriskSafletConstants.VAR_KEY_ASTERISK_SERVER,
-          ((AsteriskInitiatorInfo) ictx).getAsteriskServer());
-    }
-  }
+//  @Override
+//  public void initialize(InitiatorInfo ictx) throws ActionStepException {
+//    // TODO Auto-generated method stub
+//    super.initialize(ictx);
+//    if (ictx instanceof AsteriskInitiatorInfo) {
+//      Saflet handler = getSaflet();
+//      if (handler == null)
+//        return;
+//      SafletContext context = handler.getSafletContext();
+//      context.setVariableRawValue(AsteriskSafletConstants.VAR_KEY_MANAGER_CONNECTION,
+//          ((AsteriskInitiatorInfo) ictx).getManagerConnection());
+//      
+//      context.setVariableRawValue(AsteriskSafletConstants.VAR_KEY_ASTERISK_SERVER,
+//          ((AsteriskInitiatorInfo) ictx).getAsteriskServer());
+//    }
+//  }
 
   //
   // @Override
