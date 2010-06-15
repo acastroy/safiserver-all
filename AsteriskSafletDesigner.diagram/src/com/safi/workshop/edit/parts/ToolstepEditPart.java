@@ -1,5 +1,8 @@
 package com.safi.workshop.edit.parts;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
@@ -40,6 +43,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.ui.internal.intro.impl.util.Log;
 
 import com.safi.asterisk.figures.DefaultToolstepFigure;
 import com.safi.asterisk.figures.ToolstepAnchor;
@@ -498,5 +502,19 @@ public abstract class ToolstepEditPart extends AbstractBorderedShapeEditPart {
 
   public HandlerEditPart getHandlerEditPart() {
     return (HandlerEditPart) getParent();
+  }
+  
+  public int getVisualId(){
+  	try {
+			Field f = getClass().getDeclaredField("VISUAL_ID");
+			int modifiers = f.getModifiers();
+			if (Modifier.isPublic(modifiers) && Modifier.isStatic(modifiers) && Modifier.isFinal(modifiers)){
+				return f.getInt(this);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			AsteriskDiagramEditorPlugin.getDefault().logError("Couldn't retrieve VISUAL_ID from "+this , e);
+		} 
+		return -1;
   }
 }

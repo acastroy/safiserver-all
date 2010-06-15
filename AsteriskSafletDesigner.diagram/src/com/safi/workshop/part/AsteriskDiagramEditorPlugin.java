@@ -56,20 +56,26 @@ import com.safi.workshop.application.DiagramEditorPerspective;
 import com.safi.workshop.application.DiagramEditorWorkbenchWindowAdvisor;
 import com.safi.workshop.application.SafiDBPerspective;
 import com.safi.workshop.edit.parts.HandlerEditPart;
+import com.safi.workshop.edit.policies.ActionPakCreateCommandFactory;
 import com.safi.workshop.edit.policies.ActionstepCreateCommandFactory;
 import com.safi.workshop.edit.policies.HandlerItemSemanticEditPolicy;
 import com.safi.workshop.providers.AsteriskElementTypes;
 import com.safi.workshop.providers.AsteriskModelingAssistantProvider;
 import com.safi.workshop.serverview.ServerViewEditorInput;
 import com.safi.workshop.serverview.editors.SafiServerPanel;
+import com.safi.workshop.sheet.ActionPakEditorDialogFactory;
 import com.safi.workshop.sheet.ActionstepEditorDialogFactory;
 import com.safi.workshop.sheet.ActionstepEditorDialogFactoryManager;
 import com.safi.workshop.sheet.DynamicValueEditorPage;
 import com.safi.workshop.sqlexplorer.plugin.SQLExplorerPlugin;
 import com.safi.workshop.view.factories.ActionPakEditPartFactory;
-import com.safi.workshop.view.factories.ActionPakViewFactory;
+import com.safi.workshop.view.factories.ActionPakElementFactory;
+import com.safi.workshop.view.factories.ActionPakModelFactory;
+import com.safi.workshop.view.factories.ActionPakViewFactoryFactory;
+import com.safi.workshop.view.factories.ActionstepEditPartFactory;
 import com.safi.workshop.view.factories.ActionstepElementFactory;
 import com.safi.workshop.view.factories.ActionstepModelFactory;
+import com.safi.workshop.view.factories.ActionstepViewFactoryFactory;
 
 import de.schlichtherle.io.ArchiveDetector;
 import de.schlichtherle.io.DefaultArchiveDetector;
@@ -96,8 +102,8 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 
 	static {
 		de.schlichtherle.io.File.setDefaultArchiveDetector(new DefaultArchiveDetector(
-		    ArchiveDetector.NULL, // delegate
-		    new String[] { "sar", "de.schlichtherle.io.archive.zip.JarDriver" }));
+				ArchiveDetector.NULL, // delegate
+				new String[] { "sar", "de.schlichtherle.io.archive.zip.JarDriver" }));
 	}
 	/**
 	 * @generated
@@ -112,7 +118,6 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 	private boolean debug;
 	private SafiDBPerspective safiDBPerspective;
 	private DiagramEditorPerspective safletPerspective;
-
 
 	private SafiServerStatusListener safiServerAuthListener;
 	// private List<ActionStepProfile> actionstepProfiles = new
@@ -143,8 +148,7 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 	@Override
 	public void start(final BundleContext context) throws Exception {
 		super.start(context);
-		PreferencesHint.registerPreferenceStore(DIAGRAM_PREFERENCES_HINT,
-		    getPreferenceStore());
+		PreferencesHint.registerPreferenceStore(DIAGRAM_PREFERENCES_HINT, getPreferenceStore());
 		// adapterFactory = createAdapterFactory();
 
 		// initDebugConsole();
@@ -179,6 +183,11 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 			}
 
 		};
+
+		if (SafiServerPlugin.getDefault() == null) {
+			SafiServerPlugin p = new SafiServerPlugin();
+			p.start(context);
+		}
 		SafiServerPlugin.getDefault().addAuthListener(safiServerAuthListener);
 
 		// SQLExplorerPlugin.getDefault().start(context);
@@ -223,8 +232,7 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 	public void loadActionPaks(IProgressMonitor monitor) {
 
 		IExtensionRegistry registry = Platform.getExtensionRegistry();
-		IExtensionPoint point = registry
-		    .getExtensionPoint("AsteriskSafletDesigner.diagram.actionPak");
+		IExtensionPoint point = registry.getExtensionPoint("AsteriskSafletDesigner.diagram.actionPak");
 		if (point == null) {
 			return;
 		}
@@ -235,21 +243,21 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 		monitor.subTask("Processing ActionPaks");
 		// load factories first
 		for (IExtension extension : extensions) {
-			
+
 			IConfigurationElement[] elements = extension.getConfigurationElements();
 
 			for (IConfigurationElement element : elements) {
 				if ("itemProviderAdapterFactory".equals(element.getName())) {
 					try {
 						ComposeableAdapterFactory factory = (ComposeableAdapterFactory) element
-						    .createExecutableExtension("factory");
+								.createExecutableExtension("factory");
 						// this.adapterFactory.addAdapterFactory(factory);
 						factories.add(factory);
 					} catch (Exception e) {
 						e.printStackTrace();
 						logError("Couldn't load adapter factory", e);
 					}
-				}
+				} 
 			}
 		}
 		fillItemProviderFactories(factories);
@@ -268,6 +276,40 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 			// extension.get
 
 			for (IConfigurationElement element : elements) {
+				 if ("actionPakFactory".equals(element.getName())) {
+					try {
+
+						ActionPakFactoryProfile profile = new ActionPakFactoryProfile();
+
+						ActionPakCreateCommandFactory createFactory = (ActionPakCreateCommandFactory) element
+								.createExecutableExtension("createCommandFactory");
+
+						ActionPakElementFactory elementFactory = (ActionPakElementFactory) element
+								.createExecutableExtension("elementFactory");
+
+						ActionPakModelFactory modelFactory = (ActionPakModelFactory) element
+								.createExecutableExtension("modelFactory");
+
+						ActionPakEditPartFactory editPartFactory = (ActionPakEditPartFactory) element
+								.createExecutableExtension("editPartFactory");
+
+						ActionPakViewFactoryFactory viewFactory = (ActionPakViewFactoryFactory) element
+								.createExecutableExtension("viewFactory");
+						profile.commandFactory = createFactory;
+						profile.elementFactory = elementFactory;
+						profile.modelFactory = modelFactory;
+						profile.editPartFactory = editPartFactory;
+						profile.viewFactory = viewFactory;
+						
+						pak.actionPakFactoryProfile=profile;
+					} catch (Exception e) {
+						e.printStackTrace();
+						logError("Couldn't load actionPakFactory", e);
+					}
+
+				}
+			}
+			for (IConfigurationElement element : elements) {
 
 				if ("pakjar".equals(element.getName())) {
 
@@ -281,7 +323,7 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 							apj.version = element.getAttribute("version");
 							apj.bundleSymbolicName = element.getAttribute("bundleSymbolicName");
 							pak.addActionPakJar(apj);
-							
+
 						} catch (Exception e) {
 							e.printStackTrace();
 							logError("Couldn't load ActionPak jar " + jar, e);
@@ -334,33 +376,63 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 						String semanticHint = element.getAttribute("semanticHint");
 						String labelSemanticHint = element.getAttribute("labelSemanticHint");
 						String inputItemSemanticHint = element.getAttribute("inputItemSemanticHint");
-						String inputItemLabelSemanticHint = element
-						    .getAttribute("inputItemLabelSemanticHint");
-						String inputItemPanelSemanticHint = element
-						    .getAttribute("inputItemPanelSemanticHint");
+						String inputItemLabelSemanticHint = element.getAttribute("inputItemLabelSemanticHint");
+						String inputItemPanelSemanticHint = element.getAttribute("inputItemPanelSemanticHint");
 
-						String outputItemSemanticHint = element
-						    .getAttribute("outputItemSemanticHint");
+						String outputItemSemanticHint = element.getAttribute("outputItemSemanticHint");
 						String outputItemLabelSemanticHint = element
-						    .getAttribute("outputItemLabelSemanticHint");
+								.getAttribute("outputItemLabelSemanticHint");
 						String outputItemPanelSemanticHint = element
-						    .getAttribute("outputItemPanelSemanticHint");
+								.getAttribute("outputItemPanelSemanticHint");
 
 						String isInitiator = element.getAttribute("isInitiator");
-						ActionstepCreateCommandFactory createFactory = (ActionstepCreateCommandFactory) element
-						    .createExecutableExtension("createCommandFactory");
+						
+						ActionstepCreateCommandFactory createFactory = null;
+						
+						if (StringUtils.isBlank(element.getAttribute("createCommandFactory"))){
+						  if (pak.actionPakFactoryProfile != null && pak.actionPakFactoryProfile.commandFactory != null)
+						  	createFactory = pak.actionPakFactoryProfile.commandFactory;
+						}
+						else
+							createFactory = (ActionstepCreateCommandFactory) element
+									.createExecutableExtension("createCommandFactory");
 
-						ActionstepElementFactory elementFactory = (ActionstepElementFactory) element
-						    .createExecutableExtension("elementFactory");
+						ActionstepElementFactory elementFactory = null;
+						if (StringUtils.isBlank(element.getAttribute("elementFactory"))){
+						  if (pak.actionPakFactoryProfile != null && pak.actionPakFactoryProfile.elementFactory != null)
+						  	elementFactory = pak.actionPakFactoryProfile.elementFactory;
+						}
+						else
+						  elementFactory = (ActionstepElementFactory) element
+								.createExecutableExtension("elementFactory");
 
-						ActionstepModelFactory modelFactory = (ActionstepModelFactory) element
-						    .createExecutableExtension("modelFactory");
+						ActionstepModelFactory modelFactory = null;
+						if (StringUtils.isBlank(element.getAttribute("modelFactory"))){
+						  if (pak.actionPakFactoryProfile != null && pak.actionPakFactoryProfile.modelFactory != null)
+						  	modelFactory = pak.actionPakFactoryProfile.modelFactory;
+						}
+						else						
+							modelFactory = (ActionstepModelFactory) element
+								.createExecutableExtension("modelFactory");
 
-						ActionPakEditPartFactory editPartFactory = (ActionPakEditPartFactory) element
-						    .createExecutableExtension("editPartFactory");
+						ActionstepEditPartFactory editPartFactory = null;
+						if (StringUtils.isBlank(element.getAttribute("editPartFactory"))){
+						  if (pak.actionPakFactoryProfile != null && pak.actionPakFactoryProfile.editPartFactory != null)
+						  	editPartFactory = pak.actionPakFactoryProfile.editPartFactory;
+						}
+						else						
+						 editPartFactory = (ActionstepEditPartFactory) element
+								.createExecutableExtension("editPartFactory");
 
-						ActionPakViewFactory viewFactory = (ActionPakViewFactory) element
-						    .createExecutableExtension("viewFactory");
+						ActionstepViewFactoryFactory viewFactory = null;
+						if (StringUtils.isBlank(element.getAttribute("viewFactory"))){
+						  if (pak.actionPakFactoryProfile != null && pak.actionPakFactoryProfile.viewFactory != null)
+						  	viewFactory = pak.actionPakFactoryProfile.viewFactory;
+						}
+						else						
+						  viewFactory = (ActionstepViewFactoryFactory) element
+								.createExecutableExtension("viewFactory");
+						
 						profile.semanticHint = semanticHint;
 						profile.commandFactory = createFactory;
 						profile.elementFactory = elementFactory;
@@ -387,22 +459,20 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 						pak.addActionStep(profile);
 						// actionstepProfiles.add(profile);
 						IElementType elementType = elementFactory.getElementType(Integer
-						    .parseInt(profile.semanticHint));
+								.parseInt(profile.semanticHint));
 						// IElementType labelElementType =
 						// elementFactory.getElementType(Integer.parseInt(profile.semanticHint));
-						EClass modelEClass = modelFactory.getModel(
-						    Integer.parseInt(profile.semanticHint)).eClass();
+						EClass modelEClass = modelFactory.getModel(Integer.parseInt(profile.semanticHint))
+								.eClass();
 						AsteriskVisualIDRegistry.registerVisualId(modelEClass, Integer
-						    .parseInt(((IHintedType) elementType).getSemanticHint()));
+								.parseInt(((IHintedType) elementType).getSemanticHint()));
 
 						if (!AsteriskElementTypes.isKnownElementType(elementType)) {
 							AsteriskElementTypes.getKnownElementTypes().add(elementType);
 						}
-						if (!AsteriskModelingAssistantProvider.getToolstepTypes().contains(
-						    elementType))
+						if (!AsteriskModelingAssistantProvider.getToolstepTypes().contains(elementType))
 							AsteriskModelingAssistantProvider.getToolstepTypes().add(elementType);
-						HandlerItemSemanticEditPolicy.registerCreateCommandFactory(elementType,
-						    createFactory);
+						HandlerItemSemanticEditPolicy.registerCreateCommandFactory(elementType, createFactory);
 						ENamedElement elem = AsteriskElementTypes.getElement(elementType);
 						if (elem == null) {
 							AsteriskElementTypes.getElements().put(elementType, modelEClass);
@@ -410,54 +480,52 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 
 						if (StringUtils.isNotBlank(inputItemSemanticHint)) {
 							elementType = elementFactory.getElementType(Integer
-							    .parseInt(profile.inputItemSemanticHint));
+									.parseInt(profile.inputItemSemanticHint));
 							// IElementType labelElementType =
 							// elementFactory.getElementType(Integer.parseInt(profile.semanticHint));
-							modelEClass = modelFactory.getModel(
-							    Integer.parseInt(profile.inputItemSemanticHint)).eClass();
+							modelEClass = modelFactory.getModel(Integer.parseInt(profile.inputItemSemanticHint))
+									.eClass();
 							AsteriskVisualIDRegistry.registerVisualId(modelEClass, Integer
-							    .parseInt(((IHintedType) elementType).getSemanticHint()));
+									.parseInt(((IHintedType) elementType).getSemanticHint()));
 
 							if (!AsteriskElementTypes.isKnownElementType(elementType)) {
 								AsteriskElementTypes.getKnownElementTypes().add(elementType);
 							}
-							if (!AsteriskModelingAssistantProvider.getToolstepTypes().contains(
-							    elementType))
+							if (!AsteriskModelingAssistantProvider.getToolstepTypes().contains(elementType))
 								AsteriskModelingAssistantProvider.getToolstepTypes().add(elementType);
-							HandlerItemSemanticEditPolicy.registerCreateCommandFactory(elementType,
-							    createFactory);
+							HandlerItemSemanticEditPolicy
+									.registerCreateCommandFactory(elementType, createFactory);
 							elem = AsteriskElementTypes.getElement(elementType);
 							if (elem == null) {
 								AsteriskElementTypes.getElements().put(elementType, modelEClass);
 							}
-							AsteriskModelingAssistantProvider.registerPopupbarType(modelFactory
-							    .getModel(Integer.parseInt(semanticHint)).eClass(), elementType);
+							AsteriskModelingAssistantProvider.registerPopupbarType(modelFactory.getModel(
+									Integer.parseInt(semanticHint)).eClass(), elementType);
 						}
 
 						if (StringUtils.isNotBlank(outputItemSemanticHint)) {
 							elementType = elementFactory.getElementType(Integer
-							    .parseInt(profile.outputItemSemanticHint));
+									.parseInt(profile.outputItemSemanticHint));
 							// IElementType labelElementType =
 							// elementFactory.getElementType(Integer.parseInt(profile.semanticHint));
-							modelEClass = modelFactory.getModel(
-							    Integer.parseInt(profile.outputItemSemanticHint)).eClass();
+							modelEClass = modelFactory.getModel(Integer.parseInt(profile.outputItemSemanticHint))
+									.eClass();
 							AsteriskVisualIDRegistry.registerVisualId(modelEClass, Integer
-							    .parseInt(((IHintedType) elementType).getSemanticHint()));
+									.parseInt(((IHintedType) elementType).getSemanticHint()));
 
 							if (!AsteriskElementTypes.isKnownElementType(elementType)) {
 								AsteriskElementTypes.getKnownElementTypes().add(elementType);
 							}
-							if (!AsteriskModelingAssistantProvider.getToolstepTypes().contains(
-							    elementType))
+							if (!AsteriskModelingAssistantProvider.getToolstepTypes().contains(elementType))
 								AsteriskModelingAssistantProvider.getToolstepTypes().add(elementType);
-							HandlerItemSemanticEditPolicy.registerCreateCommandFactory(elementType,
-							    createFactory);
+							HandlerItemSemanticEditPolicy
+									.registerCreateCommandFactory(elementType, createFactory);
 							elem = AsteriskElementTypes.getElement(elementType);
 							if (elem == null) {
 								AsteriskElementTypes.getElements().put(elementType, modelEClass);
 							}
-							AsteriskModelingAssistantProvider.registerPopupbarType(modelFactory
-							    .getModel(Integer.parseInt(semanticHint)).eClass(), elementType);
+							AsteriskModelingAssistantProvider.registerPopupbarType(modelFactory.getModel(
+									Integer.parseInt(semanticHint)).eClass(), elementType);
 						}
 						System.err.println("I have executed my plan...now i will bask");
 					} catch (Exception e) {
@@ -469,14 +537,22 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 				} else if ("actionstepEditorDialogFactory".equals(element.getName())) {
 					try {
 						ActionstepEditorDialogFactory factory = (ActionstepEditorDialogFactory) element
-						    .createExecutableExtension("factory");
+								.createExecutableExtension("factory");
 
-						String classname = element.getAttribute("actionstepClass");
-						// Class<ActionStep> toolstepClass =
-						// (Class<ActionStep>)Class.forName(classname);
-						// this.adapterFactory.addAdapterFactory(factory);
-						ActionstepEditorDialogFactoryManager.getInstance()
-						    .registerActionstepEditorDialogFactory(classname, factory);
+						if (factory instanceof ActionPakEditorDialogFactory) {
+							ActionPakEditorDialogFactory ape = (ActionPakEditorDialogFactory) factory;
+							for (String classname : ape.getSupportedActionstepEditPartNames()) {
+								ActionstepEditorDialogFactoryManager.getInstance()
+										.registerActionstepEditorDialogFactory(classname, factory);
+							}
+						} else {
+							String classname = element.getAttribute("actionstepClass");
+							// Class<ActionStep> toolstepClass =
+							// (Class<ActionStep>)Class.forName(classname);
+							// this.adapterFactory.addAdapterFactory(factory);
+							ActionstepEditorDialogFactoryManager.getInstance()
+									.registerActionstepEditorDialogFactory(classname, factory);
+						}
 					} catch (Exception e) {
 						e.printStackTrace();
 						logError("Couldn't load ActionstepEditorDialogFactory", e);
@@ -668,21 +744,15 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 	@SuppressWarnings("unchecked")
 	protected void fillItemProviderFactories(List factories) {
 		factories.add(new com.safi.core.provider.CoreItemProviderAdapterFactory());
-		factories
-		    .add(new com.safi.core.actionstep.provider.ActionStepItemProviderAdapterFactory());
-		factories
-		    .add(new com.safi.core.scripting.provider.ScriptingItemProviderAdapterFactory());
+		factories.add(new com.safi.core.actionstep.provider.ActionStepItemProviderAdapterFactory());
+		factories.add(new com.safi.core.scripting.provider.ScriptingItemProviderAdapterFactory());
 		factories.add(new com.safi.core.saflet.provider.SafletItemProviderAdapterFactory());
-		factories
-		    .add(new com.safi.core.initiator.provider.InitiatorItemProviderAdapterFactory());
+		factories.add(new com.safi.core.initiator.provider.InitiatorItemProviderAdapterFactory());
 
 		factories.add(new com.safi.asterisk.provider.AsteriskItemProviderAdapterFactory());
-		factories
-		    .add(new com.safi.asterisk.actionstep.provider.ActionstepItemProviderAdapterFactory());
-		factories
-		    .add(new com.safi.asterisk.initiator.provider.InitiatorItemProviderAdapterFactory());
-		factories
-		    .add(new com.safi.asterisk.saflet.provider.SafletItemProviderAdapterFactory());
+		factories.add(new com.safi.asterisk.actionstep.provider.ActionstepItemProviderAdapterFactory());
+		factories.add(new com.safi.asterisk.initiator.provider.InitiatorItemProviderAdapterFactory());
+		factories.add(new com.safi.asterisk.saflet.provider.SafletItemProviderAdapterFactory());
 
 		factories.add(new DbItemProviderAdapterFactory());
 		factories.add(new ResourceItemProviderAdapterFactory());
@@ -701,17 +771,16 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 	 */
 	public ImageDescriptor getItemImageDescriptor(Object item) {
 		IItemLabelProvider labelProvider = (IItemLabelProvider) adapterFactory.adapt(item,
-		    IItemLabelProvider.class);
+				IItemLabelProvider.class);
 		if (labelProvider != null) {
-			return ExtendedImageRegistry.getInstance().getImageDescriptor(
-			    labelProvider.getImage(item));
+			return ExtendedImageRegistry.getInstance().getImageDescriptor(labelProvider.getImage(item));
 		}
 		return null;
 	}
 
 	public Image getItemImage(Object item) {
 		IItemLabelProvider labelProvider = (IItemLabelProvider) adapterFactory.adapt(item,
-		    IItemLabelProvider.class);
+				IItemLabelProvider.class);
 		if (labelProvider != null) {
 			return ExtendedImageRegistry.getInstance().getImage(labelProvider.getImage(item));
 		}
@@ -720,7 +789,7 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 
 	public String getItemLabelText(Object item) {
 		IItemLabelProvider labelProvider = (IItemLabelProvider) adapterFactory.adapt(item,
-		    IItemLabelProvider.class);
+				IItemLabelProvider.class);
 		if (labelProvider != null) {
 			return labelProvider.getText(item);
 		}
@@ -754,8 +823,8 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 	public static ImageDescriptor findImageDescriptor(String path) {
 		final IPath p = new Path(path);
 		if (p.isAbsolute() && p.segmentCount() > 1) {
-			return AbstractUIPlugin.imageDescriptorFromPlugin(p.segment(0), p
-			    .removeFirstSegments(1).makeAbsolute().toString());
+			return AbstractUIPlugin.imageDescriptorFromPlugin(p.segment(0), p.removeFirstSegments(1)
+					.makeAbsolute().toString());
 		} else {
 			return getBundledImageDescriptor(p.makeAbsolute().toString());
 		}
@@ -814,8 +883,7 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 			error = throwable.getMessage();
 		}
 		getLog().log(
-		    new Status(IStatus.ERROR, AsteriskDiagramEditorPlugin.ID, IStatus.OK, error,
-		        throwable));
+				new Status(IStatus.ERROR, AsteriskDiagramEditorPlugin.ID, IStatus.OK, error, throwable));
 		debug(error, throwable);
 	}
 
@@ -834,8 +902,7 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 			message = throwable.getMessage();
 		}
 		getLog().log(
-		    new Status(IStatus.INFO, AsteriskDiagramEditorPlugin.ID, IStatus.OK, message,
-		        throwable));
+				new Status(IStatus.INFO, AsteriskDiagramEditorPlugin.ID, IStatus.OK, message, throwable));
 		debug(message, throwable);
 	}
 
@@ -847,9 +914,10 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 		if (message == null && throwable != null) {
 			message = throwable.getMessage();
 		}
-		getLog().log(
-		    new Status(IStatus.WARNING, AsteriskDiagramEditorPlugin.ID, IStatus.OK, message,
-		        throwable));
+		getLog()
+				.log(
+						new Status(IStatus.WARNING, AsteriskDiagramEditorPlugin.ID, IStatus.OK, message,
+								throwable));
 		debug(message, throwable);
 	}
 
@@ -917,7 +985,7 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 	}
 
 	public void setWindowAdvisor(
-	    DiagramEditorWorkbenchWindowAdvisor diagramEditorWorkbenchWindowAdvisor) {
+			DiagramEditorWorkbenchWindowAdvisor diagramEditorWorkbenchWindowAdvisor) {
 		this.windowAdvisor = diagramEditorWorkbenchWindowAdvisor;
 		updateWindowTitle();
 	}
@@ -928,14 +996,11 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 			d.asyncExec(new Runnable() {
 				@Override
 				public void run() {
-					windowAdvisor
-					    .getWindowConfigurer()
-					    .setTitle(
-					        SafiServerPlugin.getDefault().getCurrentUser() == null
-					            || !SafiServerPlugin.getDefault().isConnected() ? "SafiWorkshop - Not Connected"
-					            : "SafiWorkshop - User "
-					                + SafiServerPlugin.getDefault().getCurrentUser().getName()
-					                + " connected");
+					windowAdvisor.getWindowConfigurer().setTitle(
+							SafiServerPlugin.getDefault().getCurrentUser() == null
+									|| !SafiServerPlugin.getDefault().isConnected() ? "SafiWorkshop - Not Connected"
+									: "SafiWorkshop - User "
+											+ SafiServerPlugin.getDefault().getCurrentUser().getName() + " connected");
 
 				}
 			});
@@ -975,8 +1040,7 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 
 							if (connected) {
 								try {
-									final SafiServer safiServer = SafiServerPlugin.getDefault()
-									    .getSafiServer(true);
+									final SafiServer safiServer = SafiServerPlugin.getDefault().getSafiServer(true);
 									if (safiServer == null) {
 										logError("Unable to open SafiServer View: couldn't find SafiServer");
 										for (IEditorReference ref : page.getEditorReferences()) {
@@ -994,7 +1058,7 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 									SafiServerPanel serverPanel = (SafiServerPanel) page.findEditor(input);
 									if (serverPanel == null) {
 										IEditorPart ep = page.openEditor(input,
-										    "com.safi.workshop.serverview.editors.SafiServerPanel");
+												"com.safi.workshop.serverview.editors.SafiServerPanel");
 										if (ep instanceof SafiServerPanel) {
 											serverPanel = (SafiServerPanel) ep;
 										} else {
@@ -1079,6 +1143,7 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 	public static class ActionPak {
 		public String name;
 		public String description;
+		public ActionPakFactoryProfile actionPakFactoryProfile;
 		public List<ActionStepProfile> actionSteps;
 		public List<ActionPakJar> actionPakJars;
 		public List<SafiServerJar> serverJars;
@@ -1108,7 +1173,7 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 
 	public static class ActionStepProfile {
 		public ActionPak actionPak;
-		public ActionPakViewFactory viewFactory;
+		public ActionstepViewFactoryFactory viewFactory;
 		public String inputItemLabelSemanticHint;
 		public String inputItemSemanticHint;
 		public String inputItemPanelSemanticHint;
@@ -1118,7 +1183,7 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 		public ActionstepCreateCommandFactory commandFactory;
 		public ActionstepElementFactory elementFactory;
 		public ActionstepModelFactory modelFactory;
-		public ActionPakEditPartFactory editPartFactory;
+		public ActionstepEditPartFactory editPartFactory;
 		public String palettePath;
 		public String displayName;
 		public String tooltip;
@@ -1126,6 +1191,15 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 		public String labelSemanticHint;
 
 		public boolean isInitiator;
+	}
+
+	public static class ActionPakFactoryProfile {
+		public ActionPak actionPak;
+		public ActionPakViewFactoryFactory viewFactory;
+		public ActionPakCreateCommandFactory commandFactory;
+		public ActionPakElementFactory elementFactory;
+		public ActionPakModelFactory modelFactory;
+		public ActionPakEditPartFactory editPartFactory;
 	}
 
 	public static class Jar {
@@ -1137,7 +1211,7 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 
 	public static class SafiServerJar extends Jar {
 		public String description;
-		
+
 	}
 
 	public static class ActionPakJar extends Jar {

@@ -19,7 +19,15 @@ import com.safi.workshop.part.AsteriskVisualIDRegistry;
 
 public class ActionstepViewFactory extends AbstractShapeViewFactory {
 
-  int visualID = -1;
+  private int visualID = -1;
+  private int labelID = -1;
+  private List<Integer> auxSubViews;
+  
+  public ActionstepViewFactory(int visualID, int labelID, List<Integer> auxSubViews){
+  	this.visualID = visualID;
+  	this.labelID = labelID;
+  	this.auxSubViews = auxSubViews;
+  }
 
   @Override
   protected List createStyles(View view) {
@@ -52,20 +60,32 @@ public class ActionstepViewFactory extends AbstractShapeViewFactory {
     if (semanticHint == null)
       semanticHint = String.valueOf(visualID);
     String labelSemanticHint = null;
-    for (AsteriskDiagramEditorPlugin.ActionStepProfile p : AsteriskDiagramEditorPlugin
-        .getInstance().getActionstepProfiles()) {
-
-      if (p.semanticHint.equals(semanticHint)) {
-        labelSemanticHint = p.labelSemanticHint;
-        break;
-      }
+    if (labelID == -1) {
+	    for (AsteriskDiagramEditorPlugin.ActionStepProfile p : AsteriskDiagramEditorPlugin
+	        .getInstance().getActionstepProfiles()) {
+	
+	      if (p.semanticHint.equals(semanticHint)) {
+	        labelSemanticHint = p.labelSemanticHint;
+	        break;
+	      }
+	    }
     }
+    else
+    	labelSemanticHint = String.valueOf(labelID);
     if (labelSemanticHint != null) {
       getViewService().createNode(eObjectAdapter, view, labelSemanticHint, ViewUtil.APPEND, true,
           getPreferencesHint());
     } else
       AsteriskDiagramEditorPlugin.getInstance().logError(
           "Couldn't find label hint for custom Actionstep " + semanticHint);
+    
+    if (auxSubViews != null && !auxSubViews.isEmpty()) {
+    	for (Integer id : auxSubViews){
+    		getViewService().createNode(eObjectAdapter, view,
+            AsteriskVisualIDRegistry.getType(id), ViewUtil.APPEND,
+            true, getPreferencesHint());
+    	}
+    }
   }
 
   public int getVisualID() {

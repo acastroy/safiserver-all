@@ -35,8 +35,8 @@ import org.hibernate.Session;
 import com.safi.db.DBConnection;
 import com.safi.db.DBResource;
 import com.safi.db.Query;
-import com.safi.db.server.config.AsteriskServer;
-import com.safi.db.server.config.FreeSwitchServer;
+import com.safi.db.astdb.AsteriskServer;
+import com.safi.db.fsdb.FreeSwitchServer;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.ServerResource;
 import com.safi.server.plugin.SafiServerPlugin;
@@ -252,7 +252,7 @@ public class DeleteAction extends AbstractConnectionTreeAction {
               } else
                 checkedTelEntit = true;
             }
-            if (!production.getAsteriskServers().remove(r)) {
+            if (!production.getTelephonySubsystems().remove(r)) {
               MessageDialog.openInformation(Display.getCurrent().getActiveShell(), "Can't Delete",
                   "An error has occurred. The Asterisk server instance could not be deleted");
               continue;
@@ -268,7 +268,7 @@ public class DeleteAction extends AbstractConnectionTreeAction {
               } else
                 checkedTelEntit = true;
             }
-            if (!production.getFreeSwitchServers().remove(r)) {
+            if (!production.getTelephonySubsystems().remove(r)) {
               MessageDialog.openInformation(Display.getCurrent().getActiveShell(), "Can't Delete",
                   "An error has occurred. The FreeSWITCH server instance could not be deleted");
               continue;

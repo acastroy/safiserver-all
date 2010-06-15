@@ -115,9 +115,46 @@ import com.safi.core.actionstep.SetColValue;
 import com.safi.core.actionstep.SetColValues;
 import com.safi.core.actionstep.SetQueryParam;
 import com.safi.core.actionstep.UpdatetRow;
-import com.safi.core.initiator.Initiator;
 import com.safi.core.saflet.Saflet;
-import com.safi.workshop.edit.parts.*;
+import com.safi.workshop.edit.parts.AssignmentEditPart;
+import com.safi.workshop.edit.parts.AudioFileItemEditPart;
+import com.safi.workshop.edit.parts.CaseItemEditPart;
+import com.safi.workshop.edit.parts.CaseItemTargetToolstepEditPart;
+import com.safi.workshop.edit.parts.ChoiceEditPart;
+import com.safi.workshop.edit.parts.ChoiceItemPanelEditPart;
+import com.safi.workshop.edit.parts.CloseDBConnectionEditPart;
+import com.safi.workshop.edit.parts.DebugLogEditPart;
+import com.safi.workshop.edit.parts.DeleteRowEditPart;
+import com.safi.workshop.edit.parts.ExecuteQueryEditPart;
+import com.safi.workshop.edit.parts.ExecuteScriptEditPart;
+import com.safi.workshop.edit.parts.ExecuteUpdateEditPart;
+import com.safi.workshop.edit.parts.GetColMappingEditPart;
+import com.safi.workshop.edit.parts.GetColValueEditPart;
+import com.safi.workshop.edit.parts.GetColValuesEditPart;
+import com.safi.workshop.edit.parts.GetColValuesValuesPanelEditPart;
+import com.safi.workshop.edit.parts.HandlerEditPart;
+import com.safi.workshop.edit.parts.IfThenEditPart;
+import com.safi.workshop.edit.parts.InsertRowEditPart;
+import com.safi.workshop.edit.parts.InvokeSafletEditPart;
+import com.safi.workshop.edit.parts.MoveToFirstRowEditPart;
+import com.safi.workshop.edit.parts.MoveToInsertRowEditPart;
+import com.safi.workshop.edit.parts.MoveToLastRowEditPart;
+import com.safi.workshop.edit.parts.MoveToRowEditPart;
+import com.safi.workshop.edit.parts.NextRowEditPart;
+import com.safi.workshop.edit.parts.OpenDBConnectionEditPart;
+import com.safi.workshop.edit.parts.OpenQueryEditPart;
+import com.safi.workshop.edit.parts.OutputEditPart;
+import com.safi.workshop.edit.parts.OutputTargetEditPart;
+import com.safi.workshop.edit.parts.PreviousRowEditPart;
+import com.safi.workshop.edit.parts.QueryParamMappingEditPart;
+import com.safi.workshop.edit.parts.RunQueryEditPart;
+import com.safi.workshop.edit.parts.RunQueryRunQueryValuesPanelEditPart;
+import com.safi.workshop.edit.parts.SetColMappingEditPart;
+import com.safi.workshop.edit.parts.SetColValueEditPart;
+import com.safi.workshop.edit.parts.SetColValuesEditPart;
+import com.safi.workshop.edit.parts.SetColValuesValuesPanelEditPart;
+import com.safi.workshop.edit.parts.SetQueryParamEditPart;
+import com.safi.workshop.edit.parts.UpdatetRowEditPart;
 import com.safi.workshop.providers.AsteriskElementTypes;
 
 /**
@@ -131,154 +168,16 @@ public class AsteriskDiagramUpdater {
   public static List getSemanticChildren(View view) {
     int visualID = AsteriskVisualIDRegistry.getVisualID(view);
     switch (visualID) {
-      case AnswerEditPart.VISUAL_ID:
-        return getAnswer_1001SemanticChildren(view);
       case AssignmentEditPart.VISUAL_ID:
         return getAssignment_1002SemanticChildren(view);
       case ChoiceEditPart.VISUAL_ID:
         return getChoice_1003SemanticChildren(view);
-      case GetFullVariableEditPart.VISUAL_ID:
-        return getGetFullVariable_1004SemanticChildren(view);
-      case MultiStreamAudioEditPart.VISUAL_ID:
-        return getMultiStreamAudio_1005SemanticChildren(view);
-      case HangupEditPart.VISUAL_ID:
-        return getHangup_1006SemanticChildren(view);
       case IfThenEditPart.VISUAL_ID:
         return getIfThen_1007SemanticChildren(view);
-      case RecordFileEditPart.VISUAL_ID:
-        return getRecordFile_1008SemanticChildren(view);
-      case SayAlphaEditPart.VISUAL_ID:
-        return getSayAlpha_1009SemanticChildren(view);
-      case SayDateTimeEditPart.VISUAL_ID:
-        return getSayDateTime_1010SemanticChildren(view);
-      case SayDigitsEditPart.VISUAL_ID:
-        return getSayDigits_1011SemanticChildren(view);
-      case SayNumberEditPart.VISUAL_ID:
-        return getSayNumber_1012SemanticChildren(view);
-      case SayPhoneticEditPart.VISUAL_ID:
-        return getSayPhonetic_1013SemanticChildren(view);
-      case SayTimeEditPart.VISUAL_ID:
-        return getSayTime_1014SemanticChildren(view);
-      case SetAutoHangupEditPart.VISUAL_ID:
-        return getSetAutoHangup_1015SemanticChildren(view);
-      case SetCallerIdEditPart.VISUAL_ID:
-        return getSetCallerId_1016SemanticChildren(view);
-      case SetChannelVariableEditPart.VISUAL_ID:
-        return getSetChannelVariable_1017SemanticChildren(view);
-      case SetContextEditPart.VISUAL_ID:
-        return getSetContext_1018SemanticChildren(view);
-      case SetExtensionEditPart.VISUAL_ID:
-        return getSetExtension_1019SemanticChildren(view);
-      case StopMusicOnHoldEditPart.VISUAL_ID:
-        return getStopMusicOnHold_1020SemanticChildren(view);
-      case SetMusicOnEditPart.VISUAL_ID:
-        return getSetMusicOn_1021SemanticChildren(view);
-      case SetPriorityEditPart.VISUAL_ID:
-        return getSetPriority_1022SemanticChildren(view);
-      case StreamAudioEditPart.VISUAL_ID:
-        return getStreamAudio_1023SemanticChildren(view);
-      case WaitForDigitEditPart.VISUAL_ID:
-        return getWaitForDigit_1024SemanticChildren(view);
-      case GetDigitsEditPart.VISUAL_ID:
-        return getGetDigits_1026SemanticChildren(view);
-      case OriginateCallEditPart.VISUAL_ID:
-        return getOriginateCall_1027SemanticChildren(view);
-      case PlayDTMFEditPart.VISUAL_ID:
-        return getPlayDTMF_1028SemanticChildren(view);
-      case RecordCallEditPart.VISUAL_ID:
-        return getRecordCall_1029SemanticChildren(view);
-      case ExecuteApplicationEditPart.VISUAL_ID:
-        return getExecuteApplication_1030SemanticChildren(view);
-      case PlayMusicOnHoldEditPart.VISUAL_ID:
-        return getPlayMusicOnHold_1031SemanticChildren(view);
-      case PromptGetDigitsEditPart.VISUAL_ID:
-        return getPromptGetDigits_1032SemanticChildren(view);
-      case SleepEditPart.VISUAL_ID:
-        return getSleep_1033SemanticChildren(view);
-      case StreamAudioExtendedEditPart.VISUAL_ID:
-        return getStreamAudioExtended_1034SemanticChildren(view);
-      case GetCallInfoEditPart.VISUAL_ID:
-        return getGetCallInfo_1036SemanticChildren(view);
       case ExecuteScriptEditPart.VISUAL_ID:
         return getExecuteScript_1037SemanticChildren(view);
       case InvokeSafletEditPart.VISUAL_ID:
         return getInvokeSaflet_1038SemanticChildren(view);
-      case DialEditPart.VISUAL_ID:
-        return getDial_1039SemanticChildren(view);
-      case PickupEditPart.VISUAL_ID:
-        return getPickup_1040SemanticChildren(view);
-      case BackgroundEditPart.VISUAL_ID:
-        return getBackground_1041SemanticChildren(view);
-      case BackgroundDetectEditPart.VISUAL_ID:
-        return getBackgroundDetect_1042SemanticChildren(view);
-      case WaitExtenEditPart.VISUAL_ID:
-        return getWaitExten_1043SemanticChildren(view);
-      case SoftHangupEditPart.VISUAL_ID:
-        return getSoftHangup_1044SemanticChildren(view);
-      case PickupChanEditPart.VISUAL_ID:
-        return getPickupChan_1045SemanticChildren(view);
-      case PickdownEditPart.VISUAL_ID:
-        return getPickdown_1046SemanticChildren(view);
-      case ProgressEditPart.VISUAL_ID:
-        return getProgress_1047SemanticChildren(view);
-      case BridgeEditPart.VISUAL_ID:
-        return getBridge_1048SemanticChildren(view);
-      case PlaceCallEditPart.VISUAL_ID:
-        return getPlaceCall_1049SemanticChildren(view);
-      case VoicemailEditPart.VISUAL_ID:
-        return getVoicemail_1050SemanticChildren(view);
-      case VoicemailMainEditPart.VISUAL_ID:
-        return getVoicemailMain_1051SemanticChildren(view);
-      case VMAuthenticateEditPart.VISUAL_ID:
-        return getVMAuthenticate_1052SemanticChildren(view);
-      case MeetMeEditPart.VISUAL_ID:
-        return getMeetMe_1053SemanticChildren(view);
-      case MeetMeAdminEditPart.VISUAL_ID:
-        return getMeetMeAdmin_1054SemanticChildren(view);
-      case MeetMeCountEditPart.VISUAL_ID:
-        return getMeetMeCount_1055SemanticChildren(view);
-      case DebugLogEditPart.VISUAL_ID:
-        return getDebugLog_1056SemanticChildren(view);
-      case WaitForRingEditPart.VISUAL_ID:
-        return getWaitForRing_1057SemanticChildren(view);
-      case WaitMusicOnHoldEditPart.VISUAL_ID:
-        return getWaitMusicOnHold_1058SemanticChildren(view);
-      case GetAvailableChannelEditPart.VISUAL_ID:
-        return getGetAvailableChannel_1059SemanticChildren(view);
-      case CongestionEditPart.VISUAL_ID:
-        return getCongestion_1060SemanticChildren(view);
-      case RingingEditPart.VISUAL_ID:
-        return getRinging_1061SemanticChildren(view);
-      case SetCallerPresentationEditPart.VISUAL_ID:
-        return getSetCallerPresentation_1062SemanticChildren(view);
-      case SetGlobalVariableEditPart.VISUAL_ID:
-        return getSetGlobalVariable_1063SemanticChildren(view);
-      case EchoEditPart.VISUAL_ID:
-        return getEcho_1064SemanticChildren(view);
-      case FestivalEditPart.VISUAL_ID:
-        return getFestival_1065SemanticChildren(view);
-      case PlaytonesEditPart.VISUAL_ID:
-        return getPlaytones_1066SemanticChildren(view);
-      case StopPlaytonesEditPart.VISUAL_ID:
-        return getStopPlaytones_1067SemanticChildren(view);
-      case ChanSpyEditPart.VISUAL_ID:
-        return getChanSpy_1068SemanticChildren(view);
-      case DictateEditPart.VISUAL_ID:
-        return getDictate_1069SemanticChildren(view);
-      case ExtensionSpyEditPart.VISUAL_ID:
-        return getExtensionSpy_1070SemanticChildren(view);
-      case MixMonitorEditPart.VISUAL_ID:
-        return getMixMonitor_1071SemanticChildren(view);
-      case StopMixmonitorEditPart.VISUAL_ID:
-        return getStopMixmonitor_1072SemanticChildren(view);
-      case StopMonitorEditPart.VISUAL_ID:
-        return getStopMonitor_1073SemanticChildren(view);
-      case MonitorEditPart.VISUAL_ID:
-        return getMonitor_1074SemanticChildren(view);
-      case DirectoryEditPart.VISUAL_ID:
-        return getDirectory_1075SemanticChildren(view);
-      case TransferEditPart.VISUAL_ID:
-        return getTransfer_1076SemanticChildren(view);
       case OpenDBConnectionEditPart.VISUAL_ID:
         return getOpenDBConnection_1077SemanticChildren(view);
       case CloseDBConnectionEditPart.VISUAL_ID:
@@ -317,14 +216,10 @@ public class AsteriskDiagramUpdater {
         return getGetColValues_1094SemanticChildren(view);
       case SetColValuesEditPart.VISUAL_ID:
         return getSetColValues_1095SemanticChildren(view);
-      case ExtensionTransferEditPart.VISUAL_ID:
-        return getExtensionTransfer_1096SemanticChildren(view);
       case RunQueryEditPart.VISUAL_ID:
         return getRunQuery_1097SemanticChildren(view);
       case ChoiceItemPanelEditPart.VISUAL_ID:
         return getChoiceItemPanel_5001SemanticChildren(view);
-      case MultiStreamAudioFilesPanelEditPart.VISUAL_ID:
-        return getMultiStreamAudioFilesPanel_5002SemanticChildren(view);
       case GetColValuesValuesPanelEditPart.VISUAL_ID:
         return getGetColValuesValuesPanel_5003SemanticChildren(view);
       case SetColValuesValuesPanelEditPart.VISUAL_ID:
@@ -363,25 +258,7 @@ public class AsteriskDiagramUpdater {
     return result;
   }
 
-  /**
-   * @generated
-   */
-  public static List getAnswer_1001SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    Answer modelElement = (Answer) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
+  
 
   /**
    * @generated
@@ -423,45 +300,8 @@ public class AsteriskDiagramUpdater {
     return result;
   }
 
-  /**
-   * @generated
-   */
-  public static List getGetFullVariable_1004SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    GetFullVariable modelElement = (GetFullVariable) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getMultiStreamAudio_1005SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    MultiStreamAudio modelElement = (MultiStreamAudio) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
+  
+ 
 
   /**
    * @generated
@@ -491,546 +331,6 @@ public class AsteriskDiagramUpdater {
       return Collections.EMPTY_LIST;
     }
     IfThen modelElement = (IfThen) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getRecordFile_1008SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    com.safi.asterisk.actionstep.RecordFile modelElement = (RecordFile) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSayAlpha_1009SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    SayAlpha modelElement = (SayAlpha) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSayDateTime_1010SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    SayDateTime modelElement = (SayDateTime) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSayDigits_1011SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    SayDigits modelElement = (SayDigits) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSayNumber_1012SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    SayNumber modelElement = (SayNumber) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSayPhonetic_1013SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    SayPhonetic modelElement = (SayPhonetic) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSayTime_1014SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    SayTime modelElement = (SayTime) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSetAutoHangup_1015SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    SetAutoHangup modelElement = (SetAutoHangup) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSetCallerId_1016SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    SetCallerId modelElement = (SetCallerId) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSetChannelVariable_1017SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    SetChannelVariable modelElement = (SetChannelVariable) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSetContext_1018SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    SetContext modelElement = (SetContext) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSetExtension_1019SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    SetExtension modelElement = (SetExtension) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getStopMusicOnHold_1020SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    StopMusicOnHold modelElement = (StopMusicOnHold) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSetMusicOn_1021SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    SetMusicOn modelElement = (SetMusicOn) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSetPriority_1022SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    SetPriority modelElement = (SetPriority) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getStreamAudio_1023SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    StreamAudio modelElement = (StreamAudio) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getWaitForDigit_1024SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    WaitForDigit modelElement = (WaitForDigit) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getGetDigits_1026SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    GetDigits modelElement = (GetDigits) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getOriginateCall_1027SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    OriginateCall modelElement = (OriginateCall) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getPlayDTMF_1028SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    PlayDTMF modelElement = (PlayDTMF) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getRecordCall_1029SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    RecordCall modelElement = (RecordCall) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getExecuteApplication_1030SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    ExecuteApplication modelElement = (ExecuteApplication) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getPlayMusicOnHold_1031SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    PlayMusicOnHold modelElement = (PlayMusicOnHold) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getPromptGetDigits_1032SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    PromptGetDigits modelElement = (PromptGetDigits) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSleep_1033SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    Sleep modelElement = (Sleep) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getStreamAudioExtended_1034SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    StreamAudioExtended modelElement = (StreamAudioExtended) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getGetCallInfo_1036SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    GetCallInfo modelElement = (GetCallInfo) view.getElement();
     List result = new LinkedList();
     for (Object element : modelElement.getOutputs()) {
       Output childElement = (Output) element;
@@ -1086,346 +386,6 @@ public class AsteriskDiagramUpdater {
   /**
    * @generated
    */
-  public static List getDial_1039SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    Dial modelElement = (Dial) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getPickup_1040SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    Pickup modelElement = (Pickup) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getBackground_1041SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    Background modelElement = (Background) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getBackgroundDetect_1042SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    BackgroundDetect modelElement = (BackgroundDetect) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getWaitExten_1043SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    WaitExten modelElement = (WaitExten) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSoftHangup_1044SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    SoftHangup modelElement = (SoftHangup) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getPickupChan_1045SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    PickupChan modelElement = (PickupChan) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getPickdown_1046SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    Pickdown modelElement = (Pickdown) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getProgress_1047SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    Progress modelElement = (Progress) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getBridge_1048SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    Bridge modelElement = (Bridge) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getPlaceCall_1049SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    PlaceCall modelElement = (PlaceCall) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getVoicemail_1050SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    Voicemail modelElement = (Voicemail) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getVoicemailMain_1051SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    VoicemailMain modelElement = (VoicemailMain) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getVMAuthenticate_1052SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    VMAuthenticate modelElement = (VMAuthenticate) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getMeetMe_1053SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    MeetMe modelElement = (MeetMe) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getMeetMeAdmin_1054SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    MeetMeAdmin modelElement = (MeetMeAdmin) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getMeetMeCount_1055SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    MeetMeCount modelElement = (MeetMeCount) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
   public static List getDebugLog_1056SemanticChildren(View view) {
     if (!view.isSetElement()) {
       return Collections.EMPTY_LIST;
@@ -1446,391 +406,11 @@ public class AsteriskDiagramUpdater {
   /**
    * @generated
    */
-  public static List getWaitForRing_1057SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    WaitForRing modelElement = (WaitForRing) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getWaitMusicOnHold_1058SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    WaitMusicOnHold modelElement = (WaitMusicOnHold) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getGetAvailableChannel_1059SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    GetAvailableChannel modelElement = (GetAvailableChannel) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getCongestion_1060SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    Congestion modelElement = (Congestion) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getRinging_1061SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    Ringing modelElement = (Ringing) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSetCallerPresentation_1062SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    SetCallerPresentation modelElement = (SetCallerPresentation) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
   public static List getSetGlobalVariable_1063SemanticChildren(View view) {
     if (!view.isSetElement()) {
       return Collections.EMPTY_LIST;
     }
     SetGlobalVariable modelElement = (SetGlobalVariable) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getEcho_1064SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    Echo modelElement = (Echo) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getFestival_1065SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    Festival modelElement = (Festival) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getPlaytones_1066SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    Playtones modelElement = (Playtones) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getStopPlaytones_1067SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    StopPlaytones modelElement = (StopPlaytones) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getChanSpy_1068SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    ChanSpy modelElement = (ChanSpy) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getDictate_1069SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    Dictate modelElement = (Dictate) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getExtensionSpy_1070SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    ExtensionSpy modelElement = (ExtensionSpy) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getMixMonitor_1071SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    MixMonitor modelElement = (MixMonitor) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getStopMixmonitor_1072SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    StopMixmonitor modelElement = (StopMixmonitor) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getStopMonitor_1073SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    StopMonitor modelElement = (StopMonitor) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getMonitor_1074SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    Monitor modelElement = (Monitor) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getDirectory_1075SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    Directory modelElement = (Directory) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getTransfer_1076SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    Transfer modelElement = (Transfer) view.getElement();
     List result = new LinkedList();
     for (Object element : modelElement.getOutputs()) {
       Output childElement = (Output) element;
@@ -2223,25 +803,6 @@ public class AsteriskDiagramUpdater {
     return result;
   }
 
-  /**
-   * @generated
-   */
-  public static List getExtensionTransfer_1096SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    ExtensionTransfer modelElement = (ExtensionTransfer) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
 
   /**
    * @generated
@@ -2395,10 +956,7 @@ public class AsteriskDiagramUpdater {
     for (Object element : modelElement.getActionsteps()) {
       ActionStep childElement = (ActionStep) element;
       int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == AnswerEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
+      
       if (visualID == AssignmentEditPart.VISUAL_ID) {
         result.add(new AsteriskNodeDescriptor(childElement, visualID));
         continue;
@@ -2407,130 +965,12 @@ public class AsteriskDiagramUpdater {
         result.add(new AsteriskNodeDescriptor(childElement, visualID));
         continue;
       }
-      if (visualID == GetFullVariableEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == MultiStreamAudioEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == HangupEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
+     
       if (visualID == IfThenEditPart.VISUAL_ID) {
         result.add(new AsteriskNodeDescriptor(childElement, visualID));
         continue;
       }
-      if (visualID == RecordFileEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == SayAlphaEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == SayDateTimeEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == SayDigitsEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == SayNumberEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == SayPhoneticEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == SayTimeEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == SetAutoHangupEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == SetCallerIdEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == SetChannelVariableEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == SetContextEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == SetExtensionEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == StopMusicOnHoldEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == SetMusicOnEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == SetPriorityEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == StreamAudioEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == WaitForDigitEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == GetDigitsEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == OriginateCallEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == PlayDTMFEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == RecordCallEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == ExecuteApplicationEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == PlayMusicOnHoldEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == PromptGetDigitsEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == SleepEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == StreamAudioExtendedEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == GetCallInfoEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
+      
       if (visualID == ExecuteScriptEditPart.VISUAL_ID) {
         result.add(new AsteriskNodeDescriptor(childElement, visualID));
         continue;
@@ -2539,158 +979,11 @@ public class AsteriskDiagramUpdater {
         result.add(new AsteriskNodeDescriptor(childElement, visualID));
         continue;
       }
-      if (visualID == DialEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == PickupEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == BackgroundEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == BackgroundDetectEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == WaitExtenEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == SoftHangupEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == PickupChanEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == PickdownEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == ProgressEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == BridgeEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == PlaceCallEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == VoicemailEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == VoicemailMainEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == VMAuthenticateEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == MeetMeEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == MeetMeAdminEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == MeetMeCountEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
       if (visualID == DebugLogEditPart.VISUAL_ID) {
         result.add(new AsteriskNodeDescriptor(childElement, visualID));
         continue;
       }
-      if (visualID == WaitForRingEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == WaitMusicOnHoldEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == GetAvailableChannelEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == CongestionEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == RingingEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == SetCallerPresentationEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == SetGlobalVariableEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == EchoEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == FestivalEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == PlaytonesEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == StopPlaytonesEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == ChanSpyEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == DictateEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == ExtensionSpyEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == MixMonitorEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == StopMixmonitorEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == StopMonitorEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == MonitorEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == DirectoryEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-      if (visualID == TransferEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
+
       if (visualID == OpenDBConnectionEditPart.VISUAL_ID) {
         result.add(new AsteriskNodeDescriptor(childElement, visualID));
         continue;
@@ -2767,10 +1060,7 @@ public class AsteriskDiagramUpdater {
         result.add(new AsteriskNodeDescriptor(childElement, visualID));
         continue;
       }
-      if (visualID == ExtensionTransferEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
+     
       if (visualID == RunQueryEditPart.VISUAL_ID) {
         result.add(new AsteriskNodeDescriptor(childElement, visualID));
         continue;
@@ -2783,16 +1073,16 @@ public class AsteriskDiagramUpdater {
         }
       }
     }
-    {
-      Initiator childElement = modelElement.getInitiator();
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == DIDMatcherEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-      }
-      if (visualID == IncomingCallEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-      }
-    }
+//    {
+//      Initiator childElement = modelElement.getInitiator();
+//      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
+//      if (visualID == DIDMatcherEditPart.VISUAL_ID) {
+//        result.add(new AsteriskNodeDescriptor(childElement, visualID));
+//      }
+//      if (visualID == IncomingCallEditPart.VISUAL_ID) {
+//        result.add(new AsteriskNodeDescriptor(childElement, visualID));
+//      }
+//    }
     return result;
   }
 
@@ -2804,158 +1094,17 @@ public class AsteriskDiagramUpdater {
     switch (visualID) {
       case HandlerEditPart.VISUAL_ID:
         return getHandler_79ContainedLinks(view);
-      case AnswerEditPart.VISUAL_ID:
-        return getAnswer_1001ContainedLinks(view);
-      case AssignmentEditPart.VISUAL_ID:
-        return getAssignment_1002ContainedLinks(view);
       case ChoiceEditPart.VISUAL_ID:
         return getChoice_1003ContainedLinks(view);
-      case GetFullVariableEditPart.VISUAL_ID:
-        return getGetFullVariable_1004ContainedLinks(view);
-      case MultiStreamAudioEditPart.VISUAL_ID:
-        return getMultiStreamAudio_1005ContainedLinks(view);
-      case HangupEditPart.VISUAL_ID:
-        return getHangup_1006ContainedLinks(view);
       case IfThenEditPart.VISUAL_ID:
         return getIfThen_1007ContainedLinks(view);
-      case RecordFileEditPart.VISUAL_ID:
-        return getRecordFile_1008ContainedLinks(view);
-      case SayAlphaEditPart.VISUAL_ID:
-        return getSayAlpha_1009ContainedLinks(view);
-      case SayDateTimeEditPart.VISUAL_ID:
-        return getSayDateTime_1010ContainedLinks(view);
-      case SayDigitsEditPart.VISUAL_ID:
-        return getSayDigits_1011ContainedLinks(view);
-      case SayNumberEditPart.VISUAL_ID:
-        return getSayNumber_1012ContainedLinks(view);
-      case SayPhoneticEditPart.VISUAL_ID:
-        return getSayPhonetic_1013ContainedLinks(view);
-      case SayTimeEditPart.VISUAL_ID:
-        return getSayTime_1014ContainedLinks(view);
-      case SetAutoHangupEditPart.VISUAL_ID:
-        return getSetAutoHangup_1015ContainedLinks(view);
-      case SetCallerIdEditPart.VISUAL_ID:
-        return getSetCallerId_1016ContainedLinks(view);
-      case SetChannelVariableEditPart.VISUAL_ID:
-        return getSetChannelVariable_1017ContainedLinks(view);
-      case SetContextEditPart.VISUAL_ID:
-        return getSetContext_1018ContainedLinks(view);
-      case SetExtensionEditPart.VISUAL_ID:
-        return getSetExtension_1019ContainedLinks(view);
-      case StopMusicOnHoldEditPart.VISUAL_ID:
-        return getStopMusicOnHold_1020ContainedLinks(view);
-      case SetMusicOnEditPart.VISUAL_ID:
-        return getSetMusicOn_1021ContainedLinks(view);
-      case SetPriorityEditPart.VISUAL_ID:
-        return getSetPriority_1022ContainedLinks(view);
-      case StreamAudioEditPart.VISUAL_ID:
-        return getStreamAudio_1023ContainedLinks(view);
-      case WaitForDigitEditPart.VISUAL_ID:
-        return getWaitForDigit_1024ContainedLinks(view);
-      case DIDMatcherEditPart.VISUAL_ID:
-        return getDIDMatcher_1025ContainedLinks(view);
-      case GetDigitsEditPart.VISUAL_ID:
-        return getGetDigits_1026ContainedLinks(view);
-      case OriginateCallEditPart.VISUAL_ID:
-        return getOriginateCall_1027ContainedLinks(view);
-      case PlayDTMFEditPart.VISUAL_ID:
-        return getPlayDTMF_1028ContainedLinks(view);
-      case RecordCallEditPart.VISUAL_ID:
-        return getRecordCall_1029ContainedLinks(view);
-      case ExecuteApplicationEditPart.VISUAL_ID:
-        return getExecuteApplication_1030ContainedLinks(view);
-      case PlayMusicOnHoldEditPart.VISUAL_ID:
-        return getPlayMusicOnHold_1031ContainedLinks(view);
-      case PromptGetDigitsEditPart.VISUAL_ID:
-        return getPromptGetDigits_1032ContainedLinks(view);
-      case SleepEditPart.VISUAL_ID:
-        return getSleep_1033ContainedLinks(view);
-      case StreamAudioExtendedEditPart.VISUAL_ID:
-        return getStreamAudioExtended_1034ContainedLinks(view);
-      case IncomingCallEditPart.VISUAL_ID:
-        return getIncomingCall_1035ContainedLinks(view);
-      case GetCallInfoEditPart.VISUAL_ID:
-        return getGetCallInfo_1036ContainedLinks(view);
       case ExecuteScriptEditPart.VISUAL_ID:
         return getExecuteScript_1037ContainedLinks(view);
       case InvokeSafletEditPart.VISUAL_ID:
         return getInvokeSaflet_1038ContainedLinks(view);
-      case DialEditPart.VISUAL_ID:
-        return getDial_1039ContainedLinks(view);
-      case PickupEditPart.VISUAL_ID:
-        return getPickup_1040ContainedLinks(view);
-      case BackgroundEditPart.VISUAL_ID:
-        return getBackground_1041ContainedLinks(view);
-      case BackgroundDetectEditPart.VISUAL_ID:
-        return getBackgroundDetect_1042ContainedLinks(view);
-      case WaitExtenEditPart.VISUAL_ID:
-        return getWaitExten_1043ContainedLinks(view);
-      case SoftHangupEditPart.VISUAL_ID:
-        return getSoftHangup_1044ContainedLinks(view);
-      case PickupChanEditPart.VISUAL_ID:
-        return getPickupChan_1045ContainedLinks(view);
-      case PickdownEditPart.VISUAL_ID:
-        return getPickdown_1046ContainedLinks(view);
-      case ProgressEditPart.VISUAL_ID:
-        return getProgress_1047ContainedLinks(view);
-      case BridgeEditPart.VISUAL_ID:
-        return getBridge_1048ContainedLinks(view);
-      case PlaceCallEditPart.VISUAL_ID:
-        return getPlaceCall_1049ContainedLinks(view);
-      case VoicemailEditPart.VISUAL_ID:
-        return getVoicemail_1050ContainedLinks(view);
-      case VoicemailMainEditPart.VISUAL_ID:
-        return getVoicemailMain_1051ContainedLinks(view);
-      case VMAuthenticateEditPart.VISUAL_ID:
-        return getVMAuthenticate_1052ContainedLinks(view);
-      case MeetMeEditPart.VISUAL_ID:
-        return getMeetMe_1053ContainedLinks(view);
-      case MeetMeAdminEditPart.VISUAL_ID:
-        return getMeetMeAdmin_1054ContainedLinks(view);
-      case MeetMeCountEditPart.VISUAL_ID:
-        return getMeetMeCount_1055ContainedLinks(view);
       case DebugLogEditPart.VISUAL_ID:
         return getDebugLog_1056ContainedLinks(view);
-      case WaitForRingEditPart.VISUAL_ID:
-        return getWaitForRing_1057ContainedLinks(view);
-      case WaitMusicOnHoldEditPart.VISUAL_ID:
-        return getWaitMusicOnHold_1058ContainedLinks(view);
-      case GetAvailableChannelEditPart.VISUAL_ID:
-        return getGetAvailableChannel_1059ContainedLinks(view);
-      case CongestionEditPart.VISUAL_ID:
-        return getCongestion_1060ContainedLinks(view);
-      case RingingEditPart.VISUAL_ID:
-        return getRinging_1061ContainedLinks(view);
-      case SetCallerPresentationEditPart.VISUAL_ID:
-        return getSetCallerPresentation_1062ContainedLinks(view);
-      case SetGlobalVariableEditPart.VISUAL_ID:
-        return getSetGlobalVariable_1063ContainedLinks(view);
-      case EchoEditPart.VISUAL_ID:
-        return getEcho_1064ContainedLinks(view);
-      case FestivalEditPart.VISUAL_ID:
-        return getFestival_1065ContainedLinks(view);
-      case PlaytonesEditPart.VISUAL_ID:
-        return getPlaytones_1066ContainedLinks(view);
-      case StopPlaytonesEditPart.VISUAL_ID:
-        return getStopPlaytones_1067ContainedLinks(view);
-      case ChanSpyEditPart.VISUAL_ID:
-        return getChanSpy_1068ContainedLinks(view);
-      case DictateEditPart.VISUAL_ID:
-        return getDictate_1069ContainedLinks(view);
-      case ExtensionSpyEditPart.VISUAL_ID:
-        return getExtensionSpy_1070ContainedLinks(view);
-      case MixMonitorEditPart.VISUAL_ID:
-        return getMixMonitor_1071ContainedLinks(view);
-      case StopMixmonitorEditPart.VISUAL_ID:
-        return getStopMixmonitor_1072ContainedLinks(view);
-      case StopMonitorEditPart.VISUAL_ID:
-        return getStopMonitor_1073ContainedLinks(view);
-      case MonitorEditPart.VISUAL_ID:
-        return getMonitor_1074ContainedLinks(view);
-      case DirectoryEditPart.VISUAL_ID:
-        return getDirectory_1075ContainedLinks(view);
-      case TransferEditPart.VISUAL_ID:
-        return getTransfer_1076ContainedLinks(view);
+
       case OpenDBConnectionEditPart.VISUAL_ID:
         return getOpenDBConnection_1077ContainedLinks(view);
       case CloseDBConnectionEditPart.VISUAL_ID:
@@ -2994,8 +1143,6 @@ public class AsteriskDiagramUpdater {
         return getGetColValues_1094ContainedLinks(view);
       case SetColValuesEditPart.VISUAL_ID:
         return getSetColValues_1095ContainedLinks(view);
-      case ExtensionTransferEditPart.VISUAL_ID:
-        return getExtensionTransfer_1096ContainedLinks(view);
       case RunQueryEditPart.VISUAL_ID:
         return getRunQuery_1097ContainedLinks(view);
       case OutputEditPart.VISUAL_ID:
@@ -3029,158 +1176,18 @@ public class AsteriskDiagramUpdater {
   public static List getIncomingLinks(View view) {
     int visualID = AsteriskVisualIDRegistry.getVisualID(view);
     switch (visualID) {
-      case AnswerEditPart.VISUAL_ID:
-        return getAnswer_1001IncomingLinks(view);
       case AssignmentEditPart.VISUAL_ID:
         return getAssignment_1002IncomingLinks(view);
       case ChoiceEditPart.VISUAL_ID:
         return getChoice_1003IncomingLinks(view);
-      case GetFullVariableEditPart.VISUAL_ID:
-        return getGetFullVariable_1004IncomingLinks(view);
-      case MultiStreamAudioEditPart.VISUAL_ID:
-        return getMultiStreamAudio_1005IncomingLinks(view);
-      case HangupEditPart.VISUAL_ID:
-        return getHangup_1006IncomingLinks(view);
-      case IfThenEditPart.VISUAL_ID:
+       case IfThenEditPart.VISUAL_ID:
         return getIfThen_1007IncomingLinks(view);
-      case RecordFileEditPart.VISUAL_ID:
-        return getRecordFile_1008IncomingLinks(view);
-      case SayAlphaEditPart.VISUAL_ID:
-        return getSayAlpha_1009IncomingLinks(view);
-      case SayDateTimeEditPart.VISUAL_ID:
-        return getSayDateTime_1010IncomingLinks(view);
-      case SayDigitsEditPart.VISUAL_ID:
-        return getSayDigits_1011IncomingLinks(view);
-      case SayNumberEditPart.VISUAL_ID:
-        return getSayNumber_1012IncomingLinks(view);
-      case SayPhoneticEditPart.VISUAL_ID:
-        return getSayPhonetic_1013IncomingLinks(view);
-      case SayTimeEditPart.VISUAL_ID:
-        return getSayTime_1014IncomingLinks(view);
-      case SetAutoHangupEditPart.VISUAL_ID:
-        return getSetAutoHangup_1015IncomingLinks(view);
-      case SetCallerIdEditPart.VISUAL_ID:
-        return getSetCallerId_1016IncomingLinks(view);
-      case SetChannelVariableEditPart.VISUAL_ID:
-        return getSetChannelVariable_1017IncomingLinks(view);
-      case SetContextEditPart.VISUAL_ID:
-        return getSetContext_1018IncomingLinks(view);
-      case SetExtensionEditPart.VISUAL_ID:
-        return getSetExtension_1019IncomingLinks(view);
-      case StopMusicOnHoldEditPart.VISUAL_ID:
-        return getStopMusicOnHold_1020IncomingLinks(view);
-      case SetMusicOnEditPart.VISUAL_ID:
-        return getSetMusicOn_1021IncomingLinks(view);
-      case SetPriorityEditPart.VISUAL_ID:
-        return getSetPriority_1022IncomingLinks(view);
-      case StreamAudioEditPart.VISUAL_ID:
-        return getStreamAudio_1023IncomingLinks(view);
-      case WaitForDigitEditPart.VISUAL_ID:
-        return getWaitForDigit_1024IncomingLinks(view);
-      case DIDMatcherEditPart.VISUAL_ID:
-        return getDIDMatcher_1025IncomingLinks(view);
-      case GetDigitsEditPart.VISUAL_ID:
-        return getGetDigits_1026IncomingLinks(view);
-      case OriginateCallEditPart.VISUAL_ID:
-        return getOriginateCall_1027IncomingLinks(view);
-      case PlayDTMFEditPart.VISUAL_ID:
-        return getPlayDTMF_1028IncomingLinks(view);
-      case RecordCallEditPart.VISUAL_ID:
-        return getRecordCall_1029IncomingLinks(view);
-      case ExecuteApplicationEditPart.VISUAL_ID:
-        return getExecuteApplication_1030IncomingLinks(view);
-      case PlayMusicOnHoldEditPart.VISUAL_ID:
-        return getPlayMusicOnHold_1031IncomingLinks(view);
-      case PromptGetDigitsEditPart.VISUAL_ID:
-        return getPromptGetDigits_1032IncomingLinks(view);
-      case SleepEditPart.VISUAL_ID:
-        return getSleep_1033IncomingLinks(view);
-      case StreamAudioExtendedEditPart.VISUAL_ID:
-        return getStreamAudioExtended_1034IncomingLinks(view);
-      case IncomingCallEditPart.VISUAL_ID:
-        return getIncomingCall_1035IncomingLinks(view);
-      case GetCallInfoEditPart.VISUAL_ID:
-        return getGetCallInfo_1036IncomingLinks(view);
       case ExecuteScriptEditPart.VISUAL_ID:
         return getExecuteScript_1037IncomingLinks(view);
       case InvokeSafletEditPart.VISUAL_ID:
         return getInvokeSaflet_1038IncomingLinks(view);
-      case DialEditPart.VISUAL_ID:
-        return getDial_1039IncomingLinks(view);
-      case PickupEditPart.VISUAL_ID:
-        return getPickup_1040IncomingLinks(view);
-      case BackgroundEditPart.VISUAL_ID:
-        return getBackground_1041IncomingLinks(view);
-      case BackgroundDetectEditPart.VISUAL_ID:
-        return getBackgroundDetect_1042IncomingLinks(view);
-      case WaitExtenEditPart.VISUAL_ID:
-        return getWaitExten_1043IncomingLinks(view);
-      case SoftHangupEditPart.VISUAL_ID:
-        return getSoftHangup_1044IncomingLinks(view);
-      case PickupChanEditPart.VISUAL_ID:
-        return getPickupChan_1045IncomingLinks(view);
-      case PickdownEditPart.VISUAL_ID:
-        return getPickdown_1046IncomingLinks(view);
-      case ProgressEditPart.VISUAL_ID:
-        return getProgress_1047IncomingLinks(view);
-      case BridgeEditPart.VISUAL_ID:
-        return getBridge_1048IncomingLinks(view);
-      case PlaceCallEditPart.VISUAL_ID:
-        return getPlaceCall_1049IncomingLinks(view);
-      case VoicemailEditPart.VISUAL_ID:
-        return getVoicemail_1050IncomingLinks(view);
-      case VoicemailMainEditPart.VISUAL_ID:
-        return getVoicemailMain_1051IncomingLinks(view);
-      case VMAuthenticateEditPart.VISUAL_ID:
-        return getVMAuthenticate_1052IncomingLinks(view);
-      case MeetMeEditPart.VISUAL_ID:
-        return getMeetMe_1053IncomingLinks(view);
-      case MeetMeAdminEditPart.VISUAL_ID:
-        return getMeetMeAdmin_1054IncomingLinks(view);
-      case MeetMeCountEditPart.VISUAL_ID:
-        return getMeetMeCount_1055IncomingLinks(view);
       case DebugLogEditPart.VISUAL_ID:
         return getDebugLog_1056IncomingLinks(view);
-      case WaitForRingEditPart.VISUAL_ID:
-        return getWaitForRing_1057IncomingLinks(view);
-      case WaitMusicOnHoldEditPart.VISUAL_ID:
-        return getWaitMusicOnHold_1058IncomingLinks(view);
-      case GetAvailableChannelEditPart.VISUAL_ID:
-        return getGetAvailableChannel_1059IncomingLinks(view);
-      case CongestionEditPart.VISUAL_ID:
-        return getCongestion_1060IncomingLinks(view);
-      case RingingEditPart.VISUAL_ID:
-        return getRinging_1061IncomingLinks(view);
-      case SetCallerPresentationEditPart.VISUAL_ID:
-        return getSetCallerPresentation_1062IncomingLinks(view);
-      case SetGlobalVariableEditPart.VISUAL_ID:
-        return getSetGlobalVariable_1063IncomingLinks(view);
-      case EchoEditPart.VISUAL_ID:
-        return getEcho_1064IncomingLinks(view);
-      case FestivalEditPart.VISUAL_ID:
-        return getFestival_1065IncomingLinks(view);
-      case PlaytonesEditPart.VISUAL_ID:
-        return getPlaytones_1066IncomingLinks(view);
-      case StopPlaytonesEditPart.VISUAL_ID:
-        return getStopPlaytones_1067IncomingLinks(view);
-      case ChanSpyEditPart.VISUAL_ID:
-        return getChanSpy_1068IncomingLinks(view);
-      case DictateEditPart.VISUAL_ID:
-        return getDictate_1069IncomingLinks(view);
-      case ExtensionSpyEditPart.VISUAL_ID:
-        return getExtensionSpy_1070IncomingLinks(view);
-      case MixMonitorEditPart.VISUAL_ID:
-        return getMixMonitor_1071IncomingLinks(view);
-      case StopMixmonitorEditPart.VISUAL_ID:
-        return getStopMixmonitor_1072IncomingLinks(view);
-      case StopMonitorEditPart.VISUAL_ID:
-        return getStopMonitor_1073IncomingLinks(view);
-      case MonitorEditPart.VISUAL_ID:
-        return getMonitor_1074IncomingLinks(view);
-      case DirectoryEditPart.VISUAL_ID:
-        return getDirectory_1075IncomingLinks(view);
-      case TransferEditPart.VISUAL_ID:
-        return getTransfer_1076IncomingLinks(view);
       case OpenDBConnectionEditPart.VISUAL_ID:
         return getOpenDBConnection_1077IncomingLinks(view);
       case CloseDBConnectionEditPart.VISUAL_ID:
@@ -3219,8 +1226,6 @@ public class AsteriskDiagramUpdater {
         return getGetColValues_1094IncomingLinks(view);
       case SetColValuesEditPart.VISUAL_ID:
         return getSetColValues_1095IncomingLinks(view);
-      case ExtensionTransferEditPart.VISUAL_ID:
-        return getExtensionTransfer_1096IncomingLinks(view);
       case RunQueryEditPart.VISUAL_ID:
         return getRunQuery_1097IncomingLinks(view);
       case OutputEditPart.VISUAL_ID:
@@ -3268,158 +1273,18 @@ public class AsteriskDiagramUpdater {
   public static List getOutgoingLinks(View view) {
     int visualID = AsteriskVisualIDRegistry.getVisualID(view);
     switch (visualID) {
-      case AnswerEditPart.VISUAL_ID:
-        return getAnswer_1001OutgoingLinks(view);
       case AssignmentEditPart.VISUAL_ID:
         return getAssignment_1002OutgoingLinks(view);
       case ChoiceEditPart.VISUAL_ID:
         return getChoice_1003OutgoingLinks(view);
-      case GetFullVariableEditPart.VISUAL_ID:
-        return getGetFullVariable_1004OutgoingLinks(view);
-      case MultiStreamAudioEditPart.VISUAL_ID:
-        return getMultiStreamAudio_1005OutgoingLinks(view);
-      case HangupEditPart.VISUAL_ID:
-        return getHangup_1006OutgoingLinks(view);
       case IfThenEditPart.VISUAL_ID:
         return getIfThen_1007OutgoingLinks(view);
-      case RecordFileEditPart.VISUAL_ID:
-        return getRecordFile_1008OutgoingLinks(view);
-      case SayAlphaEditPart.VISUAL_ID:
-        return getSayAlpha_1009OutgoingLinks(view);
-      case SayDateTimeEditPart.VISUAL_ID:
-        return getSayDateTime_1010OutgoingLinks(view);
-      case SayDigitsEditPart.VISUAL_ID:
-        return getSayDigits_1011OutgoingLinks(view);
-      case SayNumberEditPart.VISUAL_ID:
-        return getSayNumber_1012OutgoingLinks(view);
-      case SayPhoneticEditPart.VISUAL_ID:
-        return getSayPhonetic_1013OutgoingLinks(view);
-      case SayTimeEditPart.VISUAL_ID:
-        return getSayTime_1014OutgoingLinks(view);
-      case SetAutoHangupEditPart.VISUAL_ID:
-        return getSetAutoHangup_1015OutgoingLinks(view);
-      case SetCallerIdEditPart.VISUAL_ID:
-        return getSetCallerId_1016OutgoingLinks(view);
-      case SetChannelVariableEditPart.VISUAL_ID:
-        return getSetChannelVariable_1017OutgoingLinks(view);
-      case SetContextEditPart.VISUAL_ID:
-        return getSetContext_1018OutgoingLinks(view);
-      case SetExtensionEditPart.VISUAL_ID:
-        return getSetExtension_1019OutgoingLinks(view);
-      case StopMusicOnHoldEditPart.VISUAL_ID:
-        return getStopMusicOnHold_1020OutgoingLinks(view);
-      case SetMusicOnEditPart.VISUAL_ID:
-        return getSetMusicOn_1021OutgoingLinks(view);
-      case SetPriorityEditPart.VISUAL_ID:
-        return getSetPriority_1022OutgoingLinks(view);
-      case StreamAudioEditPart.VISUAL_ID:
-        return getStreamAudio_1023OutgoingLinks(view);
-      case WaitForDigitEditPart.VISUAL_ID:
-        return getWaitForDigit_1024OutgoingLinks(view);
-      case DIDMatcherEditPart.VISUAL_ID:
-        return getDIDMatcher_1025OutgoingLinks(view);
-      case GetDigitsEditPart.VISUAL_ID:
-        return getGetDigits_1026OutgoingLinks(view);
-      case OriginateCallEditPart.VISUAL_ID:
-        return getOriginateCall_1027OutgoingLinks(view);
-      case PlayDTMFEditPart.VISUAL_ID:
-        return getPlayDTMF_1028OutgoingLinks(view);
-      case RecordCallEditPart.VISUAL_ID:
-        return getRecordCall_1029OutgoingLinks(view);
-      case ExecuteApplicationEditPart.VISUAL_ID:
-        return getExecuteApplication_1030OutgoingLinks(view);
-      case PlayMusicOnHoldEditPart.VISUAL_ID:
-        return getPlayMusicOnHold_1031OutgoingLinks(view);
-      case PromptGetDigitsEditPart.VISUAL_ID:
-        return getPromptGetDigits_1032OutgoingLinks(view);
-      case SleepEditPart.VISUAL_ID:
-        return getSleep_1033OutgoingLinks(view);
-      case StreamAudioExtendedEditPart.VISUAL_ID:
-        return getStreamAudioExtended_1034OutgoingLinks(view);
-      case IncomingCallEditPart.VISUAL_ID:
-        return getIncomingCall_1035OutgoingLinks(view);
-      case GetCallInfoEditPart.VISUAL_ID:
-        return getGetCallInfo_1036OutgoingLinks(view);
       case ExecuteScriptEditPart.VISUAL_ID:
         return getExecuteScript_1037OutgoingLinks(view);
       case InvokeSafletEditPart.VISUAL_ID:
         return getInvokeSaflet_1038OutgoingLinks(view);
-      case DialEditPart.VISUAL_ID:
-        return getDial_1039OutgoingLinks(view);
-      case PickupEditPart.VISUAL_ID:
-        return getPickup_1040OutgoingLinks(view);
-      case BackgroundEditPart.VISUAL_ID:
-        return getBackground_1041OutgoingLinks(view);
-      case BackgroundDetectEditPart.VISUAL_ID:
-        return getBackgroundDetect_1042OutgoingLinks(view);
-      case WaitExtenEditPart.VISUAL_ID:
-        return getWaitExten_1043OutgoingLinks(view);
-      case SoftHangupEditPart.VISUAL_ID:
-        return getSoftHangup_1044OutgoingLinks(view);
-      case PickupChanEditPart.VISUAL_ID:
-        return getPickupChan_1045OutgoingLinks(view);
-      case PickdownEditPart.VISUAL_ID:
-        return getPickdown_1046OutgoingLinks(view);
-      case ProgressEditPart.VISUAL_ID:
-        return getProgress_1047OutgoingLinks(view);
-      case BridgeEditPart.VISUAL_ID:
-        return getBridge_1048OutgoingLinks(view);
-      case PlaceCallEditPart.VISUAL_ID:
-        return getPlaceCall_1049OutgoingLinks(view);
-      case VoicemailEditPart.VISUAL_ID:
-        return getVoicemail_1050OutgoingLinks(view);
-      case VoicemailMainEditPart.VISUAL_ID:
-        return getVoicemailMain_1051OutgoingLinks(view);
-      case VMAuthenticateEditPart.VISUAL_ID:
-        return getVMAuthenticate_1052OutgoingLinks(view);
-      case MeetMeEditPart.VISUAL_ID:
-        return getMeetMe_1053OutgoingLinks(view);
-      case MeetMeAdminEditPart.VISUAL_ID:
-        return getMeetMeAdmin_1054OutgoingLinks(view);
-      case MeetMeCountEditPart.VISUAL_ID:
-        return getMeetMeCount_1055OutgoingLinks(view);
       case DebugLogEditPart.VISUAL_ID:
         return getDebugLog_1056OutgoingLinks(view);
-      case WaitForRingEditPart.VISUAL_ID:
-        return getWaitForRing_1057OutgoingLinks(view);
-      case WaitMusicOnHoldEditPart.VISUAL_ID:
-        return getWaitMusicOnHold_1058OutgoingLinks(view);
-      case GetAvailableChannelEditPart.VISUAL_ID:
-        return getGetAvailableChannel_1059OutgoingLinks(view);
-      case CongestionEditPart.VISUAL_ID:
-        return getCongestion_1060OutgoingLinks(view);
-      case RingingEditPart.VISUAL_ID:
-        return getRinging_1061OutgoingLinks(view);
-      case SetCallerPresentationEditPart.VISUAL_ID:
-        return getSetCallerPresentation_1062OutgoingLinks(view);
-      case SetGlobalVariableEditPart.VISUAL_ID:
-        return getSetGlobalVariable_1063OutgoingLinks(view);
-      case EchoEditPart.VISUAL_ID:
-        return getEcho_1064OutgoingLinks(view);
-      case FestivalEditPart.VISUAL_ID:
-        return getFestival_1065OutgoingLinks(view);
-      case PlaytonesEditPart.VISUAL_ID:
-        return getPlaytones_1066OutgoingLinks(view);
-      case StopPlaytonesEditPart.VISUAL_ID:
-        return getStopPlaytones_1067OutgoingLinks(view);
-      case ChanSpyEditPart.VISUAL_ID:
-        return getChanSpy_1068OutgoingLinks(view);
-      case DictateEditPart.VISUAL_ID:
-        return getDictate_1069OutgoingLinks(view);
-      case ExtensionSpyEditPart.VISUAL_ID:
-        return getExtensionSpy_1070OutgoingLinks(view);
-      case MixMonitorEditPart.VISUAL_ID:
-        return getMixMonitor_1071OutgoingLinks(view);
-      case StopMixmonitorEditPart.VISUAL_ID:
-        return getStopMixmonitor_1072OutgoingLinks(view);
-      case StopMonitorEditPart.VISUAL_ID:
-        return getStopMonitor_1073OutgoingLinks(view);
-      case MonitorEditPart.VISUAL_ID:
-        return getMonitor_1074OutgoingLinks(view);
-      case DirectoryEditPart.VISUAL_ID:
-        return getDirectory_1075OutgoingLinks(view);
-      case TransferEditPart.VISUAL_ID:
-        return getTransfer_1076OutgoingLinks(view);
       case OpenDBConnectionEditPart.VISUAL_ID:
         return getOpenDBConnection_1077OutgoingLinks(view);
       case CloseDBConnectionEditPart.VISUAL_ID:
@@ -3458,8 +1323,6 @@ public class AsteriskDiagramUpdater {
         return getGetColValues_1094OutgoingLinks(view);
       case SetColValuesEditPart.VISUAL_ID:
         return getSetColValues_1095OutgoingLinks(view);
-      case ExtensionTransferEditPart.VISUAL_ID:
-        return getExtensionTransfer_1096OutgoingLinks(view);
       case RunQueryEditPart.VISUAL_ID:
         return getRunQuery_1097OutgoingLinks(view);
       case OutputEditPart.VISUAL_ID:

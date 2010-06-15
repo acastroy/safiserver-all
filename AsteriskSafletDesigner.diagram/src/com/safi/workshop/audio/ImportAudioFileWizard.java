@@ -299,18 +299,18 @@ public class ImportAudioFileWizard extends Wizard implements IImportWizard {
     this.promptNames = promptNames;
   }
 
-  public Object getAsteriskServers() {
-    try {
-      SafiServer server = SafiServerPlugin.getDefault().getSafiServer(true);
-      return server.getAsteriskServers();
-    } catch (Exception e) {
-      e.printStackTrace();
-      Throwable th = e.getCause();
-      MessageDialog.openError(getShell(), "Retrieve Error", "Couldn't retrieve asterisk servers: "
-          + (th == null ? e : th).getLocalizedMessage());
-    }
-    return null;
-  }
+//  public Object getAsteriskServers() {
+//    try {
+//      SafiServer server = SafiServerPlugin.getDefault().getSafiServer(true);
+//      return server.getAsteriskServers();
+//    } catch (Exception e) {
+//      e.printStackTrace();
+//      Throwable th = e.getCause();
+//      MessageDialog.openError(getShell(), "Retrieve Error", "Couldn't retrieve asterisk servers: "
+//          + (th == null ? e : th).getLocalizedMessage());
+//    }
+//    return null;
+//  }
 
   public Prompt getPrompt() {
     return prompt;

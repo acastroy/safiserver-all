@@ -33,7 +33,6 @@ import com.safi.workshop.edit.parts.ActionstepSubItem;
 import com.safi.workshop.edit.parts.CaseItemTargetToolstepEditPart;
 import com.safi.workshop.edit.parts.ChoiceEditPart;
 import com.safi.workshop.edit.parts.GetColValuesEditPart;
-import com.safi.workshop.edit.parts.MultiStreamAudioEditPart;
 import com.safi.workshop.edit.parts.OutputEditPart;
 import com.safi.workshop.edit.parts.OutputTargetEditPart;
 import com.safi.workshop.edit.parts.SetColValuesEditPart;
@@ -96,9 +95,6 @@ public class AsteriskModelingAssistantProvider extends ModelingAssistantProvider
 
     if (editPart instanceof ChoiceEditPart) {
       return Collections.singletonList(AsteriskElementTypes.CaseItem_2002);
-    }
-    if (editPart instanceof MultiStreamAudioEditPart) {
-      return Collections.singletonList(AsteriskElementTypes.AudioFileItem_2003);
     }
 
     if (editPart instanceof SetColValuesEditPart) {
@@ -393,42 +389,10 @@ public class AsteriskModelingAssistantProvider extends ModelingAssistantProvider
   }
 
   private static List addAllToolstepTypes(List types) {
-    types.add(AsteriskElementTypes.Answer_1001);
     types.add(AsteriskElementTypes.Assignment_1002);
     types.add(AsteriskElementTypes.Choice_1003);
-    types.add(AsteriskElementTypes.GetFullVariable_1004);
-    types.add(AsteriskElementTypes.MultiStreamAudio_1005);
-    types.add(AsteriskElementTypes.Hangup_1006);
     types.add(AsteriskElementTypes.IfThen_1007);
-    types.add(AsteriskElementTypes.RecordFile_1008);
-    types.add(AsteriskElementTypes.SayAlpha_1009);
-    types.add(AsteriskElementTypes.SayDateTime_1010);
-    types.add(AsteriskElementTypes.SayDigits_1011);
-    types.add(AsteriskElementTypes.SayNumber_1012);
-    types.add(AsteriskElementTypes.SayPhonetic_1013);
-    types.add(AsteriskElementTypes.SayTime_1014);
-    types.add(AsteriskElementTypes.SetAutoHangup_1015);
-    types.add(AsteriskElementTypes.SetCallerId_1016);
-    types.add(AsteriskElementTypes.SetChannelVariable_1017);
-    types.add(AsteriskElementTypes.SetContext_1018);
-    // types.add(AsteriskElementTypes.SetExtension_1019);
-    types.add(AsteriskElementTypes.StopMusicOnHold_1020);
-    types.add(AsteriskElementTypes.SetMusicOn_1021);
-    types.add(AsteriskElementTypes.SetPriority_1022);
-    types.add(AsteriskElementTypes.StreamAudio_1023);
-    types.add(AsteriskElementTypes.WaitForDigit_1024);
-    types.add(AsteriskElementTypes.DIDMatcher_1025);
-    types.add(AsteriskElementTypes.GetDigits_1026);
-    types.add(AsteriskElementTypes.OriginateCall_1027);
-    types.add(AsteriskElementTypes.PlayDTMF_1028);
-    types.add(AsteriskElementTypes.RecordCall_1029);
-    types.add(AsteriskElementTypes.Transfer_1076);
-    types.add(AsteriskElementTypes.ExecuteApplication_1030);
-    types.add(AsteriskElementTypes.PlayMusicOnHold_1031);
-    types.add(AsteriskElementTypes.PromptGetDigits_1032);
-    types.add(AsteriskElementTypes.Sleep_1033);
-    types.add(AsteriskElementTypes.StreamAudioExtended_1034);
-    types.add(AsteriskElementTypes.GetCallInfo_1036);
+
     types.add(AsteriskElementTypes.ExecuteScript_1037);
     types.add(AsteriskElementTypes.InvokeSaflet_1038);
 
@@ -440,35 +404,7 @@ public class AsteriskModelingAssistantProvider extends ModelingAssistantProvider
     // types.add(AsteriskElementTypes.SoftHangup_1044);
     // types.add(AsteriskElementTypes.PickupChan_1045);
     // types.add(AsteriskElementTypes.Pickdown_1046);
-    types.add(AsteriskElementTypes.Progress_1047);
-    // types.add(AsteriskElementTypes.Bridge_1048);
-    types.add(AsteriskElementTypes.PlaceCall_1049);
-    types.add(AsteriskElementTypes.Voicemail_1050);
-    types.add(AsteriskElementTypes.VoicemailMain_1051);
-    // types.add(AsteriskElementTypes.VMAuthenticate_1052);
-    types.add(AsteriskElementTypes.MeetMe_1053);
-    types.add(AsteriskElementTypes.MeetMeAdmin_1054);
-    types.add(AsteriskElementTypes.MeetMeCount_1055);
-    types.add(AsteriskElementTypes.DebugLog_1056);
-    types.add(AsteriskElementTypes.WaitForRing_1057);
-    types.add(AsteriskElementTypes.WaitMusicOnHold_1058);
-    // types.add(AsteriskElementTypes.GetAvailableChannel_1059);
-    types.add(AsteriskElementTypes.Congestion_1060);
-    types.add(AsteriskElementTypes.Ringing_1061);
-    types.add(AsteriskElementTypes.SetCallerPresentation_1062);
-    types.add(AsteriskElementTypes.SetGlobalVariable_1063);
-    types.add(AsteriskElementTypes.Echo_1064);
-    types.add(AsteriskElementTypes.Festival_1065);
-    // types.add(AsteriskElementTypes.Playtones_1066);
-    // types.add(AsteriskElementTypes.StopPlaytones_1067);
-    types.add(AsteriskElementTypes.ChanSpy_1068);
-    types.add(AsteriskElementTypes.Dictate_1069);
-    types.add(AsteriskElementTypes.ExtensionSpy_1070);
-    // types.add(AsteriskElementTypes.MixMonitor_1071);
-    // types.add(AsteriskElementTypes.StopMixmonitor_1072);
-    types.add(AsteriskElementTypes.StopMonitor_1073);
-    types.add(AsteriskElementTypes.Monitor_1074);
-    types.add(AsteriskElementTypes.Directory_1075);
+
 
     types.add(AsteriskElementTypes.OpenDBConnection_1077);
 
@@ -493,7 +429,6 @@ public class AsteriskModelingAssistantProvider extends ModelingAssistantProvider
 
     types.add(AsteriskElementTypes.MoveToInsertRow_1090);
     types.add(AsteriskElementTypes.MoveToFirstRow_1092);
-    types.add(AsteriskElementTypes.ExtensionTransfer_1096);
 
     return types;
   }

@@ -8,7 +8,7 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 
-import com.safi.db.server.config.FreeSwitchServer;
+import com.safi.db.fsdb.FreeSwitchServer;
 import com.safi.db.server.config.User;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.preferences.FreeSwitchConfigurationDialog;

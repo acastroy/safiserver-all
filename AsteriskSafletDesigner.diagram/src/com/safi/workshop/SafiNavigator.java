@@ -87,8 +87,8 @@ import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributo
 
 import com.safi.db.DBConnection;
 import com.safi.db.Query;
-import com.safi.db.server.config.AsteriskServer;
-import com.safi.db.server.config.FreeSwitchServer;
+import com.safi.db.astdb.AsteriskServer;
+import com.safi.db.fsdb.FreeSwitchServer;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.impl.SafiServerImpl;
 import com.safi.server.plugin.SafiServerPlugin;

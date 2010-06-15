@@ -11,8 +11,8 @@ import org.eclipse.swt.graphics.Point;
 import org.eclipse.ui.IDecoratorManager;
 import org.eclipse.ui.PlatformUI;
 
-import com.safi.db.server.config.AsteriskServer;
-import com.safi.db.server.config.FreeSwitchServer;
+import com.safi.db.astdb.AsteriskServer;
+import com.safi.db.fsdb.FreeSwitchServer;
 import com.safi.db.server.config.SafiServer;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
@@ -72,7 +72,7 @@ public class ServerResourcesDecorator2 extends LabelProvider implements ILabelDe
 
   private Image decorateAsteriskServer(AsteriskServer server, Image baseImage) {
     {
-      if (server.isActive())
+      if (server.isEnabled())
         return doDecorate(baseImage, getImageDescriptor(AST_SERVER_ACTIVE_ICON), BOTTOM_LEFT);
       else
         return doDecorate(baseImage, getImageDescriptor(AST_SERVER_INACTIVE_ICON), BOTTOM_LEFT);

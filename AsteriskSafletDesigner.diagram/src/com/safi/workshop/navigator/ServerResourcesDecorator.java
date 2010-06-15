@@ -9,8 +9,8 @@ import org.eclipse.jface.viewers.LabelProviderChangedEvent;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IDecoratorManager;
 
-import com.safi.db.server.config.AsteriskServer;
-import com.safi.db.server.config.FreeSwitchServer;
+import com.safi.db.astdb.AsteriskServer;
+import com.safi.db.fsdb.FreeSwitchServer;
 import com.safi.db.server.config.SafiServer;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
@@ -86,7 +86,7 @@ public class ServerResourcesDecorator extends org.eclipse.jface.viewers.LabelPro
   private void decorateAsteriskServer(AsteriskServer server, IDecoration decoration) {
     System.err.println("decking astserver " + server);
     {
-      if (server.isActive())
+      if (server.isEnabled())
         decoration.addOverlay(getImageDescriptor(AST_SERVER_ACTIVE_ICON), IDecoration.BOTTOM_LEFT);
       else
         decoration

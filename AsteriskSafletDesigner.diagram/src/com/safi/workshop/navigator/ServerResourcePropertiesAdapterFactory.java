@@ -6,8 +6,8 @@ import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.PropertyDescriptor;
 import org.eclipse.ui.views.properties.TextPropertyDescriptor;
 
-import com.safi.db.server.config.AsteriskServer;
-import com.safi.db.server.config.FreeSwitchServer;
+import com.safi.db.astdb.AsteriskServer;
+import com.safi.db.fsdb.FreeSwitchServer;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.User;
 
@@ -111,7 +111,7 @@ public class ServerResourcePropertiesAdapterFactory implements IAdapterFactory {
       } else if (PROPERTY_BIND_IP.equals(id)) {
         return resource.getBindIP();
       } else if (PROPERTY_AGI_PORT.equals(id)) {
-        return resource.getPort();
+        return 4575;
       } else if (PROPERTY_MANAGEMENT_PORT.equals(id)) {
         return resource.getManagementPort();
       } else if (PROPERTY_DEBUG.equals(id)) {
@@ -219,7 +219,7 @@ public class ServerResourcePropertiesAdapterFactory implements IAdapterFactory {
       } else if (PROPERTY_SFTP_PORT.equals(id)) {
         return resource.getSftpPort();
       } else if (PROPERTY_IS_ACTIVE.equals(id)) {
-        return resource.isActive();
+        return resource.isEnabled();
       } else if (PROPERTY_IS_PRIVATE.equals(id)) {
         return resource.isPrivate();
       } else

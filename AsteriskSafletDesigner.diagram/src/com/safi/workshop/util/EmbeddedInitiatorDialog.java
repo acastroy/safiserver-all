@@ -24,7 +24,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
 import com.safi.asterisk.handler.connection.ExceptionHandler;
-import com.safi.db.server.config.AsteriskServer;
+import com.safi.db.astdb.AsteriskServer;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.Saflet;
 import com.safi.db.server.config.SafletProject;

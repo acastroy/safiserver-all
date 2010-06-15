@@ -9,7 +9,7 @@ import java.util.List;
 
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
-import com.safi.db.server.config.FreeSwitchServer;
+import com.safi.db.fsdb.FreeSwitchServer;
 import com.safi.db.server.config.SafiServer;
 
 public class FreeSwitchServerList extends ArrayList<FreeSwitchServer> {

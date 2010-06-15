@@ -98,7 +98,7 @@ public class AudioFileReorderEditPolicy extends FlowLayoutEditPolicy {
                 newIndex);
 
             // compartment.refresh();
-            ((MultiStreamAudioFilesPanelEditPart) getHost()).updateSizeIfNecessary();
+            ((ItemPanelEditPart) getHost()).updateSizeIfNecessary();
             compartment.refresh();
 
           }

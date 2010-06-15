@@ -152,7 +152,7 @@ public class SafiServerAdminDialog extends Dialog {
     this.textSafiServer.setText(safiServer.getName());
     this.bindIPCombo.setText(safiServer.getBindIP());
 
-    this.textSafiAgiPort.setText(Integer.toString(safiServer.getPort()));
+    this.textSafiAgiPort.setText("4575"); //TODO: This should be taken from the Asterisk telephony subsystem
     this.textSafiMgtPort.setText(Integer.toString(safiServer.getManagementPort()));
     this.textDBPort.setText(Integer.toString(safiServer.getDbPort()));
 
@@ -297,7 +297,7 @@ public class SafiServerAdminDialog extends Dialog {
         }
 
         safiServer.setBindIP(host);
-        safiServer.setPort(fportInt);
+//        safiServer.setPort(fportInt);
         safiServer.setName(name);
         // SafiServer server = SafiServerPlugin.getDefault().getSafiServer();
         safiServer.setManagementPort(mportInt);

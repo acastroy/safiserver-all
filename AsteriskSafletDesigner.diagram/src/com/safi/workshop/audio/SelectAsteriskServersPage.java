@@ -18,7 +18,8 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 
-import com.safi.db.server.config.AsteriskServer;
+import com.safi.db.astdb.AsteriskServer;
+import com.safi.server.plugin.SafiServerPlugin;
 
 public class SelectAsteriskServersPage extends WizardPage {
 
@@ -72,7 +73,7 @@ public class SelectAsteriskServersPage extends WizardPage {
     final TableColumn addressColumn = new TableColumn(table, SWT.NONE);
     addressColumn.setWidth(100);
     addressColumn.setText("host address");
-    checkboxTableViewer.setInput(((ImportAudioFileWizard) getWizard()).getAsteriskServers());
+    checkboxTableViewer.setInput(SafiServerPlugin.getDefault().getAvailableAsteriskServers());
     setPageComplete(true);
   }
 

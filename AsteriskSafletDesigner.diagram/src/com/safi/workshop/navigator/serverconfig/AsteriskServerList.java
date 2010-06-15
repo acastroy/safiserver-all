@@ -9,7 +9,7 @@ import java.util.List;
 
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
-import com.safi.db.server.config.AsteriskServer;
+import com.safi.db.astdb.AsteriskServer;
 import com.safi.db.server.config.SafiServer;
 
 public class AsteriskServerList extends ArrayList<AsteriskServer> {

@@ -1,7 +1,6 @@
 package com.safi.workshop.navigator.serverconfig;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
@@ -15,10 +14,11 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
-import com.safi.db.server.config.AsteriskServer;
+import com.safi.db.astdb.AsteriskServer;
+import com.safi.db.fsdb.FreeSwitchServer;
 import com.safi.db.server.config.ConfigFactory;
-import com.safi.db.server.config.FreeSwitchServer;
 import com.safi.db.server.config.SafiServer;
+import com.safi.db.server.config.TelephonySubsystem;
 import com.safi.db.server.config.User;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.saflet.manager.EntitlementUtils;
@@ -54,10 +54,12 @@ public class ServerResourcesContentProvider implements ITreeContentProvider, Ada
 			AsteriskDiagramEditorPlugin.getInstance().logWarn("Couldn't retrieve production SafiServer",
 					e);
 		}
-		if (safiServer == null) {
-			safiServer = ConfigFactory.eINSTANCE.createSafiServer();
-			safiServer.setName("Production");
-			safiServer.setBindIP("Not Connected");
+		synchronized(this) {
+			if (safiServer == null) {
+				safiServer = ConfigFactory.eINSTANCE.createSafiServer();
+				safiServer.setName("Production");
+				safiServer.setBindIP("Not Connected");
+			}
 		}
 	}
 
@@ -93,31 +95,30 @@ public class ServerResourcesContentProvider implements ITreeContentProvider, Ada
 					userList.replace(newlist);
 					userList.setSafiServer(safiServer);
 				}
-				List<AsteriskServer> alist = Collections.emptyList();
-				List<FreeSwitchServer> fslist = Collections.emptyList();
-				
+				List<AsteriskServer> alist = new ArrayList<AsteriskServer>();
+				List<FreeSwitchServer> fslist = new ArrayList<FreeSwitchServer>();
+				List<TelephonySubsystem> systems = Collections.emptyList();
 				if (SafiServerPlugin.getDefault().isConnected()) {
 					User u = SafiServerPlugin.getDefault().getCurrentUser();
-					alist = safiServer.getAsteriskServers();
+					systems = safiServer.getTelephonySubsystems();
 
 					boolean canManageAll = EntitlementUtils.isUserEntitled(u,
 							EntitlementUtils.ENTIT_MANAGE_TELEPHONY_SERVERS);
-					for (Iterator<AsteriskServer> iter = alist.iterator(); iter.hasNext();) {
-						AsteriskServer s = iter.next();
-						if (canManageAll || !s.isPrivate()
-								|| (u != null && s.getCreatedBy() != null && s.getCreatedBy().getId() == u.getId()))
-							continue;
-						iter.remove();
+					for (Iterator<TelephonySubsystem> iter = systems.iterator(); iter.hasNext();) {
+						TelephonySubsystem ss = iter.next();
+						if (canManageAll || !ss.isPrivate()
+								|| (u != null && ss.getCreatedBy() != null && ss.getCreatedBy().getId() == u.getId())){
+							if (ss instanceof AsteriskServer)
+								alist.add((AsteriskServer)ss);
+							else
+						  if (ss instanceof FreeSwitchServer)
+						  	fslist.add((FreeSwitchServer)ss);
+						  	
+						}
 					}
 					
-					fslist = safiServer.getFreeSwitchServers();
-					for (Iterator<FreeSwitchServer> iter = fslist.iterator(); iter.hasNext();) {
-						FreeSwitchServer s = iter.next();
-						if (canManageAll || !s.isPrivate()
-								|| (u != null && s.getCreatedBy() != null && s.getCreatedBy().getId() == u.getId()))
-							continue;
-						iter.remove();
-					}
+					
+					
 				}
 				
 				if (asteriskList == null)
