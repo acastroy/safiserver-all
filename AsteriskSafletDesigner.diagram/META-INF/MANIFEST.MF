@@ -28,11 +28,17 @@ Bundle-ClassPath: .,
  lib/licensews.jar,
  lib/org.eclipse.nebula.widgets.formattedtext_1.0.0.HEAD.jar,
  lib/log4j-1.2.15.jar,
- lib/RmiJdbc.jar
+ lib/RmiJdbc.jar,
+ lib/jsch-0.1.42.jar,
+ lib/safiServer.jar,
+ lib/wrapper.jar
 Bundle-Activator: com.safi.workshop.part.AsteriskDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: com.safi.workshop,
+Export-Package: com.safi.server.manager,
+ com.safi.server.saflet.mbean,
+ com.safi.server.saflet.util,
+ com.safi.workshop,
  com.safi.workshop.edit.commands,
  com.safi.workshop.edit.helpers,
  com.safi.workshop.edit.parts,
@@ -143,7 +149,6 @@ Require-Bundle: org.eclipse.ui.ide,
  org.eclipse.jdt.core.manipulation;bundle-version="1.2.0",
  AsteriskCore;bundle-version="1.1.0",
  AsteriskCore.edit;bundle-version="1.0.0",
- com.safi.server.asterisk;bundle-version="1.0.3",
  org.eclipse.equinox.p2.repository;bundle-version="1.0.0",
  org.eclipse.core.runtime.compatibility;bundle-version="3.2.0",
  org.eclipse.dltk.javascript.formatter;bundle-version="2.0.0",
@@ -152,5 +157,10 @@ Require-Bundle: org.eclipse.ui.ide,
  SafiLogging;bundle-version="1.0.0",
  SafiDBManager;bundle-version="1.0.0",
  org.eclipse.dltk.javascript.parser;bundle-version="2.0.0",
- ActionPak;bundle-version="1.0.0"
+ ActionPak;bundle-version="1.0.0",
+ ASTDB;bundle-version="1.0.0",
+ FSDB;bundle-version="1.0.0",
+ org.eclipse.emf.teneo;bundle-version="1.1.1",
+ org.eclipse.emf.teneo.annotations;bundle-version="1.1.0",
+ org.eclipse.emf.teneo.hibernate;bundle-version="1.1.1"
 Bundle-ActivationPolicy: lazy
