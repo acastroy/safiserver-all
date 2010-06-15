@@ -1387,16 +1387,7 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
             <param name="semanticHint" value="79"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.Answer_1001"
-               name="%metatype.name.Answer_1001"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Answer"
-               edithelper="com.safi.workshop.edit.helpers.AnswerEditHelper">
-            <param name="semanticHint" value="1001"/>
-         </metamodelType>
-      </metamodel>
+      
       <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
          <metamodelType
                id="AsteriskSafletDesigner.diagram.Assignment_1002"
@@ -1417,36 +1408,7 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
             <param name="semanticHint" value="1003"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.GetFullVariable_1004"
-               name="%metatype.name.GetFullVariable_1004"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="GetFullVariable"
-               edithelper="com.safi.workshop.edit.helpers.GetFullVariableEditHelper">
-            <param name="semanticHint" value="1004"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.MultiStreamAudio_1005"
-               name="%metatype.name.MultiStreamAudio_1005"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="MultiStreamAudio"
-               edithelper="com.safi.workshop.edit.helpers.MultiStreamAudioEditHelper">
-            <param name="semanticHint" value="1005"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.Hangup_1006"
-               name="%metatype.name.Hangup_1006"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Hangup"
-               edithelper="com.safi.workshop.edit.helpers.HangupEditHelper">
-            <param name="semanticHint" value="1006"/>
-         </metamodelType>
-      </metamodel>
+      
       <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
          <metamodelType
                id="AsteriskSafletDesigner.diagram.IfThen_1007"
@@ -1455,296 +1417,6 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
                eclass="IfThen"
                edithelper="com.safi.workshop.edit.helpers.IfThenEditHelper">
             <param name="semanticHint" value="1007"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.RecordFile_1008"
-               name="%metatype.name.RecordFile_1008"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="RecordFile"
-               edithelper="com.safi.workshop.edit.helpers.RecordFileEditHelper">
-            <param name="semanticHint" value="1008"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.SayAlpha_1009"
-               name="%metatype.name.SayAlpha_1009"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="SayAlpha"
-               edithelper="com.safi.workshop.edit.helpers.SayAlphaEditHelper">
-            <param name="semanticHint" value="1009"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.SayDateTime_1010"
-               name="%metatype.name.SayDateTime_1010"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="SayDateTime"
-               edithelper="com.safi.workshop.edit.helpers.SayDateTimeEditHelper">
-            <param name="semanticHint" value="1010"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.SayDigits_1011"
-               name="%metatype.name.SayDigits_1011"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="SayDigits"
-               edithelper="com.safi.workshop.edit.helpers.SayDigitsEditHelper">
-            <param name="semanticHint" value="1011"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.SayNumber_1012"
-               name="%metatype.name.SayNumber_1012"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="SayNumber"
-               edithelper="com.safi.workshop.edit.helpers.SayNumberEditHelper">
-            <param name="semanticHint" value="1012"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.SayPhonetic_1013"
-               name="%metatype.name.SayPhonetic_1013"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="SayPhonetic"
-               edithelper="com.safi.workshop.edit.helpers.SayPhoneticEditHelper">
-            <param name="semanticHint" value="1013"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.SayTime_1014"
-               name="%metatype.name.SayTime_1014"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="SayTime"
-               edithelper="com.safi.workshop.edit.helpers.SayTimeEditHelper">
-            <param name="semanticHint" value="1014"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.SetAutoHangup_1015"
-               name="%metatype.name.SetAutoHangup_1015"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="SetAutoHangup"
-               edithelper="com.safi.workshop.edit.helpers.SetAutoHangupEditHelper">
-            <param name="semanticHint" value="1015"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.SetCallerId_1016"
-               name="%metatype.name.SetCallerId_1016"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="SetCallerId"
-               edithelper="com.safi.workshop.edit.helpers.SetCallerIdEditHelper">
-            <param name="semanticHint" value="1016"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.SetChannelVariable_1017"
-               name="%metatype.name.SetChannelVariable_1017"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="SetChannelVariable"
-               edithelper="com.safi.workshop.edit.helpers.SetChannelVariableEditHelper">
-            <param name="semanticHint" value="1017"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.SetContext_1018"
-               name="%metatype.name.SetContext_1018"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="SetContext"
-               edithelper="com.safi.workshop.edit.helpers.SetContextEditHelper">
-            <param name="semanticHint" value="1018"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.SetExtension_1019"
-               name="%metatype.name.SetExtension_1019"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="SetExtension"
-               edithelper="com.safi.workshop.edit.helpers.SetExtensionEditHelper">
-            <param name="semanticHint" value="1019"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.StopMusicOnHold_1020"
-               name="%metatype.name.StopMusicOnHold_1020"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="StopMusicOnHold"
-               edithelper="com.safi.workshop.edit.helpers.StopMusicOnHoldEditHelper">
-            <param name="semanticHint" value="1020"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.SetMusicOn_1021"
-               name="%metatype.name.SetMusicOn_1021"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="SetMusicOn"
-               edithelper="com.safi.workshop.edit.helpers.SetMusicOnEditHelper">
-            <param name="semanticHint" value="1021"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.SetPriority_1022"
-               name="%metatype.name.SetPriority_1022"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="SetPriority"
-               edithelper="com.safi.workshop.edit.helpers.SetPriorityEditHelper">
-            <param name="semanticHint" value="1022"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.StreamAudio_1023"
-               name="%metatype.name.StreamAudio_1023"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="StreamAudio"
-               edithelper="com.safi.workshop.edit.helpers.StreamAudioEditHelper">
-            <param name="semanticHint" value="1023"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.WaitForDigit_1024"
-               name="%metatype.name.WaitForDigit_1024"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="WaitForDigit"
-               edithelper="com.safi.workshop.edit.helpers.WaitForDigitEditHelper">
-            <param name="semanticHint" value="1024"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#initiator">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.DIDMatcher_1025"
-               name="%metatype.name.DIDMatcher_1025"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="DIDMatcher"
-               edithelper="com.safi.workshop.edit.helpers.DIDMatcherEditHelper">
-            <param name="semanticHint" value="1025"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.GetDigits_1026"
-               name="%metatype.name.GetDigits_1026"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="GetDigits"
-               edithelper="com.safi.workshop.edit.helpers.GetDigitsEditHelper">
-            <param name="semanticHint" value="1026"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.OriginateCall_1027"
-               name="%metatype.name.OriginateCall_1027"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="OriginateCall"
-               edithelper="com.safi.workshop.edit.helpers.OriginateCallEditHelper">
-            <param name="semanticHint" value="1027"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.PlayDTMF_1028"
-               name="%metatype.name.PlayDTMF_1028"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="PlayDTMF"
-               edithelper="com.safi.workshop.edit.helpers.PlayDTMFEditHelper">
-            <param name="semanticHint" value="1028"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.RecordCall_1029"
-               name="%metatype.name.RecordCall_1029"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="RecordCall"
-               edithelper="com.safi.workshop.edit.helpers.RecordCallEditHelper">
-            <param name="semanticHint" value="1029"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.ExecuteApplication_1030"
-               name="%metatype.name.ExecuteApplication_1030"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="ExecuteApplication"
-               edithelper="com.safi.workshop.edit.helpers.ExecuteApplicationEditHelper">
-            <param name="semanticHint" value="1030"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.PlayMusicOnHold_1031"
-               name="%metatype.name.PlayMusicOnHold_1031"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="PlayMusicOnHold"
-               edithelper="com.safi.workshop.edit.helpers.PlayMusicOnHoldEditHelper">
-            <param name="semanticHint" value="1031"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.PromptGetDigits_1032"
-               name="%metatype.name.PromptGetDigits_1032"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="PromptGetDigits"
-               edithelper="com.safi.workshop.edit.helpers.PromptGetDigitsEditHelper">
-            <param name="semanticHint" value="1032"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.Sleep_1033"
-               name="%metatype.name.Sleep_1033"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Sleep"
-               edithelper="com.safi.workshop.edit.helpers.SleepEditHelper">
-            <param name="semanticHint" value="1033"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.StreamAudioExtended_1034"
-               name="%metatype.name.StreamAudioExtended_1034"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="StreamAudioExtended"
-               edithelper="com.safi.workshop.edit.helpers.StreamAudioExtendedEditHelper">
-            <param name="semanticHint" value="1034"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#initiator">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.IncomingCall_1035"
-               name="%metatype.name.IncomingCall_1035"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="IncomingCall"
-               edithelper="com.safi.workshop.edit.helpers.IncomingCallEditHelper">
-            <param name="semanticHint" value="1035"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.GetCallInfo_1036"
-               name="%metatype.name.GetCallInfo_1036"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="GetCallInfo"
-               edithelper="com.safi.workshop.edit.helpers.GetCallInfoEditHelper">
-            <param name="semanticHint" value="1036"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
@@ -1767,176 +1439,7 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
             <param name="semanticHint" value="1038"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.Dial_1039"
-               name="%metatype.name.Dial_1039"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Dial"
-               edithelper="com.safi.workshop.edit.helpers.DialEditHelper">
-            <param name="semanticHint" value="1039"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.Pickup_1040"
-               name="%metatype.name.Pickup_1040"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Pickup"
-               edithelper="com.safi.workshop.edit.helpers.PickupEditHelper">
-            <param name="semanticHint" value="1040"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.Background_1041"
-               name="%metatype.name.Background_1041"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Background"
-               edithelper="com.safi.workshop.edit.helpers.BackgroundEditHelper">
-            <param name="semanticHint" value="1041"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.BackgroundDetect_1042"
-               name="%metatype.name.BackgroundDetect_1042"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="BackgroundDetect"
-               edithelper="com.safi.workshop.edit.helpers.BackgroundDetectEditHelper">
-            <param name="semanticHint" value="1042"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.WaitExten_1043"
-               name="%metatype.name.WaitExten_1043"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="WaitExten"
-               edithelper="com.safi.workshop.edit.helpers.WaitExtenEditHelper">
-            <param name="semanticHint" value="1043"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.SoftHangup_1044"
-               name="%metatype.name.SoftHangup_1044"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="SoftHangup"
-               edithelper="com.safi.workshop.edit.helpers.SoftHangupEditHelper">
-            <param name="semanticHint" value="1044"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.PickupChan_1045"
-               name="%metatype.name.PickupChan_1045"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="PickupChan"
-               edithelper="com.safi.workshop.edit.helpers.PickupChanEditHelper">
-            <param name="semanticHint" value="1045"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.Pickdown_1046"
-               name="%metatype.name.Pickdown_1046"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Pickdown"
-               edithelper="com.safi.workshop.edit.helpers.PickdownEditHelper">
-            <param name="semanticHint" value="1046"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.Progress_1047"
-               name="%metatype.name.Progress_1047"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Progress"
-               edithelper="com.safi.workshop.edit.helpers.ProgressEditHelper">
-            <param name="semanticHint" value="1047"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.Bridge_1048"
-               name="%metatype.name.Bridge_1048"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Bridge"
-               edithelper="com.safi.workshop.edit.helpers.BridgeEditHelper">
-            <param name="semanticHint" value="1048"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.PlaceCall_1049"
-               name="%metatype.name.PlaceCall_1049"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="PlaceCall"
-               edithelper="com.safi.workshop.edit.helpers.PlaceCallEditHelper">
-            <param name="semanticHint" value="1049"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.Voicemail_1050"
-               name="%metatype.name.Voicemail_1050"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Voicemail"
-               edithelper="com.safi.workshop.edit.helpers.VoicemailEditHelper">
-            <param name="semanticHint" value="1050"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.VoicemailMain_1051"
-               name="%metatype.name.VoicemailMain_1051"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="VoicemailMain"
-               edithelper="com.safi.workshop.edit.helpers.VoicemailMainEditHelper">
-            <param name="semanticHint" value="1051"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.VMAuthenticate_1052"
-               name="%metatype.name.VMAuthenticate_1052"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="VMAuthenticate"
-               edithelper="com.safi.workshop.edit.helpers.VMAuthenticateEditHelper">
-            <param name="semanticHint" value="1052"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.MeetMe_1053"
-               name="%metatype.name.MeetMe_1053"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="MeetMe"
-               edithelper="com.safi.workshop.edit.helpers.MeetMeEditHelper">
-            <param name="semanticHint" value="1053"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.MeetMeAdmin_1054"
-               name="%metatype.name.MeetMeAdmin_1054"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="MeetMeAdmin"
-               edithelper="com.safi.workshop.edit.helpers.MeetMeAdminEditHelper">
-            <param name="semanticHint" value="1054"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.MeetMeCount_1055"
-               name="%metatype.name.MeetMeCount_1055"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="MeetMeCount"
-               edithelper="com.safi.workshop.edit.helpers.MeetMeCountEditHelper">
-            <param name="semanticHint" value="1055"/>
-         </metamodelType>
-      </metamodel>
+      
       <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
          <metamodelType
                id="AsteriskSafletDesigner.diagram.DebugLog_1056"
@@ -1947,206 +1450,7 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
             <param name="semanticHint" value="1056"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.WaitForRing_1057"
-               name="%metatype.name.WaitForRing_1057"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="WaitForRing"
-               edithelper="com.safi.workshop.edit.helpers.WaitForRingEditHelper">
-            <param name="semanticHint" value="1057"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.WaitMusicOnHold_1058"
-               name="%metatype.name.WaitMusicOnHold_1058"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="WaitMusicOnHold"
-               edithelper="com.safi.workshop.edit.helpers.WaitMusicOnHoldEditHelper">
-            <param name="semanticHint" value="1058"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.GetAvailableChannel_1059"
-               name="%metatype.name.GetAvailableChannel_1059"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="GetAvailableChannel"
-               edithelper="com.safi.workshop.edit.helpers.GetAvailableChannelEditHelper">
-            <param name="semanticHint" value="1059"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.Congestion_1060"
-               name="%metatype.name.Congestion_1060"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Congestion"
-               edithelper="com.safi.workshop.edit.helpers.CongestionEditHelper">
-            <param name="semanticHint" value="1060"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.Ringing_1061"
-               name="%metatype.name.Ringing_1061"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Ringing"
-               edithelper="com.safi.workshop.edit.helpers.RingingEditHelper">
-            <param name="semanticHint" value="1061"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.SetCallerPresentation_1062"
-               name="%metatype.name.SetCallerPresentation_1062"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="SetCallerPresentation"
-               edithelper="com.safi.workshop.edit.helpers.SetCallerPresentationEditHelper">
-            <param name="semanticHint" value="1062"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.SetGlobalVariable_1063"
-               name="%metatype.name.SetGlobalVariable_1063"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="SetGlobalVariable"
-               edithelper="com.safi.workshop.edit.helpers.SetGlobalVariableEditHelper">
-            <param name="semanticHint" value="1063"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.Echo_1064"
-               name="%metatype.name.Echo_1064"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Echo"
-               edithelper="com.safi.workshop.edit.helpers.EchoEditHelper">
-            <param name="semanticHint" value="1064"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.Festival_1065"
-               name="%metatype.name.Festival_1065"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Festival"
-               edithelper="com.safi.workshop.edit.helpers.FestivalEditHelper">
-            <param name="semanticHint" value="1065"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.Playtones_1066"
-               name="%metatype.name.Playtones_1066"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Playtones"
-               edithelper="com.safi.workshop.edit.helpers.PlaytonesEditHelper">
-            <param name="semanticHint" value="1066"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.StopPlaytones_1067"
-               name="%metatype.name.StopPlaytones_1067"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="StopPlaytones"
-               edithelper="com.safi.workshop.edit.helpers.StopPlaytonesEditHelper">
-            <param name="semanticHint" value="1067"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.ChanSpy_1068"
-               name="%metatype.name.ChanSpy_1068"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="ChanSpy"
-               edithelper="com.safi.workshop.edit.helpers.ChanSpyEditHelper">
-            <param name="semanticHint" value="1068"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.Dictate_1069"
-               name="%metatype.name.Dictate_1069"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Dictate"
-               edithelper="com.safi.workshop.edit.helpers.DictateEditHelper">
-            <param name="semanticHint" value="1069"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.ExtensionSpy_1070"
-               name="%metatype.name.ExtensionSpy_1070"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="ExtensionSpy"
-               edithelper="com.safi.workshop.edit.helpers.ExtensionSpyEditHelper">
-            <param name="semanticHint" value="1070"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.MixMonitor_1071"
-               name="%metatype.name.MixMonitor_1071"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="MixMonitor"
-               edithelper="com.safi.workshop.edit.helpers.MixMonitorEditHelper">
-            <param name="semanticHint" value="1071"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.StopMixmonitor_1072"
-               name="%metatype.name.StopMixmonitor_1072"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="StopMixmonitor"
-               edithelper="com.safi.workshop.edit.helpers.StopMixmonitorEditHelper">
-            <param name="semanticHint" value="1072"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.StopMonitor_1073"
-               name="%metatype.name.StopMonitor_1073"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="StopMonitor"
-               edithelper="com.safi.workshop.edit.helpers.StopMonitorEditHelper">
-            <param name="semanticHint" value="1073"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.Monitor_1074"
-               name="%metatype.name.Monitor_1074"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Monitor"
-               edithelper="com.safi.workshop.edit.helpers.MonitorEditHelper">
-            <param name="semanticHint" value="1074"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.Directory_1075"
-               name="%metatype.name.Directory_1075"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Directory"
-               edithelper="com.safi.workshop.edit.helpers.DirectoryEditHelper">
-            <param name="semanticHint" value="1075"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.Transfer_1076"
-               name="%metatype.name.Transfer_1076"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Transfer"
-               edithelper="com.safi.workshop.edit.helpers.TransferEditHelper">
-            <param name="semanticHint" value="1076"/>
-         </metamodelType>
-      </metamodel>
+      
       <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
          <metamodelType
                id="AsteriskSafletDesigner.diagram.OpenDBConnection_1077"
@@ -2337,16 +1641,7 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
             <param name="semanticHint" value="1095"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http:///com/safi/asterisk.ecore#actionstep">
-         <metamodelType
-               id="AsteriskSafletDesigner.diagram.ExtensionTransfer_1096"
-               name="%metatype.name.ExtensionTransfer_1096"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="ExtensionTransfer"
-               edithelper="com.safi.workshop.edit.helpers.ExtensionTransferEditHelper">
-            <param name="semanticHint" value="1096"/>
-         </metamodelType>
-      </metamodel>
+      
       <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
          <metamodelType
                id="AsteriskSafletDesigner.diagram.RunQuery_1097"
@@ -2457,82 +1752,14 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
       </clientContext> 
       <binding context="AsteriskClientContext">
          <elementType ref="AsteriskSafletDesigner.diagram.Handler_79"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.Answer_1001"/>
          <elementType ref="AsteriskSafletDesigner.diagram.Assignment_1002"/>
          <elementType ref="AsteriskSafletDesigner.diagram.Choice_1003"/>
          <elementType ref="AsteriskSafletDesigner.diagram.GetFullVariable_1004"/>
          <elementType ref="AsteriskSafletDesigner.diagram.MultiStreamAudio_1005"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.Hangup_1006"/>
          <elementType ref="AsteriskSafletDesigner.diagram.IfThen_1007"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.RecordFile_1008"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.SayAlpha_1009"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.SayDateTime_1010"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.SayDigits_1011"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.SayNumber_1012"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.SayPhonetic_1013"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.SayTime_1014"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.SetAutoHangup_1015"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.SetCallerId_1016"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.SetChannelVariable_1017"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.SetContext_1018"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.SetExtension_1019"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.StopMusicOnHold_1020"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.SetMusicOn_1021"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.SetPriority_1022"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.StreamAudio_1023"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.WaitForDigit_1024"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.DIDMatcher_1025"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.GetDigits_1026"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.OriginateCall_1027"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.PlayDTMF_1028"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.RecordCall_1029"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.ExecuteApplication_1030"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.PlayMusicOnHold_1031"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.PromptGetDigits_1032"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.Sleep_1033"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.StreamAudioExtended_1034"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.IncomingCall_1035"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.GetCallInfo_1036"/>
          <elementType ref="AsteriskSafletDesigner.diagram.ExecuteScript_1037"/>
          <elementType ref="AsteriskSafletDesigner.diagram.InvokeSaflet_1038"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.Dial_1039"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.Pickup_1040"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.Background_1041"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.BackgroundDetect_1042"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.WaitExten_1043"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.SoftHangup_1044"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.PickupChan_1045"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.Pickdown_1046"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.Progress_1047"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.Bridge_1048"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.PlaceCall_1049"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.Voicemail_1050"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.VoicemailMain_1051"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.VMAuthenticate_1052"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.MeetMe_1053"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.MeetMeAdmin_1054"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.MeetMeCount_1055"/>
          <elementType ref="AsteriskSafletDesigner.diagram.DebugLog_1056"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.WaitForRing_1057"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.WaitMusicOnHold_1058"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.GetAvailableChannel_1059"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.Congestion_1060"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.Ringing_1061"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.SetCallerPresentation_1062"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.SetGlobalVariable_1063"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.Echo_1064"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.Festival_1065"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.Playtones_1066"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.StopPlaytones_1067"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.ChanSpy_1068"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.Dictate_1069"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.ExtensionSpy_1070"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.MixMonitor_1071"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.StopMixmonitor_1072"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.StopMonitor_1073"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.Monitor_1074"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.Directory_1075"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.Transfer_1076"/>
          <elementType ref="AsteriskSafletDesigner.diagram.OpenDBConnection_1077"/>
          <elementType ref="AsteriskSafletDesigner.diagram.CloseDBConnection_1078"/>
          <elementType ref="AsteriskSafletDesigner.diagram.OpenQuery_1079"/>
@@ -2552,7 +1779,6 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
          <elementType ref="AsteriskSafletDesigner.diagram.PreviousRow_1093"/>
          <elementType ref="AsteriskSafletDesigner.diagram.GetColValues_1094"/>
          <elementType ref="AsteriskSafletDesigner.diagram.SetColValues_1095"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.ExtensionTransfer_1096"/>
          <elementType ref="AsteriskSafletDesigner.diagram.RunQuery_1097"/>
          <elementType ref="AsteriskSafletDesigner.diagram.Output_2001"/>
          <elementType ref="AsteriskSafletDesigner.diagram.CaseItem_2002"/>
@@ -3749,4 +2975,19 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
         </scriptCompletionProposalComputer>     
     </extension>
     -->
+    
+     <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="com.safi.server.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="com.safi.server.preferences.WorkshopPreferencePage"
+            id="org.eclipse.ui.preferencePages.Startup"
+            name="Workshop">
+      </page>
+   </extension>
 </plugin>
