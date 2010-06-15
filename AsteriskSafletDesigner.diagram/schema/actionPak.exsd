@@ -61,7 +61,7 @@
          <sequence>
             <element ref="paletteEntry"/>
          </sequence>
-         <attribute name="createCommandFactory" type="string" use="required">
+         <attribute name="createCommandFactory" type="string">
             <annotation>
                <documentation>
                   
@@ -71,7 +71,7 @@
                </appInfo>
             </annotation>
          </attribute>
-         <attribute name="elementFactory" type="string" use="required">
+         <attribute name="elementFactory" type="string">
             <annotation>
                <documentation>
                   
@@ -81,7 +81,7 @@
                </appInfo>
             </annotation>
          </attribute>
-         <attribute name="editPartFactory" type="string" use="required">
+         <attribute name="editPartFactory" type="string">
             <annotation>
                <documentation>
                   
@@ -91,7 +91,7 @@
                </appInfo>
             </annotation>
          </attribute>
-         <attribute name="modelFactory" type="string" use="required">
+         <attribute name="modelFactory" type="string">
             <annotation>
                <documentation>
                   
@@ -101,13 +101,13 @@
                </appInfo>
             </annotation>
          </attribute>
-         <attribute name="viewFactory" type="string" use="required">
+         <attribute name="viewFactory" type="string">
             <annotation>
                <documentation>
                   
                </documentation>
                <appInfo>
-                  <meta.attribute kind="java" basedOn=":com.safi.workshop.view.factories.ActionPakViewFactory"/>
+                  <meta.attribute kind="java" basedOn=":com.safi.workshop.view.factories.ActionstepViewFactoryFactory"/>
                </appInfo>
             </annotation>
          </attribute>
@@ -337,6 +337,66 @@
                <documentation>
                   
                </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="actionPakFactory">
+      <annotation>
+         <documentation>
+            Factories that apply to all Actionsteps in this ActionPak
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="createCommandFactory" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":com.safi.workshop.edit.policies.ActionPakCreateCommandFactory"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="elementFactory" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":com.safi.workshop.view.factories.ActionPakElementFactory"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="editPartFactory" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":com.safi.workshop.view.factories.ActionPakEditPartFactory"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="modelFactory" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":com.safi.workshop.view.factories.ActionPakModelFactory"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="viewFactory" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":com.safi.workshop.view.factories.ActionPakViewFactoryFactory"/>
+               </appInfo>
             </annotation>
          </attribute>
       </complexType>
