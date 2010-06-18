@@ -10,16 +10,12 @@ import java.util.List;
 import java.util.logging.Level;
 
 import org.apache.commons.lang.StringUtils;
-import org.asteriskjava.fastagi.AgiChannel;
-import org.asteriskjava.fastagi.AgiRequest;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import com.safi.asterisk.Call;
-import com.safi.asterisk.util.AsteriskSafletConstants;
 import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.InputItem;
@@ -35,7 +31,6 @@ import com.safi.core.saflet.SafletContext;
 import com.safi.core.saflet.SafletEnvironment;
 import com.safi.db.Variable;
 import com.safi.db.VariableScope;
-import com.safi.db.astdb.AsteriskServer;
 import com.safi.db.server.config.TelephonySubsystem;
 import com.safi.db.util.VariableTranslator;
 import com.safi.workshop.model.actionpak1.Actionpak1Package;
@@ -179,19 +174,19 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 
 				if (targetInitiator instanceof CallSource1) {
 					SafiCall scall = ((CallSource1) targetInitiator).getNewCall1();
-
-					if (scall != null && scall instanceof Call) {
-						Call call = (Call) scall;
-						AgiRequest request = (AgiRequest) context
-								.getVariableRawValue(AsteriskSafletConstants.VAR_KEY_REQUEST);
-						AgiChannel channel = (AgiChannel) context
-								.getVariableRawValue(AsteriskSafletConstants.VAR_KEY_CHANNEL);
-						call.setCallerIdName(request.getCallerIdName());
-						call.setCallerIdNum(request.getCallerIdNumber());
-						call.setChannel(channel);
-						call.setChannelName(channel.getName());
-						call.setUniqueId(channel.getUniqueId());
-					}
+					context.preHandoffPrep(scall);
+//					if (scall != null && scall instanceof Call) {
+//						Call call = (Call) scall;
+//						AgiRequest request = (AgiRequest) context
+//								.getVariableRawValue(AsteriskSafletConstants.VAR_KEY_REQUEST);
+//						AgiChannel channel = (AgiChannel) context
+//								.getVariableRawValue(AsteriskSafletConstants.VAR_KEY_CHANNEL);
+//						call.setCallerIdName(request.getCallerIdName());
+//						call.setCallerIdNum(request.getCallerIdNumber());
+//						call.setChannel(channel);
+//						call.setChannelName(channel.getName());
+//						call.setUniqueId(channel.getUniqueId());
+//					}
 				}
 				// EStructuralFeature targetFeature =
 				// targetInitiator.eClass().getEStructuralFeature("call");
