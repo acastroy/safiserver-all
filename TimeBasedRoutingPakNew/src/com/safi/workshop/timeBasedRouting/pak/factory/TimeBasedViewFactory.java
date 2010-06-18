@@ -7,10 +7,10 @@ import com.safi.workshop.timeBasedRouting.pak.editpart.TimeBasedRoutingNameEditP
 import com.safi.workshop.timeBasedRouting.pak.editpart.TimeItemEditPart;
 import com.safi.workshop.timeBasedRouting.pak.editpart.TimeItemLabelTextEditPart;
 import com.safi.workshop.timeBasedRouting.pak.editpart.TimeItemPanelEditPart;
-import com.safi.workshop.view.factories.ActionPakViewFactory;
+import com.safi.workshop.view.factories.ActionstepViewFactoryFactory;
 import com.safi.workshop.view.factories.ActionstepNameLabelViewFactory;
 
-public class TimeBasedViewFactory implements ActionPakViewFactory {
+public class TimeBasedViewFactory implements ActionstepViewFactoryFactory {
 
   public TimeBasedViewFactory() {
     // TODO Auto-generated constructor stub

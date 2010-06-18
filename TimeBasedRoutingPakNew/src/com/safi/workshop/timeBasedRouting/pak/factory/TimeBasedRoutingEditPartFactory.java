@@ -8,9 +8,9 @@ import com.safi.workshop.timeBasedRouting.pak.editpart.TimeBasedRoutingNameEditP
 import com.safi.workshop.timeBasedRouting.pak.editpart.TimeItemEditPart;
 import com.safi.workshop.timeBasedRouting.pak.editpart.TimeItemLabelTextEditPart;
 import com.safi.workshop.timeBasedRouting.pak.editpart.TimeItemPanelEditPart;
-import com.safi.workshop.view.factories.ActionPakEditPartFactory;
+import com.safi.workshop.view.factories.ActionstepEditPartFactory;
 
-public class TimeBasedRoutingEditPartFactory implements ActionPakEditPartFactory {
+public class TimeBasedRoutingEditPartFactory implements ActionstepEditPartFactory {
 
   @Override
   public EditPart createEditPart(View view, int id) {
