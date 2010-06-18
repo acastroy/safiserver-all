@@ -3,9 +3,9 @@ package com.safi.workshop.actionpak1;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
-import com.safi.workshop.view.factories.ActionPakEditPartFactory;
+import com.safi.workshop.view.factories.ActionstepEditPartFactory;
 
-public class ActionstepTestEditPartFactory implements ActionPakEditPartFactory {
+public class ActionstepTestEditPartFactory implements ActionstepEditPartFactory {
 
   @Override
   public EditPart createEditPart(View view, int id) {

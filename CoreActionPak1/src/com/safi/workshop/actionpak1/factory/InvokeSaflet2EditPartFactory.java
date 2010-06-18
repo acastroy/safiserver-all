@@ -11,9 +11,9 @@ import com.safi.workshop.actionpak1.editpart.InvokeSaflet2NameEditPart;
 import com.safi.workshop.actionpak1.editpart.OutputItemEditPart;
 import com.safi.workshop.actionpak1.editpart.OutputItemLabelTextEditPart;
 import com.safi.workshop.actionpak1.editpart.OutputItemPanelEditPart;
-import com.safi.workshop.view.factories.ActionPakEditPartFactory;
+import com.safi.workshop.view.factories.ActionstepEditPartFactory;
 
-public class InvokeSaflet2EditPartFactory implements ActionPakEditPartFactory {
+public class InvokeSaflet2EditPartFactory implements ActionstepEditPartFactory {
 
   @Override
   public EditPart createEditPart(View view, int id) {

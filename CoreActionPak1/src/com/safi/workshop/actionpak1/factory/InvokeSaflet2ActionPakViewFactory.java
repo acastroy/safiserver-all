@@ -10,10 +10,10 @@ import com.safi.workshop.actionpak1.editpart.InvokeSaflet2NameEditPart;
 import com.safi.workshop.actionpak1.editpart.OutputItemEditPart;
 import com.safi.workshop.actionpak1.editpart.OutputItemLabelTextEditPart;
 import com.safi.workshop.actionpak1.editpart.OutputItemPanelEditPart;
-import com.safi.workshop.view.factories.ActionPakViewFactory;
+import com.safi.workshop.view.factories.ActionstepViewFactoryFactory;
 import com.safi.workshop.view.factories.ActionstepNameLabelViewFactory;
 
-public class InvokeSaflet2ActionPakViewFactory implements ActionPakViewFactory {
+public class InvokeSaflet2ActionPakViewFactory implements ActionstepViewFactoryFactory {
 
   public InvokeSaflet2ActionPakViewFactory() {
     // TODO Auto-generated constructor stub

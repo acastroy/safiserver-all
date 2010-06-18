@@ -3,6 +3,7 @@ package com.safi.workshop.actionpak1.editpart;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
@@ -46,6 +47,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.PlatformUI;
+
 import com.safi.asterisk.figures.ParameterizedFigure;
 import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.ActionStepFactory;
@@ -54,10 +56,10 @@ import com.safi.core.actionstep.DynamicValueType;
 import com.safi.core.actionstep.InputItem;
 import com.safi.core.actionstep.OutputParameter;
 import com.safi.core.actionstep.ParameterizedInitiator;
-import com.safi.db.util.VariableTranslator;
 import com.safi.core.initiator.Initiator;
 import com.safi.core.saflet.Saflet;
 import com.safi.db.VariableType;
+import com.safi.db.util.VariableTranslator;
 import com.safi.server.manager.SafiServerRemoteManager;
 import com.safi.server.saflet.mbean.DebugRemoteControl;
 import com.safi.workshop.actionpak1.ElementTypes;
@@ -69,8 +71,8 @@ import com.safi.workshop.edit.policies.ActionstepCanonicalEditPolicy;
 import com.safi.workshop.model.actionpak1.InvokeSaflet2;
 import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.part.AsteriskVisualIDRegistry;
+import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.part.ValidateAction;
 import com.safi.workshop.util.SafletPersistenceManager;
 
