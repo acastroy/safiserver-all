@@ -81,13 +81,22 @@ public interface CallPackage extends EPackage {
 	int SAFI_CALL__UUID = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SAFI_CALL__NAME = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Safi Call</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SAFI_CALL_FEATURE_COUNT = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 1;
+	int SAFI_CALL_FEATURE_COUNT = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link com.safi.core.call.CallSource1 <em>Source1</em>}' class.
@@ -242,6 +251,17 @@ public interface CallPackage extends EPackage {
 	EAttribute getSafiCall_Uuid();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.safi.core.call.SafiCall#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see com.safi.core.call.SafiCall#getName()
+	 * @see #getSafiCall()
+	 * @generated
+	 */
+	EAttribute getSafiCall_Name();
+
+	/**
 	 * Returns the meta object for class '{@link com.safi.core.call.CallSource1 <em>Source1</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -364,6 +384,14 @@ public interface CallPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SAFI_CALL__UUID = eINSTANCE.getSafiCall_Uuid();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SAFI_CALL__NAME = eINSTANCE.getSafiCall_Name();
 
 		/**
 		 * The meta object literal for the '{@link com.safi.core.call.CallSource1 <em>Source1</em>}' class.

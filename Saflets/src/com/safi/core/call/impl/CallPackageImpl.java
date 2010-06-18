@@ -189,6 +189,15 @@ public class CallPackageImpl extends EPackageImpl implements CallPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getSafiCall_Name() {
+		return (EAttribute)safiCallEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCallSource1() {
 		return callSource1EClass;
 	}
@@ -286,6 +295,7 @@ public class CallPackageImpl extends EPackageImpl implements CallPackage {
 		// Create classes and their features
 		safiCallEClass = createEClass(SAFI_CALL);
 		createEAttribute(safiCallEClass, SAFI_CALL__UUID);
+		createEAttribute(safiCallEClass, SAFI_CALL__NAME);
 
 		callSource1EClass = createEClass(CALL_SOURCE1);
 		createEReference(callSource1EClass, CALL_SOURCE1__NEW_CALL1);
@@ -338,6 +348,7 @@ public class CallPackageImpl extends EPackageImpl implements CallPackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(safiCallEClass, SafiCall.class, "SafiCall", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSafiCall_Uuid(), ecorePackage.getEString(), "uuid", null, 0, 1, SafiCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSafiCall_Name(), ecorePackage.getEString(), "name", null, 0, 1, SafiCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(callSource1EClass, CallSource1.class, "CallSource1", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCallSource1_NewCall1(), this.getSafiCall(), null, "newCall1", null, 0, 1, CallSource1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -6,6 +6,7 @@ public interface SafletConstants {
   public static final String VAR_KEY_HANDLER_ENVIRONMENT = "_handler_environment_";
   public static final String VAR_KEY_HANDLER             = "_handler_";
   public static final String VAR_KEY_INVOKE_COUNT        = "_invocation_count_";
+  public static final String VAR_KEY_TELEPHONY_SUBSYSTEM = "_telephony_subsys_";
   
   public static final String WORKBENCH_DEBUGLOG      = "WORKBENCH_DEBUGLOG";
   public static final String STANDARD_LOG            = "STANDARD_LOG";

@@ -6,6 +6,7 @@
  */
 package com.safi.core.saflet.impl;
 
+import com.safi.core.call.SafiCall;
 import com.safi.core.impl.ThreadSensitiveImpl;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -425,6 +426,17 @@ public abstract class SafletContextImpl extends ThreadSensitiveImpl implements S
   }
 
   
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void preHandoffPrep(SafiCall call) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
 
 		public Object getDebugLock() {
     return debugLock;

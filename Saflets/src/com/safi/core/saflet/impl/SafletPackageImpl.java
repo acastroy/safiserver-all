@@ -448,6 +448,7 @@ public class SafletPackageImpl extends EPackageImpl implements SafletPackage {
 		ScriptingPackage theScriptingPackage = (ScriptingPackage)EPackage.Registry.INSTANCE.getEPackage(ScriptingPackage.eNS_URI);
 		ActionStepPackage theActionStepPackage = (ActionStepPackage)EPackage.Registry.INSTANCE.getEPackage(ActionStepPackage.eNS_URI);
 		DbPackage theDbPackage = (DbPackage)EPackage.Registry.INSTANCE.getEPackage(DbPackage.eNS_URI);
+		CallPackage theCallPackage = (CallPackage)EPackage.Registry.INSTANCE.getEPackage(CallPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -532,6 +533,9 @@ public class SafletPackageImpl extends EPackageImpl implements SafletPackage {
 		op = addEOperation(safletContextEClass, null, "setSessionVar", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaObject(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(safletContextEClass, null, "preHandoffPrep", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theCallPackage.getSafiCall(), "call", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(safletEnvironmentEClass, SafletEnvironment.class, "SafletEnvironment", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -953,6 +953,9 @@
         <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
       </eOperations>
+      <eOperations name="preHandoffPrep">
+        <eParameters name="call" eType="#//call/SafiCall"/>
+      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="exceptions" ordered="false"
           upperBound="-1" eType="#//saflet/Exception" changeable="false"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parentSaflet" ordered="false"
@@ -1009,6 +1012,7 @@
   <eSubpackages name="call" nsURI="http:///com/safi/core.ecore#call" nsPrefix="com.safi.core.call">
     <eClassifiers xsi:type="ecore:EClass" name="SafiCall" abstract="true" eSuperTypes="#//ThreadSensitive">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="CallSource1" abstract="true" interface="true">
       <eStructuralFeatures xsi:type="ecore:EReference" name="newCall1" eType="#//call/SafiCall"

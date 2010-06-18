@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.safi.core.call.impl.SafiCallImpl#getUuid <em>Uuid</em>}</li>
+ *   <li>{@link com.safi.core.call.impl.SafiCallImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +41,36 @@ public abstract class SafiCallImpl extends ThreadSensitiveImpl implements SafiCa
 	 * @ordered
 	 */
 	protected static final String UUID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUuid()
+	 * @generated
+	 * @ordered
+	 */
+	protected String uuid = UUID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
@@ -108,11 +139,34 @@ public abstract class SafiCallImpl extends ThreadSensitiveImpl implements SafiCa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CallPackage.SAFI_CALL__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CallPackage.SAFI_CALL__UUID:
 				return getUuid();
+			case CallPackage.SAFI_CALL__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -128,6 +182,9 @@ public abstract class SafiCallImpl extends ThreadSensitiveImpl implements SafiCa
 			case CallPackage.SAFI_CALL__UUID:
 				setUuid((String)newValue);
 				return;
+			case CallPackage.SAFI_CALL__NAME:
+				setName((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -142,6 +199,9 @@ public abstract class SafiCallImpl extends ThreadSensitiveImpl implements SafiCa
 		switch (featureID) {
 			case CallPackage.SAFI_CALL__UUID:
 				setUuid(UUID_EDEFAULT);
+				return;
+			case CallPackage.SAFI_CALL__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);

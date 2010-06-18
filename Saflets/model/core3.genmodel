@@ -2,24 +2,21 @@
 <genmodel:GenModel xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/Saflets/src"
-    modelPluginID="Saflets" modelName="Core" editPluginClass="com.safi.core.provider.CoreEditPluginProv"
-    runtimeCompatibility="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
-    copyrightFields="false" usedGenPackages="../../SafiDB/model/db.genmodel#//db">
+    modelPluginID="Saflets" modelName="Core3" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../SafiDB/model/db.genmodel#//db">
   <foreignModel>core.ecore</foreignModel>
-  <genPackages prefix="Core" basePackage="com.safi" disposableProviderFactory="true"
-      ecorePackage="core.ecore#/">
+  <genPackages prefix="Core" disposableProviderFactory="true" ecorePackage="core.ecore#/">
     <genClasses image="false" ecoreClass="core.ecore#//ProductIdentifiable">
-      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//ProductIdentifiable/productId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//ProductIdentifiable/productId"/>
     </genClasses>
     <genClasses ecoreClass="core.ecore#//ThreadSensitive">
       <genOperations ecoreOperation="core.ecore#//ThreadSensitive/cleanup"/>
     </genClasses>
-     <genClasses image="false" ecoreClass="core.ecore#//PlatformDisposition">
+    <genClasses image="false" ecoreClass="core.ecore#//PlatformDisposition">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//PlatformDisposition/platformID"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//PlatformDisposition/platformDependant"/>
     </genClasses>
-    <nestedGenPackages prefix="ActionStep" disposableProviderFactory="true" literalsInterface="false"
-        ecorePackage="core.ecore#//actionstep">
+    <nestedGenPackages prefix="Actionstep" disposableProviderFactory="true" ecorePackage="core.ecore#//actionstep">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="core.ecore#//actionstep/DynamicValueType">
         <genEnumLiterals ecoreEnumLiteral="core.ecore#//actionstep/DynamicValueType/LiteralText"/>
         <genEnumLiterals ecoreEnumLiteral="core.ecore#//actionstep/DynamicValueType/ScriptText"/>
@@ -45,16 +42,15 @@
         <genTypeParameters ecoreTypeParameter="core.ecore#//actionstep/BasicEMap/T"/>
         <genTypeParameters ecoreTypeParameter="core.ecore#//actionstep/BasicEMap/T1"/>
       </genDataTypes>
-       <genClasses image="false" ecoreClass="core.ecore#//actionstep/ActionStep">
-        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/ActionStep/paused"/>
-        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/ActionStep/active"/>
-        <genFeatures property="None" children="true" createChild="true" propertyDescription="Dataflow Output"
-            ecoreFeature="ecore:EReference core.ecore#//actionstep/ActionStep/outputs"/>
+      <genClasses image="false" ecoreClass="core.ecore#//actionstep/ActionStep">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/ActionStep/paused"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/ActionStep/active"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/ActionStep/outputs"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/ActionStep/name"/>
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference core.ecore#//actionstep/ActionStep/saflet"/>
-        <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference core.ecore#//actionstep/ActionStep/defaultOutput"/>
-        <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference core.ecore#//actionstep/ActionStep/errorOutput"/>
         <genOperations ecoreOperation="core.ecore#//actionstep/ActionStep/beginProcessing">
           <genParameters ecoreParameter="core.ecore#//actionstep/ActionStep/beginProcessing/context"/>
@@ -78,8 +74,7 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/Assignment/variableName"/>
       </genClasses>
       <genClasses ecoreClass="core.ecore#//actionstep/CaseItem">
-        <genFeatures children="true" createChild="true" propertyDescription="Value from which to compare"
-            ecoreFeature="ecore:EReference core.ecore#//actionstep/CaseItem/dynamicValue"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/CaseItem/dynamicValue"/>
       </genClasses>
       <genClasses ecoreClass="core.ecore#//actionstep/InputItem">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/InputItem/parameterName"/>
@@ -87,8 +82,7 @@
       </genClasses>
       <genClasses image="false" ecoreClass="core.ecore#//actionstep/ParameterizedActionstep">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/ParameterizedActionstep/inputs"/>
-        <genFeatures property="None" children="true" createChild="true" 
-            ecoreFeature="ecore:EReference core.ecore#//actionstep/ParameterizedActionstep/outputParameters"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/ParameterizedActionstep/outputParameters"/>
       </genClasses>
       <genClasses image="false" ecoreClass="core.ecore#//actionstep/ParameterizedInitiator">
         <genOperations ecoreOperation="core.ecore#//actionstep/ParameterizedInitiator/getOutputMap"/>
@@ -105,37 +99,36 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/DynamicValue/data"/>
       </genClasses>
       <genClasses ecoreClass="core.ecore#//actionstep/IfThen">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/IfThen/booleanExpression"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/IfThen/booleanExpression"/>
       </genClasses>
       <genClasses ecoreClass="core.ecore#//actionstep/Output">
-        <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference core.ecore#//actionstep/Output/target"/>
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference core.ecore#//actionstep/Output/parent"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/Output/name"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/Output/outputType"/>
       </genClasses>
       <genClasses ecoreClass="core.ecore#//actionstep/ExecuteScript">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/ExecuteScript/scriptText"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/ExecuteScript/scriptText"/>
       </genClasses>
       <genClasses ecoreClass="core.ecore#//actionstep/InvokeSaflet">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/InvokeSaflet/targetSafletPath"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/InvokeSaflet/labelText"/>
       </genClasses>
       <genClasses ecoreClass="core.ecore#//actionstep/DebugLog">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/DebugLog/message"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/DebugLog/message"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/DebugLog/debugLevel"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/DebugLog/logFilename"/>
       </genClasses>
       <genClasses ecoreClass="core.ecore#//actionstep/OpenDBConnection">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference core.ecore#//actionstep/OpenDBConnection/connection"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/OpenDBConnection/connection"/>
       </genClasses>
       <genClasses ecoreClass="core.ecore#//actionstep/CloseDBConnection">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference core.ecore#//actionstep/CloseDBConnection/connection"/>
       </genClasses>
       <genClasses ecoreClass="core.ecore#//actionstep/OpenQuery">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/OpenQuery/query"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/OpenQuery/query"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference core.ecore#//actionstep/OpenQuery/connection"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/OpenQuery/useCache"/>
@@ -145,11 +138,11 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/OpenQuery/holdabilityMode"/>
       </genClasses>
       <genClasses ecoreClass="core.ecore#//actionstep/SetQueryParam">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/SetQueryParam/value"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference core.ecore#//actionstep/SetQueryParam/parameter"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/SetQueryParam/value"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/SetQueryParam/parameter"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/SetQueryParam/paramDatatype"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/SetQueryParam/query"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference core.ecore#//actionstep/SetQueryParam/query"/>
       </genClasses>
       <genClasses ecoreClass="core.ecore#//actionstep/ExecuteUpdate">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -169,8 +162,8 @@
       <genClasses ecoreClass="core.ecore#//actionstep/GetColValue">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference core.ecore#//actionstep/GetColValue/resultSet"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/GetColValue/variableName"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/GetColValue/column"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/GetColValue/variableName"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/GetColValue/column"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/GetColValue/getAsDatatype"/>
       </genClasses>
       <genClasses ecoreClass="core.ecore#//actionstep/GetColValues">
@@ -181,9 +174,9 @@
       <genClasses ecoreClass="core.ecore#//actionstep/SetColValue">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference core.ecore#//actionstep/SetColValue/resultSet"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/SetColValue/column"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/SetColValue/column"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/SetColValue/setAsDatatype"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/SetColValue/value"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/SetColValue/value"/>
       </genClasses>
       <genClasses ecoreClass="core.ecore#//actionstep/SetColValues">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -197,7 +190,7 @@
       <genClasses ecoreClass="core.ecore#//actionstep/MoveToRow">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference core.ecore#//actionstep/MoveToRow/resultSet"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/MoveToRow/rowNum"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/MoveToRow/rowNum"/>
       </genClasses>
       <genClasses ecoreClass="core.ecore#//actionstep/MoveToLastRow">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -237,47 +230,48 @@
       </genClasses>
       <genClasses ecoreClass="core.ecore#//actionstep/DBResultSetId">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/DBResultSetId/name"/>
-        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/DBResultSetId/id"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/DBResultSetId/id"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/DBResultSetId/jDBCResultSet"/>
       </genClasses>
       <genClasses ecoreClass="core.ecore#//actionstep/GetColMapping">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/GetColMapping/variableName"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/GetColMapping/column"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/GetColMapping/variableName"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/GetColMapping/column"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/GetColMapping/getAsDatatype"/>
       </genClasses>
       <genClasses ecoreClass="core.ecore#//actionstep/SetColMapping">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/SetColMapping/column"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/SetColMapping/column"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/SetColMapping/setAsDatatype"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/SetColMapping/value"/>
       </genClasses>
       <genClasses ecoreClass="core.ecore#//actionstep/RunQuery">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference core.ecore#//actionstep/RunQuery/connection"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/RunQuery/query"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/RunQuery/query"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/RunQuery/paramMappings"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/RunQuery/resultSetName"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/RunQuery/scrollable"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/RunQuery/readOnly"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/RunQuery/resultSet"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/RunQuery/rowsUpdatedVar"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/RunQuery/sql"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/RunQuery/resultSet"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/RunQuery/rowsUpdatedVar"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/RunQuery/sql"/>
         <genOperations ecoreOperation="core.ecore#//actionstep/RunQuery/refreshParams">
           <genParameters ecoreParameter="core.ecore#//actionstep/RunQuery/refreshParams/qry"/>
         </genOperations>
       </genClasses>
       <genClasses ecoreClass="core.ecore#//actionstep/QueryParamMapping">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/QueryParamMapping/queryParam"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/QueryParamMapping/queryParam"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/QueryParamMapping/setAsDatatype"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/QueryParamMapping/value"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/QueryParamMapping/value"/>
       </genClasses>
       <genClasses ecoreClass="core.ecore#//actionstep/Item">
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/Item/labelText"/>
-        <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/Item/labelText"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference core.ecore#//actionstep/Item/parentActionStep"/>
-        <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference core.ecore#//actionstep/Item/targetActionStep"/>
       </genClasses>
       <genClasses image="false" ecoreClass="core.ecore#//actionstep/Heavyweight"/>
+      <genClasses ecoreClass="core.ecore#//actionstep/OutputParameter"/>
     </nestedGenPackages>
     <nestedGenPackages prefix="Scripting" disposableProviderFactory="true" ecorePackage="core.ecore#//scripting">
       <genDataTypes ecoreDataType="core.ecore#//scripting/SafletScriptException"/>
@@ -337,24 +331,22 @@
       <genDataTypes ecoreDataType="core.ecore#//saflet/SafletException"/>
       <genDataTypes ecoreDataType="core.ecore#//saflet/Exception"/>
       <genDataTypes ecoreDataType="core.ecore#//saflet/Executor"/>
-      <genClasses ecoreClass="core.ecore#//saflet/Saflet">
-        <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+      <genClasses image="false" ecoreClass="core.ecore#//saflet/Saflet">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference core.ecore#//saflet/Saflet/initiator"/>
-        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//saflet/Saflet/active"/>
-        <genFeatures createChild="false" propertyDescription="The name of the Saflet"
-            ecoreFeature="ecore:EAttribute core.ecore#//saflet/Saflet/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//saflet/Saflet/active"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//saflet/Saflet/name"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//saflet/Saflet/safletContext"/>
-        <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference core.ecore#//saflet/Saflet/safletScope"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//saflet/Saflet/actionsteps"/>
-        <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference core.ecore#//saflet/Saflet/scriptingEnvironment"/>
-        <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference core.ecore#//saflet/Saflet/safletEnvironment"/>
-        <genFeatures property="Readonly" createChild="false" propertyCategory="" propertyDescription="Saflet version number"
-            ecoreFeature="ecore:EAttribute core.ecore#//saflet/Saflet/version"/>
-        <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute core.ecore#//saflet/Saflet/description"/>
-        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//saflet/Saflet/id"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//saflet/Saflet/version"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//saflet/Saflet/description"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//saflet/Saflet/id"/>
         <genOperations ecoreOperation="core.ecore#//saflet/Saflet/getActionStep">
           <genParameters ecoreParameter="core.ecore#//saflet/Saflet/getActionStep/name"/>
         </genOperations>
@@ -371,7 +363,7 @@
         <genOperations ecoreOperation="core.ecore#//saflet/Saflet/initializeScriptableObjects"/>
         <genOperations ecoreOperation="core.ecore#//saflet/Saflet/init"/>
       </genClasses>
-      <genClasses ecoreClass="core.ecore#//saflet/SafletContext">
+      <genClasses image="false" ecoreClass="core.ecore#//saflet/SafletContext">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//saflet/SafletContext/exceptions"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference core.ecore#//saflet/SafletContext/parentSaflet"/>

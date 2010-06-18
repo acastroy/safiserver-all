@@ -7,6 +7,7 @@
 package com.safi.core.saflet;
 
 import com.safi.core.ThreadSensitive;
+import com.safi.core.call.SafiCall;
 import com.safi.db.Variable;
 
 import java.util.Map;
@@ -189,6 +190,14 @@ public interface SafletContext extends ThreadSensitive {
   void setSessionVar(String name, Object value);
 
   /**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void preHandoffPrep(SafiCall call);
+
+		/**
    * <!-- begin-user-doc --> <!-- end-user-doc -->
    * 
    * @model
