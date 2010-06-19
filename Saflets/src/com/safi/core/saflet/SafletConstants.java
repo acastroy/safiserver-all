@@ -1,6 +1,7 @@
 package com.safi.core.saflet;
 
 public interface SafletConstants {
+	public static final String PLATFORM_ID 								 = "Asterisk";
   public static final String VAR_KEY_PROPS               = "_custom_props_";
   public static final String VAR_KEY_HANDLER_CONTEXT     = "_handler_context_";
   public static final String VAR_KEY_HANDLER_ENVIRONMENT = "_handler_environment_";

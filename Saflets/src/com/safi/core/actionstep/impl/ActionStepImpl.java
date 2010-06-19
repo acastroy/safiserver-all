@@ -1047,17 +1047,21 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
 
   /**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
   @Override
   public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ActionStepPackage.ACTION_STEP__PRODUCT_ID:
 				return PRODUCT_ID_EDEFAULT == null ? productId != null : !PRODUCT_ID_EDEFAULT.equals(productId);
+			case ActionStepPackage.ACTION_STEP__PLATFORM_ID:
+				return isSetPlatformID();
+			case ActionStepPackage.ACTION_STEP__PLATFORM_DEPENDANT:
+				return isSetPlatformDependant();
 			case ActionStepPackage.ACTION_STEP__PAUSED:
 				return paused != PAUSED_EDEFAULT;
 			case ActionStepPackage.ACTION_STEP__ACTIVE:
-				return activeHolder.get() != ACTIVE_EDEFAULT;
+				return active != ACTIVE_EDEFAULT;
 			case ActionStepPackage.ACTION_STEP__OUTPUTS:
 				return outputs != null && !outputs.isEmpty();
 			case ActionStepPackage.ACTION_STEP__NAME:
