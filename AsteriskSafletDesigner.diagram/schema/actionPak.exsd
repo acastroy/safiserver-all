@@ -28,6 +28,7 @@
             <element ref="serverjar" minOccurs="0" maxOccurs="unbounded"/>
             <element ref="description" minOccurs="0" maxOccurs="1"/>
             <element ref="actionstepEditorDialogFactory" minOccurs="0" maxOccurs="unbounded"/>
+            <element ref="actionPakFactory" minOccurs="0" maxOccurs="1"/>
          </sequence>
          <attribute name="point" type="string">
             <annotation>
@@ -396,6 +397,16 @@
                </documentation>
                <appInfo>
                   <meta.attribute kind="java" basedOn=":com.safi.workshop.view.factories.ActionPakViewFactoryFactory"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="editorDialogFactory" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":com.safi.workshop.sheet.ActionPakEditorDialogFactory"/>
                </appInfo>
             </annotation>
          </attribute>
