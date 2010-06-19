@@ -23,6 +23,7 @@ import com.safi.asterisk.saflet.AsteriskSafletContext;
 import com.safi.asterisk.saflet.AsteriskSafletEnvironment;
 import com.safi.asterisk.saflet.SafletFactory;
 import com.safi.asterisk.saflet.SafletPackage;
+import com.safi.core.call.CallPackage;
 import com.safi.db.astdb.AstdbPackage;
 import com.safi.workshop.model.actionpak1.Actionpak1Package;
 

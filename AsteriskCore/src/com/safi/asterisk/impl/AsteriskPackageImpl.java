@@ -163,7 +163,7 @@ public class AsteriskPackageImpl extends EPackageImpl implements AsteriskPackage
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EAttribute getCall_Name() {
+  public EAttribute getCall_Channel() {
 		return (EAttribute)callEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -172,7 +172,7 @@ public class AsteriskPackageImpl extends EPackageImpl implements AsteriskPackage
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EAttribute getCall_Channel() {
+  public EAttribute getCall_CallerIdName() {
 		return (EAttribute)callEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -181,7 +181,7 @@ public class AsteriskPackageImpl extends EPackageImpl implements AsteriskPackage
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EAttribute getCall_CallerIdName() {
+  public EAttribute getCall_CallerIdNum() {
 		return (EAttribute)callEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -190,7 +190,7 @@ public class AsteriskPackageImpl extends EPackageImpl implements AsteriskPackage
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EAttribute getCall_CallerIdNum() {
+  public EAttribute getCall_UniqueId() {
 		return (EAttribute)callEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -199,7 +199,7 @@ public class AsteriskPackageImpl extends EPackageImpl implements AsteriskPackage
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EAttribute getCall_UniqueId() {
+  public EAttribute getCall_ChannelName() {
 		return (EAttribute)callEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -208,17 +208,8 @@ public class AsteriskPackageImpl extends EPackageImpl implements AsteriskPackage
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EAttribute getCall_ChannelName() {
-		return (EAttribute)callEClass.getEStructuralFeatures().get(5);
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
   public EAttribute getCall_CallState() {
-		return (EAttribute)callEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)callEClass.getEStructuralFeatures().get(5);
 	}
 
   /**
@@ -286,7 +277,6 @@ public class AsteriskPackageImpl extends EPackageImpl implements AsteriskPackage
 
 		// Create classes and their features
 		callEClass = createEClass(CALL);
-		createEAttribute(callEClass, CALL__NAME);
 		createEAttribute(callEClass, CALL__CHANNEL);
 		createEAttribute(callEClass, CALL__CALLER_ID_NAME);
 		createEAttribute(callEClass, CALL__CALLER_ID_NUM);
@@ -346,7 +336,6 @@ public class AsteriskPackageImpl extends EPackageImpl implements AsteriskPackage
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(callEClass, Call.class, "Call", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCall_Name(), ecorePackage.getEString(), "name", null, 0, 1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCall_Channel(), this.getAgiChannel(), "channel", null, 0, 1, Call.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCall_CallerIdName(), ecorePackage.getEString(), "callerIdName", null, 0, 1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCall_CallerIdNum(), ecorePackage.getEString(), "callerIdNum", null, 0, 1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

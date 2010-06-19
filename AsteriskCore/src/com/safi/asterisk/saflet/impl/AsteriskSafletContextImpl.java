@@ -9,12 +9,17 @@ package com.safi.asterisk.saflet.impl;
 import java.util.logging.Logger;
 
 import org.apache.commons.lang.StringUtils;
+import org.asteriskjava.fastagi.AgiChannel;
+import org.asteriskjava.fastagi.AgiRequest;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import com.safi.asterisk.Call;
 import com.safi.asterisk.saflet.AsteriskSafletContext;
 import com.safi.asterisk.saflet.SafletPackage;
+import com.safi.asterisk.util.AsteriskSafletConstants;
+import com.safi.core.call.SafiCall;
 import com.safi.core.saflet.impl.SafletContextImpl;
 
 /**
@@ -71,6 +76,21 @@ public class AsteriskSafletContextImpl extends SafletContextImpl implements Aste
   protected AsteriskSafletContextImpl() {
 		super();
 	}
+  
+  @Override
+  public void preHandoffPrep(SafiCall scall) {
+  	super.preHandoffPrep(scall);
+  	if (scall != null && scall instanceof Call) {
+			Call call = (Call) scall;
+			AgiRequest request = (AgiRequest)getVariableRawValue(AsteriskSafletConstants.VAR_KEY_REQUEST);
+			AgiChannel channel = (AgiChannel) getVariableRawValue(AsteriskSafletConstants.VAR_KEY_CHANNEL);
+			call.setCallerIdName(request.getCallerIdName());
+			call.setCallerIdNum(request.getCallerIdNumber());
+			call.setChannel(channel);
+			call.setChannelName(channel.getName());
+			call.setUniqueId(channel.getUniqueId());
+		}
+  }
 
   @Override
   public void cleanup() {

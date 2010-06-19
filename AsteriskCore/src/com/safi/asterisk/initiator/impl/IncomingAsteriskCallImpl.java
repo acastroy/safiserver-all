@@ -135,7 +135,12 @@ public class IncomingAsteriskCallImpl extends IncomingCall2Impl implements Incom
     ((Call)newCall1).setChannel(channel);
     ((Call)newCall1).setChannelName(channel.getName());
     ((Call)newCall1).setUniqueId(channel.getUniqueId());
-    super.initialize(info);
+    //super.initialize(info);
   }
+  
+  @Override
+	public String getPlatformID() {
+		return AsteriskSafletConstants.PLATFORM_ID;
+	}
 
 } //IncomingAsteriskCallImpl

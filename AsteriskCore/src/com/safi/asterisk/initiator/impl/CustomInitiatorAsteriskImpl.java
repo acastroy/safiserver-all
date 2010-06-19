@@ -64,5 +64,10 @@ public class CustomInitiatorAsteriskImpl extends CustomInitiatorImpl implements 
 	          ((AsteriskInitiatorInfo) ictx).getAsteriskServer());
 	    }
 	  }
+	 
+	 @Override
+	public String getPlatformID() {
+		return AsteriskSafletConstants.PLATFORM_ID;
+	}
 
 } //CustomInitiatorAsteriskImpl

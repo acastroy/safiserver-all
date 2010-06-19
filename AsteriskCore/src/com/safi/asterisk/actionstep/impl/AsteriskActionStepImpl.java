@@ -8,6 +8,7 @@ package com.safi.asterisk.actionstep.impl;
 
 import com.safi.asterisk.actionstep.ActionstepPackage;
 import com.safi.asterisk.actionstep.AsteriskActionStep;
+import com.safi.asterisk.util.AsteriskSafletConstants;
 
 import com.safi.core.actionstep.impl.ActionStepImpl;
 
@@ -47,9 +48,9 @@ public abstract class AsteriskActionStepImpl extends ActionStepImpl implements A
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	@Override
-	public String getPlatformID() {
-		return "Asterisk";
-	}
+	 @Override
+		public String getPlatformID() {
+			return AsteriskSafletConstants.PLATFORM_ID;
+		}
 
 } //AsteriskActionStepImpl

@@ -26,7 +26,6 @@ import com.safi.core.call.impl.SafiCallImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.safi.asterisk.impl.CallImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.safi.asterisk.impl.CallImpl#getChannel <em>Channel</em>}</li>
  *   <li>{@link com.safi.asterisk.impl.CallImpl#getCallerIdName <em>Caller Id Name</em>}</li>
  *   <li>{@link com.safi.asterisk.impl.CallImpl#getCallerIdNum <em>Caller Id Num</em>}</li>
@@ -39,26 +38,6 @@ import com.safi.core.call.impl.SafiCallImpl;
  * @generated
  */
 public class CallImpl extends SafiCallImpl implements Call {
-  /**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-  protected String name = NAME_EDEFAULT;
-
   /**
 	 * The default value of the '{@link #getChannel() <em>Channel</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -289,27 +268,6 @@ public class CallImpl extends SafiCallImpl implements Call {
 	}
 
   /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public String getName() {
-		return name;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AsteriskPackage.CALL__NAME, oldName, name));
-	}
-
-  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated NOT
@@ -478,8 +436,6 @@ public class CallImpl extends SafiCallImpl implements Call {
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AsteriskPackage.CALL__NAME:
-				return getName();
 			case AsteriskPackage.CALL__CHANNEL:
 				return getChannel();
 			case AsteriskPackage.CALL__CALLER_ID_NAME:
@@ -504,9 +460,6 @@ public class CallImpl extends SafiCallImpl implements Call {
   @Override
   public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AsteriskPackage.CALL__NAME:
-				setName((String)newValue);
-				return;
 			case AsteriskPackage.CALL__CHANNEL:
 				setChannel((AgiChannel)newValue);
 				return;
@@ -537,9 +490,6 @@ public class CallImpl extends SafiCallImpl implements Call {
   @Override
   public void eUnset(int featureID) {
 		switch (featureID) {
-			case AsteriskPackage.CALL__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 			case AsteriskPackage.CALL__CHANNEL:
 				setChannel(CHANNEL_EDEFAULT);
 				return;

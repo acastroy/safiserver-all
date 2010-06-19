@@ -88,7 +88,7 @@ public interface AsteriskPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int CALL__NAME = CallPackage.SAFI_CALL_FEATURE_COUNT + 0;
+  int CALL__NAME = CallPackage.SAFI_CALL__NAME;
 
   /**
 	 * The feature id for the '<em><b>Channel</b></em>' attribute.
@@ -97,7 +97,7 @@ public interface AsteriskPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int CALL__CHANNEL = CallPackage.SAFI_CALL_FEATURE_COUNT + 1;
+  int CALL__CHANNEL = CallPackage.SAFI_CALL_FEATURE_COUNT + 0;
 
   /**
 	 * The feature id for the '<em><b>Caller Id Name</b></em>' attribute.
@@ -106,7 +106,7 @@ public interface AsteriskPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int CALL__CALLER_ID_NAME = CallPackage.SAFI_CALL_FEATURE_COUNT + 2;
+  int CALL__CALLER_ID_NAME = CallPackage.SAFI_CALL_FEATURE_COUNT + 1;
 
   /**
 	 * The feature id for the '<em><b>Caller Id Num</b></em>' attribute.
@@ -115,7 +115,7 @@ public interface AsteriskPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int CALL__CALLER_ID_NUM = CallPackage.SAFI_CALL_FEATURE_COUNT + 3;
+  int CALL__CALLER_ID_NUM = CallPackage.SAFI_CALL_FEATURE_COUNT + 2;
 
   /**
 	 * The feature id for the '<em><b>Unique Id</b></em>' attribute.
@@ -124,7 +124,7 @@ public interface AsteriskPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int CALL__UNIQUE_ID = CallPackage.SAFI_CALL_FEATURE_COUNT + 4;
+  int CALL__UNIQUE_ID = CallPackage.SAFI_CALL_FEATURE_COUNT + 3;
 
   /**
 	 * The feature id for the '<em><b>Channel Name</b></em>' attribute.
@@ -133,7 +133,7 @@ public interface AsteriskPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int CALL__CHANNEL_NAME = CallPackage.SAFI_CALL_FEATURE_COUNT + 5;
+  int CALL__CHANNEL_NAME = CallPackage.SAFI_CALL_FEATURE_COUNT + 4;
 
   /**
 	 * The feature id for the '<em><b>Call State</b></em>' attribute.
@@ -142,7 +142,7 @@ public interface AsteriskPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int CALL__CALL_STATE = CallPackage.SAFI_CALL_FEATURE_COUNT + 6;
+  int CALL__CALL_STATE = CallPackage.SAFI_CALL_FEATURE_COUNT + 5;
 
   /**
 	 * The number of structural features of the '<em>Call</em>' class.
@@ -151,7 +151,7 @@ public interface AsteriskPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int CALL_FEATURE_COUNT = CallPackage.SAFI_CALL_FEATURE_COUNT + 7;
+  int CALL_FEATURE_COUNT = CallPackage.SAFI_CALL_FEATURE_COUNT + 6;
 
   /**
 	 * The meta object id for the '{@link com.safi.asterisk.CallState <em>Call State</em>}' enum.
@@ -204,17 +204,6 @@ public interface AsteriskPackage extends EPackage {
 	 * @generated
 	 */
   EClass getCall();
-
-  /**
-	 * Returns the meta object for the attribute '{@link com.safi.asterisk.Call#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see com.safi.asterisk.Call#getName()
-	 * @see #getCall()
-	 * @generated
-	 */
-  EAttribute getCall_Name();
 
   /**
 	 * Returns the meta object for the attribute '{@link com.safi.asterisk.Call#getChannel <em>Channel</em>}'.
@@ -356,14 +345,6 @@ public interface AsteriskPackage extends EPackage {
 		 * @generated
 		 */
     EClass CALL = eINSTANCE.getCall();
-
-    /**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-		 * @generated
-		 */
-    EAttribute CALL__NAME = eINSTANCE.getCall_Name();
 
     /**
 		 * The meta object literal for the '<em><b>Channel</b></em>' attribute feature.
