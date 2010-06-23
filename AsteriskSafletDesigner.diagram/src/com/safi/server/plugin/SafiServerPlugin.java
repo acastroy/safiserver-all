@@ -48,13 +48,12 @@ import com.jcraft.jsch.HostKey;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.UserInfo;
-import com.safi.asterisk.util.AsteriskSafletConstants;
+import com.safi.core.saflet.SafletConstants;
 import com.safi.db.SafiDriverManager;
 import com.safi.db.Variable;
-import com.safi.db.astdb.AsteriskServer;
-import com.safi.db.fsdb.FreeSwitchServer;
 import com.safi.db.server.config.Entitlement;
 import com.safi.db.server.config.Role;
+import com.safi.db.server.config.SFTPInfo;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.TelephonySubsystem;
 import com.safi.db.server.config.User;
@@ -69,6 +68,8 @@ import com.safi.server.saflet.manager.DBManager;
 import com.safi.server.saflet.manager.DBManagerException;
 import com.safi.server.saflet.mbean.SysInfo;
 import com.safi.server.util.Utils;
+import com.safi.workshop.TelephonyModulePlugin;
+import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 
 /**
  * The activator class controls the plug-in life cycle
@@ -417,6 +418,20 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 		return va[0];
 	}
 
+	public boolean hasTelephonyModules(){
+		return AsteriskDiagramEditorPlugin.getInstance().getTelephonyModulePlugins().length > 0;
+	}
+	
+	public List<TelephonySubsystem> getTelephonySubsystems(){
+		List<TelephonySubsystem> infos = new ArrayList<TelephonySubsystem>();
+		for (TelephonyModulePlugin plugins : AsteriskDiagramEditorPlugin.getInstance().getTelephonyModulePlugins() ){
+			for (TelephonySubsystem sys : plugins.getAvailableTelephonySubsystems()){
+//				if (sys instanceof SFTPInfo)
+					infos.add(sys);
+			}
+		}
+		return infos;
+	}
 	public void loadDriverManager() throws IOException {
 		loadDriverManager(false);
 	}
@@ -517,7 +532,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 
 	public void setDebugStream(OutputStream os) {
 		if (debugConsoleAppender == null) {
-			Formatter formatter = new CustomFormatter(AsteriskSafletConstants.DEBUG_PATTERN_LAYOUT);
+			Formatter formatter = new CustomFormatter(SafletConstants.DEBUG_PATTERN_LAYOUT);
 			debugConsoleAppender = new StreamHandler(os, formatter);
 			debuggerLog.addHandler(debugConsoleAppender);
 			debuggerLog.setLevel(Level.FINEST);
@@ -1615,54 +1630,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 
 	}
 
-	public boolean hasAsteriskServers() {
-		try {
-			if (!isConnected())
-				return false;
-			for (TelephonySubsystem server : getSafiServer(true).getTelephonySubsystems()) {
-				if (server instanceof AsteriskServer && server.isEnabled()
-				    && (!server.isPrivate() || (server.isPrivate()
-				        && server.getCreatedBy() != null && server.getCreatedBy().getId() == getCurrentUser()
-				        .getId())))
-					return true;
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return false;
-	}
-
-	public List<AsteriskServer> getAvailableAsteriskServers() {
-		List<AsteriskServer> servers = new ArrayList<AsteriskServer>();
-		try {
-			for (TelephonySubsystem server : getSafiServer(true).getTelephonySubsystems()) {
-				if (server instanceof AsteriskServer && server.isEnabled()
-				    && (!server.isPrivate() || (server.isPrivate()
-				        && server.getCreatedBy() != null && server.getCreatedBy().getId() == getCurrentUser()
-				        .getId())))
-					servers.add((AsteriskServer)server);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return servers;
-	}
 	
-	public List<FreeSwitchServer> getAvailableFreeSwitchServers() {
-		List<FreeSwitchServer> servers = new ArrayList<FreeSwitchServer>();
-		try {
-			for (TelephonySubsystem server : getSafiServer(true).getTelephonySubsystems()) {
-				if (server instanceof FreeSwitchServer && server.isEnabled()
-				    && (!server.isPrivate() || (server.isPrivate()
-				        && server.getCreatedBy() != null && server.getCreatedBy().getId() == getCurrentUser()
-				        .getId())))
-					servers.add((FreeSwitchServer)server);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return servers;
-	}
 
 	// public NotifyingListImpl<Variable> getGlobalVariables() {
 	// return globalVariables;

@@ -3,10 +3,12 @@ package com.safi.workshop.part;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.locks.ReentrantLock;
 
+import org.apache.commons.collections.ReferenceMap;
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
@@ -52,6 +54,7 @@ import com.safi.server.manager.SafiServerRemoteManager;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.preferences.SafiServerStatusListener;
 import com.safi.server.saflet.mbean.SysInfo;
+import com.safi.workshop.TelephonyModulePlugin;
 import com.safi.workshop.application.DiagramEditorPerspective;
 import com.safi.workshop.application.DiagramEditorWorkbenchWindowAdvisor;
 import com.safi.workshop.application.SafiDBPerspective;
@@ -131,6 +134,7 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 	private Map<String, IConfigurationElement> dynamicValueEditorContributionItems = new HashMap<String, IConfigurationElement>();
 	protected SafiServerPanel safiServerPanel;
 	private DebugEventListener debugEventListener;
+	private Map<String, TelephonyModulePlugin> telephonyModulePlugins = new LinkedHashMap<String, TelephonyModulePlugin>();
 
 	/**
 	 * @generated NOT
@@ -194,6 +198,36 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 
 	}
 
+	
+	public void intTelephonyModulePluginMap(IProgressMonitor monitor){
+		IExtensionRegistry registry = Platform.getExtensionRegistry();
+		IExtensionPoint point = registry.getExtensionPoint("AsteriskSafletDesigner.diagram.telephonyModule");
+		if (point == null) {
+			return;
+		}
+
+		IExtension[] extensions = point.getExtensions();
+		// adapterFactory = createAdapterFactory();
+		monitor.subTask("Processing Telephony Modules");
+		// load factories first
+		for (IExtension extension : extensions) {
+			IConfigurationElement[] elements = extension.getConfigurationElements();
+
+			for (IConfigurationElement element : elements) {
+				if ("TelephonyModulePlugin".equals(element.getName())) {
+					try {
+						TelephonyModulePlugin plugin = (TelephonyModulePlugin) element
+								.createExecutableExtension("class");
+						System.err.println("Adding TelephonyModule "+plugin.getClass());
+						telephonyModulePlugins.put(plugin.getPlatformId(), plugin);
+					} catch (Exception e) {
+						e.printStackTrace();
+						logError("Couldn't load adapter factory", e);
+					}
+				}
+			}
+		}
+	}
 	protected void updateServerView(SysInfo info) {
 		if (safiServerPanel != null) {
 			safiServerPanel.updateInfo(info);
@@ -405,6 +439,7 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 						String outputItemPanelSemanticHint = element.getAttribute("outputItemPanelSemanticHint");
 
 						String isInitiator = element.getAttribute("isInitiator");
+						String platformId = element.getAttribute("platformId");
 
 						ActionstepCreateCommandFactory createFactory = null;
 
@@ -459,6 +494,7 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 
 						profile.viewFactory = viewFactory;
 						profile.isInitiator = Boolean.valueOf(isInitiator);
+						profile.platformId = platformId;
 
 						IConfigurationElement[] paletteElems = element.getChildren("paletteEntry");
 						if (paletteElems != null && paletteElems.length >= 1) {
@@ -753,10 +789,10 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 		factories.add(new com.safi.core.saflet.provider.SafletItemProviderAdapterFactory());
 		factories.add(new com.safi.core.initiator.provider.InitiatorItemProviderAdapterFactory());
 
-		factories.add(new com.safi.asterisk.provider.AsteriskItemProviderAdapterFactory());
-		factories.add(new com.safi.asterisk.actionstep.provider.ActionstepItemProviderAdapterFactory());
-		factories.add(new com.safi.asterisk.initiator.provider.InitiatorItemProviderAdapterFactory());
-		factories.add(new com.safi.asterisk.saflet.provider.SafletItemProviderAdapterFactory());
+//		factories.add(new com.safi.asterisk.provider.AsteriskItemProviderAdapterFactory());
+//		factories.add(new com.safi.asterisk.actionstep.provider.ActionstepItemProviderAdapterFactory());
+//		factories.add(new com.safi.asterisk.initiator.provider.InitiatorItemProviderAdapterFactory());
+//		factories.add(new com.safi.asterisk.saflet.provider.SafletItemProviderAdapterFactory());
 
 		factories.add(new DbItemProviderAdapterFactory());
 		factories.add(new ResourceItemProviderAdapterFactory());
@@ -1186,6 +1222,7 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 		public String labelSemanticHint;
 
 		public boolean isInitiator;
+		public String platformId;
 	}
 
 	public static class ActionPakFactoryProfile {
@@ -1219,5 +1256,9 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 		}
 		this.debugEventListener = debugEventListener;
 		SafiServerPlugin.getDefault().addDebugEventListener(debugEventListener);
+	}
+
+	public TelephonyModulePlugin[] getTelephonyModulePlugins() {
+		return telephonyModulePlugins.values().toArray(new TelephonyModulePlugin[telephonyModulePlugins.size()]);
 	}
 }

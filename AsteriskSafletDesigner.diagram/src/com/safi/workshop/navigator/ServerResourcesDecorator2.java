@@ -11,19 +11,11 @@ import org.eclipse.swt.graphics.Point;
 import org.eclipse.ui.IDecoratorManager;
 import org.eclipse.ui.PlatformUI;
 
-import com.safi.db.astdb.AsteriskServer;
-import com.safi.db.fsdb.FreeSwitchServer;
 import com.safi.db.server.config.SafiServer;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 
 public class ServerResourcesDecorator2 extends LabelProvider implements ILabelDecorator {
-  private final static String AST_SERVER_ACTIVE_ICON = "icons/decorators/astserver_active.gif"; // NON-NLS-1
-  private final static String AST_SERVER_INACTIVE_ICON = "icons/decorators/astserver_inactive.gif";
-
-  private final static String AST_SERVER_PRIVATE_ICON = "icons/decorators/astserver_private.gif";
-  private final static String AST_SERVER_PUBLIC_ICON = "icons/decorators/astserver_public.gif";
-
   private final static String SAFI_SERVER_CONNECTED_ICON = "icons/decorators/safiserver_connected.gif";
   private final static String SAFI_SERVER_DISCONNECTED_ICON = "icons/decorators/safiserver_disconnected.gif";
   private static final String DECORATOR_ID = "com.safi.workshop.navigator.ServerResourcesDecorator";
@@ -33,23 +25,19 @@ public class ServerResourcesDecorator2 extends LabelProvider implements ILabelDe
   private static final int BOTTOM_LEFT = 2;
   private static final int BOTTOM_RIGHT = 3;
 
-  public static ServerResourcesDecorator2 getDirtyDecorator() {
-    IDecoratorManager decoratorManager = AsteriskDiagramEditorPlugin.getDefault().getWorkbench()
-        .getDecoratorManager();
-
-    if (decoratorManager.getEnabled(DECORATOR_ID)) {
-      return (ServerResourcesDecorator2) decoratorManager.getBaseLabelProvider(DECORATOR_ID);
-    }
-    return null;
-  }
+//  public static ServerResourcesDecorator2 getDirtyDecorator() {
+//    IDecoratorManager decoratorManager = AsteriskDiagramEditorPlugin.getDefault().getWorkbench()
+//        .getDecoratorManager();
+//
+//    if (decoratorManager.getEnabled(DECORATOR_ID)) {
+//      return (ServerResourcesDecorator2) decoratorManager.getBaseLabelProvider(DECORATOR_ID);
+//    }
+//    return null;
+//  }
 
   @Override
   public Image decorateImage(Image image, Object element) {
-  	if (element instanceof AsteriskServer) {
-      return decorateAsteriskServer((AsteriskServer) element, image);
-    } else if (element instanceof FreeSwitchServer) {
-      return decorateFreeSwitchServer((FreeSwitchServer) element, image);
-    } else if (element instanceof SafiServer) {
+  	if (element instanceof SafiServer) {
       return decorateSafiServer((SafiServer) element, image);
     }
 
@@ -70,37 +58,6 @@ public class ServerResourcesDecorator2 extends LabelProvider implements ILabelDe
     return AsteriskDiagramEditorPlugin.getBundledImageDescriptor(path);
   }
 
-  private Image decorateAsteriskServer(AsteriskServer server, Image baseImage) {
-    {
-      if (server.isEnabled())
-        return doDecorate(baseImage, getImageDescriptor(AST_SERVER_ACTIVE_ICON), BOTTOM_LEFT);
-      else
-        return doDecorate(baseImage, getImageDescriptor(AST_SERVER_INACTIVE_ICON), BOTTOM_LEFT);
-      //
-      // if (server.isPrivate())
-      // return doDecorate(baseImage, getImageDescriptor(AST_SERVER_PRIVATE_ICON),
-      // BOTTOM_LEFT);
-      // else
-      // return doDecorate(baseImage, getImageDescriptor(AST_SERVER_PUBLIC_ICON),
-      // BOTTOM_LEFT);
-    }
-  }
-
-  private Image decorateFreeSwitchServer(FreeSwitchServer server, Image baseImage) {
-    {
-      if (server.isEnabled())
-        return doDecorate(baseImage, getImageDescriptor(AST_SERVER_ACTIVE_ICON), BOTTOM_LEFT);
-      else
-        return doDecorate(baseImage, getImageDescriptor(AST_SERVER_INACTIVE_ICON), BOTTOM_LEFT);
-      //
-      // if (server.isPrivate())
-      // return doDecorate(baseImage, getImageDescriptor(AST_SERVER_PRIVATE_ICON),
-      // BOTTOM_LEFT);
-      // else
-      // return doDecorate(baseImage, getImageDescriptor(AST_SERVER_PUBLIC_ICON),
-      // BOTTOM_LEFT);
-    }
-  }
   public void refresh() {
 
     // Fire a label provider changed event to decorate the

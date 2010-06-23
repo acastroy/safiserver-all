@@ -30,6 +30,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
 import com.safi.core.actionstep.QueryParamMapping;
+import com.safi.core.provider.CoreEditPluginProv;
 import com.safi.core.saflet.SafletContext;
 import com.safi.db.SQLDataType;
 import com.safi.workshop.sheet.DynamicValueEditorUtils;
@@ -192,7 +193,7 @@ public class EditQueryParamMappingDialog extends TitleAreaDialog {
     comboElement = SWTObservables.observeDelayedValue(400, comboElement);
     bindingContext.bindValue(comboElement, ob, null, null);
     setTitleImage(ExtendedImageRegistry.getInstance().getImage(
-        com.safi.asterisk.provider.AsteriskEditPlugin.getPlugin().getImage(
+    		CoreEditPluginProv.getPlugin().getImage(
             "full/obj16/RunQuery.gif")));
     // setTitleImage(AsteriskDiagramEditorPlugin.getInstance().getItemImage(mapping));
     dbQueryParamIDText.setText(mapping.getQueryParam().getId() == null ? "" : mapping

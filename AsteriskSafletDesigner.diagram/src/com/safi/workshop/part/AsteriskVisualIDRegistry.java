@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 
-import com.safi.asterisk.initiator.InitiatorPackage;
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletPackage;
@@ -648,11 +647,6 @@ public class AsteriskVisualIDRegistry {
         break;
       case CaseItemEditPart.VISUAL_ID:
         if (CaseItemLabelTextEditPart.VISUAL_ID == nodeVisualID) {
-          return true;
-        }
-        break;
-      case AudioFileItemEditPart.VISUAL_ID:
-        if (AudioFileItemLabelTextEditPart.VISUAL_ID == nodeVisualID) {
           return true;
         }
         break;

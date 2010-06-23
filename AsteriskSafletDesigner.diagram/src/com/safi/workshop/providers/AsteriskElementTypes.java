@@ -21,8 +21,6 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
 
-import com.safi.asterisk.actionstep.ActionstepPackage;
-import com.safi.asterisk.initiator.InitiatorPackage;
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.saflet.SafletPackage;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
@@ -195,11 +193,6 @@ public class AsteriskElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IElementType CaseItem_2002 = getElementType("AsteriskSafletDesigner.diagram.CaseItem_2002"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType AudioFileItem_2003 = getElementType("AsteriskSafletDesigner.diagram.AudioFileItem_2003"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -403,8 +396,6 @@ public class AsteriskElementTypes extends ElementInitializers {
 
 			elements.put(CaseItem_2002, ActionStepPackage.eINSTANCE.getCaseItem());
 
-			elements.put(AudioFileItem_2003, ActionStepPackage.eINSTANCE.getAudioFileItem());
-
 			elements.put(GetColMapping_2004, ActionStepPackage.eINSTANCE.getGetColMapping());
 
 			elements.put(SetColMapping_2005, ActionStepPackage.eINSTANCE.getSetColMapping());
@@ -463,7 +454,6 @@ public class AsteriskElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(RunQuery_1097);
 			KNOWN_ELEMENT_TYPES.add(Output_2001);
 			KNOWN_ELEMENT_TYPES.add(CaseItem_2002);
-			KNOWN_ELEMENT_TYPES.add(AudioFileItem_2003);
 			KNOWN_ELEMENT_TYPES.add(GetColMapping_2004);
 			KNOWN_ELEMENT_TYPES.add(SetColMapping_2005);
 			KNOWN_ELEMENT_TYPES.add(QueryParamMapping_2006);

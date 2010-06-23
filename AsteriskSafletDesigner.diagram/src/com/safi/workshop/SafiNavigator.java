@@ -87,23 +87,16 @@ import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributo
 
 import com.safi.db.DBConnection;
 import com.safi.db.Query;
-import com.safi.db.astdb.AsteriskServer;
-import com.safi.db.fsdb.FreeSwitchServer;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.impl.SafiServerImpl;
 import com.safi.server.plugin.SafiServerPlugin;
-import com.safi.server.preferences.AsteriskConfigurationDialog;
-import com.safi.server.preferences.FreeSwitchConfigurationDialog;
 import com.safi.server.saflet.manager.DBManager;
 import com.safi.server.saflet.manager.EntitlementUtils;
 import com.safi.server.saflet.manager.PooledDataSourceManager;
 import com.safi.workshop.application.DiagramEditorActionBarAdvisor;
 import com.safi.workshop.application.DiagramEditorWorkbenchAdvisor;
+import com.safi.workshop.navigator.SafiNavigatorDoubleClickListener;
 import com.safi.workshop.navigator.ServerResourcesDecorator;
-import com.safi.workshop.navigator.serverconfig.AddAsteriskServerAction;
-import com.safi.workshop.navigator.serverconfig.AddFreeSwitchServerAction;
-import com.safi.workshop.navigator.serverconfig.AsteriskServerList;
-import com.safi.workshop.navigator.serverconfig.FreeSwitchServerList;
 import com.safi.workshop.navigator.serverconfig.SafiserverRegisterDialog;
 import com.safi.workshop.navigator.serverconfig.UserDialog;
 import com.safi.workshop.navigator.serverconfig.UserList;
@@ -145,6 +138,7 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
   private static IStructuredSelection cachedSelection;
 
   private ExecutorService executor = Executors.newSingleThreadExecutor();
+  private Set<SafiNavigatorDoubleClickListener> doubleClickListeners = new LinkedHashSet<SafiNavigatorDoubleClickListener>();
 
   public SafiNavigator() {
     // TODO Auto-generated constructor stub
@@ -188,6 +182,13 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
 
   }
 
+  public boolean addSafiNavigatorDblClickListener(SafiNavigatorDoubleClickListener listener){
+  	return doubleClickListeners.add(listener);
+  }
+  
+  public boolean removeSafiNavigatorDblClickListener(SafiNavigatorDoubleClickListener listener) {
+  	return doubleClickListeners.remove(listener);
+  }
   @Override
   public void init(IViewSite site) throws PartInitException {
     super.init(site);
@@ -243,13 +244,27 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
     });
     _treeViewer.addDoubleClickListener(new IDoubleClickListener() {
       public void doubleClick(DoubleClickEvent event) {
+      	
         IStructuredSelection selection = (IStructuredSelection) event.getSelection();
         if (selection != null) {
           // User user = null;
           Object selected = selection.getFirstElement();
+          
+          
           if (selected != null) {
             _treeViewer.setExpandedState(selected, true);
           }
+          
+          
+          for (SafiNavigatorDoubleClickListener l : doubleClickListeners){
+        		try {
+        			if (!l.elementDoubleClicked(selected, event))
+        				return;
+  					} catch (Exception e) {
+  						e.printStackTrace();
+  						AsteriskDiagramEditorPlugin.getDefault().logError("Error caught while processing SafiNavigator double-click", e);
+  					}
+        	}
           if (selected instanceof ManagedDriver) {
             new EditDriverAction().run();
           } else if (selected instanceof Alias) {
@@ -291,44 +306,7 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
             action.run();
 
           }
-          // if (user != null) {
-          // NewQueryAction action = new NewQueryAction();
-          // action.run();
-          // // openNewEditor(user);
-          // }
-          /*
-           * else if (selected instanceof EList<?>) {
-           * 
-           * if (selected instanceof AsteriskServerList){ new
-           * AddAsteriskServerAction().run(); } if (!(selected instanceof
-           * HibernatePersistableEList)) return; HibernatePersistableEList elementElist =
-           * (HibernatePersistableEList) selected; PersistentList pList = (PersistentList)
-           * elementElist.getDelegate(); if
-           * ("SafiServer.asteriskServers".equals(pList.getRole())) { new
-           * AddAsteriskServerAction().run(); } else if
-           * ("SafiServer.users".equals(pList.getRole())) { UserManagerAction action = new
-           * UserManagerAction(); action.run(); // try { // EList<User> server =
-           * (EList<User>) selected; // } catch (Exception ex) { // } } }
-           */
-          else if (selected instanceof AsteriskServerList) {
-            com.safi.db.server.config.User user = SafiServerPlugin.getDefault().getCurrentUser();
-            if (!EntitlementUtils.isUserEntitled(user,
-                EntitlementUtils.ENTIT_MANAGE_TELEPHONY_SERVERS)) {
-              MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
-                  "You do not have sufficient privileges to carry out this operation.");
-              return;
-            }
-            new AddAsteriskServerAction().run();
-          } else if (selected instanceof FreeSwitchServerList) {
-            com.safi.db.server.config.User user = SafiServerPlugin.getDefault().getCurrentUser();
-            if (!EntitlementUtils.isUserEntitled(user,
-                EntitlementUtils.ENTIT_MANAGE_TELEPHONY_SERVERS)) {
-              MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
-                  "You do not have sufficient privileges to carry out this operation.");
-              return;
-            }
-            new AddFreeSwitchServerAction().run();
-          } else if (selected instanceof UserList) {
+          else if (selected instanceof UserList) {
 
             new UserManagerAction().run();
           }
@@ -352,42 +330,6 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
              * result = safi.open(); if (result == Dialog.OK) refresh(selected); }
              */
             // }
-          } else if (selected instanceof AsteriskServer) {
-            AsteriskServer asteriskSelected = (AsteriskServer) selected;
-            {
-              com.safi.db.server.config.User user = SafiServerPlugin.getDefault().getCurrentUser();
-              if (!EntitlementUtils.isUserEntitled(user,
-                  EntitlementUtils.ENTIT_MANAGE_TELEPHONY_SERVERS)) {
-                MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
-                    "You do not have sufficient privileges to carry out this operation.");
-                return;
-              }
-              AsteriskConfigurationDialog astercfg = new AsteriskConfigurationDialog(_treeViewer
-                  .getTree().getShell(), asteriskSelected);
-              int result = astercfg.open();
-              if (result == Window.OK) {
-                astercfg.commit();
-                refresh();
-              }
-            }
-          } else if (selected instanceof FreeSwitchServer) {
-          	FreeSwitchServer asteriskSelected = (FreeSwitchServer) selected;
-            {
-              com.safi.db.server.config.User user = SafiServerPlugin.getDefault().getCurrentUser();
-              if (!EntitlementUtils.isUserEntitled(user,
-                  EntitlementUtils.ENTIT_MANAGE_TELEPHONY_SERVERS)) {
-                MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Not Entitled",
-                    "You do not have sufficient privileges to carry out this operation.");
-                return;
-              }
-              FreeSwitchConfigurationDialog astercfg = new FreeSwitchConfigurationDialog(_treeViewer
-                  .getTree().getShell(), asteriskSelected);
-              int result = astercfg.open();
-              if (result == Window.OK) {
-                astercfg.commit();
-                refresh();
-              }
-            }
           } else if (selected instanceof com.safi.db.server.config.User) {
             com.safi.db.server.config.User user = SafiServerPlugin.getDefault().getCurrentUser();
             if (!EntitlementUtils.isUserEntitled(user, EntitlementUtils.ENTIT_MANAGE_USERS)) {
@@ -1551,6 +1493,27 @@ public class SafiNavigator extends CommonNavigator implements IPropertyChangeLis
       }
     }
   }
+  
+//  @Override
+//  protected void handleDoubleClick(DoubleClickEvent anEvent) {
+//    ICommandService commandService = (ICommandService)getSite().getService(ICommandService.class);
+//    
+//    Command command = commandService.getCommand(OPEN_COMMAND_ID); 
+//    if(command.isEnabled()) {
+//      IHandlerService handlerService = (IHandlerService)getSite().getService(IHandlerService.class);
+//      try {
+//        handlerService.executeCommand(OPEN_COMMAND_ID, null);
+//      } catch (NotDefinedException e) {
+//        throw new RuntimeException("Could not find open command: " + OPEN_COMMAND_ID);
+//      } catch (Exception e) {
+//        // Ignore
+//      }
+//    } else {
+//
+//      // Pass the double click up to the super-class so it can expand/colapse trees
+//      super.handleDoubleClick(anEvent);
+//    }
+//  }
 
   @Override
   public void menuAboutToShow(IMenuManager manager) {

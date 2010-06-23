@@ -18,7 +18,6 @@ import org.mozilla.javascript.Scriptable;
 import org.mozilla.javascript.Undefined;
 import org.mozilla.javascript.Wrapper;
 
-import com.safi.asterisk.saflet.AsteriskSafletEnvironment;
 import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletConstants;
 import com.safi.core.saflet.SafletContext;
@@ -36,7 +35,7 @@ public abstract class ScriptEnabledEditorPage extends AbstractDynamicValueEditor
   protected RhinoSafletScriptEnvironment scriptingEnvironment;
   protected SafletContext handlerContext;
   protected Composite scriptPanel;
-  protected AsteriskSafletEnvironment handlerEnvironment;
+  protected SafletEnvironment handlerEnvironment;
 
   public ScriptEnabledEditorPage(SafletContext handlerContext) {
     super();
@@ -217,7 +216,7 @@ public abstract class ScriptEnabledEditorPage extends AbstractDynamicValueEditor
     System.setSecurityManager(oldSecurityManager);
   }
 
-  class ScriptHandlerEnvironment extends EObjectImpl implements AsteriskSafletEnvironment {
+  class ScriptHandlerEnvironment extends EObjectImpl implements SafletEnvironment {
 
   	@Override
     public void cleanup(){
@@ -233,35 +232,6 @@ public abstract class ScriptEnabledEditorPage extends AbstractDynamicValueEditor
     @Override
     public Saflet getSaflet(String path, int astServerId) {
       return null;
-    }
-
-    @Override
-    public Object getLoopbackCall(String uuid) {
-      return null;
-    }
-
-    @Override
-    public void setLoopbackLock(String uuid, Object lock) {
-    }
-
-    @Override
-    public int getFastAgiPort() {
-      return -1;
-    }
-
-    @Override
-    public int getManagementPort() {
-      return -1;
-    }
-
-    @Override
-    public void setFastAgiPort(int value) {
-
-    }
-
-    @Override
-    public void setManagementPort(int value) {
-
     }
 
     @Override
@@ -293,11 +263,6 @@ public abstract class ScriptEnabledEditorPage extends AbstractDynamicValueEditor
       return SafiServerPlugin.getDefault().getGlobalVariable(name);
     }
 
-    @Override
-    public Object getLoopbackLock(String uuid) {
-      // TODO Auto-generated method stub
-      return null;
-    }
   }
 
   private static class ExitTrappedException extends SecurityException {

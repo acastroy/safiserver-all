@@ -470,7 +470,6 @@ implements IViewProvider {
           case RunQueryEditPart.VISUAL_ID:
           case OutputEditPart.VISUAL_ID:
           case CaseItemEditPart.VISUAL_ID:
-          case AudioFileItemEditPart.VISUAL_ID:
           case GetColMappingEditPart.VISUAL_ID:
           case SetColMappingEditPart.VISUAL_ID:
           case QueryParamMappingEditPart.VISUAL_ID:
@@ -663,13 +662,13 @@ implements IViewProvider {
               return null; // wrong container
             }
             break;
-          case AudioFileItemLabelTextEditPart.VISUAL_ID:
-            if (AudioFileItemEditPart.VISUAL_ID != AsteriskVisualIDRegistry
-                .getVisualID(containerView)
-                || containerView.getElement() != domainElement) {
-              return null; // wrong container
-            }
-            break;
+//          case AudioFileItemLabelTextEditPart.VISUAL_ID:
+//            if (AudioFileItemEditPart.VISUAL_ID != AsteriskVisualIDRegistry
+//                .getVisualID(containerView)
+//                || containerView.getElement() != domainElement) {
+//              return null; // wrong container
+//            }
+//            break;
           case GetColMappingGetAsDatatypeEditPart.VISUAL_ID:
             if (GetColMappingEditPart.VISUAL_ID != AsteriskVisualIDRegistry
                 .getVisualID(containerView)
@@ -917,10 +916,6 @@ implements IViewProvider {
         return CaseItemViewFactory.class.newInstance();
       case CaseItemLabelTextEditPart.VISUAL_ID:
         return CaseItemLabelTextViewFactory.class.newInstance();
-      case AudioFileItemEditPart.VISUAL_ID:
-        return AudioFileItemViewFactory.class.newInstance();
-      case AudioFileItemLabelTextEditPart.VISUAL_ID:
-        return AudioFileItemLabelTextViewFactory.class.newInstance();
       case GetColMappingEditPart.VISUAL_ID:
         return GetColMappingViewFactory.class.newInstance();
       case GetColMappingGetAsDatatypeEditPart.VISUAL_ID:
@@ -1086,10 +1081,6 @@ implements IViewProvider {
         return CaseItemViewFactory.class;
       case CaseItemLabelTextEditPart.VISUAL_ID:
         return CaseItemLabelTextViewFactory.class;
-      case AudioFileItemEditPart.VISUAL_ID:
-        return AudioFileItemViewFactory.class;
-      case AudioFileItemLabelTextEditPart.VISUAL_ID:
-        return AudioFileItemLabelTextViewFactory.class;
       case GetColMappingEditPart.VISUAL_ID:
         return GetColMappingViewFactory.class;
       case GetColMappingGetAsDatatypeEditPart.VISUAL_ID:

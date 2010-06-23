@@ -34,9 +34,8 @@ import org.tanukisoftware.wrapper.jmx.WrapperManagerMBean;
 
 import sun.rmi.transport.proxy.RMIMasterSocketFactory;
 
-import com.safi.db.astdb.AsteriskServer;
-import com.safi.db.fsdb.FreeSwitchServer;
 import com.safi.db.server.config.SafiServer;
+import com.safi.db.server.config.TelephonySubsystem;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.preferences.PreferenceConstants;
 import com.safi.server.saflet.importing.OverwriteMode;
@@ -533,18 +532,14 @@ public class SafiServerRemoteManager implements NotificationListener {
     }
   }
 
-  public void synchAudioFiles(AsteriskServer server) throws Exception {
+  public void synchAudioFiles(TelephonySubsystem server ) throws Exception {
     if (serverMonitor == null)
       throw new IllegalStateException("No manager connection to SafiServer found");
-    serverMonitor.synchAudioFiles(server.getId(), "Asterisk");
+    serverMonitor.synchAudioFiles(server.getId(), server.getPlatformId());
 //    serverMonitor.synchAsteriskAudioFiles(server.getId());
   }
   
-  public void synchAudioFiles(FreeSwitchServer server) throws Exception {
-    if (serverMonitor == null)
-      throw new IllegalStateException("No manager connection to SafiServer found");
-    serverMonitor.synchAudioFiles(server.getId(), "FreeSWITCH");
-  }
+ 
 
   public boolean notificationPreferencesChanged() {
     IPreferenceStore store = SafiServerPlugin.getDefault().getPreferenceStore();

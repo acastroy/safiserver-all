@@ -76,11 +76,6 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 
-import com.safi.asterisk.AsteriskFactory;
-import com.safi.asterisk.Call;
-import com.safi.asterisk.saflet.AsteriskSaflet;
-import com.safi.asterisk.saflet.SafletFactory;
-import com.safi.core.call.CallSource1;
 import com.safi.core.initiator.Initiator;
 import com.safi.core.saflet.Saflet;
 import com.safi.db.Query;
@@ -88,6 +83,7 @@ import com.safi.db.server.config.Prompt;
 import com.safi.server.manager.SafiServerRemoteManager;
 import com.safi.server.saflet.util.FileUtils;
 import com.safi.workshop.SafiNavigator;
+import com.safi.workshop.TelephonyModulePlugin;
 import com.safi.workshop.edit.parts.HandlerEditPart;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin.ActionStepProfile;
 import com.safi.workshop.sqlexplorer.plugin.editors.SQLEditorInput;
@@ -328,92 +324,85 @@ public class SafiWorkshopEditorUtil {
   /**
    * @generated NOT
    */
-  public static Resource createDiagram(URI diagramURI, IProgressMonitor progressMonitor) {
-    TransactionalEditingDomain editingDomain = WorkspaceEditingDomainFactory.INSTANCE
-        .createEditingDomain();
-    progressMonitor.beginTask(Messages.AsteriskDiagramEditorUtil_CreateDiagramProgressTask, 3);
-    final Resource diagramResource = editingDomain.getResourceSet().createResource(diagramURI);
-    final String diagramName = diagramURI.lastSegment();
-    final URI fURI = diagramURI;
-    AbstractTransactionalCommand command = new AbstractTransactionalCommand(editingDomain,
-        Messages.AsteriskDiagramEditorUtil_CreateDiagramCommandLabel, Collections.EMPTY_LIST) {
-      @Override
-      protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
-          throws ExecutionException {
-        Saflet model = createInitialModel();
-        attachModelToResource(model, diagramResource);
+//  public static Resource createDiagram(final Initiator initiator, URI diagramURI, IProgressMonitor progressMonitor) {
+//    TransactionalEditingDomain editingDomain = WorkspaceEditingDomainFactory.INSTANCE
+//        .createEditingDomain();
+//    progressMonitor.beginTask(Messages.AsteriskDiagramEditorUtil_CreateDiagramProgressTask, 3);
+//    final Resource diagramResource = editingDomain.getResourceSet().createResource(diagramURI);
+//    final String diagramName = diagramURI.lastSegment();
+//    final URI fURI = diagramURI;
+//    AbstractTransactionalCommand command = new AbstractTransactionalCommand(editingDomain,
+//        Messages.AsteriskDiagramEditorUtil_CreateDiagramCommandLabel, Collections.EMPTY_LIST) {
+//      @Override
+//      protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
+//          throws ExecutionException {
+//        Saflet model = createInitialModel();
+//        attachModelToResource(model, diagramResource);
+//
+//        Diagram diagram = ViewService.createDiagram(model, HandlerEditPart.MODEL_ID,
+//            AsteriskDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+//        String safletName = fURI.trimFileExtension().lastSegment();
+//        if (diagram != null) {
+//          diagramResource.getContents().add(diagram);
+//          diagram.setName(diagramName);
+//          diagram.setElement(model);
+//          Saflet handler = (Saflet) diagram.getElement();
+//          handler.setName(safletName);
+//          
+//          handler.setInitiator(initiator);
+//
+//        }
+//
+//        try {
+//
+//          diagramResource.save(com.safi.workshop.part.SafiWorkshopEditorUtil.getSaveOptions());
+//          try {
+//            WorkspaceSynchronizer.getFile(diagramResource).setPersistentProperty(
+//                SafletPersistenceManager.SAFLET_NAME_KEY, safletName);
+//          } catch (CoreException e) {
+//            AsteriskDiagramEditorPlugin.getDefault().logError(
+//                "Unable to set persistent property", e); //$NON-NLS-1$
+//          }
+//        } catch (IOException e) {
+//
+//          AsteriskDiagramEditorPlugin.getDefault().logError(
+//              "Unable to store model and diagram resources", e); //$NON-NLS-1$
+//        }
+//        return CommandResult.newOKCommandResult();
+//      }
+//      
+//      @Override
+//          public boolean canUndo() {
+//            // TODO Auto-generated method stub
+//            return false;
+//          }
+//      @Override
+//          public boolean canRedo() {
+//            // TODO Auto-generated method stub
+//            return false;
+//          }
+//      
+//    };
+//    try {
+//      OperationHistoryFactory.getOperationHistory().execute(command,
+//          new SubProgressMonitor(progressMonitor, 1), null);
+//    } catch (ExecutionException e) {
+//      AsteriskDiagramEditorPlugin.getDefault().logError("Unable to create model and diagram", e); //$NON-NLS-1$
+//    }
+//    return diagramResource;
+//  }
 
-        Diagram diagram = ViewService.createDiagram(model, HandlerEditPart.MODEL_ID,
-            AsteriskDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
-        String safletName = fURI.trimFileExtension().lastSegment();
-        if (diagram != null) {
-          diagramResource.getContents().add(diagram);
-          diagram.setName(diagramName);
-          diagram.setElement(model);
-          Saflet handler = (Saflet) diagram.getElement();
-          handler.setName(safletName);
-          com.safi.asterisk.initiator.IncomingCall call = com.safi.asterisk.initiator.InitiatorFactory.eINSTANCE
-              .createIncomingCall();
-          call.createDefaultOutputs();
-          call.setName("Incoming Call");
-          handler.setInitiator(call);
-          call.setSaflet(handler);
-          Call call1 = AsteriskFactory.eINSTANCE.createCall();
-          call1.setName("Call1");
-          call.setNewCall1(call1);
-
-        }
-
-        try {
-
-          diagramResource.save(com.safi.workshop.part.SafiWorkshopEditorUtil.getSaveOptions());
-          try {
-            WorkspaceSynchronizer.getFile(diagramResource).setPersistentProperty(
-                SafletPersistenceManager.SAFLET_NAME_KEY, safletName);
-          } catch (CoreException e) {
-            AsteriskDiagramEditorPlugin.getDefault().logError(
-                "Unable to set persistent property", e); //$NON-NLS-1$
-          }
-        } catch (IOException e) {
-
-          AsteriskDiagramEditorPlugin.getDefault().logError(
-              "Unable to store model and diagram resources", e); //$NON-NLS-1$
-        }
-        return CommandResult.newOKCommandResult();
-      }
-      
-      @Override
-          public boolean canUndo() {
-            // TODO Auto-generated method stub
-            return false;
-          }
-      @Override
-          public boolean canRedo() {
-            // TODO Auto-generated method stub
-            return false;
-          }
-      
-    };
-    try {
-      OperationHistoryFactory.getOperationHistory().execute(command,
-          new SubProgressMonitor(progressMonitor, 1), null);
-    } catch (ExecutionException e) {
-      AsteriskDiagramEditorPlugin.getDefault().logError("Unable to create model and diagram", e); //$NON-NLS-1$
-    }
-    return diagramResource;
-  }
-
-  /**
-   * Create a new instance of domain element associated with canvas. <!-- begin-user-doc
-   * --> <!-- end-user-doc -->
-   * 
-   * @generated NOT
-   */
-  private static Saflet createInitialModel() {
-    AsteriskSaflet handler = SafletFactory.eINSTANCE.createAsteriskSaflet();
-    handler.setSafletContext(SafletFactory.eINSTANCE.createAsteriskSafletContext());
-    return handler;
-  }
+//  /**
+//   * Create a new instance of domain element associated with canvas. <!-- begin-user-doc
+//   * --> <!-- end-user-doc -->
+//   * 
+//   * @generated NOT
+//   */
+//  private static Saflet createInitialModel() {
+//    AsteriskSaflet handler = SafletFactory.eINSTANCE.createAsteriskSaflet();
+//    handler.setSafletContext(SafletFactory.eINSTANCE.createAsteriskSafletContext());
+//    return handler;
+//  }
 
   /**
    * Store model element in the resource. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -860,12 +849,10 @@ public class SafiWorkshopEditorUtil {
     return null;
   }
 
-  public static Resource createDiagram(URI diagramURI, final ActionStepProfile asp,
+  public static Resource createDiagram(URI diagramURI, final TelephonyModulePlugin module, final ActionStepProfile asp,
       IProgressMonitor progressMonitor) {
     // TODO Auto-generated method stub
-    if (asp == null) {
-      return createDiagram(diagramURI, progressMonitor);
-    } else {
+    {
       TransactionalEditingDomain editingDomain = WorkspaceEditingDomainFactory.INSTANCE
           .createEditingDomain();
       progressMonitor.beginTask(Messages.AsteriskDiagramEditorUtil_CreateDiagramProgressTask, 3);
@@ -877,7 +864,7 @@ public class SafiWorkshopEditorUtil {
         @Override
         protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
             throws ExecutionException {
-        Saflet model = createInitialModel();
+        Saflet model = module.createInitialSaflet();
         attachModelToResource(model, diagramResource);
 
         Diagram diagram = ViewService.createDiagram(model, HandlerEditPart.MODEL_ID,
@@ -895,11 +882,8 @@ public class SafiWorkshopEditorUtil {
           initiator.setName(asp.displayName);
           handler.setInitiator(initiator);
           initiator.setSaflet(handler);
-          if (initiator instanceof CallSource1) {
-            Call call1 = AsteriskFactory.eINSTANCE.createCall();
-            call1.setName("Call1");
-            ((CallSource1) initiator).setNewCall1(call1);
-          }
+          module.preProcessSaflet(handler);
+          
           // Call call1 = AsteriskFactory.eINSTANCE.createCall();
           // call1.setName("Call1");
           // call.setNewCall1(call1);

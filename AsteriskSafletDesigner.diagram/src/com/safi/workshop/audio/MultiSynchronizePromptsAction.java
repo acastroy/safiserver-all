@@ -27,9 +27,7 @@ public class MultiSynchronizePromptsAction implements IWorkbenchWindowActionDele
 
   @Override
   public void run(IAction action) {
-
-    AudioUtils.synchronizeAsteriskPrompts(SafiServerPlugin.getDefault().getAvailableAsteriskServers());
-    AudioUtils.synchronizeFreeSwitchPrompts(SafiServerPlugin.getDefault().getAvailableFreeSwitchServers());
+  	AudioUtils.synchronizeTelephonySubsystemPrompts(SafiServerPlugin.getDefault().getTelephonySubsystems());
 
   }
 

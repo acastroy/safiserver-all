@@ -55,7 +55,6 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.Widget;
 
-import com.safi.asterisk.saflet.SafletFactory;
 import com.safi.core.saflet.SafletContext;
 import com.safi.core.saflet.SafletEnvironment;
 import com.safi.core.scripting.RhinoSafletScriptEnvironment;
@@ -1643,71 +1642,71 @@ public class BooleanExpressionEditorPanel extends Composite {
 	}
 
 	public static void main(String[] args) {
-		Display display = new Display();
-		Shell shell = new Shell(display);
-		shell.setLayout(new FillLayout());
-		BooleanExpressionEditorPanel panel = new BooleanExpressionEditorPanel(shell,
-		    buildDummyHandlerContext());
-		panel
-		    .buildModelFromExpression("(((shit != \"ff\") && (myDouble < 33.3)) || ((shit == a) && (myInt > -7.3)))");
-		// panel.buildModelFromExpression("( (  (a > b || !(b >= 9) || ((a == \"asshole\") && (e == 'dickers')))))");
-
-		shell.open();
-		shell.pack();
-		while (!shell.isDisposed()) {
-			if (!display.readAndDispatch())
-				display.sleep();
-		}
-		display.dispose();
+//		Display display = new Display();
+//		Shell shell = new Shell(display);
+//		shell.setLayout(new FillLayout());
+//		BooleanExpressionEditorPanel panel = new BooleanExpressionEditorPanel(shell,
+//		    buildDummyHandlerContext());
+//		panel
+//		    .buildModelFromExpression("(((shit != \"ff\") && (myDouble < 33.3)) || ((shit == a) && (myInt > -7.3)))");
+//		// panel.buildModelFromExpression("( (  (a > b || !(b >= 9) || ((a == \"asshole\") && (e == 'dickers')))))");
+//
+//		shell.open();
+//		shell.pack();
+//		while (!shell.isDisposed()) {
+//			if (!display.readAndDispatch())
+//				display.sleep();
+//		}
+//		display.dispose();
 
 	}
 
-	private static SafletContext buildDummyHandlerContext() {
-		SafletContext context = SafletFactory.eINSTANCE.createAsteriskSafletContext();
-		Variable v = DbFactory.eINSTANCE.createVariable();
-		v.setType(VariableType.TEXT);
-		v.setDefaultValue("shit");
-		v.setName("shit");
-		context.addOrUpdateVariable(v);
-
-		v = DbFactory.eINSTANCE.createVariable();
-		v.setType(VariableType.INTEGER);
-		v.setDefaultValue(400);
-		v.setName("myInt");
-		context.addOrUpdateVariable(v);
-
-		v = DbFactory.eINSTANCE.createVariable();
-		v.setType(VariableType.DECIMAL);
-		v.setDefaultValue(22.3);
-		v.setName("myDouble");
-		context.addOrUpdateVariable(v);
-
-		v = DbFactory.eINSTANCE.createVariable();
-		v.setType(VariableType.TEXT);
-		v.setDefaultValue("asshole");
-		v.setName("a");
-		context.addOrUpdateVariable(v);
-
-		v = DbFactory.eINSTANCE.createVariable();
-		v.setType(VariableType.TEXT);
-		v.setDefaultValue("dickers");
-		v.setName("e");
-		context.addOrUpdateVariable(v);
-
-		v = DbFactory.eINSTANCE.createVariable();
-		v.setType(VariableType.INTEGER);
-		v.setDefaultValue(5);
-		v.setName("b");
-		context.addOrUpdateVariable(v);
-
-		v = DbFactory.eINSTANCE.createVariable();
-		v.setType(VariableType.BOOLEAN);
-		v.setDefaultValue(true);
-		v.setName("bool");
-		context.addOrUpdateVariable(v);
-
-		return context;
-	}
+//	private static SafletContext buildDummyHandlerContext() {
+//		SafletContext context = SafletFactory.eINSTANCE.createAsteriskSafletContext();
+//		Variable v = DbFactory.eINSTANCE.createVariable();
+//		v.setType(VariableType.TEXT);
+//		v.setDefaultValue("shit");
+//		v.setName("shit");
+//		context.addOrUpdateVariable(v);
+//
+//		v = DbFactory.eINSTANCE.createVariable();
+//		v.setType(VariableType.INTEGER);
+//		v.setDefaultValue(400);
+//		v.setName("myInt");
+//		context.addOrUpdateVariable(v);
+//
+//		v = DbFactory.eINSTANCE.createVariable();
+//		v.setType(VariableType.DECIMAL);
+//		v.setDefaultValue(22.3);
+//		v.setName("myDouble");
+//		context.addOrUpdateVariable(v);
+//
+//		v = DbFactory.eINSTANCE.createVariable();
+//		v.setType(VariableType.TEXT);
+//		v.setDefaultValue("asshole");
+//		v.setName("a");
+//		context.addOrUpdateVariable(v);
+//
+//		v = DbFactory.eINSTANCE.createVariable();
+//		v.setType(VariableType.TEXT);
+//		v.setDefaultValue("dickers");
+//		v.setName("e");
+//		context.addOrUpdateVariable(v);
+//
+//		v = DbFactory.eINSTANCE.createVariable();
+//		v.setType(VariableType.INTEGER);
+//		v.setDefaultValue(5);
+//		v.setName("b");
+//		context.addOrUpdateVariable(v);
+//
+//		v = DbFactory.eINSTANCE.createVariable();
+//		v.setType(VariableType.BOOLEAN);
+//		v.setDefaultValue(true);
+//		v.setName("bool");
+//		context.addOrUpdateVariable(v);
+//
+//		return context;
+//	}
 
 	public String getExpressionText() {
 		return expressionString;

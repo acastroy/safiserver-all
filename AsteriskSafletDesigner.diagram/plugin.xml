@@ -455,62 +455,8 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
             </enablement>
          </action>
       </objectContribution>
-      <objectContribution
-            id="AsteriskSafletDesigner.diagram.astServerList"
-            objectClass="com.safi.workshop.navigator.serverconfig.AsteriskServerList">
-         <action
-               class="com.safi.workshop.navigator.serverconfig.AddAsteriskServerAction"
-               icon="icons/server/action/AsteriskServerManager.gif"
-               id="AsteriskSafletDesigner.diagram.action.serverconfig.AddAsteriskServerAction"
-               label="Add Asterisk Server"
-               menubarPath="com.safi.db.Menu"
-               tooltip="Add Asterisk Server">
-         </action>
-         <action
-               class="com.safi.workshop.audio.MultiSynchronizePromptsAction"
-               icon="icons/audio/synch.gif"
-               id="com.safi.workshop.audio.MultiSynchronizePromptsAction"
-               label="Synchronize prompts with Asterisk servers"
-               menubarPath="com.safi.db.Menu"
-               tooltip="Synchronize audio prompts with Asterisk server">
-            <enablement>
-               <not>
-                  <objectState
-                        name="id"
-                        value="-1">
-                  </objectState>
-               </not>
-            </enablement>
-         </action>
-      </objectContribution>
-      <objectContribution
-            id="AsteriskSafletDesigner.diagram.fsServerList"
-            objectClass="com.safi.workshop.navigator.serverconfig.FreeSwitchServerList">
-         <action
-               class="com.safi.workshop.navigator.serverconfig.AddFreeSwitchServerAction"
-               icon="icons/server/action/FreeSwitchServerManager.gif"
-               id="AsteriskSafletDesigner.diagram.action.serverconfig.AddFreeSwitchServerAction"
-               label="Add FreeSWITCH Server"
-               menubarPath="com.safi.db.Menu"
-               tooltip="Add FreeSWITCH Server">
-         </action>
-         <action
-               class="com.safi.workshop.audio.MultiSynchronizePromptsAction"
-               icon="icons/audio/synch.gif"
-               id="com.safi.workshop.audio.MultiSynchronizePromptsAction"
-               label="Synchronize prompts with FreeSWITCH servers"
-               menubarPath="com.safi.db.Menu"
-               tooltip="Synchronize audio prompts with FreeSWITCH server">
-            <enablement>
-               <not>
-                  <objectState
-                        name="id"
-                        value="-1">
-                  </objectState>
-               </not>
-            </enablement>
-         </action>
-      </objectContribution>
+      
+     
       <objectContribution
             id="AsteriskSafletDesigner.diagram.objectContribution10"
             objectClass="com.safi.workshop.navigator.serverconfig.UserList">
@@ -702,90 +648,8 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
             </enablement>
          </action>
       </objectContribution>
-      <objectContribution
-            id="AsteriskSafletDesigner.diagram.objectContribution3"
-            objectClass="com.safi.db.server.config.AsteriskServer">
-         <action
-               class="com.safi.workshop.sqlexplorer.connections.actions.DeleteAction"
-               icon="icons/old_delete_edit.gif"
-               id="com.safi.workshop.navigator.DeleteAction"
-               label="Delete"
-               menubarPath="com.safi.db.Menu"
-               overrideActionId="org.eclipse.ui.edit.delete"
-               tooltip="Delete Resource">
-            <enablement>
-                <objectClass
-                        name="com.safi.db.server.config.AsteriskServer">
-                  </objectClass>
-            </enablement>
-         </action>
-         <!--
-         <action
-               class="com.safi.workshop.audio.SynchronizePromptsAction"
-               id="com.safi.workshop.audio.SynchronizePromptsAction"
-               label="Synchronize Prompts"
-               menubarPath="com.safi.db.Menu"
-               tooltip="Synchronize audio prompts with Asterisk server">
-            <enablement>
-               <not>
-                  <objectState
-                        name="id"
-                        value="-1">
-                  </objectState>
-               </not>
-            </enablement>
-         </action>
-         -->
-         <action
-               class="com.safi.workshop.navigator.ModifyAsteriskServerAction"
-               id="com.safi.workshop.navigator.ModifyAsteriskServerAction"
-               label="Modify Asterisk Server"
-               menubarPath="com.safi.db.Menu"
-               tooltip="Modify Asterisk Server">
-         </action>
-      </objectContribution>
-       <objectContribution
-            id="AsteriskSafletDesigner.diagram.fsServer"
-            objectClass="com.safi.db.server.config.FreeSwitchServer">
-         <action
-               class="com.safi.workshop.sqlexplorer.connections.actions.DeleteAction"
-               icon="icons/old_delete_edit.gif"
-               id="com.safi.workshop.navigator.DeleteAction"
-               label="Delete"
-               menubarPath="com.safi.db.Menu"
-               overrideActionId="org.eclipse.ui.edit.delete"
-               tooltip="Delete Resource">
-            <enablement>
-              <objectClass
-                        name="com.safi.db.server.config.FreeSwitchServer">
-                  </objectClass>
-            </enablement>
-         </action>
-         <!--
-         <action
-               class="com.safi.workshop.audio.SynchronizePromptsAction"
-               id="com.safi.workshop.audio.SynchronizePromptsAction"
-               label="Synchronize Prompts"
-               menubarPath="com.safi.db.Menu"
-               tooltip="Synchronize audio prompts with Asterisk server">
-            <enablement>
-               <not>
-                  <objectState
-                        name="id"
-                        value="-1">
-                  </objectState>
-               </not>
-            </enablement>
-         </action>
-         -->
-         <action
-               class="com.safi.workshop.navigator.ModifyFreeSwitchServerAction"
-               id="com.safi.workshop.navigator.ModifyFreeSwitchServerAction"
-               label="Modify FreeSWITCH Server"
-               menubarPath="com.safi.db.Menu"
-               tooltip="Modify FreeSWITCH Server">
-         </action>
-      </objectContribution>
+     
+      
       
       <objectContribution
             id="AsteriskSafletDesigner.diagram.objectContribution4"
@@ -835,10 +699,7 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
                         name="com.safi.db.server.config.User">
                   </objectClass>
                   <objectClass
-                        name="com.safi.db.server.config.AsteriskServer">
-                  </objectClass>
-                  <objectClass
-                        name="com.safi.db.server.config.FreeSwitchServer">
+                        name="com.safi.db.server.config.TelephonySubsystem">
                   </objectClass>
                </or>
             </enablement>
@@ -1674,16 +1535,6 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
       </metamodel>
       <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
          <metamodelType
-               id="AsteriskSafletDesigner.diagram.AudioFileItem_2003"
-               name="%metatype.name.AudioFileItem_2003"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="AudioFileItem"
-               edithelper="com.safi.workshop.edit.helpers.AudioFileItemEditHelper">
-            <param name="semanticHint" value="2003"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
-         <metamodelType
                id="AsteriskSafletDesigner.diagram.GetColMapping_2004"
                name="%metatype.name.GetColMapping_2004"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -2217,21 +2068,15 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
                      value="com.safi.db.server.config.SafiServer">
                </instanceof>
                <instanceof
-                     value="com.safi.db.server.config.AsteriskServer">
+                     value="com.safi.db.server.config.TelephonySubsystem">
                </instanceof>
-               <instanceof
-                        value="com.safi.db.server.config.FreeSwitchServer">
-               </instanceof>
+               
                 <instanceof
                      value="com.safi.workshop.navigator.serverconfig.UserList">
                </instanceof>
                <instanceof
-                     value="com.safi.workshop.navigator.serverconfig.AsteriskServerList">
+                     value="com.safi.workshop.navigator.serverconfig.TelephonySubsystemList">
                </instanceof>
-               <instanceof
-                     value="com.safi.workshop.navigator.serverconfig.FreeSwitchServerList">
-               </instanceof>
-               
                
             </or>
          </enablement>
@@ -2246,14 +2091,15 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
          <possibleChildren>
             <or>
                <instanceof
-                     value="com.safi.db.server.config.ServerResource">
+                     value="com.safi.db.server.config.SafiServer">
                </instanceof>
                <instanceof
-                     value="com.safi.workshop.navigator.serverconfig.AsteriskServerList">
+                     value="com.safi.workshop.navigator.serverconfig.UserList">
                </instanceof>
                <instanceof
-                     value="com.safi.workshop.navigator.serverconfig.FreeSwitchServerList">
+                     value="com.safi.db.server.config.User">
                </instanceof>
+              
             </or>
          </possibleChildren>
          <triggerPoints>
@@ -2548,6 +2394,7 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
    <extension-point id="editorAction" name="SQL Editor Action" schema="schema/editorAction.exsd"/>
    <extension-point id="explainPlanContextAction" name="Explain Plan Context Action" schema="schema/explainPlanContextAction.exsd"/>
    <extension-point id="actionPak" name="Additional ActionSteps" schema="schema/actionPak.exsd"/>
+   <extension-point id="telephonyModule" name="Safi Telephony Modules" schema="schema/SafiTelephonyModulePlugin.exsd"/>
 
    <extension
          id="nodeContextAction"
@@ -2813,7 +2660,7 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
          state="true">
       <enablement>
          <objectClass
-               name="com.safi.db.server.config.ServerResource">
+               name="com.safi.db.server.config.SafiServer">
          </objectClass>
       </enablement>
    </decorator>

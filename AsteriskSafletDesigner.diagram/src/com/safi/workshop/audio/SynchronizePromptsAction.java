@@ -1,23 +1,18 @@
 package com.safi.workshop.audio;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Collections;
 
 import org.apache.commons.lang.StringUtils;
-import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.jface.dialogs.ProgressMonitorDialog;
-import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 
-import com.safi.db.astdb.AsteriskServer;
+import com.safi.db.server.config.SFTPInfo;
+import com.safi.db.server.config.TelephonySubsystem;
 import com.safi.db.server.config.User;
-import com.safi.server.manager.SafiServerRemoteManager;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.saflet.manager.EntitlementUtils;
 import com.safi.workshop.audio.utils.AudioUtils;
@@ -66,63 +61,66 @@ public class SynchronizePromptsAction implements IWorkbenchWindowActionDelegate 
       StructuredSelection selection = (StructuredSelection) cachedSelection;
       if (selection.size() > 1)
         return;
-      final AsteriskServer server = (AsteriskServer) selection.getFirstElement();
-      if (StringUtils.isBlank(server.getSftpUser())) {
-        MessageDialog
-            .openError(
-                SafiWorkshopEditorUtil.getActiveShell(),
-                "SFTP Error",
-                "No SFTP user name was specified for Asterisk server "
-                    + server.getName()
-                    + ".  Please enter SFTP username and password from Asterisk server configuration dialog and try again");
+      final TelephonySubsystem server = (TelephonySubsystem) selection.getFirstElement();
+      final SFTPInfo info = server instanceof SFTPInfo ? (SFTPInfo)server : null;
+      if (info != null) {
+	      if (StringUtils.isBlank(info.getSftpUser())) {
+	        MessageDialog
+	            .openError(
+	                SafiWorkshopEditorUtil.getActiveShell(),
+	                "SFTP Error",
+	                "No SFTP user name was specified for Telephony Subsystem "
+	                    + server.getName()
+	                    + ".  Please enter SFTP username and password from Telephony Subsystem configuration dialog and try again");
+	      }
+	      if (StringUtils.isBlank(server.getPromptDirectory())) {
+	        MessageDialog
+	            .openError(
+	                SafiWorkshopEditorUtil.getActiveShell(),
+	                "SFTP Error",
+	                "No prompt directory was specified for Telephony Subsystem instance "
+	                    + server.getName()
+	                    + ".  Please enter SFTP username and password from Telephony Subsystem configuration dialog and try again");
+	      }
+	      AudioUtils.synchronizeTelephonySubsystemPrompts(Collections.singletonList(server));
       }
-      if (StringUtils.isBlank(server.getPromptDirectory())) {
-        MessageDialog
-            .openError(
-                SafiWorkshopEditorUtil.getActiveShell(),
-                "SFTP Error",
-                "No prompt directory was specified for Asterisk server "
-                    + server.getName()
-                    + ".  Please enter SFTP username and password from Asterisk server configuration dialog and try again");
-      }
-      AudioUtils.synchronizeAsteriskPrompts(Collections.singletonList(server));
 
     }
   }
 
-  public void synchronizePrompts(final AsteriskServer server) {
-    ProgressMonitorDialog pm = new ProgressMonitorDialog(SafiWorkshopEditorUtil.getActiveShell());
-    try {
-      pm.run(true, true, new IRunnableWithProgress() {
-        @Override
-        public void run(IProgressMonitor monitor) throws InvocationTargetException,
-            InterruptedException {
-          try {
-            monitor.beginTask("Synchronizing prompts with Asterisk server " + server.getName(), 1);
-
-            SafiServerRemoteManager.getInstance().synchAudioFiles(server);
-            monitor.worked(1);
-
-          } catch (final Exception e) {
-            e.printStackTrace();
-            final Display d = Display.getDefault();
-            d.asyncExec(new Runnable() {
-              public void run() {
-                MessageDialog.openError(d.getActiveShell(), "Save Error",
-                    "Error caught while synchronizing audio prompts: " + e.getLocalizedMessage());
-              }
-            });
-          }
-
-        }
-      });
-    } catch (Exception e) {
-      e.printStackTrace();
-      MessageDialog.openError(SafiServerPlugin.getDefault().getWorkbench().getDisplay()
-          .getActiveShell(), "Save Error", "Error caught while synchronizing prompts: "
-          + e.getLocalizedMessage());
-    }
-  }
+//  public void synchronizePrompts(final AsteriskServer server) {
+//    ProgressMonitorDialog pm = new ProgressMonitorDialog(SafiWorkshopEditorUtil.getActiveShell());
+//    try {
+//      pm.run(true, true, new IRunnableWithProgress() {
+//        @Override
+//        public void run(IProgressMonitor monitor) throws InvocationTargetException,
+//            InterruptedException {
+//          try {
+//            monitor.beginTask("Synchronizing prompts with Asterisk server " + server.getName(), 1);
+//
+//            SafiServerRemoteManager.getInstance().synchAudioFiles(server);
+//            monitor.worked(1);
+//
+//          } catch (final Exception e) {
+//            e.printStackTrace();
+//            final Display d = Display.getDefault();
+//            d.asyncExec(new Runnable() {
+//              public void run() {
+//                MessageDialog.openError(d.getActiveShell(), "Save Error",
+//                    "Error caught while synchronizing audio prompts: " + e.getLocalizedMessage());
+//              }
+//            });
+//          }
+//
+//        }
+//      });
+//    } catch (Exception e) {
+//      e.printStackTrace();
+//      MessageDialog.openError(SafiServerPlugin.getDefault().getWorkbench().getDisplay()
+//          .getActiveShell(), "Save Error", "Error caught while synchronizing prompts: "
+//          + e.getLocalizedMessage());
+//    }
+//  }
 
   @Override
   public void selectionChanged(IAction action, ISelection selection) {

@@ -77,9 +77,6 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 import org.osgi.framework.Version;
 
-import com.safi.asterisk.AsteriskPackage;
-import com.safi.asterisk.actionstep.ActionstepPackage;
-import com.safi.asterisk.initiator.InitiatorPackage;
 import com.safi.core.actionstep.ActionStepFactory;
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.DynamicValueType;
@@ -1550,11 +1547,8 @@ public class SafletPersistenceManager {
     resourceLoader.getResourceFactoryRegistry().getExtensionToFactoryMap().put("saflet",
         resourceFactoryImpl);
     SafletPackage handlerPackage = SafletPackage.eINSTANCE;
-    ActionstepPackage toolstepPackage = ActionstepPackage.eINSTANCE;
-    InitiatorPackage initiatorPackage = InitiatorPackage.eINSTANCE;
     ScriptingPackage scriptingPackage = ScriptingPackage.eINSTANCE;
     DbPackage dbPackage = DbPackage.eINSTANCE;
-    AsteriskPackage asteriskPackage = AsteriskPackage.eINSTANCE;
 
     resourceLoader.getLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
     return resourceLoader;

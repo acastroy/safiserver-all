@@ -653,7 +653,7 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
 
 	@Override
 	public void dispose() {
-		if (needsSynch && SafiServerPlugin.getDefault().hasAsteriskServers()) {
+		if (needsSynch) {
 			boolean b = MessageDialog
 			    .openQuestion(
 			        SafiWorkshopEditorUtil.getActiveShell(),
@@ -661,8 +661,8 @@ public class PromptChooser extends Composite implements ISelectionChangedListene
 			        "One or more prompts were changed and may need to be synchronized "
 			            + "with the Asterisk servers. Do you wish to synchronize audio prompts now?");
 			if (b) {
-				AudioUtils.synchronizeAsteriskPrompts(SafiServerPlugin.getDefault()
-				    .getAvailableAsteriskServers());
+				AudioUtils.synchronizeTelephonySubsystemPrompts(SafiServerPlugin.getDefault()
+				    .getTelephonySubsystems());
 			}
 		}
 		if (playerDialog != null) {

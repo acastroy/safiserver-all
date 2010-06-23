@@ -204,12 +204,6 @@ public class AsteriskEditPartFactory implements EditPartFactory {
         case CaseItemLabelTextEditPart.VISUAL_ID:
           return new CaseItemLabelTextEditPart(view);
 
-        case AudioFileItemEditPart.VISUAL_ID:
-          return new AudioFileItemEditPart(view);
-
-        case AudioFileItemLabelTextEditPart.VISUAL_ID:
-          return new AudioFileItemLabelTextEditPart(view);
-
         case GetColMappingEditPart.VISUAL_ID:
           return new GetColMappingEditPart(view);
 

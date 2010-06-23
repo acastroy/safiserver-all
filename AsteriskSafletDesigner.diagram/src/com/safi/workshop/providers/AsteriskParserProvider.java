@@ -705,24 +705,24 @@ public class AsteriskParserProvider extends AbstractProvider implements IParserP
    */
   private IParser audioFileItemLabelText_4006Parser;
 
-  /**
-   * @generated
-   */
-  private IParser getAudioFileItemLabelText_4006Parser() {
-    if (audioFileItemLabelText_4006Parser == null) {
-      audioFileItemLabelText_4006Parser = createAudioFileItemLabelText_4006Parser();
-    }
-    return audioFileItemLabelText_4006Parser;
-  }
-
-  /**
-   * @generated
-   */
-  protected IParser createAudioFileItemLabelText_4006Parser() {
-    EAttribute[] features = new EAttribute[] { ActionStepPackage.eINSTANCE.getItem_LabelText(), };
-    MessageFormatParser parser = new MessageFormatParser(features);
-    return parser;
-  }
+//  /**
+//   * @generated
+//   */
+//  private IParser getAudioFileItemLabelText_4006Parser() {
+//    if (audioFileItemLabelText_4006Parser == null) {
+//      audioFileItemLabelText_4006Parser = createAudioFileItemLabelText_4006Parser();
+//    }
+//    return audioFileItemLabelText_4006Parser;
+//  }
+//
+//  /**
+//   * @generated
+//   */
+//  protected IParser createAudioFileItemLabelText_4006Parser() {
+//    EAttribute[] features = new EAttribute[] { ActionStepPackage.eINSTANCE.getItem_LabelText(), };
+//    MessageFormatParser parser = new MessageFormatParser(features);
+//    return parser;
+//  }
 
   /**
    * @generated
@@ -834,8 +834,8 @@ public class AsteriskParserProvider extends AbstractProvider implements IParserP
         return getRunQueryName_4103Parser();
       case CaseItemLabelTextEditPart.VISUAL_ID:
         return getCaseItemLabelText_4003Parser();
-      case AudioFileItemLabelTextEditPart.VISUAL_ID:
-        return getAudioFileItemLabelText_4006Parser();
+//      case AudioFileItemLabelTextEditPart.VISUAL_ID:
+//        return getAudioFileItemLabelText_4006Parser();
       case GetColMappingGetAsDatatypeEditPart.VISUAL_ID:
         return getGetColMappingGetAsDatatype_4097Parser();
       case SetColMappingSetAsDatatypeEditPart.VISUAL_ID:

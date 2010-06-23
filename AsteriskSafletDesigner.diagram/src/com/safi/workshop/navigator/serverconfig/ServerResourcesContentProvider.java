@@ -14,8 +14,6 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
-import com.safi.db.astdb.AsteriskServer;
-import com.safi.db.fsdb.FreeSwitchServer;
 import com.safi.db.server.config.ConfigFactory;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.TelephonySubsystem;
@@ -28,8 +26,6 @@ public class ServerResourcesContentProvider implements ITreeContentProvider, Ada
 
 	private static final Object[] EMPTY_ARRAY = new Object[0];
 	private UserList userList;
-	private AsteriskServerList asteriskList;
-	private FreeSwitchServerList freeSwitchList;
 	private SafiServer safiServer;
 	
 
@@ -95,46 +91,18 @@ public class ServerResourcesContentProvider implements ITreeContentProvider, Ada
 					userList.replace(newlist);
 					userList.setSafiServer(safiServer);
 				}
-				List<AsteriskServer> alist = new ArrayList<AsteriskServer>();
-				List<FreeSwitchServer> fslist = new ArrayList<FreeSwitchServer>();
-				List<TelephonySubsystem> systems = Collections.emptyList();
 				if (SafiServerPlugin.getDefault().isConnected()) {
 					User u = SafiServerPlugin.getDefault().getCurrentUser();
-					systems = safiServer.getTelephonySubsystems();
 
 					boolean canManageAll = EntitlementUtils.isUserEntitled(u,
 							EntitlementUtils.ENTIT_MANAGE_TELEPHONY_SERVERS);
-					for (Iterator<TelephonySubsystem> iter = systems.iterator(); iter.hasNext();) {
-						TelephonySubsystem ss = iter.next();
-						if (canManageAll || !ss.isPrivate()
-								|| (u != null && ss.getCreatedBy() != null && ss.getCreatedBy().getId() == u.getId())){
-							if (ss instanceof AsteriskServer)
-								alist.add((AsteriskServer)ss);
-							else
-						  if (ss instanceof FreeSwitchServer)
-						  	fslist.add((FreeSwitchServer)ss);
-						  	
-						}
-					}
+					
 					
 					
 					
 				}
-				
-				if (asteriskList == null)
-					asteriskList = new AsteriskServerList(alist, safiServer);
-				else {
-					asteriskList.replace(alist);
-					asteriskList.setSafiServer(safiServer);
-				}
-
-				if (freeSwitchList == null)
-					freeSwitchList = new FreeSwitchServerList(fslist, safiServer);
-				else {
-					freeSwitchList.replace(fslist);
-					freeSwitchList.setSafiServer(safiServer);
-				}
-				return new Object[] {freeSwitchList , asteriskList, userList};
+			
+				return new Object[] { userList};
 			}
 			// } else { // debug server
 			// List<AsteriskServer> asteriskList = safiServer.getAsteriskServers();
@@ -157,23 +125,9 @@ public class ServerResourcesContentProvider implements ITreeContentProvider, Ada
 			if (userList != null && userList.contains(u))
 				return userList;
 			return null;
-		} else if (element instanceof AsteriskServerList) {
-			try {
-				return SafiServerPlugin.getDefault().getSafiServer(true);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			return ((AsteriskServerList) element).getServer();
-		} else if (element instanceof FreeSwitchServerList) {
-			return ((FreeSwitchServerList) element).getServer();
-		} else if (element instanceof UserList) {
+		} if (element instanceof UserList) {
 			return null;
-		} else if (element instanceof AsteriskServer) {
-			return asteriskList;
-		} else if (element instanceof FreeSwitchServer) {
-			return freeSwitchList;
-		}
+		} 
 		return null;
 	}
 

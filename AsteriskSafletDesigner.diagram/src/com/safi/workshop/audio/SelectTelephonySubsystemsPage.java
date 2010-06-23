@@ -18,10 +18,10 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 
-import com.safi.db.astdb.AsteriskServer;
+import com.safi.db.server.config.TelephonySubsystem;
 import com.safi.server.plugin.SafiServerPlugin;
 
-public class SelectAsteriskServersPage extends WizardPage {
+public class SelectTelephonySubsystemsPage extends WizardPage {
 
   private Table table;
   private CheckboxTableViewer checkboxTableViewer;
@@ -29,7 +29,7 @@ public class SelectAsteriskServersPage extends WizardPage {
   /**
    * Create the wizard
    */
-  public SelectAsteriskServersPage() {
+  public SelectTelephonySubsystemsPage() {
     super("wizardPage");
     setTitle("Select Asterisk Servers");
     setDescription("Select Asterisk servers to where this prompt will be deployed");
@@ -65,6 +65,10 @@ public class SelectAsteriskServersPage extends WizardPage {
     final TableColumn newColumnTableColumn = new TableColumn(table, SWT.NONE);
     newColumnTableColumn.setWidth(120);
     newColumnTableColumn.setText("name");
+    
+    final TableColumn platformIdColumn = new TableColumn(table, SWT.NONE);
+    platformIdColumn.setWidth(120);
+    platformIdColumn.setText("platform ID");
 
     final TableColumn promptDirectoryColumn = new TableColumn(table, SWT.NONE);
     promptDirectoryColumn.setWidth(100);
@@ -73,30 +77,21 @@ public class SelectAsteriskServersPage extends WizardPage {
     final TableColumn addressColumn = new TableColumn(table, SWT.NONE);
     addressColumn.setWidth(100);
     addressColumn.setText("host address");
-    checkboxTableViewer.setInput(SafiServerPlugin.getDefault().getAvailableAsteriskServers());
+    checkboxTableViewer.setInput(SafiServerPlugin.getDefault().getTelephonySubsystems());
     setPageComplete(true);
-  }
-
-  public List<AsteriskServer> getAsteriskServers() {
-    Object o[] = checkboxTableViewer.getCheckedElements();
-    if (o == null || o.length == 0)
-      return null;
-    List<AsteriskServer> ast = new ArrayList<AsteriskServer>();
-    for (Object ob : o) {
-      ast.add((AsteriskServer) ob);
-    }
-    return ast;
   }
 
   class TableLabelProvider extends LabelProvider implements ITableLabelProvider {
     public String getColumnText(Object element, int columnIndex) {
-      AsteriskServer server = (AsteriskServer) element;
+      TelephonySubsystem server = (TelephonySubsystem) element;
       switch (columnIndex) {
         case 0:
           return server.getName();
         case 1:
-          return server.getPromptDirectory();
+          return server.getPlatformId();
         case 2:
+          return server.getPromptDirectory();
+        case 3:
           return server.getHostname();
       }
       return "";

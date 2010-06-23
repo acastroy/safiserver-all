@@ -9,26 +9,12 @@ import org.eclipse.jface.viewers.LabelProviderChangedEvent;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IDecoratorManager;
 
-import com.safi.db.astdb.AsteriskServer;
-import com.safi.db.fsdb.FreeSwitchServer;
 import com.safi.db.server.config.SafiServer;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 
 public class ServerResourcesDecorator extends org.eclipse.jface.viewers.LabelProvider implements
     ILightweightLabelDecorator {
-
-  private final static String AST_SERVER_ACTIVE_ICON = "icons/decorators/astserver_active.gif"; // NON-NLS-1
-  private final static String AST_SERVER_INACTIVE_ICON = "icons/decorators/astserver_inactive.gif";
-
-  private final static String AST_SERVER_PRIVATE_ICON = "icons/decorators/astserver_private.gif";
-  private final static String AST_SERVER_PUBLIC_ICON = "icons/decorators/astserver_public.gif";
-  
-  private final static String FS_SERVER_ACTIVE_ICON = "icons/decorators/astserver_active.gif"; // NON-NLS-1
-  private final static String FS_SERVER_INACTIVE_ICON = "icons/decorators/astserver_inactive.gif";
-
-  private final static String FS_SERVER_PRIVATE_ICON = "icons/decorators/astserver_private.gif";
-  private final static String FS_SERVER_PUBLIC_ICON = "icons/decorators/astserver_public.gif";
 
   private final static String SAFI_SERVER_CONNECTED_ICON = "icons/decorators/safiserver_connected.gif";
   private final static String SAFI_SERVER_DISCONNECTED_ICON = "icons/decorators/safiserver_disconnected.gif";
@@ -55,11 +41,7 @@ public class ServerResourcesDecorator extends org.eclipse.jface.viewers.LabelPro
   @Override
   public void decorate(Object element, IDecoration decoration) {
     System.err.println("Tryin to dec " + element + " of typ e " + element.getClass());
-    if (element instanceof AsteriskServer) {
-      decorateAsteriskServer((AsteriskServer) element, decoration);
-    } else if (element instanceof FreeSwitchServer) {
-      decorateFreeSwitchServer((FreeSwitchServer) element, decoration);
-    } else if (element instanceof SafiServer) {
+    if (element instanceof SafiServer) {
       decorateSafiServer((SafiServer) element, decoration);
     } /*
        * else if (element instanceof SafiServerList) { for (SafiServer server :
@@ -83,39 +65,6 @@ public class ServerResourcesDecorator extends org.eclipse.jface.viewers.LabelPro
     }
   }
 
-  private void decorateAsteriskServer(AsteriskServer server, IDecoration decoration) {
-    System.err.println("decking astserver " + server);
-    {
-      if (server.isEnabled())
-        decoration.addOverlay(getImageDescriptor(AST_SERVER_ACTIVE_ICON), IDecoration.BOTTOM_LEFT);
-      else
-        decoration
-            .addOverlay(getImageDescriptor(AST_SERVER_INACTIVE_ICON), IDecoration.BOTTOM_LEFT);
-
-      if (server.isPrivate())
-        decoration
-            .addOverlay(getImageDescriptor(AST_SERVER_PRIVATE_ICON), IDecoration.BOTTOM_RIGHT);
-      else
-        decoration.addOverlay(getImageDescriptor(AST_SERVER_PUBLIC_ICON), IDecoration.BOTTOM_RIGHT);
-    }
-  }
-  
-  private void decorateFreeSwitchServer(FreeSwitchServer server, IDecoration decoration) {
-    System.err.println("decking fsserver " + server);
-    {
-      if (server.isEnabled())
-        decoration.addOverlay(getImageDescriptor(FS_SERVER_ACTIVE_ICON), IDecoration.BOTTOM_LEFT);
-      else
-        decoration
-            .addOverlay(getImageDescriptor(FS_SERVER_INACTIVE_ICON), IDecoration.BOTTOM_LEFT);
-
-      if (server.isPrivate())
-        decoration
-            .addOverlay(getImageDescriptor(FS_SERVER_PRIVATE_ICON), IDecoration.BOTTOM_RIGHT);
-      else
-        decoration.addOverlay(getImageDescriptor(FS_SERVER_PUBLIC_ICON), IDecoration.BOTTOM_RIGHT);
-    }
-  }
 
   private ImageDescriptor getImageDescriptor(String path) {
     return AsteriskDiagramEditorPlugin.getBundledImageDescriptor(path);

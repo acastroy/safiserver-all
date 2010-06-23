@@ -2,7 +2,7 @@
 <classpath>
 	<classpathentry exported="true" kind="lib" path="lib/wrapper.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/jsch-0.1.42.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/safiServer.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/safiServer.jar" sourcepath="/SafiServerOSGI"/>
 	<classpathentry exported="true" kind="lib" path="lib/RmiJdbc.jar" sourcepath="/RmiJdbc"/>
 	<classpathentry exported="true" kind="lib" path="lib/log4j-1.2.15.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>

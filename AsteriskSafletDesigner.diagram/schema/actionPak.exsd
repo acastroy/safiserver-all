@@ -182,6 +182,13 @@
                </documentation>
             </annotation>
          </attribute>
+         <attribute name="platformId" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
       </complexType>
    </element>
 
@@ -224,9 +231,6 @@
             </annotation>
          </attribute>
       </complexType>
-   </element>
-
-   <element name="Initiator" type="string">
    </element>
 
    <element name="pakjar">

@@ -532,16 +532,16 @@ public class HandlerCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
         }
         break;
       }
-      case AudioFileItemEditPart.VISUAL_ID: {
-        if (!domain2NotationMap.containsKey(view.getElement())) {
-          result.addAll(AsteriskDiagramUpdater.getAudioFileItem_2003ContainedLinks(view));
-        }
-        if (!domain2NotationMap.containsKey(view.getElement())
-            || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-          domain2NotationMap.put(view.getElement(), view);
-        }
-        break;
-      }
+//      case AudioFileItemEditPart.VISUAL_ID: {
+//        if (!domain2NotationMap.containsKey(view.getElement())) {
+//          result.addAll(AsteriskDiagramUpdater.getAudioFileItem_2003ContainedLinks(view));
+//        }
+//        if (!domain2NotationMap.containsKey(view.getElement())
+//            || view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
+//          domain2NotationMap.put(view.getElement(), view);
+//        }
+//        break;
+//      }
       case GetColMappingEditPart.VISUAL_ID: {
         if (!domain2NotationMap.containsKey(view.getElement())) {
           result.addAll(AsteriskDiagramUpdater.getGetColMapping_2004ContainedLinks(view));

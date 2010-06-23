@@ -184,13 +184,13 @@ public class ImportAudioFileWizard extends Wizard implements IImportWizard {
       }
     }
 
-    if (promptForSynch && SafiServerPlugin.getDefault().hasAsteriskServers()) {
+    if (promptForSynch && SafiServerPlugin.getDefault().hasTelephonyModules()) {
       shell = SafiWorkshopEditorUtil.getActiveShell();
       boolean b = MessageDialog.openQuestion(shell, "Synchronize Now?",
           "One or more prompts were changed and may need to be synchronized "
-              + "with the Asterisk servers. Do you wish to synchronize audio prompts now?");
+              + "with the Telephony subsystems. Do you wish to synchronize audio prompts now?");
       if (b) {
-        AudioUtils.synchronizeAsteriskPrompts(SafiServerPlugin.getDefault().getAvailableAsteriskServers());
+        AudioUtils.synchronizeTelephonySubsystemPrompts(SafiServerPlugin.getDefault().getTelephonySubsystems());
       }
     }
     return true;

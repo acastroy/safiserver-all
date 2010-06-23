@@ -16,10 +16,6 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 
-import com.safi.asterisk.AsteriskPackage;
-import com.safi.asterisk.actionstep.ActionstepPackage;
-import com.safi.asterisk.initiator.InitiatorPackage;
-import com.safi.asterisk.saflet.SafletPackage;
 import com.safi.core.saflet.Saflet;
 import com.safi.core.scripting.ScriptingPackage;
 import com.safi.db.DbPackage;
@@ -100,13 +96,9 @@ public abstract class ServerResourceAction implements IWorkbenchWindowActionDele
       XMIResourceFactoryImpl resourceFactoryImpl = new XMIResourceFactoryImpl();
       resourceLoader.getResourceFactoryRegistry().getExtensionToFactoryMap().put("saflet",
           resourceFactoryImpl);
-      SafletPackage handlerPackage = SafletPackage.eINSTANCE;
       com.safi.core.saflet.SafletPackage handlerPackage2 = com.safi.core.saflet.SafletPackage.eINSTANCE;
-      ActionstepPackage toolstepPackage = ActionstepPackage.eINSTANCE;
-      InitiatorPackage initiatorPackage = InitiatorPackage.eINSTANCE;
       ScriptingPackage scriptingPackage = ScriptingPackage.eINSTANCE;
       DbPackage dbPackage = DbPackage.eINSTANCE;
-      AsteriskPackage asteriskPackage = AsteriskPackage.eINSTANCE;
 
       resourceLoader.getLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
     }

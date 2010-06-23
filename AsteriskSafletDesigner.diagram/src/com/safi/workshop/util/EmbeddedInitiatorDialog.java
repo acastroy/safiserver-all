@@ -24,11 +24,11 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
 import com.safi.asterisk.handler.connection.ExceptionHandler;
-import com.safi.db.astdb.AsteriskServer;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.Saflet;
 import com.safi.db.server.config.SafletProject;
 import com.safi.db.server.config.ServerResource;
+import com.safi.db.server.config.TelephonySubsystem;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.util.CustomInitiatorClient;
 import com.safi.util.ui.PropertyEditorTable;
@@ -41,7 +41,7 @@ public class EmbeddedInitiatorDialog extends Dialog {
   private Composite composite;
   private CCombo safletNameText;
 //  private Text safiServerManagementPort;
-  private CCombo asteriskServerIPText;
+  private CCombo telephonySubsystemIPCombo;
   private Text safiServerIPText;
   private CustomInitiatorClient client;
   private PropertyEditorTable propertyEditorTable;
@@ -121,11 +121,11 @@ public class EmbeddedInitiatorDialog extends Dialog {
     final Label asteriskServerIpLabel = new Label(container, SWT.NONE);
     asteriskServerIpLabel.setText("Asterisk Server IP:");
 
-    asteriskServerIPText = new CCombo(container, SWT.BORDER);
+    telephonySubsystemIPCombo = new CCombo(container, SWT.BORDER);
     final GridData gd_asteriskServerIP = new GridData(SWT.FILL, SWT.CENTER, true, false);
-    asteriskServerIPText.setLayoutData(gd_asteriskServerIP);
+    telephonySubsystemIPCombo.setLayoutData(gd_asteriskServerIP);
     if (client.getAstIp() != null)
-      asteriskServerIPText.setText(client.getAstIp());
+      telephonySubsystemIPCombo.setText(client.getAstIp());
 
 //    final Label safiserverManagementPortLabel = new Label(container, SWT.NONE);
 //    safiserverManagementPortLabel.setText("SafiServer Management Port:");
@@ -158,9 +158,9 @@ public class EmbeddedInitiatorDialog extends Dialog {
     updatePosition();
   }
 
-  private String[] getProductionAsteriskServers() {
+  private String[] getTelephonySubsystemInstances() {
     List<String> servernames = new ArrayList<String>();
-    for (AsteriskServer server : SafiServerPlugin.getDefault().getAvailableAsteriskServers()) {
+    for (TelephonySubsystem server : SafiServerPlugin.getDefault().getTelephonySubsystems()) {
       servernames.add(server.getHostname());
     }
     return servernames.toArray(new String[servernames.size()]);
@@ -175,7 +175,7 @@ public class EmbeddedInitiatorDialog extends Dialog {
                 getShell(),
                 "Not Connected",
                 "You are not currently connected to a production SafiServer.  No remote SafiServer information is available");
-        asteriskServerIPText.setItems(new String[0]);
+        telephonySubsystemIPCombo.setItems(new String[0]);
         safletNameText.setItems(new String[0]);
       } else {
         SafiServer server = SafiServerPlugin.getDefault().getSafiServer(true);
@@ -195,7 +195,7 @@ public class EmbeddedInitiatorDialog extends Dialog {
         // } else
 //        safiServerManagementPort.setData(server.getManagementPort());
 
-        asteriskServerIPText.setItems(getProductionAsteriskServers());
+        telephonySubsystemIPCombo.setItems(getTelephonySubsystemInstances());
         safletNameText.setItems(getProdSafletCompletions());
       }
     } catch (Exception e) {
@@ -291,7 +291,7 @@ public class EmbeddedInitiatorDialog extends Dialog {
     if (IDialogConstants.OK_ID == buttonId)
       okPressed();
     else if (IDialogConstants.PROCEED_ID == buttonId) {
-      client.setAstIp(asteriskServerIPText.getText());
+      client.setAstIp(telephonySubsystemIPCombo.getText());
       client.setHost((String) safiServerIPText.getData());
       try {
         client.setPort(SafiServerPlugin.getDefault().getLocalTunneledManagementPort());

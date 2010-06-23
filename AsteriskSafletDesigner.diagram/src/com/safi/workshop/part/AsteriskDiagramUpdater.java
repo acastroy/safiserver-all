@@ -11,80 +11,9 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
 
-import com.safi.asterisk.actionstep.Answer;
-import com.safi.asterisk.actionstep.Background;
-import com.safi.asterisk.actionstep.BackgroundDetect;
-import com.safi.asterisk.actionstep.Bridge;
-import com.safi.asterisk.actionstep.ChanSpy;
-import com.safi.asterisk.actionstep.Congestion;
-import com.safi.asterisk.actionstep.Dial;
-import com.safi.asterisk.actionstep.Dictate;
-import com.safi.asterisk.actionstep.Directory;
-import com.safi.asterisk.actionstep.Echo;
-import com.safi.asterisk.actionstep.ExecuteApplication;
-import com.safi.asterisk.actionstep.ExtensionSpy;
-import com.safi.asterisk.actionstep.ExtensionTransfer;
-import com.safi.asterisk.actionstep.Festival;
-import com.safi.asterisk.actionstep.GetAvailableChannel;
-import com.safi.asterisk.actionstep.GetCallInfo;
-import com.safi.asterisk.actionstep.GetDigits;
-import com.safi.asterisk.actionstep.GetFullVariable;
-import com.safi.asterisk.actionstep.Hangup;
-import com.safi.asterisk.actionstep.MeetMe;
-import com.safi.asterisk.actionstep.MeetMeAdmin;
-import com.safi.asterisk.actionstep.MeetMeCount;
-import com.safi.asterisk.actionstep.MixMonitor;
-import com.safi.asterisk.actionstep.Monitor;
-import com.safi.asterisk.actionstep.MultiStreamAudio;
-import com.safi.asterisk.actionstep.OriginateCall;
-import com.safi.asterisk.actionstep.Pickdown;
-import com.safi.asterisk.actionstep.Pickup;
-import com.safi.asterisk.actionstep.PickupChan;
-import com.safi.asterisk.actionstep.PlaceCall;
-import com.safi.asterisk.actionstep.PlayDTMF;
-import com.safi.asterisk.actionstep.PlayMusicOnHold;
-import com.safi.asterisk.actionstep.Playtones;
-import com.safi.asterisk.actionstep.Progress;
-import com.safi.asterisk.actionstep.PromptGetDigits;
-import com.safi.asterisk.actionstep.RecordCall;
-import com.safi.asterisk.actionstep.RecordFile;
-import com.safi.asterisk.actionstep.Ringing;
-import com.safi.asterisk.actionstep.SayAlpha;
-import com.safi.asterisk.actionstep.SayDateTime;
-import com.safi.asterisk.actionstep.SayDigits;
-import com.safi.asterisk.actionstep.SayNumber;
-import com.safi.asterisk.actionstep.SayPhonetic;
-import com.safi.asterisk.actionstep.SayTime;
-import com.safi.asterisk.actionstep.SetAutoHangup;
-import com.safi.asterisk.actionstep.SetCallerId;
-import com.safi.asterisk.actionstep.SetCallerPresentation;
-import com.safi.asterisk.actionstep.SetChannelVariable;
-import com.safi.asterisk.actionstep.SetContext;
-import com.safi.asterisk.actionstep.SetExtension;
-import com.safi.asterisk.actionstep.SetGlobalVariable;
-import com.safi.asterisk.actionstep.SetMusicOn;
-import com.safi.asterisk.actionstep.SetPriority;
-import com.safi.asterisk.actionstep.Sleep;
-import com.safi.asterisk.actionstep.SoftHangup;
-import com.safi.asterisk.actionstep.StopMixmonitor;
-import com.safi.asterisk.actionstep.StopMonitor;
-import com.safi.asterisk.actionstep.StopMusicOnHold;
-import com.safi.asterisk.actionstep.StopPlaytones;
-import com.safi.asterisk.actionstep.StreamAudio;
-import com.safi.asterisk.actionstep.StreamAudioExtended;
-import com.safi.asterisk.actionstep.Transfer;
-import com.safi.asterisk.actionstep.VMAuthenticate;
-import com.safi.asterisk.actionstep.Voicemail;
-import com.safi.asterisk.actionstep.VoicemailMain;
-import com.safi.asterisk.actionstep.WaitExten;
-import com.safi.asterisk.actionstep.WaitForDigit;
-import com.safi.asterisk.actionstep.WaitForRing;
-import com.safi.asterisk.actionstep.WaitMusicOnHold;
-import com.safi.asterisk.initiator.IncomingCall;
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.actionstep.Assignment;
-import com.safi.core.actionstep.AudioFileItem;
 import com.safi.core.actionstep.CaseItem;
 import com.safi.core.actionstep.Choice;
 import com.safi.core.actionstep.CloseDBConnection;
@@ -117,7 +46,6 @@ import com.safi.core.actionstep.SetQueryParam;
 import com.safi.core.actionstep.UpdatetRow;
 import com.safi.core.saflet.Saflet;
 import com.safi.workshop.edit.parts.AssignmentEditPart;
-import com.safi.workshop.edit.parts.AudioFileItemEditPart;
 import com.safi.workshop.edit.parts.CaseItemEditPart;
 import com.safi.workshop.edit.parts.CaseItemTargetToolstepEditPart;
 import com.safi.workshop.edit.parts.ChoiceEditPart;
@@ -306,26 +234,6 @@ public class AsteriskDiagramUpdater {
   /**
    * @generated
    */
-  public static List getHangup_1006SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    Hangup modelElement = (Hangup) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
   public static List getIfThen_1007SemanticChildren(View view) {
     if (!view.isSetElement()) {
       return Collections.EMPTY_LIST;
@@ -391,26 +299,6 @@ public class AsteriskDiagramUpdater {
       return Collections.EMPTY_LIST;
     }
     DebugLog modelElement = (DebugLog) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSetGlobalVariable_1063SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    SetGlobalVariable modelElement = (SetGlobalVariable) view.getElement();
     List result = new LinkedList();
     for (Object element : modelElement.getOutputs()) {
       Output childElement = (Output) element;
@@ -848,29 +736,29 @@ public class AsteriskDiagramUpdater {
     return result;
   }
 
-  /**
-   * @generated
-   */
-  public static List getMultiStreamAudioFilesPanel_5002SemanticChildren(View view) {
-    if (false == view.eContainer() instanceof View) {
-      return Collections.EMPTY_LIST;
-    }
-    View containerView = (View) view.eContainer();
-    if (!containerView.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    MultiStreamAudio modelElement = (MultiStreamAudio) containerView.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getAudioFilenames()) {
-      AudioFileItem childElement = (AudioFileItem) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == AudioFileItemEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
+//  /**
+//   * @generated
+//   */
+//  public static List getMultiStreamAudioFilesPanel_5002SemanticChildren(View view) {
+//    if (false == view.eContainer() instanceof View) {
+//      return Collections.EMPTY_LIST;
+//    }
+//    View containerView = (View) view.eContainer();
+//    if (!containerView.isSetElement()) {
+//      return Collections.EMPTY_LIST;
+//    }
+//    MultiStreamAudio modelElement = (MultiStreamAudio) containerView.getElement();
+//    List result = new LinkedList();
+//    for (Object element : modelElement.getAudioFilenames()) {
+//      AudioFileItem childElement = (AudioFileItem) element;
+//      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
+//      if (visualID == AudioFileItemEditPart.VISUAL_ID) {
+//        result.add(new AsteriskNodeDescriptor(childElement, visualID));
+//        continue;
+//      }
+//    }
+//    return result;
+//  }
 
   /**
    * @generated
@@ -1149,8 +1037,8 @@ public class AsteriskDiagramUpdater {
         return getOutput_2001ContainedLinks(view);
       case CaseItemEditPart.VISUAL_ID:
         return getCaseItem_2002ContainedLinks(view);
-      case AudioFileItemEditPart.VISUAL_ID:
-        return getAudioFileItem_2003ContainedLinks(view);
+//      case AudioFileItemEditPart.VISUAL_ID:
+//        return getAudioFileItem_2003ContainedLinks(view);
       case GetColMappingEditPart.VISUAL_ID:
         return getGetColMapping_2004ContainedLinks(view);
       case SetColMappingEditPart.VISUAL_ID:
@@ -1232,8 +1120,7 @@ public class AsteriskDiagramUpdater {
         return getOutput_2001IncomingLinks(view);
       case CaseItemEditPart.VISUAL_ID:
         return getCaseItem_2002IncomingLinks(view);
-      case AudioFileItemEditPart.VISUAL_ID:
-        return getAudioFileItem_2003IncomingLinks(view);
+ 
       case GetColMappingEditPart.VISUAL_ID:
         return getGetColMapping_2004IncomingLinks(view);
       case SetColMappingEditPart.VISUAL_ID:
@@ -1329,8 +1216,8 @@ public class AsteriskDiagramUpdater {
         return getOutput_2001OutgoingLinks(view);
       case CaseItemEditPart.VISUAL_ID:
         return getCaseItem_2002OutgoingLinks(view);
-      case AudioFileItemEditPart.VISUAL_ID:
-        return getAudioFileItem_2003OutgoingLinks(view);
+//      case AudioFileItemEditPart.VISUAL_ID:
+//        return getAudioFileItem_2003OutgoingLinks(view);
       case GetColMappingEditPart.VISUAL_ID:
         return getGetColMapping_2004OutgoingLinks(view);
       case SetColMappingEditPart.VISUAL_ID:
@@ -1591,22 +1478,7 @@ public class AsteriskDiagramUpdater {
     return Collections.EMPTY_LIST;
   }
 
-  public static List getIncomingCall_1035SemanticChildren(View view) {
-    if (!view.isSetElement()) {
-      return Collections.EMPTY_LIST;
-    }
-    IncomingCall modelElement = (IncomingCall) view.getElement();
-    List result = new LinkedList();
-    for (Object element : modelElement.getOutputs()) {
-      Output childElement = (Output) element;
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
-      if (visualID == OutputEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
-        continue;
-      }
-    }
-    return result;
-  }
+  
 
   /**
    * @generated
@@ -2068,16 +1940,16 @@ public class AsteriskDiagramUpdater {
     result.addAll(getOutgoingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement));
     return result;
   }
-
-  /**
-   * @generated
-   */
-  public static List getAudioFileItem_2003ContainedLinks(View view) {
-    AudioFileItem modelElement = (AudioFileItem) view.getElement();
-    List result = new LinkedList();
-    result.addAll(getOutgoingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement));
-    return result;
-  }
+//
+//  /**
+//   * @generated
+//   */
+//  public static List getAudioFileItem_2003ContainedLinks(View view) {
+//    AudioFileItem modelElement = (AudioFileItem) view.getElement();
+//    List result = new LinkedList();
+//    result.addAll(getOutgoingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement));
+//    return result;
+//  }
 
   /**
    * @generated
@@ -2099,22 +1971,6 @@ public class AsteriskDiagramUpdater {
   public static List getQueryParamMapping_2006ContainedLinks(View view) {
     return Collections.EMPTY_LIST;
   }
-
-  /**
-   * @generated
-   */
-  public static List getAnswer_1001IncomingLinks(View view) {
-    Answer modelElement = (Answer) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
   /**
    * @generated
    */
@@ -2148,51 +2004,6 @@ public class AsteriskDiagramUpdater {
   /**
    * @generated
    */
-  public static List getGetFullVariable_1004IncomingLinks(View view) {
-    GetFullVariable modelElement = (GetFullVariable) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getMultiStreamAudio_1005IncomingLinks(View view) {
-    MultiStreamAudio modelElement = (MultiStreamAudio) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getHangup_1006IncomingLinks(View view) {
-    Hangup modelElement = (Hangup) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
   public static List getIfThen_1007IncomingLinks(View view) {
     IfThen modelElement = (IfThen) view.getElement();
     Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
@@ -2205,424 +2016,6 @@ public class AsteriskDiagramUpdater {
     return result;
   }
 
-  /**
-   * @generated
-   */
-  public static List getRecordFile_1008IncomingLinks(View view) {
-    RecordFile modelElement = (RecordFile) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSayAlpha_1009IncomingLinks(View view) {
-    SayAlpha modelElement = (SayAlpha) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSayDateTime_1010IncomingLinks(View view) {
-    SayDateTime modelElement = (SayDateTime) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSayDigits_1011IncomingLinks(View view) {
-    SayDigits modelElement = (SayDigits) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSayNumber_1012IncomingLinks(View view) {
-    SayNumber modelElement = (SayNumber) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSayPhonetic_1013IncomingLinks(View view) {
-    SayPhonetic modelElement = (SayPhonetic) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSayTime_1014IncomingLinks(View view) {
-    SayTime modelElement = (SayTime) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSetAutoHangup_1015IncomingLinks(View view) {
-    SetAutoHangup modelElement = (SetAutoHangup) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSetCallerId_1016IncomingLinks(View view) {
-    SetCallerId modelElement = (SetCallerId) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSetChannelVariable_1017IncomingLinks(View view) {
-    SetChannelVariable modelElement = (SetChannelVariable) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSetContext_1018IncomingLinks(View view) {
-    SetContext modelElement = (SetContext) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSetExtension_1019IncomingLinks(View view) {
-    SetExtension modelElement = (SetExtension) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getStopMusicOnHold_1020IncomingLinks(View view) {
-    StopMusicOnHold modelElement = (StopMusicOnHold) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSetMusicOn_1021IncomingLinks(View view) {
-    SetMusicOn modelElement = (SetMusicOn) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSetPriority_1022IncomingLinks(View view) {
-    SetPriority modelElement = (SetPriority) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getStreamAudio_1023IncomingLinks(View view) {
-    StreamAudio modelElement = (StreamAudio) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getWaitForDigit_1024IncomingLinks(View view) {
-    WaitForDigit modelElement = (WaitForDigit) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getDIDMatcher_1025IncomingLinks(View view) {
-    return Collections.EMPTY_LIST;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getGetDigits_1026IncomingLinks(View view) {
-    GetDigits modelElement = (GetDigits) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getOriginateCall_1027IncomingLinks(View view) {
-    OriginateCall modelElement = (OriginateCall) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getPlayDTMF_1028IncomingLinks(View view) {
-    PlayDTMF modelElement = (PlayDTMF) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getRecordCall_1029IncomingLinks(View view) {
-    RecordCall modelElement = (RecordCall) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getExecuteApplication_1030IncomingLinks(View view) {
-    ExecuteApplication modelElement = (ExecuteApplication) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getPlayMusicOnHold_1031IncomingLinks(View view) {
-    PlayMusicOnHold modelElement = (PlayMusicOnHold) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getPromptGetDigits_1032IncomingLinks(View view) {
-    PromptGetDigits modelElement = (PromptGetDigits) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSleep_1033IncomingLinks(View view) {
-    Sleep modelElement = (Sleep) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getStreamAudioExtended_1034IncomingLinks(View view) {
-    StreamAudioExtended modelElement = (StreamAudioExtended) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getIncomingCall_1035IncomingLinks(View view) {
-    return Collections.EMPTY_LIST;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getGetCallInfo_1036IncomingLinks(View view) {
-    GetCallInfo modelElement = (GetCallInfo) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
 
   /**
    * @generated
@@ -2657,563 +2050,8 @@ public class AsteriskDiagramUpdater {
   /**
    * @generated
    */
-  public static List getDial_1039IncomingLinks(View view) {
-    Dial modelElement = (Dial) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getPickup_1040IncomingLinks(View view) {
-    Pickup modelElement = (Pickup) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getBackground_1041IncomingLinks(View view) {
-    Background modelElement = (Background) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getBackgroundDetect_1042IncomingLinks(View view) {
-    BackgroundDetect modelElement = (BackgroundDetect) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getWaitExten_1043IncomingLinks(View view) {
-    WaitExten modelElement = (WaitExten) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSoftHangup_1044IncomingLinks(View view) {
-    SoftHangup modelElement = (SoftHangup) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getPickupChan_1045IncomingLinks(View view) {
-    PickupChan modelElement = (PickupChan) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getPickdown_1046IncomingLinks(View view) {
-    Pickdown modelElement = (Pickdown) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getProgress_1047IncomingLinks(View view) {
-    Progress modelElement = (Progress) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getBridge_1048IncomingLinks(View view) {
-    Bridge modelElement = (Bridge) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getPlaceCall_1049IncomingLinks(View view) {
-    PlaceCall modelElement = (PlaceCall) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getVoicemail_1050IncomingLinks(View view) {
-    Voicemail modelElement = (Voicemail) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getVoicemailMain_1051IncomingLinks(View view) {
-    VoicemailMain modelElement = (VoicemailMain) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getVMAuthenticate_1052IncomingLinks(View view) {
-    VMAuthenticate modelElement = (VMAuthenticate) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getMeetMe_1053IncomingLinks(View view) {
-    MeetMe modelElement = (MeetMe) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getMeetMeAdmin_1054IncomingLinks(View view) {
-    MeetMeAdmin modelElement = (MeetMeAdmin) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getMeetMeCount_1055IncomingLinks(View view) {
-    MeetMeCount modelElement = (MeetMeCount) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
   public static List getDebugLog_1056IncomingLinks(View view) {
     DebugLog modelElement = (DebugLog) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getWaitForRing_1057IncomingLinks(View view) {
-    WaitForRing modelElement = (WaitForRing) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getWaitMusicOnHold_1058IncomingLinks(View view) {
-    WaitMusicOnHold modelElement = (WaitMusicOnHold) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getGetAvailableChannel_1059IncomingLinks(View view) {
-    GetAvailableChannel modelElement = (GetAvailableChannel) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getCongestion_1060IncomingLinks(View view) {
-    Congestion modelElement = (Congestion) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getRinging_1061IncomingLinks(View view) {
-    Ringing modelElement = (Ringing) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSetCallerPresentation_1062IncomingLinks(View view) {
-    SetCallerPresentation modelElement = (SetCallerPresentation) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getSetGlobalVariable_1063IncomingLinks(View view) {
-    SetGlobalVariable modelElement = (SetGlobalVariable) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getEcho_1064IncomingLinks(View view) {
-    Echo modelElement = (Echo) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getFestival_1065IncomingLinks(View view) {
-    Festival modelElement = (Festival) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getPlaytones_1066IncomingLinks(View view) {
-    Playtones modelElement = (Playtones) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getStopPlaytones_1067IncomingLinks(View view) {
-    StopPlaytones modelElement = (StopPlaytones) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getChanSpy_1068IncomingLinks(View view) {
-    ChanSpy modelElement = (ChanSpy) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getDictate_1069IncomingLinks(View view) {
-    Dictate modelElement = (Dictate) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getExtensionSpy_1070IncomingLinks(View view) {
-    ExtensionSpy modelElement = (ExtensionSpy) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getMixMonitor_1071IncomingLinks(View view) {
-    MixMonitor modelElement = (MixMonitor) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getStopMixmonitor_1072IncomingLinks(View view) {
-    StopMixmonitor modelElement = (StopMixmonitor) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getStopMonitor_1073IncomingLinks(View view) {
-    StopMonitor modelElement = (StopMonitor) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getMonitor_1074IncomingLinks(View view) {
-    Monitor modelElement = (Monitor) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getDirectory_1075IncomingLinks(View view) {
-    Directory modelElement = (Directory) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getTransfer_1076IncomingLinks(View view) {
-    Transfer modelElement = (Transfer) view.getElement();
     Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
         .getResources());
     List result = new LinkedList();
@@ -3499,21 +2337,6 @@ public class AsteriskDiagramUpdater {
    */
   public static List getSetColValues_1095IncomingLinks(View view) {
     SetColValues modelElement = (SetColValues) view.getElement();
-    Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
-        .getResources());
-    List result = new LinkedList();
-    result.addAll(getIncomingFeatureModelFacetLinks_Output_Target_3001(modelElement,
-        crossReferences));
-    result.addAll(getIncomingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement,
-        crossReferences));
-    return result;
-  }
-
-  /**
-   * @generated
-   */
-  public static List getExtensionTransfer_1096IncomingLinks(View view) {
-    ExtensionTransfer modelElement = (ExtensionTransfer) view.getElement();
     Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet()
         .getResources());
     List result = new LinkedList();
@@ -4291,16 +3114,16 @@ public class AsteriskDiagramUpdater {
     result.addAll(getOutgoingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement));
     return result;
   }
-
-  /**
-   * @generated
-   */
-  public static List getAudioFileItem_2003OutgoingLinks(View view) {
-    AudioFileItem modelElement = (AudioFileItem) view.getElement();
-    List result = new LinkedList();
-    result.addAll(getOutgoingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement));
-    return result;
-  }
+//
+//  /**
+//   * @generated
+//   */
+//  public static List getAudioFileItem_2003OutgoingLinks(View view) {
+//    AudioFileItem modelElement = (AudioFileItem) view.getElement();
+//    List result = new LinkedList();
+//    result.addAll(getOutgoingFeatureModelFacetLinks_CaseItem_TargetToolstep_3003(modelElement));
+//    return result;
+//  }
 
   /**
    * @generated
