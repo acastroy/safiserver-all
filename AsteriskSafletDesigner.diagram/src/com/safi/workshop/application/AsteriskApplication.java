@@ -547,7 +547,9 @@ public class AsteriskApplication implements IApplication {
                 SafiServerPlugin.getDefault().getPreferenceStore();
                 // SafiServerPlugin.getDefault().getPreferenceStore().addPropertyChangeListener(
                 // SafiServerPlugin.getDefault().new ProdServerPrefListener());
+                
                 AsteriskDiagramEditorPlugin.getInstance().loadActionPaks(new NullProgressMonitor());
+                
               } catch (Exception e) {
                 AsteriskDiagramEditorPlugin.getInstance().logError("Error in pre-startup", e);
               }
@@ -575,7 +577,7 @@ public class AsteriskApplication implements IApplication {
               SafiWorkshopEditorUtil.initializePalette();
               // AsteriskDiagramEditorUtil.getSafiNavigator().switchToSafletPerspective();
               SafiWorkshopEditorUtil.getSafiNavigator().refresh();
-
+              AsteriskDiagramEditorPlugin.getInstance().intTelephonyModulePluginMap(new NullProgressMonitor());
               // SafiJavaScriptEditor jeditor = new SafiJavaScriptEditor();
 
               // AsteriskDiagramEditorPlugin.getInstance().initSQLPlugin();

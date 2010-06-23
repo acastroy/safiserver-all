@@ -327,6 +327,10 @@ public class SafletCreationPage extends WizardNewFileCreationPage {
 				}
 				TelephonyModulePlugin module = null;
 				
+				if (platformCombo.getSelectionIndex() < 0){
+					ErrorDialog.openError(getContainer().getShell(), "No Platform was selected.  Please select a Platform", null, Status.CANCEL_STATUS);
+					throw new InterruptedException();
+				}
 				String platformId = platformCombo.getItem(platformCombo.getSelectionIndex());
 				module = (TelephonyModulePlugin) platformCombo.getData(platformId);
 					diagram = SafiWorkshopEditorUtil.createDiagram(newURI, module, asp, monitor);

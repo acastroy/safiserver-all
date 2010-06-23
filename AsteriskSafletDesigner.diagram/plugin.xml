@@ -1605,8 +1605,6 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
          <elementType ref="AsteriskSafletDesigner.diagram.Handler_79"/>
          <elementType ref="AsteriskSafletDesigner.diagram.Assignment_1002"/>
          <elementType ref="AsteriskSafletDesigner.diagram.Choice_1003"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.GetFullVariable_1004"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.MultiStreamAudio_1005"/>
          <elementType ref="AsteriskSafletDesigner.diagram.IfThen_1007"/>
          <elementType ref="AsteriskSafletDesigner.diagram.ExecuteScript_1037"/>
          <elementType ref="AsteriskSafletDesigner.diagram.InvokeSaflet_1038"/>
@@ -1633,7 +1631,6 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
          <elementType ref="AsteriskSafletDesigner.diagram.RunQuery_1097"/>
          <elementType ref="AsteriskSafletDesigner.diagram.Output_2001"/>
          <elementType ref="AsteriskSafletDesigner.diagram.CaseItem_2002"/>
-         <elementType ref="AsteriskSafletDesigner.diagram.AudioFileItem_2003"/>
          <elementType ref="AsteriskSafletDesigner.diagram.GetColMapping_2004"/>
          <elementType ref="AsteriskSafletDesigner.diagram.SetColMapping_2005"/>
          <elementType ref="AsteriskSafletDesigner.diagram.QueryParamMapping_2006"/>
@@ -1843,7 +1840,8 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
             class="com.safi.workshop.view.vareditor.VariablesView2"
             icon="icons/vareditor/VarView.gif"
             id="com.safi.workshop.view.VariablesView"
-            name="Variables">
+            name="Variables"
+            restorable="true">
       </view>
       <view
             allowMultiple="false"
