@@ -6,15 +6,12 @@
  */
 package com.safi.core.actionstep.provider;
 
-import com.safi.core.actionstep.util.ActionStepAdapterFactory;
-
 import java.util.ArrayList;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -26,6 +23,8 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+
+import com.safi.core.actionstep.util.ActionStepAdapterFactory;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -142,29 +141,6 @@ public class ActionStepItemProviderAdapterFactory extends ActionStepAdapterFacto
 		}
 
 		return inputItemItemProvider;
-	}
-
-  /**
-	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.AudioFileItem} instances.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  protected AudioFileItemItemProvider audioFileItemItemProvider;
-
-  /**
-	 * This creates an adapter for a {@link com.safi.core.actionstep.AudioFileItem}.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  @Override
-  public Adapter createAudioFileItemAdapter() {
-		if (audioFileItemItemProvider == null) {
-			audioFileItemItemProvider = new AudioFileItemItemProvider(this);
-		}
-
-		return audioFileItemItemProvider;
 	}
 
   /**
@@ -1097,7 +1073,6 @@ public class ActionStepItemProviderAdapterFactory extends ActionStepAdapterFacto
 		if (assignmentItemProvider != null) assignmentItemProvider.dispose();
 		if (caseItemItemProvider != null) caseItemItemProvider.dispose();
 		if (inputItemItemProvider != null) inputItemItemProvider.dispose();
-		if (audioFileItemItemProvider != null) audioFileItemItemProvider.dispose();
 		if (choiceItemProvider != null) choiceItemProvider.dispose();
 		if (dynamicValueItemProvider != null) dynamicValueItemProvider.dispose();
 		if (ifThenItemProvider != null) ifThenItemProvider.dispose();
