@@ -108,8 +108,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="audioFilenames" ordered="false"
-          upperBound="-1" eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/AudioFileItem"
-          containment="true" resolveProxies="false">
+          upperBound="-1" eType="#//actionstep/AudioFileItem" containment="true" resolveProxies="false">
         <eAnnotations source="Required">
           <details key="criteria" value="non-empty"/>
         </eAnnotations>
@@ -1898,6 +1897,19 @@
           <details key="displayText" value="Variable"/>
         </eAnnotations>
       </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AudioFileItem" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/CaseItem">
+      <eAnnotations source="DynamicValueAnnotation">
+        <details key="superProperty" value="dynamicValue"/>
+        <details key="type" value="Prompt Filename"/>
+        <details key="isTypeLocked" value="false"/>
+        <details key="description" value="The audio prompt file name that will be played"/>
+        <details key="expectedReturnType" value="Text"/>
+        <details key="helperClass" value="com.safi.workshop.sheet.PromptChooserDynamicValueEditorPage"/>
+      </eAnnotations>
+      <eAnnotations source="Required">
+        <details key="criteria" value="non-null"/>
+      </eAnnotations>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="initiator" nsURI="http:///com/safi/asterisk.ecore#initiator"

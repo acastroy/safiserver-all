@@ -10728,6 +10728,61 @@ public interface ActionstepPackage extends EPackage {
 	int MANAGER_ACTION_FEATURE_COUNT = ActionStepPackage.PARAMETERIZED_ACTIONSTEP_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link com.safi.asterisk.actionstep.impl.AudioFileItemImpl <em>Audio File Item</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.safi.asterisk.actionstep.impl.AudioFileItemImpl
+	 * @see com.safi.asterisk.actionstep.impl.ActionstepPackageImpl#getAudioFileItem()
+	 * @generated
+	 */
+	int AUDIO_FILE_ITEM = 71;
+
+	/**
+	 * The feature id for the '<em><b>Label Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUDIO_FILE_ITEM__LABEL_TEXT = ActionStepPackage.CASE_ITEM__LABEL_TEXT;
+
+	/**
+	 * The feature id for the '<em><b>Parent Action Step</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUDIO_FILE_ITEM__PARENT_ACTION_STEP = ActionStepPackage.CASE_ITEM__PARENT_ACTION_STEP;
+
+	/**
+	 * The feature id for the '<em><b>Target Action Step</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUDIO_FILE_ITEM__TARGET_ACTION_STEP = ActionStepPackage.CASE_ITEM__TARGET_ACTION_STEP;
+
+	/**
+	 * The feature id for the '<em><b>Dynamic Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUDIO_FILE_ITEM__DYNAMIC_VALUE = ActionStepPackage.CASE_ITEM__DYNAMIC_VALUE;
+
+	/**
+	 * The number of structural features of the '<em>Audio File Item</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUDIO_FILE_ITEM_FEATURE_COUNT = ActionStepPackage.CASE_ITEM_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link com.safi.asterisk.actionstep.MeetMeAdminCommand <em>Meet Me Admin Command</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10735,7 +10790,7 @@ public interface ActionstepPackage extends EPackage {
 	 * @see com.safi.asterisk.actionstep.impl.ActionstepPackageImpl#getMeetMeAdminCommand()
 	 * @generated
 	 */
-	int MEET_ME_ADMIN_COMMAND = 71;
+	int MEET_ME_ADMIN_COMMAND = 72;
 
 	/**
 	 * The meta object id for the '{@link com.safi.asterisk.actionstep.PresentationType <em>Presentation Type</em>}' enum.
@@ -10745,7 +10800,7 @@ public interface ActionstepPackage extends EPackage {
 	 * @see com.safi.asterisk.actionstep.impl.ActionstepPackageImpl#getPresentationType()
 	 * @generated
 	 */
-	int PRESENTATION_TYPE = 72;
+	int PRESENTATION_TYPE = 73;
 
 	/**
 	 * The meta object id for the '{@link com.safi.asterisk.actionstep.ManagerActionType <em>Manager Action Type</em>}' enum.
@@ -10755,7 +10810,7 @@ public interface ActionstepPackage extends EPackage {
 	 * @see com.safi.asterisk.actionstep.impl.ActionstepPackageImpl#getManagerActionType()
 	 * @generated
 	 */
-	int MANAGER_ACTION_TYPE = 73;
+	int MANAGER_ACTION_TYPE = 74;
 
 	/**
 	 * The meta object id for the '<em>Map</em>' data type.
@@ -10765,7 +10820,7 @@ public interface ActionstepPackage extends EPackage {
 	 * @see com.safi.asterisk.actionstep.impl.ActionstepPackageImpl#getMap()
 	 * @generated
 	 */
-	int MAP = 74;
+	int MAP = 75;
 
 	/**
 	 * The meta object id for the '<em>Basic EMap</em>' data type.
@@ -10775,7 +10830,7 @@ public interface ActionstepPackage extends EPackage {
 	 * @see com.safi.asterisk.actionstep.impl.ActionstepPackageImpl#getBasicEMap()
 	 * @generated
 	 */
-	int BASIC_EMAP = 75;
+	int BASIC_EMAP = 76;
 
 
 	/**
@@ -14250,6 +14305,16 @@ public interface ActionstepPackage extends EPackage {
 	EReference getManagerAction_ManagerResponse();
 
 	/**
+	 * Returns the meta object for class '{@link com.safi.asterisk.actionstep.AudioFileItem <em>Audio File Item</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Audio File Item</em>'.
+	 * @see com.safi.asterisk.actionstep.AudioFileItem
+	 * @generated
+	 */
+	EClass getAudioFileItem();
+
+	/**
 	 * Returns the meta object for enum '{@link com.safi.asterisk.actionstep.MeetMeAdminCommand <em>Meet Me Admin Command</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -17040,6 +17105,16 @@ public interface ActionstepPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MANAGER_ACTION__MANAGER_RESPONSE = eINSTANCE.getManagerAction_ManagerResponse();
+
+		/**
+		 * The meta object literal for the '{@link com.safi.asterisk.actionstep.impl.AudioFileItemImpl <em>Audio File Item</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.safi.asterisk.actionstep.impl.AudioFileItemImpl
+		 * @see com.safi.asterisk.actionstep.impl.ActionstepPackageImpl#getAudioFileItem()
+		 * @generated
+		 */
+		EClass AUDIO_FILE_ITEM = eINSTANCE.getAudioFileItem();
 
 		/**
 		 * The meta object literal for the '{@link com.safi.asterisk.actionstep.MeetMeAdminCommand <em>Meet Me Admin Command</em>}' enum.

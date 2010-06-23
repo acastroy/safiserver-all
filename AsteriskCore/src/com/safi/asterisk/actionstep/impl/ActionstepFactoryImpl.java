@@ -205,6 +205,7 @@ public class ActionstepFactoryImpl extends EFactoryImpl implements ActionstepFac
 			case ActionstepPackage.DIRECTORY: return createDirectory();
 			case ActionstepPackage.EXTENSION_TRANSFER: return createExtensionTransfer();
 			case ActionstepPackage.MANAGER_ACTION: return createManagerAction();
+			case ActionstepPackage.AUDIO_FILE_ITEM: return createAudioFileItem();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -954,6 +955,16 @@ public class ActionstepFactoryImpl extends EFactoryImpl implements ActionstepFac
 	public ManagerAction createManagerAction() {
 		ManagerActionImpl managerAction = new ManagerActionImpl();
 		return managerAction;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AudioFileItem createAudioFileItem() {
+		AudioFileItemImpl audioFileItem = new AudioFileItemImpl();
+		return audioFileItem;
 	}
 
 		/**

@@ -6,12 +6,10 @@
  */
 package com.safi.asterisk.actionstep;
 
-import com.safi.core.actionstep.AudioFileItem;
-import com.safi.core.actionstep.DynamicValue;
-
-import com.safi.core.call.CallConsumer1;
-
 import org.eclipse.emf.common.util.EList;
+
+import com.safi.core.actionstep.DynamicValue;
+import com.safi.core.call.CallConsumer1;
 
 /**
  * <!-- begin-user-doc -->
@@ -60,7 +58,7 @@ public interface MultiStreamAudio extends AsteriskActionStep, CallConsumer1 {
 
 	/**
 	 * Returns the value of the '<em><b>Audio Filenames</b></em>' containment reference list.
-	 * The list contents are of type {@link com.safi.core.actionstep.AudioFileItem}.
+	 * The list contents are of type {@link com.safi.asterisk.actionstep.AudioFileItem}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Audio Filenames</em>' containment reference list isn't clear,

@@ -656,6 +656,15 @@ public interface ActionstepFactory extends EFactory {
 	ManagerAction createManagerAction();
 
 	/**
+	 * Returns a new object of class '<em>Audio File Item</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Audio File Item</em>'.
+	 * @generated
+	 */
+	AudioFileItem createAudioFileItem();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

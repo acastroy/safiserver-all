@@ -540,6 +540,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asterisk.ecore#//actionstep/ManagerAction/managerActionType"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asterisk.ecore#//actionstep/ManagerAction/managerResponse"/>
       </genClasses>
+      <genClasses ecoreClass="asterisk.ecore#//actionstep/AudioFileItem"/>
     </nestedGenPackages>
     <nestedGenPackages prefix="Initiator" disposableProviderFactory="true" ecorePackage="asterisk.ecore#//initiator">
       <genDataTypes ecoreDataType="asterisk.ecore#//initiator/ManagerEvent"/>

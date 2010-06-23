@@ -23,6 +23,7 @@ import com.safi.asterisk.actionstep.ActionstepFactory;
 import com.safi.asterisk.actionstep.ActionstepPackage;
 import com.safi.asterisk.actionstep.Answer;
 import com.safi.asterisk.actionstep.AsteriskActionStep;
+import com.safi.asterisk.actionstep.AudioFileItem;
 import com.safi.asterisk.actionstep.Background;
 import com.safi.asterisk.actionstep.BackgroundDetect;
 import com.safi.asterisk.actionstep.Bridge;
@@ -608,6 +609,13 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 	 * @generated
 	 */
 	private EClass managerActionEClass = null;
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass audioFileItemEClass = null;
 
 		/**
 	 * <!-- begin-user-doc -->
@@ -3620,6 +3628,15 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 
 		/**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAudioFileItem() {
+		return audioFileItemEClass;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -4084,6 +4101,8 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		createEAttribute(managerActionEClass, MANAGER_ACTION__MANAGER_ACTION_TYPE);
 		createEReference(managerActionEClass, MANAGER_ACTION__MANAGER_RESPONSE);
 
+		audioFileItemEClass = createEClass(AUDIO_FILE_ITEM);
+
 		// Create enums
 		meetMeAdminCommandEEnum = createEEnum(MEET_ME_ADMIN_COMMAND);
 		presentationTypeEEnum = createEEnum(PRESENTATION_TYPE);
@@ -4270,6 +4289,7 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		extensionTransferEClass.getESuperTypes().add(theCallPackage.getCallConsumer2());
 		asteriskActionStepEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
 		managerActionEClass.getESuperTypes().add(theActionStepPackage.getParameterizedActionstep());
+		audioFileItemEClass.getESuperTypes().add(theActionStepPackage.getCaseItem());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(answerEClass, Answer.class, "Answer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -4288,7 +4308,7 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 
 		initEClass(multiStreamAudioEClass, MultiStreamAudio.class, "MultiStreamAudio", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMultiStreamAudio_EscapeDigits(), theActionStepPackage.getDynamicValue(), null, "escapeDigits", null, 0, 1, MultiStreamAudio.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMultiStreamAudio_AudioFilenames(), theActionStepPackage.getAudioFileItem(), null, "audioFilenames", null, 0, -1, MultiStreamAudio.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getMultiStreamAudio_AudioFilenames(), this.getAudioFileItem(), null, "audioFilenames", null, 0, -1, MultiStreamAudio.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(hangupEClass, Hangup.class, "Hangup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -4669,6 +4689,8 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		initEAttribute(getManagerAction_ManagerActionType(), this.getManagerActionType(), "managerActionType", null, 0, 1, ManagerAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getManagerAction_ManagerResponse(), theActionStepPackage.getDynamicValue(), null, "managerResponse", null, 0, 1, ManagerAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
+		initEClass(audioFileItemEClass, AudioFileItem.class, "AudioFileItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		// Initialize enums and add enum literals
 		initEEnum(meetMeAdminCommandEEnum, MeetMeAdminCommand.class, "MeetMeAdminCommand");
 		addEEnumLiteral(meetMeAdminCommandEEnum, MeetMeAdminCommand.EJECT_LAST_USER);
@@ -4930,7 +4952,7 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		   source, 
 		   new String[] {
 			 "seconds", "true"
-		   });					
+		   });							
 	}
 
   /**
@@ -5811,7 +5833,18 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 			 "description", "The assignee variable",
 			 "expectedReturnType", "Object",
 			 "helperClass", ""
-		   });		
+		   });				
+		addAnnotation
+		  (audioFileItemEClass, 
+		   source, 
+		   new String[] {
+			 "superProperty", "dynamicValue",
+			 "type", "Prompt Filename",
+			 "isTypeLocked", "false",
+			 "description", "The audio prompt file name that will be played",
+			 "expectedReturnType", "Text",
+			 "helperClass", "com.safi.workshop.sheet.PromptChooserDynamicValueEditorPage"
+		   });	
 	}
 
   /**
@@ -5935,7 +5968,7 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		   source, 
 		   new String[] {
 			 "output", "true"
-		   });	
+		   });			
 	}
 
   /**
@@ -5975,7 +6008,7 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		   source, 
 		   new String[] {
 			 "displayText", "Variable"
-		   });
+		   });		
 	}
 
   /**
@@ -6255,7 +6288,13 @@ public class ActionstepPackageImpl extends EPackageImpl implements ActionstepPac
 		   source, 
 		   new String[] {
 			 "criteria", "non-null"
-		   });										
+		   });													
+		addAnnotation
+		  (audioFileItemEClass, 
+		   source, 
+		   new String[] {
+			 "criteria", "non-null"
+		   });
 	}
 
 } //ActionstepPackageImpl

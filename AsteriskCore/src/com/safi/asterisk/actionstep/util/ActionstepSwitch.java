@@ -86,6 +86,8 @@ import com.safi.asterisk.actionstep.WaitMusicOnHold;
 import com.safi.core.ProductIdentifiable;
 import com.safi.core.ThreadSensitive;
 import com.safi.core.actionstep.ActionStep;
+import com.safi.core.actionstep.CaseItem;
+import com.safi.core.actionstep.Item;
 import com.safi.core.actionstep.ParameterizedActionstep;
 import com.safi.core.call.CallConsumer1;
 import com.safi.core.call.CallConsumer2;
@@ -1014,6 +1016,15 @@ public class ActionstepSwitch<T> {
 				if (result == null) result = caseProductIdentifiable(managerAction);
 				if (result == null) result = caseThreadSensitive(managerAction);
 				if (result == null) result = casePlatformDisposition(managerAction);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ActionstepPackage.AUDIO_FILE_ITEM: {
+				AudioFileItem audioFileItem = (AudioFileItem)theEObject;
+				T result = caseAudioFileItem(audioFileItem);
+				if (result == null) result = caseCaseItem(audioFileItem);
+				if (result == null) result = caseItem(audioFileItem);
+				if (result == null) result = caseThreadSensitive(audioFileItem);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -2087,6 +2098,21 @@ public class ActionstepSwitch<T> {
 	}
 
 		/**
+	 * Returns the result of interpreting the object as an instance of '<em>Audio File Item</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Audio File Item</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAudioFileItem(AudioFileItem object) {
+		return null;
+	}
+
+		/**
 	 * Returns the result of interpreting the object as an instance of '<em>Consumer1</em>'.
 	 * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -2203,6 +2229,36 @@ public class ActionstepSwitch<T> {
 	 * @generated
 	 */
 	public T caseParameterizedActionstep(ParameterizedActionstep object) {
+		return null;
+	}
+
+		/**
+	 * Returns the result of interpreting the object as an instance of '<em>Item</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Item</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseItem(Item object) {
+		return null;
+	}
+
+		/**
+	 * Returns the result of interpreting the object as an instance of '<em>Case Item</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Case Item</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCaseItem(CaseItem object) {
 		return null;
 	}
 
