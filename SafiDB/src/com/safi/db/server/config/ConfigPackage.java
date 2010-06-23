@@ -1137,13 +1137,22 @@ public interface ConfigPackage extends EPackage {
 	int TELEPHONY_SUBSYSTEM__PROMPT_DIRECTORY = SERVER_RESOURCE_FEATURE_COUNT + 10;
 
 		/**
+	 * The feature id for the '<em><b>Platform Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TELEPHONY_SUBSYSTEM__PLATFORM_ID = SERVER_RESOURCE_FEATURE_COUNT + 11;
+
+		/**
 	 * The number of structural features of the '<em>Telephony Subsystem</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TELEPHONY_SUBSYSTEM_FEATURE_COUNT = SERVER_RESOURCE_FEATURE_COUNT + 11;
+	int TELEPHONY_SUBSYSTEM_FEATURE_COUNT = SERVER_RESOURCE_FEATURE_COUNT + 12;
 
 		/**
 	 * The meta object id for the '{@link com.safi.db.server.config.SynchMode <em>Synch Mode</em>}' enum.
@@ -1730,6 +1739,17 @@ public interface ConfigPackage extends EPackage {
 	EAttribute getTelephonySubsystem_PromptDirectory();
 
 		/**
+	 * Returns the meta object for the attribute '{@link com.safi.db.server.config.TelephonySubsystem#getPlatformId <em>Platform Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Platform Id</em>'.
+	 * @see com.safi.db.server.config.TelephonySubsystem#getPlatformId()
+	 * @see #getTelephonySubsystem()
+	 * @generated
+	 */
+	EAttribute getTelephonySubsystem_PlatformId();
+
+		/**
 	 * Returns the meta object for enum '{@link com.safi.db.server.config.SynchMode <em>Synch Mode</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2204,6 +2224,14 @@ public interface ConfigPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TELEPHONY_SUBSYSTEM__PROMPT_DIRECTORY = eINSTANCE.getTelephonySubsystem_PromptDirectory();
+
+				/**
+		 * The meta object literal for the '<em><b>Platform Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TELEPHONY_SUBSYSTEM__PLATFORM_ID = eINSTANCE.getTelephonySubsystem_PlatformId();
 
 				/**
 		 * The meta object literal for the '{@link com.safi.db.server.config.SynchMode <em>Synch Mode</em>}' enum.

@@ -35,6 +35,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link com.safi.db.server.config.impl.TelephonySubsystemImpl#getManagerPort <em>Manager Port</em>}</li>
  *   <li>{@link com.safi.db.server.config.impl.TelephonySubsystemImpl#getVersionId <em>Version Id</em>}</li>
  *   <li>{@link com.safi.db.server.config.impl.TelephonySubsystemImpl#getPromptDirectory <em>Prompt Directory</em>}</li>
+ *   <li>{@link com.safi.db.server.config.impl.TelephonySubsystemImpl#getPlatformId <em>Platform Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -250,6 +251,35 @@ public class TelephonySubsystemImpl extends ServerResourceImpl implements Teleph
 	 * @ordered
 	 */
 	protected String promptDirectory = PROMPT_DIRECTORY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPlatformId() <em>Platform Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlatformId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PLATFORM_ID_EDEFAULT = "";
+
+	/**
+	 * The cached value of the '{@link #getPlatformId() <em>Platform Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlatformId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String platformId = PLATFORM_ID_EDEFAULT;
+
+	/**
+	 * This is true if the Platform Id attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean platformIdESet;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -523,6 +553,24 @@ public class TelephonySubsystemImpl extends ServerResourceImpl implements Teleph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getPlatformId() {
+		return platformId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetPlatformId() {
+		return platformIdESet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -549,6 +597,8 @@ public class TelephonySubsystemImpl extends ServerResourceImpl implements Teleph
 				return getVersionId();
 			case ConfigPackage.TELEPHONY_SUBSYSTEM__PROMPT_DIRECTORY:
 				return getPromptDirectory();
+			case ConfigPackage.TELEPHONY_SUBSYSTEM__PLATFORM_ID:
+				return getPlatformId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -673,6 +723,8 @@ public class TelephonySubsystemImpl extends ServerResourceImpl implements Teleph
 				return VERSION_ID_EDEFAULT == null ? versionId != null : !VERSION_ID_EDEFAULT.equals(versionId);
 			case ConfigPackage.TELEPHONY_SUBSYSTEM__PROMPT_DIRECTORY:
 				return PROMPT_DIRECTORY_EDEFAULT == null ? promptDirectory != null : !PROMPT_DIRECTORY_EDEFAULT.equals(promptDirectory);
+			case ConfigPackage.TELEPHONY_SUBSYSTEM__PLATFORM_ID:
+				return isSetPlatformId();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -707,6 +759,8 @@ public class TelephonySubsystemImpl extends ServerResourceImpl implements Teleph
 		result.append(versionId);
 		result.append(", promptDirectory: ");
 		result.append(promptDirectory);
+		result.append(", platformId: ");
+		if (platformIdESet) result.append(platformId); else result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}

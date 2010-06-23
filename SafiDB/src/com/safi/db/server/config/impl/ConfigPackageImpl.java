@@ -658,6 +658,15 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 
 		/**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTelephonySubsystem_PlatformId() {
+		return (EAttribute)telephonySubsystemEClass.getEStructuralFeatures().get(11);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -755,6 +764,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		createEAttribute(telephonySubsystemEClass, TELEPHONY_SUBSYSTEM__MANAGER_PORT);
 		createEAttribute(telephonySubsystemEClass, TELEPHONY_SUBSYSTEM__VERSION_ID);
 		createEAttribute(telephonySubsystemEClass, TELEPHONY_SUBSYSTEM__PROMPT_DIRECTORY);
+		createEAttribute(telephonySubsystemEClass, TELEPHONY_SUBSYSTEM__PLATFORM_ID);
 
 		// Create enums
 		synchModeEEnum = createEEnum(SYNCH_MODE);
@@ -860,6 +870,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		initEAttribute(getTelephonySubsystem_ManagerPort(), ecorePackage.getEInt(), "managerPort", "5038", 0, 1, TelephonySubsystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTelephonySubsystem_VersionId(), ecorePackage.getEString(), "versionId", null, 0, 1, TelephonySubsystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTelephonySubsystem_PromptDirectory(), ecorePackage.getEString(), "promptDirectory", "/var/lib/asterisk/sounds/", 0, 1, TelephonySubsystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTelephonySubsystem_PlatformId(), ecorePackage.getEString(), "platformId", "", 0, 1, TelephonySubsystem.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(synchModeEEnum, SynchMode.class, "SynchMode");

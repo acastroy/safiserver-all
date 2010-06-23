@@ -354,6 +354,8 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="versionId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="promptDirectory" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
             defaultValueLiteral="/var/lib/asterisk/sounds/"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="platformId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            changeable="false" defaultValueLiteral="" unsettable="true"/>
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>

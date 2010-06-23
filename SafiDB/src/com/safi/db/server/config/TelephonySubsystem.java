@@ -26,6 +26,7 @@ package com.safi.db.server.config;
  *   <li>{@link com.safi.db.server.config.TelephonySubsystem#getManagerPort <em>Manager Port</em>}</li>
  *   <li>{@link com.safi.db.server.config.TelephonySubsystem#getVersionId <em>Version Id</em>}</li>
  *   <li>{@link com.safi.db.server.config.TelephonySubsystem#getPromptDirectory <em>Prompt Directory</em>}</li>
+ *   <li>{@link com.safi.db.server.config.TelephonySubsystem#getPlatformId <em>Platform Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -324,5 +325,32 @@ public interface TelephonySubsystem extends ServerResource {
 	 * @generated
 	 */
 	void setPromptDirectory(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Platform Id</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Platform Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Platform Id</em>' attribute.
+	 * @see #isSetPlatformId()
+	 * @see com.safi.db.server.config.ConfigPackage#getTelephonySubsystem_PlatformId()
+	 * @model default="" unsettable="true" changeable="false"
+	 * @generated
+	 */
+	String getPlatformId();
+
+	/**
+	 * Returns whether the value of the '{@link com.safi.db.server.config.TelephonySubsystem#getPlatformId <em>Platform Id</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Platform Id</em>' attribute is set.
+	 * @see #getPlatformId()
+	 * @generated
+	 */
+	boolean isSetPlatformId();
 
 } // TelephonySubsystem

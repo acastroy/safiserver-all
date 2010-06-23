@@ -216,6 +216,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/TelephonySubsystem/managerPort"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/TelephonySubsystem/versionId"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/TelephonySubsystem/promptDirectory"/>
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/TelephonySubsystem/platformId"/>
         </genClasses>
       </nestedGenPackages>
     </nestedGenPackages>
