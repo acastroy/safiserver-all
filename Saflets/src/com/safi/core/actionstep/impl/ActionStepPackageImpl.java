@@ -7,6 +7,7 @@
 package com.safi.core.actionstep.impl;
 
 import java.util.Map;
+
 import org.eclipse.emf.common.util.BasicEMap;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -17,12 +18,12 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import com.safi.core.CorePackage;
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.ActionStepFactory;
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.actionstep.Assignment;
-import com.safi.core.actionstep.AudioFileItem;
 import com.safi.core.actionstep.CaseItem;
 import com.safi.core.actionstep.Choice;
 import com.safi.core.actionstep.CloseDBConnection;
@@ -119,13 +120,6 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 	 * @generated
 	 */
   private EClass parameterizedInitiatorEClass = null;
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  private EClass audioFileItemEClass = null;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -615,15 +609,6 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 	 */
   public EClass getParameterizedInitiator() {
 		return parameterizedInitiatorEClass;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public EClass getAudioFileItem() {
-		return audioFileItemEClass;
 	}
 
   /**
@@ -1913,8 +1898,6 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 
 		parameterizedInitiatorEClass = createEClass(PARAMETERIZED_INITIATOR);
 
-		audioFileItemEClass = createEClass(AUDIO_FILE_ITEM);
-
 		choiceEClass = createEClass(CHOICE);
 		createEReference(choiceEClass, CHOICE__CHOICES);
 		createEReference(choiceEClass, CHOICE__VALUE);
@@ -2134,7 +2117,6 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		parameterizedActionstepEClass.getESuperTypes().add(this.getActionStep());
 		parameterizedInitiatorEClass.getESuperTypes().add(theInitiatorPackage.getInitiator());
 		parameterizedInitiatorEClass.getESuperTypes().add(this.getParameterizedActionstep());
-		audioFileItemEClass.getESuperTypes().add(this.getCaseItem());
 		choiceEClass.getESuperTypes().add(this.getActionStep());
 		dynamicValueEClass.getESuperTypes().add(theCorePackage.getThreadSensitive());
 		ifThenEClass.getESuperTypes().add(this.getActionStep());
@@ -2229,8 +2211,6 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
 		initEOperation(op, g1);
-
-		initEClass(audioFileItemEClass, AudioFileItem.class, "AudioFileItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(choiceEClass, Choice.class, "Choice", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getChoice_Choices(), this.getCaseItem(), null, "choices", null, 0, -1, Choice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2466,17 +2446,6 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 			 "description", "The value with which to compare against",
 			 "expectedReturnType", "Unknown",
 			 "helperClass", "com.safi.workshop.sheet.BooleanBuilderDynamicValueEditorPage"
-		   });			
-		addAnnotation
-		  (audioFileItemEClass, 
-		   source, 
-		   new String[] {
-			 "superProperty", "dynamicValue",
-			 "type", "Prompt Filename",
-			 "isTypeLocked", "false",
-			 "description", "The audio prompt file name that will be played",
-			 "expectedReturnType", "Text",
-			 "helperClass", "com.safi.workshop.sheet.PromptChooserDynamicValueEditorPage"
 		   });				
 		addAnnotation
 		  (getChoice_Value(), 
@@ -2801,12 +2770,6 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		   source, 
 		   new String[] {
 			 "criteria", "non-null"
-		   });			
-		addAnnotation
-		  (audioFileItemEClass, 
-		   source, 
-		   new String[] {
-			 "criteria", "non-null"
 		   });		
 		addAnnotation
 		  (getChoice_Choices(), 
@@ -3051,7 +3014,7 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		   source, 
 		   new String[] {
 			 "output", "true"
-		   });																				
+		   });																		
 		addAnnotation
 		  (getOpenDBConnection_Connection(), 
 		   source, 
@@ -3139,7 +3102,7 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		   source, 
 		   new String[] {
 			 "displayText", "Variable"
-		   });																																
+		   });																														
 		addAnnotation
 		  (getExecuteUpdate_RowsUpdatedVar(), 
 		   source, 

@@ -102,10 +102,6 @@ public class ActionStepAdapterFactory extends AdapterFactoryImpl {
 				return createParameterizedInitiatorAdapter();
 			}
 			@Override
-			public Adapter caseAudioFileItem(AudioFileItem object) {
-				return createAudioFileItemAdapter();
-			}
-			@Override
 			public Adapter caseChoice(Choice object) {
 				return createChoiceAdapter();
 			}
@@ -356,20 +352,6 @@ public class ActionStepAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
   public Adapter createParameterizedInitiatorAdapter() {
-		return null;
-	}
-
-  /**
-	 * Creates a new adapter for an object of class '{@link com.safi.core.actionstep.AudioFileItem <em>Audio File Item</em>}'.
-	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see com.safi.core.actionstep.AudioFileItem
-	 * @generated
-	 */
-  public Adapter createAudioFileItemAdapter() {
 		return null;
 	}
 

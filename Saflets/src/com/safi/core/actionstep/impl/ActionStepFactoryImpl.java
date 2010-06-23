@@ -6,8 +6,8 @@
  */
 package com.safi.core.actionstep.impl;
 
-import com.safi.core.actionstep.*;
 import java.util.Map;
+
 import org.eclipse.emf.common.util.BasicEMap;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -15,10 +15,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
 import com.safi.core.actionstep.ActionStepFactory;
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.actionstep.Assignment;
-import com.safi.core.actionstep.AudioFileItem;
 import com.safi.core.actionstep.CaseItem;
 import com.safi.core.actionstep.Choice;
 import com.safi.core.actionstep.CloseDBConnection;
@@ -108,7 +108,6 @@ public class ActionStepFactoryImpl extends EFactoryImpl implements ActionStepFac
 			case ActionStepPackage.ASSIGNMENT: return createAssignment();
 			case ActionStepPackage.CASE_ITEM: return createCaseItem();
 			case ActionStepPackage.INPUT_ITEM: return createInputItem();
-			case ActionStepPackage.AUDIO_FILE_ITEM: return createAudioFileItem();
 			case ActionStepPackage.CHOICE: return createChoice();
 			case ActionStepPackage.DYNAMIC_VALUE: return createDynamicValue();
 			case ActionStepPackage.IF_THEN: return createIfThen();
@@ -224,16 +223,6 @@ public class ActionStepFactoryImpl extends EFactoryImpl implements ActionStepFac
   public InputItem createInputItem() {
 		InputItemImpl inputItem = new InputItemImpl();
 		return inputItem;
-	}
-
-  /**
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  public AudioFileItem createAudioFileItem() {
-		AudioFileItemImpl audioFileItem = new AudioFileItemImpl();
-		return audioFileItem;
 	}
 
   /**

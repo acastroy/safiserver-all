@@ -127,19 +127,6 @@
         </eGenericType>
       </eOperations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="AudioFileItem" eSuperTypes="#//actionstep/CaseItem">
-      <eAnnotations source="DynamicValueAnnotation">
-        <details key="superProperty" value="dynamicValue"/>
-        <details key="type" value="Prompt Filename"/>
-        <details key="isTypeLocked" value="false"/>
-        <details key="description" value="The audio prompt file name that will be played"/>
-        <details key="expectedReturnType" value="Text"/>
-        <details key="helperClass" value="com.safi.workshop.sheet.PromptChooserDynamicValueEditorPage"/>
-      </eAnnotations>
-      <eAnnotations source="Required">
-        <details key="criteria" value="non-null"/>
-      </eAnnotations>
-    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Choice" eSuperTypes="#//actionstep/ActionStep">
       <eStructuralFeatures xsi:type="ecore:EReference" name="choices" ordered="false"
           upperBound="-1" eType="#//actionstep/CaseItem" containment="true" resolveProxies="false">

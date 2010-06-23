@@ -151,15 +151,6 @@ public class ActionStepSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ActionStepPackage.AUDIO_FILE_ITEM: {
-				AudioFileItem audioFileItem = (AudioFileItem)theEObject;
-				T result = caseAudioFileItem(audioFileItem);
-				if (result == null) result = caseCaseItem(audioFileItem);
-				if (result == null) result = caseItem(audioFileItem);
-				if (result == null) result = caseThreadSensitive(audioFileItem);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ActionStepPackage.CHOICE: {
 				Choice choice = (Choice)theEObject;
 				T result = caseChoice(choice);
@@ -577,21 +568,6 @@ public class ActionStepSwitch<T> {
 	 * @generated
 	 */
   public T caseParameterizedInitiator(ParameterizedInitiator object) {
-		return null;
-	}
-
-  /**
-	 * Returns the result of interpreting the object as an instance of '<em>Audio File Item</em>'.
-	 * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Audio File Item</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-  public T caseAudioFileItem(AudioFileItem object) {
 		return null;
 	}
 

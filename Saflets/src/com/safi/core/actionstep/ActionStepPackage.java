@@ -73,7 +73,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getItem()
 	 * @generated
 	 */
-  int ITEM = 41;
+  int ITEM = 40;
 
   /**
 	 * The meta object id for the '{@link com.safi.core.actionstep.impl.CaseItemImpl <em>Case Item</em>}' class.
@@ -730,61 +730,6 @@ public interface ActionStepPackage extends EPackage {
   int PARAMETERIZED_INITIATOR_FEATURE_COUNT = InitiatorPackage.INITIATOR_FEATURE_COUNT + 2;
 
   /**
-	 * The meta object id for the '{@link com.safi.core.actionstep.impl.AudioFileItemImpl <em>Audio File Item</em>}' class.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @see com.safi.core.actionstep.impl.AudioFileItemImpl
-	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getAudioFileItem()
-	 * @generated
-	 */
-  int AUDIO_FILE_ITEM = 6;
-
-  /**
-	 * The feature id for the '<em><b>Label Text</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int AUDIO_FILE_ITEM__LABEL_TEXT = CASE_ITEM__LABEL_TEXT;
-
-  /**
-	 * The feature id for the '<em><b>Parent Action Step</b></em>' reference.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int AUDIO_FILE_ITEM__PARENT_ACTION_STEP = CASE_ITEM__PARENT_ACTION_STEP;
-
-  /**
-	 * The feature id for the '<em><b>Target Action Step</b></em>' reference.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int AUDIO_FILE_ITEM__TARGET_ACTION_STEP = CASE_ITEM__TARGET_ACTION_STEP;
-
-  /**
-	 * The feature id for the '<em><b>Dynamic Value</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int AUDIO_FILE_ITEM__DYNAMIC_VALUE = CASE_ITEM__DYNAMIC_VALUE;
-
-  /**
-	 * The number of structural features of the '<em>Audio File Item</em>' class.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-  int AUDIO_FILE_ITEM_FEATURE_COUNT = CASE_ITEM_FEATURE_COUNT + 0;
-
-  /**
 	 * The meta object id for the '{@link com.safi.core.actionstep.impl.ChoiceImpl <em>Choice</em>}' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -792,7 +737,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getChoice()
 	 * @generated
 	 */
-  int CHOICE = 7;
+  int CHOICE = 6;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -919,7 +864,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getDynamicValue()
 	 * @generated
 	 */
-  int DYNAMIC_VALUE = 8;
+  int DYNAMIC_VALUE = 7;
 
   /**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -974,7 +919,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getIfThen()
 	 * @generated
 	 */
-  int IF_THEN = 9;
+  int IF_THEN = 8;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -1092,7 +1037,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getOutput()
 	 * @generated
 	 */
-  int OUTPUT = 10;
+  int OUTPUT = 9;
 
   /**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -1147,7 +1092,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getExecuteScript()
 	 * @generated
 	 */
-  int EXECUTE_SCRIPT = 11;
+  int EXECUTE_SCRIPT = 10;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -1265,7 +1210,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getInvokeSaflet()
 	 * @generated
 	 */
-  int INVOKE_SAFLET = 12;
+  int INVOKE_SAFLET = 11;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -1392,7 +1337,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getDebugLog()
 	 * @generated
 	 */
-  int DEBUG_LOG = 13;
+  int DEBUG_LOG = 12;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -1528,7 +1473,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getOpenDBConnection()
 	 * @generated
 	 */
-  int OPEN_DB_CONNECTION = 14;
+  int OPEN_DB_CONNECTION = 13;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -1646,7 +1591,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getCloseDBConnection()
 	 * @generated
 	 */
-  int CLOSE_DB_CONNECTION = 15;
+  int CLOSE_DB_CONNECTION = 14;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -1764,7 +1709,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getOpenQuery()
 	 * @generated
 	 */
-  int OPEN_QUERY = 16;
+  int OPEN_QUERY = 15;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -1936,7 +1881,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getSetQueryParam()
 	 * @generated
 	 */
-  int SET_QUERY_PARAM = 17;
+  int SET_QUERY_PARAM = 16;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -2081,7 +2026,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getExecuteUpdate()
 	 * @generated
 	 */
-  int EXECUTE_UPDATE = 18;
+  int EXECUTE_UPDATE = 17;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -2208,7 +2153,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getExecuteQuery()
 	 * @generated
 	 */
-  int EXECUTE_QUERY = 19;
+  int EXECUTE_QUERY = 18;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -2344,7 +2289,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getNextRow()
 	 * @generated
 	 */
-  int NEXT_ROW = 20;
+  int NEXT_ROW = 19;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -2462,7 +2407,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getGetColValue()
 	 * @generated
 	 */
-  int GET_COL_VALUE = 21;
+  int GET_COL_VALUE = 20;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -2607,7 +2552,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getGetColValues()
 	 * @generated
 	 */
-  int GET_COL_VALUES = 22;
+  int GET_COL_VALUES = 21;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -2734,7 +2679,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getSetColValue()
 	 * @generated
 	 */
-  int SET_COL_VALUE = 23;
+  int SET_COL_VALUE = 22;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -2879,7 +2824,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getSetColValues()
 	 * @generated
 	 */
-  int SET_COL_VALUES = 24;
+  int SET_COL_VALUES = 23;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -3006,7 +2951,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getUpdatetRow()
 	 * @generated
 	 */
-  int UPDATET_ROW = 25;
+  int UPDATET_ROW = 24;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -3124,7 +3069,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getMoveToRow()
 	 * @generated
 	 */
-  int MOVE_TO_ROW = 26;
+  int MOVE_TO_ROW = 25;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -3251,7 +3196,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getMoveToLastRow()
 	 * @generated
 	 */
-  int MOVE_TO_LAST_ROW = 27;
+  int MOVE_TO_LAST_ROW = 26;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -3369,7 +3314,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getDeleteRow()
 	 * @generated
 	 */
-  int DELETE_ROW = 28;
+  int DELETE_ROW = 27;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -3487,7 +3432,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getMoveToInsertRow()
 	 * @generated
 	 */
-  int MOVE_TO_INSERT_ROW = 29;
+  int MOVE_TO_INSERT_ROW = 28;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -3605,7 +3550,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getInsertRow()
 	 * @generated
 	 */
-  int INSERT_ROW = 30;
+  int INSERT_ROW = 29;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -3723,7 +3668,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getMoveToFirstRow()
 	 * @generated
 	 */
-  int MOVE_TO_FIRST_ROW = 31;
+  int MOVE_TO_FIRST_ROW = 30;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -3841,7 +3786,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getPreviousRow()
 	 * @generated
 	 */
-  int PREVIOUS_ROW = 32;
+  int PREVIOUS_ROW = 31;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -3959,7 +3904,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getDBConnectionId()
 	 * @generated
 	 */
-  int DB_CONNECTION_ID = 33;
+  int DB_CONNECTION_ID = 32;
 
   /**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -3996,7 +3941,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getDBQueryId()
 	 * @generated
 	 */
-  int DB_QUERY_ID = 34;
+  int DB_QUERY_ID = 33;
 
   /**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -4033,7 +3978,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getDBQueryParamId()
 	 * @generated
 	 */
-  int DB_QUERY_PARAM_ID = 35;
+  int DB_QUERY_PARAM_ID = 34;
 
   /**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -4070,7 +4015,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getDBResultSetId()
 	 * @generated
 	 */
-  int DB_RESULT_SET_ID = 36;
+  int DB_RESULT_SET_ID = 35;
 
   /**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4116,7 +4061,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getGetColMapping()
 	 * @generated
 	 */
-  int GET_COL_MAPPING = 37;
+  int GET_COL_MAPPING = 36;
 
   /**
 	 * The feature id for the '<em><b>Label Text</b></em>' attribute.
@@ -4189,7 +4134,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getSetColMapping()
 	 * @generated
 	 */
-  int SET_COL_MAPPING = 38;
+  int SET_COL_MAPPING = 37;
 
   /**
 	 * The feature id for the '<em><b>Label Text</b></em>' attribute.
@@ -4262,7 +4207,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getRunQuery()
 	 * @generated
 	 */
-  int RUN_QUERY = 39;
+  int RUN_QUERY = 38;
 
   /**
 	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
@@ -4452,7 +4397,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getQueryParamMapping()
 	 * @generated
 	 */
-  int QUERY_PARAM_MAPPING = 40;
+  int QUERY_PARAM_MAPPING = 39;
 
   /**
 	 * The feature id for the '<em><b>Label Text</b></em>' attribute.
@@ -4525,7 +4470,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getHeavyweight()
 	 * @generated
 	 */
-  int HEAVYWEIGHT = 42;
+  int HEAVYWEIGHT = 41;
 
   /**
 	 * The number of structural features of the '<em>Heavyweight</em>' class.
@@ -4544,7 +4489,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getOutputParameter()
 	 * @generated
 	 */
-  int OUTPUT_PARAMETER = 43;
+  int OUTPUT_PARAMETER = 42;
 
   /**
 	 * The feature id for the '<em><b>Label Text</b></em>' attribute.
@@ -4617,7 +4562,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getDynamicValueType()
 	 * @generated
 	 */
-  int DYNAMIC_VALUE_TYPE = 44;
+  int DYNAMIC_VALUE_TYPE = 43;
 
   /**
 	 * The meta object id for the '{@link com.safi.core.actionstep.OutputType <em>Output Type</em>}' enum.
@@ -4627,7 +4572,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getOutputType()
 	 * @generated
 	 */
-  int OUTPUT_TYPE = 45;
+  int OUTPUT_TYPE = 44;
 
   /**
 	 * The meta object id for the '{@link com.safi.core.actionstep.DebugLevel <em>Debug Level</em>}' enum.
@@ -4637,7 +4582,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getDebugLevel()
 	 * @generated
 	 */
-  int DEBUG_LEVEL = 46;
+  int DEBUG_LEVEL = 45;
 
   /**
 	 * The meta object id for the '<em>Map</em>' data type.
@@ -4647,7 +4592,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getMap()
 	 * @generated
 	 */
-  int MAP = 47;
+  int MAP = 46;
 
   /**
 	 * The meta object id for the '<em>Basic EMap</em>' data type.
@@ -4657,7 +4602,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getBasicEMap()
 	 * @generated
 	 */
-  int BASIC_EMAP = 48;
+  int BASIC_EMAP = 47;
 
 
   /**
@@ -4786,16 +4731,6 @@ public interface ActionStepPackage extends EPackage {
 	 * @generated
 	 */
   EClass getParameterizedInitiator();
-
-  /**
-	 * Returns the meta object for class '{@link com.safi.core.actionstep.AudioFileItem <em>Audio File Item</em>}'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Audio File Item</em>'.
-	 * @see com.safi.core.actionstep.AudioFileItem
-	 * @generated
-	 */
-  EClass getAudioFileItem();
 
   /**
 	 * Returns the meta object for class '{@link com.safi.core.actionstep.Choice <em>Choice</em>}'.

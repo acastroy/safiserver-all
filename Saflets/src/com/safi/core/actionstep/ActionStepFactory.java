@@ -53,15 +53,6 @@ public interface ActionStepFactory extends EFactory {
   InputItem createInputItem();
 
   /**
-	 * Returns a new object of class '<em>Audio File Item</em>'.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Audio File Item</em>'.
-	 * @generated
-	 */
-  AudioFileItem createAudioFileItem();
-
-  /**
 	 * Returns a new object of class '<em>Choice</em>'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
