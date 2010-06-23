@@ -71,6 +71,7 @@ public class TelephonySubsystemItemProvider
 			addManagerPortPropertyDescriptor(object);
 			addVersionIdPropertyDescriptor(object);
 			addPromptDirectoryPropertyDescriptor(object);
+			addPlatformIdPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -318,6 +319,28 @@ public class TelephonySubsystemItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Platform Id feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPlatformIdPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TelephonySubsystem_platformId_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TelephonySubsystem_platformId_feature", "_UI_TelephonySubsystem_type"),
+				 ConfigPackage.Literals.TELEPHONY_SUBSYSTEM__PLATFORM_ID,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns TelephonySubsystem.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -364,6 +387,7 @@ public class TelephonySubsystemItemProvider
 			case ConfigPackage.TELEPHONY_SUBSYSTEM__MANAGER_PORT:
 			case ConfigPackage.TELEPHONY_SUBSYSTEM__VERSION_ID:
 			case ConfigPackage.TELEPHONY_SUBSYSTEM__PROMPT_DIRECTORY:
+			case ConfigPackage.TELEPHONY_SUBSYSTEM__PLATFORM_ID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
