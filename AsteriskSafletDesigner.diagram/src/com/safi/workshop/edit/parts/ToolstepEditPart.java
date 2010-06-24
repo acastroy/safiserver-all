@@ -43,7 +43,6 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
-import org.eclipse.ui.internal.intro.impl.util.Log;
 
 import com.safi.asterisk.figures.DefaultToolstepFigure;
 import com.safi.asterisk.figures.ToolstepAnchor;
@@ -55,12 +54,12 @@ import com.safi.core.actionstep.impl.ActionStepImpl;
 import com.safi.core.saflet.SafletContext;
 import com.safi.db.Variable;
 import com.safi.server.plugin.SafiServerPlugin;
-import com.safi.server.preferences.PreferenceConstants;
 import com.safi.workshop.edit.policies.OpenEditorEditPolicy;
 import com.safi.workshop.part.AsteriskDiagramEditor;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.part.ValidateAction;
+import com.safi.workshop.preferences.PreferenceConstants;
 
 /**
  * @generated NOT

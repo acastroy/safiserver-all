@@ -55,10 +55,10 @@ import com.safi.db.server.config.Role;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.User;
 import com.safi.server.plugin.SafiServerPlugin;
-import com.safi.server.preferences.PreferenceConstants;
 import com.safi.server.saflet.manager.DBManager;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.safi.workshop.part.SafiWorkshopEditorUtil;
+import com.safi.workshop.preferences.PreferenceConstants;
 
 public class UserDialog extends TitleAreaDialog {
 

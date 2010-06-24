@@ -29,8 +29,8 @@ import org.eclipse.ui.internal.progress.ProgressMonitorJobsDialog;
 
 import com.safi.db.server.config.SafiServer;
 import com.safi.server.plugin.SafiServerPlugin;
-import com.safi.server.preferences.PreferenceConstants;
 import com.safi.server.saflet.manager.DBManager;
+import com.safi.workshop.preferences.PreferenceConstants;
 
 @Deprecated
 public class SafiServerAdminDialog extends Dialog {

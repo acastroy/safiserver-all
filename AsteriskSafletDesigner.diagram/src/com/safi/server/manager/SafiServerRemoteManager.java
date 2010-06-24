@@ -37,13 +37,13 @@ import sun.rmi.transport.proxy.RMIMasterSocketFactory;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.TelephonySubsystem;
 import com.safi.server.plugin.SafiServerPlugin;
-import com.safi.server.preferences.PreferenceConstants;
 import com.safi.server.saflet.importing.OverwriteMode;
 import com.safi.server.saflet.mbean.DebugRemoteControl;
 import com.safi.server.saflet.mbean.ENotificationWrapper;
 import com.safi.server.saflet.mbean.FileTransfer;
 import com.safi.server.saflet.mbean.SafiServerMonitor;
 import com.safi.server.saflet.mbean.SysInfo;
+import com.safi.workshop.preferences.PreferenceConstants;
 
 public class SafiServerRemoteManager implements NotificationListener {
   private MBeanServerConnection serverConnection;

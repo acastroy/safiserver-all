@@ -61,7 +61,6 @@ import com.safi.logging.CustomFormatter;
 import com.safi.server.manager.DebugEventListener;
 import com.safi.server.manager.SafiServerManagementException;
 import com.safi.server.manager.SafiServerRemoteManager;
-import com.safi.server.preferences.PreferenceConstants;
 import com.safi.server.preferences.SafiServerStatusListener;
 import com.safi.server.saflet.GlobalVariableManager;
 import com.safi.server.saflet.manager.DBManager;
@@ -70,6 +69,7 @@ import com.safi.server.saflet.mbean.SysInfo;
 import com.safi.server.util.Utils;
 import com.safi.workshop.TelephonyModulePlugin;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
+import com.safi.workshop.preferences.PreferenceConstants;
 
 /**
  * The activator class controls the plug-in life cycle

@@ -4,6 +4,7 @@ import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
 import org.eclipse.jface.preference.IPreferenceStore;
 
 import com.safi.server.plugin.SafiServerPlugin;
+import com.safi.workshop.preferences.PreferenceConstants;
 
 public class PreferenceInitializer extends AbstractPreferenceInitializer {
 

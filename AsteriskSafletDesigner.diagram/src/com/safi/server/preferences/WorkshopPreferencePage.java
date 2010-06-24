@@ -15,6 +15,7 @@ import org.eclipse.ui.IWorkbenchPreferencePage;
 
 import com.safi.server.manager.SafiServerRemoteManager;
 import com.safi.server.plugin.SafiServerPlugin;
+import com.safi.workshop.preferences.PreferenceConstants;
 
 public class WorkshopPreferencePage extends FieldEditorPreferencePage implements
     IWorkbenchPreferencePage {
