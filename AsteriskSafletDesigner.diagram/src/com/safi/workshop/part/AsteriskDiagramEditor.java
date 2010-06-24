@@ -1002,7 +1002,7 @@ public class AsteriskDiagramEditor extends DiagramDocumentEditor {
       // CustomPalettePage page = (CustomPalettePage)getAdapter(PalettePage.class);
       // page.
     }
-
+   
     // getDiagramGraphicalViewer().setProperty(
     // WorkspaceViewerProperties.GRIDORDER, false);
 

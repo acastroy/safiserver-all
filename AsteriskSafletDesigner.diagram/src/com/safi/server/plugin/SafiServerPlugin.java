@@ -1011,6 +1011,8 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 		notifyListenersConnectionChange(success);
 		if (success) {
 			updateTraceLogLevel();
+			
+			//commented out since DiagramDocumentEditor$preferenceInitializer is throwing an NPR
 			updateServerInfoUpdatePeriod();
 		}
 		if (exception != null)
@@ -1039,8 +1041,10 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 	public void updateServerInfoUpdatePeriod() {
 		try {
 			int period = SafiServerRemoteManager.getInstance().getServerInfoUpdatePeriod();
-			getPreferenceStore().setValue(PreferenceConstants.PREF_SERVER_INFO_UPDATE_PERIOD,
-			    period);
+			int current = getPreferenceStore().getInt(PreferenceConstants.PREF_SERVER_INFO_UPDATE_PERIOD);
+			if (current != period)
+				getPreferenceStore().setValue(PreferenceConstants.PREF_SERVER_INFO_UPDATE_PERIOD,
+				    period);
 		} catch (SafiServerManagementException e) {
 			e.printStackTrace();
 			logError("Couldn't retrieve info update period", e);
@@ -1222,7 +1226,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 	@Override
 	public IPreferenceStore getPreferenceStore() {
 
-		IPreferenceStore store = super.getPreferenceStore();
+		IPreferenceStore store = AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore();
 		if (prefListener == null) {
 			prefListener = new ProdServerPrefListener();
 			store.addPropertyChangeListener(prefListener);

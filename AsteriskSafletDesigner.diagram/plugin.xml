@@ -1870,7 +1870,9 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
          point="org.eclipse.ui.navigator.viewer">
       <viewer
             viewerId="com.safi.eclipse.NavigatorView">
-         <popupMenu>
+         <popupMenu
+               allowsPlatformContributions="true"
+               id="com.safi.navigator.popup">
             <insertionPoint
                   name="group.new"
                   separator="true">
@@ -2065,16 +2067,12 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
                <instanceof
                      value="com.safi.db.server.config.SafiServer">
                </instanceof>
-               <instanceof
-                     value="com.safi.db.server.config.TelephonySubsystem">
-               </instanceof>
+              
                
                 <instanceof
                      value="com.safi.workshop.navigator.serverconfig.UserList">
                </instanceof>
-               <instanceof
-                     value="com.safi.workshop.navigator.serverconfig.TelephonySubsystemList">
-               </instanceof>
+              
                
             </or>
          </enablement>
@@ -2316,11 +2314,12 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
                tooltip="Close Connection">
          </action>
       </viewContribution>
--->
+
       <viewContribution
             id="com.safi.workshop.sqlexplorer.connections.actions.NewEditor"
             targetID="com.safi.eclipse.NavigatorView">
       </viewContribution>
+      -->
       <viewContribution
             id="com.safi.workshop.sqlexplorer.connections.actions.NewAliasAction"
             targetID="com.safi.eclipse.NavigatorView">
