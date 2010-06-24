@@ -6,10 +6,7 @@
  */
 package com.safi.workshop.model.actionpak1.impl;
 
-import com.safi.workshop.model.actionpak1.*;
-import org.asteriskjava.manager.action.ManagerAction;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
