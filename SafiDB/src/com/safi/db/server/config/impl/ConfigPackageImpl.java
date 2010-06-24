@@ -280,20 +280,11 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 
   /**
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getSafiServer_TelephonySubsystems() {
-		return (EReference)safiServerEClass.getEStructuralFeatures().get(2);
-	}
-
-		/**
-	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
   public EReference getSafiServer_User() {
-		return (EReference)safiServerEClass.getEStructuralFeatures().get(3);
+		return (EReference)safiServerEClass.getEStructuralFeatures().get(2);
 	}
 
   /**
@@ -302,7 +293,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 	 * @generated
 	 */
   public EReference getSafiServer_Users() {
-		return (EReference)safiServerEClass.getEStructuralFeatures().get(4);
+		return (EReference)safiServerEClass.getEStructuralFeatures().get(3);
 	}
 
   /**
@@ -311,7 +302,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 	 * @generated
 	 */
   public EAttribute getSafiServer_Running() {
-		return (EAttribute)safiServerEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)safiServerEClass.getEStructuralFeatures().get(4);
 	}
 
   /**
@@ -320,7 +311,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 	 * @generated
 	 */
   public EAttribute getSafiServer_Debug() {
-		return (EAttribute)safiServerEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)safiServerEClass.getEStructuralFeatures().get(5);
 	}
 
   /**
@@ -329,7 +320,7 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 	 * @generated
 	 */
   public EAttribute getSafiServer_DbPort() {
-		return (EAttribute)safiServerEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)safiServerEClass.getEStructuralFeatures().get(6);
 	}
 
   /**
@@ -714,7 +705,6 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		safiServerEClass = createEClass(SAFI_SERVER);
 		createEAttribute(safiServerEClass, SAFI_SERVER__BIND_IP);
 		createEAttribute(safiServerEClass, SAFI_SERVER__MANAGEMENT_PORT);
-		createEReference(safiServerEClass, SAFI_SERVER__TELEPHONY_SUBSYSTEMS);
 		createEReference(safiServerEClass, SAFI_SERVER__USER);
 		createEReference(safiServerEClass, SAFI_SERVER__USERS);
 		createEAttribute(safiServerEClass, SAFI_SERVER__RUNNING);
@@ -820,7 +810,6 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		initEClass(safiServerEClass, SafiServer.class, "SafiServer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSafiServer_BindIP(), ecorePackage.getEString(), "bindIP", null, 0, 1, SafiServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSafiServer_ManagementPort(), ecorePackage.getEInt(), "managementPort", "7020", 0, 1, SafiServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSafiServer_TelephonySubsystems(), this.getTelephonySubsystem(), null, "telephonySubsystems", null, 0, -1, SafiServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSafiServer_User(), this.getUser(), null, "user", null, 0, 1, SafiServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSafiServer_Users(), this.getUser(), null, "users", null, 0, -1, SafiServer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSafiServer_Running(), ecorePackage.getEBoolean(), "running", null, 0, 1, SafiServer.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -895,12 +884,6 @@ public class ConfigPackageImpl extends EPackageImpl implements ConfigPackage {
 		   source, 
 		   new String[] {
 			 "appinfo", "@GeneratedValue(strategy=\"TABLE\")"
-		   });		
-		addAnnotation
-		  (getSafiServer_TelephonySubsystems(), 
-		   source, 
-		   new String[] {
-			 "appinfo", "@OneToMany(fetch=\"EAGER\" indexed=\"false\" cascade=\"ALL\")"
 		   });		
 		addAnnotation
 		  (getSafiServer_Users(), 

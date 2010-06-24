@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import com.safi.db.server.config.ConfigPackage;
@@ -31,7 +32,6 @@ import com.safi.db.server.config.User;
  * <ul>
  *   <li>{@link com.safi.db.server.config.impl.SafiServerImpl#getBindIP <em>Bind IP</em>}</li>
  *   <li>{@link com.safi.db.server.config.impl.SafiServerImpl#getManagementPort <em>Management Port</em>}</li>
- *   <li>{@link com.safi.db.server.config.impl.SafiServerImpl#getTelephonySubsystems <em>Telephony Subsystems</em>}</li>
  *   <li>{@link com.safi.db.server.config.impl.SafiServerImpl#getUser <em>User</em>}</li>
  *   <li>{@link com.safi.db.server.config.impl.SafiServerImpl#getUsers <em>Users</em>}</li>
  *   <li>{@link com.safi.db.server.config.impl.SafiServerImpl#isRunning <em>Running</em>}</li>
@@ -84,16 +84,6 @@ public class SafiServerImpl extends ServerResourceImpl implements SafiServer {
   protected int managementPort = MANAGEMENT_PORT_EDEFAULT;
 
   /**
-	 * The cached value of the '{@link #getTelephonySubsystems() <em>Telephony Subsystems</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTelephonySubsystems()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<TelephonySubsystem> telephonySubsystems;
-
-		/**
 	 * The cached value of the '{@link #getUser() <em>User</em>}' containment reference.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -236,18 +226,6 @@ public class SafiServerImpl extends ServerResourceImpl implements SafiServer {
 
   /**
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<TelephonySubsystem> getTelephonySubsystems() {
-		if (telephonySubsystems == null) {
-			telephonySubsystems = new EObjectContainmentEList<TelephonySubsystem>(TelephonySubsystem.class, this, ConfigPackage.SAFI_SERVER__TELEPHONY_SUBSYSTEMS);
-		}
-		return telephonySubsystems;
-	}
-
-		/**
-	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -372,8 +350,6 @@ public class SafiServerImpl extends ServerResourceImpl implements SafiServer {
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ConfigPackage.SAFI_SERVER__TELEPHONY_SUBSYSTEMS:
-				return ((InternalEList<?>)getTelephonySubsystems()).basicRemove(otherEnd, msgs);
 			case ConfigPackage.SAFI_SERVER__USER:
 				return basicSetUser(null, msgs);
 			case ConfigPackage.SAFI_SERVER__USERS:
@@ -394,8 +370,6 @@ public class SafiServerImpl extends ServerResourceImpl implements SafiServer {
 				return getBindIP();
 			case ConfigPackage.SAFI_SERVER__MANAGEMENT_PORT:
 				return getManagementPort();
-			case ConfigPackage.SAFI_SERVER__TELEPHONY_SUBSYSTEMS:
-				return getTelephonySubsystems();
 			case ConfigPackage.SAFI_SERVER__USER:
 				return getUser();
 			case ConfigPackage.SAFI_SERVER__USERS:
@@ -424,10 +398,6 @@ public class SafiServerImpl extends ServerResourceImpl implements SafiServer {
 				return;
 			case ConfigPackage.SAFI_SERVER__MANAGEMENT_PORT:
 				setManagementPort((Integer)newValue);
-				return;
-			case ConfigPackage.SAFI_SERVER__TELEPHONY_SUBSYSTEMS:
-				getTelephonySubsystems().clear();
-				getTelephonySubsystems().addAll((Collection<? extends TelephonySubsystem>)newValue);
 				return;
 			case ConfigPackage.SAFI_SERVER__USER:
 				setUser((User)newValue);
@@ -463,9 +433,6 @@ public class SafiServerImpl extends ServerResourceImpl implements SafiServer {
 			case ConfigPackage.SAFI_SERVER__MANAGEMENT_PORT:
 				setManagementPort(MANAGEMENT_PORT_EDEFAULT);
 				return;
-			case ConfigPackage.SAFI_SERVER__TELEPHONY_SUBSYSTEMS:
-				getTelephonySubsystems().clear();
-				return;
 			case ConfigPackage.SAFI_SERVER__USER:
 				setUser((User)null);
 				return;
@@ -497,8 +464,6 @@ public class SafiServerImpl extends ServerResourceImpl implements SafiServer {
 				return BIND_IP_EDEFAULT == null ? bindIP != null : !BIND_IP_EDEFAULT.equals(bindIP);
 			case ConfigPackage.SAFI_SERVER__MANAGEMENT_PORT:
 				return managementPort != MANAGEMENT_PORT_EDEFAULT;
-			case ConfigPackage.SAFI_SERVER__TELEPHONY_SUBSYSTEMS:
-				return telephonySubsystems != null && !telephonySubsystems.isEmpty();
 			case ConfigPackage.SAFI_SERVER__USER:
 				return user != null;
 			case ConfigPackage.SAFI_SERVER__USERS:

@@ -234,22 +234,13 @@ public interface ConfigPackage extends EPackage {
   int SAFI_SERVER__MANAGEMENT_PORT = SERVER_RESOURCE_FEATURE_COUNT + 1;
 
   /**
-	 * The feature id for the '<em><b>Telephony Subsystems</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SAFI_SERVER__TELEPHONY_SUBSYSTEMS = SERVER_RESOURCE_FEATURE_COUNT + 2;
-
-		/**
 	 * The feature id for the '<em><b>User</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int SAFI_SERVER__USER = SERVER_RESOURCE_FEATURE_COUNT + 3;
+  int SAFI_SERVER__USER = SERVER_RESOURCE_FEATURE_COUNT + 2;
 
   /**
 	 * The feature id for the '<em><b>Users</b></em>' containment reference list.
@@ -258,7 +249,7 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int SAFI_SERVER__USERS = SERVER_RESOURCE_FEATURE_COUNT + 4;
+  int SAFI_SERVER__USERS = SERVER_RESOURCE_FEATURE_COUNT + 3;
 
   /**
 	 * The feature id for the '<em><b>Running</b></em>' attribute.
@@ -267,7 +258,7 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int SAFI_SERVER__RUNNING = SERVER_RESOURCE_FEATURE_COUNT + 5;
+  int SAFI_SERVER__RUNNING = SERVER_RESOURCE_FEATURE_COUNT + 4;
 
   /**
 	 * The feature id for the '<em><b>Debug</b></em>' attribute.
@@ -276,7 +267,7 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int SAFI_SERVER__DEBUG = SERVER_RESOURCE_FEATURE_COUNT + 6;
+  int SAFI_SERVER__DEBUG = SERVER_RESOURCE_FEATURE_COUNT + 5;
 
   /**
 	 * The feature id for the '<em><b>Db Port</b></em>' attribute.
@@ -285,7 +276,7 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int SAFI_SERVER__DB_PORT = SERVER_RESOURCE_FEATURE_COUNT + 7;
+  int SAFI_SERVER__DB_PORT = SERVER_RESOURCE_FEATURE_COUNT + 6;
 
   /**
 	 * The number of structural features of the '<em>Safi Server</em>' class.
@@ -294,7 +285,7 @@ public interface ConfigPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int SAFI_SERVER_FEATURE_COUNT = SERVER_RESOURCE_FEATURE_COUNT + 8;
+  int SAFI_SERVER_FEATURE_COUNT = SERVER_RESOURCE_FEATURE_COUNT + 7;
 
 
   /**
@@ -1285,17 +1276,6 @@ public interface ConfigPackage extends EPackage {
   EAttribute getSafiServer_ManagementPort();
 
   /**
-	 * Returns the meta object for the containment reference list '{@link com.safi.db.server.config.SafiServer#getTelephonySubsystems <em>Telephony Subsystems</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Telephony Subsystems</em>'.
-	 * @see com.safi.db.server.config.SafiServer#getTelephonySubsystems()
-	 * @see #getSafiServer()
-	 * @generated
-	 */
-	EReference getSafiServer_TelephonySubsystems();
-
-		/**
 	 * Returns the meta object for the containment reference '{@link com.safi.db.server.config.SafiServer#getUser <em>User</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1874,14 +1854,6 @@ public interface ConfigPackage extends EPackage {
     EAttribute SAFI_SERVER__MANAGEMENT_PORT = eINSTANCE.getSafiServer_ManagementPort();
 
     /**
-		 * The meta object literal for the '<em><b>Telephony Subsystems</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SAFI_SERVER__TELEPHONY_SUBSYSTEMS = eINSTANCE.getSafiServer_TelephonySubsystems();
-
-				/**
 		 * The meta object literal for the '<em><b>User</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

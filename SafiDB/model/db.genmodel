@@ -164,7 +164,6 @@
         <genClasses ecoreClass="db.ecore#//server/config/SafiServer">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/SafiServer/bindIP"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/SafiServer/managementPort"/>
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference db.ecore#//server/config/SafiServer/telephonySubsystems"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference db.ecore#//server/config/SafiServer/user"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference db.ecore#//server/config/SafiServer/users"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute db.ecore#//server/config/SafiServer/running"/>

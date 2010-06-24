@@ -225,12 +225,6 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindIP" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="managementPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
             defaultValueLiteral="7020"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="telephonySubsystems"
-            upperBound="-1" eType="#//server/config/TelephonySubsystem" containment="true">
-          <eAnnotations source="teneo.jpa">
-            <details key="appinfo" value="@OneToMany(fetch=&quot;EAGER&quot; indexed=&quot;false&quot; cascade=&quot;ALL&quot;)"/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="user" eType="#//server/config/User"
             containment="true"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="users" upperBound="-1"
