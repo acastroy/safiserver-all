@@ -193,7 +193,6 @@ public class SafiServerItemProvider
   public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ConfigPackage.Literals.SAFI_SERVER__TELEPHONY_SUBSYSTEMS);
 			childrenFeatures.add(ConfigPackage.Literals.SAFI_SERVER__USER);
 			childrenFeatures.add(ConfigPackage.Literals.SAFI_SERVER__USERS);
 		}
@@ -257,7 +256,6 @@ public class SafiServerItemProvider
 			case ConfigPackage.SAFI_SERVER__DB_PORT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ConfigPackage.SAFI_SERVER__TELEPHONY_SUBSYSTEMS:
 			case ConfigPackage.SAFI_SERVER__USER:
 			case ConfigPackage.SAFI_SERVER__USERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -276,11 +274,6 @@ public class SafiServerItemProvider
   @Override
   protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ConfigPackage.Literals.SAFI_SERVER__TELEPHONY_SUBSYSTEMS,
-				 ConfigFactory.eINSTANCE.createTelephonySubsystem()));
 
 		newChildDescriptors.add
 			(createChildParameter
