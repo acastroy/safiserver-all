@@ -27,6 +27,7 @@ import org.eclipse.ui.internal.progress.ProgressMonitorJobsDialog;
 import com.safi.db.server.config.SafiServer;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.saflet.manager.DBManager;
+import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.preferences.PreferenceConstants;
 import com.safi.workshop.util.SafletPersistenceManager;
@@ -65,7 +66,7 @@ public class SafiserverRegisterDialog extends Dialog {
     container.setLayout(new GridLayout());
 
     //
-    IPreferenceStore store = SafiServerPlugin.getDefault().getPreferenceStore();
+    IPreferenceStore store = AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore();
 
     CTabFolder tabFolder = new CTabFolder(container, SWT.BORDER);
     tabFolder.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
@@ -259,7 +260,7 @@ public class SafiserverRegisterDialog extends Dialog {
     // boolean useTunnel = this.useTunnelCheckbox.getSelection();
     sshIP = host;
     sshUser = userName;
-    IPreferenceStore store = SafiServerPlugin.getDefault().getPreferenceStore();
+    IPreferenceStore store = AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore();
 
     // int dbPortLocal =
     // store.getInt(PreferenceConstants.PREF_SSH_FORWARDING_DB_PORT_LOCAL);

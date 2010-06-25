@@ -43,6 +43,7 @@ import com.safi.server.saflet.mbean.ENotificationWrapper;
 import com.safi.server.saflet.mbean.FileTransfer;
 import com.safi.server.saflet.mbean.SafiServerMonitor;
 import com.safi.server.saflet.mbean.SysInfo;
+import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.safi.workshop.preferences.PreferenceConstants;
 
 public class SafiServerRemoteManager implements NotificationListener {
@@ -134,7 +135,7 @@ public class SafiServerRemoteManager implements NotificationListener {
             BooleanMessageDialogWithToggle.openInformation(d.getActiveShell(),
                 ((AttributeChangeNotification) notification).getAttributeName(), notification
                     .getMessage(), "Notify me of server info messages in the future", true,
-                SafiServerPlugin.getDefault().getPreferenceStore(),
+                    AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore(),
                 PreferenceConstants.PREF_SERVER_ERROR_NOTIFICATION);
           }
         });
@@ -149,7 +150,7 @@ public class SafiServerRemoteManager implements NotificationListener {
             BooleanMessageDialogWithToggle.openInformation(d.getActiveShell(),
                 ((AttributeChangeNotification) notification).getAttributeName(), notification
                     .getMessage(), "Notify me of server error messages in the future", true,
-                SafiServerPlugin.getDefault().getPreferenceStore(),
+                    AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore(),
                 PreferenceConstants.PREF_SERVER_INFO_NOTIFICATION);
           }
         });
@@ -264,7 +265,7 @@ public class SafiServerRemoteManager implements NotificationListener {
           SafiServerPlugin.getDefault().refreshMgmtTunnelIfNecessary();
           } catch (Exception e) {
             e.printStackTrace();
-            SafiServerPlugin.getDefault().logError("Couldn't establish management tunnel to " + serviceHost, e);
+            AsteriskDiagramEditorPlugin.getInstance().logError("Couldn't establish management tunnel to " + serviceHost, e);
             final Display d = Display.getDefault();
             d.asyncExec(new Runnable(){
               @Override
@@ -297,7 +298,7 @@ public class SafiServerRemoteManager implements NotificationListener {
 //            + serviceHost + ":" + servicePort + "/safiserver";
         
         String urlString = "service:jmx:rmi://127.0.0.1:" + servicePort + "/jndi/rmi://127.0.0.1:" + servicePort + "/safiserver";
-        SafiServerPlugin.getDefault().getLog().log(
+        AsteriskDiagramEditorPlugin.getInstance().getLog().log(
             new Status(Status.INFO, SafiServerPlugin.PLUGIN_ID,
                 "SafiServerRemoteManager connecting to " + urlString));
         JMXServiceURL url = new JMXServiceURL(urlString);
@@ -340,7 +341,7 @@ public class SafiServerRemoteManager implements NotificationListener {
       if (e instanceof SafiServerManagementException)
         throw (SafiServerManagementException)e;
       e.printStackTrace();
-      SafiServerPlugin.getDefault().getLog().log(
+      AsteriskDiagramEditorPlugin.getInstance().getLog().log(
           new Status(Status.ERROR, SafiServerPlugin.PLUGIN_ID, "Couldn't connect to remote server",
               e));
       throw new SafiServerManagementException(e);
@@ -351,7 +352,7 @@ public class SafiServerRemoteManager implements NotificationListener {
 
   private IPreferenceStore getPreferenceStore() {
     // TODO Auto-generated method stub
-    return SafiServerPlugin.getDefault().getPreferenceStore();
+    return AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore();
   }
 
   public void reset() {
@@ -542,7 +543,7 @@ public class SafiServerRemoteManager implements NotificationListener {
  
 
   public boolean notificationPreferencesChanged() {
-    IPreferenceStore store = SafiServerPlugin.getDefault().getPreferenceStore();
+    IPreferenceStore store = AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore();
     observeError = store.getBoolean(PreferenceConstants.PREF_SERVER_ERROR_NOTIFICATION);
     observerInfo = store.getBoolean(PreferenceConstants.PREF_SERVER_INFO_NOTIFICATION);
     return true;

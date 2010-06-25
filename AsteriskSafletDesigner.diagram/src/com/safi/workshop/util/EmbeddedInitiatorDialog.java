@@ -3,6 +3,7 @@ package com.safi.workshop.util;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
@@ -23,16 +24,16 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
-import com.safi.asterisk.handler.connection.ExceptionHandler;
 import com.safi.db.server.config.SafiServer;
 import com.safi.db.server.config.Saflet;
 import com.safi.db.server.config.SafletProject;
 import com.safi.db.server.config.ServerResource;
 import com.safi.db.server.config.TelephonySubsystem;
 import com.safi.server.plugin.SafiServerPlugin;
+import com.safi.server.saflet.connection.ExceptionHandler;
 import com.safi.util.CustomInitiatorClient;
-import com.safi.util.ui.PropertyEditorTable;
 import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
+import com.safi.workshop.sqlexplorer.wizard.PropertyEditorTable;
 
 public class EmbeddedInitiatorDialog extends Dialog {
 
@@ -144,6 +145,9 @@ public class EmbeddedInitiatorDialog extends Dialog {
     safletNameText.setLayoutData(gd_safletNameText);
     if (client.getSaflet() != null)
       safletNameText.setText(client.getSaflet());
+    
+    if (client.getProps() == null)
+    	client.setProps(new Properties());
     propertyEditorTable = new PropertyEditorTable(container, SWT.NONE, client.getProps());
     propertyEditorTable.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 2, 1));
     // new Label(container, SWT.NONE);
@@ -321,6 +325,8 @@ public class EmbeddedInitiatorDialog extends Dialog {
                 display.asyncExec(new Runnable() {
                   @Override
                   public void run() {
+                  	e.printStackTrace();
+                  	AsteriskDiagramEditorPlugin.getInstance().logError("Error caught while invoking custom initiator", e);
                     Throwable ex = getUnderlyingCause(e);
                     MessageDialog.openError(getShell(), "Invoke Error",
                         "Custom Initiation returned an error: " + (message == null ? "" : message)

@@ -30,6 +30,7 @@ import org.eclipse.ui.internal.progress.ProgressMonitorJobsDialog;
 import com.safi.db.server.config.SafiServer;
 import com.safi.server.plugin.SafiServerPlugin;
 import com.safi.server.saflet.manager.DBManager;
+import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.safi.workshop.preferences.PreferenceConstants;
 
 @Deprecated
@@ -321,7 +322,7 @@ public class SafiServerAdminDialog extends Dialog {
                 DBManager.getInstance().saveOrUpdateServerResource(safiServer);
 
                 // DBManager.getInstance().setPort(dbportInt);
-                IPreferenceStore store = SafiServerPlugin.getDefault().getPreferenceStore();
+                IPreferenceStore store = AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore();
                 store.setValue(PreferenceConstants.PREF_DB_PORT_PROD, fdbport);
                 store.setValue(PreferenceConstants.PREF_SAFISERVER_HOSTNAME_PROD, fhost);
                 SafiServerPlugin.getDefault().updateServerResources(monitor);

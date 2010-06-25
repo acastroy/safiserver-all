@@ -432,6 +432,7 @@ public class AsteriskElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(IfThen_1007);
 			KNOWN_ELEMENT_TYPES.add(ExecuteScript_1037);
 			KNOWN_ELEMENT_TYPES.add(InvokeSaflet_1038);
+			KNOWN_ELEMENT_TYPES.add(DebugLog_1056);
 			KNOWN_ELEMENT_TYPES.add(OpenDBConnection_1077);
 			KNOWN_ELEMENT_TYPES.add(CloseDBConnection_1078);
 			KNOWN_ELEMENT_TYPES.add(OpenQuery_1079);

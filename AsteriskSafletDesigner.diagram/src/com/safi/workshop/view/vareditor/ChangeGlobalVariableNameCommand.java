@@ -7,6 +7,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 
 import com.safi.db.Variable;
 import com.safi.server.plugin.SafiServerPlugin;
+import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 
 public class ChangeGlobalVariableNameCommand extends AbstractOverrideableCommand implements Command {
 
@@ -27,7 +28,7 @@ public class ChangeGlobalVariableNameCommand extends AbstractOverrideableCommand
     try {
       variable = SafiServerPlugin.getDefault().changeGlobalVariableName(variable, newName);
     } catch (Exception e) {
-      SafiServerPlugin.getDefault().logError(
+    	AsteriskDiagramEditorPlugin.getInstance().logError(
           "Couldn't rename variable from " + oldName + " to " + newName, e);
       e.printStackTrace();
     }
@@ -45,7 +46,7 @@ public class ChangeGlobalVariableNameCommand extends AbstractOverrideableCommand
     try {
       SafiServerPlugin.getDefault().changeGlobalVariableName(variable, oldName);
     } catch (Exception e) {
-      SafiServerPlugin.getDefault().logError(
+    	AsteriskDiagramEditorPlugin.getInstance().logError(
           "Couldn't rename variable from " + newName + " to " + oldName, e);
       e.printStackTrace();
     }

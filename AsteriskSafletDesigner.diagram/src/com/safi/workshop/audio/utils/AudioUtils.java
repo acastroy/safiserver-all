@@ -348,8 +348,7 @@ public class AudioUtils {
       });
     } catch (Exception e) {
       e.printStackTrace();
-      MessageDialog.openError(SafiServerPlugin.getDefault().getWorkbench().getDisplay()
-          .getActiveShell(), "Save Error", "Error caught while synchronizing prompts: "
+      MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Save Error", "Error caught while synchronizing prompts: "
           + e.getLocalizedMessage());
     }
   }

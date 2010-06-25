@@ -74,7 +74,7 @@ import com.safi.workshop.preferences.PreferenceConstants;
 /**
  * The activator class controls the plug-in life cycle
  */
-public class SafiServerPlugin extends AbstractUIPlugin {
+public class SafiServerPlugin  {
 
 	private static final String REGEX_PATT_IP = "^((0|1[0-9]{0,2}|2[0-9]{0,1}|2[0-4][0-9]|25[0-5]|[3-9][0-9]{0,1})\\.){3}(0|1[0-9]{0,2}|2[0-9]{0,1}|2[0-4][0-9]|25[0-5]|[3-9][0-9]{0,1})$";
 	// public static final String AST_DEBUG_NAME_SUFFIX = "(Debug)";
@@ -117,7 +117,6 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 	// private static MessageConsole debugConsole;
 	private static Handler debugConsoleAppender;
 	public final static Logger debuggerLog = Logger.getLogger(WORKBENCH_DEBUGLOG);
-	private ProdServerPrefListener prefListener;
 
 	public static String SSH_HOME_DEFAULT = null;
 	static {
@@ -147,8 +146,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 	 * org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext
 	 * )
 	 */
-	public void start(BundleContext context) throws Exception {
-		super.start(context);
+	public void start() throws Exception {
 		// GlobalVariableManager.getInstance().setDebug(true);
 		initLogging();
 		// initDebugConsole();
@@ -203,11 +201,11 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 				loadDriverManager();
 				monitor.worked(1);
 			} catch (Exception e) {
-				getLog().log(
+				AsteriskDiagramEditorPlugin.getInstance().getLog().log(
 				    new Status(Status.ERROR, PLUGIN_ID, "Couldn't load driver manager", e));
 			}
 
-			String sshIP = getPreferenceStore().getString(
+			String sshIP = AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore().getString(
 			    PreferenceConstants.PREF_SAFISERVER_HOSTNAME_PROD);
 			checkForLocalIP(sshIP);
 			if (isUseTunnel() && !isTunnelEstablished()) {
@@ -215,7 +213,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 					monitor.subTask("Init SSH Tunnel");
 					establishSSHTunnel();
 				} catch (Exception e) {
-					getLog().log(
+					AsteriskDiagramEditorPlugin.getInstance().getLog().log(
 					    new Status(Status.ERROR, PLUGIN_ID, "Couldn't establish SSH tunnel", e));
 					// isErrorOccurred = true;
 					// try {
@@ -272,7 +270,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 	}
 
 	private void refreshDBManagerIfNecessary() {
-		IPreferenceStore store = getPreferenceStore();
+		IPreferenceStore store = AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore();
 
 		String hostname = store.getString(PreferenceConstants.PREF_SAFISERVER_HOSTNAME_PROD);
 		String user = store.getString(PreferenceConstants.PREF_SAFISERVER_USER_PROD);
@@ -462,7 +460,6 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 	 */
 	public void stop(BundleContext context) throws Exception {
 		plugin = null;
-		super.stop(context);
 		authListeners.clear();
 	}
 
@@ -475,17 +472,6 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 		return plugin;
 	}
 
-	/**
-	 * Returns an image descriptor for the image file at the given plug-in
-	 * relative path
-	 * 
-	 * @param path
-	 *          the path
-	 * @return the image descriptor
-	 */
-	public static ImageDescriptor getImageDescriptor(String path) {
-		return imageDescriptorFromPlugin(PLUGIN_ID, path);
-	}
 
 	public SafiDriverManager getDriverManager() {
 		return driverManager;
@@ -611,32 +597,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 		}
 	}
 
-	public class ProdServerPrefListener implements
-	    org.eclipse.jface.util.IPropertyChangeListener {
-
-		@Override
-		public void propertyChange(org.eclipse.jface.util.PropertyChangeEvent event) {
-			String property = event.getProperty();
-			if (PreferenceConstants.PREF_SERVER_TRACELOG_LEVEL.equals(property)) {
-				String level = (String) event.getNewValue();
-				if (SafiServerRemoteManager.getInstance().isConnected()) {
-					setServerTracelogLevel(level);
-				}
-			} else if (PreferenceConstants.PREF_SERVER_INFO_UPDATE_PERIOD.equals(property)) {
-				try {
-					Integer val = (Integer) event.getNewValue();
-					if (SafiServerRemoteManager.getInstance().isConnected())
-						setServerInfoUpdatePeriod(val);
-				} catch (NumberFormatException e) {
-					logError("Illegal value for server info update perdiod: " + event.getNewValue());
-				}
-
-				// updateServerInfoUpdatePeriod();
-			} else if (PreferenceConstants.PREF_SERVER_ERROR_NOTIFICATION.equals(property)
-			    || PreferenceConstants.PREF_SERVER_INFO_NOTIFICATION.equals(property))
-				SafiServerRemoteManager.getInstance().notificationPreferencesChanged();
-		}
-	}
+	
 
 	public void updateServerResources(IProgressMonitor monitor)
 	    throws SafiServerManagementException, DBManagerException, JSchException, Exception {
@@ -644,7 +605,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 		DBManager.getInstance().resetLastConnectionAttempt();
 		// String serverHostName;
 		// int dbPort;
-		String sshIP = getPreferenceStore().getString(
+		String sshIP = AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore().getString(
 		    PreferenceConstants.PREF_SAFISERVER_HOSTNAME_PROD);
 		checkForLocalIP(sshIP);
 		if (isUseTunnel()) {
@@ -746,7 +707,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 	}
 
 	public void loadKnownHosts() {
-		String ssh_home = getPreferenceStore().getString(PreferenceConstants.KEY_SSH2HOME);
+		String ssh_home = AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore().getString(PreferenceConstants.KEY_SSH2HOME);
 
 		if (ssh_home.length() == 0)
 			ssh_home = SSH_HOME_DEFAULT;
@@ -755,7 +716,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 		try {
 			getJSch().setKnownHosts(file.getPath());
 		} catch (JSchException e) {
-			logError("An error occurred while loading the know hosts file " + file, e);
+			AsteriskDiagramEditorPlugin.getInstance().logError("An error occurred while loading the know hosts file " + file, e);
 		}
 		needToLoadKnownHosts = false;
 	}
@@ -813,9 +774,9 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 			if (monitor != null)
 				monitor.worked(1);
 		}
-		String sshUser = getPreferenceStore().getString(
+		String sshUser = AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore().getString(
 		    PreferenceConstants.PREF_SAFISERVER_USER_PROD);
-		String sshIP = getPreferenceStore().getString(
+		String sshIP = AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore().getString(
 		    PreferenceConstants.PREF_SAFISERVER_HOSTNAME_PROD);
 
 		if (checkForLocalIP(sshIP)) {
@@ -824,8 +785,8 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 			return;
 		}
 		JSch jsch = getJSch();
-		int sshPort = getPreferenceStore().getInt(PreferenceConstants.PREF_SSH_SERVER_PORT);
-		String pass = getPreferenceStore().getString(
+		int sshPort = AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore().getInt(PreferenceConstants.PREF_SSH_SERVER_PORT);
+		String pass = AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore().getString(
 		    PreferenceConstants.PREF_SAFISERVER_PASS_PROD);
 
 		boolean isnew = false;
@@ -857,7 +818,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 		HostKey key = sshTunnelSession.getHostKey();
 		// int sshDBPortNum = getPreferenceStore().getInt(
 		// PreferenceConstants.PREF_SSH_FORWARDING_DB_PORT_LOCAL);
-		int sshDBPortRemote = getPreferenceStore().getInt(
+		int sshDBPortRemote = AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore().getInt(
 		    PreferenceConstants.PREF_DB_PORT_PROD);
 
 		if (currentSSHDBPortNum >= 0)
@@ -956,7 +917,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 						tunnels.remove(remotePort);
 					} catch (Exception e) {
 						e.printStackTrace();
-						logError("Couldn't delete port forward for " + oldPort, e);
+						AsteriskDiagramEditorPlugin.getInstance().logError("Couldn't delete port forward for " + oldPort, e);
 					}
 
 				}
@@ -1003,7 +964,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 			try {
 				success = SafiServerRemoteManager.getInstance().restartConnection();
 			} catch (SafiServerManagementException e) {
-				logWarn("Couldn't refresh remote connection", e);
+				AsteriskDiagramEditorPlugin.getInstance().logWarn("Couldn't refresh remote connection", e);
 				disconnectSSHTunnel();
 				exception = e;
 			}
@@ -1026,12 +987,12 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 			String level = SafiServerRemoteManager.getInstance().getServerTracelogLevel();
 			if (level == null)
 				return;
-			getPreferenceStore()
+			AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore()
 			    .setValue(PreferenceConstants.PREF_SERVER_TRACELOG_LEVEL, level);
 			setServerTracelogLevel(level);
 		} catch (SafiServerManagementException e) {
 			e.printStackTrace();
-			logError("Couldn't retrieve info update period", e);
+			AsteriskDiagramEditorPlugin.getInstance().logError("Couldn't retrieve info update period", e);
 		}
 
 		// setServerInfoUpdatePeriod(getPreferenceStore().getInt(PreferenceConstants.PREF_SERVER_INFO_UPDATE_PERIOD));
@@ -1041,24 +1002,24 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 	public void updateServerInfoUpdatePeriod() {
 		try {
 			int period = SafiServerRemoteManager.getInstance().getServerInfoUpdatePeriod();
-			int current = getPreferenceStore().getInt(PreferenceConstants.PREF_SERVER_INFO_UPDATE_PERIOD);
+			int current = AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore().getInt(PreferenceConstants.PREF_SERVER_INFO_UPDATE_PERIOD);
 			if (current != period)
-				getPreferenceStore().setValue(PreferenceConstants.PREF_SERVER_INFO_UPDATE_PERIOD,
+				AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore().setValue(PreferenceConstants.PREF_SERVER_INFO_UPDATE_PERIOD,
 				    period);
 		} catch (SafiServerManagementException e) {
 			e.printStackTrace();
-			logError("Couldn't retrieve info update period", e);
+			AsteriskDiagramEditorPlugin.getInstance().logError("Couldn't retrieve info update period", e);
 		}
 		// setServerInfoUpdatePeriod(getPreferenceStore().getInt(PreferenceConstants.PREF_SERVER_INFO_UPDATE_PERIOD));
 	}
 
 	public void commitTraceLogLevel() {
-		setServerTracelogLevel(getPreferenceStore().getString(
+		setServerTracelogLevel(AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore().getString(
 		    PreferenceConstants.PREF_SERVER_TRACELOG_LEVEL));
 	}
 
 	public void commitServerInfoUpdatePeriod() {
-		setServerInfoUpdatePeriod(getPreferenceStore().getInt(
+		setServerInfoUpdatePeriod(AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore().getInt(
 		    PreferenceConstants.PREF_SERVER_INFO_UPDATE_PERIOD));
 	}
 
@@ -1066,7 +1027,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 		if (isUseTunnel()) {
 			int newDBPort = updateForwardedPortIfNecessary(currentSSHDBPortNum);
 			if (newDBPort != currentSSHDBPortNum) {
-				int sshDBPortRemote = getPreferenceStore().getInt(
+				int sshDBPortRemote = AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore().getInt(
 				    PreferenceConstants.PREF_DB_PORT_PROD);
 				removeTunnel(currentSSHDBPortNum);
 				addTunnel(newDBPort, sshDBPortRemote, "127.0.0.1");
@@ -1104,7 +1065,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 		try {
 			refreshMgmtTunnelIfNecessary();
 		} catch (Exception e) {
-			logError("Couldn't establish management tunnel to " + currentServer.getBindIP(), e);
+			AsteriskDiagramEditorPlugin.getInstance().logError("Couldn't establish management tunnel to " + currentServer.getBindIP(), e);
 			final Display d = Display.getDefault();
 			d.asyncExec(new Runnable() {
 				@Override
@@ -1155,7 +1116,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 		    && !com.safi.server.util.Utils.isServerPortAvail(port)) {
 			int oldPort = port;
 			port = Utils.findFreePort();
-			logInfo("Just remapped old port " + oldPort + " to " + port);
+			AsteriskDiagramEditorPlugin.getInstance().logInfo("Just remapped old port " + oldPort + " to " + port);
 		}
 		return port;
 	}
@@ -1223,16 +1184,6 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 	// }
 	// }
 
-	@Override
-	public IPreferenceStore getPreferenceStore() {
-
-		IPreferenceStore store = AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore();
-		if (prefListener == null) {
-			prefListener = new ProdServerPrefListener();
-			store.addPropertyChangeListener(prefListener);
-		}
-		return store;
-	}
 
 	// public synchronized SafiServer createLocalSafiServerFromStore() {
 	// IPreferenceStore store = getPreferenceStore();
@@ -1273,7 +1224,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 
 	public SafiServer refreshProdSafiServer() throws Exception {
 		checkForLocalIP(getProductionServerDisplayHostname());
-		IPreferenceStore store = getPreferenceStore();
+		IPreferenceStore store = AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore();
 		int id = store.getInt(PreferenceConstants.PREF_SAFISERVER_ID);
 
 		SafiServer oldServer = currentServer;
@@ -1316,7 +1267,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 	}
 
 	public String getProductionServerDisplayHostname() {
-		return getPreferenceStore().getString(
+		return AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore().getString(
 		    PreferenceConstants.PREF_SAFISERVER_HOSTNAME_PROD);
 	}
 
@@ -1405,18 +1356,18 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 		if (isUseTunnel() && !isTunnelEstablished())
 			establishSSHTunnel();
 
-		String user = getPreferenceStore().getString(
+		String user = AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore().getString(
 		    PreferenceConstants.PREF_SAFISERVER_USER_PROD);
 		IWorkbenchWindow window = null;
 		if (PlatformUI.isWorkbenchRunning()) {
-			window = getWorkbench().getActiveWorkbenchWindow();
+			window = AsteriskDiagramEditorPlugin.getInstance().getWorkbench().getActiveWorkbenchWindow();
 			if (StringUtils.isBlank(user)) {
 				if (window != null && window.getShell() != null)
 					window.getShell().setText("Not Logged In");
 				user = null;
 			}
 		}
-		String pass = getPreferenceStore().getString(
+		String pass = AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore().getString(
 		    PreferenceConstants.PREF_SAFISERVER_PASS_PROD);
 		currentUser = null;
 		if (user == null)
@@ -1485,7 +1436,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 	}
 
 	private boolean hasProductionServerInfo() {
-		IPreferenceStore store = SafiServerPlugin.getDefault().getPreferenceStore();
+		IPreferenceStore store = AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore();
 		if (store == null)
 			return false;
 		String hostname = store.getString(PreferenceConstants.PREF_SAFISERVER_HOSTNAME_PROD);
@@ -1605,7 +1556,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 			SafiServerRemoteManager.getInstance().setServerTracelogLevel(level);
 		} catch (SafiServerManagementException e) {
 			e.printStackTrace();
-			getLog().log(
+			AsteriskDiagramEditorPlugin.getInstance().getLog().log(
 			    new Status(Status.ERROR, PLUGIN_ID,
 			        "Couldn't set production SafiServer tracelog level", e));
 		}
@@ -1616,7 +1567,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 			SafiServerRemoteManager.getInstance().setServerInfoUpdatePeriod(seconds);
 		} catch (SafiServerManagementException e) {
 			e.printStackTrace();
-			getLog().log(
+			AsteriskDiagramEditorPlugin.getInstance().getLog().log(
 			    new Status(Status.ERROR, PLUGIN_ID,
 			        "Couldn't set production SafiServer info update frequency", e));
 		}
@@ -1677,69 +1628,7 @@ public class SafiServerPlugin extends AbstractUIPlugin {
 		return fv[0];
 	}
 
-	/**
-	 * @generated
-	 */
-	public void logError(String error) {
-		logError(error, null);
-	}
-
-	/**
-	 * @generated
-	 */
-	public void logError(String error, Throwable throwable) {
-		if (error == null && throwable != null) {
-			error = throwable.getMessage();
-		}
-		getLog().log(new Status(IStatus.ERROR, PLUGIN_ID, IStatus.OK, error, throwable));
-		debug(error, throwable);
-	}
-
-	/**
-	 * @generated
-	 */
-	public void logInfo(String message) {
-		logInfo(message, null);
-	}
-
-	/**
-	 * @generated
-	 */
-	public void logInfo(String message, Throwable throwable) {
-		if (message == null && throwable != null) {
-			message = throwable.getMessage();
-		}
-		getLog().log(new Status(IStatus.INFO, PLUGIN_ID, IStatus.OK, message, throwable));
-		debug(message, throwable);
-	}
-
-	public void logWarn(String message) {
-		logWarn(message, null);
-	}
-
-	public void logWarn(String message, Throwable throwable) {
-		if (message == null && throwable != null) {
-			message = throwable.getMessage();
-		}
-		getLog().log(new Status(IStatus.WARNING, PLUGIN_ID, IStatus.OK, message, throwable));
-		debug(message, throwable);
-	}
-
-	/**
-	 * @generated
-	 */
-	private void debug(String message, Throwable throwable) {
-		if (!isDebugging()) {
-			return;
-		}
-		if (message != null) {
-			System.err.println(message);
-		}
-		if (throwable != null) {
-			throwable.printStackTrace();
-		}
-	}
-
+	
 	public void serverInfoUpdated(SysInfo info) {
 		for (SafiServerStatusListener l : authListeners)
 			l.serverInfoUpdate(info);

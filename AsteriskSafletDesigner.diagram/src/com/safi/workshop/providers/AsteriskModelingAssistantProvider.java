@@ -392,7 +392,6 @@ public class AsteriskModelingAssistantProvider extends ModelingAssistantProvider
     types.add(AsteriskElementTypes.Assignment_1002);
     types.add(AsteriskElementTypes.Choice_1003);
     types.add(AsteriskElementTypes.IfThen_1007);
-
     types.add(AsteriskElementTypes.ExecuteScript_1037);
     types.add(AsteriskElementTypes.InvokeSaflet_1038);
 
@@ -405,7 +404,7 @@ public class AsteriskModelingAssistantProvider extends ModelingAssistantProvider
     // types.add(AsteriskElementTypes.PickupChan_1045);
     // types.add(AsteriskElementTypes.Pickdown_1046);
 
-
+    types.add(AsteriskElementTypes.DebugLog_1056);
     types.add(AsteriskElementTypes.OpenDBConnection_1077);
 
     types.add(AsteriskElementTypes.CloseDBConnection_1078);

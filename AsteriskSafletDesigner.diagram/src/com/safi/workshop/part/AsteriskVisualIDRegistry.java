@@ -476,6 +476,14 @@ public class AsteriskVisualIDRegistry {
           return true;
         }
         break;
+      case DebugLogEditPart.VISUAL_ID:
+        if (DebugLogNameEditPart.VISUAL_ID == nodeVisualID) {
+          return true;
+        }
+        if (OutputEditPart.VISUAL_ID == nodeVisualID) {
+          return true;
+        }
+        break;
       case OpenDBConnectionEditPart.VISUAL_ID:
         if (OpenDBConnectionNameEditPart.VISUAL_ID == nodeVisualID) {
           return true;

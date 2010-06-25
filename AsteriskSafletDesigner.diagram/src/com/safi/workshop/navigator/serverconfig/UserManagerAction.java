@@ -46,8 +46,7 @@ public class UserManagerAction implements IWorkbenchWindowActionDelegate, IViewA
       e.printStackTrace();
     }
     if (aSafiServer == null) {
-      MessageDialog.openError(SafiServerPlugin.getDefault().getWorkbench().getDisplay()
-          .getActiveShell(), "Server Not Available", "No SafiServer instance has been registered.");
+      MessageDialog.openError(SafiWorkshopEditorUtil.getActiveShell(), "Server Not Available", "No SafiServer instance has been registered.");
       return;
     }
     /*

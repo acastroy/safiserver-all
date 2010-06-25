@@ -664,7 +664,7 @@ public class UserDialog extends TitleAreaDialog {
       session.getTransaction().commit();
 
       if (!isNew && isCurrentUser) {
-        IPreferenceStore store = SafiServerPlugin.getDefault().getPreferenceStore();
+        IPreferenceStore store = AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore();
         store.setValue(PreferenceConstants.PREF_SAFISERVER_USER_PROD, user.getName());
         store.setValue(PreferenceConstants.PREF_SAFISERVER_PASS_PROD, user.getPassword());
         SafiServerPlugin.getDefault().updateServerResources(new NullProgressMonitor());

@@ -106,6 +106,8 @@ public class AsteriskDiagramUpdater {
         return getExecuteScript_1037SemanticChildren(view);
       case InvokeSafletEditPart.VISUAL_ID:
         return getInvokeSaflet_1038SemanticChildren(view);
+      case DebugLogEditPart.VISUAL_ID:
+        return getDebugLog_1056SemanticChildren(view);
       case OpenDBConnectionEditPart.VISUAL_ID:
         return getOpenDBConnection_1077SemanticChildren(view);
       case CloseDBConnectionEditPart.VISUAL_ID:
@@ -992,7 +994,6 @@ public class AsteriskDiagramUpdater {
         return getInvokeSaflet_1038ContainedLinks(view);
       case DebugLogEditPart.VISUAL_ID:
         return getDebugLog_1056ContainedLinks(view);
-
       case OpenDBConnectionEditPart.VISUAL_ID:
         return getOpenDBConnection_1077ContainedLinks(view);
       case CloseDBConnectionEditPart.VISUAL_ID:

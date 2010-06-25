@@ -792,6 +792,8 @@ public class AsteriskParserProvider extends AbstractProvider implements IParserP
         return getInvokeSafletName_4040Parser();
       case InvokeSafletLabelTextEditPart.VISUAL_ID:
         return getInvokeSafletLabelText_4041Parser();
+      case DebugLogNameEditPart.VISUAL_ID:
+        return getDebugLogName_4059Parser();
       case OpenDBConnectionNameEditPart.VISUAL_ID:
         return getOpenDBConnectionName_4080Parser();
       case CloseDBConnectionNameEditPart.VISUAL_ID:

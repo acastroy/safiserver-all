@@ -544,7 +544,7 @@ public class AsteriskApplication implements IApplication {
               super.preStartup();
               try {
 
-                SafiServerPlugin.getDefault().getPreferenceStore();
+              	//AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore();
                 // SafiServerPlugin.getDefault().getPreferenceStore().addPropertyChangeListener(
                 // SafiServerPlugin.getDefault().new ProdServerPrefListener());
                 

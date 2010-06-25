@@ -34,6 +34,7 @@ import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
@@ -62,6 +63,7 @@ import com.safi.workshop.edit.parts.HandlerEditPart;
 import com.safi.workshop.edit.policies.ActionPakCreateCommandFactory;
 import com.safi.workshop.edit.policies.ActionstepCreateCommandFactory;
 import com.safi.workshop.edit.policies.HandlerItemSemanticEditPolicy;
+import com.safi.workshop.preferences.PreferenceConstants;
 import com.safi.workshop.providers.AsteriskElementTypes;
 import com.safi.workshop.providers.AsteriskModelingAssistantProvider;
 import com.safi.workshop.serverview.ServerViewEditorInput;
@@ -136,6 +138,8 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 	private DebugEventListener debugEventListener;
 	private Map<String, TelephonyModulePlugin> telephonyModulePlugins = new LinkedHashMap<String, TelephonyModulePlugin>();
 
+	private ProdServerPrefListener prefListener;
+
 	/**
 	 * @generated NOT
 	 */
@@ -145,13 +149,23 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 		// new SQLExplorerPlugin();
 	}
 
+	@Override
+	public IPreferenceStore getPreferenceStore() {
+		IPreferenceStore store = super.getPreferenceStore();
+		if (prefListener == null) {
+			prefListener = new ProdServerPrefListener();
+			store.addPropertyChangeListener(prefListener);
+			PreferencesHint.registerPreferenceStore(DIAGRAM_PREFERENCES_HINT, store);
+		}
+		return store;
+	}
 	/**
 	 * @generated NOT
 	 */
 	@Override
 	public void start(final BundleContext context) throws Exception {
 		super.start(context);
-		PreferencesHint.registerPreferenceStore(DIAGRAM_PREFERENCES_HINT, getPreferenceStore());
+		
 		// adapterFactory = createAdapterFactory();
 
 		// initDebugConsole();
@@ -182,14 +196,13 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 			@Override
 			public void serverInfoUpdate(SysInfo info) {
 				updateServerView(info);
-
 			}
 
 		};
 
 		if (SafiServerPlugin.getDefault() == null) {
 			SafiServerPlugin p = new SafiServerPlugin();
-			p.start(context);
+			p.start();
 		}
 		SafiServerPlugin.getDefault().addAuthListener(safiServerAuthListener);
 
@@ -1261,4 +1274,31 @@ public class AsteriskDiagramEditorPlugin extends AbstractUIPlugin {
 	public TelephonyModulePlugin[] getTelephonyModulePlugins() {
 		return telephonyModulePlugins.values().toArray(new TelephonyModulePlugin[telephonyModulePlugins.size()]);
 	}
+	
+	public class ProdServerPrefListener implements
+  org.eclipse.jface.util.IPropertyChangeListener {
+
+@Override
+public void propertyChange(org.eclipse.jface.util.PropertyChangeEvent event) {
+	String property = event.getProperty();
+	if (PreferenceConstants.PREF_SERVER_TRACELOG_LEVEL.equals(property)) {
+		String level = (String) event.getNewValue();
+		if (SafiServerRemoteManager.getInstance().isConnected()) {
+			SafiServerPlugin.getDefault().setServerTracelogLevel(level);
+		}
+	} else if (PreferenceConstants.PREF_SERVER_INFO_UPDATE_PERIOD.equals(property)) {
+		try {
+			Integer val = (Integer) event.getNewValue();
+			if (SafiServerRemoteManager.getInstance().isConnected())
+				SafiServerPlugin.getDefault().setServerInfoUpdatePeriod(val);
+		} catch (NumberFormatException e) {
+			logError("Illegal value for server info update perdiod: " + event.getNewValue());
+		}
+
+		// updateServerInfoUpdatePeriod();
+	} else if (PreferenceConstants.PREF_SERVER_ERROR_NOTIFICATION.equals(property)
+	    || PreferenceConstants.PREF_SERVER_INFO_NOTIFICATION.equals(property))
+		SafiServerRemoteManager.getInstance().notificationPreferencesChanged();
+}
+}
 }

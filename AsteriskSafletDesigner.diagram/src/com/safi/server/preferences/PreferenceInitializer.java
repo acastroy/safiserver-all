@@ -4,6 +4,7 @@ import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
 import org.eclipse.jface.preference.IPreferenceStore;
 
 import com.safi.server.plugin.SafiServerPlugin;
+import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
 import com.safi.workshop.preferences.PreferenceConstants;
 
 public class PreferenceInitializer extends AbstractPreferenceInitializer {
@@ -42,6 +43,6 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
   }
 
   protected IPreferenceStore getPreferenceStore() {
-    return SafiServerPlugin.getDefault().getPreferenceStore();
+    return AsteriskDiagramEditorPlugin.getInstance().getPreferenceStore();
   }
 }

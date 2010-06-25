@@ -1070,6 +1070,9 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
    <extension point="org.eclipse.core.runtime.preferences">
       <?gmfgen generated="true"?>
       <initializer class="com.safi.workshop.preferences.DiagramPreferenceInitializer"/>
+      <initializer
+            class="com.safi.server.preferences.PreferenceInitializer">
+      </initializer>
    </extension>
 
    <extension point="org.eclipse.ui.preferencePages">
@@ -2820,12 +2823,6 @@ Safi Systems LLC, Copyright 2008 All Rights Reserved
     </extension>
     -->
     
-     <extension
-         point="org.eclipse.core.runtime.preferences">
-      <initializer
-            class="com.safi.server.preferences.PreferenceInitializer">
-      </initializer>
-   </extension>
    <extension
          point="org.eclipse.ui.preferencePages">
       <page
