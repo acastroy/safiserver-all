@@ -4,7 +4,7 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.MoveRequest;
 
-import com.safi.workshop.edit.policies.AsteriskBaseItemSemanticEditPolicy;
+import com.safi.workshop.edit.policies.SafiWorkshopBaseItemSemanticEditPolicy;
 import com.safi.workshop.model.timeBasedRouting.TimeBasedRoutingPackage;
 import com.safi.workshop.timeBasedRouting.pak.ElementTypes;
 import com.safi.workshop.timeBasedRouting.pak.command.TimeItemCreateCommand;
@@ -12,7 +12,7 @@ import com.safi.workshop.timeBasedRouting.pak.command.TimeItemCreateCommand;
 /**
  * @generated
  */
-public class TimeItemPanelItemSemanticEditPolicy extends AsteriskBaseItemSemanticEditPolicy {
+public class TimeItemPanelItemSemanticEditPolicy extends SafiWorkshopBaseItemSemanticEditPolicy {
 
   /**
    * @generated

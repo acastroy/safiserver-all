@@ -14,8 +14,8 @@ import org.eclipse.gmf.runtime.notation.View;
 import com.safi.workshop.model.timeBasedRouting.TimeBasedRouting;
 import com.safi.workshop.model.timeBasedRouting.TimeBasedRoutingPackage;
 import com.safi.workshop.model.timeBasedRouting.TimeItem;
-import com.safi.workshop.part.AsteriskNodeDescriptor;
-import com.safi.workshop.part.AsteriskVisualIDRegistry;
+import com.safi.workshop.part.SafletNodeDescriptor;
+import com.safi.workshop.part.SafletVisualIDRegistry;
 
 /**
  * @generated
@@ -35,7 +35,7 @@ public class TimeItemPanelCanonicalEditPolicy extends CanonicalEditPolicy {
     List result = new LinkedList();
     for (Iterator it = getTimeItemPanelSemanticChildren(viewObject)
         .iterator(); it.hasNext();) {
-      result.add(((AsteriskNodeDescriptor) it.next()).getModelElement());
+      result.add(((SafletNodeDescriptor) it.next()).getModelElement());
     }
     return result;
   }
@@ -44,11 +44,11 @@ public class TimeItemPanelCanonicalEditPolicy extends CanonicalEditPolicy {
    * @generated
    */
   protected boolean isOrphaned(Collection semanticChildren, final View view) {
-    int visualID = AsteriskVisualIDRegistry.getVisualID(view);
+    int visualID = SafletVisualIDRegistry.getVisualID(view);
     switch (visualID) {
       case TimeItemEditPart.VISUAL_ID:
         return !semanticChildren.contains(view.getElement())
-            || visualID != AsteriskVisualIDRegistry.getNodeVisualID((View) getHost().getModel(),
+            || visualID != SafletVisualIDRegistry.getNodeVisualID((View) getHost().getModel(),
                 view.getElement());
     }
     return false;
@@ -84,9 +84,9 @@ public class TimeItemPanelCanonicalEditPolicy extends CanonicalEditPolicy {
     List result = new LinkedList();
     for (Iterator it = modelElement.getTimes().iterator(); it.hasNext();) {
       TimeItem childElement = (TimeItem) it.next();
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
+      int visualID = SafletVisualIDRegistry.getNodeVisualID(view, childElement);
       if (visualID == TimeItemEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
+        result.add(new SafletNodeDescriptor(childElement, visualID));
         continue;
       }
     }

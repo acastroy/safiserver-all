@@ -32,9 +32,9 @@ import com.safi.core.actionstep.Item;
 import com.safi.workshop.edit.parts.ActionstepSubItem;
 import com.safi.workshop.edit.parts.HandlerEditPart;
 import com.safi.workshop.edit.parts.ToolstepEditPart;
-import com.safi.workshop.edit.policies.AsteriskConnectionHandleEditPolicy;
+import com.safi.workshop.edit.policies.SafiWorkshopConnectionHandleEditPolicy;
 import com.safi.workshop.model.timeBasedRouting.TimeItem;
-import com.safi.workshop.part.AsteriskVisualIDRegistry;
+import com.safi.workshop.part.SafletVisualIDRegistry;
 import com.safi.workshop.part.ValidateAction;
 
 /**
@@ -110,7 +110,7 @@ public class TimeItemEditPart extends ShapeNodeEditPart implements ActionstepSub
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.CONNECTION_HANDLES_ROLE,
-		    new AsteriskConnectionHandleEditPolicy());
+		    new SafiWorkshopConnectionHandleEditPolicy());
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, getPrimaryDragEditPolicy());
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new TimeItemItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.OPEN_ROLE, new EditTimeItemHandlerPolicy());
@@ -341,7 +341,7 @@ public class TimeItemEditPart extends ShapeNodeEditPart implements ActionstepSub
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(AsteriskVisualIDRegistry
+		return getChildBySemanticHint(SafletVisualIDRegistry
 		    .getType(TimeItemLabelTextEditPart.VISUAL_ID));
 	}
 

@@ -27,7 +27,7 @@
    <extension
          id="TimeBasedRouting"
          name="TimeBasedRouting"
-         point="AsteriskSafletDesigner.diagram.actionPak">
+         point="SafiWorkshopCore.actionPak">
       <actionStep
             createCommandFactory="com.safi.workshop.timeBasedRouting.pak.factory.TimeBasedRoutingCreateCommandFactory"
             editPartFactory="com.safi.workshop.timeBasedRouting.pak.factory.TimeBasedRoutingEditPartFactory"

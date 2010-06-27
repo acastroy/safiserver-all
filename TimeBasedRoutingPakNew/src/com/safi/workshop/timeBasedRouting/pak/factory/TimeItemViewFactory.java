@@ -16,7 +16,7 @@ import org.eclipse.gmf.runtime.notation.ShapeStyle;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.runtime.notation.impl.NodeImpl;
 
-import com.safi.workshop.part.AsteriskVisualIDRegistry;
+import com.safi.workshop.part.SafletVisualIDRegistry;
 import com.safi.workshop.timeBasedRouting.pak.editpart.TimeItemEditPart;
 import com.safi.workshop.timeBasedRouting.pak.editpart.TimeItemLabelTextEditPart;
 
@@ -40,7 +40,7 @@ public class TimeItemViewFactory extends AbstractShapeViewFactory {
   protected void decorateView(View containerView, View view, IAdaptable semanticAdapter,
       String semanticHint, int index, boolean persisted) {
     if (semanticHint == null) {
-      semanticHint = AsteriskVisualIDRegistry.getType(TimeItemEditPart.VISUAL_ID);
+      semanticHint = SafletVisualIDRegistry.getType(TimeItemEditPart.VISUAL_ID);
       view.setType(semanticHint);
     }
     super.decorateView(containerView, view, semanticAdapter, semanticHint, index, persisted);
@@ -50,7 +50,7 @@ public class TimeItemViewFactory extends AbstractShapeViewFactory {
       eObjectAdapter = new EObjectAdapter(eObject);
     }
     getViewService().createNode(eObjectAdapter, view,
-        AsteriskVisualIDRegistry.getType(TimeItemLabelTextEditPart.VISUAL_ID), ViewUtil.APPEND,
+        SafletVisualIDRegistry.getType(TimeItemLabelTextEditPart.VISUAL_ID), ViewUtil.APPEND,
         true, getPreferencesHint());
 
     NodeImpl n = (NodeImpl) view;

@@ -10,13 +10,13 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import com.safi.workshop.edit.commands.CaseItemTargetToolstepCreateCommand;
 import com.safi.workshop.edit.commands.CaseItemTargetToolstepReorientCommand;
 import com.safi.workshop.edit.parts.CaseItemTargetToolstepEditPart;
-import com.safi.workshop.edit.policies.AsteriskBaseItemSemanticEditPolicy;
-import com.safi.workshop.providers.AsteriskElementTypes;
+import com.safi.workshop.edit.policies.SafiWorkshopBaseItemSemanticEditPolicy;
+import com.safi.workshop.providers.SafiWorkshopElementTypes;
 
 /**
  * @generated
  */
-public class TimeItemItemSemanticEditPolicy extends AsteriskBaseItemSemanticEditPolicy {
+public class TimeItemItemSemanticEditPolicy extends SafiWorkshopBaseItemSemanticEditPolicy {
 
   /**
    * @generated
@@ -41,7 +41,7 @@ public class TimeItemItemSemanticEditPolicy extends AsteriskBaseItemSemanticEdit
    * @generated
    */
   protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-    if (AsteriskElementTypes.CaseItemTargetToolstep_3003 == req.getElementType()) {
+    if (SafiWorkshopElementTypes.CaseItemTargetToolstep_3003 == req.getElementType()) {
       return getGEFWrapper(new CaseItemTargetToolstepCreateCommand(req, req.getSource(), req
           .getTarget()));
     }
@@ -52,7 +52,7 @@ public class TimeItemItemSemanticEditPolicy extends AsteriskBaseItemSemanticEdit
    * @generated
    */
   protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-    if (AsteriskElementTypes.CaseItemTargetToolstep_3003 == req.getElementType()) {
+    if (SafiWorkshopElementTypes.CaseItemTargetToolstep_3003 == req.getElementType()) {
       return null;
     }
     return null;

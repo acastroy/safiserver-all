@@ -14,7 +14,7 @@ import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 
 import com.safi.workshop.edit.parts.HandlerEditPart;
-import com.safi.workshop.part.AsteriskVisualIDRegistry;
+import com.safi.workshop.part.SafletVisualIDRegistry;
 import com.safi.workshop.timeBasedRouting.pak.editpart.TimeBasedRoutingEditPart;
 import com.safi.workshop.timeBasedRouting.pak.editpart.TimeBasedRoutingNameEditPart;
 import com.safi.workshop.timeBasedRouting.pak.editpart.TimeItemPanelEditPart;
@@ -39,11 +39,11 @@ public class TimeBasedRoutingViewFactory extends AbstractShapeViewFactory {
   protected void decorateView(View containerView, View view, IAdaptable semanticAdapter,
       String semanticHint, int index, boolean persisted) {
     if (semanticHint == null) {
-      semanticHint = AsteriskVisualIDRegistry.getType(TimeBasedRoutingEditPart.VISUAL_ID);
+      semanticHint = SafletVisualIDRegistry.getType(TimeBasedRoutingEditPart.VISUAL_ID);
       view.setType(semanticHint);
     }
     super.decorateView(containerView, view, semanticAdapter, semanticHint, index, persisted);
-    if (!HandlerEditPart.MODEL_ID.equals(AsteriskVisualIDRegistry.getModelID(containerView))) {
+    if (!HandlerEditPart.MODEL_ID.equals(SafletVisualIDRegistry.getModelID(containerView))) {
       EAnnotation shortcutAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
       shortcutAnnotation.setSource("Shortcut"); //$NON-NLS-1$
       shortcutAnnotation.getDetails().put("modelID", HandlerEditPart.MODEL_ID); //$NON-NLS-1$
@@ -55,10 +55,10 @@ public class TimeBasedRoutingViewFactory extends AbstractShapeViewFactory {
       eObjectAdapter = new EObjectAdapter(eObject);
     }
     getViewService().createNode(eObjectAdapter, view,
-        AsteriskVisualIDRegistry.getType(TimeBasedRoutingNameEditPart.VISUAL_ID), ViewUtil.APPEND,
+        SafletVisualIDRegistry.getType(TimeBasedRoutingNameEditPart.VISUAL_ID), ViewUtil.APPEND,
         true, getPreferencesHint());
     getViewService().createNode(eObjectAdapter, view,
-        AsteriskVisualIDRegistry.getType(TimeItemPanelEditPart.VISUAL_ID),
+        SafletVisualIDRegistry.getType(TimeItemPanelEditPart.VISUAL_ID),
         ViewUtil.APPEND, true, getPreferencesHint());
   }
 }

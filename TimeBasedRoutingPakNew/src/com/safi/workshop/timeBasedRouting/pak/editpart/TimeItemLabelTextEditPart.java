@@ -47,8 +47,8 @@ import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
 
 import com.safi.core.actionstep.ActionStepPackage;
-import com.safi.workshop.edit.parts.AsteriskEditPartFactory;
-import com.safi.workshop.edit.policies.AsteriskTextSelectionEditPolicy;
+import com.safi.workshop.edit.parts.SafiWorkshopEditPartFactory;
+import com.safi.workshop.edit.policies.SafiWorkshopTextSelectionEditPolicy;
 import com.safi.workshop.edit.policies.EditCaseItemHandlerPolicy;
 import com.safi.workshop.parsers.MessageFormatParser;
 
@@ -204,7 +204,7 @@ public class TimeItemLabelTextEditPart extends CompartmentEditPart implements IT
     // if (parserElement == null) {
     // return null;
     // }
-    // return AsteriskElementTypes.getImage(parserElement.eClass());
+    // return SafiWorkshopElementTypes.getImage(parserElement.eClass());
     return null;
   }
 
@@ -232,8 +232,8 @@ public class TimeItemLabelTextEditPart extends CompartmentEditPart implements IT
   public void setLabelText(String text) {
     setLabelTextHelper(getFigure(), text);
     Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-    if (pdEditPolicy instanceof AsteriskTextSelectionEditPolicy) {
-      ((AsteriskTextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
+    if (pdEditPolicy instanceof SafiWorkshopTextSelectionEditPolicy) {
+      ((SafiWorkshopTextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
     }
   }
 
@@ -321,7 +321,7 @@ public class TimeItemLabelTextEditPart extends CompartmentEditPart implements IT
   protected DirectEditManager getManager() {
     if (manager == null) {
       setManager(new TextDirectEditManager(this,
-          TextDirectEditManager.getTextCellEditorClass(this), AsteriskEditPartFactory
+          TextDirectEditManager.getTextCellEditorClass(this), SafiWorkshopEditPartFactory
               .getTextCellEditorLocator(this)));
     }
     return manager;
@@ -410,8 +410,8 @@ public class TimeItemLabelTextEditPart extends CompartmentEditPart implements IT
     setLabelTextHelper(getFigure(), getLabelText());
     setLabelIconHelper(getFigure(), getLabelIcon());
     Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-    if (pdEditPolicy instanceof AsteriskTextSelectionEditPolicy) {
-      ((AsteriskTextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
+    if (pdEditPolicy instanceof SafiWorkshopTextSelectionEditPolicy) {
+      ((SafiWorkshopTextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
     }
   }
 

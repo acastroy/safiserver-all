@@ -30,7 +30,7 @@ import com.safi.workshop.edit.parts.ItemPanelEditPart;
 import com.safi.workshop.edit.parts.OutputEditPart;
 import com.safi.workshop.edit.parts.ToolstepEditPart;
 import com.safi.workshop.edit.policies.ActionstepCanonicalEditPolicy;
-import com.safi.workshop.part.AsteriskVisualIDRegistry;
+import com.safi.workshop.part.SafletVisualIDRegistry;
 import com.safi.workshop.timeBasedRouting.pak.ElementTypes;
 
 /**
@@ -72,7 +72,7 @@ public class TimeBasedRoutingEditPart extends ToolstepEditPart implements Action
                 .getViewAndElementDescriptor().getCreateElementRequestAdapter();
             IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
             if (type == ElementTypes.elementType_TimeItem_50000) {
-              EditPart compartmentEditPart = getChildBySemanticHint(AsteriskVisualIDRegistry
+              EditPart compartmentEditPart = getChildBySemanticHint(SafletVisualIDRegistry
                   .getType(TimeItemPanelEditPart.VISUAL_ID));
               
               Command c =  compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
@@ -315,7 +315,7 @@ public class TimeBasedRoutingEditPart extends ToolstepEditPart implements Action
    * @generated
    */
   public EditPart getPrimaryChildEditPart() {
-    return getChildBySemanticHint(AsteriskVisualIDRegistry.getType(TimeBasedRoutingNameEditPart.VISUAL_ID));
+    return getChildBySemanticHint(SafletVisualIDRegistry.getType(TimeBasedRoutingNameEditPart.VISUAL_ID));
   }
 
   private ItemPanelEditPart outputListCompartmentPart;
