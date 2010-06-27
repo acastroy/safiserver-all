@@ -4,7 +4,7 @@
       label="Workshop Asterisk Feature"
       version="1.5.3"
       provider-name="SAFI"
-      plugin="AsteriskSafletDesigner.diagram"
+      plugin="SafiWorkshopCore"
       os="linux,win32"
       ws="gtk,motif,win32"
       nl="en_US"
@@ -328,7 +328,7 @@ support@safisystems.com
       <import plugin="org.eclipse.equinox.concurrent" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ecf.filetransfer" version="3.0.0" match="greaterOrEqual"/>
       <import plugin="ActionPak" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="AsteriskSafletDesigner.diagram" version="1.1.2" match="greaterOrEqual"/>
+      <import plugin="SafiWorkshopCore" version="1.1.2" match="greaterOrEqual"/>
       <import plugin="CoreActionPak1Model" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="CoreActionPak1Model.edit" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="Saflets.edit" version="1.0.0" match="greaterOrEqual"/>
@@ -1651,7 +1651,7 @@ support@safisystems.com
          unpack="false"/>
 
    <plugin
-         id="AsteriskSafletDesigner.diagram"
+         id="SafiWorkshopCore"
          download-size="0"
          install-size="0"
          version="1.4.12"
