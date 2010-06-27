@@ -8,12 +8,12 @@ import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.actionstep.ParameterizedActionstep;
 import com.safi.workshop.actionpak1.ElementTypes;
 import com.safi.workshop.edit.parts.ToolstepEditPart;
-import com.safi.workshop.edit.policies.AsteriskBaseItemSemanticEditPolicy;
+import com.safi.workshop.edit.policies.SafiWorkshopBaseItemSemanticEditPolicy;
 
 /**
  * @generated
  */
-public class InputItemPanelItemSemanticEditPolicy extends AsteriskBaseItemSemanticEditPolicy {
+public class InputItemPanelItemSemanticEditPolicy extends SafiWorkshopBaseItemSemanticEditPolicy {
 
   /**
    * @generated

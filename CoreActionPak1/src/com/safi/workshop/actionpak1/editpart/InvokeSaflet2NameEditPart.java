@@ -47,10 +47,10 @@ import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
 
 import com.safi.workshop.actionpak1.ElementTypes;
-import com.safi.workshop.edit.parts.AsteriskEditPartFactory;
-import com.safi.workshop.edit.policies.AsteriskTextSelectionEditPolicy;
-import com.safi.workshop.providers.AsteriskElementTypes;
-import com.safi.workshop.providers.AsteriskParserProvider;
+import com.safi.workshop.edit.parts.SafiWorkshopEditPartFactory;
+import com.safi.workshop.edit.policies.SafiWorkshopTextSelectionEditPolicy;
+import com.safi.workshop.providers.SafiWorkshopElementTypes;
+import com.safi.workshop.providers.SafiWorkshopParserProvider;
 
 /**
  * @generated
@@ -197,7 +197,7 @@ public class InvokeSaflet2NameEditPart extends CompartmentEditPart implements IT
     if (parserElement == null) {
       return null;
     }
-    return AsteriskElementTypes.getImage(parserElement.eClass());
+    return SafiWorkshopElementTypes.getImage(parserElement.eClass());
   }
 
   /**
@@ -222,8 +222,8 @@ public class InvokeSaflet2NameEditPart extends CompartmentEditPart implements IT
   public void setLabelText(String text) {
     setLabelTextHelper(getFigure(), text);
     Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-    if (pdEditPolicy instanceof AsteriskTextSelectionEditPolicy) {
-      ((AsteriskTextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
+    if (pdEditPolicy instanceof SafiWorkshopTextSelectionEditPolicy) {
+      ((SafiWorkshopTextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
     }
   }
 
@@ -298,7 +298,7 @@ public class InvokeSaflet2NameEditPart extends CompartmentEditPart implements IT
   public IParser getParser() {
     if (parser == null) {
       String parserHint = ((View) getModel()).getType();
-      IAdaptable hintAdapter = new AsteriskParserProvider.HintAdapter(
+      IAdaptable hintAdapter = new SafiWorkshopParserProvider.HintAdapter(
           ElementTypes.elementType_InvokeSaflet2_10004, getParserElement(), parserHint);
       parser = ParserService.getInstance().getParser(hintAdapter);
     }
@@ -311,7 +311,7 @@ public class InvokeSaflet2NameEditPart extends CompartmentEditPart implements IT
   protected DirectEditManager getManager() {
     if (manager == null) {
       setManager(new TextDirectEditManager(this,
-          TextDirectEditManager.getTextCellEditorClass(this), AsteriskEditPartFactory
+          TextDirectEditManager.getTextCellEditorClass(this), SafiWorkshopEditPartFactory
               .getTextCellEditorLocator(this)));
     }
     return manager;
@@ -400,8 +400,8 @@ public class InvokeSaflet2NameEditPart extends CompartmentEditPart implements IT
     setLabelTextHelper(getFigure(), getLabelText());
     setLabelIconHelper(getFigure(), getLabelIcon());
     Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-    if (pdEditPolicy instanceof AsteriskTextSelectionEditPolicy) {
-      ((AsteriskTextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
+    if (pdEditPolicy instanceof SafiWorkshopTextSelectionEditPolicy) {
+      ((SafiWorkshopTextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
     }
   }
 

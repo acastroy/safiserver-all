@@ -46,10 +46,10 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
 
-import com.safi.workshop.edit.parts.AsteriskEditPartFactory;
-import com.safi.workshop.edit.policies.AsteriskTextSelectionEditPolicy;
-import com.safi.workshop.providers.AsteriskElementTypes;
-import com.safi.workshop.providers.AsteriskParserProvider;
+import com.safi.workshop.edit.parts.SafiWorkshopEditPartFactory;
+import com.safi.workshop.edit.policies.SafiWorkshopTextSelectionEditPolicy;
+import com.safi.workshop.providers.SafiWorkshopElementTypes;
+import com.safi.workshop.providers.SafiWorkshopParserProvider;
 
 /**
  * @generated
@@ -197,7 +197,7 @@ public class ActionstepTestNameEditPart extends CompartmentEditPart implements I
     if (parserElement == null) {
       return null;
     }
-    return AsteriskElementTypes.getImage(parserElement.eClass());
+    return SafiWorkshopElementTypes.getImage(parserElement.eClass());
   }
 
   //  public static Image getImage(String path) {
@@ -234,8 +234,8 @@ public class ActionstepTestNameEditPart extends CompartmentEditPart implements I
   public void setLabelText(String text) {
     setLabelTextHelper(getFigure(), text);
     Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-    if (pdEditPolicy instanceof AsteriskTextSelectionEditPolicy) {
-      ((AsteriskTextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
+    if (pdEditPolicy instanceof SafiWorkshopTextSelectionEditPolicy) {
+      ((SafiWorkshopTextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
     }
   }
 
@@ -310,7 +310,7 @@ public class ActionstepTestNameEditPart extends CompartmentEditPart implements I
   public IParser getParser() {
     if (parser == null) {
       String parserHint = ((View) getModel()).getType();
-      IAdaptable hintAdapter = new AsteriskParserProvider.HintAdapter(
+      IAdaptable hintAdapter = new SafiWorkshopParserProvider.HintAdapter(
           ElementTypes.elementType_ActionstepTest_10000, getParserElement(), parserHint);
       parser = ParserService.getInstance().getParser(hintAdapter);
     }
@@ -323,7 +323,7 @@ public class ActionstepTestNameEditPart extends CompartmentEditPart implements I
   protected DirectEditManager getManager() {
     if (manager == null) {
       setManager(new TextDirectEditManager(this,
-          TextDirectEditManager.getTextCellEditorClass(this), AsteriskEditPartFactory
+          TextDirectEditManager.getTextCellEditorClass(this), SafiWorkshopEditPartFactory
               .getTextCellEditorLocator(this)));
     }
     return manager;
@@ -412,8 +412,8 @@ public class ActionstepTestNameEditPart extends CompartmentEditPart implements I
     setLabelTextHelper(getFigure(), getLabelText());
     setLabelIconHelper(getFigure(), getLabelIcon());
     Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-    if (pdEditPolicy instanceof AsteriskTextSelectionEditPolicy) {
-      ((AsteriskTextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
+    if (pdEditPolicy instanceof SafiWorkshopTextSelectionEditPolicy) {
+      ((SafiWorkshopTextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
     }
   }
 

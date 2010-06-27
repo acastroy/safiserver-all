@@ -69,9 +69,9 @@ import com.safi.workshop.edit.parts.ItemPanelEditPart;
 import com.safi.workshop.edit.parts.OutputEditPart;
 import com.safi.workshop.edit.policies.ActionstepCanonicalEditPolicy;
 import com.safi.workshop.model.actionpak1.InvokeSaflet2;
-import com.safi.workshop.part.AsteriskDiagramEditor;
-import com.safi.workshop.part.AsteriskDiagramEditorPlugin;
-import com.safi.workshop.part.AsteriskVisualIDRegistry;
+import com.safi.workshop.part.SafletDiagramEditor;
+import com.safi.workshop.part.SafiWorkshopCorePlugin;
+import com.safi.workshop.part.SafletVisualIDRegistry;
 import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.part.ValidateAction;
 import com.safi.workshop.util.SafletPersistenceManager;
@@ -120,11 +120,11 @@ public class InvokeSaflet2EditPart extends com.safi.workshop.edit.parts.Toolstep
               DynamicValue val = is.getTargetSafletPath();
               if (val == null || val.getType() == DynamicValueType.CUSTOM)
                 return UnexecutableCommand.INSTANCE;
-              EditPart compartmentEditPart = getChildBySemanticHint(AsteriskVisualIDRegistry
+              EditPart compartmentEditPart = getChildBySemanticHint(SafletVisualIDRegistry
                   .getType(InputItemPanelEditPart.VISUAL_ID));
               return compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
             } else if (type == ElementTypes.elementType_OutputItem_50002) {
-              EditPart compartmentEditPart = getChildBySemanticHint(AsteriskVisualIDRegistry
+              EditPart compartmentEditPart = getChildBySemanticHint(SafletVisualIDRegistry
                   .getType(OutputItemPanelEditPart.VISUAL_ID));
               return compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
             }
@@ -294,7 +294,7 @@ public class InvokeSaflet2EditPart extends com.safi.workshop.edit.parts.Toolstep
       String absolutePath = ifile.getWorkspace().getRoot().getLocation().toString()
           + ifile.getFullPath();
       String saname = SafletPersistenceManager.getInstance().getSafletName(ifile);
-      AsteriskDiagramEditor currentEditor = SafiWorkshopEditorUtil.openDebugEditor(saname,
+      SafletDiagramEditor currentEditor = SafiWorkshopEditorUtil.openDebugEditor(saname,
           "saflet", absolutePath, false);
       HandlerEditPart handlerEditPart = (HandlerEditPart) currentEditor.getDiagramEditPart();
 
@@ -517,7 +517,7 @@ public class InvokeSaflet2EditPart extends com.safi.workshop.edit.parts.Toolstep
    * @generated
    */
   public EditPart getPrimaryChildEditPart() {
-    return getChildBySemanticHint(AsteriskVisualIDRegistry
+    return getChildBySemanticHint(SafletVisualIDRegistry
         .getType(InvokeSaflet2NameEditPart.VISUAL_ID));
   }
 
@@ -723,8 +723,8 @@ public class InvokeSaflet2EditPart extends com.safi.workshop.edit.parts.Toolstep
 
   @Override
   public IStatus validate() {
-    if (AsteriskDiagramEditorPlugin.getInstance().getWorkbench().getActiveWorkbenchWindow() == null
-        || AsteriskDiagramEditorPlugin.getInstance().getWorkbench().getActiveWorkbenchWindow()
+    if (SafiWorkshopCorePlugin.getInstance().getWorkbench().getActiveWorkbenchWindow() == null
+        || SafiWorkshopCorePlugin.getInstance().getWorkbench().getActiveWorkbenchWindow()
             .getShell() == null)
       return super.validate();
 
@@ -744,13 +744,13 @@ public class InvokeSaflet2EditPart extends com.safi.workshop.edit.parts.Toolstep
               "Couldn't find target saflet " + targetSafletPath + " Reason: "
                   + e.getLocalizedMessage());
           e.printStackTrace();
-          errorStatus = new Status(IStatus.ERROR, AsteriskDiagramEditorPlugin.ID,
+          errorStatus = new Status(IStatus.ERROR, SafiWorkshopCorePlugin.ID,
               "Couldn't find target saflet " + targetSafletPath + " Reason: "
                   + e.getLocalizedMessage(), e);
         }
         if (errorStatus == null) {
           String filePath = (String) VariableTranslator.translateValue(VariableType.TEXT, result);
-          errorStatus = new Status(IStatus.ERROR, AsteriskDiagramEditorPlugin.ID, "Target Saflet "
+          errorStatus = new Status(IStatus.ERROR, SafiWorkshopCorePlugin.ID, "Target Saflet "
               + filePath + " doesn't exist in the current workspace");
         }
       }
@@ -760,7 +760,7 @@ public class InvokeSaflet2EditPart extends com.safi.workshop.edit.parts.Toolstep
     Runnable runna = new Runnable() {
       @Override
       public void run() {
-        AsteriskDiagramEditor editor = getAsteriskDiagramEditor();
+        SafletDiagramEditor editor = getAsteriskDiagramEditor();
         // editor.setBypassTransactionRecorder(true);
         try {
           final AbstractCommand cmd = new AbstractCommand() {
@@ -820,7 +820,7 @@ public class InvokeSaflet2EditPart extends com.safi.workshop.edit.parts.Toolstep
     if (errorStatus != null)
       return errorStatus;
     // if (res[0] != null){
-    // return new Status(IStatus.ERROR, AsteriskDiagramEditorPlugin.ID,
+    // return new Status(IStatus.ERROR, SafiWorkshopCorePlugin.ID,
     // "Couldn't refresh params: "+res[0].getLocalizedMessage());
     // }
     return super.validate();

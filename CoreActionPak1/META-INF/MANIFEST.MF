@@ -4,7 +4,7 @@ Bundle-Name: CoreActionPak1 Plug-in
 Bundle-SymbolicName: CoreActionPak1;singleton:=true
 Bundle-Version: 1.2.6
 Bundle-Vendor: Safi Systems LLC
-Require-Bundle: AsteriskSafletDesigner.diagram;bundle-version="1.4.12",
+Require-Bundle: SafiWorkshopCore;bundle-version="1.4.12",
  org.eclipse.emf.ecore,
  org.eclipse.emf.ecore.xmi,
  org.eclipse.emf.edit.ui,

@@ -1,7 +1,7 @@
 package com.safi.workshop.actionpak1;
 
-import com.safi.workshop.edit.helpers.AsteriskBaseEditHelper;
+import com.safi.workshop.edit.helpers.SafiWorkshopBaseEditHelper;
 
-public class ActionstepEditHelper extends AsteriskBaseEditHelper {
+public class ActionstepEditHelper extends SafiWorkshopBaseEditHelper {
 
 }

@@ -22,7 +22,7 @@ import com.safi.asterisk.figures.DefaultToolstepFigure;
 import com.safi.workshop.edit.parts.ToolstepEditPart;
 import com.safi.workshop.edit.policies.ActionstepCanonicalEditPolicy;
 import com.safi.workshop.edit.policies.ActionstepItemSemanticEditPolicy;
-import com.safi.workshop.part.AsteriskVisualIDRegistry;
+import com.safi.workshop.part.SafletVisualIDRegistry;
 
 /**
  * @generated NOT
@@ -168,7 +168,7 @@ public class ActionstepTestEditPart extends ToolstepEditPart {
    * @generated
    */
   public EditPart getPrimaryChildEditPart() {
-    return getChildBySemanticHint(AsteriskVisualIDRegistry.getType(ActionstepTestNameEditPart.VISUAL_ID));
+    return getChildBySemanticHint(SafletVisualIDRegistry.getType(ActionstepTestNameEditPart.VISUAL_ID));
   }
 
 }

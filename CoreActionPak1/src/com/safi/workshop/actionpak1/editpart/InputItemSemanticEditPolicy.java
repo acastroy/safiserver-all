@@ -20,17 +20,17 @@ import com.safi.workshop.edit.commands.OutputTargetReorientCommand;
 import com.safi.workshop.edit.parts.CaseItemTargetToolstepEditPart;
 import com.safi.workshop.edit.parts.OutputEditPart;
 import com.safi.workshop.edit.parts.OutputTargetEditPart;
-import com.safi.workshop.edit.policies.AsteriskBaseItemSemanticEditPolicy;
-import com.safi.workshop.part.AsteriskVisualIDRegistry;
-import com.safi.workshop.providers.AsteriskElementTypes;
+import com.safi.workshop.edit.policies.SafiWorkshopBaseItemSemanticEditPolicy;
+import com.safi.workshop.part.SafletVisualIDRegistry;
+import com.safi.workshop.providers.SafiWorkshopElementTypes;
 
-public class InputItemSemanticEditPolicy extends AsteriskBaseItemSemanticEditPolicy {
+public class InputItemSemanticEditPolicy extends SafiWorkshopBaseItemSemanticEditPolicy {
 
   /**
    * @generated
    */
   protected Command getCreateCommand(CreateElementRequest req) {
-    if (AsteriskElementTypes.Output_2001 == req.getElementType()) {
+    if (SafiWorkshopElementTypes.Output_2001 == req.getElementType()) {
       if (req.getContainmentFeature() == null) {
         req.setContainmentFeature(ActionStepPackage.eINSTANCE.getActionStep_Outputs());
       }
@@ -65,7 +65,7 @@ public class InputItemSemanticEditPolicy extends AsteriskBaseItemSemanticEditPol
     }
     for (Iterator it = view.getChildren().iterator(); it.hasNext();) {
       Node node = (Node) it.next();
-      switch (AsteriskVisualIDRegistry.getVisualID(node)) {
+      switch (SafletVisualIDRegistry.getVisualID(node)) {
         case OutputEditPart.VISUAL_ID:
           cmd.add(getDestroyElementCommand(node));
           break;
@@ -73,7 +73,7 @@ public class InputItemSemanticEditPolicy extends AsteriskBaseItemSemanticEditPol
         case OutputItemPanelEditPart.VISUAL_ID:
           for (Iterator cit = node.getChildren().iterator(); cit.hasNext();) {
             Node cnode = (Node) cit.next();
-            switch (AsteriskVisualIDRegistry.getVisualID(cnode)) {
+            switch (SafletVisualIDRegistry.getVisualID(cnode)) {
               case InputItemEditPart.VISUAL_ID:
                 cmd.add(getDestroyElementCommand(cnode));
                 break;
@@ -97,14 +97,14 @@ public class InputItemSemanticEditPolicy extends AsteriskBaseItemSemanticEditPol
    * @generated
    */
   protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-//    if (AsteriskElementTypes.CaseItemTargetToolstep_3003 == req.getElementType()) {
+//    if (SafiWorkshopElementTypes.CaseItemTargetToolstep_3003 == req.getElementType()) {
 //      return getGEFWrapper(new CaseItemTargetToolstepCreateCommand(req, req.getSource(), req
 //          .getTarget()));
 //    }
-//    if (AsteriskElementTypes.OutputTarget_3001 == req.getElementType()) {
+//    if (SafiWorkshopElementTypes.OutputTarget_3001 == req.getElementType()) {
 //      return null;
 //    }
-//    if (AsteriskElementTypes.CaseItemTargetToolstep_3003 == req.getElementType()) {
+//    if (SafiWorkshopElementTypes.CaseItemTargetToolstep_3003 == req.getElementType()) {
 //      return null;
 //    }
     return null;
@@ -114,15 +114,15 @@ public class InputItemSemanticEditPolicy extends AsteriskBaseItemSemanticEditPol
    * @generated
    */
   protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-//    if (AsteriskElementTypes.CaseItemTargetToolstep_3003 == req.getElementType()) {
+//    if (SafiWorkshopElementTypes.CaseItemTargetToolstep_3003 == req.getElementType()) {
 //      return null;
 //    }
     return null;
     
-//    if (AsteriskElementTypes.OutputTarget_3001 == req.getElementType()) {
+//    if (SafiWorkshopElementTypes.OutputTarget_3001 == req.getElementType()) {
 //      return getGEFWrapper(new OutputTargetCreateCommand(req, req.getSource(), req.getTarget()));
 //    }
-//    if (AsteriskElementTypes.CaseItemTargetToolstep_3003 == req.getElementType()) {
+//    if (SafiWorkshopElementTypes.CaseItemTargetToolstep_3003 == req.getElementType()) {
 //      return getGEFWrapper(new CaseItemTargetToolstepCreateCommand(req, req.getSource(), req
 //          .getTarget()));
 //    }

@@ -12,7 +12,7 @@ import org.eclipse.gmf.runtime.notation.TitleStyle;
 import org.eclipse.gmf.runtime.notation.View;
 
 import com.safi.workshop.actionpak1.editpart.InputItemPanelEditPart;
-import com.safi.workshop.part.AsteriskVisualIDRegistry;
+import com.safi.workshop.part.SafletVisualIDRegistry;
 
 /**
  * @generated
@@ -35,7 +35,7 @@ public class InputItemPanelViewFactory extends BasicNodeViewFactory {
   protected void decorateView(View containerView, View view, IAdaptable semanticAdapter,
       String semanticHint, int index, boolean persisted) {
     if (semanticHint == null) {
-      semanticHint = AsteriskVisualIDRegistry.getType(InputItemPanelEditPart.VISUAL_ID);
+      semanticHint = SafletVisualIDRegistry.getType(InputItemPanelEditPart.VISUAL_ID);
       view.setType(semanticHint);
     }
     super.decorateView(containerView, view, semanticAdapter, semanticHint, index, persisted);

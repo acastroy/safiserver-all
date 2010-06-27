@@ -12,7 +12,7 @@ import com.safi.workshop.actionpak1.editpart.InputItemPanelEditPart;
 import com.safi.workshop.actionpak1.editpart.OutputItemPanelEditPart;
 import com.safi.workshop.edit.parts.OutputEditPart;
 import com.safi.workshop.edit.policies.ActionstepItemSemanticEditPolicy;
-import com.safi.workshop.part.AsteriskVisualIDRegistry;
+import com.safi.workshop.part.SafletVisualIDRegistry;
 
 public class ActionStepItemSemanticEditPolicy2 extends ActionstepItemSemanticEditPolicy {
 
@@ -33,7 +33,7 @@ public class ActionStepItemSemanticEditPolicy2 extends ActionstepItemSemanticEdi
     }
     for (Iterator it = view.getChildren().iterator(); it.hasNext();) {
         Node node = (Node) it.next();
-        switch (AsteriskVisualIDRegistry.getVisualID(node)) {
+        switch (SafletVisualIDRegistry.getVisualID(node)) {
           case OutputEditPart.VISUAL_ID:
             cmd.add(getDestroyElementCommand(node));
             break;
@@ -41,7 +41,7 @@ public class ActionStepItemSemanticEditPolicy2 extends ActionstepItemSemanticEdi
           case OutputItemPanelEditPart.VISUAL_ID:
             for (Iterator cit = node.getChildren().iterator(); cit.hasNext();) {
               Node cnode = (Node) cit.next();
-              switch (AsteriskVisualIDRegistry.getVisualID(cnode)) {
+              switch (SafletVisualIDRegistry.getVisualID(cnode)) {
                 case InputItemEditPart.VISUAL_ID:
                   cmd.add(getDestroyElementCommand(cnode));
                   break;

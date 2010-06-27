@@ -34,7 +34,7 @@ import com.safi.core.actionstep.OutputParameter;
 import com.safi.workshop.edit.parts.ActionstepSubItem;
 import com.safi.workshop.edit.parts.HandlerEditPart;
 import com.safi.workshop.edit.parts.ToolstepEditPart;
-import com.safi.workshop.part.AsteriskVisualIDRegistry;
+import com.safi.workshop.part.SafletVisualIDRegistry;
 import com.safi.workshop.part.ValidateAction;
 
 /**
@@ -106,7 +106,7 @@ public class OutputItemEditPart extends ShapeNodeEditPart implements ActionstepS
   protected void createDefaultEditPolicies() {
     super.createDefaultEditPolicies();
     // installEditPolicy(EditPolicyRoles.CONNECTION_HANDLES_ROLE,
-    // new AsteriskConnectionHandleEditPolicy());
+    // new SafiWorkshopConnectionHandleEditPolicy());
     installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, getPrimaryDragEditPolicy());
     installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InputItemSemanticEditPolicy());
     installEditPolicy(EditPolicyRoles.OPEN_ROLE, new EditOutputItemPolicy());
@@ -337,7 +337,7 @@ public class OutputItemEditPart extends ShapeNodeEditPart implements ActionstepS
    * @generated
    */
   public EditPart getPrimaryChildEditPart() {
-    return getChildBySemanticHint(AsteriskVisualIDRegistry
+    return getChildBySemanticHint(SafletVisualIDRegistry
         .getType(OutputItemLabelTextEditPart.VISUAL_ID));
   }
 

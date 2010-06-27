@@ -62,7 +62,7 @@
 <extension
       id="CorePak1"
       name="CorePak1"
-      point="AsteriskSafletDesigner.diagram.actionPak">
+      point="SafiWorkshopCore.actionPak">
    <actionStep
          createCommandFactory="com.safi.workshop.actionpak1.ActionstepTestCreateCommandFactory"
          editPartFactory="com.safi.workshop.actionpak1.ActionstepTestEditPartFactory"

@@ -18,7 +18,7 @@ import org.eclipse.gmf.runtime.notation.impl.NodeImpl;
 
 import com.safi.workshop.actionpak1.editpart.InputItemEditPart;
 import com.safi.workshop.actionpak1.editpart.InputItemLabelTextEditPart;
-import com.safi.workshop.part.AsteriskVisualIDRegistry;
+import com.safi.workshop.part.SafletVisualIDRegistry;
 
 /**
  * @generated
@@ -40,7 +40,7 @@ public class InputItemViewFactory extends AbstractShapeViewFactory {
   protected void decorateView(View containerView, View view, IAdaptable semanticAdapter,
       String semanticHint, int index, boolean persisted) {
     if (semanticHint == null) {
-      semanticHint = AsteriskVisualIDRegistry.getType(InputItemEditPart.VISUAL_ID);
+      semanticHint = SafletVisualIDRegistry.getType(InputItemEditPart.VISUAL_ID);
       view.setType(semanticHint);
     }
     super.decorateView(containerView, view, semanticAdapter, semanticHint, index, persisted);
@@ -50,7 +50,7 @@ public class InputItemViewFactory extends AbstractShapeViewFactory {
       eObjectAdapter = new EObjectAdapter(eObject);
     }
     getViewService().createNode(eObjectAdapter, view,
-        AsteriskVisualIDRegistry.getType(InputItemLabelTextEditPart.VISUAL_ID), ViewUtil.APPEND,
+        SafletVisualIDRegistry.getType(InputItemLabelTextEditPart.VISUAL_ID), ViewUtil.APPEND,
         true, getPreferencesHint());
 
     NodeImpl n = (NodeImpl) view;

@@ -16,8 +16,8 @@ import org.eclipse.gmf.runtime.notation.View;
 import com.safi.core.actionstep.ActionStepPackage;
 import com.safi.core.actionstep.InputItem;
 import com.safi.core.actionstep.ParameterizedActionstep;
-import com.safi.workshop.part.AsteriskNodeDescriptor;
-import com.safi.workshop.part.AsteriskVisualIDRegistry;
+import com.safi.workshop.part.SafletNodeDescriptor;
+import com.safi.workshop.part.SafletVisualIDRegistry;
 
 /**
  * @generated
@@ -36,7 +36,7 @@ public class InputItemPanelCanonicalEditPolicy extends CanonicalEditPolicy {
     View viewObject = (View) getHost().getModel();
     List result = new LinkedList();
     for (Iterator it = getInputItemPanelSemanticChildren(viewObject).iterator(); it.hasNext();) {
-      result.add(((AsteriskNodeDescriptor) it.next()).getModelElement());
+      result.add(((SafletNodeDescriptor) it.next()).getModelElement());
     }
     return result;
   }
@@ -45,11 +45,11 @@ public class InputItemPanelCanonicalEditPolicy extends CanonicalEditPolicy {
    * @generated
    */
   protected boolean isOrphaned(Collection semanticChildren, final View view) {
-    int visualID = AsteriskVisualIDRegistry.getVisualID(view);
+    int visualID = SafletVisualIDRegistry.getVisualID(view);
     switch (visualID) {
       case InputItemEditPart.VISUAL_ID:
         return !semanticChildren.contains(view.getElement())
-            || visualID != AsteriskVisualIDRegistry.getNodeVisualID((View) getHost().getModel(),
+            || visualID != SafletVisualIDRegistry.getNodeVisualID((View) getHost().getModel(),
                 view.getElement());
     }
     return false;
@@ -92,9 +92,9 @@ public class InputItemPanelCanonicalEditPolicy extends CanonicalEditPolicy {
     for (Iterator it = inputs.iterator(); it.hasNext();) {
       InputItem childElement = (InputItem) it
           .next();
-      int visualID = AsteriskVisualIDRegistry.getNodeVisualID(view, childElement);
+      int visualID = SafletVisualIDRegistry.getNodeVisualID(view, childElement);
       if (visualID == InputItemEditPart.VISUAL_ID) {
-        result.add(new AsteriskNodeDescriptor(childElement, visualID));
+        result.add(new SafletNodeDescriptor(childElement, visualID));
         continue;
       }
     }

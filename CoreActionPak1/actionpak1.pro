@@ -81,7 +81,7 @@
 -libraryjars 'D:\temp\safiStaging\obfuscated\eclipse\plugins\com.safi.server.asterisk_1.0.8.jar'
 -libraryjars 'D:\workspace\SafiServerCore\lib\safiServer_v20090712.jar'
 -libraryjars 'D:\workspace\SafiCommons\log4j-1.2.15.jar'
--libraryjars 'D:\temp\safiStaging\obfuscated\eclipse\plugins\AsteriskSafletDesigner.diagram_1.2.6.jar'
+-libraryjars 'D:\temp\safiStaging\obfuscated\eclipse\plugins\SafiWorkshopCore_1.2.6.jar'
 -libraryjars 'D:\ganymede2\eclipse\plugins\org.apache.commons.lang_2.3.0.v200803061910.jar'
 -libraryjars 'D:\ganymede2\eclipse\plugins\org.apache.commons.logging_1.0.4.v20080605-1930.jar'
 -libraryjars 'D:\workspace\SafiServerCore\lib\safiFastagi_v20090124.jar'
