@@ -50,7 +50,7 @@ public abstract class SafiCallImpl extends ThreadSensitiveImpl implements SafiCa
 	 * @generated
 	 * @ordered
 	 */
-	protected String uuid = UUID_EDEFAULT;
+//	protected String uuid = UUID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -217,6 +217,8 @@ public abstract class SafiCallImpl extends ThreadSensitiveImpl implements SafiCa
 		switch (featureID) {
 			case CallPackage.SAFI_CALL__UUID:
 				return UUID_EDEFAULT == null ? uuidHolder.get() != null : !UUID_EDEFAULT.equals(uuidHolder.get());
+			case CallPackage.SAFI_CALL__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
