@@ -7,6 +7,7 @@
 package com.safi.core.call.provider;
 
 
+import com.safi.core.CorePackage;
 import com.safi.core.call.CallPackage;
 import com.safi.core.call.SafiCall;
 
@@ -66,10 +67,56 @@ public class SafiCallItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addPlatformIDPropertyDescriptor(object);
+			addPlatformDependantPropertyDescriptor(object);
 			addUuidPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Platform ID feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPlatformIDPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PlatformDisposition_platformID_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PlatformDisposition_platformID_feature", "_UI_PlatformDisposition_type"),
+				 CorePackage.Literals.PLATFORM_DISPOSITION__PLATFORM_ID,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Platform Dependant feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPlatformDependantPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PlatformDisposition_platformDependant_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PlatformDisposition_platformDependant_feature", "_UI_PlatformDisposition_type"),
+				 CorePackage.Literals.PLATFORM_DISPOSITION__PLATFORM_DEPENDANT,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -142,6 +189,8 @@ public class SafiCallItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SafiCall.class)) {
+			case CallPackage.SAFI_CALL__PLATFORM_ID:
+			case CallPackage.SAFI_CALL__PLATFORM_DEPENDANT:
 			case CallPackage.SAFI_CALL__UUID:
 			case CallPackage.SAFI_CALL__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
