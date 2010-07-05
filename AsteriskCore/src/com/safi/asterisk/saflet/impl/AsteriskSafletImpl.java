@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EClass;
 import com.safi.asterisk.Call;
 import com.safi.asterisk.saflet.AsteriskSaflet;
 import com.safi.asterisk.saflet.SafletPackage;
+import com.safi.asterisk.util.AsteriskSafletConstants;
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.call.CallSource1;
 import com.safi.core.call.CallSource2;
@@ -108,4 +109,8 @@ public class AsteriskSafletImpl extends SafletImpl implements AsteriskSaflet {
     return 1;
   }
 
+  @Override
+  public String getPlatformID() {
+  	return AsteriskSafletConstants.PLATFORM_ID;
+  }
 } //AsteriskSafletImpl

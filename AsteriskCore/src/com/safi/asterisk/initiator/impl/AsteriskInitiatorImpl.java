@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import com.safi.asterisk.initiator.AsteriskInitiator;
 import com.safi.asterisk.initiator.InitiatorPackage;
+import com.safi.asterisk.util.AsteriskSafletConstants;
 import com.safi.core.initiator.impl.InitiatorImpl;
 
 /**
@@ -47,7 +48,7 @@ public class AsteriskInitiatorImpl extends InitiatorImpl implements AsteriskInit
 	 * @generated NOT
 	 */
 	@Override
-	public String getPlatformID() {
-		return "Asterisk";
-	}
+  public String getPlatformID() {
+  	return AsteriskSafletConstants.PLATFORM_ID;
+  }
 } //AsteriskInitiatorImpl

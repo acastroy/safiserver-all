@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import com.safi.asterisk.AsteriskPackage;
 import com.safi.asterisk.Call;
 import com.safi.asterisk.CallState;
+import com.safi.asterisk.util.AsteriskSafletConstants;
 import com.safi.core.call.impl.SafiCallImpl;
 
 /**
@@ -564,4 +565,8 @@ public class CallImpl extends SafiCallImpl implements Call {
 		return result.toString();
 	}
 
+  @Override
+  public String getPlatformID() {
+  	return AsteriskSafletConstants.PLATFORM_ID;
+  }
 } //CallImpl

@@ -69,6 +69,24 @@ public interface SafletPackage extends EPackage {
   int ASTERISK_SAFLET = 0;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASTERISK_SAFLET__PLATFORM_ID = com.safi.core.saflet.SafletPackage.SAFLET__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASTERISK_SAFLET__PLATFORM_DEPENDANT = com.safi.core.saflet.SafletPackage.SAFLET__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Initiator</b></em>' reference.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

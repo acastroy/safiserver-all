@@ -73,6 +73,24 @@ public interface AsteriskPackage extends EPackage {
   int CALL = 0;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALL__PLATFORM_ID = CallPackage.SAFI_CALL__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALL__PLATFORM_DEPENDANT = CallPackage.SAFI_CALL__PLATFORM_DEPENDANT;
+
+		/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
