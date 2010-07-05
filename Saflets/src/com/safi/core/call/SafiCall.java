@@ -6,6 +6,7 @@
  */
 package com.safi.core.call;
 
+import com.safi.core.PlatformDisposition;
 import com.safi.core.ThreadSensitive;
 
 /**
@@ -25,7 +26,7 @@ import com.safi.core.ThreadSensitive;
  * @model abstract="true"
  * @generated
  */
-public interface SafiCall extends ThreadSensitive {
+public interface SafiCall extends ThreadSensitive, PlatformDisposition {
 	/**
 	 * Returns the value of the '<em><b>Uuid</b></em>' attribute.
 	 * <!-- begin-user-doc -->

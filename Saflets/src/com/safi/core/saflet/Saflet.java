@@ -6,6 +6,7 @@
  */
 package com.safi.core.saflet;
 
+import com.safi.core.PlatformDisposition;
 import com.safi.core.ThreadSensitive;
 import java.util.logging.Level;
 import org.eclipse.emf.common.util.EList;
@@ -43,7 +44,7 @@ import com.safi.core.scripting.ScriptScope;
  * @model abstract="true"
  * @generated
  */
-public interface Saflet extends ThreadSensitive {
+public interface Saflet extends ThreadSensitive, PlatformDisposition {
   
 public final static int DEFAULT_MANAGER_ACTION_TIMEOUT = 120000;
 

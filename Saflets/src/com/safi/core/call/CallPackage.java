@@ -72,13 +72,31 @@ public interface CallPackage extends EPackage {
 	int SAFI_CALL = 0;
 
 	/**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SAFI_CALL__PLATFORM_ID = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SAFI_CALL__PLATFORM_DEPENDANT = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SAFI_CALL__UUID = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 0;
+	int SAFI_CALL__UUID = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -87,7 +105,7 @@ public interface CallPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SAFI_CALL__NAME = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 1;
+	int SAFI_CALL__NAME = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Safi Call</em>' class.
@@ -96,7 +114,7 @@ public interface CallPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SAFI_CALL_FEATURE_COUNT = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 2;
+	int SAFI_CALL_FEATURE_COUNT = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link com.safi.core.call.CallSource1 <em>Source1</em>}' class.

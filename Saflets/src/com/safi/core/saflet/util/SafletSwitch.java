@@ -6,6 +6,7 @@
  */
 package com.safi.core.saflet.util;
 
+import com.safi.core.PlatformDisposition;
 import com.safi.core.ThreadSensitive;
 import com.safi.core.saflet.*;
 
@@ -92,6 +93,7 @@ public class SafletSwitch<T> {
 				Saflet saflet = (Saflet)theEObject;
 				T result = caseSaflet(saflet);
 				if (result == null) result = caseThreadSensitive(saflet);
+				if (result == null) result = casePlatformDisposition(saflet);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -170,6 +172,21 @@ public class SafletSwitch<T> {
 	 * @generated
 	 */
 	public T caseThreadSensitive(ThreadSensitive object) {
+		return null;
+	}
+
+		/**
+	 * Returns the result of interpreting the object as an instance of '<em>Platform Disposition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Platform Disposition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePlatformDisposition(PlatformDisposition object) {
 		return null;
 	}
 

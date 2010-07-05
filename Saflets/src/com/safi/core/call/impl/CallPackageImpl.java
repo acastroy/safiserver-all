@@ -342,6 +342,7 @@ public class CallPackageImpl extends EPackageImpl implements CallPackage {
 
 		// Add supertypes to classes
 		safiCallEClass.getESuperTypes().add(theCorePackage.getThreadSensitive());
+		safiCallEClass.getESuperTypes().add(theCorePackage.getPlatformDisposition());
 		callSource2EClass.getESuperTypes().add(this.getCallSource1());
 		callConsumer2EClass.getESuperTypes().add(this.getCallConsumer1());
 

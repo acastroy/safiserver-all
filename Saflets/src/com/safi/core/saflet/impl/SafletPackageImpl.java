@@ -456,6 +456,7 @@ public class SafletPackageImpl extends EPackageImpl implements SafletPackage {
 
 		// Add supertypes to classes
 		safletEClass.getESuperTypes().add(theCorePackage.getThreadSensitive());
+		safletEClass.getESuperTypes().add(theCorePackage.getPlatformDisposition());
 		safletContextEClass.getESuperTypes().add(theCorePackage.getThreadSensitive());
 		safletEnvironmentEClass.getESuperTypes().add(theCorePackage.getThreadSensitive());
 

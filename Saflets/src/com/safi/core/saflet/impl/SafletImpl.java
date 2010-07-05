@@ -6,6 +6,8 @@
  */
 package com.safi.core.saflet.impl;
 
+import com.safi.core.CorePackage;
+import com.safi.core.PlatformDisposition;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Collections;
@@ -51,6 +53,8 @@ import com.safi.logging.SafiFileHandler;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.safi.core.saflet.impl.SafletImpl#getPlatformID <em>Platform ID</em>}</li>
+ *   <li>{@link com.safi.core.saflet.impl.SafletImpl#isPlatformDependant <em>Platform Dependant</em>}</li>
  *   <li>{@link com.safi.core.saflet.impl.SafletImpl#getInitiator <em>Initiator</em>}</li>
  *   <li>{@link com.safi.core.saflet.impl.SafletImpl#isActive <em>Active</em>}</li>
  *   <li>{@link com.safi.core.saflet.impl.SafletImpl#getName <em>Name</em>}</li>
@@ -69,6 +73,58 @@ import com.safi.logging.SafiFileHandler;
  */
 public abstract class SafletImpl extends ThreadSensitiveImpl implements Saflet {
 
+	/**
+	 * The default value of the '{@link #getPlatformID() <em>Platform ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlatformID()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PLATFORM_ID_EDEFAULT = "";
+	/**
+	 * The cached value of the '{@link #getPlatformID() <em>Platform ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlatformID()
+	 * @generated
+	 * @ordered
+	 */
+	protected String platformID = PLATFORM_ID_EDEFAULT;
+	/**
+	 * This is true if the Platform ID attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean platformIDESet;
+	/**
+	 * The default value of the '{@link #isPlatformDependant() <em>Platform Dependant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isPlatformDependant()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean PLATFORM_DEPENDANT_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isPlatformDependant() <em>Platform Dependant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isPlatformDependant()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean platformDependant = PLATFORM_DEPENDANT_EDEFAULT;
+	/**
+	 * This is true if the Platform Dependant attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean platformDependantESet;
 	private final static int DEFAULT_MAX_ITERATIONS = 10000;
 	private final static int MAX_ITERATIONS = DEFAULT_MAX_ITERATIONS;
 
@@ -397,6 +453,42 @@ public abstract class SafletImpl extends ThreadSensitiveImpl implements Saflet {
 	@Override
 	protected EClass eStaticClass() {
 		return SafletPackage.Literals.SAFLET;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPlatformID() {
+		return platformID;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetPlatformID() {
+		return platformIDESet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isPlatformDependant() {
+		return platformDependant;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetPlatformDependant() {
+		return platformDependantESet;
 	}
 
 	/**
@@ -844,6 +936,10 @@ public abstract class SafletImpl extends ThreadSensitiveImpl implements Saflet {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case SafletPackage.SAFLET__PLATFORM_ID:
+				return getPlatformID();
+			case SafletPackage.SAFLET__PLATFORM_DEPENDANT:
+				return isPlatformDependant();
 			case SafletPackage.SAFLET__INITIATOR:
 				return getInitiator();
 			case SafletPackage.SAFLET__ACTIVE:
@@ -970,6 +1066,10 @@ public abstract class SafletImpl extends ThreadSensitiveImpl implements Saflet {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case SafletPackage.SAFLET__PLATFORM_ID:
+				return isSetPlatformID();
+			case SafletPackage.SAFLET__PLATFORM_DEPENDANT:
+				return isSetPlatformDependant();
 			case SafletPackage.SAFLET__INITIATOR:
 				return initiator != null;
 			case SafletPackage.SAFLET__ACTIVE:
@@ -997,6 +1097,40 @@ public abstract class SafletImpl extends ThreadSensitiveImpl implements Saflet {
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == PlatformDisposition.class) {
+			switch (derivedFeatureID) {
+				case SafletPackage.SAFLET__PLATFORM_ID: return CorePackage.PLATFORM_DISPOSITION__PLATFORM_ID;
+				case SafletPackage.SAFLET__PLATFORM_DEPENDANT: return CorePackage.PLATFORM_DISPOSITION__PLATFORM_DEPENDANT;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == PlatformDisposition.class) {
+			switch (baseFeatureID) {
+				case CorePackage.PLATFORM_DISPOSITION__PLATFORM_ID: return SafletPackage.SAFLET__PLATFORM_ID;
+				case CorePackage.PLATFORM_DISPOSITION__PLATFORM_DEPENDANT: return SafletPackage.SAFLET__PLATFORM_DEPENDANT;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1005,7 +1139,11 @@ public abstract class SafletImpl extends ThreadSensitiveImpl implements Saflet {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (active: ");
+		result.append(" (platformID: ");
+		if (platformIDESet) result.append(platformID); else result.append("<unset>");
+		result.append(", platformDependant: ");
+		if (platformDependantESet) result.append(platformDependant); else result.append("<unset>");
+		result.append(", active: ");
 		result.append(active);
 		result.append(", name: ");
 		result.append(name);

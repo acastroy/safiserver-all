@@ -866,7 +866,7 @@
     <eClassifiers xsi:type="ecore:EDataType" name="Script" instanceClassName="org.mozilla.javascript.Script"/>
   </eSubpackages>
   <eSubpackages name="saflet" nsURI="http:///com/safi/core.ecore#saflet" nsPrefix="com.safi.core.saflet">
-    <eClassifiers xsi:type="ecore:EClass" name="Saflet" abstract="true" eSuperTypes="#//ThreadSensitive">
+    <eClassifiers xsi:type="ecore:EClass" name="Saflet" abstract="true" eSuperTypes="#//ThreadSensitive #//PlatformDisposition">
       <eOperations name="getActionStep" eType="#//actionstep/ActionStep">
         <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
@@ -997,7 +997,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="InitiatorInfo" abstract="true" interface="true"/>
   </eSubpackages>
   <eSubpackages name="call" nsURI="http:///com/safi/core.ecore#call" nsPrefix="com.safi.core.call">
-    <eClassifiers xsi:type="ecore:EClass" name="SafiCall" abstract="true" eSuperTypes="#//ThreadSensitive">
+    <eClassifiers xsi:type="ecore:EClass" name="SafiCall" abstract="true" eSuperTypes="#//ThreadSensitive #//PlatformDisposition">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>

@@ -6,6 +6,7 @@
  */
 package com.safi.core.call.util;
 
+import com.safi.core.PlatformDisposition;
 import com.safi.core.ThreadSensitive;
 
 import com.safi.core.call.*;
@@ -96,6 +97,10 @@ public class CallAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseThreadSensitive(ThreadSensitive object) {
 				return createThreadSensitiveAdapter();
+			}
+			@Override
+			public Adapter casePlatformDisposition(PlatformDisposition object) {
+				return createPlatformDispositionAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -198,6 +203,20 @@ public class CallAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createThreadSensitiveAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.safi.core.PlatformDisposition <em>Platform Disposition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.safi.core.PlatformDisposition
+	 * @generated
+	 */
+	public Adapter createPlatformDispositionAdapter() {
 		return null;
 	}
 

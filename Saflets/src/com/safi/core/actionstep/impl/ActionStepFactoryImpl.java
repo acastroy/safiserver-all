@@ -6,6 +6,7 @@
  */
 package com.safi.core.actionstep.impl;
 
+import com.safi.core.actionstep.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicEMap;

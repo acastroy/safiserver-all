@@ -72,13 +72,31 @@ public interface SafletPackage extends EPackage {
   int SAFLET = 0;
 
   /**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SAFLET__PLATFORM_ID = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 0;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SAFLET__PLATFORM_DEPENDANT = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 1;
+
+		/**
 	 * The feature id for the '<em><b>Initiator</b></em>' reference.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int SAFLET__INITIATOR = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 0;
+  int SAFLET__INITIATOR = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 2;
 
   /**
 	 * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -87,7 +105,7 @@ public interface SafletPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int SAFLET__ACTIVE = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 1;
+  int SAFLET__ACTIVE = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 3;
 
   /**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -96,7 +114,7 @@ public interface SafletPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int SAFLET__NAME = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 2;
+  int SAFLET__NAME = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 4;
 
   /**
 	 * The feature id for the '<em><b>Saflet Context</b></em>' containment reference.
@@ -105,7 +123,7 @@ public interface SafletPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int SAFLET__SAFLET_CONTEXT = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 3;
+  int SAFLET__SAFLET_CONTEXT = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 5;
 
   /**
 	 * The feature id for the '<em><b>Saflet Scope</b></em>' reference.
@@ -114,7 +132,7 @@ public interface SafletPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int SAFLET__SAFLET_SCOPE = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 4;
+  int SAFLET__SAFLET_SCOPE = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 6;
 
   /**
 	 * The feature id for the '<em><b>Actionsteps</b></em>' containment reference list.
@@ -123,7 +141,7 @@ public interface SafletPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int SAFLET__ACTIONSTEPS = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 5;
+  int SAFLET__ACTIONSTEPS = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 7;
 
   /**
 	 * The feature id for the '<em><b>Scripting Environment</b></em>' reference.
@@ -132,7 +150,7 @@ public interface SafletPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int SAFLET__SCRIPTING_ENVIRONMENT = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 6;
+  int SAFLET__SCRIPTING_ENVIRONMENT = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 8;
 
   /**
 	 * The feature id for the '<em><b>Saflet Environment</b></em>' reference.
@@ -141,7 +159,7 @@ public interface SafletPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int SAFLET__SAFLET_ENVIRONMENT = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 7;
+  int SAFLET__SAFLET_ENVIRONMENT = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 9;
 
   /**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -150,7 +168,7 @@ public interface SafletPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int SAFLET__VERSION = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 8;
+  int SAFLET__VERSION = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 10;
 
   /**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -159,7 +177,7 @@ public interface SafletPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int SAFLET__DESCRIPTION = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 9;
+  int SAFLET__DESCRIPTION = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 11;
 
   /**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -168,7 +186,7 @@ public interface SafletPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int SAFLET__ID = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 10;
+  int SAFLET__ID = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 12;
 
   /**
 	 * The number of structural features of the '<em>Saflet</em>' class.
@@ -177,7 +195,7 @@ public interface SafletPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-  int SAFLET_FEATURE_COUNT = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 11;
+  int SAFLET_FEATURE_COUNT = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 13;
 
   /**
 	 * The meta object id for the '{@link com.safi.core.saflet.impl.SafletContextImpl <em>Context</em>}' class.
