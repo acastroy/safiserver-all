@@ -331,6 +331,10 @@ public abstract class SafiCallImpl extends ThreadSensitiveImpl implements SafiCa
 				return UUID_EDEFAULT == null ? uuidHolder.get() != null : !UUID_EDEFAULT.equals(uuidHolder.get());
 			case CallPackage.SAFI_CALL__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case CallPackage.SAFI_CALL__PLATFORM_ID:
+				return PLATFORM_ID_EDEFAULT == null ? platformID != null : !PLATFORM_ID_EDEFAULT.equals(platformID);
+			case CallPackage.SAFI_CALL__PLATFORM_DEPENDANT:
+				return isSetPlatformDependant();
 		}
 		return super.eIsSet(featureID);
 	}
