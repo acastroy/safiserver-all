@@ -138,7 +138,7 @@ public class CallImpl extends SafiCallImpl implements Call {
 	 * @generated
 	 * @ordered
 	 */
-	protected String uniqueId = UNIQUE_ID_EDEFAULT;
+//	protected String uniqueId = UNIQUE_ID_EDEFAULT;
 
 		/**
 	 * The cached value of the '{@link #getUniqueId() <em>Unique Id</em>}' attribute.
@@ -175,7 +175,7 @@ public class CallImpl extends SafiCallImpl implements Call {
 	 * @generated
 	 * @ordered
 	 */
-	protected String channelName = CHANNEL_NAME_EDEFAULT;
+//	protected String channelName = CHANNEL_NAME_EDEFAULT;
 
 		/**
 	 * The cached value of the '{@link #getChannelName() <em>Channel Name</em>}' attribute.
@@ -211,7 +211,7 @@ public class CallImpl extends SafiCallImpl implements Call {
 	 * @generated
 	 * @ordered
 	 */
-	protected CallState callState = CALL_STATE_EDEFAULT;
+//	protected CallState callState = CALL_STATE_EDEFAULT;
 
 		/**
 	 * The cached value of the '{@link #getCallState() <em>Call State</em>}' attribute.
@@ -375,13 +375,13 @@ public class CallImpl extends SafiCallImpl implements Call {
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
   public void setChannelName(String newChannelName) {
-		String oldChannelName = channelName;
-		channelName = newChannelName;
+		String oldChannelName = channelNameHolder.get();
+		channelNameHolder.set(newChannelName);
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AsteriskPackage.CALL__CHANNEL_NAME, oldChannelName, channelName));
+			eNotify(new ENotificationImpl(this, Notification.SET, AsteriskPackage.CALL__CHANNEL_NAME, oldChannelName, channelNameHolder.get()));
 	}
 
   /**

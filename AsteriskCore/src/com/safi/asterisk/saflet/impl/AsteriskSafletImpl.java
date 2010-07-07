@@ -35,10 +35,12 @@ public class AsteriskSafletImpl extends SafletImpl implements AsteriskSaflet {
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
   protected AsteriskSafletImpl() {
 		super();
+		platformID = AsteriskSafletConstants.PLATFORM_ID;
+		platformIDESet = true;
 	}
 
   /**
