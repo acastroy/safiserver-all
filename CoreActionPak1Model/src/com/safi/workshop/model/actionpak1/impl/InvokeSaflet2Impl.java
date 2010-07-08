@@ -25,6 +25,7 @@ import com.safi.core.actionstep.impl.ParameterizedActionstepImpl;
 import com.safi.core.call.CallSource1;
 import com.safi.core.call.SafiCall;
 import com.safi.core.initiator.Initiator;
+import com.safi.core.initiator.InitiatorInfo;
 import com.safi.core.saflet.Saflet;
 import com.safi.core.saflet.SafletConstants;
 import com.safi.core.saflet.SafletContext;
@@ -114,7 +115,14 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 				// initialize default variables for target
 				targetSaflet.initializeScriptableObjects();
 
+				Initiator targetInitiator = targetSaflet.getInitiator();
 				SafletContext targetContext = targetSaflet.getSafletContext();
+				Object infoObject = context.getVariableRawValue(SafletConstants.VAR_KEY_INITIATORINFO);
+				
+				if (infoObject instanceof InitiatorInfo){
+					InitiatorInfo info = (InitiatorInfo) infoObject;
+					targetInitiator.initialize(info); //initialize with defaults
+				}
 				// targetContext.setDebugLock(context.getDebugLock());
 				// transfer variables from this context to the target
 
@@ -126,11 +134,20 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 				}
 
 				targetContext.setSessionVariables(context.getSessionVariables());
+				
+				
+//				Object debugLock = context.getDebugLock();
+//				if (debugLock == null)
+//					debugLock = context.restoreDebugLock(); //may have been a breakpoint
+//				
+//				if (debugLock != null)
+//					targetContext.setDebugLock(debugLock);
+				
 				// for (Variable v : context.getLocalVariables()){
 				// targetContext.setVariableRawValue(v.getName(),
 				// context.getVariableRawValue(v.getName()));
 				// }
-				Initiator targetInitiator = targetSaflet.getInitiator();
+				
 
 				if (targetInitiator instanceof ParameterizedInitiator) {
 					ParameterizedInitiator init = (ParameterizedInitiator) targetInitiator;
