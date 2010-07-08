@@ -69,7 +69,7 @@ public abstract class InitiatorImpl extends ActionStepImpl implements Initiator 
       return;
     saflet.initializeScriptableObjects();
     SafletContext context = saflet.getSafletContext();
-
+    context.setVariableRawValue(SafletConstants.VAR_KEY_INITIATORINFO, ictx);
 //    saflet.getScriptingEnvironment().getSharedScriptScope().exposeObjectToScript(
 //        SafletConstants.VAR_KEY_HANDLER_CONTEXT, context);
 //

@@ -55,10 +55,16 @@ public abstract class SafletContextImpl extends ThreadSensitiveImpl implements S
 	 * The cached value of the '{@link #getExceptions() <em>Exceptions</em>}' attribute list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getExceptions()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-  protected EList<Exception> exceptions;
+//  protected EList<Exception> exceptions;
+  
+  protected ThreadLocal<EList<Exception>> exceptions = new ThreadLocal<EList<Exception>>(){
+  	protected EList<Exception> initialValue() {
+  		return new BasicEList<Exception>();
+  	}
+  };
 
   /**
 	 * The cached value of the '{@link #getParentSaflet() <em>Parent Saflet</em>}' reference.
@@ -82,10 +88,10 @@ public abstract class SafletContextImpl extends ThreadSensitiveImpl implements S
 	 * The cached value of the '{@link #getSessionVariables() <em>Session Variables</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getSessionVariables()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-  protected Map<String, Object> sessionVariables;
+  private ThreadLocal<Map<String, Object>> sessionVariables = new ThreadLocal<Map<String,Object>>();
   
   protected ThreadLocal<List<Variable>> runtimeVariables = new ThreadLocal<List<Variable>>(){
   	protected List<Variable> initialValue() {
@@ -93,8 +99,8 @@ public abstract class SafletContextImpl extends ThreadSensitiveImpl implements S
   	}
   };
 
-  protected Object debugLock;
-  private Object suspendedLock;
+  private ThreadLocal<Object> debugLock = new ThreadLocal<Object>();
+  private ThreadLocal<Object> suspendedLock = new ThreadLocal<Object>();
 
   /**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -111,6 +117,9 @@ public abstract class SafletContextImpl extends ThreadSensitiveImpl implements S
 	 */
 	public void cleanup() {
 		runtimeVariables.remove();
+		sessionVariables.remove();
+		debugLock.remove();
+		suspendedLock.remove();
 		super.cleanup();
 	}
   /**
@@ -124,13 +133,13 @@ public abstract class SafletContextImpl extends ThreadSensitiveImpl implements S
 
   /**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
   public EList<Exception> getExceptions() {
-		if (exceptions == null) {
-			exceptions = new EDataTypeUniqueEList<Exception>(Exception.class, this, SafletPackage.SAFLET_CONTEXT__EXCEPTIONS);
-		}
-		return exceptions;
+//		if (exceptions == null) {
+//			exceptions = new EDataTypeUniqueEList<Exception>(Exception.class, this, SafletPackage.SAFLET_CONTEXT__EXCEPTIONS);
+//		}
+		return exceptions.get();
 	}
 
   /**
@@ -181,10 +190,10 @@ public abstract class SafletContextImpl extends ThreadSensitiveImpl implements S
 
   /**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
   public Map<String, Object> getSessionVariables() {
-		return sessionVariables;
+		return sessionVariables.get();
 	}
 
   /**
@@ -192,8 +201,8 @@ public abstract class SafletContextImpl extends ThreadSensitiveImpl implements S
 	 * @generated
 	 */
   public void setSessionVariables(Map<String, Object> newSessionVariables) {
-		Map<String, Object> oldSessionVariables = sessionVariables;
-		sessionVariables = newSessionVariables;
+		Map<String, Object> oldSessionVariables = sessionVariables.get();
+		sessionVariables.set(newSessionVariables);
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SafletPackage.SAFLET_CONTEXT__SESSION_VARIABLES, oldSessionVariables, sessionVariables));
 	}
@@ -382,9 +391,8 @@ public abstract class SafletContextImpl extends ThreadSensitiveImpl implements S
    * @generated NOT
    */
   public void addException(Exception e) {
-    if (exceptions == null)
-      exceptions = new BasicEList<Exception>();
-    exceptions.add(e);
+    
+    exceptions.get().add(e);
   }
 
   /**
@@ -430,39 +438,37 @@ public abstract class SafletContextImpl extends ThreadSensitiveImpl implements S
 		/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void preHandoffPrep(SafiCall call) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		
 	}
 
 		public Object getDebugLock() {
-    return debugLock;
+    return debugLock.get();
   }
 
   public void setDebugLock(Object debugLock) {
-    this.debugLock = debugLock;
+    this.debugLock.set(debugLock);
   }
 
   @Override
   public void suspendDebugLock() {
-    this.suspendedLock = debugLock;
-    this.debugLock = null;
+    this.suspendedLock.set(debugLock.get());
+    this.debugLock.remove();
 
   }
 
   @Override
   public Object restoreDebugLock() {
-    debugLock = suspendedLock;
-    suspendedLock = null;
-    return debugLock;
+    debugLock.set(suspendedLock.get());
+    suspendedLock.remove();
+    return debugLock.get();
   }
 
   @Override
   public boolean isDebugging() {
-    return debugLock != null  || suspendedLock != null;
+    return debugLock.get() != null  || suspendedLock.get() != null;
   }
   /**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -542,13 +548,13 @@ public abstract class SafletContextImpl extends ThreadSensitiveImpl implements S
 
   /**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
   @Override
   public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case SafletPackage.SAFLET_CONTEXT__EXCEPTIONS:
-				return exceptions != null && !exceptions.isEmpty();
+				return exceptions != null && !exceptions.get().isEmpty();
 			case SafletPackage.SAFLET_CONTEXT__PARENT_SAFLET:
 				return parentSaflet != null;
 			case SafletPackage.SAFLET_CONTEXT__VARIABLES:
