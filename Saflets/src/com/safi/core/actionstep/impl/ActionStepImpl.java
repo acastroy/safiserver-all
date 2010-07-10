@@ -191,14 +191,11 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
    * begin-user-doc --> <!-- end-user-doc -->
    * 
    * @see #isActive()
-   * @generated NOT
+   * @generated  
    * @ordered
    */
 //  protected boolean active = ACTIVE_EDEFAULT;
 
-  protected ThreadLocal<Boolean> activeHolder = new ThreadLocal<Boolean>(){
-  	protected Boolean initialValue() {return ACTIVE_EDEFAULT; }
-  };
   /**
 	 * The cached value of the '{@link #getOutputs() <em>Outputs</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -247,11 +244,9 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
   protected Output errorOutput;
   public final static String SCRIPT_TEXT_REPLACE = "((^\\\")|(\\\"(\\s*)(\\;)?$))";
   protected transient volatile boolean breakpoint;
-  protected ThreadLocal<ActionStep> nextHolder = new ThreadLocal<ActionStep>();
+  private ActionStep next;
 //  protected transient volatile int visits = 0;
-  protected ThreadLocal<Integer> visitsHolder = new ThreadLocal<Integer>(){
-  	protected Integer initialValue() { return 0;};
-  };
+  protected int visits = 0;
   protected final static Logger debugLog = SafletImpl.debugLog;
   protected final static Logger stdLog = SafletImpl.stdLog;
 
@@ -266,13 +261,11 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
   
   @Override
   public int incrementVisits() {
-  	int visits = visitsHolder.get();
-  	visitsHolder.set(++visits);
-    return visits;
+  	return ++visits;
   }
 
   public int getVisits() {
-    return visitsHolder.get();
+    return visits;
   }
 
   /**
@@ -364,10 +357,10 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
 
   /**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
   public boolean isActive() {
-		return activeHolder.get();
+		return active;
 	}
 
   /**
@@ -377,8 +370,8 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
    */
   public void setActive(boolean newActive) {
   	
-    boolean oldActive = activeHolder.get();
-    activeHolder.set(newActive);
+    boolean oldActive = active;
+    active = newActive;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.ACTION_STEP__ACTIVE,
           oldActive, newActive));
@@ -620,7 +613,7 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
 
     }
     final ActionStep errorActionStep = getErrorActionStep();
-		nextHolder.set(errorActionStep);
+    next = errorActionStep;
     if (errorActionStep != null) {
       context.addException(e);
       // errorToolstep.beginProcessing(context);
@@ -764,8 +757,7 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
 
   @Override
   public ActionStep getNext() {
-    // TODO Auto-generated method stub
-    return nextHolder.get();
+    return next;
   }
 
   @Override
@@ -778,7 +770,7 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
     setActive(false);
     if (context.isDebugging())
       context.touchVariables();
-    nextHolder.set(o.getTarget());
+    next = o.getTarget();
     // if (nextToolstep != null) nextToolstep.beginProcessing(context);
   }
 
@@ -808,21 +800,19 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
 	 * @generated NOT
 	 */
 	public void cleanup() {
-		activeHolder.remove();
-		visitsHolder.remove();
-		for (EStructuralFeature feat : this.eClass().getEStructuralFeatures()){
-			Object obj = eGet(feat);
-			if (obj instanceof ThreadSensitive){
-				((ThreadSensitive)obj).cleanup();
-			}
-			else if (obj instanceof Collection){
-				for (Object o : (Collection)obj){
-					if (o instanceof ThreadSensitive){
-						((ThreadSensitive)o).cleanup();
-					}
-				}
-			}
-		}
+//		for (EStructuralFeature feat : this.eClass().getEStructuralFeatures()){
+//			Object obj = eGet(feat);
+//			if (obj instanceof ThreadSensitive){
+//				((ThreadSensitive)obj).cleanup();
+//			}
+//			else if (obj instanceof Collection){
+//				for (Object o : (Collection)obj){
+//					if (o instanceof ThreadSensitive){
+//						((ThreadSensitive)o).cleanup();
+//					}
+//				}
+//			}
+//		}
 	}
 
 		@Override
@@ -1124,7 +1114,7 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
 
 		/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
   @Override
   public String toString() {
@@ -1133,14 +1123,23 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (productId: ");
 		result.append(productId);
+		result.append(", platformID: ");
+		if (platformIDESet) result.append(platformID); else result.append("<unset>");
+		result.append(", platformDependant: ");
+		if (platformDependantESet) result.append(platformDependant); else result.append("<unset>");
 		result.append(", paused: ");
 		result.append(paused);
 		result.append(", active: ");
-		result.append(activeHolder.get());
+		result.append(active);
 		result.append(", name: ");
 		result.append(name);
 		result.append(')');
 		return result.toString();
 	}
+
+
+		public void setNext(ActionStep next) {
+			this.next = next;
+		}
 
 } // ActionStepImpl

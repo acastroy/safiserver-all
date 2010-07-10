@@ -303,7 +303,6 @@ public abstract class SafletImpl extends ThreadSensitiveImpl implements Saflet {
 		debugLog = Logger.getLogger(SafletConstants.WORKBENCH_DEBUGLOG);
 	}
 
-	protected ThreadLocal<ScriptScope> safletScopeHolder = new ThreadLocal<ScriptScope>();
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
@@ -318,20 +317,19 @@ public abstract class SafletImpl extends ThreadSensitiveImpl implements Saflet {
 	 * @generated NOT
 	 */
 	public void cleanup() {
-		safletScopeHolder.remove();
-		for (EStructuralFeature feat : this.eClass().getEAllStructuralFeatures()){
-			Object obj = eGet(feat);
-			if (obj instanceof ThreadSensitive){
-				((ThreadSensitive)obj).cleanup();
-			}
-			else if (obj instanceof Collection){
-				for (Object o : (Collection)obj){
-					if (o instanceof ThreadSensitive){
-						((ThreadSensitive)o).cleanup();
-					}
-				}
-			}
-		}
+//		for (EStructuralFeature feat : this.eClass().getEAllStructuralFeatures()){
+//			Object obj = eGet(feat);
+//			if (obj instanceof ThreadSensitive){
+//				((ThreadSensitive)obj).cleanup();
+//			}
+//			else if (obj instanceof Collection){
+//				for (Object o : (Collection)obj){
+//					if (o instanceof ThreadSensitive){
+//						((ThreadSensitive)o).cleanup();
+//					}
+//				}
+//			}
+//		}
 		
 //		SafletContext context = getSafletContext();
 //		if (context != null)
@@ -611,21 +609,21 @@ public abstract class SafletImpl extends ThreadSensitiveImpl implements Saflet {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
+	 * @generated
 	 */
 	public ScriptScope basicGetSafletScope() {
-		return safletScopeHolder.get();
+		return safletScope;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
+	 * @generated
 	 */
 	public void setSafletScope(ScriptScope newSafletScope) {
-		safletScopeHolder.set(newSafletScope);
-
+		ScriptScope oldSafletScope = safletScope;
+		safletScope = newSafletScope;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SafletPackage.SAFLET__SAFLET_SCOPE, oldSafletScope, safletScope));
 	}
 
 	/**

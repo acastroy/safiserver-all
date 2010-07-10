@@ -78,18 +78,16 @@ public class DBConnectionIdImpl extends ThreadSensitiveImpl implements DBConnect
 	 * @generated NOT
 	 * @ordered
 	 */
-//	protected Connection jdbcConnection = JDBC_CONNECTION_EDEFAULT;
 
 		/**
 	 * The cached value of the '{@link #getJdbcConnection() <em>Jdbc Connection</em>}' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @see #getJdbcConnection()
-	 * @generated NOT
+	 * @generated  
 	 * @ordered
 	 */
   
-  protected ThreadLocal<Connection> jdbcConnectionHolder = new ThreadLocal<Connection>();
 //  protected Connection jdbcConnection = JDBC_CONNECTION_EDEFAULT;
 
   /**
@@ -103,7 +101,6 @@ public class DBConnectionIdImpl extends ThreadSensitiveImpl implements DBConnect
 
   @Override
   public void cleanup() {
-    jdbcConnectionHolder.remove();
     super.cleanup();
   }
   /**
@@ -140,22 +137,22 @@ public class DBConnectionIdImpl extends ThreadSensitiveImpl implements DBConnect
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
   public Connection getJdbcConnection() {
-		return jdbcConnectionHolder.get();
+		return jdbcConnection;
 	}
 
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
   public void setJdbcConnection(Connection newJdbcConnection) {
-		Connection oldJdbcConnection = jdbcConnectionHolder.get();
-		jdbcConnectionHolder.set(newJdbcConnection);
+		Connection oldJdbcConnection = jdbcConnection;
+		jdbcConnection = newJdbcConnection;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.DB_CONNECTION_ID__JDBC_CONNECTION, oldJdbcConnection, jdbcConnectionHolder.get()));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.DB_CONNECTION_ID__JDBC_CONNECTION, oldJdbcConnection, jdbcConnection));
 	}
 
   /**
@@ -213,7 +210,7 @@ public class DBConnectionIdImpl extends ThreadSensitiveImpl implements DBConnect
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
   @Override
   public boolean eIsSet(int featureID) {
@@ -221,7 +218,7 @@ public class DBConnectionIdImpl extends ThreadSensitiveImpl implements DBConnect
 			case ActionStepPackage.DB_CONNECTION_ID__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case ActionStepPackage.DB_CONNECTION_ID__JDBC_CONNECTION:
-				return JDBC_CONNECTION_EDEFAULT == null ? jdbcConnectionHolder.get() != null : !JDBC_CONNECTION_EDEFAULT.equals(jdbcConnectionHolder.get());
+				return JDBC_CONNECTION_EDEFAULT == null ? jdbcConnection != null : !JDBC_CONNECTION_EDEFAULT.equals(jdbcConnection);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -229,7 +226,7 @@ public class DBConnectionIdImpl extends ThreadSensitiveImpl implements DBConnect
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
   @Override
   public String toString() {
@@ -239,7 +236,7 @@ public class DBConnectionIdImpl extends ThreadSensitiveImpl implements DBConnect
 		result.append(" (id: ");
 		result.append(id);
 		result.append(", jdbcConnection: ");
-		result.append(jdbcConnectionHolder.get());
+		result.append(jdbcConnection);
 		result.append(')');
 		return result.toString();
 	}

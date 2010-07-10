@@ -149,16 +149,11 @@ public abstract class SafiCallImpl extends ThreadSensitiveImpl implements SafiCa
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getUuid()
-	 * @generated NOT
+	 * @generated  
 	 * @ordered
 	 */
 	
-	 protected ThreadLocal<String> uuidHolder = new ThreadLocal<String>(){
-	  	protected String initialValue() {
-	  		return UUID_EDEFAULT;
-	  	}
-	  };
-//	protected String uuid = UUID_EDEFAULT;
+	
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,28 +213,27 @@ public abstract class SafiCallImpl extends ThreadSensitiveImpl implements SafiCa
 
 	@Override
 	public void cleanup() {
-		uuidHolder.remove();
 		super.cleanup();
 	}
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public String getUuid() {
-		return uuidHolder.get();
+		return uuid;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void setUuid(String newUuid) {
-		String oldUuid = uuidHolder.get();
-		uuidHolder.set(newUuid);
+		String oldUuid = uuid;
+		uuid = newUuid;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CallPackage.SAFI_CALL__UUID, oldUuid, newUuid));
+			eNotify(new ENotificationImpl(this, Notification.SET, CallPackage.SAFI_CALL__UUID, oldUuid, uuid));
 	}
 
 	/**
@@ -322,19 +316,19 @@ public abstract class SafiCallImpl extends ThreadSensitiveImpl implements SafiCa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CallPackage.SAFI_CALL__UUID:
-				return UUID_EDEFAULT == null ? uuidHolder.get() != null : !UUID_EDEFAULT.equals(uuidHolder.get());
-			case CallPackage.SAFI_CALL__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case CallPackage.SAFI_CALL__PLATFORM_ID:
-				return PLATFORM_ID_EDEFAULT == null ? platformID != null : !PLATFORM_ID_EDEFAULT.equals(platformID);
+				return isSetPlatformID();
 			case CallPackage.SAFI_CALL__PLATFORM_DEPENDANT:
 				return isSetPlatformDependant();
+			case CallPackage.SAFI_CALL__UUID:
+				return UUID_EDEFAULT == null ? uuid != null : !UUID_EDEFAULT.equals(uuid);
+			case CallPackage.SAFI_CALL__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -376,15 +370,21 @@ public abstract class SafiCallImpl extends ThreadSensitiveImpl implements SafiCa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (uuid: ");
-		result.append(uuidHolder.get());
+		result.append(" (platformID: ");
+		if (platformIDESet) result.append(platformID); else result.append("<unset>");
+		result.append(", platformDependant: ");
+		if (platformDependantESet) result.append(platformDependant); else result.append("<unset>");
+		result.append(", uuid: ");
+		result.append(uuid);
+		result.append(", name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

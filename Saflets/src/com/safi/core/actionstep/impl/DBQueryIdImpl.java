@@ -75,20 +75,18 @@ public class DBQueryIdImpl extends ThreadSensitiveImpl implements DBQueryId {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getJdbcStatement()
-	 * @generated NOT
+	 * @generated  
 	 * @ordered
 	 */
-//	protected Statement jdbcStatement = JDBC_STATEMENT_EDEFAULT;
 
 		/**
 	 * The cached value of the '{@link #getJdbcStatement() <em>Jdbc Statement</em>}' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @see #getJdbcStatement()
-	 * @generated NOT
+	 * @generated  
 	 * @ordered
 	 */
-  protected ThreadLocal<Statement> jdbcStatementHolder = new ThreadLocal<Statement>();
 //  protected Statement jdbcStatement = JDBC_STATEMENT_EDEFAULT;
 
   /**
@@ -102,7 +100,6 @@ public class DBQueryIdImpl extends ThreadSensitiveImpl implements DBQueryId {
 
   @Override
   public void cleanup() {
-  	jdbcStatementHolder.remove();
   	super.cleanup();
   }
   /**
@@ -139,22 +136,22 @@ public class DBQueryIdImpl extends ThreadSensitiveImpl implements DBQueryId {
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
   public Statement getJdbcStatement() {
-		return jdbcStatementHolder.get();
+		return jdbcStatement;
 	}
 
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
   public void setJdbcStatement(Statement newJdbcStatement) {
-		Statement oldJdbcStatement = jdbcStatementHolder.get();
-		jdbcStatementHolder.set(newJdbcStatement);
+		Statement oldJdbcStatement = jdbcStatement;
+		jdbcStatement = newJdbcStatement;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.DB_QUERY_ID__JDBC_STATEMENT, oldJdbcStatement, jdbcStatementHolder.get()));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionStepPackage.DB_QUERY_ID__JDBC_STATEMENT, oldJdbcStatement, jdbcStatement));
 	}
 
   /**
@@ -212,7 +209,7 @@ public class DBQueryIdImpl extends ThreadSensitiveImpl implements DBQueryId {
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
   @Override
   public boolean eIsSet(int featureID) {
@@ -220,7 +217,7 @@ public class DBQueryIdImpl extends ThreadSensitiveImpl implements DBQueryId {
 			case ActionStepPackage.DB_QUERY_ID__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case ActionStepPackage.DB_QUERY_ID__JDBC_STATEMENT:
-				return JDBC_STATEMENT_EDEFAULT == null ? jdbcStatementHolder.get() != null : !JDBC_STATEMENT_EDEFAULT.equals(jdbcStatementHolder.get());
+				return JDBC_STATEMENT_EDEFAULT == null ? jdbcStatement != null : !JDBC_STATEMENT_EDEFAULT.equals(jdbcStatement);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -228,7 +225,7 @@ public class DBQueryIdImpl extends ThreadSensitiveImpl implements DBQueryId {
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
   @Override
   public String toString() {
@@ -238,7 +235,7 @@ public class DBQueryIdImpl extends ThreadSensitiveImpl implements DBQueryId {
 		result.append(" (id: ");
 		result.append(id);
 		result.append(", jdbcStatement: ");
-		result.append(jdbcStatementHolder.get());
+		result.append(jdbcStatement);
 		result.append(')');
 		return result.toString();
 	}

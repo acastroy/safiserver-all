@@ -116,12 +116,10 @@ public class DynamicValueImpl extends ThreadSensitiveImpl implements DynamicValu
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @see #getData()
-	 * @generated NOT
+	 * @generated  
 	 * @ordered
 	 */
-  protected ThreadLocal<EMap<String, String>> dataHolder = new ThreadLocal<EMap<String,String>>();
   
-//  protected EMap<String, String> data;
 
   /**
 	 * <!-- begin-user-doc -->
@@ -134,11 +132,6 @@ public class DynamicValueImpl extends ThreadSensitiveImpl implements DynamicValu
 
   @Override
   public void cleanup() {
-  	dataHolder.remove();
-  	if (payload != null && payload instanceof ThreadSensitive){
-  		((ThreadSensitive)payload).cleanup();
-  	}
-  	
   	super.cleanup();
   }
   /**
@@ -239,13 +232,11 @@ public class DynamicValueImpl extends ThreadSensitiveImpl implements DynamicValu
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
   public EMap<String, String> getData() {
-  	EMap<String, String> data = dataHolder.get();
 		if (data == null) {
 			data = new EcoreEMap<String,String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, ActionStepPackage.DYNAMIC_VALUE__DATA);
-			dataHolder.set(data);
 		}
 		return data;
 	}
@@ -338,7 +329,7 @@ public class DynamicValueImpl extends ThreadSensitiveImpl implements DynamicValu
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
   @Override
   public boolean eIsSet(int featureID) {
@@ -350,7 +341,7 @@ public class DynamicValueImpl extends ThreadSensitiveImpl implements DynamicValu
 			case ActionStepPackage.DYNAMIC_VALUE__PAYLOAD:
 				return payload != null;
 			case ActionStepPackage.DYNAMIC_VALUE__DATA:
-				return dataHolder.get() != null && !dataHolder.get().isEmpty();
+				return data != null && !data.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
