@@ -41,7 +41,7 @@ public class AsteriskSafletContextImpl extends SafletContextImpl implements Aste
 	 * The default value of the '{@link #getBufferedDigits() <em>Buffered Digits</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getBufferedDigits()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
   protected static final String BUFFERED_DIGITS_EDEFAULT = null;
@@ -51,7 +51,7 @@ public class AsteriskSafletContextImpl extends SafletContextImpl implements Aste
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getBufferedDigits()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
 	protected String bufferedDigits = BUFFERED_DIGITS_EDEFAULT;
@@ -59,15 +59,10 @@ public class AsteriskSafletContextImpl extends SafletContextImpl implements Aste
 	 * The cached value of the '{@link #getBufferedDigits() <em>Buffered Digits</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getBufferedDigits()
-	 * @generated NOT
+	 * @generated  
 	 * @ordered
 	 */
-//  protected String bufferedDigits = BUFFERED_DIGITS_EDEFAULT;
-  protected ThreadLocal<StringBuffer> bufferedDigitsHolder = new ThreadLocal<StringBuffer>(){
-  	protected StringBuffer initialValue() {
-  		return new StringBuffer();
-  	}
-  };
+ 
 
   /**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -94,7 +89,6 @@ public class AsteriskSafletContextImpl extends SafletContextImpl implements Aste
 
   @Override
   public void cleanup() {
-    bufferedDigitsHolder.remove();
     super.cleanup();
   }
   /**
@@ -108,26 +102,21 @@ public class AsteriskSafletContextImpl extends SafletContextImpl implements Aste
 
   /**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
   public String getBufferedDigits() {
-		String str = bufferedDigitsHolder.get().toString();
-		if (StringUtils.isBlank(str)) return null;
-		return str;
+		return bufferedDigits;
 	}
 
   /**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
   public void setBufferedDigits(String newBufferedDigits) {
-		StringBuffer oldBufferedDigits = bufferedDigitsHolder.get();
-		StringBuffer buf = new StringBuffer();
-		if (newBufferedDigits != null)
-			buf.append(newBufferedDigits);
-	  bufferedDigitsHolder.set(buf);
+		String oldBufferedDigits = bufferedDigits;
+		bufferedDigits = newBufferedDigits;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SafletPackage.ASTERISK_SAFLET_CONTEXT__BUFFERED_DIGITS, oldBufferedDigits.toString(), newBufferedDigits));
+			eNotify(new ENotificationImpl(this, Notification.SET, SafletPackage.ASTERISK_SAFLET_CONTEXT__BUFFERED_DIGITS, oldBufferedDigits, bufferedDigits));
 	}
 
   /**
@@ -138,11 +127,10 @@ public class AsteriskSafletContextImpl extends SafletContextImpl implements Aste
   public void appendBufferedDigits(String digits) {
     if (digits == null)
       return;
-    bufferedDigitsHolder.get().append(digits);
-//    if (bufferedDigits == null)
-//      bufferedDigits = digits;
-//    else
-//      bufferedDigits += digits;
+    if (bufferedDigits == null)
+    	bufferedDigits = digits;
+    else
+    	bufferedDigits += digits;
   }
 
   /**
@@ -151,14 +139,14 @@ public class AsteriskSafletContextImpl extends SafletContextImpl implements Aste
    * @generated NOT
    */
   public String flushBufferedDigits() {
-  	String temp = bufferedDigitsHolder.get().toString();
-  	bufferedDigitsHolder.remove();
+  	String temp = bufferedDigits;
+  	bufferedDigits = null;
     return temp;
   }
 
   @Override
   public char popBufferedDigit() {
-  	StringBuffer buf = bufferedDigitsHolder.get();
+  	StringBuffer buf = new StringBuffer(bufferedDigits);
   	
     if (StringUtils.isBlank(buf.toString()))
       return (char) 253;
@@ -211,20 +199,20 @@ public class AsteriskSafletContextImpl extends SafletContextImpl implements Aste
 
   /**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
   @Override
   public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case SafletPackage.ASTERISK_SAFLET_CONTEXT__BUFFERED_DIGITS:
-				return BUFFERED_DIGITS_EDEFAULT == null ? bufferedDigitsHolder.get() != null : !BUFFERED_DIGITS_EDEFAULT.equals(bufferedDigitsHolder.get().toString());
+				return BUFFERED_DIGITS_EDEFAULT == null ? bufferedDigits != null : !BUFFERED_DIGITS_EDEFAULT.equals(bufferedDigits);
 		}
 		return super.eIsSet(featureID);
 	}
 
   /**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
   @Override
   public String toString() {
@@ -232,7 +220,7 @@ public class AsteriskSafletContextImpl extends SafletContextImpl implements Aste
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (bufferedDigits: ");
-		result.append(bufferedDigitsHolder.get());
+		result.append(bufferedDigits);
 		result.append(')');
 		return result.toString();
 	}

@@ -74,15 +74,10 @@ public class CallImpl extends SafiCallImpl implements Call {
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @see #getCallerIdName()
-	 * @generated NOT
+	 * @generated  
 	 * @ordered
 	 */
-  protected ThreadLocal<String> callerIdNameHolder = new ThreadLocal<String>(){
-  	protected String initialValue() {
-  		return CALLER_ID_NAME_EDEFAULT;
-  	}
-  };
-//  protected String callerIdName = CALLER_ID_NAME_EDEFAULT;
+
 
   /**
 	 * The default value of the '{@link #getCallerIdNum() <em>Caller Id Num</em>}' attribute.
@@ -112,13 +107,6 @@ public class CallImpl extends SafiCallImpl implements Call {
 	 * @generated NOT
 	 * @ordered
 	 */
-  
-  protected ThreadLocal<String> callerIdNumHolder = new ThreadLocal<String>(){
-  	protected String initialValue() {
-  		return CALLER_ID_NUM_EDEFAULT;
-  	}
-  };
-//  protected String callerIdNum = CALLER_ID_NUM_EDEFAULT;
 
   /**
 	 * The default value of the '{@link #getUniqueId() <em>Unique Id</em>}' attribute.
@@ -138,21 +126,26 @@ public class CallImpl extends SafiCallImpl implements Call {
 	 * @generated
 	 * @ordered
 	 */
-//	protected String uniqueId = UNIQUE_ID_EDEFAULT;
+	protected String uniqueId = UNIQUE_ID_EDEFAULT;
+
+		/**
+	 * The cached value of the '{@link #getUniqueId() <em>Unique Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUniqueId()
+	 * @generated
+	 * @ordered
+	 */
 
 		/**
 	 * The cached value of the '{@link #getUniqueId() <em>Unique Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @see #getUniqueId()
-	 * @generated NOT
+	 * @generated  
 	 * @ordered
 	 */
-  protected ThreadLocal<String> uniqueIdHolder = new ThreadLocal<String>(){
-  	protected String initialValue() {
-  		return UNIQUE_ID_EDEFAULT;
-  	}
-  };
+  
 //  protected String uniqueId = UNIQUE_ID_EDEFAULT;
 
   /**
@@ -175,6 +168,16 @@ public class CallImpl extends SafiCallImpl implements Call {
 	 * @generated
 	 * @ordered
 	 */
+	protected String channelName = CHANNEL_NAME_EDEFAULT;
+
+		/**
+	 * The cached value of the '{@link #getChannelName() <em>Channel Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChannelName()
+	 * @generated
+	 * @ordered
+	 */
 //	protected String channelName = CHANNEL_NAME_EDEFAULT;
 
 		/**
@@ -182,15 +185,10 @@ public class CallImpl extends SafiCallImpl implements Call {
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @see #getChannelName()
-	 * @generated NOT
+	 * @generated  
 	 * @ordered
 	 */
   
-  protected ThreadLocal<String> channelNameHolder = new ThreadLocal<String>(){
-  	protected String initialValue() {
-  		return CHANNEL_NAME_EDEFAULT;
-  	}
-  };
 //  protected String channelName = CHANNEL_NAME_EDEFAULT;
 
   /**
@@ -216,28 +214,16 @@ public class CallImpl extends SafiCallImpl implements Call {
 		/**
 	 * The cached value of the '{@link #getCallState() <em>Call State</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getCallState()
-	 * @generated NOT
+	 * @generated
 	 * @ordered
 	 */
-  
-  protected ThreadLocal<CallState> callStateHolder = new ThreadLocal<CallState>(){
-  	protected CallState initialValue() {
-  		return CALL_STATE_EDEFAULT;
-  	}
-  };
-//  protected CallState callState = CALL_STATE_EDEFAULT;
+	protected CallState callState = CALL_STATE_EDEFAULT;
 
-  protected ThreadLocal<AgiChannel> channelHolder = new ThreadLocal<AgiChannel>();
-//private AgiChannel channel;
-  
-  protected ThreadLocal<Map<String,Object>> dataMapHolder = new ThreadLocal<Map<String,Object>>(){
-  	protected java.util.Map<String,Object> initialValue() {
-  		return new HashMap<String, Object>();
-  	}
-  };
-//  private Map<String,Object> dataMap;
+		private Map<String,Object> dataMap;
+		
+		private AgiChannel channel;
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -250,12 +236,6 @@ public class CallImpl extends SafiCallImpl implements Call {
   @Override
   public void cleanup() {
   	
-    callerIdNameHolder.remove();
-    callStateHolder.remove();
-    channelHolder.remove();
-    channelNameHolder.remove();
-    dataMapHolder.remove();
-    uniqueIdHolder.remove();
     super.cleanup();
   }
   /**
@@ -269,24 +249,22 @@ public class CallImpl extends SafiCallImpl implements Call {
 	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated NOT
-   */
+	 * @generated NOT
+	 */
   public AgiChannel getChannel() {
+		return channel;
+	}
 
-    return channelHolder.get();
-  
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated NOT
-   */
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
   public void setChannel(AgiChannel newChannel) {
   	
-    channelHolder.set(newChannel);
+    channel = newChannel;
     if (newChannel == null)
       setChannelName(null);
     else {
@@ -301,116 +279,106 @@ public class CallImpl extends SafiCallImpl implements Call {
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
   public String getCallerIdName() {
-		return callerIdNameHolder.get();
+		return callerIdName;
 	}
 
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
   public void setCallerIdName(String newCallerIdName) {
-  	String oldCallerIdName = callerIdNameHolder.get();
-  	callerIdNameHolder.set(newCallerIdName);
-//		callerIdName = newCallerIdName;
+		String oldCallerIdName = callerIdName;
+		callerIdName = newCallerIdName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AsteriskPackage.CALL__CALLER_ID_NAME, oldCallerIdName, callerIdNameHolder.get()));
+			eNotify(new ENotificationImpl(this, Notification.SET, AsteriskPackage.CALL__CALLER_ID_NAME, oldCallerIdName, callerIdName));
 	}
 
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
   public String getCallerIdNum() {
-		return callerIdNumHolder.get();
+		return callerIdNum;
 	}
 
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
   public void setCallerIdNum(String newCallerIdNum) {
-		String oldCallerIdNum = callerIdNumHolder.get();
-		callerIdNumHolder.set(newCallerIdNum);
+		String oldCallerIdNum = callerIdNum;
+		callerIdNum = newCallerIdNum;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AsteriskPackage.CALL__CALLER_ID_NUM, oldCallerIdNum, callerIdNumHolder.get()));
+			eNotify(new ENotificationImpl(this, Notification.SET, AsteriskPackage.CALL__CALLER_ID_NUM, oldCallerIdNum, callerIdNum));
 	}
 
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
   public String getUniqueId() {
-		return uniqueIdHolder.get();
+		return uniqueId;
 	}
 
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
   public void setUniqueId(String newUniqueId) {
-		String oldUniqueId = uniqueIdHolder.get();
-	
-		uniqueIdHolder.set(newUniqueId);
+		String oldUniqueId = uniqueId;
+		uniqueId = newUniqueId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AsteriskPackage.CALL__UNIQUE_ID, oldUniqueId, uniqueIdHolder.get()));
+			eNotify(new ENotificationImpl(this, Notification.SET, AsteriskPackage.CALL__UNIQUE_ID, oldUniqueId, uniqueId));
 	}
 
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
   public String getChannelName() {
-		return channelNameHolder.get();
+		return channelName;
 	}
 
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
   public void setChannelName(String newChannelName) {
-		String oldChannelName = channelNameHolder.get();
-		channelNameHolder.set(newChannelName);
+		String oldChannelName = channelName;
+		channelName = newChannelName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AsteriskPackage.CALL__CHANNEL_NAME, oldChannelName, channelNameHolder.get()));
+			eNotify(new ENotificationImpl(this, Notification.SET, AsteriskPackage.CALL__CHANNEL_NAME, oldChannelName, channelName));
 	}
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated NOT
-   */
-  public CallState getCallState() {
-    if (channelHolder.get() != null){
-      try {
-        return CallState.get(channelHolder.get().getChannelStatus());
-      } catch (Exception e) {
-        e.printStackTrace();
-      }
-    }
-    return CallState.UNKNOWN;
-    
-  }
 
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
+	 */
+  public CallState getCallState() {
+		return callState;
+	}
+
+  /**
+	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+	 * @generated
 	 */
   public void setCallState(CallState newCallState) {
-		CallState oldCallState = callStateHolder.get();
-		callStateHolder.set(newCallState == null ? CALL_STATE_EDEFAULT : newCallState);
+		CallState oldCallState = callState;
+		callState = newCallState == null ? CALL_STATE_EDEFAULT : newCallState;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AsteriskPackage.CALL__CALL_STATE, oldCallState, callStateHolder.get()));
+			eNotify(new ENotificationImpl(this, Notification.SET, AsteriskPackage.CALL__CALL_STATE, oldCallState, callState));
 	}
 
   /**
@@ -419,7 +387,9 @@ public class CallImpl extends SafiCallImpl implements Call {
    * @generated NOT
    */
   public void setData(String name, Object value) {
-    dataMapHolder.get().put(name, value);
+  	if (dataMap == null)
+  		dataMap = new HashMap<String, Object>();
+    dataMap.put(name, value);
   }
 
   /**
@@ -427,7 +397,7 @@ public class CallImpl extends SafiCallImpl implements Call {
    * <!-- end-user-doc -->
    * @generated NOT
    */
-  public Object getData(String name) {return dataMapHolder.get().get(name);}
+  public Object getData(String name) {return dataMap == null ? null : dataMap.get(name);}
 
   /**
 	 * <!-- begin-user-doc -->
@@ -516,25 +486,23 @@ public class CallImpl extends SafiCallImpl implements Call {
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
   @Override
   public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AsteriskPackage.CALL__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case AsteriskPackage.CALL__CHANNEL:
 				return CHANNEL_EDEFAULT == null ? getChannel() != null : !CHANNEL_EDEFAULT.equals(getChannel());
 			case AsteriskPackage.CALL__CALLER_ID_NAME:
-				return CALLER_ID_NAME_EDEFAULT == null ? callerIdNameHolder.get() != null : !CALLER_ID_NAME_EDEFAULT.equals(callerIdNameHolder.get());
+				return CALLER_ID_NAME_EDEFAULT == null ? callerIdName != null : !CALLER_ID_NAME_EDEFAULT.equals(callerIdName);
 			case AsteriskPackage.CALL__CALLER_ID_NUM:
-				return CALLER_ID_NUM_EDEFAULT == null ? callerIdNumHolder.get() != null : !CALLER_ID_NUM_EDEFAULT.equals(callerIdNumHolder.get());
+				return CALLER_ID_NUM_EDEFAULT == null ? callerIdNum != null : !CALLER_ID_NUM_EDEFAULT.equals(callerIdNum);
 			case AsteriskPackage.CALL__UNIQUE_ID:
-				return UNIQUE_ID_EDEFAULT == null ? uniqueIdHolder.get() != null : !UNIQUE_ID_EDEFAULT.equals(uniqueIdHolder.get());
+				return UNIQUE_ID_EDEFAULT == null ? uniqueId != null : !UNIQUE_ID_EDEFAULT.equals(uniqueId);
 			case AsteriskPackage.CALL__CHANNEL_NAME:
-				return CHANNEL_NAME_EDEFAULT == null ? channelNameHolder.get() != null : !CHANNEL_NAME_EDEFAULT.equals(channelNameHolder.get());
+				return CHANNEL_NAME_EDEFAULT == null ? channelName != null : !CHANNEL_NAME_EDEFAULT.equals(channelName);
 			case AsteriskPackage.CALL__CALL_STATE:
-				return callStateHolder.get() != CALL_STATE_EDEFAULT;
+				return callState != CALL_STATE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -542,25 +510,23 @@ public class CallImpl extends SafiCallImpl implements Call {
   /**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
   @Override
   public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", callerIdName: ");
-		result.append(callerIdNameHolder.get());
+		result.append(" (callerIdName: ");
+		result.append(callerIdName);
 		result.append(", callerIdNum: ");
-		result.append(callerIdNumHolder.get());
+		result.append(callerIdNum);
 		result.append(", uniqueId: ");
-		result.append(uniqueIdHolder.get());
+		result.append(uniqueId);
 		result.append(", channelName: ");
-		result.append(channelNameHolder.get());
+		result.append(channelName);
 		result.append(", callState: ");
-		result.append(callStateHolder.get());
+		result.append(callState);
 		result.append(')');
 		return result.toString();
 	}
