@@ -16,6 +16,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EAnnotation;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -445,7 +447,17 @@ public class ActionStepItemProvider
     public String getDisplayName(Object object) {
       // TODO Auto-generated method stub
       String name = super.getDisplayName(object);
+      EStructuralFeature feature = this.feature;
+      EStructuralFeature declaringFeature = null;
       if (feature != null){
+//      	System.err.println("The goddam containerclass of "+object.getClass()+"."+feature.getName() +" is "+feature.getContainerClass()+" and eclass "+feature.getEContainingClass());
+//      	if (object instanceof EObject && feature.getEContainingClass() != ((EObject)object).eClass()){
+//      		EClass containingCls = feature.getEContainingClass();
+//      		EStructuralFeature original = containingCls.getEStructuralFeature(feature.getFeatureID());
+//      		if (original != null){
+//      			declaringFeature = original;
+//      		}
+//      	}
         EAnnotation annot = feature.getEAnnotation("MetaProperty");
         if (annot != null){
           EMap<String, String> det = annot.getDetails();
