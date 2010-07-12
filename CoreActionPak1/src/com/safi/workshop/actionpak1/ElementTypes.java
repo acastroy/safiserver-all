@@ -15,10 +15,10 @@ public class ElementTypes {
  
   
   public static IElementType elementType_InputItem_50001 = 
-    ElementTypeRegistry.getInstance().getType("CoreActionPak1.InputItem_50001"); //$NON-NLS-1$
+    ElementTypeRegistry.getInstance().getType("SafiWorkshopCore.InputItem_50001"); //$NON-NLS-1$
   
   public static IElementType elementType_OutputItem_50002 = 
-    ElementTypeRegistry.getInstance().getType("CoreActionPak1.OutputItem_50002"); //$NON-NLS-1$
+    ElementTypeRegistry.getInstance().getType("SafiWorkshopCore.OutputItem_50002"); //$NON-NLS-1$
 
   public static IElementType elementType_InvokeSaflet2_10004 = 
     ElementTypeRegistry.getInstance().getType("CoreActionPak1.InvokeSaflet2_10004"); //$NON-NLS-1$

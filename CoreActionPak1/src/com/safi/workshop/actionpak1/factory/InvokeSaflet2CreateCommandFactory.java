@@ -4,8 +4,8 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 
 import com.safi.workshop.actionpak1.ElementTypes;
-import com.safi.workshop.actionpak1.command.InputItemCreateCommand;
 import com.safi.workshop.actionpak1.command.InvokeSaflet2CreateCommand;
+import com.safi.workshop.edit.commands.InputItemCreateCommand;
 import com.safi.workshop.edit.policies.ActionstepCreateCommandFactory;
 
 public class InvokeSaflet2CreateCommandFactory implements ActionstepCreateCommandFactory {

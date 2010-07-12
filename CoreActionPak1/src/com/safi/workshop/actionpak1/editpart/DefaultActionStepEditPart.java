@@ -20,10 +20,10 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
 import com.safi.asterisk.figures.DefaultToolstepFigure;
-import com.safi.workshop.actionpak1.policy.ActionStepItemSemanticEditPolicy2;
 import com.safi.workshop.edit.parts.ActionStepNameEditPart;
 import com.safi.workshop.edit.parts.OutputEditPart;
 import com.safi.workshop.edit.parts.ToolstepEditPart;
+import com.safi.workshop.edit.policies.ActionStepItemSemanticEditPolicy2;
 import com.safi.workshop.edit.policies.ActionstepCanonicalEditPolicy;
 import com.safi.workshop.part.SafletVisualIDRegistry;
 

@@ -1,4 +1,4 @@
-package com.safi.workshop.actionpak1.editpart;
+package com.safi.workshop.actionpak1.policy;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -26,6 +26,8 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.OpenEditPolicy;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 
 import com.safi.core.actionstep.DynamicValue;
+import com.safi.workshop.actionpak1.editpart.InvokeSaflet2EditPart;
+import com.safi.workshop.actionpak1.editpart.InvokeSaflet2NameEditPart;
 import com.safi.workshop.model.actionpak1.InvokeSaflet2;
 import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.util.SafletPersistenceManager;

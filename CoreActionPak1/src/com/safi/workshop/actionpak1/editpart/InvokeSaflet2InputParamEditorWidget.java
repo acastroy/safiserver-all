@@ -4,7 +4,8 @@ import org.eclipse.swt.widgets.Composite;
 
 import com.safi.core.actionstep.InputItem;
 import com.safi.core.actionstep.Item;
-import com.safi.workshop.actionpak1.command.SetInputItemValueCommand;
+import com.safi.workshop.edit.commands.SetInputItemValueCommand;
+import com.safi.workshop.sheet.InputItemEditorWidget;
 
 public class InvokeSaflet2InputParamEditorWidget extends InputItemEditorWidget {
 

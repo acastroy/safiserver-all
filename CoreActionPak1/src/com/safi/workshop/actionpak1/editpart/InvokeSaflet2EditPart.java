@@ -63,10 +63,15 @@ import com.safi.db.util.VariableTranslator;
 import com.safi.server.manager.SafiServerRemoteManager;
 import com.safi.server.saflet.mbean.DebugRemoteControl;
 import com.safi.workshop.actionpak1.ElementTypes;
+import com.safi.workshop.actionpak1.policy.InvokeSaflet2ItemSemanticEditPolicy;
 import com.safi.workshop.edit.parts.ActionstepWithOutputParameters;
 import com.safi.workshop.edit.parts.HandlerEditPart;
+import com.safi.workshop.edit.parts.InputItemEditPart;
+import com.safi.workshop.edit.parts.InputItemPanelEditPart;
 import com.safi.workshop.edit.parts.ItemPanelEditPart;
 import com.safi.workshop.edit.parts.OutputEditPart;
+import com.safi.workshop.edit.parts.OutputItemEditPart;
+import com.safi.workshop.edit.parts.OutputItemPanelEditPart;
 import com.safi.workshop.edit.policies.ActionstepCanonicalEditPolicy;
 import com.safi.workshop.model.actionpak1.InvokeSaflet2;
 import com.safi.workshop.part.SafletDiagramEditor;
@@ -121,11 +126,11 @@ public class InvokeSaflet2EditPart extends com.safi.workshop.edit.parts.Toolstep
               if (val == null || val.getType() == DynamicValueType.CUSTOM)
                 return UnexecutableCommand.INSTANCE;
               EditPart compartmentEditPart = getChildBySemanticHint(SafletVisualIDRegistry
-                  .getType(InputItemPanelEditPart.VISUAL_ID));
+                  .getType(InvokeSafletInputItemPanelEditPart.VISUAL_ID));
               return compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
             } else if (type == ElementTypes.elementType_OutputItem_50002) {
               EditPart compartmentEditPart = getChildBySemanticHint(SafletVisualIDRegistry
-                  .getType(OutputItemPanelEditPart.VISUAL_ID));
+                  .getType(InvokeSafletOutputItemPanelEditPart.VISUAL_ID));
               return compartmentEditPart == null ? null : compartmentEditPart.getCommand(request);
             }
           }
@@ -375,17 +380,17 @@ public class InvokeSaflet2EditPart extends com.safi.workshop.edit.parts.Toolstep
           .setLabel(getPrimaryShape().getToolstepNameLabel());
       return true;
     }
-    if (childEditPart instanceof InputItemPanelEditPart) {
+    if (childEditPart instanceof InvokeSafletInputItemPanelEditPart) {
       IFigure pane = getPrimaryShape().getInputItemPanel();
       setupContentPane(pane); // FIXME each comparment should handle his content pane in
       // his own way
-      pane.add(((InputItemPanelEditPart) childEditPart).getFigure());
+      pane.add(((InvokeSafletInputItemPanelEditPart) childEditPart).getFigure());
       return true;
-    } else if (childEditPart instanceof OutputItemPanelEditPart) {
+    } else if (childEditPart instanceof InvokeSafletOutputItemPanelEditPart) {
       IFigure pane = getPrimaryShape().getOutputItemPanel();
       setupContentPane(pane); // FIXME each comparment should handle his content pane in
       // his own way
-      pane.add(((OutputItemPanelEditPart) childEditPart).getFigure());
+      pane.add(((InvokeSafletOutputItemPanelEditPart) childEditPart).getFigure());
       return true;
     }
     return false;
@@ -397,17 +402,17 @@ public class InvokeSaflet2EditPart extends com.safi.workshop.edit.parts.Toolstep
    */
   protected boolean removeFixedChild(EditPart childEditPart) {
 
-    if (childEditPart instanceof InputItemPanelEditPart) {
+    if (childEditPart instanceof InvokeSafletInputItemPanelEditPart) {
       IFigure pane = getPrimaryShape().getInputItemPanel();
       setupContentPane(pane); // FIXME each comparment should handle his content pane in
       // his own way
-      pane.remove(((InputItemPanelEditPart) childEditPart).getFigure());
+      pane.remove(((InvokeSafletInputItemPanelEditPart) childEditPart).getFigure());
       return true;
-    } else if (childEditPart instanceof OutputItemPanelEditPart) {
+    } else if (childEditPart instanceof InvokeSafletOutputItemPanelEditPart) {
       IFigure pane = getPrimaryShape().getOutputItemPanel();
       setupContentPane(pane); // FIXME each comparment should handle his content pane in
       // his own way
-      pane.remove(((OutputItemPanelEditPart) childEditPart).getFigure());
+      pane.remove(((InvokeSafletOutputItemPanelEditPart) childEditPart).getFigure());
       return true;
     } else if (childEditPart instanceof OutputEditPart) {
       getBorderedFigure().getBorderItemContainer().remove(
@@ -457,9 +462,9 @@ public class InvokeSaflet2EditPart extends com.safi.workshop.edit.parts.Toolstep
       return getPrimaryShape().getInputItemPanel();
     } else if (editPart instanceof OutputItemEditPart) {
       return getPrimaryShape().getOutputItemPanel();
-    } else if (editPart instanceof InputItemPanelEditPart)
+    } else if (editPart instanceof InvokeSafletInputItemPanelEditPart)
       return getPrimaryShape().getInputItemPanel();
-    else if (editPart instanceof OutputItemPanelEditPart)
+    else if (editPart instanceof InvokeSafletOutputItemPanelEditPart)
       return getPrimaryShape().getOutputItemPanel();
     else
       return super.getContentPaneFor(editPart);
@@ -857,7 +862,7 @@ public class InvokeSaflet2EditPart extends com.safi.workshop.edit.parts.Toolstep
   public ItemPanelEditPart getInputCompartmentPart() {
     if (inputListCompartmentPart == null) {
       for (Object o : getChildren()) {
-        if (o instanceof InputItemPanelEditPart) {
+        if (o instanceof InvokeSafletInputItemPanelEditPart) {
           inputListCompartmentPart = (ItemPanelEditPart) o;
           break;
         }
@@ -871,7 +876,7 @@ public class InvokeSaflet2EditPart extends com.safi.workshop.edit.parts.Toolstep
   public ItemPanelEditPart getOutputCompartmentPart() {
     if (outputListCompartmentPart == null) {
       for (Object o : getChildren()) {
-        if (o instanceof OutputItemPanelEditPart) {
+        if (o instanceof InvokeSafletOutputItemPanelEditPart) {
           outputListCompartmentPart = (ItemPanelEditPart) o;
           break;
         }

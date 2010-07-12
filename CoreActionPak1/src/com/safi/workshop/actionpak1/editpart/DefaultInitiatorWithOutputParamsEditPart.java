@@ -3,7 +3,7 @@ package com.safi.workshop.actionpak1.editpart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gmf.runtime.notation.View;
 
-import com.safi.workshop.actionpak1.policy.InitiatorItemSemanticEditPolicy2;
+import com.safi.workshop.edit.policies.InitiatorItemSemanticEditPolicy2;
 
 /**
  * @generated

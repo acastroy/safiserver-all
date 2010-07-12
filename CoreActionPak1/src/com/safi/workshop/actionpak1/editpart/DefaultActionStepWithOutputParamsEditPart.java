@@ -23,7 +23,11 @@ import com.safi.asterisk.figures.ParameterizedFigure;
 import com.safi.asterisk.initiator.CustomInitiatorAsterisk;
 import com.safi.workshop.actionpak1.ElementTypes;
 import com.safi.workshop.edit.parts.ActionstepWithOutputParameters;
+import com.safi.workshop.edit.parts.InputItemEditPart;
+import com.safi.workshop.edit.parts.InputItemPanelEditPart;
 import com.safi.workshop.edit.parts.ItemPanelEditPart;
+import com.safi.workshop.edit.parts.OutputItemEditPart;
+import com.safi.workshop.edit.parts.OutputItemPanelEditPart;
 import com.safi.workshop.part.SafletVisualIDRegistry;
 
 /**

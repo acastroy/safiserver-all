@@ -4,7 +4,8 @@ import org.eclipse.swt.widgets.Composite;
 
 import com.safi.core.actionstep.Item;
 import com.safi.core.actionstep.OutputParameter;
-import com.safi.workshop.actionpak1.command.SetOutputItemValueCommand;
+import com.safi.workshop.edit.commands.SetOutputItemValueCommand;
+import com.safi.workshop.sheet.OutputItemEditorWidget;
 
 public class InvokeSaflet2OutputParamEditorWidget extends OutputItemEditorWidget {
 

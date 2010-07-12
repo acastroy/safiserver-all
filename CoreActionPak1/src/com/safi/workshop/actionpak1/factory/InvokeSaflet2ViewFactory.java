@@ -13,11 +13,13 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 
-import com.safi.workshop.actionpak1.editpart.InputItemPanelEditPart;
 import com.safi.workshop.actionpak1.editpart.InvokeSaflet2EditPart;
 import com.safi.workshop.actionpak1.editpart.InvokeSaflet2NameEditPart;
-import com.safi.workshop.actionpak1.editpart.OutputItemPanelEditPart;
+import com.safi.workshop.actionpak1.editpart.InvokeSafletInputItemPanelEditPart;
+import com.safi.workshop.actionpak1.editpart.InvokeSafletOutputItemPanelEditPart;
 import com.safi.workshop.edit.parts.HandlerEditPart;
+import com.safi.workshop.edit.parts.InputItemPanelEditPart;
+import com.safi.workshop.edit.parts.OutputItemPanelEditPart;
 import com.safi.workshop.part.SafletVisualIDRegistry;
 
 /**
@@ -59,10 +61,10 @@ public class InvokeSaflet2ViewFactory extends AbstractShapeViewFactory {
         SafletVisualIDRegistry.getType(InvokeSaflet2NameEditPart.VISUAL_ID), ViewUtil.APPEND,
         true, getPreferencesHint());
     getViewService().createNode(eObjectAdapter, view,
-        SafletVisualIDRegistry.getType(OutputItemPanelEditPart.VISUAL_ID),
+        SafletVisualIDRegistry.getType(InvokeSafletOutputItemPanelEditPart.VISUAL_ID),
         ViewUtil.APPEND, true, getPreferencesHint());
     getViewService().createNode(eObjectAdapter, view,
-        SafletVisualIDRegistry.getType(InputItemPanelEditPart.VISUAL_ID),
+        SafletVisualIDRegistry.getType(InvokeSafletInputItemPanelEditPart.VISUAL_ID),
         ViewUtil.APPEND, true, getPreferencesHint());
   }
 }

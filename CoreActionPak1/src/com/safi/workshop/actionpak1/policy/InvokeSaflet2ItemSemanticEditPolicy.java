@@ -1,4 +1,4 @@
-package com.safi.workshop.actionpak1.editpart;
+package com.safi.workshop.actionpak1.policy;
 
 import java.util.Iterator;
 
@@ -14,13 +14,19 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 
 import com.safi.core.actionstep.ActionStepPackage;
+import com.safi.workshop.actionpak1.editpart.InvokeSafletInputItemPanelEditPart;
+import com.safi.workshop.actionpak1.editpart.InvokeSafletOutputItemPanelEditPart;
 import com.safi.workshop.edit.commands.CaseItemTargetToolstepCreateCommand;
 import com.safi.workshop.edit.commands.CaseItemTargetToolstepReorientCommand;
 import com.safi.workshop.edit.commands.OutputCreateCommand;
 import com.safi.workshop.edit.commands.OutputTargetCreateCommand;
 import com.safi.workshop.edit.commands.OutputTargetReorientCommand;
 import com.safi.workshop.edit.parts.CaseItemTargetToolstepEditPart;
+import com.safi.workshop.edit.parts.InputItemEditPart;
+import com.safi.workshop.edit.parts.InputItemPanelEditPart;
 import com.safi.workshop.edit.parts.OutputEditPart;
+import com.safi.workshop.edit.parts.OutputItemEditPart;
+import com.safi.workshop.edit.parts.OutputItemPanelEditPart;
 import com.safi.workshop.edit.parts.OutputTargetEditPart;
 import com.safi.workshop.edit.policies.SafiWorkshopBaseItemSemanticEditPolicy;
 import com.safi.workshop.part.SafletVisualIDRegistry;
@@ -71,8 +77,8 @@ public class InvokeSaflet2ItemSemanticEditPolicy extends SafiWorkshopBaseItemSem
         case OutputEditPart.VISUAL_ID:
           cmd.add(getDestroyElementCommand(node));
           break;
-        case InputItemPanelEditPart.VISUAL_ID:
-        case OutputItemPanelEditPart.VISUAL_ID:
+        case InvokeSafletInputItemPanelEditPart.VISUAL_ID:
+        case InvokeSafletOutputItemPanelEditPart.VISUAL_ID:
           for (Iterator cit = node.getChildren().iterator(); cit.hasNext();) {
             Node cnode = (Node) cit.next();
             switch (SafletVisualIDRegistry.getVisualID(cnode)) {
