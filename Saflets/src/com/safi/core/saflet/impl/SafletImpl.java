@@ -298,10 +298,7 @@ public abstract class SafletImpl extends ThreadSensitiveImpl implements Saflet {
 
 	public final static Logger stdLog = Logger.getLogger(SafletConstants.STANDARD_LOG);
 
-	public final static Logger debugLog;
-	static {
-		debugLog = Logger.getLogger(SafletConstants.WORKBENCH_DEBUGLOG);
-	}
+	public final static Logger debugLog = Logger.getLogger(SafletConstants.WORKBENCH_DEBUGLOG);
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -343,6 +340,25 @@ public abstract class SafletImpl extends ThreadSensitiveImpl implements Saflet {
 //			initator.cleanup();
 	}
 	
+	@Override
+	public boolean isDebugLogEnabled() {
+		return debugLog.isLoggable(Level.FINEST);
+	}
+	
+	@Override
+	public boolean isInfoLogEnabled() {
+		return debugLog.isLoggable(Level.INFO);
+	}
+
+	@Override
+	public boolean isWarnLogEnabled() {
+		return debugLog.isLoggable(Level.WARNING);
+	}
+	
+	@Override
+	public boolean isLogLevelEnabled(Level lvl) {
+		return debugLog.isLoggable(lvl);
+	}
 	
 	@Override
 	public void debug(String message) {

@@ -63,6 +63,10 @@ public final static int DEFAULT_MANAGER_ACTION_TIMEOUT = 120000;
   
   void error(String message, Throwable e);
   void warn(String message, Throwable e);
+  boolean isDebugLogEnabled();
+  boolean isInfoLogEnabled();
+  boolean isWarnLogEnabled();
+  boolean isLogLevelEnabled(Level lvl);
   
   /**
 	 * Returns the value of the '<em><b>Initiator</b></em>' reference.
