@@ -33,6 +33,9 @@ import com.safi.core.ThreadSensitive;
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.ActionStepPackage;
+import com.safi.core.call.CallSource1;
+import com.safi.core.call.CallSource2;
+import com.safi.core.call.SafiCall;
 import com.safi.core.impl.ThreadSensitiveImpl;
 import com.safi.core.initiator.Initiator;
 import com.safi.core.saflet.Saflet;
@@ -1170,5 +1173,63 @@ public abstract class SafletImpl extends ThreadSensitiveImpl implements Saflet {
 		result.append(')');
 		return result.toString();
 	}
+	
+	 @Override
+	  public String getUniqueCallName(String prefix) {
+	    int max = 1;
+	    com.safi.core.initiator.Initiator init = getInitiator();
+	    
+	    if (init instanceof CallSource1) {
+	    	SafiCall call = (SafiCall)((CallSource1) init).getNewCall1();
+	      if (call != null) {
+	        String sn = call.getName();
+	        max = Math.max(max, getNextNameSeq(sn));
+	      }
+
+	      if (init instanceof CallSource2) {
+	      	SafiCall call2 = (SafiCall)((CallSource2) init).getNewCall2();
+	        if (call2 != null) {
+	          String sn = call2.getName();
+	          max = Math.max(max, getNextNameSeq(sn));
+	        }
+	      }
+	    }
+
+	    for (ActionStep ts : getActionsteps()) {
+	      if (ts instanceof CallSource1) {
+	      	SafiCall call = (SafiCall)((CallSource1) ts).getNewCall1();
+	        if (call != null) {
+	          String sn = call.getName();
+	          max = Math.max(max, getNextNameSeq(sn));
+	        }
+
+	        if (ts instanceof CallSource2) {
+	        	SafiCall call2 = (SafiCall)((CallSource2) ts).getNewCall2();
+	          if (call2 != null) {
+	            String sn = call2.getName();
+	            max = Math.max(max, getNextNameSeq(sn));
+	          }
+	        }
+
+	      }
+	    }
+	    return prefix + max;
+	  }
+
+	  public int getNextNameSeq(String callName) {
+	    int idx = callName.length() - 1;
+	    while (idx >= 0 && Character.isDigit(callName.charAt(idx))) {
+	      --idx;
+	    }
+	    if ((idx + 1) <= (callName.length())) {
+	      try {
+	        String seq = callName.substring(idx + 1, callName.length());
+	        return Integer.parseInt(seq) + 1;
+	      } catch (Exception e) {
+	        e.printStackTrace();
+	      }
+	    }
+	    return 1;
+	  }
 
 } // SafletImpl
