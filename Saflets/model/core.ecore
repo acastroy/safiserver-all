@@ -235,7 +235,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="message" ordered="false"
           eType="#//actionstep/DynamicValue" containment="true" resolveProxies="false">
         <eAnnotations source="DynamicValueAnnotation">
-          <details key="type" value="VariableName"/>
+          <details key="type" value="ScriptText"/>
           <details key="isTypeLocked" value="false"/>
           <details key="description" value="The message to be logged"/>
           <details key="expectedReturnType" value="Text"/>
