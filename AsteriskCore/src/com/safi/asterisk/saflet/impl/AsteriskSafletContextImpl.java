@@ -146,7 +146,7 @@ public class AsteriskSafletContextImpl extends SafletContextImpl implements Aste
 
   @Override
   public char popBufferedDigit() {
-  	StringBuffer buf = new StringBuffer(bufferedDigits);
+  	StringBuilder buf = new StringBuilder(bufferedDigits);
   	
     if (StringUtils.isBlank(buf.toString()))
       return (char) 253;
