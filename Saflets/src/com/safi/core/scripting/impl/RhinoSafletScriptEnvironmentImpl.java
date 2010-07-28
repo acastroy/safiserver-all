@@ -10,10 +10,13 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import org.apache.commons.js2j.SugarWrapFactory;
 import org.eclipse.emf.ecore.EClass;
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.ContextFactory;
 import org.mozilla.javascript.Kit;
+
 import com.safi.core.scripting.RhinoSafletScript;
 import com.safi.core.scripting.RhinoSafletScriptEnvironment;
 import com.safi.core.scripting.SafletScriptException;
@@ -80,11 +83,12 @@ public class RhinoSafletScriptEnvironmentImpl extends SafletScriptEnvironmentImp
     try {
       if (Context.isValidLanguageVersion(170))
         cx.setLanguageVersion(170);
+      cx.setWrapFactory(new SugarWrapFactory());
       org.mozilla.javascript.ScriptableObject sharedScope = cx.initStandardObjects();
       sharedScriptScope = ScriptingFactory.eINSTANCE.createRhinoScriptScope();
       sharedScriptScope.setScopeObject(sharedScope);
       InputStream scriptStream = ClassLoader.getSystemResourceAsStream(SHARED_JS_FILE);
-
+      
       if (scriptStream == null) {
         if (log.isLoggable(Level.FINEST))
           log.log(Level.FINEST, "Couldn't load " + SHARED_JS_FILE

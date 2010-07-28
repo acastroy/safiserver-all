@@ -4,7 +4,8 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: Saflets; singleton:=true
 Bundle-Version: 1.2.6
 Bundle-ClassPath: .,
- lib/Zql.jar
+ lib/Zql.jar,
+ lib/commons-js2j-0.1-SNAPSHOT.jar
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
@@ -25,7 +26,8 @@ Export-Package: com.safi.core,
  com.safi.core.scripting,
  com.safi.core.scripting.impl,
  com.safi.core.scripting.util,
- com.safi.core.util
+ com.safi.core.util,
+ org.apache.commons.js2j
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi,

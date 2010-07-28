@@ -8,6 +8,8 @@ package com.safi.core.scripting.impl;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import org.apache.commons.js2j.SugarWrapFactory;
 import org.eclipse.emf.ecore.EClass;
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.ContextFactory;
@@ -60,6 +62,8 @@ public class RhinoScriptScopeImpl extends ScriptScopeImpl implements RhinoScript
         ctx = ContextFactory.getGlobal().enterContext();
         if (Context.isValidLanguageVersion(170))
           ctx.setLanguageVersion(170);
+        if (!(ctx.getWrapFactory() instanceof SugarWrapFactory))
+        	ctx.setWrapFactory(new SugarWrapFactory());
         newContext = true;
       }
       Scriptable scriptable = ((Scriptable) scopeObject);
@@ -69,6 +73,10 @@ public class RhinoScriptScopeImpl extends ScriptScopeImpl implements RhinoScript
       	
       	value = ((Long)value).intValue();
       }
+//      else
+//      if (value instanceof List) {
+//      	value = new ScriptableList(scriptable, (List)value);
+//      }
       Object wrappedOut = Context.javaToJS(value, scriptable);
 
       scriptable.put(name, scriptable, wrappedOut);
@@ -87,7 +95,9 @@ public class RhinoScriptScopeImpl extends ScriptScopeImpl implements RhinoScript
     try {
       
       if (ctx == null) {
-        ContextFactory.getGlobal().enterContext();
+        ctx = ContextFactory.getGlobal().enterContext();
+        if (!(ctx.getWrapFactory() instanceof SugarWrapFactory))
+        	ctx.setWrapFactory(new SugarWrapFactory());
         newContext = true;
       }
       Scriptable scriptable = ((Scriptable) scopeObject);
@@ -113,6 +123,8 @@ public class RhinoScriptScopeImpl extends ScriptScopeImpl implements RhinoScript
         ctx = ContextFactory.getGlobal().enterContext();
         if (Context.isValidLanguageVersion(170))
           ctx.setLanguageVersion(170);
+        if (!(ctx.getWrapFactory() instanceof SugarWrapFactory))
+        	ctx.setWrapFactory(new SugarWrapFactory());
         newContext = true;
       }
       Scriptable scriptable = ((Scriptable) scopeObject);

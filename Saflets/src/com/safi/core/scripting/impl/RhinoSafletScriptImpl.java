@@ -6,6 +6,7 @@
  */
 package com.safi.core.scripting.impl;
 
+import org.apache.commons.js2j.SugarWrapFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -66,6 +67,8 @@ public class RhinoSafletScriptImpl extends SafletScriptImpl implements RhinoSafl
   public Object execute(com.safi.core.scripting.ScriptScope scope) throws SafletScriptException {
     try {
       Context cx = ContextFactory.getGlobal().enterContext();
+      if (!(cx.getWrapFactory() instanceof SugarWrapFactory))
+      	cx.setWrapFactory(new SugarWrapFactory());
       if (rhinoScript == null) {
         rhinoScript = cx.compileString(scriptText, name, 1, null);
       }
