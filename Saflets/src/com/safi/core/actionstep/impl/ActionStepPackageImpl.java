@@ -2481,7 +2481,7 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		  (getInvokeSaflet_TargetSafletPath(), 
 		   source, 
 		   new String[] {
-			 "type", "VariableName",
+			 "type", "Saflet Path",
 			 "isTypeLocked", "true",
 			 "description", "The path of the saflet to which control will be transferred",
 			 "expectedReturnType", "Text",
@@ -2491,7 +2491,7 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		  (getDebugLog_Message(), 
 		   source, 
 		   new String[] {
-			 "type", "VariableName",
+			 "type", "ScriptText",
 			 "isTypeLocked", "false",
 			 "description", "The message to be logged",
 			 "expectedReturnType", "Text",

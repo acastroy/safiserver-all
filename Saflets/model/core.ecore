@@ -218,7 +218,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="targetSafletPath" ordered="false"
           eType="#//actionstep/DynamicValue" containment="true" resolveProxies="false">
         <eAnnotations source="DynamicValueAnnotation">
-          <details key="type" value="VariableName"/>
+          <details key="type" value="Saflet Path"/>
           <details key="isTypeLocked" value="true"/>
           <details key="description" value="The path of the saflet to which control will be transferred"/>
           <details key="expectedReturnType" value="Text"/>

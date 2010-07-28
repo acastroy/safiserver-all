@@ -37,7 +37,7 @@ public interface InvokeSaflet extends ActionStep {
 	 * @see #setTargetSafletPath(DynamicValue)
 	 * @see com.safi.core.actionstep.ActionStepPackage#getInvokeSaflet_TargetSafletPath()
 	 * @model containment="true" ordered="false"
-	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='true' description='The path of the saflet to which control will be transferred' expectedReturnType='Text' helperClass='com.safi.workshop.sheet.assist.SafletChooserAssistant'"
+	 *        annotation="DynamicValueAnnotation type='Saflet Path' isTypeLocked='true' description='The path of the saflet to which control will be transferred' expectedReturnType='Text' helperClass='com.safi.workshop.sheet.assist.SafletChooserAssistant'"
 	 *        annotation="Required criteria='non-null'"
 	 * @generated
 	 */

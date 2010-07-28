@@ -277,6 +277,7 @@
             ecoreFeature="ecore:EReference core.ecore#//actionstep/Item/targetActionStep"/>
       </genClasses>
       <genClasses image="false" ecoreClass="core.ecore#//actionstep/Heavyweight"/>
+      <genClasses ecoreClass="core.ecore#//actionstep/OutputParameter"/>
     </nestedGenPackages>
     <nestedGenPackages prefix="Scripting" disposableProviderFactory="true" ecorePackage="core.ecore#//scripting">
       <genDataTypes ecoreDataType="core.ecore#//scripting/SafletScriptException"/>

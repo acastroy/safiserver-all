@@ -92,8 +92,8 @@ public class MoveToRowImpl extends ActionStepImpl implements MoveToRow {
       } else {
         ResultSet rs = resultSet.getJDBCResultSet();
         Object dn = resolveDynamicValue(rowNum, context);
-        Integer rn = (Integer)VariableTranslator.translateValue(VariableType.INTEGER, dn);
-        if (rn == null)
+        int rn = ((Number)VariableTranslator.translateValue(VariableType.INTEGER, dn)).intValue();
+        if (rn < 0)
           exception = new ActionStepException("Invalid row number: "+dn);
         else {
         boolean b = rs.absolute(rn);

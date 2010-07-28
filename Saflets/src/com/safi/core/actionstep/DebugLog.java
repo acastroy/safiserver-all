@@ -38,7 +38,7 @@ public interface DebugLog extends ActionStep {
 	 * @see #setMessage(DynamicValue)
 	 * @see com.safi.core.actionstep.ActionStepPackage#getDebugLog_Message()
 	 * @model containment="true" ordered="false"
-	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The message to be logged' expectedReturnType='Text' helperClass=''"
+	 *        annotation="DynamicValueAnnotation type='ScriptText' isTypeLocked='false' description='The message to be logged' expectedReturnType='Text' helperClass=''"
 	 *        annotation="Required criteria='non-null'"
 	 * @generated
 	 */
