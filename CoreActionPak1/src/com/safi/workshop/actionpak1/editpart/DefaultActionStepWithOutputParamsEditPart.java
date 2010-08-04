@@ -20,7 +20,6 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 
 import com.safi.asterisk.figures.ParameterizedFigure;
-import com.safi.asterisk.initiator.CustomInitiatorAsterisk;
 import com.safi.workshop.actionpak1.ElementTypes;
 import com.safi.workshop.edit.parts.ActionstepWithOutputParameters;
 import com.safi.workshop.edit.parts.InputItemEditPart;
@@ -28,6 +27,7 @@ import com.safi.workshop.edit.parts.InputItemPanelEditPart;
 import com.safi.workshop.edit.parts.ItemPanelEditPart;
 import com.safi.workshop.edit.parts.OutputItemEditPart;
 import com.safi.workshop.edit.parts.OutputItemPanelEditPart;
+import com.safi.workshop.model.actionpak1.CustomInitiator;
 import com.safi.workshop.part.SafletVisualIDRegistry;
 
 /**
@@ -79,8 +79,8 @@ public class DefaultActionStepWithOutputParamsEditPart extends DefaultActionStep
     return false;
   }
 
-  public CustomInitiatorAsterisk getCustomInitiatorModel() {
-    return (CustomInitiatorAsterisk) getActionStep();
+  public CustomInitiator getCustomInitiatorModel() {
+    return (CustomInitiator) getActionStep();
   }
 
   @Override
