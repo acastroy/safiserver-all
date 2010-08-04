@@ -17,4 +17,3 @@ Require-Bundle: SafiCommons;bundle-version="1.2.5",
  SafiDB;visibility:=reexport,
  org.apache.commons.lang;bundle-version="2.3.0"
 Eclipse-LazyStart: true
-Import-Package: com.safi.db.astdb
