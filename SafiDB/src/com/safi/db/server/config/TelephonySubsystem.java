@@ -205,7 +205,7 @@ public interface TelephonySubsystem extends ServerResource {
 	 * @return the value of the '<em>Manager Name</em>' attribute.
 	 * @see #setManagerName(String)
 	 * @see com.safi.db.server.config.ConfigPackage#getTelephonySubsystem_ManagerName()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	String getManagerName();
