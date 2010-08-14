@@ -216,7 +216,7 @@ public class GetDigitsImpl extends AsteriskActionStepImpl implements GetDigits {
 
 			Variable v = resolveVariableFromName(variableName, context);
 
-			StringBuffer buf = new StringBuffer();
+			StringBuilder buf = new StringBuilder();
 			boolean rcvdEscape = false;
 			int numRemainingDigits = maxDigits;
 			if (useBufferedDigits) {
