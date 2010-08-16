@@ -48,6 +48,18 @@
             <param name="semanticHint" value="10004"/>
          </metamodelType>
       </metamodel>
+      
+       <metamodel nsURI="http:///com/safi/core.ecore#actionstep">
+         <metamodelType
+               id="SafiWorkshopCore.Finally_10006"
+               name="Finally"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Finally"
+               edithelper="com.safi.workshop.actionpak1.ActionstepEditHelper">
+            <param name="semanticHint" value="10006"/>
+         </metamodelType>
+      </metamodel>
+      
    </extension>
    <extension
          point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
@@ -117,6 +129,25 @@
          actionstepClass="com.safi.workshop.actionpak1.editpart.InvokeSaflet2EditPart"
          factory="com.safi.workshop.actionpak1.factory.InvokeSaflet2EditorDialogFactory">
    </actionstepEditorDialogFactory>
+   <actionPakFactory
+         createCommandFactory="com.safi.workshop.actionpak1.CoreActionPak1CreateCommandFactory"
+         editPartFactory="com.safi.workshop.actionpak1.CoreActionPak1EditPartFactory"
+         editorDialogFactory="com.safi.workshop.actionpak1.CoreActionPak1EditorDialogFactory"
+         elementFactory="com.safi.workshop.actionpak1.CoreActionPak1ElementFactory"
+         modelFactory="com.safi.workshop.actionpak1.CoreActionPak1ModelFactory"
+         viewFactory="com.safi.workshop.actionpak1.CoreActionPak1ViewFactory">
+   </actionPakFactory>
+   <actionStep
+         enabled="true"
+         isInitiator="false"
+         labelSemanticHint="909090"
+         semanticHint="10006">
+      <paletteEntry
+            displayName="Finally"
+            path="Logic"
+            tooltip="Actionstep that is guaranteed to execute just before Saflet exits">
+      </paletteEntry>
+   </actionStep>
    
 </extension>
 

@@ -23,5 +23,7 @@ public class ElementTypes {
   public static IElementType elementType_InvokeSaflet2_10004 = 
     ElementTypeRegistry.getInstance().getType("CoreActionPak1.InvokeSaflet2_10004"); //$NON-NLS-1$
   
+  public static IElementType elementType_Finally_10006 = 
+    ElementTypeRegistry.getInstance().getType("SafiWorkshopCore.Finally_10006"); //$NON-NLS-1$
   
 }
