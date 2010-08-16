@@ -189,13 +189,22 @@ public interface SafletPackage extends EPackage {
   int SAFLET__ID = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 12;
 
   /**
+	 * The feature id for the '<em><b>Finally</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SAFLET__FINALLY = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 13;
+
+		/**
 	 * The number of structural features of the '<em>Saflet</em>' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int SAFLET_FEATURE_COUNT = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 13;
+  int SAFLET_FEATURE_COUNT = CorePackage.THREAD_SENSITIVE_FEATURE_COUNT + 14;
 
   /**
 	 * The meta object id for the '{@link com.safi.core.saflet.impl.SafletContextImpl <em>Context</em>}' class.
@@ -434,6 +443,17 @@ public interface SafletPackage extends EPackage {
   EAttribute getSaflet_Id();
 
   /**
+	 * Returns the meta object for the reference '{@link com.safi.core.saflet.Saflet#getFinally <em>Finally</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Finally</em>'.
+	 * @see com.safi.core.saflet.Saflet#getFinally()
+	 * @see #getSaflet()
+	 * @generated
+	 */
+	EReference getSaflet_Finally();
+
+		/**
 	 * Returns the meta object for class '{@link com.safi.core.saflet.SafletContext <em>Context</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -651,6 +671,14 @@ public interface SafletPackage extends EPackage {
     EAttribute SAFLET__ID = eINSTANCE.getSaflet_Id();
 
     /**
+		 * The meta object literal for the '<em><b>Finally</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SAFLET__FINALLY = eINSTANCE.getSaflet_Finally();
+
+				/**
 		 * The meta object literal for the '{@link com.safi.core.saflet.impl.SafletContextImpl <em>Context</em>}' class.
 		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

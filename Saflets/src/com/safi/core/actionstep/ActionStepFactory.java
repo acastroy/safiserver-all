@@ -377,6 +377,15 @@ public interface ActionStepFactory extends EFactory {
   OutputParameter createOutputParameter();
 
   /**
+	 * Returns a new object of class '<em>Finally</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Finally</em>'.
+	 * @generated
+	 */
+	Finally createFinally();
+
+		/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

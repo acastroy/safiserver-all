@@ -285,6 +285,15 @@ public class SafletPackageImpl extends EPackageImpl implements SafletPackage {
 
   /**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSaflet_Finally() {
+		return (EReference)safletEClass.getEStructuralFeatures().get(11);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -404,6 +413,7 @@ public class SafletPackageImpl extends EPackageImpl implements SafletPackage {
 		createEAttribute(safletEClass, SAFLET__VERSION);
 		createEAttribute(safletEClass, SAFLET__DESCRIPTION);
 		createEAttribute(safletEClass, SAFLET__ID);
+		createEReference(safletEClass, SAFLET__FINALLY);
 
 		safletContextEClass = createEClass(SAFLET_CONTEXT);
 		createEAttribute(safletContextEClass, SAFLET_CONTEXT__EXCEPTIONS);
@@ -473,6 +483,7 @@ public class SafletPackageImpl extends EPackageImpl implements SafletPackage {
 		initEAttribute(getSaflet_Version(), ecorePackage.getEString(), "version", "", 1, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getSaflet_Description(), ecorePackage.getEString(), "description", "", 0, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getSaflet_Id(), ecorePackage.getEInt(), "id", "-1", 0, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSaflet_Finally(), theActionStepPackage.getFinally(), null, "finally", null, 0, 1, Saflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = addEOperation(safletEClass, theActionStepPackage.getActionStep(), "getActionStep", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);

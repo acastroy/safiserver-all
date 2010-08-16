@@ -39,6 +39,7 @@ import com.safi.core.actionstep.DynamicValueType;
 import com.safi.core.actionstep.ExecuteQuery;
 import com.safi.core.actionstep.ExecuteScript;
 import com.safi.core.actionstep.ExecuteUpdate;
+import com.safi.core.actionstep.Finally;
 import com.safi.core.actionstep.GetColMapping;
 import com.safi.core.actionstep.GetColValue;
 import com.safi.core.actionstep.GetColValues;
@@ -388,6 +389,13 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
   private EClass outputParameterEClass = null;
 
   /**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass finallyEClass = null;
+
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
@@ -1801,6 +1809,15 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 
   /**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFinally() {
+		return finallyEClass;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -2059,6 +2076,8 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 
 		outputParameterEClass = createEClass(OUTPUT_PARAMETER);
 
+		finallyEClass = createEClass(FINALLY);
+
 		// Create enums
 		dynamicValueTypeEEnum = createEEnum(DYNAMIC_VALUE_TYPE);
 		outputTypeEEnum = createEEnum(OUTPUT_TYPE);
@@ -2155,6 +2174,7 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		queryParamMappingEClass.getESuperTypes().add(this.getItem());
 		itemEClass.getESuperTypes().add(theCorePackage.getThreadSensitive());
 		outputParameterEClass.getESuperTypes().add(this.getInputItem());
+		finallyEClass.getESuperTypes().add(this.getActionStep());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(actionStepEClass, ActionStep.class, "ActionStep", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2375,6 +2395,8 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		initEClass(heavyweightEClass, Heavyweight.class, "Heavyweight", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(outputParameterEClass, OutputParameter.class, "OutputParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(finallyEClass, Finally.class, "Finally", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(dynamicValueTypeEEnum, DynamicValueType.class, "DynamicValueType");

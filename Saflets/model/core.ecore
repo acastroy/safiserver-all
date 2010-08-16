@@ -803,6 +803,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Heavyweight" abstract="true" interface="true"/>
     <eClassifiers xsi:type="ecore:EClass" name="OutputParameter" eSuperTypes="#//actionstep/InputItem"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Finally" eSuperTypes="#//actionstep/ActionStep"/>
   </eSubpackages>
   <eSubpackages name="scripting" nsURI="http:///com/safi/core.ecore#scripting" nsPrefix="com.safi.core.scripting">
     <eClassifiers xsi:type="ecore:EClass" name="SafletScript" abstract="true">
@@ -908,6 +909,7 @@
           defaultValueLiteral=""/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
           defaultValueLiteral="-1"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="finally" eType="#//actionstep/Finally"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="SafletContext" abstract="true" eSuperTypes="#//ThreadSensitive">
       <eOperations name="init"/>

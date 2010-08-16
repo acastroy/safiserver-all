@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EClass;
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.DBConnectionId;
+import com.safi.core.actionstep.Finally;
 import com.safi.core.actionstep.OpenDBConnection;
 import com.safi.core.actionstep.impl.ActionStepImpl;
 import com.safi.core.initiator.Initiator;
@@ -89,10 +90,13 @@ public abstract class InitiatorImpl extends ActionStepImpl implements Initiator 
    * @generated NOT
    */
   public void beginProcessing() throws ActionStepException {
+  	getSaflet().setActive(true);
+  	Finally finallyStep = null;
+  	SafletContext handlerContext = null;
     try {
-      getSaflet().setActive(true);
+      finallyStep = getSaflet().getFinally();
       ActionStep action = getDefaultOutput().getTarget();
-      final SafletContext handlerContext = getSaflet().getSafletContext();
+      handlerContext = getSaflet().getSafletContext();
       // Object val =
       // handlerContext.getVariableRawValue(SafletConstants.VAR_KEY_INVOKE_COUNT);
       // if (val instanceof Number){
@@ -111,30 +115,52 @@ public abstract class InitiatorImpl extends ActionStepImpl implements Initiator 
       // invokeCountVar.setDefaultValue(new Integer(0));
       // handlerContext.addOrUpdateVariable(invokeCountVar);
       // }
-      while (action != null) {
-        int visits = action.incrementVisits();
-        if (visits > getSaflet().getMaxIterations()) {
-          getSaflet().error(
-              "Error caught in " + getSaflet().getName() + ": Max number of iterations exceeded!");
-          action.handleException(handlerContext, new ActionStepException("Error caught in "
-              + getSaflet().getName() + ": Max number of iterations exceeded!"));
-          // action = action.getNext();
-          // if (action != null){
-          // action.beginProcessing(handlerContext);
-          // continue;
-          // }
-          break;
-        }
-        action.beginProcessing(handlerContext);
-        action = action.getNext();
-      }
+      
+      action = doActionStepExecuteLoop(handlerContext, action);
+      
+      
       // if (nextActionStep != null)
       // nextActionStep.beginProcessing(getSaflet().getSafletContext());
     } finally {
-      cleanDBResources();
-      getSaflet().setActive(false);
+    	if (finallyStep != null) {
+      	ActionStep action = finallyStep;
+      	try {
+      	doActionStepExecuteLoop(handlerContext, action);
+      	} finally {
+					  cleanDBResources();
+			      getSaflet().setActive(false);
+				}
+      }
+    	else {
+    		 cleanDBResources();
+         getSaflet().setActive(false);
+    	}
+     
     }
   }
+
+	private ActionStep doActionStepExecuteLoop(SafletContext handlerContext, ActionStep action)
+			throws ActionStepException {
+		while (action != null) {
+		  int visits = action.incrementVisits();
+		  if (visits > getSaflet().getMaxIterations()) {
+		    getSaflet().error(
+		        "Error caught in " + getSaflet().getName() + ": Max number of iterations exceeded!");
+		    action.handleException(handlerContext, new ActionStepException("Error caught in "
+		        + getSaflet().getName() + ": Max number of iterations exceeded!"));
+		    // action = action.getNext();
+		    // if (action != null){
+		    // action.beginProcessing(handlerContext);
+		    // continue;
+		    // }
+		    break;
+		  }
+		  action.beginProcessing(handlerContext);
+		  action = action.getNext();
+		  
+		}
+		return action;
+	}
 
   private void cleanDBResources() {
     try {

@@ -13,6 +13,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.ActionStepException;
+import com.safi.core.actionstep.Finally;
 import com.safi.core.initiator.Initiator;
 import com.safi.core.scripting.SafletScript;
 import com.safi.core.scripting.SafletScriptEnvironment;
@@ -37,6 +38,7 @@ import com.safi.core.scripting.ScriptScope;
  *   <li>{@link com.safi.core.saflet.Saflet#getVersion <em>Version</em>}</li>
  *   <li>{@link com.safi.core.saflet.Saflet#getDescription <em>Description</em>}</li>
  *   <li>{@link com.safi.core.saflet.Saflet#getId <em>Id</em>}</li>
+ *   <li>{@link com.safi.core.saflet.Saflet#getFinally <em>Finally</em>}</li>
  * </ul>
  * </p>
  *
@@ -351,6 +353,30 @@ public final static int DEFAULT_MANAGER_ACTION_TIMEOUT = 120000;
   void setId(int value);
 
   /**
+	 * Returns the value of the '<em><b>Finally</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Finally</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Finally</em>' reference.
+	 * @see #setFinally(Finally)
+	 * @see com.safi.core.saflet.SafletPackage#getSaflet_Finally()
+	 * @model
+	 * @generated
+	 */
+	Finally getFinally();
+		/**
+	 * Sets the value of the '{@link com.safi.core.saflet.Saflet#getFinally <em>Finally</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Finally</em>' reference.
+	 * @see #getFinally()
+	 * @generated
+	 */
+	void setFinally(Finally value);
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @model

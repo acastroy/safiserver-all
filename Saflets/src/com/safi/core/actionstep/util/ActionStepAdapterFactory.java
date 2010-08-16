@@ -250,6 +250,10 @@ public class ActionStepAdapterFactory extends AdapterFactoryImpl {
 				return createOutputParameterAdapter();
 			}
 			@Override
+			public Adapter caseFinally(Finally object) {
+				return createFinallyAdapter();
+			}
+			@Override
 			public Adapter caseProductIdentifiable(ProductIdentifiable object) {
 				return createProductIdentifiableAdapter();
 			}
@@ -888,6 +892,20 @@ public class ActionStepAdapterFactory extends AdapterFactoryImpl {
 	}
 
   /**
+	 * Creates a new adapter for an object of class '{@link com.safi.core.actionstep.Finally <em>Finally</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.safi.core.actionstep.Finally
+	 * @generated
+	 */
+	public Adapter createFinallyAdapter() {
+		return null;
+	}
+
+		/**
 	 * Creates a new adapter for an object of class '{@link com.safi.core.ProductIdentifiable <em>Product Identifiable</em>}'.
 	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;

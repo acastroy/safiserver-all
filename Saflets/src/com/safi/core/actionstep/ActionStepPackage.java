@@ -4555,6 +4555,115 @@ public interface ActionStepPackage extends EPackage {
   int OUTPUT_PARAMETER_FEATURE_COUNT = INPUT_ITEM_FEATURE_COUNT + 0;
 
   /**
+	 * The meta object id for the '{@link com.safi.core.actionstep.impl.FinallyImpl <em>Finally</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.safi.core.actionstep.impl.FinallyImpl
+	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getFinally()
+	 * @generated
+	 */
+	int FINALLY = 43;
+
+		/**
+	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINALLY__PRODUCT_ID = ACTION_STEP__PRODUCT_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINALLY__PLATFORM_ID = ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINALLY__PLATFORM_DEPENDANT = ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
+	 * The feature id for the '<em><b>Paused</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINALLY__PAUSED = ACTION_STEP__PAUSED;
+
+		/**
+	 * The feature id for the '<em><b>Active</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINALLY__ACTIVE = ACTION_STEP__ACTIVE;
+
+		/**
+	 * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINALLY__OUTPUTS = ACTION_STEP__OUTPUTS;
+
+		/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINALLY__NAME = ACTION_STEP__NAME;
+
+		/**
+	 * The feature id for the '<em><b>Saflet</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINALLY__SAFLET = ACTION_STEP__SAFLET;
+
+		/**
+	 * The feature id for the '<em><b>Default Output</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINALLY__DEFAULT_OUTPUT = ACTION_STEP__DEFAULT_OUTPUT;
+
+		/**
+	 * The feature id for the '<em><b>Error Output</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINALLY__ERROR_OUTPUT = ACTION_STEP__ERROR_OUTPUT;
+
+		/**
+	 * The number of structural features of the '<em>Finally</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINALLY_FEATURE_COUNT = ACTION_STEP_FEATURE_COUNT + 0;
+
+		/**
 	 * The meta object id for the '{@link com.safi.core.actionstep.DynamicValueType <em>Dynamic Value Type</em>}' enum.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4562,7 +4671,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getDynamicValueType()
 	 * @generated
 	 */
-  int DYNAMIC_VALUE_TYPE = 43;
+  int DYNAMIC_VALUE_TYPE = 44;
 
   /**
 	 * The meta object id for the '{@link com.safi.core.actionstep.OutputType <em>Output Type</em>}' enum.
@@ -4572,7 +4681,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getOutputType()
 	 * @generated
 	 */
-  int OUTPUT_TYPE = 44;
+  int OUTPUT_TYPE = 45;
 
   /**
 	 * The meta object id for the '{@link com.safi.core.actionstep.DebugLevel <em>Debug Level</em>}' enum.
@@ -4582,7 +4691,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getDebugLevel()
 	 * @generated
 	 */
-  int DEBUG_LEVEL = 45;
+  int DEBUG_LEVEL = 46;
 
   /**
 	 * The meta object id for the '<em>Map</em>' data type.
@@ -4592,7 +4701,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getMap()
 	 * @generated
 	 */
-  int MAP = 46;
+  int MAP = 47;
 
   /**
 	 * The meta object id for the '<em>Basic EMap</em>' data type.
@@ -4602,7 +4711,7 @@ public interface ActionStepPackage extends EPackage {
 	 * @see com.safi.core.actionstep.impl.ActionStepPackageImpl#getBasicEMap()
 	 * @generated
 	 */
-  int BASIC_EMAP = 47;
+  int BASIC_EMAP = 48;
 
 
   /**
@@ -6147,6 +6256,16 @@ public interface ActionStepPackage extends EPackage {
   EClass getOutputParameter();
 
   /**
+	 * Returns the meta object for class '{@link com.safi.core.actionstep.Finally <em>Finally</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Finally</em>'.
+	 * @see com.safi.core.actionstep.Finally
+	 * @generated
+	 */
+	EClass getFinally();
+
+		/**
 	 * Returns the meta object for enum '{@link com.safi.core.actionstep.DynamicValueType <em>Dynamic Value Type</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

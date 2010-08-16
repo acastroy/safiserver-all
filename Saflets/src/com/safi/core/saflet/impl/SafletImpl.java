@@ -33,6 +33,7 @@ import com.safi.core.ThreadSensitive;
 import com.safi.core.actionstep.ActionStep;
 import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.ActionStepPackage;
+import com.safi.core.actionstep.Finally;
 import com.safi.core.call.CallSource1;
 import com.safi.core.call.CallSource2;
 import com.safi.core.call.SafiCall;
@@ -69,6 +70,7 @@ import com.safi.logging.SafiFileHandler;
  *   <li>{@link com.safi.core.saflet.impl.SafletImpl#getVersion <em>Version</em>}</li>
  *   <li>{@link com.safi.core.saflet.impl.SafletImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link com.safi.core.saflet.impl.SafletImpl#getId <em>Id</em>}</li>
+ *   <li>{@link com.safi.core.saflet.impl.SafletImpl#getFinally <em>Finally</em>}</li>
  * </ul>
  * </p>
  *
@@ -299,6 +301,15 @@ public abstract class SafletImpl extends ThreadSensitiveImpl implements Saflet {
 	 */
 	protected int id = ID_EDEFAULT;
 
+	/**
+	 * The cached value of the '{@link #getFinally() <em>Finally</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFinally()
+	 * @generated
+	 * @ordered
+	 */
+	protected Finally finally_;
 	public final static Logger stdLog = Logger.getLogger(SafletConstants.STANDARD_LOG);
 
 	public final static Logger debugLog = Logger.getLogger(SafletConstants.WORKBENCH_DEBUGLOG);
@@ -793,6 +804,44 @@ public abstract class SafletImpl extends ThreadSensitiveImpl implements Saflet {
 			eNotify(new ENotificationImpl(this, Notification.SET, SafletPackage.SAFLET__ID, oldId, id));
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Finally getFinally() {
+		if (finally_ != null && finally_.eIsProxy()) {
+			InternalEObject oldFinally = (InternalEObject)finally_;
+			finally_ = (Finally)eResolveProxy(oldFinally);
+			if (finally_ != oldFinally) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SafletPackage.SAFLET__FINALLY, oldFinally, finally_));
+			}
+		}
+		return finally_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Finally basicGetFinally() {
+		return finally_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFinally(Finally newFinally) {
+		Finally oldFinally = finally_;
+		finally_ = newFinally;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SafletPackage.SAFLET__FINALLY, oldFinally, finally_));
+	}
+
 	@Override
 	public String getUniqueActionStepName(String prefix) {
 		int count = 0;
@@ -982,6 +1031,9 @@ public abstract class SafletImpl extends ThreadSensitiveImpl implements Saflet {
 				return getDescription();
 			case SafletPackage.SAFLET__ID:
 				return getId();
+			case SafletPackage.SAFLET__FINALLY:
+				if (resolve) return getFinally();
+				return basicGetFinally();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1028,6 +1080,9 @@ public abstract class SafletImpl extends ThreadSensitiveImpl implements Saflet {
 			case SafletPackage.SAFLET__ID:
 				setId((Integer)newValue);
 				return;
+			case SafletPackage.SAFLET__FINALLY:
+				setFinally((Finally)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1072,6 +1127,9 @@ public abstract class SafletImpl extends ThreadSensitiveImpl implements Saflet {
 			case SafletPackage.SAFLET__ID:
 				setId(ID_EDEFAULT);
 				return;
+			case SafletPackage.SAFLET__FINALLY:
+				setFinally((Finally)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1109,6 +1167,8 @@ public abstract class SafletImpl extends ThreadSensitiveImpl implements Saflet {
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case SafletPackage.SAFLET__ID:
 				return id != ID_EDEFAULT;
+			case SafletPackage.SAFLET__FINALLY:
+				return finally_ != null;
 		}
 		return super.eIsSet(featureID);
 	}

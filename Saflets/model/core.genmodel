@@ -278,6 +278,7 @@
       </genClasses>
       <genClasses image="false" ecoreClass="core.ecore#//actionstep/Heavyweight"/>
       <genClasses ecoreClass="core.ecore#//actionstep/OutputParameter"/>
+      <genClasses ecoreClass="core.ecore#//actionstep/Finally"/>
     </nestedGenPackages>
     <nestedGenPackages prefix="Scripting" disposableProviderFactory="true" ecorePackage="core.ecore#//scripting">
       <genDataTypes ecoreDataType="core.ecore#//scripting/SafletScriptException"/>
@@ -355,6 +356,8 @@
             ecoreFeature="ecore:EAttribute core.ecore#//saflet/Saflet/version"/>
         <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute core.ecore#//saflet/Saflet/description"/>
         <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//saflet/Saflet/id"/>
+         <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference core.ecore#//saflet/Saflet/finally"/>
         <genOperations ecoreOperation="core.ecore#//saflet/Saflet/getActionStep">
           <genParameters ecoreParameter="core.ecore#//saflet/Saflet/getActionStep/name"/>
         </genOperations>

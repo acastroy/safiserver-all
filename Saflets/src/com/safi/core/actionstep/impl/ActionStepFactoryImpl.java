@@ -145,6 +145,7 @@ public class ActionStepFactoryImpl extends EFactoryImpl implements ActionStepFac
 			case ActionStepPackage.QUERY_PARAM_MAPPING: return createQueryParamMapping();
 			case ActionStepPackage.ITEM: return createItem();
 			case ActionStepPackage.OUTPUT_PARAMETER: return createOutputParameter();
+			case ActionStepPackage.FINALLY: return createFinally();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -587,6 +588,16 @@ public class ActionStepFactoryImpl extends EFactoryImpl implements ActionStepFac
 	}
 
   /**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Finally createFinally() {
+		FinallyImpl finally_ = new FinallyImpl();
+		return finally_;
+	}
+
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated

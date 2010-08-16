@@ -492,6 +492,16 @@ public class ActionStepSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ActionStepPackage.FINALLY: {
+				Finally finally_ = (Finally)theEObject;
+				T result = caseFinally(finally_);
+				if (result == null) result = caseActionStep(finally_);
+				if (result == null) result = caseProductIdentifiable(finally_);
+				if (result == null) result = caseThreadSensitive(finally_);
+				if (result == null) result = casePlatformDisposition(finally_);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -1142,6 +1152,21 @@ public class ActionStepSwitch<T> {
 	}
 
   /**
+	 * Returns the result of interpreting the object as an instance of '<em>Finally</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Finally</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFinally(Finally object) {
+		return null;
+	}
+
+		/**
 	 * Returns the result of interpreting the object as an instance of '<em>Product Identifiable</em>'.
 	 * <!-- begin-user-doc -->
    * This implementation returns null;
