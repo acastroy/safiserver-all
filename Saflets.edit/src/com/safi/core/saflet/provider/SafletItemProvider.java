@@ -80,6 +80,7 @@ public class SafletItemProvider
 			addNamePropertyDescriptor(object);
 			addVersionPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
+			addFinallyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -195,6 +196,28 @@ public class SafletItemProvider
 	}
 
   /**
+	 * This adds a property descriptor for the Finally feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFinallyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Saflet_finally_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Saflet_finally_feature", "_UI_Saflet_type"),
+				 SafletPackage.Literals.SAFLET__FINALLY,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+		/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -419,6 +442,11 @@ public class SafletItemProvider
 			(createChildParameter
 				(SafletPackage.Literals.SAFLET__ACTIONSTEPS,
 				 ActionStepFactory.eINSTANCE.createRunQuery()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SafletPackage.Literals.SAFLET__ACTIONSTEPS,
+				 ActionStepFactory.eINSTANCE.createFinally()));
 	}
 
   /**

@@ -408,6 +408,11 @@ public class DynamicValueItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionStepPackage.eINSTANCE.getDynamicValue_Payload(),
+				 ActionStepFactory.eINSTANCE.createFinally()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionStepPackage.eINSTANCE.getDynamicValue_Payload(),
 				 CoreFactory.eINSTANCE.createThreadSensitive()));
 
 		newChildDescriptors.add

@@ -972,6 +972,29 @@ public class ActionStepItemProviderAdapterFactory extends ActionStepAdapterFacto
 	}
 
   /**
+	 * This keeps track of the one adapter used for all {@link com.safi.core.actionstep.Finally} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FinallyItemProvider finallyItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link com.safi.core.actionstep.Finally}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFinallyAdapter() {
+		if (finallyItemProvider == null) {
+			finallyItemProvider = new FinallyItemProvider(this);
+		}
+
+		return finallyItemProvider;
+	}
+
+		/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1109,6 +1132,7 @@ public class ActionStepItemProviderAdapterFactory extends ActionStepAdapterFacto
 		if (queryParamMappingItemProvider != null) queryParamMappingItemProvider.dispose();
 		if (itemItemProvider != null) itemItemProvider.dispose();
 		if (outputParameterItemProvider != null) outputParameterItemProvider.dispose();
+		if (finallyItemProvider != null) finallyItemProvider.dispose();
 	}
 
 }
