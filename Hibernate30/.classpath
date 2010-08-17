@@ -2,7 +2,7 @@
 <classpath>
 	<classpathentry exported="true" kind="lib" path="hibernate-jmx.jar"/>
 	<classpathentry exported="true" kind="lib" path="persistence.jar"/>
-	<classpathentry exported="true" kind="lib" path="commons-collections-3.1.jar" sourcepath="D:/javalib/apache_commons/commons-collections-3.1-src.zip"/>
+	<classpathentry exported="true" kind="lib" path="commons-collections-3.1.jar" sourcepath="C:/javalib/commons-collections-3.2.1/commons-collections-3.2.1-sources.jar"/>
 	<classpathentry exported="true" kind="lib" path="slf4j-log4j12-1.5.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="slf4j-api-1.5.2.jar"/>
 	<classpathentry exported="true" kind="lib" path="hibernate-annotations.jar" sourcepath="/Hibernate_Annot3.3.1GA"/>
