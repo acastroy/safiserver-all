@@ -600,6 +600,10 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
    * @generated NOT
    */
   public void handleException(SafletContext context, Exception e) throws ActionStepException {
+   this.handleException(context, e, 0);
+  }
+  
+  public void handleException(SafletContext context, Exception e, int index) throws ActionStepException {
     setActive(false);
     if (context.isDebugging())
       context.touchVariables();
@@ -612,7 +616,7 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
       debugLog.severe(getSaflet().getName() + "->" + name + ": " + msg);
 
     }
-    final ActionStep errorActionStep = getErrorActionStep();
+    final ActionStep errorActionStep = getNextActionStepByOutputIndex(index);
     next = errorActionStep;
     if (errorActionStep != null) {
       context.addException(e);
@@ -624,6 +628,10 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
       throw new ActionStepException(e);
     }
 
+  }
+
+  protected ActionStep getNextActionStepByOutputIndex(int idx) {
+    return outputs == null || outputs.size() <= idx ? null : getOutputs().get(idx).getTarget();
   }
 
   protected ActionStep getErrorActionStep() {
