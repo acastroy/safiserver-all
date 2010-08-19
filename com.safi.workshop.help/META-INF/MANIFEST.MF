@@ -4,3 +4,4 @@ Bundle-Name: SafiWorkshop Help Plug-in
 Bundle-SymbolicName: com.safi.workshop.help; singleton:=true
 Bundle-Version: 1.0.1
 Bundle-Vendor: SAFI
+Require-Bundle: org.eclipse.help

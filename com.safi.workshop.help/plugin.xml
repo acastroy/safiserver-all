@@ -14,5 +14,12 @@
 		    <extension point="org.eclipse.help.toc">
 		        <toc file="toctoc_1.xml"/><toc file="toctoc_2.xml"/><toc file="toctoc_3.xml"/><toc file="toctoc_5.xml"/>
 		    </extension>
+      <extension
+            point="org.eclipse.help.contexts">
+         <contexts
+               file="contexts.xml"
+               plugin="com.safi.workshop.help">
+         </contexts>
+      </extension>
 		
 			</plugin>
