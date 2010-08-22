@@ -1,8 +1,11 @@
 package com.safi.workshop.actionpak1;
 
+import org.eclipse.draw2d.IFigure;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
+import com.safi.asterisk.figures.ActionstepColors;
+import com.safi.asterisk.figures.DefaultToolstepFigure;
 import com.safi.workshop.actionpak1.editpart.DefaultActionStepEditPart;
 import com.safi.workshop.edit.parts.ActionStepItemLabelTextEditPart;
 import com.safi.workshop.edit.parts.ActionStepNameEditPart;
@@ -39,7 +42,15 @@ public class CoreActionPak1EditPartFactory implements ActionPakEditPartFactory {
          return new ActionStepItemLabelTextEditPart(view);
          
        case CoreActionPak1Ids.Finally:
-      	 return new DefaultActionStepEditPart(view, id);
+      	 return new DefaultActionStepEditPart(view, id) {
+      		 @Override
+      		protected IFigure createNodeShape() {
+      			// TODO Auto-generated method stub
+      			DefaultToolstepFigure fig = (DefaultToolstepFigure) super.createNodeShape();
+      			fig.setForegroundColor(ActionstepColors.actionBGGreen);
+      			return fig;
+      		}
+      	 };
        
 		}
 		System.err.println("HAAAAAYYYYY!!!!! Couldn't find editpart for id "+id);
