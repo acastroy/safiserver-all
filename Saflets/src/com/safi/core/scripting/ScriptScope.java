@@ -6,8 +6,11 @@
  */
 package com.safi.core.scripting;
 
+import com.safi.core.saflet.SafletEnvironment;
 import com.safi.core.saflet.SafletException;
 
+import com.safi.db.Variable;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -76,5 +79,13 @@ public interface ScriptScope extends EObject {
 	 * @generated
 	 */
   Object getScopedObject(String name) throws SafletException;
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model exceptions="com.safi.core.scripting.SafletScriptException" variablesMany="true"
+	 * @generated
+	 */
+	void updateVariablesFromScope(EList<Variable> variables, SafletEnvironment safletEnvironment, boolean isDebug) throws SafletScriptException;
 
 } // ScriptScope

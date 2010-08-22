@@ -519,6 +519,7 @@ public class ScriptingPackageImpl extends EPackageImpl implements ScriptingPacka
 
 		// Obtain other dependent packages
 		SafletPackage theSafletPackage = (SafletPackage)EPackage.Registry.INSTANCE.getEPackage(SafletPackage.eNS_URI);
+		DbPackage theDbPackage = (DbPackage)EPackage.Registry.INSTANCE.getEPackage(DbPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -579,6 +580,12 @@ public class ScriptingPackageImpl extends EPackageImpl implements ScriptingPacka
 		op = addEOperation(scriptScopeEClass, ecorePackage.getEJavaObject(), "getScopedObject", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, theSafletPackage.getSafletException());
+
+		op = addEOperation(scriptScopeEClass, null, "updateVariablesFromScope", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theDbPackage.getVariable(), "variables", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theSafletPackage.getSafletEnvironment(), "safletEnvironment", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "isDebug", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getSafletScriptException());
 
 		initEClass(scriptScopeFactoryEClass, ScriptScopeFactory.class, "ScriptScopeFactory", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getScriptScopeFactory_ScriptScope(), this.getScriptScope(), null, "scriptScope", null, 0, 1, ScriptScopeFactory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

@@ -11,9 +11,12 @@ import com.safi.core.PlatformDisposition;
 import java.util.Collection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
@@ -591,6 +594,14 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
 
     if (result instanceof Wrapper)
       result = ((Wrapper) result).unwrap();
+    
+    if (context != null) {
+    	BasicEList<Variable> list = new BasicEList<Variable>();
+    	if (context.getDebugLock() != null)
+    		list.addAll(context.getVariables());
+    	list.addAll(getSaflet().getSafletEnvironment().getGlobalVariables());
+    	getSaflet().getSafletScope().updateVariablesFromScope(list, getSaflet().getSafletEnvironment(), context.getDebugLock() != null);
+    }
     return result;
   }
 
@@ -714,7 +725,13 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
   }
 
   public static String translateScriptStringToRawText(String text) {
-    return text.replaceAll(SCRIPT_TEXT_REPLACE, "");
+  	if ((text.charAt(0) == '\'' && text.charAt(text.length()-1) == '\'') || (text.charAt(0) == '"' && text.charAt(text.length()-1) == '"')){
+  		text = text.substring(1, text.length() - 1);
+  		return StringEscapeUtils.unescapeJavaScript(text);
+  	}
+  	else
+  		return text;
+//    return text.replaceAll(SCRIPT_TEXT_REPLACE, "");
     // if (text != null){
     // if (text.charAt(0)=='\"')
     // text = text.substring(1);

@@ -326,6 +326,11 @@
         <genOperations ecoreOperation="core.ecore#//scripting/ScriptScope/getScopedObject">
           <genParameters ecoreParameter="core.ecore#//scripting/ScriptScope/getScopedObject/name"/>
         </genOperations>
+        <genOperations ecoreOperation="core.ecore#//scripting/ScriptScope/updateVariablesFromScope">
+          <genParameters ecoreParameter="core.ecore#//scripting/ScriptScope/updateVariablesFromScope/variables"/>
+          <genParameters ecoreParameter="core.ecore#//scripting/ScriptScope/updateVariablesFromScope/safletEnvironment"/>
+          <genParameters ecoreParameter="core.ecore#//scripting/ScriptScope/updateVariablesFromScope/isDebug"/>
+        </genOperations>
       </genClasses>
       <genClasses image="false" ecoreClass="core.ecore#//scripting/ScriptScopeFactory">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"

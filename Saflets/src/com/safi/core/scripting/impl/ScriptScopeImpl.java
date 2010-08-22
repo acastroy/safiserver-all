@@ -6,14 +6,17 @@
  */
 package com.safi.core.scripting.impl;
 
+import com.safi.core.saflet.SafletEnvironment;
 import com.safi.core.saflet.SafletException;
 
 import com.safi.core.scripting.SafletScriptException;
 import com.safi.core.scripting.ScriptScope;
 import com.safi.core.scripting.ScriptingPackage;
 
+import com.safi.db.Variable;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -127,6 +130,17 @@ public abstract class ScriptScopeImpl extends EObjectImpl implements ScriptScope
 	}
 
   /**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void updateVariablesFromScope(EList<Variable> variables, SafletEnvironment safletEnvironment, boolean isDebug) throws SafletScriptException {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated

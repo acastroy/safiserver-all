@@ -14,6 +14,7 @@ import org.mozilla.javascript.Context;
 import org.mozilla.javascript.ContextFactory;
 import org.mozilla.javascript.Script;
 import org.mozilla.javascript.Scriptable;
+import org.mozilla.javascript.ScriptableObject;
 import org.mozilla.javascript.Wrapper;
 
 import com.safi.core.scripting.RhinoSafletScript;
@@ -74,7 +75,13 @@ public class RhinoSafletScriptImpl extends SafletScriptImpl implements RhinoSafl
       }
       // TODO: share the engine among all handlers and keep a per-handler
       // Bindings object instead
-      Object result = rhinoScript.exec(cx, (Scriptable) scope.getScopeObject());
+      
+      Scriptable scopeObject = (Scriptable) scope.getScopeObject();
+      Scriptable newScope = cx.newObject(scopeObject);
+
+      newScope.setParentScope(scopeObject);
+//      newScope.setPrototype(scopeObject);
+			Object result = rhinoScript.exec(cx, newScope);
       if (result instanceof Wrapper) result = ((Wrapper) result).unwrap();
       return result;
     } catch (Exception exe) {

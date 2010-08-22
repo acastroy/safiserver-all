@@ -854,6 +854,11 @@
           eExceptions="#//saflet/SafletException">
         <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
+      <eOperations name="updateVariablesFromScope" eExceptions="#//scripting/SafletScriptException">
+        <eParameters name="variables" upperBound="-1" eType="ecore:EClass ../../SafiDB/model/db.ecore#//Variable"/>
+        <eParameters name="safletEnvironment" eType="#//saflet/SafletEnvironment"/>
+        <eParameters name="isDebug" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="scopeObject" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
     </eClassifiers>
