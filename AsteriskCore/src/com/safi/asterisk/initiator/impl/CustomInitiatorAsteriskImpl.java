@@ -62,6 +62,8 @@ public class CustomInitiatorAsteriskImpl extends CustomInitiatorImpl implements 
 	      
 	      context.setVariableRawValue(SafletConstants.VAR_KEY_TELEPHONY_SUBSYSTEM,
 	          ((AsteriskInitiatorInfo) ictx).getAsteriskServer());
+	      
+	     
 	    }
 	  }
 	 
