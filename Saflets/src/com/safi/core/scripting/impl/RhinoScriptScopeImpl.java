@@ -33,7 +33,7 @@ import com.safi.db.util.VariableTranslator;
  * <em><b>Rhino Script Scope</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
- * 
+ *
  * @generated
  */
 public class RhinoScriptScopeImpl extends ScriptScopeImpl implements RhinoScriptScope {
@@ -42,7 +42,6 @@ public class RhinoScriptScopeImpl extends ScriptScopeImpl implements RhinoScript
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected RhinoScriptScopeImpl() {
@@ -51,7 +50,6 @@ public class RhinoScriptScopeImpl extends ScriptScopeImpl implements RhinoScript
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
