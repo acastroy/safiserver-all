@@ -14,7 +14,7 @@
     <genClasses ecoreClass="core.ecore#//ThreadSensitive">
       <genOperations ecoreOperation="core.ecore#//ThreadSensitive/cleanup"/>
     </genClasses>
-     <genClasses image="false" ecoreClass="core.ecore#//PlatformDisposition">
+    <genClasses image="false" ecoreClass="core.ecore#//PlatformDisposition">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//PlatformDisposition/platformID"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//PlatformDisposition/platformDependant"/>
     </genClasses>
@@ -45,7 +45,7 @@
         <genTypeParameters ecoreTypeParameter="core.ecore#//actionstep/BasicEMap/T"/>
         <genTypeParameters ecoreTypeParameter="core.ecore#//actionstep/BasicEMap/T1"/>
       </genDataTypes>
-       <genClasses image="false" ecoreClass="core.ecore#//actionstep/ActionStep">
+      <genClasses image="false" ecoreClass="core.ecore#//actionstep/ActionStep">
         <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/ActionStep/paused"/>
         <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/ActionStep/active"/>
         <genFeatures property="None" children="true" createChild="true" propertyDescription="Dataflow Output"
@@ -87,8 +87,7 @@
       </genClasses>
       <genClasses image="false" ecoreClass="core.ecore#//actionstep/ParameterizedActionstep">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/ParameterizedActionstep/inputs"/>
-        <genFeatures property="None" children="true" createChild="true" 
-            ecoreFeature="ecore:EReference core.ecore#//actionstep/ParameterizedActionstep/outputParameters"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/ParameterizedActionstep/outputParameters"/>
       </genClasses>
       <genClasses image="false" ecoreClass="core.ecore#//actionstep/ParameterizedInitiator">
         <genOperations ecoreOperation="core.ecore#//actionstep/ParameterizedInitiator/getOutputMap"/>
@@ -361,7 +360,7 @@
             ecoreFeature="ecore:EAttribute core.ecore#//saflet/Saflet/version"/>
         <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute core.ecore#//saflet/Saflet/description"/>
         <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//saflet/Saflet/id"/>
-         <genFeatures notify="false" createChild="false" propertySortChoices="true"
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference core.ecore#//saflet/Saflet/finally"/>
         <genOperations ecoreOperation="core.ecore#//saflet/Saflet/getActionStep">
           <genParameters ecoreParameter="core.ecore#//saflet/Saflet/getActionStep/name"/>
@@ -460,10 +459,10 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//call/SafiCall/name"/>
       </genClasses>
       <genClasses image="false" ecoreClass="core.ecore#//call/CallSource1">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//call/CallSource1/newCall1"/>
+        <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//call/CallSource1/newCall1"/>
       </genClasses>
       <genClasses image="false" ecoreClass="core.ecore#//call/CallSource2">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//call/CallSource2/newCall2"/>
+        <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//call/CallSource2/newCall2"/>
       </genClasses>
       <genClasses image="false" ecoreClass="core.ecore#//call/CallConsumer1">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
