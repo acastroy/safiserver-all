@@ -41,4 +41,22 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="labelText" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScheduleSaflet" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ParameterizedActionstep">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetSafletPath" ordered="false"
+        eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="DynamicValueAnnotation">
+        <details key="type" value="Saflet Path"/>
+        <details key="isTypeLocked" value="false"/>
+        <details key="description" value="The path of the handler to which control will be transferred"/>
+        <details key="expectedReturnType" value="Saflet Path"/>
+        <details key="helperClass" value="com.safi.workshop.sheet.SelectSafletDynamicValueEditorPage"/>
+      </eAnnotations>
+      <eAnnotations source="Required">
+        <details key="criteria" value="non-null"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="labelText" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>
