@@ -70,29 +70,167 @@ public class ScheduleSafletItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addLabelTextPropertyDescriptor(object);
+			addJobNamePrefixPropertyDescriptor(object);
+			addTargetSafletPathPropertyDescriptor(object);
+			addCronExpressionPropertyDescriptor(object);
+			addStartDateTimePropertyDescriptor(object);
+			addEndDateTimePropertyDescriptor(object);
+			addCalendarNamePropertyDescriptor(object);
+			addJobNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Label Text feature.
+	 * This adds a property descriptor for the Target Saflet Path feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLabelTextPropertyDescriptor(Object object) {
+	protected void addTargetSafletPathPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ScheduleSaflet_labelText_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ScheduleSaflet_labelText_feature", "_UI_ScheduleSaflet_type"),
-				 Actionpak1Package.Literals.SCHEDULE_SAFLET__LABEL_TEXT,
-				 true,
+				 getString("_UI_ScheduleSaflet_targetSafletPath_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ScheduleSaflet_targetSafletPath_feature", "_UI_ScheduleSaflet_type"),
+				 Actionpak1Package.Literals.SCHEDULE_SAFLET__TARGET_SAFLET_PATH,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Job Name Prefix feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addJobNamePrefixPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ScheduleSaflet_jobNamePrefix_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ScheduleSaflet_jobNamePrefix_feature", "_UI_ScheduleSaflet_type"),
+				 Actionpak1Package.Literals.SCHEDULE_SAFLET__JOB_NAME_PREFIX,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Cron Expression feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCronExpressionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ScheduleSaflet_cronExpression_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ScheduleSaflet_cronExpression_feature", "_UI_ScheduleSaflet_type"),
+				 Actionpak1Package.Literals.SCHEDULE_SAFLET__CRON_EXPRESSION,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Start Date Time feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStartDateTimePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ScheduleSaflet_startDateTime_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ScheduleSaflet_startDateTime_feature", "_UI_ScheduleSaflet_type"),
+				 Actionpak1Package.Literals.SCHEDULE_SAFLET__START_DATE_TIME,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the End Date Time feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEndDateTimePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ScheduleSaflet_endDateTime_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ScheduleSaflet_endDateTime_feature", "_UI_ScheduleSaflet_type"),
+				 Actionpak1Package.Literals.SCHEDULE_SAFLET__END_DATE_TIME,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Calendar Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCalendarNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ScheduleSaflet_calendarName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ScheduleSaflet_calendarName_feature", "_UI_ScheduleSaflet_type"),
+				 Actionpak1Package.Literals.SCHEDULE_SAFLET__CALENDAR_NAME,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Job Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addJobNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ScheduleSaflet_jobName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ScheduleSaflet_jobName_feature", "_UI_ScheduleSaflet_type"),
+				 Actionpak1Package.Literals.SCHEDULE_SAFLET__JOB_NAME,
+				 false,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}
@@ -109,10 +247,13 @@ public class ScheduleSafletItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(Actionpak1Package.Literals.SCHEDULE_SAFLET__JOB_NAME_PREFIX);
 			childrenFeatures.add(Actionpak1Package.Literals.SCHEDULE_SAFLET__TARGET_SAFLET_PATH);
 			childrenFeatures.add(Actionpak1Package.Literals.SCHEDULE_SAFLET__CRON_EXPRESSION);
 			childrenFeatures.add(Actionpak1Package.Literals.SCHEDULE_SAFLET__START_DATE_TIME);
 			childrenFeatures.add(Actionpak1Package.Literals.SCHEDULE_SAFLET__END_DATE_TIME);
+			childrenFeatures.add(Actionpak1Package.Literals.SCHEDULE_SAFLET__CALENDAR_NAME);
+			childrenFeatures.add(Actionpak1Package.Literals.SCHEDULE_SAFLET__JOB_NAME);
 		}
 		return childrenFeatures;
 	}
@@ -167,13 +308,13 @@ public class ScheduleSafletItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ScheduleSaflet.class)) {
-			case Actionpak1Package.SCHEDULE_SAFLET__LABEL_TEXT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+			case Actionpak1Package.SCHEDULE_SAFLET__JOB_NAME_PREFIX:
 			case Actionpak1Package.SCHEDULE_SAFLET__TARGET_SAFLET_PATH:
 			case Actionpak1Package.SCHEDULE_SAFLET__CRON_EXPRESSION:
 			case Actionpak1Package.SCHEDULE_SAFLET__START_DATE_TIME:
 			case Actionpak1Package.SCHEDULE_SAFLET__END_DATE_TIME:
+			case Actionpak1Package.SCHEDULE_SAFLET__CALENDAR_NAME:
+			case Actionpak1Package.SCHEDULE_SAFLET__JOB_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -190,6 +331,11 @@ public class ScheduleSafletItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Actionpak1Package.Literals.SCHEDULE_SAFLET__JOB_NAME_PREFIX,
+				 ActionStepFactory.eINSTANCE.createDynamicValue()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -210,6 +356,16 @@ public class ScheduleSafletItemProvider
 			(createChildParameter
 				(Actionpak1Package.Literals.SCHEDULE_SAFLET__END_DATE_TIME,
 				 ActionStepFactory.eINSTANCE.createDynamicValue()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Actionpak1Package.Literals.SCHEDULE_SAFLET__CALENDAR_NAME,
+				 ActionStepFactory.eINSTANCE.createDynamicValue()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Actionpak1Package.Literals.SCHEDULE_SAFLET__JOB_NAME,
+				 ActionStepFactory.eINSTANCE.createDynamicValue()));
 	}
 
 	/**
@@ -226,10 +382,13 @@ public class ScheduleSafletItemProvider
 		boolean qualify =
 			childFeature == ActionStepPackage.eINSTANCE.getParameterizedActionstep_Inputs() ||
 			childFeature == ActionStepPackage.eINSTANCE.getParameterizedActionstep_OutputParameters() ||
+			childFeature == Actionpak1Package.Literals.SCHEDULE_SAFLET__JOB_NAME_PREFIX ||
 			childFeature == Actionpak1Package.Literals.SCHEDULE_SAFLET__TARGET_SAFLET_PATH ||
 			childFeature == Actionpak1Package.Literals.SCHEDULE_SAFLET__CRON_EXPRESSION ||
 			childFeature == Actionpak1Package.Literals.SCHEDULE_SAFLET__START_DATE_TIME ||
-			childFeature == Actionpak1Package.Literals.SCHEDULE_SAFLET__END_DATE_TIME;
+			childFeature == Actionpak1Package.Literals.SCHEDULE_SAFLET__END_DATE_TIME ||
+			childFeature == Actionpak1Package.Literals.SCHEDULE_SAFLET__CALENDAR_NAME ||
+			childFeature == Actionpak1Package.Literals.SCHEDULE_SAFLET__JOB_NAME;
 
 		if (qualify) {
 			return getString
