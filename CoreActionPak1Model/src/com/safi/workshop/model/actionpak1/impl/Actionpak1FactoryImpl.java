@@ -17,6 +17,8 @@ import com.safi.workshop.model.actionpak1.Actionpak1Factory;
 import com.safi.workshop.model.actionpak1.Actionpak1Package;
 import com.safi.workshop.model.actionpak1.ActionstepTest;
 import com.safi.workshop.model.actionpak1.InvokeSaflet2;
+import com.safi.workshop.model.actionpak1.ScheduleSaflet;
+import com.safi.workshop.model.actionpak1.UnscheduleSaflet;
 
 /**
  * <!-- begin-user-doc -->
@@ -65,6 +67,7 @@ public class Actionpak1FactoryImpl extends EFactoryImpl implements Actionpak1Fac
 			case Actionpak1Package.ACTIONSTEP_TEST: return createActionstepTest();
 			case Actionpak1Package.INVOKE_SAFLET2: return createInvokeSaflet2();
 			case Actionpak1Package.SCHEDULE_SAFLET: return createScheduleSaflet();
+			case Actionpak1Package.UNSCHEDULE_SAFLET: return createUnscheduleSaflet();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -98,6 +101,16 @@ public class Actionpak1FactoryImpl extends EFactoryImpl implements Actionpak1Fac
 	public ScheduleSaflet createScheduleSaflet() {
 		ScheduleSafletImpl scheduleSaflet = new ScheduleSafletImpl();
 		return scheduleSaflet;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UnscheduleSaflet createUnscheduleSaflet() {
+		UnscheduleSafletImpl unscheduleSaflet = new UnscheduleSafletImpl();
+		return unscheduleSaflet;
 	}
 
 		/**

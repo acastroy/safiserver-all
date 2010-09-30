@@ -42,6 +42,17 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ScheduleSaflet" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ParameterizedActionstep">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="jobNamePrefix" ordered="false"
+        eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="DynamicValueAnnotation">
+        <details key="type" value="Text"/>
+        <details key="isTypeLocked" value="false"/>
+        <details key="description" value="Optional (unique) name to be assigned to the job "/>
+        <details key="expectedReturnType" value="Text"/>
+        <details key="helperClass" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetSafletPath" ordered="false"
         eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
         containment="true" resolveProxies="false">
@@ -56,8 +67,6 @@
         <details key="criteria" value="non-null"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="labelText" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="cronExpression" ordered="false"
         eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
         containment="true" resolveProxies="false">
@@ -89,6 +98,47 @@
         <details key="description" value="End DateTime for the the saflet execution schedule"/>
         <details key="expectedReturnType" value="VariableName"/>
         <details key="helperClass" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="calendarName" ordered="false"
+        eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="DynamicValueAnnotation">
+        <details key="type" value="Text"/>
+        <details key="isTypeLocked" value="false"/>
+        <details key="description" value="Calendar name for the saflet execution schedule"/>
+        <details key="expectedReturnType" value="Text"/>
+        <details key="helperClass" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="jobName" ordered="false"
+        eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="DynamicValueAnnotation">
+        <details key="type" value="VariableName"/>
+        <details key="isTypeLocked" value="false"/>
+        <details key="description" value="The unique name of the job that was created"/>
+        <details key="expectedReturnType" value="Text"/>
+        <details key="helperClass" value=""/>
+      </eAnnotations>
+      <eAnnotations source="Directionality">
+        <details key="output" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnscheduleSaflet" eSuperTypes="../../Saflets/model/core.ecore#//actionstep/ActionStep">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="jobName" ordered="false"
+        eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="DynamicValueAnnotation">
+        <details key="type" value="Text"/>
+        <details key="isTypeLocked" value="false"/>
+        <details key="description" value="Name of the job to be unscheduled"/>
+        <details key="expectedReturnType" value="VariableName"/>
+        <details key="helperClass" value=""/>
+      </eAnnotations>
+      <eAnnotations source="Required">
+        <details key="criteria" value="non-null"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>

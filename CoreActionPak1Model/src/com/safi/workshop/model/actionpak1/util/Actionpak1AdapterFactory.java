@@ -6,12 +6,12 @@
  */
 package com.safi.workshop.model.actionpak1.util;
 
-import com.safi.core.PlatformDisposition;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
+import com.safi.core.PlatformDisposition;
 import com.safi.core.ProductIdentifiable;
 import com.safi.core.ThreadSensitive;
 import com.safi.core.actionstep.ActionStep;
@@ -25,6 +25,8 @@ import com.safi.workshop.model.actionpak1.ActionstepTest;
 import com.safi.workshop.model.actionpak1.CustomInitiator;
 import com.safi.workshop.model.actionpak1.IncomingCall2;
 import com.safi.workshop.model.actionpak1.InvokeSaflet2;
+import com.safi.workshop.model.actionpak1.ScheduleSaflet;
+import com.safi.workshop.model.actionpak1.UnscheduleSaflet;
 
 /**
  * <!-- begin-user-doc -->
@@ -101,6 +103,10 @@ public class Actionpak1AdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseScheduleSaflet(ScheduleSaflet object) {
 				return createScheduleSafletAdapter();
+			}
+			@Override
+			public Adapter caseUnscheduleSaflet(UnscheduleSaflet object) {
+				return createUnscheduleSafletAdapter();
 			}
 			@Override
 			public Adapter caseProductIdentifiable(ProductIdentifiable object) {
@@ -221,6 +227,20 @@ public class Actionpak1AdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createScheduleSafletAdapter() {
+		return null;
+	}
+
+		/**
+	 * Creates a new adapter for an object of class '{@link com.safi.workshop.model.actionpak1.UnscheduleSaflet <em>Unschedule Saflet</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.safi.workshop.model.actionpak1.UnscheduleSaflet
+	 * @generated
+	 */
+	public Adapter createUnscheduleSafletAdapter() {
 		return null;
 	}
 

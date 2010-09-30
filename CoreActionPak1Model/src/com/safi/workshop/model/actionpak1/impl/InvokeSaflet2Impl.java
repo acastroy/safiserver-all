@@ -44,23 +44,18 @@ import com.safi.workshop.model.actionpak1.InvokeSaflet2;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>
- * {@link com.safi.workshop.model.actionpak1.impl.InvokeSaflet2Impl#getTargetSafletPath
- * <em>Target Saflet Path</em>}</li>
- * <li>
- * {@link com.safi.workshop.model.actionpak1.impl.InvokeSaflet2Impl#getLabelText
- * <em>Label Text</em>}</li>
+ *   <li>{@link com.safi.workshop.model.actionpak1.impl.InvokeSaflet2Impl#getTargetSafletPath <em>Target Saflet Path</em>}</li>
+ *   <li>{@link com.safi.workshop.model.actionpak1.impl.InvokeSaflet2Impl#getLabelText <em>Label Text</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements InvokeSaflet2 {
 	/**
-	 * The cached value of the '{@link #getTargetSafletPath()
-	 * <em>Target Saflet Path</em>}' containment reference. <!-- begin-user-doc
+	 * The cached value of the '{@link #getTargetSafletPath() <em>Target Saflet Path</em>}' containment reference.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @see #getTargetSafletPath()
 	 * @generated
 	 * @ordered
@@ -68,9 +63,8 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 	protected DynamicValue targetSafletPath;
 
 	/**
-	 * The default value of the '{@link #getLabelText() <em>Label Text</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #getLabelText() <em>Label Text</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getLabelText()
 	 * @generated
 	 * @ordered
@@ -78,9 +72,8 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 	protected static final String LABEL_TEXT_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getLabelText() <em>Label Text</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getLabelText() <em>Label Text</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getLabelText()
 	 * @generated
 	 * @ordered
@@ -89,7 +82,6 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected InvokeSaflet2Impl() {
@@ -266,7 +258,6 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -276,7 +267,6 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public DynamicValue getTargetSafletPath() {
@@ -285,48 +275,38 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetTargetSafletPath(DynamicValue newTargetSafletPath, NotificationChain msgs) {
 		DynamicValue oldTargetSafletPath = targetSafletPath;
 		targetSafletPath = newTargetSafletPath;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					Actionpak1Package.INVOKE_SAFLET2__TARGET_SAFLET_PATH, oldTargetSafletPath, newTargetSafletPath);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Actionpak1Package.INVOKE_SAFLET2__TARGET_SAFLET_PATH, oldTargetSafletPath, newTargetSafletPath);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setTargetSafletPath(DynamicValue newTargetSafletPath) {
 		if (newTargetSafletPath != targetSafletPath) {
 			NotificationChain msgs = null;
 			if (targetSafletPath != null)
-				msgs = ((InternalEObject) targetSafletPath).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-						- Actionpak1Package.INVOKE_SAFLET2__TARGET_SAFLET_PATH, null, msgs);
+				msgs = ((InternalEObject)targetSafletPath).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Actionpak1Package.INVOKE_SAFLET2__TARGET_SAFLET_PATH, null, msgs);
 			if (newTargetSafletPath != null)
-				msgs = ((InternalEObject) newTargetSafletPath).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-						- Actionpak1Package.INVOKE_SAFLET2__TARGET_SAFLET_PATH, null, msgs);
+				msgs = ((InternalEObject)newTargetSafletPath).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Actionpak1Package.INVOKE_SAFLET2__TARGET_SAFLET_PATH, null, msgs);
 			msgs = basicSetTargetSafletPath(newTargetSafletPath, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Actionpak1Package.INVOKE_SAFLET2__TARGET_SAFLET_PATH,
-					newTargetSafletPath, newTargetSafletPath));
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Actionpak1Package.INVOKE_SAFLET2__TARGET_SAFLET_PATH, newTargetSafletPath, newTargetSafletPath));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getLabelText() {
@@ -335,20 +315,17 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setLabelText(String newLabelText) {
 		String oldLabelText = labelText;
 		labelText = newLabelText;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Actionpak1Package.INVOKE_SAFLET2__LABEL_TEXT, oldLabelText,
-					labelText));
+			eNotify(new ENotificationImpl(this, Notification.SET, Actionpak1Package.INVOKE_SAFLET2__LABEL_TEXT, oldLabelText, labelText));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -362,7 +339,6 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -378,17 +354,16 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Actionpak1Package.INVOKE_SAFLET2__TARGET_SAFLET_PATH:
-				setTargetSafletPath((DynamicValue) newValue);
+				setTargetSafletPath((DynamicValue)newValue);
 				return;
 			case Actionpak1Package.INVOKE_SAFLET2__LABEL_TEXT:
-				setLabelText((String) newValue);
+				setLabelText((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -396,14 +371,13 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Actionpak1Package.INVOKE_SAFLET2__TARGET_SAFLET_PATH:
-				setTargetSafletPath((DynamicValue) null);
+				setTargetSafletPath((DynamicValue)null);
 				return;
 			case Actionpak1Package.INVOKE_SAFLET2__LABEL_TEXT:
 				setLabelText(LABEL_TEXT_EDEFAULT);
@@ -414,7 +388,6 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -430,13 +403,11 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (labelText: ");

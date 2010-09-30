@@ -19,11 +19,16 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionpak1.ecore#//InvokeSaflet2/labelText"/>
     </genClasses>
     <genClasses ecoreClass="actionpak1.ecore#//ScheduleSaflet">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionpak1.ecore#//ScheduleSaflet/targetSafletPath"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionpak1.ecore#//ScheduleSaflet/labelText"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionpak1.ecore#//ScheduleSaflet/cronExpression"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionpak1.ecore#//ScheduleSaflet/startDateTime"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionpak1.ecore#//ScheduleSaflet/endDateTime"/>
+      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference actionpak1.ecore#//ScheduleSaflet/jobNamePrefix"/>
+      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference actionpak1.ecore#//ScheduleSaflet/targetSafletPath"/>
+      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference actionpak1.ecore#//ScheduleSaflet/cronExpression"/>
+      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference actionpak1.ecore#//ScheduleSaflet/startDateTime"/>
+      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference actionpak1.ecore#//ScheduleSaflet/endDateTime"/>
+      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference actionpak1.ecore#//ScheduleSaflet/calendarName"/>
+      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference actionpak1.ecore#//ScheduleSaflet/jobName"/>
+    </genClasses>
+    <genClasses ecoreClass="actionpak1.ecore#//UnscheduleSaflet">
+      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference actionpak1.ecore#//UnscheduleSaflet/jobName"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

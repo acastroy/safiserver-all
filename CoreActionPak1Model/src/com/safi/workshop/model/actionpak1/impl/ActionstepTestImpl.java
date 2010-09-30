@@ -11,6 +11,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.impl.ActionStepImpl;
 import com.safi.workshop.model.actionpak1.Actionpak1Package;

@@ -53,6 +53,15 @@ public interface Actionpak1Factory extends EFactory {
 	ScheduleSaflet createScheduleSaflet();
 
 		/**
+	 * Returns a new object of class '<em>Unschedule Saflet</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Unschedule Saflet</em>'.
+	 * @generated
+	 */
+	UnscheduleSaflet createUnscheduleSaflet();
+
+		/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

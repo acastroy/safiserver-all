@@ -6,12 +6,12 @@
  */
 package com.safi.workshop.model.actionpak1.util;
 
-import com.safi.core.PlatformDisposition;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
+import com.safi.core.PlatformDisposition;
 import com.safi.core.ProductIdentifiable;
 import com.safi.core.ThreadSensitive;
 import com.safi.core.actionstep.ActionStep;
@@ -25,6 +25,8 @@ import com.safi.workshop.model.actionpak1.ActionstepTest;
 import com.safi.workshop.model.actionpak1.CustomInitiator;
 import com.safi.workshop.model.actionpak1.IncomingCall2;
 import com.safi.workshop.model.actionpak1.InvokeSaflet2;
+import com.safi.workshop.model.actionpak1.ScheduleSaflet;
+import com.safi.workshop.model.actionpak1.UnscheduleSaflet;
 
 /**
  * <!-- begin-user-doc -->
@@ -159,6 +161,16 @@ public class Actionpak1Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case Actionpak1Package.UNSCHEDULE_SAFLET: {
+				UnscheduleSaflet unscheduleSaflet = (UnscheduleSaflet)theEObject;
+				T result = caseUnscheduleSaflet(unscheduleSaflet);
+				if (result == null) result = caseActionStep(unscheduleSaflet);
+				if (result == null) result = caseProductIdentifiable(unscheduleSaflet);
+				if (result == null) result = caseThreadSensitive(unscheduleSaflet);
+				if (result == null) result = casePlatformDisposition(unscheduleSaflet);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -235,6 +247,21 @@ public class Actionpak1Switch<T> {
 	 * @generated
 	 */
 	public T caseScheduleSaflet(ScheduleSaflet object) {
+		return null;
+	}
+
+		/**
+	 * Returns the result of interpreting the object as an instance of '<em>Unschedule Saflet</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Unschedule Saflet</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUnscheduleSaflet(UnscheduleSaflet object) {
 		return null;
 	}
 

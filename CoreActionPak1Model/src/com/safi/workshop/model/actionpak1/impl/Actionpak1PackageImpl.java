@@ -22,6 +22,7 @@ import com.safi.workshop.model.actionpak1.CustomInitiator;
 import com.safi.workshop.model.actionpak1.IncomingCall2;
 import com.safi.workshop.model.actionpak1.InvokeSaflet2;
 import com.safi.workshop.model.actionpak1.ScheduleSaflet;
+import com.safi.workshop.model.actionpak1.UnscheduleSaflet;
 
 /**
  * <!-- begin-user-doc -->
@@ -64,6 +65,13 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 	 * @generated
 	 */
 	private EClass scheduleSafletEClass = null;
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass unscheduleSafletEClass = null;
 
 		/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -215,7 +223,7 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getScheduleSaflet_TargetSafletPath() {
+	public EReference getScheduleSaflet_JobNamePrefix() {
 		return (EReference)scheduleSafletEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -224,8 +232,35 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getScheduleSaflet_LabelText() {
-		return (EAttribute)scheduleSafletEClass.getEStructuralFeatures().get(1);
+	public EReference getScheduleSaflet_JobName() {
+		return (EReference)scheduleSafletEClass.getEStructuralFeatures().get(6);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getUnscheduleSaflet() {
+		return unscheduleSafletEClass;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUnscheduleSaflet_JobName() {
+		return (EReference)unscheduleSafletEClass.getEStructuralFeatures().get(0);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getScheduleSaflet_TargetSafletPath() {
+		return (EReference)scheduleSafletEClass.getEStructuralFeatures().get(1);
 	}
 
 		/**
@@ -253,6 +288,15 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 	 */
 	public EReference getScheduleSaflet_EndDateTime() {
 		return (EReference)scheduleSafletEClass.getEStructuralFeatures().get(4);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getScheduleSaflet_CalendarName() {
+		return (EReference)scheduleSafletEClass.getEStructuralFeatures().get(5);
 	}
 
 		/**
@@ -296,11 +340,16 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 		createEAttribute(invokeSaflet2EClass, INVOKE_SAFLET2__LABEL_TEXT);
 
 		scheduleSafletEClass = createEClass(SCHEDULE_SAFLET);
+		createEReference(scheduleSafletEClass, SCHEDULE_SAFLET__JOB_NAME_PREFIX);
 		createEReference(scheduleSafletEClass, SCHEDULE_SAFLET__TARGET_SAFLET_PATH);
-		createEAttribute(scheduleSafletEClass, SCHEDULE_SAFLET__LABEL_TEXT);
 		createEReference(scheduleSafletEClass, SCHEDULE_SAFLET__CRON_EXPRESSION);
 		createEReference(scheduleSafletEClass, SCHEDULE_SAFLET__START_DATE_TIME);
 		createEReference(scheduleSafletEClass, SCHEDULE_SAFLET__END_DATE_TIME);
+		createEReference(scheduleSafletEClass, SCHEDULE_SAFLET__CALENDAR_NAME);
+		createEReference(scheduleSafletEClass, SCHEDULE_SAFLET__JOB_NAME);
+
+		unscheduleSafletEClass = createEClass(UNSCHEDULE_SAFLET);
+		createEReference(unscheduleSafletEClass, UNSCHEDULE_SAFLET__JOB_NAME);
 	}
 
   /**
@@ -341,6 +390,7 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 		incomingCall2EClass.getESuperTypes().add(theCallPackage.getCallSource1());
 		invokeSaflet2EClass.getESuperTypes().add(theActionStepPackage.getParameterizedActionstep());
 		scheduleSafletEClass.getESuperTypes().add(theActionStepPackage.getParameterizedActionstep());
+		unscheduleSafletEClass.getESuperTypes().add(theActionStepPackage.getActionStep());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(actionstepTestEClass, ActionstepTest.class, "ActionstepTest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -356,11 +406,16 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 		initEAttribute(getInvokeSaflet2_LabelText(), ecorePackage.getEString(), "labelText", null, 0, 1, InvokeSaflet2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(scheduleSafletEClass, ScheduleSaflet.class, "ScheduleSaflet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getScheduleSaflet_JobNamePrefix(), theActionStepPackage.getDynamicValue(), null, "jobNamePrefix", null, 0, 1, ScheduleSaflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getScheduleSaflet_TargetSafletPath(), theActionStepPackage.getDynamicValue(), null, "targetSafletPath", null, 0, 1, ScheduleSaflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getScheduleSaflet_LabelText(), ecorePackage.getEString(), "labelText", null, 0, 1, ScheduleSaflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getScheduleSaflet_CronExpression(), theActionStepPackage.getDynamicValue(), null, "cronExpression", null, 0, 1, ScheduleSaflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getScheduleSaflet_StartDateTime(), theActionStepPackage.getDynamicValue(), null, "startDateTime", null, 0, 1, ScheduleSaflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getScheduleSaflet_EndDateTime(), theActionStepPackage.getDynamicValue(), null, "endDateTime", null, 0, 1, ScheduleSaflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getScheduleSaflet_CalendarName(), theActionStepPackage.getDynamicValue(), null, "calendarName", null, 0, 1, ScheduleSaflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getScheduleSaflet_JobName(), theActionStepPackage.getDynamicValue(), null, "jobName", null, 0, 1, ScheduleSaflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(unscheduleSafletEClass, UnscheduleSaflet.class, "UnscheduleSaflet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getUnscheduleSaflet_JobName(), theActionStepPackage.getDynamicValue(), null, "jobName", null, 0, 1, UnscheduleSaflet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -370,6 +425,8 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 		createDynamicValueAnnotationAnnotations();
 		// Required
 		createRequiredAnnotations();
+		// Directionality
+		createDirectionalityAnnotations();
 	}
 
   /**
@@ -400,6 +457,16 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 			 "expectedReturnType", "Saflet Path",
 			 "helperClass", "com.safi.workshop.sheet.SelectSafletDynamicValueEditorPage"
 		   });			
+		addAnnotation
+		  (getScheduleSaflet_JobNamePrefix(), 
+		   source, 
+		   new String[] {
+			 "type", "Text",
+			 "isTypeLocked", "false",
+			 "description", "Optional (unique) name to be assigned to the job ",
+			 "expectedReturnType", "Text",
+			 "helperClass", ""
+		   });		
 		addAnnotation
 		  (getScheduleSaflet_TargetSafletPath(), 
 		   source, 
@@ -439,7 +506,37 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 			 "description", "End DateTime for the the saflet execution schedule",
 			 "expectedReturnType", "VariableName",
 			 "helperClass", ""
-		   });
+		   });		
+		addAnnotation
+		  (getScheduleSaflet_CalendarName(), 
+		   source, 
+		   new String[] {
+			 "type", "Text",
+			 "isTypeLocked", "false",
+			 "description", "Calendar name for the saflet execution schedule",
+			 "expectedReturnType", "Text",
+			 "helperClass", ""
+		   });		
+		addAnnotation
+		  (getScheduleSaflet_JobName(), 
+		   source, 
+		   new String[] {
+			 "type", "VariableName",
+			 "isTypeLocked", "false",
+			 "description", "The unique name of the job that was created",
+			 "expectedReturnType", "Text",
+			 "helperClass", ""
+		   });			
+		addAnnotation
+		  (getUnscheduleSaflet_JobName(), 
+		   source, 
+		   new String[] {
+			 "type", "Text",
+			 "isTypeLocked", "false",
+			 "description", "Name of the job to be unscheduled",
+			 "expectedReturnType", "VariableName",
+			 "helperClass", ""
+		   });	
 	}
 
   /**
@@ -461,13 +558,35 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 		   source, 
 		   new String[] {
 			 "criteria", "non-null"
-		   });			
+		   });				
 		addAnnotation
 		  (getScheduleSaflet_TargetSafletPath(), 
 		   source, 
 		   new String[] {
 			 "criteria", "non-null"
-		   });			
+		   });									
+		addAnnotation
+		  (getUnscheduleSaflet_JobName(), 
+		   source, 
+		   new String[] {
+			 "criteria", "non-null"
+		   });
+	}
+
+		/**
+	 * Initializes the annotations for <b>Directionality</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createDirectionalityAnnotations() {
+		String source = "Directionality";														
+		addAnnotation
+		  (getScheduleSaflet_JobName(), 
+		   source, 
+		   new String[] {
+			 "output", "true"
+		   });		
 	}
 
 } //Actionpak1PackageImpl

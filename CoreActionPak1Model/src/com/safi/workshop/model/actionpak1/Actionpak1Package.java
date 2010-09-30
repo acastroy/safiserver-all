@@ -9,7 +9,6 @@ package com.safi.workshop.model.actionpak1;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -718,22 +717,22 @@ public interface Actionpak1Package extends EPackage {
 	int SCHEDULE_SAFLET__OUTPUT_PARAMETERS = ActionStepPackage.PARAMETERIZED_ACTIONSTEP__OUTPUT_PARAMETERS;
 
 		/**
+	 * The feature id for the '<em><b>Job Name Prefix</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE_SAFLET__JOB_NAME_PREFIX = ActionStepPackage.PARAMETERIZED_ACTIONSTEP_FEATURE_COUNT + 0;
+
+		/**
 	 * The feature id for the '<em><b>Target Saflet Path</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULE_SAFLET__TARGET_SAFLET_PATH = ActionStepPackage.PARAMETERIZED_ACTIONSTEP_FEATURE_COUNT + 0;
-
-		/**
-	 * The feature id for the '<em><b>Label Text</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCHEDULE_SAFLET__LABEL_TEXT = ActionStepPackage.PARAMETERIZED_ACTIONSTEP_FEATURE_COUNT + 1;
+	int SCHEDULE_SAFLET__TARGET_SAFLET_PATH = ActionStepPackage.PARAMETERIZED_ACTIONSTEP_FEATURE_COUNT + 1;
 
 		/**
 	 * The feature id for the '<em><b>Cron Expression</b></em>' containment reference.
@@ -763,14 +762,150 @@ public interface Actionpak1Package extends EPackage {
 	int SCHEDULE_SAFLET__END_DATE_TIME = ActionStepPackage.PARAMETERIZED_ACTIONSTEP_FEATURE_COUNT + 4;
 
 		/**
+	 * The feature id for the '<em><b>Calendar Name</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE_SAFLET__CALENDAR_NAME = ActionStepPackage.PARAMETERIZED_ACTIONSTEP_FEATURE_COUNT + 5;
+
+		/**
+	 * The feature id for the '<em><b>Job Name</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE_SAFLET__JOB_NAME = ActionStepPackage.PARAMETERIZED_ACTIONSTEP_FEATURE_COUNT + 6;
+
+		/**
 	 * The number of structural features of the '<em>Schedule Saflet</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULE_SAFLET_FEATURE_COUNT = ActionStepPackage.PARAMETERIZED_ACTIONSTEP_FEATURE_COUNT + 5;
+	int SCHEDULE_SAFLET_FEATURE_COUNT = ActionStepPackage.PARAMETERIZED_ACTIONSTEP_FEATURE_COUNT + 7;
 
+
+		/**
+	 * The meta object id for the '{@link com.safi.workshop.model.actionpak1.impl.UnscheduleSafletImpl <em>Unschedule Saflet</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.safi.workshop.model.actionpak1.impl.UnscheduleSafletImpl
+	 * @see com.safi.workshop.model.actionpak1.impl.Actionpak1PackageImpl#getUnscheduleSaflet()
+	 * @generated
+	 */
+	int UNSCHEDULE_SAFLET = 5;
+
+		/**
+	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSCHEDULE_SAFLET__PRODUCT_ID = ActionStepPackage.ACTION_STEP__PRODUCT_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSCHEDULE_SAFLET__PLATFORM_ID = ActionStepPackage.ACTION_STEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSCHEDULE_SAFLET__PLATFORM_DEPENDANT = ActionStepPackage.ACTION_STEP__PLATFORM_DEPENDANT;
+
+		/**
+	 * The feature id for the '<em><b>Paused</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSCHEDULE_SAFLET__PAUSED = ActionStepPackage.ACTION_STEP__PAUSED;
+
+		/**
+	 * The feature id for the '<em><b>Active</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSCHEDULE_SAFLET__ACTIVE = ActionStepPackage.ACTION_STEP__ACTIVE;
+
+		/**
+	 * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSCHEDULE_SAFLET__OUTPUTS = ActionStepPackage.ACTION_STEP__OUTPUTS;
+
+		/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSCHEDULE_SAFLET__NAME = ActionStepPackage.ACTION_STEP__NAME;
+
+		/**
+	 * The feature id for the '<em><b>Saflet</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSCHEDULE_SAFLET__SAFLET = ActionStepPackage.ACTION_STEP__SAFLET;
+
+		/**
+	 * The feature id for the '<em><b>Default Output</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSCHEDULE_SAFLET__DEFAULT_OUTPUT = ActionStepPackage.ACTION_STEP__DEFAULT_OUTPUT;
+
+		/**
+	 * The feature id for the '<em><b>Error Output</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSCHEDULE_SAFLET__ERROR_OUTPUT = ActionStepPackage.ACTION_STEP__ERROR_OUTPUT;
+
+		/**
+	 * The feature id for the '<em><b>Job Name</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSCHEDULE_SAFLET__JOB_NAME = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 0;
+
+		/**
+	 * The number of structural features of the '<em>Unschedule Saflet</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNSCHEDULE_SAFLET_FEATURE_COUNT = ActionStepPackage.ACTION_STEP_FEATURE_COUNT + 1;
 
 		/**
 	 * Returns the meta object for class '{@link com.safi.workshop.model.actionpak1.ActionstepTest <em>Actionstep Test</em>}'.
@@ -867,6 +1002,49 @@ public interface Actionpak1Package extends EPackage {
 	EClass getScheduleSaflet();
 
 		/**
+	 * Returns the meta object for the containment reference '{@link com.safi.workshop.model.actionpak1.ScheduleSaflet#getJobNamePrefix <em>Job Name Prefix</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Job Name Prefix</em>'.
+	 * @see com.safi.workshop.model.actionpak1.ScheduleSaflet#getJobNamePrefix()
+	 * @see #getScheduleSaflet()
+	 * @generated
+	 */
+	EReference getScheduleSaflet_JobNamePrefix();
+
+		/**
+	 * Returns the meta object for the containment reference '{@link com.safi.workshop.model.actionpak1.ScheduleSaflet#getJobName <em>Job Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Job Name</em>'.
+	 * @see com.safi.workshop.model.actionpak1.ScheduleSaflet#getJobName()
+	 * @see #getScheduleSaflet()
+	 * @generated
+	 */
+	EReference getScheduleSaflet_JobName();
+
+		/**
+	 * Returns the meta object for class '{@link com.safi.workshop.model.actionpak1.UnscheduleSaflet <em>Unschedule Saflet</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Unschedule Saflet</em>'.
+	 * @see com.safi.workshop.model.actionpak1.UnscheduleSaflet
+	 * @generated
+	 */
+	EClass getUnscheduleSaflet();
+
+		/**
+	 * Returns the meta object for the containment reference '{@link com.safi.workshop.model.actionpak1.UnscheduleSaflet#getJobName <em>Job Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Job Name</em>'.
+	 * @see com.safi.workshop.model.actionpak1.UnscheduleSaflet#getJobName()
+	 * @see #getUnscheduleSaflet()
+	 * @generated
+	 */
+	EReference getUnscheduleSaflet_JobName();
+
+		/**
 	 * Returns the meta object for the containment reference '{@link com.safi.workshop.model.actionpak1.ScheduleSaflet#getTargetSafletPath <em>Target Saflet Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -876,17 +1054,6 @@ public interface Actionpak1Package extends EPackage {
 	 * @generated
 	 */
 	EReference getScheduleSaflet_TargetSafletPath();
-
-		/**
-	 * Returns the meta object for the attribute '{@link com.safi.workshop.model.actionpak1.ScheduleSaflet#getLabelText <em>Label Text</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Label Text</em>'.
-	 * @see com.safi.workshop.model.actionpak1.ScheduleSaflet#getLabelText()
-	 * @see #getScheduleSaflet()
-	 * @generated
-	 */
-	EAttribute getScheduleSaflet_LabelText();
 
 		/**
 	 * Returns the meta object for the containment reference '{@link com.safi.workshop.model.actionpak1.ScheduleSaflet#getCronExpression <em>Cron Expression</em>}'.
@@ -920,6 +1087,17 @@ public interface Actionpak1Package extends EPackage {
 	 * @generated
 	 */
 	EReference getScheduleSaflet_EndDateTime();
+
+		/**
+	 * Returns the meta object for the containment reference '{@link com.safi.workshop.model.actionpak1.ScheduleSaflet#getCalendarName <em>Calendar Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Calendar Name</em>'.
+	 * @see com.safi.workshop.model.actionpak1.ScheduleSaflet#getCalendarName()
+	 * @see #getScheduleSaflet()
+	 * @generated
+	 */
+	EReference getScheduleSaflet_CalendarName();
 
 		/**
 	 * Returns the factory that creates the instances of the model.
@@ -1026,20 +1204,46 @@ public interface Actionpak1Package extends EPackage {
 		EClass SCHEDULE_SAFLET = eINSTANCE.getScheduleSaflet();
 
 				/**
+		 * The meta object literal for the '<em><b>Job Name Prefix</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCHEDULE_SAFLET__JOB_NAME_PREFIX = eINSTANCE.getScheduleSaflet_JobNamePrefix();
+
+				/**
+		 * The meta object literal for the '<em><b>Job Name</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCHEDULE_SAFLET__JOB_NAME = eINSTANCE.getScheduleSaflet_JobName();
+
+				/**
+		 * The meta object literal for the '{@link com.safi.workshop.model.actionpak1.impl.UnscheduleSafletImpl <em>Unschedule Saflet</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.safi.workshop.model.actionpak1.impl.UnscheduleSafletImpl
+		 * @see com.safi.workshop.model.actionpak1.impl.Actionpak1PackageImpl#getUnscheduleSaflet()
+		 * @generated
+		 */
+		EClass UNSCHEDULE_SAFLET = eINSTANCE.getUnscheduleSaflet();
+
+				/**
+		 * The meta object literal for the '<em><b>Job Name</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UNSCHEDULE_SAFLET__JOB_NAME = eINSTANCE.getUnscheduleSaflet_JobName();
+
+				/**
 		 * The meta object literal for the '<em><b>Target Saflet Path</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference SCHEDULE_SAFLET__TARGET_SAFLET_PATH = eINSTANCE.getScheduleSaflet_TargetSafletPath();
-
-				/**
-		 * The meta object literal for the '<em><b>Label Text</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SCHEDULE_SAFLET__LABEL_TEXT = eINSTANCE.getScheduleSaflet_LabelText();
 
 				/**
 		 * The meta object literal for the '<em><b>Cron Expression</b></em>' containment reference feature.
@@ -1064,6 +1268,14 @@ public interface Actionpak1Package extends EPackage {
 		 * @generated
 		 */
 		EReference SCHEDULE_SAFLET__END_DATE_TIME = eINSTANCE.getScheduleSaflet_EndDateTime();
+
+				/**
+		 * The meta object literal for the '<em><b>Calendar Name</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCHEDULE_SAFLET__CALENDAR_NAME = eINSTANCE.getScheduleSaflet_CalendarName();
 
   }
 

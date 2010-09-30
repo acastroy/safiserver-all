@@ -1,6 +1,7 @@
 package com.safi.workshop.model.actionpak1;
 
 import java.util.logging.Logger;
+
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
