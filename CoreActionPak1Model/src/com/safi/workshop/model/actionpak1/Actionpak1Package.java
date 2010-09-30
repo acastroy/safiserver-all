@@ -600,6 +600,179 @@ public interface Actionpak1Package extends EPackage {
 
 
   /**
+	 * The meta object id for the '{@link com.safi.workshop.model.actionpak1.impl.ScheduleSafletImpl <em>Schedule Saflet</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.safi.workshop.model.actionpak1.impl.ScheduleSafletImpl
+	 * @see com.safi.workshop.model.actionpak1.impl.Actionpak1PackageImpl#getScheduleSaflet()
+	 * @generated
+	 */
+	int SCHEDULE_SAFLET = 4;
+
+		/**
+	 * The feature id for the '<em><b>Product Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE_SAFLET__PRODUCT_ID = ActionStepPackage.PARAMETERIZED_ACTIONSTEP__PRODUCT_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE_SAFLET__PLATFORM_ID = ActionStepPackage.PARAMETERIZED_ACTIONSTEP__PLATFORM_ID;
+
+		/**
+	 * The feature id for the '<em><b>Platform Dependant</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE_SAFLET__PLATFORM_DEPENDANT = ActionStepPackage.PARAMETERIZED_ACTIONSTEP__PLATFORM_DEPENDANT;
+
+		/**
+	 * The feature id for the '<em><b>Paused</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE_SAFLET__PAUSED = ActionStepPackage.PARAMETERIZED_ACTIONSTEP__PAUSED;
+
+		/**
+	 * The feature id for the '<em><b>Active</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE_SAFLET__ACTIVE = ActionStepPackage.PARAMETERIZED_ACTIONSTEP__ACTIVE;
+
+		/**
+	 * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE_SAFLET__OUTPUTS = ActionStepPackage.PARAMETERIZED_ACTIONSTEP__OUTPUTS;
+
+		/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE_SAFLET__NAME = ActionStepPackage.PARAMETERIZED_ACTIONSTEP__NAME;
+
+		/**
+	 * The feature id for the '<em><b>Saflet</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE_SAFLET__SAFLET = ActionStepPackage.PARAMETERIZED_ACTIONSTEP__SAFLET;
+
+		/**
+	 * The feature id for the '<em><b>Default Output</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE_SAFLET__DEFAULT_OUTPUT = ActionStepPackage.PARAMETERIZED_ACTIONSTEP__DEFAULT_OUTPUT;
+
+		/**
+	 * The feature id for the '<em><b>Error Output</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE_SAFLET__ERROR_OUTPUT = ActionStepPackage.PARAMETERIZED_ACTIONSTEP__ERROR_OUTPUT;
+
+		/**
+	 * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE_SAFLET__INPUTS = ActionStepPackage.PARAMETERIZED_ACTIONSTEP__INPUTS;
+
+		/**
+	 * The feature id for the '<em><b>Output Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE_SAFLET__OUTPUT_PARAMETERS = ActionStepPackage.PARAMETERIZED_ACTIONSTEP__OUTPUT_PARAMETERS;
+
+		/**
+	 * The feature id for the '<em><b>Target Saflet Path</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE_SAFLET__TARGET_SAFLET_PATH = ActionStepPackage.PARAMETERIZED_ACTIONSTEP_FEATURE_COUNT + 0;
+
+		/**
+	 * The feature id for the '<em><b>Label Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE_SAFLET__LABEL_TEXT = ActionStepPackage.PARAMETERIZED_ACTIONSTEP_FEATURE_COUNT + 1;
+
+		/**
+	 * The feature id for the '<em><b>Cron Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE_SAFLET__CRON_EXPRESSION = ActionStepPackage.PARAMETERIZED_ACTIONSTEP_FEATURE_COUNT + 2;
+
+		/**
+	 * The feature id for the '<em><b>Start Date Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE_SAFLET__START_DATE_TIME = ActionStepPackage.PARAMETERIZED_ACTIONSTEP_FEATURE_COUNT + 3;
+
+		/**
+	 * The feature id for the '<em><b>End Date Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE_SAFLET__END_DATE_TIME = ActionStepPackage.PARAMETERIZED_ACTIONSTEP_FEATURE_COUNT + 4;
+
+		/**
+	 * The number of structural features of the '<em>Schedule Saflet</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE_SAFLET_FEATURE_COUNT = ActionStepPackage.PARAMETERIZED_ACTIONSTEP_FEATURE_COUNT + 5;
+
+
+		/**
 	 * Returns the meta object for class '{@link com.safi.workshop.model.actionpak1.ActionstepTest <em>Actionstep Test</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -684,6 +857,71 @@ public interface Actionpak1Package extends EPackage {
   EAttribute getInvokeSaflet2_LabelText();
 
   /**
+	 * Returns the meta object for class '{@link com.safi.workshop.model.actionpak1.ScheduleSaflet <em>Schedule Saflet</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Schedule Saflet</em>'.
+	 * @see com.safi.workshop.model.actionpak1.ScheduleSaflet
+	 * @generated
+	 */
+	EClass getScheduleSaflet();
+
+		/**
+	 * Returns the meta object for the containment reference '{@link com.safi.workshop.model.actionpak1.ScheduleSaflet#getTargetSafletPath <em>Target Saflet Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Target Saflet Path</em>'.
+	 * @see com.safi.workshop.model.actionpak1.ScheduleSaflet#getTargetSafletPath()
+	 * @see #getScheduleSaflet()
+	 * @generated
+	 */
+	EReference getScheduleSaflet_TargetSafletPath();
+
+		/**
+	 * Returns the meta object for the attribute '{@link com.safi.workshop.model.actionpak1.ScheduleSaflet#getLabelText <em>Label Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Label Text</em>'.
+	 * @see com.safi.workshop.model.actionpak1.ScheduleSaflet#getLabelText()
+	 * @see #getScheduleSaflet()
+	 * @generated
+	 */
+	EAttribute getScheduleSaflet_LabelText();
+
+		/**
+	 * Returns the meta object for the containment reference '{@link com.safi.workshop.model.actionpak1.ScheduleSaflet#getCronExpression <em>Cron Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Cron Expression</em>'.
+	 * @see com.safi.workshop.model.actionpak1.ScheduleSaflet#getCronExpression()
+	 * @see #getScheduleSaflet()
+	 * @generated
+	 */
+	EReference getScheduleSaflet_CronExpression();
+
+		/**
+	 * Returns the meta object for the containment reference '{@link com.safi.workshop.model.actionpak1.ScheduleSaflet#getStartDateTime <em>Start Date Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Start Date Time</em>'.
+	 * @see com.safi.workshop.model.actionpak1.ScheduleSaflet#getStartDateTime()
+	 * @see #getScheduleSaflet()
+	 * @generated
+	 */
+	EReference getScheduleSaflet_StartDateTime();
+
+		/**
+	 * Returns the meta object for the containment reference '{@link com.safi.workshop.model.actionpak1.ScheduleSaflet#getEndDateTime <em>End Date Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>End Date Time</em>'.
+	 * @see com.safi.workshop.model.actionpak1.ScheduleSaflet#getEndDateTime()
+	 * @see #getScheduleSaflet()
+	 * @generated
+	 */
+	EReference getScheduleSaflet_EndDateTime();
+
+		/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -776,6 +1014,56 @@ public interface Actionpak1Package extends EPackage {
 		 * @generated
 		 */
     EAttribute INVOKE_SAFLET2__LABEL_TEXT = eINSTANCE.getInvokeSaflet2_LabelText();
+
+				/**
+		 * The meta object literal for the '{@link com.safi.workshop.model.actionpak1.impl.ScheduleSafletImpl <em>Schedule Saflet</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.safi.workshop.model.actionpak1.impl.ScheduleSafletImpl
+		 * @see com.safi.workshop.model.actionpak1.impl.Actionpak1PackageImpl#getScheduleSaflet()
+		 * @generated
+		 */
+		EClass SCHEDULE_SAFLET = eINSTANCE.getScheduleSaflet();
+
+				/**
+		 * The meta object literal for the '<em><b>Target Saflet Path</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCHEDULE_SAFLET__TARGET_SAFLET_PATH = eINSTANCE.getScheduleSaflet_TargetSafletPath();
+
+				/**
+		 * The meta object literal for the '<em><b>Label Text</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCHEDULE_SAFLET__LABEL_TEXT = eINSTANCE.getScheduleSaflet_LabelText();
+
+				/**
+		 * The meta object literal for the '<em><b>Cron Expression</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCHEDULE_SAFLET__CRON_EXPRESSION = eINSTANCE.getScheduleSaflet_CronExpression();
+
+				/**
+		 * The meta object literal for the '<em><b>Start Date Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCHEDULE_SAFLET__START_DATE_TIME = eINSTANCE.getScheduleSaflet_StartDateTime();
+
+				/**
+		 * The meta object literal for the '<em><b>End Date Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCHEDULE_SAFLET__END_DATE_TIME = eINSTANCE.getScheduleSaflet_EndDateTime();
 
   }
 

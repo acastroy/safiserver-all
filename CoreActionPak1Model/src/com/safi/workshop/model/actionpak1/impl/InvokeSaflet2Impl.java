@@ -32,6 +32,7 @@ import com.safi.core.saflet.SafletContext;
 import com.safi.core.saflet.SafletEnvironment;
 import com.safi.db.Variable;
 import com.safi.db.VariableScope;
+import com.safi.db.VariableType;
 import com.safi.db.server.config.TelephonySubsystem;
 import com.safi.db.util.VariableTranslator;
 import com.safi.workshop.model.actionpak1.Actionpak1Package;
@@ -43,18 +44,23 @@ import com.safi.workshop.model.actionpak1.InvokeSaflet2;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.safi.workshop.model.actionpak1.impl.InvokeSaflet2Impl#getTargetSafletPath <em>Target Saflet Path</em>}</li>
- *   <li>{@link com.safi.workshop.model.actionpak1.impl.InvokeSaflet2Impl#getLabelText <em>Label Text</em>}</li>
+ * <li>
+ * {@link com.safi.workshop.model.actionpak1.impl.InvokeSaflet2Impl#getTargetSafletPath
+ * <em>Target Saflet Path</em>}</li>
+ * <li>
+ * {@link com.safi.workshop.model.actionpak1.impl.InvokeSaflet2Impl#getLabelText
+ * <em>Label Text</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements InvokeSaflet2 {
 	/**
-	 * The cached value of the '{@link #getTargetSafletPath() <em>Target Saflet Path</em>}' containment reference.
-	 * <!-- begin-user-doc
+	 * The cached value of the '{@link #getTargetSafletPath()
+	 * <em>Target Saflet Path</em>}' containment reference. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
+	 * 
 	 * @see #getTargetSafletPath()
 	 * @generated
 	 * @ordered
@@ -62,8 +68,9 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 	protected DynamicValue targetSafletPath;
 
 	/**
-	 * The default value of the '{@link #getLabelText() <em>Label Text</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The default value of the '{@link #getLabelText() <em>Label Text</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getLabelText()
 	 * @generated
 	 * @ordered
@@ -71,8 +78,9 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 	protected static final String LABEL_TEXT_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getLabelText() <em>Label Text</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getLabelText() <em>Label Text</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getLabelText()
 	 * @generated
 	 * @ordered
@@ -81,6 +89,7 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected InvokeSaflet2Impl() {
@@ -90,12 +99,18 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 	@Override
 	public void beginProcessing(SafletContext context) throws ActionStepException {
 		super.beginProcessing(context);
-		if (targetSafletPath == null)
-			handleException(context, new ActionStepException("No target handler specified"));
+
 		Exception exception = null;
 		try {
 
-			String handlerPath = (String) resolveDynamicValue(targetSafletPath, context);
+			if (targetSafletPath == null)
+				throw new ActionStepException("No target Saflet specified");
+
+			String handlerPath = (String) VariableTranslator.translateValue(VariableType.TEXT, resolveDynamicValue(
+					targetSafletPath, context));
+			if (StringUtils.isBlank(handlerPath))
+				throw new ActionStepException("No target Saflet specified");
+
 			TelephonySubsystem server = (TelephonySubsystem) context
 					.getVariableRawValue(SafletConstants.VAR_KEY_TELEPHONY_SUBSYSTEM);
 
@@ -106,79 +121,74 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 			// id = (Integer) rawVal;
 			Saflet targetSaflet = getSaflet().getSafletEnvironment().getSaflet(handlerPath, id);
 			if (targetSaflet == null)
-				exception = new ActionStepException("Couldn't find target handler " + handlerPath);
-			else {
-				// Map<String, Object> curvalues = new HashMap<String, Object>();
-				// for (Variable v : context.getVariables()){
-				// curvalues.put(v.getName(), context.getVariableRawValue(v.getName()));
-				// }
-				// initialize default variables for target
-				targetSaflet.initializeScriptableObjects();
+				throw new ActionStepException("Couldn't find target Saflet " + handlerPath);
+			// Map<String, Object> curvalues = new HashMap<String, Object>();
+			// for (Variable v : context.getVariables()){
+			// curvalues.put(v.getName(), context.getVariableRawValue(v.getName()));
+			// }
+			// initialize default variables for target
+			targetSaflet.initializeScriptableObjects();
 
-				Initiator targetInitiator = targetSaflet.getInitiator();
-				SafletContext targetContext = targetSaflet.getSafletContext();
-				Object infoObject = context.getVariableRawValue(SafletConstants.VAR_KEY_INITIATORINFO);
-				
-				if (infoObject instanceof InitiatorInfo){
-					InitiatorInfo info = (InitiatorInfo) infoObject;
-					targetInitiator.initialize(info); //initialize with defaults
-				}
-				// targetContext.setDebugLock(context.getDebugLock());
-				// transfer variables from this context to the target
+			Initiator targetInitiator = targetSaflet.getInitiator();
+			SafletContext targetContext = targetSaflet.getSafletContext();
+			Object infoObject = context.getVariableRawValue(SafletConstants.VAR_KEY_INITIATORINFO);
 
-				// for (Map.Entry<String, Object> entry : curvalues.entrySet()){
-				// targetContext.setVariableRawValue(entry.getKey(), entry.getValue());
-				// }
-				for (Variable v : context.getRuntimeVariables()) {
-					targetContext.addOrUpdateVariable(v);
-				}
+			if (infoObject instanceof InitiatorInfo) {
+				InitiatorInfo info = (InitiatorInfo) infoObject;
+				targetInitiator.initialize(info); // initialize with defaults
+			}
+			// targetContext.setDebugLock(context.getDebugLock());
+			// transfer variables from this context to the target
 
-				targetContext.setSessionVariables(context.getSessionVariables());
-				
-				
-//				Object debugLock = context.getDebugLock();
-//				if (debugLock == null)
-//					debugLock = context.restoreDebugLock(); //may have been a breakpoint
-//				
-//				if (debugLock != null)
-//					targetContext.setDebugLock(debugLock);
-				
-				// for (Variable v : context.getLocalVariables()){
-				// targetContext.setVariableRawValue(v.getName(),
-				// context.getVariableRawValue(v.getName()));
-				// }
-				
+			// for (Map.Entry<String, Object> entry : curvalues.entrySet()){
+			// targetContext.setVariableRawValue(entry.getKey(), entry.getValue());
+			// }
+			for (Variable v : context.getRuntimeVariables()) {
+				targetContext.addOrUpdateVariable(v);
+			}
 
-				if (targetInitiator instanceof ParameterizedInitiator) {
-					ParameterizedInitiator init = (ParameterizedInitiator) targetInitiator;
-					List<InputItem> inputs = init.getInputs();
-					List<InputItem> params = getInputs();
-					if (!inputs.isEmpty() && !params.isEmpty()) {
-						for (InputItem param : params) {
+			targetContext.setSessionVariables(context.getSessionVariables());
 
-							for (InputItem input : inputs) {
-								if (StringUtils.equals(input.getParameterName(), param.getParameterName())) {
-									DynamicValue paramValue = param.getDynamicValue();
-									Object parmVal = resolveDynamicValue(paramValue, context);
-									DynamicValue variableName = input.getDynamicValue();
-									Variable v = resolveVariableFromName(variableName, targetContext);
-									if (v != null) {
-										if (debugLog.isLoggable(Level.FINEST))
-											debug("Got variable " + v.getName() + " of type " + v.getType());
+			// Object debugLock = context.getDebugLock();
+			// if (debugLock == null)
+			// debugLock = context.restoreDebugLock(); //may have been a breakpoint
+			//				
+			// if (debugLock != null)
+			// targetContext.setDebugLock(debugLock);
 
-										final Object translated = VariableTranslator.translateValue(v.getType(),
-												parmVal);
-										if (v.getScope() != VariableScope.GLOBAL)
+			// for (Variable v : context.getLocalVariables()){
+			// targetContext.setVariableRawValue(v.getName(),
+			// context.getVariableRawValue(v.getName()));
+			// }
+
+			if (targetInitiator instanceof ParameterizedInitiator) {
+				ParameterizedInitiator init = (ParameterizedInitiator) targetInitiator;
+				List<InputItem> inputs = init.getInputs();
+				List<InputItem> params = getInputs();
+				if (!inputs.isEmpty() && !params.isEmpty()) {
+					for (InputItem param : params) {
+
+						for (InputItem input : inputs) {
+							if (StringUtils.equals(input.getParameterName(), param.getParameterName())) {
+								DynamicValue paramValue = param.getDynamicValue();
+								Object parmVal = resolveDynamicValue(paramValue, context);
+								DynamicValue variableName = input.getDynamicValue();
+								Variable v = resolveVariableFromName(variableName, targetContext);
+								if (v != null) {
+									if (debugLog.isLoggable(Level.FINEST))
+										debug("Got variable " + v.getName() + " of type " + v.getType());
+
+									final Object translated = VariableTranslator.translateValue(v.getType(), parmVal);
+									if (v.getScope() != VariableScope.GLOBAL)
+										targetContext.setVariableRawValue(v.getName(), translated);
+									else {
+										if (targetContext.getDebugLock() != null) {
 											targetContext.setVariableRawValue(v.getName(), translated);
-										else {
-											if (targetContext.getDebugLock() != null) {
-												targetContext.setVariableRawValue(v.getName(), translated);
-												v.setDefaultValue(v.getDefaultValue()); // trigger
-																																// update
-											} else {
-												SafletEnvironment env = getSaflet().getSafletEnvironment();
-												env.setGlobalVariableValue(v.getName(), translated);
-											}
+											v.setDefaultValue(v.getDefaultValue()); // trigger
+											// update
+										} else {
+											SafletEnvironment env = getSaflet().getSafletEnvironment();
+											env.setGlobalVariableValue(v.getName(), translated);
 										}
 									}
 								}
@@ -186,60 +196,59 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 						}
 					}
 				}
-				// copy over any exceptions that have been accumulated
-				targetContext.getExceptions().addAll(context.getExceptions());
+			}
+			// copy over any exceptions that have been accumulated
+			targetContext.getExceptions().addAll(context.getExceptions());
 
-				if (targetInitiator instanceof CallSource1) {
-					SafiCall scall = ((CallSource1) targetInitiator).getNewCall1();
-					context.preHandoffPrep(scall);
-//					if (scall != null && scall instanceof Call) {
-//						Call call = (Call) scall;
-//						AgiRequest request = (AgiRequest) context
-//								.getVariableRawValue(AsteriskSafletConstants.VAR_KEY_REQUEST);
-//						AgiChannel channel = (AgiChannel) context
-//								.getVariableRawValue(AsteriskSafletConstants.VAR_KEY_CHANNEL);
-//						call.setCallerIdName(request.getCallerIdName());
-//						call.setCallerIdNum(request.getCallerIdNumber());
-//						call.setChannel(channel);
-//						call.setChannelName(channel.getName());
-//						call.setUniqueId(channel.getUniqueId());
-//					}
-				}
-				// EStructuralFeature targetFeature =
-				// targetInitiator.eClass().getEStructuralFeature("call");
-				// if (targetFeature != null) {
-				//          
-				// //if the initiator has a call getter, set it with current call
-				// settings.
-				// Call call = (Call) targetInitiator.eGet(targetFeature);
-				// AgiRequest request =
-				// (AgiRequest)context.getVariableRawValue(SafletConstants.VAR_KEY_REQUEST);
-				// AgiChannel channel =
-				// (AgiChannel)context.getVariableRawValue(SafletConstants.VAR_KEY_CHANNEL);
+			if (targetInitiator instanceof CallSource1) {
+				SafiCall scall = ((CallSource1) targetInitiator).getNewCall1();
+				context.preHandoffPrep(scall);
+				// if (scall != null && scall instanceof Call) {
+				// Call call = (Call) scall;
+				// AgiRequest request = (AgiRequest) context
+				// .getVariableRawValue(AsteriskSafletConstants.VAR_KEY_REQUEST);
+				// AgiChannel channel = (AgiChannel) context
+				// .getVariableRawValue(AsteriskSafletConstants.VAR_KEY_CHANNEL);
 				// call.setCallerIdName(request.getCallerIdName());
 				// call.setCallerIdNum(request.getCallerIdNumber());
 				// call.setChannel(channel);
 				// call.setChannelName(channel.getName());
 				// call.setUniqueId(channel.getUniqueId());
 				// }
+			}
+			// EStructuralFeature targetFeature =
+			// targetInitiator.eClass().getEStructuralFeature("call");
+			// if (targetFeature != null) {
+			//          
+			// //if the initiator has a call getter, set it with current call
+			// settings.
+			// Call call = (Call) targetInitiator.eGet(targetFeature);
+			// AgiRequest request =
+			// (AgiRequest)context.getVariableRawValue(SafletConstants.VAR_KEY_REQUEST);
+			// AgiChannel channel =
+			// (AgiChannel)context.getVariableRawValue(SafletConstants.VAR_KEY_CHANNEL);
+			// call.setCallerIdName(request.getCallerIdName());
+			// call.setCallerIdNum(request.getCallerIdNumber());
+			// call.setChannel(channel);
+			// call.setChannelName(channel.getName());
+			// call.setUniqueId(channel.getUniqueId());
+			// }
 
-				// setActive(false);
+			// setActive(false);
 
-				targetInitiator.beginProcessing();
+			targetInitiator.beginProcessing();
 
-				if (targetInitiator instanceof ParameterizedInitiator) {
-					ParameterizedInitiator init = (ParameterizedInitiator) targetInitiator;
-					for (OutputParameter param : init.getOutputParameters()) {
-						for (OutputParameter outParam : getOutputParameters()) {
-							if (StringUtils.equals(outParam.getParameterName(), param.getParameterName())) {
-								Object val = resolveDynamicValue(param.getDynamicValue(), targetInitiator
-										.getSaflet().getSafletContext());
-								String vname = resolveVariableName(outParam.getDynamicValue(), context);
-								if (StringUtils.isNotBlank(vname)) {
-									context.setVariableRawValue(vname, val);
-								}
-								break;
+			if (targetInitiator instanceof ParameterizedInitiator) {
+				ParameterizedInitiator init = (ParameterizedInitiator) targetInitiator;
+				for (OutputParameter param : init.getOutputParameters()) {
+					for (OutputParameter outParam : getOutputParameters()) {
+						if (StringUtils.equals(outParam.getParameterName(), param.getParameterName())) {
+							Object val = resolveDynamicValue(param.getDynamicValue(), targetInitiator.getSaflet().getSafletContext());
+							String vname = resolveVariableName(outParam.getDynamicValue(), context);
+							if (StringUtils.isNotBlank(vname)) {
+								context.setVariableRawValue(vname, val);
 							}
+							break;
 						}
 					}
 				}
@@ -257,6 +266,7 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -266,6 +276,7 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DynamicValue getTargetSafletPath() {
@@ -274,39 +285,48 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public NotificationChain basicSetTargetSafletPath(DynamicValue newTargetSafletPath,
-			NotificationChain msgs) {
+	public NotificationChain basicSetTargetSafletPath(DynamicValue newTargetSafletPath, NotificationChain msgs) {
 		DynamicValue oldTargetSafletPath = targetSafletPath;
 		targetSafletPath = newTargetSafletPath;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Actionpak1Package.INVOKE_SAFLET2__TARGET_SAFLET_PATH, oldTargetSafletPath, newTargetSafletPath);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					Actionpak1Package.INVOKE_SAFLET2__TARGET_SAFLET_PATH, oldTargetSafletPath, newTargetSafletPath);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setTargetSafletPath(DynamicValue newTargetSafletPath) {
 		if (newTargetSafletPath != targetSafletPath) {
 			NotificationChain msgs = null;
 			if (targetSafletPath != null)
-				msgs = ((InternalEObject)targetSafletPath).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Actionpak1Package.INVOKE_SAFLET2__TARGET_SAFLET_PATH, null, msgs);
+				msgs = ((InternalEObject) targetSafletPath).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+						- Actionpak1Package.INVOKE_SAFLET2__TARGET_SAFLET_PATH, null, msgs);
 			if (newTargetSafletPath != null)
-				msgs = ((InternalEObject)newTargetSafletPath).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Actionpak1Package.INVOKE_SAFLET2__TARGET_SAFLET_PATH, null, msgs);
+				msgs = ((InternalEObject) newTargetSafletPath).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+						- Actionpak1Package.INVOKE_SAFLET2__TARGET_SAFLET_PATH, null, msgs);
 			msgs = basicSetTargetSafletPath(newTargetSafletPath, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Actionpak1Package.INVOKE_SAFLET2__TARGET_SAFLET_PATH, newTargetSafletPath, newTargetSafletPath));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Actionpak1Package.INVOKE_SAFLET2__TARGET_SAFLET_PATH,
+					newTargetSafletPath, newTargetSafletPath));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getLabelText() {
@@ -315,22 +335,24 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setLabelText(String newLabelText) {
 		String oldLabelText = labelText;
 		labelText = newLabelText;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Actionpak1Package.INVOKE_SAFLET2__LABEL_TEXT, oldLabelText, labelText));
+			eNotify(new ENotificationImpl(this, Notification.SET, Actionpak1Package.INVOKE_SAFLET2__LABEL_TEXT, oldLabelText,
+					labelText));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID,
-			NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case Actionpak1Package.INVOKE_SAFLET2__TARGET_SAFLET_PATH:
 				return basicSetTargetSafletPath(null, msgs);
@@ -340,6 +362,7 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -355,16 +378,17 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Actionpak1Package.INVOKE_SAFLET2__TARGET_SAFLET_PATH:
-				setTargetSafletPath((DynamicValue)newValue);
+				setTargetSafletPath((DynamicValue) newValue);
 				return;
 			case Actionpak1Package.INVOKE_SAFLET2__LABEL_TEXT:
-				setLabelText((String)newValue);
+				setLabelText((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -372,13 +396,14 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Actionpak1Package.INVOKE_SAFLET2__TARGET_SAFLET_PATH:
-				setTargetSafletPath((DynamicValue)null);
+				setTargetSafletPath((DynamicValue) null);
 				return;
 			case Actionpak1Package.INVOKE_SAFLET2__LABEL_TEXT:
 				setLabelText(LABEL_TEXT_EDEFAULT);
@@ -389,6 +414,7 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -404,11 +430,13 @@ public class InvokeSaflet2Impl extends ParameterizedActionstepImpl implements In
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (labelText: ");

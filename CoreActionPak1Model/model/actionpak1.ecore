@@ -58,5 +58,38 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="labelText" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cronExpression" ordered="false"
+        eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="DynamicValueAnnotation">
+        <details key="type" value="Text"/>
+        <details key="isTypeLocked" value="false"/>
+        <details key="description" value="Cron expression defining the saflet execution schedule"/>
+        <details key="expectedReturnType" value="Crontab Expr"/>
+        <details key="helperClass" value="com.safi.workshop.sheet.ScheduledSafletDynamicValueEditorPage"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="startDateTime" ordered="false"
+        eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="DynamicValueAnnotation">
+        <details key="type" value="DateTime"/>
+        <details key="isTypeLocked" value="false"/>
+        <details key="description" value="Start DateTime for the the saflet execution schedule"/>
+        <details key="expectedReturnType" value="VariableName"/>
+        <details key="helperClass" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="endDateTime" ordered="false"
+        eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="DynamicValueAnnotation">
+        <details key="type" value="DateTime"/>
+        <details key="isTypeLocked" value="false"/>
+        <details key="description" value="End DateTime for the the saflet execution schedule"/>
+        <details key="expectedReturnType" value="VariableName"/>
+        <details key="helperClass" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
 </ecore:EPackage>

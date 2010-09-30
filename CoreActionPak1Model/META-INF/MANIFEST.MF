@@ -15,5 +15,6 @@ Require-Bundle: SafiCommons;bundle-version="1.2.5",
  org.eclipse.emf.ecore;visibility:=reexport,
  Saflets;bundle-version="1.1.0",
  SafiDB;visibility:=reexport,
- org.apache.commons.lang;bundle-version="2.3.0"
+ org.apache.commons.lang;bundle-version="2.3.0",
+ SafiWorkshopCore;bundle-version="1.4.12"
 Eclipse-LazyStart: true

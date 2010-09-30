@@ -99,6 +99,10 @@ public class Actionpak1AdapterFactory extends AdapterFactoryImpl {
 				return createInvokeSaflet2Adapter();
 			}
 			@Override
+			public Adapter caseScheduleSaflet(ScheduleSaflet object) {
+				return createScheduleSafletAdapter();
+			}
+			@Override
 			public Adapter caseProductIdentifiable(ProductIdentifiable object) {
 				return createProductIdentifiableAdapter();
 			}
@@ -207,6 +211,20 @@ public class Actionpak1AdapterFactory extends AdapterFactoryImpl {
 	}
 
   /**
+	 * Creates a new adapter for an object of class '{@link com.safi.workshop.model.actionpak1.ScheduleSaflet <em>Schedule Saflet</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.safi.workshop.model.actionpak1.ScheduleSaflet
+	 * @generated
+	 */
+	public Adapter createScheduleSafletAdapter() {
+		return null;
+	}
+
+		/**
 	 * Creates a new adapter for an object of class '{@link com.safi.core.ProductIdentifiable <em>Product Identifiable</em>}'.
 	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;

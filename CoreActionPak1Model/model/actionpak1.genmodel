@@ -7,7 +7,6 @@
   <foreignModel>actionpak1.ecore</foreignModel>
   <genPackages prefix="Actionpak1" basePackage="com.safi.workshop.model" disposableProviderFactory="true"
       ecorePackage="actionpak1.ecore#/">
-    
     <genClasses ecoreClass="actionpak1.ecore#//ActionstepTest">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionpak1.ecore#//ActionstepTest/message"/>
     </genClasses>
@@ -18,6 +17,13 @@
     <genClasses ecoreClass="actionpak1.ecore#//InvokeSaflet2">
       <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference actionpak1.ecore#//InvokeSaflet2/targetSafletPath"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionpak1.ecore#//InvokeSaflet2/labelText"/>
+    </genClasses>
+    <genClasses ecoreClass="actionpak1.ecore#//ScheduleSaflet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionpak1.ecore#//ScheduleSaflet/targetSafletPath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionpak1.ecore#//ScheduleSaflet/labelText"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionpak1.ecore#//ScheduleSaflet/cronExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionpak1.ecore#//ScheduleSaflet/startDateTime"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionpak1.ecore#//ScheduleSaflet/endDateTime"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
