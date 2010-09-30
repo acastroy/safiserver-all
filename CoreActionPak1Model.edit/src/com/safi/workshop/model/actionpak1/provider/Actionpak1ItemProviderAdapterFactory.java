@@ -122,6 +122,29 @@ public class Actionpak1ItemProviderAdapterFactory extends Actionpak1AdapterFacto
 	}
 
   /**
+	 * This keeps track of the one adapter used for all {@link com.safi.workshop.model.actionpak1.ScheduleSaflet} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ScheduleSafletItemProvider scheduleSafletItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link com.safi.workshop.model.actionpak1.ScheduleSaflet}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createScheduleSafletAdapter() {
+		if (scheduleSafletItemProvider == null) {
+			scheduleSafletItemProvider = new ScheduleSafletItemProvider(this);
+		}
+
+		return scheduleSafletItemProvider;
+	}
+
+		/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -222,6 +245,7 @@ public class Actionpak1ItemProviderAdapterFactory extends Actionpak1AdapterFacto
   public void dispose() {
 		if (actionstepTestItemProvider != null) actionstepTestItemProvider.dispose();
 		if (invokeSaflet2ItemProvider != null) invokeSaflet2ItemProvider.dispose();
+		if (scheduleSafletItemProvider != null) scheduleSafletItemProvider.dispose();
 	}
 
 }
