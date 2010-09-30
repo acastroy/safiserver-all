@@ -29,4 +29,7 @@ public class ElementTypes {
   public static IElementType elementType_ScheduleSaflet_10007 = 
     ElementTypeRegistry.getInstance().getType("CoreActionPak1.ScheduleSaflet_10007"); //$NON-NLS-1$
   
+  public static IElementType elementType_UnscheduleSaflet_10008 = 
+    ElementTypeRegistry.getInstance().getType("CoreActionPak1.UnscheduleSaflet_10008"); //$NON-NLS-1$
+  
 }

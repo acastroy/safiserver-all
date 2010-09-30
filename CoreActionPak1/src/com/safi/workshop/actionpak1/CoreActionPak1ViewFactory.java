@@ -42,9 +42,11 @@ public class CoreActionPak1ViewFactory implements ActionPakViewFactoryFactory {
 	private BasicNodeViewFactory createShapeViewFactoryInternal(int id) {
 		switch (id) {
 			case CoreActionPak1Ids.Finally:
+			case CoreActionPak1Ids.UnscheduleSaflet:
 				return new ActionstepViewFactory(id, ActionStepNameEditPart.VISUAL_ID,	null);
 			case CoreActionPak1Ids.ScheduleSaflet:
 				return new ActionstepViewFactory(id, ActionStepNameEditPart.VISUAL_ID,	Collections.singletonList(InputItemPanelEditPart.VISUAL_ID));
+				
 			case InputItemEditPart.VISUAL_ID:
 				return new InputItemViewFactory();
 			case OutputItemEditPart.VISUAL_ID:

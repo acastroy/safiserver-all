@@ -15,10 +15,10 @@ public class CoreActionPak1CreateCommandFactory implements ActionPakCreateComman
 		if (req.getElementType() == ElementTypes.elementType_Finally_10006)
 			return new FinallyActionstepCreateCommand(req);
 		
-		if (req.getElementType() == ElementTypes.elementType_ScheduleSaflet_10007)
-			return new ToolstepCreateCommand(req);
+//		if (req.getElementType() == ElementTypes.elementType_ScheduleSaflet_10007)
+//			return new ToolstepCreateCommand(req);
 		// TODO Auto-generated method stub
-		return null;
+		return new ToolstepCreateCommand(req);
 	}
 
 }

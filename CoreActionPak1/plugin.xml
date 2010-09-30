@@ -71,6 +71,17 @@
          </metamodelType>
       </metamodel>
       
+       <metamodel nsURI="http:///com/safi/workshop/actionpak1.ecore">
+         <metamodelType
+               id="CoreActionPak1.UnscheduleSaflet_10008"
+               name="Un-Schedule Saflet"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="UnscheduleSaflet"
+               edithelper="com.safi.workshop.actionpak1.ActionstepEditHelper">
+            <param name="semanticHint" value="10008"/>
+         </metamodelType>
+      </metamodel>
+      
    </extension>
    <extension
          point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
@@ -80,6 +91,7 @@
             <elementType ref="CoreActionPak1.InvokeSaflet2_10004"/>
             <elementType ref="SafiWorkshopCore.Finally_10006"/>
             <elementType ref="CoreActionPak1.ScheduleSaflet_10007"/>
+            <elementType ref="CoreActionPak1.UnscheduleSaflet_10008"/>
             <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
            
       </binding>
@@ -174,6 +186,17 @@
             displayName="Schedule Saflet"
             path="Logic"
             tooltip="Schedule a Saflet for future execution">
+      </paletteEntry>
+   </actionStep>
+   <actionStep
+         enabled="true"
+         isInitiator="false"
+         labelSemanticHint="909090"
+         semanticHint="10008">
+      <paletteEntry
+            displayName="Unschedule Saflet"
+            path="Logic"
+            tooltip="Un-schedule saflet by job name">
       </paletteEntry>
    </actionStep>
    

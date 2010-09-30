@@ -20,6 +20,8 @@ public class CoreActionPak1ElementFactory implements ActionPakElementFactory {
 				return ElementTypes.elementType_Finally_10006;
 			case CoreActionPak1Ids.ScheduleSaflet:
 				return ElementTypes.elementType_ScheduleSaflet_10007;
+			case CoreActionPak1Ids.UnscheduleSaflet:
+				return ElementTypes.elementType_UnscheduleSaflet_10008;
 		
 		}
 		System.err.println("WORNING! coodnt find actiopakka1 element type for "+id);

@@ -54,6 +54,8 @@ public class CoreActionPak1EditPartFactory implements ActionPakEditPartFactory {
       	 };
        case CoreActionPak1Ids.ScheduleSaflet:
       	 return new DefaultActionStepWithOutputParamsEditPart(view, id);
+       case CoreActionPak1Ids.UnscheduleSaflet:
+      	 return new DefaultActionStepEditPart(view, id);
        
 		}
 		System.err.println("HAAAAAYYYYY!!!!! Couldn't find editpart for id "+id);

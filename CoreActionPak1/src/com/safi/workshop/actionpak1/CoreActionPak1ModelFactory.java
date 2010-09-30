@@ -21,6 +21,8 @@ public class CoreActionPak1ModelFactory implements ActionPakModelFactory {
 				return ActionStepFactory.eINSTANCE.createFinally();
 			case CoreActionPak1Ids.ScheduleSaflet:
 				return Actionpak1Factory.eINSTANCE.createScheduleSaflet();
+			case CoreActionPak1Ids.UnscheduleSaflet:
+				return Actionpak1Factory.eINSTANCE.createUnscheduleSaflet();
 			
 		}
 		System.err.println("HEYYYAH....couldn't create coreactionpak1 model for id "+id);
