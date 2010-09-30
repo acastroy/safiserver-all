@@ -86,8 +86,8 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//actionstep/InputItem/required"/>
       </genClasses>
       <genClasses image="false" ecoreClass="core.ecore#//actionstep/ParameterizedActionstep">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/ParameterizedActionstep/inputs"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/ParameterizedActionstep/outputParameters"/>
+        <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/ParameterizedActionstep/inputs"/>
+        <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference core.ecore#//actionstep/ParameterizedActionstep/outputParameters"/>
       </genClasses>
       <genClasses image="false" ecoreClass="core.ecore#//actionstep/ParameterizedInitiator">
         <genOperations ecoreOperation="core.ecore#//actionstep/ParameterizedInitiator/getOutputMap"/>
