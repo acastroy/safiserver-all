@@ -1,5 +1,6 @@
 package com.safi.workshop.actionpak1;
 
+import java.util.Collections;
 import java.util.Map;
 import java.util.WeakHashMap;
 
@@ -42,8 +43,8 @@ public class CoreActionPak1ViewFactory implements ActionPakViewFactoryFactory {
 		switch (id) {
 			case CoreActionPak1Ids.Finally:
 				return new ActionstepViewFactory(id, ActionStepNameEditPart.VISUAL_ID,	null);
-			
-				
+			case CoreActionPak1Ids.ScheduleSaflet:
+				return new ActionstepViewFactory(id, ActionStepNameEditPart.VISUAL_ID,	Collections.singletonList(InputItemPanelEditPart.VISUAL_ID));
 			case InputItemEditPart.VISUAL_ID:
 				return new InputItemViewFactory();
 			case OutputItemEditPart.VISUAL_ID:
@@ -60,7 +61,7 @@ public class CoreActionPak1ViewFactory implements ActionPakViewFactoryFactory {
 				return new OutputItemPanelViewFactory();
 			case OutputItemLabelTextEditPart.VISUAL_ID:
 				return new ActionstepNameLabelViewFactory();
-				
+			
 		}
 		System.err.println("castel WOOOPS couldn't find view factory for id "+id);
 		return null;

@@ -7,6 +7,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import com.safi.asterisk.figures.ActionstepColors;
 import com.safi.asterisk.figures.DefaultToolstepFigure;
 import com.safi.workshop.actionpak1.editpart.DefaultActionStepEditPart;
+import com.safi.workshop.actionpak1.editpart.DefaultActionStepWithOutputParamsEditPart;
 import com.safi.workshop.edit.parts.ActionStepItemLabelTextEditPart;
 import com.safi.workshop.edit.parts.ActionStepNameEditPart;
 import com.safi.workshop.edit.parts.InputItemEditPart;
@@ -51,6 +52,8 @@ public class CoreActionPak1EditPartFactory implements ActionPakEditPartFactory {
       			return fig;
       		}
       	 };
+       case CoreActionPak1Ids.ScheduleSaflet:
+      	 return new DefaultActionStepWithOutputParamsEditPart(view, id);
        
 		}
 		System.err.println("HAAAAAYYYYY!!!!! Couldn't find editpart for id "+id);
