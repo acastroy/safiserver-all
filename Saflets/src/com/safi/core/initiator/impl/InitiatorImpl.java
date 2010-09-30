@@ -92,6 +92,8 @@ public abstract class InitiatorImpl extends ActionStepImpl implements Initiator 
    */
   public void beginProcessing() throws ActionStepException {
   	getSaflet().setActive(true);
+  	setActive(true);
+  	setActive(false);
   	Finally finallyStep = null;
   	SafletContext handlerContext = null;
     try {
