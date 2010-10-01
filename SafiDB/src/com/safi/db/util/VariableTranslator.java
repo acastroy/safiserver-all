@@ -26,9 +26,9 @@ public class VariableTranslator {
 	private static final String JAVASCRIPT_DATE_PATTERN = "EEE MMM dd yyyy HH:mm:ss 'GMT'Z (z)";
 	private final static FastDateFormat DATE_FORMATTER = FastDateFormat.getDateInstance(DateFormat.SHORT);
 	private final static FastDateFormat DATETIME_FORMATTER = FastDateFormat.getDateTimeInstance(DateFormat.SHORT,
-			DateFormat.SHORT);
+			DateFormat.MEDIUM);
 
-	private final static FastDateFormat TIME_FORMATTER = FastDateFormat.getTimeInstance(DateFormat.SHORT);
+	private final static FastDateFormat TIME_FORMATTER = FastDateFormat.getTimeInstance(DateFormat.MEDIUM);
 
 	private final static FastDateFormat JAVASCRIPT_DATE_PARSER = FastDateFormat.getInstance(JAVASCRIPT_DATE_PATTERN);
 
@@ -168,7 +168,7 @@ public class VariableTranslator {
 			case DATETIME:
 				if (value instanceof Date) {
 
-					Date d = SimpleDateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT).parse(
+					Date d = SimpleDateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.MEDIUM).parse(
 							DATETIME_FORMATTER.format((Date) value), new ParsePosition(0));
 					if (d != null)
 						return d;
@@ -176,7 +176,7 @@ public class VariableTranslator {
 						throw new IllegalArgumentException("Couldn't format datetime from " + value);
 
 				} else if (value instanceof Number) {
-					Date d = SimpleDateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT).parse(
+					Date d = SimpleDateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.MEDIUM).parse(
 							DATETIME_FORMATTER.format(new Date(((Number) value).longValue())), new ParsePosition(0));
 					if (d != null)
 						return d;
@@ -201,7 +201,7 @@ public class VariableTranslator {
 					return parseDate(value.toString());
 			case TIME:
 				if (value instanceof Date) {
-					Date d = SimpleDateFormat.getTimeInstance(DateFormat.SHORT).parse(TIME_FORMATTER.format((Date) value),
+					Date d = SimpleDateFormat.getTimeInstance(DateFormat.MEDIUM).parse(TIME_FORMATTER.format((Date) value),
 							new ParsePosition(0));
 					if (d != null)
 						return d;
@@ -209,7 +209,7 @@ public class VariableTranslator {
 						throw new IllegalArgumentException("Couldn't format time from " + value);
 				} else if (value instanceof Number) {
 					try {
-						return SimpleDateFormat.getTimeInstance(DateFormat.SHORT).parse(
+						return SimpleDateFormat.getTimeInstance(DateFormat.MEDIUM).parse(
 								TIME_FORMATTER.format(new Date(((Number) value).longValue())));
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -371,7 +371,7 @@ public class VariableTranslator {
 		Exception lastException = null;
 		Date date = null;
 		try {
-			date = SimpleDateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT).parse(value.toString(),
+			date = SimpleDateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.MEDIUM).parse(value.toString(),
 					new ParsePosition(0));
 			if (date != null)
 				return date;
