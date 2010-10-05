@@ -38,7 +38,7 @@ public interface UnscheduleSaflet extends ActionStep {
 	 * @see #setJobName(DynamicValue)
 	 * @see com.safi.workshop.model.actionpak1.Actionpak1Package#getUnscheduleSaflet_JobName()
 	 * @model containment="true" ordered="false"
-	 *        annotation="DynamicValueAnnotation type='Text' isTypeLocked='false' description='Name of the job to be unscheduled' expectedReturnType='VariableName' helperClass=''"
+	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='Name of the job to be unscheduled' expectedReturnType='VariableName' helperClass=''"
 	 *        annotation="Required criteria='non-null'"
 	 * @generated
 	 */

@@ -6,36 +6,19 @@
  */
 package com.safi.workshop.model.actionpak1.impl;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Properties;
-import java.util.logging.Level;
-
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.quartz.CronTrigger;
-import org.quartz.JobDetail;
-import org.quartz.SimpleTrigger;
-import org.quartz.Trigger;
 
 import com.safi.core.actionstep.ActionStepException;
 import com.safi.core.actionstep.DynamicValue;
-import com.safi.core.actionstep.InputItem;
 import com.safi.core.actionstep.impl.ActionStepImpl;
-import com.safi.core.saflet.SafletConstants;
 import com.safi.core.saflet.SafletContext;
-import com.safi.core.saflet.SafletEnvironment;
-import com.safi.db.Variable;
-import com.safi.db.VariableScope;
 import com.safi.db.VariableType;
-import com.safi.db.server.config.TelephonySubsystem;
 import com.safi.db.util.VariableTranslator;
-import com.safi.server.saflet.scheduling.SafiTriggerSpec;
-import com.safi.server.saflet.scheduling.SafletExecutionJob;
 import com.safi.server.saflet.scheduling.SchedulingConstants;
 import com.safi.server.saflet.scheduling.SchedulingManager;
 import com.safi.workshop.model.actionpak1.Actionpak1Package;

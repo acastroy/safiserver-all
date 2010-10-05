@@ -471,7 +471,7 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 		  (getScheduleSaflet_TargetSafletPath(), 
 		   source, 
 		   new String[] {
-			 "type", "Saflet Path",
+			 "type", "Text",
 			 "isTypeLocked", "false",
 			 "description", "The path of the handler to which control will be transferred",
 			 "expectedReturnType", "Saflet Path",
@@ -491,20 +491,20 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 		  (getScheduleSaflet_StartDateTime(), 
 		   source, 
 		   new String[] {
-			 "type", "DateTime",
+			 "type", "VariableName",
 			 "isTypeLocked", "false",
 			 "description", "Start DateTime for the the saflet execution schedule",
-			 "expectedReturnType", "VariableName",
+			 "expectedReturnType", "DateTime",
 			 "helperClass", ""
 		   });		
 		addAnnotation
 		  (getScheduleSaflet_EndDateTime(), 
 		   source, 
 		   new String[] {
-			 "type", "DateTime",
+			 "type", "VariableName",
 			 "isTypeLocked", "false",
 			 "description", "End DateTime for the the saflet execution schedule",
-			 "expectedReturnType", "VariableName",
+			 "expectedReturnType", "DateTime",
 			 "helperClass", ""
 		   });		
 		addAnnotation
@@ -531,7 +531,7 @@ public class Actionpak1PackageImpl extends EPackageImpl implements Actionpak1Pac
 		  (getUnscheduleSaflet_JobName(), 
 		   source, 
 		   new String[] {
-			 "type", "Text",
+			 "type", "VariableName",
 			 "isTypeLocked", "false",
 			 "description", "Name of the job to be unscheduled",
 			 "expectedReturnType", "VariableName",

@@ -57,7 +57,7 @@
         eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
         containment="true" resolveProxies="false">
       <eAnnotations source="DynamicValueAnnotation">
-        <details key="type" value="Saflet Path"/>
+        <details key="type" value="Text"/>
         <details key="isTypeLocked" value="false"/>
         <details key="description" value="The path of the handler to which control will be transferred"/>
         <details key="expectedReturnType" value="Saflet Path"/>
@@ -82,10 +82,10 @@
         eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
         containment="true" resolveProxies="false">
       <eAnnotations source="DynamicValueAnnotation">
-        <details key="type" value="DateTime"/>
+        <details key="type" value="VariableName"/>
         <details key="isTypeLocked" value="false"/>
         <details key="description" value="Start DateTime for the the saflet execution schedule"/>
-        <details key="expectedReturnType" value="VariableName"/>
+        <details key="expectedReturnType" value="DateTime"/>
         <details key="helperClass" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -93,10 +93,10 @@
         eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
         containment="true" resolveProxies="false">
       <eAnnotations source="DynamicValueAnnotation">
-        <details key="type" value="DateTime"/>
+        <details key="type" value="VariableName"/>
         <details key="isTypeLocked" value="false"/>
         <details key="description" value="End DateTime for the the saflet execution schedule"/>
-        <details key="expectedReturnType" value="VariableName"/>
+        <details key="expectedReturnType" value="DateTime"/>
         <details key="helperClass" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -131,7 +131,7 @@
         eType="ecore:EClass ../../Saflets/model/core.ecore#//actionstep/DynamicValue"
         containment="true" resolveProxies="false">
       <eAnnotations source="DynamicValueAnnotation">
-        <details key="type" value="Text"/>
+        <details key="type" value="VariableName"/>
         <details key="isTypeLocked" value="false"/>
         <details key="description" value="Name of the job to be unscheduled"/>
         <details key="expectedReturnType" value="VariableName"/>

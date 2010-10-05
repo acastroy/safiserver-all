@@ -99,7 +99,7 @@ public interface ScheduleSaflet extends ParameterizedActionstep {
 	 * @see #setTargetSafletPath(DynamicValue)
 	 * @see com.safi.workshop.model.actionpak1.Actionpak1Package#getScheduleSaflet_TargetSafletPath()
 	 * @model containment="true" ordered="false"
-	 *        annotation="DynamicValueAnnotation type='Saflet Path' isTypeLocked='false' description='The path of the handler to which control will be transferred' expectedReturnType='Saflet Path' helperClass='com.safi.workshop.sheet.SelectSafletDynamicValueEditorPage'"
+	 *        annotation="DynamicValueAnnotation type='Text' isTypeLocked='false' description='The path of the handler to which control will be transferred' expectedReturnType='Saflet Path' helperClass='com.safi.workshop.sheet.SelectSafletDynamicValueEditorPage'"
 	 *        annotation="Required criteria='non-null'"
 	 * @generated
 	 */
@@ -154,7 +154,7 @@ public interface ScheduleSaflet extends ParameterizedActionstep {
 	 * @see #setStartDateTime(DynamicValue)
 	 * @see com.safi.workshop.model.actionpak1.Actionpak1Package#getScheduleSaflet_StartDateTime()
 	 * @model containment="true" ordered="false"
-	 *        annotation="DynamicValueAnnotation type='DateTime' isTypeLocked='false' description='Start DateTime for the the saflet execution schedule' expectedReturnType='VariableName' helperClass=''"
+	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='Start DateTime for the the saflet execution schedule' expectedReturnType='DateTime' helperClass=''"
 	 * @generated
 	 */
 	DynamicValue getStartDateTime();
@@ -181,7 +181,7 @@ public interface ScheduleSaflet extends ParameterizedActionstep {
 	 * @see #setEndDateTime(DynamicValue)
 	 * @see com.safi.workshop.model.actionpak1.Actionpak1Package#getScheduleSaflet_EndDateTime()
 	 * @model containment="true" ordered="false"
-	 *        annotation="DynamicValueAnnotation type='DateTime' isTypeLocked='false' description='End DateTime for the the saflet execution schedule' expectedReturnType='VariableName' helperClass=''"
+	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='End DateTime for the the saflet execution schedule' expectedReturnType='DateTime' helperClass=''"
 	 * @generated
 	 */
 	DynamicValue getEndDateTime();
