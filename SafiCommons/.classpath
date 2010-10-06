@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry exported="true" kind="lib" path="safiServer.jar"/>
+	<classpathentry exported="true" kind="lib" path="safiServer.jar" sourcepath="/SafiServerSpring"/>
 	<classpathentry exported="true" kind="lib" path="quartz-1.8.3.jar" sourcepath="C:/javalib/quartz-1.8.3/quartz/src/main/java"/>
 	<classpathentry exported="true" kind="lib" path="js.jar" sourcepath="C:/Users/Zac/.m2/repository/rhino/js/1.7R2/js-1.7R2-sources.jar"/>
 	<classpathentry exported="true" kind="lib" path="commons-beanutils.jar" sourcepath="D:/javalib/commons-beanutils-1.8.1/commons-beanutils-1.8.1-sources.jar"/>
