@@ -49,8 +49,19 @@
     exampleUrl="jdbc:firebirdsql:localhost/3050:c:/database/myDatabase.gdb"
     guideUrl="jdbc:firebirdsql:[host]/[port]:[schema]" websiteUrl="http://www.firebirdsql.org/"
     defaultPort="3050"
-    urlRegexPattern="jdbc:firebirdsql:(?:([a-zA-Z0-9\-\._]+)|(?:(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])))?(?:\/([0-9]+))?(?:\:[a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~\:]*)?$"
+    urlRegexPattern="^jdbc:firebirdsql:(?:([a-zA-Z0-9\-\._]+)|(?:(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])))?(?:\/([0-9]+))?(?:\:[a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~\:]*)?$"
     id="7">
     <jars></jars>
   </drivers>
+  
+  <drivers default="false" name="AS400" driverClassName="com.ibm.as400.access.AS400JDBCDriver"
+    exampleUrl="jdbc:as400://mySystem;user=myUidl;password=myPwd;meserver=myMEServer;"
+    guideUrl="jdbc:as400://[host]/[schema]" websiteUrl="http://jt400.sourceforge.net/"
+    defaultPort="0"
+    urlRegexPattern="^jdbc:as400://(?:([a-zA-Z0-9\-\._]+)|(?:(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(?:\d{1,2}|1\d\d|2[0-4]\d|25[0-5])))(/[a-zA-Z0-9\-\._]+)?(;\w+\=\w+;?)*$"
+    id="8">
+    <jars></jars>
+  </drivers>
+  
+  
 </com.safi.db:SafiDriverManager>
