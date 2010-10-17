@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="lib" path="default_drivers/AS400/jt400.jar"/>
 	<classpathentry exported="true" kind="lib" path="commons-collections-3.2.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="commons-exec-1.0.1.jar" sourcepath="C:/Users/Zac/.m2/repository/org/apache/commons/commons-exec/1.0.1/commons-exec-1.0.1-sources.jar"/>
 	<classpathentry exported="true" kind="lib" path="commons-csv-1.0-SNAPSHOT.jar" sourcepath="/csv"/>
