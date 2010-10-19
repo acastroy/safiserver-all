@@ -379,7 +379,7 @@ public class VariableTranslator {
 			lastException = e;
 		}
 		try {
-			date = SimpleDateFormat.getDateInstance(DateFormat.SHORT).parse(value.toString(), new ParsePosition(0));
+			date = SimpleDateFormat.getDateInstance(DateFormat.MEDIUM).parse(value.toString(), new ParsePosition(0));
 			if (date != null)
 				return date;
 		} catch (Exception e) {
