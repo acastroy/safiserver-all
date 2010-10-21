@@ -71,14 +71,15 @@ public class RhinoSafletScriptImpl extends SafletScriptImpl implements RhinoSafl
       if (!(cx.getWrapFactory() instanceof SugarWrapFactory))
       	cx.setWrapFactory(new SugarWrapFactory());
       if (rhinoScript == null) {
+      	
         rhinoScript = cx.compileString(scriptText, name, 1, null);
       }
+      
       // TODO: share the engine among all handlers and keep a per-handler
       // Bindings object instead
       
       Scriptable scopeObject = (Scriptable) scope.getScopeObject();
       Scriptable newScope = cx.newObject(scopeObject);
-
       newScope.setParentScope(scopeObject);
 //      newScope.setPrototype(scopeObject);
 			Object result = rhinoScript.exec(cx, newScope);
