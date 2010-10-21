@@ -60,7 +60,7 @@ public class SafletImpl extends ServerResourceImpl implements Saflet {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SUBSYSTEM_ID_EDEFAULT = "Asterisk";
+	protected static final String SUBSYSTEM_ID_EDEFAULT = "";
 
 		/**
 	 * The cached value of the '{@link #getSubsystemId() <em>Subsystem Id</em>}' attribute.

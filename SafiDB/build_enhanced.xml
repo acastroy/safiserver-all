@@ -93,8 +93,8 @@
 		</java>
 	</target>
 	<target name="instrument" depends="build">
-		<taskdef name="instrument" classname="org.hibernate.tool.instrument.javassist.InstrumentTask">
-			<classpath path="${Plug-in Dependencies.libraryclasspath}" />
+		 <taskdef name="instrument" classname="org.hibernate.tool.instrument.javassist.InstrumentTask"> 
+		 	<!-- <taskdef name="instrument" classname="org.hibernate.tool.instrument.cglib.InstrumentTask">-->
 			<classpath path="${SafiDB.classpath}" />
 		</taskdef>
 

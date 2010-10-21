@@ -81,7 +81,7 @@ public interface Saflet extends ServerResource {
 
 		/**
 	 * Returns the value of the '<em><b>Subsystem Id</b></em>' attribute.
-	 * The default value is <code>"Asterisk"</code>.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Subsystem Id</em>' attribute isn't clear,
@@ -91,7 +91,7 @@ public interface Saflet extends ServerResource {
 	 * @return the value of the '<em>Subsystem Id</em>' attribute.
 	 * @see #setSubsystemId(String)
 	 * @see com.safi.db.server.config.ConfigPackage#getSaflet_SubsystemId()
-	 * @model default="Asterisk"
+	 * @model default=""
 	 * @generated
 	 */
 	String getSubsystemId();
