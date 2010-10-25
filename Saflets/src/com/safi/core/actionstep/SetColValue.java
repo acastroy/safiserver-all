@@ -67,7 +67,7 @@ public interface SetColValue extends ActionStep {
 	 * @see #setColumn(DynamicValue)
 	 * @see com.safi.core.actionstep.ActionStepPackage#getSetColValue_Column()
 	 * @model containment="true" ordered="false"
-	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The resultset column from which to retrieve the value.  If this value is a number, the value will be retrieved by column number.' expectedReturnType='Unknown' helperClass=''"
+	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The resultset column from which to retrieve the value.  If this value is a number, the value will be retrieved by column number.' expectedReturnType='Variable' helperClass=''"
 	 *        annotation="Required criteria='non-null'"
 	 * @generated
 	 */
@@ -124,7 +124,7 @@ public interface SetColValue extends ActionStep {
 	 * @see #setValue(DynamicValue)
 	 * @see com.safi.core.actionstep.ActionStepPackage#getSetColValue_Value()
 	 * @model containment="true" ordered="false"
-	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The value to assign to the given column of the resultset. This resultset must be updateable.' expectedReturnType='Unknown' helperClass=''"
+	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The value to assign to the given column of the resultset. This resultset must be updateable.' expectedReturnType='Variable' helperClass=''"
 	 *        annotation="Required criteria='non-null'"
 	 * @generated
 	 */

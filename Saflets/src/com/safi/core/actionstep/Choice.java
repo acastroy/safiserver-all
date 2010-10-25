@@ -55,7 +55,7 @@ public interface Choice extends ActionStep {
 	 * @see #setValue(DynamicValue)
 	 * @see com.safi.core.actionstep.ActionStepPackage#getChoice_Value()
 	 * @model containment="true" ordered="false"
-	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The value that will be compared against each choice' expectedReturnType='Unknown' helperClass=''"
+	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The value that will be compared against each choice' expectedReturnType='Variable' helperClass=''"
 	 *        annotation="Required criteria='non-null'"
 	 * @generated
 	 */

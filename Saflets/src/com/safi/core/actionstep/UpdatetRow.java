@@ -36,7 +36,6 @@ public interface UpdatetRow extends ActionStep, Heavyweight {
 	 * @see #setResultSet(DBResultSetId)
 	 * @see com.safi.core.actionstep.ActionStepPackage#getUpdatetRow_ResultSet()
 	 * @model resolveProxies="false" ordered="false"
-	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The variable that will receive the number of rows updated' expectedReturnType='Text' helperClass=''"
 	 *        annotation="Required criteria='non-null'"
 	 * @generated
 	 */

@@ -2446,7 +2446,7 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 			 "type", "VariableName",
 			 "isTypeLocked", "false",
 			 "description", "The value to assign",
-			 "expectedReturnType", "Unknown",
+			 "expectedReturnType", "Variable",
 			 "helperClass", ""
 		   });			
 		addAnnotation
@@ -2456,7 +2456,7 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 			 "type", "VariableName",
 			 "isTypeLocked", "true",
 			 "description", "The assignee variable",
-			 "expectedReturnType", "VariableName",
+			 "expectedReturnType", "Variable",
 			 "helperClass", ""
 		   });					
 		addAnnotation
@@ -2466,7 +2466,7 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 			 "type", "VariableName",
 			 "isTypeLocked", "false",
 			 "description", "The value with which to compare against",
-			 "expectedReturnType", "Unknown",
+			 "expectedReturnType", "Variable",
 			 "helperClass", "com.safi.workshop.sheet.BooleanBuilderDynamicValueEditorPage"
 		   });				
 		addAnnotation
@@ -2476,7 +2476,7 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 			 "type", "VariableName",
 			 "isTypeLocked", "false",
 			 "description", "The value that will be compared against each choice",
-			 "expectedReturnType", "Unknown",
+			 "expectedReturnType", "Variable",
 			 "helperClass", ""
 		   });			
 		addAnnotation
@@ -2496,7 +2496,7 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 			 "type", "ScriptText",
 			 "isTypeLocked", "true",
 			 "description", "The script to be executed.  Error output will taken in case of error, default output for all other cases",
-			 "expectedReturnType", "Text",
+			 "expectedReturnType", "Script",
 			 "helperClass", ""
 		   });			
 		addAnnotation
@@ -2513,7 +2513,7 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		  (getDebugLog_Message(), 
 		   source, 
 		   new String[] {
-			 "type", "ScriptText",
+			 "type", "LiteralText",
 			 "isTypeLocked", "false",
 			 "description", "The message to be logged",
 			 "expectedReturnType", "Text",
@@ -2536,7 +2536,7 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 			 "type", "VariableName",
 			 "isTypeLocked", "false",
 			 "description", "The value to assign to the parameter",
-			 "expectedReturnType", "Unknown",
+			 "expectedReturnType", "Variable",
 			 "helperClass", ""
 		   });							
 		addAnnotation
@@ -2546,19 +2546,9 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 			 "type", "VariableName",
 			 "isTypeLocked", "false",
 			 "description", "The variable that will receive the number of rows updated",
-			 "expectedReturnType", "Text",
+			 "expectedReturnType", "Variable",
 			 "helperClass", ""
-		   });							
-		addAnnotation
-		  (getNextRow_ResultSet(), 
-		   source, 
-		   new String[] {
-			 "type", "VariableName",
-			 "isTypeLocked", "false",
-			 "description", "The variable that will receive the number of rows updated",
-			 "expectedReturnType", "Text",
-			 "helperClass", ""
-		   });				
+		   });									
 		addAnnotation
 		  (getGetColValue_VariableName(), 
 		   source, 
@@ -2566,7 +2556,7 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 			 "type", "VariableName",
 			 "isTypeLocked", "false",
 			 "description", "The variable that will receive the value of the specified column",
-			 "expectedReturnType", "Text",
+			 "expectedReturnType", "Variable",
 			 "helperClass", ""
 		   });				
 		addAnnotation
@@ -2576,7 +2566,7 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 			 "type", "VariableName",
 			 "isTypeLocked", "false",
 			 "description", "The resultset column from which to retrieve the value.  If this value is a number, the value will be retrieved by column number.",
-			 "expectedReturnType", "Unknown",
+			 "expectedReturnType", "Variable",
 			 "helperClass", ""
 		   });						
 		addAnnotation
@@ -2586,7 +2576,7 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 			 "type", "VariableName",
 			 "isTypeLocked", "false",
 			 "description", "The resultset column from which to retrieve the value.  If this value is a number, the value will be retrieved by column number.",
-			 "expectedReturnType", "Unknown",
+			 "expectedReturnType", "Variable",
 			 "helperClass", ""
 		   });			
 		addAnnotation
@@ -2596,99 +2586,19 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 			 "type", "VariableName",
 			 "isTypeLocked", "false",
 			 "description", "The value to assign to the given column of the resultset. This resultset must be updateable.",
-			 "expectedReturnType", "Unknown",
+			 "expectedReturnType", "Variable",
 			 "helperClass", ""
-		   });					
-		addAnnotation
-		  (getUpdatetRow_ResultSet(), 
-		   source, 
-		   new String[] {
-			 "type", "VariableName",
-			 "isTypeLocked", "false",
-			 "description", "The variable that will receive the number of rows updated",
-			 "expectedReturnType", "Text",
-			 "helperClass", ""
-		   });			
-		addAnnotation
-		  (getMoveToRow_ResultSet(), 
-		   source, 
-		   new String[] {
-			 "type", "VariableName",
-			 "isTypeLocked", "false",
-			 "description", "The variable that will receive the number of rows updated",
-			 "expectedReturnType", "Text",
-			 "helperClass", ""
-		   });			
+		   });							
 		addAnnotation
 		  (getMoveToRow_RowNum(), 
 		   source, 
 		   new String[] {
-			 "type", "VariableName",
+			 "type", "ScriptText",
 			 "isTypeLocked", "false",
 			 "description", "The row number of the resultset to move to.  The resultset must be scrollable.",
 			 "expectedReturnType", "Integer",
 			 "helperClass", ""
-		   });			
-		addAnnotation
-		  (getMoveToLastRow_ResultSet(), 
-		   source, 
-		   new String[] {
-			 "type", "VariableName",
-			 "isTypeLocked", "false",
-			 "description", "The variable that will receive the number of rows updated",
-			 "expectedReturnType", "Text",
-			 "helperClass", ""
-		   });			
-		addAnnotation
-		  (getDeleteRow_ResultSet(), 
-		   source, 
-		   new String[] {
-			 "type", "VariableName",
-			 "isTypeLocked", "false",
-			 "description", "The variable that will receive the number of rows updated",
-			 "expectedReturnType", "Text",
-			 "helperClass", ""
-		   });			
-		addAnnotation
-		  (getMoveToInsertRow_ResultSet(), 
-		   source, 
-		   new String[] {
-			 "type", "VariableName",
-			 "isTypeLocked", "false",
-			 "description", "The variable that will receive the number of rows updated",
-			 "expectedReturnType", "Text",
-			 "helperClass", ""
-		   });			
-		addAnnotation
-		  (getInsertRow_ResultSet(), 
-		   source, 
-		   new String[] {
-			 "type", "VariableName",
-			 "isTypeLocked", "false",
-			 "description", "The variable that will receive the number of rows updated",
-			 "expectedReturnType", "Text",
-			 "helperClass", ""
-		   });			
-		addAnnotation
-		  (getMoveToFirstRow_ResultSet(), 
-		   source, 
-		   new String[] {
-			 "type", "VariableName",
-			 "isTypeLocked", "false",
-			 "description", "The variable that will receive the number of rows updated",
-			 "expectedReturnType", "Text",
-			 "helperClass", ""
-		   });			
-		addAnnotation
-		  (getPreviousRow_ResultSet(), 
-		   source, 
-		   new String[] {
-			 "type", "VariableName",
-			 "isTypeLocked", "false",
-			 "description", "The variable that will receive the number of rows updated",
-			 "expectedReturnType", "Text",
-			 "helperClass", ""
-		   });			
+		   });									
 		addAnnotation
 		  (getGetColMapping_VariableName(), 
 		   source, 
@@ -2696,37 +2606,37 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 			 "type", "VariableName",
 			 "isTypeLocked", "false",
 			 "description", "The variable that will receive the value of the specified column",
-			 "expectedReturnType", "Text",
+			 "expectedReturnType", "Variable",
 			 "helperClass", ""
 		   });			
 		addAnnotation
 		  (getGetColMapping_Column(), 
 		   source, 
 		   new String[] {
-			 "type", "VariableName",
+			 "type", "LiteralText",
 			 "isTypeLocked", "false",
 			 "description", "The resultset column from which to retrieve the value.  If this value is a number, the value will be retrieved by column number.",
-			 "expectedReturnType", "Unknown",
+			 "expectedReturnType", "Text",
 			 "helperClass", ""
 		   });		
 		addAnnotation
 		  (getSetColMapping_Column(), 
 		   source, 
 		   new String[] {
-			 "type", "VariableName",
+			 "type", "LiteralText",
 			 "isTypeLocked", "false",
 			 "description", "The resultset column from which to retrieve the value.  If this value is a number, the value will be retrieved by column number.",
-			 "expectedReturnType", "Unknown",
+			 "expectedReturnType", "Text",
 			 "helperClass", ""
 		   });		
 		addAnnotation
 		  (getSetColMapping_Value(), 
 		   source, 
 		   new String[] {
-			 "type", "VariableName",
+			 "type", "LiteralText",
 			 "isTypeLocked", "false",
 			 "description", "The value to assign to the given column of the resultset. This resultset must be updateable.",
-			 "expectedReturnType", "Unknown",
+			 "expectedReturnType", "Text",
 			 "helperClass", ""
 		   });						
 		addAnnotation
@@ -2736,14 +2646,14 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 			 "type", "VariableName",
 			 "isTypeLocked", "false",
 			 "description", "The variable that will receive the number of rows updated",
-			 "expectedReturnType", "Text",
+			 "expectedReturnType", "Variable",
 			 "helperClass", ""
 		   });			
 		addAnnotation
 		  (getRunQuery_Sql(), 
 		   source, 
 		   new String[] {
-			 "type", "VariableName",
+			 "type", "LiteralText",
 			 "isTypeLocked", "false",
 			 "description", "The variable that will receive the number of rows updated",
 			 "expectedReturnType", "Text",
@@ -2753,10 +2663,10 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		  (getQueryParamMapping_Value(), 
 		   source, 
 		   new String[] {
-			 "type", "VariableName",
+			 "type", "LiteralText",
 			 "isTypeLocked", "false",
 			 "description", "The value to assign to the given column of the resultset. This resultset must be updateable.",
-			 "expectedReturnType", "Unknown",
+			 "expectedReturnType", "Text",
 			 "helperClass", ""
 		   });
 	}
@@ -2888,7 +2798,7 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		   source, 
 		   new String[] {
 			 "criteria", "non-blank"
-		   });			
+		   });		
 		addAnnotation
 		  (getNextRow_ResultSet(), 
 		   source, 
@@ -2954,13 +2864,13 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		   source, 
 		   new String[] {
 			 "criteria", "non-empty"
-		   });			
+		   });		
 		addAnnotation
 		  (getUpdatetRow_ResultSet(), 
 		   source, 
 		   new String[] {
 			 "criteria", "non-null"
-		   });			
+		   });		
 		addAnnotation
 		  (getMoveToRow_ResultSet(), 
 		   source, 
@@ -2972,37 +2882,37 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		   source, 
 		   new String[] {
 			 "criteria", "non-null"
-		   });			
+		   });		
 		addAnnotation
 		  (getMoveToLastRow_ResultSet(), 
 		   source, 
 		   new String[] {
 			 "criteria", "non-null"
-		   });			
+		   });		
 		addAnnotation
 		  (getDeleteRow_ResultSet(), 
 		   source, 
 		   new String[] {
 			 "criteria", "non-null"
-		   });			
+		   });		
 		addAnnotation
 		  (getMoveToInsertRow_ResultSet(), 
 		   source, 
 		   new String[] {
 			 "criteria", "non-null"
-		   });			
+		   });		
 		addAnnotation
 		  (getInsertRow_ResultSet(), 
 		   source, 
 		   new String[] {
 			 "criteria", "non-null"
-		   });			
+		   });		
 		addAnnotation
 		  (getMoveToFirstRow_ResultSet(), 
 		   source, 
 		   new String[] {
 			 "criteria", "non-null"
-		   });			
+		   });		
 		addAnnotation
 		  (getPreviousRow_ResultSet(), 
 		   source, 
@@ -3066,13 +2976,13 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		   source, 
 		   new String[] {
 			 "output", "true"
-		   });							
+		   });						
 		addAnnotation
 		  (getGetColValue_VariableName(), 
 		   source, 
 		   new String[] {
 			 "output", "true"
-		   });																																	
+		   });																									
 		addAnnotation
 		  (getGetColMapping_VariableName(), 
 		   source, 
@@ -3130,7 +3040,7 @@ public class ActionStepPackageImpl extends EPackageImpl implements ActionStepPac
 		   source, 
 		   new String[] {
 			 "displayText", "Update Count Variable"
-		   });																																																					
+		   });																																												
 	}
 
 } //ActionStepPackageImpl

@@ -95,7 +95,7 @@ public interface QueryParamMapping extends Item {
 	 * @see #setValue(DynamicValue)
 	 * @see com.safi.core.actionstep.ActionStepPackage#getQueryParamMapping_Value()
 	 * @model containment="true" ordered="false"
-	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The value to assign to the given column of the resultset. This resultset must be updateable.' expectedReturnType='Unknown' helperClass=''"
+	 *        annotation="DynamicValueAnnotation type='LiteralText' isTypeLocked='false' description='The value to assign to the given column of the resultset. This resultset must be updateable.' expectedReturnType='Text' helperClass=''"
 	 * @generated
 	 */
   DynamicValue getValue();

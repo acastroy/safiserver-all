@@ -18,8 +18,8 @@
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//PlatformDisposition/platformID"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//PlatformDisposition/platformDependant"/>
     </genClasses>
-    <nestedGenPackages prefix="ActionStep" disposableProviderFactory="true" literalsInterface="false"
-        ecorePackage="core.ecore#//actionstep">
+    <nestedGenPackages prefix="ActionStep" basePackage="com.safi.core" disposableProviderFactory="true"
+        literalsInterface="false" ecorePackage="core.ecore#//actionstep">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="core.ecore#//actionstep/DynamicValueType">
         <genEnumLiterals ecoreEnumLiteral="core.ecore#//actionstep/DynamicValueType/LiteralText"/>
         <genEnumLiterals ecoreEnumLiteral="core.ecore#//actionstep/DynamicValueType/ScriptText"/>
@@ -279,7 +279,8 @@
       <genClasses ecoreClass="core.ecore#//actionstep/OutputParameter"/>
       <genClasses ecoreClass="core.ecore#//actionstep/Finally"/>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Scripting" disposableProviderFactory="true" ecorePackage="core.ecore#//scripting">
+    <nestedGenPackages prefix="Scripting" basePackage="com.safi.core" disposableProviderFactory="true"
+        ecorePackage="core.ecore#//scripting">
       <genDataTypes ecoreDataType="core.ecore#//scripting/SafletScriptException"/>
       <genDataTypes ecoreDataType="core.ecore#//scripting/Script"/>
       <genClasses image="false" ecoreClass="core.ecore#//scripting/SafletScript">
@@ -338,7 +339,8 @@
             ecoreFeature="ecore:EReference core.ecore#//scripting/ScriptScopeFactory/globalScriptScope"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Saflet" disposableProviderFactory="true" ecorePackage="core.ecore#//saflet">
+    <nestedGenPackages prefix="Saflet" basePackage="com.safi.core" disposableProviderFactory="true"
+        ecorePackage="core.ecore#//saflet">
       <genDataTypes ecoreDataType="core.ecore#//saflet/SafletException"/>
       <genDataTypes ecoreDataType="core.ecore#//saflet/Exception"/>
       <genDataTypes ecoreDataType="core.ecore#//saflet/Executor"/>
@@ -436,7 +438,8 @@
         </genOperations>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Initiator" disposableProviderFactory="true" ecorePackage="core.ecore#//initiator">
+    <nestedGenPackages prefix="Initiator" basePackage="com.safi.core" disposableProviderFactory="true"
+        ecorePackage="core.ecore#//initiator">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="core.ecore#//initiator/InputType">
         <genEnumLiterals ecoreEnumLiteral="core.ecore#//initiator/InputType/Value"/>
         <genEnumLiterals ecoreEnumLiteral="core.ecore#//initiator/InputType/Variable"/>
@@ -453,7 +456,8 @@
       </genClasses>
       <genClasses image="false" ecoreClass="core.ecore#//initiator/InitiatorInfo"/>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Call" disposableProviderFactory="true" ecorePackage="core.ecore#//call">
+    <nestedGenPackages prefix="Call" basePackage="com.safi.core" disposableProviderFactory="true"
+        ecorePackage="core.ecore#//call">
       <genClasses image="false" ecoreClass="core.ecore#//call/SafiCall">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//call/SafiCall/uuid"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute core.ecore#//call/SafiCall/name"/>

@@ -37,7 +37,6 @@ public interface MoveToRow extends ActionStep {
 	 * @see #setResultSet(DBResultSetId)
 	 * @see com.safi.core.actionstep.ActionStepPackage#getMoveToRow_ResultSet()
 	 * @model resolveProxies="false" ordered="false"
-	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The variable that will receive the number of rows updated' expectedReturnType='Text' helperClass=''"
 	 *        annotation="Required criteria='non-null'"
 	 * @generated
 	 */
@@ -65,7 +64,7 @@ public interface MoveToRow extends ActionStep {
 	 * @see #setRowNum(DynamicValue)
 	 * @see com.safi.core.actionstep.ActionStepPackage#getMoveToRow_RowNum()
 	 * @model containment="true" ordered="false"
-	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The row number of the resultset to move to.  The resultset must be scrollable.' expectedReturnType='Integer' helperClass=''"
+	 *        annotation="DynamicValueAnnotation type='ScriptText' isTypeLocked='false' description='The row number of the resultset to move to.  The resultset must be scrollable.' expectedReturnType='Integer' helperClass=''"
 	 *        annotation="Required criteria='non-null'"
 	 * @generated
 	 */

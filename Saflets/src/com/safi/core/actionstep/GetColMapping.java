@@ -39,7 +39,7 @@ public interface GetColMapping extends Item {
 	 * @see #setVariableName(DynamicValue)
 	 * @see com.safi.core.actionstep.ActionStepPackage#getGetColMapping_VariableName()
 	 * @model containment="true" ordered="false"
-	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The variable that will receive the value of the specified column' expectedReturnType='Text' helperClass=''"
+	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The variable that will receive the value of the specified column' expectedReturnType='Variable' helperClass=''"
 	 *        annotation="Directionality output='true'"
 	 * @generated
 	 */
@@ -67,7 +67,7 @@ public interface GetColMapping extends Item {
 	 * @see #setColumn(DynamicValue)
 	 * @see com.safi.core.actionstep.ActionStepPackage#getGetColMapping_Column()
 	 * @model containment="true" ordered="false"
-	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The resultset column from which to retrieve the value.  If this value is a number, the value will be retrieved by column number.' expectedReturnType='Unknown' helperClass=''"
+	 *        annotation="DynamicValueAnnotation type='LiteralText' isTypeLocked='false' description='The resultset column from which to retrieve the value.  If this value is a number, the value will be retrieved by column number.' expectedReturnType='Text' helperClass=''"
 	 * @generated
 	 */
   DynamicValue getColumn();

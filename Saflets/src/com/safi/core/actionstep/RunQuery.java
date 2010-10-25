@@ -224,7 +224,7 @@ public interface RunQuery extends ActionStep, Heavyweight {
 	 * @see #setRowsUpdatedVar(DynamicValue)
 	 * @see com.safi.core.actionstep.ActionStepPackage#getRunQuery_RowsUpdatedVar()
 	 * @model containment="true" ordered="false"
-	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The variable that will receive the number of rows updated' expectedReturnType='Text' helperClass=''"
+	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The variable that will receive the number of rows updated' expectedReturnType='Variable' helperClass=''"
 	 *        annotation="Directionality output='true'"
 	 * @generated
 	 */
@@ -252,7 +252,7 @@ public interface RunQuery extends ActionStep, Heavyweight {
 	 * @see #setSql(DynamicValue)
 	 * @see com.safi.core.actionstep.ActionStepPackage#getRunQuery_Sql()
 	 * @model containment="true" ordered="false"
-	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The variable that will receive the number of rows updated' expectedReturnType='Text' helperClass=''"
+	 *        annotation="DynamicValueAnnotation type='LiteralText' isTypeLocked='false' description='The variable that will receive the number of rows updated' expectedReturnType='Text' helperClass=''"
 	 *        annotation="Directionality output='false'"
 	 * @generated
 	 */

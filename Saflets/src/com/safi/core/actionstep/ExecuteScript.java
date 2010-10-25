@@ -36,7 +36,7 @@ public interface ExecuteScript extends ActionStep {
 	 * @see #setScriptText(DynamicValue)
 	 * @see com.safi.core.actionstep.ActionStepPackage#getExecuteScript_ScriptText()
 	 * @model containment="true" ordered="false"
-	 *        annotation="DynamicValueAnnotation type='ScriptText' isTypeLocked='true' description='The script to be executed.  Error output will taken in case of error, default output for all other cases' expectedReturnType='Text' helperClass=''"
+	 *        annotation="DynamicValueAnnotation type='ScriptText' isTypeLocked='true' description='The script to be executed.  Error output will taken in case of error, default output for all other cases' expectedReturnType='Script' helperClass=''"
 	 *        annotation="Required criteria='non-null'"
 	 * @generated
 	 */

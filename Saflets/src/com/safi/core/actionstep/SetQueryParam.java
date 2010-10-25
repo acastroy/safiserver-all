@@ -40,7 +40,7 @@ public interface SetQueryParam extends ActionStep {
 	 * @see #setValue(DynamicValue)
 	 * @see com.safi.core.actionstep.ActionStepPackage#getSetQueryParam_Value()
 	 * @model containment="true" ordered="false"
-	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The value to assign to the parameter' expectedReturnType='Unknown' helperClass=''"
+	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The value to assign to the parameter' expectedReturnType='Variable' helperClass=''"
 	 *        annotation="Required criteria='non-null'"
 	 * @generated
 	 */

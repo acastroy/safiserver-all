@@ -37,7 +37,7 @@ public interface Assignment extends ActionStep {
 	 * @see #setValue(DynamicValue)
 	 * @see com.safi.core.actionstep.ActionStepPackage#getAssignment_Value()
 	 * @model containment="true" ordered="false"
-	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The value to assign' expectedReturnType='Unknown' helperClass=''"
+	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The value to assign' expectedReturnType='Variable' helperClass=''"
 	 *        annotation="Required criteria='non-null'"
 	 * @generated
 	 */
@@ -65,7 +65,7 @@ public interface Assignment extends ActionStep {
 	 * @see #setVariableName(DynamicValue)
 	 * @see com.safi.core.actionstep.ActionStepPackage#getAssignment_VariableName()
 	 * @model containment="true" ordered="false"
-	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='true' description='The assignee variable' expectedReturnType='VariableName' helperClass=''"
+	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='true' description='The assignee variable' expectedReturnType='Variable' helperClass=''"
 	 *        annotation="Directionality output='true'"
 	 *        annotation="Required criteria='non-null'"
 	 *        annotation="MetaProperty displayText='Variable'"

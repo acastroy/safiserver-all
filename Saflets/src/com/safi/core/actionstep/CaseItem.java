@@ -36,7 +36,7 @@ public interface CaseItem extends Item {
 	 * @see #setDynamicValue(DynamicValue)
 	 * @see com.safi.core.actionstep.ActionStepPackage#getCaseItem_DynamicValue()
 	 * @model containment="true" ordered="false"
-	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The value with which to compare against' expectedReturnType='Unknown' helperClass='com.safi.workshop.sheet.BooleanBuilderDynamicValueEditorPage'"
+	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The value with which to compare against' expectedReturnType='Variable' helperClass='com.safi.workshop.sheet.BooleanBuilderDynamicValueEditorPage'"
 	 *        annotation="Required criteria='non-null'"
 	 * @generated
 	 */
