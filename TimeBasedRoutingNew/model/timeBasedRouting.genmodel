@@ -38,7 +38,9 @@
     <genClasses ecoreClass="timeBasedRouting.ecore#//OccursModel">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute timeBasedRouting.ecore#//OccursModel/mode"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute timeBasedRouting.ecore#//OccursModel/description"/>
-      <genOperations ecoreOperation="timeBasedRouting.ecore#//OccursModel/isMatch"/>
+      <genOperations ecoreOperation="timeBasedRouting.ecore#//OccursModel/isMatch">
+        <genParameters ecoreParameter="timeBasedRouting.ecore#//OccursModel/isMatch/date"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="timeBasedRouting.ecore#//DailyOccursModel">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute timeBasedRouting.ecore#//DailyOccursModel/skipDays"/>
@@ -62,7 +64,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference timeBasedRouting.ecore#//TimeRange/occursModel"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute timeBasedRouting.ecore#//TimeRange/startRange"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute timeBasedRouting.ecore#//TimeRange/endRange"/>
-      <genOperations ecoreOperation="timeBasedRouting.ecore#//TimeRange/isMatch"/>
+      <genOperations ecoreOperation="timeBasedRouting.ecore#//TimeRange/isMatch">
+        <genParameters ecoreParameter="timeBasedRouting.ecore#//TimeRange/isMatch/date"/>
+      </genOperations>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

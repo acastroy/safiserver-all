@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="WINDOWS-1252" standalone="no"?>
+<jardesc>
+    <jar path="SafiServerSpring/deploy/actionpaks/TimeBasedRouting-1.0.4.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/TimeBasedRoutingNew/exportToActionPaks.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="true" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="true" manifestLocation="" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+        <file path="/TimeBasedRoutingNew/plugin.properties"/>
+        <file path="/TimeBasedRoutingNew/build.properties"/>
+        <file path="/TimeBasedRoutingNew/.classpath"/>
+        <file path="/TimeBasedRoutingNew/.project"/>
+        <file path="/TimeBasedRoutingNew/plugin.xml"/>
+        <javaElement handleIdentifier="=TimeBasedRoutingNew/src"/>
+    </selectedElements>
+</jardesc>

@@ -72,169 +72,169 @@ public class OccursModelImpl extends EObjectImpl implements OccursModel {
   protected OccursMode mode = MODE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @see #getDescription()
-   * @generated
-   * @ordered
-   */
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String DESCRIPTION_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @see #getDescription()
-   * @generated
-   * @ordered
-   */
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
   protected String description = DESCRIPTION_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   protected OccursModelImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return TimeBasedRoutingPackage.Literals.OCCURS_MODEL;
-  }
+		return TimeBasedRoutingPackage.Literals.OCCURS_MODEL;
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public OccursMode getMode() {
-    return mode;
-  }
+		return mode;
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public void setMode(OccursMode newMode) {
-    OccursMode oldMode = mode;
-    mode = newMode == null ? MODE_EDEFAULT : newMode;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TimeBasedRoutingPackage.OCCURS_MODEL__MODE, oldMode, mode));
-  }
+		OccursMode oldMode = mode;
+		mode = newMode == null ? MODE_EDEFAULT : newMode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimeBasedRoutingPackage.OCCURS_MODEL__MODE, oldMode, mode));
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public String getDescription() {
-    return description;
-  }
+		return description;
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public void setDescription(String newDescription) {
-    String oldDescription = description;
-    description = newDescription;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TimeBasedRoutingPackage.OCCURS_MODEL__DESCRIPTION, oldDescription, description));
-  }
+		String oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimeBasedRoutingPackage.OCCURS_MODEL__DESCRIPTION, oldDescription, description));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public boolean isMatch(Date date) {
-    // TODO: implement this method
-    // Ensure that you remove @generated or mark it @generated NOT
-    throw new UnsupportedOperationException();
-  }
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case TimeBasedRoutingPackage.OCCURS_MODEL__MODE:
-        return getMode();
-      case TimeBasedRoutingPackage.OCCURS_MODEL__DESCRIPTION:
-        return getDescription();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case TimeBasedRoutingPackage.OCCURS_MODEL__MODE:
+				return getMode();
+			case TimeBasedRoutingPackage.OCCURS_MODEL__DESCRIPTION:
+				return getDescription();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case TimeBasedRoutingPackage.OCCURS_MODEL__MODE:
-        setMode((OccursMode)newValue);
-        return;
-      case TimeBasedRoutingPackage.OCCURS_MODEL__DESCRIPTION:
-        setDescription((String)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case TimeBasedRoutingPackage.OCCURS_MODEL__MODE:
+				setMode((OccursMode)newValue);
+				return;
+			case TimeBasedRoutingPackage.OCCURS_MODEL__DESCRIPTION:
+				setDescription((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case TimeBasedRoutingPackage.OCCURS_MODEL__MODE:
-        setMode(MODE_EDEFAULT);
-        return;
-      case TimeBasedRoutingPackage.OCCURS_MODEL__DESCRIPTION:
-        setDescription(DESCRIPTION_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case TimeBasedRoutingPackage.OCCURS_MODEL__MODE:
+				setMode(MODE_EDEFAULT);
+				return;
+			case TimeBasedRoutingPackage.OCCURS_MODEL__DESCRIPTION:
+				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case TimeBasedRoutingPackage.OCCURS_MODEL__MODE:
-        return mode != MODE_EDEFAULT;
-      case TimeBasedRoutingPackage.OCCURS_MODEL__DESCRIPTION:
-        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case TimeBasedRoutingPackage.OCCURS_MODEL__MODE:
+				return mode != MODE_EDEFAULT;
+			case TimeBasedRoutingPackage.OCCURS_MODEL__DESCRIPTION:
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (mode: ");
-    result.append(mode);
-    result.append(", description: ");
-    result.append(description);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (mode: ");
+		result.append(mode);
+		result.append(", description: ");
+		result.append(description);
+		result.append(')');
+		return result.toString();
+	}
 
   
 } // OccursModelImpl

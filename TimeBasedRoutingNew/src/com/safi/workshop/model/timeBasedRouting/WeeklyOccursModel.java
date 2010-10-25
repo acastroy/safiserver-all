@@ -30,74 +30,74 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface WeeklyOccursModel extends OccursModel {
   /**
-   * Returns the value of the '<em><b>Skip Weeks</b></em>' attribute.
-   * The default value is <code>"1"</code>.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Skip Weeks</b></em>' attribute.
+	 * The default value is <code>"1"</code>.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Skip Weeks</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Skip Weeks</em>' attribute.
-   * @see #setSkipWeeks(int)
-   * @see com.safi.workshop.model.timeBasedRouting.TimeBasedRoutingPackage#getWeeklyOccursModel_SkipWeeks()
-   * @model default="1" required="true"
-   * @generated
-   */
+	 * @return the value of the '<em>Skip Weeks</em>' attribute.
+	 * @see #setSkipWeeks(int)
+	 * @see com.safi.workshop.model.timeBasedRouting.TimeBasedRoutingPackage#getWeeklyOccursModel_SkipWeeks()
+	 * @model default="1" required="true"
+	 * @generated
+	 */
   int getSkipWeeks();
 
   /**
-   * Sets the value of the '{@link com.safi.workshop.model.timeBasedRouting.WeeklyOccursModel#getSkipWeeks <em>Skip Weeks</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.workshop.model.timeBasedRouting.WeeklyOccursModel#getSkipWeeks <em>Skip Weeks</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Skip Weeks</em>' attribute.
-   * @see #getSkipWeeks()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Skip Weeks</em>' attribute.
+	 * @see #getSkipWeeks()
+	 * @generated
+	 */
   void setSkipWeeks(int value);
 
   /**
-   * Returns the value of the '<em><b>Days</b></em>' attribute list.
-   * The list contents are of type {@link com.safi.workshop.model.timeBasedRouting.Day}.
-   * The literals are from the enumeration {@link com.safi.workshop.model.timeBasedRouting.Day}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Days</b></em>' attribute list.
+	 * The list contents are of type {@link com.safi.workshop.model.timeBasedRouting.Day}.
+	 * The literals are from the enumeration {@link com.safi.workshop.model.timeBasedRouting.Day}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Days</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Days</em>' attribute list.
-   * @see com.safi.workshop.model.timeBasedRouting.Day
-   * @see com.safi.workshop.model.timeBasedRouting.TimeBasedRoutingPackage#getWeeklyOccursModel_Days()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Days</em>' attribute list.
+	 * @see com.safi.workshop.model.timeBasedRouting.Day
+	 * @see com.safi.workshop.model.timeBasedRouting.TimeBasedRoutingPackage#getWeeklyOccursModel_Days()
+	 * @model
+	 * @generated
+	 */
   EList<Day> getDays();
 
   /**
-   * Returns the value of the '<em><b>Start Date</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Start Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Start Date</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Start Date</em>' attribute.
-   * @see #setStartDate(Date)
-   * @see com.safi.workshop.model.timeBasedRouting.TimeBasedRoutingPackage#getWeeklyOccursModel_StartDate()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Start Date</em>' attribute.
+	 * @see #setStartDate(Date)
+	 * @see com.safi.workshop.model.timeBasedRouting.TimeBasedRoutingPackage#getWeeklyOccursModel_StartDate()
+	 * @model
+	 * @generated
+	 */
   Date getStartDate();
 
   /**
-   * Sets the value of the '{@link com.safi.workshop.model.timeBasedRouting.WeeklyOccursModel#getStartDate <em>Start Date</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.workshop.model.timeBasedRouting.WeeklyOccursModel#getStartDate <em>Start Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Start Date</em>' attribute.
-   * @see #getStartDate()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Start Date</em>' attribute.
+	 * @see #getStartDate()
+	 * @generated
+	 */
   void setStartDate(Date value);
 
 } // WeeklyOccursModel

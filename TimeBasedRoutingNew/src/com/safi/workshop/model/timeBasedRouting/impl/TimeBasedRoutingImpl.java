@@ -45,33 +45,33 @@ import com.safi.workshop.model.timeBasedRouting.TimeRange;
  */
 public class TimeBasedRoutingImpl extends ActionStepImpl implements TimeBasedRouting {
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
-   * @generated
-   * @ordered
-   */
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
   protected DynamicValue value;
 
   /**
-   * The cached value of the '{@link #getTimes() <em>Times</em>}' containment reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTimes() <em>Times</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTimes()
-   * @generated
-   * @ordered
-   */
+	 * @see #getTimes()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<TimeItem> times;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected TimeBasedRoutingImpl() {
-    super();
-  }
+		super();
+	}
 
   @Override
   public void beginProcessing(SafletContext context) throws ActionStepException {
@@ -117,154 +117,154 @@ public class TimeBasedRoutingImpl extends ActionStepImpl implements TimeBasedRou
       handleSuccess(context); //take default
   }
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return TimeBasedRoutingPackage.Literals.TIME_BASED_ROUTING;
-  }
+		return TimeBasedRoutingPackage.Literals.TIME_BASED_ROUTING;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public DynamicValue getValue() {
-    return value;
-  }
+		return value;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public NotificationChain basicSetValue(DynamicValue newValue, NotificationChain msgs) {
-    DynamicValue oldValue = value;
-    value = newValue;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TimeBasedRoutingPackage.TIME_BASED_ROUTING__VALUE, oldValue, newValue);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		DynamicValue oldValue = value;
+		value = newValue;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TimeBasedRoutingPackage.TIME_BASED_ROUTING__VALUE, oldValue, newValue);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setValue(DynamicValue newValue) {
-    if (newValue != value) {
-      NotificationChain msgs = null;
-      if (value != null)
-        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TimeBasedRoutingPackage.TIME_BASED_ROUTING__VALUE, null, msgs);
-      if (newValue != null)
-        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TimeBasedRoutingPackage.TIME_BASED_ROUTING__VALUE, null, msgs);
-      msgs = basicSetValue(newValue, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TimeBasedRoutingPackage.TIME_BASED_ROUTING__VALUE, newValue, newValue));
-  }
+		if (newValue != value) {
+			NotificationChain msgs = null;
+			if (value != null)
+				msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TimeBasedRoutingPackage.TIME_BASED_ROUTING__VALUE, null, msgs);
+			if (newValue != null)
+				msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TimeBasedRoutingPackage.TIME_BASED_ROUTING__VALUE, null, msgs);
+			msgs = basicSetValue(newValue, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimeBasedRoutingPackage.TIME_BASED_ROUTING__VALUE, newValue, newValue));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<TimeItem> getTimes() {
-    if (times == null) {
-      times = new EObjectContainmentEList<TimeItem>(TimeItem.class, this, TimeBasedRoutingPackage.TIME_BASED_ROUTING__TIMES);
-    }
-    return times;
-  }
+		if (times == null) {
+			times = new EObjectContainmentEList<TimeItem>(TimeItem.class, this, TimeBasedRoutingPackage.TIME_BASED_ROUTING__TIMES);
+		}
+		return times;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-    switch (featureID) {
-      case TimeBasedRoutingPackage.TIME_BASED_ROUTING__VALUE:
-        return basicSetValue(null, msgs);
-      case TimeBasedRoutingPackage.TIME_BASED_ROUTING__TIMES:
-        return ((InternalEList<?>)getTimes()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case TimeBasedRoutingPackage.TIME_BASED_ROUTING__VALUE:
+				return basicSetValue(null, msgs);
+			case TimeBasedRoutingPackage.TIME_BASED_ROUTING__TIMES:
+				return ((InternalEList<?>)getTimes()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case TimeBasedRoutingPackage.TIME_BASED_ROUTING__VALUE:
-        return getValue();
-      case TimeBasedRoutingPackage.TIME_BASED_ROUTING__TIMES:
-        return getTimes();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case TimeBasedRoutingPackage.TIME_BASED_ROUTING__VALUE:
+				return getValue();
+			case TimeBasedRoutingPackage.TIME_BASED_ROUTING__TIMES:
+				return getTimes();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case TimeBasedRoutingPackage.TIME_BASED_ROUTING__VALUE:
-        setValue((DynamicValue)newValue);
-        return;
-      case TimeBasedRoutingPackage.TIME_BASED_ROUTING__TIMES:
-        getTimes().clear();
-        getTimes().addAll((Collection<? extends TimeItem>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case TimeBasedRoutingPackage.TIME_BASED_ROUTING__VALUE:
+				setValue((DynamicValue)newValue);
+				return;
+			case TimeBasedRoutingPackage.TIME_BASED_ROUTING__TIMES:
+				getTimes().clear();
+				getTimes().addAll((Collection<? extends TimeItem>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case TimeBasedRoutingPackage.TIME_BASED_ROUTING__VALUE:
-        setValue((DynamicValue)null);
-        return;
-      case TimeBasedRoutingPackage.TIME_BASED_ROUTING__TIMES:
-        getTimes().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case TimeBasedRoutingPackage.TIME_BASED_ROUTING__VALUE:
+				setValue((DynamicValue)null);
+				return;
+			case TimeBasedRoutingPackage.TIME_BASED_ROUTING__TIMES:
+				getTimes().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case TimeBasedRoutingPackage.TIME_BASED_ROUTING__VALUE:
-        return value != null;
-      case TimeBasedRoutingPackage.TIME_BASED_ROUTING__TIMES:
-        return times != null && !times.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case TimeBasedRoutingPackage.TIME_BASED_ROUTING__VALUE:
+				return value != null;
+			case TimeBasedRoutingPackage.TIME_BASED_ROUTING__TIMES:
+				return times != null && !times.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //TimeBasedRoutingImpl

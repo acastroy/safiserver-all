@@ -28,66 +28,66 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface OccursModel extends EObject {
   /**
-   * Returns the value of the '<em><b>Mode</b></em>' attribute.
-   * The literals are from the enumeration {@link com.safi.workshop.model.timeBasedRouting.OccursMode}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Mode</b></em>' attribute.
+	 * The literals are from the enumeration {@link com.safi.workshop.model.timeBasedRouting.OccursMode}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Mode</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Mode</em>' attribute.
-   * @see com.safi.workshop.model.timeBasedRouting.OccursMode
-   * @see #setMode(OccursMode)
-   * @see com.safi.workshop.model.timeBasedRouting.TimeBasedRoutingPackage#getOccursModel_Mode()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Mode</em>' attribute.
+	 * @see com.safi.workshop.model.timeBasedRouting.OccursMode
+	 * @see #setMode(OccursMode)
+	 * @see com.safi.workshop.model.timeBasedRouting.TimeBasedRoutingPackage#getOccursModel_Mode()
+	 * @model
+	 * @generated
+	 */
   OccursMode getMode();
 
   /**
-   * Sets the value of the '{@link com.safi.workshop.model.timeBasedRouting.OccursModel#getMode <em>Mode</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.workshop.model.timeBasedRouting.OccursModel#getMode <em>Mode</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Mode</em>' attribute.
-   * @see com.safi.workshop.model.timeBasedRouting.OccursMode
-   * @see #getMode()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Mode</em>' attribute.
+	 * @see com.safi.workshop.model.timeBasedRouting.OccursMode
+	 * @see #getMode()
+	 * @generated
+	 */
   void setMode(OccursMode value);
 
   /**
-   * Returns the value of the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Description</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Description</em>' attribute.
-   * @see #setDescription(String)
-   * @see com.safi.workshop.model.timeBasedRouting.TimeBasedRoutingPackage#getOccursModel_Description()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Description</em>' attribute.
+	 * @see #setDescription(String)
+	 * @see com.safi.workshop.model.timeBasedRouting.TimeBasedRoutingPackage#getOccursModel_Description()
+	 * @model
+	 * @generated
+	 */
   String getDescription();
 
   /**
-   * Sets the value of the '{@link com.safi.workshop.model.timeBasedRouting.OccursModel#getDescription <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.workshop.model.timeBasedRouting.OccursModel#getDescription <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Description</em>' attribute.
-   * @see #getDescription()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * @see #getDescription()
+	 * @generated
+	 */
   void setDescription(String value);
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @model
-   * @generated
-   */
+	 * @model
+	 * @generated
+	 */
   boolean isMatch(Date date);
 
 } // OccursModel

@@ -63,30 +63,30 @@ public class TimeRangeImpl extends EObjectImpl implements TimeRange {
       .getTimeInstance(SimpleDateFormat.SHORT);
 
   /**
-   * The cached value of the '{@link #getOccursModel() <em>Occurs Model</em>}' containment reference.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @see #getOccursModel()
-   * @generated
-   * @ordered
-   */
+	 * The cached value of the '{@link #getOccursModel() <em>Occurs Model</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see #getOccursModel()
+	 * @generated
+	 * @ordered
+	 */
   protected OccursModel occursModel;
 
   /**
-   * The default value of the '{@link #getStartRange() <em>Start Range</em>}' attribute.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @see #getStartRange()
-   * @generated
-   * @ordered
-   */
+	 * The default value of the '{@link #getStartRange() <em>Start Range</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see #getStartRange()
+	 * @generated
+	 * @ordered
+	 */
   protected static final Date START_RANGE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getStartRange() <em>Start Range</em>}' attribute.
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @see #getStartRange()
-   * @generated
-   * @ordered
-   */
+	 * The cached value of the '{@link #getStartRange() <em>Start Range</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see #getStartRange()
+	 * @generated
+	 * @ordered
+	 */
   protected Date startRange = START_RANGE_EDEFAULT;
 
   /**
@@ -110,118 +110,118 @@ public class TimeRangeImpl extends EObjectImpl implements TimeRange {
   protected Date endRange = END_RANGE_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   protected TimeRangeImpl() {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return TimeBasedRoutingPackage.Literals.TIME_RANGE;
-  }
+		return TimeBasedRoutingPackage.Literals.TIME_RANGE;
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public String getName() {
-    return name;
-  }
+		return name;
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public void setName(String newName) {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TimeBasedRoutingPackage.TIME_RANGE__NAME, oldName, name));
-  }
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimeBasedRoutingPackage.TIME_RANGE__NAME, oldName, name));
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public OccursModel getOccursModel() {
-    return occursModel;
-  }
+		return occursModel;
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public NotificationChain basicSetOccursModel(OccursModel newOccursModel, NotificationChain msgs) {
-    OccursModel oldOccursModel = occursModel;
-    occursModel = newOccursModel;
-    if (eNotificationRequired()) {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TimeBasedRoutingPackage.TIME_RANGE__OCCURS_MODEL, oldOccursModel, newOccursModel);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
+		OccursModel oldOccursModel = occursModel;
+		occursModel = newOccursModel;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TimeBasedRoutingPackage.TIME_RANGE__OCCURS_MODEL, oldOccursModel, newOccursModel);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public void setOccursModel(OccursModel newOccursModel) {
-    if (newOccursModel != occursModel) {
-      NotificationChain msgs = null;
-      if (occursModel != null)
-        msgs = ((InternalEObject)occursModel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TimeBasedRoutingPackage.TIME_RANGE__OCCURS_MODEL, null, msgs);
-      if (newOccursModel != null)
-        msgs = ((InternalEObject)newOccursModel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TimeBasedRoutingPackage.TIME_RANGE__OCCURS_MODEL, null, msgs);
-      msgs = basicSetOccursModel(newOccursModel, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TimeBasedRoutingPackage.TIME_RANGE__OCCURS_MODEL, newOccursModel, newOccursModel));
-  }
+		if (newOccursModel != occursModel) {
+			NotificationChain msgs = null;
+			if (occursModel != null)
+				msgs = ((InternalEObject)occursModel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TimeBasedRoutingPackage.TIME_RANGE__OCCURS_MODEL, null, msgs);
+			if (newOccursModel != null)
+				msgs = ((InternalEObject)newOccursModel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TimeBasedRoutingPackage.TIME_RANGE__OCCURS_MODEL, null, msgs);
+			msgs = basicSetOccursModel(newOccursModel, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimeBasedRoutingPackage.TIME_RANGE__OCCURS_MODEL, newOccursModel, newOccursModel));
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public Date getStartRange() {
-    return startRange;
-  }
+		return startRange;
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public void setStartRange(Date newStartRange) {
-    Date oldStartRange = startRange;
-    startRange = newStartRange;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TimeBasedRoutingPackage.TIME_RANGE__START_RANGE, oldStartRange, startRange));
-  }
+		Date oldStartRange = startRange;
+		startRange = newStartRange;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimeBasedRoutingPackage.TIME_RANGE__START_RANGE, oldStartRange, startRange));
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public Date getEndRange() {
-    return endRange;
-  }
+		return endRange;
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public void setEndRange(Date newEndRange) {
-    Date oldEndRange = endRange;
-    endRange = newEndRange;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TimeBasedRoutingPackage.TIME_RANGE__END_RANGE, oldEndRange, endRange));
-  }
+		Date oldEndRange = endRange;
+		endRange = newEndRange;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimeBasedRoutingPackage.TIME_RANGE__END_RANGE, oldEndRange, endRange));
+	}
 
 
   /**
@@ -267,102 +267,102 @@ public class TimeRangeImpl extends EObjectImpl implements TimeRange {
   }
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID,
       NotificationChain msgs) {
-    switch (featureID) {
-      case TimeBasedRoutingPackage.TIME_RANGE__OCCURS_MODEL:
-        return basicSetOccursModel(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+		switch (featureID) {
+			case TimeBasedRoutingPackage.TIME_RANGE__OCCURS_MODEL:
+				return basicSetOccursModel(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case TimeBasedRoutingPackage.TIME_RANGE__NAME:
-        return getName();
-      case TimeBasedRoutingPackage.TIME_RANGE__OCCURS_MODEL:
-        return getOccursModel();
-      case TimeBasedRoutingPackage.TIME_RANGE__START_RANGE:
-        return getStartRange();
-      case TimeBasedRoutingPackage.TIME_RANGE__END_RANGE:
-        return getEndRange();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case TimeBasedRoutingPackage.TIME_RANGE__NAME:
+				return getName();
+			case TimeBasedRoutingPackage.TIME_RANGE__OCCURS_MODEL:
+				return getOccursModel();
+			case TimeBasedRoutingPackage.TIME_RANGE__START_RANGE:
+				return getStartRange();
+			case TimeBasedRoutingPackage.TIME_RANGE__END_RANGE:
+				return getEndRange();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case TimeBasedRoutingPackage.TIME_RANGE__NAME:
-        setName((String)newValue);
-        return;
-      case TimeBasedRoutingPackage.TIME_RANGE__OCCURS_MODEL:
-        setOccursModel((OccursModel)newValue);
-        return;
-      case TimeBasedRoutingPackage.TIME_RANGE__START_RANGE:
-        setStartRange((Date)newValue);
-        return;
-      case TimeBasedRoutingPackage.TIME_RANGE__END_RANGE:
-        setEndRange((Date)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case TimeBasedRoutingPackage.TIME_RANGE__NAME:
+				setName((String)newValue);
+				return;
+			case TimeBasedRoutingPackage.TIME_RANGE__OCCURS_MODEL:
+				setOccursModel((OccursModel)newValue);
+				return;
+			case TimeBasedRoutingPackage.TIME_RANGE__START_RANGE:
+				setStartRange((Date)newValue);
+				return;
+			case TimeBasedRoutingPackage.TIME_RANGE__END_RANGE:
+				setEndRange((Date)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case TimeBasedRoutingPackage.TIME_RANGE__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case TimeBasedRoutingPackage.TIME_RANGE__OCCURS_MODEL:
-        setOccursModel((OccursModel)null);
-        return;
-      case TimeBasedRoutingPackage.TIME_RANGE__START_RANGE:
-        setStartRange(START_RANGE_EDEFAULT);
-        return;
-      case TimeBasedRoutingPackage.TIME_RANGE__END_RANGE:
-        setEndRange(END_RANGE_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case TimeBasedRoutingPackage.TIME_RANGE__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case TimeBasedRoutingPackage.TIME_RANGE__OCCURS_MODEL:
+				setOccursModel((OccursModel)null);
+				return;
+			case TimeBasedRoutingPackage.TIME_RANGE__START_RANGE:
+				setStartRange(START_RANGE_EDEFAULT);
+				return;
+			case TimeBasedRoutingPackage.TIME_RANGE__END_RANGE:
+				setEndRange(END_RANGE_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case TimeBasedRoutingPackage.TIME_RANGE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case TimeBasedRoutingPackage.TIME_RANGE__OCCURS_MODEL:
-        return occursModel != null;
-      case TimeBasedRoutingPackage.TIME_RANGE__START_RANGE:
-        return START_RANGE_EDEFAULT == null ? startRange != null : !START_RANGE_EDEFAULT.equals(startRange);
-      case TimeBasedRoutingPackage.TIME_RANGE__END_RANGE:
-        return END_RANGE_EDEFAULT == null ? endRange != null : !END_RANGE_EDEFAULT.equals(endRange);
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case TimeBasedRoutingPackage.TIME_RANGE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case TimeBasedRoutingPackage.TIME_RANGE__OCCURS_MODEL:
+				return occursModel != null;
+			case TimeBasedRoutingPackage.TIME_RANGE__START_RANGE:
+				return START_RANGE_EDEFAULT == null ? startRange != null : !START_RANGE_EDEFAULT.equals(startRange);
+			case TimeBasedRoutingPackage.TIME_RANGE__END_RANGE:
+				return END_RANGE_EDEFAULT == null ? endRange != null : !END_RANGE_EDEFAULT.equals(endRange);
+		}
+		return super.eIsSet(featureID);
+	}
 
   // /**
   // * <!-- begin-user-doc -->

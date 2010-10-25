@@ -10,8 +10,8 @@
       <eAnnotations source="DynamicValueAnnotation">
         <details key="type" value="VariableName"/>
         <details key="isTypeLocked" value="false"/>
-        <details key="description" value="The value to assign"/>
-        <details key="expectedReturnType" value="Unknown"/>
+        <details key="description" value="The DateTime value to be compared against provided time range(s). Defaults to current date/time"/>
+        <details key="expectedReturnType" value="DateTime"/>
         <details key="helperClass" value=""/>
       </eAnnotations>
     </eStructuralFeatures>

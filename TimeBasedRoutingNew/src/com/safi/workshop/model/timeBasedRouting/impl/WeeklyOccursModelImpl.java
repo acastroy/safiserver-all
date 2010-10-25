@@ -48,33 +48,33 @@ public class WeeklyOccursModelImpl extends OccursModelImpl implements WeeklyOccu
   private static final FastDateFormat DATE_INSTANCE = FastDateFormat.getDateInstance(SimpleDateFormat.SHORT);
   
   /**
-   * The default value of the '{@link #getSkipWeeks() <em>Skip Weeks</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getSkipWeeks() <em>Skip Weeks</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSkipWeeks()
-   * @generated
-   * @ordered
-   */
+	 * @see #getSkipWeeks()
+	 * @generated
+	 * @ordered
+	 */
   protected static final int SKIP_WEEKS_EDEFAULT = 1;
 
   /**
-   * The cached value of the '{@link #getSkipWeeks() <em>Skip Weeks</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSkipWeeks() <em>Skip Weeks</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSkipWeeks()
-   * @generated
-   * @ordered
-   */
+	 * @see #getSkipWeeks()
+	 * @generated
+	 * @ordered
+	 */
   protected int skipWeeks = SKIP_WEEKS_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getDays() <em>Days</em>}' attribute list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getDays() <em>Days</em>}' attribute list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDays()
-   * @generated
-   * @ordered
-   */
+	 * @see #getDays()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<Day> days;
 
   /**
@@ -88,23 +88,23 @@ public class WeeklyOccursModelImpl extends OccursModelImpl implements WeeklyOccu
   protected static final Date START_DATE_EDEFAULT = new Date();
 
   /**
-   * The cached value of the '{@link #getStartDate() <em>Start Date</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getStartDate() <em>Start Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStartDate()
-   * @generated
-   * @ordered
-   */
+	 * @see #getStartDate()
+	 * @generated
+	 * @ordered
+	 */
   protected Date startDate = START_DATE_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected WeeklyOccursModelImpl() {
-    super();
-  }
+		super();
+	}
 
   @Override
   public boolean isMatch(Date date) {
@@ -129,168 +129,168 @@ public class WeeklyOccursModelImpl extends OccursModelImpl implements WeeklyOccu
     return false;
   }
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return TimeBasedRoutingPackage.Literals.WEEKLY_OCCURS_MODEL;
-  }
+		return TimeBasedRoutingPackage.Literals.WEEKLY_OCCURS_MODEL;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public int getSkipWeeks() {
-    return skipWeeks;
-  }
+		return skipWeeks;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setSkipWeeks(int newSkipWeeks) {
-    int oldSkipWeeks = skipWeeks;
-    skipWeeks = newSkipWeeks;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__SKIP_WEEKS, oldSkipWeeks, skipWeeks));
-  }
+		int oldSkipWeeks = skipWeeks;
+		skipWeeks = newSkipWeeks;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__SKIP_WEEKS, oldSkipWeeks, skipWeeks));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<Day> getDays() {
-    if (days == null) {
-      days = new EDataTypeUniqueEList<Day>(Day.class, this, TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__DAYS);
-    }
-    return days;
-  }
+		if (days == null) {
+			days = new EDataTypeUniqueEList<Day>(Day.class, this, TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__DAYS);
+		}
+		return days;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Date getStartDate() {
-    return startDate;
-  }
+		return startDate;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setStartDate(Date newStartDate) {
-    Date oldStartDate = startDate;
-    startDate = newStartDate;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__START_DATE, oldStartDate, startDate));
-  }
+		Date oldStartDate = startDate;
+		startDate = newStartDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__START_DATE, oldStartDate, startDate));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__SKIP_WEEKS:
-        return new Integer(getSkipWeeks());
-      case TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__DAYS:
-        return getDays();
-      case TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__START_DATE:
-        return getStartDate();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__SKIP_WEEKS:
+				return getSkipWeeks();
+			case TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__DAYS:
+				return getDays();
+			case TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__START_DATE:
+				return getStartDate();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__SKIP_WEEKS:
-        setSkipWeeks(((Integer)newValue).intValue());
-        return;
-      case TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__DAYS:
-        getDays().clear();
-        getDays().addAll((Collection<? extends Day>)newValue);
-        return;
-      case TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__START_DATE:
-        setStartDate((Date)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__SKIP_WEEKS:
+				setSkipWeeks((Integer)newValue);
+				return;
+			case TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__DAYS:
+				getDays().clear();
+				getDays().addAll((Collection<? extends Day>)newValue);
+				return;
+			case TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__START_DATE:
+				setStartDate((Date)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__SKIP_WEEKS:
-        setSkipWeeks(SKIP_WEEKS_EDEFAULT);
-        return;
-      case TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__DAYS:
-        getDays().clear();
-        return;
-      case TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__START_DATE:
-        setStartDate(START_DATE_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__SKIP_WEEKS:
+				setSkipWeeks(SKIP_WEEKS_EDEFAULT);
+				return;
+			case TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__DAYS:
+				getDays().clear();
+				return;
+			case TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__START_DATE:
+				setStartDate(START_DATE_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__SKIP_WEEKS:
-        return skipWeeks != SKIP_WEEKS_EDEFAULT;
-      case TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__DAYS:
-        return days != null && !days.isEmpty();
-      case TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__START_DATE:
-        return START_DATE_EDEFAULT == null ? startDate != null : !START_DATE_EDEFAULT.equals(startDate);
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__SKIP_WEEKS:
+				return skipWeeks != SKIP_WEEKS_EDEFAULT;
+			case TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__DAYS:
+				return days != null && !days.isEmpty();
+			case TimeBasedRoutingPackage.WEEKLY_OCCURS_MODEL__START_DATE:
+				return START_DATE_EDEFAULT == null ? startDate != null : !START_DATE_EDEFAULT.equals(startDate);
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (skipWeeks: ");
-    result.append(skipWeeks);
-    result.append(", days: ");
-    result.append(days);
-    result.append(", startDate: ");
-    result.append(startDate);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (skipWeeks: ");
+		result.append(skipWeeks);
+		result.append(", days: ");
+		result.append(days);
+		result.append(", startDate: ");
+		result.append(startDate);
+		result.append(')');
+		return result.toString();
+	}
 
   @Override
   public String getDescription() {

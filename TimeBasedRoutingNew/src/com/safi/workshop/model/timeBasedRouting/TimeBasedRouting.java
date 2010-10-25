@@ -30,47 +30,47 @@ import com.safi.core.actionstep.DynamicValue;
  */
 public interface TimeBasedRouting extends ActionStep {
   /**
-   * Returns the value of the '<em><b>Value</b></em>' containment reference.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Value</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Value</em>' containment reference.
-   * @see #setValue(DynamicValue)
-   * @see com.safi.workshop.model.timeBasedRouting.TimeBasedRoutingPackage#getTimeBasedRouting_Value()
-   * @model containment="true" ordered="false"
-   *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The value to assign' expectedReturnType='Unknown' helperClass=''"
-   * @generated
-   */
+	 * @return the value of the '<em>Value</em>' containment reference.
+	 * @see #setValue(DynamicValue)
+	 * @see com.safi.workshop.model.timeBasedRouting.TimeBasedRoutingPackage#getTimeBasedRouting_Value()
+	 * @model containment="true" ordered="false"
+	 *        annotation="DynamicValueAnnotation type='VariableName' isTypeLocked='false' description='The DateTime value to be compared against provided time range(s). Defaults to current date/time' expectedReturnType='DateTime' helperClass=''"
+	 * @generated
+	 */
   DynamicValue getValue();
 
   /**
-   * Sets the value of the '{@link com.safi.workshop.model.timeBasedRouting.TimeBasedRouting#getValue <em>Value</em>}' containment reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link com.safi.workshop.model.timeBasedRouting.TimeBasedRouting#getValue <em>Value</em>}' containment reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Value</em>' containment reference.
-   * @see #getValue()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Value</em>' containment reference.
+	 * @see #getValue()
+	 * @generated
+	 */
   void setValue(DynamicValue value);
 
   /**
-   * Returns the value of the '<em><b>Times</b></em>' containment reference list.
-   * The list contents are of type {@link com.safi.workshop.model.timeBasedRouting.TimeItem}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Times</b></em>' containment reference list.
+	 * The list contents are of type {@link com.safi.workshop.model.timeBasedRouting.TimeItem}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Times</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Times</em>' containment reference list.
-   * @see com.safi.workshop.model.timeBasedRouting.TimeBasedRoutingPackage#getTimeBasedRouting_Times()
-   * @model containment="true"
-   *        annotation="Required criteria='non-empty'"
-   * @generated
-   */
+	 * @return the value of the '<em>Times</em>' containment reference list.
+	 * @see com.safi.workshop.model.timeBasedRouting.TimeBasedRoutingPackage#getTimeBasedRouting_Times()
+	 * @model containment="true"
+	 *        annotation="Required criteria='non-empty'"
+	 * @generated
+	 */
   EList<TimeItem> getTimes();
 
 } // TimeBasedRouting

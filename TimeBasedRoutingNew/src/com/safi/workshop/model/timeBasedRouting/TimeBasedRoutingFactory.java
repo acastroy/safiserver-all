@@ -18,83 +18,83 @@ import org.eclipse.emf.ecore.EFactory;
  */
 public interface TimeBasedRoutingFactory extends EFactory {
   /**
-   * The singleton instance of the factory.
-   * <!-- begin-user-doc -->
+	 * The singleton instance of the factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   TimeBasedRoutingFactory eINSTANCE = com.safi.workshop.model.timeBasedRouting.impl.TimeBasedRoutingFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Time Based Routing</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Time Based Routing</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Time Based Routing</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Time Based Routing</em>'.
+	 * @generated
+	 */
   TimeBasedRouting createTimeBasedRouting();
 
   /**
-   * Returns a new object of class '<em>Time Item</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Time Item</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Time Item</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Time Item</em>'.
+	 * @generated
+	 */
   TimeItem createTimeItem();
 
   /**
-   * Returns a new object of class '<em>Occurs Model</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Occurs Model</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Occurs Model</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Occurs Model</em>'.
+	 * @generated
+	 */
   OccursModel createOccursModel();
 
   /**
-   * Returns a new object of class '<em>Daily Occurs Model</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Daily Occurs Model</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Daily Occurs Model</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Daily Occurs Model</em>'.
+	 * @generated
+	 */
   DailyOccursModel createDailyOccursModel();
 
   /**
-   * Returns a new object of class '<em>Weekly Occurs Model</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Weekly Occurs Model</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Weekly Occurs Model</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Weekly Occurs Model</em>'.
+	 * @generated
+	 */
   WeeklyOccursModel createWeeklyOccursModel();
 
   /**
-   * Returns a new object of class '<em>Monthly Occurs Model</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Monthly Occurs Model</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Monthly Occurs Model</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Monthly Occurs Model</em>'.
+	 * @generated
+	 */
   MonthlyOccursModel createMonthlyOccursModel();
 
   /**
-   * Returns a new object of class '<em>Time Range</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Time Range</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Time Range</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Time Range</em>'.
+	 * @generated
+	 */
   TimeRange createTimeRange();
 
   /**
-   * Returns the package supported by this factory.
-   * <!-- begin-user-doc -->
+	 * Returns the package supported by this factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the package supported by this factory.
-   * @generated
-   */
+	 * @return the package supported by this factory.
+	 * @generated
+	 */
   TimeBasedRoutingPackage getTimeBasedRoutingPackage();
 
 } //TimeBasedRoutingFactory

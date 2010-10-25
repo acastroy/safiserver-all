@@ -73,12 +73,12 @@ public class DailyOccursModelImpl extends OccursModelImpl implements DailyOccurs
   protected Date startDate = START_DATE_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   protected DailyOccursModelImpl() {
-    super();
-  }
+		super();
+	}
 
   @Override
   public boolean isMatch(Date date) {
@@ -105,132 +105,132 @@ public class DailyOccursModelImpl extends OccursModelImpl implements DailyOccurs
   }
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass() {
-    return TimeBasedRoutingPackage.Literals.DAILY_OCCURS_MODEL;
-  }
+		return TimeBasedRoutingPackage.Literals.DAILY_OCCURS_MODEL;
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public int getSkipDays() {
-    return skipDays;
-  }
+		return skipDays;
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public void setSkipDays(int newSkipDays) {
-    int oldSkipDays = skipDays;
-    skipDays = newSkipDays;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TimeBasedRoutingPackage.DAILY_OCCURS_MODEL__SKIP_DAYS, oldSkipDays, skipDays));
-  }
+		int oldSkipDays = skipDays;
+		skipDays = newSkipDays;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimeBasedRoutingPackage.DAILY_OCCURS_MODEL__SKIP_DAYS, oldSkipDays, skipDays));
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public Date getStartDate() {
-    return startDate;
-  }
+		return startDate;
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   public void setStartDate(Date newStartDate) {
-    Date oldStartDate = startDate;
-    startDate = newStartDate;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TimeBasedRoutingPackage.DAILY_OCCURS_MODEL__START_DATE, oldStartDate, startDate));
-  }
+		Date oldStartDate = startDate;
+		startDate = newStartDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimeBasedRoutingPackage.DAILY_OCCURS_MODEL__START_DATE, oldStartDate, startDate));
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType) {
-    switch (featureID) {
-      case TimeBasedRoutingPackage.DAILY_OCCURS_MODEL__SKIP_DAYS:
-        return new Integer(getSkipDays());
-      case TimeBasedRoutingPackage.DAILY_OCCURS_MODEL__START_DATE:
-        return getStartDate();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case TimeBasedRoutingPackage.DAILY_OCCURS_MODEL__SKIP_DAYS:
+				return getSkipDays();
+			case TimeBasedRoutingPackage.DAILY_OCCURS_MODEL__START_DATE:
+				return getStartDate();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue) {
-    switch (featureID) {
-      case TimeBasedRoutingPackage.DAILY_OCCURS_MODEL__SKIP_DAYS:
-        setSkipDays(((Integer)newValue).intValue());
-        return;
-      case TimeBasedRoutingPackage.DAILY_OCCURS_MODEL__START_DATE:
-        setStartDate((Date)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case TimeBasedRoutingPackage.DAILY_OCCURS_MODEL__SKIP_DAYS:
+				setSkipDays((Integer)newValue);
+				return;
+			case TimeBasedRoutingPackage.DAILY_OCCURS_MODEL__START_DATE:
+				setStartDate((Date)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID) {
-    switch (featureID) {
-      case TimeBasedRoutingPackage.DAILY_OCCURS_MODEL__SKIP_DAYS:
-        setSkipDays(SKIP_DAYS_EDEFAULT);
-        return;
-      case TimeBasedRoutingPackage.DAILY_OCCURS_MODEL__START_DATE:
-        setStartDate(START_DATE_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case TimeBasedRoutingPackage.DAILY_OCCURS_MODEL__SKIP_DAYS:
+				setSkipDays(SKIP_DAYS_EDEFAULT);
+				return;
+			case TimeBasedRoutingPackage.DAILY_OCCURS_MODEL__START_DATE:
+				setStartDate(START_DATE_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID) {
-    switch (featureID) {
-      case TimeBasedRoutingPackage.DAILY_OCCURS_MODEL__SKIP_DAYS:
-        return skipDays != SKIP_DAYS_EDEFAULT;
-      case TimeBasedRoutingPackage.DAILY_OCCURS_MODEL__START_DATE:
-        return START_DATE_EDEFAULT == null ? startDate != null : !START_DATE_EDEFAULT.equals(startDate);
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case TimeBasedRoutingPackage.DAILY_OCCURS_MODEL__SKIP_DAYS:
+				return skipDays != SKIP_DAYS_EDEFAULT;
+			case TimeBasedRoutingPackage.DAILY_OCCURS_MODEL__START_DATE:
+				return START_DATE_EDEFAULT == null ? startDate != null : !START_DATE_EDEFAULT.equals(startDate);
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc --> <!-- end-user-doc -->
-   * @generated
-   */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
   @Override
   public String toString() {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (skipDays: ");
-    result.append(skipDays);
-    result.append(", startDate: ");
-    result.append(startDate);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (skipDays: ");
+		result.append(skipDays);
+		result.append(", startDate: ");
+		result.append(startDate);
+		result.append(')');
+		return result.toString();
+	}
 
   @Override
   public String getDescription() {
