@@ -121,8 +121,7 @@ public class VariableTranslator {
 			case INTEGER:
 				if (value instanceof Long)
 					return value;
-				else
-				if (value instanceof Number) 
+				else if (value instanceof Number)
 					return new Long(((Number) value).longValue());
 				else
 					return new Long(value.toString());
@@ -251,29 +250,31 @@ public class VariableTranslator {
 		}
 	}
 
-//	public static <T> T translateValue(Class<T> type, Object value) throws IllegalArgumentException {
-//		if (value == null)
-//			return null;
-//		VariableType vartype = null;
-//		if (type == String.class) {
-//			vartype = VariableType.TEXT;
-//		} else if (type == int.class || type == Integer.class || type == long.class || type == Long.class)
-//			vartype = VariableType.DECIMAL;
-//		else if (type == Date.class)
-//			vartype = VariableType.DATETIME;
-//		else if (type == boolean.class || type == Boolean.class)
-//			vartype = VariableType.BOOLEAN;
-//		else if (type == float.class || type == Float.class || type == double.class || type == Double.class)
-//			vartype = VariableType.DECIMAL;
-//		else if (type == List.class)
-//			vartype = VariableType.ARRAY;
-//		else
-//			vartype = VariableType.OBJECT;
-//
-//		return type.cast(translateValue(vartype, value));
-//	}
-//	
-	
+	// public static <T> T translateValue(Class<T> type, Object value) throws
+	// IllegalArgumentException {
+	// if (value == null)
+	// return null;
+	// VariableType vartype = null;
+	// if (type == String.class) {
+	// vartype = VariableType.TEXT;
+	// } else if (type == int.class || type == Integer.class || type == long.class
+	// || type == Long.class)
+	// vartype = VariableType.DECIMAL;
+	// else if (type == Date.class)
+	// vartype = VariableType.DATETIME;
+	// else if (type == boolean.class || type == Boolean.class)
+	// vartype = VariableType.BOOLEAN;
+	// else if (type == float.class || type == Float.class || type == double.class
+	// || type == Double.class)
+	// vartype = VariableType.DECIMAL;
+	// else if (type == List.class)
+	// vartype = VariableType.ARRAY;
+	// else
+	// vartype = VariableType.OBJECT;
+	//
+	// return type.cast(translateValue(vartype, value));
+	// }
+	//	
 
 	public static String translateToText(VariableType type, Object value) {
 
@@ -371,22 +372,47 @@ public class VariableTranslator {
 		Exception lastException = null;
 		Date date = null;
 		try {
-			date = SimpleDateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.MEDIUM).parse(value.toString(),
-					new ParsePosition(0));
+			try {
+				DateFormat fmt = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.MEDIUM);
+				fmt.setLenient(false);
+				date = fmt.parse(value.toString());
+			} catch (ParseException e) {
+			}
+			// date = SimpleDateFormat.getDateTimeInstance(DateFormat.SHORT,
+			// DateFormat.MEDIUM).parse(value.toString(),
+			// new ParsePosition(0));
 			if (date != null)
 				return date;
 		} catch (Exception e) {
 			lastException = e;
 		}
 		try {
-			date = SimpleDateFormat.getDateInstance(DateFormat.MEDIUM).parse(value.toString(), new ParsePosition(0));
+
+			try {
+				DateFormat fmt = DateFormat.getDateInstance(DateFormat.SHORT);
+				fmt.setLenient(false);
+				date = fmt.parse(value.toString());
+			} catch (ParseException e) {
+			}
+			// date =
+			// SimpleDateFormat.getDateInstance(DateFormat.MEDIUM).parse(value.toString(),
+			// new ParsePosition(0));
 			if (date != null)
 				return date;
 		} catch (Exception e) {
 			lastException = e;
 		}
 		try {
-			date = SimpleDateFormat.getTimeInstance(DateFormat.SHORT).parse(value.toString(), new ParsePosition(0));
+
+			try {
+				DateFormat fmt = DateFormat.getTimeInstance(DateFormat.MEDIUM);
+				fmt.setLenient(false);
+				date = fmt.parse(value.toString());
+			} catch (ParseException e) {
+			}
+			// date =
+			// SimpleDateFormat.getTimeInstance(DateFormat.SHORT).parse(value.toString(),
+			// new ParsePosition(0));
 			if (date != null)
 				return date;
 		} catch (Exception e) {
