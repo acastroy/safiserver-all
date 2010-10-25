@@ -18,22 +18,21 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
 import com.safi.core.actionstep.CaseItem;
-import com.safi.workshop.edit.parts.ToolstepEditPart;
 import com.safi.workshop.model.timeBasedRouting.TimeBasedRouting;
 import com.safi.workshop.model.timeBasedRouting.TimeItem;
-import com.safi.workshop.sheet.DynamicValueEditorUtils;
 import com.safi.workshop.sheet.actionstep.AbstractActionstepEditorPage;
 import com.safi.workshop.sheet.actionstep.ActionstepEditObservables;
 import com.safi.workshop.sheet.actionstep.ActionstepEditorDialog;
 import com.safi.workshop.sheet.actionstep.CaseItemReorderCommand;
-import com.safi.workshop.sheet.actionstep.DynamicValueEditorWidget;
-import com.safi.workshop.sheet.actionstep.DynamicValueWidgetObservableValue;
+import com.safi.workshop.sheet.actionstep.DynamicValueEditorWidget2;
+import com.safi.workshop.sheet.actionstep.DynamicValueWidget2ObservableValue;
 
 public class TimeBasedRoutingEditorPage extends AbstractActionstepEditorPage {
 
   private TimeItemEditorWidget timeItemEditorWidget;
   private Label timeRangesLabel;
-  private DynamicValueEditorWidget valueDVEWidget;
+//  private DynamicValueEditorWidget valueDVEWidget;
+  private DynamicValueEditorWidget2 valueDVEWidget;
   private Label valueLabel;
   private Text text;
   private Label nameLabel;
@@ -55,13 +54,16 @@ public class TimeBasedRoutingEditorPage extends AbstractActionstepEditorPage {
     valueLabel = new Label(this, SWT.NONE);
     valueLabel.setText("Value:");
 
-    valueDVEWidget = new DynamicValueEditorWidget(this, SWT.NONE);
+    TimeBasedRouting timeBasedRouting = (TimeBasedRouting) parent.getEditPart().getActionStep();
+    TransactionalEditingDomain editingDomain = parent.getEditPart().getEditingDomain();
+    EStructuralFeature valueFeature = timeBasedRouting.eClass().getEStructuralFeature("value");
+    
+    valueDVEWidget = new DynamicValueEditorWidget2(this, timeBasedRouting.getValue(), timeBasedRouting,  editingDomain, valueFeature);
     valueDVEWidget.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 
     //
 
-    TimeBasedRouting timeBasedRouting = (TimeBasedRouting) parent.getEditPart().getActionStep();
-    TransactionalEditingDomain editingDomain = parent.getEditPart().getEditingDomain();
+   
     IObservableValue ob = ActionstepEditObservables.observeValue(editingDomain, timeBasedRouting, timeBasedRouting
         .eClass().getEStructuralFeature("name"));
     // IObservableValue ob =
@@ -72,13 +74,16 @@ public class TimeBasedRoutingEditorPage extends AbstractActionstepEditorPage {
     uiElement = SWTObservables.observeDelayedValue(400, uiElement);
     bindingContext.bindValue(uiElement, ob, null, null);
 
-    valueDVEWidget.setDynamicValue(DynamicValueEditorUtils.copyDynamicValue(timeBasedRouting.getValue()));
-    valueDVEWidget.setEditingDomain(editingDomain);
-    valueDVEWidget.setObject(timeBasedRouting);
-    EStructuralFeature valueFeature = timeBasedRouting.eClass().getEStructuralFeature("value");
-    valueDVEWidget.setFeature(valueFeature);
+//    valueDVEWidget.setDynamicValue(DynamicValueEditorUtils.copyDynamicValue(timeBasedRouting.getValue()));
+//    valueDVEWidget.setEditingDomain(editingDomain);
+//    valueDVEWidget.setObject(timeBasedRouting);
+//    EStructuralFeature valueFeature = timeBasedRouting.eClass().getEStructuralFeature("value");
+//    valueDVEWidget.setFeature(valueFeature);
     ob = ActionstepEditObservables.observeValue(editingDomain, timeBasedRouting, valueFeature);
-    DynamicValueWidgetObservableValue valVal = new DynamicValueWidgetObservableValue(
+//    DynamicValueWidgetObservableValue valVal = new DynamicValueWidgetObservableValue(
+//        valueDVEWidget, SWT.Modify);
+    
+    DynamicValueWidget2ObservableValue valVal = new DynamicValueWidget2ObservableValue(
         valueDVEWidget, SWT.Modify);
 
     timeRangesLabel = new Label(this, SWT.NONE);
