@@ -9,7 +9,6 @@ import org.eclipse.core.databinding.Binding;
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.observable.list.WritableList;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
-import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.databinding.swt.ISWTObservableValue;
@@ -32,22 +31,20 @@ import com.safi.core.actionstep.ParameterizedInitiator;
 import com.safi.core.initiator.Initiator;
 import com.safi.core.saflet.Saflet;
 import com.safi.workshop.model.actionpak1.InvokeSaflet2;
-import com.safi.workshop.part.SafiWorkshopEditorUtil;
-import com.safi.workshop.sheet.DynamicValueEditorUtils;
 import com.safi.workshop.sheet.actionstep.AbstractActionstepEditorPage;
 import com.safi.workshop.sheet.actionstep.ActionstepEditObservables;
 import com.safi.workshop.sheet.actionstep.ActionstepEditorDialog;
 import com.safi.workshop.sheet.actionstep.ActionstepEditorPage;
 import com.safi.workshop.sheet.actionstep.CaseItemReorderCommand;
-import com.safi.workshop.sheet.actionstep.DynamicValueEditorWidget;
-import com.safi.workshop.sheet.actionstep.DynamicValueWidgetObservableValue;
+import com.safi.workshop.sheet.actionstep.DynamicValueEditorWidget2;
+import com.safi.workshop.sheet.actionstep.DynamicValueWidget2ObservableValue;
 import com.safi.workshop.util.SafletPersistenceManager;
 
 public class InvokeSaflet2EditorPage extends AbstractActionstepEditorPage {
 
 	protected InvokeSaflet2InputParamEditorWidget inputItemEditorWidget;
 	protected Label paramsLabel;
-	protected DynamicValueEditorWidget targetDVEWidget;
+	protected DynamicValueEditorWidget2 targetDVEWidget;
 	protected Label targetLabel;
 	protected Text text;
 	protected Label nameLabel;
@@ -70,7 +67,11 @@ public class InvokeSaflet2EditorPage extends AbstractActionstepEditorPage {
 		targetLabel = new Label(this, SWT.NONE);
 		targetLabel.setText("Target Saflet:");
 
-		targetDVEWidget = new DynamicValueEditorWidget(this, SWT.NONE) {
+		InvokeSaflet2 invokeSaflet = (InvokeSaflet2) parent.getEditPart().getActionStep();
+		TransactionalEditingDomain editingDomain = parent.getEditPart().getEditingDomain();
+		EStructuralFeature valueFeature = invokeSaflet.eClass().getEStructuralFeature("targetSafletPath");
+		
+		targetDVEWidget = new DynamicValueEditorWidget2(this,invokeSaflet.getTargetSafletPath(), invokeSaflet, editingDomain, valueFeature) {
 			@Override
 			protected void openEditor() {
 				super.openEditor();
@@ -85,8 +86,7 @@ public class InvokeSaflet2EditorPage extends AbstractActionstepEditorPage {
 
 		//
 
-		InvokeSaflet2 invokeSaflet = (InvokeSaflet2) parent.getEditPart().getActionStep();
-		TransactionalEditingDomain editingDomain = parent.getEditPart().getEditingDomain();
+		
 		IObservableValue ob = ActionstepEditObservables.observeValue(editingDomain, invokeSaflet, invokeSaflet.eClass()
 				.getEStructuralFeature("name"));
 		// IObservableValue ob =
@@ -96,13 +96,8 @@ public class InvokeSaflet2EditorPage extends AbstractActionstepEditorPage {
 		uiElement = SWTObservables.observeDelayedValue(400, uiElement);
 		bindingContext.bindValue(uiElement, ob, null, null);
 
-		targetDVEWidget.setDynamicValue(DynamicValueEditorUtils.copyDynamicValue(invokeSaflet.getTargetSafletPath()));
-		targetDVEWidget.setEditingDomain(editingDomain);
-		targetDVEWidget.setObject(invokeSaflet);
-		EStructuralFeature valueFeature = invokeSaflet.eClass().getEStructuralFeature("targetSafletPath");
-		targetDVEWidget.setFeature(valueFeature);
 		ob = ActionstepEditObservables.observeValue(editingDomain, invokeSaflet, valueFeature);
-		DynamicValueWidgetObservableValue valVal = new DynamicValueWidgetObservableValue(targetDVEWidget, SWT.Modify);
+		DynamicValueWidget2ObservableValue valVal = new DynamicValueWidget2ObservableValue(targetDVEWidget, SWT.Modify);
 
 		paramsLabel = new Label(this, SWT.NONE);
 		final GridData gd_paramsLabel = new GridData(SWT.LEFT, SWT.TOP, false, false);

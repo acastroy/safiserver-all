@@ -9,7 +9,6 @@ import org.eclipse.core.databinding.Binding;
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.observable.list.WritableList;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
-import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.databinding.swt.ISWTObservableValue;
@@ -26,20 +25,18 @@ import com.safi.core.actionstep.CaseItem;
 import com.safi.core.actionstep.DynamicValue;
 import com.safi.core.actionstep.DynamicValueType;
 import com.safi.core.actionstep.InputItem;
-import com.safi.core.actionstep.Item;
-import com.safi.core.actionstep.OutputParameter;
 import com.safi.core.actionstep.ParameterizedInitiator;
 import com.safi.core.initiator.Initiator;
 import com.safi.core.saflet.Saflet;
 import com.safi.workshop.model.actionpak1.ScheduleSaflet;
-import com.safi.workshop.part.SafiWorkshopEditorUtil;
 import com.safi.workshop.sheet.DynamicValueEditorUtils;
 import com.safi.workshop.sheet.actionstep.AbstractActionstepEditorPage;
 import com.safi.workshop.sheet.actionstep.ActionstepEditObservables;
 import com.safi.workshop.sheet.actionstep.ActionstepEditorDialog;
-import com.safi.workshop.sheet.actionstep.ActionstepEditorPage;
 import com.safi.workshop.sheet.actionstep.CaseItemReorderCommand;
 import com.safi.workshop.sheet.actionstep.DynamicValueEditorWidget;
+import com.safi.workshop.sheet.actionstep.DynamicValueEditorWidget2;
+import com.safi.workshop.sheet.actionstep.DynamicValueWidget2ObservableValue;
 import com.safi.workshop.sheet.actionstep.DynamicValueWidgetObservableValue;
 import com.safi.workshop.util.SafletPersistenceManager;
 
@@ -47,14 +44,14 @@ public class ScheduleSafletEditorPage extends AbstractActionstepEditorPage {
 
 	protected InvokeSaflet2InputParamEditorWidget inputItemEditorWidget;
 	protected Label paramsLabel;
-	protected DynamicValueEditorWidget targetDVEWidget;
+	protected DynamicValueEditorWidget2 targetDVEWidget;
 	protected Label targetLabel;
 	protected Text text;
 	protected Label nameLabel;
 	protected IObservableList inputList;
-	private DynamicValueEditorWidget schedStartDVEWidget;
-	private DynamicValueEditorWidget cronExprDVEWidget;
-	private DynamicValueEditorWidget schedEndDVEWidget;
+	private DynamicValueEditorWidget2 schedStartDVEWidget;
+	private DynamicValueEditorWidget2 cronExprDVEWidget;
+	private DynamicValueEditorWidget2 schedEndDVEWidget;
 
 	public ScheduleSafletEditorPage(ActionstepEditorDialog parent) {
 		super(parent);
@@ -73,7 +70,11 @@ public class ScheduleSafletEditorPage extends AbstractActionstepEditorPage {
 		targetLabel = new Label(this, SWT.NONE);
 		targetLabel.setText("Target Saflet:");
 
-		targetDVEWidget = new DynamicValueEditorWidget(this, SWT.NONE) {
+		ScheduleSaflet scheduleSaflet = (ScheduleSaflet) parent.getEditPart().getActionStep();
+		TransactionalEditingDomain editingDomain = parent.getEditPart().getEditingDomain();
+		EStructuralFeature valueFeature = scheduleSaflet.eClass().getEStructuralFeature("targetSafletPath");
+		
+		targetDVEWidget = new DynamicValueEditorWidget2(this, scheduleSaflet.getTargetSafletPath(), scheduleSaflet, editingDomain, valueFeature) {
 			@Override
 			protected void openEditor() {
 				super.openEditor();
@@ -85,8 +86,7 @@ public class ScheduleSafletEditorPage extends AbstractActionstepEditorPage {
 
 		//
 
-		ScheduleSaflet scheduleSaflet = (ScheduleSaflet) parent.getEditPart().getActionStep();
-		TransactionalEditingDomain editingDomain = parent.getEditPart().getEditingDomain();
+		
 		IObservableValue ob = ActionstepEditObservables.observeValue(editingDomain, scheduleSaflet, scheduleSaflet.eClass()
 				.getEStructuralFeature("name"));
 		// IObservableValue ob =
@@ -96,13 +96,8 @@ public class ScheduleSafletEditorPage extends AbstractActionstepEditorPage {
 		uiElement = SWTObservables.observeDelayedValue(400, uiElement);
 		bindingContext.bindValue(uiElement, ob, null, null);
 
-		targetDVEWidget.setDynamicValue(DynamicValueEditorUtils.copyDynamicValue(scheduleSaflet.getTargetSafletPath()));
-		targetDVEWidget.setEditingDomain(editingDomain);
-		targetDVEWidget.setObject(scheduleSaflet);
-		EStructuralFeature valueFeature = scheduleSaflet.eClass().getEStructuralFeature("targetSafletPath");
-		targetDVEWidget.setFeature(valueFeature);
 		ob = ActionstepEditObservables.observeValue(editingDomain, scheduleSaflet, valueFeature);
-		DynamicValueWidgetObservableValue valVal = new DynamicValueWidgetObservableValue(targetDVEWidget, SWT.Modify);
+		DynamicValueWidget2ObservableValue valVal = new DynamicValueWidget2ObservableValue(targetDVEWidget, SWT.Modify);
 		bindingContext.bindValue(valVal, ob, null, null);
 		paramsLabel = new Label(this, SWT.NONE);
 		final GridData gd_paramsLabel = new GridData(SWT.LEFT, SWT.TOP, false, false);
@@ -126,15 +121,12 @@ public class ScheduleSafletEditorPage extends AbstractActionstepEditorPage {
 			Label label = new Label(this, SWT.NONE);
 			label.setText("Start Date/Time:");
 
-			schedStartDVEWidget = new DynamicValueEditorWidget(this, SWT.NONE);
-			schedStartDVEWidget.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
-			schedStartDVEWidget.setDynamicValue(DynamicValueEditorUtils.copyDynamicValue(scheduleSaflet.getTargetSafletPath()));
-			schedStartDVEWidget.setEditingDomain(editingDomain);
-			schedStartDVEWidget.setObject(scheduleSaflet);
 			valueFeature = scheduleSaflet.eClass().getEStructuralFeature("startDateTime");
-			schedStartDVEWidget.setFeature(valueFeature);
+			
+			schedStartDVEWidget = new DynamicValueEditorWidget2(this, scheduleSaflet.getStartDateTime(), scheduleSaflet, editingDomain, valueFeature);
+			schedStartDVEWidget.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 			ob = ActionstepEditObservables.observeValue(editingDomain, scheduleSaflet, valueFeature);
-			valVal = new DynamicValueWidgetObservableValue(schedStartDVEWidget, SWT.Modify);
+			valVal = new DynamicValueWidget2ObservableValue(schedStartDVEWidget, SWT.Modify);
 			bindingContext.bindValue(valVal, ob, null, null);
 		}
 		
@@ -142,15 +134,11 @@ public class ScheduleSafletEditorPage extends AbstractActionstepEditorPage {
 			Label label = new Label(this, SWT.NONE);
 			label.setText("Cron Expression:");
 
-			cronExprDVEWidget = new DynamicValueEditorWidget(this, SWT.NONE);
-			cronExprDVEWidget.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
-			cronExprDVEWidget.setDynamicValue(DynamicValueEditorUtils.copyDynamicValue(scheduleSaflet.getTargetSafletPath()));
-			cronExprDVEWidget.setEditingDomain(editingDomain);
-			cronExprDVEWidget.setObject(scheduleSaflet);
 			valueFeature = scheduleSaflet.eClass().getEStructuralFeature("cronExpression");
-			cronExprDVEWidget.setFeature(valueFeature);
+			cronExprDVEWidget = new DynamicValueEditorWidget2(this, scheduleSaflet.getCronExpression(), scheduleSaflet, editingDomain, valueFeature);
+			cronExprDVEWidget.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 			ob = ActionstepEditObservables.observeValue(editingDomain, scheduleSaflet, valueFeature);
-			valVal = new DynamicValueWidgetObservableValue(cronExprDVEWidget, SWT.Modify);
+			valVal = new DynamicValueWidget2ObservableValue(cronExprDVEWidget, SWT.Modify);
 			bindingContext.bindValue(valVal, ob, null, null);
 		}
 		
@@ -158,15 +146,11 @@ public class ScheduleSafletEditorPage extends AbstractActionstepEditorPage {
 			Label label = new Label(this, SWT.NONE);
 			label.setText("End Date/Time:");
 
-			schedEndDVEWidget = new DynamicValueEditorWidget(this, SWT.NONE);
-			schedEndDVEWidget.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
-			schedEndDVEWidget.setDynamicValue(DynamicValueEditorUtils.copyDynamicValue(scheduleSaflet.getTargetSafletPath()));
-			schedEndDVEWidget.setEditingDomain(editingDomain);
-			schedEndDVEWidget.setObject(scheduleSaflet);
 			valueFeature = scheduleSaflet.eClass().getEStructuralFeature("endDateTime");
-			schedEndDVEWidget.setFeature(valueFeature);
+			schedEndDVEWidget = new DynamicValueEditorWidget2(this, scheduleSaflet.getEndDateTime(), scheduleSaflet, editingDomain, valueFeature);
+			schedEndDVEWidget.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 			ob = ActionstepEditObservables.observeValue(editingDomain, scheduleSaflet, valueFeature);
-			valVal = new DynamicValueWidgetObservableValue(schedEndDVEWidget, SWT.Modify);
+			valVal = new DynamicValueWidget2ObservableValue(schedEndDVEWidget, SWT.Modify);
 			bindingContext.bindValue(valVal, ob, null, null);
 		}
 	}
