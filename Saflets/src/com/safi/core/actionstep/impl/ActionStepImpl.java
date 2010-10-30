@@ -689,7 +689,7 @@ public abstract class ActionStepImpl extends EObjectImpl implements ActionStep {
     String text = dynamicValue.getText();
     switch (type.getValue()) {
       case DynamicValueType.LITERAL_TEXT_VALUE: {
-        if (text != null) {
+        if (StringUtils.isNotEmpty(text)) {
           text = translateScriptStringToRawText(text);
           // if (text.charAt(0)=='\"')
           // text = text.substring(1);
